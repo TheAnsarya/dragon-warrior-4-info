@@ -1,0 +1,116 @@
+# Dragon Warrior 4 Disassembly Project - Git Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+.env
+
+# IDE
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Build artifacts
+output/
+*.bin
+*.o
+*.obj
+
+# Generated files (keep in version control if needed)
+# generated/
+
+# ROM files (DO NOT commit ROMs)
+# Keep the roms folder but ignore contents except readme
+roms/*
+!roms/.gitkeep
+!roms/README.md
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+~$*
+
+# Logs (keep structure)
+*.log
+!~docs/**/*.log
+
+# Test output
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# IPS/BPS patches (generated)
+patches/*.ips
+patches/*.bps
+!patches/README.md
+
+# Extracted assets (regenerable)
+# Keep in git for reference, but large binaries can be excluded
+# extracted_assets/graphics/*.raw
+
+# Cache
+.cache/
+*.cache
+
+# Documentation builds
+docs/_build/
+
+# Node modules (if any JS tooling)
+node_modules/
+
+# Save states and emulator files
+*.sav
+*.srm
+*.state
+*.mss
+*.mlb.bak

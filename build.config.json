@@ -1,0 +1,48 @@
+{
+	"project": {
+		"name": "Dragon Warrior 4 Info",
+		"version": "0.1.0",
+		"description": "Complete disassembly and asset extraction for Dragon Warrior IV (NES)"
+	},
+	"rom": {
+		"name": "Dragon Warrior IV (1992-10)(Enix)(US).nes",
+		"path": "roms/Dragon Warrior IV (1992-10)(Enix)(US).nes",
+		"mapper": 4,
+		"prgBanks": 16,
+		"chrBanks": 16,
+		"prgSize": 262144,
+		"chrSize": 131072,
+		"headerSize": 16
+	},
+	"build": {
+		"mainSource": "source_files/main.asm",
+		"outputRom": "build/dragon_warrior_4_rebuilt.nes",
+		"symbolFile": "build/symbols.sym",
+		"assembler": "Ophis/ophis.exe",
+		"options": {
+			"generateSymbols": true,
+			"verbose": false,
+			"checkSize": true,
+			"compareOriginal": true
+		}
+	},
+	"assets": {
+		"extractedDir": "assets",
+		"generatedDir": "source_files/generated",
+		"jsonDir": "assets/json",
+		"graphicsDir": "assets/graphics",
+		"textDir": "assets/text",
+		"mapsDir": "assets/maps"
+	},
+	"tools": {
+		"universalEditor": "tools/universal_editor.py",
+		"assetExtractor": "tools/asset_extractor.py",
+		"assetReinserter": "tools/asset_reinserter.py",
+		"romAnalyzer": "tools/rom_analyzer.py"
+	},
+	"testing": {
+		"testDir": "tests",
+		"coverageDir": "coverage",
+		"runAfterBuild": false
+	}
+}

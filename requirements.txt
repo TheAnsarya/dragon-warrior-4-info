@@ -1,0 +1,29 @@
+# Dragon Warrior 4 Disassembly Project - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+pillow>=10.0.0		# Image processing for graphics extraction/editing
+numpy>=1.24.0		# Array operations for ROM data manipulation
+click>=8.1.0		# CLI framework for tools
+rich>=13.0.0		# Beautiful terminal output
+
+# GUI dependencies
+# tkinter is included with Python, no pip package needed
+
+# Data processing
+pyyaml>=6.0			# YAML configuration files
+toml>=0.10.2		# TOML configuration files
+
+# Development tools
+pytest>=7.4.0		# Testing framework
+pytest-cov>=4.1.0	# Coverage reporting
+black>=23.0.0		# Code formatting (for reference, we use tabs)
+flake8>=6.1.0		# Linting
+mypy>=1.5.0			# Type checking
+
+# Documentation
+markdown>=3.4.0		# Markdown processing
+
+# Optional: Advanced features
+# requests>=2.31.0	# HTTP requests (for GitHub integration)
+# python-dotenv>=1.0.0	# Environment variable management
