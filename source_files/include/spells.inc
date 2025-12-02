@@ -2,7 +2,7 @@
 ; Dragon Warrior IV - Spell Definitions
 ; ============================================================================
 ; Spell constants and character spell assignments
-; Source: GameInfo wiki documentation (RAM Map)
+; Source: GameInfo wiki documentation (SRAM Map)
 ; ============================================================================
 
 ; ============================================================================
@@ -14,196 +14,263 @@ SPELL_TYPE_SUPPORT	= $02		; Buff/debuff spells
 SPELL_TYPE_FIELD	= $03		; Overworld spells
 
 ; ============================================================================
-; Hero Battle Spells (stored at PMEM_BATTLE_SPELL1/2)
+; Hero Spells - Battle Byte 1 (offset +$1B)
 ; ============================================================================
-; These are bitmask values for the Hero's spell bytes
-; Other characters have different spell arrangements
+HERO_B1_EXPEL		= %00000001	; Bit 0 - Expel
+HERO_B1_HEALMORE	= %00000010	; Bit 1 - Healmore
+HERO_B1_BLAZE		= %00000100	; Bit 2 - Blaze
+HERO_B1_RETURN		= %00001000	; Bit 3 - Return
+HERO_B1_SLEEPMORE	= %00010000	; Bit 4 - Sleepmore
+HERO_B1_AWAKE		= %00100000	; Bit 5 - Awake
+HERO_B1_FIREBAL		= %01000000	; Bit 6 - Firebal
+HERO_B1_HEALALL		= %10000000	; Bit 7 - Healall
 
-; --- Battle Spell Byte 1 ($601C / +$1B from party base) ---
-HERO_SPELL1_EXPEL	= %00000001	; Bit 0 - Expel (instant death vs undead)
-HERO_SPELL1_HEALMORE	= %00000010	; Bit 1 - Healmore (medium heal)
-HERO_SPELL1_BLAZE	= %00000100	; Bit 2 - Blaze (fire attack)
-HERO_SPELL1_RETURN	= %00001000	; Bit 3 - Return (dungeon warp)
-HERO_SPELL1_SLEEPMORE	= %00010000	; Bit 4 - Sleepmore (sleep group)
-HERO_SPELL1_AWAKE	= %00100000	; Bit 5 - Awake (cure sleep)
-HERO_SPELL1_FIREBAL	= %01000000	; Bit 6 - Firebal (fire group)
-HERO_SPELL1_HEALALL	= %10000000	; Bit 7 - Healall (full heal one)
+; Hero Spells - Battle Byte 2 (offset +$1C)
+HERO_B2_IRONIZE		= %00000001	; Bit 0 - Ironize
+HERO_B2_FENDSPELL	= %00000010	; Bit 1 - FendSpell
+HERO_B2_ZAP		= %00000100	; Bit 2 - Zap
+HERO_B2_TRANSFORM	= %00001000	; Bit 3 - Transform
+HERO_B2_BOOM		= %00010000	; Bit 4 - Boom
+HERO_B2_HEALUSALL	= %00100000	; Bit 5 - Healusall
+HERO_B2_LIGHTNING	= %01000000	; Bit 6 - Lightning
+HERO_B2_VIVIFY		= %10000000	; Bit 7 - Vivify
 
-; --- Battle Spell Byte 2 ($601D / +$1C from party base) ---
-HERO_SPELL2_IRONIZE	= %00000001	; Bit 0 - Ironize (defense boost)
-HERO_SPELL2_FENDSPELL	= %00000010	; Bit 1 - FendSpell (magic resist)
-HERO_SPELL2_ZAP		= %00000100	; Bit 2 - Zap (lightning one)
-HERO_SPELL2_TRANSFORM	= %00001000	; Bit 3 - Transform (change appearance)
-HERO_SPELL2_BOOM	= %00010000	; Bit 4 - Boom (explosion group)
-HERO_SPELL2_HEALUSALL	= %00100000	; Bit 5 - Healusall (heal party)
-HERO_SPELL2_LIGHTNING	= %01000000	; Bit 6 - Lightning (lightning group)
-HERO_SPELL2_VIVIFY	= %10000000	; Bit 7 - Vivify (revive)
-
-; --- World Spell Byte ($601E / +$1D from party base) ---
-; Bits 0-1 are battle-only spells (Thordain, Chance)
-HERO_WSPELL_THORDAIN	= %00000001	; Bit 0 - Thordain (lightning ultimate)
-HERO_WSPELL_CHANCE	= %00000010	; Bit 1 - Chance (random effect)
-; Bits 2-7 are overworld spells
-HERO_WSPELL_RETURN	= %00000100	; Bit 2 - Return (town warp)
-HERO_WSPELL_HEALMORE	= %00001000	; Bit 3 - Healmore
-HERO_WSPELL_REPEL	= %00010000	; Bit 4 - Repel (reduce encounters)
-HERO_WSPELL_OUTSIDE	= %00100000	; Bit 5 - Outside (exit dungeon)
-HERO_WSPELL_HEALALL	= %01000000	; Bit 6 - Healall
-HERO_WSPELL_VIVIFY	= %10000000	; Bit 7 - Vivify
+; Hero Spells - World Byte (offset +$1D)
+HERO_W_THORDAIN		= %00000001	; Bit 0 - Thordain (battle)
+HERO_W_CHANCE		= %00000010	; Bit 1 - Chance (battle)
+HERO_W_RETURN		= %00000100	; Bit 2 - Return
+HERO_W_HEALMORE		= %00001000	; Bit 3 - Healmore
+HERO_W_REPEL		= %00010000	; Bit 4 - Repel
+HERO_W_OUTSIDE		= %00100000	; Bit 5 - Outside
+HERO_W_HEALALL		= %01000000	; Bit 6 - Healall
+HERO_W_VIVIFY		= %10000000	; Bit 7 - Vivify
 
 ; ============================================================================
-; Spell Names (for reference/display)
+; Cristo Spells - Battle Byte 1 (offset +$1B)
 ; ============================================================================
-; These match the in-game spell names
+CRISTO_B1_UPPER		= %00000001	; Bit 0 - Upper
+CRISTO_B1_HEAL		= %00000010	; Bit 1 - Heal
+CRISTO_B1_SURROUND	= %00000100	; Bit 2 - Surround
+CRISTO_B1_HEALMORE	= %00001000	; Bit 3 - Healmore
+CRISTO_B1_STOPSPELL	= %00010000	; Bit 4 - StopSpell
+CRISTO_B1_HEALALL	= %00100000	; Bit 5 - Healall
+CRISTO_B1_INCREASE	= %01000000	; Bit 6 - Increase
+CRISTO_B1_HEALUS	= %10000000	; Bit 7 - Healus
 
-; Healing Spells
-SPELL_HEAL		= $00		; Basic heal
-SPELL_HEALMORE		= $01		; Medium heal
-SPELL_HEALALL		= $02		; Full heal one
-SPELL_HEALUSALL		= $03		; Heal all party
-SPELL_VIVIFY		= $04		; Revive
-SPELL_REVIVE		= $05		; Full revive
+; Cristo Spells - Battle Byte 2 (offset +$1C)
+CRISTO_B2_BEAT		= %00000001	; Bit 0 - Beat
+CRISTO_B2_VIVIFY	= %00000010	; Bit 1 - Vivify
+CRISTO_B2_DEFEAT	= %00000100	; Bit 2 - Defeat
+CRISTO_B2_REVIVE	= %00001000	; Bit 3 - Revive
+; Bits 4-7 unused
 
-; Attack Spells
-SPELL_BLAZE		= $10		; Fire one
-SPELL_FIREBAL		= $11		; Fire group
-SPELL_BLAZEMORE		= $12		; Fire strong one
-SPELL_BLAZEMOST		= $13		; Fire strong group
-SPELL_BANG		= $14		; Explosion one
-SPELL_BOOM		= $15		; Explosion group
-SPELL_EXPLODET		= $16		; Explosion all
-SPELL_ZAP		= $17		; Lightning one
-SPELL_LIGHTNING		= $18		; Lightning group
-SPELL_THORDAIN		= $19		; Lightning ultimate
-
-; Status Spells
-SPELL_SLEEP		= $20		; Sleep one
-SPELL_SLEEPMORE		= $21		; Sleep group
-SPELL_AWAKE		= $22		; Cure sleep
-SPELL_STOPSPELL		= $23		; Seal magic
-SPELL_EXPEL		= $24		; Instant death undead
-SPELL_DEFEAT		= $25		; Instant death all
-
-; Support Spells
-SPELL_SAPP		= $30		; Lower defense one
-SPELL_DEFENSE		= $31		; Raise defense one
-SPELL_IRONIZE		= $32		; Greatly raise defense
-SPELL_BIKILL		= $33		; Double attack
-SPELL_SPEEDUP		= $34		; Raise agility
-SPELL_FENDSPELL		= $35		; Magic resistance
-SPELL_BOUNCE		= $36		; Reflect magic
-
-; Field Spells
-SPELL_RETURN		= $40		; Warp to town
-SPELL_OUTSIDE		= $41		; Exit dungeon
-SPELL_REPEL		= $42		; Reduce encounters
-SPELL_STEPGUARD		= $43		; Immune to floor damage
-SPELL_X_RAY		= $44		; See enemy HP
-
-; Special Spells
-SPELL_TRANSFORM		= $50		; Change appearance
-SPELL_CHANCE		= $51		; Random effect
-SPELL_SACRIFICE		= $52		; Kamikazee
+; Cristo Spells - World Byte (offset +$1D)
+CRISTO_W_HEAL		= %00000001	; Bit 0 - Heal
+CRISTO_W_ANTIDOTE	= %00000010	; Bit 1 - Antidote
+CRISTO_W_HEALMORE	= %00001000	; Bit 2 - Healmore
+CRISTO_W_VIVIFY		= %00001000	; Bit 3 - Vivify
+CRISTO_W_HEALALL	= %00010000	; Bit 4 - Healall
+CRISTO_W_HEALUS		= %00100000	; Bit 5 - Healus
+CRISTO_W_REVIVE		= %01000000	; Bit 6 - Revive
+; Bit 7 unused
 
 ; ============================================================================
-; Character Spell Byte Offsets
+; Nara Spells - Battle Byte 1 (offset +$1B)
 ; ============================================================================
-; Each character has their own spell arrangement
-; Use these offsets from the character's base address
+NARA_B1_INFERNOS	= %00000001	; Bit 0 - Infernos
+NARA_B1_HEAL		= %00000010	; Bit 1 - Heal
+NARA_B1_SLEEP		= %00000100	; Bit 2 - Sleep
+NARA_B1_HEALMORE	= %00001000	; Bit 3 - Healmore
+NARA_B1_NUMBOFF		= %00010000	; Bit 4 - NumbOff
+NARA_B1_HEALALL		= %00100000	; Bit 5 - Healall
+NARA_B1_INFERMORE	= %01000000	; Bit 6 - Infermore
+NARA_B1_BARRIER		= %10000000	; Bit 7 - Barrier
 
+; Nara Spells - Battle Byte 2 (offset +$1C)
+NARA_B2_SLEEPMORE	= %00000001	; Bit 0 - Sleepmore
+NARA_B2_VIVIFY		= %00000010	; Bit 1 - Vivify
+NARA_B2_INFERMOST	= %00000100	; Bit 2 - Infermost
+NARA_B2_FAREWELL	= %00001000	; Bit 3 - Farewell
+; Bits 4-7 unused
+
+; Nara Spells - World Byte (offset +$1D)
+NARA_W_HEAL		= %00000001	; Bit 0 - Heal
+NARA_W_NUMBOFF		= %00000010	; Bit 1 - NumbOff
+NARA_W_HEALMORE		= %00000100	; Bit 2 - Healmore
+NARA_W_VIVIFY		= %00001000	; Bit 3 - Vivify
+NARA_W_HEALALL		= %00010000	; Bit 4 - Healall
+; Bits 5-7 unused
+
+; ============================================================================
+; Mara Spells - Battle Byte 1 (offset +$1B)
+; ============================================================================
+MARA_B1_BLAZE		= %00000001	; Bit 0 - Blaze
+MARA_B1_SAP		= %00000010	; Bit 1 - Sap
+MARA_B1_FIREBAL		= %00000100	; Bit 2 - Firebal
+MARA_B1_ROBMAGIC	= %00001000	; Bit 3 - RobMagic
+MARA_B1_BANG		= %00010000	; Bit 4 - Bang
+MARA_B1_BEDRAGON	= %00100000	; Bit 5 - BeDragon
+MARA_B1_BLAZEMORE	= %01000000	; Bit 6 - Blazemore
+MARA_B1_BLAZEMOST	= %10000000	; Bit 7 - Blazemost
+
+; Mara Spells - Battle Byte 2 (offset +$1C)
+MARA_B2_FIREBANE	= %00000001	; Bit 0 - Firebane
+MARA_B2_FIREVOLT	= %00000010	; Bit 1 - Firevolt
+MARA_B2_BOOM		= %00000100	; Bit 2 - Boom
+MARA_B2_EXPLODET	= %00001000	; Bit 3 - Explodet
+; Bits 4-7 unused
+
+; Mara Spells - World Byte (offset +$1D)
+MARA_W_RETURN		= %00000001	; Bit 0 - Return
+MARA_W_OUTSIDE		= %00000010	; Bit 1 - Outside
+MARA_W_STEPGUARD	= %00000100	; Bit 2 - StepGuard
+; Bits 3-7 unused
+
+; ============================================================================
+; Brey Spells - Battle Byte 1 (offset +$1B)
+; ============================================================================
+BREY_B1_ICEBOLT		= %00000001	; Bit 0 - IceBolt
+BREY_B1_SAP		= %00000010	; Bit 1 - Sap
+BREY_B1_SNOWSTORM	= %00000100	; Bit 2 - Snowstorm
+BREY_B1_BOUNCE		= %00001000	; Bit 3 - Bounce
+BREY_B1_ICESPEARS	= %00010000	; Bit 4 - Icespears
+BREY_B1_RETURN		= %00100000	; Bit 5 - Return
+BREY_B1_ROBMAGIC	= %01000000	; Bit 6 - RobMagic
+BREY_B1_DEFENCE		= %10000000	; Bit 7 - Defence
+
+; Brey Spells - Battle Byte 2 (offset +$1C)
+BREY_B2_CHAOS		= %00000001	; Bit 0 - Chaos
+BREY_B2_SPEEDUP		= %00000010	; Bit 1 - SpeedUp
+BREY_B2_BLIZZARD	= %00000100	; Bit 2 - Blizzard
+BREY_B2_BIKILL		= %00001000	; Bit 3 - Bikill
+; Bits 4-7 unused
+
+; Brey Spells - World Byte (offset +$1D)
+BREY_W_RETURN		= %00000001	; Bit 0 - Return
+BREY_W_OUTSIDE		= %00000010	; Bit 1 - Outside
+BREY_W_DAYNIGHT		= %00000100	; Bit 2 - Day-Night
+BREY_W_XRAY		= %00001000	; Bit 3 - X-Ray
+; Bits 4-7 unused
+
+; ============================================================================
+; Taloon, Ragnar, Alena - No Spells
+; ============================================================================
+; These characters have no spell bytes - their spell bytes are n/a
+
+; ============================================================================
+; Spell Byte Offsets (from character base address)
+; ============================================================================
 SPELL_BYTE1_OFFSET	= $1b		; First battle spell byte
 SPELL_BYTE2_OFFSET	= $1c		; Second battle spell byte
 SPELL_WORLD_OFFSET	= $1d		; World/additional spells byte
 
 ; ============================================================================
-; MP Costs (estimated - needs verification)
+; Spell Names (for reference/display)
 ; ============================================================================
-MP_HEAL			= 2
-MP_HEALMORE		= 5
-MP_HEALALL		= 7
-MP_HEALUSALL		= 18
-MP_VIVIFY		= 10
-MP_REVIVE		= 20
 
-MP_BLAZE		= 2
-MP_FIREBAL		= 4
-MP_BLAZEMORE		= 6
-MP_BANG			= 5
-MP_BOOM			= 8
-MP_ZAP			= 4
-MP_LIGHTNING		= 8
-MP_THORDAIN		= 15
+; Healing Spells
+SPELL_HEAL		= $00		; Basic heal
+SPELL_HEALMORE		= $01		; Medium heal
+SPELL_HEALALL		= $02		; Full heal one
+SPELL_HEALUS		= $03		; Heal all party
+SPELL_HEALUSALL		= $04		; Full heal all party
+SPELL_VIVIFY		= $05		; Revive (50% HP)
+SPELL_REVIVE		= $06		; Full revive
 
-MP_SLEEP		= 2
-MP_SLEEPMORE		= 5
-MP_AWAKE		= 2
-MP_STOPSPELL		= 3
-MP_EXPEL		= 2
+; Status Cure
+SPELL_ANTIDOTE		= $10		; Cure poison
+SPELL_AWAKE		= $11		; Cure sleep
+SPELL_NUMBOFF		= $12		; Cure paralysis
 
-MP_SAPP			= 3
-MP_DEFENSE		= 2
-MP_IRONIZE		= 6
-MP_BIKILL		= 6
-MP_SPEEDUP		= 3
-MP_FENDSPELL		= 3
+; Fire Spells (Mara)
+SPELL_BLAZE		= $20		; Fire one
+SPELL_FIREBAL		= $21		; Fire group
+SPELL_BLAZEMORE		= $22		; Fire strong one
+SPELL_BLAZEMOST		= $23		; Fire strongest one
+SPELL_FIREBANE		= $24		; Fire breath attack
+SPELL_FIREVOLT		= $25		; Multi-hit fire
 
-MP_RETURN		= 1
-MP_OUTSIDE		= 2
-MP_REPEL		= 4
+; Ice Spells (Brey)
+SPELL_ICEBOLT		= $30		; Ice one
+SPELL_SNOWSTORM		= $31		; Ice group
+SPELL_ICESPEARS		= $32		; Ice strong
+SPELL_BLIZZARD		= $33		; Ice strongest all
+
+; Explosion Spells
+SPELL_BANG		= $40		; Explosion one
+SPELL_BOOM		= $41		; Explosion group
+SPELL_EXPLODET		= $42		; Explosion all
+
+; Lightning Spells (Hero)
+SPELL_ZAP		= $50		; Lightning one
+SPELL_LIGHTNING		= $51		; Lightning group
+SPELL_THORDAIN		= $52		; Lightning ultimate
+
+; Infernos Spells (Nara)
+SPELL_INFERNOS		= $60		; Inferno one
+SPELL_INFERMORE		= $61		; Inferno group
+SPELL_INFERMOST		= $62		; Inferno all
+
+; Status Spells
+SPELL_SLEEP		= $70		; Sleep one
+SPELL_SLEEPMORE		= $71		; Sleep group
+SPELL_STOPSPELL		= $72		; Seal magic
+SPELL_CHAOS		= $73		; Confuse
+SPELL_BEAT		= $74		; Instant death one
+SPELL_DEFEAT		= $75		; Instant death all
+SPELL_EXPEL		= $76		; Banish undead
+
+; Support Spells
+SPELL_SAP		= $80		; Lower defense one
+SPELL_UPPER		= $81		; Raise defense one
+SPELL_INCREASE		= $82		; Raise defense all
+SPELL_DEFENCE		= $83		; Lower defense all
+SPELL_IRONIZE		= $84		; Metal form
+SPELL_BIKILL		= $85		; Double attack
+SPELL_SPEEDUP		= $86		; Raise agility
+SPELL_FENDSPELL		= $87		; Magic resistance
+SPELL_BOUNCE		= $88		; Reflect magic
+SPELL_BARRIER		= $89		; Fire/ice resist
+SPELL_SURROUND		= $8a		; Evade boost
+SPELL_ROBMAGIC		= $8b		; Steal MP
+
+; Field Spells
+SPELL_RETURN		= $90		; Warp to town
+SPELL_OUTSIDE		= $91		; Exit dungeon
+SPELL_REPEL		= $92		; Reduce encounters
+SPELL_STEPGUARD		= $93		; Immune to floor damage
+SPELL_XRAY		= $94		; See enemy HP
+SPELL_DAYNIGHT		= $95		; Change time
+
+; Special Spells
+SPELL_TRANSFORM		= $a0		; Change appearance
+SPELL_CHANCE		= $a1		; Random effect
+SPELL_BEDRAGON		= $a2		; Transform to dragon
+SPELL_FAREWELL		= $a3		; Kamikaze/sacrifice
 
 ; ============================================================================
 ; Macros for Spell Operations
 ; ============================================================================
 
-; Check if character has a specific spell (Hero byte 1)
-; Usage: HAS_HERO_SPELL1 party_hero, HERO_SPELL1_HEALMORE
-;        bne .has_spell
-.macro HAS_HERO_SPELL1 char_addr, spell_bit
-	lda char_addr + SPELL_BYTE1_OFFSET
+; Check if character has a specific spell
+.macro HAS_SPELL char_addr, offset, spell_bit
+	lda char_addr + offset
 	and #spell_bit
 .endmacro
 
-; Check if character has a specific spell (Hero byte 2)
-.macro HAS_HERO_SPELL2 char_addr, spell_bit
-	lda char_addr + SPELL_BYTE2_OFFSET
-	and #spell_bit
-.endmacro
-
-; Check if character has a world spell
-.macro HAS_WORLD_SPELL char_addr, spell_bit
-	lda char_addr + SPELL_WORLD_OFFSET
-	and #spell_bit
-.endmacro
-
-; Grant a spell (Hero byte 1)
-.macro GRANT_HERO_SPELL1 char_addr, spell_bit
-	lda char_addr + SPELL_BYTE1_OFFSET
+; Grant a spell
+.macro GRANT_SPELL char_addr, offset, spell_bit
+	lda char_addr + offset
 	ora #spell_bit
-	sta char_addr + SPELL_BYTE1_OFFSET
+	sta char_addr + offset
 .endmacro
 
-; Grant a spell (Hero byte 2)
-.macro GRANT_HERO_SPELL2 char_addr, spell_bit
-	lda char_addr + SPELL_BYTE2_OFFSET
-	ora #spell_bit
-	sta char_addr + SPELL_BYTE2_OFFSET
+; Remove a spell
+.macro REMOVE_SPELL char_addr, offset, spell_bit
+	lda char_addr + offset
+	and #~(spell_bit)
+	sta char_addr + offset
 .endmacro
-
-; Grant a world spell
-.macro GRANT_WORLD_SPELL char_addr, spell_bit
-	lda char_addr + SPELL_WORLD_OFFSET
-	ora #spell_bit
-	sta char_addr + SPELL_WORLD_OFFSET
-.endmacro
-
-; ============================================================================
-; Notes
-; ============================================================================
-; - Spell byte arrangements differ per character class
-; - Cristo, Nara have healing spells in different bit positions
-; - Mara, Brey have attack spells in different bit positions
-; - The Hero has a unique spell set combining heal/attack/support
-; - Further character spell layouts need to be documented from ROM analysis
 
 ; ============================================================================
 ; End of spells.inc
