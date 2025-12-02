@@ -17,9 +17,12 @@ please always generate a "what's next section" at the end of a prompt-response; 
 
 use as reference: `C:\~working\!dq4\*` (ask me for access permission and I'll give it to you); gitignore the `roms` folder's contents but not the folder itself, so it's there ready for the user; so the reference rom file can be there but isn't in the git-repos; doument everything!; always update and create issues and todolists and always update session logs and chat logs and follow the plan as long as you can; ***continue!***; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space; Do what's next :)
 
+disassemble and comment and lebel all the code so you can find the STE tables from the code itself;
+disassemble and analyze and comment and label all the code so you can find the DTE tables from the code itself; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
 
+git commit and push in logical groups, always git commit at the right time; wait to pull assets until we know the code around them; disassemble and analyze and comment and label all the code; we want all the code analyzed, disassembled, and commented so we can know exactly where all the assets are and what datastructures they use for extraction and editing; disassemble and document/comment as much code as you can; label everything that is references somewhere else and all functions and variables and keep a centralized label list; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
 
-
+nope; git commit and push in logical groups, always git commit at the right time; wait to pull assets until we know the code around them; disassemble and analyze and comment and label all the code; we want all the code analyzed, disassembled, and commented so we can know exactly where all the assets are and what datastructures they use for extraction and editing; disassemble and document/comment as much code as you can; label everything that is references somewhere else and all functions and variables and keep a centralized label list; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
 
 
 
