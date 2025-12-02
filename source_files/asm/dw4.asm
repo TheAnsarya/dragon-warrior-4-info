@@ -15,6 +15,9 @@
 	.include "include/constants.inc"
 	.include "include/ram_map.inc"
 	.include "include/macros.inc"
+	.include "include/items.inc"
+	.include "include/maps.inc"
+	.include "include/spells.inc"
 
 ; ============================================================================
 ; iNES Header
