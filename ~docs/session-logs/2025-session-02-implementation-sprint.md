@@ -299,9 +299,34 @@ Created comprehensive markdown reference documents from GameInfo wiki:
   - Added correct $65-$79 punctuation range
   - Added $80-$81 special characters
 
-#### 4. Commits Made
-- Commit 19d5c59: "Add comprehensive reference documentation from GameInfo"
-- Commit 7875f3e: "Add comprehensive include files with wiki data"
+#### 4. Additional Files Created
+
+- `source_files/include/spells.inc` - NEW
+  - Hero battle spell bitmasks (bytes 1 and 2)
+  - Hero world spell bitmasks
+  - Spell name constants by category
+  - Estimated MP costs
+  - Helper macros for spell operations
+
+#### 5. Corrections Made
+
+- Fixed companion IDs: $C5-$CC (not $00-$07)
+- Fixed chapter values: 0-indexed ($00-$04)
+- Fixed tactics order to match wiki
+
+#### 6. Documentation Updates
+
+- `source_files/README.md` - Updated with new include files
+- `README.md` - Updated status tables and recently completed
+
+#### 7. Commits Made (This Session)
+1. Commit 19d5c59: "Add comprehensive reference documentation from GameInfo"
+2. Commit 7875f3e: "Add comprehensive include files with wiki data"
+3. Commit 39a7e1f: "Update session log with continuation work"
+4. Commit 15a1ec5: "Fix companion IDs and chapter values from wiki"
+5. Commit d314dfb: "Add spells.inc with spell definitions"
+6. Commit ffa2246: "Update assembly framework with new includes"
+7. Commit 516e9aa: "Update README with current project status"
 
 ### Known Issues
 
@@ -314,12 +339,13 @@ The actual text strings are accessed via pointer tables that need to be located 
 2. Trace back to pointer table location
 3. Update extraction to follow pointers instead of scanning
 
-### Session Statistics (Updated)
-- Lines of Python code added: ~1,300
-- Lines of Assembly code added: ~1,600 (ram_map.inc, items.inc, maps.inc)
+### Session Statistics (Final)
+- Lines of Python code added: ~1,400
+- Lines of Assembly code added: ~2,200 (ram_map.inc, items.inc, maps.inc, spells.inc)
 - Lines of generated ASM: ~1,500
 - JSON files created: 9
 - Schema files created: 2
-- Include files created: 5 (ram_map, items, maps, constants, macros)
+- Include files created: 6 (ram_map, items, maps, spells, constants, macros)
 - Reference docs created: 3 (RAM_MAP.md, GAME_VALUES.md, MAP_LIST.md)
+- Commits this session: 7
 - Duration: Extended multi-part session
