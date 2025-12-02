@@ -1,0 +1,17 @@
+{
+	"id": 0,
+	"rom_offset": "0x237c0",
+	"hp": 1028,
+	"mp": 15,
+	"attack": 1026,
+	"defense": 2,
+	"agility": 5,
+	"exp": 264,
+	"gold": 258,
+	"drop_item_id": 3,
+	"drop_rate": 1,
+	"action_pattern": 2,
+	"resistances": 4,
+	"sprite_info": 6,
+	"raw_hex": "04 04 0f 02 04 02 05 08 01 02 01 03 01 02 04 06"
+}

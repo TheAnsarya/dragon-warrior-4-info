@@ -11,7 +11,9 @@ Remember, file addresses and ROM/code addresses are not always the same; and thi
 
 Turn off any actions on github, we are not to that step yet, all github actions should be disabled and create documentation to what those actions are supposed to be doing; make sure all documentation is reachable from `README.md` in the link-tree and organize all documentation of the project and game in the `docs` folder organized into subfolders by subject or system; please go back and reformat, but all hexidecimal values in code should be lowercase, `$9d` not `$9D` or not `0xCA6E` but rather `0xca6e`; tabs not spaces!; git commit as we go; ***continue!***; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space; make sure all issues are tied to a parent issue up to the epics; use labels that have actual meanings, don't use abbreviations in labels for the code; extract all the assets that you can and use `.include`s for all graphics, and stats, and text and dialog and data structures, and effects, and for the build pipeline with transformations to json/png/etc; you know what to do;
 
+please always generate a "what's next section" at the end of a prompt-response; for that now, and then implement the response;
 
+; ***continue!***; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
 
 
 
