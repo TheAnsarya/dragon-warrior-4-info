@@ -164,6 +164,18 @@ Located in `assets/schemas/`:
 
 These schemas define the JSON format for extracted game data and enable validation in editors.
 
+## 📂 Data Files
+
+Located in `data/`:
+- `game_data.json` - Complete game data (items, characters, chapters, tactics)
+- `maps.json` - Map and submap data with ROM addresses
+- `dw4.tbl` - Text table file for ROM hacking tools
+
+## 🔧 Debug Files
+
+Located in `debug/`:
+- `Dragon Warrior IV.mlb` - Mesen debug labels (SRAM, RAM addresses)
+
 ## 🔄 Version History
 
 | Version | Date | Changes |

@@ -1,0 +1,191 @@
+# Dragon Warrior IV - Mesen Debug Labels
+# Format: ADDR:LABEL:COMMENT
+# Created for Mesen NES emulator/debugger
+
+# ==============================================================================
+# ZERO PAGE ($00-$FF) - System Variables
+# ==============================================================================
+P:0063:MapNumber:Current map number
+P:0064:SubmapNumber:Current submap number
+
+# ==============================================================================
+# WORK RAM ($0100-$07FF)
+# ==============================================================================
+
+# ==============================================================================
+# SRAM/WRAM ($6000-$7FFF) - Save Game Data (Battery-Backed)
+# ==============================================================================
+
+# General Save Data Header
+G:6000:SaveDataStart:Start of SRAM save data
+
+# Party Member 0 (Hero) - 30 bytes
+G:6001:Party0_Start:Hero - Party slot 0 start
+G:6001:Party0_StatusFlags:Hero - Status effect flags (poison, curse, etc)
+G:6002:Party0_CurrentHP_Lo:Hero - Current HP (low byte)
+G:6003:Party0_CurrentHP_Hi:Hero - Current HP (high byte)
+G:6004:Party0_MaxHP_Lo:Hero - Max HP (low byte)
+G:6005:Party0_MaxHP_Hi:Hero - Max HP (high byte)
+G:6006:Party0_CurrentMP:Hero - Current MP
+G:6007:Party0_MaxMP:Hero - Max MP
+G:6008:Party0_Level:Hero - Level
+G:6009:Party0_Strength:Hero - Strength stat
+G:600A:Party0_Agility:Hero - Agility stat
+G:600B:Party0_Vitality:Hero - Vitality stat
+G:600C:Party0_Intelligence:Hero - Intelligence stat
+G:600D:Party0_Luck:Hero - Luck stat
+G:600E:Party0_Attack:Hero - Attack power
+G:600F:Party0_Defense:Hero - Defense power
+G:6010:Party0_Item0:Hero - Item slot 0 (high bit = equipped)
+G:6011:Party0_Item1:Hero - Item slot 1
+G:6012:Party0_Item2:Hero - Item slot 2
+G:6013:Party0_Item3:Hero - Item slot 3
+G:6014:Party0_Item4:Hero - Item slot 4
+G:6015:Party0_Item5:Hero - Item slot 5
+G:6016:Party0_Item6:Hero - Item slot 6
+G:6017:Party0_Item7:Hero - Item slot 7
+G:6018:Party0_SpellFlags_Lo:Hero - Learned spells (low byte)
+G:6019:Party0_SpellFlags_Hi:Hero - Learned spells (high byte)
+G:601A:Party0_EXP_Lo:Hero - Experience (low byte)
+G:601B:Party0_EXP_Mid:Hero - Experience (middle byte)
+G:601C:Party0_EXP_Hi:Hero - Experience (high byte)
+
+# Party Member 1 (Cristo) - 30 bytes
+G:601F:Party1_Start:Cristo - Party slot 1 start
+G:601F:Party1_StatusFlags:Cristo - Status effect flags
+G:6020:Party1_CurrentHP_Lo:Cristo - Current HP (low byte)
+G:6021:Party1_CurrentHP_Hi:Cristo - Current HP (high byte)
+G:6022:Party1_MaxHP_Lo:Cristo - Max HP (low byte)
+G:6023:Party1_MaxHP_Hi:Cristo - Max HP (high byte)
+G:6024:Party1_CurrentMP:Cristo - Current MP
+G:6025:Party1_MaxMP:Cristo - Max MP
+G:6026:Party1_Level:Cristo - Level
+
+# Party Member 2 (Nara) - 30 bytes
+G:603D:Party2_Start:Nara - Party slot 2 start
+
+# Party Member 3 (Mara) - 30 bytes
+G:605B:Party3_Start:Mara - Party slot 3 start
+
+# Party Member 4 (Brey) - 30 bytes
+G:6079:Party4_Start:Brey - Party slot 4 start
+
+# Party Member 5 (Taloon) - 30 bytes
+G:6097:Party5_Start:Taloon - Party slot 5 start
+
+# Party Member 6 (Ragnar) - 30 bytes
+G:60B5:Party6_Start:Ragnar - Party slot 6 start
+
+# Party Member 7 (Alena) - 30 bytes
+G:60D3:Party7_Start:Alena - Party slot 7 start
+
+# General Save Memory ($6157-$62EE)
+G:6157:Gold_Lo:Gold amount (low byte)
+G:6158:Gold_Mid:Gold amount (middle byte)
+G:6159:Gold_Hi:Gold amount (high byte)
+G:615A:ChapterNumber:Current chapter (0=Ch1, 1=Ch2, 2=Ch3, 3=Ch4, 4=Ch5)
+G:615B:BattleTactics:AI tactics (0=Normal, 1=SaveMP, 2=Offensive, 3=Defensive, 4=TryOut, 5=UseNoMP)
+
+# Return Spell Locations
+G:6165:ReturnLoc1:Return spell destination 1
+G:6166:ReturnLoc2:Return spell destination 2
+G:6167:ReturnLoc3:Return spell destination 3
+
+# Treasure Chest Flags (27 bytes)
+G:625D:TreasureFlags_Start:Treasure chest bit flags start
+G:625E:TreasureFlags_01:Treasure flags byte 1
+G:625F:TreasureFlags_02:Treasure flags byte 2
+G:6260:TreasureFlags_03:Treasure flags byte 3
+G:6261:TreasureFlags_04:Treasure flags byte 4
+G:6262:TreasureFlags_05:Treasure flags byte 5
+G:6263:TreasureFlags_06:Treasure flags byte 6
+G:6264:TreasureFlags_07:Treasure flags byte 7
+G:6265:TreasureFlags_08:Treasure flags byte 8
+G:6266:TreasureFlags_09:Treasure flags byte 9
+G:6267:TreasureFlags_0A:Treasure flags byte 10
+G:6268:TreasureFlags_0B:Treasure flags byte 11
+G:6269:TreasureFlags_0C:Treasure flags byte 12
+G:626A:TreasureFlags_0D:Treasure flags byte 13
+G:626B:TreasureFlags_0E:Treasure flags byte 14
+G:626C:TreasureFlags_0F:Treasure flags byte 15
+G:626D:TreasureFlags_10:Treasure flags byte 16
+G:626E:TreasureFlags_11:Treasure flags byte 17
+G:626F:TreasureFlags_12:Treasure flags byte 18
+G:6270:TreasureFlags_13:Treasure flags byte 19
+G:6271:TreasureFlags_14:Treasure flags byte 20
+G:6272:TreasureFlags_15:Treasure flags byte 21
+G:6273:TreasureFlags_16:Treasure flags byte 22
+G:6274:TreasureFlags_17:Treasure flags byte 23
+G:6275:TreasureFlags_18:Treasure flags byte 24
+G:6276:TreasureFlags_19:Treasure flags byte 25
+G:6277:TreasureFlags_1A:Treasure flags byte 26
+
+# Casino Coins
+G:62AD:CasinoCoins_Lo:Casino coins (low byte)
+G:62AE:CasinoCoins_Mid:Casino coins (middle byte)
+G:62AF:CasinoCoins_Hi:Casino coins (high byte)
+
+# Day/Night Cycle
+G:62ED:DayNightCounter:Day/night cycle counter ($00-$CB)
+
+# Bag Storage
+G:62EF:BagStorage_Start:Bag item storage start
+
+# ==============================================================================
+# PRG ROM Banks - Map Data (Bank $09)
+# ==============================================================================
+R:30010:Bank09_Start:Bank 9 start - Map data
+
+# Keeleon
+R:30000:Map00_Keeleon_Outside:Keeleon - Outside
+R:30085:Map00_Keeleon_F1:Keeleon - F1
+R:3012B:Map00_Keeleon_F2:Keeleon - F2
+R:301AE:Map00_Keeleon_F3:Keeleon - F3
+R:301C1:Map00_Keeleon_B1:Keeleon - B1, Jail
+
+# Santeem
+R:30206:Map01_Santeem_F1:Santeem - F1
+R:302DD:Map01_Santeem_F2:Santeem - F2
+R:30344:Map01_Santeem_F3:Santeem - F3
+
+# Burland
+R:30398:Map02_Burland:Burland
+R:3050C:Map02_Burland_Castle_F1:Burland - Castle, F1
+R:305DE:Map02_Burland_Castle_F2:Burland - Castle, F2
+R:3065D:Map02_Burland_Flora:Burland - Flora's House / Armor Shop, F2
+
+# Dire Palace
+R:3069B:Map03_DirePalace_F1:Dire Palace - F1
+R:307B5:Map03_DirePalace_F2:Dire Palace - F2
+R:30834:Map03_DirePalace_B1_Kitchen:Dire Palace - B1, Kitchen/Jail
+R:308CF:Map03_DirePalace_B1_Tomb:Dire Palace - B1, Tomb
+
+# Endor
+R:308E7:Map04_Endor:Endor
+R:30A45:Map04_Endor_Casino:Endor - Casino/Monster Arena
+R:30AAB:Map04_Endor_Castle_F1:Endor - Castle, F1
+R:30C77:Map04_Endor_Arena:Endor - Back Castle, Arena
+
+# ==============================================================================
+# PRG ROM Banks - Text Data (Banks $0C-$0E typically)
+# ==============================================================================
+
+# ==============================================================================
+# CHR ROM - Graphics Data
+# ==============================================================================
+
+# ==============================================================================
+# Hardware Registers
+# ==============================================================================
+R:2000:PPUCTRL:PPU Control Register
+R:2001:PPUMASK:PPU Mask Register
+R:2002:PPUSTATUS:PPU Status Register
+R:2003:OAMADDR:OAM Address Register
+R:2004:OAMDATA:OAM Data Register
+R:2005:PPUSCROLL:PPU Scroll Register
+R:2006:PPUADDR:PPU Address Register
+R:2007:PPUDATA:PPU Data Register
+R:4014:OAMDMA:OAM DMA Register
+R:4015:SND_CHN:APU Sound Channel Enable
+R:4016:JOYPAD1:Joypad 1 Register
+R:4017:JOYPAD2:Joypad 2 / APU Frame Counter
