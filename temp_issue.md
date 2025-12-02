@@ -1,28 +1,32 @@
 ## Description
-Document the world map system in detail.
+Document the save system and SRAM format.
 
 ## Research Areas
-- World map tile data
-- Encounter zone definitions
-- Location marker system
-- World map variations by chapter
+- SRAM layout
+- Save slot structure
+- Checksum calculation
+- Data validation
+
+## Save Data Contents
+- Character stats
+- Inventory
+- Gold
+- Story flags
+- Position data
+- Play time
 
 ## Data Structures
-- World map tile format
-- Zone encounter tables
-- Location coordinates
-- Map event triggers
-
-## Features to Document
-- Tile types and movement
-- Hidden locations
-- Chapter-specific changes
-- Vehicle movement rules
+- Save header format
+- Character save block
+- Inventory save block
+- Flag save block
 
 ## Related Systems
-- Encounter system
-- Chapter progression
-- Vehicle mechanics
-- Save system (position)
+- All game systems (persisted)
+- Church (save trigger)
+- Inn (save trigger)
+
+## References
+- GameInfo SRAM Map
 
 ## Parent Epic: #5
