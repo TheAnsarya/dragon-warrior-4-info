@@ -150,10 +150,150 @@ VEC_IRQ                 = $7FFFE ; IRQ/BRK vector (2 bytes)
 ; $C0 = CPY #imm
 
 ; ============================================
+; CPU ADDRESS LABELS - RAM
+; ============================================
+; Zero Page ($00-$FF)
+zp_10                   = $10   ; Pointer low (used by text routines)
+zp_11                   = $11   ; Pointer high
+zp_1F                   = $1F   ; Flags (bit 7=disable NMI processing?)
+zp_EE                   = $EE   ; Text data pointer low (Bank 22)
+zp_EF                   = $EF   ; Text data pointer high
+zp_F5                   = $F5   ; Text flags
+zp_F6                   = $F6   ; Text compare value
+zp_F7                   = $F7   ; Text temp
+zp_F8                   = $F8   ; Current character being processed
+
+; Sprite/OAM RAM ($0200-$02FF)
+OAM_BUFFER              = $0200 ; OAM buffer for DMA
+
+; PPU Transfer Buffer ($0300-$03FF)
+PPU_BUFFER              = $0300 ; NMI PPU transfer buffer
+PPU_BUFFER_ADDR         = $0300 ; PPU address high byte
+; Format: [CTRL|LEN] [ADDR_HI] [ADDR_LO] [DATA...]
+; If byte 0 bit 7 set: extended format
+; Byte 0 bits 0-5: length
+; Byte 0 bit 6: vertical increment flag
+
+; System Variables ($0500-$05FF)
+mmc_bank_select         = $0500 ; MMC1 PRG bank select shadow
+mmc_bank_data           = $0501 ; MMC1 PRG bank data shadow
+nmi_jmp                 = $0502 ; NMI handler: JMP opcode ($4C)
+nmi_handler_lo          = $0503 ; NMI handler: address low
+nmi_handler_hi          = $0504 ; NMI handler: address high
+ppuctrl_shadow          = $0505 ; PPUCTRL shadow
+ppumask_shadow          = $0506 ; PPUMASK shadow
+current_bank            = $0507 ; Currently switched bank
+scroll_x                = $0508 ; PPU scroll X
+scroll_y                = $0509 ; PPU scroll Y
+ppu_transfer_flag       = $050A ; PPU transfer state
+ppu_transfer_count      = $050B ; Number of PPU transfers pending
+frame_counter           = $050C ; Frame counter (incremented in NMI)
+game_state              = $0519 ; Game state flag
+scroll_index            = $051A ; Index for scroll table
+
+; Text Variables ($03D0-$03DF estimated)
+text_ppu_addr           = $03D4 ; Current PPU address for text
+text_line_counter       = $03D9 ; Line/position counter
+
+; Text State ($07B4)
+text_flags              = $07B4 ; Text rendering flags
+
+; ============================================
+; CPU ADDRESS LABELS - FIXED BANK ($C000-$FFFF)
+; ============================================
+; Jump Table at $C001 (21 entries)
+JT_E577                 = $C001 ; JMP $E577
+JT_E54B                 = $C004 ; JMP $E54B
+JT_E58D                 = $C007 ; JMP $E58D
+JT_E5A3                 = $C00A ; JMP $E5A3
+JT_E5B9                 = $C00D ; JMP $E5B9
+JT_E5CF                 = $C010 ; JMP $E5CF
+JT_E5E5                 = $C013 ; JMP $E5E5
+JT_E561                 = $C016 ; JMP $E561
+JT_E687                 = $C019 ; JMP $E687
+JT_F08A                 = $C01C ; JMP $F08A
+JT_EF5B                 = $C01F ; JMP $EF5B
+JT_F057                 = $C022 ; JMP $F057
+JT_F05E                 = $C025 ; JMP $F05E
+JT_EED5                 = $C028 ; JMP $EED5
+JT_F0B4                 = $C02B ; JMP $F0B4
+JT_E5FB                 = $C02E ; JMP $E5FB
+JT_E617                 = $C031 ; JMP $E617
+JT_E62D                 = $C034 ; JMP $E62D
+JT_E643                 = $C037 ; JMP $E643
+JT_E659                 = $C03A ; JMP $E659
+
+; Main Initialization
+Main_Init               = $C03D ; Main init routine (after reset)
+
+; MMC1 Bank Switching
+Sub_C104                = $C104 ; Setup MMC1 registers
+mmc1_write_ctrl         = $C118 ; Write to MMC1 control ($9FFF)
+mmc1_write_chr0         = $C12F ; Write to MMC1 CHR bank 0 ($BFFF)
+mmc1_write_prg          = $C146 ; Write to MMC1 PRG bank ($DFFF)
+
+; NMI Handler
+NMI_Handler             = $C15A ; NMI entry point (PHA/TXA/TYA/PHA...)
+
+; PPU Transfer Routine (called from NMI)
+PPU_Transfer            = $C222 ; Main PPU transfer dispatcher
+PPU_BufferCopy          = $C243 ; Copy $0300 buffer to PPU
+PPU_SetScroll           = $C2EA ; Set PPUCTRL/PPUMASK/SCROLL
+OAM_DMA                 = $C303 ; Perform OAM DMA
+
+; Scroll/Clear Table
+Scroll_Table            = $C37B ; PPU address table for scrolling
+
+; Bank call helper
+Bank_Call               = $C38B ; Call routine in another bank
+Bank_GetPtr             = $C3BA ; Get pointer from bank
+
+; Wait routines
+Wait_VBlank             = $FF74 ; Wait for VBlank
+
+; Bank switch
+Set_Bank                = $FF91 ; Switch to bank in A
+
+; Reset Vector
+Reset_Handler           = $FFD8 ; Reset vector target
+
+; IRQ Handler  
+IRQ_Handler             = $C408 ; IRQ entry point
+
+; ============================================
+; BANK 22 TEXT LABELS ($8000-$BFFF when switched)
+; ============================================
+; Text Control Code Handler
+Text_CheckControlCode   = $8B11 ; Check if char is control code
+Text_HandleFF           = $8B17 ; Handle $FF (END)
+Text_HandleFE           = $8B1B ; Handle $FE (CTRL)
+Text_HandleFD           = $8B1F ; Handle $FD (LINE)
+Text_ProcessEnd         = $8B28 ; Process end of text
+Text_HandleFECode       = $8B30 ; FE code processing
+Text_NextLine           = $8B48 ; Move to next line
+Text_SetEndState        = $8B63 ; Set end-of-text state
+
+; Text Data (CPU addresses when Bank 22 is loaded)
+Menu_Text               = $B3F0 ; Menu text data (ROM 0x5B400)
+
+; ============================================
+; PPU REGISTERS
+; ============================================
+PPUCTRL                 = $2000 ; PPU Control Register 1
+PPUMASK                 = $2001 ; PPU Control Register 2
+PPUSTATUS               = $2002 ; PPU Status Register
+OAMADDR                 = $2003 ; OAM Address
+OAMDATA                 = $2004 ; OAM Data
+PPUSCROLL               = $2005 ; PPU Scroll Position
+PPUADDR                 = $2006 ; PPU Address
+PPUDATA                 = $2007 ; PPU Data
+OAMDMA                  = $4014 ; OAM DMA Register
+
+; ============================================
 ; TODO: Addresses to investigate
 ; ============================================
-; - Find text rendering routine
-; - Find text pointer tables
+; - Find text pointer tables (lookup by message ID)
+; - Disassemble text rendering loop in switchable banks
 ; - Find item stat tables
 ; - Find spell effect tables
 ; - Find monster data tables
