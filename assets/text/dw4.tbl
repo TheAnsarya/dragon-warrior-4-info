@@ -72,24 +72,44 @@
 
 # Punctuation and symbols
 00= 
-3f='
-40=,
-41=.
-42=-
-43=?
-44=!
-45=;
-46=:
-47="
-48=/
-49=(
-4a=)
+65=—
+68='
+69='
+6a='
+6b='
+6d=?
+6e=!
+6f=-
+70=✱
+71=:
+72=…
+73=†
+74=☠
+75=(
+76=)
+77=,
+78=.
+79=「
+80=▼
+81=▶
 
 # Control codes
+# 66=,
+	0x67: 
+# 6c=.'
 # f0=[WAIT]
 # f1=[LINE]
 # f2=[NAME]
 # f3=[ITEM]
 # f4=[NUM]
+# f5=[HERO]
+# f6=[MONSTER]
+# f7=[SPELL]
+# f8=[GOLD]
+# f9=[EXP]
+# fa=[LV]
+# fb=[HP]
+# fc=[MP]
+# fd=[CLEAR]
 # fe=[PAUSE]
 # ff=[END]

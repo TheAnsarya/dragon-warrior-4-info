@@ -1,7 +1,8 @@
 ; ============================================================================
 ; Dragon Warrior IV - RAM Map
 ; ============================================================================
-; Zero Page and RAM address definitions
+; RAM address definitions from GameInfo wiki documentation
+; Source: Dragon Warrior 4 (NES) Wiki - RAM Map.wikitext
 ; ============================================================================
 
 ; ============================================================================
@@ -10,7 +11,7 @@
 ; These addresses are used for frequently accessed variables and pointers
 ; due to faster access times on 6502
 
-; System Variables ($00-$1F)
+; System Variables ($00-$1F) - Estimated, needs verification
 zp_temp0		= $00		; Temporary variable 0
 zp_temp1		= $01		; Temporary variable 1
 zp_temp2		= $02		; Temporary variable 2
@@ -32,7 +33,7 @@ zp_controller1_prev	= $1b		; Controller 1 previous state
 zp_controller1_new	= $1c		; Controller 1 newly pressed buttons
 zp_controller2		= $1d		; Controller 2 current state
 
-; PPU State ($20-$2F)
+; PPU State ($20-$2F) - Estimated, needs verification
 zp_ppu_ctrl_shadow	= $20		; Shadow copy of PPU_CTRL
 zp_ppu_mask_shadow	= $21		; Shadow copy of PPU_MASK
 zp_scroll_x		= $22		; Current X scroll position
@@ -40,13 +41,13 @@ zp_scroll_y		= $23		; Current Y scroll position
 zp_nametable		= $24		; Current nametable (0-3)
 zp_ppu_update_flag	= $25		; Flag indicating PPU needs update
 
-; Bank State ($30-$3F)
+; Bank State ($30-$3F) - Estimated, needs verification
 zp_current_prg_bank	= $30		; Currently loaded PRG bank
 zp_current_chr_bank0	= $31		; Current CHR bank 0
 zp_current_chr_bank1	= $32		; Current CHR bank 1
 zp_prev_prg_bank	= $33		; Previous PRG bank (for returns)
 
-; Game State Pointers ($40-$5F)
+; Game State Pointers ($40-$5F) - Estimated, needs verification
 zp_game_mode		= $40		; Current game mode
 zp_sub_mode		= $41		; Current sub-mode
 zp_menu_state		= $42		; Menu state
@@ -55,36 +56,11 @@ zp_menu_selection	= $44		; Selected menu item
 zp_dialog_ptr_lo	= $45		; Dialog text pointer low
 zp_dialog_ptr_hi	= $46		; Dialog text pointer high
 
-; Math Variables ($60-$6F)
-zp_math_operand1_lo	= $60		; 16-bit operand 1 low
-zp_math_operand1_hi	= $61		; 16-bit operand 1 high
-zp_math_operand2_lo	= $62		; 16-bit operand 2 low
-zp_math_operand2_hi	= $63		; 16-bit operand 2 high
-zp_math_result_lo	= $64		; 32-bit result low
-zp_math_result_mid1	= $65		; 32-bit result mid-low
-zp_math_result_mid2	= $66		; 32-bit result mid-high
-zp_math_result_hi	= $67		; 32-bit result high
-
-; Battle Variables ($70-$7F)
-zp_battle_phase		= $70		; Current battle phase
-zp_current_attacker	= $71		; Index of current attacker
-zp_current_target	= $72		; Index of current target
-zp_damage_amount_lo	= $73		; Damage calculation result low
-zp_damage_amount_hi	= $74		; Damage calculation result high
-
-; Audio Variables ($80-$8F)
-zp_music_id		= $80		; Current music track ID
-zp_sfx_id		= $81		; Current sound effect ID
-zp_music_tempo		= $82		; Music tempo
-zp_music_volume		= $83		; Music volume
-
-; Map Variables ($90-$9F)
-zp_map_id		= $90		; Current map ID
-zp_map_x		= $91		; Player X position on map
-zp_map_y		= $92		; Player Y position on map
-zp_map_direction	= $93		; Player facing direction
-zp_map_step_counter	= $94		; Steps since last encounter check
-zp_encounter_rate	= $95		; Current area encounter rate
+; ============================================================================
+; System RAM - Verified from Wiki ($0063-$0064)
+; ============================================================================
+map_number		= $63		; Current map ID (0-72)
+sub_map_number		= $64		; Current sub-map ID
 
 ; ============================================================================
 ; Stack ($0100-$01FF)
@@ -99,94 +75,251 @@ OAM_SPRITE0		= $0200		; First sprite (Y, tile, attr, X)
 OAM_SPRITE63		= $02fc		; Last sprite
 
 ; ============================================================================
-; General RAM ($0300-$07FF)
-; ============================================================================
-
-; PPU Update Buffer ($0300-$03FF)
-ppu_buffer		= $0300		; PPU update buffer
-ppu_buffer_length	= $0380		; Length of data in buffer
-
-; Party Data ($0400-$04FF)
-party_data		= $0400		; Start of party data
-party_member0		= $0400		; First party member
-party_member1		= $0420		; Second party member
-party_member2		= $0440		; Third party member
-party_member3		= $0460		; Fourth party member
-party_size		= $04f0		; Current party size
-party_gold_lo		= $04f1		; Gold (low byte)
-party_gold_mid		= $04f2		; Gold (middle byte)
-party_gold_hi		= $04f3		; Gold (high byte)
-
-; Character Data Structure (32 bytes per character)
-; Offset  Size  Description
-; $00     1     Character ID
-; $01     1     Level
-; $02     2     Current HP
-; $04     2     Max HP
-; $06     1     Current MP
-; $07     1     Max MP
-; $08     1     Strength
-; $09     1     Agility
-; $0a     1     Vitality
-; $0b     1     Intelligence
-; $0c     1     Luck
-; $0d     1     Attack Power
-; $0e     1     Defense Power
-; $0f     1     Equipped weapon
-; $10     1     Equipped armor
-; $11     1     Equipped shield
-; $12     1     Equipped helmet
-; $13     1     Equipped accessory
-; $14     2     Experience (low/mid)
-; $16     2     Experience (mid/high)
-; $18-$1f       Reserved
-
-; Inventory ($0500-$057F)
-inventory		= $0500		; Inventory items (64 slots)
-inventory_count		= $0540		; Item counts (64 bytes)
-
-; Wagon Inventory ($0580-$05FF)
-wagon_inventory		= $0580		; Wagon inventory items
-
-; Battle State ($0600-$06FF)
-battle_data		= $0600		; Battle state data
-enemy_data		= $0600		; Enemy data in battle (8 enemies × 16 bytes)
-enemy_0			= $0600		; First enemy
-enemy_1			= $0610		; Second enemy
-enemy_2			= $0620		; Third enemy
-enemy_3			= $0630		; Fourth enemy
-enemy_4			= $0640		; Fifth enemy
-enemy_5			= $0650		; Sixth enemy
-enemy_6			= $0660		; Seventh enemy
-enemy_7			= $0670		; Eighth enemy
-battle_turn_order	= $0680		; Turn order queue
-battle_flags		= $0690		; Battle status flags
-
-; Dialog Buffer ($0700-$077F)
-dialog_buffer		= $0700		; Dialog text buffer
-dialog_line1		= $0700		; First line of dialog
-dialog_line2		= $0720		; Second line of dialog
-dialog_line3		= $0740		; Third line of dialog
-dialog_line4		= $0760		; Fourth line of dialog
-
-; Misc RAM ($0780-$07FF)
-save_buffer		= $0780		; Save game buffer
-game_flags		= $07c0		; Game progress flags (64 bytes)
-
-; ============================================================================
 ; PRG RAM / WRAM ($6000-$7FFF) - 8KB battery-backed
 ; ============================================================================
 WRAM_START		= $6000
 WRAM_SIZE		= $2000		; 8KB
 
-; Save Slots ($6000-$6FFF)
-save_slot0		= $6000		; Save slot 0 (1KB)
-save_slot1		= $6400		; Save slot 1 (1KB)
-save_slot2		= $6800		; Save slot 2 (1KB)
-save_checksum		= $6c00		; Save checksums
+; ============================================================================
+; Party Member Data ($6001-$610E) - 30 bytes each
+; ============================================================================
+PARTY_MEMBER_SIZE	= 30		; Bytes per party member (0x1E)
 
-; Extended Data ($7000-$7FFF)
-extended_data		= $7000		; Extended game data storage
+; Party member base addresses
+party_hero		= $6001		; Hero (Party Index $00)
+party_cristo		= $601f		; Cristo (Party Index $01)
+party_nara		= $603d		; Nara (Party Index $02)
+party_mara		= $605b		; Mara (Party Index $03)
+party_brey		= $6079		; Brey (Party Index $04)
+party_taloon		= $6097		; Taloon (Party Index $05)
+party_ragnar		= $60b5		; Ragnar (Party Index $06)
+party_alena		= $60d3		; Alena (Party Index $07)
+party_unused		= $60f1		; Unused slot (Party Index $08)
+
+; Extra companions (6 bytes each)
+extra_companion_1	= $610f		; Extra Companion #1 (Party Index $09)
+extra_companion_2	= $6115		; Extra Companion #2 (Party Index $0A)
+
+; ============================================================================
+; Party Member Structure Offsets (30 bytes)
+; ============================================================================
+; Use: lda party_hero+PMEM_LEVEL,x where X=character offset
+
+PMEM_STATUS		= $00		; Status flags (bit5=Poison, bit6=Paralyze, bit7=Alive)
+PMEM_HP_LO		= $01		; Current HP (low byte)
+PMEM_HP_HI		= $02		; Current HP (high byte)
+PMEM_MP_LO		= $03		; Current MP (low byte)
+PMEM_MP_HI		= $04		; Current MP (high byte)
+PMEM_LEVEL		= $05		; Level
+PMEM_STRENGTH		= $06		; Strength stat
+PMEM_AGILITY		= $07		; Agility stat
+PMEM_VITALITY		= $08		; Vitality stat
+PMEM_INTELLIGENCE	= $09		; Intelligence stat
+PMEM_LUCK		= $0a		; Luck stat
+PMEM_UNKNOWN		= $0b		; Unknown byte
+PMEM_MAXHP_LO		= $0c		; Maximum HP (low byte)
+PMEM_MAXHP_HI		= $0d		; Maximum HP (high byte)
+PMEM_MAXMP_LO		= $0e		; Maximum MP (low byte)
+PMEM_MAXMP_HI		= $0f		; Maximum MP (high byte)
+PMEM_EXP_LO		= $10		; Experience (low byte)
+PMEM_EXP_MID		= $11		; Experience (middle byte)
+PMEM_EXP_HI		= $12		; Experience (high byte)
+PMEM_ITEM1		= $13		; Item slot 1 (bit7=equipped)
+PMEM_ITEM2		= $14		; Item slot 2 (bit7=equipped)
+PMEM_ITEM3		= $15		; Item slot 3 (bit7=equipped)
+PMEM_ITEM4		= $16		; Item slot 4 (bit7=equipped)
+PMEM_ITEM5		= $17		; Item slot 5 (bit7=equipped)
+PMEM_ITEM6		= $18		; Item slot 6 (bit7=equipped)
+PMEM_ITEM7		= $19		; Item slot 7 (bit7=equipped)
+PMEM_ITEM8		= $1a		; Item slot 8 (bit7=equipped)
+PMEM_BATTLE_SPELL1	= $1b		; Battle spells byte 1
+PMEM_BATTLE_SPELL2	= $1c		; Battle spells byte 2
+PMEM_WORLD_SPELLS	= $1d		; Overworld spells
+
+; Status flag bits
+STATUS_POISONED		= %00100000	; Bit 5 - Character is poisoned
+STATUS_PARALYZED	= %01000000	; Bit 6 - Character is paralyzed
+STATUS_ALIVE		= %10000000	; Bit 7 - Character is alive (1=alive, 0=dead)
+
+; Item equipped flag
+ITEM_EQUIPPED		= %10000000	; Bit 7 - Item is equipped
+
+; ============================================================================
+; Extra Companion Structure Offsets (6 bytes)
+; ============================================================================
+XCOMP_STATUS		= $00		; Status flags (same as party member)
+XCOMP_HP_LO		= $01		; Current HP (low byte)
+XCOMP_HP_HI		= $02		; Current HP (high byte)
+XCOMP_MP_LO		= $03		; Current MP (low byte)
+XCOMP_MP_HI		= $04		; Current MP (high byte)
+XCOMP_WHO		= $05		; Which companion (see companion IDs)
+
+; ============================================================================
+; General Game State ($6157-$62ED)
+; ============================================================================
+party_gold_lo		= $6157		; Gold low byte
+party_gold_mid		= $6158		; Gold middle byte
+party_gold_hi		= $6159		; Gold high byte (24-bit total)
+chapter_number		= $615a		; Current chapter (1-5)
+battle_tactics		= $615b		; Current battle tactics setting
+
+; Return spell locations (bitfields)
+return_locations_1	= $6165		; Branca,Endor,Bonmalmo,Aneaux,Konenber,Mintos,Soretta,Keeleon
+return_locations_2	= $6166		; Haville,Monbaraba,Santeem,Tempe,Stancia,Burland,Izmit,Gardenbur
+return_locations_3	= $6167		; Rosaville,Riverton,DirePalace,Aktemto,Gottside,Zenithia,LastRefuge,Invalid
+
+; Party order
+party_order		= $616a		; Party member order (4 bytes)
+
+; Treasure chest flags
+treasure_flags		= $625d		; Treasure chest opened flags (27 bytes)
+
+; Party members flag
+party_members_flag	= $6292		; Party members joined flag?
+
+; Casino
+casino_coins_lo		= $62ad		; Casino coins (low byte)
+casino_coins_mid	= $62ae		; Casino coins (middle byte)
+casino_coins_hi		= $62af		; Casino coins (high byte, 24-bit)
+
+; Chapter 3 - Taloon's shop inventory
+taloon_boomerangs	= $62e7		; Lakanaba shop boomerang count
+taloon_chain_sickles	= $62e8		; Lakanaba shop chain sickle count
+taloon_swords_malice	= $62e9		; Lakanaba shop sword of malice count
+
+; Time
+day_night_counter	= $62ed		; Day/Night cycle counter
+
+; ============================================================================
+; Return Location Bits ($6165-$6167)
+; ============================================================================
+; Byte $6165
+RET_BRANCA		= %00000001	; Bit 0
+RET_ENDOR		= %00000010	; Bit 1
+RET_BONMALMO		= %00000100	; Bit 2
+RET_ANEAUX		= %00001000	; Bit 3
+RET_KONENBER		= %00010000	; Bit 4
+RET_MINTOS		= %00100000	; Bit 5
+RET_SORETTA		= %01000000	; Bit 6
+RET_KEELEON		= %10000000	; Bit 7
+
+; Byte $6166
+RET_HAVILLE		= %00000001	; Bit 0
+RET_MONBARABA		= %00000010	; Bit 1
+RET_SANTEEM		= %00000100	; Bit 2
+RET_TEMPE		= %00001000	; Bit 3
+RET_STANCIA		= %00010000	; Bit 4
+RET_BURLAND		= %00100000	; Bit 5
+RET_IZMIT		= %01000000	; Bit 6
+RET_GARDENBUR		= %10000000	; Bit 7
+
+; Byte $6167
+RET_ROSAVILLE		= %00000001	; Bit 0
+RET_RIVERTON		= %00000010	; Bit 1
+RET_DIRE_PALACE		= %00000100	; Bit 2
+RET_AKTEMTO		= %00001000	; Bit 3
+RET_GOTTSIDE		= %00010000	; Bit 4
+RET_ZENITHIA		= %00100000	; Bit 5
+RET_LAST_REFUGE		= %01000000	; Bit 6
+RET_INVALID		= %10000000	; Bit 7 (ocean - unused)
+
+; ============================================================================
+; Hero Battle Spells ($601C-$601E)
+; ============================================================================
+; Byte $601C (PMEM_BATTLE_SPELL1)
+SPELL_EXPEL		= %00000001	; Bit 0
+SPELL_HEALMORE		= %00000010	; Bit 1
+SPELL_BLAZE		= %00000100	; Bit 2
+SPELL_RETURN		= %00001000	; Bit 3
+SPELL_SLEEPMORE		= %00010000	; Bit 4
+SPELL_AWAKE		= %00100000	; Bit 5
+SPELL_FIREBAL		= %01000000	; Bit 6
+SPELL_HEALALL		= %10000000	; Bit 7
+
+; Byte $601D (PMEM_BATTLE_SPELL2)
+SPELL_IRONIZE		= %00000001	; Bit 0
+SPELL_FENDSPELL		= %00000010	; Bit 1
+SPELL_ZAP		= %00000100	; Bit 2
+SPELL_TRANSFORM		= %00001000	; Bit 3
+SPELL_BOOM		= %00010000	; Bit 4
+SPELL_HEALUSALL		= %00100000	; Bit 5
+SPELL_LIGHTNING		= %01000000	; Bit 6
+SPELL_VIVIFY		= %10000000	; Bit 7
+
+; Byte $601E bits 0-1 (PMEM_WORLD_SPELLS)
+SPELL_THORDAIN		= %00000001	; Bit 0
+SPELL_CHANCE		= %00000010	; Bit 1
+
+; ============================================================================
+; Hero Overworld Spells ($601E bits 2-7)
+; ============================================================================
+WSPELL_RETURN		= %00000100	; Bit 2
+WSPELL_HEALMORE		= %00001000	; Bit 3
+WSPELL_REPEL		= %00010000	; Bit 4
+WSPELL_OUTSIDE		= %00100000	; Bit 5
+WSPELL_HEALALL		= %01000000	; Bit 6
+WSPELL_VIVIFY		= %10000000	; Bit 7
+
+; ============================================================================
+; Map/Tileset Data ($6EFE-$7800+)
+; ============================================================================
+tile_init_buffer	= $6efe		; Initialized to $FF (0x20 bytes)
+smoothing_flags		= $6f20		; Wall tile smoothing flags (0x20 bytes)
+tile_behaviors		= $6f40		; Tile behaviors (0x40 bytes, 32 tiles + roof)
+tileset_tiles		= $7600		; Tile numbers for current tileset (0xC0 bytes)
+tileset_attrs		= $76c0		; Attribute values for current tileset (0x40 bytes)
+current_map_data	= $7800		; Map data buffer for current map
+
+; Map tile format: RRRttttt
+; ttttt (bits 0-4): Tile number 0-31
+; RRR (bits 5-7): Roof number 0-7 (0 = no roof)
+
+; ============================================================================
+; Character/Companion IDs
+; ============================================================================
+CHAR_HERO		= $00
+CHAR_CRISTO		= $01
+CHAR_NARA		= $02
+CHAR_MARA		= $03
+CHAR_BREY		= $04
+CHAR_TALOON		= $05
+CHAR_RAGNAR		= $06
+CHAR_ALENA		= $07
+
+; Extra companion IDs (for XCOMP_WHO)
+COMP_HEALIE		= $00		; Healie (Ch. 1)
+COMP_ELIZA		= $01		; Eliza (Woodsman)
+COMP_ORIN		= $02		; Orin
+COMP_HECTOR		= $03		; Hector
+COMP_LAUREL		= $04		; Laurel
+COMP_DORAN		= $05		; Doran (Dragon)
+COMP_LUCIA		= $06		; Lucia (Ch. 5)
+COMP_NECROSARO		= $07		; Necrosaro (Ch. 5 - Final dungeon)
+
+; ============================================================================
+; Battle Tactics Values
+; ============================================================================
+TACTIC_NORMAL		= $00		; Normal
+TACTIC_OFFENSIVE	= $01		; Offensive
+TACTIC_DEFENSIVE	= $02		; Defensive
+TACTIC_USE_NO_MP	= $03		; Use no MP
+TACTIC_SAVE_MP		= $04		; Save MP
+TACTIC_TRY_OUT		= $05		; Try Out
+
+; ============================================================================
+; Chapter Values
+; ============================================================================
+CHAPTER_1		= $01		; Ragnar's Chapter
+CHAPTER_2		= $02		; Alena's Chapter
+CHAPTER_3		= $03		; Taloon's Chapter
+CHAPTER_4		= $04		; Nara & Mara's Chapter
+CHAPTER_5		= $05		; Hero's Chapter
+
+; ============================================================================
+; Item Value Constants
+; ============================================================================
+ITEM_NONE		= $7f		; No item / empty slot
+ITEM_EQUIPPED_MASK	= $80		; Bit mask for equipped flag
 
 ; ============================================================================
 ; End of ram_map.inc
