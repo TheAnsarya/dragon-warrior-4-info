@@ -188,10 +188,11 @@ Complete build pipeline:
 
 See the `docs/` folder for comprehensive documentation:
 
-- **[Build Guide](docs/BUILD_GUIDE.md)** - Complete build instructions
-- **[ROM Map](docs/ROM_MAP.md)** - Full ROM memory layout
-- **[Data Formats](docs/DATA_FORMATS.md)** - Game data structures
-- **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues
+- **[Documentation Index](docs/README.md)** - Complete documentation overview
+- **[ROM Structure](docs/architecture/ROM_STRUCTURE.md)** - Full ROM memory layout
+- **[Data Tables](docs/formats/DATA_TABLES.md)** - Game data structures
+- **[Quick Reference](docs/reference/QUICK_REFERENCE.md)** - Common values and lookups
+- **[Project Roadmap](docs/project/ROADMAP.md)** - Development milestones
 
 ## 🔗 Related Projects
 
