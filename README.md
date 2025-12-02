@@ -234,9 +234,28 @@ See the `docs/` folder for comprehensive documentation:
 
 | Directory | Status | Description |
 |-----------|--------|-------------|
-| `source_files/include/` | ✅ Complete | constants.inc, ram_map.inc, macros.inc |
+| `source_files/include/` | ✅ Complete | 6 include files with wiki-verified data |
 | `source_files/asm/` | 🟡 Framework | Main dw4.asm, linker config |
 | `source_files/data/` | ✅ Generated | monsters.asm, items.asm, spells.asm, shops.asm |
+
+### Include Files (Wiki-Verified)
+
+| File | Items | Description |
+|------|-------|-------------|
+| `constants.inc` | - | PPU, APU, MMC3 registers, text codes |
+| `ram_map.inc` | 300+ | Party structure, game state, map RAM |
+| `macros.inc` | 15+ | Bank switching, 16-bit ops, helpers |
+| `items.inc` | 127 | All weapons, armor, items with categories |
+| `maps.inc` | 73 | All maps with submaps, detailed layouts |
+| `spells.inc` | 50+ | Hero spells, MP costs, bitmasks |
+
+### Documentation Status
+
+| Document | Location | Description |
+|----------|----------|-------------|
+| RAM_MAP.md | `docs/reference/` | Complete WRAM layout from wiki |
+| GAME_VALUES.md | `docs/reference/` | Items, companions, tactics, chapters |
+| MAP_LIST.md | `docs/reference/` | All 73 maps with submaps |
 
 ### Recently Completed
 
@@ -246,6 +265,11 @@ See the `docs/` folder for comprehensive documentation:
 - Created `json_to_asm.py` converter tool
 - Extracted 50 monster entries, 100 items, 50 spells, 180 shops
 - Full RAM map documentation in assembly format
+- **Wiki Data Integration**: Imported GameInfo wiki data into include files
+- **items.inc**: 127 items with constants and helper macros
+- **maps.inc**: 73 maps with detailed submap definitions
+- **spells.inc**: Hero spell bitmasks and MP costs
+- **Reference Docs**: RAM_MAP.md, GAME_VALUES.md, MAP_LIST.md
 
 ### Issue Tracking
 
