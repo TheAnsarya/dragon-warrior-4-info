@@ -1,0 +1,551 @@
+{
+  "$schema": "./schema/maps.schema.json",
+  "version": "1.0.0",
+  "note": "Map data extracted from GameInfo wiki. Primary map for each group has blue background.",
+  "maps": [
+    {
+      "map_id": "0x00",
+      "name": "Keeleon",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Keeleon - Outside", "address": "0x8000", "is_primary": true },
+        { "submap_id": "0x01", "name": "Keeleon - F1", "address": "0x8085" },
+        { "submap_id": "0x02", "name": "Keeleon - F2", "address": "0x812B" },
+        { "submap_id": "0x03", "name": "Keeleon - F3", "address": "0x81AE" },
+        { "submap_id": "0x04", "name": "Keeleon - B1, Jail", "address": "0x81C1" }
+      ]
+    },
+    {
+      "map_id": "0x01",
+      "name": "Santeem",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Santeem - F1", "address": "0x8206", "is_primary": true },
+        { "submap_id": "0x01", "name": "Santeem - F2", "address": "0x82DD" },
+        { "submap_id": "0x02", "name": "Santeem - F3", "address": "0x8344" }
+      ]
+    },
+    {
+      "map_id": "0x02",
+      "name": "Burland",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Burland", "address": "0x8398", "is_primary": true },
+        { "submap_id": "0x01", "name": "Burland - Castle, F1", "address": "0x850C" },
+        { "submap_id": "0x02", "name": "Burland - Castle, F2", "address": "0x85DE" },
+        { "submap_id": "0x03", "name": "Burland - Flora's House, F2 / Armor Shop, F2", "address": "0x865D" }
+      ]
+    },
+    {
+      "map_id": "0x03",
+      "name": "Dire Palace",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Dire Palace - F1", "address": "0x869B", "is_primary": true },
+        { "submap_id": "0x01", "name": "Dire Palace - F2", "address": "0x87B5" },
+        { "submap_id": "0x02", "name": "Dire Palace - B1, Kitchen/Jail / B1, 4-Chest Room", "address": "0x8834" },
+        { "submap_id": "0x03", "name": "Dire Palace - B1, Tomb", "address": "0x88CF" }
+      ]
+    },
+    {
+      "map_id": "0x04",
+      "name": "Endor",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Endor", "address": "0x88E7", "is_primary": true },
+        { "submap_id": "0x01", "name": "Endor - Casino/Monster Arena", "address": "0x8A45" },
+        { "submap_id": "0x02", "name": "Endor - Castle, F1", "address": "0x8AAB" },
+        { "submap_id": "0x03", "name": "Endor - Bottom-right building, F1", "address": "0x8B7D" },
+        { "submap_id": "0x04", "name": "Endor - Middle-right building, F1", "address": "0x8B96" },
+        { "submap_id": "0x05", "name": "Endor - Castle, B1", "address": "0x8BB5" },
+        { "submap_id": "0x06", "name": "Endor - Castle, F2 (throne room)", "address": "0x8C04" },
+        { "submap_id": "0x07", "name": "Endor - Back Castle, Arena", "address": "0x8C77" },
+        { "submap_id": "0x08", "name": "Endor - Taloon's Shop, F2", "address": "0x8DD6" },
+        { "submap_id": "0x09", "name": "Endor - Bottom-right building, F2", "address": "0x8DF4" },
+        { "submap_id": "0x0A", "name": "Endor - Middle-right building, F2", "address": "0x8E0F" },
+        { "submap_id": "0x0B", "name": "Endor - Inn, F2", "address": "0x8E2C" },
+        { "submap_id": "0x0C", "name": "Endor - Castle, F3 (chamber)", "address": "0x8E5A" },
+        { "submap_id": "0x0D", "name": "Endor - Castle, Behind center stairs, secret door, F2-F5", "address": "0x8E92" },
+        { "submap_id": "0x0E", "name": "Endor - Back Castle, F2", "address": "0x8EC9" }
+      ]
+    },
+    {
+      "map_id": "0x05",
+      "name": "Bonmalmo",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Bonmalmo - B1, Jail", "address": "0x8F28", "is_primary": true },
+        { "submap_id": "0x01", "name": "Bonmalmo - Main", "address": "0x8F62" }
+      ]
+    },
+    {
+      "map_id": "0x06",
+      "name": "Branca",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Branca", "address": "0x9063", "is_primary": true },
+        { "submap_id": "0x01", "name": "Branca - Castle, F2, Throne Room", "address": "0x9171" },
+        { "submap_id": "0x02", "name": "Branca - Left house, F2", "address": "0x91C3" },
+        { "submap_id": "0x03", "name": "Branca - Inn, F2", "address": "0x91D5" }
+      ]
+    },
+    {
+      "map_id": "0x07",
+      "name": "Soretta",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Soretta", "address": "0x91ED", "is_primary": true },
+        { "submap_id": "0x01", "name": "Soretta - F2, Throne room", "address": "0x92CB" }
+      ]
+    },
+    {
+      "map_id": "0x08",
+      "name": "Gardenbur",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Gardenbur - Entrance", "address": "0x9313", "is_primary": true },
+        { "submap_id": "0x01", "name": "Gardenbur - Castle", "address": "0x93C9" },
+        { "submap_id": "0x02", "name": "Gardenbur - F2", "address": "0x9492" },
+        { "submap_id": "0x03", "name": "Gardenbur - Top-Left, B1, Jail / Middle, behind throne room stairs, B1", "address": "0x9506" },
+        { "submap_id": "0x04", "name": "Gardenbur - Top-Right, B1, Flowers", "address": "0x9544" }
+      ]
+    },
+    {
+      "map_id": "0x09",
+      "name": "Stancia",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Stancia", "address": "0x9563", "is_primary": true },
+        { "submap_id": "0x01", "name": "Stancia - Castle, Entrance", "address": "0x963A" },
+        { "submap_id": "0x02", "name": "Stancia - Castle, F1, Interior", "address": "0x9728" },
+        { "submap_id": "0x03", "name": "Stancia - Castle, F1, Front / Castle, F2", "address": "0x97A8" },
+        { "submap_id": "0x04", "name": "Stancia - Castle, F3, Throne Room", "address": "0x984B" },
+        { "submap_id": "0x05", "name": "Stancia - Restaurant", "address": "0x98B4" },
+        { "submap_id": "0x06", "name": "Stancia - Church", "address": "0x98D8" },
+        { "submap_id": "0x07", "name": "Stancia - Top-right house, F2", "address": "0x9931" }
+      ]
+    },
+    {
+      "map_id": "0x0A",
+      "name": "Aktemto",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Aktemto", "address": "0x997D", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x0B",
+      "name": "Riverton",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Riverton", "address": "0x9A67", "is_primary": true },
+        { "submap_id": "0x01", "name": "Riverton - Middle-right house, F2 / Bottom-right house, F2", "address": "0x9B5B" }
+      ]
+    },
+    {
+      "map_id": "0x0C",
+      "name": "Bazaar",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Bazaar", "address": "0x9BA8", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x0D",
+      "name": "Mintos",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Mintos", "address": "0x9C47", "is_primary": true },
+        { "submap_id": "0x01", "name": "Mintos - Inn, F1 / Inn, F2", "address": "0x9D2A" },
+        { "submap_id": "0x02", "name": "Mintos - Middle-right house, F2", "address": "0x9D86" }
+      ]
+    },
+    {
+      "map_id": "0x0E",
+      "name": "Tempe",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Tempe", "address": "0x9DD2", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x0F",
+      "name": "Frenor",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Frenor", "address": "0x9EE9", "is_primary": true },
+        { "submap_id": "0x01", "name": "Frenor - Inn, F2 / Top-left house, F2", "address": "0x9FEA" }
+      ]
+    },
+    {
+      "map_id": "0x10",
+      "name": "Aneaux",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Aneaux", "address": "0xA02F", "is_primary": true },
+        { "submap_id": "0x01", "name": "Aneaux - Bottom-right Inn, F2", "address": "0xA113" },
+        { "submap_id": "0x02", "name": "Aneaux - Church, F2", "address": "0xA136" },
+        { "submap_id": "0x03", "name": "Aneaux - Top-left house, F2", "address": "0xA154" }
+      ]
+    },
+    {
+      "map_id": "0x11",
+      "name": "Haville",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Haville", "address": "0xA179", "is_primary": true },
+        { "submap_id": "0x01", "name": "Haville - Inn, F2 / Bottom-right building, F2, Restaurant", "address": "0xA2CB" },
+        { "submap_id": "0x02", "name": "Haville - B1, Jail", "address": "0xA321" },
+        { "submap_id": "0x03", "name": "Haville - Piers on left", "address": "0xA348" },
+        { "submap_id": "0x04", "name": "Haville - Ship, B1", "address": "0xA3EA" },
+        { "submap_id": "0x05", "name": "Haville - Ship's Cabin", "address": "0xA43A" }
+      ]
+    },
+    {
+      "map_id": "0x12",
+      "name": "Izmit",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Izmit", "address": "0xA45E", "is_primary": true },
+        { "submap_id": "0x01", "name": "Izmit - Inn, F2 / Item Shop, F2 / Middle-right house, F2", "address": "0xA548" },
+        { "submap_id": "0x02", "name": "Izmit - Jail, B1", "address": "0xA597" }
+      ]
+    },
+    {
+      "map_id": "0x13",
+      "name": "Surene",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Surene", "address": "0xA5BB", "is_primary": true },
+        { "submap_id": "0x01", "name": "Surene - Inn, F2 / Far right house, F2", "address": "0xA6E6" },
+        { "submap_id": "0x02", "name": "Surene - Main Building, Center F1", "address": "0xA73A" },
+        { "submap_id": "0x03", "name": "Surene - Main Building, Sides / Main Building, Center F2", "address": "0xA774" },
+        { "submap_id": "0x04", "name": "Surene - Main Building, Old man's room under advanced weapon shop", "address": "0xA7B3" }
+      ]
+    },
+    {
+      "map_id": "0x14",
+      "name": "Hometown",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Hometown", "address": "0xA7D1", "is_primary": true },
+        { "submap_id": "0x01", "name": "Hometown - B1", "address": "0xA873" },
+        { "submap_id": "0x02", "name": "Hometown - Destroyed", "address": "0xA89C" }
+      ]
+    },
+    {
+      "map_id": "0x15",
+      "name": "Monbaraba",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Monbaraba", "address": "0xA97F", "is_primary": true },
+        { "submap_id": "0x01", "name": "Monbaraba - Middle-right house, F2 / Bottom-left house, F2 / Restaurant, F2", "address": "0xAA95" },
+        { "submap_id": "0x02", "name": "Monbaraba - Theater, B1, no crowd", "address": "0xAAE2" },
+        { "submap_id": "0x03", "name": "Monbaraba - Theater, B1, full crowd", "address": "0xAB8A" }
+      ]
+    },
+    {
+      "map_id": "0x16",
+      "name": "Lakanaba",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Lakanaba", "address": "0xAC9D", "is_primary": true },
+        { "submap_id": "0x01", "name": "Lakanaba - Taloon's House, F2 / Armor Shop, F2", "address": "0xADC1" },
+        { "submap_id": "0x02", "name": "Lakanaba - Shop, B1", "address": "0xAE03" }
+      ]
+    },
+    {
+      "map_id": "0x17",
+      "name": "Kievs",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Kievs", "address": "0xAE2E", "is_primary": true },
+        { "submap_id": "0x01", "name": "Kievs - Top-right house, B1", "address": "0xAF1C" }
+      ]
+    },
+    {
+      "map_id": "0x18",
+      "name": "Foxville",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Foxville", "address": "0xAF51", "is_primary": true },
+        { "submap_id": "0x01", "name": "Foxville - Empty field", "address": "0xAFE8" }
+      ]
+    },
+    {
+      "map_id": "0x19",
+      "name": "Seaside Village",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Seaside Village - Day", "address": "0xB013", "is_primary": true },
+        { "submap_id": "0x01", "name": "Seaside Village - Night", "address": "0xB0DA" },
+        { "submap_id": "0x02", "name": "Seaside Village - Item Shop, F2", "address": "0xB194" }
+      ]
+    },
+    {
+      "map_id": "0x1A",
+      "name": "Gottside",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Gottside", "address": "0xB1B6", "is_primary": true },
+        { "submap_id": "0x01", "name": "Gottside - Top-right house, B1 / Top-left house, B1", "address": "0xB369" }
+      ]
+    },
+    {
+      "map_id": "0x1B",
+      "name": "Rosaville",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Rosaville", "address": "0xB3AA", "is_primary": true },
+        { "submap_id": "0x01", "name": "Rosaville - Tower, F1, Church / Tower, B1", "address": "0xB4A4" },
+        { "submap_id": "0x02", "name": "Rosaville - Tower, Secret Area, F1 / Tower, Secret Area, F2", "address": "0xB505" },
+        { "submap_id": "0x03", "name": "Rosaville - Tower, Secret Area, F3", "address": "0xB528" }
+      ]
+    },
+    {
+      "map_id": "0x1C",
+      "name": "Secret Playground Entrance",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Secret Playground Entrance", "address": "0xB570", "is_primary": true },
+        { "submap_id": "0x01", "name": "Secret Playground Entrance - B1, Exit", "address": "0xB5CD" }
+      ]
+    },
+    {
+      "map_id": "0x1D",
+      "name": "House of Prophecy",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "House of Prophecy", "address": "0xB5E6", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x1E",
+      "name": "Shrine from Frenor to Endor",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Shrine from Frenor to Endor", "address": "0xB604", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x1F",
+      "name": "Shrine northwest of Endor (to Frenor)",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Shrine northwest of Endor (to Frenor)", "address": "0xB62F", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x20",
+      "name": "Woodsman's Shack",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Woodsman's Shack", "address": "0xB672", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x21",
+      "name": "Desert Inn",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Desert Inn", "address": "0xB6BE", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x22",
+      "name": "Small Medal King Shrine",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Small Medal King Shrine", "address": "0xB738", "is_primary": true },
+        { "submap_id": "0x01", "name": "Small Medal King Shrine - B1, shrine portal", "address": "0xB78D" }
+      ]
+    },
+    {
+      "map_id": "0x23",
+      "name": "Shrine East of Mintos (Soretta)",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Shrine East of Mintos (Soretta)", "address": "0xB7CA", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x24",
+      "name": "Small Island Shack North of Haville",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Small Island Shack North of Haville", "address": "0xB81F", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x25",
+      "name": "Royal Crypt Entrance",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Royal Crypt Entrance - Inside", "address": "0xB854", "is_primary": true },
+        { "submap_id": "0x01", "name": "Royal Crypt Entrance - Outside", "address": "0xB88C" }
+      ]
+    },
+    {
+      "map_id": "0x26",
+      "name": "Last Refuge",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Last Refuge", "address": "0xB8D3", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x27",
+      "name": "Gigademon Shrine (SW Barrier)",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "SW barrier shrine (Gigademon) - Outside", "address": "0xB947", "is_primary": true },
+        { "submap_id": "0x01", "name": "SW barrier shrine (Gigademon) - B1", "address": "0xB9AB" },
+        { "submap_id": "0x02", "name": "SW barrier shrine (Gigademon) - B2", "address": "0xB9E5" }
+      ]
+    },
+    {
+      "map_id": "0x28",
+      "name": "Anderoug Shrine (SE Barrier)",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "SE barrier shrine (Anderoug) - Outside", "address": "0xBA1D", "is_primary": true },
+        { "submap_id": "0x01", "name": "SE barrier shrine (Anderoug) - B1", "address": "0xBA34" },
+        { "submap_id": "0x02", "name": "SE barrier shrine (Anderoug) - B2", "address": "0xBA4C" }
+      ]
+    },
+    {
+      "map_id": "0x29",
+      "name": "Infurnus Shadow Shrine (NW Barrier)",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "NW barrier shrine (Infurnus Shadow) - Outside", "address": "0xBAAA", "is_primary": true },
+        { "submap_id": "0x01", "name": "NW barrier shrine (Infurnus Shadow) - B1", "address": "0xBADA" }
+      ]
+    },
+    {
+      "map_id": "0x2A",
+      "name": "Final Cave (Entrance in underworld)",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Final Cave (Entrance in underworld)", "address": "0xBB11", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x2B",
+      "name": "Riverton Travel Door",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Travel Door near Riverton - To Shrine East of Mintos", "address": "0xBB41", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x2C",
+      "name": "Shrine of Colossus",
+      "bank": "0x09",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Shrine of Colossus, Outside", "address": "0xBB4D", "is_primary": true }
+      ]
+    },
+    {
+      "map_id": "0x2D",
+      "name": "Aktemto Mine",
+      "banks": ["0x09", "0x0A"],
+      "note": "This map spans two banks",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Aktemto Mine - B1", "address": "0xBC25", "bank": "0x09", "is_primary": true },
+        { "submap_id": "0x01", "name": "Aktemto Mine - B2", "address": "0xBCBF", "bank": "0x09" },
+        { "submap_id": "0x02", "name": "Aktemto Mine - B3, Gun Powder", "address": "0xBD80", "bank": "0x09" },
+        { "submap_id": "0x03", "name": "Aktemto Mine - B3, Ruler of Evil", "address": "0xBDA1", "bank": "0x09" },
+        { "submap_id": "0x04", "name": "Aktemto Mine - B4", "address": "0xBE5E", "bank": "0x09" },
+        { "submap_id": "0x05", "name": "Aktemto Mine - Ruins, F1", "address": "0xBEF7", "bank": "0x09" },
+        { "submap_id": "0x06", "name": "Aktemto Mine - F3", "address": "0xBF68", "bank": "0x09" },
+        { "submap_id": "0x07", "name": "Aktemto Mine - Ruins, Entry Room / Ruins, F2", "address": "0xBFBB", "bank": "0x09" },
+        { "submap_id": "0x08", "name": "Aktemto Mine - Ruins, Outside", "address": "0x803E", "bank": "0x0A" },
+        { "submap_id": "0x09", "name": "Aktemto Mine - Ruins, Health Restore Room", "address": "0x82EF", "bank": "0x0A" }
+      ]
+    },
+    {
+      "map_id": "0x35",
+      "name": "Final Cave",
+      "bank": "0x0A",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Final Cave - B1", "address": "0x9705", "is_primary": true },
+        { "submap_id": "0x01", "name": "Final Cave - B2", "address": "0x978D" },
+        { "submap_id": "0x02", "name": "Final Cave - B4", "address": "0x984E" },
+        { "submap_id": "0x03", "name": "Final Cave - B3", "address": "0x98FB" },
+        { "submap_id": "0x04", "name": "Final Cave - B5", "address": "0x9988" },
+        { "submap_id": "0x05", "name": "Final Cave - B8", "address": "0x99CE" },
+        { "submap_id": "0x06", "name": "Final Cave - B7", "address": "0x99E9" },
+        { "submap_id": "0x07", "name": "Final Cave - B6, middle and top", "address": "0x9A0B" },
+        { "submap_id": "0x08", "name": "Final Cave - B6, bottom", "address": "0x9A59" },
+        { "submap_id": "0x09", "name": "Final Cave - B9", "address": "0x9A80" }
+      ]
+    },
+    {
+      "map_id": "0x3D",
+      "name": "Zenithian Tower",
+      "bank": "0x0A",
+      "note": "TODO: What about submaps $0f and $10?",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Zenithian Tower - Outside", "address": "0xA507", "is_primary": true, "needs_verification": true },
+        { "submap_id": "0x01", "name": "Zenithian Tower - F1", "address": "0xA6EA", "needs_verification": true },
+        { "submap_id": "0x02", "name": "Zenithian Tower - F2 (#3)", "address": "0xA79C", "needs_verification": true },
+        { "submap_id": "0x03", "name": "Zenithian Tower - F2 (#7)", "address": "0xA7C6", "needs_verification": true },
+        { "submap_id": "0x04", "name": "Zenithian Tower - F3 (#4)", "address": "0xA7F6", "needs_verification": true },
+        { "submap_id": "0x05", "name": "Zenithian Tower - F2 (#9)", "address": "0xA814", "needs_verification": true },
+        { "submap_id": "0x06", "name": "Zenithian Tower - F3 (#12)", "address": "0xA83D", "needs_verification": true },
+        { "submap_id": "0x07", "name": "Zenithian Tower - F3 (#8)", "address": "0xA856", "needs_verification": true },
+        { "submap_id": "0x08", "name": "Zenithian Tower - ???", "address": "0xA88D", "needs_verification": true },
+        { "submap_id": "0x09", "name": "Zenithian Tower - ???", "address": "0xA8D5", "needs_verification": true },
+        { "submap_id": "0x0A", "name": "Zenithian Tower - ???", "address": "0xA904", "needs_verification": true },
+        { "submap_id": "0x0B", "name": "Zenithian Tower - ???", "address": "0xA94A", "needs_verification": true },
+        { "submap_id": "0x0C", "name": "Zenithian Tower - ???", "address": "0xA979", "needs_verification": true },
+        { "submap_id": "0x0D", "name": "Zenithian Tower - ???", "address": "0xA9A6", "needs_verification": true },
+        { "submap_id": "0x0E", "name": "Zenithian Tower - ???", "address": "0xA9CC", "needs_verification": true }
+      ]
+    },
+    {
+      "map_id": "0x45",
+      "name": "Necrosaro's Palace",
+      "banks": ["0x0A", "0x0B"],
+      "note": "This map spans two banks",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Necrosaro's Palace - Outside", "address": "0xBCA5", "bank": "0x0A", "is_primary": true, "needs_verification": true },
+        { "submap_id": "0x01", "name": "Necrosaro's Palace - F1", "address": "0xBE6C", "bank": "0x0A" },
+        { "submap_id": "0x02", "name": "Necrosaro's Palace - ???", "address": "0xBF10", "bank": "0x0A", "needs_verification": true },
+        { "submap_id": "0x03", "name": "Necrosaro's Palace - ???", "address": "0xBF6A", "bank": "0x0A", "needs_verification": true },
+        { "submap_id": "0x04", "name": "Necrosaro's Palace - ???", "address": "0xBFA1", "bank": "0x0A", "needs_verification": true },
+        { "submap_id": "0x05", "name": "Necrosaro's Palace - F2", "address": "0x8075", "bank": "0x0B" },
+        { "submap_id": "0x06", "name": "Necrosaro's Palace - ???", "address": "0x80C1", "bank": "0x0B", "needs_verification": true },
+        { "submap_id": "0x07", "name": "Necrosaro's Palace - ???", "address": "0x8158", "bank": "0x0B", "needs_verification": true }
+      ]
+    },
+    {
+      "map_id": "0x46",
+      "name": "Zenithian Castle",
+      "bank": "0x0B",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Zenithian Castle - Outside", "address": "0x81A8", "is_primary": true },
+        { "submap_id": "0x01", "name": "Zenithian Castle - B1", "address": "0x8313" },
+        { "submap_id": "0x02", "name": "Zenithian Castle - F1", "address": "0x834D" },
+        { "submap_id": "0x03", "name": "Zenithian Castle - F2, F3", "address": "0x83B9" }
+      ]
+    },
+    {
+      "map_id": "0x48",
+      "name": "Shrine of Colossus Dungeon",
+      "bank": "0x0B",
+      "submaps": [
+        { "submap_id": "0x00", "name": "Shrine of Colossus, Dungeon - Outside", "address": "0x85A8", "is_primary": true },
+        { "submap_id": "0x01", "name": "Shrine of Colossus, Dungeon - F1", "address": "0x8618" },
+        { "submap_id": "0x02", "name": "Shrine of Colossus, Dungeon - F2", "address": "0x875B" },
+        { "submap_id": "0x03", "name": "Shrine of Colossus, Dungeon - F3", "address": "0x8848" },
+        { "submap_id": "0x04", "name": "Shrine of Colossus, Dungeon - F6", "address": "0x8945" },
+        { "submap_id": "0x05", "name": "Shrine of Colossus, Dungeon - B1", "address": "0x89AF" },
+        { "submap_id": "0x06", "name": "Shrine of Colossus, Dungeon - F4", "address": "0x8A5B" },
+        { "submap_id": "0x07", "name": "Shrine of Colossus, Dungeon - F4, Outside on Hands", "address": "0x8B46" },
+        { "submap_id": "0x08", "name": "Shrine of Colossus, Dungeon - F5", "address": "0x8BDC" }
+      ]
+    }
+  ]
+}

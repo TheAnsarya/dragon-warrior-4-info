@@ -1,0 +1,113 @@
+# Dragon Warrior IV Text Table
+# Format: XX=Character
+# Source: GameInfo Wiki - TBL.wikitext (verified)
+
+# Space
+00= 
+
+# Numbers (0-9)
+01=0
+02=1
+03=2
+04=3
+05=4
+06=5
+07=6
+08=7
+09=8
+0A=9
+
+# Lowercase letters (a-z)
+0B=a
+0C=b
+0D=c
+0E=d
+0F=e
+10=f
+11=g
+12=h
+13=i
+14=j
+15=k
+16=l
+17=m
+18=n
+19=o
+1A=p
+1B=q
+1C=r
+1D=s
+1E=t
+1F=u
+20=v
+21=w
+22=x
+23=y
+24=z
+
+# Uppercase letters (A-Z)
+25=A
+26=B
+27=C
+28=D
+29=E
+2A=F
+2B=G
+2C=H
+2D=I
+2E=J
+2F=K
+30=L
+31=M
+32=N
+33=O
+34=P
+35=Q
+36=R
+37=S
+38=T
+39=U
+3A=V
+3B=W
+3C=X
+3D=Y
+3E=Z
+
+# Em dash
+3F=—
+
+# Punctuation and Symbols ($65-$79)
+65=—
+66="
+67="
+68='
+69='
+6A='
+6B='
+6C=.'
+6D=?
+6E=!
+6F=-
+70=✱
+71=:
+72=…
+73=🪦
+74=💀
+75=(
+76=)
+77=,
+78=.
+79=「
+
+# UI Symbols ($80-$81)
+80=▼
+81=▶
+
+# Control Codes
+F0=[WAIT]
+F1=[LINE]
+F2=[NAME]
+F3=[ITEM]
+F4=[NUM]
+FE=[PAUSE]
+FF=[END]
