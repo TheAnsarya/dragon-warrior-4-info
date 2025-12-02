@@ -286,34 +286,36 @@ CHAR_TALOON		= $05
 CHAR_RAGNAR		= $06
 CHAR_ALENA		= $07
 
-; Extra companion IDs (for XCOMP_WHO)
-COMP_HEALIE		= $00		; Healie (Ch. 1)
-COMP_ELIZA		= $01		; Eliza (Woodsman)
-COMP_ORIN		= $02		; Orin
-COMP_HECTOR		= $03		; Hector
-COMP_LAUREL		= $04		; Laurel
-COMP_DORAN		= $05		; Doran (Dragon)
-COMP_LUCIA		= $06		; Lucia (Ch. 5)
-COMP_NECROSARO		= $07		; Necrosaro (Ch. 5 - Final dungeon)
+; Extra companion IDs (for XCOMP_WHO at offset +$05)
+; These are the actual values stored in the companion's "Who" byte
+COMP_HEALIE		= $c5		; Healie - Kind Healer (Ch. 1)
+COMP_ORIN		= $c6		; Orin - Alchemist (Ch. 4)
+COMP_LAURENT		= $c7		; Laurent - Troubadour (Ch. 3)
+COMP_STROM		= $c8		; Strom - Guardsman (Ch. 3)
+COMP_HECTOR		= $c9		; Hector - Young Man (Ch. 5)
+COMP_PANON		= $ca		; Panon - Jester (Ch. 5)
+COMP_LUCIA		= $cb		; Lucia - Zenithian (Ch. 5)
+COMP_DORAN		= $cc		; Doran - Baby Dragon (Ch. 5)
+; Values $CD-$D9 are debug/unused companion slots
 
 ; ============================================================================
-; Battle Tactics Values
+; Battle Tactics Values (stored at $615B)
 ; ============================================================================
 TACTIC_NORMAL		= $00		; Normal
-TACTIC_OFFENSIVE	= $01		; Offensive
-TACTIC_DEFENSIVE	= $02		; Defensive
-TACTIC_USE_NO_MP	= $03		; Use no MP
-TACTIC_SAVE_MP		= $04		; Save MP
-TACTIC_TRY_OUT		= $05		; Try Out
+TACTIC_SAVE_MP		= $01		; Save MP
+TACTIC_OFFENSIVE	= $02		; Offensive
+TACTIC_DEFENSIVE	= $03		; Defensive
+TACTIC_TRY_OUT		= $04		; Try Out
+TACTIC_USE_NO_MP	= $05		; Use no MP
 
 ; ============================================================================
-; Chapter Values
+; Chapter Values (stored at $615A) - Note: 0-indexed in RAM
 ; ============================================================================
-CHAPTER_1		= $01		; Ragnar's Chapter
-CHAPTER_2		= $02		; Alena's Chapter
-CHAPTER_3		= $03		; Taloon's Chapter
-CHAPTER_4		= $04		; Nara & Mara's Chapter
-CHAPTER_5		= $05		; Hero's Chapter
+CHAPTER_1		= $00		; Chapter 1 - Ragnar
+CHAPTER_2		= $01		; Chapter 2 - Alena, Cristo, & Brey
+CHAPTER_3		= $02		; Chapter 3 - Taloon
+CHAPTER_4		= $03		; Chapter 4 - Mara & Nara
+CHAPTER_5		= $04		; Chapter 5 - Hero
 
 ; ============================================================================
 ; Item Value Constants

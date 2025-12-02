@@ -25,6 +25,8 @@ Extracted from GameInfo wiki documentation.
 
 ## Extra Companions
 
+Values stored in extra companion "Who" byte at offset +$05.
+
 | Value | Name | Chapter | Class |
 |-------|------|---------|-------|
 | $C5 | Healie | 1 | Kind Healer |
@@ -35,10 +37,13 @@ Extracted from GameInfo wiki documentation.
 | $CA | Panon | 5 | Jester |
 | $CB | Lucia | 5 | Zenithian |
 | $CC | Doran | 5 | Baby Dragon |
+| $CD-$D9 | (Debug) | - | Unused debug slots |
 
 ---
 
 ## Battle Tactics
+
+Values stored at $615B.
 
 | Value | Name |
 |-------|------|
@@ -52,6 +57,8 @@ Extracted from GameInfo wiki documentation.
 ---
 
 ## Chapters
+
+Values stored at $615A (0-indexed in RAM).
 
 | Value | Name |
 |-------|------|
