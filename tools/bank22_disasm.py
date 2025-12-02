@@ -7,7 +7,7 @@ Bank 22 contains menu text and text control code handlers
 import os
 import struct
 
-ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms',
                         'Dragon Warrior IV (1992-10)(Enix)(US).nes')
 
 # 6502 instruction data
@@ -136,7 +136,7 @@ def disassemble_range(rom_data, start_offset, end_offset, base_addr):
     output = []
     pos = start_offset
     local_labels = {}  # Discovered labels within this range
-    
+
     # First pass: identify branch targets
     temp_pos = start_offset
     while temp_pos < end_offset:
@@ -147,9 +147,9 @@ def disassemble_range(rom_data, start_offset, end_offset, base_addr):
             temp_pos += 1
             continue
         name, size, mode = OPCODES[opcode]
-        
+
         cpu_addr = base_addr + (temp_pos - start_offset)
-        
+
         if mode == "rel" and size == 2 and temp_pos + 1 < len(rom_data):
             # Relative branch
             offset = rom_data[temp_pos + 1]
@@ -164,31 +164,31 @@ def disassemble_range(rom_data, start_offset, end_offset, base_addr):
             if base_addr <= addr < base_addr + (end_offset - start_offset):
                 if name in ("JMP", "JSR"):
                     local_labels[addr] = f"sub_{addr:04X}" if name == "JSR" else f"loc_{addr:04X}"
-        
+
         temp_pos += size
-    
+
     # Second pass: disassemble with labels
     while pos < end_offset:
         if pos >= len(rom_data):
             break
-        
+
         cpu_addr = base_addr + (pos - start_offset)
-        
+
         # Check for label
         if cpu_addr in local_labels:
             output.append(f"\n{local_labels[cpu_addr]}:")
-        
+
         opcode = rom_data[pos]
-        
+
         if opcode not in OPCODES:
             output.append(f"  ${cpu_addr:04X}  {opcode:02X}            .db  ${opcode:02X}")
             pos += 1
             continue
-        
+
         name, size, mode = OPCODES[opcode]
         bytes_str = ' '.join(f'{rom_data[pos+i]:02X}' for i in range(size))
         bytes_str = bytes_str.ljust(8)
-        
+
         # Format operand
         if size == 1:
             operand = ""
@@ -244,57 +244,57 @@ def disassemble_range(rom_data, start_offset, end_offset, base_addr):
                 operand = f"(${addr:04X})"
             else:
                 operand = f"${addr:04X}"
-        
+
         output.append(f"  ${cpu_addr:04X}  {bytes_str}   {name:4} {operand}")
         pos += size
-    
+
     return '\n'.join(output)
 
 def main():
     rom_data = load_rom()
     print(f"ROM loaded: {len(rom_data)} bytes")
-    
+
     output = []
     output.append("; Dragon Warrior IV (NES) - Text Handler Disassembly")
     output.append("; Bank 22 ($8000-$BFFF when switched in)")
     output.append("; =" * 35)
     output.append("")
-    
+
     # Bank 22 starts at offset 0x58010 (16 + 22*0x4000)
     BANK22_START = 16 + 22 * 0x4000  # 0x58010
     BANK22_END = BANK22_START + 0x4000
-    
+
     # Known interesting addresses in Bank 22:
     # $8B1F - CMP #$FD handler (ROM 0x58B2F)
     # $B3F0 - Menu text (ROM 0x5B400)
-    
+
     output.append("; " + "=" * 60)
     output.append("; TEXT CONTROL CODE HANDLER - $FD (LINE/CLEAR)")
     output.append("; Located at $8B1F (ROM 0x58B2F)")
     output.append("; " + "=" * 60)
     output.append("")
-    
+
     # Disassemble around $8B1F
     handler_rom = 0x58B2F
     handler_cpu = 0x8B1F
-    
+
     # Start a bit before to get context
     start = handler_rom - 0x40
     end = handler_rom + 0x80
-    
+
     output.append(disassemble_range(rom_data, start, end, handler_cpu - 0x40))
-    
+
     output.append("")
     output.append("; " + "=" * 60)
     output.append("; MENU TEXT DATA - $B3F0")
     output.append("; ROM offset 0x5B400")
     output.append("; " + "=" * 60)
     output.append("")
-    
+
     # Show menu text
     text_rom = 0x5B400
     text_cpu = 0xB3F0
-    
+
     output.append(f"; Menu text at ${text_cpu:04X}:")
     for offset in range(0, 0x100, 0x20):
         data = rom_data[text_rom + offset:text_rom + offset + 0x20]
@@ -302,17 +302,17 @@ def main():
         hex_str = ' '.join(f'{b:02X}' for b in data[:16])
         output.append(f";   +${offset:02X}: {hex_str}")
         output.append(f";        \"{text}\"")
-    
+
     output.append("")
     output.append("; " + "=" * 60)
     output.append("; LOOKING FOR TEXT RENDERING ROUTINE")
     output.append("; Search for code that reads text and writes to PPU")
     output.append("; " + "=" * 60)
     output.append("")
-    
+
     # Search Bank 22 for text rendering patterns
     # Look for: LDA indirect, CMP #$FF, STA $2007
-    
+
     patterns_found = []
     for offset in range(BANK22_START, BANK22_END - 10):
         # LDA ($xx),Y followed soon by CMP
@@ -328,10 +328,10 @@ def main():
                             'cmp_val': rom_data[offset + ahead + 1] if offset + ahead + 1 < BANK22_END else 0
                         })
                         break
-    
+
     output.append(f"; Found {len(patterns_found)} LDA ($xx),Y patterns")
     output.append("")
-    
+
     # Disassemble most promising ones
     for pattern in patterns_found[:5]:
         output.append(f"; Pattern at ${pattern['cpu']:04X}, pointer in ${pattern['zp']:02X}:")
@@ -339,20 +339,20 @@ def main():
         end = pattern['offset'] + 48
         output.append(disassemble_range(rom_data, start, end, pattern['cpu'] - 8))
         output.append("")
-    
+
     # Now search for JSR calls to PPU write routines
     output.append("; " + "=" * 60)
     output.append("; PPU WRITE LOCATIONS IN BANK 22")
     output.append("; " + "=" * 60)
     output.append("")
-    
+
     ppu_writes = []
     for offset in range(BANK22_START, BANK22_END - 2):
         # STA $2007 (PPUDATA)
         if rom_data[offset:offset+3] == bytes([0x8D, 0x07, 0x20]):
             cpu = 0x8000 + (offset - BANK22_START)
             ppu_writes.append({'offset': offset, 'cpu': cpu})
-    
+
     output.append(f"; Found {len(ppu_writes)} STA PPUDATA in Bank 22")
     for pw in ppu_writes[:10]:
         output.append(f";   ${pw['cpu']:04X}")
@@ -361,15 +361,15 @@ def main():
         end = pw['offset'] + 16
         output.append(disassemble_range(rom_data, start, end, pw['cpu'] - 16))
         output.append("")
-    
+
     # Save output
-    output_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'disassembly', 
+    output_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'disassembly',
                                'bank22_text.asm')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w') as f:
         f.write('\n'.join(output))
-    
+
     print(f"\nSaved to: {output_path}")
     print("\n" + "=" * 60)
     print("SUMMARY")

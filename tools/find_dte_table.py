@@ -48,10 +48,10 @@ def analyze_dte_table_candidate(rom, offset, size=256):
     """Analyze a potential DTE table at given offset."""
     # DTE table has 128 entries (for $80-$FF), each 2 bytes = 256 bytes total
     table = rom[offset:offset + size]
-    
+
     valid_entries = 0
     entries = []
-    
+
     for i in range(0, min(len(table), 256), 2):
         if i + 1 < len(table):
             b1, b2 = table[i], table[i + 1]
@@ -60,14 +60,14 @@ def analyze_dte_table_candidate(rom, offset, size=256):
                 c1 = decode_byte(b1)
                 c2 = decode_byte(b2)
                 entries.append(f"${0x80 + i//2:02X}={c1}{c2}")
-    
+
     return valid_entries, entries
 
 def search_for_dte_table(rom):
     """Search ROM for potential DTE tables."""
     print("Searching for DTE tables in ROM...")
     print("-" * 60)
-    
+
     # Common DTE pairs we expect to find
     common_pairs = [
         "th", "he", "an", "in", "er", "ou", "re", "on", "te", "ti",
@@ -75,13 +75,13 @@ def search_for_dte_table(rom):
         "al", "ar", "st", "en", "of", "ed", "or", "es", "ea", "at"
     ]
     encoded_pairs = {encode_pair(p): p for p in common_pairs if encode_pair(p)}
-    
+
     # Search for runs of valid DTE-like data
     candidates = []
-    
+
     for offset in range(0x10, len(rom) - 256):
         valid_count, entries = analyze_dte_table_candidate(rom, offset)
-        
+
         # A good DTE table should have most entries valid
         if valid_count >= 100:  # At least 100 of 128 entries valid
             # Check if common pairs are present
@@ -93,23 +93,23 @@ def search_for_dte_table(rom):
                         if table[i:i+2] == enc:
                             pairs_found += 1
                             break
-            
+
             candidates.append((offset, valid_count, pairs_found))
-    
+
     # Sort by score (valid entries + 10*pairs_found)
     candidates.sort(key=lambda x: x[1] + 10*x[2], reverse=True)
-    
+
     print(f"Found {len(candidates)} potential DTE table candidates")
     print()
-    
+
     for offset, valid, pairs in candidates[:10]:
         bank = (offset - 0x10) // 0x4000
         bank_offset = (offset - 0x10) % 0x4000
         cpu_addr = 0x8000 + bank_offset
-        
+
         print(f"Candidate at ROM 0x{offset:05X} (Bank {bank}, CPU ${cpu_addr:04X})")
         print(f"  Valid entries: {valid}/128, Common pairs: {pairs}")
-        
+
         # Show first 20 entries
         _, entries = analyze_dte_table_candidate(rom, offset)
         print(f"  First 20 entries: {', '.join(entries[:20])}")
@@ -120,38 +120,38 @@ def search_for_dialogue(rom):
     print("\n" + "=" * 60)
     print("Searching for dialogue patterns...")
     print("=" * 60)
-    
+
     # Look for strings that start with text and end with $FF
     # and have a mix of regular chars and high bytes (DTE codes)
-    
+
     dialogue_candidates = []
-    
+
     for offset in range(0x10, len(rom) - 50):
         # Skip if not in text range
         if rom[offset] > 0x3E and rom[offset] < 0x80:
             continue
-            
+
         # Look for $FF terminator within 200 bytes
         end = -1
         for i in range(offset, min(offset + 200, len(rom))):
             if rom[i] == 0xFF:
                 end = i
                 break
-        
+
         if end == -1 or end - offset < 10:
             continue
-            
+
         # Check pattern: should have mix of low bytes (text) and high bytes (DTE)
         segment = rom[offset:end]
         low_count = sum(1 for b in segment if b <= 0x3E)
         high_count = sum(1 for b in segment if 0x80 <= b <= 0xFE)
-        
+
         # Good dialogue has ~40-70% low bytes (text) and ~20-40% high bytes (DTE)
         if len(segment) > 15 and 0.3 < low_count/len(segment) < 0.8 and high_count/len(segment) > 0.15:
             dialogue_candidates.append((offset, end - offset, low_count, high_count))
-    
+
     print(f"Found {len(dialogue_candidates)} potential dialogue segments")
-    
+
     # Show samples from different banks
     by_bank = {}
     for offset, length, low, high in dialogue_candidates:
@@ -159,7 +159,7 @@ def search_for_dialogue(rom):
         if bank not in by_bank:
             by_bank[bank] = []
         by_bank[bank].append((offset, length, low, high))
-    
+
     for bank in sorted(by_bank.keys()):
         samples = by_bank[bank][:3]
         if samples:
@@ -180,10 +180,10 @@ def search_for_dialogue(rom):
 def main():
     with open(ROM_PATH, 'rb') as f:
         rom = f.read()
-    
+
     print(f"ROM Size: {len(rom)} bytes")
     print()
-    
+
     search_for_dte_table(rom)
     search_for_dialogue(rom)
 

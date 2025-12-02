@@ -50,7 +50,7 @@ def extract_strings(rom, bank_start, bank_num):
     """Extract readable strings from a bank."""
     strings = []
     bank_end = bank_start + 0x4000
-    
+
     i = bank_start
     while i < bank_end:
         # Look for start of text (text char that isn't space)
@@ -65,7 +65,7 @@ def extract_strings(rom, bank_start, bank_num):
                     break
                 length += 1
                 i += 1
-            
+
             # If we got a decent run of text, extract it
             if length >= 4:
                 segment = rom[start:start + length]
@@ -77,17 +77,17 @@ def extract_strings(rom, bank_start, bank_num):
                     strings.append((start, cpu_addr, decoded.strip()))
         else:
             i += 1
-    
+
     return strings
 
 def main():
     with open(ROM_PATH, 'rb') as f:
         rom = f.read()
-    
+
     print("=" * 80)
     print("DRAGON WARRIOR IV - MENU/UI TEXT EXTRACTION")
     print("=" * 80)
-    
+
     # Known good banks with menu text
     menu_banks = [
         (17, 0x44010, "Battle/Command text"),
@@ -95,24 +95,24 @@ def main():
         (23, 0x5C010, "Casino text"),
         (27, 0x6C010, "Chapter titles"),
     ]
-    
+
     all_strings = []
-    
+
     for bank_num, bank_start, description in menu_banks:
         print(f"\n--- Bank {bank_num}: {description} ---")
         strings = extract_strings(rom, bank_start, bank_num)
         print(f"Found {len(strings)} strings")
-        
+
         for rom_offset, cpu_addr, text in strings:
             # Show unique/interesting strings
             if len(text) > 3 and not text.startswith('<'):
                 all_strings.append((bank_num, rom_offset, cpu_addr, text))
-    
+
     # Now show all unique strings, sorted by content
     print("\n" + "=" * 80)
     print("ALL EXTRACTED MENU/UI STRINGS")
     print("=" * 80)
-    
+
     seen = set()
     for bank, rom_off, cpu, text in all_strings:
         # Clean text for dedup
@@ -120,16 +120,16 @@ def main():
         if clean not in seen and len(clean) >= 3:
             seen.add(clean)
             print(f"Bank {bank:2d} ${cpu:04X}: {text[:70]}")
-    
+
     # Now search all banks for readable strings
     print("\n" + "=" * 80)
     print("SEARCHING ALL BANKS FOR TEXT")
     print("=" * 80)
-    
+
     for bank in range(32):
         bank_start = 0x10 + bank * 0x4000
         strings = extract_strings(rom, bank_start, bank)
-        
+
         # Filter to only long, interesting strings
         good_strings = []
         for rom_off, cpu, text in strings:
@@ -137,7 +137,7 @@ def main():
             # Has at least 6 chars and contains a-z or A-Z
             if len(clean) >= 6 and any(c.isalpha() for c in clean):
                 good_strings.append((rom_off, cpu, text))
-        
+
         if good_strings:
             print(f"\nBank {bank}: {len(good_strings)} meaningful strings")
             for rom_off, cpu, text in good_strings[:10]:

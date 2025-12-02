@@ -7,7 +7,7 @@ Extract all text strings from the ROM with proper bank and address mapping
 import os
 import json
 
-ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms',
                         'Dragon Warrior IV (1992-10)(Enix)(US).nes')
 
 # Full text table
@@ -82,12 +82,12 @@ def find_strings(rom_data, min_length=4):
     """Find all text strings in ROM"""
     strings = []
     i = 16  # Skip header
-    
+
     while i < len(rom_data):
         # Look for start of string (printable char, not space)
         if rom_data[i] in TBL and rom_data[i] != 0:
             start = i
-            
+
             # Count consecutive text characters
             j = i
             text_chars = 0
@@ -103,9 +103,9 @@ def find_strings(rom_data, min_length=4):
                     j += 1
                 else:
                     break
-            
+
             length = j - start
-            
+
             # Must have minimum printable characters and end with $FF or be substantial
             if text_chars >= min_length:
                 # Check for proper termination
@@ -113,7 +113,7 @@ def find_strings(rom_data, min_length=4):
                     bank = (start - 16) // 0x4000
                     cpu = 0x8000 + ((start - 16) % 0x4000)
                     text = decode_string(rom_data[start:j])
-                    
+
                     strings.append({
                         'rom_offset': start,
                         'bank': bank,
@@ -125,7 +125,7 @@ def find_strings(rom_data, min_length=4):
             i = j
         else:
             i += 1
-    
+
     return strings
 
 def categorize_strings(strings):
@@ -139,10 +139,10 @@ def categorize_strings(strings):
         'chapter': [],
         'misc': [],
     }
-    
+
     for s in strings:
         text = s['text'].upper()
-        
+
         if 'CHAPTER' in text or 'ROYAL SOLDIERS' in text or "ALENA'S" in text:
             categories['chapter'].append(s)
         elif any(w in text for w in ['FIGHT', 'SPELL', 'ITEM', 'RUN', 'PARRY', 'ATTACK', 'DEFEND']):
@@ -157,21 +157,21 @@ def categorize_strings(strings):
             categories['dialogue'].append(s)
         else:
             categories['misc'].append(s)
-    
+
     return categories
 
 def main():
     rom_data = load_rom()
     print(f"ROM loaded: {len(rom_data)} bytes")
-    
+
     # Find all strings
     print("Finding text strings...")
     strings = find_strings(rom_data, min_length=4)
     print(f"Found {len(strings)} strings")
-    
+
     # Categorize
     categories = categorize_strings(strings)
-    
+
     # Output
     output_lines = []
     output_lines.append("=" * 80)
@@ -179,12 +179,12 @@ def main():
     output_lines.append("=" * 80)
     output_lines.append(f"Total strings found: {len(strings)}")
     output_lines.append("")
-    
+
     output_lines.append("STRINGS BY CATEGORY:")
     for cat, items in categories.items():
         output_lines.append(f"  {cat}: {len(items)}")
     output_lines.append("")
-    
+
     # Strings by bank
     by_bank = {}
     for s in strings:
@@ -192,12 +192,12 @@ def main():
         if bank not in by_bank:
             by_bank[bank] = []
         by_bank[bank].append(s)
-    
+
     output_lines.append("STRINGS BY BANK:")
     for bank in sorted(by_bank.keys()):
         output_lines.append(f"  Bank {bank:2d}: {len(by_bank[bank])} strings")
     output_lines.append("")
-    
+
     # Detailed output
     output_lines.append("=" * 80)
     output_lines.append("CHAPTER TITLES")
@@ -205,64 +205,64 @@ def main():
     for s in categories['chapter']:
         output_lines.append(f"Bank {s['bank']:2d} ${s['cpu']:04X}: {s['text']}")
     output_lines.append("")
-    
+
     output_lines.append("=" * 80)
     output_lines.append("BATTLE/MENU COMMANDS")
     output_lines.append("=" * 80)
     for s in categories['battle'][:30]:
         output_lines.append(f"Bank {s['bank']:2d} ${s['cpu']:04X}: {s['text']}")
     output_lines.append("")
-    
+
     output_lines.append("=" * 80)
     output_lines.append("CASINO TEXT")
     output_lines.append("=" * 80)
     for s in categories['casino']:
         output_lines.append(f"Bank {s['bank']:2d} ${s['cpu']:04X}: {s['text']}")
     output_lines.append("")
-    
+
     output_lines.append("=" * 80)
     output_lines.append("MENU TEXT")
     output_lines.append("=" * 80)
     for s in categories['menu'][:30]:
         output_lines.append(f"Bank {s['bank']:2d} ${s['cpu']:04X}: {s['text']}")
     output_lines.append("")
-    
+
     output_lines.append("=" * 80)
     output_lines.append("NAMES (potential items/spells/characters)")
     output_lines.append("=" * 80)
     for s in categories['names'][:50]:
         output_lines.append(f"Bank {s['bank']:2d} ${s['cpu']:04X}: {s['text']}")
     output_lines.append("")
-    
+
     output_lines.append("=" * 80)
     output_lines.append("ALL STRINGS BY BANK")
     output_lines.append("=" * 80)
-    
+
     for bank in sorted(by_bank.keys()):
         output_lines.append(f"\n--- BANK {bank} (ROM 0x{16 + bank*0x4000:05X}) ---")
         for s in by_bank[bank]:
             preview = s['text'][:60] + ('...' if len(s['text']) > 60 else '')
             output_lines.append(f"  ${s['cpu']:04X}: {preview}")
-    
+
     # Print summary
     for line in output_lines[:50]:
         print(line)
     print("... (truncated)")
-    
+
     # Save full output
     output_path = os.path.join(os.path.dirname(__file__), '..', 'assets', 'text',
                                'extracted_text.txt')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(output_lines))
-    
+
     print(f"\nSaved to: {output_path}")
-    
+
     # Also save as JSON for programmatic access
     json_path = os.path.join(os.path.dirname(__file__), '..', 'assets', 'text',
                              'strings.json')
-    
+
     # Convert to JSON-serializable format
     json_strings = []
     for s in strings:
@@ -275,14 +275,14 @@ def main():
             'length': s['length'],
             'text': s['text'],
         })
-    
+
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump({
             'rom_name': 'Dragon Warrior IV (1992-10)(Enix)(US).nes',
             'total_strings': len(strings),
             'strings': json_strings
         }, f, indent=2, ensure_ascii=False)
-    
+
     print(f"Saved JSON to: {json_path}")
 
 if __name__ == '__main__':

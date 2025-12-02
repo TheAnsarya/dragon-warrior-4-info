@@ -24,6 +24,9 @@ git commit and push in logical groups, always git commit at the right time; wait
 
 nope; git commit and push in logical groups, always git commit at the right time; wait to pull assets until we know the code around them; disassemble and analyze and comment and label all the code; we want all the code analyzed, disassembled, and commented so we can know exactly where all the assets are and what datastructures they use for extraction and editing; disassemble and document/comment as much code as you can; label everything that is references somewhere else and all functions and variables and keep a centralized label list; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
 
+don't try to extract the dialog right now, instead disassemble the dialog code and analyze that first; if you don't know where the dialog code is, disassemble something further upstream first;
+
+git commit and push in logical groups, commit all uncommited files in this process, with descriptions and todolist updates and github issue updates; then continue;
 
 
 

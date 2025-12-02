@@ -9,7 +9,7 @@
 ; Character Mapping (as seen in RAM per Data Crystal):
 
 ; Space
-00= 
+00=
 
 ; Numbers 0-9
 01=0

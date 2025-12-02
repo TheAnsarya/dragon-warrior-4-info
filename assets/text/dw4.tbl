@@ -9,7 +9,7 @@
 #
 # Known text regions:
 # - $5B400-$5B4C0: Menu text (FIGHT, ITEM, SPELL, etc.)
-# - $5C2F6-$5C3C0: Casino/Poker text  
+# - $5C2F6-$5C3C0: Casino/Poker text
 # - $6E674-$6E700: Chapter titles
 # - Bank 18 ($48000): Spell/Item names
 #

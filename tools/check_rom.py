@@ -61,7 +61,7 @@ elif vec_reset >= 0xC000:
     rom_offset = 16 + prg_size - 0x10000 + vec_reset  # Assuming same mapping for now
 elif vec_reset >= 0x8000:
     rom_offset = 16 + prg_size - 0x10000 + vec_reset
-    
+
 print(f'Likely ROM offset: 0x{rom_offset:05X}')
 
 # Show bytes at reset handler location

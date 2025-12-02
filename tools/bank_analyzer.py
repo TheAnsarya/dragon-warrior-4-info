@@ -8,7 +8,7 @@ import os
 import struct
 from collections import Counter
 
-ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms',
                         'Dragon Warrior IV (1992-10)(Enix)(US).nes')
 
 # Text character range
@@ -72,7 +72,7 @@ def analyze_bank(rom_data, bank_num):
     bank_start = 16 + (bank_num * 0x4000)
     bank_end = bank_start + 0x4000
     bank_data = rom_data[bank_start:bank_end]
-    
+
     analysis = {
         'bank': bank_num,
         'rom_start': bank_start,
@@ -84,18 +84,18 @@ def analyze_bank(rom_data, bank_num):
         'empty_regions': [],
         'pointers': [],
     }
-    
+
     # Count byte types
     text_bytes = sum(1 for b in bank_data if b in TEXT_CHARS)
     code_bytes = sum(1 for b in bank_data if b in CODE_OPCODES)
     zero_bytes = sum(1 for b in bank_data if b == 0x00)
     ff_bytes = sum(1 for b in bank_data if b == 0xFF)
-    
+
     analysis['text_ratio'] = text_bytes / len(bank_data)
     analysis['code_ratio'] = code_bytes / len(bank_data)
     analysis['zero_ratio'] = zero_bytes / len(bank_data)
     analysis['ff_ratio'] = ff_bytes / len(bank_data)
-    
+
     # Find text strings (sequences of printable chars ending in $FF)
     i = 0
     while i < len(bank_data) - 4:
@@ -105,7 +105,7 @@ def analyze_bank(rom_data, bank_num):
             j = i
             while j < len(bank_data) and bank_data[j] in TBL:
                 j += 1
-            
+
             # Check if terminated by $FF
             if j < len(bank_data) and bank_data[j] == 0xFF and j - i >= 4:
                 text = decode_text(bank_data[i:j+1], 60)
@@ -118,7 +118,7 @@ def analyze_bank(rom_data, bank_num):
                 i = j + 1
                 continue
         i += 1
-    
+
     # Find JSR/JMP targets (potential subroutine starts)
     for i in range(len(bank_data) - 2):
         opcode = bank_data[i]
@@ -130,11 +130,11 @@ def analyze_bank(rom_data, bank_num):
                     'type': 'JSR' if opcode == 0x20 else 'JMP',
                     'target': target
                 })
-    
+
     # Find RTS (code region ends)
     rts_locations = [i for i, b in enumerate(bank_data) if b == 0x60]
     analysis['rts_count'] = len(rts_locations)
-    
+
     # Determine primary content type
     if analysis['zero_ratio'] > 0.7 or analysis['ff_ratio'] > 0.7:
         analysis['content_type'] = 'EMPTY/PADDING'
@@ -148,14 +148,14 @@ def analyze_bank(rom_data, bank_num):
         analysis['content_type'] = 'MIXED TEXT/DATA'
     else:
         analysis['content_type'] = 'BINARY DATA'
-    
+
     return analysis
 
 def main():
     rom_data = load_rom()
     print(f"ROM loaded: {len(rom_data)} bytes")
     print()
-    
+
     output = []
     output.append("=" * 80)
     output.append("DRAGON WARRIOR IV - PRG BANK CONTENT ANALYSIS")
@@ -164,29 +164,29 @@ def main():
     output.append(f"ROM Size: {len(rom_data)} bytes")
     output.append(f"PRG-ROM: {(len(rom_data) - 16) // 1024}KB ({(len(rom_data) - 16) // 0x4000} banks)")
     output.append("")
-    
+
     banks = []
     for bank_num in range(32):
         analysis = analyze_bank(rom_data, bank_num)
         banks.append(analysis)
-    
+
     # Summary table
     output.append("BANK SUMMARY")
     output.append("-" * 80)
     output.append(f"{'Bank':>4} {'ROM Offset':>12} {'Type':<20} {'Text%':>6} {'Code%':>6} {'RTS':>5} {'Strings':>8}")
     output.append("-" * 80)
-    
+
     for a in banks:
         output.append(f"{a['bank']:>4} 0x{a['rom_start']:05X}-{a['rom_end']:05X} "
                      f"{a['content_type']:<20} {a['text_ratio']*100:>5.1f}% "
                      f"{a['code_ratio']*100:>5.1f}% {a['rts_count']:>5} "
                      f"{len(a['text_strings']):>8}")
-    
+
     output.append("")
     output.append("=" * 80)
     output.append("DETAILED BANK ANALYSIS")
     output.append("=" * 80)
-    
+
     for a in banks:
         output.append("")
         output.append(f"BANK {a['bank']}: {a['content_type']}")
@@ -195,7 +195,7 @@ def main():
         output.append(f"  Text ratio: {a['text_ratio']*100:.1f}%")
         output.append(f"  Code ratio: {a['code_ratio']*100:.1f}%")
         output.append(f"  RTS instructions: {a['rts_count']}")
-        
+
         if a['text_strings']:
             output.append(f"  Text strings found: {len(a['text_strings'])}")
             output.append("  Sample strings:")
@@ -204,31 +204,31 @@ def main():
                 output.append(f"    ${s['cpu']:04X}: \"{preview}\"")
             if len(a['text_strings']) > 10:
                 output.append(f"    ... and {len(a['text_strings']) - 10} more")
-    
+
     # Print and save
     print('\n'.join(output))
-    
+
     output_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'analysis',
                                'bank_contents.txt')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w') as f:
         f.write('\n'.join(output))
-    
+
     print(f"\n\nSaved to: {output_path}")
-    
+
     # Generate labels.asm bank section
     labels_section = []
     labels_section.append("")
     labels_section.append("; ============================================")
     labels_section.append("; PRG BANK MAP (Auto-generated)")
     labels_section.append("; ============================================")
-    
+
     for a in banks:
         labels_section.append(f"; Bank {a['bank']:2d} (0x{a['rom_start']:05X}): {a['content_type']}")
         if a['text_strings']:
             labels_section.append(f";          {len(a['text_strings'])} text strings")
-    
+
     print("\nBank map for labels.asm:")
     print('\n'.join(labels_section))
 

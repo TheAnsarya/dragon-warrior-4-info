@@ -37,24 +37,24 @@ def decode(b):
 def main():
     with open(ROM_PATH, 'rb') as f:
         rom = f.read()
-    
+
     # Bank 17 - starts at ROM 0x44010
     # "the Tower" found at 0x47E5F
     print("Bank 17 Text Area (around 'the Tower'):")
     print("=" * 60)
-    
+
     start = 0x47E40
     for i in range(20):
         offset = start + i * 0x20
         segment = rom[offset:offset + 0x30]
         decoded = ''.join(decode(b) for b in segment)
         print(f"0x{offset:05X}: {decoded[:60]}")
-    
+
     # Let's also look at Bank 22 where "Select the message" was found
     print("\n" + "=" * 60)
     print("Bank 22 Text Area (around 'Select the message'):")
     print("=" * 60)
-    
+
     # Search for it
     search = bytes([0x37, 0x0F, 0x16, 0x0F, 0x0D, 0x1E])  # "Select"
     pos = rom.find(search)

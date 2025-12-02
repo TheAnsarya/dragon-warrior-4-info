@@ -195,28 +195,28 @@ class Instruction:
 
 class Disassembler:
     """6502 Disassembler for NES ROMs."""
-    
+
     def __init__(self, rom_data: bytes):
         self.rom = rom_data
         self.labels: Dict[int, str] = {}
         self.comments: Dict[int, str] = {}
         self.entry_points: Set[int] = set()
         self.data_regions: List[Tuple[int, int]] = []
-        
+
     def add_label(self, addr: int, name: str):
         """Add a label for an address."""
         self.labels[addr] = name
-        
+
     def add_comment(self, addr: int, comment: str):
         """Add a comment for an address."""
         self.comments[addr] = comment
-        
+
     def rom_to_cpu(self, rom_offset: int, bank: int) -> int:
         """Convert ROM offset to CPU address."""
         # For switchable bank ($8000-$BFFF)
         bank_offset = rom_offset - 16 - (bank * 0x4000)
         return 0x8000 + bank_offset
-    
+
     def cpu_to_rom(self, cpu_addr: int, bank: int) -> int:
         """Convert CPU address to ROM offset."""
         if 0x8000 <= cpu_addr <= 0xBFFF:
@@ -226,14 +226,14 @@ class Disassembler:
             # Fixed bank (usually bank 31)
             return 16 + (31 * 0x4000) + (cpu_addr - 0xC000)
         return -1
-    
+
     def disassemble_instruction(self, offset: int) -> Optional[Instruction]:
         """Disassemble a single instruction at the given offset."""
         if offset >= len(self.rom):
             return None
-            
+
         opcode = self.rom[offset]
-        
+
         if opcode not in OPCODES:
             # Unknown opcode - treat as data
             return Instruction(
@@ -245,10 +245,10 @@ class Disassembler:
                 mode='DATA',
                 comment=f'Unknown opcode ${opcode:02X}'
             )
-        
+
         mnemonic, mode, length = OPCODES[opcode]
         operand = self.rom[offset + 1:offset + length] if length > 1 else b''
-        
+
         target = None
         if mode == 'REL' and len(operand) == 1:
             # Relative branch - calculate target
@@ -258,7 +258,7 @@ class Disassembler:
             target = offset + length + rel
         elif mode in ('ABS', 'ABX', 'ABY', 'IND') and len(operand) == 2:
             target = operand[0] | (operand[1] << 8)
-        
+
         return Instruction(
             offset=offset,
             cpu_addr=0,
@@ -268,12 +268,12 @@ class Disassembler:
             mode=mode,
             target=target
         )
-    
+
     def format_operand(self, inst: Instruction, bank: int) -> str:
         """Format the operand for display."""
         mode = inst.mode
         operand = inst.operand
-        
+
         if mode == 'IMP':
             return ''
         elif mode == 'IMM':
@@ -317,63 +317,63 @@ class Disassembler:
         elif mode == 'DATA':
             return f'${inst.opcode:02X}'
         return ''
-    
+
     def disassemble_range(self, start: int, end: int, bank: int) -> List[str]:
         """Disassemble a range of ROM addresses."""
         lines = []
         offset = start
-        
+
         while offset < end:
             cpu_addr = self.rom_to_cpu(offset, bank)
-            
+
             # Check for label
             if cpu_addr in self.labels:
                 lines.append(f'\n{self.labels[cpu_addr]}:')
-            
+
             inst = self.disassemble_instruction(offset)
             if inst is None:
                 break
-            
+
             # Format the line
             raw_bytes = self.rom[offset:offset + len(inst.operand) + 1]
             hex_str = ' '.join(f'{b:02X}' for b in raw_bytes)
             operand_str = self.format_operand(inst, bank)
-            
+
             line = f'  ${cpu_addr:04X}  {hex_str:<12}  {inst.mnemonic:<4} {operand_str}'
-            
+
             # Add comment if present
             if cpu_addr in self.comments:
                 line += f'  ; {self.comments[cpu_addr]}'
             elif inst.mnemonic in ('JSR', 'JMP') and inst.target:
                 if inst.target in self.labels:
                     line += f'  ; -> {self.labels[inst.target]}'
-            
+
             lines.append(line)
-            
+
             # Move to next instruction
             if inst.mode == 'DATA':
                 offset += 1
             else:
                 offset += len(inst.operand) + 1
-        
+
         return lines
-    
+
     def analyze_code_flow(self, start: int, bank: int) -> Set[int]:
         """Analyze code flow from a starting point to find all reachable code."""
         visited = set()
         to_visit = [start]
-        
+
         while to_visit:
             offset = to_visit.pop()
             if offset in visited or offset >= len(self.rom):
                 continue
-            
+
             visited.add(offset)
             inst = self.disassemble_instruction(offset)
-            
+
             if inst is None:
                 continue
-            
+
             # Check for branches/jumps
             if inst.mnemonic in ('BCC', 'BCS', 'BEQ', 'BMI', 'BNE', 'BPL', 'BVC', 'BVS'):
                 # Conditional branch - add both paths
@@ -400,7 +400,7 @@ class Disassembler:
                 # Regular instruction - continue
                 if inst.mode != 'DATA':
                     to_visit.append(offset + len(inst.operand) + 1)
-        
+
         return visited
 
 
@@ -409,49 +409,49 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(script_dir)
     rom_path = os.path.join(project_root, 'roms', 'Dragon Warrior IV (1992-10)(Enix)(US).nes')
-    
+
     if not os.path.exists(rom_path):
         print(f"ROM file not found: {rom_path}")
         sys.exit(1)
-    
+
     print(f"Loading ROM: {rom_path}")
     with open(rom_path, 'rb') as f:
         rom_data = f.read()
-    
+
     print(f"ROM size: {len(rom_data)} bytes")
-    
+
     # Parse iNES header
     prg_size = rom_data[4] * 16384  # PRG-ROM size
     chr_size = rom_data[5] * 8192   # CHR-ROM size
     mapper = (rom_data[6] >> 4) | (rom_data[7] & 0xF0)
-    
+
     print(f"PRG-ROM: {prg_size} bytes ({rom_data[4]} x 16KB banks)")
     print(f"CHR-ROM: {chr_size} bytes")
     print(f"Mapper: {mapper}")
-    
+
     dis = Disassembler(rom_data)
-    
+
     # Read interrupt vectors from end of PRG-ROM
     # Vectors are at CPU addresses $FFFA-$FFFF which map to last 6 bytes of PRG
     vec_offset = 16 + prg_size - 6
     vec_nmi = rom_data[vec_offset] | (rom_data[vec_offset + 1] << 8)
     vec_reset = rom_data[vec_offset + 2] | (rom_data[vec_offset + 3] << 8)
     vec_irq = rom_data[vec_offset + 4] | (rom_data[vec_offset + 5] << 8)
-    
+
     print(f"\nInterrupt Vectors (at ROM 0x{vec_offset:05X}):")
     print(f"  NMI:   ${vec_nmi:04X}")
     print(f"  RESET: ${vec_reset:04X}")
     print(f"  IRQ:   ${vec_irq:04X}")
-    
+
     # Add labels for vectors
     dis.add_label(vec_nmi, 'NMI_Handler')
     dis.add_label(vec_reset, 'Reset_Handler')
     dis.add_label(vec_irq, 'IRQ_Handler')
-    
+
     # Calculate ROM offset for reset handler
     # CPU $E000-$FFFF maps to last 8KB of PRG
     # CPU $C000-$DFFF maps to second-to-last 8KB (for MMC3 mode)
-    
+
     def cpu_to_rom_fixed(cpu_addr):
         """Convert CPU address to ROM offset for fixed bank."""
         if cpu_addr >= 0xE000:
@@ -465,41 +465,41 @@ def main():
             # Switchable - need to know which bank
             return -1
         return -1
-    
+
     # Disassemble the reset handler
     print("\n" + "=" * 70)
     print("RESET HANDLER")
     print("=" * 70)
-    
+
     reset_rom = cpu_to_rom_fixed(vec_reset)
     if reset_rom < 0:
         print(f"Reset vector ${vec_reset:04X} is in switchable bank area")
     else:
         print(f"Reset vector ${vec_reset:04X} -> ROM offset 0x{reset_rom:05X}")
-        
+
         # Disassemble
         lines = []
         offset = reset_rom
         cpu_addr = vec_reset
-        
+
         for i in range(50):  # Disassemble up to 50 instructions
             if offset >= len(rom_data):
                 break
-                
+
             inst = dis.disassemble_instruction(offset)
             if inst is None:
                 break
-            
+
             # Format the line
             length = len(inst.operand) + 1
             raw_bytes = rom_data[offset:offset + length]
             hex_str = ' '.join(f'{b:02X}' for b in raw_bytes)
-            
+
             operand_str = dis.format_operand(inst, 31)
-            
+
             line = f'  ${cpu_addr:04X}  {hex_str:<12}  {inst.mnemonic:<4} {operand_str}'
             lines.append(line)
-            
+
             # Stop at RTS/RTI/BRK or JMP
             if inst.mnemonic in ('RTS', 'RTI', 'BRK'):
                 break
@@ -513,17 +513,17 @@ def main():
                         cpu_addr = inst.target
                         continue
                 break
-            
+
             offset += length
             cpu_addr += length
-        
+
         for line in lines:
             print(line)
-    
+
     # Save disassembly to file
     output_dir = os.path.join(project_root, 'docs', 'disassembly')
     os.makedirs(output_dir, exist_ok=True)
-    
+
     output_path = os.path.join(output_dir, 'vectors.asm')
     with open(output_path, 'w') as f:
         f.write("; Dragon Warrior IV (NES) - Interrupt Vector Handlers\n")
@@ -534,13 +534,13 @@ def main():
         f.write(f"; NMI Vector:   ${vec_nmi:04X}\n")
         f.write(f"; RESET Vector: ${vec_reset:04X}\n")
         f.write(f"; IRQ Vector:   ${vec_irq:04X}\n\n")
-        
+
         f.write("; ============================================\n")
         f.write("; RESET HANDLER\n")
         f.write("; ============================================\n")
         for line in lines:
             f.write(line + '\n')
-    
+
     print(f"\nDisassembly saved to: {output_path}")
 
 
