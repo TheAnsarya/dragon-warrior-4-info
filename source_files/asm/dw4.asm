@@ -4,7 +4,7 @@
 ; This is the top-level source file for the DW4 disassembly.
 ; It includes all sub-modules and defines the ROM structure.
 ; ============================================================================
-; 
+;
 ; Build command (ca65/ld65):
 ;   ca65 -o dw4.o dw4.asm
 ;   ld65 -C dw4.cfg -o dw4.nes dw4.o

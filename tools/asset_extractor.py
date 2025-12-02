@@ -277,7 +277,7 @@ class Monster:
 	resistances: int = 0  # Bitmask
 	sprite_id: int = 0
 	palette_id: int = 0
-	
+
 	# ROM location info
 	rom_offset: int = 0
 
@@ -293,7 +293,7 @@ class Spell:
 	effect_type: int = 0
 	element: int = 0
 	accuracy: int = 100
-	
+
 	# Who can learn this spell
 	learnable_by: List[int] = field(default_factory=list)
 	learn_level: Dict[int, int] = field(default_factory=dict)  # character_id -> level
@@ -352,7 +352,7 @@ class AssetExtractor:
 		self.text_dir = output_dir / "text"
 		self.maps_dir = output_dir / "maps"
 		self.audio_dir = output_dir / "audio"
-		
+
 		# Extraction results for cross-referencing
 		self.monsters: List[Monster] = []
 		self.spells: List[Spell] = []
@@ -385,11 +385,11 @@ class AssetExtractor:
 	def bank_to_offset(self, bank: int, addr: int = 0x8000) -> int:
 		"""
 		Convert a PRG bank number and address to a ROM file offset.
-		
+
 		Args:
 			bank: PRG bank number (0-15 for 256KB PRG)
 			addr: CPU address (typically $8000-$FFFF)
-		
+
 		Returns:
 			Absolute offset in ROM file (accounting for 16-byte iNES header)
 		"""
@@ -404,7 +404,7 @@ class AssetExtractor:
 		else:
 			# Low bank window ($8000-$BFFF)
 			bank_offset = addr - 0x8000
-		
+
 		return header_size + (bank * bank_size) + bank_offset
 
 	def cpu_to_offset(self, bank: int, cpu_addr: int) -> int:
@@ -531,12 +531,12 @@ class AssetExtractor:
 	def extract_monsters(self):
 		"""
 		Extract monster data from ROM.
-		
+
 		DW4 monster data format (based on typical Dragon Quest NES structure):
 		- Monster stats are stored in Bank $08 (data tables bank)
 		- Each monster entry is typically 12-16 bytes
 		- Monster names are stored separately in text banks
-		
+
 		Known structure per monster (typical DQ format):
 		  Offset 0: HP (2 bytes, little endian)
 		  Offset 2: MP (1 byte)
@@ -552,7 +552,7 @@ class AssetExtractor:
 		  Offset 15: Sprite/palette info (1 byte)
 		"""
 		self.console.print("  [dim]Scanning for monster data...[/dim]")
-		
+
 		monsters_data = {
 			"_comment": "Dragon Warrior IV Monster Data - Extracted from ROM",
 			"_extraction_info": {
@@ -565,21 +565,21 @@ class AssetExtractor:
 			"monster_names": [],
 			"raw_data_samples": []
 		}
-		
+
 		# Try to find monster data by scanning for patterns
 		# Monster data typically has:
 		# - HP values in reasonable range (1-1000)
 		# - Sequential entries
 		# - Consistent structure
-		
+
 		# First, try to extract monster names from text bank
 		monster_names = self._extract_monster_names()
 		monsters_data["monster_names"] = monster_names
-		
+
 		# Scan Bank 0x08 for potential monster stat tables
 		bank_offset = self.bank_to_offset(MONSTER_DATA_BANK)
 		self.console.print(f"  [dim]Bank 0x{MONSTER_DATA_BANK:02x} starts at ROM offset 0x{bank_offset:05x}[/dim]")
-		
+
 		# Sample raw data from suspected locations for analysis
 		sample_offsets = [
 			bank_offset,
@@ -591,7 +591,7 @@ class AssetExtractor:
 			bank_offset + 0x2000,
 			bank_offset + 0x3000,
 		]
-		
+
 		for sample_offset in sample_offsets:
 			sample = self.read_bytes(sample_offset, 64)
 			if sample:
@@ -601,41 +601,41 @@ class AssetExtractor:
 					"hex": hex_dump,
 					"interpretation": self._interpret_monster_sample(sample)
 				})
-		
+
 		# Attempt to parse monster entries if pattern is found
 		# This is exploratory - actual offsets need verification
 		found_monsters = self._scan_for_monster_table()
 		if found_monsters:
 			monsters_data["monsters"] = found_monsters
 			monsters_data["_extraction_info"]["status"] = "partial_extraction"
-		
+
 		# Save extracted data
 		output_path = self.json_dir / "monsters" / "monsters.json"
 		with open(output_path, "w", encoding="utf-8") as f:
 			json.dump(monsters_data, f, indent="\t", ensure_ascii=False)
-		
+
 		# Also save individual monster files if we found any
 		if found_monsters:
 			for monster in found_monsters:
 				monster_path = self.json_dir / "monsters" / f"monster_{monster['id']:03d}.json"
 				with open(monster_path, "w", encoding="utf-8") as f:
 					json.dump(monster, f, indent="\t", ensure_ascii=False)
-		
+
 		self.console.print(f"  [dim]Found {len(found_monsters)} potential monster entries[/dim]")
 
 	def _extract_monster_names(self) -> List[Dict]:
 		"""Extract monster names from text banks."""
 		names = []
-		
+
 		# Monster names are typically in text bank with a pointer table
 		# Try scanning text banks for name patterns
 		for bank in TEXT_BANKS:
 			bank_offset = self.bank_to_offset(bank)
-			
+
 			# Look for pointer table pattern (sequential increasing pointers)
 			for scan_offset in range(bank_offset, bank_offset + 0x3000, 0x100):
 				ptrs = self.read_pointer_table(scan_offset, 10)
-				
+
 				# Check if this looks like a valid pointer table
 				# Pointers should be in $8000-$BFFF range and roughly sequential
 				if all(0x8000 <= p < 0xc000 for p in ptrs):
@@ -643,14 +643,14 @@ class AssetExtractor:
 						# This might be a name table
 						self.console.print(f"  [dim]Potential name table at 0x{scan_offset:05x}[/dim]")
 						break
-		
+
 		return names
 
 	def _interpret_monster_sample(self, data: bytes) -> Dict:
 		"""Attempt to interpret 16 bytes as a monster entry."""
 		if len(data) < 16:
 			return {}
-		
+
 		return {
 			"as_monster": {
 				"hp": self._bytes_to_word(data[0:2]),
@@ -677,31 +677,31 @@ class AssetExtractor:
 	def _scan_for_monster_table(self) -> List[Dict]:
 		"""Scan for monster stat table by looking for reasonable stat patterns."""
 		monsters = []
-		
+
 		# Monster stats have recognizable patterns:
 		# - HP: 1-2000+ for bosses, most enemies 10-500
 		# - MP: 0-255
 		# - Attack/Defense: 1-255
 		# - EXP/Gold: realistic values
-		
+
 		bank_offset = self.bank_to_offset(MONSTER_DATA_BANK)
 		entry_size = 16  # Estimated
-		
+
 		# Scan for potential start of monster table
 		best_offset = None
 		best_score = 0
-		
+
 		for scan_start in range(bank_offset, bank_offset + 0x3800, 16):
 			score = 0
 			valid_entries = 0
-			
+
 			# Check 10 consecutive entries
 			for i in range(10):
 				offset = scan_start + (i * entry_size)
 				entry = self.read_bytes(offset, entry_size)
 				if len(entry) < entry_size:
 					break
-				
+
 				hp = self._bytes_to_word(entry[0:2])
 				mp = entry[2]
 				attack = self._bytes_to_word(entry[3:5])
@@ -709,7 +709,7 @@ class AssetExtractor:
 				agility = entry[6]
 				exp = self._bytes_to_word(entry[7:9])
 				gold = self._bytes_to_word(entry[9:11])
-				
+
 				# Score based on reasonable values
 				if 1 <= hp <= 3000:
 					score += 2
@@ -725,24 +725,24 @@ class AssetExtractor:
 					score += 1
 				if 0 <= gold <= 5000:
 					score += 1
-				
+
 				if score > 5:
 					valid_entries += 1
-			
+
 			if valid_entries >= 8 and score > best_score:
 				best_score = score
 				best_offset = scan_start
-		
+
 		# If we found a good candidate, extract monsters
 		if best_offset and best_score > 50:
 			self.console.print(f"  [dim]Best monster table candidate at 0x{best_offset:05x} (score: {best_score})[/dim]")
-			
+
 			for i in range(min(MONSTER_COUNT, 50)):  # Extract up to 50 for now
 				offset = best_offset + (i * entry_size)
 				entry = self.read_bytes(offset, entry_size)
 				if len(entry) < entry_size:
 					break
-				
+
 				monster = {
 					"id": i,
 					"rom_offset": f"0x{offset:05x}",
@@ -761,7 +761,7 @@ class AssetExtractor:
 					"raw_hex": " ".join(f"{b:02x}" for b in entry)
 				}
 				monsters.append(monster)
-		
+
 		return monsters
 
 	# ========================================================================
@@ -771,13 +771,13 @@ class AssetExtractor:
 	def extract_items(self):
 		"""
 		Extract item data from ROM.
-		
+
 		DW4 item data includes:
 		- Equipment stats (attack, defense bonuses)
 		- Prices
 		- Usability flags (who can equip)
 		- Special effects
-		
+
 		Items are typically organized by category:
 		- Weapons (swords, axes, staffs, etc.)
 		- Armor (body armor)
@@ -788,7 +788,7 @@ class AssetExtractor:
 		- Key items
 		"""
 		self.console.print("  [dim]Scanning for item data...[/dim]")
-		
+
 		items_data = {
 			"_comment": "Dragon Warrior IV Item Data - Extracted from ROM",
 			"_extraction_info": {
@@ -807,7 +807,7 @@ class AssetExtractor:
 			},
 			"raw_data_samples": []
 		}
-		
+
 		# Known DW4 weapons for reference
 		known_weapons = [
 			"Copper Sword", "Thorn Whip", "Iron Claw", "Boomerang",
@@ -817,47 +817,47 @@ class AssetExtractor:
 			"Metal Babble Sword", "Sword of Lethargy",
 		]
 		items_data["known_weapon_names"] = known_weapons
-		
+
 		# Scan for item tables
 		found_items = self._scan_for_item_table()
 		if found_items:
 			items_data["items"] = found_items
 			items_data["_extraction_info"]["status"] = "partial_extraction"
-		
+
 		# Save extracted data
 		output_path = self.json_dir / "items" / "items.json"
 		with open(output_path, "w", encoding="utf-8") as f:
 			json.dump(items_data, f, indent="\t", ensure_ascii=False)
-		
+
 		self.console.print(f"  [dim]Found {len(found_items)} potential item entries[/dim]")
 
 	def _scan_for_item_table(self) -> List[Dict]:
 		"""Scan for item data table."""
 		items = []
-		
+
 		# Item data typically has:
 		# - Price (2 bytes, range 0-65535)
 		# - Attack/Defense bonus (1 byte each)
 		# - Equipment flags
-		
+
 		for bank in [0x06, 0x07, 0x08]:
 			bank_offset = self.bank_to_offset(bank)
 			entry_size = 8  # Estimated item entry size
-			
+
 			for scan_start in range(bank_offset, bank_offset + 0x3800, 8):
 				score = 0
 				valid_entries = 0
-				
+
 				for i in range(10):
 					offset = scan_start + (i * entry_size)
 					entry = self.read_bytes(offset, entry_size)
 					if len(entry) < entry_size:
 						break
-					
+
 					price = self._bytes_to_word(entry[0:2])
 					attack = entry[2]
 					defense = entry[3]
-					
+
 					# Score based on reasonable item values
 					if 0 <= price <= 50000:
 						score += 2
@@ -865,10 +865,10 @@ class AssetExtractor:
 						score += 1
 					if 0 <= defense <= 100:
 						score += 1
-					
+
 					if score > 3:
 						valid_entries += 1
-				
+
 				if valid_entries >= 8:
 					# Found potential item table
 					for i in range(100):  # Extract up to 100 items
@@ -876,7 +876,7 @@ class AssetExtractor:
 						entry = self.read_bytes(offset, entry_size)
 						if len(entry) < entry_size:
 							break
-						
+
 						item = {
 							"id": i,
 							"rom_offset": f"0x{offset:05x}",
@@ -890,9 +890,9 @@ class AssetExtractor:
 							"raw_hex": " ".join(f"{b:02x}" for b in entry)
 						}
 						items.append(item)
-					
+
 					return items
-		
+
 		return items
 
 	# ========================================================================
@@ -902,7 +902,7 @@ class AssetExtractor:
 	def extract_shops(self):
 		"""
 		Extract shop inventory data from ROM.
-		
+
 		Shops are typically stored as:
 		- Shop type byte
 		- Number of items
@@ -910,7 +910,7 @@ class AssetExtractor:
 		- Terminator byte (usually 0xFF)
 		"""
 		self.console.print("  [dim]Scanning for shop data...[/dim]")
-		
+
 		shops_data = {
 			"_comment": "Dragon Warrior IV Shop Data - Extracted from ROM",
 			"shops": [],
@@ -921,32 +921,32 @@ class AssetExtractor:
 				"3": "Tool shop"
 			}
 		}
-		
+
 		# Scan for shop patterns (lists of item IDs followed by 0xFF)
 		found_shops = self._scan_for_shop_data()
 		shops_data["shops"] = found_shops
-		
+
 		output_path = self.json_dir / "shops.json"
 		with open(output_path, "w", encoding="utf-8") as f:
 			json.dump(shops_data, f, indent="\t", ensure_ascii=False)
-		
+
 		self.console.print(f"  [dim]Found {len(found_shops)} potential shop definitions[/dim]")
 
 	def _scan_for_shop_data(self) -> List[Dict]:
 		"""Scan for shop inventory data."""
 		shops = []
 		shop_id = 0
-		
+
 		# Shops are typically in data banks
 		for bank in [0x08, 0x09, 0x0a]:
 			bank_offset = self.bank_to_offset(bank)
-			
+
 			offset = bank_offset
 			while offset < bank_offset + 0x3f00:
 				# Look for pattern: small values (item IDs) followed by 0xFF
 				potential_items = []
 				scan_offset = offset
-				
+
 				while scan_offset < offset + 20:
 					byte = self.read_byte(scan_offset)
 					if byte == 0xff:
@@ -967,9 +967,9 @@ class AssetExtractor:
 						scan_offset += 1
 					else:
 						break
-				
+
 				offset += 1
-		
+
 		return shops
 
 	# ========================================================================
@@ -979,53 +979,53 @@ class AssetExtractor:
 	def extract_exp_tables(self):
 		"""
 		Extract experience tables for each character.
-		
+
 		DW4 has separate exp tables for different characters.
 		Each entry typically contains:
 		- EXP required for level (2-3 bytes)
 		- Stat gains for that level
 		"""
 		self.console.print("  [dim]Scanning for experience tables...[/dim]")
-		
+
 		exp_data = {
 			"_comment": "Dragon Warrior IV Experience Tables - Extracted from ROM",
 			"characters": {},
 			"raw_data_samples": []
 		}
-		
+
 		# Experience values follow patterns:
 		# - Level 1: 0 or small value
 		# - Each subsequent level requires more exp
 		# - Values grow exponentially
-		
+
 		found_tables = self._scan_for_exp_tables()
 		exp_data["exp_tables"] = found_tables
-		
+
 		output_path = self.json_dir / "exp_tables.json"
 		with open(output_path, "w", encoding="utf-8") as f:
 			json.dump(exp_data, f, indent="\t", ensure_ascii=False)
-		
+
 		self.console.print(f"  [dim]Found {len(found_tables)} potential exp table sections[/dim]")
 
 	def _scan_for_exp_tables(self) -> List[Dict]:
 		"""Scan for experience point tables."""
 		exp_tables = []
-		
+
 		# EXP tables have distinct patterns:
 		# - Values start small and increase
 		# - Typically 50-99 entries per character
 		# - Each entry is 2-3 bytes
-		
+
 		for bank in [0x06, 0x07, 0x08]:
 			bank_offset = self.bank_to_offset(bank)
-			
+
 			for scan_start in range(bank_offset, bank_offset + 0x3800, 2):
 				# Check for increasing sequence
 				values = []
 				for i in range(30):
 					val = self.read_word(scan_start + (i * 2))
 					values.append(val)
-				
+
 				# Check if values are monotonically increasing
 				if all(values[i] < values[i+1] for i in range(len(values)-1)):
 					if values[0] < 100 and values[-1] > 10000:
@@ -1035,7 +1035,7 @@ class AssetExtractor:
 							"bank": f"0x{bank:02x}",
 							"levels": []
 						}
-						
+
 						for level in range(50):  # Up to 50 levels
 							exp = self.read_word(scan_start + (level * 2))
 							if exp >= 0xffff or (level > 0 and exp == 0):
@@ -1044,10 +1044,10 @@ class AssetExtractor:
 								"level": level + 1,
 								"exp_required": exp
 							})
-						
+
 						if len(exp_table["levels"]) > 20:
 							exp_tables.append(exp_table)
-		
+
 		return exp_tables
 
 	# ========================================================================
@@ -1057,48 +1057,48 @@ class AssetExtractor:
 	def extract_encounters(self):
 		"""
 		Extract enemy encounter tables.
-		
+
 		Encounter data typically includes:
 		- Zone/area ID
 		- List of possible enemy groups
 		- Encounter rate modifier
 		"""
 		self.console.print("  [dim]Scanning for encounter tables...[/dim]")
-		
+
 		encounter_data = {
 			"_comment": "Dragon Warrior IV Encounter Data - Extracted from ROM",
 			"zones": [],
 			"encounter_groups": []
 		}
-		
+
 		# Encounter tables are often in map-related banks
 		found_encounters = self._scan_for_encounter_data()
 		encounter_data["encounter_groups"] = found_encounters
-		
+
 		output_path = self.json_dir / "encounters.json"
 		with open(output_path, "w", encoding="utf-8") as f:
 			json.dump(encounter_data, f, indent="\t", ensure_ascii=False)
-		
+
 		self.console.print(f"  [dim]Found {len(found_encounters)} potential encounter groups[/dim]")
 
 	def _scan_for_encounter_data(self) -> List[Dict]:
 		"""Scan for encounter group definitions."""
 		encounters = []
-		
+
 		# Encounter groups typically have:
 		# - Small monster count (1-8)
 		# - Monster IDs in valid range
 		# - Followed by terminator or next group
-		
+
 		for bank in MAP_BANKS:
 			bank_offset = self.bank_to_offset(bank)
-			
+
 			for scan_start in range(bank_offset, bank_offset + 0x3800, 4):
 				# Look for patterns of small values (monster IDs)
 				entry = self.read_bytes(scan_start, 8)
 				if len(entry) < 8:
 					continue
-				
+
 				# Check if this could be an encounter group
 				monster_ids = []
 				for b in entry[:6]:
@@ -1108,7 +1108,7 @@ class AssetExtractor:
 						break
 					else:
 						break
-				
+
 				if 2 <= len(monster_ids) <= 6:
 					encounter = {
 						"rom_offset": f"0x{scan_start:05x}",
@@ -1116,7 +1116,7 @@ class AssetExtractor:
 						"raw_hex": " ".join(f"{b:02x}" for b in entry)
 					}
 					encounters.append(encounter)
-		
+
 		# Deduplicate
 		seen = set()
 		unique_encounters = []
@@ -1125,7 +1125,7 @@ class AssetExtractor:
 			if key not in seen:
 				seen.add(key)
 				unique_encounters.append(enc)
-		
+
 		return unique_encounters
 
 	# ========================================================================
@@ -1135,7 +1135,7 @@ class AssetExtractor:
 	def extract_spells(self):
 		"""
 		Extract spell data from ROM.
-		
+
 		DW4 spell data structure (typical DQ format):
 		  Offset 0: MP cost (1 byte)
 		  Offset 1: Effect type (1 byte)
@@ -1144,11 +1144,11 @@ class AssetExtractor:
 		  Offset 4: Element (1 byte)
 		  Offset 5: Accuracy (1 byte)
 		  Offset 6-7: Flags/extras (2 bytes)
-		
+
 		Spell names are stored separately in text banks.
 		"""
 		self.console.print("  [dim]Scanning for spell data...[/dim]")
-		
+
 		spells_data = {
 			"_comment": "Dragon Warrior IV Spell Data - Extracted from ROM",
 			"_extraction_info": {
@@ -1167,7 +1167,7 @@ class AssetExtractor:
 				"field": []
 			}
 		}
-		
+
 		# Known DW4 spells for reference
 		known_spells = [
 			"Heal", "Healmore", "Healall", "Healus", "Healusall",
@@ -1182,18 +1182,18 @@ class AssetExtractor:
 			"Transform", "Chance", "Bounce",
 		]
 		spells_data["known_spell_names"] = known_spells
-		
+
 		# Scan for spell tables
 		# Spells typically have:
 		# - MP cost in range 0-30 for most spells
 		# - Effect type < 64 (limited effect types)
 		# - Power values 0-255
-		
+
 		found_spells = self._scan_for_spell_table()
 		if found_spells:
 			spells_data["spells"] = found_spells
 			spells_data["_extraction_info"]["status"] = "partial_extraction"
-		
+
 		# Sample data from multiple banks
 		for bank in [0x06, 0x07, 0x08, 0x09]:
 			bank_offset = self.bank_to_offset(bank)
@@ -1206,42 +1206,42 @@ class AssetExtractor:
 						"offset": f"0x{sample_offset:05x}",
 						"hex": hex_dump
 					})
-		
+
 		# Save extracted data
 		output_path = self.json_dir / "spells" / "spells.json"
 		with open(output_path, "w", encoding="utf-8") as f:
 			json.dump(spells_data, f, indent="\t", ensure_ascii=False)
-		
+
 		self.console.print(f"  [dim]Found {len(found_spells)} potential spell entries[/dim]")
 
 	def _scan_for_spell_table(self) -> List[Dict]:
 		"""Scan for spell data table."""
 		spells = []
-		
+
 		# Spells have distinct patterns:
 		# - MP cost: 0-30 typically (some high level spells up to 50)
 		# - Most bytes are small values
-		
+
 		for bank in [0x06, 0x07, 0x08]:
 			bank_offset = self.bank_to_offset(bank)
 			entry_size = 8  # Estimated spell entry size
-			
+
 			for scan_start in range(bank_offset, bank_offset + 0x3800, 8):
 				score = 0
 				valid_entries = 0
-				
+
 				# Check 10 consecutive potential spell entries
 				for i in range(10):
 					offset = scan_start + (i * entry_size)
 					entry = self.read_bytes(offset, entry_size)
 					if len(entry) < entry_size:
 						break
-					
+
 					mp_cost = entry[0]
 					effect_type = entry[1]
 					power = entry[2]
 					target = entry[3]
-					
+
 					# Score based on reasonable spell values
 					if 0 <= mp_cost <= 50:
 						score += 2
@@ -1251,21 +1251,21 @@ class AssetExtractor:
 						score += 1
 					if 0 <= target <= 8:
 						score += 2
-					
+
 					if score > 4:
 						valid_entries += 1
-				
+
 				if valid_entries >= 8:
 					# Found potential spell table
 					self.console.print(f"  [dim]Potential spell table at bank 0x{bank:02x}, offset 0x{scan_start:05x}[/dim]")
-					
+
 					# Extract up to 50 spells
 					for i in range(50):
 						offset = scan_start + (i * entry_size)
 						entry = self.read_bytes(offset, entry_size)
 						if len(entry) < entry_size:
 							break
-						
+
 						spell = {
 							"id": i,
 							"rom_offset": f"0x{offset:05x}",
@@ -1279,9 +1279,9 @@ class AssetExtractor:
 							"raw_hex": " ".join(f"{b:02x}" for b in entry)
 						}
 						spells.append(spell)
-					
+
 					return spells  # Return first valid table found
-		
+
 		return spells
 
 	# ========================================================================
@@ -1291,7 +1291,7 @@ class AssetExtractor:
 	def extract_text(self):
 		"""
 		Extract all text/dialog from ROM.
-		
+
 		DW4 text is stored in banks 0x0c-0x0e using a custom encoding (TBL).
 		Text features:
 		- Compressed with DTE (Dual Tile Encoding)
@@ -1299,7 +1299,7 @@ class AssetExtractor:
 		- Special control codes for names, line breaks, etc.
 		"""
 		self.console.print("  [dim]Scanning for text data...[/dim]")
-		
+
 		text_data = {
 			"_comment": "Dragon Warrior IV Text Data - Extracted from ROM",
 			"_extraction_info": {
@@ -1312,24 +1312,24 @@ class AssetExtractor:
 			"string_samples": [],
 			"tbl_file": "dw4.tbl"
 		}
-		
+
 		# Extract text from each text bank
 		for bank in TEXT_BANKS:
 			bank_offset = self.bank_to_offset(bank)
 			self.console.print(f"  [dim]Scanning text bank 0x{bank:02x}...[/dim]")
-			
+
 			# Find pointer tables (sequences of valid pointers)
 			ptr_tables = self._find_pointer_tables(bank, bank_offset)
 			for ptr_table in ptr_tables:
 				text_data["pointer_tables"].append(ptr_table)
-			
+
 			# Extract readable strings
 			strings = self._extract_strings_from_bank(bank, bank_offset)
 			text_data["dialog_blocks"].append({
 				"bank": f"0x{bank:02x}",
 				"strings": strings[:100]  # Limit for now
 			})
-		
+
 		# Sample some decoded strings
 		for block in text_data["dialog_blocks"]:
 			for string_info in block["strings"][:20]:
@@ -1339,30 +1339,30 @@ class AssetExtractor:
 					"raw_hex": string_info.get("raw_hex", "")
 				}
 				text_data["string_samples"].append(sample)
-		
+
 		# Save extracted text
 		output_path = self.text_dir / "dialog.json"
 		with open(output_path, "w", encoding="utf-8") as f:
 			json.dump(text_data, f, indent="\t", ensure_ascii=False)
-		
+
 		# Save TBL file
 		self._save_tbl_file()
-		
+
 		# Save raw text dump
 		self._save_text_dump(text_data)
-		
+
 		total_strings = sum(len(b["strings"]) for b in text_data["dialog_blocks"])
 		self.console.print(f"  [dim]Found {total_strings} text strings[/dim]")
 
 	def _find_pointer_tables(self, bank: int, bank_offset: int) -> List[Dict]:
 		"""Find pointer tables within a bank."""
 		tables = []
-		
+
 		# Scan for sequences of valid pointers
 		for scan_start in range(bank_offset, bank_offset + 0x3f00, 2):
 			ptrs = []
 			valid_count = 0
-			
+
 			for i in range(16):
 				ptr = self.read_word(scan_start + (i * 2))
 				if 0x8000 <= ptr < 0xc000:
@@ -1370,7 +1370,7 @@ class AssetExtractor:
 					ptrs.append(ptr)
 				else:
 					break
-			
+
 			if valid_count >= 8:
 				# Check if pointers are roughly sequential (typical for text)
 				if all(ptrs[j] < ptrs[j+1] for j in range(min(4, len(ptrs)-1))):
@@ -1381,13 +1381,13 @@ class AssetExtractor:
 						"count": len(ptrs)
 					}
 					tables.append(table_info)
-		
+
 		return tables
 
 	def _extract_strings_from_bank(self, bank: int, bank_offset: int) -> List[Dict]:
 		"""Extract readable strings from a bank."""
 		strings = []
-		
+
 		# Scan for sequences of valid TBL characters
 		offset = bank_offset
 		while offset < bank_offset + 0x3f00:
@@ -1395,14 +1395,14 @@ class AssetExtractor:
 			text = []
 			raw_bytes = []
 			string_start = offset
-			
+
 			for i in range(100):  # Max string length
 				byte = self.read_byte(offset + i)
 				raw_bytes.append(byte)
-				
+
 				if byte == 0x00 or byte == 0xff:  # Terminators
 					break
-				
+
 				char = DW4_TBL.get(byte)
 				if char:
 					text.append(char)
@@ -1412,7 +1412,7 @@ class AssetExtractor:
 				else:
 					# Unknown - might not be text
 					break
-			
+
 			# If we got a reasonable string, save it
 			decoded = "".join(text)
 			if len(decoded) >= 3 and not decoded.startswith("["):
@@ -1425,9 +1425,9 @@ class AssetExtractor:
 						"text": decoded,
 						"raw_hex": " ".join(f"{b:02x}" for b in raw_bytes[:20])
 					})
-			
+
 			offset += 1
-		
+
 		# Remove duplicates and overlapping strings
 		unique_strings = []
 		seen_offsets = set()
@@ -1436,7 +1436,7 @@ class AssetExtractor:
 			if not any(offset_int >= seen and offset_int < seen + 20 for seen in seen_offsets):
 				unique_strings.append(s)
 				seen_offsets.add(offset_int)
-		
+
 		return sorted(unique_strings, key=lambda x: x["offset"])
 
 	def _save_tbl_file(self):
@@ -1446,27 +1446,27 @@ class AssetExtractor:
 			f.write("# Dragon Warrior IV Text Table\n")
 			f.write("# Format: XX=CHAR\n")
 			f.write("# Generated by asset_extractor.py\n\n")
-			
+
 			f.write("# Uppercase letters\n")
 			for val, char in sorted(DW4_TBL.items()):
 				if char.isupper() and len(char) == 1:
 					f.write(f"{val:02x}={char}\n")
-			
+
 			f.write("\n# Lowercase letters\n")
 			for val, char in sorted(DW4_TBL.items()):
 				if char.islower() and len(char) == 1:
 					f.write(f"{val:02x}={char}\n")
-			
+
 			f.write("\n# Numbers\n")
 			for val, char in sorted(DW4_TBL.items()):
 				if char.isdigit():
 					f.write(f"{val:02x}={char}\n")
-			
+
 			f.write("\n# Punctuation and symbols\n")
 			for val, char in sorted(DW4_TBL.items()):
 				if not char.isalnum() and len(char) == 1:
 					f.write(f"{val:02x}={char}\n")
-			
+
 			f.write("\n# Control codes\n")
 			for val, char in sorted(DW4_TBL.items()):
 				if len(char) > 1:
@@ -1478,14 +1478,14 @@ class AssetExtractor:
 		with open(dump_path, "w", encoding="utf-8") as f:
 			f.write("Dragon Warrior IV - Extracted Dialog\n")
 			f.write("=" * 50 + "\n\n")
-			
+
 			for block in text_data["dialog_blocks"]:
 				f.write(f"Bank {block['bank']}\n")
 				f.write("-" * 30 + "\n")
-				
+
 				for string_info in block["strings"]:
 					f.write(f"[{string_info['offset']}] {string_info['text']}\n")
-				
+
 				f.write("\n")
 
 	# ========================================================================
@@ -1692,10 +1692,10 @@ def hexdump(rom: str, bank: int, offset: str, length: int):
 			start = extractor.bank_to_offset(bank)
 		else:
 			start = 16  # Skip header
-		
+
 		data = extractor.read_bytes(start, length)
 		extractor.console.print(f"\n[bold]Hex dump at 0x{start:05x} ({length} bytes):[/bold]\n")
-		
+
 		for i in range(0, len(data), 16):
 			hex_part = " ".join(f"{b:02x}" for b in data[i:i+16])
 			ascii_part = "".join(chr(b) if 32 <= b < 127 else "." for b in data[i:i+16])
@@ -1715,7 +1715,7 @@ def info(rom: str):
 		extractor.console.print(f"  Banks 0x{MAP_BANKS[0]:02x}-0x{MAP_BANKS[-1]:02x}: Map data")
 		extractor.console.print(f"  Banks 0x{TEXT_BANKS[0]:02x}-0x{TEXT_BANKS[-1]:02x}: Text/dialog")
 		extractor.console.print(f"  Bank 0x{FIXED_BANK:02x}: Fixed bank (always mapped to $C000)")
-		
+
 		extractor.console.print("\n[bold]Known Offsets:[/bold]")
 		extractor.console.print(f"  Monster data bank: 0x{MONSTER_DATA_BANK:02x}")
 		extractor.console.print(f"  Monster count: {MONSTER_COUNT}")
