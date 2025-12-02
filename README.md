@@ -200,15 +200,33 @@ See the `docs/` folder for comprehensive documentation:
 
 ## 🏗️ Project Status
 
-| Phase | Status | Description |
-|-------|--------|-------------|
-| 1. ROM Analysis | 🟡 In Progress | Initial ROM structure analysis |
-| 2. Disassembly | ⬜ Not Started | Create complete ASM source |
-| 3. Asset Extraction | ⬜ Not Started | Extract all game assets |
-| 4. Editors | ⬜ Not Started | Build universal editor |
-| 5. Build Pipeline | ⬜ Not Started | Implement build system |
-| 6. Documentation | 🟡 In Progress | Comprehensive docs |
-| 7. Testing | ⬜ Not Started | Automated test suite |
+| Phase | Status | Issues | Description |
+|-------|--------|--------|-------------|
+| 1. ROM Disassembly | 🟡 In Progress | [#1](../../issues/1) | Complete ASM source |
+| 2. Asset Extraction | ⬜ Planning | [#2](../../issues/2) | Extract all game assets |
+| 3. Universal Editor | ⬜ Planning | [#3](../../issues/3) | Build GUI editor |
+| 4. Build Pipeline | ⬜ Planning | [#4](../../issues/4) | Implement build system |
+| 5. SNES Port Prep | ⬜ Future | [#42](../../issues/42) | DQ3 Remix planning |
+
+### Issue Tracking
+
+- **50+ GitHub Issues** covering all aspects of the project
+- **5 Epic Issues** for major project phases
+- **12 Custom Labels** for organization
+
+See [Issues](../../issues) for the complete backlog.
+
+## 📊 Technical Details
+
+| Property | Value |
+|----------|-------|
+| **ROM** | Dragon Warrior IV (1992-10)(Enix)(US).nes |
+| **Platform** | NES (Nintendo Entertainment System) |
+| **Mapper** | MMC3 (iNES Mapper 4) |
+| **PRG ROM** | 256 KB (16 × 16KB banks) |
+| **CHR ROM** | 128 KB (16 × 8KB banks) |
+| **RAM** | 2KB internal + 8KB WRAM (battery-backed) |
+| **File Size** | 393,232 bytes |
 
 ## 📄 License
 

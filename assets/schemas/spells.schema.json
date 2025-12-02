@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://dragon-warrior-4-info/schemas/spells.schema.json",
+    "title": "Spell Data",
+    "description": "Schema for Dragon Warrior IV spell data",
+    "type": "object",
+    "required": ["version", "spells"],
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "spells": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/spell"
+            }
+        }
+    },
+    "$defs": {
+        "spell": {
+            "type": "object",
+            "required": ["id", "name", "mp_cost", "effect_type"],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 12
+                },
+                "mp_cost": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 99
+                },
+                "effect_type": {
+                    "type": "string",
+                    "enum": ["damage", "heal", "buff", "debuff", "status", "utility"]
+                },
+                "power": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "target_type": {
+                    "type": "string",
+                    "enum": ["single_enemy", "enemy_group", "all_enemies", "self", "single_ally", "all_allies", "field_only"]
+                },
+                "element": {
+                    "type": "string",
+                    "enum": ["none", "fire", "ice", "lightning", "wind", "holy", "dark"]
+                },
+                "learned_by": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "character": {
+                                "type": "string",
+                                "enum": ["hero", "ragnar", "alena", "brey", "cristo", "taloon", "nara", "mara"]
+                            },
+                            "level": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 99
+                            }
+                        }
+                    }
+                },
+                "battle_only": {
+                    "type": "boolean"
+                },
+                "field_only": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

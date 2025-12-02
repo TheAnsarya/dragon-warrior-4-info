@@ -26,14 +26,14 @@ from tools.asset_extractor import encode_text, DW4_TBL_REVERSE
 
 class AssetReinserter:
 	"""Converts extracted assets back to ASM source."""
-	
+
 	def __init__(self, assets_dir: Path, source_dir: Path):
 		"""Initialize reinserter."""
 		self.assets_dir = assets_dir
 		self.source_dir = source_dir
 		self.generated_dir = source_dir / "generated"
 		self.console = Console()
-	
+
 	def setup_directories(self):
 		"""Create output directory structure."""
 		dirs = [
@@ -44,31 +44,31 @@ class AssetReinserter:
 		]
 		for d in dirs:
 			d.mkdir(parents=True, exist_ok=True)
-	
+
 	def convert_all(self):
 		"""Convert all assets to ASM."""
 		self.setup_directories()
-		
+
 		self.console.print("[bold]Converting assets to ASM...[/bold]")
-		
+
 		self.convert_monsters()
 		self.convert_items()
 		self.convert_spells()
 		self.convert_text()
-		
+
 		self.console.print("\n[bold green]Asset conversion complete![/bold green]")
-	
+
 	def convert_monsters(self):
 		"""Convert monster JSON to ASM."""
 		json_path = self.assets_dir / "json" / "monsters" / "monsters.json"
-		
+
 		if not json_path.exists():
 			self.console.print("[yellow]Warning: monsters.json not found[/yellow]")
 			return
-		
+
 		with open(json_path, "r", encoding="utf-8") as f:
 			data = json.load(f)
-		
+
 		# Generate ASM file
 		asm_lines = [
 			"; ============================================================================",
@@ -81,34 +81,34 @@ class AssetReinserter:
 			"",
 			"MonsterTable:",
 		]
-		
+
 		if "monsters" in data and data["monsters"]:
 			for monster in data["monsters"]:
 				# TODO: Generate actual monster data bytes
 				asm_lines.append(f"\t; Monster {monster.get('id', '?')}: {monster.get('name', 'Unknown')}")
 		else:
 			asm_lines.append("\t; TODO: Monster data to be populated")
-		
+
 		asm_lines.append("")
 		asm_lines.append("; End of monster data")
-		
+
 		output_path = self.generated_dir / "data" / "monsters.asm"
 		with open(output_path, "w", encoding="utf-8", newline="\r\n") as f:
 			f.write("\n".join(asm_lines))
-		
+
 		self.console.print(f"  Generated: {output_path.name}")
-	
+
 	def convert_items(self):
 		"""Convert item JSON to ASM."""
 		json_path = self.assets_dir / "json" / "items" / "items.json"
-		
+
 		if not json_path.exists():
 			self.console.print("[yellow]Warning: items.json not found[/yellow]")
 			return
-		
+
 		with open(json_path, "r", encoding="utf-8") as f:
 			data = json.load(f)
-		
+
 		# Generate ASM file
 		asm_lines = [
 			"; ============================================================================",
@@ -123,21 +123,21 @@ class AssetReinserter:
 			"",
 			"; End of item data",
 		]
-		
+
 		output_path = self.generated_dir / "data" / "items.asm"
 		with open(output_path, "w", encoding="utf-8", newline="\r\n") as f:
 			f.write("\n".join(asm_lines))
-		
+
 		self.console.print(f"  Generated: {output_path.name}")
-	
+
 	def convert_spells(self):
 		"""Convert spell JSON to ASM."""
 		json_path = self.assets_dir / "json" / "spells" / "spells.json"
-		
+
 		if not json_path.exists():
 			self.console.print("[yellow]Warning: spells.json not found[/yellow]")
 			return
-		
+
 		# Generate ASM file
 		asm_lines = [
 			"; ============================================================================",
@@ -152,21 +152,21 @@ class AssetReinserter:
 			"",
 			"; End of spell data",
 		]
-		
+
 		output_path = self.generated_dir / "data" / "spells.asm"
 		with open(output_path, "w", encoding="utf-8", newline="\r\n") as f:
 			f.write("\n".join(asm_lines))
-		
+
 		self.console.print(f"  Generated: {output_path.name}")
-	
+
 	def convert_text(self):
 		"""Convert text JSON to ASM."""
 		json_path = self.assets_dir / "text" / "dialog.json"
-		
+
 		if not json_path.exists():
 			self.console.print("[yellow]Warning: dialog.json not found[/yellow]")
 			return
-		
+
 		# Generate ASM file
 		asm_lines = [
 			"; ============================================================================",
@@ -179,22 +179,22 @@ class AssetReinserter:
 			"",
 			"; End of dialog data",
 		]
-		
+
 		output_path = self.generated_dir / "text" / "dialog.asm"
 		with open(output_path, "w", encoding="utf-8", newline="\r\n") as f:
 			f.write("\n".join(asm_lines))
-		
+
 		self.console.print(f"  Generated: {output_path.name}")
-	
+
 	def json_to_asm_bytes(self, data: List[int], label: str, bytes_per_line: int = 16) -> List[str]:
 		"""Convert a list of bytes to ASM .byte statements."""
 		lines = [f"{label}:"]
-		
+
 		for i in range(0, len(data), bytes_per_line):
 			chunk = data[i:i + bytes_per_line]
 			hex_values = ", ".join(f"${b:02X}" for b in chunk)
 			lines.append(f"\t.byte {hex_values}")
-		
+
 		return lines
 
 

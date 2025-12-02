@@ -23,7 +23,7 @@
 Bank00_Start:
 	; TODO: Disassemble actual bank contents
 	; This is a placeholder structure
-	
+
 ; ----------------------------------------------------------------------------
 ; Main Game Loop
 ; ----------------------------------------------------------------------------
@@ -31,22 +31,22 @@ Bank00_Start:
 MainLoop:
 	; Wait for VBlank
 	jsr WaitVBlank
-	
+
 	; Update PPU from buffer
 	jsr UpdatePPU
-	
+
 	; Read joypad input
 	jsr ReadJoypad
-	
+
 	; Process game state
 	jsr ProcessGameState
-	
+
 	; Update sprites
 	jsr UpdateSprites
-	
+
 	; Update sound
 	jsr UpdateSound
-	
+
 	; Loop forever
 	jmp MainLoop
 
@@ -76,7 +76,7 @@ ReadJoypad:
 	sta JOYPAD1
 	lda #$00
 	sta JOYPAD1
-	
+
 	; Read 8 buttons
 	ldx #$08
 @ReadLoop:
@@ -85,13 +85,13 @@ ReadJoypad:
 	rol joy1_held
 	dex
 	bne @ReadLoop
-	
+
 	; Calculate newly pressed buttons
 	lda joy1_held
 	eor #$FF
 	and joy1_pressed
 	sta joy1_pressed
-	
+
 	rts
 
 ; ----------------------------------------------------------------------------

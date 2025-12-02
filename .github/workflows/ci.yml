@@ -9,24 +9,24 @@ on:
 jobs:
   test:
     runs-on: windows-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    
+
     - name: Run tests
       run: |
         python -m pytest tests/ -v --tb=short
-    
+
     - name: Check formatting
       run: |
         python tools/format_files.py check --project .
@@ -34,20 +34,20 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    
+
     - name: Install linting tools
       run: |
         python -m pip install --upgrade pip
         pip install flake8
-    
+
     - name: Lint Python files
       run: |
         flake8 tools/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -57,10 +57,10 @@ jobs:
   build:
     runs-on: windows-latest
     needs: test
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Verify Ophis exists
       run: |
         if (Test-Path "Ophis/ophis.exe") {
@@ -71,7 +71,7 @@ jobs:
           exit 1
         }
       shell: pwsh
-    
+
     - name: Check source files
       run: |
         $files = @(

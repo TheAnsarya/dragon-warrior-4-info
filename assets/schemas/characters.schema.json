@@ -1,0 +1,115 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://dragon-warrior-4-info/schemas/characters.schema.json",
+    "title": "Character Data",
+    "description": "Schema for Dragon Warrior IV playable character data",
+    "type": "object",
+    "required": ["version", "characters"],
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "characters": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/character"
+            }
+        }
+    },
+    "$defs": {
+        "character": {
+            "type": "object",
+            "required": ["id", "name", "chapter", "base_stats", "growth"],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 7,
+                    "description": "Character ID (0-7)"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 4,
+                    "description": "Default character name"
+                },
+                "chapter": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Chapter where character joins"
+                },
+                "class": {
+                    "type": "string",
+                    "description": "Character class/role"
+                },
+                "base_stats": {
+                    "$ref": "#/$defs/baseStats"
+                },
+                "growth": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/levelStats"
+                    },
+                    "minItems": 99,
+                    "maxItems": 99,
+                    "description": "Stats at each level (1-99)"
+                },
+                "spells": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/spellLearning"
+                    },
+                    "description": "Spells learned and levels"
+                },
+                "equipment": {
+                    "$ref": "#/$defs/equipmentPermissions"
+                }
+            }
+        },
+        "baseStats": {
+            "type": "object",
+            "properties": {
+                "hp": { "type": "integer", "minimum": 1, "maximum": 999 },
+                "mp": { "type": "integer", "minimum": 0, "maximum": 999 },
+                "strength": { "type": "integer", "minimum": 0, "maximum": 255 },
+                "agility": { "type": "integer", "minimum": 0, "maximum": 255 },
+                "vitality": { "type": "integer", "minimum": 0, "maximum": 255 },
+                "intelligence": { "type": "integer", "minimum": 0, "maximum": 255 },
+                "luck": { "type": "integer", "minimum": 0, "maximum": 255 }
+            }
+        },
+        "levelStats": {
+            "type": "object",
+            "required": ["level", "total_exp"],
+            "properties": {
+                "level": { "type": "integer", "minimum": 1, "maximum": 99 },
+                "total_exp": { "type": "integer", "minimum": 0 },
+                "hp": { "type": "integer" },
+                "mp": { "type": "integer" },
+                "strength": { "type": "integer" },
+                "agility": { "type": "integer" },
+                "vitality": { "type": "integer" },
+                "intelligence": { "type": "integer" },
+                "luck": { "type": "integer" }
+            }
+        },
+        "spellLearning": {
+            "type": "object",
+            "properties": {
+                "spell_id": { "type": "integer" },
+                "spell_name": { "type": "string" },
+                "level": { "type": "integer", "minimum": 1, "maximum": 99 }
+            }
+        },
+        "equipmentPermissions": {
+            "type": "object",
+            "properties": {
+                "weapons": { "type": "array", "items": { "type": "integer" } },
+                "armor": { "type": "array", "items": { "type": "integer" } },
+                "shields": { "type": "array", "items": { "type": "integer" } },
+                "helmets": { "type": "array", "items": { "type": "integer" } },
+                "accessories": { "type": "array", "items": { "type": "integer" } }
+            }
+        }
+    }
+}

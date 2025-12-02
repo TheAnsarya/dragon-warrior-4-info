@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://dragon-warrior-4-info/schemas/items.schema.json",
+    "title": "Item Data",
+    "description": "Schema for Dragon Warrior IV item data",
+    "type": "object",
+    "required": ["version", "items"],
+    "properties": {
+        "version": {
+            "type": "string",
+            "description": "Schema version"
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/item"
+            }
+        }
+    },
+    "$defs": {
+        "item": {
+            "type": "object",
+            "required": ["id", "name", "type"],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Item ID (0-255)"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 16,
+                    "description": "Item name"
+                },
+                "name_ptr": {
+                    "type": "string",
+                    "pattern": "^0x[0-9A-Fa-f]+$",
+                    "description": "ROM pointer to name string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": ["weapon", "armor", "shield", "helmet", "accessory", "consumable", "key", "other"],
+                    "description": "Item category"
+                },
+                "stats": {
+                    "$ref": "#/$defs/equipStats"
+                },
+                "price": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535,
+                    "description": "Purchase price (sell = price/2)"
+                },
+                "effect": {
+                    "type": ["integer", "null"],
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Special effect ID when used"
+                },
+                "equip_by": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["hero", "ragnar", "alena", "brey", "cristo", "taloon", "nara", "mara"]
+                    },
+                    "description": "Characters who can equip this item"
+                },
+                "flags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["cursed", "key_item", "unique", "sellable", "battle_use", "field_use"]
+                    },
+                    "description": "Item flags and properties"
+                }
+            }
+        },
+        "equipStats": {
+            "type": "object",
+            "properties": {
+                "attack": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Attack bonus"
+                },
+                "defense": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Defense bonus"
+                },
+                "agility": {
+                    "type": "integer",
+                    "minimum": -128,
+                    "maximum": 127,
+                    "description": "Agility modifier"
+                },
+                "luck": {
+                    "type": "integer",
+                    "minimum": -128,
+                    "maximum": 127,
+                    "description": "Luck modifier"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,143 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://dragon-warrior-4-info/schemas/monsters.schema.json",
+    "title": "Monster Data",
+    "description": "Schema for Dragon Warrior IV monster data",
+    "type": "object",
+    "required": ["version", "monsters"],
+    "properties": {
+        "version": {
+            "type": "string",
+            "description": "Schema version"
+        },
+        "monsters": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/monster"
+            }
+        }
+    },
+    "$defs": {
+        "monster": {
+            "type": "object",
+            "required": ["id", "name", "stats"],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Monster ID (0-255)"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 12,
+                    "description": "Monster name"
+                },
+                "name_ptr": {
+                    "type": "string",
+                    "pattern": "^0x[0-9A-Fa-f]+$",
+                    "description": "ROM pointer to name string"
+                },
+                "stats": {
+                    "$ref": "#/$defs/monsterStats"
+                },
+                "exp": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535,
+                    "description": "Experience points awarded"
+                },
+                "gold": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535,
+                    "description": "Gold pieces dropped"
+                },
+                "drops": {
+                    "$ref": "#/$defs/dropInfo"
+                },
+                "ai_script": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "AI behavior pattern ID"
+                },
+                "sprite_id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Graphics sprite index"
+                },
+                "element_resist": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["fire", "ice", "lightning", "wind", "magic", "physical"]
+                    },
+                    "description": "Elemental resistances"
+                },
+                "status_resist": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["sleep", "poison", "paralysis", "confusion", "silence", "death"]
+                    },
+                    "description": "Status effect immunities"
+                }
+            }
+        },
+        "monsterStats": {
+            "type": "object",
+            "required": ["hp", "attack", "defense"],
+            "properties": {
+                "hp": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 999,
+                    "description": "Hit points"
+                },
+                "mp": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Magic points"
+                },
+                "attack": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Attack power"
+                },
+                "defense": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Defense power"
+                },
+                "agility": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Agility/speed"
+                }
+            }
+        },
+        "dropInfo": {
+            "type": "object",
+            "properties": {
+                "item_id": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Item ID dropped (0 = none)"
+                },
+                "rate": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Drop rate (X/256 chance)"
+                }
+            }
+        }
+    }
+}

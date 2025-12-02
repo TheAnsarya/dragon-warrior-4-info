@@ -3,8 +3,26 @@
 
 Sorry, there was an error, restart; We are creating a complete disassembly of the NES game `Dragon Warrior 4` the US version with asset extraction/resinsertion in a complete build pipeline; Our home folder is `C:\Users\me\source\repos\dragon-warrior-4-info`;  create a new public github repos named `dragon-warrior-4-info` that is a complete code and asset disassembly of `Dragon Warrior 4` (`DW4`) with full editors for all assets and use those assets in the build pipeline; turn on github issues for the project (and make a github project that is always associated with all github issue tracking work and kanban board), during this planning process, and when planning or making new un-planned work, always create todo-lists and create githuib issues and epics; and update them as you complete work; always create session logs in `~docs\session-logs` and ai chat logs at `~docs\chat-logs\` as markdown (`.md`) log files; For reference: use the `dragon-warrior-info` project for the Dragon Warrior (DW1) disassembly (`https://github.com/TheAnsarya/dragon-warrior-info` / `C:\Users\me\source\repos\dragon-warrior-info`) and Final Fantasy Mystic Quest (FFMQ) disassembly (`https://github.com/TheAnsarya/ffmq-info` / `C:\Users\me\source\repos\ffmq-info`); copy all necessary files, like the editorconfig (*always use tabs, never spaces, for all files forever*) and always format files (tabs! `{` and `}` on the same line as the rest of the code!); The standard reference rom, that we are disassembling and using in comparisons after builds is `C:\Users\me\source\repos\dragon-warrior-4-info\roms\Dragon Warrior IV (1992-10)(Enix)(US).nes` (relative path `.\roms\Dragon Warrior IV (1992-10)(Enix)(US).nes`), This is the source of truth; make sure to copy Ophis over so we have a compiler; our goal is a complete disassembly of the game like the other projects, with a full universal editor that edits all extracted assets and some code like damage calculation or spell effects; Use as a reference for information on the NES game DW4 `C:\Users\me\source\repos\GameInfo\Dragon Warrior 4 (NES)`; ****** Primary: make this whole project and github it and PLAN everything we will need to do for this, including manual and automated testing;
 
+At the end of every prompt-response please include a "what's next" section or what's left to do or an example prompt for what we should do next
 
-make `dragon-warrior-4-info` into a git repos and push it to github as a public repos, turn on `github issues` for this repository, then create a github project for `Dragon Warrior 4` and then make a SCRUMM board for the issues and make issues and todo-lists and epics for everything we're planning to do to to make this project complete;
+research and create all the details for each epic issue; update the epics with sub-issues for every detail and sub-effort; `~docs` is for documentation about *making* the project while `docs` is for information about the project itself;; make a bunch of github issues and trodolists for what we're doing with this project; OLDER MAYBE REDUNDANT: make `dragon-warrior-4-info` into a git repos and push it to github as a public repos, turn on `github issues` for this repository, then create a github project for `Dragon Warrior 4` and then make a SCRUMM board for the issues and make issues and todo-lists and epics for everything we're planning to do to to make this project complete;
+
+Remember, file addresses and ROM/code addresses are not always the same; and this is an NES game!; and make a ton of documentation about the project and game; ***continue!***; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space; make plans for the assets to all be extracted to binary, be converted to editable versions (json or png or whatever), be edited, (edited json and png files), binary data files, and that klinda thing for the pipeline; My eventual goal is to take all the assets and replicate it in an SNES game "Dragon Quest 3: Remix" as a hack, so the NES game is transformed and then inserted into the SNES game; but our goal for this project is to disassemble and the reassemble this rom using a build pipe line that uses all extracted assets, and alkso, extract every possible asset! Make all of the planning and issues for this effort; and then work on all of this;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

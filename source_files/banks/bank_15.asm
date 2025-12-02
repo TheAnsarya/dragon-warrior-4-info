@@ -25,40 +25,40 @@
 Reset:
 	sei						; Disable interrupts
 	cld						; Clear decimal mode
-	
+
 	; Initialize stack
 	ldx #$FF
 	txs
-	
+
 	; Disable NMI and rendering
 	lda #$00
 	sta PPU_CTRL
 	sta PPU_MASK
-	
+
 	; Wait for PPU to stabilize (2 frames)
 	jsr WaitVBlankInit
 	jsr WaitVBlankInit
-	
+
 	; Clear RAM
 	jsr ClearRAM
-	
+
 	; Initialize MMC3
 	jsr InitMapper
-	
+
 	; Initialize PPU
 	jsr InitPPU
-	
+
 	; Initialize APU
 	jsr InitAPU
-	
+
 	; Initialize game variables
 	jsr InitGame
-	
+
 	; Enable NMI
 	lda #$80
 	sta PPU_CTRL
 	sta ppu_ctrl_shadow
-	
+
 	; Jump to main loop in bank 0
 	jmp MainLoop
 
@@ -72,27 +72,27 @@ NMI:
 	pha
 	tya
 	pha
-	
+
 	; Increment frame counter
 	inc nmi_count
-	
+
 	; OAM DMA
 	lda #$02
 	sta OAM_DMA
-	
+
 	; Update PPU from buffer
 	jsr ProcessPPUBuffer
-	
+
 	; Reset scroll
 	lda scroll_x
 	sta PPU_SCROLL
 	lda scroll_y
 	sta PPU_SCROLL
-	
+
 	; Restore PPU control
 	lda ppu_ctrl_shadow
 	sta PPU_CTRL
-	
+
 	pla
 	tay
 	pla
@@ -106,14 +106,14 @@ NMI:
 
 IRQ:
 	pha
-	
+
 	; Acknowledge IRQ
 	sta MMC3_IRQ_DISABLE
 	sta MMC3_IRQ_ENABLE
-	
+
 	; TODO: Handle scanline-based effects
 	; (Status bar, split scrolling, etc.)
-	
+
 	pla
 	rti
 
@@ -148,21 +148,21 @@ InitMapper:
 	; Set PRG bank mode, CHR bank mode
 	lda #$00
 	sta MMC3_BANK_SELECT
-	
+
 	; Enable PRG RAM
 	lda #$80
 	sta MMC3_PRG_RAM
-	
+
 	; Set horizontal mirroring
 	lda #$00
 	sta MMC3_MIRRORING
-	
+
 	rts
 
 InitPPU:
 	; Clear nametables
 	`ppu_addr NAMETABLE_0
-	
+
 	lda #$00
 	ldx #$08				; 8 * 256 = 2048 bytes
 	ldy #$00
@@ -172,32 +172,32 @@ InitPPU:
 	bne @ClearLoop
 	dex
 	bne @ClearLoop
-	
+
 	; Clear palette
 	`ppu_addr PALETTE_BG
-	
+
 	lda #$0F				; Black
 	ldx #$20				; 32 palette entries
 @PalLoop:
 	sta PPU_DATA
 	dex
 	bne @PalLoop
-	
+
 	rts
 
 InitAPU:
 	; Silence all channels
 	lda #$00
 	sta APU_STATUS
-	
+
 	; Initialize frame counter
 	lda #$40
 	sta JOYPAD2
-	
+
 	; Enable channels
 	lda #$0F
 	sta APU_STATUS
-	
+
 	rts
 
 InitGame:
@@ -206,7 +206,7 @@ InitGame:
 	sta game_mode
 	sta current_chapter
 	sta current_map
-	
+
 	rts
 
 ; ----------------------------------------------------------------------------

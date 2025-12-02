@@ -53,13 +53,13 @@ def sample_rom_data():
 		0x40,  # Flags 7: mapper 4 high
 		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  # Padding
 	])
-	
+
 	# Sample PRG data (just zeros for testing)
 	prg_data = bytes([0x00] * 256 * 1024)
-	
+
 	# Sample CHR data (just zeros for testing)
 	chr_data = bytes([0x00] * 128 * 1024)
-	
+
 	return header + prg_data + chr_data
 
 
