@@ -11,7 +11,7 @@ Disassemble and annotate the text rendering code to understand:
 
 import os
 
-ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms',
                         'Dragon Warrior IV (1992-10)(Enix)(US).nes')
 
 # 6502 Opcode definitions: (mnemonic, addressing_mode, size)
@@ -265,27 +265,27 @@ def disassemble(rom_data, start_addr, length, bank):
     lines = []
     pc = start_addr
     i = 0
-    
+
     while i < length:
         addr = pc
         opcode = rom_data[rom_offset + i]
-        
+
         if opcode in OPCODES:
             mnemonic, mode, size = OPCODES[opcode]
-            
+
             # Get operand bytes for hex dump
             hex_bytes = [f"{rom_data[rom_offset + i + j]:02X}" for j in range(size)]
             hex_str = ' '.join(hex_bytes).ljust(8)
-            
+
             # Format operand
             operand, _ = format_operand(mode, rom_data, rom_offset + i + 1, pc)
-            
+
             # Build instruction string
             if operand:
                 instr = f"{mnemonic} {operand}"
             else:
                 instr = mnemonic
-            
+
             lines.append((addr, hex_str, instr))
             i += size
             pc += size
@@ -295,7 +295,7 @@ def disassemble(rom_data, start_addr, length, bank):
             lines.append((addr, hex_str, f".byte ${opcode:02X}"))
             i += 1
             pc += 1
-    
+
     return lines
 
 def print_disasm(lines, title=""):
@@ -304,117 +304,60 @@ def print_disasm(lines, title=""):
         print(f"\n{'='*60}")
         print(f" {title}")
         print(f"{'='*60}")
-    
+
     for addr, hex_str, instr in lines:
         print(f"${addr:04X}: {hex_str} {instr}")
 
 def main():
     rom_data = load_rom()
-    
+
     print("Dragon Warrior IV - Text Engine Disassembly")
     print("=" * 60)
-    
-    # TBL decoding - let's be more thorough
-    def decode_char(b):
-        if b == 0x00:
-            return ' '
-        elif 0x01 <= b <= 0x0A:
-            return chr(ord('0') + b - 1)
-        elif 0x0B <= b <= 0x24:
-            return chr(ord('a') + b - 0x0B)
-        elif 0x25 <= b <= 0x3E:
-            return chr(ord('A') + b - 0x25)
-        elif b == 0x6F:
-            return '-'
-        elif b == 0x71:
-            return ':'
-        elif b == 0x77:
-            return ','
-        elif b == 0x78:
-            return '.'
-        elif b == 0x7A:
-            return '!'
-        elif b == 0x7B:
-            return '?'
-        elif b == 0x7E:
-            return "'"
-        elif b == 0xFF:
-            return '[END]'
-        elif b == 0xFD:
-            return '[NL]'
-        elif b == 0xFE:
-            return '[FE]'
-        elif b == 0x8B:
-            return '[SEP]'  # Menu separator
-        elif b == 0x89:
-            return '[89]'  # Some control code
-        elif b >= 0xF0:
-            return f'[{b:02X}]'
-        elif b >= 0x80:
-            return f'<{b:02X}>'  
-        else:
-            return f'[{b:02X}]'
-    
-    def decode_text_detailed(rom_data, start_offset, length):
-        """Decode text with both hex and character view"""
-        result = []
-        text = ""
-        for i in range(length):
-            b = rom_data[start_offset + i]
-            text += decode_char(b)
-        return text
-    
-    # The text starts at $B3A3, but let's find the actual start
-    # by looking for the first printable character going backwards
+
+    # Bank 22's text processing is the key
+    # Let's look at where ($EE),Y is used to read text data
     print("\n" + "="*60)
-    print(" Bank 22 - Menu Text Analysis")
+    print(" Bank 22 - Looking for text data reads via ($EE),Y")
     print("="*60)
-    
-    # Look at $B3A3 onward in hex + decoded
-    rom_offset = cpu_to_rom(0xB3A3, 22)
-    
-    # The structure appears to be a header then text
-    print("\nHeader bytes at $B3A3:")
-    header = ' '.join(f'{rom_data[rom_offset+i]:02X}' for i in range(16))
-    print(f"  {header}")
-    
-    # The first readable text starts around $B3B3
-    print("\nText starting at $B3AF:")
-    text = decode_text_detailed(rom_data, rom_offset + 0x0C, 300)
-    
-    # Split on [SEP] and [NL] to show structure
-    print(text[:300])
-    
-    # Let's trace what's before $B3A3 - is this part of a table?
-    print("\n" + "="*60)
-    print(" Looking for text pointer table structure")
-    print("="*60)
-    
-    # The code at $B388 does LDA $B3A3,X - so X is an index into the string
-    # Let's check if there are length/offset bytes before each string
-    
-    # Decode the code at $B380
-    print("\nDisassembling code at $B380:")
+
+    # Search for B1 EE (LDA ($EE),Y) in Bank 22
+    rom_offset = cpu_to_rom(0x8000, 22)
+    for i in range(0x4000):
+        if rom_data[rom_offset + i] == 0xB1 and rom_data[rom_offset + i + 1] == 0xEE:
+            cpu_addr = 0x8000 + i
+            # Context: 4 bytes before and after
+            start = max(0, i - 4)
+            end = min(0x4000, i + 8)
+            context = ' '.join(f'{rom_data[rom_offset+start+j]:02X}' for j in range(end - start))
+            print(f"${cpu_addr:04X}: LDA ($EE),Y  Context: {context}")
+
+    # Let's look at $95AF which was called from the text loop
     print_disasm(
-        disassemble(rom_data, 0xB380, 0x40, 22),
-        "Bank 22 - Code accessing menu text"
+        disassemble(rom_data, 0x95AF, 0x60, 22),
+        "Bank 22 - Text Read Loop $95AF"
     )
-    
-    # Now let's look at how dialogue text might be different
-    # Let's check Bank 23 which likely has NPC dialogue
+
+    # And $95FF
+    print_disasm(
+        disassemble(rom_data, 0x95FF, 0x50, 22),
+        "Bank 22 - Text Handler $95FF"
+    )
+
+    # Let's find where the actual character decoding happens
+    # The text byte is in $F8, and we know $80+ are special
     print("\n" + "="*60)
-    print(" Bank 23 - Looking for dialogue structure")
+    print(" Looking for DTE decoding (checks for >= $80)")
     print("="*60)
-    
-    # Try reading from the start of Bank 23 data area
-    rom_offset = cpu_to_rom(0xB4C1, 23)  # One of the pointers we saw earlier
-    print(f"\nData at $B4C1 (Bank 23, ROM ${rom_offset:05X}):")
-    hex_dump = ' '.join(f'{rom_data[rom_offset+i]:02X}' for i in range(64))
-    print(hex_dump)
-    
-    # Try decoding it
-    text = decode_text_detailed(rom_data, rom_offset, 100)
-    print(f"\nDecoded: {text[:100]}")
+
+    # Search for CMP #$80 (C9 80) in Bank 22
+    for i in range(0x4000):
+        if rom_data[rom_offset + i] == 0xC9 and rom_data[rom_offset + i + 1] == 0x80:
+            cpu_addr = 0x8000 + i
+            # Context
+            start = max(0, i - 4)
+            end = min(0x4000, i + 8)
+            context = ' '.join(f'{rom_data[rom_offset+start+j]:02X}' for j in range(end - start))
+            print(f"${cpu_addr:04X}: CMP #$80  Context: {context}")
 
 if __name__ == '__main__':
     main()
