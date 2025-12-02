@@ -1,16 +1,24 @@
-# Dragon Warrior IV Text Table
+# Dragon Warrior IV (NES) Text Table
 # Format: XX=CHAR
-# Source: GameInfo wiki documentation
+# ============================================
 #
-# Text is stored in PRG banks $0C-$0E
-# Uses DTE (Dual Tile Encoding) compression
+# ENCODING NOTES:
+# - Text is plain TBL encoded (NOT DTE compressed)
+# - Text terminator: $FF (END)
+# - Control codes: $F0-$FF and $22 XX (2-byte position code)
 #
-# Generated/Updated by asset_extractor.py
+# Known text regions:
+# - $5B400-$5B4C0: Menu text (FIGHT, ITEM, SPELL, etc.)
+# - $5C2F6-$5C3C0: Casino/Poker text  
+# - $6E674-$6E700: Chapter titles
+# - Bank 18 ($48000): Spell/Item names
+#
+# Generated/Updated by text analysis tools
 
 # ============================================
-# Space
+# Space ($00)
 # ============================================
-00= 
+00=<space>
 
 # ============================================
 # Numbers ($01-$0A)
@@ -24,16 +32,16 @@
 07=6
 08=7
 09=8
-0a=9
+0A=9
 
 # ============================================
 # Lowercase letters ($0B-$24)
 # ============================================
-0b=a
-0c=b
-0d=c
-0e=d
-0f=e
+0B=a
+0C=b
+0D=c
+0E=d
+0F=e
 10=f
 11=g
 12=h
@@ -44,12 +52,12 @@
 17=m
 18=n
 19=o
-1a=p
-1b=q
-1c=r
-1d=s
-1e=t
-1f=u
+1A=p
+1B=q
+1C=r
+1D=s
+1E=t
+1F=u
 20=v
 21=w
 22=x
@@ -64,12 +72,12 @@
 27=C
 28=D
 29=E
-2a=F
-2b=G
-2c=H
-2d=I
-2e=J
-2f=K
+2A=F
+2B=G
+2C=H
+2D=I
+2E=J
+2F=K
 30=L
 31=M
 32=N
@@ -80,71 +88,84 @@
 37=S
 38=T
 39=U
-3a=V
-3b=W
-3c=X
-3d=Y
-3e=Z
+3A=V
+3B=W
+3C=X
+3D=Y
+3E=Z
+
+# ============================================
+# Reserved/Unknown ($3F-$64)
+# These may be graphics tiles or special chars
+# ============================================
 
 # ============================================
 # Punctuation and Symbols ($65-$79)
 # ============================================
-65=—
-66=,
-67=.
-68='
-69='
-6a='
-6b='
-6c=.'
-6d=?
-6e=!
-6f=-
-70=✱
-71=:
-72=…
-73=†
-74=☠
-75=(
-76=)
-77=,
-78=.
-79=「
+65=,
+66=.
+67=-
+68=…
+69=!
+6A='
+6B=&
+6C="
+6D=?
+6E=/
+6F=~
+70=:
+71=(
+72=)
+73=`
+74=;
+75=[MALE]
+76=[FEMALE]
+77=%
+78={
+79=}
 
 # ============================================
-# Special Characters ($80-$81)
+# Special Game Symbols ($7A-$81)
 # ============================================
-80=▼
-81=▶
+7A=[LV]
+7B=[HP]
+7C=[MP]
+7D=[G]
+7E=[*]
+7F=[SWORD]
+80=[SHIELD]
+81=[>>]
 
 # ============================================
-# Control Codes ($F0-$FF)
-# These are not displayed but control text flow
+# Text Control Codes ($F0-$FF)
+# These control text display, not characters
 # ============================================
-# f0=[WAIT]    - Wait for button press
-# f1=[LINE]    - New line
-# f2=[NAME]    - Insert character name
-# f3=[ITEM]    - Insert item name
-# f4=[NUM]     - Insert number
-# f5=[HERO]    - Insert hero name
-# f6=[MONSTER] - Insert monster name
-# f7=[SPELL]   - Insert spell name
-# f8=[GOLD]    - Insert gold amount
-# f9=[EXP]     - Insert EXP amount
-# fa=[LV]      - Insert level
-# fb=[HP]      - Insert HP
-# fc=[MP]      - Insert MP
-# fd=[CLEAR]   - Clear text window
-# fe=[PAUSE]   - Short pause
-# ff=[END]     - End of text string
+# F0=[WAIT]      - Wait for button press
+# F1=[ITEM]      - Insert item name
+# F2=[SPELL]     - Insert spell name
+# F3=[NAME]      - Insert character name
+# F4=[MONSTER]   - Insert monster name
+# F5=[NUMBER]    - Insert number
+# F6=[CTRL-F6]   - Unknown control
+# F7=[CTRL-F7]   - Unknown control
+# F8=[CTRL-F8]   - Unknown control
+# F9=[CTRL-F9]   - Unknown control
+# FA=[CTRL-FA]   - Unknown control
+# FB=[CTRL-FB]   - Unknown control
+# FC=[CTRL-FC]   - Unknown control
+# FD=[LINE]      - Line break / clear line
+# FE=[CTRL-FE]   - Scene/window control
+# FF=[END]       - String terminator
 
 # ============================================
-# DTE (Dual Tile Encoding) Codes
-# These are compressed character pairs
-# Range: $82-$EF (110 pairs possible)
-# Actual pairs need to be extracted from ROM
+# 2-Byte Control Code
 # ============================================
-# DTE pairs are stored in text banks
-# Each code $82-$EF represents two characters
-# This saves ROM space for common letter pairs
-# like "th", "he", "in", "er", "an", etc.
+# $22 XX = Position/formatting control
+#   The XX byte is a parameter (seen: 03, 04, 07, 09)
+#   Example: 22 07 = [POS:7] before "The Royal Soldiers"
+
+# ============================================
+# Notes on Byte $40
+# ============================================
+# $40 appears to be a string terminator in some contexts
+# (item/spell name tables in Bank 18)
