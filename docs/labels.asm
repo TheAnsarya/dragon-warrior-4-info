@@ -257,24 +257,82 @@ Set_Bank                = $FF91 ; Switch to bank in A
 ; Reset Vector
 Reset_Handler           = $FFD8 ; Reset vector target
 
-; IRQ Handler  
+; IRQ Handler
 IRQ_Handler             = $C408 ; IRQ entry point
 
 ; ============================================
 ; BANK 22 TEXT LABELS ($8000-$BFFF when switched)
 ; ============================================
-; Text Control Code Handler
-Text_CheckControlCode   = $8B11 ; Check if char is control code
-Text_HandleFF           = $8B17 ; Handle $FF (END)
-Text_HandleFE           = $8B1B ; Handle $FE (CTRL)
-Text_HandleFD           = $8B1F ; Handle $FD (LINE)
-Text_ProcessEnd         = $8B28 ; Process end of text
-Text_HandleFECode       = $8B30 ; FE code processing
-Text_NextLine           = $8B48 ; Move to next line
-Text_SetEndState        = $8B63 ; Set end-of-text state
+; Note: Bank 22 starts at ROM offset $58010
+; CPU $8000 = ROM $58010, CPU $B3A3 = ROM $5B3B3
 
-; Text Data (CPU addresses when Bank 22 is loaded)
-Menu_Text               = $B3F0 ; Menu text data (ROM 0x5B400)
+; Function Dispatch Table at $8000 (indexed by routine ID)
+Bank22_DispatchTable    = $8000 ; Table of code pointers
+
+; Text Entry Points
+Text_EntryDirect        = $8A08 ; Entry: char in A, bank in X
+Text_EntryInline1       = $8A18 ; Entry: inline text (1-byte mod)
+Text_EntryInline2       = $8A45 ; Entry: inline text (2-byte mod)
+Text_EntryInline3       = $8A72 ; Entry: inline text with state
+Text_CharProcessor      = $8AA5 ; Main character processor
+
+; Text Control Code Handler
+Text_CheckControlCode   = $8B11 ; Check if char >= $F0
+Text_ControlDispatch    = $8B28 ; Dispatch control codes
+Text_HandleFE           = $8B30 ; Handle $FE (PPU manipulation)
+Text_HandleFD           = $8B48 ; Handle $FD (new line)
+Text_HandleFF           = $8B63 ; Handle $FF (end of text)
+
+; Text Support Routines
+Text_AttrReader         = $8BDA ; Read text attributes from ($EE)
+Text_PPUCalc            = $8C96 ; Calculate PPU address
+Text_CharRenderInit     = $90C4 ; Initialize character renderer
+Text_PtrLookup          = $9553 ; Look up text pointer from table
+
+; Text Data Tables
+Text_PtrTableBase       = $A4FF ; 2-byte pointer to text index table
+Text_IndexTable         = $A501 ; Text index table (entry * 2 + base)
+
+; Menu String Index at $B3A3 (indexed by X for LDA $B3A3,X)
+Menu_StringIndex        = $B3A3 ; Index bytes: 06 07 05 03 00 1D 1A...
+Menu_StringData         = $B3B3 ; Menu strings start here
+
+; Menu Text (CPU addresses when Bank 22 is loaded)
+Menu_Text               = $B3F0 ; Approximate start of readable menu text
+
+; ============================================
+; FIXED BANK TEXT ROUTINES ($C000-$FFFF)
+; ============================================
+; Bank Switching
+BankSwitch              = $FF91 ; Switch to bank in A (writes $0507)
+
+; Text Byte Loading (reads from switched bank)
+Text_LoadByte           = $C3EA ; Load byte: bank in A, ptr in $00/$01, Y=offset
+Bank_Call               = $C38B ; Call routine in bank
+Bank_GetPtr             = $C3BA ; Get pointer from bank (bank in $23, idx in $24)
+Bank_LoadPtr            = $C3CE ; Load pointer into zero page
+
+; ============================================
+; TEXT ZERO PAGE VARIABLES
+; ============================================
+text_ptr_lo             = $10   ; General pointer low
+text_ptr_hi             = $11   ; General pointer high
+text_temp_lo            = $00   ; Temp pointer low (used by C3EA)
+text_temp_hi            = $01   ; Temp pointer high
+text_data_lo            = $EE   ; Current text data pointer low
+text_data_hi            = $EF   ; Current text data pointer high
+text_flags              = $F5   ; Text rendering flags
+text_char_in            = $F6   ; Character input to processor
+text_temp               = $F7   ; Temporary value
+current_char            = $F8   ; Current character being processed
+
+; ============================================
+; TEXT RAM VARIABLES
+; ============================================
+bank_current            = $0507 ; Current switched PRG bank
+text_bank               = $0517 ; Bank for text loading
+text_ppu_addr           = $03D4 ; PPU address for text output
+text_state              = $07B4 ; Text state machine flags
 
 ; ============================================
 ; PPU REGISTERS
