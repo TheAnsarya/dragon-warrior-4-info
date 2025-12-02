@@ -24,6 +24,7 @@ For newcomers, we recommend reading the documentation in this order:
 | [Graphics Format](GRAPHICS_FORMAT.md) | CHR data and sprite composition | NES PPU basics |
 | [Audio Format](AUDIO_FORMAT.md) | Music and sound effect data | NES APU basics |
 | [Map Format](MAP_FORMAT.md) | Map structure and compression | ROM structure |
+| [RAM Reference](RAM_REFERENCE.md) | Runtime memory and save data | ROM structure |
 
 ### 3. Development
 | Document | Description | Prerequisite Knowledge |

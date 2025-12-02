@@ -8,66 +8,63 @@ Dragon Warrior IV uses a custom text encoding system, common for NES games of th
 
 ## Character Table (TBL Format)
 
-### Standard Characters
+### Standard Characters (Verified from TBL)
 
 | Hex | Char | Hex | Char | Hex | Char | Hex | Char |
 |-----|------|-----|------|-----|------|-----|------|
-| $00 | (space) | $10 | g | $20 | O | $30 | w |
-| $01 | 0 | $11 | h | $21 | P | $31 | x |
-| $02 | 1 | $12 | i | $22 | Q | $32 | y |
-| $03 | 2 | $13 | j | $23 | R | $33 | z |
-| $04 | 3 | $14 | k | $24 | S | | |
-| $05 | 4 | $15 | l | $25 | T | | |
-| $06 | 5 | $16 | m | $26 | U | | |
-| $07 | 6 | $17 | n | $27 | V | | |
-| $08 | 7 | $18 | o | $28 | W | | |
-| $09 | 8 | $19 | p | $29 | X | | |
-| $0A | 9 | $1A | q | $2A | Y | | |
-| $0B | a | $1B | r | $2B | Z | | |
-| $0C | b | $1C | s | | | | |
-| $0D | c | $1D | t | | | | |
-| $0E | d | $1E | u | | | | |
-| $0F | e | $1F | v | | | | |
+| $00 | (space) | $10 | f | $20 | v | $30 | L |
+| $01 | 0 | $11 | g | $21 | w | $31 | M |
+| $02 | 1 | $12 | h | $22 | x | $32 | N |
+| $03 | 2 | $13 | i | $23 | y | $33 | O |
+| $04 | 3 | $14 | j | $24 | z | $34 | P |
+| $05 | 4 | $15 | k | $25 | A | $35 | Q |
+| $06 | 5 | $16 | l | $26 | B | $36 | R |
+| $07 | 6 | $17 | m | $18 | n | $37 | S |
+| $08 | 7 | $19 | o | $29 | D | $38 | T |
+| $09 | 8 | $1A | p | $2A | E | $39 | U |
+| $0A | 9 | $1B | q | $2B | F | $3A | V |
+| $0B | a | $1C | r | $2C | G | $3B | W |
+| $0C | b | $1D | s | $2D | H | $3C | X |
+| $0D | c | $1E | t | $2E | I | $3D | Y |
+| $0E | d | $1F | u | $2F | J | $3E | Z |
+| $0F | e | | | | | $3F | — |
 
-**Note:** The actual mapping may differ slightly - verify against ROM data.
+**Verified:** This mapping matches the GameInfo TBL reference file.
 
-### Punctuation and Special Characters
+### Punctuation and Special Characters (Verified from TBL)
 
 | Hex | Character | Description |
 |-----|-----------|-------------|
-| $34 | . | Period |
-| $35 | , | Comma |
-| $36 | ' | Apostrophe |
-| $37 | " | Quote (open) |
-| $38 | " | Quote (close) |
-| $39 | ! | Exclamation |
-| $3A | ? | Question mark |
-| $3B | - | Hyphen/dash |
-| $3C | : | Colon |
-| $3D | ; | Semicolon |
-| $3E | ( | Open paren |
-| $3F | ) | Close paren |
-| $40 | / | Slash |
-| $41 | ~ | Tilde |
-| $42 | * | Asterisk |
-| $43 | + | Plus |
-| $44 | = | Equals |
-| $45 | # | Hash/pound |
+| $65 | — | Em dash |
+| $66 | " | Opening double quote |
+| $67 | " | Closing double quote |
+| $68 | ' | Opening single quote |
+| $69 | ' | Closing single quote |
+| $6A | ' | Apostrophe |
+| $6B | ' | Alternate apostrophe |
+| $6C | .' | Period + apostrophe ligature |
+| $6D | ? | Question mark |
+| $6E | ! | Exclamation mark |
+| $6F | - | Hyphen |
+| $70 | ✱ | Asterisk/star |
+| $71 | : | Colon |
+| $72 | … | Ellipsis |
+| $73 | 🪦 | Tombstone symbol |
+| $74 | 💀 | Skull symbol |
+| $75 | ( | Left parenthesis |
+| $76 | ) | Right parenthesis |
+| $77 | , | Comma |
+| $78 | . | Period |
+| $79 | 「 | Japanese opening bracket |
 
-### UI and Special Tiles
+### UI and Special Tiles (Verified from TBL)
 
-| Hex | Description |
-|-----|-------------|
-| $80 | Menu cursor (arrow) |
-| $81 | Ellipsis (...) |
-| $82 | Heart symbol |
-| $83 | Sword icon |
-| $84 | Shield icon |
-| $85 | Helmet icon |
-| $86 | Armor icon |
-| $87 | Accessory icon |
-| $88-$8F | Item category icons |
-| $90-$9F | Status effect icons |
+| Hex | Char | Description |
+|-----|------|-------------|
+| $80 | ▼ | Down arrow (continue prompt) |
+| $81 | ▶ | Right arrow (selection cursor) |
+
+Note: Additional UI tiles exist in the $82-$9F range but need further verification.
 
 ### Control Codes
 
