@@ -226,11 +226,100 @@ Separated constants, RAM map, and macros into include files:
 8. ⏳ Create Universal Asset Editor GUI
 9. ⏳ GitHub Actions CI/CD
 
-## Session Statistics
-- Lines of Python code added: ~1,200
-- Lines of Assembly code added: ~700
+## Session 02b Continuation - Reference Data Integration
+
+### Work Completed
+
+#### 1. Reference Documentation Created
+Created comprehensive markdown reference documents from GameInfo wiki:
+
+- `docs/reference/RAM_MAP.md` - Complete WRAM documentation
+  - System RAM ($0000-$07FF) addresses
+  - Party member structure (30 bytes each at $6001-$610E)
+  - 8 party members + 2 extra companion slots
+  - Hero spells bitmap documentation
+  - Return spell location bitfields
+  - Map/tileset RAM addresses
+
+- `docs/reference/GAME_VALUES.md` - Complete game value reference
+  - All 127 items ($00-$7E) with hex values
+  - 8 party members and 8 extra companions
+  - Battle tactics values
+  - Chapter values
+  - Day/night cycle documentation
+
+- `docs/reference/MAP_LIST.md` - Complete map reference
+  - All 73 maps ($00-$48) with submap counts
+  - Detailed submap lists for key locations
+  - Map data RAM format documentation
+
+#### 2. Include Files Updated with Wiki Data
+
+- `source_files/include/ram_map.inc` - REWRITTEN
+  - Replaced placeholder addresses with verified wiki data
+  - Added party member base addresses ($6001, $601F, etc.)
+  - Added party member structure offsets (PMEM_*)
+  - Added extra companion structure offsets (XCOMP_*)
+  - Added status flag bits (STATUS_POISONED, etc.)
+  - Added spell bits for Hero
+  - Added return location bits (RET_*)
+  - Added game state addresses (gold, chapter, tactics)
+  - Added map RAM addresses
+
+- `source_files/include/items.inc` - NEW FILE
+  - All weapons ($00-$23): 36 items
+  - All armor ($24-$3C): 25 items  
+  - All shields ($3D-$45): 9 items
+  - All helms ($46-$4F): 10 items
+  - Accessory ($50): 1 item
+  - Consumables ($52-$7E): 45 items
+  - Category range constants
+  - Helper macros (IS_EQUIPPED, GET_ITEM_ID, IS_WEAPON, IS_EQUIPMENT)
+
+- `source_files/include/maps.inc` - NEW FILE
+  - All 73 map ID constants
+  - Submap count constants
+  - Detailed Endor submaps (15 total)
+  - Zenithian Tower submaps (17 total)
+  - Final Cave submaps (10 total)
+  - Map tile format documentation
+  - Map RAM address constants
+  - Chapter starting location constants
+
+#### 3. TBL Encoding Fixed
+
+- `assets/text/dw4.tbl` - Corrected punctuation codes
+  - Old: $3F-$4A (wrong range)
+  - New: $65-$79 (correct from wiki)
+  - Added symbols: 🪦, 💀, ✱, …, 「
+  - Added arrows: ▼, ▶
+
+- `tools/asset_extractor.py` - Updated DW4_TBL dictionary
+  - Removed incorrect punctuation mappings
+  - Added correct $65-$79 punctuation range
+  - Added $80-$81 special characters
+
+#### 4. Commits Made
+- Commit 19d5c59: "Add comprehensive reference documentation from GameInfo"
+- Commit 7875f3e: "Add comprehensive include files with wiki data"
+
+### Known Issues
+
+#### Text Extraction Still Producing Noise
+The text extraction is scanning banks byte-by-byte and finding false positives.
+The actual text strings are accessed via pointer tables that need to be located and followed.
+
+**Next Steps for Text:**
+1. Use Mesen debugger to find actual text display routine
+2. Trace back to pointer table location
+3. Update extraction to follow pointers instead of scanning
+
+### Session Statistics (Updated)
+- Lines of Python code added: ~1,300
+- Lines of Assembly code added: ~1,600 (ram_map.inc, items.inc, maps.inc)
 - Lines of generated ASM: ~1,500
 - JSON files created: 9
 - Schema files created: 2
-- Include files created: 3
-- Duration: Extended session
+- Include files created: 5 (ram_map, items, maps, constants, macros)
+- Reference docs created: 3 (RAM_MAP.md, GAME_VALUES.md, MAP_LIST.md)
+- Duration: Extended multi-part session
