@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Dragon Warrior IV Map Data",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"maps": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": { "type": "integer" },
+					"name": { "type": "string" },
+					"type": {
+						"type": "string",
+						"enum": ["world", "town", "dungeon", "castle", "cave", "tower", "shrine"]
+					},
+					"chapter": { "type": "integer" },
+					"rom_address": {
+						"type": "string",
+						"pattern": "^0x[0-9a-fA-F]+$"
+					},
+					"width": { "type": "integer" },
+					"height": { "type": "integer" }
+				},
+				"required": ["id", "name"]
+			}
+		}
+	}
+}

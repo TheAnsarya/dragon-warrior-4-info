@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Dragon Warrior IV Game Data",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"game": {
+			"type": "object",
+			"properties": {
+				"title": { "type": "string" },
+				"platform": { "type": "string" },
+				"year": { "type": "integer" },
+				"developer": { "type": "string" },
+				"publisher": { "type": "string" }
+			}
+		},
+		"chapters": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"number": { "type": "integer" },
+					"title": { "type": "string" },
+					"protagonist": { "type": "string" }
+				}
+			}
+		},
+		"characters": {
+			"type": "object",
+			"properties": {
+				"party": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": { "type": "integer" },
+							"name": { "type": "string" },
+							"chapter": { "type": "integer" },
+							"class": { "type": "string" }
+						}
+					}
+				},
+				"extras": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": { "type": "integer" },
+							"name": { "type": "string" },
+							"chapter": { "type": "integer" }
+						}
+					}
+				}
+			}
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": { "type": "integer" },
+					"name": { "type": "string" },
+					"type": { "type": "string" }
+				},
+				"required": ["id", "name"]
+			}
+		}
+	}
+}
