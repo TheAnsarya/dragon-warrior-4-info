@@ -10,7 +10,7 @@ Find the text rendering/display code by looking for:
 import os
 import struct
 
-ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms',
                         'Dragon Warrior IV (1992-10)(Enix)(US).nes')
 
 # Known text locations (ROM offsets)
@@ -48,11 +48,11 @@ def rom_to_cpu(rom_offset, bank_size=0x4000):
     if rom_offset < 16:
         return None  # Header
     rom_offset -= 16  # Remove header
-    
+
     # For 512KB ROM, last bank is always at $C000-$FFFF
     rom_size = 524288
     last_bank_start = rom_size - 0x4000  # 0x78000
-    
+
     if rom_offset >= last_bank_start:
         # Fixed bank at $C000-$FFFF
         return 0xC000 + (rom_offset - last_bank_start)
@@ -75,15 +75,15 @@ def find_pointer_references(rom_data, target_addr, search_range=None):
     """Find places in ROM that contain a 16-bit pointer to target_addr"""
     lo = target_addr & 0xFF
     hi = (target_addr >> 8) & 0xFF
-    
+
     results = []
     start = search_range[0] if search_range else 16
     end = search_range[1] if search_range else len(rom_data)
-    
+
     for offset in range(start, end - 1):
         if rom_data[offset] == lo and rom_data[offset + 1] == hi:
             results.append(offset)
-    
+
     return results
 
 def disassemble_at(rom_data, rom_offset, num_bytes=64):
@@ -113,7 +113,7 @@ def disassemble_at(rom_data, rom_offset, num_bytes=64):
         0xEC: 3, 0xED: 3, 0xEE: 3, 0xF0: 2, 0xF1: 2, 0xF5: 2, 0xF6: 2,
         0xF8: 1, 0xF9: 3, 0xFD: 3, 0xFE: 3,
     }
-    
+
     OPCODE_NAMES = {
         0x00: "BRK", 0x01: "ORA", 0x05: "ORA", 0x06: "ASL", 0x08: "PHP", 0x09: "ORA", 0x0A: "ASL",
         0x0D: "ORA", 0x0E: "ASL", 0x10: "BPL", 0x11: "ORA", 0x15: "ORA", 0x16: "ASL", 0x18: "CLC",
@@ -138,19 +138,19 @@ def disassemble_at(rom_data, rom_offset, num_bytes=64):
         0xEC: "CPX", 0xED: "SBC", 0xEE: "INC", 0xF0: "BEQ", 0xF1: "SBC", 0xF5: "SBC", 0xF6: "INC",
         0xF8: "SED", 0xF9: "SBC", 0xFD: "SBC", 0xFE: "INC",
     }
-    
+
     lines = []
     pos = rom_offset
     cpu_base = rom_to_cpu(rom_offset)
-    
+
     bytes_read = 0
     while bytes_read < num_bytes and pos < len(rom_data):
         opcode = rom_data[pos]
         op_len = OPCODE_LEN.get(opcode, 1)
         op_name = OPCODE_NAMES.get(opcode, f".db ${opcode:02X}")
-        
+
         cpu_addr = cpu_base + bytes_read if cpu_base else pos
-        
+
         if op_len == 1:
             lines.append(f"  ${cpu_addr:04X}  {opcode:02X}            {op_name}")
         elif op_len == 2:
@@ -161,22 +161,22 @@ def disassemble_at(rom_data, rom_offset, num_bytes=64):
             hi = rom_data[pos + 2] if pos + 2 < len(rom_data) else 0
             addr = lo | (hi << 8)
             lines.append(f"  ${cpu_addr:04X}  {opcode:02X} {lo:02X} {hi:02X}      {op_name}  ${addr:04X}")
-        
+
         pos += op_len
         bytes_read += op_len
-    
+
     return '\n'.join(lines)
 
 def find_text_control_checks(rom_data):
     """Find code that checks for text control codes ($FF, $FD, $FE, $22)"""
     results = []
-    
+
     # Pattern: CMP #$FF / BEQ (end of string)
     for offset in range(16, len(rom_data) - 2):
         if rom_data[offset] == 0xC9:  # CMP #imm
             val = rom_data[offset + 1]
             next_op = rom_data[offset + 2]
-            
+
             if val in [0xFF, 0xFD, 0xFE, 0x22] and next_op in [0xF0, 0xD0]:  # BEQ or BNE
                 cpu = rom_to_cpu(offset)
                 if cpu:
@@ -186,18 +186,18 @@ def find_text_control_checks(rom_data):
                         'control_code': val,
                         'branch': 'BEQ' if next_op == 0xF0 else 'BNE'
                     })
-    
+
     return results
 
 def find_lda_indirect_y_loops(rom_data):
     """Find patterns like: LDA ($xx),Y / CMP #$FF / BEQ (typical text loop)"""
     results = []
-    
+
     for offset in range(16, len(rom_data) - 5):
         # LDA ($xx),Y
         if rom_data[offset] == 0xB1:
             zp = rom_data[offset + 1]
-            
+
             # Look ahead for CMP #$FF
             for ahead in range(2, 10):
                 if offset + ahead + 2 > len(rom_data):
@@ -212,27 +212,27 @@ def find_lda_indirect_y_loops(rom_data):
                             'cmp_offset': ahead
                         })
                     break
-    
+
     return results
 
 def analyze_bank_for_text_code(rom_data, bank_num):
     """Analyze a specific bank for text-related code"""
     bank_start = 16 + (bank_num * 0x4000)
     bank_end = bank_start + 0x4000
-    
+
     results = {
         'text_loops': [],
         'control_checks': [],
         'ppu_writes': [],
     }
-    
+
     for offset in range(bank_start, min(bank_end, len(rom_data)) - 3):
         # PPU writes (STA $2007)
         if rom_data[offset:offset+3] == bytes([0x8D, 0x07, 0x20]):
             cpu = rom_to_cpu(offset)
             if cpu:
                 results['ppu_writes'].append(cpu)
-        
+
         # LDA ($xx),Y followed by check
         if rom_data[offset] == 0xB1:
             zp = rom_data[offset + 1]
@@ -245,14 +245,14 @@ def analyze_bank_for_text_code(rom_data, bank_num):
                         'check_val': rom_data[offset + ahead + 1] if offset + ahead + 1 < bank_end else 0
                     })
                     break
-    
+
     return results
 
 def main():
     rom_data = load_rom()
     print(f"ROM loaded: {len(rom_data)} bytes")
     print()
-    
+
     # Convert known text ROM offsets to CPU addresses
     print("=" * 70)
     print("KNOWN TEXT LOCATIONS")
@@ -264,14 +264,14 @@ def main():
         cpu = 0x8000 + (prg_offset % 0x4000)
         print(f"  ROM 0x{rom_off:05X} -> Bank {bank}, CPU ${cpu:04X}: {desc}")
     print()
-    
+
     # Find text control code checks
     print("=" * 70)
     print("TEXT CONTROL CODE CHECKS")
     print("=" * 70)
-    
+
     control_checks = find_text_control_checks(rom_data)
-    
+
     # Group by control code
     by_code = {}
     for check in control_checks:
@@ -279,27 +279,27 @@ def main():
         if code not in by_code:
             by_code[code] = []
         by_code[code].append(check)
-    
+
     for code in sorted(by_code.keys()):
         code_name = {0xFF: 'END', 0xFD: 'LINE/CLEAR', 0xFE: 'CTRL-FE', 0x22: 'POSITION'}.get(code, '???')
         checks = by_code[code]
         print(f"\n  Control code ${code:02X} ({code_name}): {len(checks)} occurrences")
-        
+
         # Show first few
         for check in checks[:5]:
             rom_off = check['rom_offset']
             bank = (rom_off - 16) // 0x4000
             print(f"    Bank {bank:2d}, ${check['cpu_addr']:04X} (ROM 0x{rom_off:05X}): CMP #${code:02X}, {check['branch']}")
     print()
-    
+
     # Find text read loops
     print("=" * 70)
     print("TEXT READ LOOPS (LDA ($xx),Y ... CMP #$FF)")
     print("=" * 70)
-    
+
     text_loops = find_lda_indirect_y_loops(rom_data)
     print(f"Found {len(text_loops)} potential text read loops")
-    
+
     # Group by bank
     by_bank = {}
     for loop in text_loops:
@@ -307,16 +307,16 @@ def main():
         if bank not in by_bank:
             by_bank[bank] = []
         by_bank[bank].append(loop)
-    
+
     print("\nLoops per bank:")
     for bank in sorted(by_bank.keys()):
         loops = by_bank[bank]
         print(f"  Bank {bank:2d}: {len(loops)} loops")
-    
+
     # Show most promising (banks with text)
     text_banks = [16, 22, 23, 27]  # Banks known to have text
     print("\nDetailed analysis for text-related banks:")
-    
+
     for bank in text_banks:
         if bank in by_bank:
             print(f"\n  Bank {bank}:")
@@ -325,23 +325,23 @@ def main():
                 # Disassemble around this location
                 print(disassemble_at(rom_data, loop['rom_offset'] - 4, 32))
     print()
-    
+
     # Look for references to known text addresses
     print("=" * 70)
     print("SEARCHING FOR REFERENCES TO KNOWN TEXT")
     print("=" * 70)
-    
+
     for rom_off, desc in KNOWN_TEXT.items():
         prg_offset = rom_off - 16
         bank = prg_offset // 0x4000
         cpu = 0x8000 + (prg_offset % 0x4000)
-        
+
         print(f"\n{desc} at ${cpu:04X}:")
-        
+
         # Search for this CPU address in the same bank
         bank_start = 16 + (bank * 0x4000)
         bank_end = bank_start + 0x4000
-        
+
         refs = find_pointer_references(rom_data, cpu, (bank_start, bank_end))
         if refs:
             print(f"  Found {len(refs)} references in Bank {bank}:")
@@ -353,37 +353,37 @@ def main():
         else:
             print(f"  No direct pointer references found in Bank {bank}")
     print()
-    
+
     # Analyze fixed bank ($C000-$FFFF) for text routines
     print("=" * 70)
     print("FIXED BANK TEXT CODE ANALYSIS")
     print("=" * 70)
-    
+
     fixed_bank = 31  # Last bank
     analysis = analyze_bank_for_text_code(rom_data, fixed_bank)
-    
+
     print(f"\nPPU writes (STA $2007) in fixed bank: {len(analysis['ppu_writes'])}")
     if analysis['ppu_writes'][:10]:
         print("  First 10:")
         for addr in analysis['ppu_writes'][:10]:
             print(f"    ${addr:04X}")
-    
+
     # Save results
-    output_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'analysis', 
+    output_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'analysis',
                                'text_engine_analysis.txt')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w') as f:
         f.write("Dragon Warrior IV - Text Engine Analysis\n")
         f.write("=" * 60 + "\n\n")
-        
+
         f.write("KNOWN TEXT LOCATIONS:\n")
         for rom_off, desc in KNOWN_TEXT.items():
             prg_offset = rom_off - 16
             bank = prg_offset // 0x4000
             cpu = 0x8000 + (prg_offset % 0x4000)
             f.write(f"  ROM 0x{rom_off:05X} -> Bank {bank}, CPU ${cpu:04X}: {desc}\n")
-        
+
         f.write("\n\nCONTROL CODE CHECKS:\n")
         for code in sorted(by_code.keys()):
             code_name = {0xFF: 'END', 0xFD: 'LINE/CLEAR', 0xFE: 'CTRL-FE', 0x22: 'POSITION'}.get(code, '???')
@@ -393,12 +393,12 @@ def main():
                 rom_off = check['rom_offset']
                 bank = (rom_off - 16) // 0x4000
                 f.write(f"    Bank {bank:2d}, ${check['cpu_addr']:04X}: CMP #${code:02X}, {check['branch']}\n")
-        
+
         f.write("\n\nTEXT READ LOOPS BY BANK:\n")
         for bank in sorted(by_bank.keys()):
             loops = by_bank[bank]
             f.write(f"  Bank {bank:2d}: {len(loops)} loops\n")
-    
+
     print(f"\nSaved analysis to: {output_path}")
 
 if __name__ == '__main__':

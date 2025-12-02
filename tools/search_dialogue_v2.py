@@ -72,11 +72,11 @@ def decode_string(data, max_len=200):
 def main():
     with open(ROM_PATH, 'rb') as f:
         rom = f.read()
-    
+
     print("=" * 70)
     print("DRAGON WARRIOR IV - UPDATED TEXT SEARCH")
     print("=" * 70)
-    
+
     # Search for dialogue patterns with apostrophes
     # "I'm" - I=$2D, '=$6A, m=$17
     im_bytes = bytes([0x2D, 0x6A, 0x17])
@@ -93,7 +93,7 @@ def main():
         print(f"  ROM 0x{pos:05X} (Bank {bank}): ...{decoded[:50]}...")
         pos += 1
         count += 1
-    
+
     # Search for "the" with lowercase - t=$1E, h=$12, e=$0F
     the_bytes = bytes([0x1E, 0x12, 0x0F])
     print("\nSearching for 'the'...")
@@ -111,7 +111,7 @@ def main():
             print(f"  ROM 0x{pos:05X} (Bank {bank}): ...{decoded}...")
         pos += 1
         count += 1
-    
+
     # Search for common RPG words with updated encoding
     # "weapon" - w=$21, e=$0F, a=$0B, p=$1A, o=$19, n=$18
     weapon = bytes([0x21, 0x0F, 0x0B, 0x1A, 0x19, 0x18])
@@ -126,7 +126,7 @@ def main():
         decoded = decode_string(ctx)
         print(f"  ROM 0x{pos:05X} (Bank {bank}): ...{decoded}...")
         pos += 1
-    
+
     # "armor" - a=$0B, r=$1C, m=$17, o=$19, r=$1C
     armor = bytes([0x0B, 0x1C, 0x17, 0x19, 0x1C])
     print("\nSearching for 'armor'...")
@@ -140,7 +140,7 @@ def main():
         decoded = decode_string(ctx)
         print(f"  ROM 0x{pos:05X} (Bank {bank}): ...{decoded}...")
         pos += 1
-    
+
     # "slime" - s=$1D, l=$16, i=$13, m=$17, e=$0F
     slime = bytes([0x1D, 0x16, 0x13, 0x17, 0x0F])
     print("\nSearching for 'slime'...")
@@ -154,7 +154,7 @@ def main():
         decoded = decode_string(ctx)
         print(f"  ROM 0x{pos:05X} (Bank {bank}): ...{decoded}...")
         pos += 1
-    
+
     # Search with question mark: "?" = $6D
     print("\nSearching for '?' with surrounding text...")
     pos = 0
@@ -173,12 +173,12 @@ def main():
             print(f"  ROM 0x{pos:05X} (Bank {bank}): ...{decoded}...")
             count += 1
         pos += 1
-    
+
     # Now let's look at known good text areas and analyze patterns
     print("\n" + "=" * 70)
     print("ANALYZING KNOWN TEXT AREAS")
     print("=" * 70)
-    
+
     # Bank 27 chapter text - we know this works
     print("\nBank 27 Chapter Titles (known good text):")
     chapter_start = 0x6E676
@@ -187,7 +187,7 @@ def main():
         segment = rom[offset:offset + 0x30]
         decoded = decode_string(segment)
         print(f"  0x{offset:05X}: {decoded}")
-    
+
     # Casino text in Bank 23
     print("\nBank 23 Casino Text (known good text):")
     casino_start = 0x5C2EC  # "Royal Flush"

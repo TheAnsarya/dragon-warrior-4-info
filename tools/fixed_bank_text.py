@@ -6,7 +6,7 @@ The fixed bank contains the core PPU write routines
 
 import os
 
-ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms',
                         'Dragon Warrior IV (1992-10)(Enix)(US).nes')
 
 # 6502 instruction data
@@ -66,7 +66,7 @@ OPCODES = {
 
 LABELS = {
     0x2000: "PPUCTRL",
-    0x2001: "PPUMASK", 
+    0x2001: "PPUMASK",
     0x2002: "PPUSTATUS",
     0x2003: "OAMADDR",
     0x2004: "OAMDATA",
@@ -95,18 +95,18 @@ def disasm_inst(rom_data, offset, cpu_addr, local_labels=None):
     """Disassemble one instruction"""
     if offset >= len(rom_data):
         return None, 1
-    
+
     opcode = rom_data[offset]
     if opcode not in OPCODES:
         return f"  ${cpu_addr:04X}  {opcode:02X}            .db  ${opcode:02X}", 1
-    
+
     name, size, mode = OPCODES[opcode]
-    
+
     if offset + size > len(rom_data):
         return f"  ${cpu_addr:04X}  {opcode:02X}            .db  ${opcode:02X}", 1
-    
+
     bytes_hex = ' '.join(f'{rom_data[offset+i]:02X}' for i in range(size)).ljust(8)
-    
+
     if size == 1:
         operand = ""
     elif size == 2:
@@ -135,7 +135,7 @@ def disasm_inst(rom_data, offset, cpu_addr, local_labels=None):
         label = LABELS.get(addr)
         if local_labels and addr in local_labels:
             label = local_labels[addr]
-        
+
         if mode == "abs":
             operand = label if label else f"${addr:04X}"
         elif mode == "absx":
@@ -146,7 +146,7 @@ def disasm_inst(rom_data, offset, cpu_addr, local_labels=None):
             operand = f"(${addr:04X})"
         else:
             operand = f"${addr:04X}"
-    
+
     return f"  ${cpu_addr:04X}  {bytes_hex}  {name:4} {operand}", size
 
 def disasm_range(rom_data, rom_start, rom_end, cpu_base):
@@ -163,7 +163,7 @@ def disasm_range(rom_data, rom_start, rom_end, cpu_base):
             continue
         name, size, mode = OPCODES[opcode]
         cpu = cpu_base + (pos - rom_start)
-        
+
         if mode == "rel" and size == 2:
             arg = rom_data[pos + 1]
             signed = arg if arg < 128 else arg - 256
@@ -175,33 +175,33 @@ def disasm_range(rom_data, rom_start, rom_end, cpu_base):
             if cpu_base <= addr < cpu_base + (rom_end - rom_start):
                 prefix = "sub_" if name == "JSR" else "loc_"
                 labels[addr] = f"{prefix}{addr:04X}"
-        
+
         pos += size
-    
+
     # Merge with global labels
     labels.update(LABELS)
-    
+
     # Second pass: disassemble
     output = []
     pos = rom_start
     while pos < rom_end:
         cpu = cpu_base + (pos - rom_start)
-        
+
         if cpu in labels and labels[cpu].startswith(("loc_", "sub_")):
             output.append(f"\n{labels[cpu]}:")
-        
+
         line, size = disasm_inst(rom_data, pos, cpu, labels)
         if line:
             output.append(line)
         pos += size
-    
+
     return '\n'.join(output)
 
 def find_ppu_write_clusters(rom_data, bank_start, bank_end, cpu_base):
     """Find areas with multiple PPU writes (likely text rendering)"""
     clusters = []
     current_cluster = None
-    
+
     for offset in range(bank_start, bank_end - 2):
         # STA PPUDATA ($8D $07 $20)
         if rom_data[offset:offset+3] == bytes([0x8D, 0x07, 0x20]):
@@ -215,33 +215,33 @@ def find_ppu_write_clusters(rom_data, bank_start, bank_end, cpu_base):
                 if len(current_cluster['writes']) >= 2:
                     clusters.append(current_cluster)
                 current_cluster = {'start': offset, 'end': offset, 'writes': [cpu]}
-    
+
     if current_cluster and len(current_cluster['writes']) >= 2:
         clusters.append(current_cluster)
-    
+
     return clusters
 
 def main():
     rom_data = load_rom()
     print(f"ROM loaded: {len(rom_data)} bytes")
-    
+
     # Fixed bank is the last 16KB
     FIXED_START = 16 + 0x78000  # ROM offset for $C000
     FIXED_END = FIXED_START + 0x4000
     CPU_BASE = 0xC000
-    
+
     output = []
     output.append("; Dragon Warrior IV (NES) - Fixed Bank Text Routines")
     output.append("; Bank 31 ($C000-$FFFF) - Always mapped")
     output.append("; " + "=" * 55)
     output.append("")
-    
+
     # Find PPU write clusters
     clusters = find_ppu_write_clusters(rom_data, FIXED_START, FIXED_END, CPU_BASE)
-    
+
     output.append(f"; Found {len(clusters)} PPU write clusters (potential text routines)")
     output.append("")
-    
+
     for i, cluster in enumerate(clusters):
         cpu_start = CPU_BASE + (cluster['start'] - FIXED_START)
         cpu_end = CPU_BASE + (cluster['end'] - FIXED_START)
@@ -249,36 +249,36 @@ def main():
         for w in cluster['writes']:
             output.append(f";   STA PPUDATA at ${w:04X}")
     output.append("")
-    
+
     # Disassemble each cluster with context
     output.append("; " + "=" * 60)
     output.append("; PPU WRITE CLUSTER DISASSEMBLY")
     output.append("; " + "=" * 60)
-    
+
     for i, cluster in enumerate(clusters[:10]):  # First 10 clusters
         cpu_start = CPU_BASE + (cluster['start'] - FIXED_START)
-        
+
         output.append("")
         output.append(f"; --- Cluster {i+1}: {len(cluster['writes'])} PPU writes starting at ${cpu_start:04X} ---")
-        
+
         # Disassemble 64 bytes before first write to 32 bytes after last
         start = cluster['start'] - 64
         end = cluster['end'] + 32
-        
+
         if start < FIXED_START:
             start = FIXED_START
         if end > FIXED_END:
             end = FIXED_END
-        
+
         output.append(disasm_range(rom_data, start, end, CPU_BASE + (start - FIXED_START)))
-    
+
     # Look for text-reading patterns
     output.append("")
     output.append("; " + "=" * 60)
     output.append("; TEXT READING PATTERNS")
     output.append("; Looking for LDA ($xx),Y near PPU writes")
     output.append("; " + "=" * 60)
-    
+
     text_patterns = []
     for offset in range(FIXED_START, FIXED_END - 10):
         # LDA ($xx),Y = $B1 $xx
@@ -296,9 +296,9 @@ def main():
                             'ppu_offset': ahead
                         })
                         break
-    
+
     output.append(f"\n; Found {len(text_patterns)} LDA ($xx),Y -> STA PPUDATA patterns")
-    
+
     for pattern in text_patterns[:5]:
         output.append(f"\n; Pattern at ${pattern['cpu']:04X}: LDA (${pattern['zp']:02X}),Y")
         start = pattern['offset'] - 16
@@ -306,19 +306,19 @@ def main():
         if start < FIXED_START:
             start = FIXED_START
         output.append(disasm_range(rom_data, start, end, CPU_BASE + (start - FIXED_START)))
-    
+
     # Save output
     output_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'disassembly',
                                'fixed_bank_text.asm')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w') as f:
         f.write('\n'.join(output))
-    
+
     print(f"\nSaved to: {output_path}")
     print(f"\nClusters found: {len(clusters)}")
     print(f"Text patterns found: {len(text_patterns)}")
-    
+
     # Print most interesting clusters
     print("\nMost interesting clusters:")
     for i, cluster in enumerate(sorted(clusters, key=lambda x: len(x['writes']), reverse=True)[:5]):

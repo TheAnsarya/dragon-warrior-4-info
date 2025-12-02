@@ -11,14 +11,14 @@ ROM_PATH = r"c:\Users\me\source\repos\dragon-warrior-4-info\roms\Dragon Warrior 
 def find_address_references(rom, bank_start, bank_end, target_addr):
     """Find code that references a specific CPU address."""
     results = []
-    
+
     # Look for LDA $XXXX, LDX $XXXX, LDY $XXXX patterns
     lo = target_addr & 0xFF
     hi = (target_addr >> 8) & 0xFF
-    
+
     for offset in range(bank_start, bank_end - 2):
         opcode = rom[offset]
-        
+
         # Absolute addressing: LDA $XXXX (AD), LDX $XXXX (AE), LDY $XXXX (AC)
         # STA $XXXX (8D), STX $XXXX (8E), STY $XXXX (8C)
         if opcode in [0xAD, 0xAE, 0xAC, 0x8D, 0x8E, 0x8C]:
@@ -26,14 +26,14 @@ def find_address_references(rom, bank_start, bank_end, target_addr):
                 bank_offset = (offset - bank_start)
                 cpu_addr = 0x8000 + bank_offset
                 results.append((offset, cpu_addr, opcode))
-        
+
         # Indexed absolute: LDA $XXXX,X (BD), LDA $XXXX,Y (B9)
         if opcode in [0xBD, 0xB9]:
             if rom[offset + 1] == lo and rom[offset + 2] == hi:
                 bank_offset = (offset - bank_start)
                 cpu_addr = 0x8000 + bank_offset
                 results.append((offset, cpu_addr, opcode))
-    
+
     return results
 
 def disassemble_context(rom, offset, lines_before=5, lines_after=10):
@@ -46,7 +46,7 @@ def disassemble_context(rom, offset, lines_before=5, lines_after=10):
         0x8A: 1, 0x98: 1, 0x9A: 1, 0xA8: 1, 0xAA: 1, 0xB8: 1, 0xBA: 1, 0xC8: 1,
         0xCA: 1, 0xD8: 1, 0xE8: 1, 0xEA: 1, 0xF8: 1, 0xFA: 1,
     }
-    
+
     opcode_names = {
         0xA9: "LDA #", 0xA5: "LDA zp", 0xB5: "LDA zp,X", 0xAD: "LDA abs",
         0xBD: "LDA abs,X", 0xB9: "LDA abs,Y", 0xA1: "LDA (zp,X)", 0xB1: "LDA (zp),Y",
@@ -77,17 +77,17 @@ def disassemble_context(rom, offset, lines_before=5, lines_after=10):
         0x10: "BPL", 0x30: "BMI", 0x50: "BVC", 0x70: "BVS",
         0xEA: "NOP", 0x00: "BRK",
     }
-    
+
     result = []
     pos = offset
-    
+
     # Decode forward
     for _ in range(lines_after):
         if pos >= len(rom):
             break
         opcode = rom[pos]
         name = opcode_names.get(opcode, f"???({opcode:02X})")
-        
+
         # Determine length
         if opcode in opcode_lengths:
             length = opcode_lengths[opcode]
@@ -103,7 +103,7 @@ def disassemble_context(rom, offset, lines_before=5, lines_after=10):
             length = 3  # JSR, JMP
         else:
             length = 1
-        
+
         # Format instruction
         if length == 1:
             line = f"  {name}"
@@ -120,35 +120,35 @@ def disassemble_context(rom, offset, lines_before=5, lines_after=10):
             hi = rom[pos + 2]
             addr = lo + (hi << 8)
             line = f"  {name}${addr:04X}"
-        
+
         marker = ">>>" if pos == offset else "   "
         result.append(f"{marker} ${pos & 0x3FFF | 0x8000:04X}: {line}")
         pos += length
-    
+
     return '\n'.join(result)
 
 def main():
     with open(ROM_PATH, 'rb') as f:
         rom = f.read()
-    
+
     print("=" * 70)
     print("DW4 TEXT RENDERING CODE ANALYSIS")
     print("=" * 70)
-    
+
     # Bank 22 contains both the DTE table and text rendering code
     bank22_start = 0x58010
     bank22_end = 0x5C010
-    
+
     # Target address: $B3A4 (DTE table)
     dte_table_addr = 0xB3A4
-    
+
     print(f"\nSearching for references to DTE table at ${dte_table_addr:04X}...")
     refs = find_address_references(rom, bank22_start, bank22_end, dte_table_addr)
-    
+
     for rom_off, cpu_addr, opcode in refs:
         print(f"\nFound reference at ${cpu_addr:04X} (opcode ${opcode:02X}):")
         print(disassemble_context(rom, rom_off))
-    
+
     # Also search nearby addresses (table might be referenced with offset)
     for offset in range(-10, 10, 2):
         addr = dte_table_addr + offset
@@ -157,22 +157,22 @@ def main():
             print(f"\nReferences to ${addr:04X} (offset {offset} from DTE table):")
             for rom_off, cpu_addr, opcode in refs:
                 print(f"  ${cpu_addr:04X}")
-    
+
     # Now let's look for the text control code handler we found earlier
     # Bank 22 $8B11 had control code checking
     print("\n" + "=" * 70)
     print("TEXT CONTROL CODE HANDLER (Bank 22 $8B11)")
     print("=" * 70)
-    
+
     # CPU $8B11 = Bank offset $0B01 = ROM 0x58010 + 0x0B01 = 0x58B11
     handler_rom = 0x58010 + 0x0B11
     print(disassemble_context(rom, handler_rom, lines_before=5, lines_after=30))
-    
+
     # Look for text reading routines - LDA (ptr),Y pattern
     print("\n" + "=" * 70)
     print("SEARCHING FOR TEXT POINTER READING PATTERNS")
     print("=" * 70)
-    
+
     # LDA (zp),Y = $B1
     text_read_patterns = []
     for offset in range(bank22_start, bank22_end - 5):
@@ -184,7 +184,7 @@ def main():
                 bank_offset = offset - bank22_start
                 cpu_addr = 0x8000 + bank_offset
                 text_read_patterns.append((offset, cpu_addr, rom[offset+1]))
-    
+
     print(f"Found {len(text_read_patterns)} LDA (zp),Y patterns in Bank 22")
     for rom_off, cpu_addr, zp_addr in text_read_patterns[:10]:
         print(f"\n${cpu_addr:04X}: LDA (${zp_addr:02X}),Y")
