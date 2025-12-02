@@ -1,0 +1,96 @@
+{
+	"$schema": "./schemas/characters.schema.json",
+	"version": "1.0.0",
+	"party_members": [
+		{
+			"id": "0x00",
+			"name": "Hero",
+			"playable_chapter": 5
+		},
+		{
+			"id": "0x01",
+			"name": "Cristo",
+			"playable_chapter": 2
+		},
+		{
+			"id": "0x02",
+			"name": "Nara",
+			"playable_chapter": 4
+		},
+		{
+			"id": "0x03",
+			"name": "Mara",
+			"playable_chapter": 4
+		},
+		{
+			"id": "0x04",
+			"name": "Brey",
+			"playable_chapter": 2
+		},
+		{
+			"id": "0x05",
+			"name": "Taloon",
+			"playable_chapter": 3
+		},
+		{
+			"id": "0x06",
+			"name": "Ragnar",
+			"playable_chapter": 1
+		},
+		{
+			"id": "0x07",
+			"name": "Alena",
+			"playable_chapter": 2
+		}
+	],
+	"extra_companions": [
+		{
+			"id": "0xC5",
+			"name": "Healie",
+			"chapter": 1,
+			"class": "Kind Healer"
+		},
+		{
+			"id": "0xC6",
+			"name": "Orin",
+			"chapter": 4,
+			"class": "Alchemist"
+		},
+		{
+			"id": "0xC7",
+			"name": "Laurent",
+			"chapter": 3,
+			"class": "Troubadour"
+		},
+		{
+			"id": "0xC8",
+			"name": "Strom",
+			"chapter": 3,
+			"class": "Guardsman"
+		},
+		{
+			"id": "0xC9",
+			"name": "Hector",
+			"chapter": 5,
+			"class": "Young Man"
+		},
+		{
+			"id": "0xCA",
+			"name": "Panon",
+			"chapter": 5,
+			"class": "Jester"
+		},
+		{
+			"id": "0xCB",
+			"name": "Lucia",
+			"chapter": 5,
+			"class": "Zenithian"
+		},
+		{
+			"id": "0xCC",
+			"name": "Doran",
+			"chapter": 5,
+			"class": "Baby Dragon"
+		}
+	]
+}

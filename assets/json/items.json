@@ -1,0 +1,658 @@
+{
+	"$schema": "./schemas/items.schema.json",
+	"version": "1.0.0",
+	"note": "Item index uses bottom 7 bits (0x00-0x7F). High bit indicates equipped.",
+	"equipment_range": {
+		"start": "0x00",
+		"end": "0x50"
+	},
+	"consumable_range": {
+		"start": "0x52",
+		"end": "0x7E"
+	},
+	"blank_separator": "0x51",
+	"no_item": "0x7F",
+	"equipped_flag": "0x80",
+	"items": [
+		{
+			"id": "0x00",
+			"name": "Cypress Stick",
+			"type": "weapon"
+		},
+		{
+			"id": "0x01",
+			"name": "Club",
+			"type": "weapon"
+		},
+		{
+			"id": "0x02",
+			"name": "Copper Sword",
+			"type": "weapon"
+		},
+		{
+			"id": "0x03",
+			"name": "Iron Claw",
+			"type": "weapon"
+		},
+		{
+			"id": "0x04",
+			"name": "Chain Sickle",
+			"type": "weapon"
+		},
+		{
+			"id": "0x05",
+			"name": "Iron Spear",
+			"type": "weapon"
+		},
+		{
+			"id": "0x06",
+			"name": "Broad Sword",
+			"type": "weapon"
+		},
+		{
+			"id": "0x07",
+			"name": "Battle Axe",
+			"type": "weapon"
+		},
+		{
+			"id": "0x08",
+			"name": "Silver Tarot Cards",
+			"type": "weapon"
+		},
+		{
+			"id": "0x09",
+			"name": "Thorn Whip",
+			"type": "weapon"
+		},
+		{
+			"id": "0x0A",
+			"name": "Morning Star",
+			"type": "weapon"
+		},
+		{
+			"id": "0x0B",
+			"name": "Boomerang",
+			"type": "weapon"
+		},
+		{
+			"id": "0x0C",
+			"name": "Abacus of Virtue",
+			"type": "weapon"
+		},
+		{
+			"id": "0x0D",
+			"name": "Iron Fan",
+			"type": "weapon"
+		},
+		{
+			"id": "0x0E",
+			"name": "Metal Babble Sword",
+			"type": "weapon"
+		},
+		{
+			"id": "0x0F",
+			"name": "Poison Needle",
+			"type": "weapon"
+		},
+		{
+			"id": "0x10",
+			"name": "Staff of Force",
+			"type": "weapon"
+		},
+		{
+			"id": "0x11",
+			"name": "Staff of Thunder",
+			"type": "weapon"
+		},
+		{
+			"id": "0x12",
+			"name": "Demon Hammer",
+			"type": "weapon"
+		},
+		{
+			"id": "0x13",
+			"name": "Multi-edge Sword",
+			"type": "weapon"
+		},
+		{
+			"id": "0x14",
+			"name": "Zenithian Sword (1)",
+			"type": "weapon"
+		},
+		{
+			"id": "0x15",
+			"name": "Dragon Killer",
+			"type": "weapon"
+		},
+		{
+			"id": "0x16",
+			"name": "Stilleto Earrings",
+			"type": "weapon"
+		},
+		{
+			"id": "0x17",
+			"name": "Staff of Punishment",
+			"type": "weapon"
+		},
+		{
+			"id": "0x18",
+			"name": "Sword of Lethargy",
+			"type": "weapon"
+		},
+		{
+			"id": "0x19",
+			"name": "Venomous Dagger",
+			"type": "weapon"
+		},
+		{
+			"id": "0x1A",
+			"name": "Fire Claw",
+			"type": "weapon"
+		},
+		{
+			"id": "0x1B",
+			"name": "Ice Blade",
+			"type": "weapon"
+		},
+		{
+			"id": "0x1C",
+			"name": "Sword of Miracles",
+			"type": "weapon"
+		},
+		{
+			"id": "0x1D",
+			"name": "Staff of Antimagic",
+			"type": "weapon"
+		},
+		{
+			"id": "0x1E",
+			"name": "Magma Staff",
+			"type": "weapon"
+		},
+		{
+			"id": "0x1F",
+			"name": "Sword of Decimation",
+			"type": "weapon"
+		},
+		{
+			"id": "0x20",
+			"name": "Staff of Healing",
+			"type": "weapon"
+		},
+		{
+			"id": "0x21",
+			"name": "Zenithian Sword (2)",
+			"type": "weapon"
+		},
+		{
+			"id": "0x22",
+			"name": "Staff of Jubilation",
+			"type": "weapon"
+		},
+		{
+			"id": "0x23",
+			"name": "Sword of Malice",
+			"type": "weapon"
+		},
+		{
+			"id": "0x24",
+			"name": "Basic Clothes",
+			"type": "armor"
+		},
+		{
+			"id": "0x25",
+			"name": "Wayfarer's Clothes",
+			"type": "armor"
+		},
+		{
+			"id": "0x26",
+			"name": "Leather Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x27",
+			"name": "Chain Mail",
+			"type": "armor"
+		},
+		{
+			"id": "0x28",
+			"name": "Half Plate Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x29",
+			"name": "Iron Apron",
+			"type": "armor"
+		},
+		{
+			"id": "0x2A",
+			"name": "Full Plate Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x2B",
+			"name": "Silk Robe",
+			"type": "armor"
+		},
+		{
+			"id": "0x2C",
+			"name": "Dancer's Costume",
+			"type": "armor"
+		},
+		{
+			"id": "0x2D",
+			"name": "Bronze Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x2E",
+			"name": "Metal Babble Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x2F",
+			"name": "Fur Coat",
+			"type": "armor"
+		},
+		{
+			"id": "0x30",
+			"name": "Leather Dress",
+			"type": "armor"
+		},
+		{
+			"id": "0x31",
+			"name": "Pink Leotard",
+			"type": "armor"
+		},
+		{
+			"id": "0x32",
+			"name": "Dragon Mail",
+			"type": "armor"
+		},
+		{
+			"id": "0x33",
+			"name": "Cloak of Evasion",
+			"type": "armor"
+		},
+		{
+			"id": "0x34",
+			"name": "Sacred Robe",
+			"type": "armor"
+		},
+		{
+			"id": "0x35",
+			"name": "Water Flying Clothes",
+			"type": "armor"
+		},
+		{
+			"id": "0x36",
+			"name": "Mysterious Bolero",
+			"type": "armor"
+		},
+		{
+			"id": "0x37",
+			"name": "Zenithian Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x38",
+			"name": "Swordedge Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x39",
+			"name": "Robe of Serenity",
+			"type": "armor"
+		},
+		{
+			"id": "0x3A",
+			"name": "Zombie Mail",
+			"type": "armor"
+		},
+		{
+			"id": "0x3B",
+			"name": "Dress of Radiance",
+			"type": "armor"
+		},
+		{
+			"id": "0x3C",
+			"name": "Demon Armor",
+			"type": "armor"
+		},
+		{
+			"id": "0x3D",
+			"name": "Leather Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x3E",
+			"name": "Scale Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x3F",
+			"name": "Iron Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x40",
+			"name": "Shield of Strength",
+			"type": "shield"
+		},
+		{
+			"id": "0x41",
+			"name": "Mirror Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x42",
+			"name": "Aeolus' Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x43",
+			"name": "Dragon Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x44",
+			"name": "Zenithian Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x45",
+			"name": "Metal Babble Shield",
+			"type": "shield"
+		},
+		{
+			"id": "0x46",
+			"name": "Leather Hat",
+			"type": "helmet"
+		},
+		{
+			"id": "0x47",
+			"name": "Wooden Hat",
+			"type": "helmet"
+		},
+		{
+			"id": "0x48",
+			"name": "Iron Helmet",
+			"type": "helmet"
+		},
+		{
+			"id": "0x49",
+			"name": "Iron Mask",
+			"type": "helmet"
+		},
+		{
+			"id": "0x4A",
+			"name": "Feather Hat",
+			"type": "helmet"
+		},
+		{
+			"id": "0x4B",
+			"name": "Zenithian Helm",
+			"type": "helmet"
+		},
+		{
+			"id": "0x4C",
+			"name": "Mask of Corruption",
+			"type": "helmet"
+		},
+		{
+			"id": "0x4D",
+			"name": "Golden Barrette",
+			"type": "helmet"
+		},
+		{
+			"id": "0x4E",
+			"name": "Hat of Happiness",
+			"type": "helmet"
+		},
+		{
+			"id": "0x4F",
+			"name": "Metal Babble Helm",
+			"type": "helmet"
+		},
+		{
+			"id": "0x50",
+			"name": "Meteorite Armband",
+			"type": "accessory"
+		},
+		{
+			"id": "0x51",
+			"name": "??? (Blank Name)",
+			"type": "separator"
+		},
+		{
+			"id": "0x52",
+			"name": "Baron's Horn",
+			"type": "key_item"
+		},
+		{
+			"id": "0x53",
+			"name": "Medical Herb",
+			"type": "consumable"
+		},
+		{
+			"id": "0x54",
+			"name": "Antidote Herb",
+			"type": "consumable"
+		},
+		{
+			"id": "0x55",
+			"name": "Fairy Water",
+			"type": "consumable"
+		},
+		{
+			"id": "0x56",
+			"name": "Wing of Wyvern",
+			"type": "consumable"
+		},
+		{
+			"id": "0x57",
+			"name": "Leaf of World Tree",
+			"type": "consumable"
+		},
+		{
+			"id": "0x58",
+			"name": "Full Moon Herb",
+			"type": "consumable"
+		},
+		{
+			"id": "0x59",
+			"name": "Wizard's Ring",
+			"type": "accessory"
+		},
+		{
+			"id": "0x5A",
+			"name": "Magic Potion",
+			"type": "consumable"
+		},
+		{
+			"id": "0x5B",
+			"name": "Dew of World Tree",
+			"type": "consumable"
+		},
+		{
+			"id": "0x5C",
+			"name": "Flute of Uncovering",
+			"type": "key_item"
+		},
+		{
+			"id": "0x5D",
+			"name": "Sphere of Silence",
+			"type": "key_item"
+		},
+		{
+			"id": "0x5E",
+			"name": "Scent Pouch",
+			"type": "key_item"
+		},
+		{
+			"id": "0x5F",
+			"name": "Sandglass of Regression",
+			"type": "key_item"
+		},
+		{
+			"id": "0x60",
+			"name": "Sage's Stone",
+			"type": "key_item"
+		},
+		{
+			"id": "0x61",
+			"name": "Strength Seed",
+			"type": "stat_seed"
+		},
+		{
+			"id": "0x62",
+			"name": "Agility Seed",
+			"type": "stat_seed"
+		},
+		{
+			"id": "0x63",
+			"name": "Luck Seed",
+			"type": "stat_seed"
+		},
+		{
+			"id": "0x64",
+			"name": "Lifeforce Nuts",
+			"type": "stat_seed"
+		},
+		{
+			"id": "0x65",
+			"name": "Mystic Acorns",
+			"type": "stat_seed"
+		},
+		{
+			"id": "0x66",
+			"name": "Mirror of Ra",
+			"type": "key_item"
+		},
+		{
+			"id": "0x67",
+			"name": "Lamp of Darkness",
+			"type": "key_item"
+		},
+		{
+			"id": "0x68",
+			"name": "Staff of Transform",
+			"type": "key_item"
+		},
+		{
+			"id": "0x69",
+			"name": "Small Medal",
+			"type": "collectible"
+		},
+		{
+			"id": "0x6A",
+			"name": "Stone of Drought",
+			"type": "key_item"
+		},
+		{
+			"id": "0x6B",
+			"name": "Iron Safe",
+			"type": "key_item"
+		},
+		{
+			"id": "0x6C",
+			"name": "Flying Shoes",
+			"type": "key_item"
+		},
+		{
+			"id": "0x6D",
+			"name": "Silver Statuette",
+			"type": "key_item"
+		},
+		{
+			"id": "0x6E",
+			"name": "Treasure Map",
+			"type": "key_item"
+		},
+		{
+			"id": "0x6F",
+			"name": "Symbol of Faith",
+			"type": "key_item"
+		},
+		{
+			"id": "0x70",
+			"name": "Gunpowder Jar",
+			"type": "key_item"
+		},
+		{
+			"id": "0x71",
+			"name": "Thief's Key",
+			"type": "key"
+		},
+		{
+			"id": "0x72",
+			"name": "Magic Key",
+			"type": "key"
+		},
+		{
+			"id": "0x73",
+			"name": "Final Key",
+			"type": "key"
+		},
+		{
+			"id": "0x74",
+			"name": "Lunch",
+			"type": "consumable"
+		},
+		{
+			"id": "0x75",
+			"name": "Birdsong Nectar",
+			"type": "key_item"
+		},
+		{
+			"id": "0x76",
+			"name": "Golden Bracelet",
+			"type": "key_item"
+		},
+		{
+			"id": "0x77",
+			"name": "Prince's Letter",
+			"type": "key_item"
+		},
+		{
+			"id": "0x78",
+			"name": "Royal Scroll",
+			"type": "key_item"
+		},
+		{
+			"id": "0x79",
+			"name": "Gum Pod",
+			"type": "key_item"
+		},
+		{
+			"id": "0x7A",
+			"name": "Boarding Pass",
+			"type": "key_item"
+		},
+		{
+			"id": "0x7B",
+			"name": "Padequia Root",
+			"type": "key_item"
+		},
+		{
+			"id": "0x7C",
+			"name": "Fire of Serenity",
+			"type": "key_item"
+		},
+		{
+			"id": "0x7D",
+			"name": "Gas Canister",
+			"type": "key_item"
+		},
+		{
+			"id": "0x7E",
+			"name": "Padequia Seed",
+			"type": "key_item"
+		},
+		{
+			"id": "0x7F",
+			"name": "??? No Item",
+			"type": "none"
+		}
+	]
+}

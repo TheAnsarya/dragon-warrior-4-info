@@ -1,0 +1,122 @@
+{
+	"$schema": "./schemas/chapters.schema.json",
+	"version": "1.0.0",
+	"chapters": [
+		{
+			"id": "0x00",
+			"number": 1,
+			"name": "Chapter 1 - Ragnar",
+			"protagonist": "Ragnar"
+		},
+		{
+			"id": "0x01",
+			"number": 2,
+			"name": "Chapter 2 - Alena, Cristo, & Brey",
+			"protagonist": "Alena"
+		},
+		{
+			"id": "0x02",
+			"number": 3,
+			"name": "Chapter 3 - Taloon",
+			"protagonist": "Taloon"
+		},
+		{
+			"id": "0x03",
+			"number": 4,
+			"name": "Chapter 4 - Mara & Nara",
+			"protagonist": "Nara"
+		},
+		{
+			"id": "0x04",
+			"number": 5,
+			"name": "Chapter 5 - Hero",
+			"protagonist": "Hero"
+		}
+	],
+	"battle_tactics": [
+		{
+			"id": "0x00",
+			"name": "Normal"
+		},
+		{
+			"id": "0x01",
+			"name": "Save MP"
+		},
+		{
+			"id": "0x02",
+			"name": "Offensive"
+		},
+		{
+			"id": "0x03",
+			"name": "Defensive"
+		},
+		{
+			"id": "0x04",
+			"name": "Try Out"
+		},
+		{
+			"id": "0x05",
+			"name": "Use No MP"
+		}
+	],
+	"day_night_cycle": {
+		"ranges": [
+			{
+				"start": "0x00",
+				"end": "0x27",
+				"length": 40,
+				"description": "Day"
+			},
+			{
+				"start": "0x28",
+				"end": "0x77",
+				"length": 80,
+				"description": "Day - After staying at Inn"
+			},
+			{
+				"start": "0x78",
+				"end": "0x7B",
+				"length": 4,
+				"description": "Afternoon"
+			},
+			{
+				"start": "0x7C",
+				"end": "0x7F",
+				"length": 4,
+				"description": "Dusk"
+			},
+			{
+				"start": "0x80",
+				"end": "0x83",
+				"length": 4,
+				"description": "Evening"
+			},
+			{
+				"start": "0x84",
+				"end": "0xBF",
+				"length": 60,
+				"description": "Night"
+			},
+			{
+				"start": "0xC0",
+				"end": "0xC3",
+				"length": 4,
+				"description": "Pre-dawn"
+			},
+			{
+				"start": "0xC4",
+				"end": "0xC7",
+				"length": 4,
+				"description": "Dawn"
+			},
+			{
+				"start": "0xC8",
+				"end": "0xCB",
+				"length": 4,
+				"description": "Morning"
+			}
+		],
+		"inn_reset_value": "0x28",
+		"cycle_reset_after": "0xCB"
+	}
+}

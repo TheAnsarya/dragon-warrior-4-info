@@ -1,0 +1,11 @@
+{
+	"$schema": "./schemas/game_info.schema.json",
+	"version": "1.0.0",
+	"game": {
+		"title": "Dragon Warrior IV",
+		"platform": "NES",
+		"region": "US",
+		"year": 1992,
+		"publisher": "Enix"
+	}
+}
