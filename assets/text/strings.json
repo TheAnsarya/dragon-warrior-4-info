@@ -1,0 +1,5775 @@
+{
+  "rom_name": "Dragon Warrior IV (1992-10)(Enix)(US).nes",
+  "total_strings": 641,
+  "strings": [
+    {
+      "rom_offset": 1133,
+      "rom_offset_hex": "0x0046D",
+      "bank": 0,
+      "cpu": 33885,
+      "cpu_hex": "$845D",
+      "length": 7,
+      "text": "R'<56>F,#<END>"
+    },
+    {
+      "rom_offset": 2532,
+      "rom_offset_hex": "0x009E4",
+      "bank": 0,
+      "cpu": 35284,
+      "cpu_hex": "$89D4",
+      "length": 7,
+      "text": "$k<54><4C><4C><59><END>"
+    },
+    {
+      "rom_offset": 3859,
+      "rom_offset_hex": "0x00F13",
+      "bank": 0,
+      "cpu": 36611,
+      "cpu_hex": "$8F03",
+      "length": 6,
+      "text": "44<56>BH<END>"
+    },
+    {
+      "rom_offset": 22233,
+      "rom_offset_hex": "0x056D9",
+      "bank": 1,
+      "cpu": 38601,
+      "cpu_hex": "$96C9",
+      "length": 7,
+      "text": "fID<64>|U<END>"
+    },
+    {
+      "rom_offset": 29082,
+      "rom_offset_hex": "0x0719A",
+      "bank": 1,
+      "cpu": 45450,
+      "cpu_hex": "$B18A",
+      "length": 7,
+      "text": "so8<FE>'7<END>"
+    },
+    {
+      "rom_offset": 29159,
+      "rom_offset_hex": "0x071E7",
+      "bank": 1,
+      "cpu": 45527,
+      "cpu_hex": "$B1D7",
+      "length": 6,
+      "text": "kO<5B><59>T<END>"
+    },
+    {
+      "rom_offset": 30056,
+      "rom_offset_hex": "0x07568",
+      "bank": 1,
+      "cpu": 46424,
+      "cpu_hex": "$B558",
+      "length": 5,
+      "text": "Q<4B><4D>p<END>"
+    },
+    {
+      "rom_offset": 63464,
+      "rom_offset_hex": "0x0F7E8",
+      "bank": 3,
+      "cpu": 47064,
+      "cpu_hex": "$B7D8",
+      "length": 5,
+      "text": "z|(T<END>"
+    },
+    {
+      "rom_offset": 67005,
+      "rom_offset_hex": "0x105BD",
+      "bank": 4,
+      "cpu": 34221,
+      "cpu_hex": "$85AD",
+      "length": 6,
+      "text": "I'<63>.<5A><END>"
+    },
+    {
+      "rom_offset": 84609,
+      "rom_offset_hex": "0x14A81",
+      "bank": 5,
+      "cpu": 35441,
+      "cpu_hex": "$8A71",
+      "length": 5,
+      "text": "w77p<END>"
+    },
+    {
+      "rom_offset": 84634,
+      "rom_offset_hex": "0x14A9A",
+      "bank": 5,
+      "cpu": 35466,
+      "cpu_hex": "$8A8A",
+      "length": 5,
+      "text": "h77q<END>"
+    },
+    {
+      "rom_offset": 89821,
+      "rom_offset_hex": "0x15EDD",
+      "bank": 5,
+      "cpu": 40653,
+      "cpu_hex": "$9ECD",
+      "length": 10,
+      "text": "hd0G nFfu<END>"
+    },
+    {
+      "rom_offset": 91524,
+      "rom_offset_hex": "0x16584",
+      "bank": 5,
+      "cpu": 42356,
+      "cpu_hex": "$A574",
+      "length": 10,
+      "text": "g40G n<61> k<END>"
+    },
+    {
+      "rom_offset": 98955,
+      "rom_offset_hex": "0x1828B",
+      "bank": 6,
+      "cpu": 33403,
+      "cpu_hex": "$827B",
+      "length": 8,
+      "text": "wuu5rX+<END>"
+    },
+    {
+      "rom_offset": 99568,
+      "rom_offset_hex": "0x184F0",
+      "bank": 6,
+      "cpu": 34016,
+      "cpu_hex": "$84E0",
+      "length": 8,
+      "text": "*=OWse0<END>"
+    },
+    {
+      "rom_offset": 101190,
+      "rom_offset_hex": "0x18B46",
+      "bank": 6,
+      "cpu": 35638,
+      "cpu_hex": "$8B36",
+      "length": 5,
+      "text": "3bS2<END>"
+    },
+    {
+      "rom_offset": 101295,
+      "rom_offset_hex": "0x18BAF",
+      "bank": 6,
+      "cpu": 35743,
+      "cpu_hex": "$8B9F",
+      "length": 5,
+      "text": "4e#5<END>"
+    },
+    {
+      "rom_offset": 102964,
+      "rom_offset_hex": "0x19234",
+      "bank": 6,
+      "cpu": 37412,
+      "cpu_hex": "$9224",
+      "length": 6,
+      "text": "e0662<END>"
+    },
+    {
+      "rom_offset": 103832,
+      "rom_offset_hex": "0x19598",
+      "bank": 6,
+      "cpu": 38280,
+      "cpu_hex": "$9588",
+      "length": 6,
+      "text": "T<47> 6:<END>"
+    },
+    {
+      "rom_offset": 104744,
+      "rom_offset_hex": "0x19928",
+      "bank": 6,
+      "cpu": 39192,
+      "cpu_hex": "$9918",
+      "length": 7,
+      "text": "u<4D>f0 <FE><END>"
+    },
+    {
+      "rom_offset": 105092,
+      "rom_offset_hex": "0x19A84",
+      "bank": 6,
+      "cpu": 39540,
+      "cpu_hex": "$9A74",
+      "length": 6,
+      "text": "1bfv_<END>"
+    },
+    {
+      "rom_offset": 105499,
+      "rom_offset_hex": "0x19C1B",
+      "bank": 6,
+      "cpu": 39947,
+      "cpu_hex": "$9C0B",
+      "length": 8,
+      "text": "e2 2dU,<END>"
+    },
+    {
+      "rom_offset": 107016,
+      "rom_offset_hex": "0x1A208",
+      "bank": 6,
+      "cpu": 41464,
+      "cpu_hex": "$A1F8",
+      "length": 7,
+      "text": "bdt<4F>.+<END>"
+    },
+    {
+      "rom_offset": 107721,
+      "rom_offset_hex": "0x1A4C9",
+      "bank": 6,
+      "cpu": 42169,
+      "cpu_hex": "$A4B9",
+      "length": 5,
+      "text": "6cie<END>"
+    },
+    {
+      "rom_offset": 109330,
+      "rom_offset_hex": "0x1AB12",
+      "bank": 6,
+      "cpu": 43778,
+      "cpu_hex": "$AB02",
+      "length": 6,
+      "text": "wX2<4C><58><END>"
+    },
+    {
+      "rom_offset": 109431,
+      "rom_offset_hex": "0x1AB77",
+      "bank": 6,
+      "cpu": 43879,
+      "cpu_hex": "$AB67",
+      "length": 7,
+      "text": "x:2<64>P<FE><END>"
+    },
+    {
+      "rom_offset": 109626,
+      "rom_offset_hex": "0x1AC3A",
+      "bank": 6,
+      "cpu": 44074,
+      "cpu_hex": "$AC2A",
+      "length": 5,
+      "text": "a8 0<END>"
+    },
+    {
+      "rom_offset": 111564,
+      "rom_offset_hex": "0x1B3CC",
+      "bank": 6,
+      "cpu": 46012,
+      "cpu_hex": "$B3BC",
+      "length": 10,
+      "text": "6u<FE>vH*g0<53><END>"
+    },
+    {
+      "rom_offset": 112620,
+      "rom_offset_hex": "0x1B7EC",
+      "bank": 6,
+      "cpu": 47068,
+      "cpu_hex": "$B7DC",
+      "length": 7,
+      "text": "u00211<END>"
+    },
+    {
+      "rom_offset": 112756,
+      "rom_offset_hex": "0x1B874",
+      "bank": 6,
+      "cpu": 47204,
+      "cpu_hex": "$B864",
+      "length": 5,
+      "text": "y6uu<END>"
+    },
+    {
+      "rom_offset": 113009,
+      "rom_offset_hex": "0x1B971",
+      "bank": 6,
+      "cpu": 47457,
+      "cpu_hex": "$B961",
+      "length": 7,
+      "text": "/142d#<END>"
+    },
+    {
+      "rom_offset": 114138,
+      "rom_offset_hex": "0x1BDDA",
+      "bank": 6,
+      "cpu": 48586,
+      "cpu_hex": "$BDCA",
+      "length": 6,
+      "text": "lL 20<END>"
+    },
+    {
+      "rom_offset": 116337,
+      "rom_offset_hex": "0x1C671",
+      "bank": 7,
+      "cpu": 34401,
+      "cpu_hex": "$8661",
+      "length": 5,
+      "text": "5rb:<END>"
+    },
+    {
+      "rom_offset": 116830,
+      "rom_offset_hex": "0x1C85E",
+      "bank": 7,
+      "cpu": 34894,
+      "cpu_hex": "$884E",
+      "length": 6,
+      "text": "w: 6:<END>"
+    },
+    {
+      "rom_offset": 116952,
+      "rom_offset_hex": "0x1C8D8",
+      "bank": 7,
+      "cpu": 35016,
+      "cpu_hex": "$88C8",
+      "length": 7,
+      "text": "u<42>Tgv@<END>"
+    },
+    {
+      "rom_offset": 120382,
+      "rom_offset_hex": "0x1D63E",
+      "bank": 7,
+      "cpu": 38446,
+      "cpu_hex": "$962E",
+      "length": 6,
+      "text": "02eu:<END>"
+    },
+    {
+      "rom_offset": 122231,
+      "rom_offset_hex": "0x1DD77",
+      "bank": 7,
+      "cpu": 40295,
+      "cpu_hex": "$9D67",
+      "length": 6,
+      "text": "Zud39<END>"
+    },
+    {
+      "rom_offset": 123441,
+      "rom_offset_hex": "0x1E231",
+      "bank": 7,
+      "cpu": 41505,
+      "cpu_hex": "$A221",
+      "length": 5,
+      "text": "dM56<END>"
+    },
+    {
+      "rom_offset": 123499,
+      "rom_offset_hex": "0x1E26B",
+      "bank": 7,
+      "cpu": 41563,
+      "cpu_hex": "$A25B",
+      "length": 6,
+      "text": "vfr60<END>"
+    },
+    {
+      "rom_offset": 124794,
+      "rom_offset_hex": "0x1E77A",
+      "bank": 7,
+      "cpu": 42858,
+      "cpu_hex": "$A76A",
+      "length": 10,
+      "text": "O0137f773<END>"
+    },
+    {
+      "rom_offset": 125392,
+      "rom_offset_hex": "0x1E9D0",
+      "bank": 7,
+      "cpu": 43456,
+      "cpu_hex": "$A9C0",
+      "length": 5,
+      "text": "&v6:<END>"
+    },
+    {
+      "rom_offset": 125829,
+      "rom_offset_hex": "0x1EB85",
+      "bank": 7,
+      "cpu": 43893,
+      "cpu_hex": "$AB75",
+      "length": 7,
+      "text": "Lxd 1:<END>"
+    },
+    {
+      "rom_offset": 125927,
+      "rom_offset_hex": "0x1EBE7",
+      "bank": 7,
+      "cpu": 43991,
+      "cpu_hex": "$ABD7",
+      "length": 5,
+      "text": "LN?9<END>"
+    },
+    {
+      "rom_offset": 127544,
+      "rom_offset_hex": "0x1F238",
+      "bank": 7,
+      "cpu": 45608,
+      "cpu_hex": "$B228",
+      "length": 6,
+      "text": "o402e<END>"
+    },
+    {
+      "rom_offset": 128084,
+      "rom_offset_hex": "0x1F454",
+      "bank": 7,
+      "cpu": 46148,
+      "cpu_hex": "$B444",
+      "length": 5,
+      "text": "Kq3 <END>"
+    },
+    {
+      "rom_offset": 128232,
+      "rom_offset_hex": "0x1F4E8",
+      "bank": 7,
+      "cpu": 46296,
+      "cpu_hex": "$B4D8",
+      "length": 5,
+      "text": "Xe6r<END>"
+    },
+    {
+      "rom_offset": 129979,
+      "rom_offset_hex": "0x1FBBB",
+      "bank": 7,
+      "cpu": 48043,
+      "cpu_hex": "$BBAB",
+      "length": 6,
+      "text": "3bF|<FE><END>"
+    },
+    {
+      "rom_offset": 130280,
+      "rom_offset_hex": "0x1FCE8",
+      "bank": 7,
+      "cpu": 48344,
+      "cpu_hex": "$BCD8",
+      "length": 7,
+      "text": "u2%xT<FE><END>"
+    },
+    {
+      "rom_offset": 131062,
+      "rom_offset_hex": "0x1FFF6",
+      "bank": 7,
+      "cpu": 49126,
+      "cpu_hex": "$BFE6",
+      "length": 11,
+      "text": "v<51><55><45><53><54>v<49><56>v<END>"
+    },
+    {
+      "rom_offset": 132883,
+      "rom_offset_hex": "0x20713",
+      "bank": 8,
+      "cpu": 34563,
+      "cpu_hex": "$8703",
+      "length": 13,
+      "text": "LhoLmBLziLB3<END>"
+    },
+    {
+      "rom_offset": 133178,
+      "rom_offset_hex": "0x2083A",
+      "bank": 8,
+      "cpu": 34858,
+      "cpu_hex": "$882A",
+      "length": 17,
+      "text": "% Q <42> _ M p r i <END>"
+    },
+    {
+      "rom_offset": 133756,
+      "rom_offset_hex": "0x20A7C",
+      "bank": 8,
+      "cpu": 35436,
+      "cpu_hex": "$8A6C",
+      "length": 7,
+      "text": "r<48>    <END>"
+    },
+    {
+      "rom_offset": 136126,
+      "rom_offset_hex": "0x213BE",
+      "bank": 8,
+      "cpu": 37806,
+      "cpu_hex": "$93AE",
+      "length": 11,
+      "text": "a8e8f8 837<END>"
+    },
+    {
+      "rom_offset": 136481,
+      "rom_offset_hex": "0x21521",
+      "bank": 8,
+      "cpu": 38161,
+      "cpu_hex": "$9511",
+      "length": 6,
+      "text": "7Bo^o<END>"
+    },
+    {
+      "rom_offset": 139723,
+      "rom_offset_hex": "0x221CB",
+      "bank": 8,
+      "cpu": 41403,
+      "cpu_hex": "$A1BB",
+      "length": 12,
+      "text": "000    0 0 <END>"
+    },
+    {
+      "rom_offset": 139737,
+      "rom_offset_hex": "0x221D9",
+      "bank": 8,
+      "cpu": 41417,
+      "cpu_hex": "$A1C9",
+      "length": 10,
+      "text": "000  00 1<END>"
+    },
+    {
+      "rom_offset": 139747,
+      "rom_offset_hex": "0x221E3",
+      "bank": 8,
+      "cpu": 41427,
+      "cpu_hex": "$A1D3",
+      "length": 13,
+      "text": "000 00200020<END>"
+    },
+    {
+      "rom_offset": 139765,
+      "rom_offset_hex": "0x221F5",
+      "bank": 8,
+      "cpu": 41445,
+      "cpu_hex": "$A1E5",
+      "length": 6,
+      "text": "220<LINE>6<END>"
+    },
+    {
+      "rom_offset": 139775,
+      "rom_offset_hex": "0x221FF",
+      "bank": 8,
+      "cpu": 41455,
+      "cpu_hex": "$A1EF",
+      "length": 5,
+      "text": "3021<END>"
+    },
+    {
+      "rom_offset": 139780,
+      "rom_offset_hex": "0x22204",
+      "bank": 8,
+      "cpu": 41460,
+      "cpu_hex": "$A1F4",
+      "length": 6,
+      "text": "3000<FE><END>"
+    },
+    {
+      "rom_offset": 139786,
+      "rom_offset_hex": "0x2220A",
+      "bank": 8,
+      "cpu": 41466,
+      "cpu_hex": "$A1FA",
+      "length": 10,
+      "text": "00 0c 0a <END>"
+    },
+    {
+      "rom_offset": 139802,
+      "rom_offset_hex": "0x2221A",
+      "bank": 8,
+      "cpu": 41482,
+      "cpu_hex": "$A20A",
+      "length": 9,
+      "text": "g0e00 20<END>"
+    },
+    {
+      "rom_offset": 139820,
+      "rom_offset_hex": "0x2222C",
+      "bank": 8,
+      "cpu": 41500,
+      "cpu_hex": "$A21C",
+      "length": 5,
+      "text": "h001<END>"
+    },
+    {
+      "rom_offset": 139897,
+      "rom_offset_hex": "0x22279",
+      "bank": 8,
+      "cpu": 41577,
+      "cpu_hex": "$A269",
+      "length": 13,
+      "text": "005002080060<END>"
+    },
+    {
+      "rom_offset": 145077,
+      "rom_offset_hex": "0x236B5",
+      "bank": 8,
+      "cpu": 46757,
+      "cpu_hex": "$B6A5",
+      "length": 19,
+      "text": "Z b5<46> fu Z c5<46> fu <END>"
+    },
+    {
+      "rom_offset": 145252,
+      "rom_offset_hex": "0x23764",
+      "bank": 8,
+      "cpu": 46932,
+      "cpu_hex": "$B754",
+      "length": 9,
+      "text": "r<60>FRScQP<END>"
+    },
+    {
+      "rom_offset": 147094,
+      "rom_offset_hex": "0x23E96",
+      "bank": 8,
+      "cpu": 48774,
+      "cpu_hex": "$BE86",
+      "length": 14,
+      "text": "q2yo2zo2yr2zr<END>"
+    },
+    {
+      "rom_offset": 147112,
+      "rom_offset_hex": "0x23EA8",
+      "bank": 8,
+      "cpu": 48792,
+      "cpu_hex": "$BE98",
+      "length": 8,
+      "text": "333 I<4A>I<END>"
+    },
+    {
+      "rom_offset": 147120,
+      "rom_offset_hex": "0x23EB0",
+      "bank": 8,
+      "cpu": 48800,
+      "cpu_hex": "$BEA0",
+      "length": 16,
+      "text": "232 <4E>S<45><4E>5345elf<END>"
+    },
+    {
+      "rom_offset": 147136,
+      "rom_offset_hex": "0x23EC0",
+      "bank": 8,
+      "cpu": 48816,
+      "cpu_hex": "$BEB0",
+      "length": 8,
+      "text": "423 <4E><47><4F><END>"
+    },
+    {
+      "rom_offset": 147144,
+      "rom_offset_hex": "0x23EC8",
+      "bank": 8,
+      "cpu": 48824,
+      "cpu_hex": "$BEB8",
+      "length": 16,
+      "text": "036 XG<51>X4444<5A><55><5F><END>"
+    },
+    {
+      "rom_offset": 147160,
+      "rom_offset_hex": "0x23ED8",
+      "bank": 8,
+      "cpu": 48840,
+      "cpu_hex": "$BEC8",
+      "length": 8,
+      "text": "292 <49><5A><50><END>"
+    },
+    {
+      "rom_offset": 147168,
+      "rom_offset_hex": "0x23EE0",
+      "bank": 8,
+      "cpu": 48848,
+      "cpu_hex": "$BED0",
+      "length": 16,
+      "text": "224 ,<58><58><52>0886<5D><64>-<END>"
+    },
+    {
+      "rom_offset": 147192,
+      "rom_offset_hex": "0x23EF8",
+      "bank": 8,
+      "cpu": 48872,
+      "cpu_hex": "$BEE8",
+      "length": 8,
+      "text": "262 <55>_<55><END>"
+    },
+    {
+      "rom_offset": 147213,
+      "rom_offset_hex": "0x23F0D",
+      "bank": 8,
+      "cpu": 48893,
+      "cpu_hex": "$BEFD",
+      "length": 11,
+      "text": "&<63><63>7444<5D><5F>-<END>"
+    },
+    {
+      "rom_offset": 147312,
+      "rom_offset_hex": "0x23F70",
+      "bank": 8,
+      "cpu": 48992,
+      "cpu_hex": "$BF60",
+      "length": 5,
+      "text": "j0  <END>"
+    },
+    {
+      "rom_offset": 171019,
+      "rom_offset_hex": "0x29C0B",
+      "bank": 10,
+      "cpu": 39931,
+      "cpu_hex": "$9BFB",
+      "length": 6,
+      "text": "9   T<END>"
+    },
+    {
+      "rom_offset": 195300,
+      "rom_offset_hex": "0x2FAE4",
+      "bank": 11,
+      "cpu": 47828,
+      "cpu_hex": "$BAD4",
+      "length": 7,
+      "text": "ZVc3<4D>X<END>"
+    },
+    {
+      "rom_offset": 195648,
+      "rom_offset_hex": "0x2FC40",
+      "bank": 11,
+      "cpu": 48176,
+      "cpu_hex": "$BC30",
+      "length": 5,
+      "text": "c3<4D>X<END>"
+    },
+    {
+      "rom_offset": 196572,
+      "rom_offset_hex": "0x2FFDC",
+      "bank": 11,
+      "cpu": 49100,
+      "cpu_hex": "$BFCC",
+      "length": 10,
+      "text": "j(<52><5F><60>?./<5C><END>"
+    },
+    {
+      "rom_offset": 197061,
+      "rom_offset_hex": "0x301C5",
+      "bank": 12,
+      "cpu": 33205,
+      "cpu_hex": "$81B5",
+      "length": 12,
+      "text": "307       <48><END>"
+    },
+    {
+      "rom_offset": 197259,
+      "rom_offset_hex": "0x3028B",
+      "bank": 12,
+      "cpu": 33403,
+      "cpu_hex": "$827B",
+      "length": 5,
+      "text": "v<50>0u<END>"
+    },
+    {
+      "rom_offset": 197602,
+      "rom_offset_hex": "0x303E2",
+      "bank": 12,
+      "cpu": 33746,
+      "cpu_hex": "$83D2",
+      "length": 7,
+      "text": ".igfvL<END>"
+    },
+    {
+      "rom_offset": 197638,
+      "rom_offset_hex": "0x30406",
+      "bank": 12,
+      "cpu": 33782,
+      "cpu_hex": "$83F6",
+      "length": 11,
+      "text": "s+ <40>vz141 <END>"
+    },
+    {
+      "rom_offset": 198027,
+      "rom_offset_hex": "0x3058B",
+      "bank": 12,
+      "cpu": 34171,
+      "cpu_hex": "$857B",
+      "length": 5,
+      "text": "YU26<END>"
+    },
+    {
+      "rom_offset": 198044,
+      "rom_offset_hex": "0x3059C",
+      "bank": 12,
+      "cpu": 34188,
+      "cpu_hex": "$858C",
+      "length": 5,
+      "text": "5E B<END>"
+    },
+    {
+      "rom_offset": 198767,
+      "rom_offset_hex": "0x3086F",
+      "bank": 12,
+      "cpu": 34911,
+      "cpu_hex": "$885F",
+      "length": 8,
+      "text": ") : vv <END>"
+    },
+    {
+      "rom_offset": 199065,
+      "rom_offset_hex": "0x30999",
+      "bank": 12,
+      "cpu": 35209,
+      "cpu_hex": "$8989",
+      "length": 8,
+      "text": "v   1  <END>"
+    },
+    {
+      "rom_offset": 199159,
+      "rom_offset_hex": "0x309F7",
+      "bank": 12,
+      "cpu": 35303,
+      "cpu_hex": "$89E7",
+      "length": 10,
+      "text": "v v  ::::<END>"
+    },
+    {
+      "rom_offset": 199184,
+      "rom_offset_hex": "0x30A10",
+      "bank": 12,
+      "cpu": 35328,
+      "cpu_hex": "$8A00",
+      "length": 20,
+      "text": "vvv:Zb3 ::::0OO    <END>"
+    },
+    {
+      "rom_offset": 199457,
+      "rom_offset_hex": "0x30B21",
+      "bank": 12,
+      "cpu": 35601,
+      "cpu_hex": "$8B11",
+      "length": 7,
+      "text": "LL 006<END>"
+    },
+    {
+      "rom_offset": 199908,
+      "rom_offset_hex": "0x30CE4",
+      "bank": 12,
+      "cpu": 36052,
+      "cpu_hex": "$8CD4",
+      "length": 5,
+      "text": "nXnz<END>"
+    },
+    {
+      "rom_offset": 201275,
+      "rom_offset_hex": "0x3123B",
+      "bank": 12,
+      "cpu": 37419,
+      "cpu_hex": "$922B",
+      "length": 6,
+      "text": "01X02<END>"
+    },
+    {
+      "rom_offset": 201376,
+      "rom_offset_hex": "0x312A0",
+      "bank": 12,
+      "cpu": 37520,
+      "cpu_hex": "$9290",
+      "length": 7,
+      "text": "3h<48><41>0 <END>"
+    },
+    {
+      "rom_offset": 201389,
+      "rom_offset_hex": "0x312AD",
+      "bank": 12,
+      "cpu": 37533,
+      "cpu_hex": "$929D",
+      "length": 10,
+      "text": "1  v<48>h1  <END>"
+    },
+    {
+      "rom_offset": 201825,
+      "rom_offset_hex": "0x31461",
+      "bank": 12,
+      "cpu": 37969,
+      "cpu_hex": "$9451",
+      "length": 16,
+      "text": "?<54>!<44><56><61><59> 01 hv73<END>"
+    },
+    {
+      "rom_offset": 202234,
+      "rom_offset_hex": "0x315FA",
+      "bank": 12,
+      "cpu": 38378,
+      "cpu_hex": "$95EA",
+      "length": 24,
+      "text": "jj333 &<63><44>a<53><40><40><47>6bnLvHKv <END>"
+    },
+    {
+      "rom_offset": 202308,
+      "rom_offset_hex": "0x31644",
+      "bank": 12,
+      "cpu": 38452,
+      "cpu_hex": "$9634",
+      "length": 5,
+      "text": ":Xv2<END>"
+    },
+    {
+      "rom_offset": 202506,
+      "rom_offset_hex": "0x3170A",
+      "bank": 12,
+      "cpu": 38650,
+      "cpu_hex": "$96FA",
+      "length": 8,
+      "text": "nLvvvv <END>"
+    },
+    {
+      "rom_offset": 202536,
+      "rom_offset_hex": "0x31728",
+      "bank": 12,
+      "cpu": 38680,
+      "cpu_hex": "$9718",
+      "length": 26,
+      "text": "vvvvvvvv                 <END>"
+    },
+    {
+      "rom_offset": 202950,
+      "rom_offset_hex": "0x318C6",
+      "bank": 12,
+      "cpu": 39094,
+      "cpu_hex": "$98B6",
+      "length": 5,
+      "text": "00  <END>"
+    },
+    {
+      "rom_offset": 203078,
+      "rom_offset_hex": "0x31946",
+      "bank": 12,
+      "cpu": 39222,
+      "cpu_hex": "$9936",
+      "length": 5,
+      "text": "00  <END>"
+    },
+    {
+      "rom_offset": 203331,
+      "rom_offset_hex": "0x31A43",
+      "bank": 12,
+      "cpu": 39475,
+      "cpu_hex": "$9A33",
+      "length": 6,
+      "text": "LL mf<END>"
+    },
+    {
+      "rom_offset": 204179,
+      "rom_offset_hex": "0x31D93",
+      "bank": 12,
+      "cpu": 40323,
+      "cpu_hex": "$9D83",
+      "length": 6,
+      "text": "1<42><42><42><42><END>"
+    },
+    {
+      "rom_offset": 204792,
+      "rom_offset_hex": "0x31FF8",
+      "bank": 12,
+      "cpu": 40936,
+      "cpu_hex": "$9FE8",
+      "length": 9,
+      "text": "3i3  037<END>"
+    },
+    {
+      "rom_offset": 205706,
+      "rom_offset_hex": "0x3238A",
+      "bank": 12,
+      "cpu": 41850,
+      "cpu_hex": "$A37A",
+      "length": 11,
+      "text": "O277n7    <END>"
+    },
+    {
+      "rom_offset": 205756,
+      "rom_offset_hex": "0x323BC",
+      "bank": 12,
+      "cpu": 41900,
+      "cpu_hex": "$A3AC",
+      "length": 29,
+      "text": "1151  <46><40>  <46> :|voB<59> :  ,   , <END>"
+    },
+    {
+      "rom_offset": 205826,
+      "rom_offset_hex": "0x32402",
+      "bank": 12,
+      "cpu": 41970,
+      "cpu_hex": "$A3F2",
+      "length": 7,
+      "text": ",   , <END>"
+    },
+    {
+      "rom_offset": 206378,
+      "rom_offset_hex": "0x3262A",
+      "bank": 12,
+      "cpu": 42522,
+      "cpu_hex": "$A61A",
+      "length": 8,
+      "text": "b3    <FE><END>"
+    },
+    {
+      "rom_offset": 206505,
+      "rom_offset_hex": "0x326A9",
+      "bank": 12,
+      "cpu": 42649,
+      "cpu_hex": "$A699",
+      "length": 9,
+      "text": "7      K<END>"
+    },
+    {
+      "rom_offset": 206942,
+      "rom_offset_hex": "0x3285E",
+      "bank": 12,
+      "cpu": 43086,
+      "cpu_hex": "$A84E",
+      "length": 6,
+      "text": "55   <END>"
+    },
+    {
+      "rom_offset": 207256,
+      "rom_offset_hex": "0x32998",
+      "bank": 12,
+      "cpu": 43400,
+      "cpu_hex": "$A988",
+      "length": 25,
+      "text": ":                       <END>"
+    },
+    {
+      "rom_offset": 208011,
+      "rom_offset_hex": "0x32C8B",
+      "bank": 12,
+      "cpu": 44155,
+      "cpu_hex": "$AC7B",
+      "length": 6,
+      "text": "0 0Fk<END>"
+    },
+    {
+      "rom_offset": 208426,
+      "rom_offset_hex": "0x32E2A",
+      "bank": 12,
+      "cpu": 44570,
+      "cpu_hex": "$AE1A",
+      "length": 8,
+      "text": "v    6 <END>"
+    },
+    {
+      "rom_offset": 208449,
+      "rom_offset_hex": "0x32E41",
+      "bank": 12,
+      "cpu": 44593,
+      "cpu_hex": "$AE31",
+      "length": 16,
+      "text": "nfyHFGHnv.<4C><40><43><43><40><END>"
+    },
+    {
+      "rom_offset": 208475,
+      "rom_offset_hex": "0x32E5B",
+      "bank": 12,
+      "cpu": 44619,
+      "cpu_hex": "$AE4B",
+      "length": 7,
+      "text": "3 rr  <END>"
+    },
+    {
+      "rom_offset": 208600,
+      "rom_offset_hex": "0x32ED8",
+      "bank": 12,
+      "cpu": 44744,
+      "cpu_hex": "$AEC8",
+      "length": 7,
+      "text": "rr    <END>"
+    },
+    {
+      "rom_offset": 208682,
+      "rom_offset_hex": "0x32F2A",
+      "bank": 12,
+      "cpu": 44826,
+      "cpu_hex": "$AF1A",
+      "length": 8,
+      "text": "v<45>3zvC <END>"
+    },
+    {
+      "rom_offset": 208691,
+      "rom_offset_hex": "0x32F33",
+      "bank": 12,
+      "cpu": 44835,
+      "cpu_hex": "$AF23",
+      "length": 6,
+      "text": "0<55><55>  <END>"
+    },
+    {
+      "rom_offset": 208705,
+      "rom_offset_hex": "0x32F41",
+      "bank": 12,
+      "cpu": 44849,
+      "cpu_hex": "$AF31",
+      "length": 16,
+      "text": "niFxxxxnv<60><41><49><49><49><49><END>"
+    },
+    {
+      "rom_offset": 208722,
+      "rom_offset_hex": "0x32F52",
+      "bank": 12,
+      "cpu": 44866,
+      "cpu_hex": "$AF42",
+      "length": 16,
+      "text": "/<49><49><49><49><49>   zzzzz <END>"
+    },
+    {
+      "rom_offset": 208740,
+      "rom_offset_hex": "0x32F64",
+      "bank": 12,
+      "cpu": 44884,
+      "cpu_hex": "$AF54",
+      "length": 5,
+      "text": "FF  <END>"
+    },
+    {
+      "rom_offset": 208849,
+      "rom_offset_hex": "0x32FD1",
+      "bank": 12,
+      "cpu": 44993,
+      "cpu_hex": "$AFC1",
+      "length": 5,
+      "text": "0<49><49>0<END>"
+    },
+    {
+      "rom_offset": 208858,
+      "rom_offset_hex": "0x32FDA",
+      "bank": 12,
+      "cpu": 45002,
+      "cpu_hex": "$AFCA",
+      "length": 5,
+      "text": "zz  <END>"
+    },
+    {
+      "rom_offset": 209310,
+      "rom_offset_hex": "0x3319E",
+      "bank": 12,
+      "cpu": 45454,
+      "cpu_hex": "$B18E",
+      "length": 21,
+      "text": "2e<40><60>b<5A><57><54><4C><49>K bofh13  <END>"
+    },
+    {
+      "rom_offset": 210094,
+      "rom_offset_hex": "0x334AE",
+      "bank": 12,
+      "cpu": 46238,
+      "cpu_hex": "$B49E",
+      "length": 7,
+      "text": "|:<4F>0<46>L<END>"
+    },
+    {
+      "rom_offset": 210348,
+      "rom_offset_hex": "0x335AC",
+      "bank": 12,
+      "cpu": 46492,
+      "cpu_hex": "$B59C",
+      "length": 5,
+      "text": "cc c<END>"
+    },
+    {
+      "rom_offset": 210531,
+      "rom_offset_hex": "0x33663",
+      "bank": 12,
+      "cpu": 46675,
+      "cpu_hex": "$B653",
+      "length": 6,
+      "text": "u6vnu<END>"
+    },
+    {
+      "rom_offset": 211060,
+      "rom_offset_hex": "0x33874",
+      "bank": 12,
+      "cpu": 47204,
+      "cpu_hex": "$B864",
+      "length": 5,
+      "text": "3373<END>"
+    },
+    {
+      "rom_offset": 212217,
+      "rom_offset_hex": "0x33CF9",
+      "bank": 12,
+      "cpu": 48361,
+      "cpu_hex": "$BCE9",
+      "length": 9,
+      "text": "00   0<FE> <END>"
+    },
+    {
+      "rom_offset": 213171,
+      "rom_offset_hex": "0x340B3",
+      "bank": 13,
+      "cpu": 32931,
+      "cpu_hex": "$80A3",
+      "length": 5,
+      "text": "= <55><55><END>"
+    },
+    {
+      "rom_offset": 213255,
+      "rom_offset_hex": "0x34107",
+      "bank": 13,
+      "cpu": 33015,
+      "cpu_hex": "$80F7",
+      "length": 11,
+      "text": "#6 111    <END>"
+    },
+    {
+      "rom_offset": 213724,
+      "rom_offset_hex": "0x342DC",
+      "bank": 13,
+      "cpu": 33484,
+      "cpu_hex": "$82CC",
+      "length": 6,
+      "text": "XjQf <END>"
+    },
+    {
+      "rom_offset": 215003,
+      "rom_offset_hex": "0x347DB",
+      "bank": 13,
+      "cpu": 34763,
+      "cpu_hex": "$87CB",
+      "length": 6,
+      "text": "6222K<END>"
+    },
+    {
+      "rom_offset": 215276,
+      "rom_offset_hex": "0x348EC",
+      "bank": 13,
+      "cpu": 35036,
+      "cpu_hex": "$88DC",
+      "length": 6,
+      "text": "3f0<44> <END>"
+    },
+    {
+      "rom_offset": 215292,
+      "rom_offset_hex": "0x348FC",
+      "bank": 13,
+      "cpu": 35052,
+      "cpu_hex": "$88EC",
+      "length": 6,
+      "text": "3f0<44> <END>"
+    },
+    {
+      "rom_offset": 215860,
+      "rom_offset_hex": "0x34B34",
+      "bank": 13,
+      "cpu": 35620,
+      "cpu_hex": "$8B24",
+      "length": 6,
+      "text": "6222a<END>"
+    },
+    {
+      "rom_offset": 216140,
+      "rom_offset_hex": "0x34C4C",
+      "bank": 13,
+      "cpu": 35900,
+      "cpu_hex": "$8C3C",
+      "length": 6,
+      "text": "vf   <END>"
+    },
+    {
+      "rom_offset": 216389,
+      "rom_offset_hex": "0x34D45",
+      "bank": 13,
+      "cpu": 36149,
+      "cpu_hex": "$8D35",
+      "length": 5,
+      "text": "2  2<END>"
+    },
+    {
+      "rom_offset": 218619,
+      "rom_offset_hex": "0x355FB",
+      "bank": 13,
+      "cpu": 38379,
+      "cpu_hex": "$95EB",
+      "length": 8,
+      "text": "v    6 <END>"
+    },
+    {
+      "rom_offset": 218642,
+      "rom_offset_hex": "0x35612",
+      "bank": 13,
+      "cpu": 38402,
+      "cpu_hex": "$9602",
+      "length": 16,
+      "text": "nfCFvKAnv.<48><40><45><40><40><END>"
+    },
+    {
+      "rom_offset": 218786,
+      "rom_offset_hex": "0x356A2",
+      "bank": 13,
+      "cpu": 38546,
+      "cpu_hex": "$9692",
+      "length": 5,
+      "text": "0<55><55>0<END>"
+    },
+    {
+      "rom_offset": 220539,
+      "rom_offset_hex": "0x35D7B",
+      "bank": 13,
+      "cpu": 40299,
+      "cpu_hex": "$9D6B",
+      "length": 27,
+      "text": "fv    <40>L<60> <63><60>L  7f ff6     <END>"
+    },
+    {
+      "rom_offset": 220603,
+      "rom_offset_hex": "0x35DBB",
+      "bank": 13,
+      "cpu": 40363,
+      "cpu_hex": "$9DAB",
+      "length": 11,
+      "text": "iI1117    <END>"
+    },
+    {
+      "rom_offset": 221360,
+      "rom_offset_hex": "0x360B0",
+      "bank": 13,
+      "cpu": 41120,
+      "cpu_hex": "$A0A0",
+      "length": 5,
+      "text": ",,  <END>"
+    },
+    {
+      "rom_offset": 221389,
+      "rom_offset_hex": "0x360CD",
+      "bank": 13,
+      "cpu": 41149,
+      "cpu_hex": "$A0BD",
+      "length": 6,
+      "text": "+<60><5F>: <END>"
+    },
+    {
+      "rom_offset": 221788,
+      "rom_offset_hex": "0x3625C",
+      "bank": 13,
+      "cpu": 41548,
+      "cpu_hex": "$A24C",
+      "length": 10,
+      "text": "klmlkimm <END>"
+    },
+    {
+      "rom_offset": 221980,
+      "rom_offset_hex": "0x3631C",
+      "bank": 13,
+      "cpu": 41740,
+      "cpu_hex": "$A30C",
+      "length": 12,
+      "text": "vwvvv:     <END>"
+    },
+    {
+      "rom_offset": 222340,
+      "rom_offset_hex": "0x36484",
+      "bank": 13,
+      "cpu": 42100,
+      "cpu_hex": "$A474",
+      "length": 5,
+      "text": "~K<5F>:<END>"
+    },
+    {
+      "rom_offset": 222348,
+      "rom_offset_hex": "0x3648C",
+      "bank": 13,
+      "cpu": 42108,
+      "cpu_hex": "$A47C",
+      "length": 5,
+      "text": "4<4E>q:<END>"
+    },
+    {
+      "rom_offset": 223261,
+      "rom_offset_hex": "0x3681D",
+      "bank": 13,
+      "cpu": 43021,
+      "cpu_hex": "$A80D",
+      "length": 8,
+      "text": "v   1  <END>"
+    },
+    {
+      "rom_offset": 223414,
+      "rom_offset_hex": "0x368B6",
+      "bank": 13,
+      "cpu": 43174,
+      "cpu_hex": "$A8A6",
+      "length": 7,
+      "text": "F: i4k<END>"
+    },
+    {
+      "rom_offset": 223448,
+      "rom_offset_hex": "0x368D8",
+      "bank": 13,
+      "cpu": 43208,
+      "cpu_hex": "$A8C8",
+      "length": 5,
+      "text": "1<4A><42>F<END>"
+    },
+    {
+      "rom_offset": 223725,
+      "rom_offset_hex": "0x369ED",
+      "bank": 13,
+      "cpu": 43485,
+      "cpu_hex": "$A9DD",
+      "length": 8,
+      "text": "w 297xN<END>"
+    },
+    {
+      "rom_offset": 224268,
+      "rom_offset_hex": "0x36C0C",
+      "bank": 13,
+      "cpu": 44028,
+      "cpu_hex": "$ABFC",
+      "length": 10,
+      "text": "0 v3  <42> <FE><END>"
+    },
+    {
+      "rom_offset": 224597,
+      "rom_offset_hex": "0x36D55",
+      "bank": 13,
+      "cpu": 44357,
+      "cpu_hex": "$AD45",
+      "length": 25,
+      "text": "L<60><40>     2bfvv<40><40>         <END>"
+    },
+    {
+      "rom_offset": 225983,
+      "rom_offset_hex": "0x372BF",
+      "bank": 13,
+      "cpu": 45743,
+      "cpu_hex": "$B2AF",
+      "length": 23,
+      "text": "3f0<44> 'P~~P~~ <51>3<45><41> <55>~ <FE><END>"
+    },
+    {
+      "rom_offset": 226012,
+      "rom_offset_hex": "0x372DC",
+      "bank": 13,
+      "cpu": 45772,
+      "cpu_hex": "$B2CC",
+      "length": 7,
+      "text": "0 <48>f <55><END>"
+    },
+    {
+      "rom_offset": 227204,
+      "rom_offset_hex": "0x37784",
+      "bank": 13,
+      "cpu": 46964,
+      "cpu_hex": "$B774",
+      "length": 17,
+      "text": "cb 36ee 22625eb <END>"
+    },
+    {
+      "rom_offset": 227300,
+      "rom_offset_hex": "0x377E4",
+      "bank": 13,
+      "cpu": 47060,
+      "cpu_hex": "$B7D4",
+      "length": 22,
+      "text": "6eeeu::u5ddbi::u6euu<5F><END>"
+    },
+    {
+      "rom_offset": 227324,
+      "rom_offset_hex": "0x377FC",
+      "bank": 13,
+      "cpu": 47084,
+      "cpu_hex": "$B7EC",
+      "length": 6,
+      "text": "6eed<51><END>"
+    },
+    {
+      "rom_offset": 227492,
+      "rom_offset_hex": "0x378A4",
+      "bank": 13,
+      "cpu": 47252,
+      "cpu_hex": "$B894",
+      "length": 18,
+      "text": "6eeeu::u5dd0sVNn$<END>"
+    },
+    {
+      "rom_offset": 227553,
+      "rom_offset_hex": "0x378E1",
+      "bank": 13,
+      "cpu": 47313,
+      "cpu_hex": "$B8D1",
+      "length": 8,
+      "text": ":u 1tt5<END>"
+    },
+    {
+      "rom_offset": 227572,
+      "rom_offset_hex": "0x378F4",
+      "bank": 13,
+      "cpu": 47332,
+      "cpu_hex": "$B8E4",
+      "length": 6,
+      "text": "$:::u<END>"
+    },
+    {
+      "rom_offset": 227651,
+      "rom_offset_hex": "0x37943",
+      "bank": 13,
+      "cpu": 47411,
+      "cpu_hex": "$B933",
+      "length": 6,
+      "text": "fiuZ<60><END>"
+    },
+    {
+      "rom_offset": 227772,
+      "rom_offset_hex": "0x379BC",
+      "bank": 13,
+      "cpu": 47532,
+      "cpu_hex": "$B9AC",
+      "length": 7,
+      "text": "&Mm:v$<END>"
+    },
+    {
+      "rom_offset": 227819,
+      "rom_offset_hex": "0x379EB",
+      "bank": 13,
+      "cpu": 47579,
+      "cpu_hex": "$B9DB",
+      "length": 8,
+      "text": "e&Mm:v$<END>"
+    },
+    {
+      "rom_offset": 229839,
+      "rom_offset_hex": "0x381CF",
+      "bank": 14,
+      "cpu": 33215,
+      "cpu_hex": "$81BF",
+      "length": 10,
+      "text": "mZYoSVNn<4F><END>"
+    },
+    {
+      "rom_offset": 231542,
+      "rom_offset_hex": "0x38876",
+      "bank": 14,
+      "cpu": 34918,
+      "cpu_hex": "$8866",
+      "length": 9,
+      "text": "T2220   <END>"
+    },
+    {
+      "rom_offset": 232119,
+      "rom_offset_hex": "0x38AB7",
+      "bank": 14,
+      "cpu": 35495,
+      "cpu_hex": "$8AA7",
+      "length": 17,
+      "text": "6eeeuuue5d76rph7<END>"
+    },
+    {
+      "rom_offset": 232971,
+      "rom_offset_hex": "0x38E0B",
+      "bank": 14,
+      "cpu": 36347,
+      "cpu_hex": "$8DFB",
+      "length": 14,
+      "text": ":wt SmSgZ:  :<END>"
+    },
+    {
+      "rom_offset": 234183,
+      "rom_offset_hex": "0x392C7",
+      "bank": 14,
+      "cpu": 37559,
+      "cpu_hex": "$92B7",
+      "length": 29,
+      "text": "6ee885q37ffllozW    ff7 6ee+<END>"
+    },
+    {
+      "rom_offset": 236821,
+      "rom_offset_hex": "0x39D15",
+      "bank": 14,
+      "cpu": 40197,
+      "cpu_hex": "$9D05",
+      "length": 12,
+      "text": ":e        <FE><END>"
+    },
+    {
+      "rom_offset": 237207,
+      "rom_offset_hex": "0x39E97",
+      "bank": 14,
+      "cpu": 40583,
+      "cpu_hex": "$9E87",
+      "length": 11,
+      "text": "0266ee66u:<END>"
+    },
+    {
+      "rom_offset": 237801,
+      "rom_offset_hex": "0x3A0E9",
+      "bank": 14,
+      "cpu": 41177,
+      "cpu_hex": "$A0D9",
+      "length": 7,
+      "text": "4  1 2<END>"
+    },
+    {
+      "rom_offset": 237833,
+      "rom_offset_hex": "0x3A109",
+      "bank": 14,
+      "cpu": 41209,
+      "cpu_hex": "$A0F9",
+      "length": 7,
+      "text": "0    0<END>"
+    },
+    {
+      "rom_offset": 237847,
+      "rom_offset_hex": "0x3A117",
+      "bank": 14,
+      "cpu": 41223,
+      "cpu_hex": "$A107",
+      "length": 10,
+      "text": "0    0  <FE><END>"
+    },
+    {
+      "rom_offset": 237927,
+      "rom_offset_hex": "0x3A167",
+      "bank": 14,
+      "cpu": 41303,
+      "cpu_hex": "$A157",
+      "length": 9,
+      "text": "G!S5a1  <END>"
+    },
+    {
+      "rom_offset": 239603,
+      "rom_offset_hex": "0x3A7F3",
+      "bank": 14,
+      "cpu": 42979,
+      "cpu_hex": "$A7E3",
+      "length": 20,
+      "text": "&-TS  205uWW06eeodt<END>"
+    },
+    {
+      "rom_offset": 239707,
+      "rom_offset_hex": "0x3A85B",
+      "bank": 14,
+      "cpu": 43083,
+      "cpu_hex": "$A84B",
+      "length": 8,
+      "text": "c0gn<FE><FE><FE><END>"
+    },
+    {
+      "rom_offset": 239883,
+      "rom_offset_hex": "0x3A90B",
+      "bank": 14,
+      "cpu": 43259,
+      "cpu_hex": "$A8FB",
+      "length": 5,
+      "text": "9kk1<END>"
+    },
+    {
+      "rom_offset": 240011,
+      "rom_offset_hex": "0x3A98B",
+      "bank": 14,
+      "cpu": 43387,
+      "cpu_hex": "$A97B",
+      "length": 5,
+      "text": "9kkD<END>"
+    },
+    {
+      "rom_offset": 240488,
+      "rom_offset_hex": "0x3AB68",
+      "bank": 14,
+      "cpu": 43864,
+      "cpu_hex": "$AB58",
+      "length": 8,
+      "text": "ru::qT <END>"
+    },
+    {
+      "rom_offset": 240584,
+      "rom_offset_hex": "0x3ABC8",
+      "bank": 14,
+      "cpu": 43960,
+      "cpu_hex": "$ABB8",
+      "length": 8,
+      "text": "%TZ:qT <END>"
+    },
+    {
+      "rom_offset": 241004,
+      "rom_offset_hex": "0x3AD6C",
+      "bank": 14,
+      "cpu": 44380,
+      "cpu_hex": "$AD5C",
+      "length": 7,
+      "text": "ffvZu=<END>"
+    },
+    {
+      "rom_offset": 241052,
+      "rom_offset_hex": "0x3AD9C",
+      "bank": 14,
+      "cpu": 44428,
+      "cpu_hex": "$AD8C",
+      "length": 7,
+      "text": "ffvZu=<END>"
+    },
+    {
+      "rom_offset": 241148,
+      "rom_offset_hex": "0x3ADFC",
+      "bank": 14,
+      "cpu": 44524,
+      "cpu_hex": "$ADEC",
+      "length": 7,
+      "text": "iiwZu=<END>"
+    },
+    {
+      "rom_offset": 241179,
+      "rom_offset_hex": "0x3AE1B",
+      "bank": 14,
+      "cpu": 44555,
+      "cpu_hex": "$AE0B",
+      "length": 13,
+      "text": "uue    <60><60>   <END>"
+    },
+    {
+      "rom_offset": 241387,
+      "rom_offset_hex": "0x3AEEB",
+      "bank": 14,
+      "cpu": 44763,
+      "cpu_hex": "$AEDB",
+      "length": 5,
+      "text": "fT_ <END>"
+    },
+    {
+      "rom_offset": 242504,
+      "rom_offset_hex": "0x3B348",
+      "bank": 14,
+      "cpu": 45880,
+      "cpu_hex": "$B338",
+      "length": 8,
+      "text": "|220  h<END>"
+    },
+    {
+      "rom_offset": 243655,
+      "rom_offset_hex": "0x3B7C7",
+      "bank": 14,
+      "cpu": 47031,
+      "cpu_hex": "$B7B7",
+      "length": 70,
+      "text": "02ciIOIN015tltmsIMzkuke ieuq994  02ciIOI 015tltmNIMzkukesieuq994  uF:<END>"
+    },
+    {
+      "rom_offset": 243844,
+      "rom_offset_hex": "0x3B884",
+      "bank": 14,
+      "cpu": 47220,
+      "cpu_hex": "$B874",
+      "length": 20,
+      "text": "v<40><60>                <END>"
+    },
+    {
+      "rom_offset": 244042,
+      "rom_offset_hex": "0x3B94A",
+      "bank": 14,
+      "cpu": 47418,
+      "cpu_hex": "$B93A",
+      "length": 6,
+      "text": "uk<40>0<4E><END>"
+    },
+    {
+      "rom_offset": 244586,
+      "rom_offset_hex": "0x3BB6A",
+      "bank": 14,
+      "cpu": 47962,
+      "cpu_hex": "$BB5A",
+      "length": 13,
+      "text": "WIIIIYY<42>FQ3P<END>"
+    },
+    {
+      "rom_offset": 244599,
+      "rom_offset_hex": "0x3BB77",
+      "bank": 14,
+      "cpu": 47975,
+      "cpu_hex": "$BB67",
+      "length": 22,
+      "text": "PPQVSSSTUUUUWW754 012<END>"
+    },
+    {
+      "rom_offset": 244621,
+      "rom_offset_hex": "0x3BB8D",
+      "bank": 14,
+      "cpu": 47997,
+      "cpu_hex": "$BB7D",
+      "length": 7,
+      "text": "4568ef<END>"
+    },
+    {
+      "rom_offset": 245451,
+      "rom_offset_hex": "0x3BECB",
+      "bank": 14,
+      "cpu": 48827,
+      "cpu_hex": "$BEBB",
+      "length": 47,
+      "text": "X<47>IqQgfpvrYmK<45>yuByFCmFDLFEgh<44>RhFzFXyoXzo<45>yr<45>zr<END>"
+    },
+    {
+      "rom_offset": 245583,
+      "rom_offset_hex": "0x3BF4F",
+      "bank": 14,
+      "cpu": 48959,
+      "cpu_hex": "$BF3F",
+      "length": 10,
+      "text": "n<60>l R0R1<60><END>"
+    },
+    {
+      "rom_offset": 249238,
+      "rom_offset_hex": "0x3CD96",
+      "bank": 15,
+      "cpu": 36230,
+      "cpu_hex": "$8D86",
+      "length": 8,
+      "text": "U4f3 6+<END>"
+    },
+    {
+      "rom_offset": 249334,
+      "rom_offset_hex": "0x3CDF6",
+      "bank": 15,
+      "cpu": 36326,
+      "cpu_hex": "$8DE6",
+      "length": 5,
+      "text": "hEu!<END>"
+    },
+    {
+      "rom_offset": 250374,
+      "rom_offset_hex": "0x3D206",
+      "bank": 15,
+      "cpu": 37366,
+      "cpu_hex": "$91F6",
+      "length": 6,
+      "text": "U4 6+<END>"
+    },
+    {
+      "rom_offset": 250443,
+      "rom_offset_hex": "0x3D24B",
+      "bank": 15,
+      "cpu": 37435,
+      "cpu_hex": "$923B",
+      "length": 5,
+      "text": "0  0<END>"
+    },
+    {
+      "rom_offset": 259251,
+      "rom_offset_hex": "0x3F4B3",
+      "bank": 15,
+      "cpu": 46243,
+      "cpu_hex": "$B4A3",
+      "length": 5,
+      "text": "0  0<END>"
+    },
+    {
+      "rom_offset": 261267,
+      "rom_offset_hex": "0x3FC93",
+      "bank": 15,
+      "cpu": 48259,
+      "cpu_hex": "$BC83",
+      "length": 10,
+      "text": "e<FE>  e<FE>  :<END>"
+    },
+    {
+      "rom_offset": 261705,
+      "rom_offset_hex": "0x3FE49",
+      "bank": 15,
+      "cpu": 48697,
+      "cpu_hex": "$BE39",
+      "length": 9,
+      "text": "33333<FE><FE><FE><END>"
+    },
+    {
+      "rom_offset": 261871,
+      "rom_offset_hex": "0x3FEEF",
+      "bank": 15,
+      "cpu": 48863,
+      "cpu_hex": "$BEDF",
+      "length": 6,
+      "text": "77777<END>"
+    },
+    {
+      "rom_offset": 262134,
+      "rom_offset_hex": "0x3FFF6",
+      "bank": 15,
+      "cpu": 49126,
+      "cpu_hex": "$BFE6",
+      "length": 11,
+      "text": "v<51><55><45><53><54>v<49><56>v<END>"
+    },
+    {
+      "rom_offset": 265362,
+      "rom_offset_hex": "0x40C92",
+      "bank": 16,
+      "cpu": 35970,
+      "cpu_hex": "$8C82",
+      "length": 8,
+      "text": "tt<60>l0t<61><END>"
+    },
+    {
+      "rom_offset": 265394,
+      "rom_offset_hex": "0x40CB2",
+      "bank": 16,
+      "cpu": 36002,
+      "cpu_hex": "$8CA2",
+      "length": 10,
+      "text": "==.<63><43><41><41>0t<END>"
+    },
+    {
+      "rom_offset": 266537,
+      "rom_offset_hex": "0x41129",
+      "bank": 16,
+      "cpu": 37145,
+      "cpu_hex": "$9119",
+      "length": 67,
+      "text": "lF OnK2GBsfC6IgLhPwEpFoGxHiLjMcEmFJGdznLeN u2r5D0134678u9taOrvqybA<END>"
+    },
+    {
+      "rom_offset": 266605,
+      "rom_offset_hex": "0x4116D",
+      "bank": 16,
+      "cpu": 37213,
+      "cpu_hex": "$915D",
+      "length": 14,
+      "text": "OFWQGLEVFLGHM<END>"
+    },
+    {
+      "rom_offset": 266619,
+      "rom_offset_hex": "0x4117B",
+      "bank": 16,
+      "cpu": 37227,
+      "cpu_hex": "$916B",
+      "length": 6,
+      "text": "EJFLG<END>"
+    },
+    {
+      "rom_offset": 266635,
+      "rom_offset_hex": "0x4118B",
+      "bank": 16,
+      "cpu": 37243,
+      "cpu_hex": "$917B",
+      "length": 5,
+      "text": "OQTR<END>"
+    },
+    {
+      "rom_offset": 267713,
+      "rom_offset_hex": "0x415C1",
+      "bank": 16,
+      "cpu": 38321,
+      "cpu_hex": "$95B1",
+      "length": 18,
+      "text": "'<61><60>1h0debl43km g9<END>"
+    },
+    {
+      "rom_offset": 267731,
+      "rom_offset_hex": "0x415D3",
+      "bank": 16,
+      "cpu": 38339,
+      "cpu_hex": "$95C3",
+      "length": 24,
+      "text": "534f<43>c6 gk0d81h7qa29p<46>B<END>"
+    },
+    {
+      "rom_offset": 267755,
+      "rom_offset_hex": "0x415EB",
+      "bank": 16,
+      "cpu": 38363,
+      "cpu_hex": "$95DB",
+      "length": 15,
+      "text": "2i1efcl54km ha<END>"
+    },
+    {
+      "rom_offset": 270245,
+      "rom_offset_hex": "0x41FA5",
+      "bank": 16,
+      "cpu": 40853,
+      "cpu_hex": "$9F95",
+      "length": 97,
+      "text": "e<61>k<61>q<61>w<61>C<61>I<61>O<61>U<61>:<61><45><61><4B><61><51><61>f@p@z@J@T@<42>@<4C>@<56>@<60>@?@456789 02bdf iq 4a 020000000111122723000112009<57><61><5B><61><5A><61><END>"
+    },
+    {
+      "rom_offset": 270759,
+      "rom_offset_hex": "0x421A7",
+      "bank": 16,
+      "cpu": 41367,
+      "cpu_hex": "$A197",
+      "length": 5,
+      "text": "(<60>V<4E><END>"
+    },
+    {
+      "rom_offset": 274041,
+      "rom_offset_hex": "0x42E79",
+      "bank": 16,
+      "cpu": 44649,
+      "cpu_hex": "$AE69",
+      "length": 6,
+      "text": "1n<60>T<60><END>"
+    },
+    {
+      "rom_offset": 278089,
+      "rom_offset_hex": "0x43E49",
+      "bank": 16,
+      "cpu": 48697,
+      "cpu_hex": "$BE39",
+      "length": 11,
+      "text": "qg<42><42><50>Dfb  <END>"
+    },
+    {
+      "rom_offset": 278249,
+      "rom_offset_hex": "0x43EE9",
+      "bank": 16,
+      "cpu": 48857,
+      "cpu_hex": "$BED9",
+      "length": 14,
+      "text": "eB6<LINE>e0226007Z<END>"
+    },
+    {
+      "rom_offset": 278311,
+      "rom_offset_hex": "0x43F27",
+      "bank": 16,
+      "cpu": 48919,
+      "cpu_hex": "$BF17",
+      "length": 11,
+      "text": "mJ da43<42>x<50><END>"
+    },
+    {
+      "rom_offset": 278367,
+      "rom_offset_hex": "0x43F5F",
+      "bank": 16,
+      "cpu": 48975,
+      "cpu_hex": "$BF4F",
+      "length": 6,
+      "text": "fLvv<40><END>"
+    },
+    {
+      "rom_offset": 301899,
+      "rom_offset_hex": "0x49B4B",
+      "bank": 18,
+      "cpu": 39739,
+      "cpu_hex": "$9B3B",
+      "length": 5,
+      "text": "01v%<END>"
+    },
+    {
+      "rom_offset": 302058,
+      "rom_offset_hex": "0x49BEA",
+      "bank": 18,
+      "cpu": 39898,
+      "cpu_hex": "$9BDA",
+      "length": 33,
+      "text": "21<60> .<57><57><47>mmCBzwgi CCSRQzwxy  013 <END>"
+    },
+    {
+      "rom_offset": 302316,
+      "rom_offset_hex": "0x49CEC",
+      "bank": 18,
+      "cpu": 40156,
+      "cpu_hex": "$9CDC",
+      "length": 5,
+      "text": "5 6+<END>"
+    },
+    {
+      "rom_offset": 308150,
+      "rom_offset_hex": "0x4B3B6",
+      "bank": 18,
+      "cpu": 45990,
+      "cpu_hex": "$B3A6",
+      "length": 5,
+      "text": "6+<50> <END>"
+    },
+    {
+      "rom_offset": 308366,
+      "rom_offset_hex": "0x4B48E",
+      "bank": 18,
+      "cpu": 46206,
+      "cpu_hex": "$B47E",
+      "length": 5,
+      "text": "8 6+<END>"
+    },
+    {
+      "rom_offset": 308960,
+      "rom_offset_hex": "0x4B6E0",
+      "bank": 18,
+      "cpu": 46800,
+      "cpu_hex": "$B6D0",
+      "length": 14,
+      "text": "-&<55>%.t?<5E><52>*#@$<END>"
+    },
+    {
+      "rom_offset": 309832,
+      "rom_offset_hex": "0x4BA48",
+      "bank": 18,
+      "cpu": 47672,
+      "cpu_hex": "$BA38",
+      "length": 6,
+      "text": "34199<END>"
+    },
+    {
+      "rom_offset": 323760,
+      "rom_offset_hex": "0x4F0B0",
+      "bank": 19,
+      "cpu": 45216,
+      "cpu_hex": "$B0A0",
+      "length": 5,
+      "text": "hn|<5E><END>"
+    },
+    {
+      "rom_offset": 324408,
+      "rom_offset_hex": "0x4F338",
+      "bank": 19,
+      "cpu": 45864,
+      "cpu_hex": "$B328",
+      "length": 67,
+      "text": "lF OnK2GBsfC6IgLhPwEpFoGxHiLjMcEmFJGdznLeN u2r5D0134678u9taOrvqybA<END>"
+    },
+    {
+      "rom_offset": 324476,
+      "rom_offset_hex": "0x4F37C",
+      "bank": 19,
+      "cpu": 45932,
+      "cpu_hex": "$B36C",
+      "length": 14,
+      "text": "OFWQGLEVFLGHM<END>"
+    },
+    {
+      "rom_offset": 324490,
+      "rom_offset_hex": "0x4F38A",
+      "bank": 19,
+      "cpu": 45946,
+      "cpu_hex": "$B37A",
+      "length": 6,
+      "text": "EJFLG<END>"
+    },
+    {
+      "rom_offset": 324506,
+      "rom_offset_hex": "0x4F39A",
+      "bank": 19,
+      "cpu": 45962,
+      "cpu_hex": "$B38A",
+      "length": 5,
+      "text": "OQTR<END>"
+    },
+    {
+      "rom_offset": 325446,
+      "rom_offset_hex": "0x4F746",
+      "bank": 19,
+      "cpu": 46902,
+      "cpu_hex": "$B736",
+      "length": 19,
+      "text": "210654a98edcihg  v<END>"
+    },
+    {
+      "rom_offset": 325562,
+      "rom_offset_hex": "0x4F7BA",
+      "bank": 19,
+      "cpu": 47018,
+      "cpu_hex": "$B7AA",
+      "length": 62,
+      "text": "O54ta<50>k84Dk<64>Eh4Ia9582U4*hd3r5N4<50>7c2y4Y5b5n9Jf71y4<5A>9a1N9_jta<4B>k<END>"
+    },
+    {
+      "rom_offset": 325625,
+      "rom_offset_hex": "0x4F7F9",
+      "bank": 19,
+      "cpu": 47081,
+      "cpu_hex": "$B7E9",
+      "length": 27,
+      "text": "taNaja95023222012445e5<64>kNa<END>"
+    },
+    {
+      "rom_offset": 326111,
+      "rom_offset_hex": "0x4F9DF",
+      "bank": 19,
+      "cpu": 47567,
+      "cpu_hex": "$B9CF",
+      "length": 6,
+      "text": "uuuuu<END>"
+    },
+    {
+      "rom_offset": 326262,
+      "rom_offset_hex": "0x4FA76",
+      "bank": 19,
+      "cpu": 47718,
+      "cpu_hex": "$BA66",
+      "length": 7,
+      "text": "uz    <END>"
+    },
+    {
+      "rom_offset": 326423,
+      "rom_offset_hex": "0x4FB17",
+      "bank": 19,
+      "cpu": 47879,
+      "cpu_hex": "$BB07",
+      "length": 37,
+      "text": "tpBBb9h9    tpBBeeee        <40>N<46>Xllvv<END>"
+    },
+    {
+      "rom_offset": 326463,
+      "rom_offset_hex": "0x4FB3F",
+      "bank": 19,
+      "cpu": 47919,
+      "cpu_hex": "$BB2F",
+      "length": 13,
+      "text": "ll<4D><4D><4D><4D><4D><4D>    <END>"
+    },
+    {
+      "rom_offset": 326498,
+      "rom_offset_hex": "0x4FB62",
+      "bank": 19,
+      "cpu": 47954,
+      "cpu_hex": "$BB52",
+      "length": 49,
+      "text": "&39907f137030701301070nvvnf<40>n37b12f224401f1nDfnv<END>"
+    },
+    {
+      "rom_offset": 327602,
+      "rom_offset_hex": "0x4FFB2",
+      "bank": 19,
+      "cpu": 49058,
+      "cpu_hex": "$BFA2",
+      "length": 6,
+      "text": "5qpk<LINE><END>"
+    },
+    {
+      "rom_offset": 331487,
+      "rom_offset_hex": "0x50EDF",
+      "bank": 20,
+      "cpu": 36559,
+      "cpu_hex": "$8ECF",
+      "length": 6,
+      "text": "vv   <END>"
+    },
+    {
+      "rom_offset": 340170,
+      "rom_offset_hex": "0x530CA",
+      "bank": 20,
+      "cpu": 45242,
+      "cpu_hex": "$B0BA",
+      "length": 6,
+      "text": "5L3-<49><END>"
+    },
+    {
+      "rom_offset": 344026,
+      "rom_offset_hex": "0x53FDA",
+      "bank": 20,
+      "cpu": 49098,
+      "cpu_hex": "$BFCA",
+      "length": 7,
+      "text": "2e 900<END>"
+    },
+    {
+      "rom_offset": 344378,
+      "rom_offset_hex": "0x5413A",
+      "bank": 21,
+      "cpu": 33066,
+      "cpu_hex": "$812A",
+      "length": 6,
+      "text": ":<43><42>:<45><END>"
+    },
+    {
+      "rom_offset": 345168,
+      "rom_offset_hex": "0x54450",
+      "bank": 21,
+      "cpu": 33856,
+      "cpu_hex": "$8440",
+      "length": 6,
+      "text": "56i6<47><END>"
+    },
+    {
+      "rom_offset": 348374,
+      "rom_offset_hex": "0x550D6",
+      "bank": 21,
+      "cpu": 37062,
+      "cpu_hex": "$90C6",
+      "length": 11,
+      "text": ":6l45<49><FE>64<49><END>"
+    },
+    {
+      "rom_offset": 349117,
+      "rom_offset_hex": "0x553BD",
+      "bank": 21,
+      "cpu": 37805,
+      "cpu_hex": "$93AD",
+      "length": 5,
+      "text": ":6qq<END>"
+    },
+    {
+      "rom_offset": 349211,
+      "rom_offset_hex": "0x5541B",
+      "bank": 21,
+      "cpu": 37899,
+      "cpu_hex": "$940B",
+      "length": 9,
+      "text": "a6qs16qg<END>"
+    },
+    {
+      "rom_offset": 353827,
+      "rom_offset_hex": "0x56623",
+      "bank": 21,
+      "cpu": 42515,
+      "cpu_hex": "$A613",
+      "length": 5,
+      "text": "5<46>p,<END>"
+    },
+    {
+      "rom_offset": 356796,
+      "rom_offset_hex": "0x571BC",
+      "bank": 21,
+      "cpu": 45484,
+      "cpu_hex": "$B1AC",
+      "length": 37,
+      "text": "2 <51><4B>--<60> 01234g5678:9abdGfhiklmopCD<48>E<END>"
+    },
+    {
+      "rom_offset": 356833,
+      "rom_offset_hex": "0x571E1",
+      "bank": 21,
+      "cpu": 45521,
+      "cpu_hex": "$B1D1",
+      "length": 30,
+      "text": "9abcdeefghiijklmmjnopqrstuvve<END>"
+    },
+    {
+      "rom_offset": 363025,
+      "rom_offset_hex": "0x58A11",
+      "bank": 22,
+      "cpu": 35329,
+      "cpu_hex": "$8A01",
+      "length": 7,
+      "text": "pDR<41><4B><56><END>"
+    },
+    {
+      "rom_offset": 372415,
+      "rom_offset_hex": "0x5AEBF",
+      "bank": 22,
+      "cpu": 44719,
+      "cpu_hex": "$AEAF",
+      "length": 11,
+      "text": "88  84sive<END>"
+    },
+    {
+      "rom_offset": 376769,
+      "rom_offset_hex": "0x5BFC1",
+      "bank": 22,
+      "cpu": 49073,
+      "cpu_hex": "$BFB1",
+      "length": 6,
+      "text": "1T<60>n<60><END>"
+    },
+    {
+      "rom_offset": 377588,
+      "rom_offset_hex": "0x5C2F4",
+      "bank": 23,
+      "cpu": 33508,
+      "cpu_hex": "$82E4",
+      "length": 20,
+      "text": "bnCOZ<44><4D><59>Royal Flush<END>"
+    },
+    {
+      "rom_offset": 377608,
+      "rom_offset_hex": "0x5C308",
+      "bank": 23,
+      "cpu": 33528,
+      "cpu_hex": "$82F8",
+      "length": 12,
+      "text": "5 of a Kind<END>"
+    },
+    {
+      "rom_offset": 377620,
+      "rom_offset_hex": "0x5C314",
+      "bank": 23,
+      "cpu": 33540,
+      "cpu_hex": "$8304",
+      "length": 15,
+      "text": "Straight Flush<END>"
+    },
+    {
+      "rom_offset": 377635,
+      "rom_offset_hex": "0x5C323",
+      "bank": 23,
+      "cpu": 33555,
+      "cpu_hex": "$8313",
+      "length": 12,
+      "text": "4 of a Kind<END>"
+    },
+    {
+      "rom_offset": 377647,
+      "rom_offset_hex": "0x5C32F",
+      "bank": 23,
+      "cpu": 33567,
+      "cpu_hex": "$831F",
+      "length": 11,
+      "text": "Full House<END>"
+    },
+    {
+      "rom_offset": 377658,
+      "rom_offset_hex": "0x5C33A",
+      "bank": 23,
+      "cpu": 33578,
+      "cpu_hex": "$832A",
+      "length": 6,
+      "text": "Flush<END>"
+    },
+    {
+      "rom_offset": 377664,
+      "rom_offset_hex": "0x5C340",
+      "bank": 23,
+      "cpu": 33584,
+      "cpu_hex": "$8330",
+      "length": 9,
+      "text": "Straight<END>"
+    },
+    {
+      "rom_offset": 377673,
+      "rom_offset_hex": "0x5C349",
+      "bank": 23,
+      "cpu": 33593,
+      "cpu_hex": "$8339",
+      "length": 12,
+      "text": "3 of a Kind<END>"
+    },
+    {
+      "rom_offset": 377685,
+      "rom_offset_hex": "0x5C355",
+      "bank": 23,
+      "cpu": 33605,
+      "cpu_hex": "$8345",
+      "length": 8,
+      "text": "2 Pairs<END>"
+    },
+    {
+      "rom_offset": 377693,
+      "rom_offset_hex": "0x5C35D",
+      "bank": 23,
+      "cpu": 33613,
+      "cpu_hex": "$834D",
+      "length": 13,
+      "text": "Top Score of<END>"
+    },
+    {
+      "rom_offset": 377706,
+      "rom_offset_hex": "0x5C36A",
+      "bank": 23,
+      "cpu": 33626,
+      "cpu_hex": "$835A",
+      "length": 10,
+      "text": "Double Up<END>"
+    },
+    {
+      "rom_offset": 377716,
+      "rom_offset_hex": "0x5C374",
+      "bank": 23,
+      "cpu": 33636,
+      "cpu_hex": "$8364",
+      "length": 13,
+      "text": "Top Takes of<END>"
+    },
+    {
+      "rom_offset": 377729,
+      "rom_offset_hex": "0x5C381",
+      "bank": 23,
+      "cpu": 33649,
+      "cpu_hex": "$8371",
+      "length": 10,
+      "text": "Double Up<END>"
+    },
+    {
+      "rom_offset": 377739,
+      "rom_offset_hex": "0x5C38B",
+      "bank": 23,
+      "cpu": 33659,
+      "cpu_hex": "$837B",
+      "length": 11,
+      "text": "Total Bets<END>"
+    },
+    {
+      "rom_offset": 377750,
+      "rom_offset_hex": "0x5C396",
+      "bank": 23,
+      "cpu": 33670,
+      "cpu_hex": "$8386",
+      "length": 12,
+      "text": "Total Takes<END>"
+    },
+    {
+      "rom_offset": 377762,
+      "rom_offset_hex": "0x5C3A2",
+      "bank": 23,
+      "cpu": 33682,
+      "cpu_hex": "$8392",
+      "length": 23,
+      "text": "Top Score of Double Up<END>"
+    },
+    {
+      "rom_offset": 378005,
+      "rom_offset_hex": "0x5C495",
+      "bank": 23,
+      "cpu": 33925,
+      "cpu_hex": "$8485",
+      "length": 5,
+      "text": "74v%<END>"
+    },
+    {
+      "rom_offset": 378023,
+      "rom_offset_hex": "0x5C4A7",
+      "bank": 23,
+      "cpu": 33943,
+      "cpu_hex": "$8497",
+      "length": 5,
+      "text": "74v%<END>"
+    },
+    {
+      "rom_offset": 380749,
+      "rom_offset_hex": "0x5CF4D",
+      "bank": 23,
+      "cpu": 36669,
+      "cpu_hex": "$8F3D",
+      "length": 5,
+      "text": "31<4C>%<END>"
+    },
+    {
+      "rom_offset": 382673,
+      "rom_offset_hex": "0x5D6D1",
+      "bank": 23,
+      "cpu": 38593,
+      "cpu_hex": "$96C1",
+      "length": 10,
+      "text": "/        <END>"
+    },
+    {
+      "rom_offset": 382683,
+      "rom_offset_hex": "0x5D6DB",
+      "bank": 23,
+      "cpu": 38603,
+      "cpu_hex": "$96CB",
+      "length": 17,
+      "text": "g^^l#^l        <FE><END>"
+    },
+    {
+      "rom_offset": 382742,
+      "rom_offset_hex": "0x5D716",
+      "bank": 23,
+      "cpu": 38662,
+      "cpu_hex": "$9706",
+      "length": 5,
+      "text": "ffff<END>"
+    },
+    {
+      "rom_offset": 382826,
+      "rom_offset_hex": "0x5D76A",
+      "bank": 23,
+      "cpu": 38746,
+      "cpu_hex": "$975A",
+      "length": 5,
+      "text": "eeu:<END>"
+    },
+    {
+      "rom_offset": 382930,
+      "rom_offset_hex": "0x5D7D2",
+      "bank": 23,
+      "cpu": 38850,
+      "cpu_hex": "$97C2",
+      "length": 12,
+      "text": "6eutr   Km.<END>"
+    },
+    {
+      "rom_offset": 382966,
+      "rom_offset_hex": "0x5D7F6",
+      "bank": 23,
+      "cpu": 38886,
+      "cpu_hex": "$97E6",
+      "length": 5,
+      "text": "0266<END>"
+    },
+    {
+      "rom_offset": 383126,
+      "rom_offset_hex": "0x5D896",
+      "bank": 23,
+      "cpu": 39046,
+      "cpu_hex": "$9886",
+      "length": 5,
+      "text": "nnXX<END>"
+    },
+    {
+      "rom_offset": 383154,
+      "rom_offset_hex": "0x5D8B2",
+      "bank": 23,
+      "cpu": 39074,
+      "cpu_hex": "$98A2",
+      "length": 15,
+      "text": "22222 2       <END>"
+    },
+    {
+      "rom_offset": 383202,
+      "rom_offset_hex": "0x5D8E2",
+      "bank": 23,
+      "cpu": 39122,
+      "cpu_hex": "$98D2",
+      "length": 11,
+      "text": "2         <END>"
+    },
+    {
+      "rom_offset": 383252,
+      "rom_offset_hex": "0x5D914",
+      "bank": 23,
+      "cpu": 39172,
+      "cpu_hex": "$9904",
+      "length": 10,
+      "text": "555555uu:<END>"
+    },
+    {
+      "rom_offset": 383410,
+      "rom_offset_hex": "0x5D9B2",
+      "bank": 23,
+      "cpu": 39330,
+      "cpu_hex": "$99A2",
+      "length": 11,
+      "text": "2       u:<END>"
+    },
+    {
+      "rom_offset": 383845,
+      "rom_offset_hex": "0x5DB65",
+      "bank": 23,
+      "cpu": 39765,
+      "cpu_hex": "$9B55",
+      "length": 6,
+      "text": "uuuuu<END>"
+    },
+    {
+      "rom_offset": 383857,
+      "rom_offset_hex": "0x5DB71",
+      "bank": 23,
+      "cpu": 39777,
+      "cpu_hex": "$9B61",
+      "length": 5,
+      "text": ",   <END>"
+    },
+    {
+      "rom_offset": 387295,
+      "rom_offset_hex": "0x5E8DF",
+      "bank": 23,
+      "cpu": 43215,
+      "cpu_hex": "$A8CF",
+      "length": 7,
+      "text": "eL__L2<END>"
+    },
+    {
+      "rom_offset": 387326,
+      "rom_offset_hex": "0x5E8FE",
+      "bank": 23,
+      "cpu": 43246,
+      "cpu_hex": "$A8EE",
+      "length": 8,
+      "text": "ee22226<END>"
+    },
+    {
+      "rom_offset": 387356,
+      "rom_offset_hex": "0x5E91C",
+      "bank": 23,
+      "cpu": 43276,
+      "cpu_hex": "$A90C",
+      "length": 10,
+      "text": "F euULLL_<END>"
+    },
+    {
+      "rom_offset": 387408,
+      "rom_offset_hex": "0x5E950",
+      "bank": 23,
+      "cpu": 43328,
+      "cpu_hex": "$A940",
+      "length": 6,
+      "text": "WqqqS<END>"
+    },
+    {
+      "rom_offset": 387440,
+      "rom_offset_hex": "0x5E970",
+      "bank": 23,
+      "cpu": 43360,
+      "cpu_hex": "$A960",
+      "length": 6,
+      "text": "NNLL_<END>"
+    },
+    {
+      "rom_offset": 387452,
+      "rom_offset_hex": "0x5E97C",
+      "bank": 23,
+      "cpu": 43372,
+      "cpu_hex": "$A96C",
+      "length": 10,
+      "text": "6   2377g<END>"
+    },
+    {
+      "rom_offset": 387917,
+      "rom_offset_hex": "0x5EB4D",
+      "bank": 23,
+      "cpu": 43837,
+      "cpu_hex": "$AB3D",
+      "length": 9,
+      "text": "::::::::<END>"
+    },
+    {
+      "rom_offset": 388158,
+      "rom_offset_hex": "0x5EC3E",
+      "bank": 23,
+      "cpu": 44078,
+      "cpu_hex": "$AC2E",
+      "length": 8,
+      "text": "v ggg v<END>"
+    },
+    {
+      "rom_offset": 388174,
+      "rom_offset_hex": "0x5EC4E",
+      "bank": 23,
+      "cpu": 44094,
+      "cpu_hex": "$AC3E",
+      "length": 8,
+      "text": "77  fff<END>"
+    },
+    {
+      "rom_offset": 388192,
+      "rom_offset_hex": "0x5EC60",
+      "bank": 23,
+      "cpu": 44112,
+      "cpu_hex": "$AC50",
+      "length": 6,
+      "text": "rLLL <END>"
+    },
+    {
+      "rom_offset": 388543,
+      "rom_offset_hex": "0x5EDBF",
+      "bank": 23,
+      "cpu": 44463,
+      "cpu_hex": "$ADAF",
+      "length": 5,
+      "text": "0   <END>"
+    },
+    {
+      "rom_offset": 388581,
+      "rom_offset_hex": "0x5EDE5",
+      "bank": 23,
+      "cpu": 44501,
+      "cpu_hex": "$ADD5",
+      "length": 12,
+      "text": "=SSi#44<FE>   <END>"
+    },
+    {
+      "rom_offset": 388733,
+      "rom_offset_hex": "0x5EE7D",
+      "bank": 23,
+      "cpu": 44653,
+      "cpu_hex": "$AE6D",
+      "length": 6,
+      "text": "02266<END>"
+    },
+    {
+      "rom_offset": 389078,
+      "rom_offset_hex": "0x5EFD6",
+      "bank": 23,
+      "cpu": 44998,
+      "cpu_hex": "$AFC6",
+      "length": 8,
+      "text": "X,,,,X <END>"
+    },
+    {
+      "rom_offset": 389094,
+      "rom_offset_hex": "0x5EFE6",
+      "bank": 23,
+      "cpu": 45014,
+      "cpu_hex": "$AFD6",
+      "length": 8,
+      "text": "nTnnnX <END>"
+    },
+    {
+      "rom_offset": 389177,
+      "rom_offset_hex": "0x5F039",
+      "bank": 23,
+      "cpu": 45097,
+      "cpu_hex": "$B029",
+      "length": 5,
+      "text": ",,X <END>"
+    },
+    {
+      "rom_offset": 389191,
+      "rom_offset_hex": "0x5F047",
+      "bank": 23,
+      "cpu": 45111,
+      "cpu_hex": "$B037",
+      "length": 7,
+      "text": ",bnnn <END>"
+    },
+    {
+      "rom_offset": 389206,
+      "rom_offset_hex": "0x5F056",
+      "bank": 23,
+      "cpu": 45126,
+      "cpu_hex": "$B046",
+      "length": 8,
+      "text": "X,X,,X <END>"
+    },
+    {
+      "rom_offset": 389222,
+      "rom_offset_hex": "0x5F066",
+      "bank": 23,
+      "cpu": 45142,
+      "cpu_hex": "$B056",
+      "length": 8,
+      "text": "X,,Z5X <END>"
+    },
+    {
+      "rom_offset": 390791,
+      "rom_offset_hex": "0x5F687",
+      "bank": 23,
+      "cpu": 46711,
+      "cpu_hex": "$B677",
+      "length": 9,
+      "text": "hGFBzyus<END>"
+    },
+    {
+      "rom_offset": 393206,
+      "rom_offset_hex": "0x5FFF6",
+      "bank": 23,
+      "cpu": 49126,
+      "cpu_hex": "$BFE6",
+      "length": 11,
+      "text": "v<51><55><45><53><54>v<49><56>v<END>"
+    },
+    {
+      "rom_offset": 393741,
+      "rom_offset_hex": "0x6020D",
+      "bank": 24,
+      "cpu": 33277,
+      "cpu_hex": "$81FD",
+      "length": 5,
+      "text": ":6 b<END>"
+    },
+    {
+      "rom_offset": 395236,
+      "rom_offset_hex": "0x607E4",
+      "bank": 24,
+      "cpu": 34772,
+      "cpu_hex": "$87D4",
+      "length": 6,
+      "text": "3:A t<END>"
+    },
+    {
+      "rom_offset": 395325,
+      "rom_offset_hex": "0x6083D",
+      "bank": 24,
+      "cpu": 34861,
+      "cpu_hex": "$882D",
+      "length": 8,
+      "text": ":<46>4Nb3j<END>"
+    },
+    {
+      "rom_offset": 395369,
+      "rom_offset_hex": "0x60869",
+      "bank": 24,
+      "cpu": 34905,
+      "cpu_hex": "$8859",
+      "length": 5,
+      "text": ":<44> r<END>"
+    },
+    {
+      "rom_offset": 397239,
+      "rom_offset_hex": "0x60FB7",
+      "bank": 24,
+      "cpu": 36775,
+      "cpu_hex": "$8FA7",
+      "length": 5,
+      "text": ":<49> f<END>"
+    },
+    {
+      "rom_offset": 397283,
+      "rom_offset_hex": "0x60FE3",
+      "bank": 24,
+      "cpu": 36819,
+      "cpu_hex": "$8FD3",
+      "length": 5,
+      "text": ":<64>od<END>"
+    },
+    {
+      "rom_offset": 397371,
+      "rom_offset_hex": "0x6103B",
+      "bank": 24,
+      "cpu": 36907,
+      "cpu_hex": "$902B",
+      "length": 6,
+      "text": ":3f47<END>"
+    },
+    {
+      "rom_offset": 397393,
+      "rom_offset_hex": "0x61051",
+      "bank": 24,
+      "cpu": 36929,
+      "cpu_hex": "$9041",
+      "length": 5,
+      "text": ":  <4B><END>"
+    },
+    {
+      "rom_offset": 397415,
+      "rom_offset_hex": "0x61067",
+      "bank": 24,
+      "cpu": 36951,
+      "cpu_hex": "$9057",
+      "length": 5,
+      "text": ":  t<END>"
+    },
+    {
+      "rom_offset": 397833,
+      "rom_offset_hex": "0x61209",
+      "bank": 24,
+      "cpu": 37369,
+      "cpu_hex": "$91F9",
+      "length": 5,
+      "text": ":  N<END>"
+    },
+    {
+      "rom_offset": 397921,
+      "rom_offset_hex": "0x61261",
+      "bank": 24,
+      "cpu": 37457,
+      "cpu_hex": "$9251",
+      "length": 5,
+      "text": ":  <50><END>"
+    },
+    {
+      "rom_offset": 398009,
+      "rom_offset_hex": "0x612B9",
+      "bank": 24,
+      "cpu": 37545,
+      "cpu_hex": "$92A9",
+      "length": 9,
+      "text": "T_gQPVUQ<END>"
+    },
+    {
+      "rom_offset": 398018,
+      "rom_offset_hex": "0x612C2",
+      "bank": 24,
+      "cpu": 37554,
+      "cpu_hex": "$92B2",
+      "length": 7,
+      "text": "WPUUW:<END>"
+    },
+    {
+      "rom_offset": 398027,
+      "rom_offset_hex": "0x612CB",
+      "bank": 24,
+      "cpu": 37563,
+      "cpu_hex": "$92BB",
+      "length": 7,
+      "text": "iW<41><44>:W<END>"
+    },
+    {
+      "rom_offset": 398036,
+      "rom_offset_hex": "0x612D4",
+      "bank": 24,
+      "cpu": 37572,
+      "cpu_hex": "$92C4",
+      "length": 5,
+      "text": "U<44><53><54><END>"
+    },
+    {
+      "rom_offset": 398043,
+      "rom_offset_hex": "0x612DB",
+      "bank": 24,
+      "cpu": 37579,
+      "cpu_hex": "$92CB",
+      "length": 7,
+      "text": "l<57><53><4B><54>)<END>"
+    },
+    {
+      "rom_offset": 398074,
+      "rom_offset_hex": "0x612FA",
+      "bank": 24,
+      "cpu": 37610,
+      "cpu_hex": "$92EA",
+      "length": 8,
+      "text": "&0  269<END>"
+    },
+    {
+      "rom_offset": 398090,
+      "rom_offset_hex": "0x6130A",
+      "bank": 24,
+      "cpu": 37626,
+      "cpu_hex": "$92FA",
+      "length": 5,
+      "text": "&226<END>"
+    },
+    {
+      "rom_offset": 398106,
+      "rom_offset_hex": "0x6131A",
+      "bank": 24,
+      "cpu": 37642,
+      "cpu_hex": "$930A",
+      "length": 8,
+      "text": "&38269b<END>"
+    },
+    {
+      "rom_offset": 398123,
+      "rom_offset_hex": "0x6132B",
+      "bank": 24,
+      "cpu": 37659,
+      "cpu_hex": "$931B",
+      "length": 7,
+      "text": "07410a<END>"
+    },
+    {
+      "rom_offset": 398139,
+      "rom_offset_hex": "0x6133B",
+      "bank": 24,
+      "cpu": 37675,
+      "cpu_hex": "$932B",
+      "length": 7,
+      "text": "2a761n<END>"
+    },
+    {
+      "rom_offset": 398155,
+      "rom_offset_hex": "0x6134B",
+      "bank": 24,
+      "cpu": 37691,
+      "cpu_hex": "$933B",
+      "length": 7,
+      "text": "5cgrpc<END>"
+    },
+    {
+      "rom_offset": 398162,
+      "rom_offset_hex": "0x61352",
+      "bank": 24,
+      "cpu": 37698,
+      "cpu_hex": "$9342",
+      "length": 6,
+      "text": "argpc<END>"
+    },
+    {
+      "rom_offset": 398171,
+      "rom_offset_hex": "0x6135B",
+      "bank": 24,
+      "cpu": 37707,
+      "cpu_hex": "$934B",
+      "length": 6,
+      "text": "8DBzH<END>"
+    },
+    {
+      "rom_offset": 398187,
+      "rom_offset_hex": "0x6136B",
+      "bank": 24,
+      "cpu": 37723,
+      "cpu_hex": "$935B",
+      "length": 6,
+      "text": "9HDAv<END>"
+    },
+    {
+      "rom_offset": 398194,
+      "rom_offset_hex": "0x61372",
+      "bank": 24,
+      "cpu": 37730,
+      "cpu_hex": "$9362",
+      "length": 5,
+      "text": "A<4D>DH<END>"
+    },
+    {
+      "rom_offset": 398203,
+      "rom_offset_hex": "0x6137B",
+      "bank": 24,
+      "cpu": 37739,
+      "cpu_hex": "$936B",
+      "length": 6,
+      "text": "e<48><46>ZT<END>"
+    },
+    {
+      "rom_offset": 398211,
+      "rom_offset_hex": "0x61383",
+      "bank": 24,
+      "cpu": 37747,
+      "cpu_hex": "$9373",
+      "length": 14,
+      "text": "T<4D><46><48><5C>88&00045<END>"
+    },
+    {
+      "rom_offset": 398227,
+      "rom_offset_hex": "0x61393",
+      "bank": 24,
+      "cpu": 37763,
+      "cpu_hex": "$9383",
+      "length": 6,
+      "text": "0445a<END>"
+    },
+    {
+      "rom_offset": 398243,
+      "rom_offset_hex": "0x613A3",
+      "bank": 24,
+      "cpu": 37779,
+      "cpu_hex": "$9393",
+      "length": 7,
+      "text": "045ae3<END>"
+    },
+    {
+      "rom_offset": 398250,
+      "rom_offset_hex": "0x613AA",
+      "bank": 24,
+      "cpu": 37786,
+      "cpu_hex": "$939A",
+      "length": 7,
+      "text": "&4fea5<END>"
+    },
+    {
+      "rom_offset": 398259,
+      "rom_offset_hex": "0x613B3",
+      "bank": 24,
+      "cpu": 37795,
+      "cpu_hex": "$93A3",
+      "length": 6,
+      "text": "adegf<END>"
+    },
+    {
+      "rom_offset": 398267,
+      "rom_offset_hex": "0x613BB",
+      "bank": 24,
+      "cpu": 37803,
+      "cpu_hex": "$93AB",
+      "length": 7,
+      "text": "7lCyIl<END>"
+    },
+    {
+      "rom_offset": 398274,
+      "rom_offset_hex": "0x613C2",
+      "bank": 24,
+      "cpu": 37810,
+      "cpu_hex": "$93B2",
+      "length": 8,
+      "text": "Cyq3CI4<END>"
+    },
+    {
+      "rom_offset": 398283,
+      "rom_offset_hex": "0x613CB",
+      "bank": 24,
+      "cpu": 37819,
+      "cpu_hex": "$93BB",
+      "length": 5,
+      "text": "9NCI<END>"
+    },
+    {
+      "rom_offset": 398290,
+      "rom_offset_hex": "0x613D2",
+      "bank": 24,
+      "cpu": 37826,
+      "cpu_hex": "$93C2",
+      "length": 8,
+      "text": "rKC3IN4<END>"
+    },
+    {
+      "rom_offset": 398299,
+      "rom_offset_hex": "0x613DB",
+      "bank": 24,
+      "cpu": 37835,
+      "cpu_hex": "$93CB",
+      "length": 5,
+      "text": "brNK<END>"
+    },
+    {
+      "rom_offset": 398306,
+      "rom_offset_hex": "0x613E2",
+      "bank": 24,
+      "cpu": 37842,
+      "cpu_hex": "$93D2",
+      "length": 8,
+      "text": "KM3NY<45>4<END>"
+    },
+    {
+      "rom_offset": 398365,
+      "rom_offset_hex": "0x6141D",
+      "bank": 24,
+      "cpu": 37901,
+      "cpu_hex": "$940D",
+      "length": 5,
+      "text": "bitc<END>"
+    },
+    {
+      "rom_offset": 398371,
+      "rom_offset_hex": "0x61423",
+      "bank": 24,
+      "cpu": 37907,
+      "cpu_hex": "$9413",
+      "length": 6,
+      "text": "btjci<END>"
+    },
+    {
+      "rom_offset": 398402,
+      "rom_offset_hex": "0x61442",
+      "bank": 24,
+      "cpu": 37938,
+      "cpu_hex": "$9432",
+      "length": 6,
+      "text": "1720 <END>"
+    },
+    {
+      "rom_offset": 398413,
+      "rom_offset_hex": "0x6144D",
+      "bank": 24,
+      "cpu": 37949,
+      "cpu_hex": "$943D",
+      "length": 5,
+      "text": "659c<END>"
+    },
+    {
+      "rom_offset": 398419,
+      "rom_offset_hex": "0x61453",
+      "bank": 24,
+      "cpu": 37955,
+      "cpu_hex": "$9443",
+      "length": 6,
+      "text": "569cb<END>"
+    },
+    {
+      "rom_offset": 398426,
+      "rom_offset_hex": "0x6145A",
+      "bank": 24,
+      "cpu": 37962,
+      "cpu_hex": "$944A",
+      "length": 7,
+      "text": "&3c958<END>"
+    },
+    {
+      "rom_offset": 398434,
+      "rom_offset_hex": "0x61462",
+      "bank": 24,
+      "cpu": 37970,
+      "cpu_hex": "$9452",
+      "length": 5,
+      "text": "58ab<END>"
+    },
+    {
+      "rom_offset": 398443,
+      "rom_offset_hex": "0x6146B",
+      "bank": 24,
+      "cpu": 37979,
+      "cpu_hex": "$945B",
+      "length": 13,
+      "text": "6fopiknnfipk<END>"
+    },
+    {
+      "rom_offset": 398459,
+      "rom_offset_hex": "0x6147B",
+      "bank": 24,
+      "cpu": 37995,
+      "cpu_hex": "$946B",
+      "length": 14,
+      "text": "8CsnpkxkDsnC<5C><END>"
+    },
+    {
+      "rom_offset": 398475,
+      "rom_offset_hex": "0x6148B",
+      "bank": 24,
+      "cpu": 38011,
+      "cpu_hex": "$947B",
+      "length": 14,
+      "text": "aztXYDMxzYw<4D>E<END>"
+    },
+    {
+      "rom_offset": 398491,
+      "rom_offset_hex": "0x6149B",
+      "bank": 24,
+      "cpu": 38027,
+      "cpu_hex": "$948B",
+      "length": 14,
+      "text": "f<46>M,GE<5C>G,v<4D>E<5C><END>"
+    },
+    {
+      "rom_offset": 398507,
+      "rom_offset_hex": "0x614AB",
+      "bank": 24,
+      "cpu": 38043,
+      "cpu_hex": "$949B",
+      "length": 8,
+      "text": "cGCvO<4D>B<END>"
+    },
+    {
+      "rom_offset": 398515,
+      "rom_offset_hex": "0x614B3",
+      "bank": 24,
+      "cpu": 38051,
+      "cpu_hex": "$94A3",
+      "length": 6,
+      "text": "ECG<4D>Z<END>"
+    },
+    {
+      "rom_offset": 398523,
+      "rom_offset_hex": "0x614BB",
+      "bank": 24,
+      "cpu": 38059,
+      "cpu_hex": "$94AB",
+      "length": 12,
+      "text": "dDGTO<5C>zOZ<4E>T<END>"
+    },
+    {
+      "rom_offset": 398554,
+      "rom_offset_hex": "0x614DA",
+      "bank": 24,
+      "cpu": 38090,
+      "cpu_hex": "$94CA",
+      "length": 8,
+      "text": "_g<47>N<48>S<42><END>"
+    },
+    {
+      "rom_offset": 398570,
+      "rom_offset_hex": "0x614EA",
+      "bank": 24,
+      "cpu": 38106,
+      "cpu_hex": "$94DA",
+      "length": 7,
+      "text": "_gS<47><4C><4E><END>"
+    },
+    {
+      "rom_offset": 398596,
+      "rom_offset_hex": "0x61504",
+      "bank": 24,
+      "cpu": 38132,
+      "cpu_hex": "$94F4",
+      "length": 5,
+      "text": "S<51><42><49><END>"
+    },
+    {
+      "rom_offset": 398619,
+      "rom_offset_hex": "0x6151B",
+      "bank": 24,
+      "cpu": 38155,
+      "cpu_hex": "$950B",
+      "length": 12,
+      "text": "iB<49><52><55><4A><58><52><5A><55><5B><END>"
+    },
+    {
+      "rom_offset": 398635,
+      "rom_offset_hex": "0x6152B",
+      "bank": 24,
+      "cpu": 38171,
+      "cpu_hex": "$951B",
+      "length": 7,
+      "text": "i<52><51><64><5A><58><END>"
+    },
+    {
+      "rom_offset": 398650,
+      "rom_offset_hex": "0x6153A",
+      "bank": 24,
+      "cpu": 38186,
+      "cpu_hex": "$952A",
+      "length": 7,
+      "text": "_k<5F><64><56><58><END>"
+    },
+    {
+      "rom_offset": 398666,
+      "rom_offset_hex": "0x6154A",
+      "bank": 24,
+      "cpu": 38202,
+      "cpu_hex": "$953A",
+      "length": 7,
+      "text": "_l<5E><56><58><61><END>"
+    },
+    {
+      "rom_offset": 398682,
+      "rom_offset_hex": "0x6155A",
+      "bank": 24,
+      "cpu": 38218,
+      "cpu_hex": "$954A",
+      "length": 8,
+      "text": "_l<5F><5E><58><56><64><END>"
+    },
+    {
+      "rom_offset": 398698,
+      "rom_offset_hex": "0x6156A",
+      "bank": 24,
+      "cpu": 38234,
+      "cpu_hex": "$955A",
+      "length": 7,
+      "text": "&m<60>-<5D>.<END>"
+    },
+    {
+      "rom_offset": 398708,
+      "rom_offset_hex": "0x61574",
+      "bank": 24,
+      "cpu": 38244,
+      "cpu_hex": "$9564",
+      "length": 5,
+      "text": "_<5F>..<END>"
+    },
+    {
+      "rom_offset": 398715,
+      "rom_offset_hex": "0x6157B",
+      "bank": 24,
+      "cpu": 38251,
+      "cpu_hex": "$956B",
+      "length": 14,
+      "text": "m<5D><5F>-.<5D>.<60><5F><5D>_..<END>"
+    },
+    {
+      "rom_offset": 398731,
+      "rom_offset_hex": "0x6158B",
+      "bank": 24,
+      "cpu": 38267,
+      "cpu_hex": "$957B",
+      "length": 7,
+      "text": "m<61><63>?/<58><END>"
+    },
+    {
+      "rom_offset": 398749,
+      "rom_offset_hex": "0x6159D",
+      "bank": 24,
+      "cpu": 38285,
+      "cpu_hex": "$958D",
+      "length": 5,
+      "text": "/<63>(?<END>"
+    },
+    {
+      "rom_offset": 398762,
+      "rom_offset_hex": "0x615AA",
+      "bank": 24,
+      "cpu": 38298,
+      "cpu_hex": "$959A",
+      "length": 15,
+      "text": "_o<60>?<63>(/*<60>'(/?~<END>"
+    },
+    {
+      "rom_offset": 398778,
+      "rom_offset_hex": "0x615BA",
+      "bank": 24,
+      "cpu": 38314,
+      "cpu_hex": "$95AA",
+      "length": 15,
+      "text": "_p<60><63>?/(*'&/?++<END>"
+    },
+    {
+      "rom_offset": 398794,
+      "rom_offset_hex": "0x615CA",
+      "bank": 24,
+      "cpu": 38330,
+      "cpu_hex": "$95BA",
+      "length": 15,
+      "text": "_p/<63>&+*/#?*&?#<END>"
+    },
+    {
+      "rom_offset": 399034,
+      "rom_offset_hex": "0x616BA",
+      "bank": 24,
+      "cpu": 38570,
+      "cpu_hex": "$96AA",
+      "length": 5,
+      "text": "&082<END>"
+    },
+    {
+      "rom_offset": 399067,
+      "rom_offset_hex": "0x616DB",
+      "bank": 24,
+      "cpu": 38603,
+      "cpu_hex": "$96CB",
+      "length": 7,
+      "text": "5otsoj<END>"
+    },
+    {
+      "rom_offset": 399083,
+      "rom_offset_hex": "0x616EB",
+      "bank": 24,
+      "cpu": 38619,
+      "cpu_hex": "$96DB",
+      "length": 7,
+      "text": "6wsotx<END>"
+    },
+    {
+      "rom_offset": 399098,
+      "rom_offset_hex": "0x616FA",
+      "bank": 24,
+      "cpu": 38634,
+      "cpu_hex": "$96EA",
+      "length": 8,
+      "text": "&5gllfg<END>"
+    },
+    {
+      "rom_offset": 399107,
+      "rom_offset_hex": "0x61703",
+      "bank": 24,
+      "cpu": 38643,
+      "cpu_hex": "$96F3",
+      "length": 6,
+      "text": "qlfgq<END>"
+    },
+    {
+      "rom_offset": 399122,
+      "rom_offset_hex": "0x61712",
+      "bank": 24,
+      "cpu": 38658,
+      "cpu_hex": "$9702",
+      "length": 7,
+      "text": "IY<42><43>NS<END>"
+    },
+    {
+      "rom_offset": 399130,
+      "rom_offset_hex": "0x6171A",
+      "bank": 24,
+      "cpu": 38666,
+      "cpu_hex": "$970A",
+      "length": 16,
+      "text": "_e<4E><4C><4A><42><45><4A>S<4C><4E><42><4C><4A>5<END>"
+    },
+    {
+      "rom_offset": 399154,
+      "rom_offset_hex": "0x61732",
+      "bank": 24,
+      "cpu": 38690,
+      "cpu_hex": "$9722",
+      "length": 7,
+      "text": "cqaflC<END>"
+    },
+    {
+      "rom_offset": 399165,
+      "rom_offset_hex": "0x6173D",
+      "bank": 24,
+      "cpu": 38701,
+      "cpu_hex": "$972D",
+      "length": 5,
+      "text": "1 66<END>"
+    },
+    {
+      "rom_offset": 399197,
+      "rom_offset_hex": "0x6175D",
+      "bank": 24,
+      "cpu": 38733,
+      "cpu_hex": "$974D",
+      "length": 5,
+      "text": "omDu<END>"
+    },
+    {
+      "rom_offset": 399213,
+      "rom_offset_hex": "0x6176D",
+      "bank": 24,
+      "cpu": 38749,
+      "cpu_hex": "$975D",
+      "length": 5,
+      "text": "mDuO<END>"
+    },
+    {
+      "rom_offset": 399219,
+      "rom_offset_hex": "0x61773",
+      "bank": 24,
+      "cpu": 38755,
+      "cpu_hex": "$9763",
+      "length": 7,
+      "text": "O<5C>mu<5C>b<END>"
+    },
+    {
+      "rom_offset": 399227,
+      "rom_offset_hex": "0x6177B",
+      "bank": 24,
+      "cpu": 38763,
+      "cpu_hex": "$976B",
+      "length": 6,
+      "text": "6cuBz<END>"
+    },
+    {
+      "rom_offset": 399234,
+      "rom_offset_hex": "0x61782",
+      "bank": 24,
+      "cpu": 38770,
+      "cpu_hex": "$9772",
+      "length": 7,
+      "text": "rBzguv<END>"
+    },
+    {
+      "rom_offset": 399250,
+      "rom_offset_hex": "0x61792",
+      "bank": 24,
+      "cpu": 38786,
+      "cpu_hex": "$9782",
+      "length": 6,
+      "text": "uvszA<END>"
+    },
+    {
+      "rom_offset": 399259,
+      "rom_offset_hex": "0x6179B",
+      "bank": 24,
+      "cpu": 38795,
+      "cpu_hex": "$978B",
+      "length": 7,
+      "text": "bOJAFR<END>"
+    },
+    {
+      "rom_offset": 399266,
+      "rom_offset_hex": "0x617A2",
+      "bank": 24,
+      "cpu": 38802,
+      "cpu_hex": "$9792",
+      "length": 7,
+      "text": "FROvTZ<END>"
+    },
+    {
+      "rom_offset": 399275,
+      "rom_offset_hex": "0x617AB",
+      "bank": 24,
+      "cpu": 38811,
+      "cpu_hex": "$979B",
+      "length": 7,
+      "text": "cTZOJ<40><END>"
+    },
+    {
+      "rom_offset": 399282,
+      "rom_offset_hex": "0x617B2",
+      "bank": 24,
+      "cpu": 38818,
+      "cpu_hex": "$97A2",
+      "length": 7,
+      "text": "RJ<40>TZ<40><END>"
+    },
+    {
+      "rom_offset": 399306,
+      "rom_offset_hex": "0x617CA",
+      "bank": 24,
+      "cpu": 38842,
+      "cpu_hex": "$97BA",
+      "length": 9,
+      "text": "_fzRY<46><5C><5C><END>"
+    },
+    {
+      "rom_offset": 399316,
+      "rom_offset_hex": "0x617D4",
+      "bank": 24,
+      "cpu": 38852,
+      "cpu_hex": "$97C4",
+      "length": 6,
+      "text": "Hv<43><5C>8<END>"
+    },
+    {
+      "rom_offset": 399327,
+      "rom_offset_hex": "0x617DF",
+      "bank": 24,
+      "cpu": 38863,
+      "cpu_hex": "$97CF",
+      "length": 10,
+      "text": "Z<43><46><4E><48><45><48><43><5C><END>"
+    },
+    {
+      "rom_offset": 399338,
+      "rom_offset_hex": "0x617EA",
+      "bank": 24,
+      "cpu": 38874,
+      "cpu_hex": "$97DA",
+      "length": 15,
+      "text": "_h<49><4F><50><4C><42><50><50><50><4F><47><42><50><END>"
+    },
+    {
+      "rom_offset": 399355,
+      "rom_offset_hex": "0x617FB",
+      "bank": 24,
+      "cpu": 38891,
+      "cpu_hex": "$97EB",
+      "length": 10,
+      "text": "j<5F><55><5B><5A><51><5E><49><64><END>"
+    },
+    {
+      "rom_offset": 399371,
+      "rom_offset_hex": "0x6180B",
+      "bank": 24,
+      "cpu": 38907,
+      "cpu_hex": "$97FB",
+      "length": 14,
+      "text": "j<5B><64><5E><58><5B><5E><58><5F><5F><5A><5F><56><END>"
+    },
+    {
+      "rom_offset": 399389,
+      "rom_offset_hex": "0x6181D",
+      "bank": 24,
+      "cpu": 38925,
+      "cpu_hex": "$980D",
+      "length": 9,
+      "text": "-<5E><56><58><56>.<61><64><END>"
+    },
+    {
+      "rom_offset": 399450,
+      "rom_offset_hex": "0x6185A",
+      "bank": 24,
+      "cpu": 38986,
+      "cpu_hex": "$984A",
+      "length": 8,
+      "text": "ro'<60>+/<63><END>"
+    },
+    {
+      "rom_offset": 399466,
+      "rom_offset_hex": "0x6186A",
+      "bank": 24,
+      "cpu": 39002,
+      "cpu_hex": "$985A",
+      "length": 15,
+      "text": "ro?&+*(/+&<60>*'&<END>"
+    },
+    {
+      "rom_offset": 399506,
+      "rom_offset_hex": "0x61892",
+      "bank": 24,
+      "cpu": 39042,
+      "cpu_hex": "$9882",
+      "length": 5,
+      "text": "=#+~<END>"
+    },
+    {
+      "rom_offset": 399626,
+      "rom_offset_hex": "0x6190A",
+      "bank": 24,
+      "cpu": 39162,
+      "cpu_hex": "$98FA",
+      "length": 6,
+      "text": "z3iot<END>"
+    },
+    {
+      "rom_offset": 399632,
+      "rom_offset_hex": "0x61910",
+      "bank": 24,
+      "cpu": 39168,
+      "cpu_hex": "$9900",
+      "length": 6,
+      "text": "z4wtj<END>"
+    },
+    {
+      "rom_offset": 399650,
+      "rom_offset_hex": "0x61922",
+      "bank": 24,
+      "cpu": 39186,
+      "cpu_hex": "$9912",
+      "length": 5,
+      "text": "P n0<END>"
+    },
+    {
+      "rom_offset": 399662,
+      "rom_offset_hex": "0x6192E",
+      "bank": 24,
+      "cpu": 39198,
+      "cpu_hex": "$991E",
+      "length": 5,
+      "text": "z SY<END>"
+    },
+    {
+      "rom_offset": 399668,
+      "rom_offset_hex": "0x61934",
+      "bank": 24,
+      "cpu": 39204,
+      "cpu_hex": "$9924",
+      "length": 5,
+      "text": "B rc<END>"
+    },
+    {
+      "rom_offset": 399674,
+      "rom_offset_hex": "0x6193A",
+      "bank": 24,
+      "cpu": 39210,
+      "cpu_hex": "$992A",
+      "length": 5,
+      "text": "o 04<END>"
+    },
+    {
+      "rom_offset": 399680,
+      "rom_offset_hex": "0x61940",
+      "bank": 24,
+      "cpu": 39216,
+      "cpu_hex": "$9930",
+      "length": 5,
+      "text": "p <46>j<END>"
+    },
+    {
+      "rom_offset": 399686,
+      "rom_offset_hex": "0x61946",
+      "bank": 24,
+      "cpu": 39222,
+      "cpu_hex": "$9936",
+      "length": 6,
+      "text": "z3 9 <END>"
+    },
+    {
+      "rom_offset": 399692,
+      "rom_offset_hex": "0x6194C",
+      "bank": 24,
+      "cpu": 39228,
+      "cpu_hex": "$993C",
+      "length": 5,
+      "text": "z po<END>"
+    },
+    {
+      "rom_offset": 399698,
+      "rom_offset_hex": "0x61952",
+      "bank": 24,
+      "cpu": 39234,
+      "cpu_hex": "$9942",
+      "length": 5,
+      "text": "z Fm<END>"
+    },
+    {
+      "rom_offset": 399704,
+      "rom_offset_hex": "0x61958",
+      "bank": 24,
+      "cpu": 39240,
+      "cpu_hex": "$9948",
+      "length": 5,
+      "text": "F107<END>"
+    },
+    {
+      "rom_offset": 402008,
+      "rom_offset_hex": "0x62258",
+      "bank": 24,
+      "cpu": 41544,
+      "cpu_hex": "$A248",
+      "length": 6,
+      "text": "n<4C><5A><50>,<END>"
+    },
+    {
+      "rom_offset": 402280,
+      "rom_offset_hex": "0x62368",
+      "bank": 24,
+      "cpu": 41816,
+      "cpu_hex": "$A358",
+      "length": 8,
+      "text": "0   nhn<END>"
+    },
+    {
+      "rom_offset": 402384,
+      "rom_offset_hex": "0x623D0",
+      "bank": 24,
+      "cpu": 41920,
+      "cpu_hex": "$A3C0",
+      "length": 6,
+      "text": "0   %<END>"
+    },
+    {
+      "rom_offset": 402472,
+      "rom_offset_hex": "0x62428",
+      "bank": 24,
+      "cpu": 42008,
+      "cpu_hex": "$A418",
+      "length": 7,
+      "text": "0   II<END>"
+    },
+    {
+      "rom_offset": 402480,
+      "rom_offset_hex": "0x62430",
+      "bank": 24,
+      "cpu": 42016,
+      "cpu_hex": "$A420",
+      "length": 6,
+      "text": "00  <59><END>"
+    },
+    {
+      "rom_offset": 402520,
+      "rom_offset_hex": "0x62458",
+      "bank": 24,
+      "cpu": 42056,
+      "cpu_hex": "$A448",
+      "length": 6,
+      "text": "0   %<END>"
+    },
+    {
+      "rom_offset": 402528,
+      "rom_offset_hex": "0x62460",
+      "bank": 24,
+      "cpu": 42064,
+      "cpu_hex": "$A450",
+      "length": 6,
+      "text": "0   -<END>"
+    },
+    {
+      "rom_offset": 403112,
+      "rom_offset_hex": "0x626A8",
+      "bank": 24,
+      "cpu": 42648,
+      "cpu_hex": "$A698",
+      "length": 169,
+      "text": "Oyzzz......@NNNOOzzzz......@@NNOOzzzz     jjjjj           jjjjj           jjjjj           kkkkk           kkkmm           llmmm           llmmm           llmmm      I<45><46><END>"
+    },
+    {
+      "rom_offset": 403288,
+      "rom_offset_hex": "0x62758",
+      "bank": 24,
+      "cpu": 42824,
+      "cpu_hex": "$A748",
+      "length": 6,
+      "text": "M<44><44><47><47><END>"
+    },
+    {
+      "rom_offset": 403294,
+      "rom_offset_hex": "0x6275E",
+      "bank": 24,
+      "cpu": 42830,
+      "cpu_hex": "$A74E",
+      "length": 14,
+      "text": "N<4D><4C>O<41><41><41><41><41><41><41>R<48><END>"
+    },
+    {
+      "rom_offset": 403313,
+      "rom_offset_hex": "0x62771",
+      "bank": 24,
+      "cpu": 42849,
+      "cpu_hex": "$A761",
+      "length": 11,
+      "text": "T<4A><4A><4A><4B><4B><4B>U<40>:<END>"
+    },
+    {
+      "rom_offset": 403337,
+      "rom_offset_hex": "0x62789",
+      "bank": 24,
+      "cpu": 42873,
+      "cpu_hex": "$A779",
+      "length": 7,
+      "text": "0<56><56><56>A<5D><END>"
+    },
+    {
+      "rom_offset": 403355,
+      "rom_offset_hex": "0x6279B",
+      "bank": 24,
+      "cpu": 42891,
+      "cpu_hex": "$A78B",
+      "length": 9,
+      "text": "J<59><59>K<53><53><53>L<END>"
+    },
+    {
+      "rom_offset": 403366,
+      "rom_offset_hex": "0x627A6",
+      "bank": 24,
+      "cpu": 42902,
+      "cpu_hex": "$A796",
+      "length": 6,
+      "text": "M<54><54><55><55><END>"
+    },
+    {
+      "rom_offset": 403372,
+      "rom_offset_hex": "0x627AC",
+      "bank": 24,
+      "cpu": 42908,
+      "cpu_hex": "$A79C",
+      "length": 31,
+      "text": "N<4D><4C>O<41><41><41><41><41><41><41>P<57><57><58><57><58>QVVWVWXXXWXR<48><END>"
+    },
+    {
+      "rom_offset": 403408,
+      "rom_offset_hex": "0x627D0",
+      "bank": 24,
+      "cpu": 42944,
+      "cpu_hex": "$A7C0",
+      "length": 17,
+      "text": "T<4A><4A><4A><4B><4B><4B>U<40>W<5D><5D><5C>X:Y<END>"
+    },
+    {
+      "rom_offset": 403425,
+      "rom_offset_hex": "0x627E1",
+      "bank": 24,
+      "cpu": 42961,
+      "cpu_hex": "$A7D1",
+      "length": 18,
+      "text": "iiiiiSSSSSSTTTUU:<END>"
+    },
+    {
+      "rom_offset": 403470,
+      "rom_offset_hex": "0x6280E",
+      "bank": 24,
+      "cpu": 43006,
+      "cpu_hex": "$A7FE",
+      "length": 9,
+      "text": "YZZYYYY<48><END>"
+    },
+    {
+      "rom_offset": 404909,
+      "rom_offset_hex": "0x62DAD",
+      "bank": 24,
+      "cpu": 44445,
+      "cpu_hex": "$AD9D",
+      "length": 30,
+      "text": "*<60>hhjjmrxAJJeotyD<64><46><4D><4D><4D>0www<48><46><48><END>"
+    },
+    {
+      "rom_offset": 404939,
+      "rom_offset_hex": "0x62DCB",
+      "bank": 24,
+      "cpu": 44475,
+      "cpu_hex": "$ADBB",
+      "length": 8,
+      "text": "424 <40>E<40><END>"
+    },
+    {
+      "rom_offset": 404947,
+      "rom_offset_hex": "0x62DD3",
+      "bank": 24,
+      "cpu": 44483,
+      "cpu_hex": "$ADC3",
+      "length": 24,
+      "text": "909 EJJE<64><64><64><64> 0244433167<END>"
+    },
+    {
+      "rom_offset": 404971,
+      "rom_offset_hex": "0x62DEB",
+      "bank": 24,
+      "cpu": 44507,
+      "cpu_hex": "$ADDB",
+      "length": 16,
+      "text": "4a0 OtvT4972wOZ<END>"
+    },
+    {
+      "rom_offset": 404987,
+      "rom_offset_hex": "0x62DFB",
+      "bank": 24,
+      "cpu": 44523,
+      "cpu_hex": "$ADEB",
+      "length": 8,
+      "text": "804 trr<END>"
+    },
+    {
+      "rom_offset": 404995,
+      "rom_offset_hex": "0x62E03",
+      "bank": 24,
+      "cpu": 44531,
+      "cpu_hex": "$ADF3",
+      "length": 16,
+      "text": "0cc z<5C>Zvh0hcsou<END>"
+    },
+    {
+      "rom_offset": 405011,
+      "rom_offset_hex": "0x62E13",
+      "bank": 24,
+      "cpu": 44547,
+      "cpu_hex": "$AE03",
+      "length": 8,
+      "text": "333 bfd<END>"
+    },
+    {
+      "rom_offset": 405019,
+      "rom_offset_hex": "0x62E1B",
+      "bank": 24,
+      "cpu": 44555,
+      "cpu_hex": "$AE0B",
+      "length": 8,
+      "text": "244 BDB<END>"
+    },
+    {
+      "rom_offset": 405027,
+      "rom_offset_hex": "0x62E23",
+      "bank": 24,
+      "cpu": 44563,
+      "cpu_hex": "$AE13",
+      "length": 8,
+      "text": "424 RAH<END>"
+    },
+    {
+      "rom_offset": 405035,
+      "rom_offset_hex": "0x62E2B",
+      "bank": 24,
+      "cpu": 44571,
+      "cpu_hex": "$AE1B",
+      "length": 8,
+      "text": "422 a98<END>"
+    },
+    {
+      "rom_offset": 405043,
+      "rom_offset_hex": "0x62E33",
+      "bank": 24,
+      "cpu": 44579,
+      "cpu_hex": "$AE23",
+      "length": 8,
+      "text": "333 cic<END>"
+    },
+    {
+      "rom_offset": 405051,
+      "rom_offset_hex": "0x62E3B",
+      "bank": 24,
+      "cpu": 44587,
+      "cpu_hex": "$AE2B",
+      "length": 8,
+      "text": "424 grg<END>"
+    },
+    {
+      "rom_offset": 405059,
+      "rom_offset_hex": "0x62E43",
+      "bank": 24,
+      "cpu": 44595,
+      "cpu_hex": "$AE33",
+      "length": 16,
+      "text": "424 xxxx4444omB<END>"
+    },
+    {
+      "rom_offset": 405140,
+      "rom_offset_hex": "0x62E94",
+      "bank": 24,
+      "cpu": 44676,
+      "cpu_hex": "$AE84",
+      "length": 5,
+      "text": "j<40>v%<END>"
+    },
+    {
+      "rom_offset": 405170,
+      "rom_offset_hex": "0x62EB2",
+      "bank": 24,
+      "cpu": 44706,
+      "cpu_hex": "$AEA2",
+      "length": 5,
+      "text": "54<4C>%<END>"
+    },
+    {
+      "rom_offset": 406113,
+      "rom_offset_hex": "0x63261",
+      "bank": 24,
+      "cpu": 45649,
+      "cpu_hex": "$B251",
+      "length": 5,
+      "text": "579b<END>"
+    },
+    {
+      "rom_offset": 406118,
+      "rom_offset_hex": "0x63266",
+      "bank": 24,
+      "cpu": 45654,
+      "cpu_hex": "$B256",
+      "length": 7,
+      "text": "168abc<END>"
+    },
+    {
+      "rom_offset": 406125,
+      "rom_offset_hex": "0x6326D",
+      "bank": 24,
+      "cpu": 45661,
+      "cpu_hex": "$B25D",
+      "length": 6,
+      "text": "79abc<END>"
+    },
+    {
+      "rom_offset": 406131,
+      "rom_offset_hex": "0x63273",
+      "bank": 24,
+      "cpu": 45667,
+      "cpu_hex": "$B263",
+      "length": 7,
+      "text": "589abd<END>"
+    },
+    {
+      "rom_offset": 406138,
+      "rom_offset_hex": "0x6327A",
+      "bank": 24,
+      "cpu": 45674,
+      "cpu_hex": "$B26A",
+      "length": 5,
+      "text": "abcd<END>"
+    },
+    {
+      "rom_offset": 406143,
+      "rom_offset_hex": "0x6327F",
+      "bank": 24,
+      "cpu": 45679,
+      "cpu_hex": "$B26F",
+      "length": 5,
+      "text": "9abc<END>"
+    },
+    {
+      "rom_offset": 406152,
+      "rom_offset_hex": "0x63288",
+      "bank": 24,
+      "cpu": 45688,
+      "cpu_hex": "$B278",
+      "length": 7,
+      "text": "45789a<END>"
+    },
+    {
+      "rom_offset": 406163,
+      "rom_offset_hex": "0x63293",
+      "bank": 24,
+      "cpu": 45699,
+      "cpu_hex": "$B283",
+      "length": 6,
+      "text": "67898<END>"
+    },
+    {
+      "rom_offset": 406173,
+      "rom_offset_hex": "0x6329D",
+      "bank": 24,
+      "cpu": 45709,
+      "cpu_hex": "$B28D",
+      "length": 7,
+      "text": "345677<END>"
+    },
+    {
+      "rom_offset": 406184,
+      "rom_offset_hex": "0x632A8",
+      "bank": 24,
+      "cpu": 45720,
+      "cpu_hex": "$B298",
+      "length": 5,
+      "text": "5665<END>"
+    },
+    {
+      "rom_offset": 406189,
+      "rom_offset_hex": "0x632AD",
+      "bank": 24,
+      "cpu": 45725,
+      "cpu_hex": "$B29D",
+      "length": 5,
+      "text": "5654<END>"
+    },
+    {
+      "rom_offset": 406194,
+      "rom_offset_hex": "0x632B2",
+      "bank": 24,
+      "cpu": 45730,
+      "cpu_hex": "$B2A2",
+      "length": 6,
+      "text": "23454<END>"
+    },
+    {
+      "rom_offset": 406200,
+      "rom_offset_hex": "0x632B8",
+      "bank": 24,
+      "cpu": 45736,
+      "cpu_hex": "$B2A8",
+      "length": 5,
+      "text": "432 <END>"
+    },
+    {
+      "rom_offset": 406205,
+      "rom_offset_hex": "0x632BD",
+      "bank": 24,
+      "cpu": 45741,
+      "cpu_hex": "$B2AD",
+      "length": 6,
+      "text": "44321<END>"
+    },
+    {
+      "rom_offset": 406212,
+      "rom_offset_hex": "0x632C4",
+      "bank": 24,
+      "cpu": 45748,
+      "cpu_hex": "$B2B4",
+      "length": 6,
+      "text": "43210<END>"
+    },
+    {
+      "rom_offset": 406225,
+      "rom_offset_hex": "0x632D1",
+      "bank": 24,
+      "cpu": 45761,
+      "cpu_hex": "$B2C1",
+      "length": 7,
+      "text": "3320 <FE><END>"
+    },
+    {
+      "rom_offset": 406239,
+      "rom_offset_hex": "0x632DF",
+      "bank": 24,
+      "cpu": 45775,
+      "cpu_hex": "$B2CF",
+      "length": 5,
+      "text": "1232<END>"
+    },
+    {
+      "rom_offset": 406272,
+      "rom_offset_hex": "0x63300",
+      "bank": 24,
+      "cpu": 45808,
+      "cpu_hex": "$B2F0",
+      "length": 5,
+      "text": "0123<END>"
+    },
+    {
+      "rom_offset": 406277,
+      "rom_offset_hex": "0x63305",
+      "bank": 24,
+      "cpu": 45813,
+      "cpu_hex": "$B2F5",
+      "length": 6,
+      "text": "01234<END>"
+    },
+    {
+      "rom_offset": 406284,
+      "rom_offset_hex": "0x6330C",
+      "bank": 24,
+      "cpu": 45820,
+      "cpu_hex": "$B2FC",
+      "length": 6,
+      "text": "12357<END>"
+    },
+    {
+      "rom_offset": 406290,
+      "rom_offset_hex": "0x63312",
+      "bank": 24,
+      "cpu": 45826,
+      "cpu_hex": "$B302",
+      "length": 5,
+      "text": "468b<END>"
+    },
+    {
+      "rom_offset": 406295,
+      "rom_offset_hex": "0x63317",
+      "bank": 24,
+      "cpu": 45831,
+      "cpu_hex": "$B307",
+      "length": 5,
+      "text": "357b<END>"
+    },
+    {
+      "rom_offset": 406305,
+      "rom_offset_hex": "0x63321",
+      "bank": 24,
+      "cpu": 45841,
+      "cpu_hex": "$B311",
+      "length": 6,
+      "text": "01259<END>"
+    },
+    {
+      "rom_offset": 406315,
+      "rom_offset_hex": "0x6332B",
+      "bank": 24,
+      "cpu": 45851,
+      "cpu_hex": "$B31B",
+      "length": 6,
+      "text": "125ae<END>"
+    },
+    {
+      "rom_offset": 406326,
+      "rom_offset_hex": "0x63336",
+      "bank": 24,
+      "cpu": 45862,
+      "cpu_hex": "$B326",
+      "length": 6,
+      "text": "0124c<END>"
+    },
+    {
+      "rom_offset": 406336,
+      "rom_offset_hex": "0x63340",
+      "bank": 24,
+      "cpu": 45872,
+      "cpu_hex": "$B330",
+      "length": 5,
+      "text": "25ad<END>"
+    },
+    {
+      "rom_offset": 406341,
+      "rom_offset_hex": "0x63345",
+      "bank": 24,
+      "cpu": 45877,
+      "cpu_hex": "$B335",
+      "length": 5,
+      "text": "389e<END>"
+    },
+    {
+      "rom_offset": 406347,
+      "rom_offset_hex": "0x6334B",
+      "bank": 24,
+      "cpu": 45883,
+      "cpu_hex": "$B33B",
+      "length": 5,
+      "text": "015c<END>"
+    },
+    {
+      "rom_offset": 406352,
+      "rom_offset_hex": "0x63350",
+      "bank": 24,
+      "cpu": 45888,
+      "cpu_hex": "$B340",
+      "length": 5,
+      "text": "acde<END>"
+    },
+    {
+      "rom_offset": 406357,
+      "rom_offset_hex": "0x63355",
+      "bank": 24,
+      "cpu": 45893,
+      "cpu_hex": "$B345",
+      "length": 7,
+      "text": "27bcde<END>"
+    },
+    {
+      "rom_offset": 406364,
+      "rom_offset_hex": "0x6335C",
+      "bank": 24,
+      "cpu": 45900,
+      "cpu_hex": "$B34C",
+      "length": 6,
+      "text": "39bcd<END>"
+    },
+    {
+      "rom_offset": 406370,
+      "rom_offset_hex": "0x63362",
+      "bank": 24,
+      "cpu": 45906,
+      "cpu_hex": "$B352",
+      "length": 7,
+      "text": "8abcde<END>"
+    },
+    {
+      "rom_offset": 406377,
+      "rom_offset_hex": "0x63369",
+      "bank": 24,
+      "cpu": 45913,
+      "cpu_hex": "$B359",
+      "length": 7,
+      "text": "179bcd<END>"
+    },
+    {
+      "rom_offset": 406384,
+      "rom_offset_hex": "0x63370",
+      "bank": 24,
+      "cpu": 45920,
+      "cpu_hex": "$B360",
+      "length": 7,
+      "text": "589cde<END>"
+    },
+    {
+      "rom_offset": 406396,
+      "rom_offset_hex": "0x6337C",
+      "bank": 24,
+      "cpu": 45932,
+      "cpu_hex": "$B36C",
+      "length": 6,
+      "text": "79abc<END>"
+    },
+    {
+      "rom_offset": 406423,
+      "rom_offset_hex": "0x63397",
+      "bank": 24,
+      "cpu": 45959,
+      "cpu_hex": "$B387",
+      "length": 6,
+      "text": "00000<END>"
+    },
+    {
+      "rom_offset": 406511,
+      "rom_offset_hex": "0x633EF",
+      "bank": 24,
+      "cpu": 46047,
+      "cpu_hex": "$B3DF",
+      "length": 5,
+      "text": "0000<END>"
+    },
+    {
+      "rom_offset": 406994,
+      "rom_offset_hex": "0x635D2",
+      "bank": 24,
+      "cpu": 46530,
+      "cpu_hex": "$B5C2",
+      "length": 94,
+      "text": "1 3h 5i 1d 2e 3b 5:35u 73 53d7409k 2m 7g 59 75 2l 9w 5f 4<43>55856q 8707a 9c05p 96 7<40>44o 4o04x 9<END>"
+    },
+    {
+      "rom_offset": 408649,
+      "rom_offset_hex": "0x63C49",
+      "bank": 24,
+      "cpu": 48185,
+      "cpu_hex": "$BC39",
+      "length": 17,
+      "text": "Tf   vLTXTLv 7b<FE><END>"
+    },
+    {
+      "rom_offset": 408667,
+      "rom_offset_hex": "0x63C5B",
+      "bank": 24,
+      "cpu": 48203,
+      "cpu_hex": "$BC4B",
+      "length": 20,
+      "text": "b7<60><60>+-*-+<60><60><60><60><60><60><60><60><60> <END>"
+    },
+    {
+      "rom_offset": 408720,
+      "rom_offset_hex": "0x63C90",
+      "bank": 24,
+      "cpu": 48256,
+      "cpu_hex": "$BC80",
+      "length": 11,
+      "text": "d5555     <END>"
+    },
+    {
+      "rom_offset": 408966,
+      "rom_offset_hex": "0x63D86",
+      "bank": 24,
+      "cpu": 48502,
+      "cpu_hex": "$BD76",
+      "length": 16,
+      "text": "OORXRR$Y<63><61>Xt<43><63><5E><END>"
+    },
+    {
+      "rom_offset": 409883,
+      "rom_offset_hex": "0x6411B",
+      "bank": 25,
+      "cpu": 33035,
+      "cpu_hex": "$810B",
+      "length": 51,
+      "text": "slaalm4lsjs4lmars2b076559303<FE><FE><FE>Z 93dk36qk2vj1d<46>29r<END>"
+    },
+    {
+      "rom_offset": 410383,
+      "rom_offset_hex": "0x6430F",
+      "bank": 25,
+      "cpu": 33535,
+      "cpu_hex": "$82FF",
+      "length": 54,
+      "text": "f   m i m    m      mim mfm nnm         mnmm        h<END>"
+    },
+    {
+      "rom_offset": 412801,
+      "rom_offset_hex": "0x64C81",
+      "bank": 25,
+      "cpu": 35953,
+      "cpu_hex": "$8C71",
+      "length": 7,
+      "text": "luEu<LINE>b<END>"
+    },
+    {
+      "rom_offset": 412808,
+      "rom_offset_hex": "0x64C88",
+      "bank": 25,
+      "cpu": 35960,
+      "cpu_hex": "$8C78",
+      "length": 6,
+      "text": "5252b<END>"
+    },
+    {
+      "rom_offset": 414027,
+      "rom_offset_hex": "0x6514B",
+      "bank": 25,
+      "cpu": 37179,
+      "cpu_hex": "$913B",
+      "length": 5,
+      "text": "btsn<END>"
+    },
+    {
+      "rom_offset": 414053,
+      "rom_offset_hex": "0x65165",
+      "bank": 25,
+      "cpu": 37205,
+      "cpu_hex": "$9155",
+      "length": 14,
+      "text": "E=<48>^bEGE@L&bC<END>"
+    },
+    {
+      "rom_offset": 414393,
+      "rom_offset_hex": "0x652B9",
+      "bank": 25,
+      "cpu": 37545,
+      "cpu_hex": "$92A9",
+      "length": 7,
+      "text": "+7zz#<60><END>"
+    },
+    {
+      "rom_offset": 414455,
+      "rom_offset_hex": "0x652F7",
+      "bank": 25,
+      "cpu": 37607,
+      "cpu_hex": "$92E7",
+      "length": 9,
+      "text": "nEDzCE#<60><END>"
+    },
+    {
+      "rom_offset": 419687,
+      "rom_offset_hex": "0x66767",
+      "bank": 25,
+      "cpu": 42839,
+      "cpu_hex": "$A757",
+      "length": 6,
+      "text": "nBI^<48><END>"
+    },
+    {
+      "rom_offset": 419708,
+      "rom_offset_hex": "0x6677C",
+      "bank": 25,
+      "cpu": 42860,
+      "cpu_hex": "$A76C",
+      "length": 14,
+      "text": "$n#b+5*2z*z+b<END>"
+    },
+    {
+      "rom_offset": 419973,
+      "rom_offset_hex": "0x66885",
+      "bank": 25,
+      "cpu": 43125,
+      "cpu_hex": "$A875",
+      "length": 7,
+      "text": "9DEED<49><END>"
+    },
+    {
+      "rom_offset": 420020,
+      "rom_offset_hex": "0x668B4",
+      "bank": 25,
+      "cpu": 43172,
+      "cpu_hex": "$A8A4",
+      "length": 10,
+      "text": "bIKI^L%bG<END>"
+    },
+    {
+      "rom_offset": 420074,
+      "rom_offset_hex": "0x668EA",
+      "bank": 25,
+      "cpu": 43226,
+      "cpu_hex": "$A8DA",
+      "length": 9,
+      "text": "nbn5n5 )<END>"
+    },
+    {
+      "rom_offset": 420258,
+      "rom_offset_hex": "0x669A2",
+      "bank": 25,
+      "cpu": 43410,
+      "cpu_hex": "$A992",
+      "length": 14,
+      "text": "C^b%nB%b@nz@b<END>"
+    },
+    {
+      "rom_offset": 420465,
+      "rom_offset_hex": "0x66A71",
+      "bank": 25,
+      "cpu": 43617,
+      "cpu_hex": "$AA61",
+      "length": 6,
+      "text": "'zB+b<END>"
+    },
+    {
+      "rom_offset": 420472,
+      "rom_offset_hex": "0x66A78",
+      "bank": 25,
+      "cpu": 43624,
+      "cpu_hex": "$AA68",
+      "length": 6,
+      "text": "*nz#b<END>"
+    },
+    {
+      "rom_offset": 420964,
+      "rom_offset_hex": "0x66C64",
+      "bank": 25,
+      "cpu": 44116,
+      "cpu_hex": "$AC54",
+      "length": 7,
+      "text": "npq-bq<END>"
+    },
+    {
+      "rom_offset": 420992,
+      "rom_offset_hex": "0x66C80",
+      "bank": 25,
+      "cpu": 44144,
+      "cpu_hex": "$AC70",
+      "length": 26,
+      "text": "pssossnssmssnrrlppkrrjppi<END>"
+    },
+    {
+      "rom_offset": 421170,
+      "rom_offset_hex": "0x66D32",
+      "bank": 25,
+      "cpu": 44322,
+      "cpu_hex": "$AD22",
+      "length": 27,
+      "text": "buuhttgslfnngnneqqdnncoobn<END>"
+    },
+    {
+      "rom_offset": 421702,
+      "rom_offset_hex": "0x66F46",
+      "bank": 25,
+      "cpu": 44854,
+      "cpu_hex": "$AF36",
+      "length": 11,
+      "text": "3wwwuuusss<END>"
+    },
+    {
+      "rom_offset": 421716,
+      "rom_offset_hex": "0x66F54",
+      "bank": 25,
+      "cpu": 44868,
+      "cpu_hex": "$AF44",
+      "length": 7,
+      "text": "4ruzuz<END>"
+    },
+    {
+      "rom_offset": 421723,
+      "rom_offset_hex": "0x66F5B",
+      "bank": 25,
+      "cpu": 44875,
+      "cpu_hex": "$AF4B",
+      "length": 8,
+      "text": "*DzDGDG<END>"
+    },
+    {
+      "rom_offset": 424369,
+      "rom_offset_hex": "0x679B1",
+      "bank": 25,
+      "cpu": 47521,
+      "cpu_hex": "$B9A1",
+      "length": 5,
+      "text": ".n)b<END>"
+    },
+    {
+      "rom_offset": 425408,
+      "rom_offset_hex": "0x67DC0",
+      "bank": 25,
+      "cpu": 48560,
+      "cpu_hex": "$BDB0",
+      "length": 5,
+      "text": "V=bK<END>"
+    },
+    {
+      "rom_offset": 426488,
+      "rom_offset_hex": "0x681F8",
+      "bank": 26,
+      "cpu": 33256,
+      "cpu_hex": "$81E8",
+      "length": 5,
+      "text": "Rs<5D>|<END>"
+    },
+    {
+      "rom_offset": 427923,
+      "rom_offset_hex": "0x68793",
+      "bank": 26,
+      "cpu": 34691,
+      "cpu_hex": "$8783",
+      "length": 6,
+      "text": "(<45>Y<44><4D><END>"
+    },
+    {
+      "rom_offset": 431383,
+      "rom_offset_hex": "0x69517",
+      "bank": 26,
+      "cpu": 38151,
+      "cpu_hex": "$9507",
+      "length": 5,
+      "text": "yT%.<END>"
+    },
+    {
+      "rom_offset": 432097,
+      "rom_offset_hex": "0x697E1",
+      "bank": 26,
+      "cpu": 38865,
+      "cpu_hex": "$97D1",
+      "length": 6,
+      "text": "#<56>F,#<END>"
+    },
+    {
+      "rom_offset": 444708,
+      "rom_offset_hex": "0x6C924",
+      "bank": 27,
+      "cpu": 35092,
+      "cpu_hex": "$8914",
+      "length": 9,
+      "text": "+<60>8 82q <END>"
+    },
+    {
+      "rom_offset": 444735,
+      "rom_offset_hex": "0x6C93F",
+      "bank": 27,
+      "cpu": 35119,
+      "cpu_hex": "$892F",
+      "length": 24,
+      "text": "fjfjfj&<63><44>a<53><40><40><47>6bnLvHKv <END>"
+    },
+    {
+      "rom_offset": 444997,
+      "rom_offset_hex": "0x6CA45",
+      "bank": 27,
+      "cpu": 35381,
+      "cpu_hex": "$8A35",
+      "length": 18,
+      "text": "&<63><44>a<50><40><43><44>6bnLvKHy <END>"
+    },
+    {
+      "rom_offset": 445064,
+      "rom_offset_hex": "0x6CA88",
+      "bank": 27,
+      "cpu": 35448,
+      "cpu_hex": "$8A78",
+      "length": 6,
+      "text": "gjiji<END>"
+    },
+    {
+      "rom_offset": 445251,
+      "rom_offset_hex": "0x6CB43",
+      "bank": 27,
+      "cpu": 35635,
+      "cpu_hex": "$8B33",
+      "length": 20,
+      "text": "L &<63><44>7<51><40><47><40>6bnLxKDw <END>"
+    },
+    {
+      "rom_offset": 445320,
+      "rom_offset_hex": "0x6CB88",
+      "bank": 27,
+      "cpu": 35704,
+      "cpu_hex": "$8B78",
+      "length": 6,
+      "text": "11111<END>"
+    },
+    {
+      "rom_offset": 445507,
+      "rom_offset_hex": "0x6CC43",
+      "bank": 27,
+      "cpu": 35891,
+      "cpu_hex": "$8C33",
+      "length": 20,
+      "text": "f &<63><44>7<54><44><4C><4C>6bnLvvvv <END>"
+    },
+    {
+      "rom_offset": 445549,
+      "rom_offset_hex": "0x6CC6D",
+      "bank": 27,
+      "cpu": 35933,
+      "cpu_hex": "$8C5D",
+      "length": 26,
+      "text": "vvvvvvvv                 <END>"
+    },
+    {
+      "rom_offset": 446309,
+      "rom_offset_hex": "0x6CF65",
+      "bank": 27,
+      "cpu": 36693,
+      "cpu_hex": "$8F55",
+      "length": 33,
+      "text": "JHDBHDBH<4D><49><40><44><49><41><45><48>        <40><40><40><40><40> <40><40><END>"
+    },
+    {
+      "rom_offset": 446565,
+      "rom_offset_hex": "0x6D065",
+      "bank": 27,
+      "cpu": 36949,
+      "cpu_hex": "$9055",
+      "length": 33,
+      "text": "vvvvvvvv<4C><4C><4C><4C><4C><4C><4C><4C>                <END>"
+    },
+    {
+      "rom_offset": 448483,
+      "rom_offset_hex": "0x6D7E3",
+      "bank": 27,
+      "cpu": 38867,
+      "cpu_hex": "$97D3",
+      "length": 5,
+      "text": "b*OF<END>"
+    },
+    {
+      "rom_offset": 452174,
+      "rom_offset_hex": "0x6E64E",
+      "bank": 27,
+      "cpu": 42558,
+      "cpu_hex": "$A63E",
+      "length": 9,
+      "text": "rhrD9r7t<END>"
+    },
+    {
+      "rom_offset": 452190,
+      "rom_offset_hex": "0x6E65E",
+      "bank": 27,
+      "cpu": 42574,
+      "cpu_hex": "$A64E",
+      "length": 13,
+      "text": "vz9B9rD97 3N<END>"
+    },
+    {
+      "rom_offset": 452203,
+      "rom_offset_hex": "0x6E66B",
+      "bank": 27,
+      "cpu": 42587,
+      "cpu_hex": "$A65B",
+      "length": 15,
+      "text": "wcThe End<FE>w<50>of<END>"
+    },
+    {
+      "rom_offset": 452220,
+      "rom_offset_hex": "0x6E67C",
+      "bank": 27,
+      "cpu": 42604,
+      "cpu_hex": "$A66C",
+      "length": 10,
+      "text": "Chapter <LINE><END>"
+    },
+    {
+      "rom_offset": 452230,
+      "rom_offset_hex": "0x6E686",
+      "bank": 27,
+      "cpu": 42614,
+      "cpu_hex": "$A676",
+      "length": 21,
+      "text": "x6The Royal Soldiers<END>"
+    },
+    {
+      "rom_offset": 452251,
+      "rom_offset_hex": "0x6E69B",
+      "bank": 27,
+      "cpu": 42635,
+      "cpu_hex": "$A68B",
+      "length": 29,
+      "text": "x2Princess Alena?s Adventure<END>"
+    },
+    {
+      "rom_offset": 452280,
+      "rom_offset_hex": "0x6E6B8",
+      "bank": 27,
+      "cpu": 42664,
+      "cpu_hex": "$A6A8",
+      "length": 27,
+      "text": "x3Taloon the Arms Merchant<END>"
+    },
+    {
+      "rom_offset": 452307,
+      "rom_offset_hex": "0x6E6D3",
+      "bank": 27,
+      "cpu": 42691,
+      "cpu_hex": "$A6C3",
+      "length": 27,
+      "text": "x3The Sisters of Monbaraba<END>"
+    },
+    {
+      "rom_offset": 452334,
+      "rom_offset_hex": "0x6E6EE",
+      "bank": 27,
+      "cpu": 42718,
+      "cpu_hex": "$A6DE",
+      "length": 18,
+      "text": "x8The Chosen Ones<END>"
+    },
+    {
+      "rom_offset": 454451,
+      "rom_offset_hex": "0x6EF33",
+      "bank": 27,
+      "cpu": 44835,
+      "cpu_hex": "$AF23",
+      "length": 7,
+      "text": "cj1cf<47><END>"
+    },
+    {
+      "rom_offset": 454555,
+      "rom_offset_hex": "0x6EF9B",
+      "bank": 27,
+      "cpu": 44939,
+      "cpu_hex": "$AF8B",
+      "length": 13,
+      "text": "626262teue60<END>"
+    },
+    {
+      "rom_offset": 454609,
+      "rom_offset_hex": "0x6EFD1",
+      "bank": 27,
+      "cpu": 44993,
+      "cpu_hex": "$AFC1",
+      "length": 8,
+      "text": "6u2eT:r<END>"
+    },
+    {
+      "rom_offset": 460712,
+      "rom_offset_hex": "0x707A8",
+      "bank": 28,
+      "cpu": 34712,
+      "cpu_hex": "$8798",
+      "length": 5,
+      "text": "h77p<END>"
+    },
+    {
+      "rom_offset": 460737,
+      "rom_offset_hex": "0x707C1",
+      "bank": 28,
+      "cpu": 34737,
+      "cpu_hex": "$87B1",
+      "length": 5,
+      "text": "h77q<END>"
+    },
+    {
+      "rom_offset": 461439,
+      "rom_offset_hex": "0x70A7F",
+      "bank": 28,
+      "cpu": 35439,
+      "cpu_hex": "$8A6F",
+      "length": 5,
+      "text": "w77p<END>"
+    },
+    {
+      "rom_offset": 461464,
+      "rom_offset_hex": "0x70A98",
+      "bank": 28,
+      "cpu": 35464,
+      "cpu_hex": "$8A88",
+      "length": 5,
+      "text": "g77q<END>"
+    },
+    {
+      "rom_offset": 466600,
+      "rom_offset_hex": "0x71EA8",
+      "bank": 28,
+      "cpu": 40600,
+      "cpu_hex": "$9E98",
+      "length": 14,
+      "text": "ED1<40>EE0vE<44>2fE<END>"
+    },
+    {
+      "rom_offset": 466842,
+      "rom_offset_hex": "0x71F9A",
+      "bank": 28,
+      "cpu": 40842,
+      "cpu_hex": "$9F8A",
+      "length": 73,
+      "text": "a 46a 10<43>5 08  08 768 1685 080 081 084 082 0Z  6Z 00Z 16T  0T2 1T300J  0<END>"
+    },
+    {
+      "rom_offset": 466915,
+      "rom_offset_hex": "0x71FE3",
+      "bank": 28,
+      "cpu": 40915,
+      "cpu_hex": "$9FD3",
+      "length": 61,
+      "text": "a 10<43>5 08  085 080 081 084 082 0Z  6Z 00Z 16T  0T2 1T300J  0<END>"
+    },
+    {
+      "rom_offset": 470021,
+      "rom_offset_hex": "0x72C05",
+      "bank": 28,
+      "cpu": 44021,
+      "cpu_hex": "$ABF5",
+      "length": 149,
+      "text": "e V <41> 010 0010h11 l0O212<41>3l l1h e036: 3 k2  4 M240373an0T T330V0w j <43>5j0<42>35 c0S1S0<42>1K0g g09 m <42> m0S  1s k  0k0117072q q2I5I4L 20<40> <46>0f 85a f1H <46> Q1g2<END>"
+    },
+    {
+      "rom_offset": 470378,
+      "rom_offset_hex": "0x72D6A",
+      "bank": 28,
+      "cpu": 44378,
+      "cpu_hex": "$AD5A",
+      "length": 5,
+      "text": "u 01<END>"
+    },
+    {
+      "rom_offset": 471215,
+      "rom_offset_hex": "0x730AF",
+      "bank": 28,
+      "cpu": 45215,
+      "cpu_hex": "$B09F",
+      "length": 5,
+      "text": "b1v%<END>"
+    },
+    {
+      "rom_offset": 471567,
+      "rom_offset_hex": "0x7320F",
+      "bank": 28,
+      "cpu": 45567,
+      "cpu_hex": "$B1FF",
+      "length": 5,
+      "text": "b1v%<END>"
+    },
+    {
+      "rom_offset": 471626,
+      "rom_offset_hex": "0x7324A",
+      "bank": 28,
+      "cpu": 45626,
+      "cpu_hex": "$B23A",
+      "length": 5,
+      "text": "84v%<END>"
+    },
+    {
+      "rom_offset": 471633,
+      "rom_offset_hex": "0x73251",
+      "bank": 28,
+      "cpu": 45633,
+      "cpu_hex": "$B241",
+      "length": 5,
+      "text": "84v%<END>"
+    },
+    {
+      "rom_offset": 472061,
+      "rom_offset_hex": "0x733FD",
+      "bank": 28,
+      "cpu": 46061,
+      "cpu_hex": "$B3ED",
+      "length": 5,
+      "text": "9+v%<END>"
+    },
+    {
+      "rom_offset": 472319,
+      "rom_offset_hex": "0x734FF",
+      "bank": 28,
+      "cpu": 46319,
+      "cpu_hex": "$B4EF",
+      "length": 5,
+      "text": "e1v%<END>"
+    },
+    {
+      "rom_offset": 473498,
+      "rom_offset_hex": "0x7399A",
+      "bank": 28,
+      "cpu": 47498,
+      "cpu_hex": "$B98A",
+      "length": 5,
+      "text": "b1v%<END>"
+    },
+    {
+      "rom_offset": 473980,
+      "rom_offset_hex": "0x73B7C",
+      "bank": 28,
+      "cpu": 47980,
+      "cpu_hex": "$BB6C",
+      "length": 5,
+      "text": "i4v%<END>"
+    },
+    {
+      "rom_offset": 474902,
+      "rom_offset_hex": "0x73F16",
+      "bank": 28,
+      "cpu": 48902,
+      "cpu_hex": "$BF06",
+      "length": 5,
+      "text": "84v%<END>"
+    },
+    {
+      "rom_offset": 474909,
+      "rom_offset_hex": "0x73F1D",
+      "bank": 28,
+      "cpu": 48909,
+      "cpu_hex": "$BF0D",
+      "length": 5,
+      "text": "84<4C>%<END>"
+    },
+    {
+      "rom_offset": 475559,
+      "rom_offset_hex": "0x741A7",
+      "bank": 29,
+      "cpu": 33175,
+      "cpu_hex": "$8197",
+      "length": 6,
+      "text": "hmec6<END>"
+    },
+    {
+      "rom_offset": 475621,
+      "rom_offset_hex": "0x741E5",
+      "bank": 29,
+      "cpu": 33237,
+      "cpu_hex": "$81D5",
+      "length": 5,
+      "text": "e6d6<END>"
+    },
+    {
+      "rom_offset": 475971,
+      "rom_offset_hex": "0x74343",
+      "bank": 29,
+      "cpu": 33587,
+      "cpu_hex": "$8333",
+      "length": 11,
+      "text": ":euud6266e<END>"
+    },
+    {
+      "rom_offset": 476035,
+      "rom_offset_hex": "0x74383",
+      "bank": 29,
+      "cpu": 33651,
+      "cpu_hex": "$8373",
+      "length": 11,
+      "text": ":euud6266e<END>"
+    },
+    {
+      "rom_offset": 476353,
+      "rom_offset_hex": "0x744C1",
+      "bank": 29,
+      "cpu": 33969,
+      "cpu_hex": "$84B1",
+      "length": 6,
+      "text": "uuY:I<END>"
+    },
+    {
+      "rom_offset": 476417,
+      "rom_offset_hex": "0x74501",
+      "bank": 29,
+      "cpu": 34033,
+      "cpu_hex": "$84F1",
+      "length": 6,
+      "text": "uuYZE<END>"
+    },
+    {
+      "rom_offset": 477010,
+      "rom_offset_hex": "0x74752",
+      "bank": 29,
+      "cpu": 34626,
+      "cpu_hex": "$8742",
+      "length": 5,
+      "text": "266a<END>"
+    },
+    {
+      "rom_offset": 478504,
+      "rom_offset_hex": "0x74D28",
+      "bank": 29,
+      "cpu": 36120,
+      "cpu_hex": "$8D18",
+      "length": 5,
+      "text": "84<4C>%<END>"
+    },
+    {
+      "rom_offset": 479557,
+      "rom_offset_hex": "0x75145",
+      "bank": 29,
+      "cpu": 37173,
+      "cpu_hex": "$9135",
+      "length": 28,
+      "text": "000000000000000000000      <END>"
+    },
+    {
+      "rom_offset": 480965,
+      "rom_offset_hex": "0x756C5",
+      "bank": 29,
+      "cpu": 38581,
+      "cpu_hex": "$96B5",
+      "length": 15,
+      "text": "Q601S  0R3P m <END>"
+    },
+    {
+      "rom_offset": 481417,
+      "rom_offset_hex": "0x75889",
+      "bank": 29,
+      "cpu": 39033,
+      "cpu_hex": "$9879",
+      "length": 7,
+      "text": "/1g   <END>"
+    },
+    {
+      "rom_offset": 481626,
+      "rom_offset_hex": "0x7595A",
+      "bank": 29,
+      "cpu": 39242,
+      "cpu_hex": "$994A",
+      "length": 9,
+      "text": "0  00  0<END>"
+    },
+    {
+      "rom_offset": 481640,
+      "rom_offset_hex": "0x75968",
+      "bank": 29,
+      "cpu": 39256,
+      "cpu_hex": "$9958",
+      "length": 5,
+      "text": "0  0<END>"
+    },
+    {
+      "rom_offset": 486965,
+      "rom_offset_hex": "0x76E35",
+      "bank": 29,
+      "cpu": 44581,
+      "cpu_hex": "$AE25",
+      "length": 5,
+      "text": "84v%<END>"
+    },
+    {
+      "rom_offset": 486972,
+      "rom_offset_hex": "0x76E3C",
+      "bank": 29,
+      "cpu": 44588,
+      "cpu_hex": "$AE2C",
+      "length": 5,
+      "text": "84<4C>%<END>"
+    },
+    {
+      "rom_offset": 489679,
+      "rom_offset_hex": "0x778CF",
+      "bank": 29,
+      "cpu": 47295,
+      "cpu_hex": "$B8BF",
+      "length": 5,
+      "text": "k7<41>3<END>"
+    },
+    {
+      "rom_offset": 489684,
+      "rom_offset_hex": "0x778D4",
+      "bank": 29,
+      "cpu": 47300,
+      "cpu_hex": "$B8C4",
+      "length": 6,
+      "text": "0k5<41>3<END>"
+    },
+    {
+      "rom_offset": 489690,
+      "rom_offset_hex": "0x778DA",
+      "bank": 29,
+      "cpu": 47306,
+      "cpu_hex": "$B8CA",
+      "length": 12,
+      "text": "1k6O37 Y01 <END>"
+    },
+    {
+      "rom_offset": 489703,
+      "rom_offset_hex": "0x778E7",
+      "bank": 29,
+      "cpu": 47319,
+      "cpu_hex": "$B8D7",
+      "length": 5,
+      "text": "ia12<END>"
+    },
+    {
+      "rom_offset": 489709,
+      "rom_offset_hex": "0x778ED",
+      "bank": 29,
+      "cpu": 47325,
+      "cpu_hex": "$B8DD",
+      "length": 39,
+      "text": "i1M28No 3a9vh 3 avg63 1<40>10302<41>2 <40> d<40>K <END>"
+    },
+    {
+      "rom_offset": 489827,
+      "rom_offset_hex": "0x77963",
+      "bank": 29,
+      "cpu": 47443,
+      "cpu_hex": "$B953",
+      "length": 8,
+      "text": "359<41>38a<END>"
+    },
+    {
+      "rom_offset": 489927,
+      "rom_offset_hex": "0x779C7",
+      "bank": 29,
+      "cpu": 47543,
+      "cpu_hex": "$B9B7",
+      "length": 33,
+      "text": "e99887765544333322221111111100v%<END>"
+    },
+    {
+      "rom_offset": 490078,
+      "rom_offset_hex": "0x77A5E",
+      "bank": 29,
+      "cpu": 47694,
+      "cpu_hex": "$BA4E",
+      "length": 5,
+      "text": "a4v%<END>"
+    },
+    {
+      "rom_offset": 490833,
+      "rom_offset_hex": "0x77D51",
+      "bank": 29,
+      "cpu": 48449,
+      "cpu_hex": "$BD41",
+      "length": 9,
+      "text": "/h0     <END>"
+    },
+    {
+      "rom_offset": 490868,
+      "rom_offset_hex": "0x77D74",
+      "bank": 29,
+      "cpu": 48484,
+      "cpu_hex": "$BD64",
+      "length": 5,
+      "text": "06eu<END>"
+    },
+    {
+      "rom_offset": 492035,
+      "rom_offset_hex": "0x78203",
+      "bank": 30,
+      "cpu": 33267,
+      "cpu_hex": "$81F3",
+      "length": 7,
+      "text": "6 8+a<4C><END>"
+    },
+    {
+      "rom_offset": 492978,
+      "rom_offset_hex": "0x785B2",
+      "bank": 30,
+      "cpu": 34210,
+      "cpu_hex": "$85A2",
+      "length": 5,
+      "text": "4<60>v%<END>"
+    },
+    {
+      "rom_offset": 494084,
+      "rom_offset_hex": "0x78A04",
+      "bank": 30,
+      "cpu": 35316,
+      "cpu_hex": "$89F4",
+      "length": 8,
+      "text": "G20 u2 <END>"
+    },
+    {
+      "rom_offset": 494092,
+      "rom_offset_hex": "0x78A0C",
+      "bank": 30,
+      "cpu": 35324,
+      "cpu_hex": "$89FC",
+      "length": 17,
+      "text": "3Bm158c24sg36924<END>"
+    },
+    {
+      "rom_offset": 494416,
+      "rom_offset_hex": "0x78B50",
+      "bank": 30,
+      "cpu": 35648,
+      "cpu_hex": "$8B40",
+      "length": 5,
+      "text": "74v%<END>"
+    },
+    {
+      "rom_offset": 494423,
+      "rom_offset_hex": "0x78B57",
+      "bank": 30,
+      "cpu": 35655,
+      "cpu_hex": "$8B47",
+      "length": 5,
+      "text": "74<4C>%<END>"
+    },
+    {
+      "rom_offset": 495188,
+      "rom_offset_hex": "0x78E54",
+      "bank": 30,
+      "cpu": 36420,
+      "cpu_hex": "$8E44",
+      "length": 12,
+      "text": "&Xyja532110<END>"
+    },
+    {
+      "rom_offset": 495221,
+      "rom_offset_hex": "0x78E75",
+      "bank": 30,
+      "cpu": 36453,
+      "cpu_hex": "$8E65",
+      "length": 11,
+      "text": "Xyja532110<END>"
+    },
+    {
+      "rom_offset": 495237,
+      "rom_offset_hex": "0x78E85",
+      "bank": 30,
+      "cpu": 36469,
+      "cpu_hex": "$8E75",
+      "length": 29,
+      "text": "1111111111111111Xyja5432100 <END>"
+    },
+    {
+      "rom_offset": 495285,
+      "rom_offset_hex": "0x78EB5",
+      "bank": 30,
+      "cpu": 36517,
+      "cpu_hex": "$8EA5",
+      "length": 13,
+      "text": "Xyja5432100 <END>"
+    },
+    {
+      "rom_offset": 495452,
+      "rom_offset_hex": "0x78F5C",
+      "bank": 30,
+      "cpu": 36684,
+      "cpu_hex": "$8F4C",
+      "length": 7,
+      "text": "9+--<4C>%<END>"
+    },
+    {
+      "rom_offset": 496193,
+      "rom_offset_hex": "0x79241",
+      "bank": 30,
+      "cpu": 37425,
+      "cpu_hex": "$9231",
+      "length": 9,
+      "text": "+n<60>T<60>a  <END>"
+    },
+    {
+      "rom_offset": 496202,
+      "rom_offset_hex": "0x7924A",
+      "bank": 30,
+      "cpu": 37434,
+      "cpu_hex": "$923A",
+      "length": 6,
+      "text": "7Ms  <END>"
+    },
+    {
+      "rom_offset": 496209,
+      "rom_offset_hex": "0x79251",
+      "bank": 30,
+      "cpu": 37441,
+      "cpu_hex": "$9241",
+      "length": 5,
+      "text": "eC  <END>"
+    },
+    {
+      "rom_offset": 496221,
+      "rom_offset_hex": "0x7925D",
+      "bank": 30,
+      "cpu": 37453,
+      "cpu_hex": "$924D",
+      "length": 5,
+      "text": "gw  <END>"
+    },
+    {
+      "rom_offset": 496227,
+      "rom_offset_hex": "0x79263",
+      "bank": 30,
+      "cpu": 37459,
+      "cpu_hex": "$9253",
+      "length": 5,
+      "text": "g<47>  <END>"
+    },
+    {
+      "rom_offset": 496233,
+      "rom_offset_hex": "0x79269",
+      "bank": 30,
+      "cpu": 37465,
+      "cpu_hex": "$9259",
+      "length": 5,
+      "text": "cJ  <END>"
+    },
+    {
+      "rom_offset": 496239,
+      "rom_offset_hex": "0x7926F",
+      "bank": 30,
+      "cpu": 37471,
+      "cpu_hex": "$925F",
+      "length": 5,
+      "text": "E<46>  <END>"
+    },
+    {
+      "rom_offset": 496245,
+      "rom_offset_hex": "0x79275",
+      "bank": 30,
+      "cpu": 37477,
+      "cpu_hex": "$9265",
+      "length": 5,
+      "text": "v<45>  <END>"
+    },
+    {
+      "rom_offset": 496257,
+      "rom_offset_hex": "0x79281",
+      "bank": 30,
+      "cpu": 37489,
+      "cpu_hex": "$9271",
+      "length": 5,
+      "text": "Bg 9<END>"
+    },
+    {
+      "rom_offset": 496264,
+      "rom_offset_hex": "0x79288",
+      "bank": 30,
+      "cpu": 37496,
+      "cpu_hex": "$9278",
+      "length": 6,
+      "text": "F 09 <END>"
+    },
+    {
+      "rom_offset": 497664,
+      "rom_offset_hex": "0x79800",
+      "bank": 30,
+      "cpu": 38896,
+      "cpu_hex": "$97F0",
+      "length": 5,
+      "text": "9+<4C>%<END>"
+    },
+    {
+      "rom_offset": 497817,
+      "rom_offset_hex": "0x79899",
+      "bank": 30,
+      "cpu": 39049,
+      "cpu_hex": "$9889",
+      "length": 5,
+      "text": "N4v%<END>"
+    },
+    {
+      "rom_offset": 499750,
+      "rom_offset_hex": "0x7A026",
+      "bank": 30,
+      "cpu": 40982,
+      "cpu_hex": "$A016",
+      "length": 6,
+      "text": "ABCDG<END>"
+    },
+    {
+      "rom_offset": 499756,
+      "rom_offset_hex": "0x7A02C",
+      "bank": 30,
+      "cpu": 40988,
+      "cpu_hex": "$A01C",
+      "length": 15,
+      "text": "fghijklmnopsEF<END>"
+    },
+    {
+      "rom_offset": 506944,
+      "rom_offset_hex": "0x7BC40",
+      "bank": 30,
+      "cpu": 48176,
+      "cpu_hex": "$BC30",
+      "length": 6,
+      "text": "n<60>T<60>7<END>"
+    },
+    {
+      "rom_offset": 507273,
+      "rom_offset_hex": "0x7BD89",
+      "bank": 30,
+      "cpu": 48505,
+      "cpu_hex": "$BD79",
+      "length": 50,
+      "text": "m g3<64>2<40>p0e0!2v<43>739!2f<43>02b!27z 62!23M330!21r010<53>20<END>"
+    },
+    {
+      "rom_offset": 507347,
+      "rom_offset_hex": "0x7BDD3",
+      "bank": 30,
+      "cpu": 48579,
+      "cpu_hex": "$BDC3",
+      "length": 246,
+      "text": "300 21052133023213403b13d35 2720730e 2l12m00w 0I 1I10I47J 0J01K 0K02K11L02L12M 0M01M21M30N 1N02O00O20O30P00P10P20P31Q 0Q01Q11Q25Q51R10R50S10T13T34T40U 1W 0W11Y 1Y20Y50Ye0:02<40> 0<40>00<40>20<41>01<41>11<41>21<42> 0<42>00<42>13<42>20<42>31<43>30<43>54<44>10<45> 0<45>00<45>11<47> 1<47>00<48>00<48>10<48>40<48>50<48>60<END>"
+    },
+    {
+      "rom_offset": 507611,
+      "rom_offset_hex": "0x7BEDB",
+      "bank": 30,
+      "cpu": 48843,
+      "cpu_hex": "$BECB",
+      "length": 5,
+      "text": "i<64>M<4A><END>"
+    },
+    {
+      "rom_offset": 511382,
+      "rom_offset_hex": "0x7CD96",
+      "bank": 31,
+      "cpu": 36230,
+      "cpu_hex": "$8D86",
+      "length": 8,
+      "text": "U4f3 6+<END>"
+    },
+    {
+      "rom_offset": 511478,
+      "rom_offset_hex": "0x7CDF6",
+      "bank": 31,
+      "cpu": 36326,
+      "cpu_hex": "$8DE6",
+      "length": 5,
+      "text": "hEu!<END>"
+    },
+    {
+      "rom_offset": 512518,
+      "rom_offset_hex": "0x7D206",
+      "bank": 31,
+      "cpu": 37366,
+      "cpu_hex": "$91F6",
+      "length": 6,
+      "text": "U4 6+<END>"
+    },
+    {
+      "rom_offset": 512587,
+      "rom_offset_hex": "0x7D24B",
+      "bank": 31,
+      "cpu": 37435,
+      "cpu_hex": "$923B",
+      "length": 5,
+      "text": "0  0<END>"
+    },
+    {
+      "rom_offset": 521298,
+      "rom_offset_hex": "0x7F452",
+      "bank": 31,
+      "cpu": 46146,
+      "cpu_hex": "$B442",
+      "length": 17,
+      "text": "60   14 68 84  f<END>"
+    },
+    {
+      "rom_offset": 521888,
+      "rom_offset_hex": "0x7F6A0",
+      "bank": 31,
+      "cpu": 46736,
+      "cpu_hex": "$B690",
+      "length": 5,
+      "text": "zzX:<END>"
+    },
+    {
+      "rom_offset": 522080,
+      "rom_offset_hex": "0x7F760",
+      "bank": 31,
+      "cpu": 46928,
+      "cpu_hex": "$B750",
+      "length": 5,
+      "text": "zzX:<END>"
+    },
+    {
+      "rom_offset": 522219,
+      "rom_offset_hex": "0x7F7EB",
+      "bank": 31,
+      "cpu": 47067,
+      "cpu_hex": "$B7DB",
+      "length": 29,
+      "text": "wwwwwwww<FE><FE><FE><FE><FE><FE><FE><FE>wwwwffff<FE><FE><FE><FE><END>"
+    },
+    {
+      "rom_offset": 522283,
+      "rom_offset_hex": "0x7F82B",
+      "bank": 31,
+      "cpu": 47131,
+      "cpu_hex": "$B81B",
+      "length": 25,
+      "text": "wwwwwwww<FE><FE><FE><FE><FE><FE><FE><FE>77773<44>33<END>"
+    },
+    {
+      "rom_offset": 522333,
+      "rom_offset_hex": "0x7F85D",
+      "bank": 31,
+      "cpu": 47181,
+      "cpu_hex": "$B84D",
+      "length": 7,
+      "text": "h  <40>  <END>"
+    },
+    {
+      "rom_offset": 522396,
+      "rom_offset_hex": "0x7F89C",
+      "bank": 31,
+      "cpu": 47244,
+      "cpu_hex": "$B88C",
+      "length": 8,
+      "text": "1<40>  7  <END>"
+    },
+    {
+      "rom_offset": 522644,
+      "rom_offset_hex": "0x7F994",
+      "bank": 31,
+      "cpu": 47492,
+      "cpu_hex": "$B984",
+      "length": 8,
+      "text": "::uue60<END>"
+    },
+    {
+      "rom_offset": 522845,
+      "rom_offset_hex": "0x7FA5D",
+      "bank": 31,
+      "cpu": 47693,
+      "cpu_hex": "$BA4D",
+      "length": 7,
+      "text": "v  7  <END>"
+    },
+    {
+      "rom_offset": 522877,
+      "rom_offset_hex": "0x7FA7D",
+      "bank": 31,
+      "cpu": 47725,
+      "cpu_hex": "$BA6D",
+      "length": 7,
+      "text": "a<41>28w0<END>"
+    },
+    {
+      "rom_offset": 522908,
+      "rom_offset_hex": "0x7FA9C",
+      "bank": 31,
+      "cpu": 47756,
+      "cpu_hex": "$BA8C",
+      "length": 8,
+      "text": "1<40>  7  <END>"
+    },
+    {
+      "rom_offset": 522924,
+      "rom_offset_hex": "0x7FAAC",
+      "bank": 31,
+      "cpu": 47772,
+      "cpu_hex": "$BA9C",
+      "length": 8,
+      "text": "3f <40>3  <END>"
+    },
+    {
+      "rom_offset": 522939,
+      "rom_offset_hex": "0x7FABB",
+      "bank": 31,
+      "cpu": 47787,
+      "cpu_hex": "$BAAB",
+      "length": 9,
+      "text": "02A00800<END>"
+    },
+    {
+      "rom_offset": 522973,
+      "rom_offset_hex": "0x7FADD",
+      "bank": 31,
+      "cpu": 47821,
+      "cpu_hex": "$BACD",
+      "length": 7,
+      "text": "h  <40>  <END>"
+    },
+    {
+      "rom_offset": 522988,
+      "rom_offset_hex": "0x7FAEC",
+      "bank": 31,
+      "cpu": 47836,
+      "cpu_hex": "$BADC",
+      "length": 8,
+      "text": "3 <40>  7 <END>"
+    },
+    {
+      "rom_offset": 523003,
+      "rom_offset_hex": "0x7FAFB",
+      "bank": 31,
+      "cpu": 47851,
+      "cpu_hex": "$BAEB",
+      "length": 9,
+      "text": "0w2g0<41>02<END>"
+    },
+    {
+      "rom_offset": 523804,
+      "rom_offset_hex": "0x7FE1C",
+      "bank": 31,
+      "cpu": 48652,
+      "cpu_hex": "$BE0C",
+      "length": 10,
+      "text": "7vp<FE>vp<FE>v%<END>"
+    },
+    {
+      "rom_offset": 523875,
+      "rom_offset_hex": "0x7FE63",
+      "bank": 31,
+      "cpu": 48723,
+      "cpu_hex": "$BE53",
+      "length": 7,
+      "text": "fv<5E><FE>v%<END>"
+    },
+    {
+      "rom_offset": 524278,
+      "rom_offset_hex": "0x7FFF6",
+      "bank": 31,
+      "cpu": 49126,
+      "cpu_hex": "$BFE6",
+      "length": 11,
+      "text": "v<51><55><45><53><54>v<49><56>v<END>"
+    }
+  ]
+}

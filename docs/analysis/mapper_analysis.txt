@@ -1,0 +1,34 @@
+Dragon Warrior IV - Mapper Analysis
+============================================================
+
+Mapper: 1 (MMC1)
+PRG-ROM: 512KB
+CHR: RAM (no CHR-ROM)
+Battery: True
+
+MMC1 Register Writes Found:
+  $BFFF: 40 writes
+  $FFFF: 30 writes
+  $B34F: 10 writes
+  $A75C: 10 writes
+  $9FFF: 10 writes
+  $DFFF: 10 writes
+  $8D8D: 9 writes
+  $D9D4: 7 writes
+  $C319: 7 writes
+  $FF4D: 6 writes
+  $F171: 6 writes
+  $CFC3: 5 writes
+  $9E1A: 5 writes
+  $996C: 5 writes
+  $BF70: 5 writes
+  $9FEC: 5 writes
+  $FC68: 4 writes
+  $E19E: 4 writes
+  $FC67: 4 writes
+  $8F8E: 4 writes
+
+Bank Switching Routines:
+  $C118: Write Control ($9FFF)
+  $C12F: Write CHR Bank ($BFFF)
+  $C146: Write PRG Bank ($DFFF)

@@ -1,0 +1,781 @@
+================================================================================
+DRAGON WARRIOR IV - EXTRACTED TEXT
+================================================================================
+Total strings found: 641
+
+STRINGS BY CATEGORY:
+  menu: 1
+  dialogue: 72
+  names: 0
+  battle: 0
+  casino: 11
+  chapter: 2
+  misc: 555
+
+STRINGS BY BANK:
+  Bank  0: 3 strings
+  Bank  1: 4 strings
+  Bank  3: 1 strings
+  Bank  4: 1 strings
+  Bank  5: 4 strings
+  Bank  6: 19 strings
+  Bank  7: 17 strings
+  Bank  8: 27 strings
+  Bank 10: 1 strings
+  Bank 11: 3 strings
+  Bank 12: 50 strings
+  Bank 13: 37 strings
+  Bank 14: 31 strings
+  Bank 15: 9 strings
+  Bank 16: 16 strings
+  Bank 18: 7 strings
+  Bank 19: 14 strings
+  Bank 20: 3 strings
+  Bank 21: 8 strings
+  Bank 22: 3 strings
+  Bank 23: 53 strings
+  Bank 24: 183 strings
+  Bank 25: 24 strings
+  Bank 26: 4 strings
+  Bank 27: 23 strings
+  Bank 28: 19 strings
+  Bank 29: 25 strings
+  Bank 30: 29 strings
+  Bank 31: 23 strings
+
+================================================================================
+CHAPTER TITLES
+================================================================================
+Bank 27 $A66C: Chapter <LINE><END>
+Bank 27 $A676: x6The Royal Soldiers<END>
+
+================================================================================
+BATTLE/MENU COMMANDS
+================================================================================
+
+================================================================================
+CASINO TEXT
+================================================================================
+Bank 23 $82E4: bnCOZ<44><4D><59>Royal Flush<END>
+Bank 23 $82F8: 5 of a Kind<END>
+Bank 23 $8304: Straight Flush<END>
+Bank 23 $8313: 4 of a Kind<END>
+Bank 23 $832A: Flush<END>
+Bank 23 $8339: 3 of a Kind<END>
+Bank 23 $8345: 2 Pairs<END>
+Bank 23 $835A: Double Up<END>
+Bank 23 $8371: Double Up<END>
+Bank 23 $837B: Total Bets<END>
+Bank 23 $8392: Top Score of Double Up<END>
+
+================================================================================
+MENU TEXT
+================================================================================
+Bank 27 $A68B: x2Princess Alena?s Adventure<END>
+
+================================================================================
+NAMES (potential items/spells/characters)
+================================================================================
+
+================================================================================
+ALL STRINGS BY BANK
+================================================================================
+
+--- BANK 0 (ROM 0x00010) ---
+  $845D: R'<56>F,#<END>
+  $89D4: $k<54><4C><4C><59><END>
+  $8F03: 44<56>BH<END>
+
+--- BANK 1 (ROM 0x04010) ---
+  $96C9: fID<64>|U<END>
+  $B18A: so8<FE>'7<END>
+  $B1D7: kO<5B><59>T<END>
+  $B558: Q<4B><4D>p<END>
+
+--- BANK 3 (ROM 0x0C010) ---
+  $B7D8: z|(T<END>
+
+--- BANK 4 (ROM 0x10010) ---
+  $85AD: I'<63>.<5A><END>
+
+--- BANK 5 (ROM 0x14010) ---
+  $8A71: w77p<END>
+  $8A8A: h77q<END>
+  $9ECD: hd0G nFfu<END>
+  $A574: g40G n<61> k<END>
+
+--- BANK 6 (ROM 0x18010) ---
+  $827B: wuu5rX+<END>
+  $84E0: *=OWse0<END>
+  $8B36: 3bS2<END>
+  $8B9F: 4e#5<END>
+  $9224: e0662<END>
+  $9588: T<47> 6:<END>
+  $9918: u<4D>f0 <FE><END>
+  $9A74: 1bfv_<END>
+  $9C0B: e2 2dU,<END>
+  $A1F8: bdt<4F>.+<END>
+  $A4B9: 6cie<END>
+  $AB02: wX2<4C><58><END>
+  $AB67: x:2<64>P<FE><END>
+  $AC2A: a8 0<END>
+  $B3BC: 6u<FE>vH*g0<53><END>
+  $B7DC: u00211<END>
+  $B864: y6uu<END>
+  $B961: /142d#<END>
+  $BDCA: lL 20<END>
+
+--- BANK 7 (ROM 0x1C010) ---
+  $8661: 5rb:<END>
+  $884E: w: 6:<END>
+  $88C8: u<42>Tgv@<END>
+  $962E: 02eu:<END>
+  $9D67: Zud39<END>
+  $A221: dM56<END>
+  $A25B: vfr60<END>
+  $A76A: O0137f773<END>
+  $A9C0: &v6:<END>
+  $AB75: Lxd 1:<END>
+  $ABD7: LN?9<END>
+  $B228: o402e<END>
+  $B444: Kq3 <END>
+  $B4D8: Xe6r<END>
+  $BBAB: 3bF|<FE><END>
+  $BCD8: u2%xT<FE><END>
+  $BFE6: v<51><55><45><53><54>v<49><56>v<END>
+
+--- BANK 8 (ROM 0x20010) ---
+  $8703: LhoLmBLziLB3<END>
+  $882A: % Q <42> _ M p r i <END>
+  $8A6C: r<48>    <END>
+  $93AE: a8e8f8 837<END>
+  $9511: 7Bo^o<END>
+  $A1BB: 000    0 0 <END>
+  $A1C9: 000  00 1<END>
+  $A1D3: 000 00200020<END>
+  $A1E5: 220<LINE>6<END>
+  $A1EF: 3021<END>
+  $A1F4: 3000<FE><END>
+  $A1FA: 00 0c 0a <END>
+  $A20A: g0e00 20<END>
+  $A21C: h001<END>
+  $A269: 005002080060<END>
+  $B6A5: Z b5<46> fu Z c5<46> fu <END>
+  $B754: r<60>FRScQP<END>
+  $BE86: q2yo2zo2yr2zr<END>
+  $BE98: 333 I<4A>I<END>
+  $BEA0: 232 <4E>S<45><4E>5345elf<END>
+  $BEB0: 423 <4E><47><4F><END>
+  $BEB8: 036 XG<51>X4444<5A><55><5F><END>
+  $BEC8: 292 <49><5A><50><END>
+  $BED0: 224 ,<58><58><52>0886<5D><64>-<END>
+  $BEE8: 262 <55>_<55><END>
+  $BEFD: &<63><63>7444<5D><5F>-<END>
+  $BF60: j0  <END>
+
+--- BANK 10 (ROM 0x28010) ---
+  $9BFB: 9   T<END>
+
+--- BANK 11 (ROM 0x2C010) ---
+  $BAD4: ZVc3<4D>X<END>
+  $BC30: c3<4D>X<END>
+  $BFCC: j(<52><5F><60>?./<5C><END>
+
+--- BANK 12 (ROM 0x30010) ---
+  $81B5: 307       <48><END>
+  $827B: v<50>0u<END>
+  $83D2: .igfvL<END>
+  $83F6: s+ <40>vz141 <END>
+  $857B: YU26<END>
+  $858C: 5E B<END>
+  $885F: ) : vv <END>
+  $8989: v   1  <END>
+  $89E7: v v  ::::<END>
+  $8A00: vvv:Zb3 ::::0OO    <END>
+  $8B11: LL 006<END>
+  $8CD4: nXnz<END>
+  $922B: 01X02<END>
+  $9290: 3h<48><41>0 <END>
+  $929D: 1  v<48>h1  <END>
+  $9451: ?<54>!<44><56><61><59> 01 hv73<END>
+  $95EA: jj333 &<63><44>a<53><40><40><47>6bnLvHKv <END>
+  $9634: :Xv2<END>
+  $96FA: nLvvvv <END>
+  $9718: vvvvvvvv                 <END>
+  $98B6: 00  <END>
+  $9936: 00  <END>
+  $9A33: LL mf<END>
+  $9D83: 1<42><42><42><42><END>
+  $9FE8: 3i3  037<END>
+  $A37A: O277n7    <END>
+  $A3AC: 1151  <46><40>  <46> :|voB<59> :  ,   , <END>
+  $A3F2: ,   , <END>
+  $A61A: b3    <FE><END>
+  $A699: 7      K<END>
+  $A84E: 55   <END>
+  $A988: :                       <END>
+  $AC7B: 0 0Fk<END>
+  $AE1A: v    6 <END>
+  $AE31: nfyHFGHnv.<4C><40><43><43><40><END>
+  $AE4B: 3 rr  <END>
+  $AEC8: rr    <END>
+  $AF1A: v<45>3zvC <END>
+  $AF23: 0<55><55>  <END>
+  $AF31: niFxxxxnv<60><41><49><49><49><49><END>
+  $AF42: /<49><49><49><49><49>   zzzzz <END>
+  $AF54: FF  <END>
+  $AFC1: 0<49><49>0<END>
+  $AFCA: zz  <END>
+  $B18E: 2e<40><60>b<5A><57><54><4C><49>K bofh13  <END>
+  $B49E: |:<4F>0<46>L<END>
+  $B59C: cc c<END>
+  $B653: u6vnu<END>
+  $B864: 3373<END>
+  $BCE9: 00   0<FE> <END>
+
+--- BANK 13 (ROM 0x34010) ---
+  $80A3: = <55><55><END>
+  $80F7: #6 111    <END>
+  $82CC: XjQf <END>
+  $87CB: 6222K<END>
+  $88DC: 3f0<44> <END>
+  $88EC: 3f0<44> <END>
+  $8B24: 6222a<END>
+  $8C3C: vf   <END>
+  $8D35: 2  2<END>
+  $95EB: v    6 <END>
+  $9602: nfCFvKAnv.<48><40><45><40><40><END>
+  $9692: 0<55><55>0<END>
+  $9D6B: fv    <40>L<60> <63><60>L  7f ff6     <END>
+  $9DAB: iI1117    <END>
+  $A0A0: ,,  <END>
+  $A0BD: +<60><5F>: <END>
+  $A24C: klmlkimm <END>
+  $A30C: vwvvv:     <END>
+  $A474: ~K<5F>:<END>
+  $A47C: 4<4E>q:<END>
+  $A80D: v   1  <END>
+  $A8A6: F: i4k<END>
+  $A8C8: 1<4A><42>F<END>
+  $A9DD: w 297xN<END>
+  $ABFC: 0 v3  <42> <FE><END>
+  $AD45: L<60><40>     2bfvv<40><40>         <END>
+  $B2AF: 3f0<44> 'P~~P~~ <51>3<45><41> <55>~ <FE><END>
+  $B2CC: 0 <48>f <55><END>
+  $B774: cb 36ee 22625eb <END>
+  $B7D4: 6eeeu::u5ddbi::u6euu<5F><END>
+  $B7EC: 6eed<51><END>
+  $B894: 6eeeu::u5dd0sVNn$<END>
+  $B8D1: :u 1tt5<END>
+  $B8E4: $:::u<END>
+  $B933: fiuZ<60><END>
+  $B9AC: &Mm:v$<END>
+  $B9DB: e&Mm:v$<END>
+
+--- BANK 14 (ROM 0x38010) ---
+  $81BF: mZYoSVNn<4F><END>
+  $8866: T2220   <END>
+  $8AA7: 6eeeuuue5d76rph7<END>
+  $8DFB: :wt SmSgZ:  :<END>
+  $92B7: 6ee885q37ffllozW    ff7 6ee+<END>
+  $9D05: :e        <FE><END>
+  $9E87: 0266ee66u:<END>
+  $A0D9: 4  1 2<END>
+  $A0F9: 0    0<END>
+  $A107: 0    0  <FE><END>
+  $A157: G!S5a1  <END>
+  $A7E3: &-TS  205uWW06eeodt<END>
+  $A84B: c0gn<FE><FE><FE><END>
+  $A8FB: 9kk1<END>
+  $A97B: 9kkD<END>
+  $AB58: ru::qT <END>
+  $ABB8: %TZ:qT <END>
+  $AD5C: ffvZu=<END>
+  $AD8C: ffvZu=<END>
+  $ADEC: iiwZu=<END>
+  $AE0B: uue    <60><60>   <END>
+  $AEDB: fT_ <END>
+  $B338: |220  h<END>
+  $B7B7: 02ciIOIN015tltmsIMzkuke ieuq994  02ciIOI 015tltmNIMzkukesieu...
+  $B874: v<40><60>                <END>
+  $B93A: uk<40>0<4E><END>
+  $BB5A: WIIIIYY<42>FQ3P<END>
+  $BB67: PPQVSSSTUUUUWW754 012<END>
+  $BB7D: 4568ef<END>
+  $BEBB: X<47>IqQgfpvrYmK<45>yuByFCmFDLFEgh<44>RhFzFXyoXzo<45>yr<45>z...
+  $BF3F: n<60>l R0R1<60><END>
+
+--- BANK 15 (ROM 0x3C010) ---
+  $8D86: U4f3 6+<END>
+  $8DE6: hEu!<END>
+  $91F6: U4 6+<END>
+  $923B: 0  0<END>
+  $B4A3: 0  0<END>
+  $BC83: e<FE>  e<FE>  :<END>
+  $BE39: 33333<FE><FE><FE><END>
+  $BEDF: 77777<END>
+  $BFE6: v<51><55><45><53><54>v<49><56>v<END>
+
+--- BANK 16 (ROM 0x40010) ---
+  $8C82: tt<60>l0t<61><END>
+  $8CA2: ==.<63><43><41><41>0t<END>
+  $9119: lF OnK2GBsfC6IgLhPwEpFoGxHiLjMcEmFJGdznLeN u2r5D0134678u9taO...
+  $915D: OFWQGLEVFLGHM<END>
+  $916B: EJFLG<END>
+  $917B: OQTR<END>
+  $95B1: '<61><60>1h0debl43km g9<END>
+  $95C3: 534f<43>c6 gk0d81h7qa29p<46>B<END>
+  $95DB: 2i1efcl54km ha<END>
+  $9F95: e<61>k<61>q<61>w<61>C<61>I<61>O<61>U<61>:<61><45><61><4B><61...
+  $A197: (<60>V<4E><END>
+  $AE69: 1n<60>T<60><END>
+  $BE39: qg<42><42><50>Dfb  <END>
+  $BED9: eB6<LINE>e0226007Z<END>
+  $BF17: mJ da43<42>x<50><END>
+  $BF4F: fLvv<40><END>
+
+--- BANK 18 (ROM 0x48010) ---
+  $9B3B: 01v%<END>
+  $9BDA: 21<60> .<57><57><47>mmCBzwgi CCSRQzwxy  013 <END>
+  $9CDC: 5 6+<END>
+  $B3A6: 6+<50> <END>
+  $B47E: 8 6+<END>
+  $B6D0: -&<55>%.t?<5E><52>*#@$<END>
+  $BA38: 34199<END>
+
+--- BANK 19 (ROM 0x4C010) ---
+  $B0A0: hn|<5E><END>
+  $B328: lF OnK2GBsfC6IgLhPwEpFoGxHiLjMcEmFJGdznLeN u2r5D0134678u9taO...
+  $B36C: OFWQGLEVFLGHM<END>
+  $B37A: EJFLG<END>
+  $B38A: OQTR<END>
+  $B736: 210654a98edcihg  v<END>
+  $B7AA: O54ta<50>k84Dk<64>Eh4Ia9582U4*hd3r5N4<50>7c2y4Y5b5n9Jf71y4<5...
+  $B7E9: taNaja95023222012445e5<64>kNa<END>
+  $B9CF: uuuuu<END>
+  $BA66: uz    <END>
+  $BB07: tpBBb9h9    tpBBeeee        <40>N<46>Xllvv<END>
+  $BB2F: ll<4D><4D><4D><4D><4D><4D>    <END>
+  $BB52: &39907f137030701301070nvvnf<40>n37b12f224401f1nDfnv<END>
+  $BFA2: 5qpk<LINE><END>
+
+--- BANK 20 (ROM 0x50010) ---
+  $8ECF: vv   <END>
+  $B0BA: 5L3-<49><END>
+  $BFCA: 2e 900<END>
+
+--- BANK 21 (ROM 0x54010) ---
+  $812A: :<43><42>:<45><END>
+  $8440: 56i6<47><END>
+  $90C6: :6l45<49><FE>64<49><END>
+  $93AD: :6qq<END>
+  $940B: a6qs16qg<END>
+  $A613: 5<46>p,<END>
+  $B1AC: 2 <51><4B>--<60> 01234g5678:9abdGfhiklmopCD<48>E<END>
+  $B1D1: 9abcdeefghiijklmmjnopqrstuvve<END>
+
+--- BANK 22 (ROM 0x58010) ---
+  $8A01: pDR<41><4B><56><END>
+  $AEAF: 88  84sive<END>
+  $BFB1: 1T<60>n<60><END>
+
+--- BANK 23 (ROM 0x5C010) ---
+  $82E4: bnCOZ<44><4D><59>Royal Flush<END>
+  $82F8: 5 of a Kind<END>
+  $8304: Straight Flush<END>
+  $8313: 4 of a Kind<END>
+  $831F: Full House<END>
+  $832A: Flush<END>
+  $8330: Straight<END>
+  $8339: 3 of a Kind<END>
+  $8345: 2 Pairs<END>
+  $834D: Top Score of<END>
+  $835A: Double Up<END>
+  $8364: Top Takes of<END>
+  $8371: Double Up<END>
+  $837B: Total Bets<END>
+  $8386: Total Takes<END>
+  $8392: Top Score of Double Up<END>
+  $8485: 74v%<END>
+  $8497: 74v%<END>
+  $8F3D: 31<4C>%<END>
+  $96C1: /        <END>
+  $96CB: g^^l#^l        <FE><END>
+  $9706: ffff<END>
+  $975A: eeu:<END>
+  $97C2: 6eutr   Km.<END>
+  $97E6: 0266<END>
+  $9886: nnXX<END>
+  $98A2: 22222 2       <END>
+  $98D2: 2         <END>
+  $9904: 555555uu:<END>
+  $99A2: 2       u:<END>
+  $9B55: uuuuu<END>
+  $9B61: ,   <END>
+  $A8CF: eL__L2<END>
+  $A8EE: ee22226<END>
+  $A90C: F euULLL_<END>
+  $A940: WqqqS<END>
+  $A960: NNLL_<END>
+  $A96C: 6   2377g<END>
+  $AB3D: ::::::::<END>
+  $AC2E: v ggg v<END>
+  $AC3E: 77  fff<END>
+  $AC50: rLLL <END>
+  $ADAF: 0   <END>
+  $ADD5: =SSi#44<FE>   <END>
+  $AE6D: 02266<END>
+  $AFC6: X,,,,X <END>
+  $AFD6: nTnnnX <END>
+  $B029: ,,X <END>
+  $B037: ,bnnn <END>
+  $B046: X,X,,X <END>
+  $B056: X,,Z5X <END>
+  $B677: hGFBzyus<END>
+  $BFE6: v<51><55><45><53><54>v<49><56>v<END>
+
+--- BANK 24 (ROM 0x60010) ---
+  $81FD: :6 b<END>
+  $87D4: 3:A t<END>
+  $882D: :<46>4Nb3j<END>
+  $8859: :<44> r<END>
+  $8FA7: :<49> f<END>
+  $8FD3: :<64>od<END>
+  $902B: :3f47<END>
+  $9041: :  <4B><END>
+  $9057: :  t<END>
+  $91F9: :  N<END>
+  $9251: :  <50><END>
+  $92A9: T_gQPVUQ<END>
+  $92B2: WPUUW:<END>
+  $92BB: iW<41><44>:W<END>
+  $92C4: U<44><53><54><END>
+  $92CB: l<57><53><4B><54>)<END>
+  $92EA: &0  269<END>
+  $92FA: &226<END>
+  $930A: &38269b<END>
+  $931B: 07410a<END>
+  $932B: 2a761n<END>
+  $933B: 5cgrpc<END>
+  $9342: argpc<END>
+  $934B: 8DBzH<END>
+  $935B: 9HDAv<END>
+  $9362: A<4D>DH<END>
+  $936B: e<48><46>ZT<END>
+  $9373: T<4D><46><48><5C>88&00045<END>
+  $9383: 0445a<END>
+  $9393: 045ae3<END>
+  $939A: &4fea5<END>
+  $93A3: adegf<END>
+  $93AB: 7lCyIl<END>
+  $93B2: Cyq3CI4<END>
+  $93BB: 9NCI<END>
+  $93C2: rKC3IN4<END>
+  $93CB: brNK<END>
+  $93D2: KM3NY<45>4<END>
+  $940D: bitc<END>
+  $9413: btjci<END>
+  $9432: 1720 <END>
+  $943D: 659c<END>
+  $9443: 569cb<END>
+  $944A: &3c958<END>
+  $9452: 58ab<END>
+  $945B: 6fopiknnfipk<END>
+  $946B: 8CsnpkxkDsnC<5C><END>
+  $947B: aztXYDMxzYw<4D>E<END>
+  $948B: f<46>M,GE<5C>G,v<4D>E<5C><END>
+  $949B: cGCvO<4D>B<END>
+  $94A3: ECG<4D>Z<END>
+  $94AB: dDGTO<5C>zOZ<4E>T<END>
+  $94CA: _g<47>N<48>S<42><END>
+  $94DA: _gS<47><4C><4E><END>
+  $94F4: S<51><42><49><END>
+  $950B: iB<49><52><55><4A><58><52><5A><55><5B><END>
+  $951B: i<52><51><64><5A><58><END>
+  $952A: _k<5F><64><56><58><END>
+  $953A: _l<5E><56><58><61><END>
+  $954A: _l<5F><5E><58><56><64><END>
+  $955A: &m<60>-<5D>.<END>
+  $9564: _<5F>..<END>
+  $956B: m<5D><5F>-.<5D>.<60><5F><5D>_..<END>
+  $957B: m<61><63>?/<58><END>
+  $958D: /<63>(?<END>
+  $959A: _o<60>?<63>(/*<60>'(/?~<END>
+  $95AA: _p<60><63>?/(*'&/?++<END>
+  $95BA: _p/<63>&+*/#?*&?#<END>
+  $96AA: &082<END>
+  $96CB: 5otsoj<END>
+  $96DB: 6wsotx<END>
+  $96EA: &5gllfg<END>
+  $96F3: qlfgq<END>
+  $9702: IY<42><43>NS<END>
+  $970A: _e<4E><4C><4A><42><45><4A>S<4C><4E><42><4C><4A>5<END>
+  $9722: cqaflC<END>
+  $972D: 1 66<END>
+  $974D: omDu<END>
+  $975D: mDuO<END>
+  $9763: O<5C>mu<5C>b<END>
+  $976B: 6cuBz<END>
+  $9772: rBzguv<END>
+  $9782: uvszA<END>
+  $978B: bOJAFR<END>
+  $9792: FROvTZ<END>
+  $979B: cTZOJ<40><END>
+  $97A2: RJ<40>TZ<40><END>
+  $97BA: _fzRY<46><5C><5C><END>
+  $97C4: Hv<43><5C>8<END>
+  $97CF: Z<43><46><4E><48><45><48><43><5C><END>
+  $97DA: _h<49><4F><50><4C><42><50><50><50><4F><47><42><50><END>
+  $97EB: j<5F><55><5B><5A><51><5E><49><64><END>
+  $97FB: j<5B><64><5E><58><5B><5E><58><5F><5F><5A><5F><56><END>
+  $980D: -<5E><56><58><56>.<61><64><END>
+  $984A: ro'<60>+/<63><END>
+  $985A: ro?&+*(/+&<60>*'&<END>
+  $9882: =#+~<END>
+  $98FA: z3iot<END>
+  $9900: z4wtj<END>
+  $9912: P n0<END>
+  $991E: z SY<END>
+  $9924: B rc<END>
+  $992A: o 04<END>
+  $9930: p <46>j<END>
+  $9936: z3 9 <END>
+  $993C: z po<END>
+  $9942: z Fm<END>
+  $9948: F107<END>
+  $A248: n<4C><5A><50>,<END>
+  $A358: 0   nhn<END>
+  $A3C0: 0   %<END>
+  $A418: 0   II<END>
+  $A420: 00  <59><END>
+  $A448: 0   %<END>
+  $A450: 0   -<END>
+  $A698: Oyzzz......@NNNOOzzzz......@@NNOOzzzz     jjjjj           jj...
+  $A748: M<44><44><47><47><END>
+  $A74E: N<4D><4C>O<41><41><41><41><41><41><41>R<48><END>
+  $A761: T<4A><4A><4A><4B><4B><4B>U<40>:<END>
+  $A779: 0<56><56><56>A<5D><END>
+  $A78B: J<59><59>K<53><53><53>L<END>
+  $A796: M<54><54><55><55><END>
+  $A79C: N<4D><4C>O<41><41><41><41><41><41><41>P<57><57><58><57><58>Q...
+  $A7C0: T<4A><4A><4A><4B><4B><4B>U<40>W<5D><5D><5C>X:Y<END>
+  $A7D1: iiiiiSSSSSSTTTUU:<END>
+  $A7FE: YZZYYYY<48><END>
+  $AD9D: *<60>hhjjmrxAJJeotyD<64><46><4D><4D><4D>0www<48><46><48><END...
+  $ADBB: 424 <40>E<40><END>
+  $ADC3: 909 EJJE<64><64><64><64> 0244433167<END>
+  $ADDB: 4a0 OtvT4972wOZ<END>
+  $ADEB: 804 trr<END>
+  $ADF3: 0cc z<5C>Zvh0hcsou<END>
+  $AE03: 333 bfd<END>
+  $AE0B: 244 BDB<END>
+  $AE13: 424 RAH<END>
+  $AE1B: 422 a98<END>
+  $AE23: 333 cic<END>
+  $AE2B: 424 grg<END>
+  $AE33: 424 xxxx4444omB<END>
+  $AE84: j<40>v%<END>
+  $AEA2: 54<4C>%<END>
+  $B251: 579b<END>
+  $B256: 168abc<END>
+  $B25D: 79abc<END>
+  $B263: 589abd<END>
+  $B26A: abcd<END>
+  $B26F: 9abc<END>
+  $B278: 45789a<END>
+  $B283: 67898<END>
+  $B28D: 345677<END>
+  $B298: 5665<END>
+  $B29D: 5654<END>
+  $B2A2: 23454<END>
+  $B2A8: 432 <END>
+  $B2AD: 44321<END>
+  $B2B4: 43210<END>
+  $B2C1: 3320 <FE><END>
+  $B2CF: 1232<END>
+  $B2F0: 0123<END>
+  $B2F5: 01234<END>
+  $B2FC: 12357<END>
+  $B302: 468b<END>
+  $B307: 357b<END>
+  $B311: 01259<END>
+  $B31B: 125ae<END>
+  $B326: 0124c<END>
+  $B330: 25ad<END>
+  $B335: 389e<END>
+  $B33B: 015c<END>
+  $B340: acde<END>
+  $B345: 27bcde<END>
+  $B34C: 39bcd<END>
+  $B352: 8abcde<END>
+  $B359: 179bcd<END>
+  $B360: 589cde<END>
+  $B36C: 79abc<END>
+  $B387: 00000<END>
+  $B3DF: 0000<END>
+  $B5C2: 1 3h 5i 1d 2e 3b 5:35u 73 53d7409k 2m 7g 59 75 2l 9w 5f 4<43...
+  $BC39: Tf   vLTXTLv 7b<FE><END>
+  $BC4B: b7<60><60>+-*-+<60><60><60><60><60><60><60><60><60> <END>
+  $BC80: d5555     <END>
+  $BD76: OORXRR$Y<63><61>Xt<43><63><5E><END>
+
+--- BANK 25 (ROM 0x64010) ---
+  $810B: slaalm4lsjs4lmars2b076559303<FE><FE><FE>Z 93dk36qk2vj1d<46>2...
+  $82FF: f   m i m    m      mim mfm nnm         mnmm        h<END>
+  $8C71: luEu<LINE>b<END>
+  $8C78: 5252b<END>
+  $913B: btsn<END>
+  $9155: E=<48>^bEGE@L&bC<END>
+  $92A9: +7zz#<60><END>
+  $92E7: nEDzCE#<60><END>
+  $A757: nBI^<48><END>
+  $A76C: $n#b+5*2z*z+b<END>
+  $A875: 9DEED<49><END>
+  $A8A4: bIKI^L%bG<END>
+  $A8DA: nbn5n5 )<END>
+  $A992: C^b%nB%b@nz@b<END>
+  $AA61: 'zB+b<END>
+  $AA68: *nz#b<END>
+  $AC54: npq-bq<END>
+  $AC70: pssossnssmssnrrlppkrrjppi<END>
+  $AD22: buuhttgslfnngnneqqdnncoobn<END>
+  $AF36: 3wwwuuusss<END>
+  $AF44: 4ruzuz<END>
+  $AF4B: *DzDGDG<END>
+  $B9A1: .n)b<END>
+  $BDB0: V=bK<END>
+
+--- BANK 26 (ROM 0x68010) ---
+  $81E8: Rs<5D>|<END>
+  $8783: (<45>Y<44><4D><END>
+  $9507: yT%.<END>
+  $97D1: #<56>F,#<END>
+
+--- BANK 27 (ROM 0x6C010) ---
+  $8914: +<60>8 82q <END>
+  $892F: fjfjfj&<63><44>a<53><40><40><47>6bnLvHKv <END>
+  $8A35: &<63><44>a<50><40><43><44>6bnLvKHy <END>
+  $8A78: gjiji<END>
+  $8B33: L &<63><44>7<51><40><47><40>6bnLxKDw <END>
+  $8B78: 11111<END>
+  $8C33: f &<63><44>7<54><44><4C><4C>6bnLvvvv <END>
+  $8C5D: vvvvvvvv                 <END>
+  $8F55: JHDBHDBH<4D><49><40><44><49><41><45><48>        <40><40><40>...
+  $9055: vvvvvvvv<4C><4C><4C><4C><4C><4C><4C><4C>                <END...
+  $97D3: b*OF<END>
+  $A63E: rhrD9r7t<END>
+  $A64E: vz9B9rD97 3N<END>
+  $A65B: wcThe End<FE>w<50>of<END>
+  $A66C: Chapter <LINE><END>
+  $A676: x6The Royal Soldiers<END>
+  $A68B: x2Princess Alena?s Adventure<END>
+  $A6A8: x3Taloon the Arms Merchant<END>
+  $A6C3: x3The Sisters of Monbaraba<END>
+  $A6DE: x8The Chosen Ones<END>
+  $AF23: cj1cf<47><END>
+  $AF8B: 626262teue60<END>
+  $AFC1: 6u2eT:r<END>
+
+--- BANK 28 (ROM 0x70010) ---
+  $8798: h77p<END>
+  $87B1: h77q<END>
+  $8A6F: w77p<END>
+  $8A88: g77q<END>
+  $9E98: ED1<40>EE0vE<44>2fE<END>
+  $9F8A: a 46a 10<43>5 08  08 768 1685 080 081 084 082 0Z  6Z 00Z 16T...
+  $9FD3: a 10<43>5 08  085 080 081 084 082 0Z  6Z 00Z 16T  0T2 1T300J...
+  $ABF5: e V <41> 010 0010h11 l0O212<41>3l l1h e036: 3 k2  4 M240373a...
+  $AD5A: u 01<END>
+  $B09F: b1v%<END>
+  $B1FF: b1v%<END>
+  $B23A: 84v%<END>
+  $B241: 84v%<END>
+  $B3ED: 9+v%<END>
+  $B4EF: e1v%<END>
+  $B98A: b1v%<END>
+  $BB6C: i4v%<END>
+  $BF06: 84v%<END>
+  $BF0D: 84<4C>%<END>
+
+--- BANK 29 (ROM 0x74010) ---
+  $8197: hmec6<END>
+  $81D5: e6d6<END>
+  $8333: :euud6266e<END>
+  $8373: :euud6266e<END>
+  $84B1: uuY:I<END>
+  $84F1: uuYZE<END>
+  $8742: 266a<END>
+  $8D18: 84<4C>%<END>
+  $9135: 000000000000000000000      <END>
+  $96B5: Q601S  0R3P m <END>
+  $9879: /1g   <END>
+  $994A: 0  00  0<END>
+  $9958: 0  0<END>
+  $AE25: 84v%<END>
+  $AE2C: 84<4C>%<END>
+  $B8BF: k7<41>3<END>
+  $B8C4: 0k5<41>3<END>
+  $B8CA: 1k6O37 Y01 <END>
+  $B8D7: ia12<END>
+  $B8DD: i1M28No 3a9vh 3 avg63 1<40>10302<41>2 <40> d<40>K <END>
+  $B953: 359<41>38a<END>
+  $B9B7: e99887765544333322221111111100v%<END>
+  $BA4E: a4v%<END>
+  $BD41: /h0     <END>
+  $BD64: 06eu<END>
+
+--- BANK 30 (ROM 0x78010) ---
+  $81F3: 6 8+a<4C><END>
+  $85A2: 4<60>v%<END>
+  $89F4: G20 u2 <END>
+  $89FC: 3Bm158c24sg36924<END>
+  $8B40: 74v%<END>
+  $8B47: 74<4C>%<END>
+  $8E44: &Xyja532110<END>
+  $8E65: Xyja532110<END>
+  $8E75: 1111111111111111Xyja5432100 <END>
+  $8EA5: Xyja5432100 <END>
+  $8F4C: 9+--<4C>%<END>
+  $9231: +n<60>T<60>a  <END>
+  $923A: 7Ms  <END>
+  $9241: eC  <END>
+  $924D: gw  <END>
+  $9253: g<47>  <END>
+  $9259: cJ  <END>
+  $925F: E<46>  <END>
+  $9265: v<45>  <END>
+  $9271: Bg 9<END>
+  $9278: F 09 <END>
+  $97F0: 9+<4C>%<END>
+  $9889: N4v%<END>
+  $A016: ABCDG<END>
+  $A01C: fghijklmnopsEF<END>
+  $BC30: n<60>T<60>7<END>
+  $BD79: m g3<64>2<40>p0e0!2v<43>739!2f<43>02b!27z 62!23M330!21r010<5...
+  $BDC3: 300 21052133023213403b13d35 2720730e 2l12m00w 0I 1I10I47J 0J...
+  $BECB: i<64>M<4A><END>
+
+--- BANK 31 (ROM 0x7C010) ---
+  $8D86: U4f3 6+<END>
+  $8DE6: hEu!<END>
+  $91F6: U4 6+<END>
+  $923B: 0  0<END>
+  $B442: 60   14 68 84  f<END>
+  $B690: zzX:<END>
+  $B750: zzX:<END>
+  $B7DB: wwwwwwww<FE><FE><FE><FE><FE><FE><FE><FE>wwwwffff<FE><FE><FE>...
+  $B81B: wwwwwwww<FE><FE><FE><FE><FE><FE><FE><FE>77773<44>33<END>
+  $B84D: h  <40>  <END>
+  $B88C: 1<40>  7  <END>
+  $B984: ::uue60<END>
+  $BA4D: v  7  <END>
+  $BA6D: a<41>28w0<END>
+  $BA8C: 1<40>  7  <END>
+  $BA9C: 3f <40>3  <END>
+  $BAAB: 02A00800<END>
+  $BACD: h  <40>  <END>
+  $BADC: 3 <40>  7 <END>
+  $BAEB: 0w2g0<41>02<END>
+  $BE0C: 7vp<FE>vp<FE>v%<END>
+  $BE53: fv<5E><FE>v%<END>
+  $BFE6: v<51><55><45><53><54>v<49><56>v<END>
