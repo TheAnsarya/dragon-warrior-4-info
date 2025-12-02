@@ -1,0 +1,67 @@
+Dragon Warrior IV - Text Engine Analysis
+============================================================
+
+KNOWN TEXT LOCATIONS:
+  ROM 0x5B400 -> Bank 22, CPU $B3F0: Menu text (ERASE NAME, battle commands)
+  ROM 0x6E674 -> Bank 27, CPU $A664: Chapter titles
+  ROM 0x4A698 -> Bank 18, CPU $A688: Spell/item names (Outside)
+
+
+CONTROL CODE CHECKS:
+
+  $22 (POSITION): 2 occurrences
+    Bank 21, $B2F4: CMP #$22, BNE
+    Bank 30, $B39E: CMP #$22, BNE
+
+  $FD (LINE/CLEAR): 3 occurrences
+    Bank 17, $8152: CMP #$FD, BEQ
+    Bank 22, $8B1F: CMP #$FD, BEQ
+    Bank 27, $A5C6: CMP #$FD, BNE
+
+  $FE (CTRL-FE): 11 occurrences
+    Bank 17, $8608: CMP #$FE, BNE
+    Bank 18, $BB2B: CMP #$FE, BNE
+    Bank 21, $B7C9: CMP #$FE, BNE
+    Bank 21, $B7E0: CMP #$FE, BNE
+    Bank 21, $BF3E: CMP #$FE, BEQ
+    Bank 21, $BF5E: CMP #$FE, BEQ
+    Bank 22, $8B1B: CMP #$FE, BEQ
+    Bank 22, $8B2C: CMP #$FE, BNE
+    Bank 30, $AD89: CMP #$FE, BEQ
+    Bank 30, $ADAC: CMP #$FE, BEQ
+    Bank 30, $AE1D: CMP #$FE, BEQ
+
+  $FF (END): 232 occurrences
+    Bank  8, $86F7: CMP #$FF, BEQ
+    Bank  8, $8813: CMP #$FF, BEQ
+    Bank  8, $B045: CMP #$FF, BEQ
+    Bank  8, $B074: CMP #$FF, BNE
+    Bank  8, $B14A: CMP #$FF, BNE
+    Bank  8, $B268: CMP #$FF, BEQ
+    Bank  8, $B278: CMP #$FF, BNE
+    Bank  8, $B328: CMP #$FF, BEQ
+    Bank  8, $B61E: CMP #$FF, BEQ
+    Bank  8, $B742: CMP #$FF, BEQ
+    Bank 15, $942B: CMP #$FF, BEQ
+    Bank 15, $9448: CMP #$FF, BEQ
+    Bank 15, $95C5: CMP #$FF, BEQ
+    Bank 15, $960C: CMP #$FF, BEQ
+    Bank 15, $973D: CMP #$FF, BNE
+    Bank 15, $97F4: CMP #$FF, BEQ
+    Bank 15, $9C55: CMP #$FF, BNE
+    Bank 15, $A038: CMP #$FF, BEQ
+    Bank 15, $A0C3: CMP #$FF, BNE
+    Bank 15, $A18D: CMP #$FF, BNE
+
+
+TEXT READ LOOPS BY BANK:
+  Bank  8: 3 loops
+  Bank 15: 2 loops
+  Bank 16: 2 loops
+  Bank 18: 2 loops
+  Bank 19: 3 loops
+  Bank 24: 5 loops
+  Bank 27: 2 loops
+  Bank 28: 1 loops
+  Bank 30: 4 loops
+  Bank 31: 2 loops

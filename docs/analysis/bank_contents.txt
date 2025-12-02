@@ -1,0 +1,495 @@
+================================================================================
+DRAGON WARRIOR IV - PRG BANK CONTENT ANALYSIS
+================================================================================
+
+ROM Size: 524304 bytes
+PRG-ROM: 512KB (32 banks)
+
+BANK SUMMARY
+--------------------------------------------------------------------------------
+Bank   ROM Offset Type                  Text%  Code%   RTS  Strings
+--------------------------------------------------------------------------------
+   0 0x00010-04010 MOSTLY CODE           48.1%  56.9%    27        0
+   1 0x04010-08010 MOSTLY CODE           48.6%  55.7%    41        0
+   2 0x08010-0C010 MOSTLY CODE           47.0%  55.0%    35        0
+   3 0x0C010-10010 MOSTLY CODE           47.8%  55.5%    25        0
+   4 0x10010-14010 MOSTLY CODE           47.0%  55.4%    17        0
+   5 0x14010-18010 MOSTLY CODE           76.1%  58.6%    28        3
+   6 0x18010-1C010 CODE                  67.8%  59.8%   222        9
+   7 0x1C010-20010 CODE                  65.4%  58.5%   195       12
+   8 0x20010-24010 CODE                  63.2%  67.1%   184       15
+   9 0x24010-28010 CODE                  57.0%  60.6%    70        0
+  10 0x28010-2C010 CODE                  55.9%  60.9%    75        1
+  11 0x2C010-30010 CODE                  64.9%  55.4%    92        0
+  12 0x30010-34010 TEXT DATA             66.3%  59.4%    70       39
+  13 0x34010-38010 CODE                  67.1%  57.3%   104       18
+  14 0x38010-3C010 CODE                  75.6%  60.6%   176       17
+  15 0x3C010-40010 CODE                  60.3%  75.6%   363        4
+  16 0x40010-44010 CODE                  56.8%  75.9%   454        8
+  17 0x44010-48010 CODE                  61.0%  68.2%   450        0
+  18 0x48010-4C010 CODE                  59.5%  71.0%   293        2
+  19 0x4C010-50010 CODE                  52.3%  76.5%   369        9
+  20 0x50010-54010 CODE                  56.0%  73.3%   181        2
+  21 0x54010-58010 CODE                  63.5%  64.6%   194        3
+  22 0x58010-5C010 CODE                  51.4%  71.1%   366        1
+  23 0x5C010-60010 TEXT DATA             61.6%  64.6%   193       43
+  24 0x60010-64010 TEXT DATA             74.8%  62.7%   178      110
+  25 0x64010-68010 CODE                  72.0%  63.4%   128        9
+  26 0x68010-6C010 MOSTLY CODE           47.3%  55.6%    29        0
+  27 0x6C010-70010 CODE                  62.4%  68.9%   194       17
+  28 0x70010-74010 CODE                  65.1%  68.7%   203        8
+  29 0x74010-78010 CODE                  56.2%  68.7%   372       16
+  30 0x78010-7C010 CODE                  59.5%  72.7%   335       14
+  31 0x7C010-80010 CODE                  55.7%  74.5%   321        9
+
+================================================================================
+DETAILED BANK ANALYSIS
+================================================================================
+
+BANK 0: MOSTLY CODE
+  ROM: 0x00010-0x04010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 48.1%
+  Code ratio: 56.9%
+  RTS instructions: 27
+
+BANK 1: MOSTLY CODE
+  ROM: 0x04010-0x08010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 48.6%
+  Code ratio: 55.7%
+  RTS instructions: 41
+
+BANK 2: MOSTLY CODE
+  ROM: 0x08010-0x0C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 47.0%
+  Code ratio: 55.0%
+  RTS instructions: 35
+
+BANK 3: MOSTLY CODE
+  ROM: 0x0C010-0x10010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 47.8%
+  Code ratio: 55.5%
+  RTS instructions: 25
+
+BANK 4: MOSTLY CODE
+  ROM: 0x10010-0x14010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 47.0%
+  Code ratio: 55.4%
+  RTS instructions: 17
+
+BANK 5: MOSTLY CODE
+  ROM: 0x14010-0x18010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 76.1%
+  Code ratio: 58.6%
+  RTS instructions: 28
+  Text strings found: 3
+  Sample strings:
+    $8A71: "w77p"
+    $8A8A: "h77q"
+    $9ECD: "hd0G nFfu"
+
+BANK 6: CODE
+  ROM: 0x18010-0x1C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 67.8%
+  Code ratio: 59.8%
+  RTS instructions: 222
+  Text strings found: 9
+  Sample strings:
+    $84E2: "OWse0"
+    $8B36: "3bS2"
+    $9224: "e0662"
+    $9C0B: "e2 2dU,"
+    $A4B9: "6cie"
+    $AC2A: "a8 0"
+    $B7DC: "u00211"
+    $B864: "y6uu"
+    $BDCA: "lL 20"
+
+BANK 7: CODE
+  ROM: 0x1C010-0x20010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 65.4%
+  Code ratio: 58.5%
+  RTS instructions: 195
+  Text strings found: 12
+  Sample strings:
+    $8661: "5rb:"
+    $884E: "w: 6:"
+    $962E: "02eu:"
+    $9D67: "Zud39"
+    $A221: "dM56"
+    $A25B: "vfr60"
+    $A76A: "O0137f773"
+    $AB75: "Lxd 1:"
+    $ABD7: "LN?9"
+    $B228: "o402e"
+    ... and 2 more
+
+BANK 8: CODE
+  ROM: 0x20010-0x24010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 63.2%
+  Code ratio: 67.1%
+  RTS instructions: 184
+  Text strings found: 15
+  Sample strings:
+    $8703: "LhoLmBLziLB3"
+    $8832: "M p r i "
+    $93AE: "a8e8f8 837"
+    $A1BB: "000    0 0 "
+    $A1C9: "000  00 1"
+    $A1D3: "000 00200020"
+    $A1EF: "3021"
+    $A1FA: "00 0c 0a "
+    $A20A: "g0e00 20"
+    $A21C: "h001"
+    ... and 5 more
+
+BANK 9: CODE
+  ROM: 0x24010-0x28010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 57.0%
+  Code ratio: 60.6%
+  RTS instructions: 70
+
+BANK 10: CODE
+  ROM: 0x28010-0x2C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 55.9%
+  Code ratio: 60.9%
+  RTS instructions: 75
+  Text strings found: 1
+  Sample strings:
+    $9BFB: "9   T"
+
+BANK 11: CODE
+  ROM: 0x2C010-0x30010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 64.9%
+  Code ratio: 55.4%
+  RTS instructions: 92
+
+BANK 12: TEXT DATA
+  ROM: 0x30010-0x34010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 66.3%
+  Code ratio: 59.4%
+  RTS instructions: 70
+  Text strings found: 39
+  Sample strings:
+    $83D2: ".igfvL"
+    $83FA: "vz141 "
+    $857B: "YU26"
+    $858C: "5E B"
+    $8861: ": vv "
+    $8989: "v   1  "
+    $89E7: "v v  ::::"
+    $8A00: "vvv:Zb3 ::::0OO    "
+    $8B11: "LL 006"
+    $8CD4: "nXnz"
+    ... and 29 more
+
+BANK 13: CODE
+  ROM: 0x34010-0x38010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 67.1%
+  Code ratio: 57.3%
+  RTS instructions: 104
+  Text strings found: 18
+  Sample strings:
+    $80F8: "6 111    "
+    $82CC: "XjQf "
+    $87CB: "6222K"
+    $8B24: "6222a"
+    $8C3C: "vf   "
+    $8D35: "2  2"
+    $95EB: "v    6 "
+    $9D77: "L  7f ff6     "
+    $9DAB: "iI1117    "
+    $A0A0: ",,  "
+    ... and 8 more
+
+BANK 14: CODE
+  ROM: 0x38010-0x3C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 75.6%
+  Code ratio: 60.6%
+  RTS instructions: 176
+  Text strings found: 17
+  Sample strings:
+    $8866: "T2220   "
+    $8AA7: "6eeeuuue5d76rph7"
+    $8DFB: ":wt SmSgZ:  :"
+    $9E87: "0266ee66u:"
+    $A0D9: "4  1 2"
+    $A0F9: "0    0"
+    $A157: "G!S5a1  "
+    $A7E4: "-TS  205uWW06eeodt"
+    $A8FB: "9kk1"
+    $A97B: "9kkD"
+    ... and 7 more
+
+BANK 15: CODE
+  ROM: 0x3C010-0x40010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 60.3%
+  Code ratio: 75.6%
+  RTS instructions: 363
+  Text strings found: 4
+  Sample strings:
+    $8DE6: "hEu!"
+    $923B: "0  0"
+    $B4A3: "0  0"
+    $BEDF: "77777"
+
+BANK 16: CODE
+  ROM: 0x40010-0x44010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 56.8%
+  Code ratio: 75.9%
+  RTS instructions: 454
+  Text strings found: 8
+  Sample strings:
+    $9119: "lF OnK2GBsfC6IgLhPwEpFoGxHiLjMcEmFJGdznLeN u2r5D01..."
+    $915D: "OFWQGLEVFLGHM"
+    $916B: "EJFLG"
+    $917B: "OQTR"
+    $95B4: "1h0debl43km g9"
+    $95DB: "2i1efcl54km ha"
+    $BE3E: "Dfb  "
+    $BEDD: "e0226007Z"
+
+BANK 17: CODE
+  ROM: 0x44010-0x48010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 61.0%
+  Code ratio: 68.2%
+  RTS instructions: 450
+
+BANK 18: CODE
+  ROM: 0x48010-0x4C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 59.5%
+  Code ratio: 71.0%
+  RTS instructions: 293
+  Text strings found: 2
+  Sample strings:
+    $9BE2: "mmCBzwgi CCSRQzwxy  013 "
+    $BA38: "34199"
+
+BANK 19: CODE
+  ROM: 0x4C010-0x50010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 52.3%
+  Code ratio: 76.5%
+  RTS instructions: 369
+  Text strings found: 9
+  Sample strings:
+    $B328: "lF OnK2GBsfC6IgLhPwEpFoGxHiLjMcEmFJGdznLeN u2r5D01..."
+    $B36C: "OFWQGLEVFLGHM"
+    $B37A: "EJFLG"
+    $B38A: "OQTR"
+    $B736: "210654a98edcihg  v"
+    $B9CF: "uuuuu"
+    $BA66: "uz    "
+    $BB26: "Xllvv"
+    $BB6E: "n37b12f224401f1nDfnv"
+
+BANK 20: CODE
+  ROM: 0x50010-0x54010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 56.0%
+  Code ratio: 73.3%
+  RTS instructions: 181
+  Text strings found: 2
+  Sample strings:
+    $8ECF: "vv   "
+    $BFCA: "2e 900"
+
+BANK 21: CODE
+  ROM: 0x54010-0x58010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 63.5%
+  Code ratio: 64.6%
+  RTS instructions: 194
+  Text strings found: 3
+  Sample strings:
+    $93AD: ":6qq"
+    $940B: "a6qs16qg"
+    $B1D1: "9abcdeefghiijklmmjnopqrstuvve"
+
+BANK 22: CODE
+  ROM: 0x58010-0x5C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 51.4%
+  Code ratio: 71.1%
+  RTS instructions: 366
+  Text strings found: 1
+  Sample strings:
+    $AEAF: "88  84sive"
+
+BANK 23: TEXT DATA
+  ROM: 0x5C010-0x60010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 61.6%
+  Code ratio: 64.6%
+  RTS instructions: 193
+  Text strings found: 43
+  Sample strings:
+    $82EC: "Royal Flush"
+    $82F8: "5 of a Kind"
+    $8304: "Straight Flush"
+    $8313: "4 of a Kind"
+    $831F: "Full House"
+    $832A: "Flush"
+    $8330: "Straight"
+    $8339: "3 of a Kind"
+    $8345: "2 Pairs"
+    $834D: "Top Score of"
+    ... and 33 more
+
+BANK 24: TEXT DATA
+  ROM: 0x60010-0x64010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 74.8%
+  Code ratio: 62.7%
+  RTS instructions: 178
+  Text strings found: 110
+  Sample strings:
+    $81FD: ":6 b"
+    $87D4: "3:A t"
+    $882F: "4Nb3j"
+    $902B: ":3f47"
+    $9057: ":  t"
+    $91F9: ":  N"
+    $92AB: "gQPVUQ"
+    $92B2: "WPUUW:"
+    $92EB: "0  269"
+    $930B: "38269b"
+    ... and 100 more
+
+BANK 25: CODE
+  ROM: 0x64010-0x68010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 72.0%
+  Code ratio: 63.4%
+  RTS instructions: 128
+  Text strings found: 9
+  Sample strings:
+    $82FF: "f   m i m    m      mim mfm nnm         mnmm      ..."
+    $8C78: "5252b"
+    $913B: "btsn"
+    $AC54: "npq-bq"
+    $AC70: "pssossnssmssnrrlppkrrjppi"
+    $AD22: "buuhttgslfnngnneqqdnncoobn"
+    $AF36: "3wwwuuusss"
+    $AF44: "4ruzuz"
+    $AF4C: "DzDGDG"
+
+BANK 26: MOSTLY CODE
+  ROM: 0x68010-0x6C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 47.3%
+  Code ratio: 55.6%
+  RTS instructions: 29
+
+BANK 27: CODE
+  ROM: 0x6C010-0x70010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 62.4%
+  Code ratio: 68.9%
+  RTS instructions: 194
+  Text strings found: 17
+  Sample strings:
+    $8916: "8 82q "
+    $893D: "6bnLvHKv "
+    $8A3D: "6bnLvKHy "
+    $8A78: "gjiji"
+    $8B3D: "6bnLxKDw "
+    $8B78: "11111"
+    $8C3D: "6bnLvvvv "
+    $8C5D: "vvvvvvvv                 "
+    $A63E: "rhrD9r7t"
+    $A64E: "vz9B9rD97 3N"
+    ... and 7 more
+
+BANK 28: CODE
+  ROM: 0x70010-0x74010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 65.1%
+  Code ratio: 68.7%
+  RTS instructions: 203
+  Text strings found: 8
+  Sample strings:
+    $8798: "h77p"
+    $87B1: "h77q"
+    $8A6F: "w77p"
+    $8A88: "g77q"
+    $9F93: "5 08  08 768 1685 080 081 084 082 0Z  6Z 00Z 16T  ..."
+    $9FD8: "5 08  085 080 081 084 082 0Z  6Z 00Z 16T  0T2 1T30..."
+    $AC85: "Q1g2"
+    $AD5A: "u 01"
+
+BANK 29: CODE
+  ROM: 0x74010-0x78010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 56.2%
+  Code ratio: 68.7%
+  RTS instructions: 372
+  Text strings found: 16
+  Sample strings:
+    $8197: "hmec6"
+    $81D5: "e6d6"
+    $8333: ":euud6266e"
+    $8373: ":euud6266e"
+    $84B1: "uuY:I"
+    $84F1: "uuYZE"
+    $8742: "266a"
+    $9135: "000000000000000000000      "
+    $96B5: "Q601S  0R3P m "
+    $987A: "1g   "
+    ... and 6 more
+
+BANK 30: CODE
+  ROM: 0x78010-0x7C010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 59.5%
+  Code ratio: 72.7%
+  RTS instructions: 335
+  Text strings found: 14
+  Sample strings:
+    $89F4: "G20 u2 "
+    $89FC: "3Bm158c24sg36924"
+    $8E45: "Xyja532110"
+    $8E65: "Xyja532110"
+    $8E75: "1111111111111111Xyja5432100 "
+    $8EA5: "Xyja5432100 "
+    $923A: "7Ms  "
+    $9241: "eC  "
+    $924D: "gw  "
+    $9259: "cJ  "
+    ... and 4 more
+
+BANK 31: CODE
+  ROM: 0x7C010-0x80010
+  CPU: $8000-$BFFF (when switched in)
+  Text ratio: 55.7%
+  Code ratio: 74.5%
+  RTS instructions: 321
+  Text strings found: 9
+  Sample strings:
+    $8DE6: "hEu!"
+    $923B: "0  0"
+    $B442: "60   14 68 84  f"
+    $B690: "zzX:"
+    $B750: "zzX:"
+    $B984: "::uue60"
+    $BA4D: "v  7  "
+    $BA6F: "28w0"
+    $BAAB: "02A00800"
