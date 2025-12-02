@@ -192,7 +192,7 @@ class AssetReinserter:
 
 		for i in range(0, len(data), bytes_per_line):
 			chunk = data[i:i + bytes_per_line]
-			hex_values = ", ".join(f"${b:02X}" for b in chunk)
+			hex_values = ", ".join(f"${b:02x}" for b in chunk)
 			lines.append(f"\t.byte {hex_values}")
 
 		return lines

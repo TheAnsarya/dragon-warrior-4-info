@@ -50,12 +50,12 @@ DW4_TBL = {
 	0x07: "6",
 	0x08: "7",
 	0x09: "8",
-	0x0A: "9",
-	0x0B: "a",
-	0x0C: "b",
-	0x0D: "c",
-	0x0E: "d",
-	0x0F: "e",
+	0x0a: "9",
+	0x0b: "a",
+	0x0c: "b",
+	0x0d: "c",
+	0x0e: "d",
+	0x0f: "e",
 	0x10: "f",
 	0x11: "g",
 	0x12: "h",
@@ -66,12 +66,12 @@ DW4_TBL = {
 	0x17: "m",
 	0x18: "n",
 	0x19: "o",
-	0x1A: "p",
-	0x1B: "q",
-	0x1C: "r",
-	0x1D: "s",
-	0x1E: "t",
-	0x1F: "u",
+	0x1a: "p",
+	0x1b: "q",
+	0x1c: "r",
+	0x1d: "s",
+	0x1e: "t",
+	0x1f: "u",
 	0x20: "v",
 	0x21: "w",
 	0x22: "x",
@@ -82,12 +82,12 @@ DW4_TBL = {
 	0x27: "C",
 	0x28: "D",
 	0x29: "E",
-	0x2A: "F",
-	0x2B: "G",
-	0x2C: "H",
-	0x2D: "I",
-	0x2E: "J",
-	0x2F: "K",
+	0x2a: "F",
+	0x2b: "G",
+	0x2c: "H",
+	0x2d: "I",
+	0x2e: "J",
+	0x2f: "K",
 	0x30: "L",
 	0x31: "M",
 	0x32: "N",
@@ -98,12 +98,12 @@ DW4_TBL = {
 	0x37: "S",
 	0x38: "T",
 	0x39: "U",
-	0x3A: "V",
-	0x3B: "W",
-	0x3C: "X",
-	0x3D: "Y",
-	0x3E: "Z",
-	0x3F: "'",
+	0x3a: "V",
+	0x3b: "W",
+	0x3c: "X",
+	0x3d: "Y",
+	0x3e: "Z",
+	0x3f: "'",
 	0x40: ",",
 	0x41: ".",
 	0x42: "-",
@@ -114,15 +114,15 @@ DW4_TBL = {
 	0x47: "\"",
 	0x48: "/",
 	0x49: "(",
-	0x4A: ")",
+	0x4a: ")",
 	# Control codes
-	0xF0: "[WAIT]",
-	0xF1: "[LINE]",
-	0xF2: "[NAME]",
-	0xF3: "[ITEM]",
-	0xF4: "[NUM]",
-	0xFE: "[PAUSE]",
-	0xFF: "[END]",
+	0xf0: "[WAIT]",
+	0xf1: "[LINE]",
+	0xf2: "[NAME]",
+	0xf3: "[ITEM]",
+	0xf4: "[NUM]",
+	0xfe: "[PAUSE]",
+	0xff: "[END]",
 }
 
 # Reverse lookup for encoding text
@@ -135,12 +135,12 @@ def decode_text(data: bytes, tbl: Dict[int, str] = DW4_TBL) -> str:
 	i = 0
 	while i < len(data):
 		byte = data[i]
-		if byte == 0xFF:  # End marker
+		if byte == 0xff:  # End marker
 			break
 		if byte in tbl:
 			result.append(tbl[byte])
 		else:
-			result.append(f"[${byte:02X}]")
+			result.append(f"[${byte:02x}]")
 		i += 1
 	return "".join(result)
 
@@ -458,9 +458,9 @@ class AssetExtractor:
 			f.write("# Format: XX=CHAR\n\n")
 			for val, char in sorted(DW4_TBL.items()):
 				if len(char) == 1:
-					f.write(f"{val:02X}={char}\n")
+					f.write(f"{val:02x}={char}\n")
 				else:
-					f.write(f"# {val:02X}={char}\n")
+					f.write(f"# {val:02x}={char}\n")
 
 	# ========================================================================
 	# Graphics Extraction

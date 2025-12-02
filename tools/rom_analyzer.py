@@ -44,7 +44,7 @@ class INESHeader:
 	@property
 	def mapper_number(self) -> int:
 		"""Get the mapper number from flags."""
-		return (self.flags7 & 0xF0) | ((self.flags6 & 0xF0) >> 4)
+		return (self.flags7 & 0xf0) | ((self.flags6 & 0xf0) >> 4)
 
 	@property
 	def has_battery(self) -> bool:
@@ -122,7 +122,7 @@ class ROMAnalyzer:
 			return hashlib.sha256(self.rom_data).hexdigest()
 		elif algorithm == "crc32":
 			import zlib
-			return format(zlib.crc32(self.rom_data) & 0xFFFFFFFF, "08x")
+			return format(zlib.crc32(self.rom_data) & 0xffffffff, "08x")
 		return ""
 
 	def get_prg_bank(self, bank_num: int) -> bytes:
@@ -209,14 +209,14 @@ class ROMAnalyzer:
 
 		# Detect common patterns
 		zero_count = byte_freq.get(0x00, 0)
-		ff_count = byte_freq.get(0xFF, 0)
+		ff_count = byte_freq.get(0xff, 0)
 
 		# Estimate content type
 		code_indicators = 0
 		data_indicators = 0
 
 		# Common 6502 opcodes that indicate code
-		code_opcodes = [0x20, 0x60, 0x4C, 0x6C, 0xA9, 0xA5, 0x85, 0x8D, 0xAD, 0xBD, 0xB9]
+		code_opcodes = [0x20, 0x60, 0x4c, 0x6c, 0xa9, 0xa5, 0x85, 0x8d, 0xad, 0xbd, 0xb9]
 		for opcode in code_opcodes:
 			code_indicators += byte_freq.get(opcode, 0)
 
@@ -310,7 +310,7 @@ def info(rom: str, verbose: bool):
 		vectors_table.add_column("Address", style="yellow")
 
 		for name, addr in vectors.items():
-			vectors_table.add_row(name, f"${addr:04X}")
+			vectors_table.add_row(name, f"${addr:04x}")
 
 		console.print(vectors_table)
 
@@ -329,7 +329,7 @@ def info(rom: str, verbose: bool):
 			zero_pct = (analysis["zero_bytes"] / analysis["size"]) * 100
 			bank_table.add_row(
 				f"{bank:02d}",
-				f"${analysis['offset']:06X}",
+				f"${analysis['offset']:06x}",
 				analysis["estimated_type"],
 				f"{zero_pct:.1f}%",
 				str(analysis["unique_bytes"]),

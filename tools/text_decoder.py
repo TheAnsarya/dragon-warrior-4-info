@@ -20,40 +20,40 @@ DW4_TBL: Dict[int, str] = {
     0x00: " ",
     # Numbers (0-9)
     0x01: "0", 0x02: "1", 0x03: "2", 0x04: "3", 0x05: "4",
-    0x06: "5", 0x07: "6", 0x08: "7", 0x09: "8", 0x0A: "9",
+    0x06: "5", 0x07: "6", 0x08: "7", 0x09: "8", 0x0a: "9",
     # Lowercase letters (a-z)
-    0x0B: "a", 0x0C: "b", 0x0D: "c", 0x0E: "d", 0x0F: "e",
+    0x0b: "a", 0x0c: "b", 0x0d: "c", 0x0e: "d", 0x0f: "e",
     0x10: "f", 0x11: "g", 0x12: "h", 0x13: "i", 0x14: "j",
     0x15: "k", 0x16: "l", 0x17: "m", 0x18: "n", 0x19: "o",
-    0x1A: "p", 0x1B: "q", 0x1C: "r", 0x1D: "s", 0x1E: "t",
-    0x1F: "u", 0x20: "v", 0x21: "w", 0x22: "x", 0x23: "y",
+    0x1a: "p", 0x1b: "q", 0x1c: "r", 0x1d: "s", 0x1e: "t",
+    0x1f: "u", 0x20: "v", 0x21: "w", 0x22: "x", 0x23: "y",
     0x24: "z",
     # Uppercase letters (A-Z)
     0x25: "A", 0x26: "B", 0x27: "C", 0x28: "D", 0x29: "E",
-    0x2A: "F", 0x2B: "G", 0x2C: "H", 0x2D: "I", 0x2E: "J",
-    0x2F: "K", 0x30: "L", 0x31: "M", 0x32: "N", 0x33: "O",
+    0x2a: "F", 0x2b: "G", 0x2c: "H", 0x2d: "I", 0x2e: "J",
+    0x2f: "K", 0x30: "L", 0x31: "M", 0x32: "N", 0x33: "O",
     0x34: "P", 0x35: "Q", 0x36: "R", 0x37: "S", 0x38: "T",
-    0x39: "U", 0x3A: "V", 0x3B: "W", 0x3C: "X", 0x3D: "Y",
-    0x3E: "Z",
+    0x39: "U", 0x3a: "V", 0x3b: "W", 0x3c: "X", 0x3d: "Y",
+    0x3e: "Z",
     # Em dash
-    0x3F: "—",
+    0x3f: "—",
     # Punctuation ($65-$79)
     0x65: "—", 0x66: """, 0x67: """, 0x68: "'", 0x69: "'",
-    0x6A: "'", 0x6B: "'", 0x6C: ".'", 0x6D: "?", 0x6E: "!",
-    0x6F: "-", 0x70: "✱", 0x71: ":", 0x72: "…",
+    0x6a: "'", 0x6b: "'", 0x6c: ".'", 0x6d: "?", 0x6e: "!",
+    0x6f: "-", 0x70: "✱", 0x71: ":", 0x72: "…",
     0x73: "🪦", 0x74: "💀",  # Tombstone, Skull
     0x75: "(", 0x76: ")", 0x77: ",", 0x78: ".",
     0x79: "「",
     # UI Symbols
     0x80: "▼", 0x81: "▶",
     # Control codes
-    0xF0: "[WAIT]",
-    0xF1: "[LINE]",
-    0xF2: "[NAME]",
-    0xF3: "[ITEM]",
-    0xF4: "[NUM]",
-    0xFE: "[PAUSE]",
-    0xFF: "[END]",
+    0xf0: "[WAIT]",
+    0xf1: "[LINE]",
+    0xf2: "[NAME]",
+    0xf3: "[ITEM]",
+    0xf4: "[NUM]",
+    0xfe: "[PAUSE]",
+    0xff: "[END]",
 }
 
 # Reverse lookup table
@@ -78,17 +78,17 @@ def decode_byte(byte: int) -> str:
     """Decode a single byte to its character representation."""
     if byte in DW4_TBL:
         return DW4_TBL[byte]
-    return f"[${byte:02X}]"
+    return f"[${byte:02x}]"
 
 
 def decode_text(data: bytes, max_length: int = 1000) -> str:
     """
     Decode DW4 encoded text to readable string.
-    
+
     Args:
         data: Raw bytes to decode
         max_length: Maximum characters before stopping
-    
+
     Returns:
         Decoded string
     """
@@ -107,11 +107,11 @@ def decode_text(data: bytes, max_length: int = 1000) -> str:
 def decode_text_detailed(data: bytes, offset: int = 0) -> DecodedString:
     """
     Decode text with detailed metadata.
-    
+
     Args:
         data: Raw bytes to decode
         offset: File offset of the start of this string
-    
+
     Returns:
         DecodedString with full details
     """
@@ -119,23 +119,23 @@ def decode_text_detailed(data: bytes, offset: int = 0) -> DecodedString:
     raw_bytes = []
     unknown = []
     has_control = False
-    
+
     for byte in data:
         raw_bytes.append(byte)
-        
+
         if byte == 0xFF:
             decoded_chars.append("[END]")
             break
-            
+
         if byte in DW4_TBL:
             char = DW4_TBL[byte]
             decoded_chars.append(char)
             if char.startswith("[") and char.endswith("]"):
                 has_control = True
         else:
-            decoded_chars.append(f"[${byte:02X}]")
+            decoded_chars.append(f"[${byte:02x}]")
             unknown.append(byte)
-    
+
     return DecodedString(
         offset=offset,
         raw_bytes=bytes(raw_bytes),
@@ -149,16 +149,16 @@ def decode_text_detailed(data: bytes, offset: int = 0) -> DecodedString:
 def encode_text(text: str) -> bytes:
     """
     Encode readable string to DW4 format.
-    
+
     Args:
         text: Human-readable text string
-    
+
     Returns:
         Encoded bytes
     """
     result = []
     i = 0
-    
+
     while i < len(text):
         # Check for control codes first (e.g., [LINE], [END])
         if text[i] == "[":
@@ -182,7 +182,7 @@ def encode_text(text: str) -> bytes:
                             pass
                     i = end + 1
                 continue
-        
+
         # Check for multi-character sequences (like ".'")
         matched = False
         for length in [2, 1]:  # Check 2-char sequences first
@@ -193,7 +193,7 @@ def encode_text(text: str) -> bytes:
                     i += length
                     matched = True
                     break
-        
+
         if not matched:
             # Single character lookup
             char = text[i]
@@ -203,28 +203,28 @@ def encode_text(text: str) -> bytes:
                 # Skip unknown characters or encode as space
                 result.append(0x00)
             i += 1
-    
+
     # Ensure string ends with terminator
     if not result or result[-1] != 0xFF:
         result.append(0xFF)
-    
+
     return bytes(result)
 
 
 def find_strings_in_data(data: bytes, min_length: int = 3) -> List[DecodedString]:
     """
     Find potential text strings in binary data.
-    
+
     Args:
         data: Binary data to search
         min_length: Minimum string length to report
-    
+
     Returns:
         List of found strings
     """
     strings = []
     i = 0
-    
+
     while i < len(data):
         # Look for potential string start (printable character)
         if data[i] in DW4_TBL and data[i] != 0xFF:
@@ -232,7 +232,7 @@ def find_strings_in_data(data: bytes, min_length: int = 3) -> List[DecodedString
             # Read until terminator or invalid byte
             end = start
             valid_chars = 0
-            
+
             while end < len(data):
                 byte = data[end]
                 if byte == 0xFF:
@@ -243,7 +243,7 @@ def find_strings_in_data(data: bytes, min_length: int = 3) -> List[DecodedString
                 if DW4_TBL[byte] not in ("[WAIT]", "[LINE]", "[NAME]", "[ITEM]", "[NUM]", "[PAUSE]"):
                     valid_chars += 1
                 end += 1
-            
+
             # Check if this looks like a real string
             if end > start and valid_chars >= min_length:
                 string_data = data[start:end]
@@ -251,31 +251,31 @@ def find_strings_in_data(data: bytes, min_length: int = 3) -> List[DecodedString
                 strings.append(decoded)
                 i = end
                 continue
-        
+
         i += 1
-    
+
     return strings
 
 
 def load_tbl_file(path: Path) -> Dict[int, str]:
     """
     Load a TBL file format character table.
-    
+
     Args:
         path: Path to .tbl file
-    
+
     Returns:
         Dictionary mapping byte values to characters
     """
     table = {}
-    
+
     with open(path, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             # Skip comments and empty lines
             if not line or line.startswith('#') or line.startswith(';'):
                 continue
-            
+
             # Parse XX=CHAR format
             if '=' in line:
                 parts = line.split('=', 1)
@@ -285,7 +285,7 @@ def load_tbl_file(path: Path) -> Dict[int, str]:
                     table[byte_val] = char
                 except ValueError:
                     continue
-    
+
     return table
 
 
@@ -301,10 +301,10 @@ def cli():
 def encode(text: str):
     """Encode a text string to DW4 format."""
     console = Console()
-    
+
     encoded = encode_text(text)
-    hex_str = " ".join(f"{b:02X}" for b in encoded)
-    
+    hex_str = " ".join(f"{b:02x}" for b in encoded)
+
     console.print(f"[cyan]Input:[/cyan] {text}")
     console.print(f"[green]Encoded:[/green] {hex_str}")
     console.print(f"[yellow]Length:[/yellow] {len(encoded)} bytes")
@@ -315,7 +315,7 @@ def encode(text: str):
 def decode(hex_string: str):
     """Decode a hex string to text."""
     console = Console()
-    
+
     # Parse hex string
     hex_string = hex_string.replace(" ", "").replace("0x", "").replace(",", "")
     try:
@@ -323,14 +323,14 @@ def decode(hex_string: str):
     except ValueError as e:
         console.print(f"[red]Error parsing hex string: {e}[/red]")
         return
-    
+
     decoded = decode_text_detailed(data)
-    
+
     console.print(f"[cyan]Input:[/cyan] {hex_string}")
     console.print(f"[green]Decoded:[/green] {decoded.decoded}")
     console.print(f"[yellow]Length:[/yellow] {decoded.length} bytes")
     if decoded.unknown_bytes:
-        console.print(f"[red]Unknown bytes:[/red] {[f'${b:02X}' for b in decoded.unknown_bytes]}")
+        console.print(f"[red]Unknown bytes:[/red] {[f'${b:02x}' for b in decoded.unknown_bytes]}")
 
 
 @cli.command()
@@ -341,29 +341,29 @@ def decode(hex_string: str):
 def scan(rom_path: str, offset: str, length: int, min_length: int):
     """Scan ROM for text strings."""
     console = Console()
-    
+
     # Parse offset
     if offset.startswith("0x") or offset.startswith("$"):
         start_offset = int(offset.replace("$", "0x"), 16)
     else:
         start_offset = int(offset)
-    
+
     # Read ROM data
     with open(rom_path, "rb") as f:
         f.seek(start_offset)
         data = f.read(length)
-    
+
     strings = find_strings_in_data(data, min_length)
-    
+
     if not strings:
         console.print("[yellow]No strings found in specified range.[/yellow]")
         return
-    
+
     table = Table(title=f"Found Strings (offset ${start_offset:06X})")
     table.add_column("Offset", style="cyan")
     table.add_column("Length", style="yellow")
     table.add_column("Text", style="green")
-    
+
     for s in strings:
         actual_offset = start_offset + s.offset
         table.add_row(
@@ -371,7 +371,7 @@ def scan(rom_path: str, offset: str, length: int, min_length: int):
             str(s.length),
             s.decoded[:60] + ("..." if len(s.decoded) > 60 else "")
         )
-    
+
     console.print(table)
     console.print(f"\n[cyan]Total strings found:[/cyan] {len(strings)}")
 
@@ -380,7 +380,7 @@ def scan(rom_path: str, offset: str, length: int, min_length: int):
 def table():
     """Display the character table."""
     console = Console()
-    
+
     tbl = Table(title="DW4 Character Table")
     tbl.add_column("Hex", style="cyan", width=6)
     tbl.add_column("Char", style="green", width=8)
@@ -390,14 +390,14 @@ def table():
     tbl.add_column("Char", style="green", width=8)
     tbl.add_column("Hex", style="cyan", width=6)
     tbl.add_column("Char", style="green", width=8)
-    
+
     # Organize into columns
     items = sorted(DW4_TBL.items())
     rows = []
     row = []
     for code, char in items:
         display_char = char if char.strip() else "(space)"
-        row.extend([f"${code:02X}", display_char])
+        row.extend([f"${code:02x}", display_char])
         if len(row) >= 8:
             rows.append(row)
             row = []
@@ -405,10 +405,10 @@ def table():
         while len(row) < 8:
             row.extend(["", ""])
         rows.append(row)
-    
+
     for r in rows:
         tbl.add_row(*r)
-    
+
     console.print(tbl)
 
 
