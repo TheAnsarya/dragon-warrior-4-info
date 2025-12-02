@@ -204,29 +204,48 @@ See the `docs/` folder for comprehensive documentation:
 | Phase | Status | Issues | Description |
 |-------|--------|--------|-------------|
 | 1. ROM Disassembly | 🟡 In Progress | [#1](../../issues/1) | Complete ASM source |
-| 2. Asset Extraction | 🟡 In Progress | [#2](../../issues/2) | Extract all game assets |
+| 2. Asset Extraction | 🟢 Working | [#2](../../issues/2) | Extract all game assets |
 | 3. Universal Editor | ⬜ Planning | [#3](../../issues/3) | Build GUI editor |
-| 4. Build Pipeline | ⬜ Planning | [#4](../../issues/4) | Implement build system |
+| 4. Build Pipeline | 🟡 In Progress | [#4](../../issues/4) | Implement build system |
 | 5. SNES Port Prep | 🟡 Research | [#42](../../issues/42) | DQ3 Remix planning |
 
 ### Current Progress
 
 - ✅ **76 GitHub Issues** created covering all project aspects
 - ✅ **5 Epic Issues** for major phases + comprehensive sub-issues
+- ✅ **25 Labels** for issue organization
 - ✅ **13+ Documentation Files** (NES architecture, ROM structure, data formats)
-- ✅ **Game Data JSON Files** (items, maps, characters from GameInfo wiki)
-- ✅ **Mesen Debug Labels** (MLB format for SRAM/RAM debugging)
-- ✅ **Text Table** (verified TBL encoding)
-- ✅ **Python Tools** (ROM analyzer, text decoder, asset extractor framework)
+- ✅ **Asset Extraction Pipeline** - Extracts monsters, items, spells, shops, text, graphics
+- ✅ **Assembly Framework** - Include files, RAM map, macros, linker config
+- ✅ **JSON ↔ Assembly Converter** - Bidirectional data conversion
+
+### Tools Status
+
+| Tool | Status | Description |
+|------|--------|-------------|
+| `rom_analyzer.py` | ✅ Complete | ROM header, bank analysis, hex viewer |
+| `text_decoder.py` | ✅ Complete | Decode text using TBL encoding |
+| `asset_extractor.py` | ✅ Working | Extract monsters, items, spells, shops, text, graphics |
+| `json_to_asm.py` | ✅ Working | Convert JSON data to assembly source |
+| `asset_reinserter.py` | ⬜ TODO | Generate ASM from modified assets |
+| `universal_editor.py` | ⬜ TODO | GUI editor for all assets |
+
+### Source Files Status
+
+| Directory | Status | Description |
+|-----------|--------|-------------|
+| `source_files/include/` | ✅ Complete | constants.inc, ram_map.inc, macros.inc |
+| `source_files/asm/` | 🟡 Framework | Main dw4.asm, linker config |
+| `source_files/data/` | ✅ Generated | monsters.asm, items.asm, spells.asm, shops.asm |
 
 ### Recently Completed
 
-- Complete item database (127 items with types and IDs)
-- Map database with ROM addresses (~70 locations)
-- Party member and extra companion data
-- Day/night cycle and battle tactics documentation
-- RAM/SRAM reference documentation
-- SNES conversion planning guide
+- Enhanced `asset_extractor.py` with pattern-scanning extraction
+- Created assembly framework with `.include` directive support
+- Generated assembly data files from extracted JSON
+- Created `json_to_asm.py` converter tool
+- Extracted 50 monster entries, 100 items, 50 spells, 180 shops
+- Full RAM map documentation in assembly format
 
 ### Issue Tracking
 
@@ -243,10 +262,23 @@ See [Issues](../../issues) for the complete backlog.
 | **ROM** | Dragon Warrior IV (1992-10)(Enix)(US).nes |
 | **Platform** | NES (Nintendo Entertainment System) |
 | **Mapper** | MMC3 (iNES Mapper 4) |
-| **PRG ROM** | 256 KB (16 × 16KB banks) |
-| **CHR ROM** | 128 KB (16 × 8KB banks) |
-| **RAM** | 2KB internal + 8KB WRAM (battery-backed) |
-| **File Size** | 393,232 bytes |
+| **PRG ROM** | 512 KB (32 × 16KB banks) |
+| **CHR ROM** | 0 KB (uses CHR-RAM) |
+| **PRG RAM** | 8KB (battery-backed) |
+| **File Size** | 524,304 bytes |
+| **MD5** | e45105e8f82d8aa29b39260fd531498d |
+
+### ROM Bank Layout
+
+| Banks | Address | Contents |
+|-------|---------|----------|
+| $00-$05 | $8000-$BFFF | Main program code |
+| $06-$07 | $8000-$BFFF | Game logic / battle system |
+| $08 | $8000-$BFFF | **Data tables** (monsters, items, spells) |
+| $09-$0B | $8000-$BFFF | **Map data** |
+| $0C-$0E | $8000-$BFFF | **Text/dialog** |
+| $0F | $C000-$FFFF | **Fixed bank** (vectors, core routines) |
+| $10-$1F | Various | Additional program/data |
 
 ## 📄 License
 
