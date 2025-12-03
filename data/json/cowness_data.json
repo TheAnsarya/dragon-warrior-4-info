@@ -1,0 +1,232 @@
+{
+  "hero_exp_table": {
+    "25": 102787,
+    "26": 118192,
+    "27": 135522,
+    "28": 155018,
+    "29": 176951,
+    "30": 201625,
+    "31": 229383
+  },
+  "necrosaro_hp": {
+    "1": 800,
+    "2": 650,
+    "3": 1023,
+    "4": 1023,
+    "5": 700,
+    "6": 800,
+    "7": 700,
+    "8": 1023
+  },
+  "tournament_stats": {
+    "Hun": {
+      "HP": 70,
+      "behavior": "standard"
+    },
+    "Roric": {
+      "HP": 90,
+      "behavior": "standard"
+    },
+    "Vivian": {
+      "HP": 90,
+      "MP": 12,
+      "behavior": "caster"
+    },
+    "Sampson": {
+      "HP": 90,
+      "behavior": "standard"
+    },
+    "Linguar": {
+      "HP": 55,
+      "behavior": "standard"
+    }
+  },
+  "rng_addresses": {
+    "0x12": {
+      "name": "RNG_Seed_Low",
+      "description": "RNG seed low byte - changes every frame, XORed with save checksum",
+      "bank": "RAM"
+    },
+    "0x13": {
+      "name": "RNG_Seed_High",
+      "description": "RNG seed high byte - acts like DW3's RNG",
+      "bank": "RAM"
+    },
+    "0x16": {
+      "name": "RNG_Temp",
+      "description": "RNG temporary storage - used during RNG calculation",
+      "bank": "RAM"
+    },
+    "0x18": {
+      "name": "Encounter_Rate",
+      "description": "Encounter rate of current tile",
+      "bank": "RAM"
+    },
+    "0x50d": {
+      "name": "RNG_Counter",
+      "description": "RNG counter - increments each time a random number is generated",
+      "bank": "RAM"
+    },
+    "0x50c": {
+      "name": "RNG_Counter_Compare",
+      "description": "RNG counter comparison value",
+      "bank": "RAM"
+    }
+  },
+  "rng_code": {
+    "0xc890": {
+      "name": "rng_return",
+      "description": "RNG RTS"
+    },
+    "0xc891": {
+      "name": "rng_main",
+      "description": "Main RNG function - generates random number"
+    },
+    "0xc8a1": {
+      "name": "rng_inc_counter",
+      "description": "Increment RNG counter at $050D"
+    },
+    "0xc8a6": {
+      "name": "rng_load_seed",
+      "description": "Load seed from $0012 and add counter"
+    },
+    "0xc8ad": {
+      "name": "rng_shifter",
+      "description": "RNG bit shift subroutine"
+    },
+    "0xc8cb": {
+      "name": "rng_shifter_end",
+      "description": "RNG shifter end"
+    },
+    "0xc913": {
+      "name": "rng_related",
+      "description": "RNG related subroutine (called from NMI)"
+    },
+    "0xff74": {
+      "name": "nmi_rng_update",
+      "description": "NMI handler - updates RNG seed $0012"
+    },
+    "0xff79": {
+      "name": "nmi_inc_seed",
+      "description": "Increment RNG seed low byte"
+    },
+    "0xff82": {
+      "name": "nmi_call_rng",
+      "description": "Call RNG-related subroutine"
+    }
+  },
+  "save_file_addresses": {
+    "current": {
+      "start": 24576,
+      "end": 25326,
+      "name": "Current_Save_Data"
+    },
+    "file1": {
+      "start": 25327,
+      "end": 26078,
+      "name": "Save_File_1"
+    },
+    "file2": {
+      "start": 26079,
+      "end": 26830,
+      "name": "Save_File_2"
+    },
+    "file3": {
+      "start": 26831,
+      "end": 27582,
+      "name": "Save_File_3"
+    }
+  },
+  "monster_byte_flags": {
+    "byte_22": {
+      "description": "Monster special flags",
+      "bits": {
+        "0-1": "Metal flag (11 = Metal monster, immune to most damage)"
+      }
+    },
+    "byte_23": {
+      "description": "Drop rate and flags",
+      "bits": {
+        "0-2": "Item drop rate (000=0, 001=1/2, 010=1/4, 011=1/8, 100=1/16, 101=1/32, 110=1/256, 111=100%)",
+        "3-7": "Unknown flags"
+      }
+    },
+    "byte_24": {
+      "description": "Status vulnerability and behavior flags",
+      "bits": {
+        "0-2": "Status flags (usually 111)",
+        "3-5": "Mid bits - behavior flags",
+        "6": "Confused vulnerability (1=can be confused)",
+        "7": "Bounce/reflect magic flag"
+      },
+      "patterns": {
+        "199": "Bounce - reflects magic",
+        "135": "Confused - can be confused",
+        "71": "Paralyzed - can be paralyzed",
+        "7": "Asleep - can be put to sleep (Esturk, Bomb Crag)",
+        "23": "Sleepy Boys pattern (Brahmird, Big Sloth)",
+        "63": "Standard enemy pattern"
+      }
+    }
+  },
+  "monster_patterns": {
+    "Metal Slime": {
+      "byte_22": 17,
+      "byte_24": 63,
+      "notes": "Metal flag set"
+    },
+    "Metal Babble": {
+      "byte_22": 17,
+      "byte_24": 63,
+      "notes": "Metal flag set, evasion '3'"
+    },
+    "King Metal": {
+      "byte_22": 17,
+      "byte_24": 55,
+      "notes": "Metal flag set, different mid bits"
+    },
+    "Esturk": {
+      "byte_22": 0,
+      "byte_24": 7,
+      "notes": "Sleepiest Boy - very vulnerable to sleep"
+    },
+    "Necrosaro 7": {
+      "byte_22": 0,
+      "byte_24": 199,
+      "notes": "Has bounce/reflect"
+    },
+    "Mimic": {
+      "byte_22": 0,
+      "byte_24": 63,
+      "notes": "Standard Mimic AI"
+    },
+    "Vampire Bat": {
+      "byte_22": 0,
+      "byte_24": 159,
+      "notes": "Confused Boys pattern"
+    },
+    "Rogue Wisper": {
+      "byte_22": 0,
+      "byte_24": 151,
+      "notes": "Confused Boys pattern"
+    }
+  },
+  "gameplay_mechanics": {
+    "fairy_water_steps": 127,
+    "alena_level_11_stats": {
+      "HP": {
+        "min": 71,
+        "max": 91
+      },
+      "ATK": {
+        "min": 75,
+        "max": 86
+      },
+      "DEF": {
+        "min": 39,
+        "max": 41
+      }
+    },
+    "necrosaro_phase7_regen": 100
+  }
+}

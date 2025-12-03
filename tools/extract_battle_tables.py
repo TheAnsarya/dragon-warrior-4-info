@@ -29,7 +29,7 @@ def read_bytes(data, cpu_addr, count):
 def main():
     with open(ROM_PATH, "rb") as f:
         rom_data = f.read()
-    
+
     # Known battle tables
     tables = {
         # AI Tactics multiplier tables (indexed by $6E80 = tactics setting)
@@ -41,7 +41,7 @@ def main():
             "description": "Base attack power multiplier per AI tactic (0-6)",
         },
         "BB8B": {
-            "name": "Stat Multiplier by Tactics", 
+            "name": "Stat Multiplier by Tactics",
             "addr": 0xBB8B,
             "size": 7,
             "description": "Party stat sum multiplier per AI tactic",
@@ -58,7 +58,7 @@ def main():
             "size": 1,
             "description": "Base value for damage calculations (0x40 = 64)",
         },
-        
+
         # Mode-specific tables for damage calculation
         "BB9A": {
             "name": "Mode Damage Table 1",
@@ -90,7 +90,7 @@ def main():
             "size": 7,
             "description": "Mode-specific values (0xFF series)",
         },
-        
+
         # Action code tables (for hit calculation at $9135)
         "91A9": {
             "name": "Special Action Codes",
@@ -104,7 +104,7 @@ def main():
             "size": 36,  # 18 entries x 2 bytes
             "description": "Jump table for special action handlers",
         },
-        
+
         # Enemy data table
         "B967": {
             "name": "Enemy Resistance Data",
@@ -113,7 +113,7 @@ def main():
             "description": "Enemy resistance flags and type data (index by enemy ID)",
         },
     }
-    
+
     # Output file
     output = []
     output.append("# Dragon Warrior IV - Battle System Tables")
@@ -130,22 +130,22 @@ def main():
     output.append("  5 = Use No MP (physical only)")
     output.append("```")
     output.append("")
-    
+
     for key, info in tables.items():
         addr = info["addr"]
         size = info["size"]
         data = read_bytes(rom_data, addr, size)
-        
+
         output.append(f"## {info['name']} (${addr:04X})")
         output.append(f"**Description:** {info['description']}")
         output.append("")
-        
+
         # Format as hex dump
         output.append("```")
         if size <= 32:
             hex_str = " ".join(f"{b:02X}" for b in data)
             output.append(f"${addr:04X}: {hex_str}")
-            
+
             # For small tables, show decimal values too
             if size <= 8:
                 dec_str = ", ".join(str(b) for b in data)
@@ -158,7 +158,7 @@ def main():
                 output.append(f"${addr+i:04X}: {hex_str}")
         output.append("```")
         output.append("")
-    
+
     # Add analysis section
     output.append("## Analysis")
     output.append("")
@@ -173,7 +173,7 @@ def main():
         output.append(f"{i}: {tactic:10} | {val:3} (${val:02X})  | {effect}")
     output.append("```")
     output.append("")
-    
+
     output.append("### Damage Formula (sub_AA67)")
     output.append("```")
     output.append("From disassembly analysis:")
@@ -187,7 +187,7 @@ def main():
     output.append("7. total_damage = final_component + base_modified")
     output.append("```")
     output.append("")
-    
+
     output.append("### Hit Check Thresholds ($9135)")
     output.append("```")
     output.append("Action ranges for hit check:")
@@ -200,12 +200,12 @@ def main():
     output.append("  $44+:    Always hits")
     output.append("```")
     output.append("")
-    
+
     # Write output
     output_path = os.path.join(DOCS_DIR, "battle_tables.md")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(output))
-    
+
     print(f"Battle tables extracted to: {output_path}")
     print(f"Extracted {len(tables)} tables")
 

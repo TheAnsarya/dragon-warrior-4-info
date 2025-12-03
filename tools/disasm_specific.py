@@ -80,27 +80,27 @@ def disassemble_bank(rom_data, bank_num):
     bank_size = 0x4000
     bank_start = header_size + (bank_num * bank_size)
     bank_data = rom_data[bank_start:bank_start + bank_size]
-    
+
     lines = []
     lines.append(f"; Dragon Warrior IV - Bank {bank_num} Disassembly")
     lines.append(f"; ROM Offset: ${bank_start:05X} - ${bank_start + bank_size - 1:05X}")
     lines.append(f"; CPU Address: $8000-$BFFF (when mapped)")
     lines.append("; " + "=" * 70)
     lines.append("")
-    
+
     pc = 0
     cpu_addr = 0x8000
-    
+
     while pc < len(bank_data):
         opcode = bank_data[pc]
-        
+
         if opcode in OPCODES:
             mnemonic, mode, size = OPCODES[opcode]
-            
+
             # Build instruction bytes
             instr_bytes = [bank_data[pc + i] if pc + i < len(bank_data) else 0 for i in range(size)]
             hex_str = " ".join(f"{b:02X}" for b in instr_bytes)
-            
+
             # Format operand
             if mode == "IMP" or mode == "ACC":
                 operand = ""
@@ -146,12 +146,12 @@ def disassemble_bank(rom_data, bank_num):
                 operand = f"${target:04X}"
             else:
                 operand = ""
-            
+
             # Format line
             instr = f"{mnemonic} {operand}".strip()
             line = f"    {instr:24s}; ${cpu_addr:04X}: {hex_str}"
             lines.append(line)
-            
+
             pc += size
             cpu_addr += size
         else:
@@ -159,24 +159,24 @@ def disassemble_bank(rom_data, bank_num):
             lines.append(f"    .byte ${opcode:02X}            ; ${cpu_addr:04X}")
             pc += 1
             cpu_addr += 1
-    
+
     return "\n".join(lines)
 
 
 def main():
     with open(ROM_PATH, "rb") as f:
         rom_data = f.read()
-    
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
+
     for bank in BANKS:
         output_path = os.path.join(OUTPUT_DIR, f"bank_{bank:02d}.asm")
         print(f"Disassembling Bank {bank} -> {output_path}")
-        
+
         asm = disassemble_bank(rom_data, bank)
         with open(output_path, 'w') as f:
             f.write(asm)
-    
+
     print("Done!")
 
 

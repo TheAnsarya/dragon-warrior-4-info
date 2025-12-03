@@ -1,0 +1,23 @@
+# Cowness.net reference labels for Dragon Warrior IV
+# Add these to your MLB file for Mesen debugging
+
+R:0012:RNG_Seed_Low
+R:0013:RNG_Seed_High
+R:0016:RNG_Temp
+R:0018:Encounter_Rate
+S:050D:RNG_Counter
+S:050C:RNG_Counter_Compare
+P:7C890:rng_return
+P:7C891:rng_main
+P:7C8A1:rng_inc_counter
+P:7C8A6:rng_load_seed
+P:7C8AD:rng_shifter
+P:7C8CB:rng_shifter_end
+P:7C913:rng_related
+P:7FF74:nmi_rng_update
+P:7FF79:nmi_inc_seed
+P:7FF82:nmi_call_rng
+S:6000:Current_Save_Data_Start
+S:62EF:Save_File_1_Start
+S:65DF:Save_File_2_Start
+S:68CF:Save_File_3_Start

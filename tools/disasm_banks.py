@@ -98,38 +98,38 @@ RAM_VARS = {
 
 class BankDisassembler:
     """Disassembler for switchable banks ($8000-$BFFF)"""
-    
+
     HEADER_SIZE = 16
     BANK_SIZE = 0x4000  # 16KB
     BASE_ADDR = 0x8000  # Switchable bank region
-    
+
     def __init__(self, rom_path: str):
         with open(rom_path, 'rb') as f:
             self.rom = f.read()
-        
+
         self.prg_count = self.rom[4]
         self.labels: Dict[int, str] = {}
         self.comments: Dict[int, str] = {}
         self.discovered_subs: Set[int] = set()
         self.discovered_jumps: Set[int] = set()
-        
+
     def get_bank_offset(self, bank_num: int) -> int:
         """Get ROM offset for a 16KB bank"""
         return self.HEADER_SIZE + (bank_num * self.BANK_SIZE)
-    
+
     def read_bank(self, bank_num: int) -> bytes:
         """Read a 16KB bank"""
         offset = self.get_bank_offset(bank_num)
         return self.rom[offset:offset + self.BANK_SIZE]
-    
+
     def cpu_to_offset(self, cpu_addr: int) -> int:
         """Convert CPU address to bank-relative offset"""
         return cpu_addr - self.BASE_ADDR
-    
+
     def offset_to_cpu(self, offset: int) -> int:
         """Convert bank-relative offset to CPU address"""
         return offset + self.BASE_ADDR
-    
+
     def get_label(self, addr: int) -> Optional[str]:
         """Get label for address if it exists"""
         if addr in self.labels:
@@ -141,7 +141,7 @@ class BankDisassembler:
         if addr in HW_REGS:
             return HW_REGS[addr]
         return None
-    
+
     def format_operand(self, mode: str, data: bytes, pc: int) -> str:
         """Format operand based on addressing mode"""
         if mode == "IMP" or mode == "ACC":
@@ -201,21 +201,21 @@ class BankDisassembler:
             self.discovered_jumps.add(target)
             return f"${target:04X}"
         return ""
-    
+
     def first_pass(self, data: bytes) -> None:
         """First pass: discover all subroutines and jump targets"""
         self.discovered_subs.clear()
         self.discovered_jumps.clear()
-        
+
         i = 0
         while i < len(data):
             opcode = data[i]
             if opcode not in OPCODES:
                 i += 1
                 continue
-            
+
             mnemonic, mode, size = OPCODES[opcode]
-            
+
             if i + size <= len(data):
                 if mnemonic == "JSR" and mode == "ABS":
                     target = data[i+1] | (data[i+2] << 8)
@@ -233,9 +233,9 @@ class BankDisassembler:
                         target = data[i+1] | (data[i+2] << 8)
                         if self.BASE_ADDR <= target < self.BASE_ADDR + self.BANK_SIZE:
                             self.discovered_jumps.add(target)
-            
+
             i += size
-    
+
     def auto_label(self, addr: int) -> str:
         """Generate automatic label for address"""
         if addr in self.discovered_subs:
@@ -243,15 +243,15 @@ class BankDisassembler:
         elif addr in self.discovered_jumps:
             return f"loc_{addr:04X}"
         return f"unk_{addr:04X}"
-    
+
     def disassemble_region(self, data: bytes, start: int, end: int, bank_num: int) -> List[str]:
         """Disassemble a region of code"""
         lines = []
         i = start
-        
+
         while i < end:
             cpu_addr = self.offset_to_cpu(i)
-            
+
             # Add label if this is a known target
             if cpu_addr in self.discovered_subs:
                 lines.append("")
@@ -259,32 +259,32 @@ class BankDisassembler:
                 lines.append(f"{self.auto_label(cpu_addr)}:")
             elif cpu_addr in self.discovered_jumps:
                 lines.append(f"{self.auto_label(cpu_addr)}:")
-            
+
             # Handle unknown opcodes
             opcode = data[i]
             if opcode not in OPCODES:
                 lines.append(f"    .byte ${opcode:02X}              ; ${cpu_addr:04X} - Unknown opcode")
                 i += 1
                 continue
-            
+
             mnemonic, mode, size = OPCODES[opcode]
-            
+
             # Get operand bytes
             if i + size > len(data):
                 lines.append(f"    .byte ${opcode:02X}              ; ${cpu_addr:04X} - Truncated")
                 break
-            
+
             operand_data = data[i+1:i+size]
             operand = self.format_operand(mode, operand_data, cpu_addr)
-            
+
             # Format instruction
             raw_bytes = ' '.join(f'{data[i+j]:02X}' for j in range(size))
-            
+
             if operand:
                 instr = f"{mnemonic} {operand}"
             else:
                 instr = mnemonic
-            
+
             # Add comment for special instructions
             comment = ""
             if mnemonic == "JSR":
@@ -297,24 +297,24 @@ class BankDisassembler:
                 comment = "; Arithmetic"
             elif mnemonic == "CMP" and mode == "IMM":
                 comment = f"; Compare with {data[i+1]}"
-            
+
             # Build line
             line = f"    {instr:24s} ; ${cpu_addr:04X}: {raw_bytes:8s}"
             if comment:
                 line += f" {comment}"
             lines.append(line)
-            
+
             i += size
-        
+
         return lines
-    
+
     def disassemble_bank(self, bank_num: int) -> str:
         """Disassemble an entire bank"""
         data = self.read_bank(bank_num)
-        
+
         # First pass to discover labels
         self.first_pass(data)
-        
+
         # Build output
         lines = []
         lines.append(f"; ============================================================")
@@ -328,42 +328,42 @@ class BankDisassembler:
         lines.append(f";")
         lines.append(f"; ============================================================")
         lines.append("")
-        
+
         # Disassemble the full bank
         lines.extend(self.disassemble_region(data, 0, len(data), bank_num))
-        
+
         return '\n'.join(lines)
-    
+
     def analyze_bank_structure(self, bank_num: int) -> dict:
         """Analyze the structure of a bank"""
         data = self.read_bank(bank_num)
         self.first_pass(data)
-        
+
         # Count instruction types
         instr_counts = defaultdict(int)
         arithmetic_ops = 0
         branch_ops = 0
         memory_ops = 0
-        
+
         i = 0
         while i < len(data):
             opcode = data[i]
             if opcode not in OPCODES:
                 i += 1
                 continue
-            
+
             mnemonic, mode, size = OPCODES[opcode]
             instr_counts[mnemonic] += 1
-            
+
             if mnemonic in ("ADC", "SBC", "ASL", "LSR", "ROL", "ROR"):
                 arithmetic_ops += 1
             if mnemonic in ("BNE", "BEQ", "BPL", "BMI", "BCC", "BCS", "BVC", "BVS", "JMP"):
                 branch_ops += 1
             if mnemonic in ("LDA", "STA", "LDX", "STX", "LDY", "STY"):
                 memory_ops += 1
-            
+
             i += size
-        
+
         return {
             'bank': bank_num,
             'subroutines': len(self.discovered_subs),
@@ -378,72 +378,72 @@ class BankDisassembler:
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_dir = os.path.dirname(script_dir)
-    
+
     rom_path = os.path.join(project_dir, "roms", "Dragon Warrior IV (1992-10)(Enix)(US).nes")
     output_dir = os.path.join(project_dir, "disasm", "banks")
-    
+
     if not os.path.exists(rom_path):
         print(f"ROM not found: {rom_path}")
         sys.exit(1)
-    
+
     os.makedirs(output_dir, exist_ok=True)
-    
+
     disasm = BankDisassembler(rom_path)
-    
+
     # Analyze all banks and find the most code-heavy ones
     print("Analyzing bank structures...")
     print()
-    
+
     battle_candidates = []
-    
+
     for bank in range(32):
         analysis = disasm.analyze_bank_structure(bank)
-        
+
         # Look for battle system characteristics:
         # - High arithmetic operations (damage calculations)
         # - Many subroutines (complex logic)
         # - Balanced branch/memory ops
-        
-        score = (analysis['arithmetic_ops'] * 2 + 
-                 analysis['subroutines'] * 3 + 
+
+        score = (analysis['arithmetic_ops'] * 2 +
+                 analysis['subroutines'] * 3 +
                  analysis['branch_ops'])
-        
+
         if analysis['subroutines'] > 50 and analysis['arithmetic_ops'] > 100:
             battle_candidates.append((bank, score, analysis))
-        
+
         print(f"Bank {bank:2d}: {analysis['subroutines']:3d} subs, "
               f"{analysis['arithmetic_ops']:4d} arith, "
               f"{analysis['branch_ops']:4d} branch, "
               f"Score: {score:5d}")
-    
+
     print()
     print("=" * 60)
     print("Battle System Candidates (sorted by score):")
     print("=" * 60)
-    
+
     battle_candidates.sort(key=lambda x: -x[1])
-    
+
     for bank, score, analysis in battle_candidates[:5]:
         print(f"\nBank {bank} (Score: {score}):")
         print(f"  Subroutines: {analysis['subroutines']}")
         print(f"  Arithmetic: {analysis['arithmetic_ops']}")
         print(f"  Branches: {analysis['branch_ops']}")
         print(f"  Top Instructions: {', '.join(f'{m}:{c}' for m,c in analysis['top_instructions'][:5])}")
-    
+
     # Disassemble top 3 battle candidates
     print()
     print("=" * 60)
     print("Disassembling top battle candidate banks...")
     print("=" * 60)
-    
+
     for bank, score, _ in battle_candidates[:3]:
         output_path = os.path.join(output_dir, f"bank_{bank:02d}.asm")
         print(f"Disassembling Bank {bank} -> {output_path}")
-        
+
         asm = disasm.disassemble_bank(bank)
         with open(output_path, 'w') as f:
             f.write(asm)
-    
+
     print()
     print("Done!")
 

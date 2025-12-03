@@ -69,39 +69,39 @@ OPCODES = {
 
 class BankReferenceAnalyzer:
     """Analyzes bank number references in the ROM"""
-    
+
     HEADER_SIZE = 16
     BANK_SIZE = 0x4000
-    
+
     def __init__(self, rom_path: str):
         with open(rom_path, 'rb') as f:
             self.rom = f.read()
-        
+
         self.prg_count = self.rom[4]
-        
+
     def get_fixed_bank_offset(self) -> int:
         """Get offset to the fixed bank (last 16KB)"""
         return self.HEADER_SIZE + (self.prg_count - 1) * self.BANK_SIZE
-    
+
     def read_fixed_bank(self) -> bytes:
         """Read the fixed bank ($C000-$FFFF)"""
         offset = self.get_fixed_bank_offset()
         return self.rom[offset:offset + self.BANK_SIZE]
-    
+
     def find_bank_switch_calls(self, data: bytes, base_addr: int) -> List[Tuple[int, int]]:
         """
         Find all calls to bank_switch ($FF91) and trace back
         to find what bank number is being loaded.
-        
+
         Returns list of (address, bank_number) tuples.
         """
         results = []
         bank_switch_addr = 0xFF91
-        
+
         i = 0
         while i < len(data) - 2:
             opcode = data[i]
-            
+
             # Look for JSR $FF91 or JMP $FF91
             if opcode in (0x20, 0x4C):  # JSR or JMP
                 target = data[i+1] | (data[i+2] << 8)
@@ -110,16 +110,16 @@ class BankReferenceAnalyzer:
                     bank_num = self._trace_back_for_lda(data, i)
                     cpu_addr = base_addr + i
                     results.append((cpu_addr, bank_num))
-            
+
             # Advance based on instruction size
             if opcode in OPCODES:
                 _, _, size = OPCODES[opcode]
                 i += size
             else:
                 i += 1
-        
+
         return results
-    
+
     def _trace_back_for_lda(self, data: bytes, jsr_offset: int) -> int:
         """Trace backwards to find LDA #immediate before JSR bank_switch"""
         # Look back up to 20 bytes for LDA #imm
@@ -138,12 +138,12 @@ class BankReferenceAnalyzer:
                     addr = data[check_pos + 1] | (data[check_pos + 2] << 8)
                     return -addr  # Negative = from RAM
         return -999  # Unknown
-    
+
     def find_bank_tables(self, data: bytes, base_addr: int) -> List[Tuple[int, List[int]]]:
         """Find tables of bank numbers (sequences of values 0-31)"""
         tables = []
         i = 0
-        
+
         while i < len(data) - 8:
             # Check if next 4+ bytes are all valid bank numbers
             potential_banks = []
@@ -153,7 +153,7 @@ class BankReferenceAnalyzer:
                     potential_banks.append(val)
                 else:
                     break
-            
+
             if len(potential_banks) >= 4:
                 # Filter: must have some variety (not all same value)
                 if len(set(potential_banks)) >= 2:
@@ -161,19 +161,19 @@ class BankReferenceAnalyzer:
                     tables.append((cpu_addr, potential_banks))
                     i += len(potential_banks)
                     continue
-            
+
             i += 1
-        
+
         return tables
-    
+
     def analyze_fixed_bank(self) -> dict:
         """Analyze the fixed bank for all bank references"""
         data = self.read_fixed_bank()
         base_addr = 0xC000
-        
+
         bank_calls = self.find_bank_switch_calls(data, base_addr)
         # bank_tables = self.find_bank_tables(data, base_addr)
-        
+
         # Group by bank number
         banks_used = defaultdict(list)
         for addr, bank in bank_calls:
@@ -185,24 +185,24 @@ class BankReferenceAnalyzer:
             elif bank > -0x8000:
                 # From RAM
                 banks_used[f"RAM:${-bank:04X}"].append(addr)
-        
+
         return {
             'bank_calls': bank_calls,
             'banks_used': dict(banks_used),
         }
-    
+
     def print_report(self):
         """Print analysis report"""
         analysis = self.analyze_fixed_bank()
-        
+
         print("=" * 70)
         print("Dragon Warrior IV - Bank Switch Analysis")
         print("=" * 70)
         print()
-        
+
         print("Direct Bank Switch Calls (JSR/JMP $FF91):")
         print("-" * 50)
-        
+
         for addr, bank in sorted(analysis['bank_calls'], key=lambda x: x[0]):
             if bank >= 0:
                 print(f"  ${addr:04X}: Bank {bank} (${bank:02X})")
@@ -212,12 +212,12 @@ class BankReferenceAnalyzer:
                 print(f"  ${addr:04X}: From RAM ${-bank:04X}")
             else:
                 print(f"  ${addr:04X}: Unknown source")
-        
+
         print()
         print("Banks Used (grouped):")
         print("-" * 50)
-        
-        for bank, addrs in sorted(analysis['banks_used'].items(), 
+
+        for bank, addrs in sorted(analysis['banks_used'].items(),
                                   key=lambda x: x[0] if isinstance(x[0], int) else 999):
             if isinstance(bank, int):
                 category = self._categorize_bank(bank)
@@ -228,7 +228,7 @@ class BankReferenceAnalyzer:
                 print(f"  {bank}: Called from: "
                       f"{', '.join(f'${a:04X}' for a in sorted(addrs)[:5])}"
                       f"{' ...' if len(addrs) > 5 else ''}")
-    
+
     def _categorize_bank(self, bank: int) -> str:
         """Categorize bank by number"""
         if bank in (5, 14, 25):
@@ -244,13 +244,13 @@ class BankReferenceAnalyzer:
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_dir = os.path.dirname(script_dir)
-    
+
     rom_path = os.path.join(project_dir, "roms", "Dragon Warrior IV (1992-10)(Enix)(US).nes")
-    
+
     if not os.path.exists(rom_path):
         print(f"ROM not found: {rom_path}")
         sys.exit(1)
-    
+
     analyzer = BankReferenceAnalyzer(rom_path)
     analyzer.print_report()
 

@@ -172,65 +172,65 @@ OPCODES = {
 
 def is_valid_code_sequence(data, offset, min_len=10):
     """Check if a sequence looks like valid code."""
-    
+
     pos = offset
     valid_count = 0
     total = 0
-    
+
     while pos < len(data) and total < min_len:
         opcode = data[pos]
-        
+
         if opcode in OPCODES:
             mnemonic, size, _ = OPCODES[opcode]
             valid_count += 1
             pos += size
         else:
             pos += 1
-        
+
         total += 1
-    
+
     return valid_count / total >= 0.7 if total > 0 else False
 
 def find_subroutines(data, bank_start, bank_size):
     """Find likely subroutine entry points in a bank."""
-    
+
     subroutines = set()
-    
+
     for i in range(bank_start, bank_start + bank_size - 2):
         opcode = data[i]
-        
+
         # JSR = $20
         if opcode == 0x20:
             lo = data[i + 1]
             hi = data[i + 2]
             target = (hi << 8) | lo
-            
+
             # Check if target is in this bank or fixed bank
             if 0x8000 <= target <= 0xBFFF or 0xC000 <= target <= 0xFFFF:
                 subroutines.add(target)
-    
+
     return subroutines
 
 def analyze_bank(data, bank_num, total_banks):
     """Analyze a single bank for code/data regions."""
-    
+
     bank_size = 0x4000
     bank_start = bank_num * bank_size
-    
+
     if bank_start >= len(data):
         return None
-    
+
     bank_data = data[bank_start:bank_start + bank_size]
-    
+
     # Find JSR targets
     subroutines = find_subroutines(data, bank_start, bank_size)
-    
+
     # Map offset within bank to CPU address
     if bank_num == total_banks - 1:  # Fixed bank
         base_addr = 0xC000
     else:
         base_addr = 0x8000
-    
+
     return {
         'bank': bank_num,
         'subroutine_count': len(subroutines),
@@ -240,59 +240,59 @@ def analyze_bank(data, bank_num, total_banks):
 
 def find_party_data_code(data, start, end, base_addr):
     """Find code that accesses $60xx range."""
-    
+
     results = []
-    
+
     i = start
     while i < end - 2:
         opcode = data[i]
-        
+
         if opcode in OPCODES:
             mnemonic, size, _ = OPCODES[opcode]
-            
+
             # Check for absolute addressing to $60xx
             if size == 3:
                 hi = data[i + 2]
                 lo = data[i + 1]
-                
+
                 if hi == 0x60 or hi == 0x61:
                     addr = (hi << 8) | lo
                     cpu_addr = base_addr + (i - start)
-                    
+
                     results.append({
                         'cpu_addr': cpu_addr,
                         'mnemonic': mnemonic,
                         'target': addr,
                         'opcode': opcode
                     })
-            
+
             i += size
         else:
             i += 1
-    
+
     return results
 
 def analyze_fixed_bank(data):
     """Analyze the fixed bank ($C000-$FFFF) in detail."""
-    
+
     total_banks = len(data) // 0x4000
     fixed_bank_start = (total_banks - 1) * 0x4000
     fixed_bank_data = data[fixed_bank_start:]
-    
+
     print("\n" + "="*70)
     print("FIXED BANK ANALYSIS ($C000-$FFFF)")
     print("="*70)
-    
+
     # Find all accesses to party data
     party_access = find_party_data_code(data, fixed_bank_start, fixed_bank_start + 0x4000, 0xC000)
-    
+
     print(f"\nParty data accesses in fixed bank: {len(party_access)}")
-    
+
     # Group by target address
     by_target = defaultdict(list)
     for r in party_access:
         by_target[r['target']].append(r)
-    
+
     print("\nAddresses accessed and their code locations:")
     for target in sorted(by_target.keys()):
         accesses = by_target[target]
@@ -301,29 +301,29 @@ def analyze_fixed_bank(data):
             print(f"  ${a['cpu_addr']:04X}: {a['mnemonic']} ${a['target']:04X}")
         if len(accesses) > 5:
             print(f"  ... and {len(accesses) - 5} more")
-    
+
     return party_access
 
 def analyze_battle_bank(data):
     """Analyze Bank 19 (battle code)."""
-    
+
     bank_19_start = 19 * 0x4000
     bank_19_data = data[bank_19_start:bank_19_start + 0x4000]
-    
+
     print("\n" + "="*70)
     print("BANK 19 ANALYSIS (BATTLE CODE)")
     print("="*70)
-    
+
     # Find all accesses to party data
     party_access = find_party_data_code(data, bank_19_start, bank_19_start + 0x4000, 0x8000)
-    
+
     print(f"\nParty data accesses in Bank 19: {len(party_access)}")
-    
+
     # Group by target address
     by_target = defaultdict(list)
     for r in party_access:
         by_target[r['target']].append(r)
-    
+
     print("\nAddresses accessed:")
     for target in sorted(by_target.keys()):
         accesses = by_target[target]
@@ -332,67 +332,67 @@ def analyze_battle_bank(data):
             print(f"  ${a['cpu_addr']:04X}: {a['mnemonic']} ${a['target']:04X}")
         if len(accesses) > 5:
             print(f"  ... and {len(accesses) - 5} more")
-    
+
     return party_access
 
 def main():
-    rom_path = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+    rom_path = os.path.join(os.path.dirname(__file__), '..', 'roms',
                             'Dragon Warrior IV (1992-10)(Enix)(US).nes')
-    
+
     print("Loading ROM...")
     rom_data = load_rom(rom_path)
-    
+
     # Skip iNES header
     rom_data = rom_data[0x10:]
-    
+
     total_banks = len(rom_data) // 0x4000
     print(f"ROM size: {len(rom_data)} bytes ({total_banks} banks)")
-    
+
     print("\n" + "="*70)
     print("BANK OVERVIEW")
     print("="*70)
-    
+
     # Analyze each bank
     all_results = []
     for bank in range(total_banks):
         result = analyze_bank(rom_data, bank, total_banks)
         if result:
             all_results.append(result)
-    
+
     # Sort by subroutine count
     all_results.sort(key=lambda x: x['subroutine_count'], reverse=True)
-    
+
     print("\nBanks by code density (subroutine count):")
     for r in all_results[:15]:
         print(f"Bank {r['bank']:2d}: {r['subroutine_count']:4d} subroutines (${r['base_addr']:04X})")
-    
+
     # Analyze fixed bank and battle bank in detail
     fixed_access = analyze_fixed_bank(rom_data)
     battle_access = analyze_battle_bank(rom_data)
-    
+
     # Save detailed mapping
     output_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'code_map.txt')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w') as f:
         f.write("DRAGON WARRIOR 4 - CODE MAP\n")
         f.write("="*70 + "\n\n")
-        
+
         f.write("BANK OVERVIEW\n")
         f.write("-"*70 + "\n")
         for r in all_results:
             f.write(f"Bank {r['bank']:2d}: {r['subroutine_count']:4d} subroutines\n")
-        
+
         f.write("\n\nPARTY DATA ACCESS - FIXED BANK\n")
         f.write("-"*70 + "\n")
         for a in fixed_access:
             f.write(f"${a['cpu_addr']:04X}: {a['mnemonic']} ${a['target']:04X}\n")
-        
+
         f.write("\n\nPARTY DATA ACCESS - BANK 19 (BATTLE)\n")
         f.write("-"*70 + "\n")
         for a in battle_access:
             f.write(f"${a['cpu_addr']:04X}: {a['mnemonic']} ${a['target']:04X}\n")
-    
+
     print(f"\nResults saved to: {output_path}")
 
 if __name__ == '__main__':

@@ -179,13 +179,13 @@ LABELS = {
     0x0089: 'char_ptr_hi',
     0x008B: 'actor_index',
     0x0093: 'battle_flags',
-    
+
     # Battle RAM
     0x615A: 'battle_actor',
     0x615B: 'tactics',
     0x618E: 'battle_state',
     0x6E80: 'action_type',
-    
+
     # Bank 19 tables
     0xB80B: 'spell_effect_tbl',
     0xB915: 'spell_param_1',
@@ -200,7 +200,7 @@ LABELS = {
     0xBB84: 'atk_mult_tbl',
     0xBB8B: 'stat_mult_tbl',
     0xBB92: 'hit_thresh_tbl',
-    
+
     # Bank 19 subroutines
     0x8038: 'battle_entry',
     0x8051: 'init_vars',
@@ -223,35 +223,35 @@ LABELS = {
 
 def disassemble(data, start_offset, end_offset, base_addr):
     """Disassemble a range of ROM data."""
-    
+
     lines = []
     pos = start_offset
-    
+
     while pos < end_offset:
         cpu_addr = base_addr + (pos - start_offset)
-        
+
         # Check if this address has a label
         if cpu_addr in LABELS:
             lines.append(f"\n; {LABELS[cpu_addr]}")
             lines.append(f"{LABELS[cpu_addr]}:")
-        
+
         opcode = data[pos]
-        
+
         if opcode not in OPCODES:
             lines.append(f"${cpu_addr:04X}:  .byte ${opcode:02X}")
             pos += 1
             continue
-        
+
         mnemonic, size, mode = OPCODES[opcode]
-        
+
         if size > end_offset - pos:
             lines.append(f"${cpu_addr:04X}:  .byte ${opcode:02X}")
             pos += 1
             continue
-        
+
         # Format the instruction
         bytes_hex = ' '.join(f'{data[pos+i]:02X}' for i in range(size))
-        
+
         if size == 1:
             operand_str = ''
         elif size == 2:
@@ -293,12 +293,12 @@ def disassemble(data, start_offset, end_offset, base_addr):
             lo = data[pos + 1]
             hi = data[pos + 2]
             addr = (hi << 8) | lo
-            
+
             if addr in LABELS:
                 label = LABELS[addr]
             else:
                 label = f'${addr:04X}'
-            
+
             if mode == 'abs':
                 operand_str = label
             elif mode == 'abx':
@@ -311,21 +311,21 @@ def disassemble(data, start_offset, end_offset, base_addr):
                 operand_str = label
         else:
             operand_str = ''
-        
+
         # Format line
         line = f"${cpu_addr:04X}:  {bytes_hex:<12}  {mnemonic} {operand_str}"
         lines.append(line)
-        
+
         pos += size
-    
+
     return lines
 
 def extract_subroutine(data, bank_start, cpu_addr, name, max_len=200):
     """Extract a subroutine starting at cpu_addr."""
-    
+
     # Calculate ROM offset
     rom_offset = bank_start + (cpu_addr - 0x8000)
-    
+
     lines = []
     lines.append(f"; ============================================")
     lines.append(f"; {name}")
@@ -333,35 +333,35 @@ def extract_subroutine(data, bank_start, cpu_addr, name, max_len=200):
     lines.append(f"; ROM Offset:  ${rom_offset:05X}")
     lines.append(f"; ============================================")
     lines.append("")
-    
+
     # Disassemble until we hit RTS or max length
     end = min(rom_offset + max_len, bank_start + 0x4000)
-    
+
     disasm = disassemble(data, rom_offset, end, cpu_addr)
-    
+
     # Truncate at first RTS
     for i, line in enumerate(disasm):
         lines.append(line)
         if 'RTS' in line and i > 0:
             break
-    
+
     return lines
 
 def main():
-    rom_path = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+    rom_path = os.path.join(os.path.dirname(__file__), '..', 'roms',
                             'Dragon Warrior IV (1992-10)(Enix)(US).nes')
-    
+
     print("Loading ROM...")
     rom_data = load_rom(rom_path)
-    
+
     # Skip iNES header
     rom_data = rom_data[0x10:]
-    
+
     # Bank 19 starts at offset $4C000 (19 * $4000)
     bank_19_start = 19 * 0x4000
-    
+
     print("Extracting Bank 19 subroutines...\n")
-    
+
     # Key subroutines to extract
     subroutines = [
         (0x8038, "battle_entry - Battle Entry Point"),
@@ -377,7 +377,7 @@ def main():
         (0xAEA6, "get_spell_power - Get Spell Power"),
         (0xAEB4, "get_spell_attr - Get Spell Attribute"),
     ]
-    
+
     output_lines = []
     output_lines.append("; Dragon Warrior 4 (NES) - Bank 19 Disassembly")
     output_lines.append("; Battle System Code")
@@ -386,28 +386,28 @@ def main():
     output_lines.append("; Bank 19 is loaded at $8000-$BFFF")
     output_lines.append("; ROM offset: $4C010 - $50010")
     output_lines.append("")
-    
+
     for cpu_addr, name in subroutines:
         print(f"Extracting {name}...")
         lines = extract_subroutine(rom_data, bank_19_start, cpu_addr, name)
         output_lines.extend(lines)
         output_lines.append("")
         output_lines.append("")
-    
+
     # Save to file
     output_path = os.path.join(os.path.dirname(__file__), '..', 'disasm', 'bank19_battle.asm')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w') as f:
         f.write('\n'.join(output_lines))
-    
+
     print(f"\nDisassembly saved to: {output_path}")
-    
+
     # Also print a sample
     print("\n" + "="*60)
     print("SAMPLE: sum_party_stats")
     print("="*60)
-    
+
     sample_lines = extract_subroutine(rom_data, bank_19_start, 0x9212, "sum_party_stats", 150)
     for line in sample_lines:
         print(line)

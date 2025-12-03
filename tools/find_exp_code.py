@@ -18,22 +18,22 @@ def get_bank_info(rom_offset, rom_size):
     """Get bank number and CPU address for a ROM offset."""
     bank = rom_offset // 0x4000
     total_banks = rom_size // 0x4000
-    
+
     if bank == total_banks - 1:  # Last bank = fixed
         offset = 0xC000 + (rom_offset % 0x4000)
     else:
         offset = 0x8000 + (rom_offset % 0x4000)
-    
+
     return bank, offset
 
 def disassemble_instruction(data, offset):
     """Disassemble a single instruction."""
-    
+
     if offset >= len(data):
         return None, 0
-    
+
     opcode = data[offset]
-    
+
     # Opcodes with their size and mnemonic
     opcodes = {
         0x00: ('BRK', 1, 'imp'),
@@ -188,12 +188,12 @@ def disassemble_instruction(data, offset):
         0xFD: ('SBC', 3, 'abx'),
         0xFE: ('INC', 3, 'abx'),
     }
-    
+
     if opcode not in opcodes:
         return (f'.byte ${opcode:02X}', opcode, None, None), 1
-    
+
     mnemonic, size, mode = opcodes[opcode]
-    
+
     if size == 1:
         return (mnemonic, opcode, None, mode), 1
     elif size == 2:
@@ -208,34 +208,34 @@ def disassemble_instruction(data, offset):
         hi = data[offset + 2]
         operand = (hi << 8) | lo
         return (mnemonic, opcode, operand, mode), 3
-    
+
     return None, 0
 
 def disassemble_context(data, offset, cpu_addr, context_before=10, context_after=10):
     """Disassemble code around a given offset."""
-    
+
     lines = []
-    
+
     # Find starting point (approximate - start earlier to get context)
     start = max(0, offset - context_before * 3)
-    
+
     # Disassemble forward from start until we pass our target
     current = start
     found_target = False
     target_reached = False
     instructions_after = 0
-    
+
     while current < len(data):
         result, size = disassemble_instruction(data, current)
         if result is None:
             current += 1
             continue
-        
+
         mnemonic, opcode, operand, mode = result
-        
+
         # Calculate CPU address for this instruction
         curr_cpu = cpu_addr - (offset - current)
-        
+
         # Format operand
         if operand is None:
             operand_str = ''
@@ -261,31 +261,31 @@ def disassemble_context(data, offset, cpu_addr, context_before=10, context_after
             operand_str = f' (${operand:04X})'
         else:
             operand_str = ''
-        
+
         marker = ''
         if current == offset:
             found_target = True
             target_reached = True
             marker = ' <<<'
-        
+
         if found_target or (current >= offset - context_before * 3):
             lines.append(f'${curr_cpu:04X}:  {mnemonic}{operand_str}{marker}')
-        
+
         current += size
-        
+
         if target_reached:
             instructions_after += 1
             if instructions_after >= context_after:
                 break
-    
+
     return lines
 
 def find_exp_code(rom_data):
     """Find all code that modifies $601C (experience)."""
-    
+
     rom_size = len(rom_data)
     results = []
-    
+
     # Look for INC $601C,X (opcode $FE, operand $1C $60)
     for i in range(len(rom_data) - 2):
         if rom_data[i] == 0xFE:  # INC abs,X
@@ -293,10 +293,10 @@ def find_exp_code(rom_data):
             hi = rom_data[i + 2]
             if hi == 0x60 and lo == 0x1C:
                 bank, cpu_addr = get_bank_info(i, rom_size)
-                
+
                 # Get context
                 context = disassemble_context(rom_data, i, cpu_addr)
-                
+
                 results.append({
                     'type': 'INC_EXP',
                     'rom_offset': i,
@@ -304,7 +304,7 @@ def find_exp_code(rom_data):
                     'cpu_addr': cpu_addr,
                     'context': context
                 })
-        
+
         # Also look for ADC/SBC to $601C area
         if rom_data[i] in [0x7D, 0xFD]:  # ADC abs,X, SBC abs,X
             lo = rom_data[i + 1]
@@ -312,9 +312,9 @@ def find_exp_code(rom_data):
             if hi == 0x60 and 0x1A <= lo <= 0x1E:  # Exp bytes area
                 bank, cpu_addr = get_bank_info(i, rom_size)
                 op = 'ADC' if rom_data[i] == 0x7D else 'SBC'
-                
+
                 context = disassemble_context(rom_data, i, cpu_addr)
-                
+
                 results.append({
                     'type': f'{op}_EXP',
                     'rom_offset': i,
@@ -323,22 +323,22 @@ def find_exp_code(rom_data):
                     'target': (hi << 8) | lo,
                     'context': context
                 })
-    
+
     return results
 
 def find_battle_exp(rom_data):
     """Search Bank 19 (battle code) for experience-related patterns."""
-    
+
     rom_size = len(rom_data)
     results = []
-    
+
     # Bank 19 starts at offset 0x4C000 (19 * 0x4000)
     bank_19_start = 19 * 0x4000
     bank_19_end = 20 * 0x4000
-    
+
     # Look for patterns that might be experience handling
     # After battle: often involves storing to $60xx range
-    
+
     for i in range(bank_19_start, min(bank_19_end, len(rom_data) - 2)):
         # Look for JSR followed by $60xx access
         if rom_data[i] == 0x20:  # JSR
@@ -358,31 +358,31 @@ def find_battle_exp(rom_data):
                             'context': context
                         })
                         break
-    
+
     return results[:20]  # Limit results
 
 def main():
-    rom_path = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+    rom_path = os.path.join(os.path.dirname(__file__), '..', 'roms',
                             'Dragon Warrior IV (1992-10)(Enix)(US).nes')
-    
+
     print("Loading ROM...")
     rom_data = load_rom(rom_path)
-    
+
     # Skip iNES header
     rom_data = rom_data[0x10:]
-    
+
     print(f"ROM size: {len(rom_data)} bytes ({len(rom_data) // 1024} KB)")
     print()
-    
+
     print("="*70)
     print("SEARCHING FOR EXPERIENCE CODE ($601C)")
     print("="*70)
-    
+
     # Find exp code
     exp_results = find_exp_code(rom_data)
-    
+
     print(f"\nFound {len(exp_results)} $601C-related code locations\n")
-    
+
     for r in exp_results:
         print("-"*70)
         print(f"Bank {r['bank']:2d} @ ${r['cpu_addr']:04X}: {r['type']}")
@@ -390,15 +390,15 @@ def main():
         for line in r['context']:
             print(f"  {line}")
         print()
-    
+
     # Save detailed output
     output_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'exp_code_analysis.txt')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     with open(output_path, 'w') as f:
         f.write("DRAGON WARRIOR 4 - EXPERIENCE CODE ANALYSIS\n")
         f.write("="*70 + "\n\n")
-        
+
         for r in exp_results:
             f.write("-"*70 + "\n")
             f.write(f"Bank {r['bank']:2d} @ ${r['cpu_addr']:04X}: {r['type']}\n")
@@ -406,7 +406,7 @@ def main():
             for line in r['context']:
                 f.write(f"  {line}\n")
             f.write("\n")
-    
+
     print(f"Results saved to: {output_path}")
 
 if __name__ == '__main__':

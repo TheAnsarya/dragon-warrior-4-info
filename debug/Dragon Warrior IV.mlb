@@ -7,8 +7,11 @@
 # ==============================================================================
 P:0010:ptr_lo:General purpose pointer low byte
 P:0011:ptr_hi:General purpose pointer high byte
-P:0012:frame_counter_zp:Frame counter copy
+P:0012:rng_seed_lo:RNG seed low byte - changes every frame, XORed with save checksum
+P:0013:rng_seed_hi:RNG seed high byte - acts like DW3's RNG
 P:0014:scroll_temp:Scroll temporary
+P:0016:rng_temp:RNG temporary storage - used during RNG calculation
+P:0018:encounter_rate:Encounter rate of current tile
 P:001F:state_flags:System state flags (bit 7 = busy)
 P:0020:reg_save_a:Saved A during IRQ
 P:0021:reg_save_x:Saved X during IRQ
@@ -49,7 +52,8 @@ R:0508:scroll_x_shadow:Scroll X shadow
 R:0509:scroll_y_shadow:Scroll Y shadow
 R:050A:ppu_temp_a:PPU temporary A
 R:050B:ppu_buffer_count:PPU buffer entry count
-R:050C:frame_counter:Frame counter (incremented by NMI)
+R:050C:rng_counter_cmp:RNG counter comparison value
+R:050D:rng_counter:RNG counter - increments each time random number generated
 R:0513:shuffle_index:OAM shuffle index
 R:0519:nmi_skip_flag:NMI skip update flag
 R:0526:timer_counter:Timer counter (CBB4 adds 8 each frame)
@@ -63,6 +67,12 @@ R:07CC:bank_call_save:Bank call saved bank
 # ==============================================================================
 # SRAM/WRAM ($6000-$7FFF) - Save Game Data (Battery-Backed)
 # ==============================================================================
+
+# Save File Layout (from cowness.net)
+# Current Save: $6000-$62EE (751 bytes)
+# File 1:       $62EF-$65DE (752 bytes)
+# File 2:       $65DF-$68CE (752 bytes)
+# File 3:       $68CF-$6BBE (752 bytes)
 
 # General Save Data Header
 G:6000:SaveDataStart:Start of SRAM save data
@@ -342,6 +352,13 @@ R:C52F:clear_system_state:Clear system state variables
 R:C543:clear_oam_buffer:Clear OAM buffer to $F7
 
 # Main Game Loop
+R:C890:rng_return:RNG RTS
+R:C891:rng_main:Main RNG function - generates random number
+R:C8A1:rng_inc_counter:Increment RNG counter at $050D
+R:C8A6:rng_load_seed:Load seed from $0012 and add counter
+R:C8AD:rng_shifter:RNG bit shift subroutine
+R:C8CB:rng_shifter_end:RNG shifter end
+R:C913:rng_related:RNG related subroutine (called from NMI)
 R:C968:main_loop_entry:Main game loop entry point
 R:C97D:main_loop:Main game loop (infinite)
 R:C983:setup_bank_trampoline:Copy bank switch code to SRAM
@@ -356,7 +373,9 @@ R:E06E:movement_update:Update player position based on direction
 
 # High ROM Utilities
 R:FF00:utility_area:Utility code area
-R:FF74:wait_vblank:Wait for VBlank (frame sync)
+R:FF74:nmi_rng_update:NMI handler - updates RNG seed $0012
+R:FF79:nmi_inc_seed:Increment RNG seed low byte
+R:FF82:nmi_call_rng:Call RNG-related subroutine
 R:FF8E:jump_main_init:Jump to main_init
 R:FF91:bank_switch:Bank switch routine
 
@@ -559,6 +578,16 @@ G:61B1:battle_turn_counter:Battle turn counter (INC operations)
 G:61DB:battle_indexed_data:Battle indexed data table
 G:6165:battle_indexed_2:Battle indexed data table 2
 G:6168:battle_indexed_3:Battle indexed data table 3
+
+# ==============================================================================
+# SAVE FILE REGIONS (from cowness.net)
+# ==============================================================================
+G:62EF:save_file_1_start:Save File 1 Start (751 bytes)
+G:65DE:save_file_1_end:Save File 1 End
+G:65DF:save_file_2_start:Save File 2 Start (752 bytes)
+G:68CE:save_file_2_end:Save File 2 End
+G:68CF:save_file_3_start:Save File 3 Start (752 bytes)
+G:6BBE:save_file_3_end:Save File 3 End
 
 # ==============================================================================
 # FIXED BANK SUBROUTINES - Battle State Access
