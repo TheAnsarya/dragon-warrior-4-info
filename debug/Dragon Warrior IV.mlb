@@ -27,6 +27,10 @@ P:0078:irq_temp_78:IRQ temporary
 P:007B:scroll_x:Scroll X position
 P:007C:scroll_y:Scroll Y position
 P:007F:scroll_counter:Scroll counter
+P:00EA:position_x_lo:Player X position low byte
+P:00EB:position_x_hi:Player X position high byte
+P:00EC:position_y_lo:Player Y position low byte
+P:00ED:position_y_hi:Player Y position high byte
 
 # ==============================================================================
 # WORK RAM ($0100-$07FF)
@@ -48,6 +52,10 @@ R:050B:ppu_buffer_count:PPU buffer entry count
 R:050C:frame_counter:Frame counter (incremented by NMI)
 R:0513:shuffle_index:OAM shuffle index
 R:0519:nmi_skip_flag:NMI skip update flag
+R:0526:timer_counter:Timer counter (CBB4 adds 8 each frame)
+R:0529:controller_state:Controller button state
+R:052E:input_delay:Input delay counter
+R:058F:movement_speed:Movement speed/delta
 R:05FC:palette_color:Palette color value
 R:07CA:bank_call_result:Bank call result storage
 R:07CC:bank_call_save:Bank call saved bank
@@ -281,6 +289,13 @@ R:C968:main_loop_entry:Main game loop entry point
 R:C97D:main_loop:Main game loop (infinite)
 R:C983:setup_bank_trampoline:Copy bank switch code to SRAM
 R:C9ED:main_frame_handler:Main frame processing handler
+
+# Frame Handler Subroutines
+R:CA21:sub_CA21:Unknown processing
+R:CB98:read_controller:Read controller input via $4016
+R:CBB4:timer_update:Update timer counter ($0526 += 8)
+R:D542:map_handler:Map/scroll position handler
+R:E06E:movement_update:Update player position based on direction
 
 # High ROM Utilities
 R:FF00:utility_area:Utility code area

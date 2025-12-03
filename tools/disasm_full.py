@@ -233,8 +233,30 @@ class Disassembler:
         self.labels.update({
             0xC03D: "main_init",
             0xC104: "init_subroutine",
+            0xC118: "mmc1_write_control",
+            0xC12F: "mmc1_write_chr1",
+            0xC146: "mmc1_write_prg",
             0xC15A: "NMI_main",
+            0xC222: "ppu_buffer_transfer",
+            0xC2EA: "ppu_set_scroll",
+            0xC303: "oam_dma",
             0xC408: "IRQ_handler",
+            0xC52F: "clear_system_state",
+            0xC543: "clear_oam_buffer",
+            0xC569: "sub_C569",
+            0xC913: "sub_C913",
+            0xC91F: "oam_shuffle",
+            0xC968: "main_loop_entry",
+            0xC97D: "main_loop",
+            0xC983: "setup_bank_trampoline",
+            0xC9ED: "main_frame_handler",
+            0xCA21: "sub_CA21",
+            0xCB98: "sub_CB98",
+            0xCBB4: "sub_CBB4",
+            0xD542: "sub_D542",
+            0xE06E: "sub_E06E",
+            0xFF74: "wait_vblank",
+            0xFF91: "bank_switch",
             0xFFD8: "RESET_entry",
         })
         
@@ -345,6 +367,38 @@ class Disassembler:
             f.write("; UTILITY ROUTINES ($FF00-$FFFF)\n")
             f.write("; ============================================\n")
             lines = self.disassemble_range(0xFF00, 0xFFD8)
+            for line in lines:
+                f.write(line + "\n")
+            
+            # Disassemble more game loop routines
+            f.write("\n; ============================================\n")
+            f.write("; GAME LOOP SUBROUTINES ($CA00-$CC00)\n")
+            f.write("; ============================================\n")
+            lines = self.disassemble_range(0xCA00, 0xCC00)
+            for line in lines:
+                f.write(line + "\n")
+            
+            # Disassemble possible input handling
+            f.write("\n; ============================================\n")
+            f.write("; INPUT/CONTROLLER ROUTINES ($C500-$C600)\n")
+            f.write("; ============================================\n")
+            lines = self.disassemble_range(0xC500, 0xC600)
+            for line in lines:
+                f.write(line + "\n")
+            
+            # Disassemble more subroutines
+            f.write("\n; ============================================\n")
+            f.write("; SUBROUTINES ($D500-$D600)\n")
+            f.write("; ============================================\n")
+            lines = self.disassemble_range(0xD500, 0xD600)
+            for line in lines:
+                f.write(line + "\n")
+            
+            # Disassemble E06E area
+            f.write("\n; ============================================\n")
+            f.write("; SUBROUTINES ($E000-$E100)\n")
+            f.write("; ============================================\n")
+            lines = self.disassemble_range(0xE000, 0xE100)
             for line in lines:
                 f.write(line + "\n")
         

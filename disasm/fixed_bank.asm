@@ -141,12 +141,12 @@ $C0B6:  LDA  #$90
 $C0B8:  STA  $0505
 $C0BB:  STA  PPUCTRL
 $C0BE:  JSR  sub_C569
-$C0C1:  JSR  sub_C543
-$C0C4:  JSR  sub_FF74
+$C0C1:  JSR  clear_oam_buffer
+$C0C4:  JSR  wait_vblank
 $C0C7:  LDA  #$18
 $C0C9:  STA  $0506
 $C0CC:  STA  PPUMASK
-$C0CF:  JMP  loc_C968
+$C0CF:  JMP  main_loop_entry
 $C0D2:  .byte $5A
 $C0D3:  CMP  ($AD,X)
 $C0D5:  .byte $02
@@ -180,13 +180,13 @@ $C101:  JMP  loc_C101
 init_subroutine:
 $C104:  INC  $FFDF
 $C107:  LDA  vblank_flag
-$C10A:  JSR  sub_C118
+$C10A:  JSR  mmc1_write_control
 $C10D:  LDA  ppuctrl_shadow
-$C110:  JSR  sub_C12F
+$C110:  JSR  mmc1_write_chr1
 $C113:  LDA  #$00
-$C115:  JMP  loc_C146
+$C115:  JMP  mmc1_write_prg
 
-sub_C118:
+mmc1_write_control:
 $C118:  STA  vblank_flag
 $C11B:  STA  $9FFF
 $C11E:  LSR  A
@@ -199,7 +199,7 @@ $C12A:  LSR  A
 $C12B:  STA  $9FFF
 $C12E:  RTS  
 
-sub_C12F:
+mmc1_write_chr1:
 $C12F:  STA  ppuctrl_shadow
 $C132:  STA  $BFFF
 $C135:  LSR  A
@@ -212,7 +212,7 @@ $C141:  LSR  A
 $C142:  STA  $BFFF
 $C145:  RTS  
 
-loc_C146:
+mmc1_write_prg:
 $C146:  STA  $DFFF
 $C149:  LSR  A
 $C14A:  STA  $DFFF
@@ -242,9 +242,9 @@ $C16F:  BCC  loc_C181
 $C171:  CMP  #$81
 $C173:  BCS  loc_C181
 $C175:  LDA  PPUSTATUS
-$C178:  JSR  sub_C222
-$C17B:  JSR  sub_C303
-$C17E:  JSR  sub_C2EA
+$C178:  JSR  ppu_buffer_transfer
+$C17B:  JSR  oam_dma
+$C17E:  JSR  ppu_set_scroll
 
 loc_C181:
 $C181:  TSX  
@@ -265,14 +265,14 @@ $C19B:  LDA  $0519
 $C19E:  BNE  loc_C1B0
 $C1A0:  INC  $C221
 $C1A3:  LDA  #$10
-$C1A5:  JSR  sub_C12F
+$C1A5:  JSR  mmc1_write_chr1
 $C1A8:  LDA  #$10
-$C1AA:  JSR  sub_C12F
+$C1AA:  JSR  mmc1_write_chr1
 $C1AD:  JSR  sub_C019
 
 loc_C1B0:
 $C1B0:  LDA  current_bank
-$C1B3:  JSR  sub_FF91
+$C1B3:  JSR  bank_switch
 $C1B6:  NOP  
 $C1B7:  NOP  
 $C1B8:  NOP  
@@ -292,7 +292,7 @@ $C1CE:  BCS  loc_C1DD
 $C1D0:  LDA  #$D6
 $C1D2:  STA  $0105,X
 $C1D5:  LDA  #$00
-$C1D7:  JSR  sub_C12F
+$C1D7:  JSR  mmc1_write_chr1
 $C1DA:  JMP  loc_C1EF
 
 loc_C1DD:
@@ -303,7 +303,7 @@ $C1E3:  BCS  loc_C1EF
 $C1E5:  LDA  #$FF
 $C1E7:  STA  $0105,X
 $C1EA:  LDA  #$10
-$C1EC:  JSR  sub_C12F
+$C1EC:  JSR  mmc1_write_chr1
 
 loc_C1EF:
 $C1EF:  INC  $050C
@@ -337,9 +337,9 @@ $C16F:  BCC  loc_C181
 $C171:  CMP  #$81
 $C173:  BCS  loc_C181
 $C175:  LDA  PPUSTATUS
-$C178:  JSR  sub_C222
-$C17B:  JSR  sub_C303
-$C17E:  JSR  sub_C2EA
+$C178:  JSR  ppu_buffer_transfer
+$C17B:  JSR  oam_dma
+$C17E:  JSR  ppu_set_scroll
 
 loc_C181:
 $C181:  TSX  
@@ -360,14 +360,14 @@ $C19B:  LDA  $0519
 $C19E:  BNE  loc_C1B0
 $C1A0:  INC  $C221
 $C1A3:  LDA  #$10
-$C1A5:  JSR  sub_C12F
+$C1A5:  JSR  mmc1_write_chr1
 $C1A8:  LDA  #$10
-$C1AA:  JSR  sub_C12F
+$C1AA:  JSR  mmc1_write_chr1
 $C1AD:  JSR  sub_C019
 
 loc_C1B0:
 $C1B0:  LDA  current_bank
-$C1B3:  JSR  sub_FF91
+$C1B3:  JSR  bank_switch
 $C1B6:  NOP  
 $C1B7:  NOP  
 $C1B8:  NOP  
@@ -387,7 +387,7 @@ $C1CE:  BCS  loc_C1DD
 $C1D0:  LDA  #$D6
 $C1D2:  STA  $0105,X
 $C1D5:  LDA  #$00
-$C1D7:  JSR  sub_C12F
+$C1D7:  JSR  mmc1_write_chr1
 $C1DA:  JMP  loc_C1EF
 
 loc_C1DD:
@@ -398,7 +398,7 @@ $C1E3:  BCS  loc_C1EF
 $C1E5:  LDA  #$FF
 $C1E7:  STA  $0105,X
 $C1EA:  LDA  #$10
-$C1EC:  JSR  sub_C12F
+$C1EC:  JSR  mmc1_write_chr1
 
 loc_C1EF:
 $C1EF:  INC  $050C
@@ -434,7 +434,7 @@ $C21D:  PLA
 $C21E:  JMP  IRQ_handler
 $C221:  .byte $80
 
-sub_C222:
+ppu_buffer_transfer:
 $C222:  LDA  $1F
 $C224:  AND  #$20
 $C226:  BNE  loc_C23A
@@ -542,7 +542,7 @@ $C2E2:  DEC  $050B
 $C2E5:  BNE  loc_C299
 $C2E7:  JMP  loc_C276
 
-sub_C2EA:
+ppu_set_scroll:
 $C2EA:  LDA  $0505
 $C2ED:  STA  PPUCTRL
 $C2F0:  LDA  $0506
@@ -754,6 +754,8 @@ $C527:  SBC  #$0C
 $C529:  STA  $24
 $C52B:  LDA  #$12
 $C52D:  BNE  loc_C51A
+
+clear_system_state:
 $C52F:  LDA  #$00
 $C531:  STA  $1F
 $C533:  STA  $050A
@@ -763,7 +765,7 @@ $C53C:  STA  $0509
 $C53F:  STA  $0513
 $C542:  RTS  
 
-sub_C543:
+clear_oam_buffer:
 $C543:  LDA  #$F7
 $C545:  LDX  #$00
 
@@ -789,22 +791,24 @@ $C909:  BNE  loc_C8FF
 $C90B:  RTS  
 
 loc_C90C:
-$C90C:  JSR  sub_FF74
+$C90C:  JSR  wait_vblank
 $C90F:  DEX  
 $C910:  BNE  loc_C90C
 $C912:  RTS  
+
+sub_C913:
 $C913:  TXA  
 $C914:  PHA  
 $C915:  TYA  
 $C916:  PHA  
-$C917:  JSR  sub_C91F
+$C917:  JSR  oam_shuffle
 $C91A:  PLA  
 $C91B:  TAY  
 $C91C:  PLA  
 $C91D:  TAX  
 $C91E:  RTS  
 
-sub_C91F:
+oam_shuffle:
 $C91F:  LDA  $1F
 $C921:  AND  #$C8
 $C923:  BNE  loc_C94A
@@ -848,9 +852,9 @@ $C963:  DEC  $10
 $C965:  BNE  loc_C953
 $C967:  RTS  
 
-loc_C968:
-$C968:  JSR  sub_C983
-$C96B:  JSR  sub_C52F
+main_loop_entry:
+$C968:  JSR  setup_bank_trampoline
+$C96B:  JSR  clear_system_state
 $C96E:  BRK  
 $C96F:  .byte $0B
 $C970:  .byte $BF
@@ -865,11 +869,11 @@ $C97A:  BRK
 $C97B:  .byte $22
 $C97C:  .byte $EF
 
-loc_C97D:
-$C97D:  JSR  sub_C9ED
-$C980:  JMP  loc_C97D
+main_loop:
+$C97D:  JSR  main_frame_handler
+$C980:  JMP  main_loop
 
-sub_C983:
+setup_bank_trampoline:
 $C983:  LDX  #$5D
 
 loc_C985:
@@ -921,12 +925,12 @@ $C9DD:  STA  $BFFF
 $C9E0:  NOP  
 $C9E1:  NOP  
 $C9E2:  LDA  $07CC
-$C9E5:  JSR  sub_FF91
+$C9E5:  JSR  bank_switch
 $C9E8:  LDA  $07CA
 $C9EB:  PLP  
 $C9EC:  RTS  
 
-sub_C9ED:
+main_frame_handler:
 $C9ED:  JSR  sub_CBB4
 $C9F0:  JSR  sub_CB98
 $C9F3:  JSR  sub_CA21
@@ -945,7 +949,7 @@ $FF01:  .byte $03
 $FF02:  DEX  
 $FF03:  BPL  loc_FEFF
 $FF05:  LDA  #$0F
-$FF07:  JSR  sub_C118
+$FF07:  JSR  mmc1_write_control
 $FF0A:  INC  $050B
 $FF0D:  JMP  loc_C626
 $FF10:  LDY  #$02
@@ -997,7 +1001,7 @@ $FF57:  STA  $7C
 
 loc_FF59:
 $FF59:  INC  $7F
-$FF5B:  JMP  sub_FF74
+$FF5B:  JMP  wait_vblank
 $FF5E:  ORA  ($02,X)
 $FF60:  .byte $04
 $FF61:  PHP  
@@ -1019,7 +1023,7 @@ $FF71:  .byte $FF
 $FF72:  .byte $FF
 $FF73:  .byte $FF
 
-sub_FF74:
+wait_vblank:
 $FF74:  LDA  $050C
 
 loc_FF77:
@@ -1042,7 +1046,7 @@ $FF8C:  .byte $FF
 $FF8D:  .byte $FF
 $FF8E:  JMP  main_init
 
-sub_FF91:
+bank_switch:
 $FF91:  STA  current_bank
 $FF94:  PHA  
 $FF95:  LDA  ppuctrl_shadow
@@ -1079,3 +1083,805 @@ $FFD2:  STA  $BFFF
 $FFD5:  NOP  
 $FFD6:  NOP  
 $FFD7:  RTS  
+
+; ============================================
+; GAME LOOP SUBROUTINES ($CA00-$CC00)
+; ============================================
+$CA00:  ORA  ($C0,X)
+$CA02:  JSR  sub_CE09
+$CA05:  JSR  sub_D7D5
+$CA08:  LDX  $052F
+$CA0B:  JSR  loc_C90C
+$CA0E:  JSR  sub_CA17
+$CA11:  JSR  sub_D1E1
+$CA14:  INC  $3C
+$CA16:  RTS  
+
+sub_CA17:
+$CA17:  JSR  sub_D241
+$CA1A:  LDA  $14
+$CA1C:  AND  #$04
+$CA1E:  BNE  sub_CA17
+$CA20:  RTS  
+
+sub_CA21:
+$CA21:  LDX  $058E
+$CA24:  LDA  loc_CA3C,X
+$CA27:  AND  $3C
+$CA29:  BNE  loc_CA3C
+$CA2B:  LDA  #$01
+$CA2D:  STA  $052F
+$CA30:  JSR  sub_CA41
+$CA33:  JSR  sub_CB1E
+$CA36:  JSR  sub_CBF8
+$CA39:  JSR  sub_CB71
+
+loc_CA3C:
+$CA3C:  RTS  
+$CA3D:  .byte $0F
+$CA3E:  .byte $07
+$CA3F:  .byte $0F
+$CA40:  .byte $03
+
+sub_CA41:
+$CA41:  LDA  $0530
+$CA44:  BPL  loc_CA55
+$CA46:  LDA  #$FF
+$CA48:  STA  $56
+$CA4A:  JSR  sub_DB18
+$CA4D:  STA  $14
+$CA4F:  LDA  $0530
+$CA52:  BPL  loc_CA55
+$CA54:  RTS  
+
+loc_CA55:
+$CA55:  LDA  $0515
+$CA58:  CMP  #$02
+$CA5A:  BNE  loc_CA77
+$CA5C:  JSR  sub_D241
+$CA5F:  LDA  $14
+$CA61:  AND  #$F0
+$CA63:  BNE  loc_CA71
+$CA65:  LDA  $0597
+$CA68:  BEQ  loc_CA76
+$CA6A:  LDX  $3D
+$CA6C:  LDA  $CB1A,X
+$CA6F:  STA  $14
+
+loc_CA71:
+$CA71:  LDA  #$FF
+$CA73:  STA  $0597
+
+loc_CA76:
+$CA76:  RTS  
+
+loc_CA77:
+$CA77:  LDA  #$00
+$CA79:  STA  $56
+$CA7B:  LDA  $7140
+$CA7E:  AND  #$1F
+$CA80:  TAX  
+$CA81:  LDA  $6F40,X
+$CA84:  CMP  #$10
+$CA86:  BCC  loc_CAD8
+$CA88:  CMP  #$14
+$CA8A:  BCS  loc_CAD8
+$CA8C:  AND  #$03
+$CA8E:  TAX  
+$CA8F:  LDA  $CB1A,X
+$CA92:  STA  $14
+$CA94:  LDA  #$02
+$CA96:  STA  $058E
+$CA99:  LDA  #$20
+$CA9B:  STA  $058F
+$CA9E:  LDX  #$03
+
+loc_CAA0:
+$CAA0:  LDA  $70E0,X
+$CAA3:  ORA  #$40
+$CAA5:  AND  #$7F
+$CAA7:  STA  $70E0,X
+$CAAA:  DEX  
+$CAAB:  BPL  loc_CAA0
+$CAAD:  BRK  
+$CAAE:  LDY  $FB
+$CAB0:  LDA  $3C
+$CAB2:  AND  #$F0
+$CAB4:  ORA  #$08
+$CAB6:  STA  $3C
+$CAB8:  LDX  #$00
+$CABA:  JSR  sub_CABE
+$CABD:  INX  
+
+sub_CABE:
+$CABE:  LDA  $7004,X
+$CAC1:  AND  #$7F
+$CAC3:  STA  $7004,X
+$CAC6:  LDA  $6F64,X
+$CAC9:  STA  $6FA4,X
+$CACC:  LDA  $6F84,X
+$CACF:  STA  $6FC4,X
+$CAD2:  LDA  #$00
+$CAD4:  STA  $052A,X
+$CAD7:  RTS  
+
+loc_CAD8:
+$CAD8:  LDA  $15
+$CADA:  AND  #$03
+$CADC:  JMP  loc_CAEA
+$CADF:  STA  $058E
+$CAE2:  LDA  #$20
+$CAE4:  STA  $058F
+$CAE7:  JMP  sub_D241
+
+loc_CAEA:
+$CAEA:  LDA  $058E
+$CAED:  CMP  #$01
+$CAEF:  BEQ  loc_CB17
+$CAF1:  LDA  #$01
+$CAF3:  STA  $058E
+$CAF6:  LDA  #$10
+$CAF8:  STA  $058F
+$CAFB:  LDX  #$03
+
+loc_CAFD:
+$CAFD:  LDA  $70E0,X
+$CB00:  AND  #$BF
+$CB02:  STA  $70E0,X
+$CB05:  LDA  $6BE7,X
+$CB08:  AND  #$20
+$CB0A:  ASL  A
+$CB0B:  ASL  A
+$CB0C:  EOR  #$80
+$CB0E:  ORA  $70E0,X
+$CB11:  STA  $70E0,X
+$CB14:  DEX  
+$CB15:  BPL  loc_CAFD
+
+loc_CB17:
+$CB17:  JMP  sub_D241
+$CB1A:  BPL  loc_CA9C
+$CB1C:  JSR  sub_AD40
+$CB1F:  ORA  $05,X
+$CB21:  CMP  #$02
+$CB23:  BNE  loc_CB33
+$CB25:  LDA  $0597
+$CB28:  BEQ  loc_CB33
+$CB2A:  LDA  $14
+$CB2C:  ORA  $0529
+$CB2F:  LSR  A
+$CB30:  BCC  loc_CB33
+$CB32:  RTS  
+
+loc_CB33:
+$CB33:  LDX  $3D
+$CB35:  BEQ  loc_CB4A
+$CB37:  DEX  
+$CB38:  BEQ  loc_CB64
+$CB3A:  DEX  
+$CB3B:  BEQ  loc_CB57
+$CB3D:  JSR  sub_CBCA
+$CB40:  JSR  sub_CBD6
+$CB43:  JSR  sub_CBE4
+$CB46:  JSR  sub_CBBE
+$CB49:  RTS  
+
+loc_CB4A:
+$CB4A:  JSR  sub_CBD6
+$CB4D:  JSR  sub_CBBE
+$CB50:  JSR  sub_CBCA
+$CB53:  JSR  sub_CBE4
+$CB56:  RTS  
+
+loc_CB57:
+$CB57:  JSR  sub_CBE4
+$CB5A:  JSR  sub_CBCA
+$CB5D:  JSR  sub_CBBE
+$CB60:  JSR  sub_CBD6
+$CB63:  RTS  
+
+loc_CB64:
+$CB64:  JSR  sub_CBBE
+$CB67:  JSR  sub_CBE4
+$CB6A:  JSR  sub_CBD6
+$CB6D:  JSR  sub_CBCA
+$CB70:  RTS  
+
+sub_CB71:
+$CB71:  LDA  $0530
+$CB74:  BMI  loc_CB97
+$CB76:  LDA  $0599
+$CB79:  AND  #$10
+$CB7B:  BNE  loc_CB97
+$CB7D:  LDA  $0539
+$CB80:  BMI  loc_CB97
+$CB82:  CLC  
+$CB83:  ADC  #$10
+$CB85:  STA  $0539
+$CB88:  BPL  loc_CB97
+$CB8A:  BRK  
+$CB8B:  .byte $13
+$CB8C:  .byte $1F
+$CB8D:  BCC  loc_CB93
+$CB8F:  BRK  
+$CB90:  .byte $07
+$CB91:  .byte $6F
+$CB92:  PLP  
+
+loc_CB93:
+$CB93:  BRK  
+$CB94:  .byte $07
+$CB95:  .byte $6F
+$CB96:  ROL  A
+
+loc_CB97:
+$CB97:  RTS  
+
+sub_CB98:
+$CB98:  LDA  $052E
+$CB9B:  BEQ  loc_CBA1
+$CB9D:  DEC  $052E
+$CBA0:  RTS  
+
+loc_CBA1:
+$CBA1:  LDX  #$01
+$CBA3:  STX  JOY1
+$CBA6:  DEX  
+$CBA7:  STX  JOY1
+$CBAA:  LDA  JOY1
+$CBAD:  ORA  $0529
+$CBB0:  STA  $0529
+$CBB3:  RTS  
+
+sub_CBB4:
+$CBB4:  LDA  $0526
+$CBB7:  CLC  
+$CBB8:  ADC  #$08
+$CBBA:  STA  $0526
+$CBBD:  RTS  
+
+sub_CBBE:
+$CBBE:  LDA  $14
+$CBC0:  BPL  loc_CBF7
+$CBC2:  JSR  sub_CD85
+$CBC5:  LDA  #$01
+$CBC7:  JMP  loc_CBEF
+
+sub_CBCA:
+$CBCA:  BIT  $14
+$CBCC:  BVC  loc_CBF7
+$CBCE:  JSR  sub_CD85
+$CBD1:  LDA  #$03
+$CBD3:  JMP  loc_CBEF
+
+sub_CBD6:
+$CBD6:  LDA  $14
+$CBD8:  AND  #$10
+$CBDA:  BEQ  loc_CBF7
+$CBDC:  JSR  sub_CD85
+$CBDF:  LDA  #$00
+$CBE1:  JMP  loc_CBEF
+
+sub_CBE4:
+$CBE4:  LDA  $14
+$CBE6:  AND  #$20
+$CBE8:  BEQ  loc_CBF7
+$CBEA:  JSR  sub_CD85
+$CBED:  LDA  #$02
+
+loc_CBEF:
+$CBEF:  STA  $3D
+$CBF1:  JSR  sub_CC88
+$CBF4:  JMP  loc_D0C4
+
+loc_CBF7:
+$CBF7:  RTS  
+
+sub_CBF8:
+$CBF8:  LDA  $0530
+$CBFB:  BMI  loc_CC64
+$CBFD:  LDA  $14
+$CBFF:  ORA  $0529
+
+; ============================================
+; INPUT/CONTROLLER ROUTINES ($C500-$C600)
+; ============================================
+$C500:  ROL  $85
+$C502:  ROR  $68,X
+$C504:  STA  $77
+$C506:  AND  #$F0
+$C508:  LSR  A
+$C509:  LSR  A
+$C50A:  LSR  A
+$C50B:  LSR  A
+$C50C:  CMP  #$0A
+$C50E:  BCC  loc_C516
+$C510:  CMP  #$0D
+$C512:  BCS  loc_C527
+$C514:  ADC  #$18
+
+loc_C516:
+$C516:  STA  $24
+$C518:  LDA  #$10
+
+loc_C51A:
+$C51A:  STA  $23
+$C51C:  LDY  $22
+$C51E:  LDX  $21
+$C520:  PLP  
+$C521:  PLA  
+$C522:  LDA  $20
+$C524:  JMP  loc_C38B
+
+loc_C527:
+$C527:  SBC  #$0C
+$C529:  STA  $24
+$C52B:  LDA  #$12
+$C52D:  BNE  loc_C51A
+
+clear_system_state:
+$C52F:  LDA  #$00
+$C531:  STA  $1F
+$C533:  STA  $050A
+$C536:  STA  $050B
+$C539:  STA  $0508
+$C53C:  STA  $0509
+$C53F:  STA  $0513
+$C542:  RTS  
+
+clear_oam_buffer:
+$C543:  LDA  #$F7
+$C545:  LDX  #$00
+
+loc_C547:
+$C547:  STA  $0200,X
+$C54A:  INX  
+$C54B:  BNE  loc_C547
+$C54D:  RTS  
+$C54E:  JSR  sub_C5AF
+$C551:  JSR  sub_C569
+$C554:  JSR  clear_oam_buffer
+$C557:  LDA  $1F
+$C559:  AND  #$7F
+$C55B:  STA  $1F
+$C55D:  LDA  $1F
+$C55F:  AND  #$BF
+$C561:  STA  $1F
+$C563:  JSR  wait_vblank
+$C566:  JMP  loc_C592
+
+sub_C569:
+$C569:  JSR  sub_C575
+$C56C:  LDX  #$7F
+
+loc_C56E:
+$C56E:  STA  $0400,X
+$C571:  DEX  
+$C572:  BPL  loc_C56E
+$C574:  RTS  
+
+sub_C575:
+$C575:  LDA  PPUSTATUS
+$C578:  LDA  #$20
+$C57A:  STA  PPUADDR
+$C57D:  LDA  #$00
+$C57F:  STA  PPUADDR
+$C582:  LDX  #$08
+$C584:  TAY  
+
+loc_C585:
+$C585:  STA  PPUDATA
+$C588:  DEY  
+$C589:  BNE  loc_C585
+$C58B:  DEX  
+$C58C:  BNE  loc_C585
+$C58E:  RTS  
+$C58F:  JSR  sub_C5A8
+
+loc_C592:
+$C592:  LDY  #$18
+$C594:  BNE  loc_C598
+
+sub_C596:
+$C596:  LDY  #$00
+
+loc_C598:
+$C598:  LDA  PPUSTATUS
+
+loc_C59B:
+$C59B:  LDA  PPUSTATUS
+$C59E:  BPL  loc_C59B
+$C5A0:  TYA  
+$C5A1:  STA  PPUMASK
+$C5A4:  STA  $0506
+$C5A7:  RTS  
+
+sub_C5A8:
+$C5A8:  LDA  $1F
+$C5AA:  AND  #$7F
+$C5AC:  STA  $1F
+$C5AE:  RTS  
+
+sub_C5AF:
+$C5AF:  JSR  sub_C596
+$C5B2:  LDA  $1F
+$C5B4:  ORA  #$80
+$C5B6:  STA  $1F
+$C5B8:  RTS  
+$C5B9:  LDA  #$00
+$C5BB:  STA  $16
+$C5BD:  BEQ  loc_C5DE
+$C5BF:  LDA  #$40
+$C5C1:  LDX  #$F0
+$C5C3:  BNE  loc_C5C8
+$C5C5:  LDA  #$10
+$C5C7:  TAX  
+
+loc_C5C8:
+$C5C8:  STX  $17
+
+loc_C5CA:
+$C5CA:  STA  $16
+$C5CC:  JSR  loc_C5DE
+$C5CF:  LDX  #$03
+$C5D1:  JSR  loc_C90C
+$C5D4:  LDA  $16
+$C5D6:  CLC  
+$C5D7:  ADC  $17
+$C5D9:  CMP  #$50
+$C5DB:  BCC  loc_C5CA
+$C5DD:  RTS  
+
+loc_C5DE:
+$C5DE:  LDY  #$00
+$C5E0:  LDA  #$BF
+$C5E2:  STA  $0300,Y
+$C5E5:  INY  
+$C5E6:  LDA  #$20
+$C5E8:  STA  $0300,Y
+$C5EB:  INY  
+$C5EC:  LDA  #$00
+$C5EE:  STA  $0300,Y
+$C5F1:  INY  
+$C5F2:  STY  $050A
+$C5F5:  STA  $18
+$C5F7:  TAX  
+$C5F8:  LDA  $18
+$C5FA:  LDY  $05FC
+$C5FD:  AND  #$03
+$C5FF:  BEQ  loc_C605
+
+; ============================================
+; SUBROUTINES ($D500-$D600)
+; ============================================
+$D500:  ORA  #$68
+$D502:  PHA  
+$D503:  AND  #$1F
+$D505:  CMP  $0520
+$D508:  BEQ  loc_D515
+$D50A:  PLA  
+$D50B:  LDA  #$20
+$D50D:  LDX  $46
+$D50F:  BEQ  loc_D518
+$D511:  LDA  #$21
+$D513:  BNE  loc_D518
+
+loc_D515:
+$D515:  PLA  
+$D516:  AND  #$1F
+
+loc_D518:
+$D518:  TAX  
+$D519:  LDA  $76C0,X
+$D51C:  PHA  
+$D51D:  TXA  
+$D51E:  ASL  A
+$D51F:  ASL  A
+$D520:  TAX  
+$D521:  PLA  
+$D522:  RTS  
+$D523:  PHA  
+$D524:  LDA  sub_0000
+$D526:  CMP  #$C2
+$D528:  BNE  loc_D539
+$D52A:  LDA  $01
+$D52C:  CMP  #$2E
+$D52E:  BNE  loc_D539
+$D530:  LDA  $62A1
+$D533:  BPL  loc_D539
+$D535:  PLA  
+$D536:  LDA  #$02
+$D538:  RTS  
+
+loc_D539:
+$D539:  PLA  
+$D53A:  RTS  
+$D53B:  LDA  #$FF
+$D53D:  STA  $56
+$D53F:  JMP  loc_D546
+
+sub_D542:
+$D542:  LDA  #$00
+$D544:  STA  $56
+
+loc_D546:
+$D546:  LDA  current_bank
+$D549:  STA  $58
+$D54B:  LDA  #$06
+$D54D:  STA  $51
+$D54F:  LDA  $6F60
+$D552:  SEC  
+$D553:  SBC  #$08
+$D555:  STA  $7C
+$D557:  LDA  $6F80
+$D55A:  SEC  
+$D55B:  SBC  #$07
+$D55D:  STA  $7B
+$D55F:  LDA  $3C
+$D561:  AND  #$0F
+$D563:  BNE  loc_D588
+$D565:  LDA  $41
+$D567:  BMI  loc_D56C
+$D569:  JMP  loc_C013
+
+loc_D56C:
+$D56C:  LDA  $67
+$D56E:  JSR  bank_switch
+$D571:  JSR  sub_D57F
+$D574:  LDA  $7024
+$D577:  AND  $7025
+$D57A:  BMI  loc_D5AC
+$D57C:  JMP  loc_C013
+
+sub_D57F:
+$D57F:  JSR  sub_D607
+$D582:  JSR  sub_D5EE
+$D585:  JMP  sub_D57F
+
+loc_D588:
+$D588:  PHA  
+$D589:  JSR  sub_D5C0
+$D58C:  PLA  
+$D58D:  AND  #$07
+$D58F:  BNE  loc_D5AC
+$D591:  LDA  $41
+$D593:  BPL  loc_D598
+$D595:  JSR  sub_D5AD
+
+loc_D598:
+$D598:  LDX  #$00
+$D59A:  JSR  sub_D59D
+
+sub_D59D:
+$D59D:  LDA  $052A,X
+$D5A0:  AND  #$40
+$D5A2:  BEQ  loc_D5AB
+$D5A4:  ASL  A
+$D5A5:  ORA  $7004,X
+$D5A8:  STA  $7004,X
+
+loc_D5AB:
+$D5AB:  INX  
+
+loc_D5AC:
+$D5AC:  RTS  
+
+sub_D5AD:
+$D5AD:  LDA  $67
+$D5AF:  JSR  bank_switch
+
+loc_D5B2:
+$D5B2:  JSR  sub_D5FE
+$D5B5:  JSR  sub_D5EE
+$D5B8:  JMP  loc_D5B2
+$D5BB:  LDA  $58
+$D5BD:  JMP  bank_switch
+
+sub_D5C0:
+$D5C0:  LDX  $51
+$D5C2:  LDA  $7020,X
+$D5C5:  CMP  #$FF
+$D5C7:  BEQ  loc_D5E5
+$D5C9:  LDA  $7160,X
+$D5CC:  BEQ  loc_D5DD
+$D5CE:  BMI  loc_D5DA
+$D5D0:  LDA  #$09
+$D5D2:  STA  $57
+$D5D4:  JSR  sub_D5EA
+$D5D7:  JMP  loc_D5DD
+
+loc_D5DA:
+$D5DA:  JSR  sub_D9CB
+
+loc_D5DD:
+$D5DD:  INC  $51
+$D5DF:  LDA  $51
+$D5E1:  CMP  #$1E
+$D5E3:  BCC  sub_D5C0
+
+loc_D5E5:
+$D5E5:  LDA  #$06
+$D5E7:  STA  $51
+$D5E9:  RTS  
+
+sub_D5EA:
+$D5EA:  JSR  sub_D94B
+$D5ED:  RTS  
+
+sub_D5EE:
+$D5EE:  INC  $51
+$D5F0:  LDA  $51
+$D5F2:  CMP  #$1E
+$D5F4:  BCC  loc_D5FD
+$D5F6:  LDA  $58
+$D5F8:  JSR  bank_switch
+$D5FB:  PLA  
+$D5FC:  PLA  
+
+loc_D5FD:
+$D5FD:  RTS  
+
+sub_D5FE:
+$D5FE:  LDX  $51
+
+; ============================================
+; SUBROUTINES ($E000-$E100)
+; ============================================
+$E000:  LDA  $41
+$E002:  BPL  loc_E015
+$E004:  LDA  $45
+$E006:  SEC  
+$E007:  SBC  #$07
+$E009:  STA  $ED
+$E00B:  LDA  $44
+$E00D:  SEC  
+$E00E:  SBC  #$08
+$E010:  STA  $EC
+$E012:  JMP  loc_E023
+
+loc_E015:
+$E015:  LDA  $43
+$E017:  SEC  
+$E018:  SBC  #$07
+$E01A:  STA  $ED
+$E01C:  LDA  $42
+$E01E:  SEC  
+$E01F:  SBC  #$08
+$E021:  STA  $EC
+
+loc_E023:
+$E023:  LDA  $61
+$E025:  ORA  #$01
+$E027:  STA  $61
+$E029:  JSR  sub_E147
+$E02C:  LDA  #$00
+$E02E:  STA  $16
+$E030:  JSR  sub_E368
+$E033:  LDX  #$01
+
+loc_E035:
+$E035:  LDA  $7020,X
+$E038:  CMP  #$FF
+$E03A:  BEQ  loc_E06D
+$E03C:  LDA  #$00
+$E03E:  STA  $7100,X
+$E041:  STA  $7120,X
+$E044:  LDA  $7000,X
+$E047:  STA  $E4
+$E049:  LDA  $7020,X
+$E04C:  AND  #$90
+$E04E:  BNE  loc_E060
+$E050:  JSR  sub_E169
+$E053:  LDA  $E4
+$E055:  STA  $7000,X
+$E058:  BCC  loc_E068
+$E05A:  JSR  sub_E368
+$E05D:  JMP  loc_E068
+
+loc_E060:
+$E060:  JSR  sub_E160
+$E063:  LDA  $E4
+$E065:  STA  $7000,X
+
+loc_E068:
+$E068:  INX  
+$E069:  CPX  #$1E
+$E06B:  BCC  loc_E035
+
+loc_E06D:
+$E06D:  RTS  
+
+sub_E06E:
+$E06E:  JSR  sub_E147
+$E071:  LDA  $3E
+$E073:  BEQ  loc_E0BE
+$E075:  LDA  $7000
+$E078:  AND  #$03
+$E07A:  BNE  loc_E08C
+$E07C:  LDA  $EB
+$E07E:  SEC  
+$E07F:  SBC  $058F
+$E082:  STA  $EB
+$E084:  BCS  loc_E089
+$E086:  DEC  $00ED
+
+loc_E089:
+$E089:  JMP  loc_E0BE
+
+loc_E08C:
+$E08C:  CMP  #$01
+$E08E:  BNE  loc_E09F
+$E090:  LDA  $EA
+$E092:  CLC  
+$E093:  ADC  $058F
+$E096:  STA  $EA
+$E098:  BCC  loc_E09C
+$E09A:  INC  $EC
+
+loc_E09C:
+$E09C:  JMP  loc_E0BE
+
+loc_E09F:
+$E09F:  CMP  #$02
+$E0A1:  BNE  loc_E0B2
+$E0A3:  LDA  $EB
+$E0A5:  CLC  
+$E0A6:  ADC  $058F
+$E0A9:  STA  $EB
+$E0AB:  BCC  loc_E0AF
+$E0AD:  INC  $ED
+
+loc_E0AF:
+$E0AF:  JMP  loc_E0BE
+
+loc_E0B2:
+$E0B2:  LDA  $EA
+$E0B4:  SEC  
+$E0B5:  SBC  $058F
+$E0B8:  STA  $EA
+$E0BA:  BCS  loc_E0BE
+$E0BC:  DEC  $EC
+
+loc_E0BE:
+$E0BE:  LDX  #$01
+
+loc_E0C0:
+$E0C0:  LDA  $7020,X
+$E0C3:  CMP  #$FF
+$E0C5:  BNE  loc_E0C8
+$E0C7:  RTS  
+
+loc_E0C8:
+$E0C8:  LDA  $7000,X
+$E0CB:  STA  $E4
+$E0CD:  BMI  loc_E0EA
+$E0CF:  LDA  $7020,X
+$E0D2:  AND  #$90
+$E0D4:  BEQ  loc_E0DC
+$E0D6:  JSR  sub_E160
+$E0D9:  JMP  loc_E0DF
+
+loc_E0DC:
+$E0DC:  JSR  sub_E169
+
+loc_E0DF:
+$E0DF:  LDA  $E4
+$E0E1:  STA  $7000,X
+$E0E4:  INX  
+$E0E5:  CPX  #$1E
+$E0E7:  BCC  loc_E0C0
+$E0E9:  RTS  
+
+loc_E0EA:
+$E0EA:  LDA  #$0F
+$E0EC:  STA  $E3
+$E0EE:  LDY  #$10
+$E0F0:  LDA  $70E0,X
+$E0F3:  AND  #$40
+$E0F5:  BEQ  loc_E0FB
+$E0F7:  LDY  #$20
+$E0F9:  LSR  $E3
+
+loc_E0FB:
+$E0FB:  STY  $E2
+$E0FD:  LDA  $7020,X
