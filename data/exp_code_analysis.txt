@@ -1,0 +1,570 @@
+DRAGON WARRIOR 4 - EXPERIENCE CODE ANALYSIS
+======================================================================
+
+----------------------------------------------------------------------
+Bank  0 @ $B2A9: INC_EXP
+----------------------------------------------------------------------
+  $B28B:  .byte $5C
+  $B28C:  .byte $DC
+  $B28D:  .byte $87
+  $B28E:  DEC $8D,X
+  $B290:  .byte $44
+  $B291:  CMP $C8,X
+  $B293:  .byte $E2
+  $B294:  ASL $EE6A,X
+  $B297:  LDY $24DA,X
+  $B29A:  CMP $5A
+  $B29C:  DEY
+  $B29D:  LDY $EF3A,X
+  $B2A0:  ROL $E46A,X
+  $B2A3:  .byte $4F
+  $B2A4:  .byte $5B
+  $B2A5:  .byte $FC
+  $B2A6:  .byte $F7
+  $B2A7:  .byte $1A
+  $B2A8:  .byte $9B
+  $B2A9:  INC $601C,X <<<
+  $B2AC:  .byte $8B
+  $B2AD:  AND $C8,X
+  $B2AF:  .byte $43
+  $B2B0:  EOR $EB1A,Y
+  $B2B3:  .byte $FB
+  $B2B4:  .byte $47
+  $B2B5:  LDA $6A,X
+  $B2B7:  .byte $22
+  $B2B8:  BEQ $B300
+
+----------------------------------------------------------------------
+Bank  0 @ $B594: INC_EXP
+----------------------------------------------------------------------
+  $B576:  ROL $DB,X
+  $B578:  ROL $3D
+  $B57A:  .byte $CF
+  $B57B:  ADC ($A9),Y
+  $B57D:  .byte $BF
+  $B57E:  SBC ($C6,X)
+  $B580:  PHP
+  $B581:  .byte $B3
+  $B582:  DEC $0BBF
+  $B585:  .byte $47
+  $B586:  ADC $B6,X
+  $B588:  INY
+  $B589:  .byte $FF
+  $B58A:  .byte $47
+  $B58B:  ROR $6FAA,X
+  $B58E:  SED
+  $B58F:  ADC ($82),Y
+  $B591:  ROL
+  $B592:  TSX
+  $B593:  .byte $9B
+  $B594:  INC $601C,X <<<
+  $B597:  .byte $8B
+  $B598:  .byte $53
+  $B599:  JSR $6A0D
+  $B59C:  NOP
+  $B59D:  .byte $9C
+  $B59E:  .byte $A7
+  $B59F:  SBC $7B05,Y
+  $B5A2:  .byte $8F
+  $B5A3:  INC $94
+
+----------------------------------------------------------------------
+Bank  1 @ $882E: INC_EXP
+----------------------------------------------------------------------
+  $8810:  STX $1A52
+  $8813:  LDA $7B4E,Y
+  $8816:  BEQ $87CF
+  $8818:  STA $10F8
+  $881B:  CPX $1859
+  $881E:  .byte $2B
+  $881F:  RTS
+  $8820:  .byte $C7
+  $8821:  .byte $17
+  $8822:  STA $C2C7
+  $8825:  LDY #$E3
+  $8827:  SBC $E39E
+  $882A:  JSR $C6AC
+  $882D:  .byte $F3
+  $882E:  INC $601C,X <<<
+  $8831:  .byte $89
+  $8832:  .byte $B3
+  $8833:  AND $6B
+  $8835:  JMP ($EEA7)
+  $8838:  CLV
+  $8839:  INC $6D8E,X
+  $883C:  .byte $F2
+  $883D:  .byte $A7
+  $883E:  CMP #$32
+
+----------------------------------------------------------------------
+Bank  1 @ $8BF0: INC_EXP
+----------------------------------------------------------------------
+  $8BD2:  CMP $5A
+  $8BD4:  STX $96AE
+  $8BD7:  .byte $4F
+  $8BD8:  .byte $B3
+  $8BD9:  INC $A7
+  $8BDB:  .byte $FF
+  $8BDC:  .byte $AF
+  $8BDD:  AND $4B99
+  $8BE0:  INC $743F
+  $8BE3:  .byte $74
+  $8BE4:  .byte $FF
+  $8BE5:  SBC $D5,X
+  $8BE7:  TAY
+  $8BE8:  .byte $89
+  $8BE9:  LDA $13FE,X
+  $8BEC:  .byte $CF
+  $8BED:  .byte $4F
+  $8BEE:  .byte $C2
+  $8BEF:  .byte $9B
+  $8BF0:  INC $601C,X <<<
+  $8BF3:  .byte $89
+  $8BF4:  LDA $8E,X
+  $8BF6:  BNE $8B7E
+  $8BF8:  STX $7FE0
+  $8BFB:  .byte $57
+  $8BFC:  AND #$D2
+  $8BFE:  ADC $CD0F,Y
+  $8C01:  TSX
+  $8C02:  .byte $E3
+
+----------------------------------------------------------------------
+Bank  1 @ $B7F9: INC_EXP
+----------------------------------------------------------------------
+  $B7DB:  .byte $EF
+  $B7DC:  CMP ($D5,X)
+  $B7DE:  TAY
+  $B7DF:  NOP
+  $B7E0:  SBC ($B8),Y
+  $B7E2:  .byte $AF
+  $B7E3:  .byte $B7
+  $B7E4:  DEC $58
+  $B7E6:  .byte $72
+  $B7E7:  BCC $B794
+  $B7E9:  LDY $6766
+  $B7EC:  AND $3D6E
+  $B7EF:  .byte $5A
+  $B7F0:  DEY
+  $B7F1:  LDY $B51B,X
+  $B7F4:  STX $858F
+  $B7F7:  STX $F3
+  $B7F9:  INC $601C,X <<<
+  $B7FC:  .byte $8B
+  $B7FD:  LDA ($84,X)
+  $B7FF:  EOR $EA2C,X
+  $B802:  SBC $39
+  $B804:  LDA $37
+  $B806:  .byte $CF
+  $B807:  .byte $3B
+  $B808:  CPY $BC16
+  $B80B:  .byte $F7
+
+----------------------------------------------------------------------
+Bank  2 @ $9683: INC_EXP
+----------------------------------------------------------------------
+  $9665:  .byte $9E
+  $9666:  .byte $E3
+  $9667:  .byte $5B
+  $9668:  .byte $CF
+  $9669:  ADC $D280,X
+  $966C:  .byte $87
+  $966D:  .byte $44
+  $966E:  PHA
+  $966F:  .byte $F2
+  $9670:  CMP $5B1E,Y
+  $9673:  .byte $23
+  $9674:  CMP $635D
+  $9677:  CLC
+  $9678:  LDY $3F
+  $967A:  .byte $83
+  $967B:  .byte $2F
+  $967C:  CPX $46
+  $967E:  .byte $E3
+  $967F:  .byte $DC
+  $9680:  .byte $F7
+  $9681:  .byte $1A
+  $9682:  .byte $9B
+  $9683:  INC $601C,X <<<
+  $9686:  .byte $8B
+  $9687:  .byte $3C
+  $9688:  .byte $EB
+  $9689:  .byte $57
+  $968A:  .byte $FF
+  $968B:  .byte $AF
+  $968C:  .byte $14
+  $968D:  NOP
+  $968E:  SBC $27
+
+----------------------------------------------------------------------
+Bank  2 @ $A766: INC_EXP
+----------------------------------------------------------------------
+  $A748:  EOR #$E0
+  $A74A:  .byte $3B
+  $A74B:  CMP $63
+  $A74D:  .byte $5A
+  $A74E:  .byte $92
+  $A74F:  ADC $CB1C,X
+  $A752:  AND $5868,X
+  $A755:  .byte $17
+  $A756:  .byte $7B
+  $A757:  ORA $C5AD,X
+  $A75A:  .byte $3A
+  $A75B:  DEX
+  $A75C:  LSR
+  $A75D:  LDX $58F1,Y
+  $A760:  .byte $D7
+  $A761:  .byte $0B
+  $A762:  .byte $FC
+  $A763:  .byte $F7
+  $A764:  .byte $1A
+  $A765:  .byte $9B
+  $A766:  INC $601C,X <<<
+  $A769:  .byte $8B
+  $A76A:  BVS $A71E
+  $A76C:  .byte $EF
+  $A76D:  STA $86
+  $A76F:  ADC $CCB6,Y
+  $A772:  DEC $C3,X
+  $A774:  TAX
+  $A775:  .byte $C7
+  $A776:  .byte $6F
+
+----------------------------------------------------------------------
+Bank  2 @ $B152: INC_EXP
+----------------------------------------------------------------------
+  $B134:  .byte $E2
+  $B135:  BCS $B12F
+  $B137:  .byte $80
+  $B138:  LDY $B3,X
+  $B13A:  .byte $DC
+  $B13B:  .byte $67
+  $B13C:  STY $FC,X
+  $B13E:  DEC $D0,X
+  $B140:  .byte $6F
+  $B141:  CLV
+  $B142:  .byte $5A
+  $B143:  ADC #$0F
+  $B145:  .byte $F7
+  $B146:  .byte $8B
+  $B147:  LDY $0B
+  $B149:  PHP
+  $B14A:  .byte $57
+  $B14B:  .byte $4F
+  $B14C:  TAX
+  $B14D:  .byte $72
+  $B14E:  .byte $9E
+  $B14F:  .byte $DF
+  $B150:  .byte $1A
+  $B151:  .byte $9B
+  $B152:  INC $601C,X <<<
+  $B155:  .byte $8B
+  $B156:  .byte $53
+  $B157:  JSR $690D
+  $B15A:  .byte $F3
+  $B15B:  .byte $7A
+  $B15C:  LSR $AB8F
+  $B15F:  LDX $0A
+  $B161:  .byte $FC
+  $B162:  .byte $93
+
+----------------------------------------------------------------------
+Bank  3 @ $8554: INC_EXP
+----------------------------------------------------------------------
+  $8536:  ORA $C319,Y
+  $8539:  .byte $A3
+  $853A:  LDA ($68),Y
+  $853C:  INC $D9B6
+  $853F:  .byte $1F
+  $8540:  .byte $DC
+  $8541:  BIT $249F
+  $8544:  .byte $EB
+  $8545:  .byte $CF
+  $8546:  .byte $97
+  $8547:  SEI
+  $8548:  LDY $796F
+  $854B:  SBC #$F6
+  $854D:  .byte $7C
+  $854E:  CPY $ACE5
+  $8551:  .byte $F7
+  $8552:  .byte $1A
+  $8553:  .byte $9B
+  $8554:  INC $601C,X <<<
+  $8557:  .byte $8B
+  $8558:  EOR $C57D,X
+  $855B:  ROL $89,X
+  $855D:  AND ($8A),Y
+  $855F:  .byte $E3
+  $8560:  .byte $42
+  $8561:  ADC #$0F
+  $8563:  CLI
+  $8564:  ADC $58,X
+
+----------------------------------------------------------------------
+Bank  3 @ $AFEA: INC_EXP
+----------------------------------------------------------------------
+  $AFCC:  .byte $DC
+  $AFCD:  .byte $64
+  $AFCE:  .byte $67
+  $AFCF:  ASL $A78C
+  $AFD2:  INC $8D7B
+  $AFD5:  EOR $0EFF
+  $AFD8:  BMI $B01F
+  $AFDA:  .byte $97
+  $AFDB:  .byte $E3
+  $AFDC:  .byte $27
+  $AFDD:  CMP #$3A
+  $AFDF:  .byte $F3
+  $AFE0:  SBC $DE
+  $AFE2:  ROL $FD
+  $AFE4:  .byte $BB
+  $AFE5:  SBC ($5F),Y
+  $AFE7:  .byte $4F
+  $AFE8:  .byte $C2
+  $AFE9:  .byte $9B
+  $AFEA:  INC $601C,X <<<
+  $AFED:  TXA
+  $AFEE:  LDX $BD45
+  $AFF1:  ADC $357E,Y
+  $AFF4:  .byte $72
+  $AFF5:  .byte $9C
+  $AFF6:  EOR #$8E
+  $AFF8:  SBC $CD73,Y
+  $AFFB:  LDX $66,Y
+  $AFFD:  TSX
+
+----------------------------------------------------------------------
+Bank  3 @ $B055: INC_EXP
+----------------------------------------------------------------------
+  $B037:  LDY $33
+  $B039:  .byte $A7
+  $B03A:  INC $3D
+  $B03C:  .byte $D2
+  $B03D:  .byte $97
+  $B03E:  ADC ($12,X)
+  $B040:  SEC
+  $B041:  INC $8DF8,X
+  $B044:  .byte $9C
+  $B045:  ORA ($16,X)
+  $B047:  CLI
+  $B048:  .byte $DC
+  $B049:  LDA ($5D),Y
+  $B04B:  ADC $2419
+  $B04E:  .byte $C3
+  $B04F:  .byte $AB
+  $B050:  LDA $249F
+  $B053:  .byte $DA
+  $B054:  .byte $9B
+  $B055:  INC $601C,X <<<
+  $B058:  TXA
+  $B059:  LDA $643E
+  $B05C:  .byte $32
+  $B05D:  SBC ($A4),Y
+  $B05F:  STX $B4
+  $B061:  .byte $74
+  $B062:  .byte $77
+  $B063:  .byte $8B
+  $B064:  LDA $6ABB
+
+----------------------------------------------------------------------
+Bank  3 @ $B437: INC_EXP
+----------------------------------------------------------------------
+  $B419:  .byte $57
+  $B41A:  CMP $CA,X
+  $B41C:  .byte $7B
+  $B41D:  .byte $52
+  $B41E:  .byte $1B
+  $B41F:  CMP $DE31,Y
+  $B422:  TYA
+  $B423:  ADC $B4,X
+  $B425:  LDA $F4,X
+  $B427:  .byte $54
+  $B428:  AND ($C5),Y
+  $B42A:  .byte $E3
+  $B42B:  ROR $E116,X
+  $B42E:  ROR $5B
+  $B430:  BEQ $B4A5
+  $B432:  INC $37FE,X
+  $B435:  .byte $1A
+  $B436:  .byte $9B
+  $B437:  INC $601C,X <<<
+  $B43A:  .byte $8B
+  $B43B:  LSR
+  $B43C:  .byte $1B
+  $B43D:  LDX $E0A6
+  $B440:  .byte $5B
+  $B441:  CLV
+  $B442:  .byte $5A
+  $B443:  .byte $E3
+  $B444:  .byte $E3
+
+----------------------------------------------------------------------
+Bank  3 @ $B45B: INC_EXP
+----------------------------------------------------------------------
+  $B43D:  LDX $E0A6
+  $B440:  .byte $5B
+  $B441:  CLV
+  $B442:  .byte $5A
+  $B443:  .byte $E3
+  $B444:  .byte $E3
+  $B445:  LDA $D08E,X
+  $B448:  STX $A2
+  $B44A:  ADC ($01),Y
+  $B44C:  LDX $DE3F
+  $B44F:  ROL
+  $B450:  .byte $9C
+  $B451:  .byte $A7
+  $B452:  LSR $B6
+  $B454:  STY $88F3
+  $B457:  .byte $0C
+  $B458:  .byte $F7
+  $B459:  .byte $1A
+  $B45A:  .byte $9B
+  $B45B:  INC $601C,X <<<
+  $B45E:  TXA
+  $B45F:  .byte $9F
+  $B460:  ADC $EE,X
+  $B462:  .byte $3B
+  $B463:  ASL $4F,X
+  $B465:  .byte $92
+  $B466:  ADC $E7,X
+  $B468:  .byte $CB
+  $B469:  BVS $B45E
+
+----------------------------------------------------------------------
+Bank  3 @ $BCFF: INC_EXP
+----------------------------------------------------------------------
+  $BCE1:  CPX $7E
+  $BCE3:  DEC $7211,X
+  $BCE6:  .byte $4F
+  $BCE7:  AND ($F9,X)
+  $BCE9:  .byte $B7
+  $BCEA:  AND $46C6,X
+  $BCED:  BVS $BCD7
+  $BCEF:  .byte $8B
+  $BCF0:  DEC $E3
+  $BCF2:  .byte $23
+  $BCF3:  SEC
+  $BCF4:  .byte $74
+  $BCF5:  .byte $6B
+  $BCF6:  LDA #$6A
+  $BCF8:  AND $1E48,Y
+  $BCFB:  .byte $93
+  $BCFC:  STA $7A
+  $BCFE:  .byte $9B
+  $BCFF:  INC $601C,X <<<
+  $BD02:  .byte $8B
+  $BD03:  .byte $53
+  $BD04:  JSR $770D
+  $BD07:  STA ($FB),Y
+  $BD09:  SEI
+  $BD0A:  EOR $C9
+  $BD0C:  .byte $3C
+  $BD0D:  .byte $F3
+  $BD0E:  STA ($B8,X)
+
+----------------------------------------------------------------------
+Bank  4 @ $8611: INC_EXP
+----------------------------------------------------------------------
+  $85F3:  ASL $E1
+  $85F5:  .byte $6F
+  $85F6:  .byte $8F
+  $85F7:  .byte $2B
+  $85F8:  .byte $CF
+  $85F9:  .byte $8F
+  $85FA:  CLI
+  $85FB:  AND ($F4),Y
+  $85FD:  .byte $80
+  $85FE:  .byte $7B
+  $85FF:  .byte $D3
+  $8600:  BEQ $85A8
+  $8602:  .byte $1F
+  $8603:  TSX
+  $8604:  NOP
+  $8605:  ROR $BFE7,X
+  $8608:  .byte $0B
+  $8609:  RTI
+  $860A:  .byte $3B
+  $860B:  .byte $8F
+  $860C:  .byte $E7
+  $860D:  .byte $9C
+  $860E:  .byte $F7
+  $860F:  .byte $1A
+  $8610:  .byte $9B
+  $8611:  INC $601C,X <<<
+  $8614:  .byte $8B
+  $8615:  LSR
+  $8616:  ORA $7E90,Y
+  $8619:  .byte $CF
+  $861A:  CLD
+  $861B:  AND ($C4),Y
+  $861D:  .byte $DF
+  $861E:  SED
+  $861F:  LDY $4F26
+
+----------------------------------------------------------------------
+Bank 26 @ $87F5: INC_EXP
+----------------------------------------------------------------------
+  $87D7:  .byte $7B
+  $87D8:  CLD
+  $87D9:  CMP $6A29
+  $87DC:  .byte $12
+  $87DD:  .byte $BF
+  $87DE:  .byte $F7
+  $87DF:  .byte $87
+  $87E0:  LSR $7B
+  $87E2:  STY $FF57
+  $87E5:  .byte $0C
+  $87E6:  ADC #$3C
+  $87E8:  .byte $F7
+  $87E9:  .byte $1A
+  $87EA:  LSR $F8E3,X
+  $87ED:  LDA $61E8,Y
+  $87F0:  CMP $D6,X
+  $87F2:  .byte $A7
+  $87F3:  .byte $FA
+  $87F4:  .byte $9B
+  $87F5:  INC $601C,X <<<
+  $87F8:  .byte $8B
+  $87F9:  .byte $53
+  $87FA:  JSR $730D
+  $87FD:  LSR
+  $87FE:  CLI
+  $87FF:  STX $BE,Y
+  $8801:  ORA $A618,X
+  $8804:  CMP ($26),Y
+  $8806:  .byte $34
+
+----------------------------------------------------------------------
+Bank 26 @ $8830: INC_EXP
+----------------------------------------------------------------------
+  $8812:  LDA ($24),Y
+  $8814:  LDY $3EF2,X
+  $8817:  LSR
+  $8818:  .byte $4B
+  $8819:  .byte $A3
+  $881A:  LDY $FB4D,X
+  $881D:  .byte $1F
+  $881E:  .byte $87
+  $881F:  .byte $5B
+  $8820:  ROR $D6,X
+  $8822:  .byte $D7
+  $8823:  TAY
+  $8824:  STA $C1F4,Y
+  $8827:  ORA $5D,X
+  $8829:  ADC ($FB,X)
+  $882B:  ASL $AE,X
+  $882D:  .byte $52
+  $882E:  .byte $DA
+  $882F:  .byte $9B
+  $8830:  INC $601C,X <<<
+  $8833:  TXA
+  $8834:  LDX $CAA9
+  $8837:  .byte $7B
+  $8838:  .byte $7C
+  $8839:  ADC $87
+  $883B:  SBC $DF45,Y
+  $883E:  .byte $A3
+  $883F:  TSX
+  $8840:  PLP
+

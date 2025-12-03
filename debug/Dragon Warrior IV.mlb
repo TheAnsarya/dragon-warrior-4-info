@@ -539,3 +539,41 @@ R:AEC0:b19_cap_spell_index:Cap $75E8 at 8 for table lookup
 G:75E8:spell_level_index:Spell level/slot index (0-7, capped at 8)
 G:6E11:spell_lookup_result:Spell table lookup result storage
 
+# ==============================================================================
+# BATTLE STATE RAM ($615A-$61FF) - Identified via Code Analysis
+# ==============================================================================
+# Most heavily accessed battle variables discovered through ROM analysis
+G:615A:battle_actor_index:Current battle actor index (98 accesses in ROM)
+G:618E:battle_state_flags:Battle state flags (65 accesses - reads/writes)
+G:616A:battle_action_data:Battle action data array (indexed access - 59 uses)
+G:6018:battle_status_counter:Battle status or counter (30 accesses - reads only)
+G:6038:battle_flag_counter:Battle flag/counter with RMW (31 accesses)
+G:6196:battle_counter_2:Battle counter variable 2 (19 accesses)
+G:6195:battle_counter_1:Battle counter variable 1 (17 accesses)
+G:6192:battle_output_1:Battle output/store variable 1 (15 accesses)
+G:6191:battle_output_2:Battle output/store variable 2 (14 accesses)
+G:6197:battle_limit_x:Battle X limit coordinate (12 accesses)
+G:6198:battle_limit_y:Battle Y limit coordinate (12 accesses)
+G:619B:battle_flags_2:Battle flags 2 (AND/STA operations)
+G:61B1:battle_turn_counter:Battle turn counter (INC operations)
+G:61DB:battle_indexed_data:Battle indexed data table
+G:6165:battle_indexed_2:Battle indexed data table 2
+G:6168:battle_indexed_3:Battle indexed data table 3
+
+# ==============================================================================
+# FIXED BANK SUBROUTINES - Battle State Access
+# ==============================================================================
+R:CC28:fixed_read_actor_1:Read $615A (battle actor)
+R:CF41:fixed_read_actor_2:Read $615A (battle actor)
+R:F148:fixed_read_actor_3:Read $615A (battle actor)
+R:F15D:fixed_read_actor_4:Read $615A (battle actor)
+R:F164:fixed_inc_actor:Increment $615A (advance actor)
+R:CCB0:fixed_set_counter_1:Store to $6195 (battle counter 1)
+R:CFD7:fixed_cmp_counter_1:Compare $6195 (battle counter 1)
+R:CCB8:fixed_set_counter_2:Store to $6196 (battle counter 2)
+R:CFDE:fixed_cmp_counter_2:Compare $6196 (battle counter 2)
+R:CC16:fixed_cmp_limit_x:Compare $6197 (battle limit X)
+R:CC33:fixed_ldx_limit_x:Load X from $6197
+R:CC1D:fixed_cmp_limit_y:Compare $6198 (battle limit Y)
+R:CC36:fixed_ldy_limit_y:Load Y from $6198
+

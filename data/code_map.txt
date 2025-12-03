@@ -1,0 +1,82 @@
+DRAGON WARRIOR 4 - CODE MAP
+======================================================================
+
+BANK OVERVIEW
+----------------------------------------------------------------------
+Bank 30:  293 subroutines
+Bank 19:  284 subroutines
+Bank 15:  282 subroutines
+Bank 31:  239 subroutines
+Bank 17:  236 subroutines
+Bank 22:  232 subroutines
+Bank 27:  207 subroutines
+Bank 29:  207 subroutines
+Bank 18:  206 subroutines
+Bank 16:  203 subroutines
+Bank 23:  203 subroutines
+Bank 20:  194 subroutines
+Bank 21:  185 subroutines
+Bank 28:  123 subroutines
+Bank 24:  117 subroutines
+Bank  8:   76 subroutines
+Bank  7:   75 subroutines
+Bank  6:   57 subroutines
+Bank 12:   50 subroutines
+Bank  9:   48 subroutines
+Bank 14:   47 subroutines
+Bank 10:   46 subroutines
+Bank 13:   39 subroutines
+Bank 11:   37 subroutines
+Bank 25:   29 subroutines
+Bank  0:   22 subroutines
+Bank  4:   22 subroutines
+Bank 26:   19 subroutines
+Bank  1:   17 subroutines
+Bank  2:   16 subroutines
+Bank  3:   14 subroutines
+Bank  5:   12 subroutines
+
+
+PARTY DATA ACCESS - FIXED BANK
+----------------------------------------------------------------------
+$CC16: CMP $6197
+$CC1D: CMP $6198
+$CC28: LDA $615A
+$CC33: LDX $6197
+$CC36: LDY $6198
+$CCB0: STA $6195
+$CCB8: STA $6196
+$CF41: LDA $615A
+$CFD7: CMP $6195
+$CFDE: CMP $6196
+$F148: LDA $615A
+$F15D: LDA $615A
+$F164: INC $615A
+$F16E: LDA $615A
+$F173: DEC $615A
+$F18C: LDA $615A
+$F9FC: ROR $6060
+$FA04: ROR $6060
+
+
+PARTY DATA ACCESS - BANK 19 (BATTLE)
+----------------------------------------------------------------------
+$8088: LDA $615B
+$8659: LDA $616A
+$8687: LDA $616A
+$86F2: LDA $616A
+$874E: LDA $616A
+$8892: LDA $616A
+$8945: LDA $616A
+$8A34: LDA $618E
+$8A3B: BIT $618E
+$8A7E: LDA $616A
+$8AD8: LDA $616A
+$8C0F: INC $61B1
+$8C19: EOR $618C
+$B066: LDA $615A
+$B0AB: AND $619B
+$B0B0: STA $619B
+$B0D8: LDA $619B
+$B997: BIT $6134
+$BE8B: EOR $6098

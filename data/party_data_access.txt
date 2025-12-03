@@ -1,0 +1,1374 @@
+DRAGON WARRIOR 4 - PARTY DATA ACCESS ANALYSIS
+======================================================================
+
+ALL ADDRESSES ACCESSED IN $6000-$61FF RANGE
+----------------------------------------------------------------------
+$6000:   8 (R: 5 W: 3) | Modes: abs, abs,X, abs,Y | Banks: 6, 8, 14, 16, 24
+    Bank  6 @ $98DF: INC $6000,X
+    Bank  8 @ $8C00: AND $6000,X
+    Bank  8 @ $9328: CMP $6000,Y
+    Bank  8 @ $9368: CPX $6000,
+    Bank  8 @ $94AE: BIT $6000,
+    Bank 14 @ $937A: CPX $6000,
+    Bank 16 @ $8B60: STY $6000,
+    Bank 24 @ $B893: ROR $6000,X
+
+$6001:   6 (R: 1 W: 5) | Modes: abs, abs,X | Banks: 6, 10, 16, 18
+    Bank  6 @ $ABB7: ASL $6001,X
+    Bank 10 @ $9153: ADC $6001,X
+    Bank 16 @ $8B5B: STY $6001,
+    Bank 18 @ $9073: STA $6001,X
+    Bank 18 @ $907B: STA $6001,X
+    Bank 18 @ $9083: STA $6001,X
+
+$6002:   8 (R: 3 W: 5) | Modes: abs, abs,X | Banks: 11, 12, 16, 18, 23, 27
+    Bank 11 @ $B0D2: BIT $6002,
+    Bank 12 @ $8FA3: ASL $6002,
+    Bank 16 @ $8B65: STY $6002,
+    Bank 18 @ $9076: STA $6002,X
+    Bank 18 @ $907E: STA $6002,X
+    Bank 18 @ $9086: STA $6002,X
+    Bank 23 @ $A564: ORA $6002,
+    Bank 27 @ $9556: AND $6002,X
+
+$6003:   4 (R: 2 W: 2) | Modes: abs, abs,X | Banks: 16, 18, 22
+    Bank 16 @ $8B6A: STY $6003,
+    Bank 18 @ $9089: STA $6003,X
+    Bank 18 @ $BCEC: CMP $6003,
+    Bank 22 @ $9CC0: CPY $6003,
+
+$6004:   6 (R: 3 W: 3) | Modes: abs, abs,X | Banks: 10, 11, 13, 14, 16, 23
+    Bank 10 @ $9073: STX $6004,
+    Bank 11 @ $B9F8: AND $6004,X
+    Bank 13 @ $BE18: ASL $6004,
+    Bank 14 @ $B2C8: LDY $6004,X
+    Bank 16 @ $8B6F: STY $6004,
+    Bank 23 @ $BC8A: LDA $6004,
+
+$6005:  14 (R: 6 W: 8) | Modes: abs, abs,X, abs,Y | Banks: 8, 15, 16, 20, 21, 29, 30, 31
+    Bank  8 @ $8A8F: STY $6005,
+    Bank 15 @ $88AA: ORA $6005,
+    Bank 15 @ $8B9E: ROL $6005,
+    Bank 15 @ $946F: STY $6005,
+    Bank 16 @ $8B74: STY $6005,
+    Bank 20 @ $9AD8: SBC $6005,X
+    Bank 21 @ $A72F: SBC $6005,X
+    Bank 29 @ $A9A0: STX $6005,
+    Bank 30 @ $A259: STA $6005,Y
+    Bank 30 @ $A293: SBC $6005,X
+    Bank 30 @ $A2D8: SBC $6005,X
+    Bank 31 @ $C8AA: ORA $6005,
+    Bank 31 @ $CB9E: ROL $6005,
+    Bank 31 @ $D46F: STY $6005,
+
+$6007:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 11
+    Bank 11 @ $8283: AND $6007,Y
+
+$6008:   1 (R: 0 W: 1) | Modes: abs | Banks: 25
+    Bank 25 @ $B208: ROR $6008,
+
+$6009:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 16
+    Bank 16 @ $96A4: ADC $6009,Y
+
+$600A:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 5
+    Bank  5 @ $A9AC: ORA $600A,Y
+
+$600F:   7 (R: 4 W: 3) | Modes: abs, abs,X, abs,Y | Banks: 17, 18, 25, 30
+    Bank 17 @ $8937: ASL $600F,X
+    Bank 17 @ $8A73: ASL $600F,X
+    Bank 17 @ $8ACC: AND $600F,Y
+    Bank 18 @ $9545: AND $600F,
+    Bank 25 @ $ACF0: LSR $600F,X
+    Bank 30 @ $9E61: AND $600F,
+    Bank 30 @ $9E89: AND $600F,
+
+$6010:   2 (R: 2 W: 0) | Modes: abs, abs,X | Banks: 10
+    Bank 10 @ $8766: ORA $6010,X
+    Bank 10 @ $AC53: BIT $6010,
+
+$6014:   1 (R: 1 W: 0) | Modes: abs | Banks: 27
+    Bank 27 @ $9802: BIT $6014,
+
+$6017:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 11
+    Bank 11 @ $8966: ADC $6017,X
+
+$6018:  30 (R:21 W: 9) | Modes: abs, abs,X, abs,Y | Banks: 15, 16, 17, 18, 19, 21, 23, 27, 29, 30, 31
+    Bank 15 @ $9DAC: CMP $6018,X
+    Bank 15 @ $9EE2: CMP $6018,X
+    Bank 16 @ $8A56: SBC $6018,
+    Bank 16 @ $9778: INC $6018,
+    Bank 16 @ $99A2: ROR $6018,
+    Bank 16 @ $9C79: ROR $6018,
+    Bank 16 @ $A5A2: ROR $6018,X
+    Bank 16 @ $B30E: LDA $6018,Y
+    Bank 16 @ $B5B7: ASL $6018,
+    Bank 16 @ $B6F3: SBC $6018,
+    Bank 16 @ $B7F0: LDY $6018,
+    Bank 16 @ $BC7B: LDA $6018,
+    Bank 17 @ $8A37: ROR $6018,
+    Bank 17 @ $8C85: ADC $6018,
+    Bank 17 @ $8D6B: ASL $6018,
+    Bank 17 @ $8DC2: SBC $6018,Y
+    Bank 17 @ $95CF: ROR $6018,
+    Bank 18 @ $BCD8: LDY $6018,X
+    Bank 19 @ $8AEA: SBC $6018,
+    Bank 21 @ $BA3B: CMP $6018,X
+    Bank 23 @ $864F: SBC $6018,Y
+    Bank 27 @ $80DD: CPX $6018,
+    Bank 29 @ $99CD: SBC $6018,X
+    Bank 29 @ $A364: LDX $6018,
+    Bank 29 @ $A4A0: INC $6018,X
+    Bank 29 @ $B489: LDX $6018,
+    Bank 29 @ $B621: SBC $6018,X
+    Bank 30 @ $BC15: LDY $6018,X
+    Bank 31 @ $DDAC: CMP $6018,X
+    Bank 31 @ $DEE2: CMP $6018,X
+
+$601C:  18 (R: 1 W:17) | Modes: abs,X, abs,Y | Banks: 0, 1, 2, 3, 4, 11, 26
+    Bank  0 @ $B2A9: INC $601C,X
+    Bank  0 @ $B594: INC $601C,X
+    Bank  1 @ $882E: INC $601C,X
+    Bank  1 @ $8BF0: INC $601C,X
+    Bank  1 @ $B7F9: INC $601C,X
+    Bank  2 @ $9683: INC $601C,X
+    Bank  2 @ $A766: INC $601C,X
+    Bank  2 @ $B152: INC $601C,X
+    Bank  3 @ $8554: INC $601C,X
+    Bank  3 @ $AFEA: INC $601C,X
+    Bank  3 @ $B055: INC $601C,X
+    Bank  3 @ $B437: INC $601C,X
+    Bank  3 @ $B45B: INC $601C,X
+    Bank  3 @ $BCFF: INC $601C,X
+    Bank  4 @ $8611: INC $601C,X
+    Bank 11 @ $8899: LDX $601C,Y
+    Bank 26 @ $87F5: INC $601C,X
+    Bank 26 @ $8830: INC $601C,X
+
+$601E:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 16
+    Bank 16 @ $8C82: ASL $601E,X
+
+$601F:   3 (R: 1 W: 2) | Modes: abs,X, abs,Y | Banks: 5, 7
+    Bank  5 @ $9644: SBC $601F,X
+    Bank  5 @ $996B: STA $601F,Y
+    Bank  7 @ $A4DF: ROR $601F,X
+
+$6020:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 21
+    Bank 21 @ $AC19: SBC $6020,Y
+
+$6022:   4 (R: 4 W: 0) | Modes: abs,X | Banks: 1, 2, 3, 26
+    Bank  1 @ $9A98: CMP $6022,X
+    Bank  2 @ $8E79: CMP $6022,X
+    Bank  3 @ $8419: CMP $6022,X
+    Bank 26 @ $9563: CMP $6022,X
+
+$6028:   7 (R: 5 W: 2) | Modes: abs, abs,Y | Banks: 8, 10, 16
+    Bank  8 @ $B8C0: ASL $6028,
+    Bank 10 @ $8915: DEC $6028,
+    Bank 16 @ $96A8: ADC $6028,Y
+    Bank 16 @ $96BC: ADC $6028,Y
+    Bank 16 @ $96CC: ADC $6028,Y
+    Bank 16 @ $96E1: ADC $6028,Y
+    Bank 16 @ $971E: ADC $6028,Y
+
+$6029:   4 (R: 3 W: 1) | Modes: abs, abs,Y | Banks: 19, 27
+    Bank 19 @ $ADE3: LDA $6029,Y
+    Bank 19 @ $B93A: LDA $6029,Y
+    Bank 19 @ $B94B: LDA $6029,Y
+    Bank 27 @ $AA06: ASL $6029,
+
+$602B:   8 (R: 8 W: 0) | Modes: abs, abs,X, abs,Y | Banks: 18, 21
+    Bank 18 @ $94C8: LDY $602B,X
+    Bank 18 @ $94EB: LDA $602B,Y
+    Bank 18 @ $94F3: LDA $602B,X
+    Bank 18 @ $9557: LDX $602B,
+    Bank 18 @ $955B: LDY $602B,
+    Bank 18 @ $9616: CMP $602B,Y
+    Bank 21 @ $B7B2: AND $602B,
+    Bank 21 @ $BEC9: EOR $602B,Y
+
+$602E:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 10
+    Bank 10 @ $8E0E: ADC $602E,X
+
+$602F:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 22
+    Bank 22 @ $A392: ORA $602F,X
+
+$6032:   1 (R: 0 W: 1) | Modes: abs | Banks: 26
+    Bank 26 @ $BD3F: INC $6032,
+
+$6038:  31 (R:18 W:13) | Modes: abs, abs,X, abs,Y | Banks: 7, 8, 15, 16, 17, 18, 19, 20, 24, 29, 30, 31
+    Bank  7 @ $A165: ROL $6038,X
+    Bank  8 @ $B63B: LDX $6038,
+    Bank 15 @ $8EEB: DEC $6038,
+    Bank 15 @ $9A28: CMP $6038,X
+    Bank 15 @ $9CEC: CMP $6038,X
+    Bank 16 @ $8359: ROR $6038,
+    Bank 16 @ $888A: ADC $6038,Y
+    Bank 16 @ $88B4: ADC $6038,Y
+    Bank 16 @ $97E3: ADC $6038,Y
+    Bank 16 @ $99B2: ROR $6038,
+    Bank 16 @ $9C73: ROR $6038,
+    Bank 16 @ $A5A6: ROR $6038,X
+    Bank 16 @ $A707: ROR $6038,X
+    Bank 16 @ $B324: LDA $6038,
+    Bank 17 @ $BB25: AND $6038,
+    Bank 18 @ $836D: LSR $6038,X
+    Bank 18 @ $AC87: LDY $6038,
+    Bank 18 @ $B8A3: AND $6038,X
+    Bank 18 @ $B943: AND $6038,X
+    Bank 18 @ $BD14: LDY $6038,X
+    Bank 19 @ $863A: ADC $6038,Y
+    Bank 20 @ $94AE: CPX $6038,
+    Bank 20 @ $9A8D: STA $6038,X
+    Bank 24 @ $A8F0: ROR $6038,
+    Bank 24 @ $AC0F: LDY $6038,
+    Bank 29 @ $A51C: ROL $6038,X
+    Bank 29 @ $A7A1: SBC $6038,Y
+    Bank 30 @ $ADCB: STY $6038,
+    Bank 31 @ $CEEB: DEC $6038,
+    Bank 31 @ $DA28: CMP $6038,X
+    Bank 31 @ $DCEC: CMP $6038,X
+
+$603A:   1 (R: 1 W: 0) | Modes: abs | Banks: 11
+    Bank 11 @ $8081: LDX $603A,
+
+$603B:   4 (R: 2 W: 2) | Modes: abs, abs,X, abs,Y | Banks: 21
+    Bank 21 @ $9D80: LSR $603B,
+    Bank 21 @ $A3DE: AND $603B,Y
+    Bank 21 @ $A423: AND $603B,X
+    Bank 21 @ $AB94: INC $603B,
+
+$603F:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 13
+    Bank 13 @ $B96E: AND $603F,Y
+
+$6040:   2 (R: 0 W: 2) | Modes: abs,X | Banks: 6, 12
+    Bank  6 @ $B6F3: LSR $6040,X
+    Bank 12 @ $A35B: ASL $6040,X
+
+$6042:   2 (R: 1 W: 1) | Modes: abs, abs,Y | Banks: 9, 12
+    Bank  9 @ $80DB: AND $6042,Y
+    Bank 12 @ $9F44: STY $6042,
+
+$6048:   2 (R: 1 W: 1) | Modes: abs,X, abs,Y | Banks: 22
+    Bank 22 @ $99A0: STA $6048,Y
+    Bank 22 @ $BCC7: LDY $6048,X
+
+$604B:   1 (R: 1 W: 0) | Modes: abs | Banks: 21
+    Bank 21 @ $ABB3: CMP $604B,
+
+$604C:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 1
+    Bank  1 @ $BA64: ADC $604C,X
+
+$604E:   1 (R: 1 W: 0) | Modes: abs | Banks: 11
+    Bank 11 @ $B79E: CPY $604E,
+
+$6050:   1 (R: 0 W: 1) | Modes: abs | Banks: 24
+    Bank 24 @ $BE6D: INC $6050,
+
+$6053:   3 (R: 1 W: 2) | Modes: abs, abs,X | Banks: 18, 22
+    Bank 18 @ $A53E: ASL $6053,
+    Bank 22 @ $B63E: ROL $6053,X
+    Bank 22 @ $B723: AND $6053,
+
+$6058:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 10
+    Bank 10 @ $BD83: AND $6058,Y
+
+$6059:   1 (R: 1 W: 0) | Modes: abs | Banks: 3
+    Bank  3 @ $86C8: CPX $6059,
+
+$605C:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 11
+    Bank 11 @ $89C3: EOR $605C,Y
+
+$605E:   1 (R: 1 W: 0) | Modes: abs | Banks: 4
+    Bank  4 @ $BCE9: CMP $605E,
+
+$605F:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 17
+    Bank 17 @ $90A8: LSR $605F,X
+
+$6060:   3 (R: 0 W: 3) | Modes: abs,X | Banks: 24, 31
+    Bank 24 @ $A80B: LSR $6060,X
+    Bank 31 @ $F9FC: ROR $6060,X
+    Bank 31 @ $FA04: ROR $6060,X
+
+$6061:   8 (R: 4 W: 4) | Modes: abs, abs,X | Banks: 16, 25
+    Bank 16 @ $91FE: STX $6061,
+    Bank 16 @ $9247: STX $6061,
+    Bank 16 @ $92A9: STX $6061,
+    Bank 16 @ $92C2: STX $6061,
+    Bank 25 @ $9A2F: ORA $6061,X
+    Bank 25 @ $9A46: ORA $6061,X
+    Bank 25 @ $9AC3: ORA $6061,X
+    Bank 25 @ $9ACB: ORA $6061,X
+
+$6062:   9 (R: 6 W: 3) | Modes: abs, abs,X, abs,Y | Banks: 15, 18, 30, 31
+    Bank 15 @ $8E06: STA $6062,
+    Bank 15 @ $8F8A: ADC $6062,X
+    Bank 18 @ $BBDD: INC $6062,
+    Bank 30 @ $A4F2: SBC $6062,
+    Bank 30 @ $B75C: ADC $6062,Y
+    Bank 30 @ $B7A3: EOR $6062,X
+    Bank 30 @ $B7AF: EOR $6062,X
+    Bank 31 @ $CE06: STA $6062,
+    Bank 31 @ $CF8A: ADC $6062,X
+
+$6064:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 25
+    Bank 25 @ $A97C: ASL $6064,X
+
+$6065:   2 (R: 2 W: 0) | Modes: abs,X, abs,Y | Banks: 24, 25
+    Bank 24 @ $984B: ORA $6065,Y
+    Bank 25 @ $BD36: LDA $6065,X
+
+$6066:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 24
+    Bank 24 @ $B917: ROR $6066,X
+
+$6067:   2 (R: 2 W: 0) | Modes: abs, abs,X | Banks: 17, 24
+    Bank 17 @ $BC57: BIT $6067,
+    Bank 24 @ $9570: EOR $6067,X
+
+$6068:   3 (R: 0 W: 3) | Modes: abs, abs,X | Banks: 16, 19, 20
+    Bank 16 @ $9802: STY $6068,
+    Bank 19 @ $B912: ASL $6068,X
+    Bank 20 @ $8C04: STY $6068,
+
+$6069:   1 (R: 0 W: 1) | Modes: abs | Banks: 3
+    Bank  3 @ $A48D: ROR $6069,
+
+$606A:   2 (R: 1 W: 1) | Modes: abs,X, abs,Y | Banks: 25, 26
+    Bank 25 @ $94BD: ORA $606A,X
+    Bank 26 @ $B01E: STA $606A,Y
+
+$606B:   6 (R: 4 W: 2) | Modes: abs, abs,X | Banks: 16, 18, 23, 31
+    Bank 16 @ $A61F: CMP $606B,X
+    Bank 18 @ $AA82: CPX $606B,
+    Bank 18 @ $AAB4: DEC $606B,X
+    Bank 23 @ $BB86: ASL $606B,X
+    Bank 31 @ $EB84: SBC $606B,X
+    Bank 31 @ $EE3C: SBC $606B,X
+
+$606C:   1 (R: 0 W: 1) | Modes: abs | Banks: 9
+    Bank  9 @ $8237: ASL $606C,
+
+$606E:   1 (R: 1 W: 0) | Modes: abs | Banks: 24
+    Bank 24 @ $95A0: ADC $606E,
+
+$6070:   2 (R: 2 W: 0) | Modes: abs,X | Banks: 7
+    Bank  7 @ $B8F5: AND $6070,X
+    Bank  7 @ $B8F9: AND $6070,X
+
+$6073:   3 (R: 1 W: 2) | Modes: abs, abs,X | Banks: 17, 18, 21
+    Bank 17 @ $8A52: EOR $6073,X
+    Bank 18 @ $9132: ROL $6073,
+    Bank 21 @ $AB75: ROL $6073,
+
+$6074:   1 (R: 1 W: 0) | Modes: abs | Banks: 6
+    Bank  6 @ $8F50: LDX $6074,
+
+$6075:   9 (R: 8 W: 1) | Modes: abs, abs,X, abs,Y | Banks: 19, 24
+    Bank 19 @ $825D: LDX $6075,
+    Bank 19 @ $82C6: LDY $6075,X
+    Bank 19 @ $8305: LDX $6075,Y
+    Bank 19 @ $8590: ADC $6075,Y
+    Bank 19 @ $8596: ADC $6075,Y
+    Bank 19 @ $8D74: ADC $6075,Y
+    Bank 19 @ $919D: CPX $6075,
+    Bank 19 @ $925C: SBC $6075,
+    Bank 24 @ $9B91: LSR $6075,
+
+$6076:   2 (R: 2 W: 0) | Modes: abs | Banks: 6, 25
+    Bank  6 @ $AEB2: AND $6076,
+    Bank 25 @ $A760: AND $6076,
+
+$6077:   1 (R: 1 W: 0) | Modes: abs | Banks: 7
+    Bank  7 @ $9750: BIT $6077,
+
+$6078:   3 (R: 2 W: 1) | Modes: abs, abs,X | Banks: 7, 13, 29
+    Bank  7 @ $A231: STX $6078,
+    Bank 13 @ $8753: LDY $6078,X
+    Bank 29 @ $973B: LDX $6078,
+
+$6079:   5 (R: 5 W: 0) | Modes: abs,Y | Banks: 7
+    Bank  7 @ $B537: LDX $6079,Y
+    Bank  7 @ $B5B2: LDX $6079,Y
+    Bank  7 @ $B9A5: LDX $6079,Y
+    Bank  7 @ $B9E9: LDX $6079,Y
+    Bank  7 @ $BA3C: LDX $6079,Y
+
+$607B:   2 (R: 1 W: 1) | Modes: abs, abs,Y | Banks: 25, 27
+    Bank 25 @ $9A07: ROL $607B,
+    Bank 27 @ $B17F: LDA $607B,Y
+
+$607C:   2 (R: 1 W: 1) | Modes: abs,X, abs,Y | Banks: 7, 14
+    Bank  7 @ $A7C5: LDX $607C,Y
+    Bank 14 @ $AEFA: INC $607C,X
+
+$6080:   2 (R: 1 W: 1) | Modes: abs, abs,Y | Banks: 7, 25
+    Bank  7 @ $B3ED: ADC $6080,Y
+    Bank 25 @ $B0E2: INC $6080,
+
+$6081:   4 (R: 4 W: 0) | Modes: abs, abs,Y | Banks: 16, 22
+    Bank 16 @ $854E: LDA $6081,Y
+    Bank 16 @ $9423: LDA $6081,Y
+    Bank 22 @ $8157: ADC $6081,
+    Bank 22 @ $815E: ADC $6081,
+
+$6082:   2 (R: 1 W: 1) | Modes: abs,X, abs,Y | Banks: 19, 25
+    Bank 19 @ $B249: DEC $6082,X
+    Bank 25 @ $A51A: EOR $6082,Y
+
+$6083:   1 (R: 1 W: 0) | Modes: abs | Banks: 23
+    Bank 23 @ $8B3B: CMP $6083,
+
+$6084:   2 (R: 0 W: 2) | Modes: abs | Banks: 23
+    Bank 23 @ $83D7: STX $6084,
+    Bank 23 @ $849D: STX $6084,
+
+$6085:   1 (R: 0 W: 1) | Modes: abs,Y | Banks: 29
+    Bank 29 @ $9942: STA $6085,Y
+
+$6087:   1 (R: 1 W: 0) | Modes: abs | Banks: 30
+    Bank 30 @ $8FDC: ORA $6087,
+
+$6088:   3 (R: 3 W: 0) | Modes: abs | Banks: 15, 27, 31
+    Bank 15 @ $9C48: EOR $6088,
+    Bank 27 @ $88C1: LDX $6088,
+    Bank 31 @ $DC48: EOR $6088,
+
+$608A:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 18
+    Bank 18 @ $8485: ROR $608A,X
+
+$608B:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 23
+    Bank 23 @ $BC46: ROL $608B,X
+
+$608E:   1 (R: 0 W: 1) | Modes: abs | Banks: 22
+    Bank 22 @ $8E46: LSR $608E,
+
+$608F:   2 (R: 0 W: 2) | Modes: abs, abs,X | Banks: 23
+    Bank 23 @ $87F4: ASL $608F,
+    Bank 23 @ $87FA: ASL $608F,X
+
+$6090:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 16
+    Bank 16 @ $90FA: SBC $6090,X
+
+$6091:   2 (R: 1 W: 1) | Modes: abs, abs,X | Banks: 12, 29
+    Bank 12 @ $B698: INC $6091,X
+    Bank 29 @ $9198: LDX $6091,
+
+$6092:   1 (R: 0 W: 1) | Modes: abs | Banks: 25
+    Bank 25 @ $A734: LSR $6092,
+
+$6093:   1 (R: 0 W: 1) | Modes: abs | Banks: 10
+    Bank 10 @ $B9A2: LSR $6093,
+
+$6094:   4 (R: 3 W: 1) | Modes: abs, abs,X | Banks: 25
+    Bank 25 @ $ADF7: ASL $6094,X
+    Bank 25 @ $B052: SBC $6094,X
+    Bank 25 @ $B230: CPX $6094,
+    Bank 25 @ $B63C: SBC $6094,X
+
+$6096:   2 (R: 1 W: 1) | Modes: abs,X | Banks: 18, 29
+    Bank 18 @ $965F: AND $6096,X
+    Bank 29 @ $96B2: STA $6096,X
+
+$6098:   5 (R: 5 W: 0) | Modes: abs, abs,X | Banks: 14, 17, 19
+    Bank 14 @ $9713: LDY $6098,X
+    Bank 17 @ $982F: AND $6098,X
+    Bank 19 @ $A786: LDY $6098,
+    Bank 19 @ $BE85: EOR $6098,
+    Bank 19 @ $BE8B: EOR $6098,
+
+$6099:   1 (R: 0 W: 1) | Modes: abs | Banks: 28
+    Bank 28 @ $9A34: LSR $6099,
+
+$609C:   4 (R: 3 W: 1) | Modes: abs, abs,Y | Banks: 21, 22
+    Bank 21 @ $9C2B: ROL $609C,
+    Bank 22 @ $9AD4: ORA $609C,Y
+    Bank 22 @ $A04A: ORA $609C,Y
+    Bank 22 @ $A0A9: ORA $609C,Y
+
+$609D:   8 (R: 4 W: 4) | Modes: abs, abs,X | Banks: 6, 15, 17, 24, 31
+    Bank  6 @ $A15C: ROR $609D,X
+    Bank 15 @ $9BD3: EOR $609D,
+    Bank 15 @ $9E66: EOR $609D,
+    Bank 17 @ $9D28: ROR $609D,
+    Bank 24 @ $9C16: ASL $609D,
+    Bank 24 @ $9FB5: ASL $609D,
+    Bank 31 @ $DBD3: EOR $609D,
+    Bank 31 @ $DE66: EOR $609D,
+
+$609E:   2 (R: 1 W: 1) | Modes: abs | Banks: 18, 28
+    Bank 18 @ $9EC2: STX $609E,
+    Bank 28 @ $9EE3: CPY $609E,
+
+$60A0:   2 (R: 0 W: 2) | Modes: abs, abs,X | Banks: 25
+    Bank 25 @ $A13E: DEC $60A0,X
+    Bank 25 @ $AB0E: INC $60A0,
+
+$60A2:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 10
+    Bank 10 @ $A173: AND $60A2,Y
+
+$60A3:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 22
+    Bank 22 @ $A245: ORA $60A3,Y
+
+$60A5:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 22
+    Bank 22 @ $80ED: ORA $60A5,X
+
+$60A8:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 6
+    Bank  6 @ $A96B: ROL $60A8,X
+
+$60A9:   1 (R: 0 W: 1) | Modes: abs,Y | Banks: 22
+    Bank 22 @ $9FB5: STA $60A9,Y
+
+$60AC:   1 (R: 1 W: 0) | Modes: abs | Banks: 17
+    Bank 17 @ $88C7: EOR $60AC,
+
+$60AD:   2 (R: 0 W: 2) | Modes: abs,X | Banks: 28
+    Bank 28 @ $A1AB: ASL $60AD,X
+    Bank 28 @ $AB34: ASL $60AD,X
+
+$60AE:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 10
+    Bank 10 @ $98EF: ADC $60AE,Y
+
+$60AF:   1 (R: 0 W: 1) | Modes: abs | Banks: 8
+    Bank  8 @ $B034: LSR $60AF,
+
+$60B0:   2 (R: 2 W: 0) | Modes: abs | Banks: 17, 27
+    Bank 17 @ $8B28: ORA $60B0,
+    Bank 27 @ $B0D9: CPX $60B0,
+
+$60B3:   1 (R: 1 W: 0) | Modes: abs | Banks: 16
+    Bank 16 @ $BA94: AND $60B3,
+
+$60B5:   3 (R: 2 W: 1) | Modes: abs, abs,Y | Banks: 3, 18, 19
+    Bank  3 @ $BB1F: ROL $60B5,
+    Bank 18 @ $AF6A: BIT $60B5,
+    Bank 19 @ $B5C8: CMP $60B5,Y
+
+$60B6:  11 (R: 5 W: 6) | Modes: abs, abs,X | Banks: 0, 2, 3, 19, 26
+    Bank  0 @ $A792: ROL $60B6,
+    Bank  2 @ $89AB: EOR $60B6,
+    Bank  2 @ $944F: EOR $60B6,
+    Bank  2 @ $AD97: STY $60B6,
+    Bank  2 @ $AF3F: DEC $60B6,
+    Bank  3 @ $9FAD: EOR $60B6,
+    Bank 19 @ $B62C: EOR $60B6,
+    Bank 19 @ $B690: CMP $60B6,X
+    Bank 26 @ $94C5: ROR $60B6,X
+    Bank 26 @ $9D20: STY $60B6,
+    Bank 26 @ $B17A: STY $60B6,
+
+$60B7:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 17
+    Bank 17 @ $A5CA: AND $60B7,X
+
+$60B8:   2 (R: 2 W: 0) | Modes: abs, abs,Y | Banks: 14, 23
+    Bank 14 @ $A78A: CPY $60B8,
+    Bank 23 @ $8038: ORA $60B8,Y
+
+$60BB:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 20
+    Bank 20 @ $B1EE: EOR $60BB,X
+
+$60BD:   9 (R: 8 W: 1) | Modes: abs, abs,X, abs,Y | Banks: 15, 22, 29, 31
+    Bank 15 @ $9897: EOR $60BD,
+    Bank 15 @ $9A10: CMP $60BD,Y
+    Bank 15 @ $9E32: CMP $60BD,X
+    Bank 22 @ $BD21: BIT $60BD,
+    Bank 22 @ $BD74: STA $60BD,
+    Bank 29 @ $98FA: EOR $60BD,X
+    Bank 31 @ $D897: EOR $60BD,
+    Bank 31 @ $DA10: CMP $60BD,Y
+    Bank 31 @ $DE32: CMP $60BD,X
+
+$60BE:   2 (R: 2 W: 0) | Modes: abs | Banks: 1, 2
+    Bank  1 @ $A761: CMP $60BE,
+    Bank  2 @ $9809: LDA $60BE,
+
+$60C0:   3 (R: 0 W: 3) | Modes: abs, abs,Y | Banks: 11, 13, 14
+    Bank 11 @ $ACEA: ROL $60C0,
+    Bank 13 @ $84B8: STA $60C0,Y
+    Bank 14 @ $8F06: ASL $60C0,
+
+$60C1:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 9
+    Bank  9 @ $AC9E: ASL $60C1,X
+
+$60C5:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 30
+    Bank 30 @ $8673: LDA $60C5,Y
+
+$60C6:   9 (R: 8 W: 1) | Modes: abs, abs,X, abs,Y | Banks: 22, 23, 24, 29, 31
+    Bank 22 @ $8135: AND $60C6,
+    Bank 22 @ $8746: SBC $60C6,Y
+    Bank 22 @ $9C1D: AND $60C6,
+    Bank 23 @ $9275: AND $60C6,
+    Bank 24 @ $ACE0: AND $60C6,
+    Bank 29 @ $904F: AND $60C6,
+    Bank 29 @ $B989: ROL $60C6,X
+    Bank 29 @ $BDB5: AND $60C6,
+    Bank 31 @ $F1F3: AND $60C6,
+
+$60C8:   3 (R: 1 W: 2) | Modes: abs, abs,X | Banks: 6, 7
+    Bank  6 @ $9686: ADC $60C8,X
+    Bank  7 @ $826A: ASL $60C8,X
+    Bank  7 @ $A3E5: ASL $60C8,
+
+$60CB:   2 (R: 2 W: 0) | Modes: abs,Y | Banks: 15, 31
+    Bank 15 @ $8B47: LDX $60CB,Y
+    Bank 31 @ $CB47: LDX $60CB,Y
+
+$60CC:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 26
+    Bank 26 @ $B2A2: ORA $60CC,Y
+
+$60CF:   1 (R: 1 W: 0) | Modes: abs | Banks: 10
+    Bank 10 @ $907F: CMP $60CF,
+
+$60D0:   3 (R: 0 W: 3) | Modes: abs, abs,Y | Banks: 6, 25
+    Bank  6 @ $92C8: STA $60D0,Y
+    Bank 25 @ $8F32: INC $60D0,
+    Bank 25 @ $B0E9: INC $60D0,
+
+$60D2:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 9
+    Bank  9 @ $925F: ADC $60D2,Y
+
+$60D3:   1 (R: 1 W: 0) | Modes: abs | Banks: 17
+    Bank 17 @ $B063: BIT $60D3,
+
+$60D4:   2 (R: 2 W: 0) | Modes: abs,Y | Banks: 15, 31
+    Bank 15 @ $9417: EOR $60D4,Y
+    Bank 31 @ $D417: EOR $60D4,Y
+
+$60DA:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 7
+    Bank  7 @ $A293: LSR $60DA,X
+
+$60DD:   2 (R: 2 W: 0) | Modes: abs,Y | Banks: 3, 26
+    Bank  3 @ $A506: ADC $60DD,Y
+    Bank 26 @ $B910: ADC $60DD,Y
+
+$60E0:   1 (R: 0 W: 1) | Modes: abs | Banks: 7
+    Bank  7 @ $852C: DEC $60E0,
+
+$60E1:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 25
+    Bank 25 @ $B46C: SBC $60E1,X
+
+$60E6:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 2
+    Bank  2 @ $A11C: ROR $60E6,X
+
+$60E8:   3 (R: 1 W: 2) | Modes: abs, abs,Y | Banks: 0, 15, 28
+    Bank  0 @ $9B42: ADC $60E8,
+    Bank 15 @ $A88B: STX $60E8,
+    Bank 28 @ $98FE: STA $60E8,Y
+
+$60E9:   1 (R: 1 W: 0) | Modes: abs | Banks: 10
+    Bank 10 @ $B382: LDY $60E9,
+
+$60EC:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 7
+    Bank  7 @ $9A57: EOR $60EC,X
+
+$60EE:   2 (R: 2 W: 0) | Modes: abs | Banks: 25
+    Bank 25 @ $AC8F: CPX $60EE,
+    Bank 25 @ $B2A9: CPX $60EE,
+
+$60EF:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 27
+    Bank 27 @ $B03C: ROL $60EF,X
+
+$60F8:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 4
+    Bank  4 @ $A7E0: CMP $60F8,Y
+
+$60FB:   4 (R: 1 W: 3) | Modes: abs | Banks: 17, 18, 23
+    Bank 17 @ $AAAE: ORA $60FB,
+    Bank 18 @ $87A0: ROL $60FB,
+    Bank 18 @ $A61B: STX $60FB,
+    Bank 23 @ $9D30: ROL $60FB,
+
+$60FC:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 13
+    Bank 13 @ $B86A: INC $60FC,X
+
+$60FF:   2 (R: 0 W: 2) | Modes: abs,X | Banks: 19, 25
+    Bank 19 @ $9A08: LSR $60FF,X
+    Bank 25 @ $89AD: ROR $60FF,X
+
+$6100:   4 (R: 2 W: 2) | Modes: abs, abs,X, abs,Y | Banks: 8, 18, 23, 25
+    Bank  8 @ $B975: LDA $6100,Y
+    Bank 18 @ $84A5: ROR $6100,X
+    Bank 23 @ $BC9E: STY $6100,
+    Bank 25 @ $B4E5: SBC $6100,
+
+$6101:   3 (R: 2 W: 1) | Modes: abs, abs,X | Banks: 12, 16, 30
+    Bank 12 @ $A277: ADC $6101,X
+    Bank 16 @ $8C9B: ASL $6101,X
+    Bank 30 @ $BD6D: ORA $6101,
+
+$6105:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 12
+    Bank 12 @ $A327: LDY $6105,X
+
+$6108:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 3
+    Bank  3 @ $8451: LDA $6108,Y
+
+$610B:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 30
+    Bank 30 @ $BF41: SBC $610B,X
+
+$610E:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 18
+    Bank 18 @ $8EB4: STA $610E,X
+
+$6112:   1 (R: 1 W: 0) | Modes: abs | Banks: 1
+    Bank  1 @ $A5F1: ADC $6112,
+
+$6113:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 1
+    Bank  1 @ $B4A3: LDA $6113,Y
+
+$6119:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 4
+    Bank  4 @ $968F: ORA $6119,X
+
+$611C:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 11
+    Bank 11 @ $8A89: CMP $611C,Y
+
+$611D:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 2
+    Bank  2 @ $911F: ORA $611D,X
+
+$611E:   1 (R: 1 W: 0) | Modes: abs | Banks: 11
+    Bank 11 @ $A111: CPY $611E,
+
+$6120:   1 (R: 0 W: 1) | Modes: abs | Banks: 16
+    Bank 16 @ $AF2E: ROR $6120,
+
+$6128:   1 (R: 0 W: 1) | Modes: abs | Banks: 1
+    Bank  1 @ $A345: STA $6128,
+
+$612A:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 2
+    Bank  2 @ $B4D2: DEC $612A,X
+
+$612B:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 0
+    Bank  0 @ $B38B: LDY $612B,X
+
+$6133:   2 (R: 2 W: 0) | Modes: abs,X | Banks: 24
+    Bank 24 @ $BCFD: ORA $6133,X
+    Bank 24 @ $BD1D: ORA $6133,X
+
+$6134:   1 (R: 1 W: 0) | Modes: abs | Banks: 19
+    Bank 19 @ $B997: BIT $6134,
+
+$6136:   3 (R: 1 W: 2) | Modes: abs, abs,X | Banks: 3, 12, 27
+    Bank  3 @ $9EE6: STA $6136,
+    Bank 12 @ $8A8B: EOR $6136,
+    Bank 27 @ $BC86: STA $6136,X
+
+$6138:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 9
+    Bank  9 @ $A9DD: LDY $6138,X
+
+$613D:   1 (R: 0 W: 1) | Modes: abs | Banks: 3
+    Bank  3 @ $9B3C: INC $613D,
+
+$6141:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 9
+    Bank  9 @ $B020: ADC $6141,X
+
+$6143:   1 (R: 0 W: 1) | Modes: abs | Banks: 11
+    Bank 11 @ $94FE: STY $6143,
+
+$6145:   1 (R: 0 W: 1) | Modes: abs | Banks: 11
+    Bank 11 @ $8EB8: STY $6145,
+
+$614A:   8 (R: 8 W: 0) | Modes: abs | Banks: 0, 2, 3, 4
+    Bank  0 @ $99E7: CMP $614A,
+    Bank  0 @ $A382: CMP $614A,
+    Bank  0 @ $A5F6: CMP $614A,
+    Bank  0 @ $A732: CMP $614A,
+    Bank  2 @ $8ED5: CMP $614A,
+    Bank  3 @ $997E: CMP $614A,
+    Bank  3 @ $9B42: CMP $614A,
+    Bank  4 @ $A061: CMP $614A,
+
+$614D:   1 (R: 1 W: 0) | Modes: abs | Banks: 12
+    Bank 12 @ $9CD1: AND $614D,
+
+$614E:   1 (R: 0 W: 1) | Modes: abs | Banks: 18
+    Bank 18 @ $8D27: LSR $614E,
+
+$614F:   1 (R: 0 W: 1) | Modes: abs | Banks: 11
+    Bank 11 @ $B5CC: LSR $614F,
+
+$6150:   1 (R: 0 W: 1) | Modes: abs | Banks: 10
+    Bank 10 @ $B122: ASL $6150,
+
+$6151:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 10
+    Bank 10 @ $B3B6: AND $6151,X
+
+$6153:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 27
+    Bank 27 @ $9DDE: ADC $6153,Y
+
+$6157:   3 (R: 1 W: 2) | Modes: abs | Banks: 16, 18
+    Bank 16 @ $8699: LDA $6157,
+    Bank 18 @ $9029: STA $6157,
+    Bank 18 @ $ADDB: ROR $6157,
+
+$6158:   3 (R: 1 W: 2) | Modes: abs | Banks: 16, 18
+    Bank 16 @ $869E: LDA $6158,
+    Bank 18 @ $901D: STA $6158,
+    Bank 18 @ $ADD8: ROR $6158,
+
+$6159:   5 (R: 3 W: 2) | Modes: abs | Banks: 3, 16, 18, 26
+    Bank  3 @ $B52F: CPX $6159,
+    Bank 16 @ $86A3: LDA $6159,
+    Bank 18 @ $9020: STA $6159,
+    Bank 18 @ $ADD5: LSR $6159,
+    Bank 26 @ $B775: CPX $6159,
+
+$615A:  98 (R:93 W: 5) | Modes: abs | Banks: 8, 15, 16, 17, 18, 19, 21, 24, 25, 27, 28, 29, 30, 31
+    Bank  8 @ $808E: LDA $615A,
+    Bank 15 @ $8C28: LDA $615A,
+    Bank 15 @ $8F41: LDA $615A,
+    Bank 16 @ $9515: LDY $615A,
+    Bank 16 @ $9544: LDY $615A,
+    Bank 16 @ $958C: LDA $615A,
+    Bank 17 @ $809C: LDA $615A,
+    Bank 17 @ $86B9: LDA $615A,
+    Bank 17 @ $88CA: LDA $615A,
+    Bank 17 @ $AAF5: LDA $615A,
+    Bank 17 @ $AD25: LDA $615A,
+    Bank 17 @ $AE0A: LDA $615A,
+    Bank 17 @ $B292: LDA $615A,
+    Bank 17 @ $B2F5: LDA $615A,
+    Bank 18 @ $8EBF: LDA $615A,
+    Bank 18 @ $8EE8: LDX $615A,
+    Bank 18 @ $8F00: LDA $615A,
+    Bank 18 @ $8F0A: CMP $615A,
+    Bank 18 @ $9023: LDX $615A,
+    Bank 18 @ $902C: LDA $615A,
+    Bank 18 @ $9031: ADC $615A,
+    Bank 18 @ $9043: LDA $615A,
+    Bank 18 @ $905E: LDA $615A,
+    Bank 18 @ $9067: STA $615A,
+    Bank 18 @ $90EC: LDA $615A,
+    Bank 18 @ $91DD: LDA $615A,
+    Bank 18 @ $964F: LDA $615A,
+    Bank 18 @ $A985: LDX $615A,
+    Bank 18 @ $AD8C: LDX $615A,
+    Bank 18 @ $AD9F: LDA $615A,
+    Bank 18 @ $ADBB: LDY $615A,
+    Bank 18 @ $B95C: LDA $615A,
+    Bank 19 @ $B066: LDA $615A,
+    Bank 21 @ $9ADA: LDA $615A,
+    Bank 21 @ $9B16: CMP $615A,
+    Bank 21 @ $9CEB: LDA $615A,
+    Bank 21 @ $9F83: LDA $615A,
+    Bank 21 @ $A738: LDA $615A,
+    Bank 21 @ $A85C: LDA $615A,
+    Bank 24 @ $9C23: LDA $615A,
+    Bank 24 @ $9D12: LDA $615A,
+    Bank 24 @ $A069: LDA $615A,
+    Bank 24 @ $A14E: LDA $615A,
+    Bank 24 @ $A263: LDY $615A,
+    Bank 24 @ $A274: ADC $615A,
+    Bank 24 @ $A840: LDX $615A,
+    Bank 25 @ $8058: LDX $615A,
+    Bank 25 @ $80C1: LDA $615A,
+    Bank 25 @ $80DA: LDA $615A,
+    Bank 25 @ $80EA: LDX $615A,
+    Bank 27 @ $A5CD: ADC $615A,
+    Bank 27 @ $A766: LDX $615A,
+    Bank 27 @ $A7A9: LDA $615A,
+    Bank 27 @ $AAFA: LDA $615A,
+    Bank 27 @ $ABE3: LDA $615A,
+    Bank 27 @ $AC02: INC $615A,
+    Bank 27 @ $AC05: LDA $615A,
+    Bank 28 @ $9C4C: LDA $615A,
+    Bank 28 @ $A10B: LDA $615A,
+    Bank 28 @ $A33D: LDA $615A,
+    Bank 28 @ $A373: LDA $615A,
+    Bank 28 @ $A380: LDA $615A,
+    Bank 28 @ $A3B9: LDA $615A,
+    Bank 28 @ $A3D1: LDA $615A,
+    Bank 28 @ $A51E: LDA $615A,
+    Bank 28 @ $A57F: LDA $615A,
+    Bank 28 @ $A5A0: LDA $615A,
+    Bank 28 @ $A5B2: LDA $615A,
+    Bank 28 @ $A8FE: LDA $615A,
+    Bank 28 @ $AD47: CMP $615A,
+    Bank 29 @ $9AC5: LDA $615A,
+    Bank 29 @ $9BA3: LDY $615A,
+    Bank 29 @ $AC6A: LDA $615A,
+    Bank 29 @ $B752: CMP $615A,
+    Bank 30 @ $8FEF: LDA $615A,
+    Bank 30 @ $92FC: LDA $615A,
+    Bank 30 @ $9489: LDA $615A,
+    Bank 30 @ $9856: LDA $615A,
+    Bank 30 @ $9B74: LDA $615A,
+    Bank 30 @ $9BBB: LDA $615A,
+    Bank 30 @ $9E3F: LDX $615A,
+    Bank 30 @ $A36B: STA $615A,
+    Bank 30 @ $A37C: LDX $615A,
+    Bank 30 @ $A480: LDX $615A,
+    Bank 30 @ $A578: LDA $615A,
+    Bank 30 @ $B381: LDA $615A,
+    Bank 30 @ $B9D4: LDA $615A,
+    Bank 30 @ $B9ED: LDA $615A,
+    Bank 30 @ $BA04: LDA $615A,
+    Bank 30 @ $BB8D: LDA $615A,
+    Bank 31 @ $CC28: LDA $615A,
+    Bank 31 @ $CF41: LDA $615A,
+    Bank 31 @ $F148: LDA $615A,
+    Bank 31 @ $F15D: LDA $615A,
+    Bank 31 @ $F164: INC $615A,
+    Bank 31 @ $F16E: LDA $615A,
+    Bank 31 @ $F173: DEC $615A,
+    Bank 31 @ $F18C: LDA $615A,
+
+$615B:   4 (R: 1 W: 3) | Modes: abs, abs,X | Banks: 11, 16, 18, 19
+    Bank 11 @ $8827: DEC $615B,X
+    Bank 16 @ $879D: STA $615B,
+    Bank 18 @ $8EBC: STA $615B,
+    Bank 19 @ $8088: LDA $615B,
+
+$615C:   4 (R: 4 W: 0) | Modes: abs | Banks: 8, 16, 28
+    Bank  8 @ $85C3: LDA $615C,
+    Bank 16 @ $880D: LDA $615C,
+    Bank 16 @ $8B37: LDA $615C,
+    Bank 28 @ $BBA9: LDA $615C,
+
+$615D:   6 (R: 6 W: 0) | Modes: abs, abs,X | Banks: 2, 4, 10, 16, 21
+    Bank  2 @ $9A7D: LDY $615D,X
+    Bank  2 @ $A62E: SBC $615D,X
+    Bank  4 @ $92B6: SBC $615D,
+    Bank 10 @ $8527: CMP $615D,
+    Bank 16 @ $8595: LDA $615D,X
+    Bank 21 @ $B069: LDA $615D,X
+
+$6162:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 30
+    Bank 30 @ $BEE8: INC $6162,X
+
+$6163:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 24
+    Bank 24 @ $BD7D: AND $6163,X
+
+$6164:   2 (R: 2 W: 0) | Modes: abs,X | Banks: 0
+    Bank  0 @ $A6AE: ADC $6164,X
+    Bank  0 @ $AFEB: AND $6164,X
+
+$6165:   8 (R: 5 W: 3) | Modes: abs, abs,X, abs,Y | Banks: 2, 16, 18, 27
+    Bank  2 @ $98DB: STA $6165,
+    Bank 16 @ $94F8: LDA $6165,Y
+    Bank 16 @ $952B: LDA $6165,Y
+    Bank 16 @ $9567: LDA $6165,Y
+    Bank 16 @ $95AB: LDA $6165,Y
+    Bank 16 @ $95B0: STA $6165,Y
+    Bank 18 @ $903A: STA $6165,Y
+    Bank 27 @ $BFC2: SBC $6165,X
+
+$6168:   5 (R: 4 W: 1) | Modes: abs, abs,X, abs,Y | Banks: 0, 3, 4, 26
+    Bank  0 @ $9E48: SBC $6168,Y
+    Bank  3 @ $BC22: LDA $6168,X
+    Bank  4 @ $9306: ORA $6168,
+    Bank 26 @ $8DE7: AND $6168,Y
+    Bank 26 @ $B1BC: STA $6168,X
+
+$616A:  59 (R:41 W:18) | Modes: abs, abs,X, abs,Y | Banks: 16, 18, 19, 24, 30
+    Bank 16 @ $8288: LDA $616A,Y
+    Bank 16 @ $8301: LDA $616A,Y
+    Bank 16 @ $835F: LDA $616A,X
+    Bank 16 @ $838A: LDA $616A,X
+    Bank 16 @ $858C: LDA $616A,Y
+    Bank 16 @ $8724: LDA $616A,Y
+    Bank 16 @ $87DD: LDA $616A,Y
+    Bank 16 @ $92FA: LDA $616A,Y
+    Bank 16 @ $9300: STA $616A,Y
+    Bank 16 @ $933B: LDA $616A,Y
+    Bank 16 @ $936B: LDA $616A,Y
+    Bank 16 @ $9393: STA $616A,Y
+    Bank 16 @ $93E3: STA $616A,Y
+    Bank 16 @ $9416: LDA $616A,Y
+    Bank 16 @ $941E: STA $616A,Y
+    Bank 16 @ $9493: STA $616A,Y
+    Bank 16 @ $98C4: LDA $616A,Y
+    Bank 16 @ $98CB: LDA $616A,Y
+    Bank 16 @ $9A9E: LDA $616A,Y
+    Bank 16 @ $9AA8: STA $616A,Y
+    Bank 16 @ $9AB2: STA $616A,Y
+    Bank 16 @ $9AF4: LDA $616A,Y
+    Bank 16 @ $9B09: LDA $616A,Y
+    Bank 16 @ $9B98: LDA $616A,Y
+    Bank 16 @ $9B9F: STA $616A,Y
+    Bank 16 @ $9C05: LDA $616A,Y
+    Bank 16 @ $9C0C: STA $616A,Y
+    Bank 16 @ $9C39: STA $616A,Y
+    Bank 16 @ $9C44: STA $616A,Y
+    Bank 16 @ $9C4F: LDA $616A,X
+    Bank 16 @ $9C56: STA $616A,X
+    Bank 16 @ $9C8C: LDA $616A,Y
+    Bank 16 @ $9C96: STA $616A,Y
+    Bank 16 @ $9CA0: STA $616A,Y
+    Bank 16 @ $9CF4: LDA $616A,Y
+    Bank 16 @ $9D00: LDA $616A,Y
+    Bank 16 @ $9D16: LDA $616A,Y
+    Bank 16 @ $9D7D: LDA $616A,Y
+    Bank 16 @ $9DBC: LDA $616A,Y
+    Bank 16 @ $A0DB: LDA $616A,Y
+    Bank 16 @ $A117: LDA $616A,Y
+    Bank 16 @ $A153: LDA $616A,Y
+    Bank 16 @ $A2EF: LDA $616A,X
+    Bank 18 @ $80C8: LDA $616A,X
+    Bank 18 @ $8ECD: STA $616A,Y
+    Bank 18 @ $8EDB: STA $616A,Y
+    Bank 18 @ $8EEE: STA $616A,
+    Bank 18 @ $8EF4: STA $616A,Y
+    Bank 18 @ $9D1B: LDA $616A,Y
+    Bank 19 @ $8659: LDA $616A,X
+    Bank 19 @ $8687: LDA $616A,X
+    Bank 19 @ $86F2: LDA $616A,X
+    Bank 19 @ $874E: LDA $616A,X
+    Bank 19 @ $8892: LDA $616A,X
+    Bank 19 @ $8945: LDA $616A,X
+    Bank 19 @ $8A7E: LDA $616A,X
+    Bank 19 @ $8AD8: LDA $616A,X
+    Bank 24 @ $A134: LDA $616A,
+    Bank 30 @ $B17B: LDA $616A,X
+
+$616B:   3 (R: 3 W: 0) | Modes: abs, abs,Y | Banks: 16, 24
+    Bank 16 @ $9AA5: LDA $616B,Y
+    Bank 16 @ $9C93: LDA $616B,Y
+    Bank 24 @ $A13F: LDA $616B,
+
+$616E:   4 (R: 1 W: 3) | Modes: abs, abs,Y | Banks: 16
+    Bank 16 @ $9419: STA $616E,
+    Bank 16 @ $944F: LDA $616E,Y
+    Bank 16 @ $9456: STA $616E,Y
+    Bank 16 @ $94B4: STA $616E,Y
+
+$6170:   1 (R: 0 W: 1) | Modes: abs | Banks: 25
+    Bank 25 @ $9336: INC $6170,
+
+$6175:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 9
+    Bank  9 @ $A540: EOR $6175,X
+
+$617E:   1 (R: 1 W: 0) | Modes: abs,X | Banks: 6
+    Bank  6 @ $A996: AND $617E,X
+
+$6180:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 2
+    Bank  2 @ $B3B9: SBC $6180,Y
+
+$6182:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 4
+    Bank  4 @ $AF97: ROL $6182,X
+
+$6187:   1 (R: 1 W: 0) | Modes: abs | Banks: 26
+    Bank 26 @ $936C: CPY $6187,
+
+$618A:   1 (R: 1 W: 0) | Modes: abs | Banks: 12
+    Bank 12 @ $A092: LDA $618A,
+
+$618C:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 19
+    Bank 19 @ $8C19: EOR $618C,Y
+
+$618D:   6 (R: 1 W: 5) | Modes: abs, abs,X | Banks: 1, 2, 3, 17
+    Bank  1 @ $B5C2: LDY $618D,X
+    Bank  2 @ $B86A: INC $618D,
+    Bank  3 @ $BB00: INC $618D,X
+    Bank 17 @ $94A5: ASL $618D,
+    Bank 17 @ $9A1D: ASL $618D,
+    Bank 17 @ $9BA4: ROR $618D,X
+
+$618E:  65 (R:51 W:14) | Modes: abs | Banks: 10, 16, 17, 18, 19, 21, 22, 27, 30
+    Bank 10 @ $9AAB: EOR $618E,
+    Bank 16 @ $8243: LDA $618E,
+    Bank 16 @ $824A: BIT $618E,
+    Bank 16 @ $8261: BIT $618E,
+    Bank 16 @ $849D: LDA $618E,
+    Bank 16 @ $84A4: LDA $618E,
+    Bank 16 @ $84AB: LDA $618E,
+    Bank 16 @ $918F: LDA $618E,
+    Bank 16 @ $91AA: LDA $618E,
+    Bank 16 @ $91B1: STA $618E,
+    Bank 16 @ $91B8: LDA $618E,
+    Bank 16 @ $91C9: LDA $618E,
+    Bank 16 @ $91F8: LDA $618E,
+    Bank 16 @ $91FD: STA $618E,
+    Bank 16 @ $9228: LDA $618E,
+    Bank 16 @ $9241: LDA $618E,
+    Bank 16 @ $9246: STA $618E,
+    Bank 16 @ $925C: LDA $618E,
+    Bank 16 @ $926A: LDA $618E,
+    Bank 16 @ $9271: STA $618E,
+    Bank 16 @ $928E: LDA $618E,
+    Bank 16 @ $92A3: LDA $618E,
+    Bank 16 @ $92A8: STA $618E,
+    Bank 16 @ $92B3: LDA $618E,
+    Bank 16 @ $92BA: LDA $618E,
+    Bank 16 @ $92C1: STA $618E,
+    Bank 16 @ $92C5: LDA $618E,
+    Bank 16 @ $92CC: STA $618E,
+    Bank 16 @ $9357: BIT $618E,
+    Bank 16 @ $935E: LDA $618E,
+    Bank 16 @ $9409: LDA $618E,
+    Bank 16 @ $9410: STA $618E,
+    Bank 16 @ $9426: LDA $618E,
+    Bank 16 @ $945D: LDA $618E,
+    Bank 16 @ $9462: STA $618E,
+    Bank 16 @ $94BA: LDA $618E,
+    Bank 16 @ $94BF: STA $618E,
+    Bank 16 @ $94D0: LDA $618E,
+    Bank 16 @ $A19E: BIT $618E,
+    Bank 16 @ $A1A6: BIT $618E,
+    Bank 16 @ $A1B4: BIT $618E,
+    Bank 17 @ $816D: LDA $618E,
+    Bank 17 @ $92F6: LDA $618E,
+    Bank 17 @ $9326: LDA $618E,
+    Bank 17 @ $BA1D: BIT $618E,
+    Bank 17 @ $BA27: BIT $618E,
+    Bank 17 @ $BC6B: LDA $618E,
+    Bank 18 @ $8EAF: STA $618E,
+    Bank 18 @ $906C: STA $618E,
+    Bank 18 @ $9C10: BIT $618E,
+    Bank 18 @ $9D31: BIT $618E,
+    Bank 19 @ $8A34: LDA $618E,
+    Bank 19 @ $8A3B: BIT $618E,
+    Bank 21 @ $97D4: LSR $618E,
+    Bank 22 @ $BFAB: LDA $618E,
+    Bank 27 @ $AE59: STA $618E,
+    Bank 30 @ $84E0: LDA $618E,
+    Bank 30 @ $9421: LDA $618E,
+    Bank 30 @ $9706: LDA $618E,
+    Bank 30 @ $9B80: LDA $618E,
+    Bank 30 @ $9BC7: LDA $618E,
+    Bank 30 @ $B16A: BIT $618E,
+    Bank 30 @ $B172: BIT $618E,
+    Bank 30 @ $B259: LDA $618E,
+    Bank 30 @ $B260: LDA $618E,
+
+$618F:   6 (R: 2 W: 4) | Modes: abs | Banks: 16, 30
+    Bank 16 @ $84D2: LDA $618F,
+    Bank 16 @ $919D: STA $618F,
+    Bank 16 @ $91E5: CMP $618F,
+    Bank 16 @ $92DB: STA $618F,
+    Bank 30 @ $9286: STA $618F,
+    Bank 30 @ $A583: STA $618F,
+
+$6191:  14 (R: 3 W:11) | Modes: abs | Banks: 8, 16, 18, 28, 30
+    Bank  8 @ $B13C: STA $6191,
+    Bank 16 @ $91A2: STA $6191,
+    Bank 16 @ $91EC: CMP $6191,
+    Bank 16 @ $920E: STA $6191,
+    Bank 16 @ $9280: STA $6191,
+    Bank 16 @ $92D1: STA $6191,
+    Bank 18 @ $B6E4: CMP $6191,
+    Bank 18 @ $B78C: INC $6191,
+    Bank 18 @ $B795: INC $6191,
+    Bank 18 @ $B7B1: DEC $6191,
+    Bank 18 @ $B8B1: STA $6191,
+    Bank 18 @ $B8DE: STA $6191,
+    Bank 28 @ $B284: STA $6191,
+    Bank 30 @ $942A: LDA $6191,
+
+$6192:  15 (R: 3 W:12) | Modes: abs | Banks: 8, 16, 18, 28, 30
+    Bank  8 @ $B141: STA $6192,
+    Bank 16 @ $91A7: STA $6192,
+    Bank 16 @ $91F3: CMP $6192,
+    Bank 16 @ $9213: STA $6192,
+    Bank 16 @ $9285: STA $6192,
+    Bank 16 @ $92D6: STA $6192,
+    Bank 18 @ $B6EB: CMP $6192,
+    Bank 18 @ $B76E: DEC $6192,
+    Bank 18 @ $B777: DEC $6192,
+    Bank 18 @ $B7A5: INC $6192,
+    Bank 18 @ $B8B9: STA $6192,
+    Bank 18 @ $B8E5: STA $6192,
+    Bank 18 @ $B967: INC $6192,
+    Bank 28 @ $B28E: STA $6192,
+    Bank 30 @ $9433: LDA $6192,
+
+$6193:   3 (R: 2 W: 1) | Modes: abs | Banks: 16
+    Bank 16 @ $84E0: LDA $6193,
+    Bank 16 @ $923A: LDA $6193,
+    Bank 16 @ $9276: STA $6193,
+
+$6194:   1 (R: 0 W: 1) | Modes: abs | Banks: 16
+    Bank 16 @ $927B: STA $6194,
+
+$6195:  17 (R: 5 W:12) | Modes: abs, abs,X | Banks: 15, 21, 28, 30, 31
+    Bank 15 @ $8CB0: STA $6195,X
+    Bank 15 @ $8FD7: CMP $6195,
+    Bank 21 @ $98C8: LSR $6195,
+    Bank 28 @ $B287: STA $6195,
+    Bank 30 @ $92D7: STX $6195,
+    Bank 30 @ $932A: LDA $6195,
+    Bank 30 @ $9771: STY $6195,
+    Bank 30 @ $9C40: STA $6195,
+    Bank 30 @ $9C55: LDA $6195,
+    Bank 30 @ $9C63: STA $6195,
+    Bank 30 @ $9CDC: LDA $6195,
+    Bank 30 @ $A6CF: STA $6195,
+    Bank 30 @ $AE6B: STA $6195,
+    Bank 30 @ $AEAF: STA $6195,
+    Bank 30 @ $AFF2: STA $6195,
+    Bank 31 @ $CCB0: STA $6195,X
+    Bank 31 @ $CFD7: CMP $6195,
+
+$6196:  19 (R: 5 W:14) | Modes: abs, abs,X | Banks: 8, 15, 28, 30, 31
+    Bank  8 @ $B0DC: STA $6196,
+    Bank  8 @ $B0EA: STA $6196,
+    Bank  8 @ $B0F5: INC $6196,
+    Bank 15 @ $8CB8: STA $6196,X
+    Bank 15 @ $8FDE: CMP $6196,
+    Bank 28 @ $B291: STA $6196,
+    Bank 30 @ $92DC: STX $6196,
+    Bank 30 @ $9333: LDA $6196,
+    Bank 30 @ $9774: STY $6196,
+    Bank 30 @ $9C46: STA $6196,
+    Bank 30 @ $9C5B: LDA $6196,
+    Bank 30 @ $9C66: STA $6196,
+    Bank 30 @ $9CE5: LDA $6196,
+    Bank 30 @ $A6D5: STA $6196,
+    Bank 30 @ $AE71: STA $6196,
+    Bank 30 @ $AEB2: STA $6196,
+    Bank 30 @ $AFF9: STA $6196,
+    Bank 31 @ $CCB8: STA $6196,X
+    Bank 31 @ $CFDE: CMP $6196,
+
+$6197:  12 (R: 5 W: 7) | Modes: abs | Banks: 15, 27, 28, 30, 31
+    Bank 15 @ $8C16: CMP $6197,
+    Bank 15 @ $8C33: LDX $6197,
+    Bank 27 @ $AE3E: STA $6197,
+    Bank 28 @ $B907: STA $6197,
+    Bank 30 @ $933C: LDA $6197,
+    Bank 30 @ $9783: STY $6197,
+    Bank 30 @ $9C6B: STX $6197,
+    Bank 30 @ $A6DB: STA $6197,
+    Bank 30 @ $AE7B: STA $6197,
+    Bank 30 @ $AEB5: STA $6197,
+    Bank 31 @ $CC16: CMP $6197,
+    Bank 31 @ $CC33: LDX $6197,
+
+$6198:  12 (R: 5 W: 7) | Modes: abs | Banks: 15, 27, 28, 30, 31
+    Bank 15 @ $8C1D: CMP $6198,
+    Bank 15 @ $8C36: LDY $6198,
+    Bank 27 @ $AE45: STA $6198,
+    Bank 28 @ $B90C: STA $6198,
+    Bank 30 @ $9351: LDY $6198,
+    Bank 30 @ $9786: STY $6198,
+    Bank 30 @ $9CA3: STY $6198,
+    Bank 30 @ $A6E1: STA $6198,
+    Bank 30 @ $AE81: STA $6198,
+    Bank 30 @ $AEB8: STA $6198,
+    Bank 31 @ $CC1D: CMP $6198,
+    Bank 31 @ $CC36: LDY $6198,
+
+$6199:   1 (R: 1 W: 0) | Modes: abs | Banks: 16
+    Bank 16 @ $929E: CMP $6199,
+
+$619B:   3 (R: 2 W: 1) | Modes: abs,X | Banks: 19
+    Bank 19 @ $B0AB: AND $619B,X
+    Bank 19 @ $B0B0: STA $619B,X
+    Bank 19 @ $B0D8: LDA $619B,X
+
+$619D:   1 (R: 0 W: 1) | Modes: abs | Banks: 25
+    Bank 25 @ $9E7E: STA $619D,
+
+$619E:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 12
+    Bank 12 @ $A04C: ROL $619E,X
+
+$61A0:   1 (R: 0 W: 1) | Modes: abs | Banks: 25
+    Bank 25 @ $9317: INC $61A0,
+
+$61A2:   1 (R: 0 W: 1) | Modes: abs | Banks: 2
+    Bank  2 @ $9020: DEC $61A2,
+
+$61A5:   2 (R: 2 W: 0) | Modes: abs | Banks: 15, 31
+    Bank 15 @ $A022: CPX $61A5,
+    Bank 31 @ $E022: CPX $61A5,
+
+$61A8:   2 (R: 1 W: 1) | Modes: abs, abs,X | Banks: 23
+    Bank 23 @ $B3C6: AND $61A8,X
+    Bank 23 @ $B3CC: STA $61A8,
+
+$61A9:   2 (R: 2 W: 0) | Modes: abs, abs,Y | Banks: 23
+    Bank 23 @ $B3D8: ADC $61A9,Y
+    Bank 23 @ $B3DE: CPY $61A9,
+
+$61AD:   4 (R: 3 W: 1) | Modes: abs,X, abs,Y | Banks: 17, 22, 26
+    Bank 17 @ $9171: ADC $61AD,X
+    Bank 17 @ $A7B1: ADC $61AD,X
+    Bank 22 @ $A627: LSR $61AD,X
+    Bank 26 @ $B4A3: SBC $61AD,Y
+
+$61B0:   1 (R: 0 W: 1) | Modes: abs | Banks: 3
+    Bank  3 @ $A3F8: INC $61B0,
+
+$61B1:   3 (R: 1 W: 2) | Modes: abs, abs,X | Banks: 9, 10, 19
+    Bank  9 @ $AB01: BIT $61B1,
+    Bank 10 @ $AFFC: ASL $61B1,X
+    Bank 19 @ $8C0F: INC $61B1,
+
+$61B5:   1 (R: 1 W: 0) | Modes: abs | Banks: 3
+    Bank  3 @ $B24F: EOR $61B5,
+
+$61B9:   1 (R: 1 W: 0) | Modes: abs | Banks: 1
+    Bank  1 @ $BD14: CMP $61B9,
+
+$61BE:   2 (R: 2 W: 0) | Modes: abs | Banks: 1, 27
+    Bank  1 @ $A4CD: AND $61BE,
+    Bank 27 @ $B7EE: AND $61BE,
+
+$61C0:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 7
+    Bank  7 @ $998B: ROL $61C0,X
+
+$61C7:   2 (R: 2 W: 0) | Modes: abs, abs,X | Banks: 0, 1
+    Bank  0 @ $A13B: ORA $61C7,
+    Bank  1 @ $BCC3: AND $61C7,X
+
+$61C8:   3 (R: 1 W: 2) | Modes: abs, abs,X | Banks: 6, 7
+    Bank  6 @ $A7D4: ASL $61C8,X
+    Bank  6 @ $AB3C: ROR $61C8,X
+    Bank  7 @ $888B: ORA $61C8,
+
+$61C9:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 6
+    Bank  6 @ $8213: ROR $61C9,X
+
+$61CF:   1 (R: 1 W: 0) | Modes: abs | Banks: 9
+    Bank  9 @ $AA66: LDY $61CF,
+
+$61D0:   1 (R: 1 W: 0) | Modes: abs | Banks: 10
+    Bank 10 @ $BB0E: EOR $61D0,
+
+$61DA:   2 (R: 2 W: 0) | Modes: abs,X, abs,Y | Banks: 9, 30
+    Bank  9 @ $94D2: CMP $61DA,Y
+    Bank 30 @ $BC26: LDA $61DA,X
+
+$61DB:  10 (R: 5 W: 5) | Modes: abs, abs,X, abs,Y | Banks: 21, 22
+    Bank 21 @ $9F90: LDA $61DB,X
+    Bank 21 @ $B37E: STA $61DB,Y
+    Bank 21 @ $B386: STA $61DB,
+    Bank 21 @ $B38E: LDA $61DB,Y
+    Bank 21 @ $B3BF: STA $61DB,Y
+    Bank 21 @ $B3D0: LDA $61DB,Y
+    Bank 21 @ $B3DC: STA $61DB,Y
+    Bank 21 @ $B3EA: STA $61DB,Y
+    Bank 21 @ $BDC9: LDA $61DB,X
+    Bank 22 @ $ABE5: LDA $61DB,X
+
+$61DC:   2 (R: 1 W: 1) | Modes: abs,Y | Banks: 21
+    Bank 21 @ $B3BA: STA $61DC,Y
+    Bank 21 @ $B3D9: LDA $61DC,Y
+
+$61E6:   2 (R: 2 W: 0) | Modes: abs, abs,Y | Banks: 10, 26
+    Bank 10 @ $AE13: BIT $61E6,
+    Bank 26 @ $9870: LDA $61E6,Y
+
+$61E8:   6 (R: 6 W: 0) | Modes: abs,X, abs,Y | Banks: 0, 1, 3, 26
+    Bank  0 @ $A5C6: ADC $61E8,X
+    Bank  1 @ $A42E: AND $61E8,X
+    Bank  1 @ $A48F: SBC $61E8,Y
+    Bank  3 @ $937C: AND $61E8,X
+    Bank 26 @ $87ED: LDA $61E8,Y
+    Bank 26 @ $BEC0: SBC $61E8,X
+
+$61F0:   1 (R: 1 W: 0) | Modes: abs | Banks: 16
+    Bank 16 @ $A0AA: ORA $61F0,
+
+$61F2:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 4
+    Bank  4 @ $94DA: ADC $61F2,Y
+
+$61F7:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 1
+    Bank  1 @ $BFC5: ROR $61F7,X
+
+$61F8:   1 (R: 1 W: 0) | Modes: abs,Y | Banks: 25
+    Bank 25 @ $9AD2: SBC $61F8,Y
+
+$61F9:   1 (R: 1 W: 0) | Modes: abs | Banks: 4
+    Bank  4 @ $8FB5: CPX $61F9,
+
+$61FD:   1 (R: 1 W: 0) | Modes: abs | Banks: 25
+    Bank 25 @ $9926: CPX $61FD,
+
+$61FF:   1 (R: 0 W: 1) | Modes: abs,X | Banks: 15
+    Bank 15 @ $BD35: INC $61FF,X
+
