@@ -396,8 +396,33 @@ class Disassembler:
 
             # Disassemble E06E area
             f.write("\n; ============================================\n")
-            f.write("; SUBROUTINES ($E000-$E100)\n")
+            f.write("; MOVEMENT ROUTINES ($E000-$E200)\n")
             f.write("; ============================================\n")
+            lines = self.disassemble_range(0xE000, 0xE200)
+            for line in lines:
+                f.write(line + "\n")
+
+            # Disassemble bank switch areas
+            f.write("\n; ============================================\n")
+            f.write("; BANK SWITCH AREAS ($DA80-$DB00)\n")
+            f.write("; ============================================\n")
+            lines = self.disassemble_range(0xDA80, 0xDB00)
+            for line in lines:
+                f.write(line + "\n")
+
+            f.write("\n; ============================================\n")
+            f.write("; BANK SWITCH AREAS ($DF70-$E000)\n")
+            f.write("; ============================================\n")
+            lines = self.disassemble_range(0xDF70, 0xE000)
+            for line in lines:
+                f.write(line + "\n")
+
+            f.write("\n; ============================================\n")
+            f.write("; BANK 29 CALL AREA ($E600-$E700)\n")
+            f.write("; ============================================\n")
+            lines = self.disassemble_range(0xE600, 0xE700)
+            for line in lines:
+                f.write(line + "\n")
             lines = self.disassemble_range(0xE000, 0xE100)
             for line in lines:
                 f.write(line + "\n")

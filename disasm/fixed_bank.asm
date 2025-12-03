@@ -1725,8 +1725,602 @@ sub_D5FE:
 $D5FE:  LDX  $51
 
 ; ============================================
-; SUBROUTINES ($E000-$E100)
+; MOVEMENT ROUTINES ($E000-$E200)
 ; ============================================
+$E000:  LDA  $41
+$E002:  BPL  loc_E015
+$E004:  LDA  $45
+$E006:  SEC  
+$E007:  SBC  #$07
+$E009:  STA  $ED
+$E00B:  LDA  $44
+$E00D:  SEC  
+$E00E:  SBC  #$08
+$E010:  STA  $EC
+$E012:  JMP  loc_E023
+
+loc_E015:
+$E015:  LDA  $43
+$E017:  SEC  
+$E018:  SBC  #$07
+$E01A:  STA  $ED
+$E01C:  LDA  $42
+$E01E:  SEC  
+$E01F:  SBC  #$08
+$E021:  STA  $EC
+
+loc_E023:
+$E023:  LDA  $61
+$E025:  ORA  #$01
+$E027:  STA  $61
+$E029:  JSR  sub_E147
+$E02C:  LDA  #$00
+$E02E:  STA  $16
+$E030:  JSR  sub_E368
+$E033:  LDX  #$01
+
+loc_E035:
+$E035:  LDA  $7020,X
+$E038:  CMP  #$FF
+$E03A:  BEQ  loc_E06D
+$E03C:  LDA  #$00
+$E03E:  STA  $7100,X
+$E041:  STA  $7120,X
+$E044:  LDA  $7000,X
+$E047:  STA  $E4
+$E049:  LDA  $7020,X
+$E04C:  AND  #$90
+$E04E:  BNE  loc_E060
+$E050:  JSR  sub_E169
+$E053:  LDA  $E4
+$E055:  STA  $7000,X
+$E058:  BCC  loc_E068
+$E05A:  JSR  sub_E368
+$E05D:  JMP  loc_E068
+
+loc_E060:
+$E060:  JSR  sub_E160
+$E063:  LDA  $E4
+$E065:  STA  $7000,X
+
+loc_E068:
+$E068:  INX  
+$E069:  CPX  #$1E
+$E06B:  BCC  loc_E035
+
+loc_E06D:
+$E06D:  RTS  
+
+sub_E06E:
+$E06E:  JSR  sub_E147
+$E071:  LDA  $3E
+$E073:  BEQ  loc_E0BE
+$E075:  LDA  $7000
+$E078:  AND  #$03
+$E07A:  BNE  loc_E08C
+$E07C:  LDA  $EB
+$E07E:  SEC  
+$E07F:  SBC  $058F
+$E082:  STA  $EB
+$E084:  BCS  loc_E089
+$E086:  DEC  $00ED
+
+loc_E089:
+$E089:  JMP  loc_E0BE
+
+loc_E08C:
+$E08C:  CMP  #$01
+$E08E:  BNE  loc_E09F
+$E090:  LDA  $EA
+$E092:  CLC  
+$E093:  ADC  $058F
+$E096:  STA  $EA
+$E098:  BCC  loc_E09C
+$E09A:  INC  $EC
+
+loc_E09C:
+$E09C:  JMP  loc_E0BE
+
+loc_E09F:
+$E09F:  CMP  #$02
+$E0A1:  BNE  loc_E0B2
+$E0A3:  LDA  $EB
+$E0A5:  CLC  
+$E0A6:  ADC  $058F
+$E0A9:  STA  $EB
+$E0AB:  BCC  loc_E0AF
+$E0AD:  INC  $ED
+
+loc_E0AF:
+$E0AF:  JMP  loc_E0BE
+
+loc_E0B2:
+$E0B2:  LDA  $EA
+$E0B4:  SEC  
+$E0B5:  SBC  $058F
+$E0B8:  STA  $EA
+$E0BA:  BCS  loc_E0BE
+$E0BC:  DEC  $EC
+
+loc_E0BE:
+$E0BE:  LDX  #$01
+
+loc_E0C0:
+$E0C0:  LDA  $7020,X
+$E0C3:  CMP  #$FF
+$E0C5:  BNE  loc_E0C8
+$E0C7:  RTS  
+
+loc_E0C8:
+$E0C8:  LDA  $7000,X
+$E0CB:  STA  $E4
+$E0CD:  BMI  loc_E0EA
+$E0CF:  LDA  $7020,X
+$E0D2:  AND  #$90
+$E0D4:  BEQ  loc_E0DC
+$E0D6:  JSR  sub_E160
+$E0D9:  JMP  loc_E0DF
+
+loc_E0DC:
+$E0DC:  JSR  sub_E169
+
+loc_E0DF:
+$E0DF:  LDA  $E4
+$E0E1:  STA  $7000,X
+$E0E4:  INX  
+$E0E5:  CPX  #$1E
+$E0E7:  BCC  loc_E0C0
+$E0E9:  RTS  
+
+loc_E0EA:
+$E0EA:  LDA  #$0F
+$E0EC:  STA  $E3
+$E0EE:  LDY  #$10
+$E0F0:  LDA  $70E0,X
+$E0F3:  AND  #$40
+$E0F5:  BEQ  loc_E0FB
+$E0F7:  LDY  #$20
+$E0F9:  LSR  $E3
+
+loc_E0FB:
+$E0FB:  STY  $E2
+$E0FD:  LDA  $7020,X
+$E100:  STA  $E5
+$E102:  AND  #$90
+$E104:  BEQ  loc_E10C
+$E106:  JSR  sub_E160
+$E109:  JMP  loc_E12B
+
+loc_E10C:
+$E10C:  LDA  $E4
+$E10E:  JSR  sub_E2EE
+$E111:  LDA  $E5
+$E113:  AND  #$40
+$E115:  BEQ  loc_E128
+$E117:  LDA  #$10
+$E119:  STA  $E2
+$E11B:  LDA  $E5
+$E11D:  AND  #$20
+$E11F:  BEQ  loc_E123
+$E121:  ASL  $E2
+
+loc_E123:
+$E123:  LDA  $E5
+$E125:  JSR  sub_E2EE
+
+loc_E128:
+$E128:  JSR  sub_E169
+
+loc_E12B:
+$E12B:  LDA  $3C
+$E12D:  AND  $E3
+$E12F:  CMP  $E3
+$E131:  BNE  loc_E139
+$E133:  LDA  $E4
+$E135:  AND  #$7F
+$E137:  STA  $E4
+
+loc_E139:
+$E139:  LDA  $E4
+$E13B:  STA  $7000,X
+$E13E:  INX  
+$E13F:  CPX  #$1E
+$E141:  BCS  loc_E146
+$E143:  JMP  loc_E0C0
+
+loc_E146:
+$E146:  RTS  
+
+sub_E147:
+$E147:  LDA  $7020
+$E14A:  AND  #$90
+$E14C:  BEQ  loc_E152
+$E14E:  LDY  #$00
+$E150:  BEQ  loc_E1B7
+
+loc_E152:
+$E152:  LDA  #$08
+$E154:  STA  sub_0000
+$E156:  LDA  #$07
+$E158:  STA  $01
+$E15A:  LDA  #$00
+$E15C:  TAX  
+$E15D:  JMP  loc_E336
+
+sub_E160:
+$E160:  LDA  $E4
+$E162:  AND  #$3C
+$E164:  STA  $E2
+$E166:  BNE  loc_E1A9
+$E168:  RTS  
+
+sub_E169:
+$E169:  LDA  $E4
+$E16B:  AND  #$3C
+$E16D:  STA  $E2
+$E16F:  LDA  $7140,X
+$E172:  AND  #$E0
+$E174:  CMP  $46
+$E176:  BNE  loc_E1A5
+$E178:  LDA  $7120,X
+$E17B:  SEC  
+$E17C:  SBC  $EB
+$E17E:  STA  $E0
+$E180:  LDA  $6FC0,X
+$E183:  SBC  $ED
+$E185:  STA  $E1
+$E187:  AND  #$F0
+$E189:  BEQ  loc_E199
+$E18B:  LDA  $E1
+$E18D:  CMP  #$FF
+$E18F:  BNE  loc_E1A5
+$E191:  LDA  $E0
+$E193:  CMP  #$40
+$E195:  BCC  loc_E1A5
+$E197:  BCS  loc_E1D3
+
+loc_E199:
+$E199:  LDA  $E1
+$E19B:  AND  #$0F
+$E19D:  CMP  #$0F
+$E19F:  BCC  loc_E1D3
+$E1A1:  LDA  $E0
+$E1A3:  BEQ  loc_E1D3
+
+loc_E1A5:
+$E1A5:  LDA  $E2
+$E1A7:  BEQ  loc_E1D1
+
+loc_E1A9:
+$E1A9:  JSR  sub_C78C
+$E1AC:  LDA  $E2
+$E1AE:  JSR  sub_E4BB
+$E1B1:  LDA  $E4
+$E1B3:  AND  #$C3
+$E1B5:  STA  $E4
+
+loc_E1B7:
+$E1B7:  LDA  #$F7
+$E1B9:  STA  $0200,Y
+$E1BC:  STA  $0204,Y
+$E1BF:  STA  $0208,Y
+$E1C2:  STA  $020C,Y
+$E1C5:  STA  $0203,Y
+$E1C8:  STA  $0207,Y
+$E1CB:  STA  $020B,Y
+$E1CE:  STA  $020F,Y
+
+loc_E1D1:
+$E1D1:  CLC  
+$E1D2:  RTS  
+
+loc_E1D3:
+$E1D3:  LDA  $7100,X
+$E1D6:  SEC  
+$E1D7:  SBC  $EA
+$E1D9:  STA  $DE
+$E1DB:  LDA  $6FA0,X
+$E1DE:  SBC  $EC
+$E1E0:  STA  $DF
+$E1E2:  AND  #$F0
+$E1E4:  BEQ  loc_E24D
+$E1E6:  LDA  $DF
+$E1E8:  CMP  #$FF
+$E1EA:  BNE  loc_E1A5
+$E1EC:  LDA  $DE
+$E1EE:  BPL  loc_E1A5
+$E1F0:  STA  $E6
+$E1F2:  LDA  $E2
+$E1F4:  BNE  loc_E20E
+$E1F6:  JSR  sub_E45C
+$E1F9:  STA  $E2
+$E1FB:  LDA  $E4
+$E1FD:  AND  #$C3
+$E1FF:  ORA  $E2
+
+; ============================================
+; BANK SWITCH AREAS ($DA80-$DB00)
+; ============================================
+$DA80:  RTI  
+$DA81:  BVS  loc_DAEB
+$DA83:  ORA  $7040,X
+$DA86:  STA  $7040,X
+$DA89:  LDA  $70E0,X
+$DA8C:  AND  #$BF
+$DA8E:  STA  $70E0,X
+$DA91:  JSR  sub_DDE3
+$DA94:  JMP  loc_D891
+$DA97:  LDY  #$01
+$DA99:  LDA  ($4D),Y
+$DA9B:  JSR  sub_DDE0
+$DA9E:  BRK  
+$DA9F:  ORA  ($8F,X)
+$DAA1:  JMP  loc_DDF0
+$DAA4:  LDA  current_bank
+$DAA7:  PHA  
+$DAA8:  CMP  #$1C
+$DAAA:  CLC  
+$DAAB:  BEQ  loc_DAB3
+$DAAD:  LDA  #$1C
+$DAAF:  JSR  bank_switch
+$DAB2:  SEC  
+
+loc_DAB3:
+$DAB3:  PHP  
+$DAB4:  JSR  sub_DAC6
+$DAB7:  LDX  $51
+$DAB9:  JSR  sub_DDE0
+$DABC:  PLP  
+$DABD:  PLA  
+$DABE:  BCC  loc_DAC3
+$DAC0:  JSR  bank_switch
+
+loc_DAC3:
+$DAC3:  JMP  loc_DDF0
+
+sub_DAC6:
+$DAC6:  LDA  $8014
+$DAC9:  STA  $55
+$DACB:  LDA  $8015
+$DACE:  STA  $56
+$DAD0:  LDA  $8016
+$DAD3:  STA  sub_0000
+$DAD5:  LDA  $8017
+$DAD8:  STA  $01
+$DADA:  LDY  #$01
+$DADC:  LDA  $67
+$DADE:  LDX  #$4D
+$DAE0:  JSR  sub_C3EA
+$DAE3:  TAX  
+$DAE4:  LDY  #$00
+$DAE6:  LDA  (sub_0000),Y
+$DAE8:  STA  $0531
+
+loc_DAEB:
+$DAEB:  CPX  #$00
+$DAED:  BEQ  loc_DB03
+$DAEF:  LDA  (sub_0000),Y
+$DAF1:  CLC  
+$DAF2:  ADC  $55
+$DAF4:  STA  $55
+$DAF6:  BCC  loc_DAFA
+$DAF8:  INC  $56
+
+loc_DAFA:
+$DAFA:  INY  
+$DAFB:  LDA  (sub_0000),Y
+$DAFD:  STA  $0531
+
+; ============================================
+; BANK SWITCH AREAS ($DF70-$E000)
+; ============================================
+$DF70:  .byte $92
+$DF71:  DEC  $DECF,X
+$DF74:  SBC  $DE
+$DF76:  SBC  $DE
+$DF78:  SBC  $DE
+$DF7A:  LDA  current_bank
+$DF7D:  PHA  
+$DF7E:  LDA  $51
+$DF80:  JSR  bank_switch
+$DF83:  LDY  #$00
+$DF85:  LDA  ($49),Y
+$DF87:  STA  $98
+$DF89:  JSR  sub_DF9F
+$DF8C:  LDA  ($49),Y
+$DF8E:  STA  $99
+$DF90:  JSR  sub_DF9F
+$DF93:  LDA  ($49),Y
+$DF95:  STA  $9A
+$DF97:  JSR  sub_DF9F
+$DF9A:  PLA  
+$DF9B:  JSR  bank_switch
+$DF9E:  RTS  
+
+sub_DF9F:
+$DF9F:  PHA  
+$DFA0:  INC  $49
+$DFA2:  BNE  loc_DFA6
+$DFA4:  INC  $4A
+
+loc_DFA6:
+$DFA6:  LDA  $49
+$DFA8:  CMP  #$D8
+$DFAA:  BNE  loc_DFED
+$DFAC:  LDA  $4A
+$DFAE:  CMP  #$BF
+$DFB0:  BNE  loc_DFED
+$DFB2:  INC  current_bank
+$DFB5:  INC  $51
+$DFB7:  LDA  current_bank
+$DFBA:  PHA  
+$DFBB:  JSR  bank_switch
+$DFBE:  PLA  
+$DFBF:  CMP  #$05
+$DFC1:  BCC  loc_DFE5
+$DFC3:  BEQ  loc_DFDE
+$DFC5:  LDA  #$1B
+$DFC7:  STA  $51
+$DFC9:  JSR  bank_switch
+$DFCC:  LDA  $DFEF
+$DFCF:  ASL  A
+$DFD0:  TAX  
+$DFD1:  LDA  $8000,X
+$DFD4:  STA  $49
+$DFD6:  LDA  $8001,X
+$DFD9:  STA  $4A
+$DFDB:  JMP  loc_DFED
+
+loc_DFDE:
+$DFDE:  LDA  #$1A
+$DFE0:  STA  $51
+$DFE2:  JSR  bank_switch
+
+loc_DFE5:
+$DFE5:  LDA  #$80
+$DFE7:  STA  $4A
+$DFE9:  LDA  #$00
+$DFEB:  STA  $49
+
+loc_DFED:
+$DFED:  PLA  
+$DFEE:  RTS  
+$DFEF:  ASL  A
+$DFF0:  .byte $BF
+$DFF1:  LDA  #$00
+$DFF3:  STA  $07BB
+$DFF6:  STA  $EA
+$DFF8:  STA  $EB
+$DFFA:  JSR  sub_E4F6
+$DFFD:  JSR  sub_E402
+
+; ============================================
+; BANK 29 CALL AREA ($E600-$E700)
+; ============================================
+$E600:  ORA  $E6,X
+$E602:  STA  $6CDC
+$E605:  LDA  $E616
+$E608:  STA  $6CDD
+$E60B:  PLP  
+$E60C:  JSR  sub_6CAD
+$E60F:  LDA  #$1D
+$E611:  JSR  bank_switch
+$E614:  RTS  
+$E615:  .byte $AB
+$E616:  .byte $F4
+$E617:  PHP  
+$E618:  STA  $07CA
+$E61B:  LDA  $E62B
+$E61E:  STA  $6CDC
+$E621:  LDA  $E62C
+$E624:  STA  $6CDD
+$E627:  PLP  
+$E628:  JMP  sub_6CAD
+$E62B:  TXA  
+$E62C:  SBC  $08,X
+$E62E:  STA  $07CA
+$E631:  LDA  $E641
+$E634:  STA  $6CDC
+$E637:  LDA  $E642
+$E63A:  STA  $6CDD
+$E63D:  PLP  
+$E63E:  JMP  sub_6CAD
+$E641:  .byte $8B
+$E642:  SBC  $08,X
+$E644:  STA  $07CA
+$E647:  LDA  $E657
+$E64A:  STA  $6CDC
+$E64D:  LDA  $E658
+$E650:  STA  $6CDD
+$E653:  PLP  
+$E654:  JMP  sub_6CAD
+$E657:  LDX  $08FA,Y
+$E65A:  STA  $07CA
+$E65D:  LDA  $E66D
+$E660:  STA  $6CDC
+$E663:  LDA  $E66E
+$E666:  STA  $6CDD
+$E669:  PLP  
+$E66A:  JMP  sub_6CAD
+$E66D:  LDX  $A5FA,Y
+$E670:  .byte $3F
+$E671:  CLC  
+$E672:  ADC  $49
+$E674:  STA  $49
+$E676:  BCC  loc_E67A
+$E678:  INC  $4A
+
+loc_E67A:
+$E67A:  RTS  
+$E67B:  LDA  $49
+$E67D:  SEC  
+$E67E:  SBC  $3F
+$E680:  STA  $49
+$E682:  BCS  loc_E67A
+$E684:  DEC  $4A
+$E686:  RTS  
+$E687:  LDA  $BF
+$E689:  AND  #$01
+$E68B:  BNE  loc_E68E
+$E68D:  RTS  
+
+loc_E68E:
+$E68E:  LDA  #$19
+$E690:  STA  $6E86
+$E693:  JSR  sub_FF94
+$E696:  LDA  #$00
+$E698:  STA  $B4
+$E69A:  LDA  $B0
+$E69C:  AND  #$DF
+$E69E:  STA  $B0
+$E6A0:  LDA  $0621
+$E6A3:  ORA  $0623
+$E6A6:  ORA  $0625
+$E6A9:  ORA  $0627
+$E6AC:  BNE  loc_E6B2
+$E6AE:  LDA  #$20
+$E6B0:  STA  $B0
+
+loc_E6B2:
+$E6B2:  LDY  #$04
+$E6B4:  LDX  #$08
+$E6B6:  JSR  sub_E77C
+$E6B9:  LDY  #$04
+$E6BB:  LDX  #$08
+$E6BD:  JSR  sub_E739
+$E6C0:  LDA  $BD
+$E6C2:  CLC  
+$E6C3:  ADC  $BC
+$E6C5:  STA  $BD
+$E6C7:  BCC  loc_E6F8
+
+loc_E6C9:
+$E6C9:  SBC  #$96
+$E6CB:  STA  $BD
+$E6CD:  JSR  sub_F0E3
+$E6D0:  LDY  #$00
+$E6D2:  LDX  #$00
+$E6D4:  JSR  sub_E77C
+$E6D7:  LDY  #$01
+$E6D9:  LDX  #$02
+$E6DB:  JSR  sub_E77C
+$E6DE:  LDY  #$02
+$E6E0:  LDX  #$04
+$E6E2:  JSR  sub_E77C
+$E6E5:  JSR  sub_F0F6
+$E6E8:  LDY  #$03
+$E6EA:  LDX  #$06
+$E6EC:  JSR  sub_E77C
+$E6EF:  JSR  sub_EEE2
+$E6F2:  LDA  $BD
+$E6F4:  CMP  #$6A
+$E6F6:  BCC  loc_E6C9
+
+loc_E6F8:
+$E6F8:  LDY  #$00
+$E6FA:  LDX  #$00
+$E6FC:  JSR  sub_E739
+$E6FF:  LDY  #$01
 $E000:  LDA  $41
 $E002:  BPL  loc_E015
 $E004:  LDA  $45
