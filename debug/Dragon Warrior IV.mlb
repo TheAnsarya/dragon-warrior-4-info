@@ -5,12 +5,52 @@
 # ==============================================================================
 # ZERO PAGE ($00-$FF) - System Variables
 # ==============================================================================
+P:0010:ptr_lo:General purpose pointer low byte
+P:0011:ptr_hi:General purpose pointer high byte
+P:0012:frame_counter_zp:Frame counter copy
+P:0014:scroll_temp:Scroll temporary
+P:001F:state_flags:System state flags (bit 7 = busy)
+P:0020:reg_save_a:Saved A during IRQ
+P:0021:reg_save_x:Saved X during IRQ
+P:0022:reg_save_y:Saved Y during IRQ
+P:0023:irq_param_1:IRQ dispatch parameter 1
+P:0024:irq_param_2:IRQ dispatch parameter 2
+P:0026:brk_ptr_lo:Pointer to BRK operand low
+P:0027:brk_ptr_hi:Pointer to BRK operand high
+P:0039:ppu_ctrl_mirror:PPU control mirror
+P:0040:temp_40:Temporary variable
 P:0063:MapNumber:Current map number
 P:0064:SubmapNumber:Current submap number
+P:0076:irq_temp_76:IRQ temporary
+P:0077:irq_temp_77:IRQ temporary
+P:0078:irq_temp_78:IRQ temporary
+P:007B:scroll_x:Scroll X position
+P:007C:scroll_y:Scroll Y position
+P:007F:scroll_counter:Scroll counter
 
 # ==============================================================================
 # WORK RAM ($0100-$07FF)
 # ==============================================================================
+R:0200:oam_buffer:OAM DMA buffer (256 bytes)
+R:0300:ppu_buffer:PPU update buffer
+R:0500:vblank_flag:VBlank synchronization flag
+R:0501:ppuctrl_shadow:Shadow of PPUCTRL ($2000)
+R:0502:NMI_JMP:JMP opcode for NMI vector
+R:0503:NMI_target_lo:NMI target address low byte
+R:0504:NMI_target_hi:NMI target address high byte
+R:0505:ppuctrl_extra:Additional PPU control
+R:0506:ppumask_shadow:Shadow of PPUMASK ($2001)
+R:0507:current_bank:Currently selected PRG bank
+R:0508:scroll_x_shadow:Scroll X shadow
+R:0509:scroll_y_shadow:Scroll Y shadow
+R:050A:ppu_temp_a:PPU temporary A
+R:050B:ppu_buffer_count:PPU buffer entry count
+R:050C:frame_counter:Frame counter (incremented by NMI)
+R:0513:shuffle_index:OAM shuffle index
+R:0519:nmi_skip_flag:NMI skip update flag
+R:05FC:palette_color:Palette color value
+R:07CA:bank_call_result:Bank call result storage
+R:07CC:bank_call_save:Bank call saved bank
 
 # ==============================================================================
 # SRAM/WRAM ($6000-$7FFF) - Save Game Data (Battery-Backed)
@@ -189,3 +229,70 @@ R:4014:OAMDMA:OAM DMA Register
 R:4015:SND_CHN:APU Sound Channel Enable
 R:4016:JOYPAD1:Joypad 1 Register
 R:4017:JOYPAD2:Joypad 2 / APU Frame Counter
+
+# ==============================================================================
+# PRG ROM - Fixed Bank Code ($C000-$FFFF)
+# ==============================================================================
+
+# Main Initialization
+R:C03D:main_init:Main initialization routine
+R:C03E:vblank_wait_1:Wait for first VBlank
+R:C043:vblank_wait_2:Wait for second VBlank
+R:C067:setup_nmi_vector:Set up NMI JMP in RAM
+R:C07E:clear_ram_loop:Clear zero page and RAM
+
+# Bank Switching Routines
+R:C104:init_subroutine:Additional initialization
+R:C118:mmc1_write_control:Write to MMC1 Control register ($9FFF)
+R:C12F:mmc1_write_chr1:Write to MMC1 CHR Bank 1 ($BFFF)
+R:C146:mmc1_write_prg:Write to MMC1 PRG Bank ($DFFF)
+
+# NMI Handler
+R:C15A:NMI_main:NMI handler entry point
+R:C181:NMI_check_stack:Check return address on stack
+R:C1EF:NMI_update_frame:Update frame counter
+R:C213:NMI_return:Normal NMI return
+R:C219:NMI_to_irq:Jump to IRQ handler
+
+# PPU Update Routines
+R:C222:ppu_buffer_transfer:Transfer PPU update buffer to VRAM
+R:C241:ppu_write_loop:PPU buffer write loop
+R:C267:ppu_write_data:Write data to PPUDATA
+R:C276:ppu_update_palette:Update palette if needed
+R:C297:ppu_update_tiles:Update tile data
+R:C2EA:ppu_set_scroll:Set PPU scroll registers
+R:C303:oam_dma:Perform OAM DMA transfer
+
+# IRQ Handler
+R:C408:IRQ_handler:IRQ/BRK handler entry
+R:C423:irq_read_operand:Read BRK operand byte
+R:C460:irq_dispatch_03:Dispatch for operand ending in $03
+R:C463:irq_dispatch_0B:Dispatch for operand ending in $0B
+R:C4CA:irq_set_flag:Set flag in $627B table
+R:C4E1:irq_clear_flag:Clear flag in $627B table
+R:C4F8:irq_extended:Extended opcode handler
+
+# System Utilities
+R:C52F:clear_system_state:Clear system state variables
+R:C543:clear_oam_buffer:Clear OAM buffer to $F7
+
+# Main Game Loop
+R:C968:main_loop_entry:Main game loop entry point
+R:C97D:main_loop:Main game loop (infinite)
+R:C983:setup_bank_trampoline:Copy bank switch code to SRAM
+R:C9ED:main_frame_handler:Main frame processing handler
+
+# High ROM Utilities
+R:FF00:utility_area:Utility code area
+R:FF74:wait_vblank:Wait for VBlank (frame sync)
+R:FF8E:jump_main_init:Jump to main_init
+R:FF91:bank_switch:Bank switch routine
+
+# Reset Handler
+R:FFD8:RESET_entry:RESET vector entry point
+R:FFDF:mmc1_reset_trigger:MMC1 reset trigger byte
+
+# CPU Vectors
+R:FFFA:vec_NMI:NMI Vector ($0502)
+R:FFFC:vec_RESET:RESET Vector ($FFD8)
+R:FFFE:vec_IRQ:IRQ Vector ($C408)

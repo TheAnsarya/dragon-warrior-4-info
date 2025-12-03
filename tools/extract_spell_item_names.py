@@ -96,7 +96,7 @@ KNOWN_SPELLS = [
 # Known item names from Dragon Warrior IV
 KNOWN_ITEMS = [
     # Consumables
-    "Medical Herb", "Antidote Herb", "Fairy Water", 
+    "Medical Herb", "Antidote Herb", "Fairy Water",
     "Wing of Wyvern", "Chimaera Wing",
     "Full Moon Herb", "Moonwort Bulb",
     "Yggdrasil Leaf", "World Leaf",
@@ -139,19 +139,19 @@ KNOWN_ITEMS = [
 def search_names(rom_data, names, category):
     """Search for a list of names in the ROM."""
     results = []
-    
+
     for name in names:
         encoded = encode_text(name)
         if len(encoded) < 3:
             continue
-            
+
         pos = 0
         occurrences = []
         while True:
             pos = rom_data.find(encoded, pos)
             if pos == -1:
                 break
-            
+
             bank = pos // 0x4000
             bank_offset = pos % 0x4000 + 0x8000
             occurrences.append({
@@ -160,7 +160,7 @@ def search_names(rom_data, names, category):
                 'bank_addr': bank_offset
             })
             pos += 1
-        
+
         if occurrences:
             results.append({
                 'name': name,
@@ -168,18 +168,18 @@ def search_names(rom_data, names, category):
                 'encoded_length': len(encoded),
                 'occurrences': occurrences
             })
-    
+
     return results
 
 def find_text_tables(rom_data):
     """Look for potential tables of text strings."""
     tables = []
-    
+
     # Look for areas with many sequential readable strings
     for bank in range(32):
         bank_start = bank * 0x4000 + 0x10
         bank_data = rom_data[bank_start:bank_start + 0x4000]
-        
+
         # Scan for potential string tables
         i = 0
         while i < len(bank_data) - 10:
@@ -192,7 +192,7 @@ def find_text_tables(rom_data):
                     string_count = 0
                     pos = i
                     strings_found = []
-                    
+
                     while pos < len(bank_data) - 10 and string_count < 50:
                         t = decode_text(bank_data[pos:pos+20])
                         if len(t) >= 3 and t[0].isupper():
@@ -205,7 +205,7 @@ def find_text_tables(rom_data):
                                 if b >= 0x80 and b != 0xFF:
                                     break  # DTE
                                 end += 1
-                            
+
                             actual_text = decode_text(bank_data[pos:end])
                             if len(actual_text) >= 3:
                                 strings_found.append(actual_text.strip())
@@ -215,7 +215,7 @@ def find_text_tables(rom_data):
                                 break
                         else:
                             break
-                    
+
                     if string_count >= 5:
                         tables.append({
                             'bank': bank,
@@ -227,65 +227,65 @@ def find_text_tables(rom_data):
                         i = pos
                         continue
             i += 1
-    
+
     return tables
 
 def main():
     rom_path = Path(sys.argv[1]) if len(sys.argv) > 1 else ROM_PATH
-    
+
     with open(rom_path, 'rb') as f:
         rom_data = f.read()
-    
+
     print("=" * 70)
     print("Dragon Warrior IV - Spell and Item Name Extractor")
     print("=" * 70)
     print()
-    
+
     # Search for spell names
     print("Searching for spell names...")
     spell_results = search_names(rom_data, KNOWN_SPELLS, 'spell')
-    
+
     print(f"\nFound {len(spell_results)} spell names:")
     print("-" * 50)
     for result in sorted(spell_results, key=lambda x: x['occurrences'][0]['rom_offset']):
         occ = result['occurrences'][0]
         print(f"  {result['name']:20s} Bank {occ['bank']:2d} ${occ['bank_addr']:04X} (ROM 0x{occ['rom_offset']:05X})")
-    
+
     # Search for item names
     print("\n" + "=" * 70)
     print("Searching for item names...")
     item_results = search_names(rom_data, KNOWN_ITEMS, 'item')
-    
+
     print(f"\nFound {len(item_results)} item names:")
     print("-" * 50)
     for result in sorted(item_results, key=lambda x: x['occurrences'][0]['rom_offset']):
         occ = result['occurrences'][0]
         print(f"  {result['name']:20s} Bank {occ['bank']:2d} ${occ['bank_addr']:04X} (ROM 0x{occ['rom_offset']:05X})")
-    
+
     # Look for text tables
     print("\n" + "=" * 70)
     print("Searching for text tables...")
     tables = find_text_tables(rom_data)
-    
+
     print(f"\nFound {len(tables)} potential text tables:")
     print("-" * 50)
     for table in sorted(tables, key=lambda x: -x['string_count'])[:20]:
         print(f"\n  Bank {table['bank']} ${table['bank_offset']:04X} ({table['string_count']} strings)")
         for s in table['sample_strings'][:5]:
             print(f"    - {s}")
-    
+
     # Save results
     output = {
         'spells_found': spell_results,
         'items_found': item_results,
         'text_tables': tables[:30]
     }
-    
+
     output_path = Path(__file__).parent.parent / "extracted" / "spell_item_names.json"
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2)
     print(f"\n\nResults saved to: {output_path}")
-    
+
     # Summary
     print("\n" + "=" * 70)
     print("SUMMARY")
@@ -293,21 +293,21 @@ def main():
     print(f"Spell names found: {len(spell_results)}/{len(KNOWN_SPELLS)}")
     print(f"Item names found:  {len(item_results)}/{len(KNOWN_ITEMS)}")
     print(f"Text tables found: {len(tables)}")
-    
+
     # Not found
     found_spell_names = {r['name'] for r in spell_results}
     found_item_names = {r['name'] for r in item_results}
-    
+
     missing_spells = [s for s in KNOWN_SPELLS if s not in found_spell_names]
     missing_items = [i for i in KNOWN_ITEMS if i not in found_item_names]
-    
+
     if missing_spells:
         print(f"\nSpells not found ({len(missing_spells)}):")
         for s in missing_spells[:10]:
             print(f"  - {s}")
         if len(missing_spells) > 10:
             print(f"  ... and {len(missing_spells)-10} more")
-    
+
     if missing_items:
         print(f"\nItems not found ({len(missing_items)}):")
         for i in missing_items[:10]:
