@@ -57,13 +57,18 @@ Key Routines:
 
 ### 4. Text Locations by Bank
 
-| Bank | Content | Notes |
-|------|---------|-------|
-| 17 | Location names | "the Tower", "the Stars", "the Moon", "the Sun" |
-| 22 | Menus/Status | HP, MP, LEVEL, FIGHT, SPELL, ITEM, etc. |
-| 22 | DTE Table | At $B3A4 |
-| 23 | Casino text | "Royal Flush", "Straight Flush", etc. |
-| 27 | Chapter titles | All 5 chapter names |
+| Bank | Address Range | Content | Notes |
+|------|---------------|---------|-------|
+| 12-13 | Various | NPC Dialogue | Story dialogue, ~670 strings |
+| 17 | Various | Location names | "the Tower", "the Stars", "the Moon", "the Sun" |
+| 18 | $A698, $A6F1 | Spell names | "Outside", "Return" (embedded in code) |
+| 18 | $AFFA | Item names | "Wing of Wyvern" (embedded in code) |
+| 22 | $B03C-$B1C0 | Menu/UI Text | Full menu system text |
+| 22 | $B3A4 | DTE Table | 128 compression pairs |
+| 23 | $82EC-$83A8 | Casino text | "Royal Flush", "Straight Flush", etc. |
+| 23-24 | Various | NPC Dialogue | Additional dialogue banks |
+| 27 | $A66C-$A6DE | Chapter titles | All 5 chapter names |
+| 31 (fixed) | $E854 | Text Routine | Main text rendering code |
 
 ### 5. Chapter Titles (Bank 27)
 
@@ -102,7 +107,9 @@ Key Routines:
 | `map_bank_contents.py` | Maps code/data regions |
 | `export_asm.py` | Generates labeled assembly |
 | `dump_all_text.py` | Complete text dump (4372 strings) |
-| `extract_npc_dialogue.py` | NPC dialogue extractor |
+| `extract_npc_dialogue.py` | NPC dialogue extractor (670 strings) |
+| `extract_spell_item_names.py` | Spell/item name search tool |
+| `rom_browser.py` | Interactive hex/text browser |
 
 ### Output Files
 
@@ -111,10 +118,14 @@ Key Routines:
 | `data/dragon-warrior-4.tbl` | Text table for ROM hacking tools (298 entries) |
 | `docs/analysis/dte_dictionary_table.md` | Complete DTE documentation |
 | `docs/analysis/text_system_overview.md` | Text system architecture |
+| `docs/analysis/text_locations.md` | Complete text location reference |
+| `docs/analysis/menu_strings_complete.md` | Menu string addresses |
+| `docs/analysis/text_routine_documentation.md` | Text rendering code analysis |
 | `disasm/text_engine.asm` | Labeled assembly (353 lines) |
-| `extracted/all_text.txt` | Complete text dump |
+| `extracted/all_text.txt` | Complete text dump (9587 lines) |
 | `extracted/text_by_bank.json` | Text organized by bank |
 | `extracted/npc_dialogue.json` | NPC dialogue data |
+| `extracted/spell_item_names.json` | Found spell/item names |
 
 ---
 
@@ -181,11 +192,19 @@ python tools/dump_all_text.py
 
 ## Next Steps
 
-1. **Dialogue Extraction**: The main NPC dialogue uses a more complex pointer/indexing system that needs further analysis
-2. **Monster Names**: Locate and extract enemy name table
-3. **Item/Spell Names**: Find equipment, spell, and item name tables
-4. **Script Analysis**: Document the game's scripting system for events/cutscenes
-5. **Graphics**: Analyze CHR-RAM loading and tile patterns
+1. **Monster Names**: Names not found with standard encoding - likely use different compression or table
+2. **Complete Spell Table**: Only Return, Outside, Sap found - most spells are DTE-compressed
+3. **Complete Item Table**: Only "Wing of Wyvern" found - items heavily DTE-compressed
+4. **Pointer Table Analysis**: Bank 18 starts with code pointers, need to trace item/spell references
+5. **Character Stats**: Find character base stat tables and growth curves
+6. **Script Analysis**: Document the game's scripting system for events/cutscenes
+7. **Graphics**: Analyze CHR-RAM loading and tile patterns
+
+### Key Challenges
+
+- **Heavy DTE Compression**: Most game text uses DTE, making direct string searches fail
+- **Embedded Strings**: Spell/item names embedded within code, not in separate tables
+- **Monster Data**: Monster names may use a completely different encoding system
 
 ---
 
