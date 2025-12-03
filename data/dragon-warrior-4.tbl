@@ -1,0 +1,237 @@
+; Dragon Warrior IV (NES) - Text Table
+; ====================================
+; For use with ROM hacking tools (Translhextion, WindHex, etc.)
+; 
+; Text encoding analysis from reverse engineering.
+; DTE table located at Bank 22, CPU $B3A4, ROM 0x5B3B4
+;
+; Control codes:
+;   FD = Line break (newline)
+;   FE = Control/PPU positioning
+;   FF = End of string
+
+; Whitespace
+00= 
+
+; Digits 0-9
+01=0
+02=1
+03=2
+04=3
+05=4
+06=5
+07=6
+08=7
+09=8
+0A=9
+
+; Lowercase a-z
+0B=a
+0C=b
+0D=c
+0E=d
+0F=e
+10=f
+11=g
+12=h
+13=i
+14=j
+15=k
+16=l
+17=m
+18=n
+19=o
+1A=p
+1B=q
+1C=r
+1D=s
+1E=t
+1F=u
+20=v
+21=w
+22=x
+23=y
+24=z
+
+; Uppercase A-Z
+25=A
+26=B
+27=C
+28=D
+29=E
+2A=F
+2B=G
+2C=H
+2D=I
+2E=J
+2F=K
+30=L
+31=M
+32=N
+33=O
+34=P
+35=Q
+36=R
+37=S
+38=T
+39=U
+3A=V
+3B=W
+3C=X
+3D=Y
+3E=Z
+
+; Primary punctuation
+3F='
+40=.
+41=,
+42=-
+43=?
+44=!
+45=(
+46=)
+47=/
+48=:
+49=*
+4A="
+
+; Alternate punctuation set (used in some contexts)
+65='
+66=.
+67=,
+68=~
+69=?
+6A=!
+6B=(
+6C=)
+6D=/
+6E=:
+6F=*
+70="
+71=-
+78=.
+
+; DTE (Dual Tile Encoding) pairs
+; These single bytes expand to two characters
+80=64
+81=2 
+82=sp
+83=ee
+84=d 
+85=yo
+86=u 
+87=li
+88=ke
+89=. 
+8A=A 
+8B=QU
+8C=ES
+8D=TC
+8E=ON
+8F=TI
+90=NU
+92=CH
+93=AN
+94=GE
+95= M
+96=ES
+97=SA
+98=GE
+99= S
+9A=PE
+9B=ED
+9C=BE
+9D=GI
+9E=N 
+9F=A 
+A0=NE
+A1=W 
+A2=QU
+A3=ES
+A4=TC
+A5=OP
+A7=ER
+A8=AS
+AA=NA
+AB=ME
+AC=Do
+AD= y
+AE=ou
+AF= w
+B0=an
+B1=t 
+B2=to
+B3=er
+B4=as
+B5=e 
+B6=th
+B7=is
+B8=qu
+B9=es
+BA=t?
+BB=Se
+BC=le
+BD=ct
+BE= t
+BF=he
+C0= m
+C1=es
+C2=sa
+C3=ge
+C4= 1
+C5= 2
+C6= 3
+C7= 4
+C8= 5
+C9= 6
+CA= 7
+CB= 8
+CC=Fa
+CD=st
+D2=Sl
+D3=ow
+D4= C
+D5=ha
+D6=pt
+D7=er
+D8= L
+D9=EV
+DA=EL
+DC=. A
+DD=DV
+DE=EN
+DF=TU
+E0=RE
+E1= L
+E2=OG
+E3=FI
+E4=GH
+E5=TT
+E6=AC
+E7=TI
+E8=CS
+E9=ME
+EA=MB
+EB=ER
+EC=RU
+ED=NS
+EE=PE
+EF=LL
+F0=IT
+F1=EM
+F2=AT
+F3=TA
+F4=CK
+F5=PA
+F6=RR
+F7=YC
+F8= 0
+F9=00
+FA=00
+FB=0S
+FC=EE
+FE=SS
+
+; Control codes
+FD=\n
+FF=[END]
