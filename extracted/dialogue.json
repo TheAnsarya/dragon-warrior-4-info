@@ -1,0 +1,1600 @@
+{
+  "menu": [
+    "ike. A QUESTCONTINUE",
+    "CHANGE MESSAGE SPEEDBEGIN A NEW QUESTCOPY",
+    "ERASE",
+    "NAMEDo you want toerase thisquest/Select the message 1 2 3 4 5 6 7 8Fast        Slow Chapter LEVEL  .ADVENTURE LOGFIGHTTACTICSMEMBERRUNSPELLITEMATTACKPARRYC 000000SEE NESSEE WSSWITCHREMOVEADDEQU TCDV2 [62]O[60]EQU7TCDV2 [62]y7[60]EQU64TCDV2 [62]y64[60]EQU.TCDV2 [62]y.[60] [62]y.TCSl22YCNU4IT2Sl2QU NE GHYC0CSASan6CS5m3EMySl2[60]EQU TC.A2YQUYC Z[53]TCDV2EQU6[60]EQU3[60]YQUYCEQU1yo*NE  X[53]IT053*fRRGETC.A29n/.A2NE0ES.A2[60]EQU4[60]EQU7[60]EQU YQUYC /[73]OP[75][60]EQU yo*vERleASesgeMEYQUYC  iOP[75][60]NE"
+  ],
+  "locations": [
+    {
+      "address": "$BE4F",
+      "text": "the Tower."
+    },
+    {
+      "address": "$BE5E",
+      "text": "the Stars."
+    },
+    {
+      "address": "$BE6D",
+      "text": "the Moon."
+    },
+    {
+      "address": "$BE7C",
+      "text": "the Sun."
+    },
+    {
+      "address": "$BE9A",
+      "text": "the Terminator."
+    }
+  ],
+  "bank_12": [
+    {
+      "address": "$807E",
+      "text": "TCS.A,EQUPE2.A"
+    },
+    {
+      "address": "$808D",
+      "text": "FIkeRTAn3O.Ay"
+    },
+    {
+      "address": "$80F8",
+      "text": "015aqJesZEMeREtEM5"
+    },
+    {
+      "address": "$8120",
+      "text": ".A,EQUPE2.AC."
+    },
+    {
+      "address": "$8130",
+      "text": "TAn3O.Ayt:"
+    },
+    {
+      "address": "$81D8",
+      "text": "O840ee)UNUATTTU"
+    },
+    {
+      "address": "$81E4",
+      "text": "wheTAfT4.yo2esTAer."
+    },
+    {
+      "address": "$81F5",
+      "text": "KANf~AN4 12"
+    },
+    {
+      "address": "$8243",
+      "text": "heYCNSDV0STU \nquITOGsaYC"
+    },
+    {
+      "address": "$8323",
+      "text": "fmm nff424m0PAOG 0000 0 7\nctPA0ITMEowkedee64ITOG13erquBEweerER8gwes4e62ystsUEM64dkekekeke.geerquananantoEQUgecYssssqlies000022li"
+    },
+    {
+      "address": "$838D",
+      "text": "heYCrr966   esesNE\"\""
+    },
+    {
+      "address": "$839F",
+      "text": "v03v 1.7TU 0STU"
+    },
+    {
+      "address": "$83B5",
+      "text": "nANi887LL  8800GHCTCanBEasN00OGge642ee22"
+    },
+    {
+      "address": "$83F6",
+      "text": "s* .vz141"
+    },
+    {
+      "address": "$8521",
+      "text": "xxx5ONmITffrrn64mITCK.CK.CKCS)0959595 0liNENUwNUwCHKNENUTI64646464 ,48EM0,0,OP8EM48e*ehKN'tdes"
+    },
+    {
+      "address": "$8587",
+      "text": "BanL3.5E B"
+    },
+    {
+      "address": "$877E",
+      "text": "is4LL4S64SSSSLL4S64hehehehectct TATATATActct"
+    },
+    {
+      "address": "$87A0",
+      "text": "oooB SL '''     TATATAb"
+    },
+    {
+      "address": "$885E",
+      "text": "an) ' vv"
+    },
+    {
+      "address": "$8877",
+      "text": "33   RU37ONCLm:RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!)3T.ONX64st)3T.ONX64stH.LESENbesFIH.LESENbesFIge2222222?SctSOPGIyGI"
+    },
+    {
+      "address": "$88DB",
+      "text": "?SctSOP2222ge"
+    },
+    {
+      "address": "$89E3",
+      "text": "NENENEv v  ''''"
+    },
+    {
+      "address": "$8A00",
+      "text": "vvv'Zb3 ''''0OO"
+    },
+    {
+      "address": "$8A24",
+      "text": "6464ESES v 02ctyy"
+    },
+    {
+      "address": "$8B05",
+      "text": "dbFIES00    FI LL 006"
+    },
+    {
+      "address": "$8C76",
+      "text": "D YCFIes64esFIYC"
+    },
+    {
+      "address": "$8CBD",
+      "text": "02064nXnznDr?2222yoyo2 x 64nXnz"
+    },
+    {
+      "address": "$8CDB",
+      "text": "?2222DrDoGEsa 3.yo2000"
+    },
+    {
+      "address": "$90D9",
+      "text": "f3f7ee"
+    },
+    {
+      "address": "$9138",
+      "text": "RR00RUPEYC0EELLWATRRNSs00ACsSeuYC6u"
+    },
+    {
+      "address": "$9212",
+      "text": "bS0vu6420.64vr 64BE, stm1\n2xGI 01X02"
+    },
+    {
+      "address": "$9238",
+      "text": "YCBEYC6YCBEYC6"
+    },
+    {
+      "address": "$9250",
+      "text": "m64uLvvv'mAv.\"\"..'vvffffA..('OPOPvvITm643T-8.ITTIhe.gedOP4e20vr-fEQU6IT\ntgewOPNE3h:,0"
+    },
+    {
+      "address": "$9299",
+      "text": "*3zqu1  v:h1"
+    },
+    {
+      "address": "$92B3",
+      "text": "420  YCBEYCesW)ptPE"
+    },
+    {
+      "address": "$9393",
+      "text": "ACACAC5 v  7777RE vvvvvvddm)))0m"
+    },
+    {
+      "address": "$93B7",
+      "text": "777     JtRERE"
+    },
+    {
+      "address": "$9523",
+      "text": "ESEEEE EEA44TC\n000"
+    },
+    {
+      "address": "$9533",
+      "text": "CBz to"
+    },
+    {
+      "address": "$95F5",
+      "text": "../6bnLvHKv"
+    },
+    {
+      "address": "$96A3",
+      "text": "0   EEEEEEEE"
+    },
+    {
+      "address": "$96C5",
+      "text": "33CK1spATsp11AT1  F''   64hehehehe64"
+    },
+    {
+      "address": "$96F8",
+      "text": "liESnLvvvv"
+    },
+    {
+      "address": "$9718",
+      "text": "vvvvvvvv"
+    },
+    {
+      "address": "$9866",
+      "text": "i6TA6amQUa6"
+    },
+    {
+      "address": "$98A3",
+      "text": "eED/u j\".ANSTIu"
+    },
+    {
+      "address": "$99EA",
+      "text": "2PEr72mliisis64SANUNUNUlilili64NEERNENELNSNS0TT444LLL08ME88SANUNUNUSANUNU64NEERNENENEERNE64TT444TT4408ME888ME80ITm64LL mf"
+    },
+    {
+      "address": "$9A39",
+      "text": "ITm64  vCe20bb GH3"
+    },
+    {
+      "address": "$9A49",
+      "text": "e20  7CSffm 64mIT"
+    },
+    {
+      "address": "$9AA0",
+      "text": "CS3ERH. 8dCS3ERRUTI64NSRR"
+    },
+    {
+      "address": "$9ABA",
+      "text": "TALLerANYCSEE00S5weu"
+    },
+    {
+      "address": "$9B30",
+      "text": "gLNEz.Ae0ONsquerCTUe0TIuA''uuuu'DV'YC"
+    },
+    {
+      "address": "$9B7E",
+      "text": ":)EQU Ztd4yAN"
+    },
+    {
+      "address": "$9B9E",
+      "text": "SlSlowELAC"
+    },
+    {
+      "address": "$9BC0",
+      "text": "EQU ZtON/yES"
+    },
+    {
+      "address": "$9BFB",
+      "text": "////)EQU ACSlSlowowAN"
+    },
+    {
+      "address": "$9C1E",
+      "text": "FlKENZ"
+    },
+    {
+      "address": "$9D48",
+      "text": "ENA8qu)ERP"
+    },
+    {
+      "address": "$9D58",
+      "text": "es)es,hstOFa"
+    },
+    {
+      "address": "$9FC1",
+      "text": "Esae:.AEQUy 0107f01U,!yoGEO:)v.   v. 1qthRkeMACBE3i3  037"
+    },
+    {
+      "address": "$A840",
+      "text": "fRE  fRE RRAC55RRAC55"
+    },
+    {
+      "address": "$A8FB",
+      "text": "!YmGt ?SA ?SA"
+    },
+    {
+      "address": "$A956",
+      "text": "he64CHbGMBo6464"
+    },
+    {
+      "address": "$A9DF",
+      "text": "TU00ITCKRURUCKENYC"
+    },
+    {
+      "address": "$AB57",
+      "text": "6ESESESESES2ee"
+    },
+    {
+      "address": "$AB80",
+      "text": "2sa2saLREIT000\n00"
+    },
+    {
+      "address": "$ABB0",
+      "text": "4ee2mmREITEE00EE"
+    },
+    {
+      "address": "$AC40",
+      "text": "482OGLIT0 0CK00"
+    },
+    {
+      "address": "$AC5C",
+      "text": "NAITRE EE00ATTTERha8"
+    },
+    {
+      "address": "$AD10",
+      "text": "0OG2TISAKkF"
+    },
+    {
+      "address": "$AD19",
+      "text": "00ITCSMBha 00PAMBTT8er8"
+    },
+    {
+      "address": "$AD3E",
+      "text": "7juER0SEERR00PANA"
+    },
+    {
+      "address": "$ADA3",
+      "text": "isLLer*erQU yo:fDNUDu*YCYC0STA0STA"
+    },
+    {
+      "address": "$AE18",
+      "text": "4GEv    6"
+    },
+    {
+      "address": "$AE47",
+      "text": "L  EE3 rr"
+    },
+    {
+      "address": "$AE60",
+      "text": "2LnAC00EEt5FIo3    RE"
+    },
+    {
+      "address": "$AEFF",
+      "text": "d1zGH3EE  SlSlhh11  mlinv*8:.4GEv(3zvC"
+    },
+    {
+      "address": "$AF41",
+      "text": "/*****   zzzzz"
+    },
+    {
+      "address": "$AF60",
+      "text": "2Ln3NETC33FIo3QUhfhOG"
+    },
+    {
+      "address": "$B197",
+      "text": "*K bofh13"
+    },
+    {
+      "address": "$B1B8",
+      "text": "33111fgiKee2v.!(A  X)dtokeL"
+    },
+    {
+      "address": "$B2C3",
+      "text": "0STUTUheLLkeeyF!!MTU"
+    },
+    {
+      "address": "$B370",
+      "text": "ms4164mRE0?MESeTULLTAEE"
+    },
+    {
+      "address": "$B3C4",
+      "text": "A  keectF00"
+    },
+    {
+      "address": "$B4CC",
+      "text": "tATATATES2L"
+    },
+    {
+      "address": "$B591",
+      "text": "EQUheREyyNENS    cc c"
+    },
+    {
+      "address": "$B5A1",
+      "text": ".\n6ee4is    anan anNSNEyyREheEQU"
+    },
+    {
+      "address": "$B5B8",
+      "text": "c cc    is4ee6\n."
+    },
+    {
+      "address": "$B63C",
+      "text": "q.P SasCEVEQU ? )//))0ES"
+    },
+    {
+      "address": "$B858",
+      "text": "PO5dTCYM 7bYC3373"
+    },
+    {
+      "address": "$BA9F",
+      "text": "TIhx,mHiw"
+    },
+    {
+      "address": "$BC7F",
+      "text": "0SPEuAT*RR Km'\nAptW(EVLLEQU"
+    },
+    {
+      "address": "$BF29",
+      "text": "NA0u8 f7   '/wkeES"
+    },
+    {
+      "address": "$BF97",
+      "text": "rnijp   th,4A"
+    }
+  ],
+  "bank_13": [
+    {
+      "address": "$8104",
+      "text": "ITREmmTU 0SENEMPETUm"
+    },
+    {
+      "address": "$811D",
+      "text": "ePATIeREmmEEEE0"
+    },
+    {
+      "address": "$819C",
+      "text": "Z~R   EE EEEE"
+    },
+    {
+      "address": "$81C5",
+      "text": "hewLLTICSNU~ke64RERE0S"
+    },
+    {
+      "address": "$81D9",
+      "text": "a4543126ERC4TUerCSRUw'LLerERRU00\n\n \n0S66u"
+    },
+    {
+      "address": "$84BB",
+      "text": "n2. GE1qTCmIT0"
+    },
+    {
+      "address": "$84C7",
+      "text": "6RE2  m.5 m)0es6X064e~.06Wm.6"
+    },
+    {
+      "address": "$8608",
+      "text": "87 keAf"
+    },
+    {
+      "address": "$8637",
+      "text": "LL0*LLLLLLLLLLLL0Z6YCZEVAC'6YCZEVTI'EVACAN"
+    },
+    {
+      "address": "$866D",
+      "text": "GIMEYCZ ?SA ?SA"
+    },
+    {
+      "address": "$86AF",
+      "text": "(Z ?SA ?SA"
+    },
+    {
+      "address": "$87B0",
+      "text": ".A,231haC."
+    },
+    {
+      "address": "$87C1",
+      "text": "ee752 6 :TITI6222K"
+    },
+    {
+      "address": "$8830",
+      "text": "keRR.6vTCGIu"
+    },
+    {
+      "address": "$8BA4",
+      "text": "5 27th 6 RR00SITLL ASeLLeweRE NE RE NE RR mITAC./.5 6 lanisanPE Se RE mfPE Se LLuTUePE Se 5 27PE Se RR00SITLL ASeLLeweRE NE RE NE RR mITAC./.5 6 lanisanLLeLLeSAn RE RE 64 m )./.\"f/ thanisanQU7is"
+    },
+    {
+      "address": "$8D41",
+      "text": "erb100ACGE5"
+    },
+    {
+      "address": "$8EB1",
+      "text": "yLBEeFI t/ fbee RE t/ :Cu RE"
+    },
+    {
+      "address": "$8EE9",
+      "text": "64 64 sp1dhG0 6"
+    },
+    {
+      "address": "$8FE8",
+      "text": ".vf   er7GIQUSA"
+    },
+    {
+      "address": "$9041",
+      "text": "fRE  fRE RRAC55RRAC55vvvvvv' uuuuuu  646464646464"
+    },
+    {
+      "address": "$906F",
+      "text": "QEsEQ '         er7GIQUSA"
+    },
+    {
+      "address": "$912C",
+      "text": "GIMkGFAN0NEhLbES ASjNE012NE 1 2!cnTI FC2vgRE6 Bxm9)A.A .NAFadptEL.A .x xxxxNA.NAFaPEPEPEPEPExohe xEQU0S hehehe 0S0S0S .QU 9)A.A0.NAFadptEL.A0646464646464"
+    },
+    {
+      "address": "$9231",
+      "text": "TT4CTATAUmMBLLKYCYCUsaMEDVhaQUASheDVTTk0S0SYCermOG00uW2dCRRTA0SheSe2EN"
+    },
+    {
+      "address": "$9290",
+      "text": "AMEsaSLLLL6owCSmLREREf5m REuRE"
+    },
+    {
+      "address": "$92A6",
+      "text": "0EEAREu   62 ED7ES40RE0m643eem RE0d)NSFITA"
+    },
+    {
+      "address": "$92E3",
+      "text": "m.RRE8uevES37i2\"RthTI"
+    },
+    {
+      "address": "$92F7",
+      "text": "EE25640.L  2LRPEGE/LL22 3dn/LLiANff"
+    },
+    {
+      "address": "$9316",
+      "text": "nANi887LL  88"
+    },
+    {
+      "address": "$94CC",
+      "text": "Kq664REt ACc(qTIunREnEMesFI6u"
+    },
+    {
+      "address": "$955C",
+      "text": "00    iC!ke gx1"
+    },
+    {
+      "address": "$95E9",
+      "text": "4GEv    6"
+    },
+    {
+      "address": "$9601",
+      "text": "/nfCFvKAnv,:.(.."
+    },
+    {
+      "address": "$9631",
+      "text": "2LnAC00EEt5FIo3    RE"
+    },
+    {
+      "address": "$9710",
+      "text": "m1641 NA  MEhaQ*e0"
+    },
+    {
+      "address": "$9772",
+      "text": "31r2v3UCH7TUDVFI"
+    },
+    {
+      "address": "$9782",
+      "text": "000 W7eeow*YC"
+    },
+    {
+      "address": "$97ED",
+      "text": "PE,WGIEEerhege"
+    },
+    {
+      "address": "$992E",
+      "text": "isTIRU.btr2v3UEE0STUDVFI"
+    },
+    {
+      "address": "$999E",
+      "text": "RU.AGE      2      023  1bcx U 2eq*FI"
+    },
+    {
+      "address": "$9A1E",
+      "text": "1\n0SDw7j. y Dw7j.0y3v.1bcx Uv?eq*FI"
+    },
+    {
+      "address": "$9DA4",
+      "text": ",7r3fuwiI1117"
+    },
+    {
+      "address": "$A081",
+      "text": "NXXNSis m.L710  ZZONthSeSeSe PEPEPE SS  .."
+    },
+    {
+      "address": "$A14C",
+      "text": "))))))))CKLLFaOTITU'"
+    },
+    {
+      "address": "$A17C",
+      "text": "5)))))LLerWLTI0SEE"
+    },
+    {
+      "address": "$A19C",
+      "text": "TCGE98esvTCESNSQUT~?TA,10g!kCH3 CKLLFaOTITU'"
+    },
+    {
+      "address": "$A1E4",
+      "text": "0 6YCSm6,  5553ACESLLerWLTI0SEE"
+    },
+    {
+      "address": "$A22E",
+      "text": "fkimmi\"\"\"\"\"\"\"\"vvvvvvvvOPYQUERYQUOPESERERklmlkimm"
+    },
+    {
+      "address": "$A25D",
+      "text": "heTUENNSFI"
+    },
+    {
+      "address": "$A2D4",
+      "text": "ERERYQUWERERERESmmlgmmmiCS5DAS5CSCSCSTT2AOP2TTTTTTESOPYQUNENEhe64"
+    },
+    {
+      "address": "$A30B",
+      "text": "vwvvv'"
+    },
+    {
+      "address": "$A43B",
+      "text": "to .   .64 PERR00EE"
+    },
+    {
+      "address": "$A489",
+      "text": "NRENA       ( Le"
+    },
+    {
+      "address": "$A521",
+      "text": "v  Z'he 4TIYC 264  Lf  7Fa"
+    },
+    {
+      "address": "$A58E",
+      "text": "erleCSTAYQU,gen"
+    },
+    {
+      "address": "$A598",
+      "text": "L3 *XTI  U"
+    },
+    {
+      "address": "$A5C8",
+      "text": "n .EMTIX  TI"
+    },
+    {
+      "address": "$A64C",
+      "text": "TIX   X gen"
+    },
+    {
+      "address": "$A766",
+      "text": "C.~RECKptELMBPEYQUthtMB00"
+    },
+    {
+      "address": "$A791",
+      "text": "00FIeCSCSCEVMEle"
+    },
+    {
+      "address": "$A7DB",
+      "text": ".!tthth:!ELptmK*"
+    },
+    {
+      "address": "$A7ED",
+      "text": "000OGAC\nv00CKASDoYC.A"
+    },
+    {
+      "address": "$A827",
+      "text": "2ITATAT00w0  001  NA"
+    },
+    {
+      "address": "$A887",
+      "text": "1ATATAT10w000000usu uuu msammmmmm  F' i4k"
+    },
+    {
+      "address": "$A8AE",
+      "text": "hamm1Slsal1k4l2  eshasaSlesCmm  NA 1\"-F"
+    },
+    {
+      "address": "$A92C",
+      "text": "2w\"\"AA*7hehe64646464"
+    },
+    {
+      "address": "$A994",
+      "text": "ctpMB/SekPE"
+    },
+    {
+      "address": "$A9DC",
+      "text": "w 297xN"
+    },
+    {
+      "address": "$AAB2",
+      "text": "W64xohe xEQU0S hehehe 0S0S0S Bxm9)A.A .NAFadptEL.A .QU 9)A.A0.NAFadptEL.A0"
+    },
+    {
+      "address": "$AE4B",
+      "text": "r    GE\"TCFI ctt"
+    },
+    {
+      "address": "$AE5B",
+      "text": "7    NU(QUYC er"
+    },
+    {
+      "address": "$B1A2",
+      "text": "eRE.btr2v3UEE0STUDVFI"
+    },
+    {
+      "address": "$B1E1",
+      "text": "(u 64 tr2v3U64 uDVFI"
+    },
+    {
+      "address": "$B267",
+      "text": "BE,ME(t/EE0STUDVFI"
+    },
+    {
+      "address": "$B282",
+      "text": "eRE  rr2v3U  DVFI"
+    },
+    {
+      "address": "$B358",
+      "text": "Tre6t''v62 6Auu"
+    },
+    {
+      "address": "$B694",
+      "text": "REIT000ITITRE64REREnLNEv"
+    },
+    {
+      "address": "$B766",
+      "text": "XT0EE 64  EELTEE3 cb 36ee 22625eb"
+    },
+    {
+      "address": "$B8AB",
+      "text": "6244m  L.EEEEEE00ITREmRERE   btITIT\"."
+    },
+    {
+      "address": "$B8CA",
+      "text": "/.TUA''he'u 1tt5"
+    },
+    {
+      "address": "$B9EA",
+      "text": "2 eONPEEEb"
+    },
+    {
+      "address": "$BA0E",
+      "text": "e eu ke5d5"
+    },
+    {
+      "address": "$BA9C",
+      "text": "266666PO7tEEEEEE   0 EECKCSCS3J"
+    },
+    {
+      "address": "$BB53",
+      "text": "fRR 0EEEE IT"
+    },
+    {
+      "address": "$BE1B",
+      "text": ".IT0ES EE  .\"0Lr: 0LNUnTEEd \"GEEEtbREREITL.r RU"
+    }
+  ],
+  "bank_23": [
+    {
+      "address": "$818E",
+      "text": "uOPRyo\nOPSyo OPTyo"
+    },
+    {
+      "address": "$819F",
+      "text": "OPR9yo\nOPSFyo OPTFyo"
+    },
+    {
+      "address": "$81B2",
+      "text": "OPspyo\nEQU yo yo"
+    },
+    {
+      "address": "$827B",
+      "text": "I3iiiiiccffNAleFIsp9NActEQUeeyo ctNAeeyo0esRUsp6"
+    },
+    {
+      "address": "$82EC",
+      "text": "Royal Flush"
+    },
+    {
+      "address": "$82F8",
+      "text": "5 of a Kind"
+    },
+    {
+      "address": "$8304",
+      "text": "Straight Flush"
+    },
+    {
+      "address": "$8313",
+      "text": "4 of a Kind"
+    },
+    {
+      "address": "$831F",
+      "text": "Full House"
+    },
+    {
+      "address": "$8330",
+      "text": "Straight"
+    },
+    {
+      "address": "$8339",
+      "text": "3 of a Kind"
+    },
+    {
+      "address": "$834D",
+      "text": "Top Score of"
+    },
+    {
+      "address": "$835A",
+      "text": "Double Up"
+    },
+    {
+      "address": "$8364",
+      "text": "Top Takes of"
+    },
+    {
+      "address": "$837B",
+      "text": "Total Bets"
+    },
+    {
+      "address": "$8386",
+      "text": "Total Takes"
+    },
+    {
+      "address": "$8392",
+      "text": "Top Score of Double Up"
+    },
+    {
+      "address": "$8A83",
+      "text": "4 gli 6liQU ctv\"6"
+    },
+    {
+      "address": "$91E7",
+      "text": "QUWct.CHGI6437fYCEQUfTCAT3EQUQTCTA3 iTUQU A:vusp~NACSRE8CKvw2y1vQU NE ct*CHTC5vct:CHTC5vesRUsp6"
+    },
+    {
+      "address": "$9375",
+      "text": "vw2QU vNAANQU4vNAANQU vLLANvLLANEQUnTC5vEQU6TC5vEQU"
+    },
+    {
+      "address": "$9630",
+      "text": "li         SeERTAERSe         EE0tee4liAN"
+    },
+    {
+      "address": "$9656",
+      "text": "T.) es64BE6464esFI"
+    },
+    {
+      "address": "$9667",
+      "text": "Zr YCFIesGEGE64es"
+    },
+    {
+      "address": "$9678",
+      "text": "Z YCQUQU64646464"
+    },
+    {
+      "address": "$968B",
+      "text": "FIhaerFIPAhaFI        4MEw4ERME4"
+    },
+    {
+      "address": "$96AB",
+      "text": "saPAPAeee"
+    },
+    {
+      "address": "$96BB",
+      "text": "/MEERERMEy/"
+    },
+    {
+      "address": "$96FD",
+      "text": "LL4444    ffff"
+    },
+    {
+      "address": "$972D",
+      "text": "'ueee   64mRERERELLIT0"
+    },
+    {
+      "address": "$97B2",
+      "text": "m64      ITREmmesFI"
+    },
+    {
+      "address": "$97C2",
+      "text": "6eutr   Km,"
+    },
+    {
+      "address": "$97DD",
+      "text": "EEEE0ITIT    0266"
+    },
+    {
+      "address": "$982A",
+      "text": "eeeeeeeuREREREREREREREm0EE"
+    },
+    {
+      "address": "$987D",
+      "text": "TIgege22    nnXX"
+    },
+    {
+      "address": "$98B9",
+      "text": "uuuuuuTUummmmm m 00"
+    },
+    {
+      "address": "$997D",
+      "text": "ctgeX     2ge"
+    },
+    {
+      "address": "$9990",
+      "text": "eemmm6464 vRETEE"
+    },
+    {
+      "address": "$99E2",
+      "text": "RE64     \n\n\n\nEE0ITIT0000006 0SGIouisTr770BEONliee2FI"
+    },
+    {
+      "address": "$9A3E",
+      "text": "x       64BEt"
+    },
+    {
+      "address": "$9A5E",
+      "text": "'e62     mIT.mRE0EE"
+    },
+    {
+      "address": "$9B12",
+      "text": "RRLLTURE"
+    },
+    {
+      "address": "$9B4C",
+      "text": "RE33EV3   uuuuu"
+    },
+    {
+      "address": "$9B72",
+      "text": "000003EV33EV3uuuuuuuu.S..S."
+    },
+    {
+      "address": "$9BB2",
+      "text": "uuuuu   .S.."
+    },
+    {
+      "address": "$9C66",
+      "text": "CSREfNUYCvEQU5EeyoEyoFyoGOP!EeTC"
+    },
+    {
+      "address": "$9DB8",
+      "text": "OPeeEeITRE4OPee67NU3anAS'RIzqh8 NE d\nd d"
+    },
+    {
+      "address": "$A160",
+      "text": "RE0ITcRE1IThDo"
+    },
+    {
+      "address": "$A1B9",
+      "text": "y mURE0ITcRE1IThDo"
+    },
+    {
+      "address": "$A226",
+      "text": "EQU NE4S9 SK S003kefCKyoIyoJyoQyoTEQU0yoHyo2EQU4yoSOP!EeTC"
+    },
+    {
+      "address": "$A5A8",
+      "text": "YQUvJYQUCSREuNUPAEQUvyo3EQUOPyo2EQU yo4y1vOP3TC5vOP2TC5vYQU4ct2ERITqNAvJYQUAvJYQUAvJYQUAC4nOP2?vyo2NUhaAC3anNE"
+    },
+    {
+      "address": "$A5EE",
+      "text": "y1v5eshER6"
+    },
+    {
+      "address": "$A5F7",
+      "text": "ITp:5eshERTC5v~TC5v5eshER6"
+    },
+    {
+      "address": "$A650",
+      "text": "00000000000000000  12399abbcQUYQUONYQUSYQUTCYQUwYQUt/YQUgeYQUFaYQUhaYQU.AYQUFIYQUPEYQU00YQUEEYQUvON mON0th5TI0is0ON 2le0unyo0.2le 2ct0dn 0ke2ct 2t0dn 0ke2t 0ME2TC0he0Do 0ME2m0es0Do 0ME2sa0ge0Do 0AS3EQU0NA 0y3ou0w 2TI0dn 0ke2TI 2TI0linA0QU2TI vTI D"
+    },
+    {
+      "address": "$A6FE",
+      "text": "7ef  75444444444468 :vNUEQUCHANGEMESSAGESPEED"
+    },
+    {
+      "address": "$A721",
+      "text": "~vBEGINANEWQUESTCOPYQUER"
+    },
+    {
+      "address": "$A75D",
+      "text": "!xqueeeeeeesONerLEV"
+    },
+    {
+      "address": "$A76C",
+      "text": "ux1234th      isONEL.A"
+    },
+    {
+      "address": "$A77F",
+      "text": "NAxt/asasasasasasSeONDVENTURE"
+    },
+    {
+      "address": "$A7A1",
+      "text": "LwstststTI"
+    },
+    {
+      "address": "$A7AA",
+      "text": "GEwFaFaFaTIow"
+    },
+    {
+      "address": "$A7BC",
+      "text": "nw777Sl"
+    },
+    {
+      "address": "$A7C5",
+      "text": "Lv666haSl"
+    },
+    {
+      "address": "$A7CE",
+      "text": "GEv555CSl"
+    },
+    {
+      "address": "$A881",
+      "text": "L4fCh4CA4CS4C9kShHLhNLlAGIASNSy"
+    },
+    {
+      "address": "$A8CD",
+      "text": "eL..L2"
+    },
+    {
+      "address": "$A8D7",
+      "text": "IT64)*SES   mvffke"
+    },
+    {
+      "address": "$A8E8",
+      "text": "'uTI/ ee22226"
+    },
+    {
+      "address": "$A8F6",
+      "text": "REPEOG000000IT ENENbttOer"
+    },
+    {
+      "address": "$A906",
+      "text": "0ow6DVQUF euULLL."
+    },
+    {
+      "address": "$A93B",
+      "text": "00IT REEMWqqqS"
+    },
+    {
+      "address": "$A946",
+      "text": "tstxCHSlSlNE EM00GIcbbN"
+    },
+    {
+      "address": "$A958",
+      "text": "NU:CSER*   NNLL."
+    },
+    {
+      "address": "$A966",
+      "text": "0NSwEQUEQUw6   2377g"
+    },
+    {
+      "address": "$A977",
+      "text": "0ITFITI3  ITbttbm"
+    },
+    {
+      "address": "$AA92",
+      "text": "?*:wOABwOABas1YC00S00EE spgeIT0000"
+    },
+    {
+      "address": "$AAED",
+      "text": "'ueligeLIT0"
+    },
+    {
+      "address": "$AAF8",
+      "text": "heTULLYC0SEE0ITLgelieu"
+    },
+    {
+      "address": "$AB07",
+      "text": "0SYCLLTU"
+    },
+    {
+      "address": "$AB2D",
+      "text": "EEEEEEEEEEEEEEEE"
+    },
+    {
+      "address": "$AC4C",
+      "text": "f 33rLLL"
+    },
+    {
+      "address": "$AC82",
+      "text": "L  ee00448ee"
+    },
+    {
+      "address": "$ACAD",
+      "text": "22bbw64SlwSAEDATU"
+    },
+    {
+      "address": "$AD6D",
+      "text": "OGOGOGOGgeANANEQUMEMEMELELAATC    000ee"
+    },
+    {
+      "address": "$ADD6",
+      "text": "SSi-44"
+    },
+    {
+      "address": "$ADFC",
+      "text": "00       tITEE"
+    },
+    {
+      "address": "$AE59",
+      "text": "LLTIFI.LL0RUnITRE EE0000 00CK0RE02266"
+    },
+    {
+      "address": "$AE75",
+      "text": "011330sp-64mmRERE"
+    },
+    {
+      "address": "$AEFD",
+      "text": "64643CSITququ0Sm1PEEE0EE"
+    },
+    {
+      "address": "$AF16",
+      "text": "ueuWg0 LTITCS36464"
+    },
+    {
+      "address": "$AF26",
+      "text": "EE0EEPE1m"
+    },
+    {
+      "address": "$AF4B",
+      "text": "yy        aseTC"
+    },
+    {
+      "address": "$AF6D",
+      "text": "uuunnn  uuunnn  EEEEEErrT\"REEEEEEErrT\"RE 0022220 0022220mmmmmmm64mmmmmmm64"
+    },
+    {
+      "address": "$AFD5",
+      "text": "nTnnnX"
+    },
+    {
+      "address": "$B045",
+      "text": "X.X..X"
+    },
+    {
+      "address": "$B055",
+      "text": "X..Z5X"
+    },
+    {
+      "address": "$B121",
+      "text": "a 648yo648G28ou27es2"
+    },
+    {
+      "address": "$B131",
+      "text": "c5sp8DVsp8!ee"
+    },
+    {
+      "address": "$B148",
+      "text": "cEDu8eli2Pkelike"
+    },
+    {
+      "address": "$B18C",
+      "text": "NU8-EQU2geEQU2haEQU"
+    },
+    {
+      "address": "$B1BC",
+      "text": "GE5asGE9LGE2MS"
+    },
+    {
+      "address": "$B1D6",
+      "text": "9/BE?FGI?uGI"
+    },
+    {
+      "address": "$B1FA",
+      "text": "W28QU2wESK:ESJMBESJVTC"
+    },
+    {
+      "address": "$B231",
+      "text": "EQU2MNAHOGNAHAME"
+    },
+    {
+      "address": "$B23C",
+      "text": "5GIDo2esy52ou"
+    },
+    {
+      "address": "$B254",
+      "text": "diandELan2GEt"
+    },
+    {
+      "address": "$B265",
+      "text": "ANAer9TCas84e8De0(e"
+    },
+    {
+      "address": "$B32D",
+      "text": "TI?heTI?bNU?FNU"
+    },
+    {
+      "address": "$B424",
+      "text": "Dgth~2th~toth~qis~dis"
+    },
+    {
+      "address": "$B445",
+      "text": "esd!esKERt/JVSeJASeKouSe"
+    },
+    {
+      "address": "$B676",
+      "text": "GEhGFBzyus"
+    },
+    {
+      "address": "$BA0B",
+      "text": "ES es2yye t/2zze le2BBe t/2zz004REe es2yyer is2Ewto th2vv000ME Se2AA000PE64L.as urtpMErMEnMEp 5t/PENUNS"
+    },
+    {
+      "address": "$BEBE",
+      "text": "-lePGE L5IT7*GE5z)GE *YCNS"
+    },
+    {
+      "address": "$BED2",
+      "text": "yGE YCIDF*0GEbe6yBGGE"
+    }
+  ],
+  "bank_24": [
+    {
+      "address": "$87C9",
+      "text": "toN:NN: jnEE.3'A t"
+    },
+    {
+      "address": "$8837",
+      "text": "// N/ EEEE"
+    },
+    {
+      "address": "$8A5D",
+      "text": "/N//2EEEE"
+    },
+    {
+      "address": "$8CB7",
+      "text": "DoEENU)'e1."
+    },
+    {
+      "address": "$8EBF",
+      "text": "/343/NEEEE"
+    },
+    {
+      "address": "$8F01",
+      "text": "NNBBBBNU  n 2'"
+    },
+    {
+      "address": "$8FA1",
+      "text": "ASASDoEEEE.'* f"
+    },
+    {
+      "address": "$8FB9",
+      "text": "EEEEEE/'CK0l"
+    },
+    {
+      "address": "$9004",
+      "text": "thtas rN52NZmME3EE0.A.'53X HeswH?N:NY:YTT ~\nESyo'3f47"
+    },
+    {
+      "address": "$904B",
+      "text": "INNNXIEEEEEEEEEE/'  t"
+    },
+    {
+      "address": "$9069",
+      "text": "EEEEEEli'GEVS"
+    },
+    {
+      "address": "$9077",
+      "text": "mtoJtoENtoERPRUEERUli6         DMUOEvvvvvvvvRUiy"
+    },
+    {
+      "address": "$91ED",
+      "text": "NNNNNNELjEEEERU/'  N"
+    },
+    {
+      "address": "$92A6",
+      "text": "EE.64T.gQPVUQ"
+    },
+    {
+      "address": "$9332",
+      "text": "0d416n33645cgrpc"
+    },
+    {
+      "address": "$945B",
+      "text": "6fopiknnfipk"
+    },
+    {
+      "address": "$9617",
+      "text": "ERdd)wESPEESNUM"
+    },
+    {
+      "address": "$962B",
+      "text": "xPEESESNPEEDTIEDEDGITIA"
+    },
+    {
+      "address": "$963D",
+      "text": "PEBEABEGEBENEGEAMNE"
+    },
+    {
+      "address": "$964B",
+      "text": "xBENWGENENADoGEBENEAOP2"
+    },
+    {
+      "address": "$965A",
+      "text": ")xBEQUWNDoNEDoNENAW"
+    },
+    {
+      "address": "$983D",
+      "text": "dspkeESyoeeESd264sp"
+    },
+    {
+      "address": "$98BA",
+      "text": "~tdESspTCdli"
+    },
+    {
+      "address": "$98CA",
+      "text": "~udTC.spdSA"
+    },
+    {
+      "address": "$9FE8",
+      "text": "le/QU5GEE'2!8ct:QUE'2(IT.ct/QUE'2!ale:QU5GEE'2(ITQle/QU5GEE'2!ale:QU5GEE'2(ITBCSCSct/QU6"
+    },
+    {
+      "address": "$A092",
+      "text": "TCT'dyodNU1ACetd6"
+    },
+    {
+      "address": "$A20E",
+      "text": "OPaE29yo3YQU37NE"
+    },
+    {
+      "address": "$A6B5",
+      "text": "NNOOzzzz     jjjjj           jjjjj           jjjjj           kkkkk           kkkmm           llmmm           llmmm           llmmm      I()"
+    },
+    {
+      "address": "$A7AD",
+      "text": "QVVWVWXXXWXR:"
+    },
+    {
+      "address": "$A7D1",
+      "text": "iiiiiSSSSSSTTTUU'"
+    },
+    {
+      "address": "$A7FE",
+      "text": "YZZYYYY:"
+    },
+    {
+      "address": "$A9C8",
+      "text": ":E2ASes(:QU8 3isNE"
+    },
+    {
+      "address": "$A9F0",
+      "text": "yee:yo\nyd:yo yyo:yo"
+    },
+    {
+      "address": "$AB42",
+      "text": "yyo:xyd:6CNUaIT1anmyee:6fanfyee:yo\nyd:yo yyo:yo"
+    },
+    {
+      "address": "$ADDB",
+      "text": "4a0 OtvT4972wOZ"
+    },
+    {
+      "address": "$ADF9",
+      "text": "Zvh0hcsou"
+    },
+    {
+      "address": "$AE33",
+      "text": "424 xxxx4444omB"
+    },
+    {
+      "address": "$AEA7",
+      "text": "EQUsyoELy'toyo.Ay.toyoDVy,toyoENy-toyoTUy?toyoREy!toyoLvvtvI3NE dtREyo16"
+    },
+    {
+      "address": "$B625",
+      "text": "PERE ANthNSt gethNS"
+    },
+    {
+      "address": "$B633",
+      "text": "OPthNSt gethNS"
+    },
+    {
+      "address": "$B63F",
+      "text": "ACthNS  00th 00thNS"
+    },
+    {
+      "address": "$BC39",
+      "text": "Tf   vLTXTLv 7b"
+    }
+  ],
+  "chapters": [
+    {
+      "address": "$8091",
+      "text": "65 56 QU ctNE46"
+    },
+    {
+      "address": "$822D",
+      "text": "Ksp3 g8sp312yd3 g8sp313yd3 m8sp31cyd3 m8sp31byd3 m8sp31ayd3 n8sp31dyd3 n8sp31eyd3 t8sp31lyd3 t8sp31myd3 Fesp3337d3 Cssp3227d1 h9sp10ezd1 i9sp10fzdY iEspY0f9dY azspY117dY pBspY278dY rpspY63cdY bispY968dY sgspYa39dY bdspYb47dY ibspYc38dY b6spYe5gd) cisp)19id) bbsp)2btd) i7sp)2lsd) j7sp)2msd) qbsp)2wtd) shsp)1qhd) unsp)03dd)2lksp)236d)2mksp)246dH a8sp: 9j3: 97sp:0hp3:5thd:6l7sp:53hd:637spI3h uI79n3I7AlspI6hodI7BlspI6iodI7ClspI6jodI7uaspI51hdI7IaspI5f8dI6idspI4ebdI7cfspI85edQ 0jyoQ0x3liQ 0kyoQ0x4liQ 8jyoQ2z3liQ 8kyoQ2z4liQ gjyoQ1H3liQ gkyoQ1H4liQ732spQ63DdQ742spQ64Dd.4f9sp.3cnd  e7u 1dqd  f7u 1eqd  67sp 13qd  n7sp 1oqd  edsp 0dqd  fdsp 0eqd  khsp 0jtd8 bf3853f18 cf3854f18 cf3855f18 knu85dad8 lnu85ead8 lf3844818 mf3845818 g6380gw18 h6380hw1807e3829g1808e382ag1808e382bg180g7u82ngd80h7u82ogd80h7u82pgd80pe382Bg180qe382Cg180qe382Dg180ge381fk180he381gk1828a381091829a38119182Da381u9182Ea381v91g i7yog2qalig2ehspg447di c7spi236di ccspi13fdi 6aspi2b3di iaspi2l3di A6spi365dq bbspq02edq cbspq03edq cbspq04ed?5pasp? oFd?5pasp? pFd?5pasp?9oFd?5pasp?9pFd? fisp?147d?5dbyo?6dfli?69esp?847dA088spA 4kdA088spA 5kdF 47spQ8583( sqsp(0ked( yqsp(44id( Hhsp(3w4d( cksp(31ad( pksp(3Iqd( hksp(3zqd( Besp(1lfd( qesp(1ffd( o8sp(22dd(103d(3ucu(3jcli(4 8yo7 f9sp70bs37 f9sp70as37 g9sp70cs3c 79spc058dc 89spc068dP e7spP22hdT odmT27t4T oemT27u4E 64spE06ddE 64spE05ddE 64spE07dd"
+    },
+    {
+      "address": "$893A",
+      "text": "../6bnLvHKv"
+    },
+    {
+      "address": "$8947",
+      "text": "00Vsp-t/"
+    },
+    {
+      "address": "$895D",
+      "text": "wvvvvvKv.T64...n7t/-V1sp1spOG"
+    },
+    {
+      "address": "$8A3A",
+      "text": ".?!6bnLvKHy"
+    },
+    {
+      "address": "$8A47",
+      "text": "keD5D5"
+    },
+    {
+      "address": "$8A6A",
+      "text": ".5D77ke7CSRE"
+    },
+    {
+      "address": "$8A77",
+      "text": "gjiji"
+    },
+    {
+      "address": "$8B3A",
+      "text": "./.6bnLxKDw"
+    },
+    {
+      "address": "$8B5D",
+      "text": "vvvvBwEv....64.m64     646464"
+    },
+    {
+      "address": "$8C3D",
+      "text": "6bnLvvvv"
+    },
+    {
+      "address": "$8C5D",
+      "text": "vvvvvvvv"
+    },
+    {
+      "address": "$8D4B",
+      "text": "vAS to"
+    },
+    {
+      "address": "$8D78",
+      "text": "53k to"
+    },
+    {
+      "address": "$8E4B",
+      "text": "v64 to"
+    },
+    {
+      "address": "$97D0",
+      "text": "FIGEEQUb:OF"
+    },
+    {
+      "address": "$9B46",
+      "text": "sp    m"
+    },
+    {
+      "address": "$9D3E",
+      "text": "OATOG1Mc2fNERRACdDVNSTAITPEMBOPCNU."
+    },
+    {
+      "address": "$9FD1",
+      "text": "e8.O"
+    },
+    {
+      "address": "$A011",
+      "text": "e8.er"
+    },
+    {
+      "address": "$A1CA",
+      "text": "*64MBMBMBA:QU47\n~NAm64IT8*"
+    },
+    {
+      "address": "$A465",
+      "text": "\" NU an  IT"
+    },
+    {
+      "address": "$A619",
+      "text": "wCS9rhL 5tzvtz1Dhtr xAnh59rB97 3N xER rhrD9r7t"
+    },
+    {
+      "address": "$A64C",
+      "text": "wAvz9B9rD97 3N"
+    },
+    {
+      "address": "$A66A",
+      "text": "wDoChapter"
+    },
+    {
+      "address": "$A676",
+      "text": "x6The Royal Soldiers"
+    },
+    {
+      "address": "$A68B",
+      "text": "x2Princess Alena!s Adventure"
+    },
+    {
+      "address": "$A6A8",
+      "text": "x3Taloon the Arms Merchant"
+    },
+    {
+      "address": "$A6C3",
+      "text": "x3The Sisters of Monbaraba"
+    },
+    {
+      "address": "$A6DE",
+      "text": "x8The Chosen Ones"
+    },
+    {
+      "address": "$A7E5",
+      "text": "EQU yocyodyoevITEQUvf"
+    },
+    {
+      "address": "$A82F",
+      "text": "ASEQUfyolvYASvYASvYASvEN2vf"
+    },
+    {
+      "address": "$A9CC",
+      "text": "TC6v5mmPAEQUyTC5vEQUmTC5vEQU"
+    },
+    {
+      "address": "$AA09",
+      "text": "5OPc6GENU*OPe6CHITe6"
+    },
+    {
+      "address": "$AA48",
+      "text": "thisquesW3:t/SeleLW3ONthemTTOPcE6NActNSNAyo2*"
+    },
+    {
+      "address": "$AC08",
+      "text": "yo\nEQU yo yo"
+    },
+    {
+      "address": "$AC4F",
+      "text": "dK 3AQU"
+    },
+    {
+      "address": "$AC78",
+      "text": "Dov22v64ou 0livMBDoveDoOP,fp3(PANE t?6"
+    },
+    {
+      "address": "$ADB3",
+      "text": "vCH2QU5vPAyTC1t"
+    },
+    {
+      "address": "$ADD2",
+      "text": "nesEQUfyolvLyvLyvLyvEN2vf"
+    },
+    {
+      "address": "$AF22",
+      "text": "wcj1cf/"
+    },
+    {
+      "address": "$AF8A",
+      "text": "TU626262teue60"
+    },
+    {
+      "address": "$AFB1",
+      "text": "5ee4"
+    },
+    {
+      "address": "$AFC1",
+      "text": "6u2eT'r"
+    },
+    {
+      "address": "$B041",
+      "text": "6d3EQU yoY  TI 7li tLLEQU"
+    },
+    {
+      "address": "$B559",
+      "text": "2vPmv"
+    },
+    {
+      "address": "$B562",
+      "text": "vb6EQUwTC\n4EQUNTC"
+    },
+    {
+      "address": "$B62A",
+      "text": "thAITv~~QU"
+    },
+    {
+      "address": "$B66E",
+      "text": "6dITW37fPNE"
+    },
+    {
+      "address": "$B985",
+      "text": "GIpA,w"
+    },
+    {
+      "address": "$BA2C",
+      "text": ".CAVEEeer.A(G"
+    },
+    {
+      "address": "$BB08",
+      "text": "TITA/esidYQULLsaer-Dow"
+    },
+    {
+      "address": "$BC17",
+      "text": "outA,1"
+    },
+    {
+      "address": "$BC36",
+      "text": ".AYC3QM"
+    },
+    {
+      "address": "$BCEE",
+      "text": ".A?MPEleME"
+    },
+    {
+      "address": "$BFD0",
+      "text": "TT/.QU"
+    }
+  ]
+}

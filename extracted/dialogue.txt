@@ -1,0 +1,1053 @@
+DRAGON WARRIOR IV - EXTRACTED DIALOGUE
+======================================================================
+
+MENU TEXT
+----------------------------------------------------------------------
+  ike. A QUESTCONTINUE
+  CHANGE MESSAGE SPEEDBEGIN A NEW QUESTCOPY
+  ERASE
+  NAMEDo you want toerase thisquest/Select the message 1 2 3 4 5 6 7 8Fast        Slow Chapter LEVEL  .ADVENTURE LOGFIGHTTACTICSMEMBERRUNSPELLITEMATTACKPARRYC 000000SEE NESSEE WSSWITCHREMOVEADDEQU TCDV2 [62]O[60]EQU7TCDV2 [62]y7[60]EQU64TCDV2 [62]y64[60]EQU.TCDV2 [62]y.[60] [62]y.TCSl22YCNU4IT2Sl2QU NE GHYC0CSASan6CS5m3EMySl2[60]EQU TC.A2YQUYC Z[53]TCDV2EQU6[60]EQU3[60]YQUYCEQU1yo*NE  X[53]IT053*fRRGETC.A29n/.A2NE0ES.A2[60]EQU4[60]EQU7[60]EQU YQUYC /[73]OP[75][60]EQU yo*vERleASesgeMEYQUYC  iOP[75][60]NE
+
+LOCATION NAMES
+----------------------------------------------------------------------
+  $BE4F: the Tower.
+  $BE5E: the Stars.
+  $BE6D: the Moon.
+  $BE7C: the Sun.
+  $BE9A: the Terminator.
+
+BANK 12 DIALOGUE
+----------------------------------------------------------------------
+  $807E:
+    TCS.A,EQUPE2.A
+
+  $808D:
+    FIkeRTAn3O.Ay
+
+  $80F8:
+    015aqJesZEMeREtEM5
+
+  $8120:
+    .A,EQUPE2.AC.
+
+  $8130:
+    TAn3O.Ayt:
+
+  $81D8:
+    O840ee)UNUATTTU
+
+  $81E4:
+    wheTAfT4.yo2esTAer.
+
+  $81F5:
+    KANf~AN4 12
+
+  $8243:
+    heYCNSDV0STU 
+    quITOGsaYC
+
+  $8323:
+    fmm nff424m0PAOG 0000 0 7
+    ctPA0ITMEowkedee64ITOG13erquBEweerER8gwes4e62ystsUEM64dkekekeke.geerquananantoEQUgecYssssqlies000022li
+
+  $838D:
+    heYCrr966   esesNE""
+
+  $839F:
+    v03v 1.7TU 0STU
+
+  $83B5:
+    nANi887LL  8800GHCTCanBEasN00OGge642ee22
+
+  $83F6:
+    s* .vz141
+
+  $8521:
+    xxx5ONmITffrrn64mITCK.CK.CKCS)0959595 0liNENUwNUwCHKNENUTI64646464 ,48EM0,0,OP8EM48e*ehKN'tdes
+
+  $8587:
+    BanL3.5E B
+
+  $877E:
+    is4LL4S64SSSSLL4S64hehehehectct TATATATActct
+
+  $87A0:
+    oooB SL '''     TATATAb
+
+  $885E:
+    an) ' vv
+
+  $8877:
+    33   RU37ONCLm:RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!)3T.ONX64st)3T.ONX64stH.LESENbesFIH.LESENbesFIge2222222?SctSOPGIyGI
+
+  $88DB:
+    ?SctSOP2222ge
+
+  $89E3:
+    NENENEv v  ''''
+
+  $8A00:
+    vvv'Zb3 ''''0OO
+
+  $8A24:
+    6464ESES v 02ctyy
+
+  $8B05:
+    dbFIES00    FI LL 006
+
+  $8C76:
+    D YCFIes64esFIYC
+
+  $8CBD:
+    02064nXnznDr?2222yoyo2 x 64nXnz
+
+  $8CDB:
+    ?2222DrDoGEsa 3.yo2000
+
+  $90D9:
+    f3f7ee
+
+  $9138:
+    RR00RUPEYC0EELLWATRRNSs00ACsSeuYC6u
+
+  $9212:
+    bS0vu6420.64vr 64BE, stm1
+    2xGI 01X02
+
+  $9238:
+    YCBEYC6YCBEYC6
+
+  $9250:
+    m64uLvvv'mAv.""..'vvffffA..('OPOPvvITm643T-8.ITTIhe.gedOP4e20vr-fEQU6IT
+    tgewOPNE3h:,0
+
+  $9299:
+    *3zqu1  v:h1
+
+  $92B3:
+    420  YCBEYCesW)ptPE
+
+  $9393:
+    ACACAC5 v  7777RE vvvvvvddm)))0m
+
+  $93B7:
+    777     JtRERE
+
+  $9523:
+    ESEEEE EEA44TC
+    000
+
+  $9533:
+    CBz to
+
+  $95F5:
+    ../6bnLvHKv
+
+  $96A3:
+    0   EEEEEEEE
+
+  $96C5:
+    33CK1spATsp11AT1  F''   64hehehehe64
+
+  $96F8:
+    liESnLvvvv
+
+  $9718:
+    vvvvvvvv
+
+  $9866:
+    i6TA6amQUa6
+
+  $98A3:
+    eED/u j".ANSTIu
+
+  $99EA:
+    2PEr72mliisis64SANUNUNUlilili64NEERNENELNSNS0TT444LLL08ME88SANUNUNUSANUNU64NEERNENENEERNE64TT444TT4408ME888ME80ITm64LL mf
+
+  $9A39:
+    ITm64  vCe20bb GH3
+
+  $9A49:
+    e20  7CSffm 64mIT
+
+  $9AA0:
+    CS3ERH. 8dCS3ERRUTI64NSRR
+
+  $9ABA:
+    TALLerANYCSEE00S5weu
+
+  $9B30:
+    gLNEz.Ae0ONsquerCTUe0TIuA''uuuu'DV'YC
+
+  $9B7E:
+    :)EQU Ztd4yAN
+
+  $9B9E:
+    SlSlowELAC
+
+  $9BC0:
+    EQU ZtON/yES
+
+  $9BFB:
+    ////)EQU ACSlSlowowAN
+
+  $9C1E:
+    FlKENZ
+
+  $9D48:
+    ENA8qu)ERP
+
+  $9D58:
+    es)es,hstOFa
+
+  $9FC1:
+    Esae:.AEQUy 0107f01U,!yoGEO:)v.   v. 1qthRkeMACBE3i3  037
+
+  $A840:
+    fRE  fRE RRAC55RRAC55
+
+  $A8FB:
+    !YmGt ?SA ?SA
+
+  $A956:
+    he64CHbGMBo6464
+
+  $A9DF:
+    TU00ITCKRURUCKENYC
+
+  $AB57:
+    6ESESESESES2ee
+
+  $AB80:
+    2sa2saLREIT000
+    00
+
+  $ABB0:
+    4ee2mmREITEE00EE
+
+  $AC40:
+    482OGLIT0 0CK00
+
+  $AC5C:
+    NAITRE EE00ATTTERha8
+
+  $AD10:
+    0OG2TISAKkF
+
+  $AD19:
+    00ITCSMBha 00PAMBTT8er8
+
+  $AD3E:
+    7juER0SEERR00PANA
+
+  $ADA3:
+    isLLer*erQU yo:fDNUDu*YCYC0STA0STA
+
+  $AE18:
+    4GEv    6
+
+  $AE47:
+    L  EE3 rr
+
+  $AE60:
+    2LnAC00EEt5FIo3    RE
+
+  $AEFF:
+    d1zGH3EE  SlSlhh11  mlinv*8:.4GEv(3zvC
+
+  $AF41:
+    /*****   zzzzz
+
+  $AF60:
+    2Ln3NETC33FIo3QUhfhOG
+
+  $B197:
+    *K bofh13
+
+  $B1B8:
+    33111fgiKee2v.!(A  X)dtokeL
+
+  $B2C3:
+    0STUTUheLLkeeyF!!MTU
+
+  $B370:
+    ms4164mRE0?MESeTULLTAEE
+
+  $B3C4:
+    A  keectF00
+
+  $B4CC:
+    tATATATES2L
+
+  $B591:
+    EQUheREyyNENS    cc c
+
+  $B5A1:
+    .
+    6ee4is    anan anNSNEyyREheEQU
+
+  $B5B8:
+    c cc    is4ee6
+    .
+
+  $B63C:
+    q.P SasCEVEQU ? )//))0ES
+
+  $B858:
+    PO5dTCYM 7bYC3373
+
+  $BA9F:
+    TIhx,mHiw
+
+  $BC7F:
+    0SPEuAT*RR Km'
+    AptW(EVLLEQU
+
+  $BF29:
+    NA0u8 f7   '/wkeES
+
+  $BF97:
+    rnijp   th,4A
+
+
+BANK 13 DIALOGUE
+----------------------------------------------------------------------
+  $8104:
+    ITREmmTU 0SENEMPETUm
+
+  $811D:
+    ePATIeREmmEEEE0
+
+  $819C:
+    Z~R   EE EEEE
+
+  $81C5:
+    hewLLTICSNU~ke64RERE0S
+
+  $81D9:
+    a4543126ERC4TUerCSRUw'LLerERRU00
+    
+     
+    0S66u
+
+  $84BB:
+    n2. GE1qTCmIT0
+
+  $84C7:
+    6RE2  m.5 m)0es6X064e~.06Wm.6
+
+  $8608:
+    87 keAf
+
+  $8637:
+    LL0*LLLLLLLLLLLL0Z6YCZEVAC'6YCZEVTI'EVACAN
+
+  $866D:
+    GIMEYCZ ?SA ?SA
+
+  $86AF:
+    (Z ?SA ?SA
+
+  $87B0:
+    .A,231haC.
+
+  $87C1:
+    ee752 6 :TITI6222K
+
+  $8830:
+    keRR.6vTCGIu
+
+  $8BA4:
+    5 27th 6 RR00SITLL ASeLLeweRE NE RE NE RR mITAC./.5 6 lanisanPE Se RE mfPE Se LLuTUePE Se 5 27PE Se RR00SITLL ASeLLeweRE NE RE NE RR mITAC./.5 6 lanisanLLeLLeSAn RE RE 64 m )./."f/ thanisanQU7is
+
+  $8D41:
+    erb100ACGE5
+
+  $8EB1:
+    yLBEeFI t/ fbee RE t/ :Cu RE
+
+  $8EE9:
+    64 64 sp1dhG0 6
+
+  $8FE8:
+    .vf   er7GIQUSA
+
+  $9041:
+    fRE  fRE RRAC55RRAC55vvvvvv' uuuuuu  646464646464
+
+  $906F:
+    QEsEQ '         er7GIQUSA
+
+  $912C:
+    GIMkGFAN0NEhLbES ASjNE012NE 1 2!cnTI FC2vgRE6 Bxm9)A.A .NAFadptEL.A .x xxxxNA.NAFaPEPEPEPEPExohe xEQU0S hehehe 0S0S0S .QU 9)A.A0.NAFadptEL.A0646464646464
+
+  $9231:
+    TT4CTATAUmMBLLKYCYCUsaMEDVhaQUASheDVTTk0S0SYCermOG00uW2dCRRTA0SheSe2EN
+
+  $9290:
+    AMEsaSLLLL6owCSmLREREf5m REuRE
+
+  $92A6:
+    0EEAREu   62 ED7ES40RE0m643eem RE0d)NSFITA
+
+  $92E3:
+    m.RRE8uevES37i2"RthTI
+
+  $92F7:
+    EE25640.L  2LRPEGE/LL22 3dn/LLiANff
+
+  $9316:
+    nANi887LL  88
+
+  $94CC:
+    Kq664REt ACc(qTIunREnEMesFI6u
+
+  $955C:
+    00    iC!ke gx1
+
+  $95E9:
+    4GEv    6
+
+  $9601:
+    /nfCFvKAnv,:.(..
+
+  $9631:
+    2LnAC00EEt5FIo3    RE
+
+  $9710:
+    m1641 NA  MEhaQ*e0
+
+  $9772:
+    31r2v3UCH7TUDVFI
+
+  $9782:
+    000 W7eeow*YC
+
+  $97ED:
+    PE,WGIEEerhege
+
+  $992E:
+    isTIRU.btr2v3UEE0STUDVFI
+
+  $999E:
+    RU.AGE      2      023  1bcx U 2eq*FI
+
+  $9A1E:
+    1
+    0SDw7j. y Dw7j.0y3v.1bcx Uv?eq*FI
+
+  $9DA4:
+    ,7r3fuwiI1117
+
+  $A081:
+    NXXNSis m.L710  ZZONthSeSeSe PEPEPE SS  ..
+
+  $A14C:
+    ))))))))CKLLFaOTITU'
+
+  $A17C:
+    5)))))LLerWLTI0SEE
+
+  $A19C:
+    TCGE98esvTCESNSQUT~?TA,10g!kCH3 CKLLFaOTITU'
+
+  $A1E4:
+    0 6YCSm6,  5553ACESLLerWLTI0SEE
+
+  $A22E:
+    fkimmi""""""""vvvvvvvvOPYQUERYQUOPESERERklmlkimm
+
+  $A25D:
+    heTUENNSFI
+
+  $A2D4:
+    ERERYQUWERERERESmmlgmmmiCS5DAS5CSCSCSTT2AOP2TTTTTTESOPYQUNENEhe64
+
+  $A30B:
+    vwvvv'
+
+  $A43B:
+    to .   .64 PERR00EE
+
+  $A489:
+    NRENA       ( Le
+
+  $A521:
+    v  Z'he 4TIYC 264  Lf  7Fa
+
+  $A58E:
+    erleCSTAYQU,gen
+
+  $A598:
+    L3 *XTI  U
+
+  $A5C8:
+    n .EMTIX  TI
+
+  $A64C:
+    TIX   X gen
+
+  $A766:
+    C.~RECKptELMBPEYQUthtMB00
+
+  $A791:
+    00FIeCSCSCEVMEle
+
+  $A7DB:
+    .!tthth:!ELptmK*
+
+  $A7ED:
+    000OGAC
+    v00CKASDoYC.A
+
+  $A827:
+    2ITATAT00w0  001  NA
+
+  $A887:
+    1ATATAT10w000000usu uuu msammmmmm  F' i4k
+
+  $A8AE:
+    hamm1Slsal1k4l2  eshasaSlesCmm  NA 1"-F
+
+  $A92C:
+    2w""AA*7hehe64646464
+
+  $A994:
+    ctpMB/SekPE
+
+  $A9DC:
+    w 297xN
+
+  $AAB2:
+    W64xohe xEQU0S hehehe 0S0S0S Bxm9)A.A .NAFadptEL.A .QU 9)A.A0.NAFadptEL.A0
+
+  $AE4B:
+    r    GE"TCFI ctt
+
+  $AE5B:
+    7    NU(QUYC er
+
+  $B1A2:
+    eRE.btr2v3UEE0STUDVFI
+
+  $B1E1:
+    (u 64 tr2v3U64 uDVFI
+
+  $B267:
+    BE,ME(t/EE0STUDVFI
+
+  $B282:
+    eRE  rr2v3U  DVFI
+
+  $B358:
+    Tre6t''v62 6Auu
+
+  $B694:
+    REIT000ITITRE64REREnLNEv
+
+  $B766:
+    XT0EE 64  EELTEE3 cb 36ee 22625eb
+
+  $B8AB:
+    6244m  L.EEEEEE00ITREmRERE   btITIT".
+
+  $B8CA:
+    /.TUA''he'u 1tt5
+
+  $B9EA:
+    2 eONPEEEb
+
+  $BA0E:
+    e eu ke5d5
+
+  $BA9C:
+    266666PO7tEEEEEE   0 EECKCSCS3J
+
+  $BB53:
+    fRR 0EEEE IT
+
+  $BE1B:
+    .IT0ES EE  ."0Lr: 0LNUnTEEd "GEEEtbREREITL.r RU
+
+
+BANK 23 DIALOGUE
+----------------------------------------------------------------------
+  $818E:
+    uOPRyo
+    OPSyo OPTyo
+
+  $819F:
+    OPR9yo
+    OPSFyo OPTFyo
+
+  $81B2:
+    OPspyo
+    EQU yo yo
+
+  $827B:
+    I3iiiiiccffNAleFIsp9NActEQUeeyo ctNAeeyo0esRUsp6
+
+  $82EC:
+    Royal Flush
+
+  $82F8:
+    5 of a Kind
+
+  $8304:
+    Straight Flush
+
+  $8313:
+    4 of a Kind
+
+  $831F:
+    Full House
+
+  $8330:
+    Straight
+
+  $8339:
+    3 of a Kind
+
+  $834D:
+    Top Score of
+
+  $835A:
+    Double Up
+
+  $8364:
+    Top Takes of
+
+  $837B:
+    Total Bets
+
+  $8386:
+    Total Takes
+
+  $8392:
+    Top Score of Double Up
+
+  $8A83:
+    4 gli 6liQU ctv"6
+
+  $91E7:
+    QUWct.CHGI6437fYCEQUfTCAT3EQUQTCTA3 iTUQU A:vusp~NACSRE8CKvw2y1vQU NE ct*CHTC5vct:CHTC5vesRUsp6
+
+  $9375:
+    vw2QU vNAANQU4vNAANQU vLLANvLLANEQUnTC5vEQU6TC5vEQU
+
+  $9630:
+    li         SeERTAERSe         EE0tee4liAN
+
+  $9656:
+    T.) es64BE6464esFI
+
+  $9667:
+    Zr YCFIesGEGE64es
+
+  $9678:
+    Z YCQUQU64646464
+
+  $968B:
+    FIhaerFIPAhaFI        4MEw4ERME4
+
+  $96AB:
+    saPAPAeee
+
+  $96BB:
+    /MEERERMEy/
+
+  $96FD:
+    LL4444    ffff
+
+  $972D:
+    'ueee   64mRERERELLIT0
+
+  $97B2:
+    m64      ITREmmesFI
+
+  $97C2:
+    6eutr   Km,
+
+  $97DD:
+    EEEE0ITIT    0266
+
+  $982A:
+    eeeeeeeuREREREREREREREm0EE
+
+  $987D:
+    TIgege22    nnXX
+
+  $98B9:
+    uuuuuuTUummmmm m 00
+
+  $997D:
+    ctgeX     2ge
+
+  $9990:
+    eemmm6464 vRETEE
+
+  $99E2:
+    RE64     
+    
+    
+    
+    EE0ITIT0000006 0SGIouisTr770BEONliee2FI
+
+  $9A3E:
+    x       64BEt
+
+  $9A5E:
+    'e62     mIT.mRE0EE
+
+  $9B12:
+    RRLLTURE
+
+  $9B4C:
+    RE33EV3   uuuuu
+
+  $9B72:
+    000003EV33EV3uuuuuuuu.S..S.
+
+  $9BB2:
+    uuuuu   .S..
+
+  $9C66:
+    CSREfNUYCvEQU5EeyoEyoFyoGOP!EeTC
+
+  $9DB8:
+    OPeeEeITRE4OPee67NU3anAS'RIzqh8 NE d
+    d d
+
+  $A160:
+    RE0ITcRE1IThDo
+
+  $A1B9:
+    y mURE0ITcRE1IThDo
+
+  $A226:
+    EQU NE4S9 SK S003kefCKyoIyoJyoQyoTEQU0yoHyo2EQU4yoSOP!EeTC
+
+  $A5A8:
+    YQUvJYQUCSREuNUPAEQUvyo3EQUOPyo2EQU yo4y1vOP3TC5vOP2TC5vYQU4ct2ERITqNAvJYQUAvJYQUAvJYQUAC4nOP2?vyo2NUhaAC3anNE
+
+  $A5EE:
+    y1v5eshER6
+
+  $A5F7:
+    ITp:5eshERTC5v~TC5v5eshER6
+
+  $A650:
+    00000000000000000  12399abbcQUYQUONYQUSYQUTCYQUwYQUt/YQUgeYQUFaYQUhaYQU.AYQUFIYQUPEYQU00YQUEEYQUvON mON0th5TI0is0ON 2le0unyo0.2le 2ct0dn 0ke2ct 2t0dn 0ke2t 0ME2TC0he0Do 0ME2m0es0Do 0ME2sa0ge0Do 0AS3EQU0NA 0y3ou0w 2TI0dn 0ke2TI 2TI0linA0QU2TI vTI D
+
+  $A6FE:
+    7ef  75444444444468 :vNUEQUCHANGEMESSAGESPEED
+
+  $A721:
+    ~vBEGINANEWQUESTCOPYQUER
+
+  $A75D:
+    !xqueeeeeeesONerLEV
+
+  $A76C:
+    ux1234th      isONEL.A
+
+  $A77F:
+    NAxt/asasasasasasSeONDVENTURE
+
+  $A7A1:
+    LwstststTI
+
+  $A7AA:
+    GEwFaFaFaTIow
+
+  $A7BC:
+    nw777Sl
+
+  $A7C5:
+    Lv666haSl
+
+  $A7CE:
+    GEv555CSl
+
+  $A881:
+    L4fCh4CA4CS4C9kShHLhNLlAGIASNSy
+
+  $A8CD:
+    eL..L2
+
+  $A8D7:
+    IT64)*SES   mvffke
+
+  $A8E8:
+    'uTI/ ee22226
+
+  $A8F6:
+    REPEOG000000IT ENENbttOer
+
+  $A906:
+    0ow6DVQUF euULLL.
+
+  $A93B:
+    00IT REEMWqqqS
+
+  $A946:
+    tstxCHSlSlNE EM00GIcbbN
+
+  $A958:
+    NU:CSER*   NNLL.
+
+  $A966:
+    0NSwEQUEQUw6   2377g
+
+  $A977:
+    0ITFITI3  ITbttbm
+
+  $AA92:
+    ?*:wOABwOABas1YC00S00EE spgeIT0000
+
+  $AAED:
+    'ueligeLIT0
+
+  $AAF8:
+    heTULLYC0SEE0ITLgelieu
+
+  $AB07:
+    0SYCLLTU
+
+  $AB2D:
+    EEEEEEEEEEEEEEEE
+
+  $AC4C:
+    f 33rLLL
+
+  $AC82:
+    L  ee00448ee
+
+  $ACAD:
+    22bbw64SlwSAEDATU
+
+  $AD6D:
+    OGOGOGOGgeANANEQUMEMEMELELAATC    000ee
+
+  $ADD6:
+    SSi-44
+
+  $ADFC:
+    00       tITEE
+
+  $AE59:
+    LLTIFI.LL0RUnITRE EE0000 00CK0RE02266
+
+  $AE75:
+    011330sp-64mmRERE
+
+  $AEFD:
+    64643CSITququ0Sm1PEEE0EE
+
+  $AF16:
+    ueuWg0 LTITCS36464
+
+  $AF26:
+    EE0EEPE1m
+
+  $AF4B:
+    yy        aseTC
+
+  $AF6D:
+    uuunnn  uuunnn  EEEEEErrT"REEEEEEErrT"RE 0022220 0022220mmmmmmm64mmmmmmm64
+
+  $AFD5:
+    nTnnnX
+
+  $B045:
+    X.X..X
+
+  $B055:
+    X..Z5X
+
+  $B121:
+    a 648yo648G28ou27es2
+
+  $B131:
+    c5sp8DVsp8!ee
+
+  $B148:
+    cEDu8eli2Pkelike
+
+  $B18C:
+    NU8-EQU2geEQU2haEQU
+
+  $B1BC:
+    GE5asGE9LGE2MS
+
+  $B1D6:
+    9/BE?FGI?uGI
+
+  $B1FA:
+    W28QU2wESK:ESJMBESJVTC
+
+  $B231:
+    EQU2MNAHOGNAHAME
+
+  $B23C:
+    5GIDo2esy52ou
+
+  $B254:
+    diandELan2GEt
+
+  $B265:
+    ANAer9TCas84e8De0(e
+
+  $B32D:
+    TI?heTI?bNU?FNU
+
+  $B424:
+    Dgth~2th~toth~qis~dis
+
+  $B445:
+    esd!esKERt/JVSeJASeKouSe
+
+  $B676:
+    GEhGFBzyus
+
+  $BA0B:
+    ES es2yye t/2zze le2BBe t/2zz004REe es2yyer is2Ewto th2vv000ME Se2AA000PE64L.as urtpMErMEnMEp 5t/PENUNS
+
+  $BEBE:
+    -lePGE L5IT7*GE5z)GE *YCNS
+
+  $BED2:
+    yGE YCIDF*0GEbe6yBGGE
+
+
+BANK 24 DIALOGUE
+----------------------------------------------------------------------
+  $87C9:
+    toN:NN: jnEE.3'A t
+
+  $8837:
+    // N/ EEEE
+
+  $8A5D:
+    /N//2EEEE
+
+  $8CB7:
+    DoEENU)'e1.
+
+  $8EBF:
+    /343/NEEEE
+
+  $8F01:
+    NNBBBBNU  n 2'
+
+  $8FA1:
+    ASASDoEEEE.'* f
+
+  $8FB9:
+    EEEEEE/'CK0l
+
+  $9004:
+    thtas rN52NZmME3EE0.A.'53X HeswH?N:NY:YTT ~
+    ESyo'3f47
+
+  $904B:
+    INNNXIEEEEEEEEEE/'  t
+
+  $9069:
+    EEEEEEli'GEVS
+
+  $9077:
+    mtoJtoENtoERPRUEERUli6         DMUOEvvvvvvvvRUiy
+
+  $91ED:
+    NNNNNNELjEEEERU/'  N
+
+  $92A6:
+    EE.64T.gQPVUQ
+
+  $9332:
+    0d416n33645cgrpc
+
+  $945B:
+    6fopiknnfipk
+
+  $9617:
+    ERdd)wESPEESNUM
+
+  $962B:
+    xPEESESNPEEDTIEDEDGITIA
+
+  $963D:
+    PEBEABEGEBENEGEAMNE
+
+  $964B:
+    xBENWGENENADoGEBENEAOP2
+
+  $965A:
+    )xBEQUWNDoNEDoNENAW
+
+  $983D:
+    dspkeESyoeeESd264sp
+
+  $98BA:
+    ~tdESspTCdli
+
+  $98CA:
+    ~udTC.spdSA
+
+  $9FE8:
+    le/QU5GEE'2!8ct:QUE'2(IT.ct/QUE'2!ale:QU5GEE'2(ITQle/QU5GEE'2!ale:QU5GEE'2(ITBCSCSct/QU6
+
+  $A092:
+    TCT'dyodNU1ACetd6
+
+  $A20E:
+    OPaE29yo3YQU37NE
+
+  $A6B5:
+    NNOOzzzz     jjjjj           jjjjj           jjjjj           kkkkk           kkkmm           llmmm           llmmm           llmmm      I()
+
+  $A7AD:
+    QVVWVWXXXWXR:
+
+  $A7D1:
+    iiiiiSSSSSSTTTUU'
+
+  $A7FE:
+    YZZYYYY:
+
+  $A9C8:
+    :E2ASes(:QU8 3isNE
+
+  $A9F0:
+    yee:yo
+    yd:yo yyo:yo
+
+  $AB42:
+    yyo:xyd:6CNUaIT1anmyee:6fanfyee:yo
+    yd:yo yyo:yo
+
+  $ADDB:
+    4a0 OtvT4972wOZ
+
+  $ADF9:
+    Zvh0hcsou
+
+  $AE33:
+    424 xxxx4444omB
+
+  $AEA7:
+    EQUsyoELy'toyo.Ay.toyoDVy,toyoENy-toyoTUy?toyoREy!toyoLvvtvI3NE dtREyo16
+
+  $B625:
+    PERE ANthNSt gethNS
+
+  $B633:
+    OPthNSt gethNS
+
+  $B63F:
+    ACthNS  00th 00thNS
+
+  $BC39:
+    Tf   vLTXTLv 7b
+
