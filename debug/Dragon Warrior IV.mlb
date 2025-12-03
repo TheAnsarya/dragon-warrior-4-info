@@ -606,3 +606,37 @@ R:CC33:fixed_ldx_limit_x:Load X from $6197
 R:CC1D:fixed_cmp_limit_y:Compare $6198 (battle limit Y)
 R:CC36:fixed_ldy_limit_y:Load Y from $6198
 
+# ==============================================================================
+# FIXED BANK - MOST CALLED SUBROUTINES (from cross-reference analysis)
+# ==============================================================================
+# Top 50 most called subroutines in the fixed bank
+
+R:C90C:wait_for_input:Wait for button input (118 calls)
+R:C827:sub_C827:Frequently called utility (56 calls)
+R:C5C5:sub_C5C5:Utility routine (48 calls)
+R:C62D:sub_C62D:Utility routine (43 calls)
+R:C5BF:sub_C5BF:Utility routine (42 calls)
+R:C3EA:sub_C3EA:PPU/video related (37 calls)
+R:C81D:sub_C81D:Utility routine (36 calls)
+R:D3E6:sub_D3E6:Processing routine (35 calls)
+R:C78C:sub_C78C:Utility routine (35 calls)
+R:C5B9:sub_C5B9:Utility routine (34 calls)
+R:D1F3:sub_D1F3:Processing routine (32 calls)
+R:C813:sub_C813:Utility routine (31 calls)
+R:C851:sub_C851:Text/menu related (31 calls)
+R:C8EC:sub_C8EC:RNG related (30 calls)
+R:C73E:sub_C73E:Utility routine (30 calls)
+R:D218:sub_D218:Processing routine (29 calls)
+R:C5AF:sub_C5AF:Utility routine (29 calls)
+R:DDE3:text_output:Text rendering (28 calls)
+R:C65A:sub_C65A:Utility routine (26 calls)
+R:D20A:sub_D20A:Processing routine (24 calls)
+R:C54E:sub_C54E:Clear/init routine (23 calls)
+R:E771:sub_E771:Processing routine (22 calls)
+R:C58F:sub_C58F:Utility routine (18 calls)
+R:D214:sub_D214:Processing routine (18 calls)
+R:C662:sub_C662:Utility routine (17 calls)
+R:C770:sub_C770:Utility routine (16 calls)
+R:D804:sub_D804:Processing routine (16 calls)
+R:C8CC:sub_C8CC:RNG/random routine (15 calls)
+
