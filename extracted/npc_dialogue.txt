@@ -1,0 +1,423 @@
+DRAGON WARRIOR IV - NPC DIALOGUE DUMP
+======================================================================
+
+
+BANK_12
+----------------------------------------------------------------------
+
+Pointer Table at $813F:
+  [  0] $80FF: JesZEMeREtEM5
+  [  2] $8080: .A,EQUPE2.A
+  [  3] $A0A0: BE3.A7SlMEFaMB u83x w'ege-ty'TAPE,WGI
+  [  4] $8080: .A,EQUPE2.A
+  [  5] $A9A9: 00000000heY'ut
+  [  6] $809F: LTAuFIuES4u
+EEEE0S00
+TAu3SA
+  [  7] $8080: .A,EQUPE2.A
+
+Pointer Table at $835F:
+  [  0] $80F1: 148jz  015aqJesZEMeREtEM5
+  [  1] $8884: CLm:RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!)3T.ONX64st)3T.ONX64stH.LESENbesFIH.LESENbesFIge2222222?SctSOPGIyGI
+  [  2] $8888: RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!)3T.ONX64st)3T.ONX64stH.LESENbesFIH.LESENbesFIge2222222?SctSOPGIyGI
+  [  3] $8988: v   1
+  [  4] $B3C3: A  keectF00
+  [  5] $B0B8: LL4nYQUGE66464LL4TL4nTToLL4TTToRE04gMEEMP4AC55bGHITLmLANivBdD46aQUGEESON7CTI4u2NEquu4REtLGEli mRE20 4s0TIuERNS.AUL 6uTLj6b3 2SeisowmLK6nONB.6liw4LfSA6fes7bNspr55dAC1.. T20 vananqu64W(spt/VVV1fDqasNE NEan? keBEndES,er64v?4a 1pfaq?liGEm.'liT ,'6 64Msp5X0geec ES0m 2e.b*K bofh13
+  [  6] $B0B0: LL4nuNEnERquLL4nYQUGE66464LL4TL4nTToLL4TTToRE04gMEEMP4AC55bGHITLmLANivBdD46aQUGEESON7CTI4u2NEquu4REtLGEli mRE20 4s0TIuERNS.AUL 6uTLj6b3 2SeisowmLK6nONB.6liw4LfSA6fes7bNspr55dAC1.. T20 vananqu64W(spt/VVV1fDqasNE NEan? keBEndES,er64v?4a 1pfaq?liGEm.'liT ,'6 64Msp5X0geec ES0m 2e.b*K bofh13
+  [  7] $91B2: /,,'.       EE5th1V1VEE1  64646464,,..      '  1V1V1164646464 EE  rqq1 96NS...1qcyee BEGENSJc2rxFbbS0vu6420.64vr 64BE, stm1
+2xGI 01X02
+
+Pointer Table at $83DB:
+  [  0] $8D8B: -,U ?  9t511sp t7EN)V1V(. :  ))-O TDDT15  Vu   CerTNO *X  GHIT7GHbFa PERR00bldJPCH2eC  "~y* rBEX0ITGH  tZEE00RRPE v2q7~.n.AREm64     fuB5nu520    )nyGE)       64ITELsan!oOG       0eH' llllH .FaNEE TquququNFa 1VVVV  rss.' '..,,'    DASAS1EE EE1xQUQUEE   zTC)iCHptE
+  [  1] $8602: mvCLPENES642mNUke0jDoy.i?0fTy0ke3uowvfMLz-vbst: 2gON0xhgewFau LS6 nkeu.UGE~,xfUo6416.O3!AVq0645SM :LLgeTtDV 0  3    ESLLACct   x  7  R*R1'B*R*4hvBy'h 'Ch'3 hA4Ay 1Avyy L(3ha9ha .N329ha9 '.(. v7 uuevEE5AT1tosa5 3f 00IT3'.'  ....v EE1EE  1EE   3 8f
+  [  2] $A00C: 5f01stSezSer))mNE.  v7 1EDRth:OAC.A 03  23 BUha't3~liUAdMEsaletESRR-ZNYGI8(ANV*EMES/erDVrMBnleTCt.Ath)?ENEN,Id3"tGIMEOGhaELGIJku2f :RUJt5/7EStoDVPE.gSeyASect 73  vp  BE3.A7SlMEFaMB u83x w'ege-ty'TAPE,WGI
+  [  3] $B09C: 4LLLL4TT4LLLL4TT4LLLL4nuNEnERquLL4nYQUGE66464LL4TL4nTToLL4TTToRE04gMEEMP4AC55bGHITLmLANivBdD46aQUGEESON7CTI4u2NEquu4REtLGEli mRE20 4s0TIuERNS.AUL 6uTLj6b3 2SeisowmLK6nONB.6liw4LfSA6fes7bNspr55dAC1.. T20 vananqu64W(spt/VVV1fDqasNE NEan? keBEndES,er64v?4a 1pfaq?liGEm.'liT ,'6 64Msp5X0geec ES0m 2e.b*K bo
+
+Pointer Table at $8420:
+  [  0] $8019: g3
+  [  1] $8684: 'B*R*4hvBy'h 'Ch'3 hA4Ay 1Avyy L(3ha9ha .N329ha9 '.(. v7 uuevEE5AT1tosa5 3f 00IT3'.'  ....v EE1EE  1EE   3 8fzGHJm7.?..,"NU7zCz37f.sa1hATACd  3889   .--   NU  tON LLerWqumRECSLLerWquerLLTIcttsa66mcttsERYCYCTITImmvleTILLRE55vleTILLTI24b
+is46ikb
+is4LL4S64
+  [  2] $8202: EDwS(uth
+  [  3] $A650: ***         OGEM002CSLLLL g7      J .erO? .J.ptCKCK1v0S eLLLLLL  64 RE    v2IRUc 27      K
+
+Pointer Table at $8477:
+  [  0] $A701: m64 vGEERan4A''u66464620 3oTT8TI0S
+EE0RE042COP(42NELmNELLBE42a41 04qESGOPNADoESUFIERanyoehaTT6464 ""LNUmTT80ddca604WHouDoEQUESTTyo40vnliRERENULLr6 RE62004qTIeERMEDoTCUOG6eTIctNU33TIowesfke5TINE vvvvTIoud33u))2RE55ke:: 64mvvJtRERE  mm       QU"AESO"0S"  v2Fa  d9mOdTUd  3MFaFaOFaOFaOFaOOFaOFaOFaOFaFa2  QU"AOES"0S"  vFa
+  [  1] $A756: a604WHouDoEQUESTTyo40vnliRERENULLr6 RE62004qTIeERMEDoTCUOG6eTIctNU33TIowesfke5TINE vvvvTIoud33u))2RE55ke:: 64mvvJtRERE  mm       QU"AESO"0S"  v2Fa  d9mOdTUd  3MFaFaOFaOFaOFaOOFaOFaOFaOFaFa2  QU"AOES"0S"  vFaM  d9OmdTUd  3QUQUkeke v v v v9Fg9g9 3 3 3 3 76  76 *,*, fRE  fRE RRAC55RRAC55
+  [  2] $A757: 604WHouDoEQUESTTyo40vnliRERENULLr6 RE62004qTIeERMEDoTCUOG6eTIctNU33TIowesfke5TINE vvvvTIoud33u))2RE55ke:: 64mvvJtRERE  mm       QU"AESO"0S"  v2Fa  d9mOdTUd  3MFaFaOFaOFaOFaOOFaOFaOFaOFaFa2  QU"AOES"0S"  vFaM  d9OmdTUd  3QUQUkeke v v v v9Fg9g9 3 3 3 3 76  76 *,*, fRE  fRE RRAC55RRAC55
+  [  3] $A953: he64CHbGMBo6464
+
+Direct Strings:
+  $8003: *REENEM3Fax*Ahe''
+  $8012: 0SuWged)g3
+  $8020: .AEREMPEge.AER0heTU''he0S
+  $8032: eREtEM5bCH
+  $8043: lEResuTCvCK00 EEYCs4OTUyhe* 0000EE EEestEMmtEM3'heheheTIPEge
+  $808D: FIkeRTAn3O.Ay
+  $809E: *LTAuFIuES4u EEEE0S00 TAu3SA
+  $8110: TAtLuWget
+  $8120: .A,EQUPE2.AC.
+  $8130: TAn3O.Ayt:
+  $81C1: heOTIYC TIES922keManLLYCYED40S
+  $81D8: O840ee)UNUATTTU
+  $81E4: wheTAfT4.yo2esTAer.
+  $81F3: heKANf~AN4 12
+  $8209: ge2.1E3fEDwS(uisge2.1E3g3ouA20039 00qQ0(ouOP200
+  $8243: YCNSDV0STUquITOGsaYC
+  $825A: cthewYC0SMEe/LON
+  $8280: 0SPAPAOPGHME800owATATQUFIAC10STUwywER0SAMSAqGA5L.tNeem33dES8
+  $82C9: ge2226edTA L5EQU!d
+  $82D9: gemmmmm.PAGHNU.eevlin3356e26uwlio5EQU3t:v  m64mIT0RETUhe    
+  $838D: heYCrr966   esesNE""
+  $83B5: nANi887LL  8800GHCTCanBEasN00OGge642ee22
+  $83DA: ,QUTC1ubNEBEankeD:T64ee64d5025S2li8s* .vz141
+  $840A: AC5ES 3bCESw2LWEMmq4coc8o64du1spYQU64--0.AS000LgNUm"4448b15b
+  $8581: MEeresES'BanL3.5E B
+  $8591: heSTUFIDVEDuYQUk6xn bAN2ITREREIT8 64mIT!TIIT'EVO4ueeu.026uym
+  $87A0: oooB SL '''     TATATAb
+  $87BB: LLTIX  bbLLTIY2ctyyctXYqCSSctXctEDERisisb 0ctY 0 yWle     yq
+  $8867: ff   0 0780    33   RU37ONCLm:RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!
+  $88DB: ?SctSOP2222ge
+  $88EE: 0She2222222geGIyGIyGIyo0  .E* z oAlER . .9rNA u GEREGEv 0cYn
+  $8A1C: gOO 6464ESES v 02ctyy
+  $8A31: ' 'u'  1 6464NE6464ES642ctctct2 yWle64    'Yhe64heAhe 64sp  
+  $8B20: REke.5REREhat/LLNULLREm64ey3AcaSeLLijkNSa62heist/'TUTI64LL64
+  $8BF0: 1  . RRRRIT ' ma7?2gv AN5ASy*3 4TIYC     Lf  . 3ACRR 7Bt Lf 
+  $8C80: .47D 1.9quATGHmRUPAanRE 77 CH ASeYQUi2q'62suqsu*li64mm1sam64
+  $8CEE: 0ShenDrDrHGEmyoyo2yo2202"/~4ITITRE 6D  4 6eeTTmNEee6 REh  NE
+  $8D27: e6 77   6kTI 66 ITOG ff   qo)'.qq.U  uFaNan"EE1NNFatoas  0 .
+  $8F48: YCBEYC6YCBEYC6RU m6464NENURUoweTUheheATIu610  13uTI00 EE0DoA
+  $9119: b  LL RUP7nes 1133esouisANCerRR00RUPEYC0EELLWATRRNSs00ACsSeu
+  $9150: werCTue2ITEETI0"XTI 00ACBEEE0RE66uTIdX00XZ64 64TIeee2 'vuuu6
+  $9238: YCBEYC6YCBEYC6
+  $9243: FIm64  YCBEYCes.Ath(m64uLvvv'mAv.""..'vvffffA..('OPOPvvITm64
+  $92A7: CHvTCGI.
+  $92B3: 420  YCBEYCesW)ptPE
+  $92C8: YCBEYC6YCBEYC6EE337777 11QUYQUOPOP3 200b333EE203111 Cyyeeeeg
+  $93C7: m       LLerWctENENNSFILLerWctENENNSFIcttYTIYCYCcttYTIYCYCct
+  $9461: AQUWQ2S vNU.j15!*?!! vh  h0  6yQQUOP
+  $9487: 1j64.fv  0TITUhehequERA0FITUhectquERAuTI0000rGH0u6RETAEQU L0
+  $9501: L  GHz to
+
+BANK_13
+----------------------------------------------------------------------
+
+Pointer Table at $8041:
+  [  0] $9FC0: jsp. inPVGE7 keTCA3!wGE 6EVleYoCS3z3  m1wwELCH.RUMBsaR  v  f  TI0000WliAT f 3364. !pVPasbEL   6464 . TI0000Wu  f 3364. qLBESR 0a 64sph  g80nM...).'ZZ77FahREvf7ptpthHtouth,wo77ir"X")dd7L53ptddouNqut/**t L--TCGE  NXXNSis m.L710  ZZONthSeSeSe PEPEPE SS  ..
+  [  1] $A0BF: '
+  [  2] $898C: 50 f     64-NE64    64geGHNE bpDd1v. btGst5B-f.31    anrJ5g .7       :077 NU. li.toyo'islAsadD li?009uEMliW413:80SOGle.YQUTUGEOGstsp  uTU.z6SAEstO5FER*CH0O" 64mm 2      t6 200 20      ... 64mLu    . mu000 00cEE      CKEE... 64mm     .   000 000          GIL mkf mu CKCKPA Ic4 PA3
+  [  3] $A08C: 10  ZZONthSeSeSe PEPEPE SS  ..
+
+Pointer Table at $8069:
+  [  0] $9F00: OHyndH           *1S?)J  3  7  iserUquED4TI 733 0vfJHIL   00 1 L5Zt.Aesf3164 0x ouuLbGHLRU 64NU 0  L5Zt.A, f3164 0x **asRtsa:TCGE98esvTCESNSQUT~?TA,10g!kCH3 TI/EML?UliFI L7zjsp.finPVGE7YQUkeTCA3!wGETI/EML?Uli  L7zjsp. inPVGE7 keTCA3!wGE 6EVleYoCS3z3  m1wwELCH.RUMBsaR  v  f  TI0000WliAT f 3
+  [  1] $9090: 646464646464
+  [  2] $809F: m 2
+  [  3] $80BF: qu,,T 6nyzyn6TAsACVELVACr REn1z1nREfGlkQUm        ATbASAS-6 111
+
+Pointer Table at $874C:
+  [  0] $8088: RRP   000 Pu64AkCHSlS8 fmmm 2
+  [  1] $A080: NXXNSis m.L710  ZZONthSeSeSe PEPEPE SS  ..
+  [  2] $9E40: qz~6PEB! 13  0  -wMETAPGEf 7ff35.ER2TC5pXSl3    vm  GEQU.A4AttGE1vv.7 
+ITruNEIT  649 d7-1uD0ES        ke70gwy?)!d7  fv 71ONny:        1spx'gesp        lxGerNU5 sp2064..1Doxnspd.  64vke64.vv3xQ"g   0   OHyndH           *1S?)J  3  7  iserUquED4TI 733 0vfJHIL   0
+  [  3] $BCBE: reuO  f.0.AON1REREITGEnXn     K'2uueK'    CKEEm00ITCKEEeiX'u' uuuuu' CKFaT00EE00000EE   v''2uuK'u   3EE0m00CKEE0Cnu''e6uuu''e REnEEEEIT 000EEIT     K'2uueK'    0ITm00ITLNENE ta8unL6ubdnuS" REREmRE   64 LfIT0     v'u2uuK'udat'L5 eboTS  L0 RE  RERE64RE
+
+Pointer Table at $88C0:
+  [  0] $9C4A: REFat*FIME/TTITYQUPE64U/TTITYQUPE64UlLee25lLee25kspnQAS .bkspnQAS .b?NEbpf6w?NEbpf6w?NU5aGEesW?NU5aGEesWbh ee! R*bh ee! R*h nA64 58h nA64 58 64h esx  64h esx EQU 5864,bEQU 5864,b64,1  L: 64,1  L: 0sp.  bh 0sp.  bh   esx  u*  esx  u*  ee!  M"  ee!  M"NANANANA
+  [  1] $8CDC: NAMB
+  [  2] $8CDC: NAMB
+  [  4] $92DC: 2TARE Am.RRE8uevES37i2"RthTI
+  [  5] $8242: anGEkekeYQUeekeee,:zEREQU17(Lb64r1"5MESm1EEgDvERTI.)vu/vNU41x21bEMaer0o1EEIT 8AN200
+  [  6] $8252: 7(Lb64r1"5MESm1EEgDvERTI.)vu/vNU41x21bEMaer0o1EEIT 8AN200
+  [  7] $8452: RE3AC!toNE!anQUREREEUXrPWKPwvffvDBN!AnjDTEE3sasa64b9HptES84*KAeeEV1LAyosaesb.OliEDquZuv2)fLnd,ZL.JAeeDVd1.xligees LITu2hSmn2. GE1qTCmIT0
+
+Pointer Table at $8B68:
+  [  0] $B600: 7eu IT00ITIT0 RE64m64 IT0 taee6eu 03397eu ITITITITIT0ITRENUfL IT0 6eeeeu'5ddb2u'REITITITIT00EE""Lm00EE',bu' ''eeuM EEEEEE64 REEEREEE0ITITIT0EE  REEE 0ITIT0ES 6euuu''6eudg'ZREIT000ITITRE64REREnLNEv
+  [  1] $B7B0: m00ITu'*td6 u6e8ua0 EEEEITIT."REREREITITNU064 6eeeu''u5ddbi''u6euu
+  [  2] $A2B0: 5AS~CS~AS5CS2OP'TT'OP2TT33333333ERERYQUWERERERESmmlgmmmiCS5DAS5CSCSCSTT2AOP2TTTTTTESOPYQUNENEhe64
+  [  3] $B708: 06' B6cdeuM GHmhRRIT0EEREEEEEREf0EE 6eeeuu'5dd0spN.06'6./cdeu' GHFarITIT0EE ITITREf0ES 21266ee2023 5ee XT0EEEELTEE3 cb 36ee 22625eb
+
+Direct Strings:
+  $8001: yutYoyoDoNE.06464REIT."RE5GEanh91sp19pNFaENhehe
+  $8028: Ht''   5"700 11900001  mAheNEES.ESNE   uOROu0EEGE:GE1   EE.t
+  $80B8: fL     qu,,T 6nyzyn6TAsACVELVACr REn1z1nREfGlkQUm        ATb
+  $8104: REmmTUENEMPETUm
+  $811D: ePATIeREmmEEEE0
+  $8129: LLTUm EMmheYC66e
+  $81A8: 1 11   asmDomES5"ZZ~R  ERerSAhewLLTICSNU~ke64RERE0S
+  $81D9: a4543126ERC4TUerCSRUw'LLerERRU00  0S66u
+  $81FB: 540SCSteeTCo84ESV)n64e2(1w1bLLTAtDopFaNUFIG*ESerEVf7xAmiQU2"
+  $828C: LLTCj870esX-8 BEthWcteeTA0EVNS?02quHIffSeA.00EVCK Bu 0EEN61,
+  $82D2: le2FI00./z200lepPERTIEMouy58ITNEES-.00W6PAEEAeesp"0r1EEITOGT
+  $84E7: BE  64Se  bEENE eEE NTA eheAS 2lsyoyM"RE 364esNUnT1KES7erFIE
+  $8586: 0S6BELEES-?00AC3B.AA8ERSAC1QU...YQUer.!x....O'uCyvxF.3OGMERU
+  $85D6: 'AENA8qu)(as.x xxxxNA.NAFaPEPEPEPEPE,y0xxxxNAMEFaPEPEPEPEPE
+  $8602: *ctPE 87 keAf
+  $8612: thC ,00ANNU   6ee 6464uddd64 6464dbbb64LL0*LLLLLLLLLLLL0Z6YC
+  $865A: RUheEEis'EVTIAMEYC'EVTIGIMEYCZSASA
+  $867F: )ANZ(Z(Z(Z(Z*AN
+  $869A: RUheEEisQ!Y(Q!Y(ZSASA
+  $86BF: )ANZ6YCZEVAC'6YCZEVTI'EVACEENAptNAptNAFptNAptNARRAC'EVTIAMEY
+  $879A: 44ee0 eeERTAlL62ged
+  $87D1: 0  7dJ-0   5gJg 1QU*cLt 2vthASLLan,RUEQU(ERERf0ESes2Asp*9CS3
+  $8809: v NE anker6  esRRITTC esR3T7M! 64  ."ON64   LkekeRR.6vTCGIu
+  $8839: 3fk IfRE0SeACOSAhaower37yoLd3!-O"UYD7a:3. DBEFarbletNAjspsah
+  $8AD1: UGWs7g2077   .ITDoCS.AEEITDasTCGH:NU  64ge4*KAeeEVmLAyosaesb
+  $8B2C: 6TA0S0STALLRECSLLLLLLLLeRERERERERERERE YC6mYCTI//.6666misisa
+  $8C4A: ..   fFUBEBEFaesLLhaDd--wxzMEEEXo4TITI10savffgeSXXGEgenz-164
+  $8D0E: heYCqu501d11
+  $8D41: erb100ACGE5
+  $8EC7: u SAa REu   hEhEhEhEMESlMESlMESlMESlELELLL 64 64 sp1dhG0 6
+  $8EF7: 0 ME 60   1bWIT Se 7Lge d Se  0 0 0 0:GE:GE:GE:GESASASASAhEh
+  $8FD8: EQUGI6TT
+  $8FE8: .vf   er7GIQUSA
+  $9098: ddddddEE ......  EQUGI6TT
+  $90B8: .vf   C5BEkeGE EE   ...   PE qu0saf35PE es .A 57mfv vvvvEN d
+  $91A8: 00TAOndb451aa4 0  heGE"LNE64NE 64  20122ES?ES     NE.NEm64.m
+  $9231: TT4CTATAUmMBLLKYCYCUsaMEDVhaQUASheDVTTk0S0SYCermOG00uW2dCRRT
+  $9261: LL4TZN:/CLL4TtENCSTIYCSest  f
+  $927A: SeSeO22w0,TI5ONNUeYCYCCSPENUAMEsaSLLLL6owCSmLREREf5m REuRE
+  $92A6: 0EEAREu   62 ED7ES40RE0m643eem RE0d)NSFITA
+  $92C7: ' 0 fb    606EEbu0060  2TARE Am.RRE8uevES37i2"RthTI
+  $92F7: EE25640.L  2LRPEGE/LL22 3dn/LLiANff
+  $9361: GouACW0SleENLER49r/CLPETUEL
+  $9376: 00owliu"ERli/GE.PEl1QUtgelie"0S0S-d.(ONRR0Sct0P:0aTIAq~0SATL
+  $93C6: esliu"ERli/GE6ONRR0SSe0SctTUwaTIAr/CEV0SRR0SSe0SleENw(TIAr/p
+  $9406: esliu"ERli/GE6ONRRFI2haeserwaTIAr7GouACW0SleENLER49r/CLPETUE
+  $9436: 00owliu"ERli/GE.PETUEL
+  $9446: esliu"ERli/GE6(ONRR0Squ0SP:0aTIAr(0TILW!v0RE4NKWu(uTIq4-9dpu
+  $94E8: spmessahe
+  $9518: spmessahe
+
+BANK_23
+----------------------------------------------------------------------
+
+Pointer Table at $8008:
+  [  0] $BEA9: .L5IT7ES ge5GzGE *ES5wNS
+  [  1] $BEC3: L5IT7*GE5z)GE *YCNS
+  [  2] $BED5: YCIDF*0GEbe6yBGGE
+  [  3] $BA01: NS
+  [  4] $BA55: PENUNS
+  [  5] $B99C: ITlnnMnSIT0u"ITlnnMnSu5XIT0.MLITl2bPNLu5X.ES5sp5UuES5an 25SdES55P2ES5an GEbKINKINIKLN64nbNLLnK.esNS
+  [  6] $B4C1: IT3LPERERE bPEmLTAwasbipn8ipngnpn5kpRUb~nqES EQU64ljLTAwasbipn7ipnRUan EQU64ES EQU64pX00RRan defgehib9876iES EQU64pXasLPEanIT9GEES EQU64pnL00PAPENEGEGE t64sq002CKTU ?:GEny64vuTU t64sq000GEES er64qpsu~nGEGE t64sq00YCPEanLTAquasnquzpsxBquxuruxuPENE*jns*nsv*npw*psyRU*PEmEQU t64ulquzME t64uzNA t64uqTU an64spsu~nL~ES e64.n
+  [  7] $B529: LPEanIT9GEES EQU64pnL00PAPENEGEGE t64sq002CKTU ?:GEny64vuTU t64sq000GEES er64qpsu~nGEGE t64sq00YCPEanLTAquasnquzpsxBquxuruxuPENE*jns*nsv*npw*psyRU*PEmEQU t64ulquzME t64uzNA t64uqTU an64spsu~nL~ES e64.nsqGEES EQU64pnLeIT5GEGE CEC*CECspRE Mn64bOnLJTCxES JLRE REES OLITbXIT5spbOnLLbOGElES O:"5NOQspMn64bOnLJTCx
+
+Pointer Table at $8018:
+  [  0] $B5CF: IT5GEGE CEC*CECspRE Mn64bOnLJTCxES JLRE REES OLITbXIT5spbOnLLbOGElES O:"5NOQspMn64bOnLJTCxES JLREES OLITbXIT5spbOnLLbOGElES OnECeLPEm)CH7)u35T-GEht/hyus)5T)CH7)u3GEhGFBzyus
+  [  1] $B68F: ~LXPE64d p00n00d p00n00su00b0S~3u00b00np00b0Ssu00n0Snp00b0Soq00z0Slo00X0Soq00z0SthPEmLGEGE YCztwumknnnzDBwwumk0PEmLXGE1d p00n00isLXPE64GE1d i00n00ki00n0S'3n00n00ki00b0Spn00n0Ski00b0Slj00z0Shj00X0Slj00z0SisGEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUb
+  [  2] $B6F8: LXPE64GE1d i00n00ki00n0S'3n00n00ki00b0Spn00n0Ski00b0Slj00z0Shj00X0Slj00z0SisGEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanFES7HJMke7JHM 642nM:GEhu3MOM2'ee 2'ee n
+  [  3] $B751: GEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanFES7HJMke7JHM 642nM:GEhu3MOM2'ee 2'ee nu3MOQOMesOee k2GEbliGEjliNUbXXis~LXPEququququququququququ0S0quququ0S hloj00t000S
+  [  4] $B656: LPEm)CH7)u35T-GEht/hyus)5T)CH7)u3GEhGFBzyus
+  [  5] $B6CE: PEmLGEGE YCztwumknnnzDBwwumk0PEmLXGE1d p00n00isLXPE64GE1d i00n00ki00n0S'3n00n00ki00b0Spn00n0Ski00b0Slj00z0Shj00X0Slj00z0SisGEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanF
+  [  6] $B731: GEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanFES7HJMke7JHM 642nM:GEhu3MOM2'ee 2'ee nu3MOQOMesOee k2GEbliGEjliNUbXXis~LXPEququququququ
+  [  7] $BA90: ~PELke dimpspspmkgdgknpswspsps8fknrwrnwrnkfimprururpmidgknpsfimprugknsnkna7fjmpryrpmjmPKHyrprpmjf3PEdpswswBwswsp6ipmpsupmpmibnrururnrnmi8kororwrwrordpswswspspkg6ipmpsumuspi3fjmrvyDHDHDHDyDyDyvrmjft/PEmL.~nB::)by*n)bz,nz*:bInbB*fwz::)bz)n?7wt("IT0PEanL
+
+Pointer Table at $8028:
+  [  0] $BB5A: PEmL.~nB::)by*n)bz,nz*:bInbB*fwz::)bz)n?7wt("IT0PEanLGE8~7uzwzEzwzws"psuswyususp"ruyuyururpm"orwrwAwAwrw"swzwzwswsnk"psuswyuywsm"jmrvyDHKHKHKHDHDHDyvrm60SeITfnUsp:64bSnbPnWd:ubX.nubUspfQS:bPnNM64GEmQli5 ubX.nubUWS:M64GEmQli5 ubX.nlibZQUITb"SePEITLpNS
+  [  1] $BBF7: ITfnUsp:64bSnbPnWd:ubX.nubUspfQS:bPnNM64GEmQli5 ubX.nubUWS:M64GEmQli5 ubX.nlibZQUITb"SePEITLpNS
+  [  2] $B880: EQULzPEmquququuuuuuuuuuGEyuo""quququG""H""I""K""L"""quES N"L"KIGEPE64swzDzwsPEm
+NL"K"IGEDr"uByur
+LzPEmesesesu""s""r"py""""""esesess""p""q""s""D"""quES K"I"GEDBPE64pswzwspPEm
+KI"G"EDBzn"ryurm
+esesesi**y**y*y*****uiesesesyuixthzsgAuqn***esES5uD*nu
+  [  3] $B8E2: LzPEmesesesu""s""r"py""""""esesess""p""q""s""D"""quES K"I"GEDBPE64pswzwspPEm
+KI"G"EDBzn"ryurm
+esesesi**y**y*y*****uiesesesyuixthzsgAuqn***esES5uD*nuz*pzBEIEBz
+ipy*ipy*nuz*buzu
+ITlnnMnSIT0u"ITlnnMnSu5XIT0.MLITl2bPNLu5X.ES5sp5UuES5an 25SdES55P2ES5
+  [  4] $B943: esesesi**y**y*y*****uiesesesyuixthzsgAuqn***esES5uD*nuz*pzBEIEBz
+ipy*ipy*nuz*buzu
+ITlnnMnSIT0u"ITlnnMnSu5XIT0.MLITl2bPNLu5X.ES5sp5UuES5an 25SdES55P2ES5an GEbKINKINIKLN64nbNLLnK.esNS
+  [  5] $BC4F: PEITLpNS
+  [  6] $BD1D: PE64Lu2DGG000EEII0000DDGGEEGG0000DDGGFFIIFFIIEEGGBBEEzzBB0000BBEE0000GE5AAzuz*ES t/5Se le5u2DGG000EEII0000DDGGEEBBEEGGDDGGPEm2 LKLES5LGEb*u NMNES5NGEb*u GFGES5u .ES5ge7.u2ES5G"u2A"ES5-u2-ES7-N :nctYCLLPP0000IILL0000LLPPNNQQNNQQLLPPNNRRLLRRKKNNKKKKIILLFFFFGGNN0000HHGHDIGIDELLPP0000
+  [  7] $BDD2: YCLLPP0000IILL0000LLPPNNQQNNQQLLPPNNRRLLRRKKNNKKKKIILLFFFFGGNN0000HHGHDIGIDELLPP0000IILL0000LLPPNNKKNNSSLLPPTUTUTUW*UWUWUWY*LKLKLKLLLKKGGGFF0th ctGE ITh64ee R64Oee2W.,.WT0SbI2L?3wzGE ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS
+
+Pointer Table at $8038:
+  [  0] $B819: ~LXPEququququququququququ0S0quququ0S hloj00t000S0quququ0S quLPE0SCKisGE0qud npu005YC
+psnu00500
+EQULzPEmquququuuuuuuuuuGEyuo""quququG""H""I""K""L"""quES N"L"KIGEPE64swzDzwsPEm
+NL"K"IGEDr"uByur
+LzPEmesesesu""s""r"py""""""esesess""p""q""s""D"""
+  [  1] $B860: LPE0SCKisGE0qud npu005YC
+psnu00500
+EQULzPEmquququuuuuuuuuuGEyuo""quququG""H""I""K""L"""quES N"L"KIGEPE64swzDzwsPEm
+NL"K"IGEDr"uByur
+LzPEmesesesu""s""r"py""""""esesess""p""q""s""D"""quES K"I"GEDBPE64pswzwspPEm
+KI"G"EDBzn"ryurm
+esesesi**y**y*y*****uies
+  [  2] $B869: GE0qud npu005YC
+psnu00500
+EQULzPEmquququuuuuuuuuuGEyuo""quququG""H""I""K""L"""quES N"L"KIGEPE64swzDzwsPEm
+NL"K"IGEDr"uByur
+LzPEmesesesu""s""r"py""""""esesess""p""q""s""D"""quES K"I"GEDBPE64pswzwspPEm
+KI"G"EDBzn"ryurm
+esesesi**y**y*y*****uiesesesyuix
+  [  3] $BE5A: GE ITh64ee R64Oee2W.,.WT0SbI2L?3wzGE ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS
+  [  4] $BE95: GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS
+  [  5] $BE5D: ITh64ee R64Oee2W.,.WT0SbI2L?3wzGE ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS
+  [  6] $BE7D: ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS
+  [  7] $BE97: L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS
+
+Pointer Table at $8119:
+  [  0] $9242: EQU3 5*!zdz1z3A!AdA1A3B!BdBOPB1BTTB3C!CQU A:vEQUsp~NACSRE8CKvI3 uyoyoyoyoyoyo.  d      ke  d      ke  d     0ke  liAAAAAAQU           EQUEQUvMAN iTUEQUWTCAT3 iTUEQUEQUvMANctEVCHGI643CSREsNUPA iTU DRAW  DRAW  DRAW  DRAW  DRAWEQUWvMANQU8ct9ANGIA37fYC iTUYes    No EQUWvMANEQUDTCTC3EQUETCON3EQUATCTI3EQULTCNU3 iTUTCAT3EQUuTCTA3QUVEQU GI6437f
+  [  1] $9F20: wITDv1TCOPj"anvE7ITCKACRvstQU as0SvEEAvxNEvATCRv2AYQURRE45 is0S
+  [  2] $A981: ttbm
+  [  3] $8500: I,5nQU1TQU TQUbctQ64IT47fRRnQU0TvyoNU4vyoan1nQU1TQUbctQ63IT47fRRnQU2TvbuNUc:v/u~NAan6vSuan9n7L0SvduNURRQU3TOPNQU2QJ7f0S60QU4v/uanTQUbctQ61anI7fRRQU ctQ3CSyoyoRE ITfCSNE3ctQITiCSkeYCQU5TvCHyoNU0QU8ANyonEQU yoOQUbctQ62anEM7fRRQU ctQCS610RE0ITsRE9ITstNE3ctQ616CSkePANyoOPO5ACOELyoNE3ctQ616CSkePANyoOPO4ACO
+
+Direct Strings:
+  $8000: 64TCan00ED  EQUtgethat0t/t/BEesesasEeeTIth0thisththMisNUt/Se
+  $810D: vRU5OPj33ALLv-CHvA2EQU yospvto2vasCHvRRCHv'AvSspv
+  $8134: vRU5v,2)janWJ2OPj9anr9an6OPjE1iy216IT9EQUTC21EQUTC61y216keIT
+  $819B: OPR9yo OPSFyoTFyo
+  $81AE: OPspyo EQU yo
+  $81BC: AC  nSlCK0 N j 7 4 3 1 0 vAT2an0EQULYQU2IT7EQUKRE2NU1EQUJ 2A
+  $829B: IT8v35AC ESspI3:9:NAct22yoct32yoOPRQUvC5EQU yo b*~NActSeeeyo
+  $82F8: 5 of a Kind
+  $8304: Straight Flush
+  $8313: 4 of a Kind
+  $831F: Full House
+  $8330: Straight
+  $8339: 3 of a Kind
+  $834D: Top Score of
+  $835A: Double Up
+  $8364: Top Takes of
+  $8371: Double Up
+  $837B: Total Bets
+  $8386: Total Takes
+  $8392: Top Score of Double Up
+  $83A9: a1a2a3a4a5h6h70607o1o2p3p4q5q6q7c6c7vdvELeevFa5vONdvLeevPdQU
+  $848A: dy74TMEfNUYCTC74v
+  $849C: ONdNE dOes vQUTITCOSE CSITlEQU097EE"SJ YQUORREACO5m4DVEQU
+  $84CA: esdQUbEQU GIQ7f00NE3thEIT6kefRRQUb7f00REdvyoNUhvyoNUcv/uan9y
+  $87AF: GIliOPjL4E.bYQUERE3IT3ACEyoPYQUERE0IT33EyoPOPjE0ITgvSTIYQUEu
+  $88B0: 6A 8Avsa2v-CHOPT60IT3NUkanfOPS6uIT3NUaan5OPR6NENU2P. vMBkeva
+  $8926: vRU5v,2OPj"ansav.QU1ctgehaRNU9IT2.7fEML9QU1eRGIge7f0QU1ctmha
+  $8A14: 00.y216keIT9EQUkeTC21EQUNUTC61gAy216IT9EQUTC21EQUTC61gAQU6ct
+  $8A91: IT9ELLGIv"CSREtNULL 2LLOPuEYCyouEQU TC4yycoucwbv-CH vsa2AEQU
+  $8B2F: yoNOPjEd6d2vsteeOPjEf6OPjEvGyoPyycoucw0OPR6anWACROPR6anLEQU 
+  $8D9D: QUTCOPjE20OPA6NEITdYQUERRKvONOPP82yoP yo0Sv!sp~~vRU5TCjITcTC
+  $8F42: QU ctPENUGIan3CSREFPAQUaEQU GIRE37f00YQUJct ACJQUTIEQU yoJEQ
+  $8FA0: IT00n?TCTCan3?cTCL36TCan"6PEITSMEED9ASA:n?ERyoHeskeNUyoFes.N
+  $9116: 0     0S     0S     0S     0S     0S       6464est/64Select6
+  $9228: IT6TC6v5yCH5CSCSREtNUTUvTI2vasCHv)ANEQU3 5*!zdz1z3A!AdA1A3B!
+  $9375: vw2QU vNAANQU4vNAANQU vLLANvLLANEQUnTC5vEQU6TC5vEQU
+  $9396: TC6vvTI2QU ctTUANGIEE4CSREfPAy1vctYGETC5vctXGETC5vctZGEyoEct
+  $9459: X.....X T.TTTT 33b"m33r33 brHFa EEmmEEddEE mmEE33 5nLLL 3333
+  $9662: ZZr YCFIesGEGE64es
+  $9682: 7 FIhaerFIPAhaFI        4MEw4ERME4
+  $96AB: saPAPAeee
+  $970B: 0ITRERERE  026eeeee    !NANAT
+  $972C: 'ueee   64mRERERELLIT0
+  $9762: REREm
+  $977C: geEDWTI   Dqu"RE
+  $97B2: m64      ITREmmesFI
+  $97C2: 6eutr   Km,
+  $982A: eeeeeeeuREREREREREREREm0EE
+  $987D: TIgege22    nnXX
+  $98B9: uuuuuuTUummmmm m 00
+
+BANK_24
+----------------------------------------------------------------------
+
+Pointer Table at $8000:
+  [  0] $9BE6: yON461IT4ykef0v00NEyk461ITqOP,f2AvoBEvFaBEvtoBEvt/NEvRRBEan2dGIyk4612~~y63ITkQU 611CSCSct,QUyo ct-QUyo0BEOP'ITm60eOP?6bNU3EQUP1EQUQkeBEEQUR00y(QUyo y)QUyo0OP-""""yo5OP?EIT45ASt ouk4RE0IT4E'keBEOP69FFE2yo6yo EQU yo0QU EQUfvC5yUQUDoVQUvs5NE t yoa"""""NAct.ESyodou.-RE7NU2~~vMQUan4ctQU2cteeQUCSBEy-:62an9NActYESPE-:TUBEEQUfQU ueQUd
+  [  1] $A1AD: :EQU7yo3EQU yo4QU3~vC5OP3n/'QUyo3OP4/.QUyo4NE t3S(:5m3RRt3:EeS(:5m7TA~9FFE2TC!:~E.c!:8mTC!:y mEvIT7y!:8.TC!:vyW~~nOPaE29yo3YQU37NE
+  [  2] $995A: QU(EQU
+  [  3] $9982: TCESesCKEeNAm3an8vENSQU7u2vctSyo v00SOP9yo19'1NANE es(GIES/es-GIsa/CS5m5NUPEctNSSASes"NUcesEm9FFASesPASes2E2ASes5 ,NA GTMEvan1?DV drFT)owChaMETC(OPA:OPQU:OPES:OPu:OPli:y(vwPE~yoli~you~yoES~yoQU~yoA:QU4EQU
+  [  4] $9991: QU7u2vctSyo v00SOP9yo19'1NANE es(GIES/es-GIsa/CS5m5NUPEctNSSASes"NUcesEm9FFASesPASes2E2ASes5 ,NA GTMEvan1?DV drFT)owChaMETC(OPA:OPQU:OPES:OPu:OPli:y(vwPE~yoli~you~yoES~yoQU~yoA:QU4EQU
+  [  5] $B226: QUbA:y54*0TC54QU2vb6~NA7RU
+
+Pointer Table at $800E:
+  [  0] $B5C2: 1 3h 5i 1d 2e 3b 5'35u 73 53d7409k 2m 7g 59 75 2l 9w 5f 4?55856q 8707a 9c05p 96 7.44o 4o04x 9
+  [  1] $B798: NEESQU IT3NEzQU1d vw2EQUfTC5vEQU TC5vctFIisyolctGHisyomvLisvLisNE7QUlvke5TC6vkeYCvLis3 RUTI2QU7EQU TC6v700YquGIleEQUNUTC 2EQU.TC02NE ES12EQU3yolQU vrquvrquvrquvrquPEa4vI3y12n?.TC123lTUesQquGI22CS5AE6TAEQU GI22CSAEePA        X.....X T.TTTT 33b"m33r33 brHFa EEmmEE55EE mmEE33 5nLLL 3333 3355  .bFaFa
+  [  2] $B7E7: EQUNUTC 2EQU.TC02NE ES12EQU3yolQU vrquvrquvrquvrquPEa4vI3y12n?.TC123lTUesQquGI22CS5AE6TAEQU GI22CSAEePA        X.....X T.TTTT 33b"m33r33 brHFa EEmmEE55EE mmEE33 5nLLL 3333 3355  .bFaFa ..  3mm3 555Z..Z  33EEm rLLLL  X..Z5X mm.AAC333 TT .TT dd d .)... TT
+  [  3] $8046: 0 2 7841N/NN/N    ('0 7 7741owNN/NNN    '1 4 9953N/N//N    ?'0 2 8843N/N//N    ?'2 e D t0:5364 ee'1 2 9844NNNNN/    '2 4 9957toNNNN/    c'2 1 a955NNNNNN   le -'2 8 aa54)NN/NN/    '2 6 da16toNNNN:  3XmAN'5 7 ba87NNNRR/  v "'3 4 cc79NNNN:
+  [  4] $AE4F: :vBtov?2v
+  [  5] $B79E: NEzQU1d vw2EQUfTC5vEQU TC5vctFIisyolctGHisyomvLisvLisNE7QUlvke5TC6vkeYCvLis3 RUTI2QU7EQU TC6v700YquGIleEQUNUTC 2EQU.TC02NE ES12EQU3yolQU vrquvrquvrquvrquPEa4vI3y12n?.TC123lTUesQquGI22CS5AE6TAEQU GI22CSAEePA        X.....X T.TTTT 33b"m33r33 brHFa EEmmEE55EE mmEE33 5nLLL 3333 3355  .bFaFa ..
+  [  6] $BC95: tO,ACFa.5tbbnnL0tO25rLEEtO2d55Fa.6epR)X'L55Fa.6nL.3Fa.')bnnLLdoot)1Fa.tO.ZbnREnTHH)LLOOZOOOsOOtROOOORMPXPLMMPXPLL.sO,OtYCYCXnnnnnnXe5555..XTA~.).YC.LLLLMM):)LL4)OGXRRrOOOZLL.T)333EN:WOORXRRYXt?
+
+Pointer Table at $801E:
+  [  0] $9AD6: YQU2vFaEDNEctuE2NAct5vGEEDNE3tuyo1NEetuE2yo2QUuEQU GI7f00EQU6yo2YQU2vFaEDNE5tufF9fCNE6tu"NUeNE8tu9FFE2n?owOEDNEctuE2NAct56
+  [  1] $9AC1: ct5vGEEDNE4tuyobNEftuE2yocYQU2vFaEDNEctuE2NAct5vGEEDNE3tuyo1NEetuE2yo2QUuEQU GI7f00EQU6yo2YQU2vFaEDNE5tufF9fCNE6tu"NUeNE8tu9FFE2n?owOEDNEctuE2NAct56
+  [  2] $99F9: TC(OPA:OPQU:OPES:OPu:OPli:y(vwPE~yoli~you~yoES~yoQU~yoA:QU4EQU
+  [  3] $9AF7: QUuEQU GI7f00EQU6yo2YQU2vFaEDNE5tufF9fCNE6tu"NUeNE8tu9FFE2n?owOEDNEctuE2NAct56
+  [  4] $9BB3: yoA:OPQUvESED~NAtE2TCAAStA9you999TTTun/GHEDyouyTTED? yoliyON461IT4ykef0v00NEyk461ITqOP,f2AvoBEvFaBEvtoBEvt/NEvRRBEan2dGIyk4612~~y63ITkQU 611CSCSct,QUyo ct-QUyo0BEOP'ITm60eOP?6bNU3EQUP1EQUQkeBEEQUR00y(QUyo y)QUyo0OP-""""yo5OP?EIT45ASt ouk4RE0IT4E'keBEOP69FFE2yo6yo EQU yo0QU EQUfvC5yUQUDoVQUvs5NE t yoa"""""NAct.ESyodou
+  [  5] $A813: EQU TCsp: 64 .v!yv.ASvCASNUgvERMENUbvAEQUvTCMEv5NAqAS yojSlouRE3NUhQU yhaDVEQUyNU2CSPActESy2ctAyyoevquMEyoJ6jNUbMEjyoJQU  EDliANASvthASougASDohASv5ASNE6tEm3NU4SQ:an2S(:kefLLvthASYQU TC0v5ASNE6QUEEQU7vMBgem3NU4SQ:an2S(:kefMBEQU yoFOPJ9BF9BF9BFyoEAn'EyoEGE'FyoFv5EQUvNUyy EQUTCe6y0EQUTCth6 6*(L6E2TC:Tysp:L1n AerASU:5au'EQU yoLTCLesU:QU3DV0
+
+Pointer Table at $802C:
+  [  0] $B40D: 1 018dh 18a3yoe 18a3yob a3o4A3 3o49ESl 01.401a34uk 018QUg 3co9TIi e5f6O65 018QUf a3co4A?53o49um 5y6FO68 6GEq 6lnMa 6nkptc 495yESi201.x mr1 BCYZ)4h CIDZ'4i zABY)owb BCIYZ43 CIDEZhel ABCIY3k AGL)owg LKDYZ75 BCYZ)440KID'/7f KID'/7?5ID'"st8 FOPN'5q FPN:670LHOMsta PN'?:6p
+  [  1] $B525: 1 hah had 8aYQUe C4b L3 43dee38OToul ptn u40ptm L"dg L30x.25 ptf L?5L8 ENq EN6 Lc Lo ENp ENpt
+  [  2] $B48F: 1 BCYZ)4h CIDZ'4i zABY)owb BCIYZ43 CIDEZhel ABCIY3k AGL)owg LKDYZ75 BCYZ)440KID'/7f KID'/7?5ID'"st8 FOPN'5q FPN:670LHOMsta PN'?:6p *?PNquc DEF'5.4.eo FOP'51 hah had 8aYQUe C4b L3 43dee38OToul ptn u40ptm L"dg L30x.25 ptf L?5
+  [  3] $AAE0: y:E2NActU:Doee:d Dod:d0Doyo:d1QU  f'yee:yo2yd:yo3yyo:yo4y:E2NActY:NActEQUQU2 f'OP2f5AC31AC4OP3yo2OP4yo3OP n'2yo OP0'3yo0NU1AC1yyo:xyd:6CNUaIT1anmyee:6fanfyee:yo
+yd:yoyo:yo
+  [  4] $BDBD: L.PEmGEGE:ke4DD.RE Mb*ke4GFGEf-ke4zBGEjGFB)RE Mb*)ke4wyzyzBBDRE Mb*ke GEb*ke4BDES *7GEb*ke4BDGEfke GIGEfERE MPGEjke4DD00S.GEfke4DD)5.GEfID00PE.GEfke4DD*5X-GEjDz.GEjke4DD*5X:GEjwu~RE uwM:GEnPEGEfmnmkmnPEREctPEmL.GEfprpnprpPEmnprpnnttnnptnprpnnrwwyzywwvvwwvvwwppvwywvwyv00op
+  [  5] $BE7D: PEmL.GEfprpnprpPEmnprpnnttnnptnprpnnrwwyzywwvvwwvvwwppvwywvwyv00oprp00200oprosuwu00200sssrpnmkikmpoprpoprpPEnprpnprptYCwyzywyzywyzywwwwwwwwwyzywwutsuwussrrssrrssyyDFHFDFHD00SlwyAy00200wyAwBDED00200BByywwusrsuywyAywyAy0GEGE:YCytESL5!u wvrnjfMnLz5gmwDKNIBwpkdkrwDINIBwp
+  [  6] $BEEE: YCwyzywyzywyzywwwwwwwwwyzywwutsuwussrrssrrssyyDFHFDFHD00SlwyAy00200wyAwBDED00200BByywwusrsuywyAywyAy0GEGE:YCytESL5!u wvrnjfMnLz5gmwDKNIBwpkdkrwDINIBwpk6gmsyEipwBINspLGEnGE L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE
+  [  7] $BF55: ESL5!u wvrnjfMnLz5gmwDKNIBwpkdkrwDINIBwpk6gmsyEipwBINspLGEnGE L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE
+
+Pointer Table at $803C:
+  [  0] $BF90: L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE
+  [  1] $BF8C: GEnGE L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE
+  [  2] $B620: ?LNS
+  [  3] $B655: 0S0SthGEnMEj007000S4th0S GEnMEj007000S4th0S GEnMEj00300ME500L0S0S2is0S GEnMEj00300th5 bn'5 bmLigi
+5 bp,n~b,npb'n.b'nnbnigi
+ESbrDGEdESbpCu3LHDzvrmjES3?u3yDIN
+5 3psvyB:3oruxA
+Lu5ou1ME1an6"ME1ou9"ME5ou5"ME5an9"ME5ou6"ME1an9"ME5ou5"ME an9"t5an6"ou1mlME ou1kp"ME5ou1kp"ME5ou1kan5EQU1k"ME5an1ik"ME an
+  [  4] $B65A: GEnMEj007000S4th0S GEnMEj007000S4th0S GEnMEj00300ME500L0S0S2is0S GEnMEj00300th5 bn'5 bmLigi
+5 bp,n~b,npb'n.b'nnbnigi
+ESbrDGEdESbpCu3LHDzvrmjES3?u3yDIN
+5 3psvyB:3oruxA
+Lu5ou1ME1an6"ME1ou9"ME5ou5"ME5an9"ME5ou6"ME1an9"ME5ou5"ME an9"t5an6"ou1mlME ou1kp"ME5ou1kp"ME5ou1kan5EQU1k"ME5an1ik"ME an1ik"ME
+
+Direct Strings:
+  $8000: ACEDyWSspSEQUSBto  saeGEisTIis)64ouNisMle  ptPEesPE00SYCPEer
+  $8202: fc7aAAAANNjzRE 4'h 9 gkhftoRNNR/ n.'b 42egegrNrNNN33~ITfd'd 
+  $87DA: DFDH/jjUmNEECEEUEETC*ES Z ESSo 2toN-NOASEE6' x ?.DNdNtoNNN  
+  $8840: EE3'. t4.VFtogNNgNjC('! r
+  $885E: XXNG'CNCNCNNE7jasc': z7)P9NX2X2Nle jqu.yo'~ A -DwN'.NO' r~EE
+  $8A66: EEEEs'li t NUGNNNNNNk3EEES'Se G :"((NNNNfEEf!'ES  0H  DeTIFF
+  $8CC0: NUONESeGHdNgNdgEQUASAS4'*1Yp00sp*32EDN0NNNUkeBEREES'M0S TIke
+  $8D44: ESoH1EGENENCHPA4'TT0 ESONXP*.A:N"  ~le.!')1.?S~X.kkkkFk ES'O
+  $8E79: QUNE"WuEDr1N2 EEEEmON'S2)B5DoOGsh4c1NNCSAS)0GEyo'ON5/ H5NAji
+  $8EBD: j/343/NEEEE
+  $8EC8: EEEECSh2? NUgeNNNN/k3TCEEGE!'22r00liNAYCOerh:(gS! XlemtQU Kt
+  $8F0F: 2l QUkG.0NPNPNNIT.A('        HHHHHH     6'  ) vSl00 NNNtoNNj
+  $8FAC: 00PzX NX2NXEEEEEE/'CK0l
+  $8FC2: ITG zeeNXtoXleIT.A/'od
+  $8FD8: CKES 7'NkeNhe0bEEEEEE/'BEn
+  $8FEE: P U0b8ESNPELL)EERUyo4k:
+  $9004: thtas rN52NZmME3EE0.A.'53X HeswH?N:NY:YTT ~ ESyo'3f47
+  $9031: ACD000totoMtoSAto2 EEEEFayo'
+  $9046: SDX INNNXIEEEEEEEEEE/'  t
+  $905C: TINA. zto3cttodEREEEEEEli'GEVS
+  $9072: d.A mtoJtoENtoERPRUEERUli6         DMUOEvvvvvvvvRUiy
+  $909E: NUES F2'to2Nhe(3le0Fa.'6e8)XNx(xN(   /'sa02 yAtjtoNXNII  bEE
+  $90F6: CSA ketos7INm7EECKFa64'  S  sp  ZtNNNN     66     005  ,,..8
+  $91FF: as 3-7csNfEEEERU '  X le5 wtNZYMBEEEE.A '  ) vAC.A NNYtoYYER
+  $9257: xAC ZtoestoEREEEERU644  9 t2e PPNtoPP  jEE  '83Z7as.DN408b/A
+  $945A: 6fopiknnfipk
+  $946A: ER8CsnpkxkDsnC
+  $947A: leaztXYDMxzYwE
+  $948A: EEf)M.GEG.vE
+  $94AA: GEdDGTOzOZT
+  $9617: ERdd)wESPEESNUM
+  $962A: xPEESESNPEEDTIEDEDGITIA
+  $963D: PEBEABEGEBENEGEAMNE
+  $964A: xBENWGENENADoGEBENEAOP2
+  $965A: )xBEQUWNDoNEDoNENAW
+  $983A: sdspkeESyoeeESd264sp
+  $98BA: ~tdESspTCdli
+  $98CA: ~udTC.spdSA
+  $994E: zzSSSSb AS  QU(EQU
+  $995E: GIES/RERNU2/7fTAQU6uYQUctNSSASesf2vSAS3fPETCESesCKEeNAm3an8v
+  $9A26: GI(EQU GI-7fTA~vGEEDNE9tuFketuFFE29yoA9'AyoAQU uQU6hITctuEvP
+  $9A85: IT5CSRE5NUCKOPESGI(GE:n'AASesNEPEn-NU1EQU
+  $9AA3: GI-~ASGGGFFF?UKAris9310GGGFFFct5vGEEDNE4tuyobNEftuE2yocYQU2v
+  $9B35: IT2v'ED32f4vGEEDOP299NANEetu""GI5tu:9999EmsGI~""""GI5EQU GIt
+  $9D91: yoSlyospEQU'yoowyoeeNE t 6
+  $9DA2: gGEvQU:GE"""NA~QSlMSlMsp5mdGHOPdyo3QU u4AAS:GE"""NA~spNU5YQU
+  $9DE2: 5vEQU5NSGI meyoCEQU AS)ow.SlNU7nTCQU2Can8CSREdIT45ATGI~~m4NU
+  $A02D: IT2ptA5Act/QUfqLzct/QUE.IThqct:QUfaLjct:QUE.IT1ay4:ETC4:5Ay4
+  $A0A0: TT~~OPTC6:TCES7:5td6
+  $A0B4: ITRUTC5:y,:EITS,:y,:EIToyhaNE0 NUzITxEM 64anpNA7ct:ESCSBE 6*

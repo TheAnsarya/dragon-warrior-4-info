@@ -1,0 +1,4048 @@
+{
+  "bank_12": {
+    "pointer_tables": [
+      {
+        "address": "$813F",
+        "count": 7,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$80FF",
+            "text": "JesZEMeREtEM5"
+          },
+          {
+            "index": 2,
+            "pointer": "$8080",
+            "text": ".A,EQUPE2.A"
+          },
+          {
+            "index": 3,
+            "pointer": "$A0A0",
+            "text": "BE3.A7SlMEFaMB u83x w'ege-ty'TAPE,WGI"
+          },
+          {
+            "index": 4,
+            "pointer": "$8080",
+            "text": ".A,EQUPE2.A"
+          },
+          {
+            "index": 5,
+            "pointer": "$A9A9",
+            "text": "00000000heY'ut"
+          },
+          {
+            "index": 6,
+            "pointer": "$809F",
+            "text": "LTAuFIuES4u\nEEEE0S00\nTAu3SA"
+          },
+          {
+            "index": 7,
+            "pointer": "$8080",
+            "text": ".A,EQUPE2.A"
+          }
+        ]
+      },
+      {
+        "address": "$835F",
+        "count": 8,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$80F1",
+            "text": "148jz  015aqJesZEMeREtEM5"
+          },
+          {
+            "index": 1,
+            "pointer": "$8884",
+            "text": "CLm:RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!)3T.ONX64st)3T.ONX64stH.LESENbesFIH.LESENbesFIge2222222?SctSOPGIyGI"
+          },
+          {
+            "index": 2,
+            "pointer": "$8888",
+            "text": "RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!)3T.ONX64st)3T.ONX64stH.LESENbesFIH.LESENbesFIge2222222?SctSOPGIyGI"
+          },
+          {
+            "index": 3,
+            "pointer": "$8988",
+            "text": "v   1"
+          },
+          {
+            "index": 4,
+            "pointer": "$B3C3",
+            "text": "A  keectF00"
+          },
+          {
+            "index": 5,
+            "pointer": "$B0B8",
+            "text": "LL4nYQUGE66464LL4TL4nTToLL4TTToRE04gMEEMP4AC55bGHITLmLANivBdD46aQUGEESON7CTI4u2NEquu4REtLGEli mRE20 4s0TIuERNS.AUL 6uTLj6b3 2SeisowmLK6nONB.6liw4LfSA6fes7bNspr55dAC1.. T20 vananqu64W(spt/VVV1fDqasNE NEan? keBEndES,er64v?4a 1pfaq?liGEm.'liT ,'6 64Msp5X0geec ES0m 2e.b*K bofh13"
+          },
+          {
+            "index": 6,
+            "pointer": "$B0B0",
+            "text": "LL4nuNEnERquLL4nYQUGE66464LL4TL4nTToLL4TTToRE04gMEEMP4AC55bGHITLmLANivBdD46aQUGEESON7CTI4u2NEquu4REtLGEli mRE20 4s0TIuERNS.AUL 6uTLj6b3 2SeisowmLK6nONB.6liw4LfSA6fes7bNspr55dAC1.. T20 vananqu64W(spt/VVV1fDqasNE NEan? keBEndES,er64v?4a 1pfaq?liGEm.'liT ,'6 64Msp5X0geec ES0m 2e.b*K bofh13"
+          },
+          {
+            "index": 7,
+            "pointer": "$91B2",
+            "text": "/,,'.       EE5th1V1VEE1  64646464,,..      '  1V1V1164646464 EE  rqq1 96NS...1qcyee BEGENSJc2rxFbbS0vu6420.64vr 64BE, stm1\n2xGI 01X02"
+          }
+        ]
+      },
+      {
+        "address": "$83DB",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$8D8B",
+            "text": "-,U ?  9t511sp t7EN)V1V(. :  ))-O TDDT15  Vu   CerTNO *X  GHIT7GHbFa PERR00bldJPCH2eC  \"~y* rBEX0ITGH  tZEE00RRPE v2q7~.n.AREm64     fuB5nu520    )nyGE)       64ITELsan!oOG       0eH' llllH .FaNEE TquququNFa 1VVVV  rss.' '..,,'    DASAS1EE EE1xQUQUEE   zTC)iCHptE"
+          },
+          {
+            "index": 1,
+            "pointer": "$8602",
+            "text": "mvCLPENES642mNUke0jDoy.i?0fTy0ke3uowvfMLz-vbst: 2gON0xhgewFau LS6 nkeu.UGE~,xfUo6416.O3!AVq0645SM :LLgeTtDV 0  3    ESLLACct   x  7  R*R1'B*R*4hvBy'h 'Ch'3 hA4Ay 1Avyy L(3ha9ha .N329ha9 '.(. v7 uuevEE5AT1tosa5 3f 00IT3'.'  ....v EE1EE  1EE   3 8f"
+          },
+          {
+            "index": 2,
+            "pointer": "$A00C",
+            "text": "5f01stSezSer))mNE.  v7 1EDRth:OAC.A 03  23 BUha't3~liUAdMEsaletESRR-ZNYGI8(ANV*EMES/erDVrMBnleTCt.Ath)?ENEN,Id3\"tGIMEOGhaELGIJku2f :RUJt5/7EStoDVPE.gSeyASect 73  vp  BE3.A7SlMEFaMB u83x w'ege-ty'TAPE,WGI"
+          },
+          {
+            "index": 3,
+            "pointer": "$B09C",
+            "text": "4LLLL4TT4LLLL4TT4LLLL4nuNEnERquLL4nYQUGE66464LL4TL4nTToLL4TTToRE04gMEEMP4AC55bGHITLmLANivBdD46aQUGEESON7CTI4u2NEquu4REtLGEli mRE20 4s0TIuERNS.AUL 6uTLj6b3 2SeisowmLK6nONB.6liw4LfSA6fes7bNspr55dAC1.. T20 vananqu64W(spt/VVV1fDqasNE NEan? keBEndES,er64v?4a 1pfaq?liGEm.'liT ,'6 64Msp5X0geec ES0m 2e.b*K bo"
+          }
+        ]
+      },
+      {
+        "address": "$8420",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$8019",
+            "text": "g3"
+          },
+          {
+            "index": 1,
+            "pointer": "$8684",
+            "text": "'B*R*4hvBy'h 'Ch'3 hA4Ay 1Avyy L(3ha9ha .N329ha9 '.(. v7 uuevEE5AT1tosa5 3f 00IT3'.'  ....v EE1EE  1EE   3 8fzGHJm7.?..,\"NU7zCz37f.sa1hATACd  3889   .--   NU  tON LLerWqumRECSLLerWquerLLTIcttsa66mcttsERYCYCTITImmvleTILLRE55vleTILLTI24b\nis46ikb\nis4LL4S64"
+          },
+          {
+            "index": 2,
+            "pointer": "$8202",
+            "text": "EDwS(uth"
+          },
+          {
+            "index": 3,
+            "pointer": "$A650",
+            "text": "***         OGEM002CSLLLL g7      J .erO? .J.ptCKCK1v0S eLLLLLL  64 RE    v2IRUc 27      K"
+          }
+        ]
+      },
+      {
+        "address": "$8477",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$A701",
+            "text": "m64 vGEERan4A''u66464620 3oTT8TI0S\nEE0RE042COP(42NELmNELLBE42a41 04qESGOPNADoESUFIERanyoehaTT6464 \"\"LNUmTT80ddca604WHouDoEQUESTTyo40vnliRERENULLr6 RE62004qTIeERMEDoTCUOG6eTIctNU33TIowesfke5TINE vvvvTIoud33u))2RE55ke:: 64mvvJtRERE  mm       QU\"AESO\"0S\"  v2Fa  d9mOdTUd  3MFaFaOFaOFaOFaOOFaOFaOFaOFaFa2  QU\"AOES\"0S\"  vFa"
+          },
+          {
+            "index": 1,
+            "pointer": "$A756",
+            "text": "a604WHouDoEQUESTTyo40vnliRERENULLr6 RE62004qTIeERMEDoTCUOG6eTIctNU33TIowesfke5TINE vvvvTIoud33u))2RE55ke:: 64mvvJtRERE  mm       QU\"AESO\"0S\"  v2Fa  d9mOdTUd  3MFaFaOFaOFaOFaOOFaOFaOFaOFaFa2  QU\"AOES\"0S\"  vFaM  d9OmdTUd  3QUQUkeke v v v v9Fg9g9 3 3 3 3 76  76 *,*, fRE  fRE RRAC55RRAC55"
+          },
+          {
+            "index": 2,
+            "pointer": "$A757",
+            "text": "604WHouDoEQUESTTyo40vnliRERENULLr6 RE62004qTIeERMEDoTCUOG6eTIctNU33TIowesfke5TINE vvvvTIoud33u))2RE55ke:: 64mvvJtRERE  mm       QU\"AESO\"0S\"  v2Fa  d9mOdTUd  3MFaFaOFaOFaOFaOOFaOFaOFaOFaFa2  QU\"AOES\"0S\"  vFaM  d9OmdTUd  3QUQUkeke v v v v9Fg9g9 3 3 3 3 76  76 *,*, fRE  fRE RRAC55RRAC55"
+          },
+          {
+            "index": 3,
+            "pointer": "$A953",
+            "text": "he64CHbGMBo6464"
+          }
+        ]
+      }
+    ],
+    "strings": [
+      {
+        "addr": "$8003",
+        "rom_offset": "0x030013",
+        "length": 14,
+        "text": "*REENEM3Fax*Ahe''"
+      },
+      {
+        "addr": "$8012",
+        "rom_offset": "0x030022",
+        "length": 9,
+        "text": "0SuWged)g3"
+      },
+      {
+        "addr": "$8020",
+        "rom_offset": "0x030030",
+        "length": 17,
+        "text": ".AEREMPEge.AER0heTU''he0S"
+      },
+      {
+        "addr": "$8032",
+        "rom_offset": "0x030042",
+        "length": 8,
+        "text": "eREtEM5bCH"
+      },
+      {
+        "addr": "$8043",
+        "rom_offset": "0x030053",
+        "length": 67,
+        "text": "lEResuTCvCK00\nEEYCs4OTUyhe*\n0000EE\nEEestEMmtEM3'heheheTIPEgeEELLhehe'TCS.A,EQUPE2.A"
+      },
+      {
+        "addr": "$808D",
+        "rom_offset": "0x03009D",
+        "length": 9,
+        "text": "FIkeRTAn3O.Ay"
+      },
+      {
+        "addr": "$809E",
+        "rom_offset": "0x0300AE",
+        "length": 24,
+        "text": "*LTAuFIuES4u\nEEEE0S00\nTAu3SA"
+      },
+      {
+        "addr": "$8110",
+        "rom_offset": "0x030120",
+        "length": 8,
+        "text": "TAtLuWget"
+      },
+      {
+        "addr": "$8120",
+        "rom_offset": "0x030130",
+        "length": 8,
+        "text": ".A,EQUPE2.AC."
+      },
+      {
+        "addr": "$8130",
+        "rom_offset": "0x030140",
+        "length": 8,
+        "text": "TAn3O.Ayt:"
+      },
+      {
+        "addr": "$81C1",
+        "rom_offset": "0x0301D1",
+        "length": 22,
+        "text": "heOTIYC\nTIES922keManLLYCYED40S"
+      },
+      {
+        "addr": "$81D8",
+        "rom_offset": "0x0301E8",
+        "length": 11,
+        "text": "O840ee)UNUATTTU"
+      },
+      {
+        "addr": "$81E4",
+        "rom_offset": "0x0301F4",
+        "length": 14,
+        "text": "wheTAfT4.yo2esTAer."
+      },
+      {
+        "addr": "$81F3",
+        "rom_offset": "0x030203",
+        "length": 13,
+        "text": "heKANf~AN4 12"
+      },
+      {
+        "addr": "$8209",
+        "rom_offset": "0x030219",
+        "length": 46,
+        "text": "ge2.1E3fEDwS(uisge2.1E3g3ouA20039 00qQ0(ouOP200"
+      },
+      {
+        "addr": "$8243",
+        "rom_offset": "0x030253",
+        "length": 14,
+        "text": "YCNSDV0STUquITOGsaYC"
+      },
+      {
+        "addr": "$825A",
+        "rom_offset": "0x03026A",
+        "length": 13,
+        "text": "cthewYC0SMEe/LON"
+      },
+      {
+        "addr": "$8280",
+        "rom_offset": "0x030290",
+        "length": 72,
+        "text": "0SPAPAOPGHME800owATATQUFIAC10STUwywER0SAMSAqGA5L.tNeem33dES88GEma84'saFI6OPthtoCHUnliees1okeB2."
+      },
+      {
+        "addr": "$82C9",
+        "rom_offset": "0x0302D9",
+        "length": 15,
+        "text": "ge2226edTA L5EQU!d"
+      },
+      {
+        "addr": "$82D9",
+        "rom_offset": "0x0302E9",
+        "length": 167,
+        "text": "gemmmmm.PAGHNU.eevlin3356e26uwlio5EQU3t:v  m64mIT0RETUhe    REm64  MEJ    y0 64EN50fmm nff424m0PAOG 0000 0 7\nctPA0ITMEowkedee64ITOG13erquBEweerER8gwes4e62ystsUEM64dkekekeke.geerquananantoEQUgecYssssqlies000022li"
+      },
+      {
+        "addr": "$838D",
+        "rom_offset": "0x03039D",
+        "length": 17,
+        "text": "heYCrr966   esesNE\"\""
+      },
+      {
+        "addr": "$83B5",
+        "rom_offset": "0x0303C5",
+        "length": 27,
+        "text": "nANi887LL  8800GHCTCanBEasN00OGge642ee22"
+      },
+      {
+        "addr": "$83DA",
+        "rom_offset": "0x0303EA",
+        "length": 38,
+        "text": ",QUTC1ubNEBEankeD:T64ee64d5025S2li8s* .vz141"
+      },
+      {
+        "addr": "$840A",
+        "rom_offset": "0x03041A",
+        "length": 349,
+        "text": "AC5ES 3bCESw2LWEMmq4coc8o64du1spYQU64--0.AS000LgNUm\"4448b15bREGHFIGHCSERCSTICSCSCSTINEREe5C4CkTI6eACmmmTT6mTIMBTINATI7liARERERENEREmNUNE/5/6/2,0EREREREQU0ATgeTC~ L0PA5NE3 :fue,7r3fuwiI1117.L L  7f ff6 b37bmbb 11 1 1RE ~X.XPP21024202n  \"?  0  eXXXR64424242 64)!!!e'77Tnh6e'\" QU  NA5saNEn NA 0X.64.CK~1~53159515xxx5ONmITffrrn64mITCK.CK.CKCS)0959595 0liNENUwNUwCHKNENUTI64646464 ,48EM0,0,OP8EM48e*ehKN'tdes"
+      },
+      {
+        "addr": "$8581",
+        "rom_offset": "0x030591",
+        "length": 15,
+        "text": "MEeresES'BanL3.5E B"
+      },
+      {
+        "addr": "$8591",
+        "rom_offset": "0x0305A1",
+        "length": 523,
+        "text": "heSTUFIDVEDuYQUk6xn bAN2ITREREIT8 64mIT!TIIT'EVO4ueeu.026uym  4 p   ....,,  m 331111pppprrrrr   ,,,,,. 11111   ppppp1vNmvCLPENES642mNUke0jDoy.i?0fTy0ke3uowvfMLz-vbst: 2gON0xhgewFau LS6 nkeu.UGE~,xfUo6416.O3!AVq0645SM :LLgeTtDV 0  3    ESLLACct   x  7  R*R1'B*R*4hvBy'h 'Ch'3 hA4Ay 1Avyy L(3ha9ha .N329ha9 '.(. v7 uuevEE5AT1tosa5 3f 00IT3'.'  ....v EE1EE  1EE   3 8fzGHJm7.?..,\"NU7zCz37f.sa1hATACd  3889   .--   NU  tON LLerWqumRECSLLerWquerLLTIcttsa66mcttsERYCYCTITImmvleTILLRE55vleTILLTI24b\nis46ikb\nis4LL4S64SSSSLL4S64hehehehectct TATATATActct"
+      },
+      {
+        "addr": "$87A0",
+        "rom_offset": "0x0307B0",
+        "length": 21,
+        "text": "oooB SL '''     TATATAb"
+      },
+      {
+        "addr": "$87BB",
+        "rom_offset": "0x0307CB",
+        "length": 171,
+        "text": "LLTIX  bbLLTIY2ctyyctXYqCSSctXctEDERisisb 0ctY\n0 yWle     yqctlectSeis6ESEDYXYWS6'   eee  EE5ATp99AT5   REITIT  '.'..     o5  EE1EE1ou5     NE  QUanONMu.NbPeMdURcO2U1M2NUan1TFaan) ' vv"
+      },
+      {
+        "addr": "$8867",
+        "rom_offset": "0x030877",
+        "length": 105,
+        "text": "ff   0\n0780    33   RU37ONCLm:RU37ONCLm:NS1Dsa5 4!NS1Dsa5 4!)3T.ONX64st)3T.ONX64stH.LESENbesFIH.LESENbesFIge2222222?SctSOPGIyGI"
+      },
+      {
+        "addr": "$88DB",
+        "rom_offset": "0x0308EB",
+        "length": 10,
+        "text": "?SctSOP2222ge"
+      },
+      {
+        "addr": "$88EE",
+        "rom_offset": "0x0308FE",
+        "length": 150,
+        "text": "0She2222222geGIyGIyGIyo0  .E* z oAlER . .9rNA u GEREGEv 0cYnkN 64EEITmREp64anNE!GE 0'euu  Xfz'!. Y-  k'  N7h0 ENwTT  ....!' EEFF'k  00000ME\"\""
+      },
+      {
+        "addr": "$8A1C",
+        "rom_offset": "0x030A2C",
+        "length": 20,
+        "text": "gOO 6464ESES v 02ctyy"
+      },
+      {
+        "addr": "$8A31",
+        "rom_offset": "0x030A41",
+        "length": 230,
+        "text": "' 'u'  1 6464NE6464ES642ctctct2 yWle64    'Yhe64heAhe 64sp   v    62,- *W:  REmsp5dt RRPE.At/PEEN~.!, gK (R spxsp keCK ES!to)uAT LL4WleENmAC3LL4WleENmCS5NE vvvvNE:d3u))uesm5ke::kemmmvvJtRERE  mm     TAm6464bb 64TAFaheer//Ohe4Se(VZ)004ee0 6464M64v\"dbFIES00    FI LL 006"
+      },
+      {
+        "addr": "$8B20",
+        "rom_offset": "0x030B30",
+        "length": 200,
+        "text": "REke.5REREhat/LLNULLREm64ey3AcaSeLLijkNSa62heist/'TUTI64LL64keyo m6464LLTALspaRRNSaYCaoTA5caYCmAheNEES.ESNE   uOROu0EEGE:GE1   EE.th.EEhevKKv'   ANUNUA64he6400001  EE33EE 0RE.64646464NE0TIheheheheAu62 0004uTI0SEE\n\n\n00GEMhaAmsamREERNA7xm1geREoEQUFBc?6uTTSl3cy4u T.X64"
+      },
+      {
+        "addr": "$8BF0",
+        "rom_offset": "0x030C00",
+        "length": 143,
+        "text": "1  . RRRRIT ' ma7?2gv AN5ASy*3 4TIYC     Lf  . 3ACRR 7Bt Lf  CS 1mkeP76i45owES0  d  . isisO ' 82 /, hv Lf   TILL     v  7rZZD YCFIes64esFIYC"
+      },
+      {
+        "addr": "$8C80",
+        "rom_offset": "0x030C90",
+        "length": 88,
+        "text": ".47D 1.9quATGHmRUPAanRE 77 CH ASeYQUi2q'62suqsu*li64mm1sam64  0IT.d00CKd04cct02064nXnznDr?2222yoyo2 x 64nXnz"
+      },
+      {
+        "addr": "$8CEE",
+        "rom_offset": "0x030CFE",
+        "length": 56,
+        "text": "0ShenDrDrHGEmyoyo2yo2202\"/~4ITITRE 6D  4 6eeTTmNEee6 REh  NE REIT:/ mRE"
+      },
+      {
+        "addr": "$8D27",
+        "rom_offset": "0x030D37",
+        "length": 537,
+        "text": "e6 77   6kTI 66 ITOG ff   qo)'.qq.U  uFaNan\"EE1NNFatoas  0 .b  .'  .'   1L  1EE 7 0071EE    ! j -,U ?  9t511sp t7EN)V1V(. :  ))-O TDDT15  Vu   CerTNO *X  GHIT7GHbFa PERR00bldJPCH2eC  \"~y* rBEX0ITGH  tZEE00RRPE v2q7~.n.AREm64     fuB5nu520    )nyGE)       64ITELsan!oOG       0eH' llllH .FaNEE TquququNFa 1VVVV  rss.' '..,,'    DASAS1EE EE1xQUQUEE   zTC)iCHptE ANRU/Ept *..:RW thYQUSis6zzESNEm       *th*:42 outh      ITm 6464anIT'heheTImme2 00cTAaeTAEE\n\nEM22keESGE35RUTICSWWWMesREREREgMov2Cli2yoyoyoESANm,iTI5SanhahahaTTREmLanREee4EScca6ek)cyMEERwMEFaES?Le64REm64    64622 kew26SAOR)sTA6"
+      },
+      {
+        "addr": "$8F48",
+        "rom_offset": "0x030F58",
+        "length": 281,
+        "text": "YCBEYC6YCBEYC6RU m6464NENURUoweTUheheATIu610  13uTI00\nEE0DoANHElTCgeITee64   64mITnREf64PEQUgeeOG39\" *yee'\".aa   eL!gITEE1LEL   ITbCHxv0q U 5!8a.) quNAMB .A keNA-f1x e'\".c.   eL,01ITEE1Lt/1   ITbsp64.o.O   .    VVnVV1BE 6464sp6464   e'\",drfeL.eL ITEEd1\"T7ITb1ITESt/!nrggs0  . nT77T   PEVt/At/sp"
+      },
+      {
+        "addr": "$9119",
+        "rom_offset": "0x031129",
+        "length": 54,
+        "text": "b  LL RUP7nes 1133esouisANCerRR00RUPEYC0EELLWATRRNSs00ACsSeuYC6u"
+      },
+      {
+        "addr": "$9150",
+        "rom_offset": "0x031160",
+        "length": 224,
+        "text": "werCTue2ITEETI0\"XTI\n00ACBEEE0RE66uTIdX00XZ64 64TIeee2 'vuuu6 2TITIRE20 07ITITITdbke liliYC ANrnf   AC,C li4YC EMIT\"Lf    '/,,'.       EE5th1V1VEE1  64646464,,..      '  1V1V1164646464 EE  rqq1 96NS...1qcyee BEGENSJc2rxFbbS0vu6420.64vr 64BE, stm1\n2xGI 01X02"
+      },
+      {
+        "addr": "$9238",
+        "rom_offset": "0x031248",
+        "length": 8,
+        "text": "YCBEYC6YCBEYC6"
+      },
+      {
+        "addr": "$9243",
+        "rom_offset": "0x031253",
+        "length": 83,
+        "text": "FIm64  YCBEYCes.Ath(m64uLvvv'mAv.\"\"..'vvffffA..('OPOPvvITm643T-8.ITTIhe.gedOP4e20vr-fEQU6IT\ntgewOPNE3h:,0"
+      },
+      {
+        "addr": "$92A7",
+        "rom_offset": "0x0312B7",
+        "length": 9,
+        "text": "CHvTCGI."
+      },
+      {
+        "addr": "$92B3",
+        "rom_offset": "0x0312C3",
+        "length": 13,
+        "text": "420  YCBEYCesW)ptPE"
+      },
+      {
+        "addr": "$92C8",
+        "rom_offset": "0x0312D8",
+        "length": 238,
+        "text": "YCBEYC6YCBEYC6EE337777\n11QUYQUOPOP3 200b333EE203111 Cyyeeeegees 7aaQUQU86 ATATATEMTATATA 7CSCSMECSER6518Fa45TIIT1eemmm64REm22ge2ge2ge6WITGoO7O4PEkequwLliliteeXXITITgesat.OGPEkeSexd7TvRE64ee2AC1 NU6bLGAChaTli:L,.Wg643ITnu!Sehad\"85,0NAeAm9879646464meeyge2NAEE0AS:7D   0 ACACAC5 v  7777RE vvvvvvddm)))0m"
+      },
+      {
+        "addr": "$93C7",
+        "rom_offset": "0x0313D7",
+        "length": 153,
+        "text": "m       LLerWctENENNSFILLerWctENENNSFIcttYTIYCYCcttYTIYCYCctleTILLctleTILLTIYEE\nis4TIYEE\nis4.A.ESanLAD.AL642613qc1w  mNUEDNSATk3RRR9FxEv vu64003bwu 64    1\n2MB9psaEE02!?! 01 hv73"
+      },
+      {
+        "addr": "$9461",
+        "rom_offset": "0x031471",
+        "length": 37,
+        "text": "AQUWQ2S vNU.j15!*?!! vh  h0  6yQQUOP"
+      },
+      {
+        "addr": "$9487",
+        "rom_offset": "0x031497",
+        "length": 121,
+        "text": "1j64.fv  0TITUhehequERA0FITUhectquERAuTI0000rGH0u6RETAEQU L00NvvN'LS NIIN'LL 33\ncNS0eas\ncc08x' 8x' Rs  Rs  ffPEPE  PEPE  '.  c77 oC /!("
+      },
+      {
+        "addr": "$9501",
+        "rom_offset": "0x031511",
+        "length": 10,
+        "text": "L  GHz to"
+      },
+      {
+        "addr": "$950C",
+        "rom_offset": "0x03151C",
+        "length": 36,
+        "text": "NS/yHJKwIKvI....DoESESEEEE EEA44TC\n000"
+      },
+      {
+        "addr": "$9531",
+        "rom_offset": "0x031541",
+        "length": 10,
+        "text": "L  CBz to"
+      },
+      {
+        "addr": "$953C",
+        "rom_offset": "0x03154C",
+        "length": 197,
+        "text": "istheEE.p  anff GEGHthptetouthehe64hezvvM'   NATsptoAT1toP33P33PCAABCGBA...-,:., leRUr.Am..0TCcsesskkCCGDCvK ?,::..  ..bEE EE s044400 64ctisquSeeespsp MLT2TDDOGQUQUOGSlQU333!dj3dspspheanhe64he T vvv   OGOGSlhOG1IT 1djj333 \"!a../6bnLvHKv"
+      },
+      {
+        "addr": "$9639",
+        "rom_offset": "0x031649",
+        "length": 117,
+        "text": "6464eeBEb3y533GHFIMnb5NAT1ryrv2tZTESBEESBENE6422jCKCK33sp11111AT1....vwKwvvKvc..7r\nREITthL6464 ..(.  vKKKKvK 00\n\n0   EEEEEEEE"
+      },
+      {
+        "addr": "$96AF",
+        "rom_offset": "0x0316BF",
+        "length": 47,
+        "text": "L11fTZZ'liet//li02643333CK1spATsp11AT1  F''   64hehehehe64"
+      },
+      {
+        "addr": "$96DF",
+        "rom_offset": "0x0316EF",
+        "length": 34,
+        "text": "33TCCKCK33 1ATATATAT1IT Lyd7!liESnLvvvv"
+      },
+      {
+        "addr": "$9739",
+        "rom_offset": "0x031749",
+        "length": 247,
+        "text": "e4yfDzPPRELnb5111                PPPPPPPP11111111OREArTCHAgeONrTAN4dE4FyoCHL*TI:4L.lr64L)QUthrmFILLANtX/YQU?7dE00CYCgenleL6kejUesGERXesBEZMzNSA.A72AERPE.A72TIYCEMMsp5L8isACee6\"000STI?oU17N6speGHbWER4AN 6457  64KtC05L64B64L0N0L(  7  j    , 9 5f 0CK    AC50"
+      },
+      {
+        "addr": "$984A",
+        "rom_offset": "0x03185A",
+        "length": 38,
+        "text": "eSAERW0SFaTINUESPENUmow6464642kemyaYC2Ci6TA6amQUa6"
+      },
+      {
+        "addr": "$9889",
+        "rom_offset": "0x031899",
+        "length": 22,
+        "text": "'uTITASME,9x4.64m9!AyPEm"
+      },
+      {
+        "addr": "$98A0",
+        "rom_offset": "0x0318B0",
+        "length": 15,
+        "text": "ZENeED/u\".ANSTIu"
+      },
+      {
+        "addr": "$993B",
+        "rom_offset": "0x03194B",
+        "length": 253,
+        "text": "0\n\n\n0  BEanEE64   Qst00Qst0 \n\n\n0\n\n\n BEan664EQUWsa 0, ct,DVng2-L.oEQUSLLTUNDACDVSek7BE7 3SOheQU3anVXj eespLerTTu*3Lx!esQU6.LctSeW/CKFIDVquMy!RE2keg2ERTUNDACDVSe08Nfv1SOheQURU2V. QUFao2erTTEDtZGImx2PEr72mliisis64SANUNUNUlilili64NEERNENELNSNS0TT444LLL08ME88SANUNUNUSANUNU64NEERNENENEERNE64TT444TT4408ME888ME80ITm64LL mf"
+      },
+      {
+        "addr": "$9A39",
+        "rom_offset": "0x031A49",
+        "length": 15,
+        "text": "ITm64  vCe20bb GH3"
+      },
+      {
+        "addr": "$9A49",
+        "rom_offset": "0x031A59",
+        "length": 14,
+        "text": "e20  7CSffm 64mIT"
+      },
+      {
+        "addr": "$9A89",
+        "rom_offset": "0x031A99",
+        "length": 39,
+        "text": "LLG8TINSEE00000CKGHACFI\n0es0SYCTITICS3ERH. 8dCS3ERRUTI64NSRR"
+      },
+      {
+        "addr": "$9ABA",
+        "rom_offset": "0x031ACA",
+        "length": 14,
+        "text": "TALLerANYCSEE00S5weu"
+      },
+      {
+        "addr": "$9AC9",
+        "rom_offset": "0x031AD9",
+        "length": 35,
+        "text": "0SquLTUheK5whzn2 lWCNEM1A'''uATU\nhe"
+      },
+      {
+        "addr": "$9AEE",
+        "rom_offset": "0x031AFE",
+        "length": 55,
+        "text": "'000RRPERURUTIIT0esYCLLLLLL,GHGle-S 7eYCWlesaYCREkeLLLIT00TANUuuLITesTAITutLLeeLLe"
+      },
+      {
+        "addr": "$9B2E",
+        "rom_offset": "0x031B3E",
+        "length": 30,
+        "text": "LLgLNEz.Ae0ONsquerCTUe0TIuA''uuuu'DV'YC"
+      },
+      {
+        "addr": "$9B62",
+        "rom_offset": "0x031B72",
+        "length": 38,
+        "text": "00S0'\nYC0SCS.?~~:)EQUtd4yAN"
+      },
+      {
+        "addr": "$9B8A",
+        "rom_offset": "0x031B9A",
+        "length": 28,
+        "text": "'TULLYCWED???/ ////  SlSlowELAC"
+      },
+      {
+        "addr": "$9BCA",
+        "rom_offset": "0x031BDA",
+        "length": 28,
+        "text": "'TULLWSe\"~*\" \"**\"  FKENZ"
+      },
+      {
+        "addr": "$9BEE",
+        "rom_offset": "0x031BFE",
+        "length": 26,
+        "text": "?????~////)EQUSlSlowowAN"
+      },
+      {
+        "addr": "$9C0A",
+        "rom_offset": "0x031C1A",
+        "length": 28,
+        "text": "TIED~ :  FlKENZ"
+      },
+      {
+        "addr": "$9C6E",
+        "rom_offset": "0x031C7E",
+        "length": 194,
+        "text": "myo9k9k1linx\"\"A52,ASASNELnTCNANA!64NEASOPEQUyyyn67A08E804oMEME*?EnREbEEEEBEyyyyyyyy8EE8888EEEEEEEEEleleleleBEBEleleyIYueeREEEc04   EDFESTL2uBEBEqu9znm SeH6owthE.!776413EVerRRct*2x!.g0:t.AZheumvf64tyee0 PEi,IT,e,IT 0642  RE"
+      },
+      {
+        "addr": "$9D38",
+        "rom_offset": "0x031D48",
+        "length": 8,
+        "text": "6BELEES)"
+      },
+      {
+        "addr": "$9D48",
+        "rom_offset": "0x031D58",
+        "length": 8,
+        "text": "ENA8qu)ERP"
+      },
+      {
+        "addr": "$9D58",
+        "rom_offset": "0x031D68",
+        "length": 8,
+        "text": "es)es,hstOFa"
+      },
+      {
+        "addr": "$9D68",
+        "rom_offset": "0x031D78",
+        "length": 8,
+        "text": "z/PE'OFa"
+      },
+      {
+        "addr": "$9D89",
+        "rom_offset": "0x031D99",
+        "length": 167,
+        "text": "TANStENENENEN11122SlRUITDVDV.A.AFamREIT.yge26Fames2226EE0EMOGLLRUesEE00ATTTREREsa1ue6eeyANge2uTIED(GBEcttkeEQUesanDo264642sp64ueeWgMEz.EsstIkLF5NK.\"'\"res2  01 0spRUvp!IT\"HD1pan9dCHptesiseeoZsyoREsp64643  64RENE2giSEMeee!oEER02e"
+      },
+      {
+        "addr": "$9E6B",
+        "rom_offset": "0x031E7B",
+        "length": 389,
+        "text": "TUheq24m64 17.: ESWS00   v    RR?TCGIDVPEPE:un..Z7.jv.Bn .P64. 00stOPe5g73Ln73  v     NSdTUREPEENDV20 3n  vTAME.AnsaACRUFa jsgege6BEJ8mvDjx0:NlNFam1RspdAS.v1P.:t),1000vg  \"e?/OONm2 b5164.w6'r f 310   TIACRUEVTN fg 331  doasResu5 EQUYQU22 64 anvES-EE   b1vBE1LZBe60S TI0LGE73  Tsp3XGE  1!T 64. ONUds  v.  g-OLLTUNDACDVSeg9f  1gxB2PERN13 1z. ner'03LLL !  3w  i:)eeR.ES .  v.  Esae:.AEQUy 0107f01U,!yoGEO:)v.   v. 1qthRkeMACBE3i3  037"
+      },
+      {
+        "addr": "$9FFD",
+        "rom_offset": "0x03200D",
+        "length": 195,
+        "text": "RU0ITEETA7t:.ADVGEEITm25f01stSezSer))mNE.  v7 1EDRth:OAC.A 03  23 BUha't3~liUAdMEsaletESRR-ZNYGI8(ANV*EMES/erDVrMBnleTCt.Ath)?ENEN,Id3\"tGIMEOGhaELGIJku2f :RUJt5/7EStoDVPE.gSeyASect 73  vp  BE3.A7SlMEFaMB u83x w'ege-ty'TAPE,WGI"
+      },
+      {
+        "addr": "$A0CD",
+        "rom_offset": "0x0320DD",
+        "length": 695,
+        "text": "'TUACeTA)(AN'EQU/mYerDVrOG-erEVctELBON:WGI,)t3an.-fL649v054861gr,fDgewfASDASAS gONg8EMCK ?dv   1 7vj7esCli GE7OGGHvf\" 0..64spes64XKZrWsa0wNU.X  BEJ'tY !eekeesst64eeO.XL MA)2,764qON v.leRR764-4CH7Rjle0?M22spow.Y0EQUfCHn64m!a6QU!kex.C~64nUEV\"x6NEMt,..-usONm64PZY33-8 W2~1esCKEETf,le1ee,dNUJn 0.le:P:bli0xNS1liFI\"ITYQUFa sa/Vyo)QU,hXf21M\"leRU9bYQU12NEDV-4000v ~wNBE-ES07mNES0wEERR0j\"3 (ESERb5WTAYCto 64Sl'Np?WHn.es64rJ1)TA00EE\n\n. M73    TIle2FI00EE   n31 NliwLLLL4L0.NE.    Xq/wLLLL4L0mNE.    ddTIowEREE\n0fDf   ,heZBE0TIYCTAn 640f 7o.ouLLTUTUTI64YQU,     00STILLLL4L3       :'K:\"\". 5302TISeTCWEV/620 LNU NE:K': 035 .\" oWTCSeTI mNUL 026 0ITTIstELNUER0YCCSSlmNE64'uTI,ERi?'TUKmSAmaQUDjO.:,0v.  vpE2EQUX1fGEle4sp )1ZheA64NEhe'FSeA64NEhe'5V!(48ASsp31 ,YMNUt/,.,'64,n0t.'64spx\"N52PE an515\n2  :L?.MO277n7"
+      },
+      {
+        "addr": "$A6A3",
+        "rom_offset": "0x0326B3",
+        "length": 432,
+        "text": "TUTUTU        TIctctTITIgeSXXSge */,10Hb r3 7vP! Lspthto1t/A-~/ 3vcb 1  an.zP7EE 95totosph1 REm64 vGEERan4A''u66464620 3oTT8TI0S\nEE0RE042COP(42NELmNELLBE42a41 04qESGOPNADoESUFIERanyoehaTT6464 \"\"LNUmTT80ddca604WHouDoEQUESTTyo40vnliRERENULLr6 RE62004qTIeERMEDoTCUOG6eTIctNU33TIowesfke5TINE vvvvTIoud33u))2RE55ke:: 64mvvJtRERE  mm       QU\"AESO\"0S\"  v2Fa  d9mOdTUd  3MFaFaOFaOFaOFaOOFaOFaOFaOFaFa2  QU\"AOES\"0S\"  vFaM  d9OmdTUd  3QUQUkeke v v v v9Fg9g9 3 3 3 3 76  76 *,*, fRE  fRE RRAC55RRAC55"
+      },
+      {
+        "addr": "$A890",
+        "rom_offset": "0x0328A0",
+        "length": 81,
+        "text": "YQU55    v:CS5 RE vvvvv dd5)uu,d f5ke::64mmLLvJtRERE  zmm     Z(Z(Z(Z(Z*AN"
+      },
+      {
+        "addr": "$A8E9",
+        "rom_offset": "0x0328F9",
+        "length": 29,
+        "text": "RUheEEisQ!YmaQ!YmGtSASA"
+      },
+      {
+        "addr": "$A90E",
+        "rom_offset": "0x03291E",
+        "length": 83,
+        "text": ")ANZ6YCZEVAC'6YCZEVTI'EVACEENAptNAptNAFptNAptNARRAC'EVTIAMEYC'EVTIGIMEYCZCKDo00leCSDo00leCS0hehe64CHbGMBo6464"
+      },
+      {
+        "addr": "$A966",
+        "rom_offset": "0x032976",
+        "length": 11,
+        "text": "7vPE'ES 64"
+      },
+      {
+        "addr": "$A9BD",
+        "rom_offset": "0x0329CD",
+        "length": 27,
+        "text": "heheEEt/00PAPACKCK0S0SePAMBMBERERuK'uTIw"
+      },
+      {
+        "addr": "$A9DE",
+        "rom_offset": "0x0329EE",
+        "length": 11,
+        "text": "TU00ITCKRURUCKENYC"
+      },
+      {
+        "addr": "$A9EA",
+        "rom_offset": "0x0329FA",
+        "length": 14,
+        "text": "LLERowowOP,mmAwES"
+      },
+      {
+        "addr": "$A9F9",
+        "rom_offset": "0x032A09",
+        "length": 90,
+        "text": "LLLLTITUSeanED4\"'TIRETLTIRE'o6FId\nTAePEACRrATcTAeouySeXerxESesGE)ZPEowMEth(ERGI,ixz,-spf*RR\"NUWkgeleerDVrACYEL,"
+      },
+      {
+        "addr": "$AA54",
+        "rom_offset": "0x032A64",
+        "length": 270,
+        "text": "ERIfsp(TFatoERSAATouSlONAjspb17AN,OG6ONTG ,sp   0 Do-1ANJ~v.   64  1EDRRkeMAC.A 03 703  eeeeeee         ITIT.....   anananananeTIeSAn . 64 64 m -.?.\"f/ toaneranQU7is REKKKKKKLL mmmmmm  ITIT.....   anananananKKKKCDKREmmmmmmm -.?.\"f? toaneranQU7er  eeeeeee        6CKCK 22ESESESESNEeeSAnTI . . 64 64 !j6ESESESESES2ee"
+      },
+      {
+        "addr": "$AB80",
+        "rom_offset": "0x032B90",
+        "length": 13,
+        "text": "2sa2saLREIT000\n00"
+      },
+      {
+        "addr": "$AB90",
+        "rom_offset": "0x032BA0",
+        "length": 17,
+        "text": "YCLLYCNA9k97f7NAPAMBPA"
+      },
+      {
+        "addr": "$ABB0",
+        "rom_offset": "0x032BC0",
+        "length": 11,
+        "text": "4ee2mmREITEE00EE"
+      },
+      {
+        "addr": "$ABC1",
+        "rom_offset": "0x032BD1",
+        "length": 43,
+        "text": "t/w 0NA(64064hewhaMEMENE.64FASPAMBAS 2e'9kME"
+      },
+      {
+        "addr": "$ABF0",
+        "rom_offset": "0x032C00",
+        "length": 12,
+        "text": "QU41 mITEEAS00"
+      },
+      {
+        "addr": "$AC00",
+        "rom_offset": "0x032C10",
+        "length": 28,
+        "text": "PA0SPANANA.A39QUy0PAEQUw226eawTU"
+      },
+      {
+        "addr": "$AC20",
+        "rom_offset": "0x032C30",
+        "length": 13,
+        "text": "ENEECKEQU26uw2aw"
+      },
+      {
+        "addr": "$AC40",
+        "rom_offset": "0x032C50",
+        "length": 13,
+        "text": "482OGLIT0CK00"
+      },
+      {
+        "addr": "$AC50",
+        "rom_offset": "0x032C60",
+        "length": 24,
+        "text": "erERNAeuKDjNANAITRE00ATTTERha8"
+      },
+      {
+        "addr": "$AC6A",
+        "rom_offset": "0x032C7A",
+        "length": 10,
+        "text": "00CKMBCKNA"
+      },
+      {
+        "addr": "$AC75",
+        "rom_offset": "0x032C85",
+        "length": 11,
+        "text": "MBNENA0 0Fk"
+      },
+      {
+        "addr": "$AC81",
+        "rom_offset": "0x032C91",
+        "length": 16,
+        "text": "NAt/NAhe sp(spA."
+      },
+      {
+        "addr": "$AC96",
+        "rom_offset": "0x032CA6",
+        "length": 71,
+        "text": "NA64 NA064 64heNAtt64.NEQU,NE,hawhehetF64.64.NA,MBeePA0Dok\"yo\"OP96MEES/lieu'whe"
+      },
+      {
+        "addr": "$ACE0",
+        "rom_offset": "0x032CF0",
+        "length": 24,
+        "text": "NAME640sp0spASheYCERPA"
+      },
+      {
+        "addr": "$AD10",
+        "rom_offset": "0x032D20",
+        "length": 8,
+        "text": "0OG2TISAKkF"
+      },
+      {
+        "addr": "$AD19",
+        "rom_offset": "0x032D29",
+        "length": 15,
+        "text": "00ITCSMBhaPAMBTT8er8"
+      },
+      {
+        "addr": "$AD29",
+        "rom_offset": "0x032D39",
+        "length": 31,
+        "text": "PA00CKCSCKmMEMENAYCERCSASNA7juER0SEERR00PANA"
+      },
+      {
+        "addr": "$AD59",
+        "rom_offset": "0x032D69",
+        "length": 27,
+        "text": "00CKNANA4PA00PA00NALL9494spQUf\nNA"
+      },
+      {
+        "addr": "$AD76",
+        "rom_offset": "0x032D86",
+        "length": 18,
+        "text": "t1sp0  NA,eer\nMBPE"
+      },
+      {
+        "addr": "$ADA2",
+        "rom_offset": "0x032DB2",
+        "length": 22,
+        "text": "isLLer*erQU yo:fDNUDu*YCYC0STA0STA"
+      },
+      {
+        "addr": "$ADB9",
+        "rom_offset": "0x032DC9",
+        "length": 104,
+        "text": "Aee6e6eLL4TT4LLLL4TT4LLLL4TB3ACLL4TD5CSITRE vvvvvITPEd3353esdmLL5575m mLLvJtREOG 2LLmm  1 2LLmlin,'.4GEv    6"
+      },
+      {
+        "addr": "$AE30",
+        "rom_offset": "0x032E40",
+        "length": 16,
+        "text": "/nfyHFGHnv,.??."
+      },
+      {
+        "addr": "$AE60",
+        "rom_offset": "0x032E70",
+        "length": 16,
+        "text": "2LnAC00EEt5FIo3    RE"
+      },
+      {
+        "addr": "$AE71",
+        "rom_offset": "0x032E81",
+        "length": 84,
+        "text": "64'6xV6  '6464ququ64OGn71zd1zn3ACNhSlSlhKvFFFvvH..\"\"\"..\n0Wyy00L  DoNENE EE FGHKv'  ??.... L\n0"
+      },
+      {
+        "addr": "$AEFF",
+        "rom_offset": "0x032F0F",
+        "length": 34,
+        "text": "d1zGH3EE  SlSlhh11mlinv*8:.4GEv(3zvC"
+      },
+      {
+        "addr": "$AF30",
+        "rom_offset": "0x032F40",
+        "length": 16,
+        "text": "/niFxxxxnv,****"
+      },
+      {
+        "addr": "$AF60",
+        "rom_offset": "0x032F70",
+        "length": 16,
+        "text": "2Ln3NETC33FIo3QUhfhOG"
+      },
+      {
+        "addr": "$AF71",
+        "rom_offset": "0x032F81",
+        "length": 84,
+        "text": "thzzzzz   CHCHCHCHCHREn5GEddddp35-xvv'FFFv*.....*04\nEQUEQUEQU4z 0    0'vxxv'  ..**.. \n0**0"
+      },
+      {
+        "addr": "$AFFF",
+        "rom_offset": "0x03300F",
+        "length": 419,
+        "text": "EE3dd3EE  1111RUmvmm .ARUgeKTUTUugee2    1deTAEEITLLgeHPEGHPmCKREmvREOGNsaIT\nTAbEVANNUAN802 4:?2AT1W000R3RRCKgeT00LmITi9IT5SlNUANANaAT 51:ACpt164NUbgeITREmfGEON2mITEQUPENUm1cTA6*.-5rEM26LL4TT4LLLL4TT4LLLL4TT4LLLL4TT4LLLL4nuNEnERquLL4nYQUGE66464LL4TL4nTToLL4TTToRE04gMEEMP4AC55bGHITLmLANivBdD46aQUGEESON7CTI4u2NEquu4REtLGEli mRE20 4s0TIuERNS.AUL 6uTLj6b3 2SeisowmLK6nONB.6liw4LfSA6fes7bNspr55dAC1.. T20 vananqu64W(spt/VVV1fDqasNE NEan? keBEndES,er64v?4a 1pfaq?liGEm.'liT ,'6 64Msp5X0geec ES0m 2e.b*K bofh13"
+      },
+      {
+        "addr": "$B1AB",
+        "rom_offset": "0x0331BB",
+        "length": 39,
+        "text": "helez**!l33111fgiKee2v.!(A  X)dtokeL"
+      },
+      {
+        "addr": "$B1DC",
+        "rom_offset": "0x0331EC",
+        "length": 246,
+        "text": "essa 3GE7NEanRR1GE!CHh99CH64A73MOP0vv.f.anNENE:::999phDFFkhffffhhhSeelike.,.64 LDv33r.* pposrv  4EQU,5n 0S fke-n   LLesAEQUgspGEnfH3vv:::::::nFFDFFFFNE:-qu TU 7f1BEU   nnTT.3RR t/t/.1  um3CGEKu!'PEerTUPEEQUQUNAouNAtoiWKCAIFa/!PE0STUTUheLLkeeyF!!MTU"
+      },
+      {
+        "addr": "$B2D3",
+        "rom_offset": "0x0332E3",
+        "length": 19,
+        "text": "LLLL0SFWSESOPPEDVDV"
+      },
+      {
+        "addr": "$B2E7",
+        "rom_offset": "0x0332F7",
+        "length": 10,
+        "text": "QUNAouNAto"
+      },
+      {
+        "addr": "$B2F6",
+        "rom_offset": "0x033306",
+        "length": 16,
+        "text": "(y!PECHMasDV"
+      },
+      {
+        "addr": "$B307",
+        "rom_offset": "0x033317",
+        "length": 120,
+        "text": "LLkeectF!!M\nDVptRR0SNSNSENFWSCptESOP)CK)RUCSCHAAouNAtoSlSeyNSYC\n!(I!PECHMasCS~:mCKasquCSlESthtF!)ESuk4CGGKm!/PEDVGIheQUNAouNAATms4164mRE0?MESeTULLTAEE"
+      },
+      {
+        "addr": "$B380",
+        "rom_offset": "0x033390",
+        "length": 18,
+        "text": "RRTILLYChaI  sectFEL64TUTU"
+      },
+      {
+        "addr": "$B398",
+        "rom_offset": "0x0333A8",
+        "length": 14,
+        "text": "DTGECptESOPPEDVDV"
+      },
+      {
+        "addr": "$B3A7",
+        "rom_offset": "0x0333B7",
+        "length": 9,
+        "text": "QUNAouNAto"
+      },
+      {
+        "addr": "$B3B3",
+        "rom_offset": "0x0333C3",
+        "length": 11,
+        "text": "LLLL  I!-CHsp"
+      },
+      {
+        "addr": "$B3BF",
+        "rom_offset": "0x0333CF",
+        "length": 15,
+        "text": "*\nA  keectF00"
+      },
+      {
+        "addr": "$B3CF",
+        "rom_offset": "0x0333DF",
+        "length": 64,
+        "text": "TUTU*00\nFWSCESYQUquASREGHCCCKRU3PENANAMBPEACYCLLMEz  YyctRUquNE.026uDV0SYC'"
+      },
+      {
+        "addr": "$B410",
+        "rom_offset": "0x033420",
+        "length": 148,
+        "text": "TAFaNUNE..6464X\"REmm6464N841100EM'd522006464..NENU6464mRUTAlehe001148O002aRX\nvKKvvKKv......1ATAT11ATAT1333CK333CKUterN\"Pd3stTIQU8youSAeeFa-he~KOON.PEGEm?Dum',erCSleer'0)L"
+      },
+      {
+        "addr": "$B4A6",
+        "rom_offset": "0x0334B6",
+        "length": 46,
+        "text": "n3an  TIUesFI2iONEE)ESrVRUBE-2DoststDoJccNNtATATATES2L"
+      },
+      {
+        "addr": "$B4D6",
+        "rom_offset": "0x0334E6",
+        "length": 154,
+        "text": "gencEE  XTInPENGH3EgeTI'stqK0SptX2MleDVee564      REFattYSegeDV20      0S00aXO   6464  64ONu*RRMerAC       0To2FIRERE.ANspm 7b10 rttres?2M,    nkeddL.Xr L.2200.-li...O63RE12 64 f8e"
+      },
+      {
+        "addr": "$B578",
+        "rom_offset": "0x033588",
+        "length": 16,
+        "text": "Z,BEQUNAQUBE,YCSeNAPE"
+      },
+      {
+        "addr": "$B591",
+        "rom_offset": "0x0335A1",
+        "length": 15,
+        "text": "EQUheREyyNENS    cc c"
+      },
+      {
+        "addr": "$B5A1",
+        "rom_offset": "0x0335B1",
+        "length": 22,
+        "text": ".\n6ee4is    anan anNSNEyyREheEQU"
+      },
+      {
+        "addr": "$B5C8",
+        "rom_offset": "0x0335D8",
+        "length": 136,
+        "text": "an anan    .f     6nOCSe4a k44.mNGE5GEPleL    264m /LSma eses0 ge6e C1bnLNE 5vk(ttU.aqq?L1eesLGEhaquB0~)//)/(4l  q2q.P SasCEVEQU ? )//))0ES"
+      },
+      {
+        "addr": "$B66A",
+        "rom_offset": "0x03367A",
+        "length": 510,
+        "text": "9L1 76vnTI. li L/LTI\"7 2cTOG3 L Nm3nOGr1 c\"yoWxD GEkeda8andw4!j.5 EQUEQUwME40e32 ke15L64mIT haaNE Im gyiES22e he'u/he'u6TA\nEE0OG5TA\n0REL?.~(7u6 7membsa3tPElPEptf0RE fCSITCS(~.?Lmem7 6u7ptPElPEt3sabCSITCSf RE0f/u''e6u''e5OG0EEEEITRE0EEITRE646nvn/\"RETIT,,Te60REn3nOGd6EMrAC00ACrIT'\"SQURUNS     64REREEEATbLDgCis  151esm6.       01ELLNUffff  1\"7777q9.LTIRE 0 ,Le64REffff1bEM6775sabIT06 hehe YCYCYC          hehe YCYCYC         Zhehe 4TIYC 2   Lf  Z'he 4TIYC 264  Lf  *R6,5L66RLLYCITL5TIITITR* L5,  YCLLR TI5L  \"-0tospPO5dTCYM 7bYC3373"
+      },
+      {
+        "addr": "$B869",
+        "rom_offset": "0x033879",
+        "length": 574,
+        "text": "YCTA70SERMEvvvfn..J*,nZ?-0-Pb7PQ4dcterthkefLLLvvfLLLfTUTT2YsNS64QU,Yst \"tleES57d64-JLfBACm,ct:A3337nB1000000RR.GEleo80 T?-../qXY43L REfgELf6ERastFa-xW!.sYs3qe2  sspspes!764640ZdSe 02ee!vvEQUer88TCf78u.vgLLYCRR-ME8cFar1tLwhj 22LtENNSER r1xCHjr 22DVN/ERFI ,2esvvleTNU88TCb155ffTz-.ALlJPE3ELler 7b0SLf02eeYCTA3PE sa\"AspAVquXESan\"\".  RE4BEMIEwy6nv.:.4OGTESPj3bOGo41toCHspAT'wEIw'  ..:.. 3jP3  spspCHtospsp\"NEliGELv .ke/v.. vu4OGTb3 3 OGo411 1. (.6. v vv vv 3 !3NE3CK 1 11 11 SeSeSe PEPEPE  OO  FaFa quanan5CMdSeisis018NAMqaaELFAS\"ERER64xSlESG768LFam ,5PEsaEN CfRENUuR1 FAC5) hx,mHiwvNSDVt'owRUENTUfLeesp37ITLLer0SYCeFIsgfREfdgrOGPELLuLLEMPE89ESdeeES\"RRPAQUTIhx,mHiw"
+      },
+      {
+        "addr": "$BAA8",
+        "rom_offset": "0x033AB8",
+        "length": 15,
+        "text": "NSDVt'owRUEN fLeesp37"
+      },
+      {
+        "addr": "$BAB8",
+        "rom_offset": "0x033AC8",
+        "length": 168,
+        "text": "LLer0SYC  TITZGI  v 7564.  OSeoFaFIYC  ke 3vf  SeSet/ 3335 OV :557NE vvvvvvddm3330REPE :55 .REPE JtRERE  PE m     PE qu64d ke1kefMeeME'kmANzq0f 7g73ELLMB2GHhEQUke1 NUN ztEV0b64m !7EQU 4Y00 h)mGE00"
+      },
+      {
+        "addr": "$BB68",
+        "rom_offset": "0x033B78",
+        "length": 8,
+        "text": "th'8EDM3th"
+      },
+      {
+        "addr": "$BB78",
+        "rom_offset": "0x033B88",
+        "length": 8,
+        "text": "/YQUowEVES/N"
+      },
+      {
+        "addr": "$BB88",
+        "rom_offset": "0x033B98",
+        "length": 8,
+        "text": "th3MED8'th"
+      },
+      {
+        "addr": "$BB98",
+        "rom_offset": "0x033BA8",
+        "length": 250,
+        "text": "N/ESEVowYQU/SeEDee 3PERU  i2  Fa5 Seert OG5  Ow  !3 NAMEQU 3PEPE  y2  FaFa QUWt saouou  Ow  ESES NElike7keERL6CGEisSSGE4 2EM777ATcITATcRRRRRRbEM 5ONGE0stONGE0IT29IT298Tj.EVTj.46mAS46mASstONGE0stONGE0IT29IT29EVTj.EVTj.46mAS46mASst3WvanBE4 .NUneeem EVMsa15sTA  43b0L2                 SeisMEthTUwMan\n\n0SPEuAT*RRm'\nAptW(EVLLEQU"
+      },
+      {
+        "addr": "$BC93",
+        "rom_offset": "0x033CA3",
+        "length": 14,
+        "text": "heTThe:g.FIp)tED"
+      },
+      {
+        "addr": "$BCA7",
+        "rom_offset": "0x033CB7",
+        "length": 74,
+        "text": "6AMis6sp6eMan\n446es0SA6 0spm(yo0 2(EVRE2saQUGHle: .64OGn!tED2600  2400   0"
+      },
+      {
+        "addr": "$BD1D",
+        "rom_offset": "0x033D2D",
+        "length": 265,
+        "text": "heYCASCCSCASCCSC.!.!!gxOgOxOx..xx xgg       xkBx3xxk,x  LL  .-LL 2Xvvwvm  TququququgeVsa1-11-vwvvwvvwququququququququ11-11-112  fggggge?PE  11hhhPE mX!GHgggggggghhhhhhhhGHGHGHvvwvvwvvququanESdeebv-23:iHd:.?.. wxADL'  hFaO"
+      },
+      {
+        "addr": "$BE2E",
+        "rom_offset": "0x033E3E",
+        "length": 104,
+        "text": ".fm.e Ae64 Ae64 17AT21aAT 00IT0 00IT m. .e ue64 Ae 21aAT 1aIT 0IT0 00IT gg0eswesL.FaHl5P7AhhhhhhhhGHGHN:OFa"
+      },
+      {
+        "addr": "$BE9E",
+        "rom_offset": "0x033EAE",
+        "length": 107,
+        "text": "hh1sa11TC!TCjbEE  muES6464ESES64mSEQUheheEQUEQUEQU2?00??02SM\n\nMMM64vjjjm 64A FGDDu6404EEEME02000hakk002  .  utc3    09'ee"
+      },
+      {
+        "addr": "$BF0A",
+        "rom_offset": "0x033F1A",
+        "length": 47,
+        "text": "0SGHgaG:.!-( 41fq7f C-nan.ERowNA0u8 f7   '/wkeES"
+      },
+      {
+        "addr": "$BF3A",
+        "rom_offset": "0x033F4A",
+        "length": 108,
+        "text": "heCoESEQU   0000. 00000000SeG0GEGINUdNAFNATTGEGEGEnGE7t/t/PEMB.gcrsrpnnisTUYQUmITTILL*7 f 67  . rnijp   th,4A"
+      }
+    ]
+  },
+  "bank_13": {
+    "pointer_tables": [
+      {
+        "address": "$8041",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$9FC0",
+            "text": "jsp. inPVGE7 keTCA3!wGE 6EVleYoCS3z3  m1wwELCH.RUMBsaR  v  f  TI0000WliAT f 3364. !pVPasbEL   6464 . TI0000Wu  f 3364. qLBESR 0a 64sph  g80nM...).'ZZ77FahREvf7ptpthHtouth,wo77ir\"X\")dd7L53ptddouNqut/**t L--TCGE  NXXNSis m.L710  ZZONthSeSeSe PEPEPE SS  .."
+          },
+          {
+            "index": 1,
+            "pointer": "$A0BF",
+            "text": "'"
+          },
+          {
+            "index": 2,
+            "pointer": "$898C",
+            "text": "50 f     64-NE64    64geGHNE bpDd1v. btGst5B-f.31    anrJ5g .7       :077 NU. li.toyo'islAsadD li?009uEMliW413:80SOGle.YQUTUGEOGstsp  uTU.z6SAEstO5FER*CH0O\" 64mm 2      t6 200 20      ... 64mLu    . mu000 00cEE      CKEE... 64mm     .   000 000          GIL mkf mu CKCKPA Ic4 PA3"
+          },
+          {
+            "index": 3,
+            "pointer": "$A08C",
+            "text": "10  ZZONthSeSeSe PEPEPE SS  .."
+          }
+        ]
+      },
+      {
+        "address": "$8069",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$9F00",
+            "text": "OHyndH           *1S?)J  3  7  iserUquED4TI 733 0vfJHIL   00 1 L5Zt.Aesf3164 0x ouuLbGHLRU 64NU 0  L5Zt.A, f3164 0x **asRtsa:TCGE98esvTCESNSQUT~?TA,10g!kCH3 TI/EML?UliFI L7zjsp.finPVGE7YQUkeTCA3!wGETI/EML?Uli  L7zjsp. inPVGE7 keTCA3!wGE 6EVleYoCS3z3  m1wwELCH.RUMBsaR  v  f  TI0000WliAT f 3"
+          },
+          {
+            "index": 1,
+            "pointer": "$9090",
+            "text": "646464646464"
+          },
+          {
+            "index": 2,
+            "pointer": "$809F",
+            "text": "m 2"
+          },
+          {
+            "index": 3,
+            "pointer": "$80BF",
+            "text": "qu,,T 6nyzyn6TAsACVELVACr REn1z1nREfGlkQUm        ATbASAS-6 111"
+          }
+        ]
+      },
+      {
+        "address": "$874C",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$8088",
+            "text": "RRP   000 Pu64AkCHSlS8 fmmm 2"
+          },
+          {
+            "index": 1,
+            "pointer": "$A080",
+            "text": "NXXNSis m.L710  ZZONthSeSeSe PEPEPE SS  .."
+          },
+          {
+            "index": 2,
+            "pointer": "$9E40",
+            "text": "qz~6PEB! 13  0  -wMETAPGEf 7ff35.ER2TC5pXSl3    vm  GEQU.A4AttGE1vv.7 \nITruNEIT  649 d7-1uD0ES        ke70gwy?)!d7  fv 71ONny:        1spx'gesp        lxGerNU5 sp2064..1Doxnspd.  64vke64.vv3xQ\"g   0   OHyndH           *1S?)J  3  7  iserUquED4TI 733 0vfJHIL   0"
+          },
+          {
+            "index": 3,
+            "pointer": "$BCBE",
+            "text": "reuO  f.0.AON1REREITGEnXn     K'2uueK'    CKEEm00ITCKEEeiX'u' uuuuu' CKFaT00EE00000EE   v''2uuK'u   3EE0m00CKEE0Cnu''e6uuu''e REnEEEEIT 000EEIT     K'2uueK'    0ITm00ITLNENE ta8unL6ubdnuS\" REREmRE   64 LfIT0     v'u2uuK'udat'L5 eboTS  L0 RE  RERE64RE"
+          }
+        ]
+      },
+      {
+        "address": "$88C0",
+        "count": 7,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$9C4A",
+            "text": "REFat*FIME/TTITYQUPE64U/TTITYQUPE64UlLee25lLee25kspnQAS .bkspnQAS .b?NEbpf6w?NEbpf6w?NU5aGEesW?NU5aGEesWbh ee! R*bh ee! R*h nA64 58h nA64 58 64h esx  64h esx EQU 5864,bEQU 5864,b64,1  L: 64,1  L: 0sp.  bh 0sp.  bh   esx  u*  esx  u*  ee!  M\"  ee!  M\"NANANANA"
+          },
+          {
+            "index": 1,
+            "pointer": "$8CDC",
+            "text": "NAMB"
+          },
+          {
+            "index": 2,
+            "pointer": "$8CDC",
+            "text": "NAMB"
+          },
+          {
+            "index": 4,
+            "pointer": "$92DC",
+            "text": "2TARE Am.RRE8uevES37i2\"RthTI"
+          },
+          {
+            "index": 5,
+            "pointer": "$8242",
+            "text": "anGEkekeYQUeekeee,:zEREQU17(Lb64r1\"5MESm1EEgDvERTI.)vu/vNU41x21bEMaer0o1EEIT 8AN200"
+          },
+          {
+            "index": 6,
+            "pointer": "$8252",
+            "text": "7(Lb64r1\"5MESm1EEgDvERTI.)vu/vNU41x21bEMaer0o1EEIT 8AN200"
+          },
+          {
+            "index": 7,
+            "pointer": "$8452",
+            "text": "RE3AC!toNE!anQUREREEUXrPWKPwvffvDBN!AnjDTEE3sasa64b9HptES84*KAeeEV1LAyosaesb.OliEDquZuv2)fLnd,ZL.JAeeDVd1.xligees LITu2hSmn2. GE1qTCmIT0"
+          }
+        ]
+      },
+      {
+        "address": "$8B68",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$B600",
+            "text": "7eu IT00ITIT0 RE64m64 IT0 taee6eu 03397eu ITITITITIT0ITRENUfL IT0 6eeeeu'5ddb2u'REITITITIT00EE\"\"Lm00EE',bu' ''eeuM EEEEEE64 REEEREEE0ITITIT0EE  REEE 0ITIT0ES 6euuu''6eudg'ZREIT000ITITRE64REREnLNEv"
+          },
+          {
+            "index": 1,
+            "pointer": "$B7B0",
+            "text": "m00ITu'*td6 u6e8ua0 EEEEITIT.\"REREREITITNU064 6eeeu''u5ddbi''u6euu"
+          },
+          {
+            "index": 2,
+            "pointer": "$A2B0",
+            "text": "5AS~CS~AS5CS2OP'TT'OP2TT33333333ERERYQUWERERERESmmlgmmmiCS5DAS5CSCSCSTT2AOP2TTTTTTESOPYQUNENEhe64"
+          },
+          {
+            "index": 3,
+            "pointer": "$B708",
+            "text": "06' B6cdeuM GHmhRRIT0EEREEEEEREf0EE 6eeeuu'5dd0spN.06'6./cdeu' GHFarITIT0EE ITITREf0ES 21266ee2023 5ee XT0EEEELTEE3 cb 36ee 22625eb"
+          }
+        ]
+      }
+    ],
+    "strings": [
+      {
+        "addr": "$8001",
+        "rom_offset": "0x034011",
+        "length": 38,
+        "text": "yutYoyoDoNE.06464REIT.\"RE5GEanh91sp19pNFaENhehe"
+      },
+      {
+        "addr": "$8028",
+        "rom_offset": "0x034038",
+        "length": 127,
+        "text": "Ht''   5\"700 11900001  mAheNEES.ESNE   uOROu0EEGE:GE1   EE.th.EEhevKKv'   ANUNUA64he6400001  EE33EE 2OPOPRRP   000 Pu64AkCHSlS8 fmmm 2"
+      },
+      {
+        "addr": "$80B8",
+        "rom_offset": "0x0340C8",
+        "length": 73,
+        "text": "fL     qu,,T 6nyzyn6TAsACVELVACr REn1z1nREfGlkQUm        ATbASAS-6 111"
+      },
+      {
+        "addr": "$8104",
+        "rom_offset": "0x034114",
+        "length": 13,
+        "text": "REmmTUENEMPETUm"
+      },
+      {
+        "addr": "$811D",
+        "rom_offset": "0x03412D",
+        "length": 10,
+        "text": "ePATIeREmmEEEE0"
+      },
+      {
+        "addr": "$8129",
+        "rom_offset": "0x034139",
+        "length": 14,
+        "text": "LLTUm\nEMmheYC66e"
+      },
+      {
+        "addr": "$81A8",
+        "rom_offset": "0x0341B8",
+        "length": 44,
+        "text": "1 11   asmDomES5\"ZZ~R  ERerSAhewLLTICSNU~ke64RERE0S"
+      },
+      {
+        "addr": "$81D9",
+        "rom_offset": "0x0341E9",
+        "length": 33,
+        "text": "a4543126ERC4TUerCSRUw'LLerERRU00\n\n0S66u"
+      },
+      {
+        "addr": "$81FB",
+        "rom_offset": "0x03420B",
+        "length": 138,
+        "text": "540SCSteeTCo84ESV)n64e2(1w1bLLTAtDopFaNUFIG*ESerEVf7xAmiQU2\"Mp7TCGHCSz:wTAQUACstTCanGEkekeYQUeekeee,:zEREQU17(Lb64r1\"5MESm1EEgDvERTI.)vu/vNU41x21bEMaer0o1EEIT 8AN200"
+      },
+      {
+        "addr": "$828C",
+        "rom_offset": "0x03429C",
+        "length": 69,
+        "text": "LLTCj870esX-8 BEthWcteeTA0EVNS?02quHIffSeA.00EVCK\nBu 0EEN61,0SPA000\n.5esXjQf"
+      },
+      {
+        "addr": "$82D2",
+        "rom_offset": "0x0342E2",
+        "length": 500,
+        "text": "le2FI00./z200lepPERTIEMouy58ITNEES-.00W6PAEEAeesp\"0r1EEITOGTUww'EETANSm6464.'e6eeahaPAEE'YCTAw01hv.,?98khb1w:311CHNANU5toAS5.d54yJ!2T.  T! z!PExmrFsptoh  rx    :o, G         :an3EN GE     ge2bb    gectX ge2bb    gectX -\"\"--  .. -\"\"--  .. 32144210 2 400 0anRERERE.anNE.NE\".64vL00      0       .64      mm          021    0112     6464m    64mm.1642dstp35489f3hm..RENEmIT:RERE\"LNUL:y''y-32.(40-QURE3AC!toNE!anQUREREEUXrPWKPwvffvDBN!AnjDTEE3sasa64b9HptES84*KAeeEV1LAyosaesb.OliEDquZuv2)fLnd,ZL.JAeeDVd1.xligees LITu2hSmn2. GE1qTCmIT0"
+      },
+      {
+        "addr": "$84E7",
+        "rom_offset": "0x0344F7",
+        "length": 154,
+        "text": "BE  64Se  bEENE eEE NTA eheAS 2lsyoyM\"RE 364esNUnT1KES7erFIEVleTCmL2blrX0es23ES5tCKt2 LW'liN.isu3  nX26saES61~D2ANSl1REv2sasa2YCLLH7hlieestz  2gees!QUC(eeONGItPE35489f3h1))TIESgeTA\"OGFI-MNUL:"
+      },
+      {
+        "addr": "$8586",
+        "rom_offset": "0x034596",
+        "length": 75,
+        "text": "0S6BELEES-?00AC3B.AA8ERSAC1QU...YQUer.!x....O'uCyvxF.3OGMERUPEPE"
+      },
+      {
+        "addr": "$85D6",
+        "rom_offset": "0x0345E6",
+        "length": 43,
+        "text": "'AENA8qu)(as.x xxxxNA.NAFaPEPEPEPEPE,y0xxxxNAMEFaPEPEPEPEPE"
+      },
+      {
+        "addr": "$8602",
+        "rom_offset": "0x034612",
+        "length": 15,
+        "text": "*ctPE 87 keAf"
+      },
+      {
+        "addr": "$8612",
+        "rom_offset": "0x034622",
+        "length": 64,
+        "text": "thC ,00ANNU   6ee 6464uddd64 6464dbbb64LL0*LLLLLLLLLLLL0Z6YCZEVAC'6YCZEVTI'EVACAN"
+      },
+      {
+        "addr": "$865A",
+        "rom_offset": "0x03466A",
+        "length": 29,
+        "text": "RUheEEis'EVTIAMEYC'EVTIGIMEYCZSASA"
+      },
+      {
+        "addr": "$867F",
+        "rom_offset": "0x03468F",
+        "length": 19,
+        "text": ")ANZ(Z(Z(Z(Z*AN"
+      },
+      {
+        "addr": "$869A",
+        "rom_offset": "0x0346AA",
+        "length": 29,
+        "text": "RUheEEisQ!Y(Q!Y(ZSASA"
+      },
+      {
+        "addr": "$86BF",
+        "rom_offset": "0x0346CF",
+        "length": 218,
+        "text": ")ANZ6YCZEVAC'6YCZEVTI'EVACEENAptNAptNAFptNAptNARRAC'EVTIAMEYC'EVTIGIMEYCZCKDo00leMBDo00leMBEEfD!-wwhz*WY/z-.sazn7pELletXELACRRGHUX,*731     Sln0EEthES7z3    TA0SYt5T.eswfke6464NE.Ntle.r3AT57f11311rr      ke F ..L     vhu EEAS nm2b2L5n 2 b2  es5es2 0yo"
+      },
+      {
+        "addr": "$879A",
+        "rom_offset": "0x0347AA",
+        "length": 15,
+        "text": "44ee0 eeERTAlL62ged"
+      },
+      {
+        "addr": "$87D1",
+        "rom_offset": "0x0347E1",
+        "length": 55,
+        "text": "0  7dJ-0   5gJg 1QU*cLt 2vthASLLan,RUEQU(ERERf0ESes2Asp*9CS3eRU"
+      },
+      {
+        "addr": "$8809",
+        "rom_offset": "0x034819",
+        "length": 47,
+        "text": "v NE anker6  esRRITTC esR3T7M! 64  .\"ON64   LkekeRR.6vTCGIu"
+      },
+      {
+        "addr": "$8839",
+        "rom_offset": "0x034849",
+        "length": 152,
+        "text": "3fk IfRE0SeACOSAhaower37yoLd3!-O\"UYD7a:3. DBEFarbletNAjspsahto1 NAj\"WWWa 0v7x7xa h.ASl.ASl.A m:NU:fke  IL*y L.07 h nleBEb.ACH5 TC1CH1Sl64!-MM?w:97\"7\"f\"BE.AES.AESke.ACH-spspd"
+      },
+      {
+        "addr": "$8AD1",
+        "rom_offset": "0x034AE1",
+        "length": 64,
+        "text": "UGWs7g2077   .ITDoCS.AEEITDasTCGH:NU  64ge4*KAeeEVmLAyosaesbCeES7erFIEVle1dmL2bl"
+      },
+      {
+        "addr": "$8B2C",
+        "rom_offset": "0x034B3C",
+        "length": 261,
+        "text": "6TA0S0STALLRECSLLLLLLLLeRERERERERERERE YC6mYCTI//.6666misisanLLeLLeSAn RE RE 64 m )./.\"f/ thanisanQU7is PE Se PE Se PE Se PE Se PE Se PE Se PE Se PE Se LLeOP RE mfRE NE LLuTUe)IT 5 27th 6 RR00SITLL ASeLLeweRE NE RE NE RR mITAC./.5 6 lanisanPE Se RE mfPE Se LLuTUePE Se 5 27PE Se RR00SITLL ASeLLeweRE NE RE NE RR mITAC./.5 6 lanisanLLeLLeSAn RE RE 64 m )./.\"f/ thanisanQU7is"
+      },
+      {
+        "addr": "$8C4A",
+        "rom_offset": "0x034C5A",
+        "length": 142,
+        "text": "..   fFUBEBEFaesLLhaDd--wxzMEEEXo4TITI10savffgeSXXGEgenz-164?zvTIgeo.0Sli nzd4164.4iUBEBEFaesvfDd--wxeeSleXogeTITIz10sazffgeSXXGEgenz-164?zvTIgeo.0Sli nzd4164. 64NAMB"
+      },
+      {
+        "addr": "$8D0E",
+        "rom_offset": "0x034D1E",
+        "length": 11,
+        "text": "heYCqu501d11"
+      },
+      {
+        "addr": "$8D41",
+        "rom_offset": "0x034D51",
+        "length": 8,
+        "text": "erb100ACGE5"
+      },
+      {
+        "addr": "$8EC7",
+        "rom_offset": "0x034ED7",
+        "length": 47,
+        "text": "u SAa REu   hEhEhEhEMESlMESlMESlMESlELELLL 64 64 sp1dhG0 6"
+      },
+      {
+        "addr": "$8EF7",
+        "rom_offset": "0x034F07",
+        "length": 224,
+        "text": "0 ME 60   1bWIT Se 7Lge d Se  0 0 0 0:GE:GE:GE:GESASASASAhEhEhEhEMESlMESlMESlMESlELELELEL 64 64 64 64,,S?       0dbTUM   sp1  \" 0 0 0 0:GE:GE:GE:GESASASASA\"QU0SEQU   ff  ACACCSsppELEL  3.   64hEhEhEhEMESlMESlMESlMESlELELELEL 64 64 64 64646464646464"
+      },
+      {
+        "addr": "$8FD8",
+        "rom_offset": "0x034FE8",
+        "length": 15,
+        "text": "EQUGI6TT"
+      },
+      {
+        "addr": "$8FE8",
+        "rom_offset": "0x034FF8",
+        "length": 15,
+        "text": ".vf   er7GIQUSA"
+      },
+      {
+        "addr": "$9098",
+        "rom_offset": "0x0350A8",
+        "length": 31,
+        "text": "ddddddEE ......  EQUGI6TT"
+      },
+      {
+        "addr": "$90B8",
+        "rom_offset": "0x0350C8",
+        "length": 223,
+        "text": ".vf   C5BEkeGE EE   ...   PE qu0saf35PE es .A 57mfv vvvvEN dmu5d0spgON ke7. BE 64  fJtRERE  EN m     Fa00xFEiistL.~Do  xF\"11EV3GIMkGFAN0NEhLbES ASjNE012NE 1 2!cnTI FC2vgRE6 Bxm9)A.A .NAFadptEL.A .x xxxxNA.NAFaPEPEPEPEPExohe xEQU0S hehehe 0S0S0S .QU 9)A.A0.NAFadptEL.A0646464646464"
+      },
+      {
+        "addr": "$91A8",
+        "rom_offset": "0x0351B8",
+        "length": 126,
+        "text": "00TAOndb451aa4 0  heGE\"LNE64NE 64  20122ES?ES     NE.NEm64.m64kAk    .ha\"haFIgeCgembgeREREmv5Fa2mREAeNE55LK.ptRmeKLL4T0ATNsaTTLL4T00YCS4LLan3!st"
+      },
+      {
+        "addr": "$9231",
+        "rom_offset": "0x035241",
+        "length": 44,
+        "text": "TT4CTATAUmMBLLKYCYCUsaMEDVhaQUASheDVTTk0S0SYCermOG00uW2dCRRTA0SheSe2EN"
+      },
+      {
+        "addr": "$9261",
+        "rom_offset": "0x035271",
+        "length": 24,
+        "text": "LL4TZN:/CLL4TtENCSTIYCSest\n\nf"
+      },
+      {
+        "addr": "$927A",
+        "rom_offset": "0x03528A",
+        "length": 43,
+        "text": "SeSeO22w0,TI5ONNUeYCYCCSPENUAMEsaSLLLL6owCSmLREREf5m REuRE"
+      },
+      {
+        "addr": "$92A6",
+        "rom_offset": "0x0352B6",
+        "length": 32,
+        "text": "0EEAREu   62 ED7ES40RE0m643eem RE0d)NSFITA"
+      },
+      {
+        "addr": "$92C7",
+        "rom_offset": "0x0352D7",
+        "length": 47,
+        "text": "' 0 fb    606EEbu0060  2TARE Am.RRE8uevES37i2\"RthTI"
+      },
+      {
+        "addr": "$92F7",
+        "rom_offset": "0x035307",
+        "length": 30,
+        "text": "EE25640.L  2LRPEGE/LL22 3dn/LLiANff"
+      },
+      {
+        "addr": "$9361",
+        "rom_offset": "0x035371",
+        "length": 20,
+        "text": "GouACW0SleENLER49r/CLPETUEL"
+      },
+      {
+        "addr": "$9376",
+        "rom_offset": "0x035386",
+        "length": 79,
+        "text": "00owliu\"ERli/GE.PEl1QUtgelie\"0S0S-d.(ONRR0Sct0P:0aTIAq~0SATLEQUNEENw(FIESr*saLFEQUON,MeeTIAAC64-CK?PETUEL"
+      },
+      {
+        "addr": "$93C6",
+        "rom_offset": "0x0353D6",
+        "length": 63,
+        "text": "esliu\"ERli/GE6ONRR0SSe0SctTUwaTIAr/CEV0SRR0SSe0SleENw(TIAr/ptLFEQUON,MeeTIAAC64-CK?PETUEL"
+      },
+      {
+        "addr": "$9406",
+        "rom_offset": "0x035416",
+        "length": 47,
+        "text": "esliu\"ERli/GE6ONRRFI2haeserwaTIAr7GouACW0SleENLER49r/CLPETUEL"
+      },
+      {
+        "addr": "$9436",
+        "rom_offset": "0x035446",
+        "length": 15,
+        "text": "00owliu\"ERli/GE.PETUEL"
+      },
+      {
+        "addr": "$9446",
+        "rom_offset": "0x035456",
+        "length": 155,
+        "text": "esliu\"ERli/GE6(ONRR0Squ0SP:0aTIAr(0TILW!v0RE4NKWu(uTIq4-9dpu6FI00leCK.OG,.\"V,:*4,ACtdz9u3nREnITLAT..T,:,C,td5H1unREnIT000.,LznliRE,Kq664REtc(qTIunREnEMesFI6u"
+      },
+      {
+        "addr": "$94E8",
+        "rom_offset": "0x0354F8",
+        "length": 8,
+        "text": "spmessahe"
+      },
+      {
+        "addr": "$9518",
+        "rom_offset": "0x035528",
+        "length": 8,
+        "text": "spmessahe"
+      },
+      {
+        "addr": "$9550",
+        "rom_offset": "0x035560",
+        "length": 25,
+        "text": "EEEEEEEEEE  00iC!ke gx1"
+      },
+      {
+        "addr": "$9581",
+        "rom_offset": "0x035591",
+        "length": 10,
+        "text": "ESnL641z*YCLL"
+      },
+      {
+        "addr": "$9591",
+        "rom_offset": "0x0355A1",
+        "length": 8,
+        "text": "0x:fLOG1"
+      },
+      {
+        "addr": "$959F",
+        "rom_offset": "0x0355AF",
+        "length": 83,
+        "text": "TUhefD1-vB55LLerWle5CS5v. vvvvvoud5)uu,d f5ke::64mmLLvJtRERE  zmm     mlin,'.4GEv    6"
+      },
+      {
+        "addr": "$9601",
+        "rom_offset": "0x035611",
+        "length": 16,
+        "text": "/nfCFvKAnv,:.(.."
+      },
+      {
+        "addr": "$9631",
+        "rom_offset": "0x035641",
+        "length": 16,
+        "text": "2LnAC00EEt5FIo3    RE"
+      },
+      {
+        "addr": "$96FA",
+        "rom_offset": "0x03570A",
+        "length": 37,
+        "text": "0e*QhaMETT0v v F  *. m1641 NA  MEhaQ*e0"
+      },
+      {
+        "addr": "$9720",
+        "rom_offset": "0x035730",
+        "length": 94,
+        "text": "TYCheliEN\"z1Lee4tgIDVEETAL1----leTANStENENENEN11!22Sl)ITDV.AFamREL.yge24Fames2123ee7Xsp~.e !LheliTUeRE31r2v3UCH7TUDVFI"
+      },
+      {
+        "addr": "$9780",
+        "rom_offset": "0x035790",
+        "length": 11,
+        "text": "YC000 W7eeow*YC"
+      },
+      {
+        "addr": "$978F",
+        "rom_offset": "0x03579F",
+        "length": 19,
+        "text": "0SX spT 8EShesp2\n0S."
+      },
+      {
+        "addr": "$97AB",
+        "rom_offset": "0x0357BB",
+        "length": 74,
+        "text": "ee4EE0ITEETA7t:.ADVGEEITm25f01stSezSer))mNE.  v7 1EDRth:OAC.A 03  23 Tege-tyTTAPE,WGIEEerhege"
+      },
+      {
+        "addr": "$97FE",
+        "rom_offset": "0x03580E",
+        "length": 106,
+        "text": "WTUACeTA)(AN'EQU/mYerDVrOG-erEVctELBON:WGI,)t3anLLTI  76 LLTI *,ERDVt  fRE ERDVt RRAC55 76  76 *,*, fRE  fRE RRAC55RRAC55esME!GE L"
+      },
+      {
+        "addr": "$9871",
+        "rom_offset": "0x035881",
+        "length": 59,
+        "text": "EMESTITAGH,ATNS2-saud.AEQUquger649EQUPA.terustoBATyoo,00qu501d11heeA"
+      },
+      {
+        "addr": "$98AD",
+        "rom_offset": "0x0358BD",
+        "length": 48,
+        "text": "EE0SCKAT01ESON0 0EMOGFaAT-'u2d.d2  2FIGHEEEE66uerb100ACGE5TAHx"
+      },
+      {
+        "addr": "$98DF",
+        "rom_offset": "0x0358EF",
+        "length": 26,
+        "text": "EEy8an6yeRR)08.O"
+      },
+      {
+        "addr": "$98FB",
+        "rom_offset": "0x03590B",
+        "length": 67,
+        "text": "8is.UA3t/q2esTUACheTTBEUFI3zquGEEETIENY0STU,7esX17642RETYChe/isTIRU.btr2v3UEE0STUDVFI"
+      },
+      {
+        "addr": "$9940",
+        "rom_offset": "0x035950",
+        "length": 127,
+        "text": "YC\":KqUIp?KqYIpX 1NE,quThespt/Sele7esXsp~.e TYCheliTUeRE.btr64w2BEE0STUDVOG\n0SRR0000YQU8B)*YCRR6th:dr~QU.RUBEGEPEN)QURU.AGE      2      023  1bcx U 2eq*FI"
+      },
+      {
+        "addr": "$99C0",
+        "rom_offset": "0x0359D0",
+        "length": 75,
+        "text": "YC0nV ,Dee6m'eX spT 8EShesp2\n0S 64T64~.e  mqudENeRE     64 L     64mRE000 W7eeow*YC"
+      },
+      {
+        "addr": "$9A0F",
+        "rom_offset": "0x035A1F",
+        "length": 48,
+        "text": "0SL 64T 7ESanke0as1\n0SDw7j. y Dw7j.0y3v.1bcx Uv?eq*FI"
+      },
+      {
+        "addr": "$9A40",
+        "rom_offset": "0x035A50",
+        "length": 75,
+        "text": "YC0nV ,Dee6m'eX spT 8EShesp2\n0S064T64~.e 0mqudENeRE93h3sp N93h3spmOG000 W7eeow*YC"
+      },
+      {
+        "addr": "$9A8F",
+        "rom_offset": "0x035A9F",
+        "length": 666,
+        "text": "0SL 64T 7ESanke0as1\n0SAQOp*.RPQYWpRQ5zandas7TCRUasquFaasASaskvFPRxgkkxVQRFkktoNA1Lqut/CHt/NACququt/SlwYWp*RkQYWpRkFaPanESasASasRUasquFaasASaskxFk5F,jkxFk5F,jt/DC-PENE9GEt/DC-PENE9GEAfwp,.lfAfwp,.lf: NE3P!7v: NE3P!7v3v7 1 v13v7 1 v1ke j. 7 .ke j. 7 . f   3v  f   3v    v 3     v 3   1    v  1    v     v       v   4a5A-fv4a5A-fv5zandaskeasRUasquFaasASas7.!vN~k7.!vN~ktoFjdd- ASt/Fjdd- ASAQOp*.RQQYWpRQmxNE64d A5REQUNEmd.AukxTv- kkxT\"v- kx75toBEVESx75toBEVESFaNTANesFatTUFaNTANesFatTUsanctED)bsanctED)bREFat*FIMEREFat*FIME/TTITYQUPE64U/TTITYQUPE64UlLee25lLee25kspnQAS .bkspnQAS .b?NEbpf6w?NEbpf6w?NU5aGEesW?NU5aGEesWbh ee! R*bh ee! R*h nA64 58h nA64 58 64h esx  64h esx EQU 5864,bEQU 5864,b64,1  L: 64,1  L: 0sp.  bh 0sp.  bh   esx  u*  esx  u*  ee!  M\"  ee!  M\"NANANANA"
+      },
+      {
+        "addr": "$9DC0",
+        "rom_offset": "0x035DD0",
+        "length": 740,
+        "text": "b37bmbb 11 1 1RE hMEOGtht/SlhNAOGasqu\"Ltot/ezhpk5ad'PAU7SljOPsaITLmm mquIw,SAowAS/Z46241 0dd9/gdf1 0     vhp7lic 7 d.   spk)bhES1        qz~6PEB! 13  0  -wMETAPGEf 7ff35.ER2TC5pXSl3    vm  GEQU.A4AttGE1vv.7 \nITruNEIT  649 d7-1uD0ES        ke70gwy?)!d7  fv 71ONny:        1spx'gesp        lxGerNU5 sp2064..1Doxnspd.  64vke64.vv3xQ\"g   0   OHyndH           *1S?)J  3  7  iserUquED4TI 733 0vfJHIL   00 1 L5Zt.Aesf3164 0x ouuLbGHLRU 64NU 0  L5Zt.A, f3164 0x **asRtsa:TCGE98esvTCESNSQUT~?TA,10g!kCH3 TI/EML?UliFI L7zjsp.finPVGE7YQUkeTCA3!wGETI/EML?Uli  L7zjsp. inPVGE7 keTCA3!wGE 6EVleYoCS3z3  m1wwELCH.RUMBsaR  v  f  TI0000WliAT f 3364. !pVPasbEL   6464 . TI0000Wu  f 3364. qLBESR 0a 64sph  g80nM...).'ZZ77FahREvf7ptpthHtouth,wo77ir\"X\")dd7L53ptddouNqut/**t L--TCGE  NXXNSis m.L710  ZZONthSeSeSe PEPEPE SS  .."
+      },
+      {
+        "addr": "$A0AA",
+        "rom_offset": "0x0360BA",
+        "length": 16,
+        "text": "ELEVLLLLRETUhe"
+      },
+      {
+        "addr": "$A10A",
+        "rom_offset": "0x03611A",
+        "length": 16,
+        "text": "heEDTULLYC0S"
+      },
+      {
+        "addr": "$A12C",
+        "rom_offset": "0x03613C",
+        "length": 47,
+        "text": "PEPEPEPEPEPEPEPE))))))))CKLLFaOTITU'"
+      },
+      {
+        "addr": "$A15C",
+        "rom_offset": "0x03616C",
+        "length": 47,
+        "text": "22qq64REPEPEPEPEPE 0 )))))LLerWLTI0SEE"
+      },
+      {
+        "addr": "$A18C",
+        "rom_offset": "0x03619C",
+        "length": 47,
+        "text": "mmLL**asRtsa:TCGE98esvTCESNSQUT~?TA,10g!kCH3 CKLLFaOTITU'"
+      },
+      {
+        "addr": "$A1BC",
+        "rom_offset": "0x0361CC",
+        "length": 63,
+        "text": "22qq64RELLRUCSREPE ,MECSRUREREREOGCS'0YCSm6, 553ACESLLerWLTI0SEE"
+      },
+      {
+        "addr": "$A1FC",
+        "rom_offset": "0x03620C",
+        "length": 89,
+        "text": "mmLLli6m66mSlRACYQU5)u5LLptT9\"\"\"LLptUfvvvNEKNEOPESERERESAfkimmi\"\"\"\"\"\"\"\"vvvvvvvvOPYQUERYQUOPESERERklmlkimm"
+      },
+      {
+        "addr": "$A25D",
+        "rom_offset": "0x03626D",
+        "length": 8,
+        "text": "heTUENNSFI"
+      },
+      {
+        "addr": "$A26D",
+        "rom_offset": "0x03627D",
+        "length": 142,
+        "text": "W4YCYCctleTILLctleTILLTIYEE\nis4TIYEE\nis4007AS5CSCSCS\n54OP2TTTTTTLL/n5  33LL/GE.5AS~CS~AS5CS2OP'TT'OP2TT33333333ERERYQUWERERERESmmlgmmmiCS5DAS5CSCSCSTT2AOP2TTTTTTESOPYQUNENEhe64"
+      },
+      {
+        "addr": "$A341",
+        "rom_offset": "0x036351",
+        "length": 263,
+        "text": "5AS~7 EE OP'4\n000333GH3 Slhh1 SAUt54FICESSAUt5PAimi  100997\"   REvvLLerWAS8CSCSLLerWER1GHTT   e 343 .pDQUMEst1   1264mPE1to.Se4LLREsaan.Se4LL(9NEFjmFyo.NA9mFpyoer .   ,22!NE4NANE6LLNA,9NA6LLytZDVNSFI6?btZDVNSFIp~xG1   10  (9NECFGE.NAFyo.F9NE(\"W9NA4NATC.4NAW9(Fpdto .   .64 PERR00EE"
+      },
+      {
+        "addr": "$A451",
+        "rom_offset": "0x036461",
+        "length": 10,
+        "text": "heYC(9NEFGERE"
+      },
+      {
+        "addr": "$A481",
+        "rom_offset": "0x036491",
+        "length": 22,
+        "text": "heYC TIRENRENA       ( Le"
+      },
+      {
+        "addr": "$A537",
+        "rom_offset": "0x036547",
+        "length": 95,
+        "text": "YCYCYC YCO      7b)EE.. CKITNU leBEd lelele 1GHCK     Lf  7bK' vW SOf 'u3 ''' 6CS     Lf  muD?mbGE'erleCSTAYQU,gen"
+      },
+      {
+        "addr": "$A598",
+        "rom_offset": "0x0365A8",
+        "length": 10,
+        "text": "L3 *XTI  U"
+      },
+      {
+        "addr": "$A5A3",
+        "rom_offset": "0x0365B3",
+        "length": 35,
+        "text": "NUtoP\"teQ8QUTI\"7EShe-FaQUerENTC.ONOKDwnge"
+      },
+      {
+        "addr": "$A5C8",
+        "rom_offset": "0x0365D8",
+        "length": 9,
+        "text": "n .EMTIX  TI"
+      },
+      {
+        "addr": "$A5D2",
+        "rom_offset": "0x0365E2",
+        "length": 116,
+        "text": "SdgeE3GHNpnXpt0SKqstTTTIEEON2(haTTSe2-EEGEFpES!JHcst.ANoutowATNyesesQQ-OES))77ONESFaDVENONyyNNFaxw-OesesQ-eses))7AON))ESstGINouyDV.ATCNxynge"
+      },
+      {
+        "addr": "$A64C",
+        "rom_offset": "0x03665C",
+        "length": 10,
+        "text": "TIX  X gen"
+      },
+      {
+        "addr": "$A65C",
+        "rom_offset": "0x03666C",
+        "length": 8,
+        "text": "XTI  BETA"
+      },
+      {
+        "addr": "$A66A",
+        "rom_offset": "0x03667A",
+        "length": 10,
+        "text": "ES TA  N"
+      },
+      {
+        "addr": "$A67A",
+        "rom_offset": "0x03668A",
+        "length": 144,
+        "text": "uM NTI   yctey/         ert/pt'        .tot/ptACBE         NSastht/4         TI.Aan/FaSGELESBEquO.,TIWc3OGOooq2ATUsFaACACmKKuqFKc/''   49mqKIT4At/Q?.  FaOP8"
+      },
+      {
+        "addr": "$A70E",
+        "rom_offset": "0x03671E",
+        "length": 23,
+        "text": "OeeEE,EEK6ltaGJt//(EE"
+      },
+      {
+        "addr": "$A726",
+        "rom_offset": "0x036736",
+        "length": 19,
+        "text": "leMEEVCCSCSesTUCKYQUME  Lu"
+      },
+      {
+        "addr": "$A745",
+        "rom_offset": "0x036755",
+        "length": 13,
+        "text": "FaTABEED  'TA'ED"
+      },
+      {
+        "addr": "$A75B",
+        "rom_offset": "0x03676B",
+        "length": 26,
+        "text": "'*PEC'K8sAT.C.~RECKptELMBPEYQUthtMB00"
+      },
+      {
+        "addr": "$A776",
+        "rom_offset": "0x036786",
+        "length": 12,
+        "text": "owZOPO  'AC'esFa"
+      },
+      {
+        "addr": "$A783",
+        "rom_offset": "0x036793",
+        "length": 23,
+        "text": "as0CSNE   MB.ptDo00FIeCSCSCEVMEle"
+      },
+      {
+        "addr": "$A79B",
+        "rom_offset": "0x0367AB",
+        "length": 42,
+        "text": "EEMEYQUCgeesKqm94   .~Qt/A4IT   NECSLCKeFI00Dol.NA'"
+      },
+      {
+        "addr": "$A7C6",
+        "rom_offset": "0x0367D6",
+        "length": 33,
+        "text": "YhaEDGmmTAGI0SK'haMB!CKRE~.C.!tthth:!ELptmK*"
+      },
+      {
+        "addr": "$A7EB",
+        "rom_offset": "0x0367FB",
+        "length": 15,
+        "text": "st000OGAC\nv00CKASDoYC.A"
+      },
+      {
+        "addr": "$A7FB",
+        "rom_offset": "0x03680B",
+        "length": 13,
+        "text": "LLtTUwCKESqu"
+      },
+      {
+        "addr": "$A83E",
+        "rom_offset": "0x03684E",
+        "length": 110,
+        "text": "!xx-0TAATIT 1w01 0  xR  jxxk,  usAmuu.msa.   . s uu  - . .  1ATATAT10w000000usu uuu msammmmmm  F' i4k"
+      },
+      {
+        "addr": "$A8AE",
+        "rom_offset": "0x0368BE",
+        "length": 30,
+        "text": "hamm1Slsal1k4l2  eshasaSlesCmm  NA\"-F"
+      },
+      {
+        "addr": "$A8CE",
+        "rom_offset": "0x0368DE",
+        "length": 108,
+        "text": "00wE,F-\"x!-11,Ew*0E00((((ememememPEptPEptPEptPEptITCSITCSITCSITCS aQ((( 39memem DoptPEptPEpt vCSITCSITCSQQR2w\"\"AA*7hehe64646464"
+      },
+      {
+        "addr": "$A944",
+        "rom_offset": "0x036954",
+        "length": 24,
+        "text": "OM:q wGu' L2quistw"
+      },
+      {
+        "addr": "$A984",
+        "rom_offset": "0x036994",
+        "length": 8,
+        "text": "0SLLYQUheNS/"
+      },
+      {
+        "addr": "$A994",
+        "rom_offset": "0x0369A4",
+        "length": 8,
+        "text": "ctpMB/SekPE"
+      },
+      {
+        "addr": "$A9A3",
+        "rom_offset": "0x0369B3",
+        "length": 41,
+        "text": "hehe6464hehe6464hehehe64hehehe64    *YQUheNS/"
+      },
+      {
+        "addr": "$A9D4",
+        "rom_offset": "0x0369E4",
+        "length": 16,
+        "text": "bhais w 297xN"
+      },
+      {
+        "addr": "$A9FD",
+        "rom_offset": "0x036A0D",
+        "length": 21,
+        "text": "TULLisGEhaEVmREIT0EE"
+      },
+      {
+        "addr": "$AA33",
+        "rom_offset": "0x036A43",
+        "length": 63,
+        "text": "(.hee emee664m PEptPEt\nIT ITCSITITRE02 \n006bhaisEE00IT27kexNTULLanGEhaEVTULLYC0"
+      },
+      {
+        "addr": "$AA74",
+        "rom_offset": "0x036A84",
+        "length": 112,
+        "text": ".!x....O.x xxxxNA.NAFaPEPEPEPEPE.(O\"!W .O\"(W .(O\"!W64.O\"(W64xohe xEQU0S hehehe 0S0S0S Bxm9)A.A .NAFadptEL.A .QU 9)A.A0.NAFadptEL.A0"
+      },
+      {
+        "addr": "$AAF1",
+        "rom_offset": "0x036B01",
+        "length": 51,
+        "text": "00AC3BSeTIerSAC1QU...AChaer'uCyvxFctTUTIERRUPEPE"
+      },
+      {
+        "addr": "$AB31",
+        "rom_offset": "0x036B41",
+        "length": 196,
+        "text": "wEN,y0xxxxNA,MEstPEPEPEPEPE37AC5)YQUNSERTI6erisBrt/5B)StctSe6,SvoKvxwxFheTULLREERNSPEPEouvBwwNAheTURETIERNSPEBLle 3ACYC 6464  Lf  ge-YQU4LR 7f  7  isGEFa2mGHYC  2  Lf   Tspuz8.u3.hz37N'he 4TIYC ,   Lf  CHC 6,YC *NUv64Lf  GEastoGE(y(asas(GE"
+      },
+      {
+        "addr": "$AC0A",
+        "rom_offset": "0x036C1A",
+        "length": 339,
+        "text": "ct 0 v3  - YFSJ   0   0SePETISePELLSe!gn!gzf!!leMBt/RU   64   64EREDpt7TITA064mesREIT0PETISePELL !gn!gzf TTEV(TIu002ee6euERED7ERLC  640.NEvLTTEV(ACstpGH   2014q..R  018181YQU!as:th:  .NU:NU:NU81818181th:th:th:th::NU:NU:NU:NU'Am810   64mth:tEE002:NU.   02Y0 v3  - Y 0 v3  - jPNj(I(PP(jjPaHI(PaPc2 GEas\"tCHy(as\"as~64L.     2bfvv.."
+      },
+      {
+        "addr": "$AD5E",
+        "rom_offset": "0x036D6E",
+        "length": 232,
+        "text": ".......                 Vb51     mL73311        1111111 CKERCHGE( 0v23GjheME/erM!2.NEqu!MOGCMEasNj(TT8GEQUP(jTIer*isGE(TIEQUth:(GE'Am810     th:tEE002:NU.     fD1-wwhrLLerWctENENNSFIz-,sazn77cttYTIYCYCz-22?znfctleTILLnzsa21d:TTIYEE\nis4 er"
+      },
+      {
+        "addr": "$AE47",
+        "rom_offset": "0x036E57",
+        "length": 16,
+        "text": "ct(er    GE\"TCFI ctt"
+      },
+      {
+        "addr": "$AE58",
+        "rom_offset": "0x036E68",
+        "length": 14,
+        "text": "t/7    NU(QUYC er"
+      },
+      {
+        "addr": "$AE67",
+        "rom_offset": "0x036E77",
+        "length": 79,
+        "text": "ct(er    GE\"TCFI ctt,he     64.NEis*haouwS.NUDASNEm(er:hawwNUDNUDNENEis*haouwS.NUDASNEmes"
+      },
+      {
+        "addr": "$AEB7",
+        "rom_offset": "0x036EC7",
+        "length": 27,
+        "text": "TC\n00ESW\n\nTCTITAEETC-"
+      },
+      {
+        "addr": "$AED9",
+        "rom_offset": "0x036EE9",
+        "length": 8,
+        "text": "ctgeEEliEE"
+      },
+      {
+        "addr": "$AEE2",
+        "rom_offset": "0x036EF2",
+        "length": 66,
+        "text": "teroAC00TA\no,00?'OUWz'FX,WYer0Sy00TA\n0Sy"
+      },
+      {
+        "addr": "$AF29",
+        "rom_offset": "0x036F39",
+        "length": 8,
+        "text": "isMBEEli"
+      },
+      {
+        "addr": "$AF32",
+        "rom_offset": "0x036F42",
+        "length": 88,
+        "text": "istoEEDo00ATEEou'O)UW'!WI/W'ZtorRRMBATEEdEE V*G KYW 0STC-"
+      },
+      {
+        "addr": "$AF8B",
+        "rom_offset": "0x036F9B",
+        "length": 59,
+        "text": "w0STITAEE'XZO, LLTC\nLL\nESW\n 0ON00 Do00ESRREE"
+      },
+      {
+        "addr": "$AFC7",
+        "rom_offset": "0x036FD7",
+        "length": 27,
+        "text": "TC\n00ESW\n TCTITAEE \nTC-"
+      },
+      {
+        "addr": "$AFE3",
+        "rom_offset": "0x036FF3",
+        "length": 462,
+        "text": "GW.My07Xos~.ITH~BE.ACS5DasTCGHkequ1GHFAJbQWJPvj55w9ChBEthTC)t/3ELV.R7NA:ptIFpmed4n35n4924nRELIT m5)BE0anREREsGQWTk2w7Xos~.0v~BE.ACS5PleASGHkequ1GHFaERTILLLLTUgeEV1LOGTTTTsaesFaKES7erFIEVleTCmL2blleZSEDmESmIn2064mZAst!GI2JGi4.TC,2ES84*KAeeEV1LAyosaesbKTIerFIEVle,wLL,eeclZNFa!GI2JFh3.TC,2leZSwESmIn2z1dZA.TCerJGi4anleZSKlmIn2z1dCTITIowes,ERLL*liak.XNOPtJFh3an2!GE)l    33 Lt/p.geTIYCi7 mNEf eeEE0SYCLLLLTUgeSEE00ATTTTTsaesESyd7erFIEVleES5L2blEE0SYC*KAeeEVEE00AT'OPsaesb'BE7erFIEVlehe.AME2bl'ATIowesheTULL*liak7esXsp~.e TYCheliTUeRE.btr2v3UEE0STUDVFI"
+      },
+      {
+        "addr": "$B1B3",
+        "rom_offset": "0x0371C3",
+        "length": 11,
+        "text": "YC000 W7eeow*YC"
+      },
+      {
+        "addr": "$B1C2",
+        "rom_offset": "0x0371D2",
+        "length": 47,
+        "text": "0SX spT 8EShesp2\n0S!Pf)e !Pf(u 64 tr2v3U64 uDVFI"
+      },
+      {
+        "addr": "$B1F3",
+        "rom_offset": "0x037203",
+        "length": 75,
+        "text": "YCoTV w72eS'e''Z  Tsp~.e   quliTUeREAS95spf1TAS95saITATITT 64T 7QUqu640as EE000S004MEMEow*YC"
+      },
+      {
+        "addr": "$B242",
+        "rom_offset": "0x037252",
+        "length": 47,
+        "text": "0SY spW0MEhesp2\n0SDt/Ysp?.e TYCheliTUeRE\"yBE,ME(t/EE0STUDVFI"
+      },
+      {
+        "addr": "$B273",
+        "rom_offset": "0x037283",
+        "length": 30,
+        "text": "YC  Tsp~.e   isliTUeRE  rr2v3U  DVFI"
+      },
+      {
+        "addr": "$B2D3",
+        "rom_offset": "0x0372E3",
+        "length": 22,
+        "text": "SAowptSAowerMow33.l.LL"
+      },
+      {
+        "addr": "$B2F3",
+        "rom_offset": "0x037303",
+        "length": 116,
+        "text": "erESowerSAower !k!3er 6eeeuue6CGYnC'eqOGATATAT0000ATOGGHClenGHEEITLLvNEheT.Ad tTU.411 TIee0S1 ITITEMEM2000 ITREITITIT0000ATOGGHClenGHEEITLw..Tre6t''v62 6Auu"
+      },
+      {
+        "addr": "$B368",
+        "rom_offset": "0x037378",
+        "length": 828,
+        "text": "1 \" \"TIL200.\" 4crrrse669meiud6GHCKGHGHEECCCKREvLnCSvv 7ffe  e66ee uu 6P T64ouN1ESEE0T64REITRERE00owptEEREvLnCSvv  22e0 d 6bb tud nTCSLL64.XREmNU\".0 X//CFYgZN9nREIT\"\"ITquanREGHlekenEMITRE d ouLLAud li34rTIITIT.0S00spFI\" IT6edd/CFYgZN9nITITPE0eetwwNSt eBExFFxr\" .ACC.ARE\" \"\"Cv tXD'u X\"keASASke.. 64\"\"64 r5mm3nr02o77q6r0 mmIT\"T0RERELL kem RE6eeee6  6eeeeuueOGATATATATOG11REITITITIT00ITn''''u' ueee rL n000EEITTIes.p1.EE REITITITATOG11REITITITIT00IT.'uuu'eueuu rX p000EE RE42g1.ES 6eeee 006eeeeutdGHCKGHCK36464NU64ITGENENE5eeu'Ku 4826 eu \"bEE0REIT0ITONOG1dfIT0 REITREIT06464NU64ITGE64NE5eeu'Kue48 31eu .IT\"anNE\"0 64mNU\"IT0 /:!(3787eqp9REIT\"ITfvNENEvfNUfITLrutu' leERTCt0uM LXEEEE0EEITTITITIT640EE 6ede:!/3787eqn9REIT\"ITfvRENEvfNUfITLnutu'erMEyu' .AXEE0.0EE TRERE0640ES dL'u6eue-//G7eu IT00ITIT0 RE64m64 IT0 taee6eu 03397eu ITITITITIT0ITRENUfL IT0 6eeeeu'5ddb2u'REITITITIT00EE\"\"Lm00EE',bu' ''eeuM EEEEEE64 REEEREEE0ITITIT0EE  REEE 0ITIT0ES 6euuu''6eudg'ZREIT000ITITRE64REREnLNEv"
+      },
+      {
+        "addr": "$B6AD",
+        "rom_offset": "0x0376BD",
+        "length": 215,
+        "text": "tu' ITITm64 LIT 64 vREITL '0  0Xtu' mmmm LITm64.vvREITIT 6eeeeuu'5dd0cphTREITITIT0EEEEEE\"\"64qur'WN006' B6cdeuM GHmhRRIT0EEREEEEEREf0EE 6eeeuu'5dd0spN.06'6./cdeu' GHFarITIT0EE ITITREf0ES 21266ee2023 5ee XT0EEEELTEE3 cb 36ee 22625eb"
+      },
+      {
+        "addr": "$B78E",
+        "rom_offset": "0x03779E",
+        "length": 91,
+        "text": "TEE 6eeee''5ddb2''REITITITIT00IT\"\"Lm00ITu'*td6 u6e8ua0 EEEEITIT.\"REREREITITNU064 6eeeu''u5ddbi''u6euu"
+      },
+      {
+        "addr": "$B7F2",
+        "rom_offset": "0x037802",
+        "length": 57,
+        "text": "REIT000ITITRE64REREnLNEv 'eeeeeudXbd eof REREREREREREIT 64 v REanL 6euuu'"
+      },
+      {
+        "addr": "$B834",
+        "rom_offset": "0x037844",
+        "length": 113,
+        "text": "'eeeeu0U7 eqf mREREREREREITm64RE RELL 6eeeuuue5dd0sph7REITITIT0EE\"\"64qur''eetd6 5ee8ua0 0EE.\"REREITITNU064 6eeeu''u5dd0sVNn"
+      },
+      {
+        "addr": "$B8A6",
+        "rom_offset": "0x0378B6",
+        "length": 34,
+        "text": "''6244m  L.EEEEEE00ITREmRERE   btITIT\"."
+      },
+      {
+        "addr": "$B8C9",
+        "rom_offset": "0x0378D9",
+        "length": 15,
+        "text": "/.TUA''he'u 1tt5"
+      },
+      {
+        "addr": "$B8EA",
+        "rom_offset": "0x0378FA",
+        "length": 16,
+        "text": "e/266  REREqu\"ITIT.'"
+      },
+      {
+        "addr": "$B913",
+        "rom_offset": "0x037923",
+        "length": 37,
+        "text": "'uueugb0   0 dumTIYCITSlELATATmYCIT0mfiuZ"
+      },
+      {
+        "addr": "$B939",
+        "rom_offset": "0x037949",
+        "length": 57,
+        "text": "eXTURE' :\"1ATsa11uESanIT L0 mREITITTUYCITm\"ITITEE3miuZvm XTU'"
+      },
+      {
+        "addr": "$B973",
+        "rom_offset": "0x037983",
+        "length": 34,
+        "text": "~: IT IT64GEquIT NU0 '''sse62668e6RFa"
+      },
+      {
+        "addr": "$B997",
+        "rom_offset": "0x0379A7",
+        "length": 27,
+        "text": "0t/t/ATOGmGHACSAITRE~GEe~v')m \"Mm'v"
+      },
+      {
+        "addr": "$B9B3",
+        "rom_offset": "0x0379C3",
+        "length": 47,
+        "text": "YCYC1ATaQURUEEcEEEE EEEEEEququYCTImRERENUITRENe~v')me\"Mm'v"
+      },
+      {
+        "addr": "$B9E3",
+        "rom_offset": "0x0379F3",
+        "length": 15,
+        "text": "ITCK2 eONPEEEb"
+      },
+      {
+        "addr": "$B9F3",
+        "rom_offset": "0x037A03",
+        "length": 37,
+        "text": "2TILLe2uLLeu28*//. e eu ke5d5"
+      },
+      {
+        "addr": "$BA19",
+        "rom_offset": "0x037A29",
+        "length": 57,
+        "text": "5  X 26eea0SLLe25deeAgeME'qu6e6   rn75eu 5CS1dON.2ITXrXN"
+      },
+      {
+        "addr": "$BA53",
+        "rom_offset": "0x037A63",
+        "length": 97,
+        "text": "fTu'X6euSmPi  7r0EEXIT0RUCSH59DVDV\n*''u OGYCOG'99 SeSetCKEEEEEE./LL)7EEAS0   78e'266666PO7tEEEEEECKCSCS3J"
+      },
+      {
+        "addr": "$BAB5",
+        "rom_offset": "0x037AC5",
+        "length": 31,
+        "text": "EEeee6/S6864e EEEEGH5EE64mFa0EEEEC"
+      },
+      {
+        "addr": "$BAD6",
+        "rom_offset": "0x037AE6",
+        "length": 118,
+        "text": "eee /S68644 EEEECK5EEXITFa5EEEE  4u'u'K*6euYpVgYCTAFI2''u BEAZ99 TILLPEREEEEEEE.'00quleleASEE 000000  06eeuue*duuuuu5564REITIT00ITITn'''"
+      },
+      {
+        "addr": "$BB4D",
+        "rom_offset": "0x037B5D",
+        "length": 15,
+        "text": "TUuu'' fRREEEE"
+      },
+      {
+        "addr": "$BB8E",
+        "rom_offset": "0x037B9E",
+        "length": 241,
+        "text": "TU''e t00EEIT 0YCEM00IT 6bnfff 66euuuueuGH55RRREIT00NENENULbbbusWeeeeuuY. \"mvL\" w' u0Fa  RE  \"IT00NENENULbqqU-y5 errZYn .ITITL\".NEmDL0Fa  w',,,,06eepp8a64 NE RERERERE64REITITNUpt3-NB t0Suu'U- LHONow00EEBEd 0 4v,,,,06eepp8a64 NE RERERERE64REITITNUeBeetqA"
+      },
+      {
+        "addr": "$BC80",
+        "rom_offset": "0x037C90",
+        "length": 452,
+        "text": "uU  LDBEEEIT erFIRE64 be3bdtYCsu*uO  fL00ke1. ITm7n0let X22e3br06rreuO  f.0.AON1REREITGEnXn     K'2uueK'    CKEEm00ITCKEEeiX'u' uuuuu' CKFaT00EE00000EE   v''2uuK'u   3EE0m00CKEE0Cnu''e6uuu''e REnEEEEIT 000EEIT     K'2uueK'    0ITm00ITLNENE ta8unL6ubdnuS\" REREmRE   64 LfIT0     v'u2uuK'udat'L5 eboTS  L0 RE  RERE64REITfIT0      K'2uueITftfv teugu' m5b73.ITIT640EEt    vYu2uuKNn2iLZ\"v66tee0'  37d3 .IT0ES  .\"0Lr: 0LNUnTEEd \"GEEEtbREREITL.r"
+      }
+    ]
+  },
+  "bank_23": {
+    "pointer_tables": [
+      {
+        "address": "$8008",
+        "count": 8,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$BEA9",
+            "text": ".L5IT7ES ge5GzGE *ES5wNS"
+          },
+          {
+            "index": 1,
+            "pointer": "$BEC3",
+            "text": "L5IT7*GE5z)GE *YCNS"
+          },
+          {
+            "index": 2,
+            "pointer": "$BED5",
+            "text": "YCIDF*0GEbe6yBGGE"
+          },
+          {
+            "index": 3,
+            "pointer": "$BA01",
+            "text": "NS"
+          },
+          {
+            "index": 4,
+            "pointer": "$BA55",
+            "text": "PENUNS"
+          },
+          {
+            "index": 5,
+            "pointer": "$B99C",
+            "text": "ITlnnMnSIT0u\"ITlnnMnSu5XIT0.MLITl2bPNLu5X.ES5sp5UuES5an 25SdES55P2ES5an GEbKINKINIKLN64nbNLLnK.esNS"
+          },
+          {
+            "index": 6,
+            "pointer": "$B4C1",
+            "text": "IT3LPERERE bPEmLTAwasbipn8ipngnpn5kpRUb~nqES EQU64ljLTAwasbipn7ipnRUan EQU64ES EQU64pX00RRan defgehib9876iES EQU64pXasLPEanIT9GEES EQU64pnL00PAPENEGEGE t64sq002CKTU ?:GEny64vuTU t64sq000GEES er64qpsu~nGEGE t64sq00YCPEanLTAquasnquzpsxBquxuruxuPENE*jns*nsv*npw*psyRU*PEmEQU t64ulquzME t64uzNA t64uqTU an64spsu~nL~ES e64.n"
+          },
+          {
+            "index": 7,
+            "pointer": "$B529",
+            "text": "LPEanIT9GEES EQU64pnL00PAPENEGEGE t64sq002CKTU ?:GEny64vuTU t64sq000GEES er64qpsu~nGEGE t64sq00YCPEanLTAquasnquzpsxBquxuruxuPENE*jns*nsv*npw*psyRU*PEmEQU t64ulquzME t64uzNA t64uqTU an64spsu~nL~ES e64.nsqGEES EQU64pnLeIT5GEGE CEC*CECspRE Mn64bOnLJTCxES JLRE REES OLITbXIT5spbOnLLbOGElES O:\"5NOQspMn64bOnLJTCx"
+          }
+        ]
+      },
+      {
+        "address": "$8018",
+        "count": 8,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$B5CF",
+            "text": "IT5GEGE CEC*CECspRE Mn64bOnLJTCxES JLRE REES OLITbXIT5spbOnLLbOGElES O:\"5NOQspMn64bOnLJTCxES JLREES OLITbXIT5spbOnLLbOGElES OnECeLPEm)CH7)u35T-GEht/hyus)5T)CH7)u3GEhGFBzyus"
+          },
+          {
+            "index": 1,
+            "pointer": "$B68F",
+            "text": "~LXPE64d p00n00d p00n00su00b0S~3u00b00np00b0Ssu00n0Snp00b0Soq00z0Slo00X0Soq00z0SthPEmLGEGE YCztwumknnnzDBwwumk0PEmLXGE1d p00n00isLXPE64GE1d i00n00ki00n0S'3n00n00ki00b0Spn00n0Ski00b0Slj00z0Shj00X0Slj00z0SisGEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUb"
+          },
+          {
+            "index": 2,
+            "pointer": "$B6F8",
+            "text": "LXPE64GE1d i00n00ki00n0S'3n00n00ki00b0Spn00n0Ski00b0Slj00z0Shj00X0Slj00z0SisGEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanFES7HJMke7JHM 642nM:GEhu3MOM2'ee 2'ee n"
+          },
+          {
+            "index": 3,
+            "pointer": "$B751",
+            "text": "GEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanFES7HJMke7JHM 642nM:GEhu3MOM2'ee 2'ee nu3MOQOMesOee k2GEbliGEjliNUbXXis~LXPEququququququququququ0S0quququ0S hloj00t000S"
+          },
+          {
+            "index": 4,
+            "pointer": "$B656",
+            "text": "LPEm)CH7)u35T-GEht/hyus)5T)CH7)u3GEhGFBzyus"
+          },
+          {
+            "index": 5,
+            "pointer": "$B6CE",
+            "text": "PEmLGEGE YCztwumknnnzDBwwumk0PEmLXGE1d p00n00isLXPE64GE1d i00n00ki00n0S'3n00n00ki00b0Spn00n0Ski00b0Slj00z0Shj00X0Slj00z0SisGEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanF"
+          },
+          {
+            "index": 6,
+            "pointer": "$B731",
+            "text": "GEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanFES7HJMke7JHM 642nM:GEhu3MOM2'ee 2'ee nu3MOQOMesOee k2GEbliGEjliNUbXXis~LXPEququququququ"
+          },
+          {
+            "index": 7,
+            "pointer": "$BA90",
+            "text": "~PELke dimpspspmkgdgknpswspsps8fknrwrnwrnkfimprururpmidgknpsfimprugknsnkna7fjmpryrpmjmPKHyrprpmjf3PEdpswswBwswsp6ipmpsupmpmibnrururnrnmi8kororwrwrordpswswspspkg6ipmpsumuspi3fjmrvyDHDHDHDyDyDyvrmjft/PEmL.~nB::)by*n)bz,nz*:bInbB*fwz::)bz)n?7wt(\"IT0PEanL"
+          }
+        ]
+      },
+      {
+        "address": "$8028",
+        "count": 8,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$BB5A",
+            "text": "PEmL.~nB::)by*n)bz,nz*:bInbB*fwz::)bz)n?7wt(\"IT0PEanLGE8~7uzwzEzwzws\"psuswyususp\"ruyuyururpm\"orwrwAwAwrw\"swzwzwswsnk\"psuswyuywsm\"jmrvyDHKHKHKHDHDHDyvrm60SeITfnUsp:64bSnbPnWd:ubX.nubUspfQS:bPnNM64GEmQli5 ubX.nubUWS:M64GEmQli5 ubX.nlibZQUITb\"SePEITLpNS"
+          },
+          {
+            "index": 1,
+            "pointer": "$BBF7",
+            "text": "ITfnUsp:64bSnbPnWd:ubX.nubUspfQS:bPnNM64GEmQli5 ubX.nubUWS:M64GEmQli5 ubX.nlibZQUITb\"SePEITLpNS"
+          },
+          {
+            "index": 2,
+            "pointer": "$B880",
+            "text": "EQULzPEmquququuuuuuuuuuGEyuo\"\"quququG\"\"H\"\"I\"\"K\"\"L\"\"\"quES N\"L\"KIGEPE64swzDzwsPEm\nNL\"K\"IGEDr\"uByur\nLzPEmesesesu\"\"s\"\"r\"py\"\"\"\"\"\"esesess\"\"p\"\"q\"\"s\"\"D\"\"\"quES K\"I\"GEDBPE64pswzwspPEm\nKI\"G\"EDBzn\"ryurm\nesesesi**y**y*y*****uiesesesyuixthzsgAuqn***esES5uD*nu"
+          },
+          {
+            "index": 3,
+            "pointer": "$B8E2",
+            "text": "LzPEmesesesu\"\"s\"\"r\"py\"\"\"\"\"\"esesess\"\"p\"\"q\"\"s\"\"D\"\"\"quES K\"I\"GEDBPE64pswzwspPEm\nKI\"G\"EDBzn\"ryurm\nesesesi**y**y*y*****uiesesesyuixthzsgAuqn***esES5uD*nuz*pzBEIEBz\nipy*ipy*nuz*buzu\nITlnnMnSIT0u\"ITlnnMnSu5XIT0.MLITl2bPNLu5X.ES5sp5UuES5an 25SdES55P2ES5"
+          },
+          {
+            "index": 4,
+            "pointer": "$B943",
+            "text": "esesesi**y**y*y*****uiesesesyuixthzsgAuqn***esES5uD*nuz*pzBEIEBz\nipy*ipy*nuz*buzu\nITlnnMnSIT0u\"ITlnnMnSu5XIT0.MLITl2bPNLu5X.ES5sp5UuES5an 25SdES55P2ES5an GEbKINKINIKLN64nbNLLnK.esNS"
+          },
+          {
+            "index": 5,
+            "pointer": "$BC4F",
+            "text": "PEITLpNS"
+          },
+          {
+            "index": 6,
+            "pointer": "$BD1D",
+            "text": "PE64Lu2DGG000EEII0000DDGGEEGG0000DDGGFFIIFFIIEEGGBBEEzzBB0000BBEE0000GE5AAzuz*ES t/5Se le5u2DGG000EEII0000DDGGEEBBEEGGDDGGPEm2 LKLES5LGEb*u NMNES5NGEb*u GFGES5u .ES5ge7.u2ES5G\"u2A\"ES5-u2-ES7-N :nctYCLLPP0000IILL0000LLPPNNQQNNQQLLPPNNRRLLRRKKNNKKKKIILLFFFFGGNN0000HHGHDIGIDELLPP0000"
+          },
+          {
+            "index": 7,
+            "pointer": "$BDD2",
+            "text": "YCLLPP0000IILL0000LLPPNNQQNNQQLLPPNNRRLLRRKKNNKKKKIILLFFFFGGNN0000HHGHDIGIDELLPP0000IILL0000LLPPNNKKNNSSLLPPTUTUTUW*UWUWUWY*LKLKLKLLLKKGGGFF0th ctGE ITh64ee R64Oee2W.,.WT0SbI2L?3wzGE ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS"
+          }
+        ]
+      },
+      {
+        "address": "$8038",
+        "count": 8,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$B819",
+            "text": "~LXPEququququququququququ0S0quququ0S hloj00t000S0quququ0S quLPE0SCKisGE0qud npu005YC\npsnu00500\nEQULzPEmquququuuuuuuuuuGEyuo\"\"quququG\"\"H\"\"I\"\"K\"\"L\"\"\"quES N\"L\"KIGEPE64swzDzwsPEm\nNL\"K\"IGEDr\"uByur\nLzPEmesesesu\"\"s\"\"r\"py\"\"\"\"\"\"esesess\"\"p\"\"q\"\"s\"\"D\"\"\""
+          },
+          {
+            "index": 1,
+            "pointer": "$B860",
+            "text": "LPE0SCKisGE0qud npu005YC\npsnu00500\nEQULzPEmquququuuuuuuuuuGEyuo\"\"quququG\"\"H\"\"I\"\"K\"\"L\"\"\"quES N\"L\"KIGEPE64swzDzwsPEm\nNL\"K\"IGEDr\"uByur\nLzPEmesesesu\"\"s\"\"r\"py\"\"\"\"\"\"esesess\"\"p\"\"q\"\"s\"\"D\"\"\"quES K\"I\"GEDBPE64pswzwspPEm\nKI\"G\"EDBzn\"ryurm\nesesesi**y**y*y*****uies"
+          },
+          {
+            "index": 2,
+            "pointer": "$B869",
+            "text": "GE0qud npu005YC\npsnu00500\nEQULzPEmquququuuuuuuuuuGEyuo\"\"quququG\"\"H\"\"I\"\"K\"\"L\"\"\"quES N\"L\"KIGEPE64swzDzwsPEm\nNL\"K\"IGEDr\"uByur\nLzPEmesesesu\"\"s\"\"r\"py\"\"\"\"\"\"esesess\"\"p\"\"q\"\"s\"\"D\"\"\"quES K\"I\"GEDBPE64pswzwspPEm\nKI\"G\"EDBzn\"ryurm\nesesesi**y**y*y*****uiesesesyuix"
+          },
+          {
+            "index": 3,
+            "pointer": "$BE5A",
+            "text": "GE ITh64ee R64Oee2W.,.WT0SbI2L?3wzGE ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS"
+          },
+          {
+            "index": 4,
+            "pointer": "$BE95",
+            "text": "GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS"
+          },
+          {
+            "index": 5,
+            "pointer": "$BE5D",
+            "text": "ITh64ee R64Oee2W.,.WT0SbI2L?3wzGE ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS"
+          },
+          {
+            "index": 6,
+            "pointer": "$BE7D",
+            "text": "ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS"
+          },
+          {
+            "index": 7,
+            "pointer": "$BE97",
+            "text": "L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS"
+          }
+        ]
+      },
+      {
+        "address": "$8119",
+        "count": 4,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$9242",
+            "text": "EQU3 5*!zdz1z3A!AdA1A3B!BdBOPB1BTTB3C!CQU A:vEQUsp~NACSRE8CKvI3 uyoyoyoyoyoyo.  d      ke  d      ke  d     0ke  liAAAAAAQU           EQUEQUvMAN iTUEQUWTCAT3 iTUEQUEQUvMANctEVCHGI643CSREsNUPA iTU DRAW  DRAW  DRAW  DRAW  DRAWEQUWvMANQU8ct9ANGIA37fYC iTUYes    No EQUWvMANEQUDTCTC3EQUETCON3EQUATCTI3EQULTCNU3 iTUTCAT3EQUuTCTA3QUVEQU GI6437f"
+          },
+          {
+            "index": 1,
+            "pointer": "$9F20",
+            "text": "wITDv1TCOPj\"anvE7ITCKACRvstQU as0SvEEAvxNEvATCRv2AYQURRE45 is0S"
+          },
+          {
+            "index": 2,
+            "pointer": "$A981",
+            "text": "ttbm"
+          },
+          {
+            "index": 3,
+            "pointer": "$8500",
+            "text": "I,5nQU1TQU TQUbctQ64IT47fRRnQU0TvyoNU4vyoan1nQU1TQUbctQ63IT47fRRnQU2TvbuNUc:v/u~NAan6vSuan9n7L0SvduNURRQU3TOPNQU2QJ7f0S60QU4v/uanTQUbctQ61anI7fRRQU ctQ3CSyoyoRE ITfCSNE3ctQITiCSkeYCQU5TvCHyoNU0QU8ANyonEQU yoOQUbctQ62anEM7fRRQU ctQCS610RE0ITsRE9ITstNE3ctQ616CSkePANyoOPO5ACOELyoNE3ctQ616CSkePANyoOPO4ACO"
+          }
+        ]
+      }
+    ],
+    "strings": [
+      {
+        "addr": "$8000",
+        "rom_offset": "0x05C010",
+        "length": 268,
+        "text": "64TCan00ED  EQUtgethat0t/t/BEesesasEeeTIth0thisththMisNUt/SeYCSe64quOGqu?eslesctSlctoququ?qutMtttSAtMtER.OPu87youv22v2EQU TC74TC84y44E44 6*Yv?2vANvTIEQUvwEQUv3ESvI3veeESvhe2vTIvDoAv-CHv?ESver2vTCv-CHvptONvt64vPE.vSTIv-CHvasCHvGIESd64vAT2anav-CH ::\"keA:vusp~:61NU29ME0NAb61NU4ENan2~9NAOPR:ct22yoRct32yoSQUR~vC5vUESvI3vTI2vDV2EQUyoAvSspv"
+      },
+      {
+        "addr": "$810D",
+        "rom_offset": "0x05C11D",
+        "length": 38,
+        "text": "vRU5OPj33ALLv-CHvA2EQU yospvto2vasCHvRRCHv'AvSspv"
+      },
+      {
+        "addr": "$8134",
+        "rom_offset": "0x05C144",
+        "length": 102,
+        "text": "vRU5v,2)janWJ2OPj9anr9an6OPjE1iy216IT9EQUTC21EQUTC61y216keIT9EQUkeTC21EQUNUTC61:::. yo0Sv!spvSTIvasCHy216CSuOPRyo\nOPSyoTyo"
+      },
+      {
+        "addr": "$819B",
+        "rom_offset": "0x05C1AB",
+        "length": 18,
+        "text": "OPR9yo\nOPSFyoTFyo"
+      },
+      {
+        "addr": "$81AE",
+        "rom_offset": "0x05C1BE",
+        "length": 13,
+        "text": "OPspyo\nEQU yo"
+      },
+      {
+        "addr": "$81BC",
+        "rom_offset": "0x05C1CC",
+        "length": 222,
+        "text": "AC\n nSlCK0 N j 7 4 3 1 0 vAT2an0EQULYQU2IT7EQUKRE2NU1EQUJ 2Av)GEEQU yovNEdvstdvLLdanBvfyoanwvxyoanrvNyoanmv!yoanhvyoancvyoan7vbuan2vuu7u2EQU yoFyoOPRyo64DOPITwOPn?fyofoOPITjOPR:OP64yoROP2vEQUspOP2vusp~yoROP2AS9NActEQUeeyo ctNAeeyo0esspASEQU v3AC keRRI3iiiiiccffNAleFIsp9NActEQUeeyo ctNAeeyo0esRUsp6"
+      },
+      {
+        "addr": "$829B",
+        "rom_offset": "0x05C2AB",
+        "length": 92,
+        "text": "IT8v35AC ESspI3:9:NAct22yoct32yoOPRQUvC5EQU yo b*~NActSeeeyo ctleeeyo0~QU 61NU5CS63NU0CSAvES bnCOZ!Royal Flush"
+      },
+      {
+        "addr": "$82F8",
+        "rom_offset": "0x05C308",
+        "length": 11,
+        "text": "5 of a Kind"
+      },
+      {
+        "addr": "$8304",
+        "rom_offset": "0x05C314",
+        "length": 14,
+        "text": "Straight Flush"
+      },
+      {
+        "addr": "$8313",
+        "rom_offset": "0x05C323",
+        "length": 11,
+        "text": "4 of a Kind"
+      },
+      {
+        "addr": "$831F",
+        "rom_offset": "0x05C32F",
+        "length": 10,
+        "text": "Full House"
+      },
+      {
+        "addr": "$8330",
+        "rom_offset": "0x05C340",
+        "length": 8,
+        "text": "Straight"
+      },
+      {
+        "addr": "$8339",
+        "rom_offset": "0x05C349",
+        "length": 11,
+        "text": "3 of a Kind"
+      },
+      {
+        "addr": "$834D",
+        "rom_offset": "0x05C35D",
+        "length": 12,
+        "text": "Top Score of"
+      },
+      {
+        "addr": "$835A",
+        "rom_offset": "0x05C36A",
+        "length": 9,
+        "text": "Double Up"
+      },
+      {
+        "addr": "$8364",
+        "rom_offset": "0x05C374",
+        "length": 12,
+        "text": "Top Takes of"
+      },
+      {
+        "addr": "$8371",
+        "rom_offset": "0x05C381",
+        "length": 9,
+        "text": "Double Up"
+      },
+      {
+        "addr": "$837B",
+        "rom_offset": "0x05C38B",
+        "length": 10,
+        "text": "Total Bets"
+      },
+      {
+        "addr": "$8386",
+        "rom_offset": "0x05C396",
+        "length": 11,
+        "text": "Total Takes"
+      },
+      {
+        "addr": "$8392",
+        "rom_offset": "0x05C3A2",
+        "length": 22,
+        "text": "Top Score of Double Up"
+      },
+      {
+        "addr": "$83A9",
+        "rom_offset": "0x05C3B9",
+        "length": 224,
+        "text": "a1a2a3a4a5h6h70607o1o2p3p4q5q6q7c6c7vdvELeevFa5vONdvLeevPdQU uNuGIYQUNEQU yoyoctanyoRE1NUfCSctanyoREfNU5CSctanyoCSuN b*ACGIACGIOPGIyo0EQUiyo REfNU4OP1v3AC EQU vESvI3OPGI6mNUasQU1ct3M7f0 b*QUnvdQU1ct6M7f0 b*QUpOP0:OP :EQUgyo u0~v3AC ~v3AC OP1v3AC EQU vESI3y74n?fan8TC74v"
+      },
+      {
+        "addr": "$848A",
+        "rom_offset": "0x05C49A",
+        "length": 17,
+        "text": "dy74TMEfNUYCTC74v"
+      },
+      {
+        "addr": "$849C",
+        "rom_offset": "0x05C4AC",
+        "length": 45,
+        "text": "ONdNE dOes vQUTITCOSE CSITlEQU097EE\"SJ YQUORREACO5m4DVEQU"
+      },
+      {
+        "addr": "$84CA",
+        "rom_offset": "0x05C4DA",
+        "length": 740,
+        "text": "esdQUbEQU GIQ7f00NE3thEIT6kefRRQUb7f00REdvyoNUhvyoNUcv/uan9yQI,5nQU1TQU TQUbctQ64IT47fRRnQU0TvyoNU4vyoan1nQU1TQUbctQ63IT47fRRnQU2TvbuNUc:v/u~NAan6vSuan9n7L0SvduNURRQU3TOPNQU2QJ7f0S60QU4v/uanTQUbctQ61anI7fRRQU ctQ3CSyoyoRE ITfCSNE3ctQITiCSkeYCQU5TvCHyoNU0QU8ANyonEQU yoOQUbctQ62anEM7fRRQU ctQCS610RE0ITsRE9ITstNE3ctQ616CSkePANyoOPO5ACOELyoNE3ctQ616CSkePANyoOPO4ACOTAyoEQU yoOQU8yoQUbctQ62IT47fRRnAQU6Tv/uancvSuNU77L4vUuan1nQU7TQUbctQ61IT47fRRnTQU3eEIT47f00nTEQU yospvEQU5E6yoeevEQU5E6yodvEQU5E6yoyov-CHvGIESvTIvleuNE v?TCy vQUTINE vATCvYQUu .vyoliv-CHvEMlivYCliv\nliv9.ACsp/uy 6PdQUvb6vlivEMliCkeQU4OPspE62eeITW2dITS2yoIT.y 63NU36zNUhct :y GI ~TC CSuNE0es 63NUb6zan75m4NUITzliNE es 63NUl6zanhct :es GI ~S CS5lim eA:vEQU5E2AS5~NACS2liy 63NU36fNUhct :y GI ~TC CSSliA:vEQU5E2AS5~NACSes 63NU36bNUhct :es GI ~S CSliQU3EQU MK7f0SEQU0yoEQU ctMEliGI 1CSRE7PAvliEQUNUyoAvLONv1TCvlivtolivSspv"
+      },
+      {
+        "addr": "$87AF",
+        "rom_offset": "0x05C7BF",
+        "length": 256,
+        "text": "GIliOPjL4E.bYQUERE3IT3ACEyoPYQUERE0IT33EyoPOPjE0ITgvSTIYQUEuKMKvONv!sp~~ke0 .ke1 :NE0vdTITCKvtTIy vQUTIyoE3EQUcyoE3EYQUKct vQUTIyoF3EQUcyoF3FOPF2EITianV QU1ctmhaRNUcIT5\"keELke7fPEL9QU1eRGIm7f0vasCHvfSlEQU yoRyoSyoTvUESvI3~~5RBSBTvUESvI3vTI2EQULYQUTRE0IT3anzNUfYQUSREuIT3anpNU5TCRmNEanhEQUKYQUSREiIT3an7NU3mkean1EQUJ: 2A~6LIT5v)GEthkev"
+      },
+      {
+        "addr": "$88B0",
+        "rom_offset": "0x05C8C0",
+        "length": 117,
+        "text": "6A 8Avsa2v-CHOPT60IT3NUkanfOPS6uIT3NUaan5OPR6NENU2P. vMBkevasCH~~ACsp/u PE0SQUIvb6 yo0Sv!spvSTIvasCHv-CHy216Gv-CHvasCHvA2ACspvto23spvRRCHv'AvSspv"
+      },
+      {
+        "addr": "$8926",
+        "rom_offset": "0x05C936",
+        "length": 237,
+        "text": "vRU5v,2OPj\"ansav.QU1ctgehaRNU9IT2.7fEML9QU1eRGIge7f0QU1ctmhaRNU9IT2:.7fEML9QU1eRGIm7f0v!sp g0SvER.OPRn/6TC6OPS/7TC7OPT/8TC8EQU yoRyoSyoTv3ESvUESvI3v)GE~~OPRn/yTCyOPS/ouTCouOPT/wTCwyw6eNUAhyou6-NUr8yy6'ITiNUgEQUeTCwEQU-TCouEQU'TCyTnv-CH vRRCHv'AvRU5OPj9ank9anBE.\"OPj\"an(\"an5v"
+      },
+      {
+        "addr": "$8A14",
+        "rom_offset": "0x05CA24",
+        "length": 124,
+        "text": "00.y216keIT9EQUkeTC21EQUNUTC61gAy216IT9EQUTC21EQUTC61gAQU6ctAGI 17fYCNE0 NE1  yo0Sy216ITav22v?Avhe2~~QU  yLLQU  cli 7TIvw2 sLLOPD 1liy4 gli 6liQU ctv\"6"
+      },
+      {
+        "addr": "$8A91",
+        "rom_offset": "0x05CAA1",
+        "length": 157,
+        "text": "IT9ELLGIv\"CSREtNULL 2LLOPuEYCyouEQU TC4yycoucwbv-CH vsa2AEQU0yoPyoucwayystCK3an2TCCK3ouCK3uREQU yoSyoTyoEvstQU700v.CHEQU TC4EQU3TC4 vkQUvZQUvNEQUvNQUv3ESvzESvI3\nAACNvRU5OPj2GIaOPN6jfaEQU yojyoGIEQU"
+      },
+      {
+        "addr": "$8B2F",
+        "rom_offset": "0x05CB3F",
+        "length": 621,
+        "text": "yoNOPjEd6d2vsteeOPjEf6OPjEvGyoPyycoucw0OPR6anWACROPR6anLEQU yoEvstQUv.CH as0SyoPOPR60ITo3REQU yoEPEy7PEou2PEwv.CH as0SvstQUv.CHEQUQUOPjE0ITB yo0Sv3ESvUESvI3OPRTCCK3y3n'RTC3NU7PE42PE5~~yyTME0TCyyouME TCouywME TCwQU1ctyM7f0 b*OP 40IT8QU4EQU9M17f0SvTIQUNE2QU1u d0EQU yoeNAe1v3AC ACeOPe65NUITOPEn?7yoEfbQU4EQU M17f0S(ESQU1eRM7f00 b*NE4QU1u d0OP1v3AC EQU yoeNAe2v3AC ACeOPe64NUITNE vuTCNE0vpTCNE1vpTCNE2vpTCNE3vpTCNE vESNE0vESNE1vESNE2vESNE3vESNE visESNE0visESNE1visESNE2visESNE3visESesZTCTCAT3v\nES hTUvNSES hTUvDVES hTUesZTCTCAT3vDVES hTUQU ct1NUGI643CSREFPA9TCQU ctPENUGI643CSREFPA9TCQU ctnEQUGI643CSREFPAEQU?TCTA3QUaEQU1GIRE37f00QU9vb6v?TCvTIvNTIvTC hTUvTC hTUv,TC er0S hTUesZTCTCAT3vNSES hTUv\nES hTU-TIQU1:TCQU0v:TCQU2:TCQU v:TCQU3NE6ctan3GI643An?5NAkeATv2CHvjAN vEQUONvLONvSspv1TCvNETCvTTTCv"
+      },
+      {
+        "addr": "$8D9D",
+        "rom_offset": "0x05CDAD",
+        "length": 420,
+        "text": "QUTCOPjE20OPA6NEITdYQUERRKvONOPP82yoP yo0Sv!sp~~vRU5TCjITcTCQ1NEvke3dPNEhdQOPjAPyoP(jyojOPj9anx9an69anR9anTOPP8.yoPOPA6NEITGOPEIT23EEQU3yoEOPP864yoPOPA6NEITiYQUERE3IT2ACEEQU yoEEQUNEyoAEQUNUyoAQU1OPATC 1TC316NU1YQUEctONTC21n?7TC617T~GE5eKE0iEQUDyoFEQURyoGEQUAyoHEQUWyoIONEQUHyoFEQUOyoGEQULyoHEQUDyoIctTCONyo EQUhyo0OPFv3AC OPGv3AC OPHv3AC OPIv3 th0SB328ekqEQU yoEyoPyoQEQUNUyoAQU ctONGI 1CSRE7PAEQU QU MKCSRE400NU0 7NU1 fvSTINE esK E06GE:visES~AS5m4NSQU NE4eKE0ect :es GI ~S 5CSRE4ACNE esK E02vtTI5m4EMQU9vb6GE:v?TC~:ASes vQUTIvATC~ASEQUYCTC 1TC31"
+      },
+      {
+        "addr": "$8F42",
+        "rom_offset": "0x05CF52",
+        "length": 86,
+        "text": "QU ctPENUGIan3CSREFPAQUaEQU GIRE37f00YQUJct ACJQUTIEQU yoJEQU5yoEEQUQ meNAEQUQ meASct :es GI ~S 3EOG6Pan7:E2NA~\"\"QU"
+      },
+      {
+        "addr": "$8FA0",
+        "rom_offset": "0x05CFB0",
+        "length": 332,
+        "text": "IT00n?TCTCan3?cTCL36TCan\"6PEITSMEED9ASA:n?ERyoHeskeNUyoFes.NUyoGEQU4yoIQU6OPHNE25GBFNU2GIan3CSkeTACSCSCS3IMB~lNUAyoH99yoE9n'ENAEQU2yoGNEbEQU3yoFct-EQUSan3CS53FCK553GMBOPHE0QUaGIRE37f00uGMETC99yoE9n'ENANEhEQU2yoEEQU3yoFctEQUSan3CS53FCK553EMBOPGn?ERTCct3TCt3TChe3OPGlNUQUMEONan3CSONL3QU NE5EQU4yoEEQU4yoFctESEQUSan3CS53FCK53EEREQU2nNU.3,3NE9W9QUANAANANAethELTC646464an 6464646464 6464646464 6464646464 6464646464 6464646464 t646464PE YC00000 000S0S0SEE 000S0S0SEE 000S0S0SEE 000S0S0SEE 000S0S0SEE"
+      },
+      {
+        "addr": "$9116",
+        "rom_offset": "0x05D126",
+        "length": 273,
+        "text": "0     0S     0S     0S     0S     0S       6464est/64Select64the6464messa64ge12643456464to6464erase64thisqu6467864Fast646464Slow64Cha646464646464pterL64EVEL6464.ADV64ENTURE64LOGFI6464646464youw64GHTTACTICSMEMBERRUNSPELLITEMATTACKPARR64EQU0TCCK3EQU64TC4EQU9TCEE4EQU?TCTA3EQU QUGI6437f00EQUQ meNANEPAS keL9CSREQNUCKQU haEQUQUWct.CHGI6437fYCEQUfTCAT3EQUQTCTA3 iTUQU A:vusp~NACSRE8CKvw2y1vQU NE ct*CHTC5vct:CHTC5vesRUsp6"
+      },
+      {
+        "addr": "$9228",
+        "rom_offset": "0x05D238",
+        "length": 332,
+        "text": "IT6TC6v5yCH5CSCSREtNUTUvTI2vasCHv)ANEQU3 5*!zdz1z3A!AdA1A3B!BdBOPB1BTTB3C!CQU A:vEQUsp~NACSRE8CKvI3 uyoyoyoyoyoyo.  d      ke  d      ke  d     0ke  liAAAAAAQU           EQUEQUvMAN iTUEQUWTCAT3 iTUEQUEQUvMANctEVCHGI643CSREsNUPA iTU DRAW  DRAW  DRAW  DRAW  DRAWEQUWvMANQU8ct9ANGIA37fYC iTUYes    No EQUWvMANEQUDTCTC3EQUETCON3EQUATCTI3EQULTCNU3 iTUTCAT3EQUuTCTA3QUVEQU GI6437f00QU EQUtvMANEQUuTC23EQU.TCPE3EQUdTCGI3EQUkeTCth3EQUyoQUnGI23700EQUtTCTA3 iTUv"
+      },
+      {
+        "addr": "$9375",
+        "rom_offset": "0x05D385",
+        "length": 32,
+        "text": "vw2QU vNAANQU4vNAANQU vLLANvLLANEQUnTC5vEQU6TC5vEQU"
+      },
+      {
+        "addr": "$9396",
+        "rom_offset": "0x05D3A6",
+        "length": 188,
+        "text": "TC6vvTI2QU ctTUANGIEE4CSREfPAy1vctYGETC5vctXGETC5vctZGEyoEct'GEyoFct.GEyoGNE QUftETC6vACE1ACF7AT3GRUeLhxLkALCmLjCLSmA:ctOGETC5vctNGETC5vctPGEyoEctQGEyoFctRGEyoGNE QU7tETC6vACE1ACF7ATQU7EQU TC6v7003GOG~n?4NA nGE0ffGE9nNAGEf ELED1QU9vb6v4IT 8A"
+      },
+      {
+        "addr": "$9459",
+        "rom_offset": "0x05D469",
+        "length": 504,
+        "text": "X.....X T.TTTT 33b\"m33r33 brHFa EEmmEEddEE mmEE33 5nLLL 3333 3355TANSENENmENEN        LENEN00TITUm        esLes        00PANSNSDVm\n        esTUTUeses        LENTUesENENL        mENDV0SYCYCYC        LENENLENENL        LENENREL        EVESptptptptEV        IT\n\nDVDVDVFI        LENEN3ELELRE        DVererDV        2is       20STIAli       eeliee       he2SeisiswA       eeee0S0See       liee0Sli       LLLLLLTUSe2       lilili       li6li       ED((((?ED       4SeSeSehehee       6li       SeERTAERSe       EE0tee4liAN"
+      },
+      {
+        "addr": "$9662",
+        "rom_offset": "0x05D672",
+        "length": 15,
+        "text": "ZZr YCFIesGEGE64es"
+      },
+      {
+        "addr": "$9682",
+        "rom_offset": "0x05D692",
+        "length": 40,
+        "text": "7 FIhaerFIPAhaFI        4MEw4ERME4"
+      },
+      {
+        "addr": "$96AB",
+        "rom_offset": "0x05D6BB",
+        "length": 15,
+        "text": "saPAPAeee"
+      },
+      {
+        "addr": "$970B",
+        "rom_offset": "0x05D71B",
+        "length": 25,
+        "text": "0ITRERERE  026eeeee    !NANAT"
+      },
+      {
+        "addr": "$972C",
+        "rom_offset": "0x05D73C",
+        "length": 19,
+        "text": "'ueee   64mRERERELLIT0"
+      },
+      {
+        "addr": "$9762",
+        "rom_offset": "0x05D772",
+        "length": 8,
+        "text": "REREm"
+      },
+      {
+        "addr": "$977C",
+        "rom_offset": "0x05D78C",
+        "length": 14,
+        "text": "geEDWTI   Dqu\"RE"
+      },
+      {
+        "addr": "$97B2",
+        "rom_offset": "0x05D7C2",
+        "length": 14,
+        "text": "m64      ITREmmesFI"
+      },
+      {
+        "addr": "$97C2",
+        "rom_offset": "0x05D7D2",
+        "length": 11,
+        "text": "6eutr   Km,"
+      },
+      {
+        "addr": "$982A",
+        "rom_offset": "0x05D83A",
+        "length": 19,
+        "text": "eeeeeeeuREREREREREREREm0EE"
+      },
+      {
+        "addr": "$987D",
+        "rom_offset": "0x05D88D",
+        "length": 13,
+        "text": "TIgege22    nnXX"
+      },
+      {
+        "addr": "$98B9",
+        "rom_offset": "0x05D8C9",
+        "length": 19,
+        "text": "uuuuuuTUummmmm m 00"
+      },
+      {
+        "addr": "$9988",
+        "rom_offset": "0x05D998",
+        "length": 20,
+        "text": "EE4TUTUTUheheeemmm6464 vRETEE"
+      },
+      {
+        "addr": "$99B2",
+        "rom_offset": "0x05D9C2",
+        "length": 44,
+        "text": "m       ITIT0EE\n\n\n\n 600000077rTthyEDYC FI2eeuESGEITeeu"
+      },
+      {
+        "addr": "$99E2",
+        "rom_offset": "0x05D9F2",
+        "length": 40,
+        "text": "RE64     \n\n\n\nEE0ITIT0000006 0SGIouisTr770BEONliee2FI"
+      },
+      {
+        "addr": "$9A4A",
+        "rom_offset": "0x05DA5A",
+        "length": 16,
+        "text": "TUTITIedfff vvREes32"
+      },
+      {
+        "addr": "$9A6F",
+        "rom_offset": "0x05DA7F",
+        "length": 35,
+        "text": "0SEMEMt42   33511   NEmEVesct*5tYC6thZ"
+      },
+      {
+        "addr": "$9A95",
+        "rom_offset": "0x05DAA5",
+        "length": 27,
+        "text": "664 keDVLvNE6464 10yostENTU*anle02eu"
+      },
+      {
+        "addr": "$9AB2",
+        "rom_offset": "0x05DAC2",
+        "length": 54,
+        "text": "leRE64    REEMEMITEMITIT0d333433264.ITRENE 'TATIER66xjjr7   64esesFIYC"
+      },
+      {
+        "addr": "$9B42",
+        "rom_offset": "0x05DB52",
+        "length": 9,
+        "text": "REITIT0"
+      },
+      {
+        "addr": "$9B4C",
+        "rom_offset": "0x05DB5C",
+        "length": 14,
+        "text": "RE33EV3   uuuuu"
+      },
+      {
+        "addr": "$9BD1",
+        "rom_offset": "0x05DBE1",
+        "length": 135,
+        "text": "0000   26sfn623ks6tanITITanREITREOPu87youv22 6*YvBEv2vASvw2vvSOPvOPvBEvTI2vQBEv22vES2 kLLOPuEYCyouvEEAvBNEvGHAvXESvhe2vXESvACNvNEvNvvGHAv"
+      },
+      {
+        "addr": "$9C59",
+        "rom_offset": "0x05DC69",
+        "length": 34,
+        "text": "vGEBE!BEEQU NAMEMCSREfNUYCvEQU5EeyoEyoFyoGOP!EeTC"
+      },
+      {
+        "addr": "$9C7C",
+        "rom_offset": "0x05DC8C",
+        "length": 56,
+        "text": "3EQU TC74TC84y44E44EQU64TC4v-CH TIQU4vb6y mIT6vRU5OPj00EQU yovLBEv"
+      },
+      {
+        "addr": "$9CB5",
+        "rom_offset": "0x05DCC5",
+        "length": 290,
+        "text": "v1TCOPj\"anj\"ancE3izjL4\"LeBEEQU0.AOPIT1~~EQUyyorEQU\"yosTCes0SBEyotvR3EQUyosTCesEEBEyotvR3B32 2vGHAv-CHOPITkv,GIvGI vyGIv)GEvACGInSl fSlOPianj60IT5an9 J0SOP\n6CKNURR K0S L0SNE d0es003f2v3AAC0TC0m4NUPETC2es003E6yo999'ASesTIERyosesNUERyorvGIEQU5yospesEQUERyotvR353spTAB3TC23AvGIEQUTIyotNE5vR3ke00B3TC2v3AEQUcGI01vquGIvmGIACeeOPeeEuyoeeOPeeEeITRE4OPee67NU3anAS'RIzqh8 NE d\nd"
+      },
+      {
+        "addr": "$9DD8",
+        "rom_offset": "0x05DDE8",
+        "length": 73,
+        "text": "es003f2vON5m4NUTANE dPdSdTd2es003fRvONes003E6NAEQU0yoREQU yoeeyovER.anqvEEAvxNE PE0SvAv~NvEQUGIv"
+      },
+      {
+        "addr": "$9E22",
+        "rom_offset": "0x05DE32",
+        "length": 303,
+        "text": "OPN4OREv\"GITC25m4NUleE69NActNyoN'\nyo\nctNyoO'O63NU7EQU2yoOEQUCSyoN4 9 j N  5 CK0CS2OPNTTTRyoNOPOTTSyoOvTCESQU eEkAStMasE5GEAkAStMasE55GEAkAStM2CSRE2NUerNE dvquNS0034yo51RNUEMterNet.ANhaftLNhaIT5604EQU 864EQU 25 5 3603347117yycoucwbv-CH vsa2~~v-CH QUEQU yoRvRU5OPjOPjEfITPArQU4vb6yycoucwITDv1TCOPj\"anvE7ITCKACRvstQU as0SvEEAvxNEvATCRv2AYQURRE45 is0S"
+      },
+      {
+        "addr": "$9F54",
+        "rom_offset": "0x05DF64",
+        "length": 78,
+        "text": "EQUER3QU0EQUSAu NE S 15555mnNUPAEQU7yo0QUNE ct01EV01IThct 1n' GI 1es 1n' S 1CSCSCSCS5555RECSNUELOP f2vEQUGIv"
+      },
+      {
+        "addr": "$9FA3",
+        "rom_offset": "0x05DFB3",
+        "length": 221,
+        "text": "305QUNE EQUAGI 1es01GI01CSCSCSCS5555mnMEOPkeGE99?CSNAEQU2:esYCAGI 1EQUbGI01EQUnGI21~GI11QUCSNE EQU1vACSCSCSCS5m4NUCKWqEDvTIQUQU5EQUaGITA3700u0e15OP0IT8EQU GICK340yo0CSRE5NUMBNE IT1NEQU EQUAS 1ctCK3S01EQUxS11ct\"NES215555CSRE5NUL~\".64vRU5OPjE0YCy m5v-CH ESvBQUOPKALAMLNE vQUNE0vQUNE1vQUv"
+      },
+      {
+        "addr": "$A083",
+        "rom_offset": "0x05E093",
+        "length": 230,
+        "text": "Wv5QUanENOPSfQOPKIT2vTANEy mvRU5OPj(2E0geOP2ITgYQUQRE2anavesWRRKCSuQ yo0SOP2*0yo2fYQU3SFOPH63NUt67NUnOPI67NUbOPJ67NU7EQU64yoSdACIACJ3ACIACHEQU4yoS,NEQU eKITptNeNf)ptHy mIT7eH62NU1ptHeHITkDo mIT187ASes\"W2vWMN(WEQU64kKMKu A:e7ptcecEuMcvES e0S~NACSRE2NUME vnhb75  fn v L y mRE0ITcRE1IThDo"
+      },
+      {
+        "addr": "$A16A",
+        "rom_offset": "0x05E17A",
+        "length": 8,
+        "text": "3esITTC64WDo"
+      },
+      {
+        "addr": "$A173",
+        "rom_offset": "0x05E183",
+        "length": 8,
+        "text": "3es00TC64WDo"
+      },
+      {
+        "addr": "$A17C",
+        "rom_offset": "0x05E18C",
+        "length": 75,
+        "text": "3es3OPITB61IT7vEQU5\"anrNUstvEQU5E2M\"feK8.MKEQUANU1EQUnPAcecIT3EQU.CKEQUwEQUvnPAcy mURE0ITcRE1IThDo"
+      },
+      {
+        "addr": "$A1C8",
+        "rom_offset": "0x05E1D8",
+        "length": 8,
+        "text": "3esERTCENWDo"
+      },
+      {
+        "addr": "$A1D1",
+        "rom_offset": "0x05E1E1",
+        "length": 8,
+        "text": "3esPATCENWDo"
+      },
+      {
+        "addr": "$A1DD",
+        "rom_offset": "0x05E1ED",
+        "length": 112,
+        "text": "TCITb61ITcvEQU5E'MNEQUfMNvEQU5MNvEQU5E'MN313OP4nYQUQRE2anhRRKvesWCSuQEQUXyoEQU0yoTnEQU NE4S9 SK S003kefCKyoIyoJyoQyoTEQU0yoHyo2EQU4yoSOP!EeTC"
+      },
+      {
+        "addr": "$A24E",
+        "rom_offset": "0x05E25E",
+        "length": 324,
+        "text": "3y m3EQU95EQUasyoEQU0yod1esK LesH ITyo0YQU1vkESRRcecEu6bIT-6jITVecEuKEQU McRREeEAMERR9e962NU3EQU M9eKITieHeEQU2MKd vES e0SSeQU30asEQU IT1EQU1yo e999' 99UESTC1NAEQUGGI 1GI31es,OPGI21es!OPGI61vTCESesE n?2Ao ASt:ASesOPGI11GI51~9999' ASGI015GEGI41isQUA:ctUESNAEQUbyo 1ct 16ESNU4EQUYCGI 1CSCSCSCS3 ME~NA.\"NEvTCESEQU yo vESEQUfAC vESAC EQU yo0YQU eEkAStlequESvlOPAC0YQU asE5GEAkAStleSeESvlOPAC0YQU asE55GEAkAStletESlOPA:GE:ou"
+      },
+      {
+        "addr": "$A393",
+        "rom_offset": "0x05E3A3",
+        "length": 18,
+        "text": "3legOPQU es8OPM5CSRE3NUPAy"
+      },
+      {
+        "addr": "$A5EE",
+        "rom_offset": "0x05E5FE",
+        "length": 8,
+        "text": "y1v5eshER6"
+      },
+      {
+        "addr": "$A5F7",
+        "rom_offset": "0x05E607",
+        "length": 19,
+        "text": "ITp:5eshERTC5v~TC5v5eshER6"
+      },
+      {
+        "addr": "$A60B",
+        "rom_offset": "0x05E61B",
+        "length": 242,
+        "text": "ITLTC6v4YQUy1vEQUyTC5vEQUmTC5vNE esLERTC6v5mBNUPA9ASes*YQUyo es\"YQUyo0NE t ITeyo15t 5TC6v3100ITNS   00000000000000000  12399abbcQUYQUONYQUSYQUTCYQUwYQUt/YQUgeYQUFaYQUhaYQU.AYQUFIYQUPEYQU00YQUEEYQUvON mON0th5TI0is0ON 2le0unyo0.2le 2ct0dn 0ke2ct 2t0dn 0ke2t 0ME2TC0he0Do 0ME2m0es0Do 0ME2sa0ge0Do 0AS3EQU0NA 0y3ou0w 2TI0dn 0ke2TI 2TI0linA0QU2TI vTI D"
+      },
+      {
+        "addr": "$A6FE",
+        "rom_offset": "0x05E70E",
+        "length": 34,
+        "text": "7ef  75444444444468 :vNUEQUCHANGEMESSAGESPEED"
+      },
+      {
+        "addr": "$A721",
+        "rom_offset": "0x05E731",
+        "length": 14,
+        "text": "~vBEGINANEWQUESTCOPYQUER"
+      },
+      {
+        "addr": "$A75D",
+        "rom_offset": "0x05E76D",
+        "length": 14,
+        "text": "!xqueeeeeeesONerLEV"
+      },
+      {
+        "addr": "$A76C",
+        "rom_offset": "0x05E77C",
+        "length": 18,
+        "text": "ux1234th      isONEL.A"
+      },
+      {
+        "addr": "$A77F",
+        "rom_offset": "0x05E78F",
+        "length": 15,
+        "text": "NAxt/asasasasasasSeONDVENTURE"
+      },
+      {
+        "addr": "$A7A1",
+        "rom_offset": "0x05E7B1",
+        "length": 8,
+        "text": "LwstststTI"
+      },
+      {
+        "addr": "$A7AA",
+        "rom_offset": "0x05E7BA",
+        "length": 8,
+        "text": "GEwFaFaFaTIow"
+      },
+      {
+        "addr": "$A7B3",
+        "rom_offset": "0x05E7C3",
+        "length": 8,
+        "text": "w888ptSl"
+      },
+      {
+        "addr": "$A7C5",
+        "rom_offset": "0x05E7D5",
+        "length": 8,
+        "text": "Lv666haSl"
+      },
+      {
+        "addr": "$A7CE",
+        "rom_offset": "0x05E7DE",
+        "length": 8,
+        "text": "GEv555CSl"
+      },
+      {
+        "addr": "$A7F9",
+        "rom_offset": "0x05E809",
+        "length": 164,
+        "text": "TAEEITTAEEySASyo yPEASyo0y1vEQUnTC5vEQUTC5vQU4NE t TC6v50AC07TAt TC6v5mNURRyEDASyo yBEASyo0y1vCSON5vNE ES5vt TC6v5m.NURREQU.n' yo NU1AC0RE6NUy1vNE ES5vES5vt TC6v5mRENURRQUnct64ASGIEE47YCL4fCh4CA4CS4C9kShHLhNLlAGIASNSy"
+      },
+      {
+        "addr": "$A8D7",
+        "rom_offset": "0x05E8E7",
+        "length": 14,
+        "text": "IT64)*SES   mvffke"
+      },
+      {
+        "addr": "$A8F6",
+        "rom_offset": "0x05E906",
+        "length": 15,
+        "text": "REPEOG000000IT ENENbttOer"
+      },
+      {
+        "addr": "$A906",
+        "rom_offset": "0x05E916",
+        "length": 15,
+        "text": "0ow6DVQUF euULLL."
+      },
+      {
+        "addr": "$A916",
+        "rom_offset": "0x05E926",
+        "length": 15,
+        "text": "CSptEQUTCouou6 FaFaFasteu"
+      },
+      {
+        "addr": "$A926",
+        "rom_offset": "0x05E936",
+        "length": 15,
+        "text": "0aGMEMEFm YCgegeee6"
+      },
+      {
+        "addr": "$A936",
+        "rom_offset": "0x05E946",
+        "length": 15,
+        "text": "-t/00IT REEMWqqqS"
+      },
+      {
+        "addr": "$A946",
+        "rom_offset": "0x05E956",
+        "length": 15,
+        "text": "tstxCHSlSlNE EM00GIcbbN"
+      },
+      {
+        "addr": "$A956",
+        "rom_offset": "0x05E966",
+        "length": 15,
+        "text": "bNU:CSER* NNLL."
+      },
+      {
+        "addr": "$A966",
+        "rom_offset": "0x05E976",
+        "length": 15,
+        "text": "0NSwEQUEQUw6   2377g"
+      },
+      {
+        "addr": "$A977",
+        "rom_offset": "0x05E987",
+        "length": 14,
+        "text": "ITFITI3  ITbttbm"
+      },
+      {
+        "addr": "$A987",
+        "rom_offset": "0x05E997",
+        "length": 220,
+        "text": "e2sty377nYYn ITFITI4NEasGE3~r3RUttFa m2ge2icy62Z RRAT\"\",tmer'TA NAx,77.LananesA *CKKCfevuestFaFaESt L7EQUNA(ME,es6eegegeYC RRVt/  YCge222064 5saV000000NbbbBE0IT *ERERaRRd.LLLLLEE *Cwwww22lTvS..O 52li64.:Lkevffnlelen uTI4ySq4000S01Mj0000geQUPE!xSe"
+      },
+      {
+        "addr": "$AA76",
+        "rom_offset": "0x05EA86",
+        "length": 57,
+        "text": "heheuFIACasFaGEjasFaGEjspsaQUspsaQU?*:?*:wOABwOABas1YC00S00EEgeIT0000"
+      },
+      {
+        "addr": "$AAB7",
+        "rom_offset": "0x05EAC7",
+        "length": 13,
+        "text": "SPE2LLuhe'"
+      },
+      {
+        "addr": "$AAED",
+        "rom_offset": "0x05EAFD",
+        "length": 8,
+        "text": "'ueligeLIT0"
+      },
+      {
+        "addr": "$AAF7",
+        "rom_offset": "0x05EB07",
+        "length": 14,
+        "text": "heTULLYC0SEE0ITLgelieu"
+      },
+      {
+        "addr": "$AB07",
+        "rom_offset": "0x05EB17",
+        "length": 8,
+        "text": "0SYCLLTU"
+      },
+      {
+        "addr": "$AB2D",
+        "rom_offset": "0x05EB3D",
+        "length": 8,
+        "text": "EEEEEEEEEEEEEEEE"
+      },
+      {
+        "addr": "$AC46",
+        "rom_offset": "0x05EC56",
+        "length": 15,
+        "text": "((f3rLLL"
+      },
+      {
+        "addr": "$AD69",
+        "rom_offset": "0x05ED79",
+        "length": 28,
+        "text": "heOGOGOGOGgeANANEQUMEMEMELELAATC    000ee"
+      },
+      {
+        "addr": "$AD89",
+        "rom_offset": "0x05ED99",
+        "length": 36,
+        "text": "TITITIliliERER/KKK6isSASASEQUNUNUNUGEru TCONTITIli2u"
+      },
+      {
+        "addr": "$AE09",
+        "rom_offset": "0x05EE19",
+        "length": 105,
+        "text": "00  t  2666620ITTAAC.C62WYTUouREREmer-\nZNEREm   vvM02   wwC --FIREITREIT.OGOGYCYC00CSCK15/(AC  6eLLTIFI.LL0RUnITRE EE0000CK0RE02266"
+      },
+      {
+        "addr": "$AE84",
+        "rom_offset": "0x05EE94",
+        "length": 135,
+        "text": "..vvu,-'uu''.REvhgvw.REEE00EEEEt63:ke3d.p6      22\n0\nLL4RUEE LnrrRENTIFIFI6.w02('u6 t/2mRE0t0ITm ,0?ee6e' fa6dd*0gWueu64643CSITququ0Sm1PEEE0EE"
+      },
+      {
+        "addr": "$AF0D",
+        "rom_offset": "0x05EF1D",
+        "length": 24,
+        "text": "cd6af   ueuWg0 LTITCS36464"
+      },
+      {
+        "addr": "$AF6D",
+        "rom_offset": "0x05EF7D",
+        "length": 80,
+        "text": "uuunnn  uuunnn  EEEEEErrT\"REEEEEEErrT\"RE 0022220 0022220mmmmmmm64mmmmmmm64"
+      },
+      {
+        "addr": "$AFD5",
+        "rom_offset": "0x05EFE5",
+        "length": 8,
+        "text": "nTnnnX"
+      },
+      {
+        "addr": "$B065",
+        "rom_offset": "0x05F075",
+        "length": 186,
+        "text": "733 3   rrrrrrrrrrrrrrrr        wtMtWt:tteetAtSAtNtout4t8tSltpttREtGHtERt0tatoktoAtoKtoXto)totototo'tototo64todtoketoEStoNUtoSAtoEDtoAtoYQUtoNAtoastotto2to6tosttotoITtoYCto0eraerqerxerTer:er,ererlierPEerNerOPerwerererTIerERergaszasPasasasas.asNUas"
+      },
+      {
+        "addr": "$B131",
+        "rom_offset": "0x05F141",
+        "length": 9,
+        "text": "c5sp8DVsp8!ee"
+      },
+      {
+        "addr": "$B13B",
+        "rom_offset": "0x05F14B",
+        "length": 12,
+        "text": "9GEeecbyo8ENyo2u"
+      },
+      {
+        "addr": "$B148",
+        "rom_offset": "0x05F158",
+        "length": 12,
+        "text": "cEDu8eli2Pkelike"
+      },
+      {
+        "addr": "$B155",
+        "rom_offset": "0x05F165",
+        "length": 45,
+        "text": "aTIkeb(AcMEA2QU2ESQU7eQU83ES/ES2ptTC2CKTC2eON2HON2ON2CHON76ON"
+      },
+      {
+        "addr": "$B18A",
+        "rom_offset": "0x05F19A",
+        "length": 12,
+        "text": "5NU8-EQU2geEQU2haEQU"
+      },
+      {
+        "addr": "$B19E",
+        "rom_offset": "0x05F1AE",
+        "length": 15,
+        "text": "9iAN(6AN8CHGE5M!M"
+      },
+      {
+        "addr": "$B1AE",
+        "rom_offset": "0x05F1BE",
+        "length": 24,
+        "text": "9MaVES8DSA9ASSA8GE5asGE9LGE2MS"
+      },
+      {
+        "addr": "$B1D6",
+        "rom_offset": "0x05F1E6",
+        "length": 9,
+        "text": "9/BE?FGI?uGI"
+      },
+      {
+        "addr": "$B1EB",
+        "rom_offset": "0x05F1FB",
+        "length": 12,
+        "text": "4KNE2iW5RW2W"
+      },
+      {
+        "addr": "$B1F8",
+        "rom_offset": "0x05F208",
+        "length": 18,
+        "text": "0W28QU2wESK:ESJMBESJVTC"
+      },
+      {
+        "addr": "$B20B",
+        "rom_offset": "0x05F21B",
+        "length": 9,
+        "text": "dTC2:OP2SAOP"
+      },
+      {
+        "addr": "$B215",
+        "rom_offset": "0x05F225",
+        "length": 15,
+        "text": "aSeOP2ACYQUaVERcER9erER"
+      },
+      {
+        "addr": "$B225",
+        "rom_offset": "0x05F235",
+        "length": 9,
+        "text": "yoER2ASkeBEAS"
+      },
+      {
+        "addr": "$B22F",
+        "rom_offset": "0x05F23F",
+        "length": 12,
+        "text": "5EQU2MNAHOGNAHAME"
+      },
+      {
+        "addr": "$B23C",
+        "rom_offset": "0x05F24C",
+        "length": 9,
+        "text": "5GIDo2esy52ou"
+      },
+      {
+        "addr": "$B254",
+        "rom_offset": "0x05F264",
+        "length": 9,
+        "text": "diandELan2GEt"
+      },
+      {
+        "addr": "$B265",
+        "rom_offset": "0x05F275",
+        "length": 15,
+        "text": "ANAer9TCas84e8De0(e"
+      },
+      {
+        "addr": "$B2AA",
+        "rom_offset": "0x05F2BA",
+        "length": 9,
+        "text": ":/esMEes*TTes"
+      },
+      {
+        "addr": "$B2B4",
+        "rom_offset": "0x05F2C4",
+        "length": 9,
+        "text": ")st/Pt/t/"
+      },
+      {
+        "addr": "$B2D1",
+        "rom_offset": "0x05F2E1",
+        "length": 30,
+        "text": "Alehele64ctWcttYCt~heSeheZ64(LLsp"
+      },
+      {
+        "addr": "$B2F7",
+        "rom_offset": "0x05F307",
+        "length": 9,
+        "text": "esdEMdlu"
+      },
+      {
+        "addr": "$B301",
+        "rom_offset": "0x05F311",
+        "length": 9,
+        "text": "5uITuCke"
+      },
+      {
+        "addr": "$B30B",
+        "rom_offset": "0x05F31B",
+        "length": 15,
+        "text": "ptbQUQU5ESUES?isES"
+      },
+      {
+        "addr": "$B322",
+        "rom_offset": "0x05F332",
+        "length": 21,
+        "text": "?ON?MEON?OTI?TI?heTI?bNU?FNU"
+      },
+      {
+        "addr": "$B338",
+        "rom_offset": "0x05F348",
+        "length": 15,
+        "text": "!NUOEQUgAN?ERANbGE"
+      },
+      {
+        "addr": "$B348",
+        "rom_offset": "0x05F358",
+        "length": 30,
+        "text": "4SATCSAGE0SGEkeS(S(MES(aPEPEb64PE"
+      },
+      {
+        "addr": "$B367",
+        "rom_offset": "0x05F377",
+        "length": 21,
+        "text": "!NEPE!SlPE!IED!uED!anED!BE!!BE"
+      },
+      {
+        "addr": "$B37D",
+        "rom_offset": "0x05F38D",
+        "length": 9,
+        "text": "GIBE1GIGI"
+      },
+      {
+        "addr": "$B387",
+        "rom_offset": "0x05F397",
+        "length": 18,
+        "text": "MEGILGINmNMABNE"
+      },
+      {
+        "addr": "$B3B3",
+        "rom_offset": "0x05F3C3",
+        "length": 51,
+        "text": "v6OPMBYQUBEER3ERRRERjASYASASTCAShaAS3EQU\"EQUEQUYQUEQUFaEQUATEQUERNA"
+      },
+      {
+        "addr": "$B3EB",
+        "rom_offset": "0x05F3FB",
+        "length": 18,
+        "text": "CLME'IDo'SDo'MBDo,y')y"
+      },
+      {
+        "addr": "$B3FE",
+        "rom_offset": "0x05F40E",
+        "length": 18,
+        "text": "yCHyyouySAwyLanhtozCer"
+      },
+      {
+        "addr": "$B411",
+        "rom_offset": "0x05F421",
+        "length": 18,
+        "text": "G9as(Uas(SAas(YCas.e.e"
+      },
+      {
+        "addr": "$B424",
+        "rom_offset": "0x05F434",
+        "length": 15,
+        "text": "Dgth~2th~toth~qis~dis"
+      },
+      {
+        "addr": "$B434",
+        "rom_offset": "0x05F444",
+        "length": 33,
+        "text": "KptisJGEquJDVqu23es2res2esd!esKERt/JVSeJASeKouSe"
+      },
+      {
+        "addr": "$B456",
+        "rom_offset": "0x05F466",
+        "length": 12,
+        "text": "GGHSeG0SSeGqlele"
+      },
+      {
+        "addr": "$B463",
+        "rom_offset": "0x05F473",
+        "length": 24,
+        "text": "MOPleL)tLfheL!heLWheL64Les64L2"
+      },
+      {
+        "addr": "$B47C",
+        "rom_offset": "0x05F48C",
+        "length": 12,
+        "text": "NAS24iee8ee8esee"
+      },
+      {
+        "addr": "$B490",
+        "rom_offset": "0x05F4A0",
+        "length": 30,
+        "text": "qASyonuli:ke(.w.Ar)QU.AQU*ES"
+      },
+      {
+        "addr": "$B4C0",
+        "rom_offset": "0x05F4D0",
+        "length": 447,
+        "text": "IT3LPERERE bPEmLTAwasbipn8ipngnpn5kpRUb~nqES EQU64ljLTAwasbipn7ipnRUan EQU64ES EQU64pX00RRan defgehib9876iES EQU64pXasLPEanIT9GEES EQU64pnL00PAPENEGEGE t64sq002CKTU ?:GEny64vuTU t64sq000GEES er64qpsu~nGEGE t64sq00YCPEanLTAquasnquzpsxBquxuruxuPENE*jns*nsv*npw*psyRU*PEmEQU t64ulquzME t64uzNA t64uqTU an64spsu~nL~ES e64.nsqGEES EQU64pnLeIT5GEGE CEC*CECspRE Mn64bOnLJTCxES JLRE REES OLITbXIT5spbOnLLbOGElES O:\"5NOQspMn64bOnLJTCxES JLREES OLITbXIT5spbOnLLbOGElES OnECeLPEm)CH7)u35T-GEht/hyus)5T)CH7)u3GEhGFBzyus"
+      },
+      {
+        "addr": "$B680",
+        "rom_offset": "0x05F690",
+        "length": 899,
+        "text": "~)RE MnGE:PENELXth~LXPE64d p00n00d p00n00su00b0S~3u00b00np00b0Ssu00n0Snp00b0Soq00z0Slo00X0Soq00z0SthPEmLGEGE YCztwumknnnzDBwwumk0PEmLXGE1d p00n00isLXPE64GE1d i00n00ki00n0S'3n00n00ki00b0Spn00n0Ski00b0Slj00z0Shj00X0Slj00z0SisGEnkmnp,L,npkmnr)anJwr,np)3u00n00isGEGEliES3ZUXSUNSUXuke5USdanDuke5USd5TGEnQUke5XUspanDke5LIanD2Mj.GEjLNUbPUGEk642spGEj2yC64u3SL5 M:64ke5MJ5ES7Mke5JHNUbQTXTQTCyESake5HEanFES7HJMke7JHM 642nM:GEhu3MOM2'ee 2'ee nu3MOQOMesOee k2GEbliGEjliNUbXXis~LXPEququququququququququ0S0quququ0S hloj00t000S0quququ0S quLPE0SCKisGE0qud npu005YC\npsnu00500\nEQULzPEmquququuuuuuuuuuGEyuo\"\"quququG\"\"H\"\"I\"\"K\"\"L\"\"\"quES N\"L\"KIGEPE64swzDzwsPEm\nNL\"K\"IGEDr\"uByur\nLzPEmesesesu\"\"s\"\"r\"py\"\"\"\"\"\"esesess\"\"p\"\"q\"\"s\"\"D\"\"\"quES K\"I\"GEDBPE64pswzwspPEm\nKI\"G\"EDBzn\"ryurm\nesesesi**y**y*y*****uiesesesyuixthzsgAuqn***esES5uD*nuz*pzBEIEBz\nipy*ipy*nuz*buzu\nITlnnMnSIT0u\"ITlnnMnSu5XIT0.MLITl2bPNLu5X.ES5sp5UuES5an 25SdES55P2ES5an GEbKINKINIKLN64nbNLLnK.esNS"
+      },
+      {
+        "addr": "$BA04",
+        "rom_offset": "0x05FA14",
+        "length": 84,
+        "text": "0SCKL7PEanES es2yye t/2zze le2BBe t/2zz004REe es2yyer is2Ewto th2vv000ME Se2AA000PE64L.as urtpMErMEnMEpt/PENUNS"
+      },
+      {
+        "addr": "$BA59",
+        "rom_offset": "0x05FA69",
+        "length": 508,
+        "text": "L7GEES2ppp*rrr*ttt*rrr004TT*ppp00300*rrr0000L.PE64an rnpmMEnMEkMEmt/~PELke dimpspspmkgdgknpswspsps8fknrwrnwrnkfimprururpmidgknpsfimprugknsnkna7fjmpryrpmjmPKHyrprpmjf3PEdpswswBwswsp6ipmpsupmpmibnrururnrnmi8kororwrwrordpswswspspkg6ipmpsumuspi3fjmrvyDHDHDHDyDyDyvrmjft/PEmL.~nB::)by*n)bz,nz*:bInbB*fwz::)bz)n?7wt(\"IT0PEanLGE8~7uzwzEzwzws\"psuswyususp\"ruyuyururpm\"orwrwAwAwrw\"swzwzwswsnk\"psuswyuywsm\"jmrvyDHKHKHKHDHDHDyvrm60SeITfnUsp:64bSnbPnWd:ubX.nubUspfQS:bPnNM64GEmQli5 ubX.nubUWS:M64GEmQli5 ubX.nlibZQUITb\"SePEITLpNS"
+      },
+      {
+        "addr": "$BC56",
+        "rom_offset": "0x05FC66",
+        "length": 615,
+        "text": "u dfgES3bou 5ME3bgES u3b2bES u2anzu fhiES3dan 5y3biES3u iES3danzES 5jES3gu cb9ES OP3ES 5kES3gYQU ER3AS EQU3u dfgES3bou u kikgi2gu TC3bES36anzPENUleRPEmu3hbfGEjPENUTCtPEmu aES38an nfkdu3kikigfdlePE64Lu2DGG000EEII0000DDGGEEGG0000DDGGFFIIFFIIEEGGBBEEzzBB0000BBEE0000GE5AAzuz*ES t/5Se le5u2DGG000EEII0000DDGGEEBBEEGGDDGGPEm2 LKLES5LGEb*u NMNES5NGEb*u GFGES5u .ES5ge7.u2ES5G\"u2A\"ES5-u2-ES7-N :nctYCLLPP0000IILL0000LLPPNNQQNNQQLLPPNNRRLLRRKKNNKKKKIILLFFFFGGNN0000HHGHDIGIDELLPP0000IILL0000LLPPNNKKNNSSLLPPTUTUTUW*UWUWUWY*LKLKLKLLLKKGGGFF0th ctGE ITh64ee R64Oee2W.,.WT0SbI2L?3wzGE ESL5*ke2yBzyB*GE .ke2JKLzan GE L5YCwvxwvxwEGHLzIGE .L5IT7ES ge5GzGE *ES5wNS"
+      },
+      {
+        "addr": "$BEBE",
+        "rom_offset": "0x05FECE",
+        "length": 19,
+        "text": "-lePGE L5IT7*GE5z)GE *YCNS"
+      },
+      {
+        "addr": "$BED2",
+        "rom_offset": "0x05FEE2",
+        "length": 18,
+        "text": "yGE YCIDF*0GEbe6yBGGE"
+      }
+    ]
+  },
+  "bank_24": {
+    "pointer_tables": [
+      {
+        "address": "$8000",
+        "count": 6,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$9BE6",
+            "text": "yON461IT4ykef0v00NEyk461ITqOP,f2AvoBEvFaBEvtoBEvt/NEvRRBEan2dGIyk4612~~y63ITkQU 611CSCSct,QUyo ct-QUyo0BEOP'ITm60eOP?6bNU3EQUP1EQUQkeBEEQUR00y(QUyo y)QUyo0OP-\"\"\"\"yo5OP?EIT45ASt ouk4RE0IT4E'keBEOP69FFE2yo6yo EQU yo0QU EQUfvC5yUQUDoVQUvs5NE t yoa\"\"\"\"\"NAct.ESyodou.-RE7NU2~~vMQUan4ctQU2cteeQUCSBEy-:62an9NActYESPE-:TUBEEQUfQU ueQUd"
+          },
+          {
+            "index": 1,
+            "pointer": "$A1AD",
+            "text": ":EQU7yo3EQU yo4QU3~vC5OP3n/'QUyo3OP4/.QUyo4NE t3S(:5m3RRt3:EeS(:5m7TA~9FFE2TC!:~E.c!:8mTC!:y mEvIT7y!:8.TC!:vyW~~nOPaE29yo3YQU37NE"
+          },
+          {
+            "index": 2,
+            "pointer": "$995A",
+            "text": "QU(EQU"
+          },
+          {
+            "index": 3,
+            "pointer": "$9982",
+            "text": "TCESesCKEeNAm3an8vENSQU7u2vctSyo v00SOP9yo19'1NANE es(GIES/es-GIsa/CS5m5NUPEctNSSASes\"NUcesEm9FFASesPASes2E2ASes5 ,NA GTMEvan1?DV drFT)owChaMETC(OPA:OPQU:OPES:OPu:OPli:y(vwPE~yoli~you~yoES~yoQU~yoA:QU4EQU"
+          },
+          {
+            "index": 4,
+            "pointer": "$9991",
+            "text": "QU7u2vctSyo v00SOP9yo19'1NANE es(GIES/es-GIsa/CS5m5NUPEctNSSASes\"NUcesEm9FFASesPASes2E2ASes5 ,NA GTMEvan1?DV drFT)owChaMETC(OPA:OPQU:OPES:OPu:OPli:y(vwPE~yoli~you~yoES~yoQU~yoA:QU4EQU"
+          },
+          {
+            "index": 5,
+            "pointer": "$B226",
+            "text": "QUbA:y54*0TC54QU2vb6~NA7RU"
+          }
+        ]
+      },
+      {
+        "address": "$800E",
+        "count": 7,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$B5C2",
+            "text": "1 3h 5i 1d 2e 3b 5'35u 73 53d7409k 2m 7g 59 75 2l 9w 5f 4?55856q 8707a 9c05p 96 7.44o 4o04x 9"
+          },
+          {
+            "index": 1,
+            "pointer": "$B798",
+            "text": "NEESQU IT3NEzQU1d vw2EQUfTC5vEQU TC5vctFIisyolctGHisyomvLisvLisNE7QUlvke5TC6vkeYCvLis3 RUTI2QU7EQU TC6v700YquGIleEQUNUTC 2EQU.TC02NE ES12EQU3yolQU vrquvrquvrquvrquPEa4vI3y12n?.TC123lTUesQquGI22CS5AE6TAEQU GI22CSAEePA        X.....X T.TTTT 33b\"m33r33 brHFa EEmmEE55EE mmEE33 5nLLL 3333 3355  .bFaFa"
+          },
+          {
+            "index": 2,
+            "pointer": "$B7E7",
+            "text": "EQUNUTC 2EQU.TC02NE ES12EQU3yolQU vrquvrquvrquvrquPEa4vI3y12n?.TC123lTUesQquGI22CS5AE6TAEQU GI22CSAEePA        X.....X T.TTTT 33b\"m33r33 brHFa EEmmEE55EE mmEE33 5nLLL 3333 3355  .bFaFa ..  3mm3 555Z..Z  33EEm rLLLL  X..Z5X mm.AAC333 TT .TT dd d .)... TT"
+          },
+          {
+            "index": 3,
+            "pointer": "$8046",
+            "text": "0 2 7841N/NN/N    ('0 7 7741owNN/NNN    '1 4 9953N/N//N    ?'0 2 8843N/N//N    ?'2 e D t0:5364 ee'1 2 9844NNNNN/    '2 4 9957toNNNN/    c'2 1 a955NNNNNN   le -'2 8 aa54)NN/NN/    '2 6 da16toNNNN:  3XmAN'5 7 ba87NNNRR/  v \"'3 4 cc79NNNN:"
+          },
+          {
+            "index": 4,
+            "pointer": "$AE4F",
+            "text": ":vBtov?2v"
+          },
+          {
+            "index": 5,
+            "pointer": "$B79E",
+            "text": "NEzQU1d vw2EQUfTC5vEQU TC5vctFIisyolctGHisyomvLisvLisNE7QUlvke5TC6vkeYCvLis3 RUTI2QU7EQU TC6v700YquGIleEQUNUTC 2EQU.TC02NE ES12EQU3yolQU vrquvrquvrquvrquPEa4vI3y12n?.TC123lTUesQquGI22CS5AE6TAEQU GI22CSAEePA        X.....X T.TTTT 33b\"m33r33 brHFa EEmmEE55EE mmEE33 5nLLL 3333 3355  .bFaFa .."
+          },
+          {
+            "index": 6,
+            "pointer": "$BC95",
+            "text": "tO,ACFa.5tbbnnL0tO25rLEEtO2d55Fa.6epR)X'L55Fa.6nL.3Fa.')bnnLLdoot)1Fa.tO.ZbnREnTHH)LLOOZOOOsOOtROOOORMPXPLMMPXPLL.sO,OtYCYCXnnnnnnXe5555..XTA~.).YC.LLLLMM):)LL4)OGXRRrOOOZLL.T)333EN:WOORXRRYXt?"
+          }
+        ]
+      },
+      {
+        "address": "$801E",
+        "count": 6,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$9AD6",
+            "text": "YQU2vFaEDNEctuE2NAct5vGEEDNE3tuyo1NEetuE2yo2QUuEQU GI7f00EQU6yo2YQU2vFaEDNE5tufF9fCNE6tu\"NUeNE8tu9FFE2n?owOEDNEctuE2NAct56"
+          },
+          {
+            "index": 1,
+            "pointer": "$9AC1",
+            "text": "ct5vGEEDNE4tuyobNEftuE2yocYQU2vFaEDNEctuE2NAct5vGEEDNE3tuyo1NEetuE2yo2QUuEQU GI7f00EQU6yo2YQU2vFaEDNE5tufF9fCNE6tu\"NUeNE8tu9FFE2n?owOEDNEctuE2NAct56"
+          },
+          {
+            "index": 2,
+            "pointer": "$99F9",
+            "text": "TC(OPA:OPQU:OPES:OPu:OPli:y(vwPE~yoli~you~yoES~yoQU~yoA:QU4EQU"
+          },
+          {
+            "index": 3,
+            "pointer": "$9AF7",
+            "text": "QUuEQU GI7f00EQU6yo2YQU2vFaEDNE5tufF9fCNE6tu\"NUeNE8tu9FFE2n?owOEDNEctuE2NAct56"
+          },
+          {
+            "index": 4,
+            "pointer": "$9BB3",
+            "text": "yoA:OPQUvESED~NAtE2TCAAStA9you999TTTun/GHEDyouyTTED? yoliyON461IT4ykef0v00NEyk461ITqOP,f2AvoBEvFaBEvtoBEvt/NEvRRBEan2dGIyk4612~~y63ITkQU 611CSCSct,QUyo ct-QUyo0BEOP'ITm60eOP?6bNU3EQUP1EQUQkeBEEQUR00y(QUyo y)QUyo0OP-\"\"\"\"yo5OP?EIT45ASt ouk4RE0IT4E'keBEOP69FFE2yo6yo EQU yo0QU EQUfvC5yUQUDoVQUvs5NE t yoa\"\"\"\"\"NAct.ESyodou"
+          },
+          {
+            "index": 5,
+            "pointer": "$A813",
+            "text": "EQU TCsp: 64 .v!yv.ASvCASNUgvERMENUbvAEQUvTCMEv5NAqAS yojSlouRE3NUhQU yhaDVEQUyNU2CSPActESy2ctAyyoevquMEyoJ6jNUbMEjyoJQU  EDliANASvthASougASDohASv5ASNE6tEm3NU4SQ:an2S(:kefLLvthASYQU TC0v5ASNE6QUEEQU7vMBgem3NU4SQ:an2S(:kefMBEQU yoFOPJ9BF9BF9BFyoEAn'EyoEGE'FyoFv5EQUvNUyy EQUTCe6y0EQUTCth6 6*(L6E2TC:Tysp:L1n AerASU:5au'EQU yoLTCLesU:QU3DV0"
+          }
+        ]
+      },
+      {
+        "address": "$802C",
+        "count": 8,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$B40D",
+            "text": "1 018dh 18a3yoe 18a3yob a3o4A3 3o49ESl 01.401a34uk 018QUg 3co9TIi e5f6O65 018QUf a3co4A?53o49um 5y6FO68 6GEq 6lnMa 6nkptc 495yESi201.x mr1 BCYZ)4h CIDZ'4i zABY)owb BCIYZ43 CIDEZhel ABCIY3k AGL)owg LKDYZ75 BCYZ)440KID'/7f KID'/7?5ID'\"st8 FOPN'5q FPN:670LHOMsta PN'?:6p"
+          },
+          {
+            "index": 1,
+            "pointer": "$B525",
+            "text": "1 hah had 8aYQUe C4b L3 43dee38OToul ptn u40ptm L\"dg L30x.25 ptf L?5L8 ENq EN6 Lc Lo ENp ENpt"
+          },
+          {
+            "index": 2,
+            "pointer": "$B48F",
+            "text": "1 BCYZ)4h CIDZ'4i zABY)owb BCIYZ43 CIDEZhel ABCIY3k AGL)owg LKDYZ75 BCYZ)440KID'/7f KID'/7?5ID'\"st8 FOPN'5q FPN:670LHOMsta PN'?:6p *?PNquc DEF'5.4.eo FOP'51 hah had 8aYQUe C4b L3 43dee38OToul ptn u40ptm L\"dg L30x.25 ptf L?5"
+          },
+          {
+            "index": 3,
+            "pointer": "$AAE0",
+            "text": "y:E2NActU:Doee:d Dod:d0Doyo:d1QU  f'yee:yo2yd:yo3yyo:yo4y:E2NActY:NActEQUQU2 f'OP2f5AC31AC4OP3yo2OP4yo3OP n'2yo OP0'3yo0NU1AC1yyo:xyd:6CNUaIT1anmyee:6fanfyee:yo\nyd:yoyo:yo"
+          },
+          {
+            "index": 4,
+            "pointer": "$BDBD",
+            "text": "L.PEmGEGE:ke4DD.RE Mb*ke4GFGEf-ke4zBGEjGFB)RE Mb*)ke4wyzyzBBDRE Mb*ke GEb*ke4BDES *7GEb*ke4BDGEfke GIGEfERE MPGEjke4DD00S.GEfke4DD)5.GEfID00PE.GEfke4DD*5X-GEjDz.GEjke4DD*5X:GEjwu~RE uwM:GEnPEGEfmnmkmnPEREctPEmL.GEfprpnprpPEmnprpnnttnnptnprpnnrwwyzywwvvwwvvwwppvwywvwyv00op"
+          },
+          {
+            "index": 5,
+            "pointer": "$BE7D",
+            "text": "PEmL.GEfprpnprpPEmnprpnnttnnptnprpnnrwwyzywwvvwwvvwwppvwywvwyv00oprp00200oprosuwu00200sssrpnmkikmpoprpoprpPEnprpnprptYCwyzywyzywyzywwwwwwwwwyzywwutsuwussrrssrrssyyDFHFDFHD00SlwyAy00200wyAwBDED00200BByywwusrsuywyAywyAy0GEGE:YCytESL5!u wvrnjfMnLz5gmwDKNIBwpkdkrwDINIBwp"
+          },
+          {
+            "index": 6,
+            "pointer": "$BEEE",
+            "text": "YCwyzywyzywyzywwwwwwwwwyzywwutsuwussrrssrrssyyDFHFDFHD00SlwyAy00200wyAwBDED00200BByywwusrsuywyAywyAy0GEGE:YCytESL5!u wvrnjfMnLz5gmwDKNIBwpkdkrwDINIBwpk6gmsyEipwBINspLGEnGE L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE"
+          },
+          {
+            "index": 7,
+            "pointer": "$BF55",
+            "text": "ESL5!u wvrnjfMnLz5gmwDKNIBwpkdkrwDINIBwpk6gmsyEipwBINspLGEnGE L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE"
+          }
+        ]
+      },
+      {
+        "address": "$803C",
+        "count": 5,
+        "strings": [
+          {
+            "index": 0,
+            "pointer": "$BF90",
+            "text": "L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE"
+          },
+          {
+            "index": 1,
+            "pointer": "$BF8C",
+            "text": "GEnGE L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE"
+          },
+          {
+            "index": 2,
+            "pointer": "$B620",
+            "text": "?LNS"
+          },
+          {
+            "index": 3,
+            "pointer": "$B655",
+            "text": "0S0SthGEnMEj007000S4th0S GEnMEj007000S4th0S GEnMEj00300ME500L0S0S2is0S GEnMEj00300th5 bn'5 bmLigi\n5 bp,n~b,npb'n.b'nnbnigi\nESbrDGEdESbpCu3LHDzvrmjES3?u3yDIN\n5 3psvyB:3oruxA\nLu5ou1ME1an6\"ME1ou9\"ME5ou5\"ME5an9\"ME5ou6\"ME1an9\"ME5ou5\"ME an9\"t5an6\"ou1mlME ou1kp\"ME5ou1kp\"ME5ou1kan5EQU1k\"ME5an1ik\"ME an"
+          },
+          {
+            "index": 4,
+            "pointer": "$B65A",
+            "text": "GEnMEj007000S4th0S GEnMEj007000S4th0S GEnMEj00300ME500L0S0S2is0S GEnMEj00300th5 bn'5 bmLigi\n5 bp,n~b,npb'n.b'nnbnigi\nESbrDGEdESbpCu3LHDzvrmjES3?u3yDIN\n5 3psvyB:3oruxA\nLu5ou1ME1an6\"ME1ou9\"ME5ou5\"ME5an9\"ME5ou6\"ME1an9\"ME5ou5\"ME an9\"t5an6\"ou1mlME ou1kp\"ME5ou1kp\"ME5ou1kan5EQU1k\"ME5an1ik\"ME an1ik\"ME"
+          }
+        ]
+      }
+    ],
+    "strings": [
+      {
+        "addr": "$8000",
+        "rom_offset": "0x060010",
+        "length": 513,
+        "text": "ACEDyWSspSEQUSBto  saeGEisTIis)64ouNisMle  ptPEesPE00SYCPEerEDiAS  casAeTIasRENActcttPEtheNUheEShevththth0 2 7841N/NN/N    ('0 7 7741owNN/NNN    '1 4 9953N/N//N    ?'0 2 8843N/N//N    ?'2 e D t0:5364 ee'1 2 9844NNNNN/    '2 4 9957toNNNN/    c'2 1 a955NNNNNN   le -'2 8 aa54)NN/NN/    '2 6 da16toNNNN:  3XmAN'5 7 ba87NNNRR/  v \"'3 4 cc79NNNN:Nd fle !'6 0 kh7cNNNNN  le 2'5 71babf     Nrfqu ED'4 7 f7lhIIINNN3rEE sp'6 6 dccatoNNRNN  EE 'a 61gf9c 64NNNNN3 .GE ee'5 9 iieetoRNRN/ 3NUEEm'ke N5DrrXxtoQQNN37EE..'8 9 fie9LINININ3fleTC'6 b"
+      },
+      {
+        "addr": "$8202",
+        "rom_offset": "0x060212",
+        "length": 1495,
+        "text": "fc7aAAAANNjzRE 4'h 9 gkhftoRNNR/ n.'b 42egegrNrNNN33~ITfd'd 9 rlfhHNNNNNNEEj'6 6 mihjNNNNNNLvjEE 0'd b2loh9YtolNNN/   64 ('6 3 gkfhtoNNN.zle\"'e b2jjgr/quANAN/ '6 9 jlbgtoNNNN  jEE TCmh d1wgnj6toNNNNEEX.C'c j2kpjezBErNNNN64 v d'a d2oolmtoNNNNNf3\"leAh h3uuro\"mmmNNRfleAN'j h url8QNQQNNNEvLle 'f e2spljOGNNN/NN:ITLmM'f 9 jqsk0toNNXNNnfEE 'e e okuoYtoNXNNN f\"EE b'h k3wtnzhatoiNNNN3 CKd'b 95mnheEQUNfNNNNU GEGH64Ch g2ottt)to6N6N63 GH ES'l n tt2qztoNNNNT64v!le 'q j FsvDLNLNLf7le d'h e xyvkto?N?NN  fEE 2'K k qJzfOPNQN*NN3 GH M'o o vtwC9toNONN/3 GEEE.k'r e3GvtY iNNNNN nGH !'u k5yttZ)2poNNT!fGEle.'o f tDthSNNSNN3jEE jT g1ESDnES'EDNqNqnCSTC'o h4rrBt/EQUNNUNN 7EE'G t yBrhtoN:NNN3 .''y g2xuxKNNNhhN m.GE', p LFwBltoXNXN/AS GEEE/'L o6yCtttoNNiN/!zCC64('t g sytJ16NNNNOnnEE'W o FNNBZtoLtoNON33EE.!'v D3EsuxaNNN9NN~fNEv'y j DyebNNNNSSj EE.b') m DNIntoNN:N:GEEENEb' 9 K5jw5NPNNPNEELb'p e tHxg'NNNNNN 3NEEE.('q p5zuGPto2N2N/jjGEITNUd'z i7ErnNto222NN64vfIT.' o ESSoSNNNOON!jASEE.3'B o2KzjXQUXNNXXjEENU' N2SVtG3tomNNlNj~GH.!'z r5BDEn8tofQNNN3364f!'j 0 DjDr.AGGGNASkeBELb)SA D5HPo*OP6NNN6TC.GH.'t j NVHNAN(N(NN33jEE 4'S o RIGMCtoNNO33)EEm'I j9GDQtQUN6N6/nfC.('Q q7PMIR2SAtomNNNjnqu~TC' n V''DtoNNONN3 EE('D e2ACDxtohNNhN jNU'- o5.*DX jNjNjN~3CES'W q DFzVXXN/XND .EE 3'B 8 DwFHBNNONNN zjEEv'N p PKDO\"NNNN/N jEE.') t7BDMuN99NTCGH.TC' o ,yBKNN'N'NfrEE ' m DSwe5'NdNjTEE c'M p5PGSC4ESNNNNN  EEfTC', C ::yLNNNNNN3GEEE k'. s .Qb:aNN'toN'!GEEE 4' w XIMEtoouNNJNGEjEEyo' 44oXsp9CSr!LFOTCDASm64?e E ,tstoN:NN: jnEE.3'A t"
+      },
+      {
+        "addr": "$87DA",
+        "rom_offset": "0x0607EA",
+        "length": 90,
+        "text": "DFDH/jjUmNEECEEUEETC*ES Z ESSo 2toN-NOASEE6' x ?.DNdNtoNNN  TCEE.3'! D9WK5toNyNNyfEERE')4Nb3j"
+      },
+      {
+        "addr": "$8840",
+        "rom_offset": "0x060850",
+        "length": 29,
+        "text": "EE3'. t4.VFtogNNgNjC('! r"
+      },
+      {
+        "addr": "$885E",
+        "rom_offset": "0x06086E",
+        "length": 505,
+        "text": "XXNG'CNCNCNNE7jasc': z7)P9NX2X2Nle jqu.yo'~ A -DwN'.NO' r~EENUA' B7Sto?aaaN\"BE)NEee'0)9t:LHd2nGENN~n~ES' D9IyNNN/NNffNUC!'5 S9RtR2NNclEEnnCSTC') Y DNNN*Nj3TCEELES') o SIt!KNNNNNNfLEEmd' l )C6NNNNNNCS7EE 3' z3*vZKtohhNhNjnGEC d'ES t ESNqNtoNNto/3GEEEC5'd Uj)fp3NNp3qu~BEASfyo' C :!!NNNN!3!EENE4'as F5\".OtoN7N7NrCON'L D7as:,4yNNyNHXASRE!'64 D .\"RbNNtoNNN7GEEE.4'as E ?:ONYNNYNASf~X.b'NU t /SXSNNN~ EE?'as M2!5NernrNO~~EEGH.'ED O5F:tofSSfNLGEleGHmd'Do B2-esNfONQfjz~EE.4'es Rn,ZGto0N'0'3~LNU'-CES"
+      },
+      {
+        "addr": "$8A66",
+        "rom_offset": "0x060A76",
+        "length": 601,
+        "text": "EEEEs'li t NUGNNNNNNk3EEES'Se G :\"((NNNNfEEf!'ES  0H  DeTIFFFN0 XDom(6DV Z :)'N!N!NN.keEE.r'ow U5.)v3dGEn-NCS)1.'RE I ESLINNtoNN~TCEENE?'OP K9.(cto0NsNNnjnEEMTNA B2sp'CHNNNNNjCSESTC'PA ygON.ES!hmNrtorNCSz~C64u'Se X6??)'tocNNN/bTCC64'L ? sp)t/X'?!-Fqubrle64r'MB Nz:FIuuNNGECSITyo'x0Nd.lto\"aN\"aRU!.Do'40yb)SA8N8N8ND~CSd'W0Q spESNVNNNNr~EEREc't0KaND'c''d'c.ASkeNUyo' t HtNNNtoNN0jDoEE3'40W9/DGENAjtojFRE~nNEGEwd0\"zDASDtoNDDnjDoCSj'ee0b00ELN7N7.ASASGENUyo'li0K SlTID,pNONNNtof!GEEENU5'AN0tGES64aNESa/Na~dGHRE'0) TC)toctNtoYNCS ~EEyo'.0 .uethRNN~1~EEan('DV0VLspdCHRRE44N!j~CSTC't1,dCHQUONNNdn)ASTCm('he0U 5:7(NNto(NDoEENU)'e1."
+      },
+      {
+        "addr": "$8CC0",
+        "rom_offset": "0x060CD0",
+        "length": 131,
+        "text": "NUONESeGHdNgNdgEQUASAS4'*1Yp00sp*32EDN0NNNUkeBEREES'M0S TIked??N?NNGEjEEou'1!m007 iwNAGPHH  leEEm('LL0Xn.ATINUM)toNNsaN764EEu'r1R to*NONN/O3GEEE!'640t"
+      },
+      {
+        "addr": "$8D44",
+        "rom_offset": "0x060D54",
+        "length": 307,
+        "text": "ESoH1EGENENCHPA4'TT0 ESONXP*.A:N\"  ~le.!')1.?S~X.kkkkFk\nES'O1X 5ANSNSNSL1LleRE'2)6.A5NEESFNptoptopASGEBEGHNUd'EV0) ESQUDoNN:NNTCnleON'*1Y OPNAstYNYNYNlefEENU3TTI1:4EQUu'sajNNjVD~TCME''J1- uEDy'VtoNNSNNjGE64c'.2n00todstNN8Nvto8BEGEDoquREu'he1rERiserctNbNYAN.)EE!'1A700liDxEVNTHNjXrumf3yHw.EQUkmto-to.NSGE.EE64yo')3S .AQXNNNNtoto4zEE5'3.A"
+      },
+      {
+        "addr": "$8E79",
+        "rom_offset": "0x060E89",
+        "length": 64,
+        "text": "QUNE\"WuEDr1N2 EEEEmON'S2)B5DoOGsh4c1NNCSAS)0GEyo'ON5/ H5NAjiNZNNtNGIDole1l'VOP"
+      },
+      {
+        "addr": "$8EBD",
+        "rom_offset": "0x060ECD",
+        "length": 10,
+        "text": "j/343/NEEEE"
+      },
+      {
+        "addr": "$8EC8",
+        "rom_offset": "0x060ED8",
+        "length": 70,
+        "text": "EEEECSh2? NUgeNNNN/k3TCEEGE!'22r00liNAYCOerh:(gS! XlemtQU KtESSNNBBBBNU  n 2'"
+      },
+      {
+        "addr": "$8F0F",
+        "rom_offset": "0x060F1F",
+        "length": 156,
+        "text": "2l QUkG.0NPNPNNIT.A('        HHHHHH     6'  ) vSl00 NNNtoNNjEEEERU/'  j )I! NNNNNN  bEEEE '  I N GHNLNEEEE7'  !byZ yES62LNEEEEEEEEEE:'  e V~ toNNNNASASDoEEEE.'* f"
+      },
+      {
+        "addr": "$8FAC",
+        "rom_offset": "0x060FBC",
+        "length": 21,
+        "text": "00PzX NX2NXEEEEEE/'CK0l"
+      },
+      {
+        "addr": "$8FC2",
+        "rom_offset": "0x060FD2",
+        "length": 21,
+        "text": "ITG zeeNXtoXleIT.A/'od"
+      },
+      {
+        "addr": "$8FD8",
+        "rom_offset": "0x060FE8",
+        "length": 21,
+        "text": "CKES 7'NkeNhe0bEEEEEE/'BEn"
+      },
+      {
+        "addr": "$8FEE",
+        "rom_offset": "0x060FFE",
+        "length": 21,
+        "text": "P U0b8ESNPELL)EERUyo4k:"
+      },
+      {
+        "addr": "$9004",
+        "rom_offset": "0x061014",
+        "length": 44,
+        "text": "thtas rN52NZmME3EE0.A.'53X HeswH?N:NY:YTT ~\nESyo'3f47"
+      },
+      {
+        "addr": "$9031",
+        "rom_offset": "0x061041",
+        "length": 20,
+        "text": "ACD000totoMtoSAto2 EEEEFayo'"
+      },
+      {
+        "addr": "$9046",
+        "rom_offset": "0x061056",
+        "length": 21,
+        "text": "SDX INNNXIEEEEEEEEEE/'  t"
+      },
+      {
+        "addr": "$905C",
+        "rom_offset": "0x06106C",
+        "length": 21,
+        "text": "TINA. zto3cttodEREEEEEEli'GEVS"
+      },
+      {
+        "addr": "$9072",
+        "rom_offset": "0x061082",
+        "length": 43,
+        "text": "d.A mtoJtoENtoERPRUEERUli6         DMUOEvvvvvvvvRUiy"
+      },
+      {
+        "addr": "$909E",
+        "rom_offset": "0x0610AE",
+        "length": 87,
+        "text": "NUES F2'to2Nhe(3le0Fa.'6e8)XNx(xN(  \n/'sa02 yAtjtoNXNII  bEEFa.'NUpD vOPED toACNNSA3EEEE.A64'CSr"
+      },
+      {
+        "addr": "$90F6",
+        "rom_offset": "0x061106",
+        "length": 263,
+        "text": "CSA ketos7INm7EECKFa64'  S  sp  ZtNNNN     66     005  ,,..88     6   hty8j AQUxNLN~jz.li'  h G NNNNNN     '  h!Vro  OPx2fSA     GET  7 Vw NNNNNN        p VK toOINOI     SA   BnQ UNQfNQ     heT  asBE CTCNmLi     GE'  y 1geNE .O.O.-0     '  X At.A NNNNNNELjEEEERU/'  N"
+      },
+      {
+        "addr": "$91FF",
+        "rom_offset": "0x06120F",
+        "length": 86,
+        "text": "as 3-7csNfEEEERU '  X le5 wtNZYMBEEEE.A '  ) vAC.A NNYtoYYEREEEE.A '   lexAC NYNtoYNMBEEEE.A '"
+      },
+      {
+        "addr": "$9257",
+        "rom_offset": "0x061267",
+        "length": 90,
+        "text": "xAC ZtoestoEREEEERU644  9 t2e PPNtoPP  jEE  '83Z7as.DN408b/ASj7Cm:TB19 asstLLLN  EE.64T.gQPVUQ"
+      },
+      {
+        "addr": "$945A",
+        "rom_offset": "0x06146A",
+        "length": 13,
+        "text": "6fopiknnfipk"
+      },
+      {
+        "addr": "$946A",
+        "rom_offset": "0x06147A",
+        "length": 14,
+        "text": "ER8CsnpkxkDsnC"
+      },
+      {
+        "addr": "$947A",
+        "rom_offset": "0x06148A",
+        "length": 14,
+        "text": "leaztXYDMxzYwE"
+      },
+      {
+        "addr": "$948A",
+        "rom_offset": "0x06149A",
+        "length": 14,
+        "text": "EEf)M.GEG.vE"
+      },
+      {
+        "addr": "$94AA",
+        "rom_offset": "0x0614BA",
+        "length": 12,
+        "text": "GEdDGTOzOZT"
+      },
+      {
+        "addr": "$9617",
+        "rom_offset": "0x061627",
+        "length": 10,
+        "text": "ERdd)wESPEESNUM"
+      },
+      {
+        "addr": "$962A",
+        "rom_offset": "0x06163A",
+        "length": 14,
+        "text": "xPEESESNPEEDTIEDEDGITIA"
+      },
+      {
+        "addr": "$963D",
+        "rom_offset": "0x06164D",
+        "length": 11,
+        "text": "PEBEABEGEBENEGEAMNE"
+      },
+      {
+        "addr": "$964A",
+        "rom_offset": "0x06165A",
+        "length": 15,
+        "text": "xBENWGENENADoGEBENEAOP2"
+      },
+      {
+        "addr": "$965A",
+        "rom_offset": "0x06166A",
+        "length": 12,
+        "text": ")xBEQUWNDoNEDoNENAW"
+      },
+      {
+        "addr": "$983A",
+        "rom_offset": "0x06184A",
+        "length": 14,
+        "text": "sdspkeESyoeeESd264sp"
+      },
+      {
+        "addr": "$98BA",
+        "rom_offset": "0x0618CA",
+        "length": 8,
+        "text": "~tdESspTCdli"
+      },
+      {
+        "addr": "$98CA",
+        "rom_offset": "0x0618DA",
+        "length": 8,
+        "text": "~udTC.spdSA"
+      },
+      {
+        "addr": "$994E",
+        "rom_offset": "0x06195E",
+        "length": 15,
+        "text": "zzSSSSb AS  QU(EQU"
+      },
+      {
+        "addr": "$995E",
+        "rom_offset": "0x06196E",
+        "length": 199,
+        "text": "GIES/RERNU2/7fTAQU6uYQUctNSSASesf2vSAS3fPETCESesCKEeNAm3an8vENSQU7u2vctSyo v00SOP9yo19'1NANE es(GIES/es-GIsa/CS5m5NUPEctNSSASes\"NUcesEm9FFASesPASes2E2ASes5 ,NA GTMEvan1?DV drFT)owChaMETC(OPA:OPQU:OPES:OPu:OPli:y(vwPE~yoli~you~yoES~yoQU~yoA:QU4EQU"
+      },
+      {
+        "addr": "$9A26",
+        "rom_offset": "0x061A36",
+        "length": 94,
+        "text": "GI(EQU GI-7fTA~vGEEDNE9tuFketuFFE29yoA9'AyoAQU uQU6hITctuEvPE5meNUCKtuEGI(ctSePEGI-CS5meNUNSyoESQU4DV(ITm7f0QU ct(6"
+      },
+      {
+        "addr": "$9A85",
+        "rom_offset": "0x061A95",
+        "length": 29,
+        "text": "IT5CSRE5NUCKOPESGI(GE:n'AASesNEPEn-NU1EQU"
+      },
+      {
+        "addr": "$9AA3",
+        "rom_offset": "0x061AB3",
+        "length": 145,
+        "text": "GI-~ASGGGFFF?UKAris9310GGGFFFct5vGEEDNE4tuyobNEftuE2yocYQU2vFaEDNEctuE2NAct5vGEEDNE3tuyo1NEetuE2yo2QUuEQU GI7f00EQU6yo2YQU2vFaEDNE5tufF9fCNE6tu\"NUeNE8tu9FFE2n?owOEDNEctuE2NAct56"
+      },
+      {
+        "addr": "$9B35",
+        "rom_offset": "0x061B45",
+        "length": 603,
+        "text": "IT2v'ED32f4vGEEDOP299NANEetu\"\"GI5tu:9999EmsGI~\"\"\"\"GI5EQU GItu9Z9ZEITsGI5tuEEEsGI5tu\"\"GIQUuM EQU M0EQUlvC5nytED M ytoED0M0)64yoA:OPQUvESED~NAtE2TCAAStA9you999TTTun/GHEDyouyTTED? yoliyON461IT4ykef0v00NEyk461ITqOP,f2AvoBEvFaBEvtoBEvt/NEvRRBEan2dGIyk4612~~y63ITkQU 611CSCSct,QUyo ct-QUyo0BEOP'ITm60eOP?6bNU3EQUP1EQUQkeBEEQUR00y(QUyo y)QUyo0OP-\"\"\"\"yo5OP?EIT45ASt ouk4RE0IT4E'keBEOP69FFE2yo6yo EQU yo0QU EQUfvC5yUQUDoVQUvs5NE t yoa\"\"\"\"\"NAct.ESyodou.-RE7NU2~~vMQUan4ctQU2cteeQUCSBEy-:62an9NActYESPE-:TUBEEQUfQU ueQUdC5QUdvC5OPeyodEQU yoeyER(ITaER(5dan95dan5vEQU52dnOP,Lqy61jEQU9 mecEQUyTC(:EQU0TC*:pWv(GIvGIv(GIvBEGIvSeGIvENGIvcNpWEQU yoeOPa\"\"E6yodQUdEQUhC5NE0t TC0:nOP ?1yo NU1AC0y, LuvMQUancEQULLyoSlyospEQUqyoowyoeeEQUtyoSlyospEQU'yoowyoeeEQU"
+      },
+      {
+        "addr": "$9D91",
+        "rom_offset": "0x061DA1",
+        "length": 16,
+        "text": "yoSlyospEQU'yoowyoeeNE t 6"
+      },
+      {
+        "addr": "$9DA2",
+        "rom_offset": "0x061DB2",
+        "length": 63,
+        "text": "gGEvQU:GE\"\"\"NA~QSlMSlMsp5mdGHOPdyo3QU u4AAS:GE\"\"\"NA~spNU5YQU3nTCQUAC35mdCSYQUd6"
+      },
+      {
+        "addr": "$9DE2",
+        "rom_offset": "0x061DF2",
+        "length": 586,
+        "text": "5vEQU5NSGI meyoCEQU AS)ow.SlNU7nTCQU2Can8CSREdIT45ATGI~~m4NUITmaNUITt yodQUdEQU5vC5ySQUDoTQUvs5QU ucA\"TCctdNU2\"\"\"E6ASessES menAESGI*:CSRE11ACcRE3ELNE1QU tdGI(:5CSRE3PAesNANt TC(:EQU0TC*:OPdn?fyo9t TC(:GETME5NATC9esTCQUTC*:esONQU7LaNE1\":*:kef00LATy*:E6NActIES menQESTC*:t TC(:vPATC):EQU0TC*:TC\":yostACstOPdn?dNANE vEQU5DVTCQUanuA:GE:vPAyo~AS~NAOPS/:EQU0S:ACstCS5m1EVOPstTC :NE d7vQUy :EVTCanvvEQU5vQUEV)TCankYQU7GHstNU3QU u7:AC7PE :7AEQU yoowOP,f5EQUuyoSlevMQUan5EQUeyoSl3EQUtyoSlvBEGIvSeGIvENGIt t TC(:EQU0TC*:vPATC):EQU4 men?2TC\":OP6Sf y.60LEQU  .NUDvquAv?NEvkeBEvFaBEEQUevCSBEyEfIT7vEQU56NU5vRRBEan2dGIOP6OgOP6 bQU ITdy4:L1~~62CKQU6ct/QUE'2!8ct:QUE'2(ITle/QU5GEE'2!8ct:QUE'2(IT.ct/QUE'2!ale:QU5GEE'2(ITQle/QU5GEE'2!ale:QU5GEE'2(ITBCSCSct/QU6"
+      },
+      {
+        "addr": "$A02D",
+        "rom_offset": "0x06203D",
+        "length": 114,
+        "text": "IT2ptA5Act/QUfqLzct/QUE.IThqct:QUfaLjct:QUE.IT1ay4:ETC4:5Ay4:864TC4:y63ITcyWQUyodyXQUyoeliNEyYQUyodyZQUyoeNE td2ITlNActTCT'dyodNU1ACetd6"
+      },
+      {
+        "addr": "$A0A0",
+        "rom_offset": "0x0620B0",
+        "length": 19,
+        "text": "TT~~OPTC6:TCES7:5td6"
+      },
+      {
+        "addr": "$A0B4",
+        "rom_offset": "0x0620C4",
+        "length": 70,
+        "text": "ITRUTC5:y,:EITS,:y,:EIToyhaNE0 NUzITxEM 64anpNA7ct:ESCSBE 6*?QU2NEoy,:L05GEvNS~~EQU"
+      },
+      {
+        "addr": "$A0FB",
+        "rom_offset": "0x06210B",
+        "length": 286,
+        "text": "TC(:TC):TC/:TC::EQU TC*:TC\":TC:TC:yodyoey0:TCESvdQUy(:6leITK6ouITG6yITIQUcy!6spNUi6daney(6spNU76dan3QUvNUiy62bQUv7 3A'WQUbA 2AEQU  aTIOPjE1IT2 ju Dey(:6ouIT36le7QUtvb6 t0S 9OP,fbOP635 nuAW  uy!:L2 kLLEQU TC-::EQU7yo3EQU yo4QU3~vC5OP3n/'QUyo3OP4/.QUyo4NE t3S(:5m3RRt3:EeS(:5m7TA~9FFE2TC!:~E.c!:8mTC!:y mEvIT7y!:8.TC!:vyW~~nOPaE29yo3YQU37NE"
+      },
+      {
+        "addr": "$A21A",
+        "rom_offset": "0x06222A",
+        "length": 51,
+        "text": "EQUw me5m1IT7CSDVTCIT1anTAGETC!:yNS6.00GENACHYERERESctTCctYQUctOPsan."
+      },
+      {
+        "addr": "$A25C",
+        "rom_offset": "0x06226C",
+        "length": 241,
+        "text": "nF7fEE:Dom3e O63NU1EQU3n/ASke~3pafjg j4vejmj r  9oojy 9coot99h9 ./fmmmD9bmm7mbj Djhvc4y9ioiet4ee.dw*ddrdI9hhthNee . *goooN  majmbo 7 Rjjeetjj9e9Daee64.ctvrddB9ddddradev BEff77n rjvjtkdev BE032700027300012    1223 0120013713737bfjnrvm64.v"
+      },
+      {
+        "addr": "$A79C",
+        "rom_offset": "0x0627AC",
+        "length": 30,
+        "text": "NO,,,,,,,PQVVWVWXXXWXR:"
+      },
+      {
+        "addr": "$A7C0",
+        "rom_offset": "0x0627D0",
+        "length": 16,
+        "text": "T\"\"\"U.WX'Y"
+      },
+      {
+        "addr": "$A7D1",
+        "rom_offset": "0x0627E1",
+        "length": 17,
+        "text": "iiiiiSSSSSSTTTUU'"
+      },
+      {
+        "addr": "$A7FE",
+        "rom_offset": "0x06280E",
+        "length": 8,
+        "text": "YZZYYYY:"
+      },
+      {
+        "addr": "$A811",
+        "rom_offset": "0x062821",
+        "length": 452,
+        "text": "wyEQU TCsp: 64 .v!yv.ASvCASNUgvERMENUbvAEQUvTCMEv5NAqAS yojSlouRE3NUhQU yhaDVEQUyNU2CSPActESy2ctAyyoevquMEyoJ6jNUbMEjyoJQU  EDliANASvthASougASDohASv5ASNE6tEm3NU4SQ:an2S(:kefLLvthASYQU TC0v5ASNE6QUEEQU7vMBgem3NU4SQ:an2S(:kefMBEQU yoFOPJ9BF9BF9BFyoEAn'EyoEGE'FyoFv5EQUvNUyy EQUTCe6y0EQUTCth6 6*(L6E2TC:Tysp:L1n AerASU:5au'EQU yoLTCLesU:QU3DV0EQUan270ctyoEQU meyoJvEQU5:TCLesU:yo EQU yo0QU EQU9vC5~LdOP n'Jyo NU1AC0EQUOP TTTJyo an130OP09OP 6aan3EQUayo QU EQU9v5TCLSY:OP SU:ACLOPL63NU oO.64SerFaAC37kO'EQU yo1y:E2NAASes(:7L8DV(:0AC1CKYQU1h:y:E2NA~CSRE3andDV(:RROP1n?Ayo1 OP1:y:E2ASes(:QU8 3isNE"
+      },
+      {
+        "addr": "$A9D6",
+        "rom_offset": "0x0629E6",
+        "length": 40,
+        "text": "5esFI2S46.PA~IT3S45EQU.S4 dyee:yo\nyd:yoyo:yo"
+      },
+      {
+        "addr": "$A9FF",
+        "rom_offset": "0x062A0F",
+        "length": 360,
+        "text": "FavnSlvcNAvNAy:Em6m4~~~~: 6*~IT76.IT1nTysp:f9 .~~~~wASvesNA 2EQU TCsp:vACMEITAC~~~~vjSlanG liysp:ETCsp: 2vACMEL31T yoEQU ysp:ETCsp:~~~~jSlvRENAOP TCee:OP0TCd:OP1TCyo:v-ME ke EvACMELgeysp:864TCsp:~~~~qASvesNAvFaNANAyee:yoRyd:yoSyyo:yoT A 6*)vFIDovI3 g0S 6A 8Ay:E2NActU:Doee:d Dod:d0Doyo:d1QU  f'yee:yo2yd:yo3yyo:yo4y:E2NActY:NActEQUQU2 f'OP2f5AC31AC4OP3yo2OP4yo3OP n'2yo OP0'3yo0NU1AC1yyo:xyd:6CNUaIT1anmyee:6fanfyee:yo\nyd:yoyo:yo"
+      },
+      {
+        "addr": "$AB68",
+        "rom_offset": "0x062B78",
+        "length": 15,
+        "text": "yee:yo\nyd:yoyo:yo"
+      },
+      {
+        "addr": "$AB78",
+        "rom_offset": "0x062B88",
+        "length": 24,
+        "text": "ke 4vesNAvFaNA~~~~~~nSl 6*"
+      },
+      {
+        "addr": "$AB91",
+        "rom_offset": "0x062BA1",
+        "length": 553,
+        "text": "c0SEQU1 aTIEQU TC!:y m2 juEQU64TCME De 9 lu kLLNEOPe mevLMEkeIT1NUTA:QU5ctM:GIN:7fYC~TCM:QU6DVM:IT47f0Tn 6**ysp:LvvuDoNUs 6*)EQU TCee:TCd:TCyo:TCsp:vEVDo 2vNDoT sp~~jSlvesNAnywbyou6yy1nTPEsp:vheDov!Doysp:ETCee:vEVDov*yvDovDo!DoOPj\"\"an7OPj\"NU1~~ysp:ETCee:~~~~~~pDoOPjEf6OPjEvxyoPyycoucw0ysp:E6NanDPEsp:vheDo as0SyoPysp:E60ITisp:PEy7PEou2PEw as0SyyTME0TCyyouME TCouywME TCwvFIDovryvI3QU1ctyM7f0 b*OP 40IT8QU4EQU9M17f0SNE3QUmu d0EQU yoeNAe1v3AC ACeOPe65NUITysp:EyoEQU yoyo b*NE5QUnu d0EQU yoeNAe2v3AC ACeOPe64NUITvRU5TCjITcTCO1NEjke3dPNE5dOOPjAPyoP(jyojEQU yoLyoEousp:LbTCee:TCd:TCyo:TCsp:EQU0TC*:TC\":TC:TC:EQU0TC*:TC\":TC:TC:hhjjmrxAJJeotyD)0www:):"
+      },
+      {
+        "addr": "$ADDB",
+        "rom_offset": "0x062DEB",
+        "length": 15,
+        "text": "4a0 OtvT4972wOZ"
+      },
+      {
+        "addr": "$ADF3",
+        "rom_offset": "0x062E03",
+        "length": 15,
+        "text": "0cc zZvh0hcsou"
+      },
+      {
+        "addr": "$AE43",
+        "rom_offset": "0x062E53",
+        "length": 21,
+        "text": "323 ROFHa447:vBtov?2v"
+      },
+      {
+        "addr": "$AE59",
+        "rom_offset": "0x062E69",
+        "length": 47,
+        "text": "OPu8.you~6 5vERou/ouvOPty54ELLTC54OPuEheyou bheEQU1TCj.TCj.v"
+      },
+      {
+        "addr": "$AEA7",
+        "rom_offset": "0x062EB7",
+        "length": 49,
+        "text": "EQUsyoELy'toyo.Ay.toyoDVy,toyoENy-toyoTUy?toyoREy!toyoLvvtvI3NE dtREyo16"
+      },
+      {
+        "addr": "$AED9",
+        "rom_offset": "0x062EE9",
+        "length": 244,
+        "text": "2ouwt.An?fyo tENn?dyo0vLwtREyo1E'TME0yo3t.Av6wn?fyo tENv6wn?dyo0OP1E.9OP TTT3yo AwOP0TTT3yo0OP0fqOP1Emyo2E.ITjOP1E'n'0La42yo1EQU yo0vLwveswn?dyo0tENv6wn?fyo OP1E.6OP TTT3yo OP0L2vLwveswv6wn?dyo0tENn?fyo OP1E.IT6OP0TTT3yo0OP0fmOP1Emyo2OP1E'n'0La42yo1EQU yo0vLw5owou5vI33ELITqoutRE*.yo1E'TME0yo3t.ANAL5*"
+      },
+      {
+        "addr": "$AFCE",
+        "rom_offset": "0x062FDE",
+        "length": 8,
+        "text": "n?0TME0*"
+      },
+      {
+        "addr": "$AFD7",
+        "rom_offset": "0x062FE7",
+        "length": 615,
+        "text": "EQU yo3OP1E'IT760IT3OP1LXOPMEyo5OP n'TI6vyo8NUaTMEvyo8OP5*3yo5OP0n'CS6tNU2TMEt\".3\".3\".345yo4OP348yo3TTanEQU yo6OP1Em4MEyo5OP1E'yo2OP n'TI6vNUdTMEvyo8OP5*3yo5*anyo8OP1E.nOP n'TIn'2TMEvNUaIT8yo6OP2TTT6yo2OP0n'CS6tNU7TMEtyo7NEanyo7OP1E.ITnOP0n'CSn'2TMEtNUaIT8yo6OP2TTT6yo2OP7\".3\".3\".345yo4OP348yo3v00anOP60OP1E.eOP3EREyo3OP4*3yo4ENanOP3Euyo3OP4EEEyo4OP6yo200anou94OP4GI 2OP3GI02EQU GI12ltou94OP2GI02OP4GI 2OP3GI12EQU GI22CS320CSCSCSON94PEa4EQU yo yo0v3OPsyoTIOPr5TIF5TIF5TIFEuyoCSOPsEuyoTIOPrEEEyoME:GE:EQU yo2OP 6van,OP06tanWOP06aNUL6hanHTMEa99yo1OP \".2\".2\"yo3B2B2B2OP1n'3ASes9to\"32f0SNU3EQUGE1EQU v3ya46HNU2vI3~AS~EQU yoEQUtyoELNE EQUvTTTyo d0v*tOPyo 5d0v*t5mtNUTTvI3OP6fan6AC3ELCEQU yoNE d mfNU7EQUtTTTITtOPyo0v*t5mvNUACvI3ACOP6tNUEVQUDb6leSlC3.hw38hwr8tw3MEhw3.h0dTAhwQUbA:y54*0TC54QU2vb6~NA7RU"
+      },
+      {
+        "addr": "$B40D",
+        "rom_offset": "0x06341D",
+        "length": 431,
+        "text": "1 018dh 18a3yoe 18a3yob a3o4A3 3o49ESl 01.401a34uk 018QUg 3co9TIi e5f6O65 018QUf a3co4A?53o49um 5y6FO68 6GEq 6lnMa 6nkptc 495yESi201.x mr1 BCYZ)4h CIDZ'4i zABY)owb BCIYZ43 CIDEZhel ABCIY3k AGL)owg LKDYZ75 BCYZ)440KID'/7f KID'/7?5ID'\"st8 FOPN'5q FPN:670LHOMsta PN'?:6p *?PNquc DEF'5.4.eo FOP'51 hah had 8aYQUe C4b L3 43dee38OToul ptn u40ptm L\"dg L30x.25 ptf L?5L8 ENq EN6 Lc Lo ENp ENpt"
+      },
+      {
+        "addr": "$B625",
+        "rom_offset": "0x063635",
+        "length": 11,
+        "text": "PEREthNStthNS"
+      },
+      {
+        "addr": "$B631",
+        "rom_offset": "0x063641",
+        "length": 11,
+        "text": "LthNStthNS"
+      },
+      {
+        "addr": "$B63D",
+        "rom_offset": "0x06364D",
+        "length": 14,
+        "text": "LthNS ththNS"
+      },
+      {
+        "addr": "$BC8C",
+        "rom_offset": "0x063C9C",
+        "length": 249,
+        "text": "5555d       tO,ACFa.5tbbnnL0tO25rLEEtO2d55Fa.6epR)X'L55Fa.6nL.3Fa.')bnnLLdoot)1Fa.tO.ZbnREnTHH)LLOOZOOOsOOtROOOORMPXPLMMPXPLL.sO,OtYCYCXnnnnnnXe5555..XTA~.).YC.LLLLMM):)LL4)OGXRRrOOOZLL.T)333EN:WOORXRRYXt?"
+      },
+      {
+        "addr": "$BD86",
+        "rom_offset": "0x063D96",
+        "length": 578,
+        "text": "SSnnnnXYCXYCPPXnnYC!!!PPzNrnbrB,YCPPnnnX?6drT-L.PEmGEGE:ke4DD.RE Mb*ke4GFGEf-ke4zBGEjGFB)RE Mb*)ke4wyzyzBBDRE Mb*ke GEb*ke4BDES *7GEb*ke4BDGEfke GIGEfERE MPGEjke4DD00S.GEfke4DD)5.GEfID00PE.GEfke4DD*5X-GEjDz.GEjke4DD*5X:GEjwu~RE uwM:GEnPEGEfmnmkmnPEREctPEmL.GEfprpnprpPEmnprpnnttnnptnprpnnrwwyzywwvvwwvvwwppvwywvwyv00oprp00200oprosuwu00200sssrpnmkikmpoprpoprpPEnprpnprptYCwyzywyzywyzywwwwwwwwwyzywwutsuwussrrssrrssyyDFHFDFHD00SlwyAy00200wyAwBDED00200BByywwusrsuywyAywyAy0GEGE:YCytESL5!u wvrnjfMnLz5gmwDKNIBwpkdkrwDINIBwpk6gmsyEipwBINspLGEnGE L5GEee (5xtplhtLz5kryIPKEysmggnszELLEzsngdkpwBImsyEKOGE"
+      }
+    ]
+  }
+}
