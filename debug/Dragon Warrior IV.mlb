@@ -180,6 +180,63 @@ G:62ED:DayNightCounter:Day/night cycle counter ($00-$CB)
 G:62EF:BagStorage_Start:Bag item storage start
 
 # ==============================================================================
+# BATTLE SYSTEM RAM ($6E00-$6E80) - Bank 19 Battle Calculations
+# ==============================================================================
+G:6E11:battle_div_rem_lo:Division remainder low byte
+G:6E12:battle_div_rem_mid:Division remainder mid byte
+G:6E13:battle_div_rem_hi:Division remainder high byte
+G:6E14:battle_div_divisor_lo:Division divisor low byte
+G:6E15:battle_div_divisor_mid:Division divisor mid byte
+G:6E16:battle_div_divisor_hi:Division divisor high byte
+G:6E44:battle_flag:Battle mode flag
+G:6E80:battle_state:Current battle action/state
+
+# ==============================================================================
+# BATTLE SYSTEM RAM ($7500-$7600) - Party Stats Buffer
+# ==============================================================================
+G:7591:party_stat_buffer:Party stat calculation buffer (4 entries)
+G:7595:party_stat_buffer_2:Party stat calculation buffer 2 (4 entries)
+G:75AD:battle_stat_ad:Battle stat AD
+G:75AE:battle_stat_ae:Battle stat AE
+G:75AF:battle_stat_af:Battle stat AF
+G:75B0:battle_stat_b0:Battle stat B0
+G:75B1:battle_stat_b1:Battle stat B1
+G:75B2:battle_stat_b2:Battle stat B2
+G:75B3:battle_stat_b3:Battle stat B3
+G:75B4:battle_stat_b4:Battle stat B4
+G:75B5:battle_stat_b5:Battle stat B5
+G:75B6:battle_stat_b6:Battle stat B6
+G:75B7:battle_stat_b7:Battle stat B7
+G:75B8:battle_stat_b8:Battle stat B8
+G:75B9:battle_stat_b9:Battle stat B9
+G:75BA:battle_stat_ba:Battle stat BA
+G:75BB:battle_stat_bb:Battle stat BB
+G:75BC:battle_stat_bc:Battle stat BC
+G:75BD:battle_stat_bd:Battle stat BD
+G:75BE:battle_stat_be:Battle stat BE
+G:75BF:battle_stat_bf:Battle stat BF
+G:75C0:battle_stat_c0:Battle stat C0
+G:75D4:battle_var_d4:Battle variable D4
+G:75D5:battle_var_d5:Battle variable D5
+G:75D7:battle_var_d7:Battle variable D7
+G:75D8:battle_var_d8:Battle variable D8
+G:75D9:battle_var_d9:Battle variable D9
+G:75DA:battle_var_da:Battle variable DA
+G:75DB:battle_var_db:Battle variable DB (init to $FF)
+G:75DC:battle_special_flag:Battle special flag ($FF if $73 set)
+G:75E6:battle_var_e6:Battle variable E6
+G:75E7:battle_var_e7:Battle variable E7
+G:75E8:battle_action_index:Battle action index (0-7 valid)
+
+# ==============================================================================
+# CHARACTER STATE ARRAY ($72F4+)
+# ==============================================================================
+G:72F4:char_state_array:Character state array (indexed by X)
+G:7004:char_flags_array:Character flags array (indexed by X)
+G:7024:battle_result_24:Battle result byte 24
+G:7025:battle_result_25:Battle result byte 25
+
+# ==============================================================================
 # PRG ROM Banks - Map Data (Bank $09)
 # ==============================================================================
 R:30010:Bank09_Start:Bank 9 start - Map data
@@ -311,3 +368,34 @@ R:FFDF:mmc1_reset_trigger:MMC1 reset trigger byte
 R:FFFA:vec_NMI:NMI Vector ($0502)
 R:FFFC:vec_RESET:RESET Vector ($FFD8)
 R:FFFE:vec_IRQ:IRQ Vector ($C408)
+
+# ==============================================================================
+# PRG ROM - Bank 19 Battle System Code ($8000-$BFFF when loaded)
+# Note: These are CPU addresses when bank 19 is in $8000-$BFFF slot
+# ==============================================================================
+
+# Bank 19 Entry Points and Main Functions
+# R:8038:b19_battle_entry:Bank 19 battle entry point (calls 8088, 80A1)
+# R:804A:b19_battle_setup:Battle setup (calls 8051, 845A)
+# R:8051:b19_init_routine:Initialization routine
+# R:805B:b19_dispatch_action:Dispatch action via jump table at $8078
+# R:8088:b19_read_game_state:Read $615B into $6E80, check modes
+# R:80A1:b19_check_conditions:Check char state via $72F4
+# R:80FA:b19_init_battle_vars:Initialize battle variables ($75D4-$75E7)
+
+# Bank 19 Math Functions
+# R:8176:b19_shift_left_4:Left shift 4 bits (multiply by 16)
+# R:8187:b19_shift_right_4:Right shift 4 bits (divide by 16)
+# R:8198:b19_scale_value:Scale value based on A register
+# R:81A5:b19_shift_extended:4-bit shift with extended precision
+# R:8330:b19_stat_calc:Stat calculation helper
+# R:83C5:b19_div_16bit:16-bit division loop (shift-subtract)
+# R:83F4:b19_div_setup:Division setup routine
+# R:8414:b19_div_24bit:24-bit division loop
+# R:845A:b19_battle_calc:Battle calculation wrapper
+# R:8488:b19_unknown_8488:Unknown helper
+# R:8C00:b19_unknown_8C00:Unknown function (called from bank 21)
+# R:9212:b19_unknown_9212:Unknown - called in battle flow
+# R:AE11:b19_unknown_AE11:Unknown helper
+# R:A8C6:b19_mode_4_handler:Handler for mode 4
+

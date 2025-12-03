@@ -68,12 +68,12 @@ class Disassembler:
     def __init__(self, rom_path: str):
         with open(rom_path, 'rb') as f:
             self.rom = f.read()
-        
+
         self.prg_size = self.rom[4] * 16384
         self.labels: Dict[int, str] = {}
         self.comments: Dict[int, str] = {}
         self.auto_labels: Dict[int, str] = {}
-        
+
         # Hardware register labels
         self.hw_labels = {
             0x2000: "PPUCTRL", 0x2001: "PPUMASK", 0x2002: "PPUSTATUS",
@@ -81,7 +81,7 @@ class Disassembler:
             0x2006: "PPUADDR", 0x2007: "PPUDATA", 0x4014: "OAMDMA",
             0x4015: "APU_STATUS", 0x4016: "JOY1", 0x4017: "JOY2",
         }
-        
+
         # Known RAM variables
         self.ram_labels = {
             0x0063: "MapNumber", 0x0064: "SubmapNumber",
@@ -89,21 +89,21 @@ class Disassembler:
             0x0502: "NMI_JMP", 0x0503: "NMI_target_lo", 0x0504: "NMI_target_hi",
             0x0507: "current_bank",
         }
-        
+
     def cpu_to_rom(self, addr: int) -> int:
         """Convert CPU address to ROM offset (fixed bank only)"""
         if addr >= 0xC000:
             return 16 + self.prg_size - 0x10000 + addr
         return -1
-    
+
     def read_byte(self, rom_offset: int) -> int:
         return self.rom[rom_offset] if 0 <= rom_offset < len(self.rom) else 0
-    
+
     def read_word(self, rom_offset: int) -> int:
         lo = self.read_byte(rom_offset)
         hi = self.read_byte(rom_offset + 1)
         return (hi << 8) | lo
-    
+
     def get_label(self, addr: int) -> Optional[str]:
         """Get label for an address"""
         if addr in self.labels:
@@ -115,27 +115,27 @@ class Disassembler:
         if addr in self.ram_labels:
             return self.ram_labels[addr]
         return None
-    
+
     def add_auto_label(self, addr: int, prefix: str = "loc"):
         """Add automatic label for jump/branch target"""
         if addr not in self.labels and addr not in self.auto_labels:
             self.auto_labels[addr] = f"{prefix}_{addr:04X}"
-    
+
     def disassemble_instruction(self, cpu_addr: int) -> Tuple[str, int, Optional[int]]:
         """Disassemble one instruction, returns (formatted_line, size, target_addr)"""
         rom_offset = self.cpu_to_rom(cpu_addr)
         if rom_offset < 0 or rom_offset >= len(self.rom):
             return (f"  .byte ???", 1, None)
-        
+
         opcode = self.rom[rom_offset]
-        
+
         if opcode not in OPCODES:
             return (f"  .byte ${opcode:02X}", 1, None)
-        
+
         mnem, mode, size = OPCODES[opcode]
         operand = bytes(self.rom[rom_offset+1:rom_offset+size])
         target = None
-        
+
         # Format operand
         if mode == "IMP":
             op_str = ""
@@ -185,48 +185,48 @@ class Disassembler:
             self.add_auto_label(target, "loc")
         else:
             op_str = f"${operand[0]:02X}" if operand else ""
-        
+
         # Format raw bytes
         raw = bytes([opcode]) + operand
         hex_str = ' '.join(f'{b:02X}' for b in raw)
-        
+
         line = f"  {mnem:4s} {op_str}"
-        
+
         return (line, size, target)
-    
+
     def first_pass(self, start: int, end: int):
         """First pass to collect all labels"""
         addr = start
         while addr < end:
             _, size, target = self.disassemble_instruction(addr)
             addr += size
-    
+
     def disassemble_range(self, start: int, end: int) -> List[str]:
         """Disassemble a range of addresses"""
         # First pass to collect labels
         self.first_pass(start, end)
-        
+
         lines = []
         addr = start
-        
+
         while addr < end:
             # Check for label
             lbl = self.get_label(addr)
             if lbl:
                 lines.append(f"\n{lbl}:")
-            
+
             line, size, _ = self.disassemble_instruction(addr)
-            
+
             # Add address comment
             comment = self.comments.get(addr, "")
             if comment:
                 line += f"  ; {comment}"
-            
+
             lines.append(f"${addr:04X}:{line}")
             addr += size
-        
+
         return lines
-    
+
     def disassemble_fixed_banks(self, output_path: str):
         """Disassemble the entire fixed bank region"""
         # Add known labels
@@ -259,7 +259,7 @@ class Disassembler:
             0xFF91: "bank_switch",
             0xFFD8: "RESET_entry",
         })
-        
+
         # Add comments
         self.comments.update({
             0xFFD8: "Entry point from RESET vector",
@@ -268,7 +268,7 @@ class Disassembler:
             0xC078: "Initialize stack pointer",
             0xC07E: "Clear zero page and RAM",
         })
-        
+
         with open(output_path, 'w') as f:
             f.write("; Dragon Warrior IV (NES) - Fixed Bank Disassembly\n")
             f.write("; ================================================\n")
@@ -280,7 +280,7 @@ class Disassembler:
             f.write(";   RESET: $FFD8\n")
             f.write(";   IRQ:   $C408\n")
             f.write(";\n\n")
-            
+
             f.write("; ============================================\n")
             f.write("; Hardware Registers\n")
             f.write("; ============================================\n")
@@ -297,7 +297,7 @@ class Disassembler:
             f.write("JOY1       = $4016\n")
             f.write("JOY2       = $4017\n")
             f.write("\n")
-            
+
             f.write("; ============================================\n")
             f.write("; RAM Variables\n")
             f.write("; ============================================\n")
@@ -310,7 +310,7 @@ class Disassembler:
             f.write("NMI_target_hi = $0504\n")
             f.write("current_bank  = $0507\n")
             f.write("\n")
-            
+
             # Disassemble RESET handler first
             f.write("; ============================================\n")
             f.write("; RESET HANDLER ($FFD8)\n")
@@ -318,7 +318,7 @@ class Disassembler:
             lines = self.disassemble_range(0xFFD8, 0xFFFA)
             for line in lines:
                 f.write(line + "\n")
-            
+
             f.write("\n; ============================================\n")
             f.write("; VECTORS ($FFFA-$FFFF)\n")
             f.write("; ============================================\n")
@@ -329,7 +329,7 @@ class Disassembler:
             f.write(f"  .word ${nmi:04X}  ; NMI\n")
             f.write(f"  .word ${reset:04X}  ; RESET\n")
             f.write(f"  .word ${irq:04X}  ; IRQ\n")
-            
+
             # Disassemble main init
             f.write("\n; ============================================\n")
             f.write("; MAIN INIT ($C03D)\n")
@@ -337,7 +337,7 @@ class Disassembler:
             lines = self.disassemble_range(0xC03D, 0xC200)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble NMI handler
             f.write("\n; ============================================\n")
             f.write("; NMI HANDLER ($C15A)\n")
@@ -345,7 +345,7 @@ class Disassembler:
             lines = self.disassemble_range(0xC15A, 0xC300)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble IRQ handler
             f.write("\n; ============================================\n")
             f.write("; IRQ HANDLER ($C408)\n")
@@ -353,7 +353,7 @@ class Disassembler:
             lines = self.disassemble_range(0xC408, 0xC550)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble main game loop area
             f.write("\n; ============================================\n")
             f.write("; MAIN GAME LOOP AREA ($C900-$CA00)\n")
@@ -361,7 +361,7 @@ class Disassembler:
             lines = self.disassemble_range(0xC900, 0xCA00)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble utility routines at end of ROM
             f.write("\n; ============================================\n")
             f.write("; UTILITY ROUTINES ($FF00-$FFFF)\n")
@@ -369,7 +369,7 @@ class Disassembler:
             lines = self.disassemble_range(0xFF00, 0xFFD8)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble more game loop routines
             f.write("\n; ============================================\n")
             f.write("; GAME LOOP SUBROUTINES ($CA00-$CC00)\n")
@@ -377,7 +377,7 @@ class Disassembler:
             lines = self.disassemble_range(0xCA00, 0xCC00)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble possible input handling
             f.write("\n; ============================================\n")
             f.write("; INPUT/CONTROLLER ROUTINES ($C500-$C600)\n")
@@ -385,7 +385,7 @@ class Disassembler:
             lines = self.disassemble_range(0xC500, 0xC600)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble more subroutines
             f.write("\n; ============================================\n")
             f.write("; SUBROUTINES ($D500-$D600)\n")
@@ -393,7 +393,7 @@ class Disassembler:
             lines = self.disassemble_range(0xD500, 0xD600)
             for line in lines:
                 f.write(line + "\n")
-            
+
             # Disassemble E06E area
             f.write("\n; ============================================\n")
             f.write("; SUBROUTINES ($E000-$E100)\n")
@@ -401,23 +401,23 @@ class Disassembler:
             lines = self.disassemble_range(0xE000, 0xE100)
             for line in lines:
                 f.write(line + "\n")
-        
+
         print(f"Wrote disassembly to: {output_path}")
 
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_dir = os.path.dirname(script_dir)
-    
+
     rom_path = os.path.join(project_dir, "roms", "Dragon Warrior IV (1992-10)(Enix)(US).nes")
     output_path = os.path.join(project_dir, "disasm", "fixed_bank.asm")
-    
+
     if not os.path.exists(rom_path):
         print(f"ROM not found: {rom_path}")
         sys.exit(1)
-    
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
+
     dis = Disassembler(rom_path)
     dis.disassemble_fixed_banks(output_path)
 
