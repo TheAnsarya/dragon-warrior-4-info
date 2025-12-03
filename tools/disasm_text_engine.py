@@ -91,7 +91,7 @@ LABELS = {
     0xF6: "current_char_raw",
     0xF7: "text_param",
     0xF8: "current_char",
-    
+
     # RAM
     0x03C6: "text_var_03C6",
     0x03C8: "text_var_03C8",
@@ -122,7 +122,7 @@ LABELS = {
     0x076C: "text_ptr_table",
     0x076D: "text_ptr_table_hi",
     0x07B4: "input_flags",
-    
+
     # ROM addresses (Bank 22)
     0x8219: "text_loop_continue",
     0x8272: "check_dte",
@@ -181,18 +181,18 @@ class Disassembler:
         self.rom = rom_data
         self.bank = bank_num
         self.bank_start = bank_num * 0x4000 + 0x10
-        
+
     def get_byte(self, cpu_addr):
         """Get a byte from the bank given a CPU address."""
         offset = cpu_addr - 0x8000
         if 0 <= offset < 0x4000:
             return self.rom[self.bank_start + offset]
         return None
-    
+
     def get_label(self, addr):
         """Get label for an address if known."""
         return LABELS.get(addr, None)
-    
+
     def format_operand(self, mode, data, addr):
         """Format the operand based on addressing mode."""
         if mode == "impl" or mode == "acc":
@@ -249,28 +249,28 @@ class Disassembler:
             label = self.get_label(target)
             return label if label else f"${target:04X}"
         return ""
-    
+
     def disassemble_range(self, start_addr, end_addr):
         """Disassemble a range of addresses."""
         result = []
         addr = start_addr
-        
+
         while addr < end_addr:
             # Check for label at this address
             label = self.get_label(addr)
             if label:
                 result.append(f"\n{label}:")
-            
+
             # Check for comment
             comment = COMMENTS.get(addr, "")
-            
+
             opcode = self.get_byte(addr)
             if opcode is None:
                 break
-                
+
             if opcode in OPCODES:
                 mnem, mode, size = OPCODES[opcode]
-                
+
                 # Get instruction bytes
                 data = []
                 for i in range(size):
@@ -278,39 +278,39 @@ class Disassembler:
                     if b is None:
                         break
                     data.append(b)
-                
+
                 if len(data) < size:
                     break
-                
+
                 # Format output
                 hex_str = ' '.join(f'{b:02X}' for b in data)
                 operand = self.format_operand(mode, data, addr)
-                
+
                 line = f"    ${addr:04X}: {hex_str:8}  {mnem:4} {operand:20}"
                 if comment:
                     line += f" {comment}"
                 result.append(line)
-                
+
                 addr += size
             else:
                 # Unknown opcode - treat as data
                 result.append(f"    ${addr:04X}: {opcode:02X}        .byte ${opcode:02X}")
                 addr += 1
-        
+
         return result
 
 
 def main():
     with open(ROM_PATH, 'rb') as f:
         rom = f.read()
-    
+
     disasm = Disassembler(rom, 22)
-    
+
     print("=" * 78)
     print(" DRAGON WARRIOR IV (NES) - TEXT ENGINE DISASSEMBLY")
     print(" Bank 22 ($16)")
     print("=" * 78)
-    
+
     # Section 1: DTE Check and Handler
     print("\n" + "=" * 78)
     print(" SECTION 1: DTE/DICTIONARY DECOMPRESSION ($8250-$82E0)")
@@ -322,7 +322,7 @@ def main():
 """)
     for line in disasm.disassemble_range(0x8250, 0x82E0):
         print(line)
-    
+
     # Section 2: Character Processing
     print("\n" + "=" * 78)
     print(" SECTION 2: MAIN CHARACTER PROCESSOR ($8AA5-$8B10)")
@@ -333,7 +333,7 @@ def main():
 """)
     for line in disasm.disassemble_range(0x8AA5, 0x8B10):
         print(line)
-    
+
     # Section 3: Control Code Handlers
     print("\n" + "=" * 78)
     print(" SECTION 3: CONTROL CODE HANDLERS ($8B11-$8BA0)")
@@ -346,7 +346,7 @@ def main():
 """)
     for line in disasm.disassemble_range(0x8B11, 0x8BA0):
         print(line)
-    
+
     # Section 4: Text Read Loop
     print("\n" + "=" * 78)
     print(" SECTION 4: TEXT READ LOOP ($95AF-$9650)")
@@ -357,7 +357,7 @@ def main():
 """)
     for line in disasm.disassemble_range(0x95AF, 0x9650):
         print(line)
-    
+
     # Summary
     print("\n" + "=" * 78)
     print(" TEXT ENGINE SUMMARY")

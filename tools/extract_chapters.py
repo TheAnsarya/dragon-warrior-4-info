@@ -7,7 +7,7 @@ Extracts chapter titles and other story text from the ROM.
 
 Known chapter titles:
 - Chapter 1: The Royal Soldiers
-- Chapter 2: Princess Alena's Adventure  
+- Chapter 2: Princess Alena's Adventure
 - Chapter 3: Taloon the Arms Merchant
 - Chapter 4: The Sisters of Monbaraba
 - Chapter 5: The Chosen Ones

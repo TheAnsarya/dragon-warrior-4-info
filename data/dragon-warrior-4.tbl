@@ -1,7 +1,7 @@
 ; Dragon Warrior IV (NES) - Text Table
 ; ====================================
 ; For use with ROM hacking tools (Translhextion, WindHex, etc.)
-; 
+;
 ; Text encoding analysis from reverse engineering.
 ; DTE table located at Bank 22, CPU $B3A4, ROM 0x5B3B4
 ;
@@ -11,7 +11,7 @@
 ;   FF = End of string
 
 ; Whitespace
-00= 
+00=
 
 ; Digits 0-9
 01=0
@@ -114,16 +114,16 @@
 ; DTE (Dual Tile Encoding) pairs
 ; These single bytes expand to two characters
 80=64
-81=2 
+81=2
 82=sp
 83=ee
-84=d 
+84=d
 85=yo
-86=u 
+86=u
 87=li
 88=ke
-89=. 
-8A=A 
+89=.
+8A=A
 8B=QU
 8C=ES
 8D=TC
@@ -142,10 +142,10 @@
 9B=ED
 9C=BE
 9D=GI
-9E=N 
-9F=A 
+9E=N
+9F=A
 A0=NE
-A1=W 
+A1=W
 A2=QU
 A3=ES
 A4=TC
@@ -159,11 +159,11 @@ AD= y
 AE=ou
 AF= w
 B0=an
-B1=t 
+B1=t
 B2=to
 B3=er
 B4=as
-B5=e 
+B5=e
 B6=th
 B7=is
 B8=qu

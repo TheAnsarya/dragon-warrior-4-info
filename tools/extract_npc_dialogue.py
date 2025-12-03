@@ -8,7 +8,7 @@ text with DTE expansion.
 
 Focus Areas:
 - Bank 12: Dialogue data
-- Bank 13: Dialogue data  
+- Bank 13: Dialogue data
 - Bank 23: Casino/dialogue
 - Bank 24: More dialogue
 """
@@ -58,35 +58,35 @@ class DialogueExtractor:
         with open(rom_path, 'rb') as f:
             self.rom = f.read()
         self._load_dte()
-        
+
     def _load_dte(self):
         """Load DTE dictionary table."""
         self.dte = {}
         for code in range(0x80, 0xFF):
             offset = DTE_TABLE_ROM + (code - 0x80) * 2
             self.dte[code] = (self.rom[offset], self.rom[offset + 1])
-    
+
     def bank_offset(self, bank, addr=0x8000):
         """Convert bank:addr to ROM offset."""
         return 16 + bank * 0x4000 + (addr - 0x8000)
-    
+
     def decode_char(self, b):
         """Decode single byte to character."""
         if b in CHAR_TABLE:
             return CHAR_TABLE[b]
         return None
-    
+
     def expand_dte(self, code, depth=10):
         """Recursively expand DTE code."""
         if depth <= 0:
             return f"<{code:02X}>"
-        
+
         if code < 0x80 or code >= 0xFD:
             return self.decode_char(code) or f"<{code:02X}>"
-        
+
         c1, c2 = self.dte.get(code, (0, 0))
         result = ""
-        
+
         for c in [c1, c2]:
             if c == 0:
                 continue
@@ -95,26 +95,26 @@ class DialogueExtractor:
             elif c in CHAR_TABLE:
                 result += CHAR_TABLE[c]
             # Silently skip unknown bytes in DTE expansion
-        
+
         return result
-    
+
     def decode_bytes(self, data, raw_mode=False):
         """
         Decode byte sequence to string.
-        
+
         Args:
             data: Bytes to decode
             raw_mode: If True, show hex codes for unknowns
-            
+
         Returns:
             Decoded string and end position
         """
         result = []
         pos = 0
-        
+
         while pos < len(data):
             b = data[pos]
-            
+
             if b == 0xFF:  # END
                 break
             elif b == 0xFD:  # LINE
@@ -130,36 +130,36 @@ class DialogueExtractor:
             elif raw_mode:
                 result.append(f"[{b:02X}]")
             # Skip other bytes
-            
+
             pos += 1
-        
+
         return ''.join(result), pos
-    
+
     def find_pointer_tables(self, bank):
         """Find potential pointer tables in a bank."""
         offset = self.bank_offset(bank)
         data = self.rom[offset:offset + 0x4000]
-        
+
         tables = []
-        
+
         # Look for sequences of valid pointers
         i = 0
         while i < len(data) - 8:
             valid_ptrs = 0
             ptr_addrs = []
-            
+
             for j in range(8):  # Check 8 consecutive words
                 lo = data[i + j*2]
                 hi = data[i + j*2 + 1]
                 ptr = (hi << 8) | lo
-                
+
                 # Valid pointer in bank range?
                 if 0x8000 <= ptr < 0xC000:
                     valid_ptrs += 1
                     ptr_addrs.append(ptr)
                 else:
                     break
-            
+
             if valid_ptrs >= 4:  # Found at least 4 consecutive valid pointers
                 tables.append({
                     'bank_offset': i,
@@ -170,41 +170,41 @@ class DialogueExtractor:
                 i += valid_ptrs * 2
             else:
                 i += 1
-        
+
         return tables
-    
+
     def extract_strings_from_pointers(self, bank, ptr_table_addr, count):
         """Extract strings pointed to by a pointer table."""
         offset = self.bank_offset(bank, ptr_table_addr)
         strings = []
-        
+
         for i in range(count):
             lo = self.rom[offset + i*2]
             hi = self.rom[offset + i*2 + 1]
             ptr = (hi << 8) | lo
-            
+
             if 0x8000 <= ptr < 0xC000:
                 text_offset = self.bank_offset(bank, ptr)
                 text_data = self.rom[text_offset:text_offset + 256]
                 text, length = self.decode_bytes(text_data)
-                
+
                 if len(text.strip()) > 0:
                     strings.append({
                         'index': i,
                         'pointer': f"${ptr:04X}",
                         'text': text.strip()
                     })
-        
+
         return strings
-    
+
     def scan_bank_for_dialogue(self, bank, min_len=8):
         """Scan a bank for readable dialogue strings."""
         offset = self.bank_offset(bank)
         data = self.rom[offset:offset + 0x4000]
-        
+
         dialogues = []
         i = 0
-        
+
         while i < len(data):
             # Look for $FF terminators
             if data[i] == 0xFF:
@@ -213,12 +213,12 @@ class DialogueExtractor:
                 while start >= 0 and data[start] != 0xFF:
                     start -= 1
                 start += 1
-                
+
                 length = i - start
                 if length >= min_len:
                     segment = data[start:i]
                     text, _ = self.decode_bytes(segment)
-                    
+
                     # Quality check - mostly alphabetic
                     alpha = sum(1 for c in text if c.isalpha())
                     if alpha >= len(text) * 0.5 and len(text) >= min_len:
@@ -229,26 +229,26 @@ class DialogueExtractor:
                             'text': text.strip()
                         })
             i += 1
-        
+
         return dialogues
-    
+
     def extract_all_dialogue(self):
         """Extract dialogue from all dialogue-heavy banks."""
         all_dialogue = {}
-        
+
         dialogue_banks = [12, 13, 23, 24]
-        
+
         for bank in dialogue_banks:
             print(f"Scanning Bank {bank}...")
-            
+
             # Find pointer tables
             ptr_tables = self.find_pointer_tables(bank)
-            
+
             bank_data = {
                 'pointer_tables': [],
                 'strings': []
             }
-            
+
             # Extract from pointer tables
             for table in ptr_tables[:5]:  # Top 5 tables
                 strings = self.extract_strings_from_pointers(
@@ -260,86 +260,86 @@ class DialogueExtractor:
                         'count': len(strings),
                         'strings': strings
                     })
-            
+
             # Also scan for FF-terminated strings
             strings = self.scan_bank_for_dialogue(bank)
             bank_data['strings'] = strings
-            
+
             all_dialogue[f'bank_{bank}'] = bank_data
-            
+
             print(f"  Found {len(ptr_tables)} pointer tables")
             print(f"  Found {len(strings)} dialogue strings")
-        
+
         return all_dialogue
 
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
+
     extractor = DialogueExtractor(ROM_PATH)
-    
+
     print("=" * 70)
     print(" DRAGON WARRIOR IV - NPC DIALOGUE EXTRACTION")
     print("=" * 70)
-    
+
     # Extract all dialogue
     dialogue = extractor.extract_all_dialogue()
-    
+
     # Save to JSON
     json_path = os.path.join(OUTPUT_DIR, 'npc_dialogue.json')
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(dialogue, f, indent=2, ensure_ascii=False)
     print(f"\nSaved: {json_path}")
-    
+
     # Create readable text dump
     txt_path = os.path.join(OUTPUT_DIR, 'npc_dialogue.txt')
     with open(txt_path, 'w', encoding='utf-8') as f:
         f.write("DRAGON WARRIOR IV - NPC DIALOGUE DUMP\n")
         f.write("=" * 70 + "\n\n")
-        
+
         for bank_name, bank_data in dialogue.items():
             f.write(f"\n{bank_name.upper()}\n")
             f.write("-" * 70 + "\n")
-            
+
             # Pointer table strings
             for table in bank_data.get('pointer_tables', []):
                 f.write(f"\nPointer Table at {table['address']}:\n")
                 for s in table['strings']:
                     f.write(f"  [{s['index']:3d}] {s['pointer']}: {s['text']}\n")
-            
+
             # Direct strings
             f.write(f"\nDirect Strings:\n")
             for s in bank_data.get('strings', [])[:50]:  # First 50
                 text_preview = s['text'][:60].replace('\n', ' ')
                 f.write(f"  {s['addr']}: {text_preview}\n")
-    
+
     print(f"Saved: {txt_path}")
-    
+
     # Summary
     print("\n" + "=" * 70)
     print(" SUMMARY")
     print("=" * 70)
-    
+
     total_strings = 0
     for bank_name, bank_data in dialogue.items():
         bank_count = len(bank_data.get('strings', []))
         ptr_count = sum(len(t.get('strings', [])) for t in bank_data.get('pointer_tables', []))
         total_strings += bank_count + ptr_count
         print(f"  {bank_name}: {bank_count} strings, {ptr_count} from pointers")
-    
+
     print(f"\n  Total: {total_strings} dialogue strings")
-    
+
     # Show some sample dialogue
     print("\n" + "=" * 70)
     print(" SAMPLE DIALOGUE")
     print("=" * 70)
-    
+
     samples_shown = 0
     for bank_name, bank_data in dialogue.items():
         for s in bank_data.get('strings', []):
             text = s['text']
             # Look for interesting dialogue (questions, statements)
-            if ('?' in text or '!' in text or 'you' in text.lower() or 
+            if ('?' in text or '!' in text or 'you' in text.lower() or
                 'welcome' in text.lower() or 'hero' in text.lower()):
                 print(f"\n{bank_name} {s['addr']}:")
                 print(f"  {text}")
