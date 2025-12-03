@@ -1,0 +1,225 @@
+{
+  "spells_found": [
+    {
+      "name": "Sap",
+      "category": "spell",
+      "encoded_length": 3,
+      "occurrences": [
+        {
+          "rom_offset": 74595,
+          "bank": 4,
+          "bank_addr": 41827
+        }
+      ]
+    },
+    {
+      "name": "Return",
+      "category": "spell",
+      "encoded_length": 6,
+      "occurrences": [
+        {
+          "rom_offset": 304881,
+          "bank": 18,
+          "bank_addr": 42737
+        }
+      ]
+    },
+    {
+      "name": "Outside",
+      "category": "spell",
+      "encoded_length": 7,
+      "occurrences": [
+        {
+          "rom_offset": 304792,
+          "bank": 18,
+          "bank_addr": 42648
+        }
+      ]
+    }
+  ],
+  "items_found": [
+    {
+      "name": "Wing of Wyvern",
+      "category": "item",
+      "encoded_length": 14,
+      "occurrences": [
+        {
+          "rom_offset": 307194,
+          "bank": 18,
+          "bank_addr": 45050
+        }
+      ]
+    }
+  ],
+  "text_tables": [
+    {
+      "bank": 14,
+      "bank_offset": 48193,
+      "rom_offset": 244817,
+      "string_count": 7,
+      "sample_strings": [
+        "A5BCbDEFG",
+        "EH8",
+        "I1J",
+        "IKJLIMN",
+        "OPx",
+        "O14",
+        "Q1R"
+      ]
+    },
+    {
+      "bank": 20,
+      "bank_offset": 47143,
+      "rom_offset": 342071,
+      "string_count": 5,
+      "sample_strings": [
+        "SAjgzDSMGigCeeLpkgre",
+        "LTngjFALHfgkyzLESgHi",
+        "LfXgkLpMiBggSHLBHgjQ",
+        "Fnyg",
+        "VkHhffLCyfLBkfLHqgLR"
+      ]
+    },
+    {
+      "bank": 20,
+      "bank_offset": 48211,
+      "rom_offset": 343139,
+      "string_count": 6,
+      "sample_strings": [
+        "Lz4m6rgLGayiCgLx2k4r",
+        "SbBLwrgL7fVGngM4PSBk",
+        "Lfk0rTgLfr4lXgPkeSCm",
+        "SheLwgglm0L",
+        "CieegeCmLCmLCmieekeH",
+        "MHrMHrim"
+      ]
+    },
+    {
+      "bank": 22,
+      "bank_offset": 45116,
+      "rom_offset": 372812,
+      "string_count": 5,
+      "sample_strings": [
+        "COMMANDTALKSPELLSTAT",
+        "SITEMEQUIPSEARCHDOOR",
+        "ACTICSINFOCONDITIONG",
+        "SEX",
+        "LEVEL"
+      ]
+    },
+    {
+      "bank": 22,
+      "bank_offset": 45200,
+      "rom_offset": 372896,
+      "string_count": 6,
+      "sample_strings": [
+        "STRENGTH",
+        "AGILITY",
+        "VITALITY",
+        "INTELLIGENCE",
+        "LUCK",
+        "MAX"
+      ]
+    },
+    {
+      "bank": 22,
+      "bank_offset": 45315,
+      "rom_offset": 373011,
+      "string_count": 5,
+      "sample_strings": [
+        "POWERA",
+        "POWERSDOUSEAPPRAISET",
+        "ANSFERDISCARDTOWHERE",
+        "EFENSE",
+        "YESNO"
+      ]
+    },
+    {
+      "bank": 23,
+      "bank_offset": 33562,
+      "rom_offset": 377642,
+      "string_count": 5,
+      "sample_strings": [
+        "Kind",
+        "Full",
+        "House",
+        "Flush",
+        "Straight"
+      ]
+    },
+    {
+      "bank": 23,
+      "bank_offset": 33659,
+      "rom_offset": 377739,
+      "string_count": 6,
+      "sample_strings": [
+        "Total",
+        "Bets",
+        "Total",
+        "Takes",
+        "Top",
+        "Score"
+      ]
+    },
+    {
+      "bank": 25,
+      "bank_offset": 42074,
+      "rom_offset": 418922,
+      "string_count": 8,
+      "sample_strings": [
+        "P567",
+        "R8765",
+        "N678",
+        "P9876",
+        "J789",
+        "N87",
+        "L67",
+        "J89ab"
+      ]
+    },
+    {
+      "bank": 25,
+      "bank_offset": 42178,
+      "rom_offset": 419026,
+      "string_count": 5,
+      "sample_strings": [
+        "AzABA",
+        "NzACBzB",
+        "PDBzBECz",
+        "RCECzCF",
+        "TDzDGD"
+      ]
+    },
+    {
+      "bank": 27,
+      "bank_offset": 33682,
+      "rom_offset": 443298,
+      "string_count": 14,
+      "sample_strings": [
+        "I79n3I7Al",
+        "I6ho",
+        "I7Bl",
+        "I6io",
+        "I7Cl",
+        "I6jo",
+        "I7ua",
+        "I51h",
+        "I7Ia",
+        "I5f8"
+      ]
+    },
+    {
+      "bank": 27,
+      "bank_offset": 33812,
+      "rom_offset": 443428,
+      "string_count": 5,
+      "sample_strings": [
+        "Q1H4",
+        "Q732",
+        "Q63D",
+        "Q742",
+        "Q64D"
+      ]
+    }
+  ]
+}
