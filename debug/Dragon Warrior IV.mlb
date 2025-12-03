@@ -464,12 +464,25 @@ R:B132:b19_find_valid_char:Find valid character in party
 
 # Bank 19 Data Tables
 R:B74D:b19_stat_table_1:Stat modifier table 1
-R:B80B:b19_stat_table_2:Stat lookup table at B80B
-R:B967:b19_enemy_data:Enemy resistance/type data table
-R:BB84:b19_mode_mult_table:Multiplier table for battle modes
-R:BB8B:b19_mode_divisor:Divisor table for battle modes
-R:BB92:b19_hit_threshold:Hit threshold table by mode
-R:BB99:b19_base_value:Base value for calculations
+R:B803:b19_unknown_table:Unknown table at B803
+R:B80B:b19_spell_effect_table:Spell/action effect type table (256 bytes)
+R:B915:b19_spell_param_1:Spell parameter table 1
+R:B949:b19_spell_param_2:Spell parameter table 2
+R:B967:b19_enemy_data:Enemy resistance/type data table (256 bytes)
+R:BA4E:b19_ai_table_1:AI decision table 1
+R:BA6C:b19_ai_table_2:AI table 2 (4 bytes)
+R:BA70:b19_ai_table_3:AI table 3 (4 bytes)
+R:BA74:b19_tactics_spell_1:Tactics spell data table 1 (7*7=49 bytes)
+R:BAA5:b19_tactics_spell_2:Tactics spell data table 2 (48 bytes)
+R:BAD5:b19_tactics_spell_3:Tactics spell data table 3 (18 bytes)
+R:BB06:b19_tactics_modifier:Tactics-based spell modifiers
+R:BB22:b19_spell_bonus:Spell bonus values by tactics
+R:BB3F:b19_spell_power:Spell power table (9 entries)
+R:BB49:b19_spell_attribute:Spell attribute table (9 entries)
+R:BB84:b19_mode_mult_table:Attack multiplier by tactics (7 entries)
+R:BB8B:b19_mode_divisor:Stat multiplier by tactics (7 entries)
+R:BB92:b19_hit_threshold:Hit threshold table by mode (7 entries)
+R:BB99:b19_base_value:Base damage value (64)
 
 # ==============================================================================
 # Bank 19 Battle RAM Variables (Additional)
@@ -507,4 +520,22 @@ P:008B:actor_index:Current actor index
 P:008C:action_param:Action parameter
 P:0093:battle_flags:Battle calculation flags (LSR'd for tests)
 P:0096:active_char_idx:Active character index for $72F4
+
+# ==============================================================================
+# Bank 19 Spell Subroutines
+# ==============================================================================
+R:9365:b19_get_tactics_spell_1:Get tactics spell data from $BAA5 (via sub_938B)
+R:937A:b19_get_tactics_spell_2:Get tactics spell data from $BAD5 (via sub_938B)
+R:938B:b19_calc_tactics_index:Calculate tactics spell index (tactics*7 + $75E8)
+R:939A:b19_get_tactics_spell_3:Get tactics spell data from $BA74 (via sub_938B)
+R:AEA6:b19_get_spell_power:Get spell power from $BB3F[X] (cap at 8)
+R:AEAF:b19_shift_right_8c8b:Shift $8C:$8B right one bit
+R:AEB4:b19_get_spell_attr:Get spell attribute from $BB49[X] (cap at 8)
+R:AEC0:b19_cap_spell_index:Cap $75E8 at 8 for table lookup
+
+# ==============================================================================
+# Bank 19 Spell/Battle RAM (Additional)
+# ==============================================================================
+G:75E8:spell_level_index:Spell level/slot index (0-7, capped at 8)
+G:6E11:spell_lookup_result:Spell table lookup result storage
 
