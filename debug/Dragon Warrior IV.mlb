@@ -372,30 +372,139 @@ R:FFFE:vec_IRQ:IRQ Vector ($C408)
 # ==============================================================================
 # PRG ROM - Bank 19 Battle System Code ($8000-$BFFF when loaded)
 # Note: These are CPU addresses when bank 19 is in $8000-$BFFF slot
+# ROM address = CPU address + $4C010 - $8000 = CPU address + $44010
 # ==============================================================================
 
 # Bank 19 Entry Points and Main Functions
-# R:8038:b19_battle_entry:Bank 19 battle entry point (calls 8088, 80A1)
-# R:804A:b19_battle_setup:Battle setup (calls 8051, 845A)
-# R:8051:b19_init_routine:Initialization routine
-# R:805B:b19_dispatch_action:Dispatch action via jump table at $8078
-# R:8088:b19_read_game_state:Read $615B into $6E80, check modes
-# R:80A1:b19_check_conditions:Check char state via $72F4
-# R:80FA:b19_init_battle_vars:Initialize battle variables ($75D4-$75E7)
+R:8038:b19_battle_entry:Bank 19 battle entry point
+R:804A:b19_battle_setup:Battle setup (calls 8051, 845A)
+R:8051:b19_init_vars:Initialize battle variables (BRK segment)
+R:805B:b19_dispatch_action:Dispatch action via jump table at $8078
+R:8074:b19_action_nop:Action 0 - No action (RTS)
+R:8075:b19_mode_4_jump:Mode 4 jump to $A8C6
+R:8078:b19_action_table:Jump table for 8 battle actions (16 bytes)
+R:8088:b19_read_tactics:Read $615B (tactics) into $6E80
+R:80A1:b19_check_char_state:Check character state via $72F4,X
+R:80FA:b19_clear_battle_vars:Clear $75D4-$75E7 battle variables
 
-# Bank 19 Math Functions
-# R:8176:b19_shift_left_4:Left shift 4 bits (multiply by 16)
-# R:8187:b19_shift_right_4:Right shift 4 bits (divide by 16)
-# R:8198:b19_scale_value:Scale value based on A register
-# R:81A5:b19_shift_extended:4-bit shift with extended precision
-# R:8330:b19_stat_calc:Stat calculation helper
-# R:83C5:b19_div_16bit:16-bit division loop (shift-subtract)
-# R:83F4:b19_div_setup:Division setup routine
-# R:8414:b19_div_24bit:24-bit division loop
-# R:845A:b19_battle_calc:Battle calculation wrapper
-# R:8488:b19_unknown_8488:Unknown helper
-# R:8C00:b19_unknown_8C00:Unknown function (called from bank 21)
-# R:9212:b19_unknown_9212:Unknown - called in battle flow
-# R:AE11:b19_unknown_AE11:Unknown helper
-# R:A8C6:b19_mode_4_handler:Handler for mode 4
+# Bank 19 16-bit Math Functions
+R:8176:b19_mul16:16-bit left shift x4 (multiply by 16)
+R:8187:b19_div16:16-bit right shift x4 (divide by 16)
+R:8198:b19_scale_stat:Scale stat value by A register
+R:81A5:b19_shift_ext:4-bit shift with extended precision in $19
+R:8330:b19_mult_by_a:Multiply X register pair by A (stat calc)
+R:8366:b19_mult_pair:Multiply pair at X by A register
+R:83AA:b19_add_pairs:Add two 16-bit pairs at X and Y
+
+# Bank 19 Division Routines
+R:83C5:b19_div_16_loop:16-bit division loop (shift-subtract method)
+R:83F4:b19_div_24_setup:24-bit division setup (sets up divisor)
+R:8414:b19_div_24_loop:24-bit division loop
+R:8454:b19_div_3byte:3-byte division helper
+
+# Bank 19 Battle Core
+R:845A:b19_battle_calc:Battle calculation wrapper (contains BRK)
+R:8488:b19_unknown_8488:Unknown battle helper
+R:89B6:b19_get_action_data:Get action data pointer into $79
+R:89F5:b19_get_action_2:Get secondary action data
+R:8A05:b19_calc_target:Calculate target selection
+
+# Bank 19 Character Data Access
+R:8D77:b19_setup_char_ptr:Set up character data pointer at $88-$89
+
+# Bank 19 Hit/Miss and Damage
+R:9110:b19_finalize_action:Finalize action (JMP target from handlers)
+R:9135:b19_check_hit:Hit/miss check - compare $75DB against thresholds
+R:919A:b19_hit_6:Hit check for action type < $29 (returns CMP #6)
+R:91A0:b19_clear_damage:Clear $75D4-$75D5 (damage output?)
+R:91A9:b19_action_codes:Action code table for special handling
+R:91CD:b19_action_jmptbl:Jump table for special action handlers
+
+# Bank 19 Party Stat Summation
+R:9201:b19_get_enemy_idx:Get enemy index from $75D3 into $8B
+R:9212:b19_sum_party_stats:Sum all 8 party members' stats (main calc)
+R:921C:b19_party_loop:Party stat sum loop (8 iterations)
+R:925F:b19_add_stat_pair:Add stat pair from ($88)+Y to tmp1-tmp2
+R:9276:b19_stat_table_lookup:Look up stat in table at $B80B
+R:9584:b19_setup_action:Set up action execution
+
+# Bank 19 Action Dispatchers
+R:A54D:b19_exec_action_step:Execute one action step (uses table at $A626)
+R:A58D:b19_validate_action:Validate action step
+R:A5AA:b19_find_target:Find valid target for action
+R:A5FC:b19_check_execute:Check if action can execute
+R:A61A:b19_calc_offset:Calculate offset = C * 12 (for action tables)
+R:A624:b19_action_ptr_table:Pointer table for action types (8 entries)
+
+# Bank 19 Battle State Management
+R:A6C6:b19_state_setup_1:Battle state setup function 1
+R:A6CA:b19_state_setup_2:Battle state setup function 2
+R:A6CE:b19_state_setup_3:Battle state setup function 3
+R:A6D2:b19_state_cleanup:Battle state cleanup
+
+# Bank 19 Damage Calculation
+R:AA54:b19_store_action:Store action type to $75DA
+R:AA67:b19_damage_calc:Main damage calculation routine
+R:AA9F:b19_apply_defense:Apply defense modifier
+R:AB59:b19_check_resist:Check resistance/elemental effectiveness
+
+# Bank 19 Action Handlers (Jump table targets from $8078)
+R:AF10:b19_action_1_handler:Action 1 handler - Attack sequence
+R:AF48:b19_action_4_handler:Action 4 handler - Skill/Spell
+R:AF97:b19_action_2_handler:Action 2 handler - Item use
+R:AFF0:b19_action_ff0:Action handler at AFF0
+R:B049:b19_action_5_handler:Action 5-7 handler - Defense/Other
+
+# Bank 19 Special Checks
+R:B066:b19_chapter_check:Check if chapter == 4 ($615A)
+R:B08C:b19_party_status_check:Check party member status
+R:B0B4:b19_bit_rotate:Bit rotation helper
+R:B0E0:b19_special_enemy:Special enemy check ($75DB == $43)
+R:B132:b19_find_valid_char:Find valid character in party
+
+# Bank 19 Data Tables
+R:B74D:b19_stat_table_1:Stat modifier table 1
+R:B80B:b19_stat_table_2:Stat lookup table at B80B
+R:B967:b19_enemy_data:Enemy resistance/type data table
+R:BB84:b19_mode_mult_table:Multiplier table for battle modes
+R:BB8B:b19_mode_divisor:Divisor table for battle modes
+R:BB92:b19_hit_threshold:Hit threshold table by mode
+R:BB99:b19_base_value:Base value for calculations
+
+# ==============================================================================
+# Bank 19 Battle RAM Variables (Additional)
+# ==============================================================================
+G:75D1:battle_action_ptr:Current action pointer low
+G:75D2:battle_action_type:Current action type
+G:75D3:battle_target_idx:Target index (enemy or char)
+G:75D9:battle_actor_idx:Acting character/enemy index
+G:75DA:battle_action_cat:Action category (upper nibble)
+G:75DB:battle_action_id:Action ID for hit calculation
+G:75E1:battle_power_lo:Action power low byte
+G:75E2:battle_power_hi:Action power high byte
+G:75E5:battle_temp_e5:Temp storage E5
+G:75EC:battle_rng_value:RNG value for hit check
+G:75ED:battle_stat_sum_lo:Sum of party stats low byte
+G:75EE:battle_stat_sum_hi:Sum of party stats high byte
+G:75EF:battle_defense_mod:Defense modifier value
+G:75F0:battle_flag_f0:Battle flag F0 (bit 7 cleared by dispatcher)
+G:75F2:battle_special:Special battle value ($7355)
+
+# ==============================================================================
+# Bank 19 Zero Page (during battle)
+# ==============================================================================
+P:0079:action_data_ptr_lo:Pointer to action data (low byte)
+P:007A:action_data_ptr_hi:Pointer to action data (high byte)
+P:007B:calculated_hit:Calculated hit value
+P:0081:party_loop_counter:Party member loop counter (7 down to 0)
+P:0082:inner_loop_counter:Inner loop counter
+P:0086:stat_ptr_lo:Stat table pointer low
+P:0087:stat_ptr_hi:Stat table pointer high
+P:0088:char_data_ptr_lo:Character data pointer low
+P:0089:char_data_ptr_hi:Character data pointer high
+P:008A:char_count:Character count
+P:008B:actor_index:Current actor index
+P:008C:action_param:Action parameter
+P:0093:battle_flags:Battle calculation flags (LSR'd for tests)
+P:0096:active_char_idx:Active character index for $72F4
 
