@@ -1,0 +1,25 @@
+Dragon Warrior IV - Monster Table Search Results
+======================================================================
+
+Found 457 candidate monster table starts
+
+Bank 5 $84DD (ROM $144ED)
+Bank 8 $97DF (ROM $217EF)
+Bank 8 $97FA (ROM $2180A)
+Bank 8 $9815 (ROM $21825)
+Bank 8 $9AF1 (ROM $21B01)
+Bank 8 $9AFD (ROM $21B0D)
+Bank 8 $9B0C (ROM $21B1C)
+Bank 8 $9B13 (ROM $21B23)
+Bank 8 $9B27 (ROM $21B37)
+Bank 8 $9B42 (ROM $21B52)
+Bank 8 $9B5D (ROM $21B6D)
+Bank 8 $9B78 (ROM $21B88)
+Bank 8 $9D3A (ROM $21D4A)
+Bank 8 $9DCB (ROM $21DDB)
+Bank 8 $9DCD (ROM $21DDD)
+Bank 8 $9DE5 (ROM $21DF5)
+Bank 8 $9E00 (ROM $21E10)
+Bank 8 $9E10 (ROM $21E20)
+Bank 8 $9E1B (ROM $21E2B)
+Bank 8 $9E1C (ROM $21E2C)
