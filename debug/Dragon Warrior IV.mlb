@@ -3063,5 +3063,218 @@ P:00F7:b22_param1:Parameter 1
 P:00F8:b22_param2:Parameter 2
 P:00F9:b22_script_data:Script data array (6 bytes)
 
+# ============================================================
+# BANK 23 - CASINO/MINI-GAME SYSTEM
+# PRG Address: $8000-$BFFF (Bank 23)
+# PRG Offset: 0x5C000
+# ============================================================
+
+# -- Bank 23 Entry and Jump Table ($8000-$804B) --
+P:8000:b23_entry_jump:Entry jump to main
+P:8003:b23_ptr_table:Pointer/handler table
+P:804C:b23_init_game:Initialize game mode
+
+# -- Bank 23 Slot Machine Main ($8052-$80B0) --
+P:8052:b23_slot_init:Initialize slot machine
+P:8068:b23_slot_setup:Setup slot graphics
+P:8078:b23_slot_render:Render slot display
+P:8084:b23_slot_main_loop:Slot machine main loop
+P:80B1:b23_check_win:Check for win condition
+
+# -- Bank 23 Win Processing ($80C1-$8118) --
+P:80C1:b23_process_win:Process winning combination
+P:80CF:b23_update_counter:Update win counter ($62B0)
+P:80E1:b23_calc_payout:Calculate payout amount
+P:80F4:b23_show_payout:Show payout on screen
+P:8107:b23_wait_display:Wait and display loop
+
+# -- Bank 23 Input Loop ($8118-$8178) --
+P:8118:b23_clear_display:Clear slot display
+P:812E:b23_input_loop:Main input processing loop
+P:8141:b23_check_buttons:Check button input
+P:8150:b23_cursor_pos1:Move cursor to position 1
+P:8162:b23_cursor_pos2:Move cursor to position 2
+P:8174:b23_jump_payout:Jump to payout handler
+P:8179:b23_process_bet:Process bet amount
+
+# -- Bank 23 Display Helpers ($818F-$81D6) --
+P:818F:b23_save_regs:Save registers to $FD-$FF
+P:819F:b23_shift_regs:Shift registers for display
+P:81B2:b23_load_display:Load display value
+P:81C5:b23_payout_table:Payout multiplier table
+
+# -- Bank 23 Spin Check ($81D7-$8236) --
+P:81D7:b23_check_spin:Check if spinning
+P:81DD:b23_set_spin_speed:Set spin speed ($2E-$30)
+P:81F2:b23_is_spinning:Check spin state, return in carry
+
+# -- Bank 23 Reel Animation ($8237-$8285) --
+P:8237:b23_animate_reels:Animate spinning reels
+P:8244:b23_stop_reel:Stop individual reel
+P:8260:b23_reel_update:Update reel position
+P:8286:b23_init_spin:Initialize spin sequence
+
+# -- Bank 23 Symbol Drawing ($8654-$889) --
+P:8654:b23_draw_symbols:Draw slot symbols
+P:896E:b23_symbol_table:Symbol graphics table
+P:89EE:b23_animate_win:Animate winning combination
+
+# -- Bank 23 Coin Operations ($8A3F-$8BE6) --
+P:8A3F:b23_coin_init:Initialize coin counter
+P:8A6B:b23_add_coins:Add coins to total
+P:8AAC:b23_update_coins:Update coin display
+P:8BE7:b23_load_coins:Load coin values
+
+# -- Bank 23 Display Update ($8BF4-$8C68) --
+P:8BF4:b23_check_display:Check display state
+P:8C04:b23_render_digits:Render digit display
+P:8C24:b23_scroll_display:Scroll display area
+P:8C39:b23_copy_digits:Copy digit values
+P:8C45:b23_output_digits:Output digits to screen
+
+# -- Bank 23 Panel Update ($8C69-$8C9C) --
+P:8C69:b23_update_panel:Update info panel
+P:8C83:b23_init_panel:Initialize panel display
+P:8C9D:b23_refresh_panel:Refresh panel data
+
+# -- Bank 23 Animation ($8CB7-$8D19) --
+P:8CB7:b23_anim_panel:Animate panel elements
+P:8CD0:b23_draw_panel:Draw panel frame
+P:8CDD:b23_load_gfx1:Load graphics set 1
+P:8CED:b23_load_gfx2:Load graphics set 2
+P:8CFD:b23_load_gfx3:Load graphics set 3
+P:8D0A:b23_setup_palette:Setup color palette
+
+# -- Bank 23 Reel Control ($8D1A-$8D7E) --
+P:8D1A:b23_stop_delay:Stop reel with delay
+P:8D1F:b23_reel_handler:Main reel handler
+P:8D25:b23_reel_animate:Reel animation step
+P:8D3E:b23_position_table:Reel position table
+P:8D43:b23_reel_init:Initialize reel state
+P:8D58:b23_reel_col2:Reel column 2 handler
+P:8D5D:b23_reel_col13:Reel column 1 and 3 handler
+P:8D67:b23_reel_col04:Reel column 0 and 4 handler
+P:8D6E:b23_copy_reel:Copy reel graphics
+
+# -- Bank 23 Main Game Loop ($8D7F-$8DBB) --
+P:8D7F:b23_game_loop:Casino game loop
+P:8D8B:b23_frame_update:Frame update handler
+P:8DA0:b23_check_input_game:Check input during game
+P:8DA7:b23_handle_button:Handle button press
+
+# -- Bank 23 Result Display ($8DC4-$8EA8) --
+P:8DC4:b23_show_result:Show spin result
+P:8DE5:b23_flash_win:Flash winning symbols
+P:8E30:b23_clear_flash:Clear flash state
+P:8E52:b23_increment_roll:Increment roll counter
+P:8EA9:b23_final_display:Final result display
+
+# -- Bank 23 Spin Control ($8ED6-$8F63) --
+P:8ED6:b23_start_spin:Start reel spinning
+P:8F37:b23_spin_check:Check spin status
+P:8F42:b23_spin_update:Update spin state
+P:8F5A:b23_init_spin_vars:Initialize spin variables
+P:8F64:b23_random_offset:Generate random offset
+
+# -- Bank 23 Probability ($8F9E-$90C3) --
+P:8F9E:b23_calc_random:Calculate random result
+P:8FC2:b23_weight_table:Probability weight table
+P:9042:b23_symbol_weights:Symbol probability weights
+
+# -- Bank 23 Graphics Data ($90C4-$9117) --
+P:90C4:b23_gfx_data1:Graphics data set 1
+P:90EE:b23_gfx_data2:Graphics data set 2
+P:9118:b23_gfx_data3:Graphics data set 3
+
+# -- Bank 23 Sound/VBlank ($91AF-$9241) --
+P:91AF:b23_vblank_wait:Wait for VBlank
+P:91E7:b23_play_sound:Play slot sound
+P:9242:b23_nmi_handler:NMI/VBlank handler
+
+# -- Bank 23 Display Setup ($92B4-$9313) --
+P:92B4:b23_setup_screen:Setup screen mode
+P:92C5:b23_clear_screen:Clear screen buffer
+P:92F6:b23_load_palette:Load color palette
+P:9314:b23_init_sprites:Initialize sprites
+
+# -- Bank 23 Win Check ($9446-$9598) --
+P:9446:b23_eval_win:Evaluate winning line
+P:9520:b23_check_line:Check single line
+
+# -- Bank 23 Monster Arena ($9BF9-$9C93) --
+P:9BF9:b23_arena_init:Initialize monster arena
+P:9C0D:b23_arena_setup:Setup arena display
+P:9C35:b23_arena_main:Arena main loop
+P:9C44:b23_arena_update:Arena frame update
+P:9C5F:b23_arena_vars:Initialize arena variables
+P:9C7E:b23_arena_flags:Set arena flags
+
+# -- Bank 23 Betting ($9C94-$9CD7) --
+P:9C94:b23_bet_menu:Betting menu
+P:9CAB:b23_bet_init:Initialize bet
+P:9CB5:b23_bet_input:Bet input loop
+P:9CD1:b23_confirm_bet:Confirm bet amount
+P:9CD8:b23_draw_bet:Draw bet display
+
+# -- Bank 23 Monster Fight ($9CFE-$9DE5) --
+P:9CFE:b23_fight_round:Process fight round
+P:9D08:b23_calc_damage:Calculate damage
+P:9D23:b23_check_ko:Check for knockout
+P:9D41:b23_update_hp:Update HP display
+
+# -- Bank 23 Fight Animation ($9DD0-$9EE5) --
+P:9DD0:b23_fight_anim:Fight animation
+P:9DE6:b23_show_damage:Show damage numbers
+P:9E76:b23_monster_anim:Monster animation
+
+# -- Bank 23 Arena Results ($9EE6-$9FE3) --
+P:9EE6:b23_fight_result:Process fight result
+P:9F32:b23_payout_arena:Calculate arena payout
+P:9FE4:b23_end_fight:End fight sequence
+
+# -- Bank 23 Arena Display ($9FFC-$A04F) --
+P:9FFC:b23_draw_arena:Draw arena screen
+P:A026:b23_draw_monsters:Draw monster sprites
+P:A050:b23_update_arena:Update arena display
+
+# -- Bank 23 Monster Stats ($A33C-$A599) --
+P:A33C:b23_load_monster:Load monster data
+P:A3A5:b23_calc_stats:Calculate monster stats
+P:A57A:b23_monster_table:Monster stat table
+P:A599:b23_monster_gfx:Monster graphics
+
+# -- Bank 23 Arena Helpers ($A7FE-$A874) --
+P:A7FE:b23_arena_helper1:Arena helper routine 1
+P:A875:b23_arena_helper2:Arena helper routine 2
+
+# -- Bank 23 Graphics/Tile Data ($AC55-$BFB5) --
+P:AC55:b23_tile_data:Tile graphics data
+P:B4C1:b23_palette_data:Palette data
+P:B6F8:b23_sprite_data:Sprite graphics
+P:BA44:b23_symbol_gfx:Slot symbol graphics
+P:BEFA:b23_bg_data:Background tile data
+
+# -- Bank 23 RAM Variables --
+G:0029:b23_reel_pos:Reel position array (6)
+G:002F:b23_reel_speed:Reel speed array (6)
+G:0034:b23_display_flags:Display update flags
+G:0036:b23_spin_value_lo:Spin value low
+G:0037:b23_spin_value_mid:Spin value middle
+G:0038:b23_spin_value_hi:Spin value high
+G:0044:b23_random_seed:Random number seed
+G:005A:b23_menu_select:Menu selection
+G:0060:b23_arena_mode:Arena mode flag
+G:0081:b23_spin_state:Spin state (0-3)
+G:0082:b23_bet_amount:Current bet amount
+G:008A:b23_timer:Animation timer
+G:04B0:b23_sprite_buffer:Sprite buffer
+G:04E0:b23_palette_buffer:Palette buffer
+G:04F2:b23_screen_offset:Screen offset
+G:04FF:b23_rng_state:RNG state
+G:0505:b23_game_flags:Game state flags
+G:0508:b23_coin_lo:Coin count low
+G:0509:b23_coin_hi:Coin count high
+G:62B0:b23_win_counter:Win counter array (8)
+
 
 
