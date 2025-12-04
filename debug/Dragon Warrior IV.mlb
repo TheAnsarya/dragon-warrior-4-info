@@ -358,14 +358,25 @@ R:C8A1:rng_inc_counter:Increment RNG counter at $050D
 R:C8A6:rng_load_seed:Load seed from $0012 and add counter
 R:C8AD:rng_shifter:RNG bit shift subroutine
 R:C8CB:rng_shifter_end:RNG shifter end
-R:C913:rng_related:RNG related subroutine (called from NMI)
+
+# OAM Sprite System
+R:C90C:wait_n_frames:Wait for X VBlank frames
+R:C913:oam_wrapper:OAM shuffle wrapper (saves XY, calls shuffle)
+R:C91F:oam_shuffle:Shuffle OAM sprites for flicker reduction
+R:C94B:oam_shuffle_data:Sprite shuffle order table
+R:C94E:oam_swap_routine:Swap sprite data between X and Y offsets
+
 R:C968:main_loop_entry:Main game loop entry point
 R:C97D:main_loop:Main game loop (infinite)
 R:C983:setup_bank_trampoline:Copy bank switch code to SRAM
 R:C9ED:main_frame_handler:Main frame processing handler
 
 # Frame Handler Subroutines
+R:CA17:wait_direction_key:Wait for direction key release ($14 & $04)
 R:CA21:sub_CA21:Unknown processing
+R:CA41:movement_processor:Process movement and tile collision
+R:CA55:movement_mode_check:Check $0515 mode for movement
+R:CA77:movement_main:Main movement processing
 R:CB98:read_controller:Read controller input via $4016
 R:CBB4:timer_update:Update timer counter ($0526 += 8)
 R:D542:map_handler:Map/scroll position handler
