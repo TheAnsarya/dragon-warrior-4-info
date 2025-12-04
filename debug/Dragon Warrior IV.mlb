@@ -137,6 +137,26 @@ G:60B5:Party6_Start:Ragnar - Party slot 6 start
 # Party Member 7 (Alena) - 30 bytes
 G:60D3:Party7_Start:Alena - Party slot 7 start
 
+# Unused Character Slot (30 bytes)
+G:60F1:Party8_Unused:Unused character slot start
+
+# Extra Companion 1 (6 bytes) - DataCrystal
+# Healie, Orin, etc. during story events
+G:610F:Companion1_StatusFlags:Extra Companion 1 - Status flags (poison, paralyzed, alive)
+G:6110:Companion1_CurrentHP_Lo:Extra Companion 1 - Current HP low
+G:6111:Companion1_CurrentHP_Hi:Extra Companion 1 - Current HP high
+G:6112:Companion1_CurrentMP_Lo:Extra Companion 1 - Current MP low
+G:6113:Companion1_CurrentMP_Hi:Extra Companion 1 - Current MP high
+G:6114:Companion1_ID:Extra Companion 1 - Which companion type
+
+# Extra Companion 2 (6 bytes) - DataCrystal
+G:6115:Companion2_StatusFlags:Extra Companion 2 - Status flags
+G:6116:Companion2_CurrentHP_Lo:Extra Companion 2 - Current HP low
+G:6117:Companion2_CurrentHP_Hi:Extra Companion 2 - Current HP high
+G:6118:Companion2_CurrentMP_Lo:Extra Companion 2 - Current MP low
+G:6119:Companion2_CurrentMP_Hi:Extra Companion 2 - Current MP high
+G:611A:Companion2_ID:Extra Companion 2 - Which companion type
+
 # General Save Memory ($6157-$62EE)
 G:6157:Gold_Lo:Gold amount (low byte)
 G:6158:Gold_Mid:Gold amount (middle byte)
@@ -144,10 +164,21 @@ G:6159:Gold_Hi:Gold amount (high byte)
 G:615A:ChapterNumber:Current chapter (0=Ch1, 1=Ch2, 2=Ch3, 3=Ch4, 4=Ch5)
 G:615B:BattleTactics:AI tactics (0=Normal, 1=SaveMP, 2=Offensive, 3=Defensive, 4=TryOut, 5=UseNoMP)
 
-# Return Spell Locations
-G:6165:ReturnLoc1:Return spell destination 1
-G:6166:ReturnLoc2:Return spell destination 2
-G:6167:ReturnLoc3:Return spell destination 3
+# Return Spell Locations (3 bytes = 24 bits for 24 towns)
+# Bit flags: which towns can be teleported to with Return spell
+# Reset every chapter change
+G:6165:ReturnLoc1:Return spell destinations byte 1
+# Bit 0=Branca, 1=Endor, 2=Bonmalmo, 3=Aneaux, 4=Konenber, 5=Mintos, 6=Soretta, 7=Keeleon
+G:6166:ReturnLoc2:Return spell destinations byte 2
+# Bit 0=Haville, 1=Monbaraba, 2=Santeem, 3=Tempe, 4=Stancia, 5=Burland, 6=Izmit, 7=Gardenbur
+G:6167:ReturnLoc3:Return spell destinations byte 3
+# Bit 0=Rosaville, 1=Riverton, 2=Dire Palace, 3=Aktemto, 4=Gottside, 5=Zenithia, 6=Last Refuge
+
+# Party Member Order (DataCrystal)
+G:616A:PartyOrder_Slot0:Active party slot 0 (character index 0-7)
+G:616B:PartyOrder_Slot1:Active party slot 1
+G:616C:PartyOrder_Slot2:Active party slot 2
+G:616D:PartyOrder_Slot3:Active party slot 3
 
 # Treasure Chest Flags (27 bytes)
 G:625D:TreasureFlags_Start:Treasure chest bit flags start
@@ -186,8 +217,29 @@ G:62AF:CasinoCoins_Hi:Casino coins (high byte)
 # Day/Night Cycle
 G:62ED:DayNightCounter:Day/night cycle counter ($00-$CB)
 
+# Chapter 3 Taloon Shop Inventory Counters (DataCrystal)
+G:62E7:C3_Shop_Boomerang_Count:Chapter 3 Lakanaba Shop - Boomerang stock count
+G:62E8:C3_Shop_ChainSickle_Count:Chapter 3 Lakanaba Shop - Chain Sickle stock count
+G:62E9:C3_Shop_SwordOfMalice_Count:Chapter 3 Lakanaba Shop - Sword of Malice stock count
+
 # Bag Storage
 G:62EF:BagStorage_Start:Bag item storage start
+
+# ==============================================================================
+# MAP RENDERING WRAM (DataCrystal ROM Map)
+# ==============================================================================
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/RAM_map
+G:6EFE:map_temp_buffer:Map temp buffer ($20 bytes, init to $FF)
+G:6F20:map_smoothing_flags:Smoothing flags - wall tile facing direction ($20 bytes)
+G:6F40:map_tile_behaviors:Tile behaviors for current tileset ($40 bytes)
+# Behavior values: normal, wall, water, stairs, etc.
+# See https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV/Tile_Behaviors
+G:7600:map_tile_numbers:Tile numbers for current tileset (32 tiles × $C0 bytes)
+# 33rd tile is Roof tile
+G:76C0:map_tile_attributes:Attribute values for current tileset ($40 bytes)
+# 33rd tile is Roof tile
+G:7800:map_data_buffer:Map data for current map (variable size)
+# Format: RRRttttt - ttttt=tile 0-31, RRR=roof 0-7 (0=no roof)
 
 # ==============================================================================
 # BATTLE SYSTEM RAM ($6E00-$6E80) - Bank 19 Battle Calculations
@@ -247,39 +299,72 @@ G:7024:battle_result_24:Battle result byte 24
 G:7025:battle_result_25:Battle result byte 25
 
 # ==============================================================================
-# PRG ROM Banks - Map Data (Bank $09)
+# PRG ROM Banks - Map Data (Banks $09, $0A, $0B)
 # ==============================================================================
-R:30010:Bank09_Start:Bank 9 start - Map data
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+# Bank 09 ($24000): Town/dungeon map data for locations 00-2D
+# Bank 0A ($28000): Map data for locations 2D-45
+# Bank 0B ($2C000): Map data for locations 45-48 + Overworld maps
 
-# Keeleon
-R:30000:Map00_Keeleon_Outside:Keeleon - Outside
-R:30085:Map00_Keeleon_F1:Keeleon - F1
-R:3012B:Map00_Keeleon_F2:Keeleon - F2
-R:301AE:Map00_Keeleon_F3:Keeleon - F3
-R:301C1:Map00_Keeleon_B1:Keeleon - B1, Jail
+# ==============================================================================
+# Bank 09 - Map Data ($24000-$27FFF) - Locations 00-2D
+# ==============================================================================
+P:24000:b09_map_data_start:Bank 09 map data start
 
-# Santeem
-R:30206:Map01_Santeem_F1:Santeem - F1
-R:302DD:Map01_Santeem_F2:Santeem - F2
-R:30344:Map01_Santeem_F3:Santeem - F3
+# Map 00: Keeleon (Town and Castle)
+P:24000:Map00_Keeleon_Outside:Keeleon - Outside area
+P:24085:Map00_Keeleon_F1:Keeleon - F1 (main floor)
+P:2412B:Map00_Keeleon_F2:Keeleon - F2
+P:241AE:Map00_Keeleon_F3:Keeleon - F3
+P:241C1:Map00_Keeleon_B1:Keeleon - B1, Jail
 
-# Burland
-R:30398:Map02_Burland:Burland
-R:3050C:Map02_Burland_Castle_F1:Burland - Castle, F1
-R:305DE:Map02_Burland_Castle_F2:Burland - Castle, F2
-R:3065D:Map02_Burland_Flora:Burland - Flora's House / Armor Shop, F2
+# Map 01: Santeem (Chapter 2 Castle)
+P:24206:Map01_Santeem_F1:Santeem - F1 (main floor)
+P:242DD:Map01_Santeem_F2:Santeem - F2
+P:24344:Map01_Santeem_F3:Santeem - F3 (Alena's room)
 
-# Dire Palace
-R:3069B:Map03_DirePalace_F1:Dire Palace - F1
-R:307B5:Map03_DirePalace_F2:Dire Palace - F2
-R:30834:Map03_DirePalace_B1_Kitchen:Dire Palace - B1, Kitchen/Jail
-R:308CF:Map03_DirePalace_B1_Tomb:Dire Palace - B1, Tomb
+# Map 02: Burland (Chapter 1 Castle)
+P:24398:Map02_Burland_Town:Burland - Town area
+P:2450C:Map02_Burland_Castle_F1:Burland - Castle, F1
+P:245DE:Map02_Burland_Castle_F2:Burland - Castle, F2
+P:2465D:Map02_Burland_Flora:Burland - Flora's House / Armor Shop, F2
 
-# Endor
-R:308E7:Map04_Endor:Endor
-R:30A45:Map04_Endor_Casino:Endor - Casino/Monster Arena
-R:30AAB:Map04_Endor_Castle_F1:Endor - Castle, F1
-R:30C77:Map04_Endor_Arena:Endor - Back Castle, Arena
+# Map 03: Dire Palace
+P:2469B:Map03_DirePalace_F1:Dire Palace - F1
+P:247B5:Map03_DirePalace_F2:Dire Palace - F2
+P:24834:Map03_DirePalace_B1_Kitchen:Dire Palace - B1, Kitchen/Jail
+P:248CF:Map03_DirePalace_B1_Tomb:Dire Palace - B1, Tomb
+
+# Map 04: Endor (Casino Town)
+P:248E7:Map04_Endor_Town:Endor - Town area
+P:24A45:Map04_Endor_Casino:Endor - Casino/Monster Arena
+P:24AAB:Map04_Endor_Castle_F1:Endor - Castle, F1
+P:24C77:Map04_Endor_Arena:Endor - Back Castle, Arena
+
+# Maps 05-2D: Additional locations continue in Bank 09
+# Full list available at DataCrystal ROM map page
+
+# ==============================================================================
+# Bank 0A - Map Data ($28000-$2BFFF) - Locations 2D-45
+# ==============================================================================
+# Continues from Bank 09, includes Aktemto Mine, Zenethian Tower, etc.
+P:28000:b0a_map_data_start:Bank 0A map data start
+# Map 2D: Aktemto Mine (continues from Bank 09)
+# Map 3D: Zenethian Tower
+# Map 45: Necrosaro's Palace (partial)
+
+# ==============================================================================
+# Bank 0B - Map Data ($2C000-$2FFFF) - Locations 45-48 + Overworld
+# ==============================================================================
+P:2C000:b0b_map_data_start:Bank 0B map data start
+
+# Map 45-48: Final areas (continued from Bank 0A)
+
+# Overworld Maps
+P:2CCEE:b0b_overworld_main:Main overworld map data
+P:2D590:b0b_overworld_row_ptrs:Overworld row pointer table
+P:2D990:b0b_overworld_gottside:Gottside continent overworld
+P:2DC65:b0b_overworld_underworld:Underworld overworld map
 
 # ==============================================================================
 # PRG ROM Banks - Text Data (Banks $0C-$0E typically)
@@ -934,6 +1019,25 @@ G:7318:b17_actor_array_2:Actor array 2
 G:7324:b17_actor_array_3:Actor array 3 (init to $F7)
 G:7330:b17_actor_array_4:Actor array 4 (init to $F7)
 G:733C:b17_actor_array_5:Actor array 5 (init to $F7)
+
+# -- Bank 17 Map System (DataCrystal ROM Map) --
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+# Bank 17 also contains the map pointer and info tables used by the map loader.
+# Map Pointer Table: 73 entries × 2 bytes = 146 bytes ($B08D-$B11E)
+# Map Info Table: 3 bytes per entry (tileset number, map data address lo/hi)
+P:5F08D:b17_map_pointer_table:Map pointer table (73 maps × 2 bytes)
+# Map indices: 00=Keeleon, 01=Santeem, 02=Burland, 03=Dire Palace, 04=Endor
+# 05=Gardenbur, 06=Branca, 07=Haville, 08=Gardenbur Castle, 09=Stancia
+# 0A=Monbaraba, 0B=Riverton, 0C=Bazaar, 0D=Mintos, 0E=Tempe, 0F=Frenor
+# 10=Aneaux, 11=Haville Cave, 12=Izmit, 13=Bonmalmo, 14=Hometown
+# 15=Monbaraba Theater, 16=Lakanaba, 17=Kievs, 18=Soretta, 19=Seaside Village
+# 1A=Gottside, 1B=Last Refuge, 1C=Secret Playground Entrance, 1D=Konenber Area
+# ...continues to map 48
+P:5F11F:b17_map_pointer_table_end:End of map pointer table
+P:5F121:b17_map_info_table:Map info data (tileset#, addr_lo, addr_hi per submap)
+# Map info format: [tileset_number][map_data_addr_lo][map_data_addr_hi]
+# Used to determine which tileset to load and where map data is stored
+P:5F4AE:b17_map_info_table_end:End of map info table
 
 # ==============================================================================
 # Bank 29 - Formation / Party Data System (PRG ROM $8000-$BFFF when loaded)
@@ -2442,6 +2546,28 @@ P:B673:b08_table_b673:Secondary table pointer
 P:B67D:b08_table_b67d:Tertiary table pointer
 P:B7F7:b08_table_b7f7:Location data table pointer
 
+# -- Bank 08 Tileset Data (DataCrystal ROM Map) --
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+# Tileset data defines tile graphics for each map type (town, dungeon, overworld).
+# 51 tilesets × 64 bytes each = $0CC0 bytes total.
+P:208229:b08_tileset_base_addr_table:Tile graphics base address table (3 entries)
+P:208ADB:b08_tileset_data_start:Tileset data start (51 tilesets × 64 bytes)
+# Tileset format: each tileset = 64 bytes of tile definitions
+# Tileset 00-32: Various town/dungeon tilesets
+# Tileset 33-50: Additional map type tilesets
+P:20979B:b08_tileset_data_end:End of tileset data (after 51st tileset)
+
+# -- Bank 08 Tile Definition Tables (DataCrystal ROM Map) --
+# Tile table entries: 3 bytes per tile (tile number, pattern, behavior)
+P:20A1BB:b08_tile_increment_patterns:Tile increment patterns table
+P:20A28D:b08_tile_pattern_f_table:Pattern F tile table
+P:20A80D:b08_tile_definition_table:Main tile definition table (3 bytes/entry)
+# Each tile entry: [tile_number][pattern][behavior]
+# Pattern determines visual appearance, behavior determines gameplay effect
+
+# -- Bank 08 Animated Tiles (DataCrystal ROM Map) --
+P:20AEB7:b08_animated_tile_data:Animated tile data (waterfalls, etc.)
+
 # -- Bank 08 RAM Variables --
 G:6F20:b08_tile_data_1:Tile data array 1 (32 entries)
 G:6F40:b08_tile_data_2:Tile data array 2 (32 entries)
@@ -2487,6 +2613,29 @@ P:00E5:b08_last_submap:Last submap number
 P:00E6:b08_last_x:Last X coordinate
 P:00E7:b08_last_y:Last Y coordinate
 P:00E9:b08_save_reg:Saved register temp
+
+# ==============================================================================
+# PRG ROM - Bank 0E: Palette and Graphics Code ($8000-$BFFF when loaded)
+# ==============================================================================
+# Bank 0E (file offset $38000) contains palette decision code and color tables.
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+
+# -- Bank 0E Palette Decision Code ($BAF7-$BB52) --
+# Determines which palette to use based on map type and conditions
+P:38AF7:b0e_palette_decision:Palette decision code entry
+P:38B52:b0e_palette_decision_end:End of palette decision code
+
+# -- Bank 0E Palette Tables ($BB53-$BC09) --
+P:38B53:b0e_palette_table_1:Palette table 1
+P:38C09:b0e_palette_table_1_end:End of palette table 1
+
+# -- Bank 0E Additional Palette Data ($BC0A-$BCE1) --
+P:38C0A:b0e_palette_data_2:Palette data section 2
+P:38CE1:b0e_palette_data_2_end:End of palette data section 2
+
+# -- Bank 0E Secondary Palette Tables ($BCE2-$BD9F) --
+P:38CE2:b0e_palette_table_2:Secondary palette table
+P:38D9F:b0e_palette_table_2_end:End of secondary palette table
 
 # ==============================================================================
 # PRG ROM - Bank 20: Party/Wagon Management System ($8000-$BFFF when loaded)
