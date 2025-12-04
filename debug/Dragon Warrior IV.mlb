@@ -1292,4 +1292,133 @@ P:BFFF:MMC1_CHR_BANK0:MMC1 CHR Bank 0
 P:DFFF:MMC1_CHR_BANK1:MMC1 CHR Bank 1
 P:FFFF:MMC1_PRG_BANK:MMC1 PRG Bank Select
 
+# ==============================================================================
+# Bank 30 - NPC/Sprite/Map Event System (PRG ROM $8000-$BFFF when loaded)
+# Bank 30 has 863 subroutines with 633 JSR calls (highest of switchable banks)
+# Contains NPC movement, sprite handling, map events, player interaction
+# Uses $6F40-$6FE0 for NPC/sprite tables, $7000-$71FF for object state
+# Heavy BRK-based dispatch for event scripting
+# ==============================================================================
+
+# Bank 30 Data Tables ($8000-$8093)
+R:8000:b30_data_start:Bank 30 data section start (event pointers)
+R:8094:b30_code_start:Bank 30 code section start
+
+# Bank 30 Event Dispatch ($8094-$80A6)
+R:8094:b30_event_entry:Event handler entry point
+R:8096:b30_event_dispatch:Event dispatch (BRK $07, $6F)
+R:809C:b30_event_table_lookup:Lookup in event table at $80AA
+R:80A7:b30_event_fallback:Fallback to $D1F3
+R:80AA:b30_event_table:Event handler jump table
+
+# Bank 30 Player/NPC Interaction ($80BA-$80F8)
+R:80BA:b30_check_player:Check player interaction flag ($41 bit 4)
+R:80BE:b30_npc_init:NPC interaction initialization
+R:80CA:b30_rng_check:RNG check for NPC (JSR $D3E6)
+R:80E2:b30_npc_direction:Set NPC direction
+R:80EA:b30_event_trigger:Trigger map event (JSR $BAEA)
+R:80F2:b30_return_fail:Return with failure code ($F0)
+
+# Bank 30 NPC Search ($80F9-$8145)
+R:80F9:b30_store_npc_index:Store NPC index to $059C
+R:8101:b30_update_npc_state:Update NPC state at $7000,X
+R:8117:b30_save_state:Save state (JSR $D7FC, $FF74)
+R:8126:b30_find_npc:Find NPC in $7020 table
+R:8128:b30_find_npc_loop:NPC search loop ($7020-$7040)
+R:8142:b30_not_found:NPC not found (CLC, RTS)
+R:8144:b30_found:NPC found (SEC, RTS)
+
+# Bank 30 Map/Location Check ($8146-$819D)
+R:8146:b30_location_check:Location check routine
+R:814C:b30_loc_table_search:Search location table at $819E
+R:8165:b30_loc_check_flags:Check location flags at $62ED
+R:8178:b30_loc_copy_state:Copy location state from $6FE0
+R:818F:b30_loc_next_entry:Advance to next table entry (+5)
+R:819E:b30_loc_table:Location lookup table data
+
+# Bank 30 Position Helpers ($81AE-$81CC)
+R:81AE:b30_get_player_pos:Get player position from $6F60/$6F80
+R:81B8:b30_adjust_position:Adjust position by direction
+
+# Bank 30 Event Scripts ($81CD-$823D)
+R:81CD:b30_event_script_1:Event script handler 1
+R:81D8:b30_check_event_ff:Check for event code $FF
+R:81E9:b30_store_event:Store event to $07B9
+R:81FF:b30_call_c8cc:Call text routine $C8CC
+R:821F:b30_event_branch:Event branch based on value
+
+# Bank 30 Wagon/Party Movement ($84BD-$8576)
+R:84BD:b30_wagon_check:Wagon state check
+R:84C4:b30_wagon_flags:Set wagon flags ($0531-$0533)
+R:84CC:b30_wagon_init:Initialize wagon state
+R:84F3:b30_party_walk_calc:Calculate party walking speed
+R:8500:b30_walk_loop_start:Walking animation loop
+R:8524:b30_walk_shift:Shift walk counter
+R:852A:b30_walk_frame_loop:Walk frame loop
+R:8547:b30_walk_speed_calc:Calculate walk speed by $058E
+
+# Bank 30 NPC Animation ($854E-$8576)
+R:854E:b30_npc_animate_full:Full NPC animation sequence
+R:855A:b30_npc_animate_calc:Calculate NPC animation
+R:856E:b30_npc_set_visible:Set NPC visible ($7020,X |= $80)
+
+# Bank 30 Map Transition ($8577-$85A3)
+R:8577:b30_map_transition:Map transition handler
+R:8587:b30_transition_animate:Animate during transition
+R:8597:b30_transition_complete:Complete transition
+
+# Bank 30 Sprite Update ($85A4-$8675)
+R:85A4:b30_sprite_update:Update sprite data at $7007-$7009
+R:85DF:b30_sprite_setup:Sprite setup (LDX #$09, JSR $D804)
+R:85EC:b30_sprite_loop:Sprite animation loop
+R:8606:b30_sprite_clear_flags:Clear sprite flags ($7007,X AND #$7F)
+R:861E:b30_sprite_full_update:Full sprite update sequence
+
+# Bank 30 Map Position ($8700-$8726)
+R:8700:b30_map_pos_init:Initialize map position (JSR $894A)
+R:8706:b30_check_map_45:Check for map $45
+R:871E:b30_toggle_map_flag:Toggle map flag at $62AA
+
+# Bank 30 Party Setup ($8726-$876A)
+R:8726:b30_party_setup:Party setup routine
+R:8729:b30_party_init_call:Initialize party (JSR $8A0D)
+R:8733:b30_party_state:Update party state at $7000
+
+# Bank 30 Animation Helpers ($86DD-$86FF)
+R:86DD:b30_animate_helper:Animation helper (E06E, D7D5, CBB4)
+R:86E6:b30_animate_speed:Calculate animation speed
+
+# Bank 30 NPC Data Structures
+G:6F40:b30_npc_type:NPC type array (32 entries)
+G:6F60:b30_npc_x_pos:NPC X position array (32 entries)
+G:6F80:b30_npc_y_pos:NPC Y position array (32 entries)
+G:6FE0:b30_npc_state:NPC state array (32 entries)
+G:6FE9:b30_sprite_counter:Sprite update counter
+G:7000:b30_object_flags:Object flags array
+G:7007:b30_follower_state_0:Follower 0 state
+G:7008:b30_follower_state_1:Follower 1 state
+G:7009:b30_follower_state_2:Follower 2 state
+G:7020:b30_active_npcs:Active NPC indices (32 entries)
+G:7029:b30_npc_visibility:NPC visibility flags
+G:70E0:b30_npc_flags:NPC processing flags (32 entries)
+G:7169:b30_party_visibility:Party visibility flag
+
+# Bank 30 Map Variables
+G:0515:b30_transition_mode:Map transition mode
+G:0531:b30_wagon_flag_1:Wagon state flag 1
+G:0532:b30_wagon_flag_2:Wagon state flag 2
+G:0533:b30_wagon_flag_3:Wagon state flag 3
+G:058E:b30_party_speed:Party movement speed
+G:058F:b30_walk_toggle:Walking animation toggle
+G:0597:b30_transition_state:Transition state flag
+G:059C:b30_current_npc:Current NPC index
+G:060A:b30_sprite_index:Current sprite index
+G:62A5:b30_chapter_flags:Chapter state flags
+G:62AA:b30_map_toggle:Map toggle state
+G:62ED:b30_event_state:Event state flag ($78 = chapter boundary)
+G:6F87:b30_party_x_pos:Party X position
+G:6F88:b30_party_y_pos:Party Y position
+G:6FC7:b30_saved_x:Saved X position
+G:6FC8:b30_saved_y:Saved Y position
+
 
