@@ -2717,5 +2717,351 @@ P:00D7:b20_scroll_cnt:Scroll counter
 P:00D8:b20_scroll_flag:Scroll flag
 P:00D9:b20_display_mode:Display mode
 
+# ============================================================
+# BANK 22 - TEXT/DIALOGUE PROCESSING SYSTEM
+# PRG Address: $8000-$BFFF (Bank 22)
+# PRG Offset: 0x58000
+# ============================================================
+
+# -- Bank 22 Entry Points ($8028-$8035) --
+P:8028:b22_entry_point:Main entry point
+P:802B:b22_call_init:Call initialization
+P:802E:b22_call_setup:Call setup routine
+P:8031:b22_call_main_loop:Call main processing loop
+P:8035:b22_entry_return:Return from entry
+
+# -- Bank 22 Main Processing Loop ($8036-$8093) --
+P:8036:b22_main_loop:Main text processing loop
+P:803F:b22_check_state:Check dialog state ($5C)
+P:8043:b22_call_input:Call input handler
+P:8051:b22_check_char_id:Check character ID in $6E8A array
+P:8084:b22_set_char_6c:Set character $6C handler
+P:8089:b22_clear_state:Clear state variables ($5D, $57)
+P:8091:b22_return_state:Return current state
+
+# -- Bank 22 Command Dispatch ($8094-$80C3) --
+P:8094:b22_dispatch_cmd:Dispatch text command
+P:80A4:b22_calc_handler:Calculate handler from command
+P:80B5:b22_default_handler:Default command handler
+P:80C4:b22_handler_table:Command handler jump table (16 entries)
+
+# -- Bank 22 Text State ($80EA-$8123) --
+P:80EA:b22_check_text_state:Check text state ($5C, $60)
+P:8107:b22_clear_flag_60:Clear flag $60
+P:810B:b22_state_return:State check return
+P:810C:b22_call_handlers:Call multiple handlers
+P:8124:b22_pop_return:Pop and return handler
+
+# -- Bank 22 Input Check ($812A-$8150) --
+P:812A:b22_check_input:Check for input ($0553)
+P:8137:b22_input_return:Input check return
+P:8138:b22_handle_input:Handle input action
+P:8140:b22_call_cd_cc:Call CD/CC handler
+P:8146:b22_compare_55:Compare $0551 with $55
+P:8150:b22_jump_cc:Jump to $81CC
+
+# -- Bank 22 Dialog Box ($816D-$81CB) --
+P:816D:b22_init_dialog:Initialize dialog box
+P:817E:b22_set_dialog_pos:Set dialog position ($56 = $13)
+P:8190:b22_dialog_scroll:Dialog scroll loop
+P:8199:b22_set_scroll_x:Set scroll X position
+P:81A1:b22_scroll_transfer:Transfer scroll position
+P:81B0:b22_check_scroll:Check scroll input
+P:81C6:b22_scroll_done:Scroll done return
+P:81C7:b22_clear_55:Clear $55 flag
+P:81CC:b22_validate_party:Validate party members
+
+# -- Bank 22 Character Lookup ($81EA-$8218) --
+P:81EA:b22_lookup_char:Lookup character from $5D
+P:81FA:b22_push_lookup:Push and process lookup
+P:8212:b22_lookup_return:Lookup return
+P:8213:b22_lookup_table:Character lookup table
+
+# -- Bank 22 Name Processing ($8219-$82D0) --
+P:8219:b22_jump_8338:Jump to $8338
+P:821C:b22_load_name:Load character name
+P:8235:b22_copy_name:Copy name to buffer ($0554)
+P:8244:b22_copy_name_loop:Name copy loop
+P:8257:b22_name_setup:Name setup routine
+P:826B:b22_name_check:Check name validity
+P:827E:b22_copy_from_03e3:Copy name from $03E3
+P:829A:b22_special_name:Special name handler
+
+# -- Bank 22 Level/Stats ($82DB-$8308) --
+P:82DB:b22_get_level:Get character level from $6E45
+P:82E7:b22_copy_level:Copy level to buffer
+P:8306:b22_level_done:Level done return
+P:8309:b22_check_level:Check level constraints
+
+# -- Bank 22 Buffer Operations ($8336-$8372) --
+P:8336:b22_set_x_zero:Set X = 0
+P:8338:b22_get_char_buffer:Get character from buffer ($0554)
+P:8346:b22_end_of_text:End of text marker ($40)
+P:8356:b22_read_script:Read from script ($F9 indexed by $5B)
+P:835D:b22_copy_to_buffer:Copy to buffer from $03E3
+P:836B:b22_store_output:Store output to $06AA
+
+# -- Bank 22 Display Setup ($8373-$8392) --
+P:8373:b22_display_setup:Setup display position
+P:8386:b22_call_c65a:Call C65A for character
+P:838B:b22_check_0553:Check $0553 state
+P:8393:b22_calc_position:Calculate screen position
+
+# -- Bank 22 Character Validation ($83A4-$83CD) --
+P:83A4:b22_validate_char:Validate character for display
+P:83BD:b22_check_special:Check special characters ($69, $6A)
+P:83CD:b22_call_8411:Call $8411 subroutine
+
+# -- Bank 22 Window Control ($83D2-$8450) --
+P:83D2:b22_window_init:Window initialization
+P:83FA:b22_window_draw:Draw window frame
+P:8411:b22_window_clear:Clear window area
+P:8423:b22_window_scroll:Window scroll handler
+P:843A:b22_window_close:Close window
+
+# -- Bank 22 Text Commands ($8451-$85C7) --
+P:8451:b22_cmd_newline:Newline command handler
+P:8479:b22_cmd_pause:Pause command handler
+P:84A5:b22_cmd_clear:Clear screen command
+P:84C9:b22_cmd_wait:Wait for input command
+P:84F2:b22_cmd_choice:Choice/menu command
+P:8528:b22_cmd_name:Insert name command
+P:8563:b22_cmd_number:Insert number command
+P:8595:b22_cmd_item:Insert item name command
+P:85C8:b22_init_buffers:Initialize text buffers
+
+# -- Bank 22 Input Handler ($85E7-$8677) --
+P:85E7:b22_process_input:Process player input
+P:8626:b22_check_button:Check button press
+P:8652:b22_update_cursor:Update cursor position
+P:8678:b22_input_loop:Input processing loop
+
+# -- Bank 22 Text Rendering ($868F-$8891) --
+P:868F:b22_render_char:Render single character
+P:86BC:b22_render_special:Render special character codes
+P:86E8:b22_render_line:Render line of text
+P:871F:b22_render_box:Render text box frame
+P:872B:b22_render_init:Initialize render state
+
+# -- Bank 22 Script Interpreter ($8892-$9649) --
+P:8892:b22_script_exec:Execute script command
+P:88C2:b22_script_loop:Script execution loop
+P:8912:b22_script_branch:Script branch handler
+P:8956:b22_script_jump:Script jump command
+P:898A:b22_script_call:Script call subroutine
+P:89BE:b22_script_return:Script return from call
+P:89F2:b22_script_end:Script end marker
+
+# -- Bank 22 Condition Processing ($964A-$96C4) --
+P:964A:b22_process_cond:Process condition flags ($F5)
+P:967C:b22_check_cond:Check condition result
+P:9694:b22_update_flags:Update flag registers
+P:96C4:b22_cond_return:Condition return
+
+# -- Bank 22 Text Lookup ($96C5-$9751) --
+P:96C5:b22_lookup_text:Lookup text in table
+P:96E3:b22_get_text_ptr:Get text pointer from $03C8
+P:96F3:b22_process_text_id:Process text ID
+P:9716:b22_shift_text_ptr:Shift text pointer
+P:973B:b22_update_text_buffer:Update text buffer ($076A)
+P:9751:b22_lookup_return:Lookup return
+
+# -- Bank 22 Message Processing ($975A-$982C) --
+P:975A:b22_msg_process:Process message data
+P:9768:b22_msg_loop:Message processing loop
+P:978C:b22_msg_lookup:Message lookup handler
+P:97B0:b22_msg_check:Message check ($F5)
+P:97BB:b22_msg_type:Message type handler
+P:97CE:b22_msg_offset:Calculate message offset
+P:97ED:b22_msg_special:Special message handler
+P:982C:b22_msg_return:Message return
+
+# -- Bank 22 Gold/Money ($982D-$9881) --
+P:982D:b22_gold_handler:Gold display handler
+P:9856:b22_format_gold:Format gold value
+P:9882:b22_gold_lookup:Gold table lookup
+
+# -- Bank 22 Cursor Control ($98B3-$98FA) --
+P:98B3:b22_cursor_out:Output character at cursor
+P:98D2:b22_cursor_special:Handle special cursor codes
+P:98FB:b22_cursor_set:Set cursor position
+
+# -- Bank 22 Number Formatting ($98FE-$9C18) --
+P:98FE:b22_format_num:Format number for display
+P:9930:b22_num_digits:Extract digits
+P:996B:b22_num_leading:Handle leading zeros
+P:998C:b22_num_output:Output formatted number
+P:99EB:b22_num_return:Number format return
+
+# -- Bank 22 Menu System ($9C19-$9FB5) --
+P:9C19:b22_menu_init:Initialize menu system
+P:9C54:b22_menu_draw:Draw menu frame
+P:9C8A:b22_menu_cursor:Position menu cursor
+P:9CC3:b22_menu_input:Handle menu input
+P:9D02:b22_menu_select:Process menu selection
+P:9D45:b22_menu_exit:Exit menu
+P:9FB6:b22_menu_numeric:Numeric input menu
+
+# -- Bank 22 Yes/No Prompt ($A004-$A0CF) --
+P:A004:b22_yesno_check1:Yes/No check option 1
+P:A020:b22_yesno_check2:Yes/No check option 2
+P:A032:b22_yesno_process:Process Yes/No result
+P:A04D:b22_yesno_up:Cursor up handler
+P:A067:b22_yesno_down:Cursor down handler
+P:A07C:b22_yesno_left:Cursor left handler
+P:A0AC:b22_yesno_right:Cursor right handler
+P:A0D0:b22_yesno_update:Update Yes/No display
+
+# -- Bank 22 Item Menu ($A0E1-$A150) --
+P:A0E1:b22_item_menu:Item selection menu
+P:A0F7:b22_item_init:Initialize item list
+P:A130:b22_item_loop:Item menu loop
+P:A14F:b22_item_return:Item menu return
+
+# -- Bank 22 String Operations ($A15A-$A214) --
+P:A15A:b22_str_compare:String comparison
+P:A163:b22_str_validate:Validate string
+P:A1A1:b22_str_search:Search in string
+
+# -- Bank 22 Party Menu ($A215-$A361) --
+P:A215:b22_party_check:Check party member
+P:A231:b22_party_select:Select party member
+P:A248:b22_party_cursor_up:Party cursor up
+P:A27B:b22_party_cursor_down:Party cursor down
+P:A2B1:b22_party_confirm:Confirm party selection
+P:A2DB:b22_party_cancel:Cancel party selection
+
+# -- Bank 22 Text Bank Lookup ($A362-$A734) --
+P:A362:b22_text_bank_ptr:Get text bank pointer
+P:A3A2:b22_text_decompress:Decompress text data
+P:A735:b22_text_ptr_table:Text pointer table
+
+# -- Bank 22 Stat Display ($B24F-$B341) --
+P:B24F:b22_stat_display:Display character stats
+P:B278:b22_stat_hp:Display HP value
+P:B29D:b22_stat_mp:Display MP value
+P:B307:b22_stat_level:Display level
+P:B337:b22_stat_ptr:Get stat pointer
+
+# -- Bank 22 Equipment Display ($B342-$B3A2) --
+P:B342:b22_equip_display:Display equipment
+P:B367:b22_equip_name:Display equipment name
+P:B37A:b22_equip_table:Equipment lookup table
+P:B37F:b22_equip_stats:Display equipment stats
+
+# -- Bank 22 Shop Interface ($B3A3-$B746) --
+P:B3A3:b22_shop_init:Initialize shop interface
+P:B3E0:b22_shop_list:Display shop item list
+P:B428:b22_shop_select:Handle shop selection
+P:B480:b22_shop_buy:Process buy transaction
+P:B4D8:b22_shop_sell:Process sell transaction
+P:B540:b22_shop_price:Calculate item price
+P:B5A0:b22_shop_confirm:Confirm purchase/sale
+
+# -- Bank 22 Character Data ($B747-$BA0D) --
+P:B747:b22_get_char_data:Get character data by index
+P:B780:b22_char_name_ptr:Get character name pointer
+P:B7B5:b22_char_stats_ptr:Get character stats pointer
+P:B810:b22_char_equip_ptr:Get equipment pointer
+P:B860:b22_char_spells_ptr:Get spell list pointer
+
+# -- Bank 22 Number Conversion ($BA0E-$BAD1) --
+P:BA0E:b22_num_to_text:Convert number to text
+P:BA44:b22_digit_extract:Extract digits from number
+P:BA9F:b22_num_output2:Output converted number
+P:BAA9:b22_num_format:Format number with leading zeros
+P:BACA:b22_num_suffix:Add number suffix
+P:BAD2:b22_num_skip:Skip leading zeros
+
+# -- Bank 22 BCD Operations ($BB4C-$BB8C) --
+P:BB4C:b22_bcd_convert:Convert to BCD
+P:BB56:b22_bcd_digit:Extract BCD digit
+P:BB75:b22_bcd_output:Output BCD value
+P:BB81:b22_bcd_loop:BCD output loop
+
+# -- Bank 22 Special Display ($BB8D-$BC42) --
+P:BB8D:b22_display_special:Display special values
+P:BBB9:b22_display_time:Display time value
+P:BBC1:b22_display_date:Display date value
+P:BBD0:b22_display_coords:Display coordinates
+P:BBFD:b22_display_name:Display name from $03DB
+
+# -- Bank 22 Character Counter ($BC43-$BC6C) --
+P:BC43:b22_count_chars:Count available characters
+P:BC55:b22_count_loop:Character count loop
+P:BC63:b22_count_done:Count complete
+
+# -- Bank 22 Multi-Column ($BC6D-$BCC0) --
+P:BC6D:b22_multi_col_init:Multi-column display init
+P:BC81:b22_multi_col_loop:Multi-column loop
+P:BCA1:b22_multi_col_row:Process multi-column row
+P:BCC1:b22_multi_col_item:Display multi-column item
+
+# -- Bank 22 Validation ($BEEC-$BF63) --
+P:BEEC:b22_validate_slot:Validate character slot
+P:BEF0:b22_validate_upper:Validate upper nibble
+P:BEFA:b22_validate_lower:Validate lower nibble ($0F check)
+P:BF02:b22_calc_validation:Calculate validation value
+P:BF2D:b22_prep_validation:Prepare validation data
+P:BF4C:b22_get_slot_bits:Get slot bit pattern
+P:BF64:b22_set_slot_bits:Set slot bit pattern
+
+# -- Bank 22 Final Check ($BF8E-$BFB5) --
+P:BF8E:b22_final_check:Final validation check
+P:BF9C:b22_check_fail:Check failed handler
+P:BFA6:b22_brk_check:BRK-based check
+P:BFB4:b22_clear_return:Clear and return
+
+# -- Bank 22 RAM Variables --
+G:03C8:b22_text_id:Current text ID
+G:03C9:b22_text_flags:Text processing flags
+G:03CA:b22_cursor_pos:Cursor position
+G:03CC:b22_input_state:Input state
+G:03CF:b22_menu_pos:Menu position
+G:03D0:b22_max_value:Maximum value limit
+G:03D1:b22_current_value:Current value
+G:03D2:b22_selected_value:Selected value
+G:03D3:b22_temp_value:Temporary value
+G:03D5:b22_display_flags:Display flags
+G:03D6:b22_column_count:Column count
+G:03D7:b22_row_count:Row count
+G:03DA:b22_scroll_pos:Scroll position
+G:03DB:b22_name_index:Name buffer index
+G:03DC:b22_menu_width:Menu width
+G:03DD:b22_menu_height:Menu height
+G:03E3:b22_name_buffer:Name buffer (8 bytes)
+G:03FF:b22_buffer_index:Buffer index
+G:0551:b22_dialog_state:Dialog state
+G:0552:b22_dialog_pos:Dialog position
+G:0553:b22_input_flag:Input flag (negative = wait)
+G:0554:b22_output_buffer:Output buffer (8+ bytes)
+
+# -- Bank 22 Zero Page Variables --
+P:0052:b22_char_index:Character index
+P:0053:b22_screen_x:Screen X position
+P:0055:b22_active_flag:Active dialog flag
+P:0056:b22_screen_y:Screen Y position
+P:0057:b22_current_char:Current character code
+P:0059:b22_scroll_amount:Scroll amount
+P:005B:b22_script_index:Script read index
+P:005C:b22_string_index:String index (multi-char)
+P:005D:b22_command:Current command
+P:0060:b22_special_flag:Special character flag ($78)
+P:006F:b22_temp_calc:Temporary calculation
+P:0072:b22_value_lo:Value low byte
+P:0073:b22_value_mid:Value middle byte
+P:0074:b22_value_hi:Value high byte
+P:0075:b22_result:Result value
+P:00EE:b22_text_ptr_lo:Text pointer low
+P:00EF:b22_text_ptr_hi:Text pointer high
+P:00F0:b22_text_start:Text start index
+P:00F1:b22_text_end:Text end index
+P:00F2:b22_text_offset:Text offset
+P:00F3:b22_char_slot:Character slot
+P:00F5:b22_condition_flags:Condition flags
+P:00F7:b22_param1:Parameter 1
+P:00F8:b22_param2:Parameter 2
+P:00F9:b22_script_data:Script data array (6 bytes)
+
 
 
