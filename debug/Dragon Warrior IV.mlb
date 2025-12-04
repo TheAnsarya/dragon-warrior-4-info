@@ -1140,4 +1140,156 @@ G:0553:b22_display_mode:Display mode flags
 G:0554:b22_text_buffer:Text output buffer (variable length)
 G:06AA:b22_char_output:Character output buffer
 
+# ==============================================================================
+# Bank 15 - System Core / NMI / PPU / MMC1 (PRG ROM $8000-$BFFF when loaded)
+# Bank 15 has 564 subroutines with 555 JSR calls and 221 JMP instructions
+# This is the core system bank containing:
+# - NMI handler and VBlank processing
+# - PPU buffer upload system
+# - OAM DMA and sprite handling
+# - MMC1 mapper register control
+# - Bank switching infrastructure
+# - BRK instruction handler
+# - System initialization and reset
+# ==============================================================================
+
+# Bank 15 Jump Table ($8000-$803C)
+R:8000:b15_jmp_table:Bank 15 jump table start ($FF then JMP vectors)
+R:8001:b15_jmp_e9ce:JMP to $E9CE vector
+R:8004:b15_jmp_e54b:JMP to $E54B vector
+R:8007:b15_jmp_f1ab:JMP to $F1AB vector
+R:800A:b15_jmp_efdb:JMP to $EFDB vector
+R:800D:b15_jmp_efd7:JMP to $EFD7 vector
+R:8010:b15_jmp_f1fa:JMP to $F1FA vector
+R:8013:b15_jmp_f223:JMP to $F223 vector
+R:8016:b15_jmp_e944:JMP to $E944 vector
+R:802E:b15_jmp_f4ab:JMP to $F4AB vector
+R:8031:b15_jmp_f58a:JMP to $F58A vector
+R:8034:b15_jmp_f58b:JMP to $F58B vector
+R:8037:b15_jmp_fabe:JMP to $FABE vector
+
+# Bank 15 Reset/Init Sequence ($803D-$80CF)
+R:803D:b15_reset_entry:Reset entry point (CLD)
+R:803E:b15_wait_vbl_1:Wait for VBlank 1
+R:8043:b15_wait_vbl_2:Wait for VBlank 2
+R:804E:b15_ppu_init:PPU initialization (PPUCTRL=#$10)
+R:8058:b15_mapper_init:MMC1 mapper reset (5x STA $FFFF)
+R:8067:b15_nmi_setup:Setup NMI JMP vector at $0502
+R:8078:b15_stack_init:Initialize stack pointer (LDX #$FF, TXS)
+R:807E:b15_ram_clear:Clear RAM ($00-$FF, $0300-$07FF)
+R:8092:b15_config_init:Initialize config ($0500=#$0E, $0501=#$10)
+R:809E:b15_ppu_setup:PPU final setup
+R:80BE:b15_post_init:Post-initialization (JSR $C569, $C543, $FF74)
+R:80CF:b15_start_game:Jump to main game loop ($C968)
+
+# Bank 15 VBlank Wait Utilities ($80D6-$80E8)
+R:80D6:b15_vbl_wait_util:VBlank wait utility (JSR $FB10)
+R:80D9:b15_wait_not_vbl:Wait for NOT VBlank
+R:80DE:b15_wait_is_vbl:Wait for VBlank
+R:80E3:b15_wait_not_vbl_2:Wait for NOT VBlank (exit condition)
+
+# Bank 15 Soft Reset ($80E9-$8103)
+R:80E9:b15_soft_reset:Soft reset (NMI=#$40, mapper reset)
+R:8101:b15_soft_reset_jmp:Jump to $C101 after soft reset
+
+# Bank 15 Mapper/Bank Control ($8104-$8159)
+R:8104:b15_inc_mapper:Increment mapper $FFDF
+R:8118:b15_write_9fff:Write MMC1 control register ($9FFF)
+R:812F:b15_write_bfff:Write MMC1 CHR bank 0 ($BFFF)
+R:8146:b15_write_dfff:Write MMC1 CHR bank 1 ($DFFF)
+
+# Bank 15 NMI Handler ($815A-$8218)
+R:815A:b15_nmi_entry:NMI handler entry (PHA, TXA, PHA, TYA, PHA)
+R:815F:b15_nmi_check_busy:Check if system busy ($1F bit 7)
+R:8163:b15_nmi_stack_check:Check stack for valid return
+R:8175:b15_nmi_ppu_update:PPU update during NMI
+R:8181:b15_nmi_range_check:Check return address range
+R:819B:b15_nmi_skip_check:Check NMI skip flag ($0519)
+R:81B0:b15_nmi_bank_switch:Bank switch during NMI ($FF91)
+R:81BD:b15_nmi_stack_fixup:Stack fixup for return address
+R:81EF:b15_nmi_inc_counter:Increment $050C counter
+R:8213:b15_nmi_exit_normal:Normal NMI exit (PLA, TAY, PLA, TAX, PLA, RTI)
+R:8219:b15_nmi_exit_brk:NMI exit to BRK handler
+
+# Bank 15 PPU Buffer Upload ($8222-$8296)
+R:8222:b15_ppu_check_flags:Check state flags for PPU update
+R:823A:b15_ppu_buffer_start:Start PPU buffer upload
+R:8241:b15_ppu_buffer_loop:PPU buffer upload loop
+R:825C:b15_ppu_write_addr:Write PPU address
+R:8267:b15_ppu_write_data:Write PPU data bytes
+R:8276:b15_ppu_palette:Handle palette update ($3F00)
+R:8296:b15_ppu_buffer_done:PPU buffer upload complete
+
+# Bank 15 PPU 9-byte Block Upload ($8297-$82E9)
+R:8297:b15_ppu_block_start:9-byte block upload start
+R:8299:b15_ppu_block_loop:9-byte block upload loop
+R:82E7:b15_ppu_block_done:Block upload done, JMP $C276
+
+# Bank 15 PPU Register Update ($82EA-$8302)
+R:82EA:b15_ppu_regs_update:Update PPU control registers
+R:82F6:b15_ppu_scroll_set:Set scroll registers ($2005)
+
+# Bank 15 OAM DMA ($8303-$8314)
+R:8303:b15_oam_check:Check OAM update needed
+R:830F:b15_oam_dma:Perform OAM DMA ($4014=#$02)
+
+# Bank 15 Nametable Clear ($8315-$837A)
+R:8315:b15_nt_clear_start:Nametable clear start
+R:8318:b15_nt_clear_loop:Nametable clear loop
+R:837B:b15_nt_addr_table:Nametable address table data
+
+# Bank 15 Inter-Bank Call System ($838B-$83E9)
+R:838B:b15_bank_call_entry:Bank call entry (STA $20, STX $21)
+R:839A:b15_bank_call_setup:Setup bank call (JSR $C3BA)
+R:83A6:b15_bank_call_exec:Execute bank call (JSR $0023)
+R:83B0:b15_bank_call_restore:Restore bank after call
+R:83BA:b15_bank_lookup:Bank lookup from table
+R:83CE:b15_bank_ptr_get:Get pointer for bank call
+R:83EA:b15_bank_indirect:Indirect bank call
+
+# Bank 15 BRK Handler ($8408-$84F7)
+R:8408:b15_brk_entry:BRK handler entry (SEI, PHP)
+R:8413:b15_brk_get_pc:Get BRK program counter from stack
+R:8423:b15_brk_decode:Decode BRK operand byte
+R:8432:b15_brk_dispatch:Dispatch based on operand type
+R:8451:b15_brk_indirect:Handle indirect BRK call
+R:8460:b15_brk_special_03:Handle opcode $x3 variant
+R:8463:b15_brk_check_cb:Check for $CB-$FA range
+R:8484:b15_brk_bank_16:Dispatch to Bank 16 ($CB-$CA)
+R:84A1:b15_brk_advance_pc:Advance PC past BRK operand
+R:84B6:b15_brk_flag_test:Test event flag ($627B,X)
+R:84CA:b15_brk_flag_set:Set event flag (OR)
+R:84E1:b15_brk_flag_clear:Clear event flag (AND)
+R:84F8:b15_brk_special:Special BRK handling
+
+# Bank 15 System State ($852F-$8542)
+R:852F:b15_clear_state:Clear system state ($1F, $050A-$0513)
+
+# Bank 15 OAM Clear ($8543-$854D)
+R:8543:b15_oam_clear:Clear OAM buffer ($0200, #$F7)
+
+# Bank 15 Screen Control ($854E-$85B8)
+R:854E:b15_screen_on_full:Full screen on sequence
+R:8569:b15_clear_ppu_buffer:Clear PPU buffer ($0400)
+R:8575:b15_clear_nametable:Clear nametable ($2000)
+R:858F:b15_screen_on:Turn screen on
+R:8596:b15_screen_wait_vbl:Wait for VBlank then enable
+R:85A8:b15_busy_clear:Clear busy flag ($1F AND #$7F)
+R:85AF:b15_screen_off:Turn screen off (set busy)
+
+# Bank 15 PPU/Hardware Registers Used
+P:2000:PPUCTRL:PPU Control Register
+P:2001:PPUMASK:PPU Mask Register
+P:2002:PPUSTATUS:PPU Status Register
+P:2005:PPUSCROLL:PPU Scroll Position
+P:2006:PPUADDR:PPU Address Register
+P:2007:PPUDATA:PPU Data Port
+P:4014:OAMDMA:OAM DMA Register
+
+# Bank 15 MMC1 Mapper Registers
+P:9FFF:MMC1_CONTROL:MMC1 Control Register
+P:BFFF:MMC1_CHR_BANK0:MMC1 CHR Bank 0
+P:DFFF:MMC1_CHR_BANK1:MMC1 CHR Bank 1
+P:FFFF:MMC1_PRG_BANK:MMC1 PRG Bank Select
+
 
