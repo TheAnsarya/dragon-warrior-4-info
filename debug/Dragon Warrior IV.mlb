@@ -1932,4 +1932,251 @@ G:7800:b27_nametable_buf1:Nametable buffer 1
 G:7900:b27_nametable_buf2:Nametable buffer 2
 G:62AA:b27_event_flags:Event/chapter flags
 
+# ==============================================================================
+# BANK 28 ($8000-$BFFF) - NPC/Map Object Management System
+# ==============================================================================
+# This bank handles NPC positioning, map object placement, and compressed
+# position data decompression. Heavy use of bit-stream reading at $994E.
+# Uses arrays at $6E5E-$7180 for NPC object data.
+
+# -- Bit-Stream Reader Core ($994E-$995B) --
+P:994E:b28_read_bits:Read Y bits from compressed data at $DA/$DB
+P:9950:b28_bits_setup_x:Setup X register for bit read
+P:9954:b28_bits_call_c3ea:Call fixed-bank bit decompression
+P:995B:b28_bits_return:Return from bit read
+
+# -- NPC Position Processing ($995C-$99xx) --
+P:995C:b28_process_npc_entry:Process NPC entry from compressed data
+P:995D:b28_init_dc:Initialize $DC to 0
+P:9974:b28_read_bits_5:Read 5 bits for position
+P:997B:b28_store_70e0:Store to NPC type array $70E0
+P:998F:b28_alt_npc_path:Alternative NPC processing path
+P:99B3:b28_read_direction:Read NPC direction from bits
+P:99CF:b28_y_equals_01:Y = 1 path
+P:99D1:b28_read_position:Read NPC position data
+
+# -- Position Compression/Decompression ($96D2-$97xx) --
+P:96D2:b28_check_chapter_4:Check if chapter == 4
+P:96DC:b28_call_96fc:Load $00 and call $96FC
+P:96E7:b28_save_3a_3b:Save $3A/$3B to $DA/$DB (bitstream pointer)
+P:96EF:b28_ret_96ef:Simple return
+P:96F0:b28_read_flag_80:Read bits and extract $80 flag
+P:96FC:b28_decompress_pos:Main position decompression routine
+P:9702:b28_decompress_loop:Decompression loop - read one entry
+P:971A:b28_skip_loop:Skip zero entries
+P:972B:b28_read_mode_byte:Read mode/type byte
+P:974B:b28_read_subtype:Read sub-type value
+P:975A:b28_alt_decode:Alternative decode path
+P:976F:b28_read_flags:Read flag byte
+P:9792:b28_read_final:Read final position byte
+P:9798:b28_check_skip:Check if entry should be skipped
+
+# -- NPC Array Management ($98B3-$9C0F) --
+P:98B3:b28_init_npc_arrays:Initialize NPC position arrays
+P:98B9:b28_init_loop:Init loop - clear $6F60-$7140
+P:98D8:b28_read_npc_mode:Read NPC mode byte
+P:98EF:b28_setup_indices:Setup array indices 3,4,5
+P:98FC:b28_store_npc_entry:Store NPC entry to arrays
+P:9901:b28_check_bit_08:Check bit $08 in mode
+P:9945:b28_advance_stream:Advance bit stream pointer
+
+# -- NPC Slot Search ($9A37-$9A73) --
+P:9A37:b28_find_npc_slot:Find empty NPC slot in $6E5E table
+P:9A3B:b28_slot_search_loop:Loop through $6E5E[0-15]
+P:9A4F:b28_empty_slot:Found empty slot ($FF)
+P:9A54:b28_calculate_index:Calculate final slot index
+P:9A61:b28_found_existing:Found existing entry
+P:9A6C:b28_check_player:Check if player slot (X=0)
+P:9A73:b28_slot_return:Return from slot search
+
+# -- NPC Type Processing ($9A74-$9AFF) --
+P:9A74:b28_process_type:Process NPC type value
+P:9A89:b28_type_high:Type >= 8 path
+P:9AB0:b28_clear_low_nibble:Clear low nibble of $00DF,Y
+P:9AB9:b28_type_even:Even type number path
+P:9ADE:b28_clear_high_nibble:Clear high nibble
+P:9AE7:b28_store_type:Store type to $7040,X
+P:9AFB:b28_shift_left_4:Shift left 4 bits
+
+# -- Map Data Loading ($9B00-$9B70) --
+P:9B00:b28_load_map_npcs:Load NPCs for current map
+P:9B08:b28_setup_e0_e1:Setup pointers $E0/$E1
+P:9B26:b28_read_map_ptr:Read map NPC data pointer
+P:9B3F:b28_read_count:Read NPC count for map
+P:9B47:b28_npc_read_loop:Loop reading NPC entries
+P:9B5E:b28_inc_da:Increment $DA pointer
+P:9B68:b28_save_ptrs:Save $DA/$DB back to $3A/$3B
+
+# -- Bit Stream Pointer Management ($9B71-$9BD8) --
+P:9B71:b28_advance_ptr:Advance bit stream pointer
+P:9B90:b28_check_flags:Check flag bits
+P:9BA2:b28_add_to_da:Add offset to $DA/$DB
+P:9BB0:b28_check_bit_10:Check bit $10 in $03
+P:9BB9:b28_bb9_return:Return
+P:9BBA:b28_check_bit_08_2:Check bit $08 in $03
+P:9BC4:b28_read_and_add:Read byte and add to pointer
+P:9BD8:b28_bd8_return:Return
+
+# -- Map Version Check ($9BD9-$9BDE) --
+P:9BD9:b28_check_map_version:Check if $62ED >= $78 (post-chapter marker)
+P:9BDF:b28_clear_npc_slot:Clear NPC slot data at index X
+
+# -- Clear/Initialize NPC Slot ($9BE1-$9C27) --
+P:9BE1:b28_clear_slot_arrays:Clear all arrays for slot X
+P:9C0F:b28_clear_slots_6_1f:Clear NPC slots 6-31
+
+# -- Map Event Triggers ($9C28-$9CC0) --
+P:9C28:b28_check_event_flags:Check event flags for current map
+P:9C2F:b28_event_search_loop:Search event table at $9E61
+P:9C65:b28_event_clear:Event found - clear carry
+P:9C67:b28_next_event:Next event entry (+4)
+P:9C6D:b28_no_event:No event - set carry
+P:9C6F:b28_special_event_check:Special event condition check
+P:9CBF:b28_clear_carry:Clear carry and return
+P:9CC0:b28_cc0_return:Simple return
+
+# -- Map Override Table ($9CC1-$9D0D) --
+P:9CC1:b28_check_override_table:Check map override table at $9D0E
+P:9CCB:b28_override_loop:Loop through override entries
+P:9CF0:b28_set_override_ptr:Set override pointer $DA/$DB
+P:9D00:b28_next_override:Next override entry
+
+# -- Map Event/NPC Setup ($9EA6-$A057) --
+P:9EA6:b28_setup_map_entry:Main map setup entry point
+P:9EB5:b28_check_chapter_version:Check chapter/version for special NPCs
+P:9EBE:b28_special_npc_loop:Loop for chapter-specific NPCs
+P:9ECC:b28_npc_table_loop:Loop through NPC table at $9F8A
+P:9EE5:b28_setup_done:Setup complete
+P:9EE6:b28_setup_npc_slot:Setup individual NPC slot
+P:9F1C:b28_store_npc_type:Store NPC type data
+P:9F44:b28_lookup_tile:Lookup tile at NPC position
+P:9F55:b28_next_npc:Move to next NPC entry
+P:9F5A:b28_store_type_only:Store type without position
+P:9F66:b28_use_player_pos:Use player position for NPC
+P:9F76:b28_save_npc_pos:Save NPC position to $054E/$054F
+
+# -- Map Handler Dispatch ($A010-$A057) --
+P:A010:b28_handler_lookup:Lookup map-specific handler
+P:A012:b28_handler_loop:Loop through handler table at $ABF5
+P:A022:b28_next_handler:Next handler entry (+2)
+P:A027:b28_handler_done:No handler found
+P:A028:b28_handler_found:Handler found - dispatch
+P:A035:b28_clear_npc:Clear NPC at slot X
+P:A044:b28_check_wagon:Check wagon/party flags
+P:A04A:b28_set_npc_pos:Set NPC position (A=X, Y=Y coord)
+P:A057:b28_pos_return:Return from position set
+
+# -- Map-Specific Handler Code ($A058-$ABF4) --
+# Note: This section contains many map-specific NPC setup routines
+# Each map has custom logic for placing NPCs based on story flags
+P:A058:b28_map_check_07:Check if player X == 7
+P:A068:b28_setup_wagon_npc:Setup wagon/chapter 4 NPC
+P:A07E:b28_check_party_flags:Check party member flags
+P:A0A0:b28_setup_default_npcs:Setup default NPC slots
+P:A0C6:b28_setup_chapter_npcs:Setup chapter-specific NPCs
+
+# -- Various Map Handlers --
+P:A177:b28_map_handler_bulk:Bulk NPC setup (slots 0C-14)
+P:A17B:b28_bulk_loop:Bulk setup loop
+
+# -- Jump Table for Map Handlers ($AC8A-$AD1C) --
+P:AC8A:b28_map_handler_table:Jump table for 60+ map handlers
+
+# -- Map Handler Dispatcher ($AD5F-$AD6D) --
+P:AD5F:b28_dispatch_handler:Dispatch to map handler via table
+P:AD61:b28_load_handler_addr:Load handler address from $BF4B table
+P:AD6B:b28_jump_indirect:JMP ($0000) to handler
+
+# -- Map Condition Table ($AD32-$AD5A) --
+P:AD32:b28_check_conditions:Check map conditions table at $AD5A
+P:AD34:b28_condition_loop:Loop through conditions
+P:AD4C:b28_condition_match:Condition matched - clear NPC
+P:AD52:b28_next_condition:Next condition (+4)
+P:AD59:b28_condition_done:Done checking conditions
+
+# -- NPC Tile Lookup ($AD1E-$AD31) --
+P:AD1E:b28_get_npc_tile:Get tile ID at NPC position
+P:AD27:b28_call_d3e6:Call tile lookup via bank switch
+P:AD2E:b28_store_tile:Store tile to $7146,X
+
+# -- Wagon/Vehicle Escort Code ($B05E-$B0B8) --
+P:B05E:b28_wagon_escort:Wagon escort sequence
+P:B083:b28_escort_loop_outer:Outer loop - step counter
+P:B087:b28_escort_loop_inner:Inner loop - animation frames
+P:B0B2:b28_escort_done:Escort sequence complete
+
+# -- Scene/Cutscene Handlers ($B0FC-$BD95) --
+P:B0FC:b28_cutscene_setup:Cutscene initialization
+P:B11D:b28_load_scene_data:Load scene-specific data
+P:BCEF:b28_find_character:Find character in party
+P:BCFF:b28_setup_display:Setup display for scene
+P:BD54:b28_save_sprites:Save sprite data to $7F00
+P:BD67:b28_restore_sprites:Restore sprite data from $7F00
+P:BD75:b28_restore_partial:Restore partial sprite data
+P:BD83:b28_save_partial:Save partial sprite data
+
+# -- Helper Functions ($BED3-$BF46) --
+P:BED3:b28_helper_0d:Helper - BRK $0D
+P:BEF2:b28_shift_delay:Shift and delay helper
+P:BEFE:b28_frame_delay:Frame delay with $0509
+P:BF12:b28_set_npc_mode:Set NPC mode to $8F
+P:BF14:b28_set_npc_mode_x:Set NPC mode with X index
+P:BF16:b28_store_mode:Store mode to $0530-$0533
+P:BF24:b28_bf24_return:Return
+P:BF25:b28_set_position:Set NPC position (A=X, Y=Y) at slot X
+P:BF33:b28_hide_npc_80:Hide NPC (set position to $80)
+P:BF37:b28_hide_npc_81:Hide NPC (set position to $81)
+P:BF39:b28_store_hidden:Store hidden position value
+P:BF46:b28_brk_07_6f:BRK $07, $6F, $43 - common helper
+
+# -- Map Handler Jump Table Data ($BF4B-$BFAF) --
+P:BF4B:b28_handler_ptr_table:Pointer table for map handlers (low/high bytes)
+
+# -- RAM Variables Used by Bank 28 --
+G:6E5E:b28_npc_type_table:NPC type table (16 entries)
+G:6F60:b28_npc_x_pos:NPC X position array (32 entries)
+G:6F80:b28_npc_y_pos:NPC Y position array (32 entries)
+G:6FA0:b28_npc_x_target:NPC X target position array
+G:6FC0:b28_npc_y_target:NPC Y target position array
+G:6FE0:b28_npc_slot_data:NPC slot data array
+G:7000:b28_npc_direction:NPC direction array (32 entries)
+G:7020:b28_npc_state:NPC state array
+G:7040:b28_npc_type_ext:NPC extended type data
+G:7060:b28_npc_ptr_hi:NPC data pointer high
+G:7080:b28_npc_ptr_lo:NPC data pointer low
+G:70A0:b28_npc_anim_frame:NPC animation frame
+G:70C0:b28_npc_timer:NPC timer/counter
+G:70E0:b28_npc_flags:NPC flags array
+G:7100:b28_npc_sprite:NPC sprite index
+G:7120:b28_npc_palette:NPC palette index
+G:7140:b28_npc_extra:NPC extra data
+G:7146:b28_npc_tile_id:NPC tile ID at position
+G:7160:b28_npc_reserved:NPC reserved data
+G:7180:b28_npc_user:NPC user-defined data
+
+# -- Zero Page Variables Used by Bank 28 --
+G:00DA:b28_bitstream_lo:Bit stream pointer low byte
+G:00DB:b28_bitstream_hi:Bit stream pointer high byte
+G:00DC:b28_temp_dc:Temporary variable
+G:00DD:b28_temp_dd:Temporary variable
+G:00DF:b28_type_packed:Packed type data (nibbles)
+G:00E0:b28_ptr_e0:Pointer low
+G:00E1:b28_ptr_e1:Pointer high
+G:003A:b28_saved_ptr_lo:Saved pointer low
+G:003B:b28_saved_ptr_hi:Saved pointer high
+G:0063:b28_map_num:Current map number
+G:0064:b28_submap_num:Current submap number
+G:0067:b28_bit_offset:Bit offset in stream
+
+# -- Work RAM Variables --
+G:0515:b28_special_flag:Special NPC flag
+G:0530:b28_event_mode:Event mode register
+G:0531:b28_event_slot:Event slot index
+G:0534:b28_event_param:Event parameter
+G:054E:b28_last_x:Last NPC X position
+G:054F:b28_last_y:Last NPC Y position
+G:0598:b28_last_submap:Last submap number
+G:62ED:b28_chapter_marker:Chapter progress marker
+
+
 
