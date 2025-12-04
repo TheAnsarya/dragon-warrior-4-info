@@ -3746,4 +3746,86 @@ P:8095:b14_ptr_table_hi:Pointer table high bytes
 P:BF02:b14_late_routine:Late code routine
 P:BF41:b14_helper:Helper routine called from $BF02
 
+# ==============================================================================
+# BANK 25 ($8000-$BFFF) - MUSIC/BGM SELECTION SYSTEM
+# ==============================================================================
+# Bank 25 handles background music selection based on chapter and location.
+# Small code section at $8000-$810A, rest is music/event script data.
+# Uses $615A (chapter), $63 (map number), $64 (submap) to select BGM.
+
+# -- Bank 25 Jump Table ($8000-$8025) --
+P:8000:b25_entry_table:Entry point jump table
+P:8014:b25_jmp_c01c:JMP to $C01C (fixed bank routine)
+P:8017:b25_jmp_c01f:JMP to $C01F (music set)
+P:801A:b25_jmp_c022:JMP to $C022
+P:801D:b25_jmp_c025:JMP to $C025
+P:8020:b25_jmp_c028:JMP to $C028
+P:8023:b25_jmp_c02b:JMP to $C02B
+
+# -- Bank 25 Main BGM Selection ($8026-$803A) --
+P:8026:b25_bgm_select_main:Main BGM selection routine
+P:802D:b25_call_get_bgm:Call get_bgm_for_location ($803B)
+P:8030:b25_call_set_music:Call $8017 to set music
+P:803A:b25_bgm_return:Return from BGM selection
+
+# -- Bank 25 Get BGM for Location ($803B-$810A) --
+P:803B:b25_get_bgm_for_loc:Determine BGM based on state
+P:803F:b25_check_0515:Check $0515 flag (special state)
+P:8044:b25_check_chapter:Load chapter from $65
+P:8048:b25_chapter_lookup:Lookup chapter-based BGM
+P:8058:b25_chapter_check:Check chapter >= 4 (full party)
+P:805F:b25_check_6292:Check flag at $6292 (Psaro state?)
+P:807D:b25_pop_return:Stack cleanup and return
+P:807F:b25_table_lookup:Direct table lookup for BGM
+P:8083:b25_special_0515:Handle special $0515 case
+P:808B:b25_negative_state:Handle negative state ($41 < 0)
+P:8095:b25_search_loop_init:Initialize location search loop
+P:8097:b25_search_map_loop:Search map/location table
+P:809C:b25_compare_map:Compare with current map ($63)
+P:80A1:b25_check_wildcard:Check for $FF wildcard (any submap)
+P:80A5:b25_compare_submap:Compare with submap ($64)
+P:80BD:b25_found_match:Found matching location
+P:80C1:b25_check_chapter_4:Check if chapter 4+
+P:80CE:b25_ch4_return:Return #$03 for chapter 4
+P:80D1:b25_check_flag_62aa:Check flag $62AA for special case
+P:80DA:b25_special_case_0:Handle special case X=0 (start area)
+P:80E8:b25_special_case_0f:Handle special case X=$0F
+P:80F9:b25_search_return:Return from search
+P:80FA:b25_search_next:Advance to next table entry (3 bytes)
+P:8101:b25_default_bgm:Default BGM from $07BA
+
+# -- Bank 25 BGM Data Tables ($810B-$814D) --
+P:810B:b25_chapter_bgm_tbl:BGM table by chapter
+P:8116:b25_map_bgm_tbl:BGM table by map index
+P:8124:b25_location_tbl:Map/submap/BGM triplet table
+
+# -- Bank 25 Event Script Data ($814E-$BFFF) --
+# Rest of bank is event script bytecode data, not 6502 code
+
+# ==============================================================================
+# DATA BANKS - GRAPHICS/PATTERN/MAP DATA (NOT EXECUTABLE CODE)
+# ==============================================================================
+# The following banks contain raw graphics data (CHR tiles), map/level data,
+# or compressed data. They are NOT executable 6502 machine code.
+#
+# Bank 00: Graphics/Pattern Data - CHR tiles for PPU
+# Bank 01: Graphics/Pattern Data - CHR tiles for PPU
+# Bank 02: Graphics/Pattern Data - CHR tiles for PPU
+# Bank 03: Graphics/Pattern Data - CHR tiles for PPU
+# Bank 04: Graphics/Pattern Data - CHR tiles for PPU
+# Bank 05: Graphics/Pattern Data - Map/level data, some with pointer tables
+# Bank 06: Graphics/Pattern Data - CHR tiles (confirmed via analysis)
+# Bank 07: Graphics/Pattern Data - CHR tiles (confirmed via analysis)
+# Bank 09: Map/Level Data - Compressed map data
+# Bank 10: Graphics/Pattern Data - CHR tiles
+# Bank 11: Graphics/Pattern Data - CHR tiles
+# Bank 12: Graphics/Pattern Data - CHR tiles
+# Bank 13: Graphics/Pattern Data - CHR tiles (confirmed via analysis)
+# Bank 26: Map/Event Script Data - Event bytecode data
+#
+# These banks are loaded into PPU pattern tables via CHR banking
+# or processed by decompression routines, not executed directly.
+
+
+
 
