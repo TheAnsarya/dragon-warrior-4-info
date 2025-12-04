@@ -197,6 +197,9 @@ G:601D:Hero_BattleSpells_Mid:Hero - Battle spell flags (Ironize, FendSpell, Zap,
 G:601E:Hero_SpellFlags_Hi:Hero - Spell flags (b0-1=Thordain/Chance battle, b2-7=overworld spells)
 
 # Party Member 1 (Cristo) - 30 bytes at $601F-$603C
+# Battle Spells ($603A): Upper, Heal, Surround, Healmore, StopSpell, Healall, Increase, Healus
+# Battle Spells ($603B): Beat, Vivify, Defeat, Revive, (n/a×4)
+# Overworld Spells ($603C): Heal, Antidote, Healmore, Vivify, Healall, Healus, Revive, (n/a)
 G:601F:Cristo_StatusFlags:Cristo - Status (b5=poison, b6=paralyzed, b7=alive)
 G:6020:Cristo_CurrentHP_Lo:Cristo - Current HP (low byte)
 G:6021:Cristo_CurrentHP_Hi:Cristo - Current HP (high byte)
@@ -205,21 +208,33 @@ G:6023:Cristo_CurrentMP_Hi:Cristo - Current MP (high byte)
 G:6024:Cristo_Level:Cristo - Level
 
 # Party Member 2 (Nara) - 30 bytes at $603D-$605A
+# Battle Spells ($6058): Infernos, Heal, Sleep, Healmore, NumbOff, Healall, Infermore, Barrior
+# Battle Spells ($6059): Sleepmore, Vivify, Infermost, Farewell, (n/a×4)
+# Overworld Spells ($605A): Heal, NumbOff, Healmore, Vivify, Healall, (n/a×3)
 G:603D:Nara_StatusFlags:Nara - Status (b5=poison, b6=paralyzed, b7=alive)
 
 # Party Member 3 (Mara) - 30 bytes at $605B-$6078
+# Battle Spells ($6076): Blaze, Sap, Firebal, RobMagic, Bang, BeDragon, Blazemore, Blazemost
+# Battle Spells ($6077): Firebane, Firevolt, Boom, Explodet, (n/a×4)
+# Overworld Spells ($6078): Return, Outside, StepGuard, (n/a×5)
 G:605B:Mara_StatusFlags:Mara - Status (b5=poison, b6=paralyzed, b7=alive)
 
 # Party Member 4 (Brey) - 30 bytes at $6079-$6096
+# Battle Spells ($6094): IceBolt, Sap, Snowstorm, Bounce, Icespears, Return, RobMagic, Defence
+# Battle Spells ($6095): Chaos, SpeedUp, Blizzard, Bikill, (n/a×4)
+# Overworld Spells ($6096): Return, Outside, Day-Night, X-Ray, (n/a×4)
 G:6079:Brey_StatusFlags:Brey - Status (b5=poison, b6=paralyzed, b7=alive)
 
 # Party Member 5 (Taloon) - 30 bytes at $6097-$60B4
+# Taloon has no spells - $60B2-$60B4 are unused
 G:6097:Taloon_StatusFlags:Taloon - Status (b5=poison, b6=paralyzed, b7=alive)
 
 # Party Member 6 (Ragnar) - 30 bytes at $60B5-$60D2
+# Ragnar has no spells - $60D0-$60D2 are unused
 G:60B5:Ragnar_StatusFlags:Ragnar - Status (b5=poison, b6=paralyzed, b7=alive)
 
 # Party Member 7 (Alena) - 30 bytes at $60D3-$60F0
+# Alena has no spells - $60EE-$60F0 are unused
 G:60D3:Alena_StatusFlags:Alena - Status (b5=poison, b6=paralyzed, b7=alive)
 
 # Unused Character Slot - 30 bytes at $60F1-$610E
@@ -265,34 +280,37 @@ G:616B:PartyOrder_Slot1:Active party slot 1
 G:616C:PartyOrder_Slot2:Active party slot 2
 G:616D:PartyOrder_Slot3:Active party slot 3
 
-# Treasure Chest Flags (27 bytes)
-G:625D:TreasureFlags_Start:Treasure chest bit flags start
-G:625E:TreasureFlags_01:Treasure flags byte 1
-G:625F:TreasureFlags_02:Treasure flags byte 2
-G:6260:TreasureFlags_03:Treasure flags byte 3
-G:6261:TreasureFlags_04:Treasure flags byte 4
-G:6262:TreasureFlags_05:Treasure flags byte 5
-G:6263:TreasureFlags_06:Treasure flags byte 6
-G:6264:TreasureFlags_07:Treasure flags byte 7
-G:6265:TreasureFlags_08:Treasure flags byte 8
-G:6266:TreasureFlags_09:Treasure flags byte 9
-G:6267:TreasureFlags_0A:Treasure flags byte 10
-G:6268:TreasureFlags_0B:Treasure flags byte 11
-G:6269:TreasureFlags_0C:Treasure flags byte 12
-G:626A:TreasureFlags_0D:Treasure flags byte 13
-G:626B:TreasureFlags_0E:Treasure flags byte 14
-G:626C:TreasureFlags_0F:Treasure flags byte 15
-G:626D:TreasureFlags_10:Treasure flags byte 16
-G:626E:TreasureFlags_11:Treasure flags byte 17
-G:626F:TreasureFlags_12:Treasure flags byte 18
-G:6270:TreasureFlags_13:Treasure flags byte 19
-G:6271:TreasureFlags_14:Treasure flags byte 20
-G:6272:TreasureFlags_15:Treasure flags byte 21
-G:6273:TreasureFlags_16:Treasure flags byte 22
-G:6274:TreasureFlags_17:Treasure flags byte 23
-G:6275:TreasureFlags_18:Treasure flags byte 24
-G:6276:TreasureFlags_19:Treasure flags byte 25
-G:6277:TreasureFlags_1A:Treasure flags byte 26
+# Treasure Chest Flags (27 bytes = 216 bits for all treasure chests)
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/RAM_map
+# 0 = chest available, 1 = already taken
+# Includes chests, pots, drawers, and searchable ground spots
+G:625D:TreasureFlags_00:$625D bit0=Burland Agility Seed, bit1=Burland Iron Helmet, bit7=Keeleon Boarding Pass
+G:625E:TreasureFlags_01:$625E bit2-5=Dire Palace, bit6-7=Burland Castle
+G:625F:TreasureFlags_02:$625F bit2-3=Endor Castle, bit4=Endor B1 Lifeforce Nuts, bit5-6=Endor Multi-edge/Strength
+G:6260:TreasureFlags_03:$6260 bit1=Gardenbur Zenithian Shield, bit2=Gardenbur Fire Claw, bit3-5=Branca
+G:6261:TreasureFlags_04:$6261 bit0=Aktemto Silver Tarot, bit1=Desert Inn Lunch, bit3-5=Lakanaba Shop
+G:6262:TreasureFlags_05:$6262 Aktemto Mine Ruins chests + Gas Canister + Gunpowder Jar
+G:6263:TreasureFlags_06:$6263 bit0-2=Padequia Cave, bit3-4=Shrine Breaking Waves Zenithian Armor
+G:6264:TreasureFlags_07:$6264 Bakor's Hideout chests + Padequia B3 chests
+G:6265:TreasureFlags_08:$6265 Cave South of Frenor + Cave West of Kievs (Magic Key, Sphere of Silence)
+G:6266:TreasureFlags_09:$6266 Cascade Cave + Secret Playground Dungeon (Flying Shoes)
+G:6267:TreasureFlags_0A:$6267 Final Cave B1-B2 + Cascade Cave (Metal Babble Sword, Sandglass)
+G:6268:TreasureFlags_0B:$6268 Final Cave B3-B7 (Mirror Shield, Staff of Jubilation)
+G:6269:TreasureFlags_0C:$6269 Silver Statuette Cave + Cave of Betrayal Symbol of Faith
+G:626A:TreasureFlags_0D:$626A Burland-Izmit tunnel + Silver Statuette Cave (Silver Statuette)
+G:626B:TreasureFlags_0E:$626B Zenithian Tower + Royal Crypt Dungeon chests
+G:626C:TreasureFlags_0F:$626C Loch Tower + World Tree (Zenithian Sword) + Birdsong Tower
+G:626D:TreasureFlags_10:$626D Great Lighthouse (Fire of Serenity, Golden Barrette)
+G:626E:TreasureFlags_11:$626E Great Lighthouse + Konenber Sword of Decimation
+G:626F:TreasureFlags_12:$626F bit4=NE Barrier Shrine (Radimvice) Zombie Mail
+G:6270:TreasureFlags_13:$6270 Shrine of Colossus Dungeon + Shrine of Horn (Baron's Horn)
+G:6271:TreasureFlags_14:$6271 (unused/unknown)
+G:6272:TreasureFlags_15:$6272 Search spots: Mintos, Hometown, Aneaux, Tempe, Riverton, Aktemto
+G:6273:TreasureFlags_16:$6273 Drawers: Santeem, Zenithian Castle + Search: SW Shrine, Seaside
+G:6274:TreasureFlags_17:$6274 Pots/Drawers: Stancia, Gardenbur, Endor, Dire Palace, Burland, Santeem
+G:6275:TreasureFlags_18:$6275 Pots/Drawers: Monbaraba, Hometown, Izmit, Haville, Bazaar
+G:6276:TreasureFlags_19:$6276 Pots: Secret Playground, Cave West Kievs, Konenber, Gottside, Kievs, Lakanaba
+G:6277:TreasureFlags_1A:$6277 Woodsman's Shack pots + Search: Seaside Stone of Drought, Frenor Mystic Acorns
 
 # Casino Coins
 G:62AD:CasinoCoins_Lo:Casino coins (low byte)
