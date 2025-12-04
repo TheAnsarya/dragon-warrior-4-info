@@ -640,3 +640,61 @@ R:C770:sub_C770:Utility routine (16 calls)
 R:D804:sub_D804:Processing routine (16 calls)
 R:C8CC:sub_C8CC:RNG/random routine (15 calls)
 
+# ==============================================================================
+# Bank 18 - Level Up / EXP System Code ($8000-$BFFF when loaded)
+# Addresses are CPU addresses when bank 18 is in $8000-$BFFF slot
+# The EXP system uses a FORMULA-BASED calculation, not lookup tables
+# ==============================================================================
+
+# Level Check and EXP Comparison Routine ($9C22-$9C4F)
+R:9C22:b18_level_check_entry:Level check routine entry
+R:9C26:b18_cmp_max_level:CMP #$63 - Max level check (99 decimal)
+R:9C2A:b18_load_exp_lo:LDA $6E19,X - Load calculated EXP req (low)
+R:9C2D:b18_cmp_exp_lo:CMP $601A,X - Compare with party EXP (low)
+R:9C30:b18_load_exp_mid:LDA $6E1A,X - Load calculated EXP req (mid)
+R:9C33:b18_sbc_exp_mid:SBC $601B,X - Subtract party EXP (mid)
+R:9C36:b18_load_exp_hi:LDA $6E1B,X - Load calculated EXP req (high)
+R:9C39:b18_sbc_exp_hi:SBC $601C,X - Subtract party EXP (high)
+
+# EXP Requirement Calculation Entry ($9D41-$9D6C)
+R:9D41:b18_exp_calc_entry:EXP calculation routine entry
+R:9D48:b18_cmp_max_level_2:CMP #$63 - Max level check (99 decimal)
+R:9D54:b18_jsr_exp_calc:JSR $9F7C - Call main EXP calculation
+R:9D5F:b18_sta_exp_lo:STA $6E19,X - Store EXP requirement (low byte)
+R:9D62:b18_sta_exp_mid:STY $6E1A,X - Store EXP requirement (mid byte)
+R:9D65:b18_sta_exp_hi:Store EXP requirement (high byte)
+
+# Main EXP Calculation Routine ($9F7C-$9FB8)
+R:9F7C:b18_exp_calc_main:Main EXP calculation subroutine
+R:9F9C:b18_coeff_table_lookup:Look up character coefficient pointer
+
+# Character EXP Coefficient Pointer Table ($A0FB-$A122)
+# 8 entries × 2 bytes = 16-bit pointers to coefficient data
+R:A0FB:b18_exp_coeff_ptr_table:Character EXP coefficient pointer table (8 entries)
+R:A0FB:b18_exp_ptr_entry_0:Hero coefficient data pointer -> $A123
+R:A0FD:b18_exp_ptr_entry_1:Cristo coefficient data pointer -> $A14B
+R:A0FF:b18_exp_ptr_entry_2:Nara coefficient data pointer -> $A17B
+R:A101:b18_exp_ptr_entry_3:Mara coefficient data pointer -> $A1AB
+R:A103:b18_exp_ptr_entry_4:Brey coefficient data pointer -> $A1DB
+R:A105:b18_exp_ptr_entry_5:Taloon coefficient data pointer -> $A20B
+R:A107:b18_exp_ptr_entry_6:Entry 6 pointer -> $A1AB (shares with Mara)
+R:A109:b18_exp_ptr_entry_7:Ragnar coefficient data pointer -> $A23B
+
+# Character EXP Coefficient Data Blocks
+R:A123:b18_exp_data_hero:Hero EXP coefficient data (40 bytes)
+R:A14B:b18_exp_data_cristo:Cristo EXP coefficient data (48 bytes)
+R:A17B:b18_exp_data_nara:Nara EXP coefficient data (48 bytes)
+R:A1AB:b18_exp_data_mara:Mara/Entry6 EXP coefficient data (48 bytes)
+R:A1DB:b18_exp_data_brey:Brey EXP coefficient data (48 bytes)
+R:A20B:b18_exp_data_taloon:Taloon EXP coefficient data (48 bytes)
+R:A23B:b18_exp_data_ragnar:Ragnar EXP coefficient data
+
+# ==============================================================================
+# EXP System RAM Variables ($6E19-$6E1B range)
+# Calculated EXP requirements stored per-character (3 bytes each)
+# ==============================================================================
+G:6E19:exp_req_calc_lo:Calculated EXP requirement (low byte, indexed by X)
+G:6E1A:exp_req_calc_mid:Calculated EXP requirement (mid byte, indexed by X)
+G:6E1B:exp_req_calc_hi:Calculated EXP requirement (high byte, indexed by X)
+
+
