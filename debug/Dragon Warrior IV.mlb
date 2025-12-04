@@ -1515,4 +1515,289 @@ G:0602:b20_special_data_2:Special shop data 2
 G:0690:b20_display_buffer:Display buffer (indexed by $C7)
 G:06A0:b20_price_buffer:Price display buffer (8 bytes)
 
+# ==============================================================================
+# BANK 21 ($8000-$BFFF) - Event Script System / Bytecode Interpreter
+# ==============================================================================
+
+# Data Tables at Start (first ~8KB is text/event data)
+# Event scripts start with BRK opcodes as bytecode commands
+
+# -- Script Flow Control Routines ($A4xx) --
+P:A47C:b21_event_process_gold:Process gold for event
+P:A489:b21_setup_npc_return:Setup NPC and return
+P:A48C:b21_npc_dialog_end:NPC dialog end routine
+P:A495:b21_npc_dialog_start:NPC dialog start routine
+P:A49E:b21_set_npc_sprite_11:Set NPC sprite to $11
+P:A4B6:b21_execute_bytecode_07DF:Execute bytecode $07DF
+P:A4BA:b21_run_event_with_cc:Run event with C8CC routine
+P:A4C9:b21_call_fixed_bank:Call fixed bank routine via B7B5
+P:A4F0:b21_check_item_77:Check if player has item $77
+
+# -- Script Branching Routines ($A5xx) --
+P:A501:b21_loop_until_clear:Loop until condition clear
+P:A504:b21_wait_loop:Wait loop (check 9AC9)
+P:A50F:b21_dialog_with_cb04:Dialog routine with $CB04
+P:A521:b21_conditional_dialog:Conditional dialog routine
+P:A52C:b21_slot_5_handler:Handler for slot 5 item
+P:A573:b21_validate_item_count:Validate item count
+P:A582:b21_item_price_calc:Calculate item price
+P:A59F:b21_get_item_price:Get item price routine
+P:A5A2:b21_store_price_result:Store price calculation result
+P:A5BE:b21_price_display_4B33:Price display via $4B33
+P:A5CF:b21_continue_or_exit:Continue or exit selection
+P:A5E1:b21_exit_to_64C:Exit to $A64C
+P:A5E4:b21_calc_high_level_price:Calculate high level price
+P:A5FA:b21_calc_standard_price:Calculate standard item price
+
+# -- Script Result Handlers ($A6xx) --
+P:A60D:b21_shift_price_6bits:Shift price right 6 bits
+P:A614:b21_price_shift_loop:Price shift loop
+P:A62B:b21_return_from_shift:Return from shift routine
+P:A62C:b21_set_fixed_price:Set fixed price ($EA60)
+P:A650:b21_set_result_06:Set result to $06
+P:A654:b21_set_result_05:Set result to $05
+P:A658:b21_set_result_04:Set result to $04
+P:A65C:b21_set_result_03:Set result to $03
+P:A660:b21_set_result_02:Set result to $02
+P:A664:b21_set_result_00:Set result to $00
+P:A668:b21_set_result_01:Set result to $01
+P:A66A:b21_set_custom_result:Set custom result from A
+P:A673:b21_branch_to_result:Branch to result handler
+P:A676:b21_jump_to_9919:Jump to $9919
+
+# -- NPC/Map Setup Routines ($A6xx-$A7xx) --
+P:A679:b21_npc_position_setup:NPC position setup (44=$0E, 45=$05)
+P:A689:b21_store_direction:Store direction in $DD
+P:A694:b21_check_map_location:Check map 19:01 for special event
+P:A6A3:b21_call_bc_a6b7:Call $A6BC then $A6B7
+P:A6A6:b21_call_a6b7_only:Call $A6B7 only
+P:A6A9:b21_load_npc_and_enter:Load NPC and enter map
+P:A6B7:b21_call_bank_07:Call bank via $07 + B7B5
+P:A6BC:b21_push_dd_call_aea6:Push $DD and call $AEA6
+P:A6C5:b21_save_da_range:Save $DA-$E9 to stack
+
+# -- Script Name/Text Handlers ($A7xx) --
+P:A732:b21_unknown_a732:Unknown routine at $A732
+P:A738:b21_unknown_a738:Unknown routine at $A738
+P:A769:b21_check_flag:Check game flag routine
+P:A774:b21_set_flag:Set game flag routine
+
+# -- Script Parsing Routines ($99xx-$9Axx) --
+P:9914:b21_add_5_to_x:Add 5 to X register
+P:9919:b21_event_dispatch:Main event bytecode dispatch
+P:9925:b21_init_event_vars:Initialize event variables
+P:9956:b21_clear_f9_fb:Clear $F9-$FB via $46EF
+P:9962:b21_check_event_range:Check event range and handle
+P:9972:b21_call_b7fb_continue:Call B7FB and continue
+P:999E:b21_calc_event_offset:Calculate event offset from $00/$01
+P:99A9:b21_lookup_event_table:Lookup in event table at $98F6
+P:99CE:b21_read_script_byte:Read script byte at ($DA),Y
+P:99D6:b21_set_dc_ff:Set $DC to $FF
+P:99D8:b21_store_dc:Store to $DC
+P:99E7:b21_cmd_02_handler:Command $02 handler (call $9A93)
+P:99F1:b21_cmd_1e_handler:Command $1E handler (call $9AC3)
+P:99FB:b21_cmd_05_handler:Command $05 handler (call $9AC9)
+P:9A05:b21_cmd_13_handler:Command $13 handler (call $9AD1)
+P:9A0F:b21_cmd_03_handler:Command $03 handler (call $9AF5)
+P:9A19:b21_cmd_14_handler:Command $14 handler (call $9B09)
+P:9A23:b21_cmd_16_handler:Command $16 handler (call $9B10)
+P:9A2D:b21_cmd_1b_handler:Command $1B handler (call $9A96)
+P:9A37:b21_cmd_1c_handler:Command $1C handler (call $9AA3)
+P:9A41:b21_cmd_1a_handler:Command $1A handler (call $9AB0)
+P:9A4C:b21_check_dc_result:Check $DC result and branch
+P:9A5A:b21_true_branch:True branch (DC=0, result!=0)
+P:9A6A:b21_false_branch:False branch
+P:9A7B:b21_check_cmd_06:Check for command $06
+P:9A8C:b21_cmd_11_impl:Command $11 implementation (check flag)
+P:9A93:b21_cmd_02_impl:Command $02 - return $E9
+P:9A96:b21_cmd_1b_impl:Command $1B - AND flag check
+P:9AA3:b21_cmd_1c_impl:Command $1C - ORA flag check
+P:9AB0:b21_cmd_1a_impl:Command $1A - CMP flag check
+P:9ABF:b21_return_00:Return $00 (false)
+P:9ABB:b21_return_ff:Return $FF (true)
+P:9AC3:b21_cmd_1e_impl:Command $1E - get value via $2973
+P:9AC9:b21_check_party_status:Check party status via B7B5 $48
+P:9AD1:b21_cmd_13_impl:Command $13 - character slot lookup
+P:9AD4:b21_slot_range_check:Slot range check
+P:9AEF:b21_branch_point:Script branch point
+
+# -- Party Member Routines ($9Bxx-$9Cxx) --
+P:9B09:b21_cmd_14_impl:Command $14 implementation
+P:9B10:b21_cmd_16_impl:Command $16 implementation
+P:9B1D:b21_unknown_9b1d:Unknown routine at $9B1D
+P:9BA8:b21_script_advance:Advance script pointer
+
+# -- Map Event Routines ($9Cxx-$9Exx) --
+P:9C92:b21_unknown_9c92:Unknown routine at $9C92
+P:9CBF:b21_unknown_9cbf:Unknown routine at $9CBF
+P:9CE5:b21_check_special_cond:Check special condition
+P:9E72:b21_set_npc_dir_03:Set NPC direction to $03
+P:9E82:b21_item_74_check:Check for item $74
+P:9E98:b21_item_74_return:Return from item 74 check
+P:9E99:b21_gold_accumulator:Gold accumulator routine
+P:9EC8:b21_next_char_loop:Next character loop
+P:9ED5:b21_recruitment_handler:Recruitment handler
+P:9EF3:b21_find_party_slot:Find party slot routine
+P:9F34:b21_branch_9f34:Script branch at $9F34
+P:9F45:b21_branch_9f45:Script branch at $9F45
+P:9F48:b21_jmp_9f34:Jump to $9F34
+P:9F4B:b21_branch_9f4b:Script branch at $9F4B
+P:9F4E:b21_check_and_process:Check and process routine
+P:9F6B:b21_branch_9f6b:Script branch at $9F6B
+P:9F6E:b21_clear_e7_return:Clear $E7 and return
+P:9F73:b21_branch_9f73:Script branch at $9F73
+P:9F79:b21_inc_counters:Increment $628C/$628D counters
+P:9F90:b21_party_member_loop:Party member loop
+P:9FD5:b21_return_9fd5:Return from party loop
+
+# -- Text/Dialog Routines ($A0xx-$A1xx) --
+P:A00D:b21_set_result_01_jmp:Set result 01 and jump
+P:A016:b21_call_664_then_9ac9:Call $A664 then $9AC9
+P:A02B:b21_fixed_gold_display:Fixed gold amount display
+P:A04C:b21_clear_e7_return2:Clear $E7 and return
+P:A051:b21_item_6d_handler:Item $6D handler
+P:A068:b21_call_b0ae_a495:Call $B0AE then $A495
+P:A06E:b21_char_level_calc:Character level calculation
+P:A0A2:b21_dialog_with_push:Dialog routine with E0/E1 push
+P:A0C3:b21_loop_9ac9_check:Loop checking $9AC9
+P:A0CE:b21_post_loop_handler:Post loop handler
+P:A0FF:b21_setup_menu_82:Setup menu with $82
+
+# -- NPC Movement/Positioning ($AExx-$AFxx) --
+P:AE58:b21_pop_e0_e1_call:Pop E0/E1 and call $A668
+P:AE61:b21_push_regs_continue:Push regs and continue
+P:AE98:b21_set_00_branch:Set $00 and branch
+P:AEA6:b21_setup_npc_data:Setup NPC data from $62xx
+P:AEAE:b21_loop_inc_data:Loop and increment data
+P:AEBB:b21_return_aebc:Return from data loop
+P:AEBC:b21_clear_f9_fb_2:Clear F9/FA/FB to $00
+P:AEC7:b21_jmp_a664:Jump to $A664
+P:AECA:b21_call_b067:Call $B067 and loop
+P:AED0:b21_check_eb04:Check $EB04 result
+P:AEE4:b21_jmp_a660:Jump to $A660
+P:AEE7:b21_store_x_to_f9:Store X to $F9
+P:AEE9:b21_jmp_a668:Jump to $A668
+P:AEEC:b21_call_a65c:Call $A65C
+P:AEFD:b21_jmp_a658:Jump to $A658
+P:AF00:b21_item_5b_handler:Item $5B handler
+P:AF20:b21_branch_af20:Script branch at $AF20
+P:AF24:b21_check_62a4:Check $62A4 high nibble
+P:AF36:b21_call_a660:Call $A660
+P:AF39:b21_call_a65c_2:Call $A65C (2)
+P:AF6B:b21_jmp_b0d7:Jump to $B0D7
+P:AF72:b21_party_swap:Party swap routine
+P:AF80:b21_swap_loop:Swap loop
+P:AFA5:b21_swap_complete:Swap complete, call $A664
+P:AFAC:b21_msg_2e_handler:Message $2E handler
+P:AFB4:b21_call_d214:Call $D214
+P:AFBD:b21_setup_party_slot1:Setup party slot 1
+P:AFF0:b21_special_map_1901:Special map 19:01 handler
+
+# -- Utility Routines ($B0xx) --
+P:B03F:b21_unknown_b03f:Unknown routine at $B03F (load NPC?)
+P:B067:b21_unknown_b067:Unknown routine at $B067
+P:B083:b21_set_0555_40:Set $0555,X to $40
+P:B089:b21_item_check_get:Check and get item
+P:B098:b21_return_carry_set:Return with carry set
+P:B09A:b21_item_display:Display item routine
+P:B0AE:b21_set_e7_01:Set $E7 to $01 (event active)
+P:B0B2:b21_set_e7_c0:Set $E7 to $C0
+P:B0B6:b21_set_e7_80:Set $E7 to $80
+P:B0B8:b21_store_e7:Store A to $E7
+P:B0BB:b21_push_check_41:Push and check condition $41
+P:B0CE:b21_msg_with_d214:Message with D214 call
+P:B0D7:b21_msg_with_d218:Message with D218 call
+P:B0E6:b21_chapter_check:Chapter/map check routine
+P:B0EF:b21_check_map_03:Check if map is $03
+P:B0FF:b21_jmp_b189:Jump to $B189
+
+# -- Name/Text Display ($B1xx-$B2xx) --
+P:B1EF:b21_save_regs_push:Save registers and push
+P:B1F6:b21_push_da_db:Push $DA/$DB
+P:B21C:b21_read_name_loop:Read name from table loop
+P:B22B:b21_end_of_name:End of name marker ($80+)
+P:B237:b21_restore_da_db:Restore $DA/$DB from stack
+P:B243:b21_check_party_flags:Check party flags for suffix
+P:B25C:b21_check_special_map:Check for special map text
+P:B28C:b21_check_map_1600:Check for map $16:$00
+P:B2A3:b21_scan_name_table:Scan name table for map/submap
+P:B2C8:b21_inc_da_db:Increment $DA/$DB pointer
+P:B2CF:b21_lookup_item_name:Lookup item name by ID
+P:B2E2:b21_use_fixed_name:Use fixed item name
+P:B2F4:b21_check_map_22:Check for map $22
+P:B316:b21_check_map_0401:Check for map $04:$01
+P:B340:b21_default_name:Default item name lookup
+P:B35F:b21_simple_name_lookup:Simple name lookup
+P:B374:b21_clear_party_list:Clear party list ($61DB-$625A)
+P:B38A:b21_count_party_members:Count party members
+P:B3A1:b21_add_to_party:Add character to party
+P:B3CA:b21_remove_from_party:Remove character from party
+
+# -- Bank Call Interface ($B7xx) --
+P:B7B5:b21_inter_bank_call:Inter-bank call dispatcher
+P:B7BF:b21_push_da_loop:Push $DA-$E9 to stack
+P:B7D5:b21_execute_call:Execute inter-bank call
+P:B7EC:b21_pop_da_loop:Pop $DA-$E9 from stack
+P:B7FB:b21_call_fixed_05_6f:Call fixed bank routine ($05 6F)
+
+# -- Dialog/Conversation System ($B8xx-$BAxx) --
+P:B810:b21_read_dialog_index:Read dialog index
+P:B822:b21_dialog_type_01:Dialog type 01 handler
+P:B825:b21_set_type_01:Set dialog type to 01
+P:B829:b21_dialog_type_03:Dialog type 03 handler
+P:B830:b21_dialog_type_02:Dialog type 02 handler
+P:B833:b21_set_type_02:Set dialog type to 02
+P:B835:b21_store_type:Store dialog type to $07C5
+P:B83D:b21_main_dialog_loop:Main dialog processing loop
+P:B84E:b21_dialog_flow_00:Dialog flow handler 00
+P:B862:b21_dialog_flow_01:Dialog flow handler 01
+P:B86F:b21_dialog_flow_02:Dialog flow handler 02
+P:B87D:b21_dialog_flow_03:Dialog flow handler 03
+P:B890:b21_use_slot_00:Use slot 00
+P:B8A8:b21_check_slot_09:Check slot >= 09
+P:B8B6:b21_check_party_valid:Check party slot valid
+P:B8C0:b21_party_invalid:Party slot invalid handler
+P:B8C6:b21_retry_or_exit:Retry or exit dialog
+
+# -- Script Helper Routines ($BAxx-$BFxx) --
+P:BA3E:b21_unknown_ba3e:Unknown routine at $BA3E
+P:BA55:b21_unknown_ba55:Unknown routine at $BA55
+P:BA5D:b21_unknown_ba5d:Unknown routine at $BA5D
+P:BACD:b21_unknown_bacd:Unknown routine at $BACD
+P:BAEF:b21_unknown_baef:Unknown routine at $BAEF
+P:BEBC:b21_call_a6b7:Call $A6B7
+P:BECC:b21_call_b4ee_a47c:Call $B4EE then $A47C
+P:BED2:b21_clear_0553_high:Clear high bit of $0553
+P:BEF6:b21_call_b833:Call $B833
+P:BEF9:b21_call_d218:Call $D218
+P:BF06:b21_find_slot_50:Find slot via $50 + B7B5
+P:BF0E:b21_check_9ce5:Check $9CE5 condition
+P:BF1B:b21_call_bf4f:Call $BF4F
+P:BF2D:b21_call_a84e:Call $A84E
+P:BF36:b21_branch_bf36:Script branch at $BF36
+P:BF48:b21_call_a6ff:Call $A6FF
+P:BF4E:b21_return_bf4e:Return
+P:BF4F:b21_setup_fe_ff:Setup $FE/$FF to $00
+P:BF64:b21_scan_npc_loop:Scan NPC data loop
+P:BF8A:b21_use_0a_value:Use value $0A
+P:BF8E:b21_read_npc_data:Read NPC data at ($DA),Y
+P:BF93:b21_store_fd:Store result to $FD
+P:BFA4:b21_read_banked_byte:Read byte via banked access
+
+# -- RAM Variables Used by Bank 21 --
+G:61DB:b21_party_list:Party member list (128 bytes, $FF = end)
+G:625B:b21_party_count_1:Party count variable 1
+G:625C:b21_party_count_2:Party count variable 2
+G:627B:b21_game_flags:Game event flags array
+G:628C:b21_counter_1:Event counter 1
+G:628D:b21_counter_2:Event counter 2
+G:628F:b21_map_flags:Map event flags
+G:62A4:b21_npc_state:NPC state variable
+G:62E7:b21_party_flags:Party member flags (3 bytes)
+G:62ED:b21_dialog_timer:Dialog timer (set to $28)
+G:6BDE:b21_special_flag:Special event flag (bit 7)
+G:07BD:b21_name_buffer:Name buffer (8 bytes)
+G:07C4:b21_name_length:Name length
+G:07C5:b21_dialog_type:Current dialog type (1-3)
+
 
