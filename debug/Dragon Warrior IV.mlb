@@ -17,17 +17,17 @@
 # Repository: https://github.com/mrisney/dragon-warrior-4-info
 # DataCrystal: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)
 #
-# Statistics: ~3,060 labels (P=1,741, G=464, R=851) across 4,435 lines
-# Banks Covered: 08, 0E, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27-30
+# Statistics: ~3,100 labels across ~4,500 lines
+# Banks Covered: 08, 0C, 0D, 0E, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27-30
 #
 # ==============================================================================
 # WHAT'S NEXT / TODO
 # ==============================================================================
 # High Priority:
-#   [ ] Bank 0C/0D: Graphics tile data (character sprites, map tiles)
+#   [x] Bank 0C/0D: Graphics tile data (character sprites, map tiles) - DONE
+#   [x] Bank 0E: Complete palette system with override tables - DONE
 #   [x] Bank 0F: Map bank lookup function at $3E9AD (b15_get_map_bank) - DONE
 #   [ ] Bank 13: Unknown - needs initial analysis
-#   [ ] Text/dialogue table locations in Banks 0C-0E
 #
 # Medium Priority:
 #   [ ] Enemy data tables (HP, stats, attack patterns, drops)
@@ -45,9 +45,28 @@
 # Completed This Session:
 #   [x] Fixed MLB address format (P: for physical, R: for CPU)
 #   [x] Added all 73 map location labels (Maps 00-48 with submaps)
+#   [x] Added Bank 0C/0D graphics labels
+#   [x] Added Bank 0E complete palette system labels
 #   [x] Integrated DataCrystal ROM map and RAM map information
 #   [x] Fixed party member data structure offsets
 #   [x] Added tile behavior documentation
+# ==============================================================================
+
+# ==============================================================================
+# TEXT TABLE / CHARACTER ENCODING
+# ==============================================================================
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/TBL
+# Text uses custom encoding, NOT ASCII. Space character = $00.
+#
+# $00 = space   $01-$09 = 0-9     $0A-$19 = a-p     $1A-$1F = q-v
+# $20-$25 = w-z,$26-$2F = A-J     $30-$3F = K-T,U,V,W,X,Y,Z
+# $40-$5F = (empty/special)
+# $60-$6F = special chars: — " " ' ' ' ' .' ? ! -
+# $70-$7F = special chars: ✱ : … ???? ???? ( ) , . 「
+# $80 = ▼ (continuation)   $81 = ▶ (choice arrow)
+#
+# Control codes (TODO: document specific sequences):
+#   Text is stored compressed in ROM banks and decompressed during display
 # ==============================================================================
 
 # ==============================================================================
@@ -3049,68 +3068,6 @@ G:7600:b08_encounter_data:Encounter data array (160 entries)
 G:7684:b08_quadrant_flags:Quadrant flags (4 bytes)
 G:7700:b08_tile_cache:Tile cache array (256 bytes)
 
-# -- Bank 08 Zero Page Variables --
-R:0000:b08_temp_00:Temporary pointer low
-R:0001:b08_temp_01:Temporary pointer high
-R:0002:b08_temp_02:Secondary temp low
-R:0003:b08_temp_03:Secondary temp high
-R:0004:b08_counter_04:Counter variable
-R:0005:b08_counter_05:Counter high byte
-R:0007:b08_mode_flag:Mode flag (0 or non-zero)
-R:0008:b08_shift_count:Shift counter
-R:0009:b08_mode_select:Mode selector (0 or 1)
-R:000A:b08_param_a:Parameter A - tile/encounter data
-R:000B:b08_param_b:Parameter B
-R:000C:b08_param_c:Parameter C
-R:000D:b08_buffer_mode:Buffer mode (0=direct, 1=deferred)
-R:000E:b08_ptr_0e:Data pointer low
-R:000F:b08_ptr_0f:Data pointer high
-R:0016:b08_tile_index:Current tile index
-R:0018:b08_tile_id_base:Tile ID base value
-R:0019:b08_ppu_addr_lo:PPU address low
-R:001A:b08_ppu_addr_hi:PPU address high
-R:0072:b08_calc_lo:Calculation temp low
-R:0073:b08_calc_hi:Calculation temp high
-R:0074:b08_rotation_cnt:Rotation count
-R:0075:b08_rotation_tmp:Rotation temp
-R:0076:b08_mode_76:Mode flag ($76)
-R:0079:b08_cache_index:Tile cache index
-R:007A:b08_transpose_flag:Transpose flag
-R:00DA:b08_loc_ptr_lo:Location pointer low
-R:00DB:b08_loc_ptr_hi:Location pointer high
-R:00DC:b08_loc_temp_dc:Location temp DC
-R:00DD:b08_loc_temp_dd:Location temp DD
-R:00DE:b08_encounter_mod_lo:Encounter modifier low
-R:00DF:b08_encounter_mod_hi:Encounter modifier high
-R:00E4:b08_last_map:Last map number
-R:00E5:b08_last_submap:Last submap number
-R:00E6:b08_last_x:Last X coordinate
-R:00E7:b08_last_y:Last Y coordinate
-R:00E9:b08_save_reg:Saved register temp
-
-# ==============================================================================
-# PRG ROM - Bank 0E: Palette and Graphics Code ($8000-$BFFF when loaded)
-# ==============================================================================
-# Bank 0E (file offset $38000) contains palette decision code and color tables.
-# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
-
-# -- Bank 0E Palette Decision Code ($BAF7-$BB52) --
-# Determines which palette to use based on map type and conditions
-P:38AF7:b0e_palette_decision:Palette decision code entry
-P:38B52:b0e_palette_decision_end:End of palette decision code
-
-# -- Bank 0E Palette Tables ($BB53-$BC09) --
-P:38B53:b0e_palette_table_1:Palette table 1
-P:38C09:b0e_palette_table_1_end:End of palette table 1
-
-# -- Bank 0E Additional Palette Data ($BC0A-$BCE1) --
-P:38C0A:b0e_palette_data_2:Palette data section 2
-P:38CE1:b0e_palette_data_2_end:End of palette data section 2
-
-# -- Bank 0E Secondary Palette Tables ($BCE2-$BD9F) --
-P:38CE2:b0e_palette_table_2:Secondary palette table
-P:38D9F:b0e_palette_table_2_end:End of secondary palette table
-
 # ==============================================================================
 # PRG ROM - Bank 20: Party/Wagon Management System ($8000-$BFFF when loaded)
 # ==============================================================================
@@ -4458,6 +4415,83 @@ P:64124:b25_location_tbl:Map/submap/BGM triplet table
 # Bank 26: Map/Event Script Data - Event bytecode data
 #
 # These banks are loaded into PPU pattern tables via CHR banking
+
+# ==============================================================================
+# PRG ROM - Bank 0C: Map Tile Graphics ($8000-$BFFF when loaded)
+# ==============================================================================
+# Bank 0C (file offset $30000) contains map tile graphics for page 0.
+# Used when Bank 08 tileset lookup returns graphics page 0.
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+P:30000:b0c_map_tile_graphics:Map tile graphics page 0 (base $8000)
+# To calculate tile address: physical_tile_number × 16 + $30000
+# Each 16x16 map tile = 4 × 8x8 NES tiles = 64 bytes
+# Tile increment patterns (from Bank 08 $A1BB) determine tile reuse
+
+# ==============================================================================
+# PRG ROM - Bank 0D: Map Tile Graphics + Sprites ($8000-$BFFF when loaded)
+# ==============================================================================
+# Bank 0D (file offset $34000) contains map tile graphics for pages 1 and 2,
+# plus character sprite graphics.
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+
+# -- Bank 0D Map Tile Graphics --
+P:34001:b0d_tile_graphics_page1:Map tile graphics page 1 (base $8001/$7F01)
+P:35F14:b0d_tile_graphics_page2:Map tile graphics page 2 (base $9F14/$9E14)
+# Page 1: Used when Bank 08 returns graphics page 1
+# Page 2: Used when Bank 08 returns graphics page 2
+
+# -- Bank 0D Character Sprite Graphics --
+P:37304:b0d_character_sprites:Character sprite graphics start
+# Character sprites for party members, NPCs
+
+# -- Bank 0D Empty/Other --
+P:37E44:b0d_empty_space_start:Empty space begins
+P:37FD4:b0d_empty_space_end:Empty space ends, other data follows
+
+# ==============================================================================
+# PRG ROM - Bank 0E: Code + Sprite Graphics + Palettes ($8000-$BFFF when loaded)
+# ==============================================================================
+# Bank 0E (file offset $38000) contains code, more character sprites, and
+# the complete palette decision system with color lookup tables.
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+
+# -- Bank 0E Initial Code Section ($8008-$8090) --
+P:38008:b0e_code_start:Bank 0E code section start
+P:38090:b0e_code_end:Bank 0E initial code section end
+
+# -- Bank 0E Character Sprite Graphics ($8097-$BAD6) --
+P:38097:b0e_character_sprite_graphics:Character sprite graphics start
+P:3BAD7:b0e_character_sprite_graphics_end:Character sprite graphics end
+
+# -- Bank 0E Palette Decision System ($BAF7-$BD9F) --
+# This code determines which color palette to use for each map/submap.
+# Usually uses tileset number to select palette, but can override for
+# specific locations (e.g., lighthouse, casino, caves).
+P:38AF7:b0e_palette_decision:Palette decision code entry
+P:38B52:b0e_palette_decision_end:End of palette decision code
+
+# -- Bank 0E Palette Override Tables ($BB53-$BB87) --
+# Maps with special palette overrides (not using their tileset's default):
+#   48=Shrine of Colossus, 46=Zenethia, 3B=Royal Crypt, 2D=Aktemto Mine
+#   3D=Zenethian Tower, 42=Lighthouse, 2A/35=Final Cave, 04=Endor, 34=Cascade Cave
+P:38B53:b0e_palette_override_maps:Map numbers with palette overrides (terminated by $80-$FF)
+P:38B67:b0e_palette_override_values:Override values (replacement for tileset number)
+P:38B75:b0e_palette_override_submaps:Submap numbers for overrides ($FF=any submap)
+# Special cases handled in code:
+#   Index $0E (Lighthouse): Check $6293 bit 4 - if set, use palette #$36
+#   Index $0F/$10 (Final Cave): Force night time palette
+#   Index $11+ (Endor Casino, Cascade Cave): Force day time palette
+
+# -- Bank 0E Color Set Tables ($BB88-$BCE1) --
+P:38B88:b0e_palette_numbers_table:Palette number lookup (tileset×2 + day/night)
+P:38C0A:b0e_color_set_table:Color set table (palette# × 4 → 4 color set bytes)
+# Each palette has 4 color set indices, each set = 3 palette colors
+P:38CE1:b0e_color_set_table_end:End of color set table
+
+# -- Bank 0E Actual Palette Colors ($BCE2-$BE12) --
+P:38CE2:b0e_palette_colors:Actual NES palette colors (3 bytes per color set)
+# Multiply color set index by 3, add to base, read 3 NES palette values
+P:3BE12:b0e_palette_colors_end:End of palette color data
 # or processed by decompression routines, not executed directly.
 
 
