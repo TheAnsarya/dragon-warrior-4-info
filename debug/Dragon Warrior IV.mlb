@@ -77,68 +77,86 @@ R:07CC:bank_call_save:Bank call saved bank
 # General Save Data Header
 G:6000:SaveDataStart:Start of SRAM save data
 
-# Party Member 0 (Hero) - 30 bytes
-G:6001:Party0_Start:Hero - Party slot 0 start
-G:6001:Party0_StatusFlags:Hero - Status effect flags (poison, curse, etc)
-G:6002:Party0_CurrentHP_Lo:Hero - Current HP (low byte)
-G:6003:Party0_CurrentHP_Hi:Hero - Current HP (high byte)
-G:6004:Party0_MaxHP_Lo:Hero - Max HP (low byte)
-G:6005:Party0_MaxHP_Hi:Hero - Max HP (high byte)
-G:6006:Party0_CurrentMP:Hero - Current MP
-G:6007:Party0_MaxMP:Hero - Max MP
-G:6008:Party0_Level:Hero - Level
-G:6009:Party0_Strength:Hero - Strength stat
-G:600A:Party0_Agility:Hero - Agility stat
-G:600B:Party0_Vitality:Hero - Vitality stat
-G:600C:Party0_Intelligence:Hero - Intelligence stat
-G:600D:Party0_Luck:Hero - Luck stat
-G:600E:Party0_Attack:Hero - Attack power
-G:600F:Party0_Defense:Hero - Defense power
-G:6010:Party0_Item0:Hero - Item slot 0 (high bit = equipped)
-G:6011:Party0_Item1:Hero - Item slot 1
-G:6012:Party0_Item2:Hero - Item slot 2
-G:6013:Party0_Item3:Hero - Item slot 3
-G:6014:Party0_Item4:Hero - Item slot 4
-G:6015:Party0_Item5:Hero - Item slot 5
-G:6016:Party0_Item6:Hero - Item slot 6
-G:6017:Party0_Item7:Hero - Item slot 7
-G:6018:Party0_SpellFlags_Lo:Hero - Learned spells (low byte)
-G:6019:Party0_SpellFlags_Hi:Hero - Learned spells (high byte)
-G:601A:Party0_EXP_Lo:Hero - Experience (low byte)
-G:601B:Party0_EXP_Mid:Hero - Experience (middle byte)
-G:601C:Party0_EXP_Hi:Hero - Experience (high byte)
+# ==============================================================================
+# Party Member Data Structure (30 bytes each)
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/SRAM_map
+# Offset +$00: Status flags (bit 5=poison, 6=paralyzed, 7=alive)
+# Offset +$01-$02: Current HP (word)
+# Offset +$03-$04: Current MP (word)
+# Offset +$05: Level
+# Offset +$06: Strength
+# Offset +$07: Agility
+# Offset +$08: Vitality
+# Offset +$09: Intelligence
+# Offset +$0A: Luck
+# Offset +$0B: ??? (unknown)
+# Offset +$0C-$0D: Maximum HP (word)
+# Offset +$0E-$0F: Maximum MP (word)
+# Offset +$10-$12: Current XP (3 bytes)
+# Offset +$13-$1A: Item slots 1-8
+# Offset +$1B-$1D: Spell flags (3 bytes)
+# ==============================================================================
 
-# Party Member 1 (Cristo) - 30 bytes
-G:601F:Party1_Start:Cristo - Party slot 1 start
-G:601F:Party1_StatusFlags:Cristo - Status effect flags
-G:6020:Party1_CurrentHP_Lo:Cristo - Current HP (low byte)
-G:6021:Party1_CurrentHP_Hi:Cristo - Current HP (high byte)
-G:6022:Party1_MaxHP_Lo:Cristo - Max HP (low byte)
-G:6023:Party1_MaxHP_Hi:Cristo - Max HP (high byte)
-G:6024:Party1_CurrentMP:Cristo - Current MP
-G:6025:Party1_MaxMP:Cristo - Max MP
-G:6026:Party1_Level:Cristo - Level
+# Party Member 0 (Hero) - 30 bytes at $6001-$601E
+G:6001:Hero_StatusFlags:Hero - Status (b5=poison, b6=paralyzed, b7=alive)
+G:6002:Hero_CurrentHP_Lo:Hero - Current HP (low byte)
+G:6003:Hero_CurrentHP_Hi:Hero - Current HP (high byte)
+G:6004:Hero_CurrentMP_Lo:Hero - Current MP (low byte)
+G:6005:Hero_CurrentMP_Hi:Hero - Current MP (high byte)
+G:6006:Hero_Level:Hero - Level
+G:6007:Hero_Strength:Hero - Strength stat
+G:6008:Hero_Agility:Hero - Agility stat
+G:6009:Hero_Vitality:Hero - Vitality stat
+G:600A:Hero_Intelligence:Hero - Intelligence stat
+G:600B:Hero_Luck:Hero - Luck stat
+G:600C:Hero_Unknown_0C:Hero - Unknown byte
+G:600D:Hero_MaxHP_Lo:Hero - Max HP (low byte)
+G:600E:Hero_MaxHP_Hi:Hero - Max HP (high byte)
+G:600F:Hero_MaxMP_Lo:Hero - Max MP (low byte)
+G:6010:Hero_MaxMP_Hi:Hero - Max MP (high byte)
+G:6011:Hero_EXP_Lo:Hero - Experience (low byte)
+G:6012:Hero_EXP_Mid:Hero - Experience (mid byte)
+G:6013:Hero_EXP_Hi:Hero - Experience (high byte)
+G:6014:Hero_Item1:Hero - Item slot 1
+G:6015:Hero_Item2:Hero - Item slot 2
+G:6016:Hero_Item3:Hero - Item slot 3
+G:6017:Hero_Item4:Hero - Item slot 4
+G:6018:Hero_Item5:Hero - Item slot 5
+G:6019:Hero_Item6:Hero - Item slot 6
+G:601A:Hero_Item7:Hero - Item slot 7
+G:601B:Hero_Item8:Hero - Item slot 8
+G:601C:Hero_BattleSpells_Lo:Hero - Battle spell flags (Expel, Healmore, Blaze, Return, Sleepmore, Awake, Firebal, Healall)
+G:601D:Hero_BattleSpells_Mid:Hero - Battle spell flags (Ironize, FendSpell, Zap, Transform, Boom, Healusall, Lightning, Vivify)
+G:601E:Hero_SpellFlags_Hi:Hero - Spell flags (b0-1=Thordain/Chance battle, b2-7=overworld spells)
 
-# Party Member 2 (Nara) - 30 bytes
-G:603D:Party2_Start:Nara - Party slot 2 start
+# Party Member 1 (Cristo) - 30 bytes at $601F-$603C
+G:601F:Cristo_StatusFlags:Cristo - Status (b5=poison, b6=paralyzed, b7=alive)
+G:6020:Cristo_CurrentHP_Lo:Cristo - Current HP (low byte)
+G:6021:Cristo_CurrentHP_Hi:Cristo - Current HP (high byte)
+G:6022:Cristo_CurrentMP_Lo:Cristo - Current MP (low byte)
+G:6023:Cristo_CurrentMP_Hi:Cristo - Current MP (high byte)
+G:6024:Cristo_Level:Cristo - Level
 
-# Party Member 3 (Mara) - 30 bytes
-G:605B:Party3_Start:Mara - Party slot 3 start
+# Party Member 2 (Nara) - 30 bytes at $603D-$605A
+G:603D:Nara_StatusFlags:Nara - Status (b5=poison, b6=paralyzed, b7=alive)
 
-# Party Member 4 (Brey) - 30 bytes
-G:6079:Party4_Start:Brey - Party slot 4 start
+# Party Member 3 (Mara) - 30 bytes at $605B-$6078
+G:605B:Mara_StatusFlags:Mara - Status (b5=poison, b6=paralyzed, b7=alive)
 
-# Party Member 5 (Taloon) - 30 bytes
-G:6097:Party5_Start:Taloon - Party slot 5 start
+# Party Member 4 (Brey) - 30 bytes at $6079-$6096
+G:6079:Brey_StatusFlags:Brey - Status (b5=poison, b6=paralyzed, b7=alive)
 
-# Party Member 6 (Ragnar) - 30 bytes
-G:60B5:Party6_Start:Ragnar - Party slot 6 start
+# Party Member 5 (Taloon) - 30 bytes at $6097-$60B4
+G:6097:Taloon_StatusFlags:Taloon - Status (b5=poison, b6=paralyzed, b7=alive)
 
-# Party Member 7 (Alena) - 30 bytes
-G:60D3:Party7_Start:Alena - Party slot 7 start
+# Party Member 6 (Ragnar) - 30 bytes at $60B5-$60D2
+G:60B5:Ragnar_StatusFlags:Ragnar - Status (b5=poison, b6=paralyzed, b7=alive)
 
-# Unused Character Slot (30 bytes)
-G:60F1:Party8_Unused:Unused character slot start
+# Party Member 7 (Alena) - 30 bytes at $60D3-$60F0
+G:60D3:Alena_StatusFlags:Alena - Status (b5=poison, b6=paralyzed, b7=alive)
+
+# Unused Character Slot - 30 bytes at $60F1-$610E
+G:60F1:Unused_Slot:Unused character slot start
 
 # Extra Companion 1 (6 bytes) - DataCrystal
 # Healie, Orin, etc. during story events
