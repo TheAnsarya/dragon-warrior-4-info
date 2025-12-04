@@ -20,7 +20,9 @@ def search_level_increment(rom_data):
     """Search for INC $60xx patterns that could be level incrementing."""
     # INC absolute = $EE
     # INC absolute,X = $FE
-    # Party member offsets: $6008, $6048, $6088, $60C8, $6108, etc.
+    # Party member structure: 30 bytes each, starting at $6001
+    # Level offsets: Hero=$6006, Cristo=$6024, etc. (offset +5 from status)
+    # Each character: base + $1E (30 bytes)
 
     results = []
 
@@ -31,7 +33,8 @@ def search_level_increment(rom_data):
             addr = (hi << 8) | lo
 
             # Check if it's incrementing level-related addresses
-            if hi == 0x60 and lo in [0x08, 0x48, 0x88, 0xC8]:
+            # Hero=$6006, Cristo=$6024, Nara=$6042, etc.
+            if hi == 0x60 and lo in [0x06, 0x24, 0x42, 0x60, 0x7E, 0x9C, 0xBA, 0xD8]:
                 bank = i // 0x4000
                 offset = i % 0x4000 + 0x8000
                 if bank >= 16:  # Fixed bank
@@ -50,8 +53,8 @@ def search_level_increment(rom_data):
             hi = rom_data[i + 2]
             addr = (hi << 8) | lo
 
-            # Check for $6008 base + X indexing for party members
-            if hi == 0x60 and lo == 0x08:
+            # Check for level base + X indexing ($6006 or lower for indexed access)
+            if hi == 0x60 and lo in [0x01, 0x05, 0x06]:
                 bank = i // 0x4000
                 offset = i % 0x4000 + 0x8000
                 if bank >= 16:  # Fixed bank
@@ -70,18 +73,26 @@ def search_level_increment(rom_data):
 def search_stat_increment(rom_data):
     """Search for patterns that look like stat increments.
 
-    Stats are at offsets like:
-    $6000 + $00 = current HP (2 bytes)
-    $6000 + $02 = current MP (2 bytes)
-    $6000 + $04 = max HP (2 bytes)
-    $6000 + $06 = max MP (2 bytes)
-    $6000 + $08 = level
-    $6000 + $09 = strength
-    $6000 + $0A = agility
-    $6000 + $0B = vitality
-    $6000 + $0C = intelligence
-    $6000 + $0D = luck
-    etc.
+    Party member structure (30 bytes each, starting at $6001):
+    $6001 + $00 = status flags
+    $6001 + $01 = current HP lo
+    $6001 + $02 = current HP hi
+    $6001 + $03 = current MP lo
+    $6001 + $04 = current MP hi
+    $6001 + $05 = level
+    $6001 + $06 = strength
+    $6001 + $07 = agility
+    $6001 + $08 = vitality
+    $6001 + $09 = intelligence
+    $6001 + $0A = luck
+    $6001 + $0B = unknown
+    $6001 + $0C = max HP lo
+    $6001 + $0D = max HP hi
+    $6001 + $0E = max MP lo
+    $6001 + $0F = max MP hi
+    $6001 + $10 = exp lo
+    $6001 + $11 = exp mid
+    $6001 + $12 = exp hi
     """
 
     results = []
@@ -93,7 +104,7 @@ def search_stat_increment(rom_data):
             lo = rom_data[i + 1]
             hi = rom_data[i + 2]
 
-            if hi == 0x60 and lo in range(0x09, 0x10):  # Stat offsets
+            if hi == 0x60 and lo in range(0x06, 0x0C):  # Stat offsets (str, agi, vit, int, luck)
                 # Check for CLC (18) and ADC
                 if i + 3 < len(rom_data) and rom_data[i + 3] == 0x18:  # CLC
                     if i + 4 < len(rom_data) and rom_data[i + 4] in [0x69, 0x65, 0x75]:  # ADC imm, zp, zpx
@@ -114,20 +125,21 @@ def search_stat_increment(rom_data):
     return results
 
 def search_exp_comparison(rom_data):
-    """Search for patterns comparing against exp (3 bytes at $601A).
+    """Search for patterns comparing against exp (3 bytes at $6011).
 
     Pattern: Load exp, compare against required exp
+    Hero EXP: $6011-$6013
     """
 
     results = []
 
-    # LDA $601A,X or LDA $601A - accessing exp low byte
+    # LDA $6011,X or LDA $6011 - accessing exp low byte
     for i in range(len(rom_data) - 5):
         if rom_data[i] == 0xBD:  # LDA abs,X
             lo = rom_data[i + 1]
             hi = rom_data[i + 2]
 
-            if hi == 0x60 and lo == 0x1A:  # EXP low byte
+            if hi == 0x60 and lo in [0x10, 0x11, 0x12, 0x13]:  # EXP bytes (with some tolerance)
                 bank = i // 0x4000
                 offset = i % 0x4000 + 0x8000
                 if bank >= 16:
@@ -145,7 +157,7 @@ def search_exp_comparison(rom_data):
             lo = rom_data[i + 1]
             hi = rom_data[i + 2]
 
-            if hi == 0x60 and lo == 0x1A:
+            if hi == 0x60 and lo in [0x11, 0x12, 0x13]:
                 bank = i // 0x4000
                 offset = i % 0x4000 + 0x8000
                 if bank >= 16:
