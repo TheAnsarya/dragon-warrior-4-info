@@ -1255,12 +1255,144 @@ R:D804:sub_D804:Processing routine (16 calls)
 R:C8CC:sub_C8CC:RNG/random routine (15 calls)
 
 # ==============================================================================
-# Bank 18 - Level Up / EXP System Code ($8000-$BFFF when loaded)
-# Addresses are CPU addresses when bank 18 is in $8000-$BFFF slot
+# Bank 18 - Character Init / Chapter Transition / EXP System ($8000-$BFFF)
+# Physical base: P:48000 | CPU addresses when bank 18 is in $8000-$BFFF slot
 # The EXP system uses a FORMULA-BASED calculation, not lookup tables
 # ==============================================================================
 
+# ------------------------------------------------------------------------------
+# Character Initialization Routine ($8F12-$9011) - P:48F12-49011
+# Called for each character (0-7) to initialize stats from ROM data tables
+# Uses $79/$7A as pointer to party data ($6001+)
+# Uses $04/$05 as pointer to stat coefficient tables
+# Uses $08/$09 as pointer to spell/item data tables
+# ------------------------------------------------------------------------------
+P:48F12:b18_char_init_entry:Character init entry (X=character index)
+P:48F14:b18_calc_char_offset:Calculate character offset (X*6)
+P:48F29:b18_jsr_set_dest_ptr:JSR $C827 - Set destination pointer
+P:48F2C:b18_load_base_data_ptr:LDA $9162 - Base char data pointer lo
+P:48F2F:b18_load_base_data_ptr_hi:LDY $9163 - Base char data pointer hi
+P:48F32:b18_jsr_copy_base_data:JSR $C81D - Copy base data
+P:48F49:b18_loop_stat_copy:Copy 5 base stats loop start
+P:48F9B:b18_set_level_1:Set level to 1 (offset $05)
+P:48F9F:b18_set_status_alive:Set status to $80 (alive, offset $00)
+P:48FAD:b18_load_spell_table_ptr:Load spell/ability table pointer
+P:48FC9:b18_spell_loop:Spell learning loop
+P:48FED:b18_break_learn_spell:Break opcode for spell learning
+P:49004:b18_copy_items:Copy initial 8 items (offsets $13-$1A)
+P:49006:b18_load_item_data:LDA $9191,X - Load item data from table
+P:49011:b18_loop_next_char:PLA/Return from char init loop
+
+# ------------------------------------------------------------------------------
+# Chapter/New Game Initialization ($901B-$90EB) - P:4901B-490EB
+# Sets up initial game state for current chapter
+# Special handling for Chapter 5 transition removes quest items
+# ------------------------------------------------------------------------------
+P:4901B:b18_game_init_start:Clear party formation pointers
+P:4901D:b18_clear_formation_lo:STA $6158 - Clear formation pointer lo
+P:49020:b18_clear_formation_hi:STA $6159 - Clear formation pointer hi
+P:49023:b18_load_chapter:LDX ChapterNumber ($615A)
+P:49026:b18_load_party_template:LDA $91D8,X - Load party template for chapter
+P:49029:b18_store_party_count:STA $6157 - Store initial party count
+P:4902C:b18_load_chapter_2:Load chapter for party setup
+P:4902F:b18_calc_chapter_offset:Calculate chapter*5 offset
+P:49037:b18_load_party_member:LDA $9178,X - Load party member ID
+P:4903A:b18_store_party_slot:STA $6165,Y - Store in party formation
+
+# Chapter 4 Special Handling (clear caravan data)
+P:49043:b18_check_chapter_4:Check if chapter == 3 (Chapter 4)
+P:4904A:b18_clear_ch4_caravan:Clear Chapter 4 caravan data
+P:4904C:b18_clear_07c6:STA $07C6 - Clear caravan slot 1
+P:4904F:b18_clear_07c7:STA $07C7 - Clear caravan slot 2
+P:49052:b18_clear_07c8:STA $07C8 - Clear caravan slot 3
+P:49055:b18_clear_62e7:STA $62E7 - Clear extended caravan 1
+P:49058:b18_clear_62e8:STA $62E8 - Clear extended caravan 2
+P:4905B:b18_clear_62e9:STA $62E9 - Clear extended caravan 3
+
+# Chapter 5 Transition Handling (cap chapter, mark certain chars dead)
+P:4905E:b18_check_ch5_transition:Check if chapter >= 5 (new Ch5 start)
+P:49065:b18_cap_chapter_at_4:Set chapter to 4 (Chapter 5 index)
+P:49067:b18_store_chapter:STA ChapterNumber ($615A)
+P:4906A:b18_set_ch5_flag:Set $618E = $20 (Chapter 5 flag)
+P:4906F:b18_mark_dead_ff:A = $FF for marking chars as dead/invalid
+
+# Mark specific party slots as invalid ($FF = dead/not in party)
+# X=$03: Slot 3 (4th character), X=$01: Slot 1 (2nd char), X=$1B: offset $1B
+P:49071:b18_mark_slot_3:LDX #$03 - Party slot 3
+P:49073:b18_mark_status_3:STA $6001,X - Mark status as $FF
+P:49076:b18_mark_hp_lo_3:STA $6002,X - Clear HP lo
+P:49079:b18_mark_slot_1:LDX #$01 - Party slot 1
+P:4907B:b18_mark_status_1:STA $6001,X - Mark status as $FF
+P:4907E:b18_mark_hp_lo_1:STA $6002,X - Clear HP lo
+P:49081:b18_mark_slot_1b:LDX #$1B - Offset $1B (spell flags?)
+P:49083:b18_mark_data_1b:STA $6001,X - Clear data at offset $1B
+P:49086:b18_mark_data_1b2:STA $6002,X - Clear data at offset $1C
+P:49089:b18_mark_data_1b3:STA $6003,X - Clear data at offset $1D
+
+# Chapter 5 Item Cleanup - Remove quest items from all characters
+# Removes: Gunpowder Jar ($6B), Hot Air Balloon ($6C), Sage's Stone ($5D)
+P:4908C:b18_item_cleanup_start:Begin item cleanup for all 8 chars
+P:4908E:b18_push_char_counter:PHA - Save character counter
+P:4908F:b18_setup_char_ptr:Set $79/$7A = character data pointer
+P:49099:b18_jsr_calc_ptr:JSR $C827 - Calculate character pointer
+P:4909C:b18_load_base_ptr_lo:LDA $9162 - Character base data pointer lo
+P:4909F:b18_load_base_ptr_hi:LDY $9163 - Character base data pointer hi
+P:490A2:b18_jsr_set_ptr:JSR $C81D - Set pointer
+P:490A5:b18_item_slot_loop:Y = $13 (item slot 0 offset)
+P:490A7:b18_load_item:LDA ($79),Y - Load item at current slot
+P:490A9:b18_check_gunpowder:CMP #$6B - Gunpowder Jar?
+P:490AB:b18_skip_if_not_gunpowder:BNE +4 - Skip if not
+P:490AD:b18_remove_gunpowder:LDA #$FF - Remove item
+P:490AF:b18_store_empty_slot:STA ($79),Y - Store empty slot
+P:490B1:b18_reload_item:Reload item for next check
+P:490B3:b18_check_balloon:CMP #$6C - Hot Air Balloon?
+P:490B5:b18_skip_if_not_balloon:BNE +4 - Skip if not
+P:490B7:b18_remove_balloon:LDA #$FF - Remove item
+P:490B9:b18_store_empty_slot_2:STA ($79),Y - Store empty slot
+P:490BB:b18_reload_item_2:Reload item for third check
+P:490BD:b18_check_sages_stone:CMP #$5D - Sage's Stone?
+P:490BF:b18_skip_if_not_sages:BNE +4 - Skip if not
+P:490C1:b18_remove_sages_stone:LDA #$FF - Remove item
+P:490C3:b18_store_empty_slot_3:STA ($79),Y - Store empty slot
+
+# Compact items (shift non-empty items to fill gaps)
+P:490C5:b18_compact_check:Check if slot is empty ($FF)
+P:490C9:b18_skip_compact:BNE - Item present, continue
+P:490CB:b18_next_item_slot:INY - Move to next slot
+P:490CC:b18_check_slot_limit:CPY #$1B - Past last item slot?
+P:490CE:b18_done_compacting:BEQ - Done with this char
+P:490D0:b18_shift_item:Shift next item to fill empty slot
+P:490D7:b18_restore_item:Restore item to previous slot
+P:490DE:b18_compact_loop:Loop until all slots processed
+P:490E0:b18_next_char:PLA - Get character counter
+P:490E1:b18_inc_counter:CLC - Prepare to increment
+P:490E2:b18_add_one:ADC #$01 - Next character
+P:490E4:b18_check_all_done:CMP #$08 - All 8 characters processed?
+P:490E6:b18_loop_all_chars:BNE - Loop for all characters
+P:490E8:b18_break_end:BRK - End marker
+P:490EB:b18_char_init_rts:RTS - Return from initialization
+
+# ------------------------------------------------------------------------------
+# Data Tables Used by Character Init (Bank 18 ROM)
+# ------------------------------------------------------------------------------
+# $9150-$9161: Character stat coefficient pointers (5 entries × 2 bytes)
+# $9162-$9163: Base character data pointer (-> $6001 format)
+# $9164-$916D: Character spell table pointers (5 entries × 2 bytes)
+# $916E-$9177: Character item table pointers (5 entries × 2 bytes)
+# $9178-$918F: Party formation templates (5 chapters × 5 slots = 25 bytes)
+# $9191-$91D7: Character initial item data (8 chars × 8 items = 64 bytes)
+# $91D8-$91DC: Party size per chapter (5 bytes: Ch1-Ch5)
+
 # Level Check and EXP Comparison Routine ($9C22-$9C4F)
+# Physical: P:49C22-49C4F
+P:49C22:b18_level_check_entry:Level check routine entry
+P:49C26:b18_cmp_max_level:CMP #$63 - Max level check (99 decimal)
+P:49C2A:b18_load_exp_lo:LDA $6E19,X - Load calculated EXP req (low)
+P:49C2D:b18_cmp_exp_lo:CMP $601A,X - Compare with party EXP (low)
+P:49C30:b18_load_exp_mid:LDA $6E1A,X - Load calculated EXP req (mid)
+P:49C33:b18_sbc_exp_mid:SBC $601B,X - Subtract party EXP (mid)
+P:49C36:b18_load_exp_hi:LDA $6E1B,X - Load calculated EXP req (high)
+P:49C39:b18_sbc_exp_hi:SBC $601C,X - Subtract party EXP (high)
 R:9C22:b18_level_check_entry:Level check routine entry
 R:9C26:b18_cmp_max_level:CMP #$63 - Max level check (99 decimal)
 R:9C2A:b18_load_exp_lo:LDA $6E19,X - Load calculated EXP req (low)
@@ -1271,6 +1403,13 @@ R:9C36:b18_load_exp_hi:LDA $6E1B,X - Load calculated EXP req (high)
 R:9C39:b18_sbc_exp_hi:SBC $601C,X - Subtract party EXP (high)
 
 # EXP Requirement Calculation Entry ($9D41-$9D6C)
+# Physical: P:49D41-49D6C
+P:49D41:b18_exp_calc_entry:EXP calculation routine entry
+P:49D48:b18_cmp_max_level_2:CMP #$63 - Max level check (99 decimal)
+P:49D54:b18_jsr_exp_calc:JSR $9F7C - Call main EXP calculation
+P:49D5F:b18_sta_exp_lo:STA $6E19,X - Store EXP requirement (low byte)
+P:49D62:b18_sta_exp_mid:STY $6E1A,X - Store EXP requirement (mid byte)
+P:49D65:b18_sta_exp_hi:Store EXP requirement (high byte)
 R:9D41:b18_exp_calc_entry:EXP calculation routine entry
 R:9D48:b18_cmp_max_level_2:CMP #$63 - Max level check (99 decimal)
 R:9D54:b18_jsr_exp_calc:JSR $9F7C - Call main EXP calculation
@@ -1279,11 +1418,23 @@ R:9D62:b18_sta_exp_mid:STY $6E1A,X - Store EXP requirement (mid byte)
 R:9D65:b18_sta_exp_hi:Store EXP requirement (high byte)
 
 # Main EXP Calculation Routine ($9F7C-$9FB8)
+# Physical: P:49F7C-49FB8
+P:49F7C:b18_exp_calc_main:Main EXP calculation subroutine
+P:49F9C:b18_coeff_table_lookup:Look up character coefficient pointer
 R:9F7C:b18_exp_calc_main:Main EXP calculation subroutine
 R:9F9C:b18_coeff_table_lookup:Look up character coefficient pointer
 
 # Character EXP Coefficient Pointer Table ($A0FB-$A122)
+# Physical: P:4A0FB-4A122
 # 8 entries × 2 bytes = 16-bit pointers to coefficient data
+P:4A0FB:b18_exp_coeff_ptr_table:Character EXP coefficient pointer table (8 entries)
+P:4A0FD:b18_exp_ptr_entry_1:Cristo coefficient data pointer -> $A14B
+P:4A0FF:b18_exp_ptr_entry_2:Nara coefficient data pointer -> $A17B
+P:4A101:b18_exp_ptr_entry_3:Mara coefficient data pointer -> $A1AB
+P:4A103:b18_exp_ptr_entry_4:Brey coefficient data pointer -> $A1DB
+P:4A105:b18_exp_ptr_entry_5:Taloon coefficient data pointer -> $A20B
+P:4A107:b18_exp_ptr_entry_6:Entry 6 pointer -> $A1AB (shares with Mara)
+P:4A109:b18_exp_ptr_entry_7:Ragnar coefficient data pointer -> $A23B
 R:A0FB:b18_exp_coeff_ptr_table:Character EXP coefficient pointer table (8 entries)
 R:A0FB:b18_exp_ptr_entry_0:Hero coefficient data pointer -> $A123
 R:A0FD:b18_exp_ptr_entry_1:Cristo coefficient data pointer -> $A14B
@@ -1295,6 +1446,14 @@ R:A107:b18_exp_ptr_entry_6:Entry 6 pointer -> $A1AB (shares with Mara)
 R:A109:b18_exp_ptr_entry_7:Ragnar coefficient data pointer -> $A23B
 
 # Character EXP Coefficient Data Blocks
+# Physical addresses: P:4A123, P:4A14B, P:4A17B, P:4A1AB, P:4A1DB, P:4A20B, P:4A23B
+P:4A123:b18_exp_data_hero:Hero EXP coefficient data (40 bytes)
+P:4A14B:b18_exp_data_cristo:Cristo EXP coefficient data (48 bytes)
+P:4A17B:b18_exp_data_nara:Nara EXP coefficient data (48 bytes)
+P:4A1AB:b18_exp_data_mara:Mara/Entry6 EXP coefficient data (48 bytes)
+P:4A1DB:b18_exp_data_brey:Brey EXP coefficient data (48 bytes)
+P:4A20B:b18_exp_data_taloon:Taloon EXP coefficient data (48 bytes)
+P:4A23B:b18_exp_data_ragnar:Ragnar EXP coefficient data
 R:A123:b18_exp_data_hero:Hero EXP coefficient data (40 bytes)
 R:A14B:b18_exp_data_cristo:Cristo EXP coefficient data (48 bytes)
 R:A17B:b18_exp_data_nara:Nara EXP coefficient data (48 bytes)
@@ -1302,6 +1461,18 @@ R:A1AB:b18_exp_data_mara:Mara/Entry6 EXP coefficient data (48 bytes)
 R:A1DB:b18_exp_data_brey:Brey EXP coefficient data (48 bytes)
 R:A20B:b18_exp_data_taloon:Taloon EXP coefficient data (48 bytes)
 R:A23B:b18_exp_data_ragnar:Ragnar EXP coefficient data
+
+# ------------------------------------------------------------------------------
+# Character Init Data Tables (Bank 18 ROM) - P:49150-491DC
+# Physical: $49150-$491DC | CPU: $9150-$91DC
+# ------------------------------------------------------------------------------
+P:49150:b18_stat_coeff_ptrs:Character stat coefficient pointers (5×2 bytes)
+P:49162:b18_base_char_data_ptr:Base character data pointer ($6001 format)
+P:49164:b18_spell_table_ptrs:Character spell table pointers (5×2 bytes)
+P:4916E:b18_item_table_ptrs:Character item table pointers (5×2 bytes)
+P:49178:b18_party_formation_data:Party formation templates (5 chapters × 5 members)
+P:49191:b18_initial_item_data:Character initial items (8 chars × 8 items)
+P:491D8:b18_party_size_per_chapter:Party size for each chapter (5 bytes)
 
 # ==============================================================================
 # EXP System RAM Variables ($6E19-$6E1B range)
