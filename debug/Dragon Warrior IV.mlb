@@ -1800,4 +1800,136 @@ G:07BD:b21_name_buffer:Name buffer (8 bytes)
 G:07C4:b21_name_length:Name length
 G:07C5:b21_dialog_type:Current dialog type (1-3)
 
+# ==============================================================================
+# BANK 27 ($8000-$BFFF) - Portal/Warp System and Screen Effects
+# ==============================================================================
+
+# -- Jump Table at Entry --
+# $8000-$801E: Jump table to portal handlers
+
+# -- Portal/Warp Lookup ($80xx) --
+P:801F:b27_portal_entry:Portal/warp entry point
+P:802E:b27_portal_not_found:Portal not found return (CLC)
+P:8030:b27_portal_found:Portal found - load destination
+P:8037:b27_search_special:Search for special warp (map $43)
+P:8055:b27_next_special:Next special warp entry
+P:805C:b27_load_dest_data:Load destination map/coords
+P:8079:b27_check_map_38:Check if map $38 (special case)
+P:8082:b27_call_c5c5:Call C5C5 for map transition
+P:8097:b27_search_portal_list:Search portal list at $05A0
+P:8099:b27_portal_loop:Portal search loop
+P:80AF:b27_next_portal:Next portal entry (add 7)
+P:80B8:b27_portal_search_fail:Portal search failed (CLC)
+P:80BA:b27_check_map_43_range:Check map $43 range $07-$09
+P:80CA:b27_return_sec:Return with SEC (success)
+P:80CC:b27_check_map_11:Check for map $11:$00
+P:80DE:b27_return_clc:Return with CLC (fail)
+P:80E0:b27_setup_portal_table:Setup portal table
+P:8101:b27_check_map_2c:Check for map $2C
+P:810C:b27_portal_setup_return:Portal setup return
+P:810D:b27_init_portal_data:Initialize portal data from $822D
+
+# -- Portal Data Copy ($81xx) --
+P:8119:b27_copy_loop_start:Portal data copy loop start
+P:8120:b27_copy_second_half:Copy second half of portal data
+P:8127:b27_inc_pointer:Increment pointer by $0A
+P:8135:b27_copy_y02:Copy from offset Y+2
+P:8142:b27_copy_y07:Copy from offset Y+7
+P:814F:b27_copy_2bytes:Copy 2 bytes to $05A0,X
+P:815D:b27_copy_dest_data:Copy destination data
+P:8170:b27_check_map_38_2:Check map $38 destination
+P:817A:b27_check_map_43_2:Check map $43 destination
+P:8186:b27_default_copy:Default destination copy
+P:8188:b27_store_5bytes:Store 5 bytes destination
+P:81BC:b27_finish_entry:Finish portal entry
+P:81C8:b27_infinite_loop:Infinite loop (error?)
+P:81CB:b27_map_45_adjust:Map $45 destination adjustment
+P:81D9:b27_return_05:Return value $05
+P:81DC:b27_map_45_check2:Map $45 check variant 2
+P:81EA:b27_return_04:Return value $04
+P:81EC:b27_simple_return:Simple return
+P:81ED:b27_map_38_adjust:Map $38 destination adjustment
+P:81F3:b27_return_03_or_04:Return $03 or $04
+P:81F9:b27_ret_calc:Return from calculation
+P:81FA:b27_map_43_adjust:Map $43 destination adjustment
+P:8206:b27_adjust_return:Adjustment return
+P:8207:b27_check_match:Check portal match
+P:821E:b27_read_byte:Read byte and compare
+P:8220:b27_compare_64:Compare with $64
+P:8225:b27_no_match:No match (CLC)
+P:8227:b27_end_of_list:End of portal list ($FF)
+
+# -- Screen Transition Effect Entry ($A0FF-$A1xx) --
+P:A0FF:b27_screen_effect_entry:Screen transition effect entry
+P:A11D:b27_setup_scroll_effect:Setup scroll effect
+P:A127:b27_run_outro_effect:Run outro/exit effect
+P:A137:b27_scroll_intro_loop:Scroll intro effect loop
+P:A154:b27_adjust_scroll_amt:Adjust scroll amount
+P:A15F:b27_store_scroll_53:Store scroll to $53
+P:A168:b27_scroll_outro_loop:Scroll outro effect loop
+P:A18F:b27_use_53_value:Use $53 value for scroll
+P:A194:b27_ppu_scroll_render:PPU scroll rendering routine
+P:A19E:b27_scroll_line_loop:Scroll line rendering loop
+P:A1C4:b27_xor_effect:XOR visual effect
+P:A1C8:b27_xor_effect_2:XOR effect part 2
+P:A1D3:b27_delay_loop:Short delay loop
+P:A1E5:b27_reset_xy:Reset X/Y for next frame
+P:A203:b27_init_outro_data:Initialize outro data
+P:A219:b27_copy_a479:Copy from $A479 table
+P:A236:b27_copy_reverse:Copy in reverse order
+P:A248:b27_copy_a494:Copy from $A494 table
+P:A265:b27_copy_reverse_2:Copy reverse from $A494
+P:A283:b27_fill_91:Fill buffer with $91
+P:A28B:b27_fill_91_2:Fill second section
+P:A295:b27_fill_91_3:Fill third section
+P:A29E:b27_setup_intro_data:Setup intro scroll data
+P:A2B4:b27_fill_scroll_buf:Fill scroll buffer
+P:A2CA:b27_fill_ppu_ctrl:Fill PPU control buffer
+P:A2D3:b27_wait_vblank:Wait for VBlank
+P:A2D9:b27_set_flag_08:Set flag $08 in $1F
+
+# -- PPU Operations ($A9xx-$AAxx) --
+P:A9B1:b27_ppu_write_setup:PPU write address setup
+P:A9C0:b27_write_7800:Write $7800 buffer to PPU
+P:A9C9:b27_write_7900:Write $7900 buffer to PPU
+P:A9E9:b27_write_attr_loop:Write attribute table loop
+P:A9F0:b27_inc_0e_20:Increment $0E by $20
+P:A9FB:b27_check_page:Check page boundary
+P:AA1D:b27_return_aa1d:Return point
+P:AA1E:b27_special_33:Special handler (X=$33)
+P:AA26:b27_special_20:Special handler (X=$20)
+P:AA28:b27_copy_aa39:Copy from $AA39
+P:AA5A:b27_calc_mask:Calculate bit mask
+P:AA6C:b27_tile_loop:Tile processing loop
+P:AA7B:b27_load_tile_addr:Load tile address
+P:AAAD:b27_incx_skip:Increment X if needed
+P:AAB4:b27_inner_loop:Inner tile loop
+P:AAC0:b27_combine_tiles:Combine tile data
+
+# -- Chapter Handlers ($ABxx) --
+P:AB0D:b27_chapter_check_entry:Chapter-specific check entry
+P:AB23:b27_chapter_process:Process chapter event
+P:AB38:b27_chapter_return:Return from chapter check
+P:AB41:b27_chapter_alt:Alternative chapter check
+P:AB51:b27_chapter_return_2:Return point 2
+P:AB52:b27_check_map_3a:Check for map $3A
+P:AB6A:b27_call_c5c5_2:Call C5C5 transition
+P:AB74:b27_ab74_return:Return from map check
+P:AB8C:b27_check_map_11_2:Check for map $11
+
+# -- Chapter Jump Table ($ACxx) --
+P:AAFA:b27_chapter_table_entry:Chapter table entry
+P:AB0A:b27_chapter_dispatch:Chapter dispatch via ($0000)
+
+# -- RAM Variables Used by Bank 27 --
+G:05A0:b27_portal_list:Portal data list (13 entries x 7 bytes)
+G:05FB:b27_portal_end:End of portal list
+G:6F60:b27_player_pos_x:Player position X array
+G:6F80:b27_player_pos_y:Player position Y array
+G:7700:b27_scroll_buffer:Scroll position buffer
+G:7782:b27_ppu_ctrl_buf:PPU control buffer
+G:7800:b27_nametable_buf1:Nametable buffer 1
+G:7900:b27_nametable_buf2:Nametable buffer 2
+G:62AA:b27_event_flags:Event/chapter flags
+
 
