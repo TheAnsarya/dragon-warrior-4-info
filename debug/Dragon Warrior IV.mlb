@@ -697,4 +697,89 @@ G:6E19:exp_req_calc_lo:Calculated EXP requirement (low byte, indexed by X)
 G:6E1A:exp_req_calc_mid:Calculated EXP requirement (mid byte, indexed by X)
 G:6E1B:exp_req_calc_hi:Calculated EXP requirement (high byte, indexed by X)
 
+# ==============================================================================
+# Bank 19 - Battle System Deep Analysis Labels
+# Addresses are CPU addresses when bank 19 is in $8000-$BFFF slot
+# ==============================================================================
+
+# Action Dispatch System
+R:805B:b19_dispatch_main:Main action dispatcher - reads $6E80 mode
+R:8062:b19_load_action_idx:Load action index from $75E8
+R:8067:b19_lookup_jmptbl:Look up handler in jump table at $8078
+R:8071:b19_indirect_jump:Execute handler via indirect jump
+
+# Math Routines - 16-bit and 24-bit operations
+R:8176:b19_mul16_shift4:16-bit left shift x4 (multiply by 16)
+R:8187:b19_div16_shift4:16-bit right shift x4 (divide by 16)
+R:8198:b19_scale_stat:Scale stat by A register
+R:81A5:b19_shift_extended:4-bit shift with extended precision
+R:8330:b19_mul16_by_a:16-bit multiply by A (shift-add method)
+R:8366:b19_mul24_by_a:24-bit multiply by A (shift-add method)
+R:83AA:b19_div16_setup:16-bit division setup
+R:83C5:b19_div16_loop:16-bit division loop (16 iterations)
+R:83F4:b19_div24_setup:24-bit division setup
+R:8414:b19_div24_loop:24-bit division loop (24 iterations)
+
+# Damage Calculation ($AA67-$AB58)
+R:AA67:b19_damage_calc_main:Main damage calculation entry
+R:AA6F:b19_damage_init:Initialize damage accumulators
+R:AA7B:b19_damage_scale_actor:Scale by actor index x16
+R:AA9F:b19_damage_divide:Divide by tactics divisor ($BB8B)
+R:AAAF:b19_damage_shift_x16:Left shift result x16
+R:AACF:b19_damage_add_base:Add base power component
+R:AAFB:b19_damage_defense:Apply defense reduction
+R:AB38:b19_damage_final:Final damage calculation
+R:AB4C:b19_damage_no_defense:Skip defense (result direct copy)
+
+# Resistance Check ($AB59-$AB91)
+R:AB59:b19_resist_check_main:Resistance check entry
+R:AB6A:b19_resist_load_power:Load attack power values
+R:AB78:b19_resist_divide:Divide by resistance
+R:AB89:b19_resist_compare:Compare against tactics threshold
+
+# Hit/Miss Determination ($9135-$91A0)
+R:9135:b19_hit_check_main:Hit/miss check main entry
+R:9144:b19_hit_action_type:Check action type for hit formula
+R:919A:b19_hit_standard:Standard hit check (action < $29)
+R:91A0:b19_hit_clear_dmg:Clear damage output for miss
+
+# AI Decision Making ($A8C6+)
+R:A8C6:b19_ai_main_entry:AI decision making main entry (mode 4)
+R:A8D5:b19_ai_init_flags:Initialize AI decision flags
+R:A8E1:b19_ai_scan_targets:Scan for valid targets
+R:A906:b19_ai_check_spells:Check available spells
+R:A92E:b19_ai_select_action:Select best action based on tactics
+R:A797:b19_ai_resist_filter:Filter actions by resistance
+
+# Tactics System Data Tables
+R:BB84:b19_tbl_attack_mult:Attack multiplier by tactics (7 entries: 10,00,10,10,10,10,10)
+R:BB8B:b19_tbl_stat_divisor:Stat divisor by tactics (7 entries: 10,10,00,10,00,00,00)
+R:BB92:b19_tbl_hit_threshold:Hit threshold by tactics (7 entries: 66,33,8C,01,FF,01,A0)
+
+# Spell Data Tables
+R:BB3F:b19_tbl_spell_power:Spell power table (9 entries)
+R:BB49:b19_tbl_spell_attr:Spell attribute table (9 entries)
+R:B80B:b19_tbl_action_effect:Action effect type table (256 bytes)
+R:B915:b19_tbl_spell_param1:Spell parameter table 1
+R:B949:b19_tbl_spell_param2:Spell parameter table 2
+
+# Enemy Data Tables
+R:B967:b19_tbl_enemy_resist:Enemy resistance data (256 bytes, packed bits)
+
+# AI Tactics Spell Selection Tables
+R:BA74:b19_tbl_tactics_spell1:Tactics spell priority matrix (7x7=49 bytes)
+R:BAA5:b19_tbl_tactics_spell2:Tactics spell priority 2 (48 bytes)
+R:BAD5:b19_tbl_tactics_spell3:Tactics spell priority 3 (18 bytes)
+
+# Battle System RAM (Additional)
+G:75E1:battle_atk_power_lo:Attack power low byte
+G:75E2:battle_atk_power_hi:Attack power high byte
+G:75ED:battle_party_stat_lo:Party stat sum low byte
+G:75EE:battle_party_stat_hi:Party stat sum high byte
+G:75EF:battle_defense_val:Defense value for damage reduction
+G:75F0:battle_ai_flags:AI decision flags (bit 7 = special mode)
+G:75F2:battle_spell_id:Selected spell ID
+G:75F3:battle_target_mask_lo:Valid target mask low byte
+G:75F4:battle_target_mask_hi:Valid target mask high byte
+G:75F5:battle_spell_mask:Available spell mask
 
