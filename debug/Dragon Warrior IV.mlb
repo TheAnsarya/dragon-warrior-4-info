@@ -1421,4 +1421,98 @@ G:6F88:b30_party_y_pos:Party Y position
 G:6FC7:b30_saved_x:Saved X position
 G:6FC8:b30_saved_y:Saved Y position
 
+# ==============================================================================
+# Bank 20 - Shop/Merchant System (PRG ROM $8000-$BFFF when loaded)
+# Bank 20 has 793 subroutines with 628 JSR calls
+# Contains shop menus, item buying/selling, price calculations
+# Uses $6E45-$6E49 for shop inventory, $0440 for item slots
+# ==============================================================================
+
+# Bank 20 Data/Initialization ($8000-$8037)
+R:8000:b20_entry:Bank 20 shop entry point
+R:8038:b20_init_loop:Shop initialization loop (JSR $8211)
+R:803F:b20_clear_buffers:Clear shop buffers (JSR $C5AF)
+R:8046:b20_clear_06a0:Clear $06A0-$06A7 buffer
+R:804E:b20_clear_05fc:Clear $05FC-$0615 buffer
+
+# Bank 20 Shop Setup ($805A-$808B)
+R:805A:b20_clear_state:Clear shop state ($CA, $C9)
+R:8062:b20_clear_6e49:Clear item count buffer ($6E49-$6E4C)
+R:806A:b20_clear_0444:Clear $0444-$044B buffer
+R:8072:b20_load_inventory:Load shop inventory loop
+R:808B:b20_process_items:Process shop items loop
+
+# Bank 20 Special Item Check ($8092-$80AD)
+R:8092:b20_check_special:Check for special item $99
+R:809E:b20_set_special:Set special shop values ($0600-$0602)
+R:80AD:b20_store_item:Store item code to $C4
+
+# Bank 20 Item Validation ($80B2-$80E4)
+R:80B2:b20_validate_item:Validate shop item
+R:80B9:b20_call_9f0c:Call item lookup $9F0C
+R:80BC:b20_call_92ef:Call price calc $92EF
+R:80BF:b20_call_9c54:Call item check $9C54
+R:80C2:b20_call_9496:Call item display $9496
+R:80E1:b20_call_946e:Call item helper $946E
+
+# Bank 20 Inventory Management ($80EE-$812C)
+R:80EE:b20_inventory_loop:Inventory processing loop
+R:8103:b20_call_9ed1:Call display $9ED1
+R:8106:b20_call_93d2:Call stats $93D2
+R:8109:b20_call_9e7f:Call refresh $9E7F
+R:8111:b20_check_7392:Check item at $7392,X
+R:8126:b20_finalize:Finalize shop display (JSR $9C71)
+
+# Bank 20 Shop Interaction ($812F-$81CC)
+R:812F:b20_shop_main:Main shop interaction entry
+R:8135:b20_call_9292:Call $9292
+R:8138:b20_call_926b:Call $926B
+R:8141:b20_item_loop:Item selection loop
+R:8162:b20_check_buy:Check if can buy (JSR $9ADD)
+R:8167:b20_check_sell:Check if can sell (JSR $9C4A)
+R:816C:b20_check_price:Check price (JSR $9439)
+R:8171:b20_check_equip:Check equipment (JSR $93F2)
+R:817A:b20_check_type:Check item type (JSR $9682)
+R:817F:b20_check_valid:Final validation (JSR $9686)
+R:8184:b20_complete_buy:Complete purchase
+R:8198:b20_store_purchase:Store purchased item
+R:81A4:b20_update_count:Update item count
+
+# Bank 20 Item Removal ($81F4-$8210)
+R:81F4:b20_remove_item:Remove item from inventory
+R:8205:b20_clear_slot:Clear last slot
+
+# Bank 20 Display Update ($8211-$822F)
+R:8211:b20_update_display:Update shop display
+R:8220:b20_alt_display:Alternative display update
+R:822F:b20_display_main:Main display routine
+
+# Bank 20 Special Displays ($8237-$82CB)
+R:8237:b20_check_ae:Check for special item $AE
+R:823E:b20_ae_display:Display special item $AE sequence
+R:8263:b20_normal_display:Normal item display
+R:8277:b20_check_bc:Check for special item $BC
+R:827E:b20_ppu_setup:Setup PPU for display
+R:82CC:b20_call_9a40:Call display helper $9A40
+
+# Bank 20 OAM Clear ($81CF-$81F3)
+R:81CF:b20_oam_clear:Clear OAM buffer ($F7 pattern)
+R:81DE:b20_oam_dma:Trigger OAM DMA ($4014)
+R:81E8:b20_sprite_loop:Sprite update loop
+
+# Bank 20 Shop Variables
+G:00C4:b20_current_item:Current item code
+G:00C5:b20_item_count:Current item count
+G:00C6:b20_slot_index:Current slot index (0-3)
+G:00C7:b20_display_index:Display index (0-7)
+G:00C9:b20_price_lo:Price accumulator low
+G:00CA:b20_price_hi:Price accumulator high
+G:0440:b20_item_slots:Shop item slots (4 bytes)
+G:0444:b20_item_counts:Shop item counts (8 bytes)
+G:0600:b20_special_data_0:Special shop data 0
+G:0601:b20_special_data_1:Special shop data 1
+G:0602:b20_special_data_2:Special shop data 2
+G:0690:b20_display_buffer:Display buffer (indexed by $C7)
+G:06A0:b20_price_buffer:Price display buffer (8 bytes)
+
 
