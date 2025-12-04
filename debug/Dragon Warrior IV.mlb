@@ -3347,3 +3347,221 @@ G:0300:b24_update_buffer:PPU update buffer
 G:050A:b24_buffer_index:Update buffer index
 G:050B:b24_update_count:Update count
 
+# ==============================================================================
+# BANK 30 ($8000-$BFFF) - NPC/OVERWORLD MOVEMENT SYSTEM
+# ==============================================================================
+# This bank handles all overworld NPC movement, party position management,
+# collision detection, and map transitions. Key RAM arrays:
+# - $6F60-$6F7F: NPC/Party X positions (slots 0-31)
+# - $6F80-$6F9F: NPC/Party Y positions (slots 0-31)
+# - $6FA0-$6FBF: Previous X positions (for movement trail)
+# - $6FC0-$6FDF: Previous Y positions (for movement trail)
+# - $6FE0-$6FFF: Movement target/timer arrays
+# - $7000-$701F: NPC direction/facing flags (bits 0-1=dir, bit 6=moving)
+# - $7020-$703F: NPC visibility/ID flags (bit 7=hidden)
+# - $7040-$705F: NPC type/behavior flags
+# - $70E0-$70FF: NPC state flags (bit 7=special state)
+# - $7140-$7143: Current tile data for collision
+
+# -- Bank 30 Entry Points ($8000-$80BD) --
+P:8000:b30_rst_handler:Bank 30 reset/entry point
+P:8094:b30_brk_entry:BRK $FB handler - NPC dispatcher
+P:809A:b30_jump_dispatch:Jump table dispatcher (ASL/TAX pattern)
+P:80AA:b30_jump_table:Jump table for NPC operations
+P:80BE:b30_npc_collision:NPC tile collision check entry
+
+# -- Bank 30 NPC Collision Check ($80BE-$8100) --
+P:80C5:b30_check_tile_type:Check tile type at NPC position
+P:80D2:b30_tile_passable:Test if tile is passable
+P:80E8:b30_collision_result:Return collision result
+P:80F9:b30_passable_exit:Exit - tile is passable
+
+# -- Bank 30 NPC Direction Update ($8101-$8125) --
+P:8101:b30_update_direction:Update NPC direction flags
+P:8108:b30_set_facing:Set NPC facing direction in $7000,X
+P:8115:b30_clear_motion:Clear motion flags
+P:8121:b30_direction_done:Direction update complete
+
+# -- Bank 30 NPC Slot Search ($8126-$8145) --
+P:8126:b30_find_npc_slot:Find empty NPC slot in $7020
+P:812E:b30_slot_search_loop:Loop through slots $06-$20
+P:813B:b30_slot_found:Empty slot found
+P:8140:b30_no_slot:No empty slot available
+P:8145:b30_slot_return:Return from slot search
+
+# -- Bank 30 Map Special Handler ($8146-$81AD) --
+P:8146:b30_map_special:Handle special map locations
+P:814F:b30_check_location:Check against location table
+P:8160:b30_special_match:Location matched - execute handler
+P:8170:b30_no_match:No special location found
+P:819E:b30_location_table:Map location lookup table
+
+# -- Bank 30 Player Position ($81AE-$81CC) --
+P:81AE:b30_get_player_pos:Get player position from $6F60/$6F80
+P:81B5:b30_apply_direction:Apply direction offset
+P:81C2:b30_store_pos:Store position to $51/$52
+P:81CC:b30_pos_return:Return from position routine
+
+# -- Bank 30 Sprite Y Adjust ($892A-$8949) --
+P:892A:b30_sprite_y_loop:Adjust sprite Y in OAM buffer
+P:8940:b30_store_sprite_y:Store adjusted Y
+P:8943:b30_next_sprite:Process next sprite (X+4)
+
+# -- Bank 30 Map Transition Table ($894A-$89C4) --
+P:894A:b30_find_transition:Find map transition entry
+P:894C:b30_trans_search:Search transition table
+P:895D:b30_trans_infinite:Error - infinite loop trap
+P:8960:b30_trans_found:Transition entry found
+P:896A:b30_load_trans_data:Load transition data
+P:8986:b30_check_transition:Check transition at coords
+P:89BA:b30_apply_transition:Apply transition direction
+P:89C4:b30_trans_return:Return from transition
+
+# -- Bank 30 Scroll Update ($8A0D-$8A67) --
+P:8A0D:b30_scroll_update:Update scroll position
+P:8A23:b30_scroll_done:Scroll update complete
+P:8A47:b30_scroll_special:Special scroll handling
+P:8A68:b30_calc_scroll:Calculate scroll parameters
+
+# -- Bank 30 Tile Write ($8A9A-$8ABB) --
+P:8A9A:b30_tile_write_loop:Write tiles to map buffer
+P:8AA4:b30_apply_tile:Apply tile to buffer
+P:8ABB:b30_write_done:Tile write complete
+
+# -- Bank 30 Sprite Fade ($8ABC-$8AFA) --
+P:8ABC:b30_sprite_fade:Fade sprites out/in
+P:8ACB:b30_fade_loop:Fade animation loop
+P:8ACD:b30_process_sprite:Process sprite visibility
+P:8AE6:b30_next_fade_spr:Next sprite for fade
+P:8AFB:b30_adjust_sprite:Adjust sprite Y for fade
+
+# -- Bank 30 Party Position Init ($9320-$9421) --
+P:9320:b30_init_party_pos:Initialize party positions
+P:9322:b30_set_hero_x:Set hero X at $6F60
+P:9327:b30_set_hero_y:Set hero Y at $6F80
+P:932A:b30_set_party_1:Set party member 1 position
+P:9336:b30_set_party_y:Set party Y positions
+P:9367:b30_clear_npc_flags:Clear NPC flags $7046-$7051
+P:9396:b30_chapter_3_setup:Chapter 3 party setup
+P:93CF:b30_count_party:Count active party members
+P:93E9:b30_setup_wagon:Setup wagon positions
+P:9421:b30_party_init_done:Party init complete
+
+# -- Bank 30 Movement Calculation ($9EC0-$9F40) --
+P:9EC0:b30_calc_movement:Calculate movement delta
+P:9EE1:b30_move_check_fail:Movement check failed
+P:9F0C:b30_calc_offset:Calculate position offset
+P:9F21:b30_apply_offset:Apply offset to position
+P:9F40:b30_read_tile_pos:Read tile at position
+
+# -- Bank 30 NPC Slot Management ($9F47-$A0A6) --
+P:9F47:b30_npc_slot_init:Initialize NPC slot data
+P:9F54:b30_scan_npc_slots:Scan NPC slots for type
+P:9F56:b30_slot_scan_loop:Loop through $6F20 array
+P:9F6F:b30_slot_scan_done:Slot scan complete
+P:9FA6:b30_check_slot_type:Check NPC type in slot
+P:A02B:b30_slot_mgmt_end:End slot management
+P:A046:b30_clear_npc_array:Clear $6E5E NPC array
+P:A0A6:b30_array_clear_done:Array clear complete
+
+# -- Bank 30 Movement Validation ($A0B1-$A155) --
+P:A0B1:b30_validate_move:Validate movement for NPC
+P:A0B3:b30_validate_loop:Validation loop
+P:A0B8:b30_check_npc_tile:Check NPC tile at $6F40,X
+P:A0D6:b30_validate_done:Movement validation complete
+
+# -- Bank 30 Party Shuffle ($AB6B-$AC1A) --
+P:AB6B:b30_copy_positions:Copy positions to previous arrays
+P:AB6D:b30_copy_loop:Copy $6F60->$6FA0, $6F80->$6FC0
+P:AB7E:b30_setup_party_vis:Setup party visibility flags
+P:AB90:b30_check_wagon_add:Check if adding wagon member
+P:ABB2:b30_shift_party:Shift party slots down
+P:ABE9:b30_clear_front:Clear front party slots
+P:ABFE:b30_shuffle_return:Return from shuffle
+P:AC04:b30_hide_wagon:Hide wagon party members
+P:AC12:b30_hide_last_two:Hide last two party slots
+
+# -- Bank 30 Tile Position Lookup ($ACD9-$AD50) --
+P:ACD9:b30_get_tile_at:Get tile at party position
+P:ACE7:b30_tile_lookup_jmp:Jump to tile lookup
+P:ACEA:b30_update_party_dir:Update all party direction flags
+P:AD07:b30_follow_leader:Make party follow leader position
+P:AD21:b30_next_follower:Process next follower
+
+# -- Bank 30 Event Handler ($B447-$B4D2) --
+P:B447:b30_event_handler:Handle map/NPC events
+P:B44A:b30_event_check:Check for event trigger
+P:B462:b30_event_dispatch:Dispatch to event handler
+P:B476:b30_event_jmp_ind:Indirect jump to event routine
+P:B47F:b30_event_default:Default event handler
+P:B4B6:b30_event_no_match:No matching event
+P:B4D3:b30_event_return:Return from event
+
+# -- Bank 30 Dungeon Check ($B4DB-$B5A2) --
+P:B4DB:b30_dungeon_check:Check if in dungeon mode
+P:B4E1:b30_dungeon_table:Search dungeon table
+P:B4F4:b30_compare_map:Compare map number
+P:B519:b30_not_dungeon:Not in dungeon mode
+P:B52F:b30_dungeon_event:Handle dungeon-specific event
+P:B559:b30_dungeon_flags:Handle dungeon flags
+
+# -- Bank 30 NPC Talk Handler ($B5A3-$B5C2) --
+P:B5A3:b30_npc_talk:Handle talking to NPC
+P:B5A5:b30_set_npc_id:Set current NPC ID at $627A
+P:B5B2:b30_talk_dispatch:Dispatch to talk handler
+
+# -- Bank 30 Lookup Tables --
+P:BC34:b30_event_table_size:Event dispatch table size
+P:BC35:b30_event_id_table:Event ID lookup table
+P:BC3D:b30_event_ptr_table:Event handler pointer table
+P:BC55:b30_dungeon_tbl_size:Dungeon table size
+P:BC56:b30_dungeon_id_table:Dungeon ID lookup table
+P:BC62:b30_dungeon_ptr_table:Dungeon handler pointer table
+P:BDAB:b30_direction_masks:Direction bitmask table
+P:BDB3:b30_direction_offsets:Direction offset table
+P:BF59:b30_location_lookup:Location lookup data table
+
+# -- Bank 30 RAM Variables --
+G:0051:b30_pos_x:Current X position
+G:0052:b30_pos_y:Current Y position
+G:0053:b30_tile_type:Current tile type
+G:0057:b30_sprite_base:Sprite base tile
+G:003D:b30_direction:Current direction (0-3)
+G:003F:b30_map_width:Map width
+G:0040:b30_map_height:Map height
+G:0041:b30_mode_flags:Mode flags (bit 7=special mode)
+G:0042:b30_dest_x:Destination X
+G:0043:b30_dest_y:Destination Y
+G:0044:b30_sub_x:Sub-tile X
+G:0045:b30_sub_y:Sub-tile Y
+G:0046:b30_tile_bank:Tile data bank
+G:0047:b30_tile_page:Tile page
+G:0049:b30_ptr_lo:Pointer low byte
+G:004A:b30_ptr_hi:Pointer high byte
+G:07B9:b30_npc_index:Current NPC index temp
+G:6E5E:b30_npc_vis_array:NPC visibility array (32 bytes)
+G:6F20:b30_npc_type_array:NPC type array (32 bytes)
+G:6F40:b30_npc_tile_array:NPC tile type array (32 bytes)
+G:6F60:b30_party_x_array:Party/NPC X positions (32 bytes)
+G:6F80:b30_party_y_array:Party/NPC Y positions (32 bytes)
+G:6FA0:b30_prev_x_array:Previous X positions (32 bytes)
+G:6FC0:b30_prev_y_array:Previous Y positions (32 bytes)
+G:6FE0:b30_move_target:Movement target array (32 bytes)
+G:7000:b30_direction_array:Direction/facing flags (32 bytes)
+G:7020:b30_visibility_array:NPC visibility/ID array (32 bytes)
+G:7040:b30_behavior_array:NPC behavior flags (32 bytes)
+G:70E0:b30_state_array:NPC state flags (32 bytes)
+G:7140:b30_tile_buffer:Current tile collision buffer (4 bytes)
+G:6195:b30_saved_x:Saved X position
+G:6196:b30_saved_y:Saved Y position
+G:6197:b30_saved_subx:Saved sub-X position
+G:6198:b30_saved_suby:Saved sub-Y position
+G:618E:b30_map_flags:Map feature flags
+G:627A:b30_npc_talk_id:Current NPC talk ID
+G:6279:b30_talk_flags:NPC talk flags
+G:6281:b30_event_flags_1:Event flags 1
+G:6283:b30_event_flags_2:Event flags 2
+G:628E:b30_chapter_flags:Chapter-specific flags
+G:6272:b30_progress_flags:Progress/story flags
+
+
