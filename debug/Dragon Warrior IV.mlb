@@ -29,7 +29,8 @@
 #   [x] Bank 0E: Complete palette system with override tables - DONE
 #   [x] Bank 0F: Map bank lookup function at $3E9AD (b15_get_map_bank) - DONE
 #   [x] Bank 09/0A/0B: Map data for all 73 locations with all submaps - DONE
-#   [ ] Bank 13: Unknown - needs initial analysis
+#   [x] Bank 13: Graphics/pattern data (CHR tiles) - DONE (line 4620)
+#   [x] Bank 18: Character init + chapter transition + EXP system - DONE
 #
 # Medium Priority:
 #   [ ] Enemy data tables (HP, stats, attack patterns, drops) - need ROM location
@@ -1385,22 +1386,32 @@ P:490EB:b18_char_init_rts:RTS - Return from initialization
 
 # Level Check and EXP Comparison Routine ($9C22-$9C4F)
 # Physical: P:49C22-49C4F
-P:49C22:b18_level_check_entry:Level check routine entry
+# NOTE: Uses Y indexing for $6E19 (calculated EXP) and ZP $72-$74 (party EXP copy)
+# BRK opcodes are co-processor commands, not actual breaks
 P:49C26:b18_cmp_max_level:CMP #$63 - Max level check (99 decimal)
-P:49C2A:b18_load_exp_lo:LDA $6E19,X - Load calculated EXP req (low)
-P:49C2D:b18_cmp_exp_lo:CMP $601A,X - Compare with party EXP (low)
-P:49C30:b18_load_exp_mid:LDA $6E1A,X - Load calculated EXP req (mid)
-P:49C33:b18_sbc_exp_mid:SBC $601B,X - Subtract party EXP (mid)
-P:49C36:b18_load_exp_hi:LDA $6E1B,X - Load calculated EXP req (high)
-P:49C39:b18_sbc_exp_hi:SBC $601C,X - Subtract party EXP (high)
-R:9C22:b18_level_check_entry:Level check routine entry
+P:49C28:b18_beq_at_max_level:BEQ - Skip if already at max level
+P:49C2E:b18_save_char_index:STA $00 - Save character index
+P:49C30:b18_calc_y_offset:ASL A - Calculate Y offset (index*3)
+P:49C31:b18_add_index:ADC $00 - Add original index
+P:49C33:b18_transfer_y:TAY - Transfer to Y for indexed access
+P:49C38:b18_load_calc_exp_lo:LDA $6E19,Y - Load calculated EXP req (low)
+P:49C3B:b18_sec_for_sbc:SEC - Set carry for subtraction
+P:49C3C:b18_sub_party_exp_lo:SBC $72 - Subtract party EXP lo (ZP copy)
+P:49C3E:b18_store_diff_lo:STA $00 - Store difference lo
+P:49C40:b18_load_calc_exp_mid:LDA $6E1A,Y - Load calculated EXP req (mid)
+P:49C43:b18_sub_party_exp_mid:SBC $73 - Subtract party EXP mid (ZP copy)
+P:49C45:b18_store_diff_mid:STA $01 - Store difference mid
+P:49C47:b18_load_calc_exp_hi:LDA $6E1B,Y - Load calculated EXP req (high)
+P:49C4A:b18_sub_party_exp_hi:SBC $74 - Subtract party EXP hi (ZP copy)
+P:49C4C:b18_store_diff_hi:STA $02 - Store difference hi
+P:49C4E:b18_clc_return:CLC - Clear carry (level up possible)
 R:9C26:b18_cmp_max_level:CMP #$63 - Max level check (99 decimal)
-R:9C2A:b18_load_exp_lo:LDA $6E19,X - Load calculated EXP req (low)
-R:9C2D:b18_cmp_exp_lo:CMP $601A,X - Compare with party EXP (low)
-R:9C30:b18_load_exp_mid:LDA $6E1A,X - Load calculated EXP req (mid)
-R:9C33:b18_sbc_exp_mid:SBC $601B,X - Subtract party EXP (mid)
-R:9C36:b18_load_exp_hi:LDA $6E1B,X - Load calculated EXP req (high)
-R:9C39:b18_sbc_exp_hi:SBC $601C,X - Subtract party EXP (high)
+R:9C38:b18_load_calc_exp_lo:LDA $6E19,Y - Load calculated EXP req (low)
+R:9C3C:b18_sub_party_exp_lo:SBC $72 - Subtract party EXP lo (ZP copy)
+R:9C40:b18_load_calc_exp_mid:LDA $6E1A,Y - Load calculated EXP req (mid)
+R:9C43:b18_sub_party_exp_mid:SBC $73 - Subtract party EXP mid (ZP copy)
+R:9C47:b18_load_calc_exp_hi:LDA $6E1B,Y - Load calculated EXP req (high)
+R:9C4A:b18_sub_party_exp_hi:SBC $74 - Subtract party EXP hi (ZP copy)
 
 # EXP Requirement Calculation Entry ($9D41-$9D6C)
 # Physical: P:49D41-49D6C
