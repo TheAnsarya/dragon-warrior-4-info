@@ -2,50 +2,57 @@
 # Dragon Warrior IV (NES) - Mesen Debug Labels
 # ==============================================================================
 # Format: TYPE:ADDR:LABEL:COMMENT
-#   P: = PRG-ROM physical address
-#   G: = Global/WRAM address ($6000-$7FFF)
-#   R: = Runtime/CPU address (for fixed bank labels)
+#   P: = PRG-ROM physical address (0x00000-0x7FFFF, excludes $10 iNES header)
+#   G: = Global/WRAM address ($6000-$7FFF, battery-backed SRAM)
+#   R: = Runtime/CPU address (for zero page, PPU regs, switchable bank runtime)
+#
+# Address Format Notes:
+#   - Zero page ($0000-$00FF) uses R: as these are CPU RAM, not ROM
+#   - PPU registers ($2000-$2007) use R: as these are hardware I/O
+#   - Switchable bank code ($8000-$BFFF) uses P: with physical ROM addresses
+#   - Physical address = Bank# × $4000 + (CPU_addr - $8000)
+#   - Bank numbers in labels (b19_, b21_, etc.) are DECIMAL
 #
 # Created for Mesen NES emulator/debugger
 # Repository: https://github.com/mrisney/dragon-warrior-4-info
 # DataCrystal: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)
 #
-# Statistics: ~2,800 labels, ~750 comments across 4,000+ lines
+# Statistics: ~2,800 labels (P=1,482, G=464, R=851) across 4,030 lines
 # Banks Covered: 08, 0E, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27-30
 # ==============================================================================
 
 # ==============================================================================
 # ZERO PAGE ($00-$FF) - System Variables
 # ==============================================================================
-P:0010:ptr_lo:General purpose pointer low byte
-P:0011:ptr_hi:General purpose pointer high byte
-P:0012:rng_seed_lo:RNG seed low byte - changes every frame, XORed with save checksum
-P:0013:rng_seed_hi:RNG seed high byte - acts like DW3's RNG
-P:0014:scroll_temp:Scroll temporary
-P:0016:rng_temp:RNG temporary storage - used during RNG calculation
-P:0018:encounter_rate:Encounter rate of current tile
-P:001F:state_flags:System state flags (bit 7 = busy)
-P:0020:reg_save_a:Saved A during IRQ
-P:0021:reg_save_x:Saved X during IRQ
-P:0022:reg_save_y:Saved Y during IRQ
-P:0023:irq_param_1:IRQ dispatch parameter 1
-P:0024:irq_param_2:IRQ dispatch parameter 2
-P:0026:brk_ptr_lo:Pointer to BRK operand low
-P:0027:brk_ptr_hi:Pointer to BRK operand high
-P:0039:ppu_ctrl_mirror:PPU control mirror
-P:0040:temp_40:Temporary variable
-P:0063:MapNumber:Current map number
-P:0064:SubmapNumber:Current submap number
-P:0076:irq_temp_76:IRQ temporary
-P:0077:irq_temp_77:IRQ temporary
-P:0078:irq_temp_78:IRQ temporary
-P:007B:scroll_x:Scroll X position
-P:007C:scroll_y:Scroll Y position
-P:007F:scroll_counter:Scroll counter
-P:00EA:position_x_lo:Player X position low byte
-P:00EB:position_x_hi:Player X position high byte
-P:00EC:position_y_lo:Player Y position low byte
-P:00ED:position_y_hi:Player Y position high byte
+R:0010:ptr_lo:General purpose pointer low byte
+R:0011:ptr_hi:General purpose pointer high byte
+R:0012:rng_seed_lo:RNG seed low byte - changes every frame, XORed with save checksum
+R:0013:rng_seed_hi:RNG seed high byte - acts like DW3's RNG
+R:0014:scroll_temp:Scroll temporary
+R:0016:rng_temp:RNG temporary storage - used during RNG calculation
+R:0018:encounter_rate:Encounter rate of current tile
+R:001F:state_flags:System state flags (bit 7 = busy)
+R:0020:reg_save_a:Saved A during IRQ
+R:0021:reg_save_x:Saved X during IRQ
+R:0022:reg_save_y:Saved Y during IRQ
+R:0023:irq_param_1:IRQ dispatch parameter 1
+R:0024:irq_param_2:IRQ dispatch parameter 2
+R:0026:brk_ptr_lo:Pointer to BRK operand low
+R:0027:brk_ptr_hi:Pointer to BRK operand high
+R:0039:ppu_ctrl_mirror:PPU control mirror
+R:0040:temp_40:Temporary variable
+R:0063:MapNumber:Current map number
+R:0064:SubmapNumber:Current submap number
+R:0076:irq_temp_76:IRQ temporary
+R:0077:irq_temp_77:IRQ temporary
+R:0078:irq_temp_78:IRQ temporary
+R:007B:scroll_x:Scroll X position
+R:007C:scroll_y:Scroll Y position
+R:007F:scroll_counter:Scroll counter
+R:00EA:position_x_lo:Player X position low byte
+R:00EB:position_x_hi:Player X position high byte
+R:00EC:position_y_lo:Player Y position low byte
+R:00ED:position_y_hi:Player Y position high byte
 
 # ==============================================================================
 # WORK RAM ($0100-$07FF)
@@ -661,20 +668,20 @@ G:75F2:battle_special:Special battle value ($7355)
 # ==============================================================================
 # Bank 19 Zero Page (during battle)
 # ==============================================================================
-P:0079:action_data_ptr_lo:Pointer to action data (low byte)
-P:007A:action_data_ptr_hi:Pointer to action data (high byte)
-P:007B:calculated_hit:Calculated hit value
-P:0081:party_loop_counter:Party member loop counter (7 down to 0)
-P:0082:inner_loop_counter:Inner loop counter
-P:0086:stat_ptr_lo:Stat table pointer low
-P:0087:stat_ptr_hi:Stat table pointer high
-P:0088:char_data_ptr_lo:Character data pointer low
-P:0089:char_data_ptr_hi:Character data pointer high
-P:008A:char_count:Character count
-P:008B:actor_index:Current actor index
-P:008C:action_param:Action parameter
-P:0093:battle_flags:Battle calculation flags (LSR'd for tests)
-P:0096:active_char_idx:Active character index for $72F4
+R:0079:action_data_ptr_lo:Pointer to action data (low byte)
+R:007A:action_data_ptr_hi:Pointer to action data (high byte)
+R:007B:calculated_hit:Calculated hit value
+R:0081:party_loop_counter:Party member loop counter (7 down to 0)
+R:0082:inner_loop_counter:Inner loop counter
+R:0086:stat_ptr_lo:Stat table pointer low
+R:0087:stat_ptr_hi:Stat table pointer high
+R:0088:char_data_ptr_lo:Character data pointer low
+R:0089:char_data_ptr_hi:Character data pointer high
+R:008A:char_count:Character count
+R:008B:actor_index:Current actor index
+R:008C:action_param:Action parameter
+R:0093:battle_flags:Battle calculation flags (LSR'd for tests)
+R:0096:active_char_idx:Active character index for $72F4
 
 # ==============================================================================
 # Bank 19 Spell Subroutines
@@ -1433,19 +1440,19 @@ R:85A8:b15_busy_clear:Clear busy flag ($1F AND #$7F)
 R:85AF:b15_screen_off:Turn screen off (set busy)
 
 # Bank 15 PPU/Hardware Registers Used
-P:2000:PPUCTRL:PPU Control Register
-P:2001:PPUMASK:PPU Mask Register
-P:2002:PPUSTATUS:PPU Status Register
-P:2005:PPUSCROLL:PPU Scroll Position
-P:2006:PPUADDR:PPU Address Register
-P:2007:PPUDATA:PPU Data Port
-P:4014:OAMDMA:OAM DMA Register
+R:2000:PPUCTRL:PPU Control Register
+R:2001:PPUMASK:PPU Mask Register
+R:2002:PPUSTATUS:PPU Status Register
+R:2005:PPUSCROLL:PPU Scroll Position
+R:2006:PPUADDR:PPU Address Register
+R:2007:PPUDATA:PPU Data Port
+R:4014:OAMDMA:OAM DMA Register
 
 # Bank 15 MMC1 Mapper Registers
-P:9FFF:MMC1_CONTROL:MMC1 Control Register
-P:BFFF:MMC1_CHR_BANK0:MMC1 CHR Bank 0
-P:DFFF:MMC1_CHR_BANK1:MMC1 CHR Bank 1
-P:FFFF:MMC1_PRG_BANK:MMC1 PRG Bank Select
+R:9FFF:MMC1_CONTROL:MMC1 Control Register
+R:BFFF:MMC1_CHR_BANK0:MMC1 CHR Bank 0
+R:DFFF:MMC1_CHR_BANK1:MMC1 CHR Bank 1
+R:FFFF:MMC1_PRG_BANK:MMC1 PRG Bank Select
 
 # ==============================================================================
 # Bank 30 - NPC/Sprite/Map Event System (PRG ROM $8000-$BFFF when loaded)
@@ -1678,266 +1685,266 @@ G:06A0:b20_price_buffer:Price display buffer (8 bytes)
 # Event scripts start with BRK opcodes as bytecode commands
 
 # -- Script Flow Control Routines ($A4xx) --
-P:A47C:b21_event_process_gold:Process gold for event
-P:A489:b21_setup_npc_return:Setup NPC and return
-P:A48C:b21_npc_dialog_end:NPC dialog end routine
-P:A495:b21_npc_dialog_start:NPC dialog start routine
-P:A49E:b21_set_npc_sprite_11:Set NPC sprite to $11
-P:A4B6:b21_execute_bytecode_07DF:Execute bytecode $07DF
-P:A4BA:b21_run_event_with_cc:Run event with C8CC routine
-P:A4C9:b21_call_fixed_bank:Call fixed bank routine via B7B5
-P:A4F0:b21_check_item_77:Check if player has item $77
+P:5647C:b21_event_process_gold:Process gold for event
+P:56489:b21_setup_npc_return:Setup NPC and return
+P:5648C:b21_npc_dialog_end:NPC dialog end routine
+P:56495:b21_npc_dialog_start:NPC dialog start routine
+P:5649E:b21_set_npc_sprite_11:Set NPC sprite to $11
+P:564B6:b21_execute_bytecode_07DF:Execute bytecode $07DF
+P:564BA:b21_run_event_with_cc:Run event with C8CC routine
+P:564C9:b21_call_fixed_bank:Call fixed bank routine via B7B5
+P:564F0:b21_check_item_77:Check if player has item $77
 
 # -- Script Branching Routines ($A5xx) --
-P:A501:b21_loop_until_clear:Loop until condition clear
-P:A504:b21_wait_loop:Wait loop (check 9AC9)
-P:A50F:b21_dialog_with_cb04:Dialog routine with $CB04
-P:A521:b21_conditional_dialog:Conditional dialog routine
-P:A52C:b21_slot_5_handler:Handler for slot 5 item
-P:A573:b21_validate_item_count:Validate item count
-P:A582:b21_item_price_calc:Calculate item price
-P:A59F:b21_get_item_price:Get item price routine
-P:A5A2:b21_store_price_result:Store price calculation result
-P:A5BE:b21_price_display_4B33:Price display via $4B33
-P:A5CF:b21_continue_or_exit:Continue or exit selection
-P:A5E1:b21_exit_to_64C:Exit to $A64C
-P:A5E4:b21_calc_high_level_price:Calculate high level price
-P:A5FA:b21_calc_standard_price:Calculate standard item price
+P:56501:b21_loop_until_clear:Loop until condition clear
+P:56504:b21_wait_loop:Wait loop (check 9AC9)
+P:5650F:b21_dialog_with_cb04:Dialog routine with $CB04
+P:56521:b21_conditional_dialog:Conditional dialog routine
+P:5652C:b21_slot_5_handler:Handler for slot 5 item
+P:56573:b21_validate_item_count:Validate item count
+P:56582:b21_item_price_calc:Calculate item price
+P:5659F:b21_get_item_price:Get item price routine
+P:565A2:b21_store_price_result:Store price calculation result
+P:565BE:b21_price_display_4B33:Price display via $4B33
+P:565CF:b21_continue_or_exit:Continue or exit selection
+P:565E1:b21_exit_to_64C:Exit to $A64C
+P:565E4:b21_calc_high_level_price:Calculate high level price
+P:565FA:b21_calc_standard_price:Calculate standard item price
 
 # -- Script Result Handlers ($A6xx) --
-P:A60D:b21_shift_price_6bits:Shift price right 6 bits
-P:A614:b21_price_shift_loop:Price shift loop
-P:A62B:b21_return_from_shift:Return from shift routine
-P:A62C:b21_set_fixed_price:Set fixed price ($EA60)
-P:A650:b21_set_result_06:Set result to $06
-P:A654:b21_set_result_05:Set result to $05
-P:A658:b21_set_result_04:Set result to $04
-P:A65C:b21_set_result_03:Set result to $03
-P:A660:b21_set_result_02:Set result to $02
-P:A664:b21_set_result_00:Set result to $00
-P:A668:b21_set_result_01:Set result to $01
-P:A66A:b21_set_custom_result:Set custom result from A
-P:A673:b21_branch_to_result:Branch to result handler
-P:A676:b21_jump_to_9919:Jump to $9919
+P:5660D:b21_shift_price_6bits:Shift price right 6 bits
+P:56614:b21_price_shift_loop:Price shift loop
+P:5662B:b21_return_from_shift:Return from shift routine
+P:5662C:b21_set_fixed_price:Set fixed price ($EA60)
+P:56650:b21_set_result_06:Set result to $06
+P:56654:b21_set_result_05:Set result to $05
+P:56658:b21_set_result_04:Set result to $04
+P:5665C:b21_set_result_03:Set result to $03
+P:56660:b21_set_result_02:Set result to $02
+P:56664:b21_set_result_00:Set result to $00
+P:56668:b21_set_result_01:Set result to $01
+P:5666A:b21_set_custom_result:Set custom result from A
+P:56673:b21_branch_to_result:Branch to result handler
+P:56676:b21_jump_to_9919:Jump to $9919
 
 # -- NPC/Map Setup Routines ($A6xx-$A7xx) --
-P:A679:b21_npc_position_setup:NPC position setup (44=$0E, 45=$05)
-P:A689:b21_store_direction:Store direction in $DD
-P:A694:b21_check_map_location:Check map 19:01 for special event
-P:A6A3:b21_call_bc_a6b7:Call $A6BC then $A6B7
-P:A6A6:b21_call_a6b7_only:Call $A6B7 only
-P:A6A9:b21_load_npc_and_enter:Load NPC and enter map
-P:A6B7:b21_call_bank_07:Call bank via $07 + B7B5
-P:A6BC:b21_push_dd_call_aea6:Push $DD and call $AEA6
-P:A6C5:b21_save_da_range:Save $DA-$E9 to stack
+P:56679:b21_npc_position_setup:NPC position setup (44=$0E, 45=$05)
+P:56689:b21_store_direction:Store direction in $DD
+P:56694:b21_check_map_location:Check map 19:01 for special event
+P:566A3:b21_call_bc_a6b7:Call $A6BC then $A6B7
+P:566A6:b21_call_a6b7_only:Call $A6B7 only
+P:566A9:b21_load_npc_and_enter:Load NPC and enter map
+P:566B7:b21_call_bank_07:Call bank via $07 + B7B5
+P:566BC:b21_push_dd_call_aea6:Push $DD and call $AEA6
+P:566C5:b21_save_da_range:Save $DA-$E9 to stack
 
 # -- Script Name/Text Handlers ($A7xx) --
-P:A732:b21_unknown_a732:Unknown routine at $A732
-P:A738:b21_unknown_a738:Unknown routine at $A738
-P:A769:b21_check_flag:Check game flag routine
-P:A774:b21_set_flag:Set game flag routine
+P:56732:b21_unknown_a732:Unknown routine at $A732
+P:56738:b21_unknown_a738:Unknown routine at $A738
+P:56769:b21_check_flag:Check game flag routine
+P:56774:b21_set_flag:Set game flag routine
 
 # -- Script Parsing Routines ($99xx-$9Axx) --
-P:9914:b21_add_5_to_x:Add 5 to X register
-P:9919:b21_event_dispatch:Main event bytecode dispatch
-P:9925:b21_init_event_vars:Initialize event variables
-P:9956:b21_clear_f9_fb:Clear $F9-$FB via $46EF
-P:9962:b21_check_event_range:Check event range and handle
-P:9972:b21_call_b7fb_continue:Call B7FB and continue
-P:999E:b21_calc_event_offset:Calculate event offset from $00/$01
-P:99A9:b21_lookup_event_table:Lookup in event table at $98F6
-P:99CE:b21_read_script_byte:Read script byte at ($DA),Y
-P:99D6:b21_set_dc_ff:Set $DC to $FF
-P:99D8:b21_store_dc:Store to $DC
-P:99E7:b21_cmd_02_handler:Command $02 handler (call $9A93)
-P:99F1:b21_cmd_1e_handler:Command $1E handler (call $9AC3)
-P:99FB:b21_cmd_05_handler:Command $05 handler (call $9AC9)
-P:9A05:b21_cmd_13_handler:Command $13 handler (call $9AD1)
-P:9A0F:b21_cmd_03_handler:Command $03 handler (call $9AF5)
-P:9A19:b21_cmd_14_handler:Command $14 handler (call $9B09)
-P:9A23:b21_cmd_16_handler:Command $16 handler (call $9B10)
-P:9A2D:b21_cmd_1b_handler:Command $1B handler (call $9A96)
-P:9A37:b21_cmd_1c_handler:Command $1C handler (call $9AA3)
-P:9A41:b21_cmd_1a_handler:Command $1A handler (call $9AB0)
-P:9A4C:b21_check_dc_result:Check $DC result and branch
-P:9A5A:b21_true_branch:True branch (DC=0, result!=0)
-P:9A6A:b21_false_branch:False branch
-P:9A7B:b21_check_cmd_06:Check for command $06
-P:9A8C:b21_cmd_11_impl:Command $11 implementation (check flag)
-P:9A93:b21_cmd_02_impl:Command $02 - return $E9
-P:9A96:b21_cmd_1b_impl:Command $1B - AND flag check
-P:9AA3:b21_cmd_1c_impl:Command $1C - ORA flag check
-P:9AB0:b21_cmd_1a_impl:Command $1A - CMP flag check
-P:9ABF:b21_return_00:Return $00 (false)
-P:9ABB:b21_return_ff:Return $FF (true)
-P:9AC3:b21_cmd_1e_impl:Command $1E - get value via $2973
-P:9AC9:b21_check_party_status:Check party status via B7B5 $48
-P:9AD1:b21_cmd_13_impl:Command $13 - character slot lookup
-P:9AD4:b21_slot_range_check:Slot range check
-P:9AEF:b21_branch_point:Script branch point
+P:55914:b21_add_5_to_x:Add 5 to X register
+P:55919:b21_event_dispatch:Main event bytecode dispatch
+P:55925:b21_init_event_vars:Initialize event variables
+P:55956:b21_clear_f9_fb:Clear $F9-$FB via $46EF
+P:55962:b21_check_event_range:Check event range and handle
+P:55972:b21_call_b7fb_continue:Call B7FB and continue
+P:5599E:b21_calc_event_offset:Calculate event offset from $00/$01
+P:559A9:b21_lookup_event_table:Lookup in event table at $98F6
+P:559CE:b21_read_script_byte:Read script byte at ($DA),Y
+P:559D6:b21_set_dc_ff:Set $DC to $FF
+P:559D8:b21_store_dc:Store to $DC
+P:559E7:b21_cmd_02_handler:Command $02 handler (call $9A93)
+P:559F1:b21_cmd_1e_handler:Command $1E handler (call $9AC3)
+P:559FB:b21_cmd_05_handler:Command $05 handler (call $9AC9)
+P:55A05:b21_cmd_13_handler:Command $13 handler (call $9AD1)
+P:55A0F:b21_cmd_03_handler:Command $03 handler (call $9AF5)
+P:55A19:b21_cmd_14_handler:Command $14 handler (call $9B09)
+P:55A23:b21_cmd_16_handler:Command $16 handler (call $9B10)
+P:55A2D:b21_cmd_1b_handler:Command $1B handler (call $9A96)
+P:55A37:b21_cmd_1c_handler:Command $1C handler (call $9AA3)
+P:55A41:b21_cmd_1a_handler:Command $1A handler (call $9AB0)
+P:55A4C:b21_check_dc_result:Check $DC result and branch
+P:55A5A:b21_true_branch:True branch (DC=0, result!=0)
+P:55A6A:b21_false_branch:False branch
+P:55A7B:b21_check_cmd_06:Check for command $06
+P:55A8C:b21_cmd_11_impl:Command $11 implementation (check flag)
+P:55A93:b21_cmd_02_impl:Command $02 - return $E9
+P:55A96:b21_cmd_1b_impl:Command $1B - AND flag check
+P:55AA3:b21_cmd_1c_impl:Command $1C - ORA flag check
+P:55AB0:b21_cmd_1a_impl:Command $1A - CMP flag check
+P:55ABF:b21_return_00:Return $00 (false)
+P:55ABB:b21_return_ff:Return $FF (true)
+P:55AC3:b21_cmd_1e_impl:Command $1E - get value via $2973
+P:55AC9:b21_check_party_status:Check party status via B7B5 $48
+P:55AD1:b21_cmd_13_impl:Command $13 - character slot lookup
+P:55AD4:b21_slot_range_check:Slot range check
+P:55AEF:b21_branch_point:Script branch point
 
 # -- Party Member Routines ($9Bxx-$9Cxx) --
-P:9B09:b21_cmd_14_impl:Command $14 implementation
-P:9B10:b21_cmd_16_impl:Command $16 implementation
-P:9B1D:b21_unknown_9b1d:Unknown routine at $9B1D
-P:9BA8:b21_script_advance:Advance script pointer
+P:55B09:b21_cmd_14_impl:Command $14 implementation
+P:55B10:b21_cmd_16_impl:Command $16 implementation
+P:55B1D:b21_unknown_9b1d:Unknown routine at $9B1D
+P:55BA8:b21_script_advance:Advance script pointer
 
 # -- Map Event Routines ($9Cxx-$9Exx) --
-P:9C92:b21_unknown_9c92:Unknown routine at $9C92
-P:9CBF:b21_unknown_9cbf:Unknown routine at $9CBF
-P:9CE5:b21_check_special_cond:Check special condition
-P:9E72:b21_set_npc_dir_03:Set NPC direction to $03
-P:9E82:b21_item_74_check:Check for item $74
-P:9E98:b21_item_74_return:Return from item 74 check
-P:9E99:b21_gold_accumulator:Gold accumulator routine
-P:9EC8:b21_next_char_loop:Next character loop
-P:9ED5:b21_recruitment_handler:Recruitment handler
-P:9EF3:b21_find_party_slot:Find party slot routine
-P:9F34:b21_branch_9f34:Script branch at $9F34
-P:9F45:b21_branch_9f45:Script branch at $9F45
-P:9F48:b21_jmp_9f34:Jump to $9F34
-P:9F4B:b21_branch_9f4b:Script branch at $9F4B
-P:9F4E:b21_check_and_process:Check and process routine
-P:9F6B:b21_branch_9f6b:Script branch at $9F6B
-P:9F6E:b21_clear_e7_return:Clear $E7 and return
-P:9F73:b21_branch_9f73:Script branch at $9F73
-P:9F79:b21_inc_counters:Increment $628C/$628D counters
-P:9F90:b21_party_member_loop:Party member loop
-P:9FD5:b21_return_9fd5:Return from party loop
+P:55C92:b21_unknown_9c92:Unknown routine at $9C92
+P:55CBF:b21_unknown_9cbf:Unknown routine at $9CBF
+P:55CE5:b21_check_special_cond:Check special condition
+P:55E72:b21_set_npc_dir_03:Set NPC direction to $03
+P:55E82:b21_item_74_check:Check for item $74
+P:55E98:b21_item_74_return:Return from item 74 check
+P:55E99:b21_gold_accumulator:Gold accumulator routine
+P:55EC8:b21_next_char_loop:Next character loop
+P:55ED5:b21_recruitment_handler:Recruitment handler
+P:55EF3:b21_find_party_slot:Find party slot routine
+P:55F34:b21_branch_9f34:Script branch at $9F34
+P:55F45:b21_branch_9f45:Script branch at $9F45
+P:55F48:b21_jmp_9f34:Jump to $9F34
+P:55F4B:b21_branch_9f4b:Script branch at $9F4B
+P:55F4E:b21_check_and_process:Check and process routine
+P:55F6B:b21_branch_9f6b:Script branch at $9F6B
+P:55F6E:b21_clear_e7_return:Clear $E7 and return
+P:55F73:b21_branch_9f73:Script branch at $9F73
+P:55F79:b21_inc_counters:Increment $628C/$628D counters
+P:55F90:b21_party_member_loop:Party member loop
+P:55FD5:b21_return_9fd5:Return from party loop
 
 # -- Text/Dialog Routines ($A0xx-$A1xx) --
-P:A00D:b21_set_result_01_jmp:Set result 01 and jump
-P:A016:b21_call_664_then_9ac9:Call $A664 then $9AC9
-P:A02B:b21_fixed_gold_display:Fixed gold amount display
-P:A04C:b21_clear_e7_return2:Clear $E7 and return
-P:A051:b21_item_6d_handler:Item $6D handler
-P:A068:b21_call_b0ae_a495:Call $B0AE then $A495
-P:A06E:b21_char_level_calc:Character level calculation
-P:A0A2:b21_dialog_with_push:Dialog routine with E0/E1 push
-P:A0C3:b21_loop_9ac9_check:Loop checking $9AC9
-P:A0CE:b21_post_loop_handler:Post loop handler
-P:A0FF:b21_setup_menu_82:Setup menu with $82
+P:5600D:b21_set_result_01_jmp:Set result 01 and jump
+P:56016:b21_call_664_then_9ac9:Call $A664 then $9AC9
+P:5602B:b21_fixed_gold_display:Fixed gold amount display
+P:5604C:b21_clear_e7_return2:Clear $E7 and return
+P:56051:b21_item_6d_handler:Item $6D handler
+P:56068:b21_call_b0ae_a495:Call $B0AE then $A495
+P:5606E:b21_char_level_calc:Character level calculation
+P:560A2:b21_dialog_with_push:Dialog routine with E0/E1 push
+P:560C3:b21_loop_9ac9_check:Loop checking $9AC9
+P:560CE:b21_post_loop_handler:Post loop handler
+P:560FF:b21_setup_menu_82:Setup menu with $82
 
 # -- NPC Movement/Positioning ($AExx-$AFxx) --
-P:AE58:b21_pop_e0_e1_call:Pop E0/E1 and call $A668
-P:AE61:b21_push_regs_continue:Push regs and continue
-P:AE98:b21_set_00_branch:Set $00 and branch
-P:AEA6:b21_setup_npc_data:Setup NPC data from $62xx
-P:AEAE:b21_loop_inc_data:Loop and increment data
-P:AEBB:b21_return_aebc:Return from data loop
-P:AEBC:b21_clear_f9_fb_2:Clear F9/FA/FB to $00
-P:AEC7:b21_jmp_a664:Jump to $A664
-P:AECA:b21_call_b067:Call $B067 and loop
-P:AED0:b21_check_eb04:Check $EB04 result
-P:AEE4:b21_jmp_a660:Jump to $A660
-P:AEE7:b21_store_x_to_f9:Store X to $F9
-P:AEE9:b21_jmp_a668:Jump to $A668
-P:AEEC:b21_call_a65c:Call $A65C
-P:AEFD:b21_jmp_a658:Jump to $A658
-P:AF00:b21_item_5b_handler:Item $5B handler
-P:AF20:b21_branch_af20:Script branch at $AF20
-P:AF24:b21_check_62a4:Check $62A4 high nibble
-P:AF36:b21_call_a660:Call $A660
-P:AF39:b21_call_a65c_2:Call $A65C (2)
-P:AF6B:b21_jmp_b0d7:Jump to $B0D7
-P:AF72:b21_party_swap:Party swap routine
-P:AF80:b21_swap_loop:Swap loop
-P:AFA5:b21_swap_complete:Swap complete, call $A664
-P:AFAC:b21_msg_2e_handler:Message $2E handler
-P:AFB4:b21_call_d214:Call $D214
-P:AFBD:b21_setup_party_slot1:Setup party slot 1
-P:AFF0:b21_special_map_1901:Special map 19:01 handler
+P:56E58:b21_pop_e0_e1_call:Pop E0/E1 and call $A668
+P:56E61:b21_push_regs_continue:Push regs and continue
+P:56E98:b21_set_00_branch:Set $00 and branch
+P:56EA6:b21_setup_npc_data:Setup NPC data from $62xx
+P:56EAE:b21_loop_inc_data:Loop and increment data
+P:56EBB:b21_return_aebc:Return from data loop
+P:56EBC:b21_clear_f9_fb_2:Clear F9/FA/FB to $00
+P:56EC7:b21_jmp_a664:Jump to $A664
+P:56ECA:b21_call_b067:Call $B067 and loop
+P:56ED0:b21_check_eb04:Check $EB04 result
+P:56EE4:b21_jmp_a660:Jump to $A660
+P:56EE7:b21_store_x_to_f9:Store X to $F9
+P:56EE9:b21_jmp_a668:Jump to $A668
+P:56EEC:b21_call_a65c:Call $A65C
+P:56EFD:b21_jmp_a658:Jump to $A658
+P:56F00:b21_item_5b_handler:Item $5B handler
+P:56F20:b21_branch_af20:Script branch at $AF20
+P:56F24:b21_check_62a4:Check $62A4 high nibble
+P:56F36:b21_call_a660:Call $A660
+P:56F39:b21_call_a65c_2:Call $A65C (2)
+P:56F6B:b21_jmp_b0d7:Jump to $B0D7
+P:56F72:b21_party_swap:Party swap routine
+P:56F80:b21_swap_loop:Swap loop
+P:56FA5:b21_swap_complete:Swap complete, call $A664
+P:56FAC:b21_msg_2e_handler:Message $2E handler
+P:56FB4:b21_call_d214:Call $D214
+P:56FBD:b21_setup_party_slot1:Setup party slot 1
+P:56FF0:b21_special_map_1901:Special map 19:01 handler
 
 # -- Utility Routines ($B0xx) --
-P:B03F:b21_unknown_b03f:Unknown routine at $B03F (load NPC?)
-P:B067:b21_unknown_b067:Unknown routine at $B067
-P:B083:b21_set_0555_40:Set $0555,X to $40
-P:B089:b21_item_check_get:Check and get item
-P:B098:b21_return_carry_set:Return with carry set
-P:B09A:b21_item_display:Display item routine
-P:B0AE:b21_set_e7_01:Set $E7 to $01 (event active)
-P:B0B2:b21_set_e7_c0:Set $E7 to $C0
-P:B0B6:b21_set_e7_80:Set $E7 to $80
-P:B0B8:b21_store_e7:Store A to $E7
-P:B0BB:b21_push_check_41:Push and check condition $41
-P:B0CE:b21_msg_with_d214:Message with D214 call
-P:B0D7:b21_msg_with_d218:Message with D218 call
-P:B0E6:b21_chapter_check:Chapter/map check routine
-P:B0EF:b21_check_map_03:Check if map is $03
-P:B0FF:b21_jmp_b189:Jump to $B189
+P:5703F:b21_unknown_b03f:Unknown routine at $B03F (load NPC?)
+P:57067:b21_unknown_b067:Unknown routine at $B067
+P:57083:b21_set_0555_40:Set $0555,X to $40
+P:57089:b21_item_check_get:Check and get item
+P:57098:b21_return_carry_set:Return with carry set
+P:5709A:b21_item_display:Display item routine
+P:570AE:b21_set_e7_01:Set $E7 to $01 (event active)
+P:570B2:b21_set_e7_c0:Set $E7 to $C0
+P:570B6:b21_set_e7_80:Set $E7 to $80
+P:570B8:b21_store_e7:Store A to $E7
+P:570BB:b21_push_check_41:Push and check condition $41
+P:570CE:b21_msg_with_d214:Message with D214 call
+P:570D7:b21_msg_with_d218:Message with D218 call
+P:570E6:b21_chapter_check:Chapter/map check routine
+P:570EF:b21_check_map_03:Check if map is $03
+P:570FF:b21_jmp_b189:Jump to $B189
 
 # -- Name/Text Display ($B1xx-$B2xx) --
-P:B1EF:b21_save_regs_push:Save registers and push
-P:B1F6:b21_push_da_db:Push $DA/$DB
-P:B21C:b21_read_name_loop:Read name from table loop
-P:B22B:b21_end_of_name:End of name marker ($80+)
-P:B237:b21_restore_da_db:Restore $DA/$DB from stack
-P:B243:b21_check_party_flags:Check party flags for suffix
-P:B25C:b21_check_special_map:Check for special map text
-P:B28C:b21_check_map_1600:Check for map $16:$00
-P:B2A3:b21_scan_name_table:Scan name table for map/submap
-P:B2C8:b21_inc_da_db:Increment $DA/$DB pointer
-P:B2CF:b21_lookup_item_name:Lookup item name by ID
-P:B2E2:b21_use_fixed_name:Use fixed item name
-P:B2F4:b21_check_map_22:Check for map $22
-P:B316:b21_check_map_0401:Check for map $04:$01
-P:B340:b21_default_name:Default item name lookup
-P:B35F:b21_simple_name_lookup:Simple name lookup
-P:B374:b21_clear_party_list:Clear party list ($61DB-$625A)
-P:B38A:b21_count_party_members:Count party members
-P:B3A1:b21_add_to_party:Add character to party
-P:B3CA:b21_remove_from_party:Remove character from party
+P:571EF:b21_save_regs_push:Save registers and push
+P:571F6:b21_push_da_db:Push $DA/$DB
+P:5721C:b21_read_name_loop:Read name from table loop
+P:5722B:b21_end_of_name:End of name marker ($80+)
+P:57237:b21_restore_da_db:Restore $DA/$DB from stack
+P:57243:b21_check_party_flags:Check party flags for suffix
+P:5725C:b21_check_special_map:Check for special map text
+P:5728C:b21_check_map_1600:Check for map $16:$00
+P:572A3:b21_scan_name_table:Scan name table for map/submap
+P:572C8:b21_inc_da_db:Increment $DA/$DB pointer
+P:572CF:b21_lookup_item_name:Lookup item name by ID
+P:572E2:b21_use_fixed_name:Use fixed item name
+P:572F4:b21_check_map_22:Check for map $22
+P:57316:b21_check_map_0401:Check for map $04:$01
+P:57340:b21_default_name:Default item name lookup
+P:5735F:b21_simple_name_lookup:Simple name lookup
+P:57374:b21_clear_party_list:Clear party list ($61DB-$625A)
+P:5738A:b21_count_party_members:Count party members
+P:573A1:b21_add_to_party:Add character to party
+P:573CA:b21_remove_from_party:Remove character from party
 
 # -- Bank Call Interface ($B7xx) --
-P:B7B5:b21_inter_bank_call:Inter-bank call dispatcher
-P:B7BF:b21_push_da_loop:Push $DA-$E9 to stack
-P:B7D5:b21_execute_call:Execute inter-bank call
-P:B7EC:b21_pop_da_loop:Pop $DA-$E9 from stack
-P:B7FB:b21_call_fixed_05_6f:Call fixed bank routine ($05 6F)
+P:577B5:b21_inter_bank_call:Inter-bank call dispatcher
+P:577BF:b21_push_da_loop:Push $DA-$E9 to stack
+P:577D5:b21_execute_call:Execute inter-bank call
+P:577EC:b21_pop_da_loop:Pop $DA-$E9 from stack
+P:577FB:b21_call_fixed_05_6f:Call fixed bank routine ($05 6F)
 
 # -- Dialog/Conversation System ($B8xx-$BAxx) --
-P:B810:b21_read_dialog_index:Read dialog index
-P:B822:b21_dialog_type_01:Dialog type 01 handler
-P:B825:b21_set_type_01:Set dialog type to 01
-P:B829:b21_dialog_type_03:Dialog type 03 handler
-P:B830:b21_dialog_type_02:Dialog type 02 handler
-P:B833:b21_set_type_02:Set dialog type to 02
-P:B835:b21_store_type:Store dialog type to $07C5
-P:B83D:b21_main_dialog_loop:Main dialog processing loop
-P:B84E:b21_dialog_flow_00:Dialog flow handler 00
-P:B862:b21_dialog_flow_01:Dialog flow handler 01
-P:B86F:b21_dialog_flow_02:Dialog flow handler 02
-P:B87D:b21_dialog_flow_03:Dialog flow handler 03
-P:B890:b21_use_slot_00:Use slot 00
-P:B8A8:b21_check_slot_09:Check slot >= 09
-P:B8B6:b21_check_party_valid:Check party slot valid
-P:B8C0:b21_party_invalid:Party slot invalid handler
-P:B8C6:b21_retry_or_exit:Retry or exit dialog
+P:57810:b21_read_dialog_index:Read dialog index
+P:57822:b21_dialog_type_01:Dialog type 01 handler
+P:57825:b21_set_type_01:Set dialog type to 01
+P:57829:b21_dialog_type_03:Dialog type 03 handler
+P:57830:b21_dialog_type_02:Dialog type 02 handler
+P:57833:b21_set_type_02:Set dialog type to 02
+P:57835:b21_store_type:Store dialog type to $07C5
+P:5783D:b21_main_dialog_loop:Main dialog processing loop
+P:5784E:b21_dialog_flow_00:Dialog flow handler 00
+P:57862:b21_dialog_flow_01:Dialog flow handler 01
+P:5786F:b21_dialog_flow_02:Dialog flow handler 02
+P:5787D:b21_dialog_flow_03:Dialog flow handler 03
+P:57890:b21_use_slot_00:Use slot 00
+P:578A8:b21_check_slot_09:Check slot >= 09
+P:578B6:b21_check_party_valid:Check party slot valid
+P:578C0:b21_party_invalid:Party slot invalid handler
+P:578C6:b21_retry_or_exit:Retry or exit dialog
 
 # -- Script Helper Routines ($BAxx-$BFxx) --
-P:BA3E:b21_unknown_ba3e:Unknown routine at $BA3E
-P:BA55:b21_unknown_ba55:Unknown routine at $BA55
-P:BA5D:b21_unknown_ba5d:Unknown routine at $BA5D
-P:BACD:b21_unknown_bacd:Unknown routine at $BACD
-P:BAEF:b21_unknown_baef:Unknown routine at $BAEF
-P:BEBC:b21_call_a6b7:Call $A6B7
-P:BECC:b21_call_b4ee_a47c:Call $B4EE then $A47C
-P:BED2:b21_clear_0553_high:Clear high bit of $0553
-P:BEF6:b21_call_b833:Call $B833
-P:BEF9:b21_call_d218:Call $D218
-P:BF06:b21_find_slot_50:Find slot via $50 + B7B5
-P:BF0E:b21_check_9ce5:Check $9CE5 condition
-P:BF1B:b21_call_bf4f:Call $BF4F
-P:BF2D:b21_call_a84e:Call $A84E
-P:BF36:b21_branch_bf36:Script branch at $BF36
-P:BF48:b21_call_a6ff:Call $A6FF
-P:BF4E:b21_return_bf4e:Return
-P:BF4F:b21_setup_fe_ff:Setup $FE/$FF to $00
-P:BF64:b21_scan_npc_loop:Scan NPC data loop
-P:BF8A:b21_use_0a_value:Use value $0A
-P:BF8E:b21_read_npc_data:Read NPC data at ($DA),Y
-P:BF93:b21_store_fd:Store result to $FD
-P:BFA4:b21_read_banked_byte:Read byte via banked access
+P:57A3E:b21_unknown_ba3e:Unknown routine at $BA3E
+P:57A55:b21_unknown_ba55:Unknown routine at $BA55
+P:57A5D:b21_unknown_ba5d:Unknown routine at $BA5D
+P:57ACD:b21_unknown_bacd:Unknown routine at $BACD
+P:57AEF:b21_unknown_baef:Unknown routine at $BAEF
+P:57EBC:b21_call_a6b7:Call $A6B7
+P:57ECC:b21_call_b4ee_a47c:Call $B4EE then $A47C
+P:57ED2:b21_clear_0553_high:Clear high bit of $0553
+P:57EF6:b21_call_b833:Call $B833
+P:57EF9:b21_call_d218:Call $D218
+P:57F06:b21_find_slot_50:Find slot via $50 + B7B5
+P:57F0E:b21_check_9ce5:Check $9CE5 condition
+P:57F1B:b21_call_bf4f:Call $BF4F
+P:57F2D:b21_call_a84e:Call $A84E
+P:57F36:b21_branch_bf36:Script branch at $BF36
+P:57F48:b21_call_a6ff:Call $A6FF
+P:57F4E:b21_return_bf4e:Return
+P:57F4F:b21_setup_fe_ff:Setup $FE/$FF to $00
+P:57F64:b21_scan_npc_loop:Scan NPC data loop
+P:57F8A:b21_use_0a_value:Use value $0A
+P:57F8E:b21_read_npc_data:Read NPC data at ($DA),Y
+P:57F93:b21_store_fd:Store result to $FD
+P:57FA4:b21_read_banked_byte:Read byte via banked access
 
 # -- RAM Variables Used by Bank 21 --
 G:61DB:b21_party_list:Party member list (128 bytes, $FF = end)
@@ -1963,118 +1970,118 @@ G:07C5:b21_dialog_type:Current dialog type (1-3)
 # $8000-$801E: Jump table to portal handlers
 
 # -- Portal/Warp Lookup ($80xx) --
-P:801F:b27_portal_entry:Portal/warp entry point
-P:802E:b27_portal_not_found:Portal not found return (CLC)
-P:8030:b27_portal_found:Portal found - load destination
-P:8037:b27_search_special:Search for special warp (map $43)
-P:8055:b27_next_special:Next special warp entry
-P:805C:b27_load_dest_data:Load destination map/coords
-P:8079:b27_check_map_38:Check if map $38 (special case)
-P:8082:b27_call_c5c5:Call C5C5 for map transition
-P:8097:b27_search_portal_list:Search portal list at $05A0
-P:8099:b27_portal_loop:Portal search loop
-P:80AF:b27_next_portal:Next portal entry (add 7)
-P:80B8:b27_portal_search_fail:Portal search failed (CLC)
-P:80BA:b27_check_map_43_range:Check map $43 range $07-$09
-P:80CA:b27_return_sec:Return with SEC (success)
-P:80CC:b27_check_map_11:Check for map $11:$00
-P:80DE:b27_return_clc:Return with CLC (fail)
-P:80E0:b27_setup_portal_table:Setup portal table
-P:8101:b27_check_map_2c:Check for map $2C
-P:810C:b27_portal_setup_return:Portal setup return
-P:810D:b27_init_portal_data:Initialize portal data from $822D
+P:6C01F:b27_portal_entry:Portal/warp entry point
+P:6C02E:b27_portal_not_found:Portal not found return (CLC)
+P:6C030:b27_portal_found:Portal found - load destination
+P:6C037:b27_search_special:Search for special warp (map $43)
+P:6C055:b27_next_special:Next special warp entry
+P:6C05C:b27_load_dest_data:Load destination map/coords
+P:6C079:b27_check_map_38:Check if map $38 (special case)
+P:6C082:b27_call_c5c5:Call C5C5 for map transition
+P:6C097:b27_search_portal_list:Search portal list at $05A0
+P:6C099:b27_portal_loop:Portal search loop
+P:6C0AF:b27_next_portal:Next portal entry (add 7)
+P:6C0B8:b27_portal_search_fail:Portal search failed (CLC)
+P:6C0BA:b27_check_map_43_range:Check map $43 range $07-$09
+P:6C0CA:b27_return_sec:Return with SEC (success)
+P:6C0CC:b27_check_map_11:Check for map $11:$00
+P:6C0DE:b27_return_clc:Return with CLC (fail)
+P:6C0E0:b27_setup_portal_table:Setup portal table
+P:6C101:b27_check_map_2c:Check for map $2C
+P:6C10C:b27_portal_setup_return:Portal setup return
+P:6C10D:b27_init_portal_data:Initialize portal data from $822D
 
 # -- Portal Data Copy ($81xx) --
-P:8119:b27_copy_loop_start:Portal data copy loop start
-P:8120:b27_copy_second_half:Copy second half of portal data
-P:8127:b27_inc_pointer:Increment pointer by $0A
-P:8135:b27_copy_y02:Copy from offset Y+2
-P:8142:b27_copy_y07:Copy from offset Y+7
-P:814F:b27_copy_2bytes:Copy 2 bytes to $05A0,X
-P:815D:b27_copy_dest_data:Copy destination data
-P:8170:b27_check_map_38_2:Check map $38 destination
-P:817A:b27_check_map_43_2:Check map $43 destination
-P:8186:b27_default_copy:Default destination copy
-P:8188:b27_store_5bytes:Store 5 bytes destination
-P:81BC:b27_finish_entry:Finish portal entry
-P:81C8:b27_infinite_loop:Infinite loop (error?)
-P:81CB:b27_map_45_adjust:Map $45 destination adjustment
-P:81D9:b27_return_05:Return value $05
-P:81DC:b27_map_45_check2:Map $45 check variant 2
-P:81EA:b27_return_04:Return value $04
-P:81EC:b27_simple_return:Simple return
-P:81ED:b27_map_38_adjust:Map $38 destination adjustment
-P:81F3:b27_return_03_or_04:Return $03 or $04
-P:81F9:b27_ret_calc:Return from calculation
-P:81FA:b27_map_43_adjust:Map $43 destination adjustment
-P:8206:b27_adjust_return:Adjustment return
-P:8207:b27_check_match:Check portal match
-P:821E:b27_read_byte:Read byte and compare
-P:8220:b27_compare_64:Compare with $64
-P:8225:b27_no_match:No match (CLC)
-P:8227:b27_end_of_list:End of portal list ($FF)
+P:6C119:b27_copy_loop_start:Portal data copy loop start
+P:6C120:b27_copy_second_half:Copy second half of portal data
+P:6C127:b27_inc_pointer:Increment pointer by $0A
+P:6C135:b27_copy_y02:Copy from offset Y+2
+P:6C142:b27_copy_y07:Copy from offset Y+7
+P:6C14F:b27_copy_2bytes:Copy 2 bytes to $05A0,X
+P:6C15D:b27_copy_dest_data:Copy destination data
+P:6C170:b27_check_map_38_2:Check map $38 destination
+P:6C17A:b27_check_map_43_2:Check map $43 destination
+P:6C186:b27_default_copy:Default destination copy
+P:6C188:b27_store_5bytes:Store 5 bytes destination
+P:6C1BC:b27_finish_entry:Finish portal entry
+P:6C1C8:b27_infinite_loop:Infinite loop (error?)
+P:6C1CB:b27_map_45_adjust:Map $45 destination adjustment
+P:6C1D9:b27_return_05:Return value $05
+P:6C1DC:b27_map_45_check2:Map $45 check variant 2
+P:6C1EA:b27_return_04:Return value $04
+P:6C1EC:b27_simple_return:Simple return
+P:6C1ED:b27_map_38_adjust:Map $38 destination adjustment
+P:6C1F3:b27_return_03_or_04:Return $03 or $04
+P:6C1F9:b27_ret_calc:Return from calculation
+P:6C1FA:b27_map_43_adjust:Map $43 destination adjustment
+P:6C206:b27_adjust_return:Adjustment return
+P:6C207:b27_check_match:Check portal match
+P:6C21E:b27_read_byte:Read byte and compare
+P:6C220:b27_compare_64:Compare with $64
+P:6C225:b27_no_match:No match (CLC)
+P:6C227:b27_end_of_list:End of portal list ($FF)
 
 # -- Screen Transition Effect Entry ($A0FF-$A1xx) --
-P:A0FF:b27_screen_effect_entry:Screen transition effect entry
-P:A11D:b27_setup_scroll_effect:Setup scroll effect
-P:A127:b27_run_outro_effect:Run outro/exit effect
-P:A137:b27_scroll_intro_loop:Scroll intro effect loop
-P:A154:b27_adjust_scroll_amt:Adjust scroll amount
-P:A15F:b27_store_scroll_53:Store scroll to $53
-P:A168:b27_scroll_outro_loop:Scroll outro effect loop
-P:A18F:b27_use_53_value:Use $53 value for scroll
-P:A194:b27_ppu_scroll_render:PPU scroll rendering routine
-P:A19E:b27_scroll_line_loop:Scroll line rendering loop
-P:A1C4:b27_xor_effect:XOR visual effect
-P:A1C8:b27_xor_effect_2:XOR effect part 2
-P:A1D3:b27_delay_loop:Short delay loop
-P:A1E5:b27_reset_xy:Reset X/Y for next frame
-P:A203:b27_init_outro_data:Initialize outro data
-P:A219:b27_copy_a479:Copy from $A479 table
-P:A236:b27_copy_reverse:Copy in reverse order
-P:A248:b27_copy_a494:Copy from $A494 table
-P:A265:b27_copy_reverse_2:Copy reverse from $A494
-P:A283:b27_fill_91:Fill buffer with $91
-P:A28B:b27_fill_91_2:Fill second section
-P:A295:b27_fill_91_3:Fill third section
-P:A29E:b27_setup_intro_data:Setup intro scroll data
-P:A2B4:b27_fill_scroll_buf:Fill scroll buffer
-P:A2CA:b27_fill_ppu_ctrl:Fill PPU control buffer
-P:A2D3:b27_wait_vblank:Wait for VBlank
-P:A2D9:b27_set_flag_08:Set flag $08 in $1F
+P:6E0FF:b27_screen_effect_entry:Screen transition effect entry
+P:6E11D:b27_setup_scroll_effect:Setup scroll effect
+P:6E127:b27_run_outro_effect:Run outro/exit effect
+P:6E137:b27_scroll_intro_loop:Scroll intro effect loop
+P:6E154:b27_adjust_scroll_amt:Adjust scroll amount
+P:6E15F:b27_store_scroll_53:Store scroll to $53
+P:6E168:b27_scroll_outro_loop:Scroll outro effect loop
+P:6E18F:b27_use_53_value:Use $53 value for scroll
+P:6E194:b27_ppu_scroll_render:PPU scroll rendering routine
+P:6E19E:b27_scroll_line_loop:Scroll line rendering loop
+P:6E1C4:b27_xor_effect:XOR visual effect
+P:6E1C8:b27_xor_effect_2:XOR effect part 2
+P:6E1D3:b27_delay_loop:Short delay loop
+P:6E1E5:b27_reset_xy:Reset X/Y for next frame
+P:6E203:b27_init_outro_data:Initialize outro data
+P:6E219:b27_copy_a479:Copy from $A479 table
+P:6E236:b27_copy_reverse:Copy in reverse order
+P:6E248:b27_copy_a494:Copy from $A494 table
+P:6E265:b27_copy_reverse_2:Copy reverse from $A494
+P:6E283:b27_fill_91:Fill buffer with $91
+P:6E28B:b27_fill_91_2:Fill second section
+P:6E295:b27_fill_91_3:Fill third section
+P:6E29E:b27_setup_intro_data:Setup intro scroll data
+P:6E2B4:b27_fill_scroll_buf:Fill scroll buffer
+P:6E2CA:b27_fill_ppu_ctrl:Fill PPU control buffer
+P:6E2D3:b27_wait_vblank:Wait for VBlank
+P:6E2D9:b27_set_flag_08:Set flag $08 in $1F
 
 # -- PPU Operations ($A9xx-$AAxx) --
-P:A9B1:b27_ppu_write_setup:PPU write address setup
-P:A9C0:b27_write_7800:Write $7800 buffer to PPU
-P:A9C9:b27_write_7900:Write $7900 buffer to PPU
-P:A9E9:b27_write_attr_loop:Write attribute table loop
-P:A9F0:b27_inc_0e_20:Increment $0E by $20
-P:A9FB:b27_check_page:Check page boundary
-P:AA1D:b27_return_aa1d:Return point
-P:AA1E:b27_special_33:Special handler (X=$33)
-P:AA26:b27_special_20:Special handler (X=$20)
-P:AA28:b27_copy_aa39:Copy from $AA39
-P:AA5A:b27_calc_mask:Calculate bit mask
-P:AA6C:b27_tile_loop:Tile processing loop
-P:AA7B:b27_load_tile_addr:Load tile address
-P:AAAD:b27_incx_skip:Increment X if needed
-P:AAB4:b27_inner_loop:Inner tile loop
-P:AAC0:b27_combine_tiles:Combine tile data
+P:6E9B1:b27_ppu_write_setup:PPU write address setup
+P:6E9C0:b27_write_7800:Write $7800 buffer to PPU
+P:6E9C9:b27_write_7900:Write $7900 buffer to PPU
+P:6E9E9:b27_write_attr_loop:Write attribute table loop
+P:6E9F0:b27_inc_0e_20:Increment $0E by $20
+P:6E9FB:b27_check_page:Check page boundary
+P:6EA1D:b27_return_aa1d:Return point
+P:6EA1E:b27_special_33:Special handler (X=$33)
+P:6EA26:b27_special_20:Special handler (X=$20)
+P:6EA28:b27_copy_aa39:Copy from $AA39
+P:6EA5A:b27_calc_mask:Calculate bit mask
+P:6EA6C:b27_tile_loop:Tile processing loop
+P:6EA7B:b27_load_tile_addr:Load tile address
+P:6EAAD:b27_incx_skip:Increment X if needed
+P:6EAB4:b27_inner_loop:Inner tile loop
+P:6EAC0:b27_combine_tiles:Combine tile data
 
 # -- Chapter Handlers ($ABxx) --
-P:AB0D:b27_chapter_check_entry:Chapter-specific check entry
-P:AB23:b27_chapter_process:Process chapter event
-P:AB38:b27_chapter_return:Return from chapter check
-P:AB41:b27_chapter_alt:Alternative chapter check
-P:AB51:b27_chapter_return_2:Return point 2
-P:AB52:b27_check_map_3a:Check for map $3A
-P:AB6A:b27_call_c5c5_2:Call C5C5 transition
-P:AB74:b27_ab74_return:Return from map check
-P:AB8C:b27_check_map_11_2:Check for map $11
+P:6EB0D:b27_chapter_check_entry:Chapter-specific check entry
+P:6EB23:b27_chapter_process:Process chapter event
+P:6EB38:b27_chapter_return:Return from chapter check
+P:6EB41:b27_chapter_alt:Alternative chapter check
+P:6EB51:b27_chapter_return_2:Return point 2
+P:6EB52:b27_check_map_3a:Check for map $3A
+P:6EB6A:b27_call_c5c5_2:Call C5C5 transition
+P:6EB74:b27_ab74_return:Return from map check
+P:6EB8C:b27_check_map_11_2:Check for map $11
 
 # -- Chapter Jump Table ($ACxx) --
-P:AAFA:b27_chapter_table_entry:Chapter table entry
-P:AB0A:b27_chapter_dispatch:Chapter dispatch via ($0000)
+P:6EAFA:b27_chapter_table_entry:Chapter table entry
+P:6EB0A:b27_chapter_dispatch:Chapter dispatch via ($0000)
 
 # -- RAM Variables Used by Bank 27 --
 G:05A0:b27_portal_list:Portal data list (13 entries x 7 bytes)
@@ -2095,197 +2102,197 @@ G:62AA:b27_event_flags:Event/chapter flags
 # Uses arrays at $6E5E-$7180 for NPC object data.
 
 # -- Bit-Stream Reader Core ($994E-$995B) --
-P:994E:b28_read_bits:Read Y bits from compressed data at $DA/$DB
-P:9950:b28_bits_setup_x:Setup X register for bit read
-P:9954:b28_bits_call_c3ea:Call fixed-bank bit decompression
-P:995B:b28_bits_return:Return from bit read
+P:7194E:b28_read_bits:Read Y bits from compressed data at $DA/$DB
+P:71950:b28_bits_setup_x:Setup X register for bit read
+P:71954:b28_bits_call_c3ea:Call fixed-bank bit decompression
+P:7195B:b28_bits_return:Return from bit read
 
 # -- NPC Position Processing ($995C-$99xx) --
-P:995C:b28_process_npc_entry:Process NPC entry from compressed data
-P:995D:b28_init_dc:Initialize $DC to 0
-P:9974:b28_read_bits_5:Read 5 bits for position
-P:997B:b28_store_70e0:Store to NPC type array $70E0
-P:998F:b28_alt_npc_path:Alternative NPC processing path
-P:99B3:b28_read_direction:Read NPC direction from bits
-P:99CF:b28_y_equals_01:Y = 1 path
-P:99D1:b28_read_position:Read NPC position data
+P:7195C:b28_process_npc_entry:Process NPC entry from compressed data
+P:7195D:b28_init_dc:Initialize $DC to 0
+P:71974:b28_read_bits_5:Read 5 bits for position
+P:7197B:b28_store_70e0:Store to NPC type array $70E0
+P:7198F:b28_alt_npc_path:Alternative NPC processing path
+P:719B3:b28_read_direction:Read NPC direction from bits
+P:719CF:b28_y_equals_01:Y = 1 path
+P:719D1:b28_read_position:Read NPC position data
 
 # -- Position Compression/Decompression ($96D2-$97xx) --
-P:96D2:b28_check_chapter_4:Check if chapter == 4
-P:96DC:b28_call_96fc:Load $00 and call $96FC
-P:96E7:b28_save_3a_3b:Save $3A/$3B to $DA/$DB (bitstream pointer)
-P:96EF:b28_ret_96ef:Simple return
-P:96F0:b28_read_flag_80:Read bits and extract $80 flag
-P:96FC:b28_decompress_pos:Main position decompression routine
-P:9702:b28_decompress_loop:Decompression loop - read one entry
-P:971A:b28_skip_loop:Skip zero entries
-P:972B:b28_read_mode_byte:Read mode/type byte
-P:974B:b28_read_subtype:Read sub-type value
-P:975A:b28_alt_decode:Alternative decode path
-P:976F:b28_read_flags:Read flag byte
-P:9792:b28_read_final:Read final position byte
-P:9798:b28_check_skip:Check if entry should be skipped
+P:716D2:b28_check_chapter_4:Check if chapter == 4
+P:716DC:b28_call_96fc:Load $00 and call $96FC
+P:716E7:b28_save_3a_3b:Save $3A/$3B to $DA/$DB (bitstream pointer)
+P:716EF:b28_ret_96ef:Simple return
+P:716F0:b28_read_flag_80:Read bits and extract $80 flag
+P:716FC:b28_decompress_pos:Main position decompression routine
+P:71702:b28_decompress_loop:Decompression loop - read one entry
+P:7171A:b28_skip_loop:Skip zero entries
+P:7172B:b28_read_mode_byte:Read mode/type byte
+P:7174B:b28_read_subtype:Read sub-type value
+P:7175A:b28_alt_decode:Alternative decode path
+P:7176F:b28_read_flags:Read flag byte
+P:71792:b28_read_final:Read final position byte
+P:71798:b28_check_skip:Check if entry should be skipped
 
 # -- NPC Array Management ($98B3-$9C0F) --
-P:98B3:b28_init_npc_arrays:Initialize NPC position arrays
-P:98B9:b28_init_loop:Init loop - clear $6F60-$7140
-P:98D8:b28_read_npc_mode:Read NPC mode byte
-P:98EF:b28_setup_indices:Setup array indices 3,4,5
-P:98FC:b28_store_npc_entry:Store NPC entry to arrays
-P:9901:b28_check_bit_08:Check bit $08 in mode
-P:9945:b28_advance_stream:Advance bit stream pointer
+P:718B3:b28_init_npc_arrays:Initialize NPC position arrays
+P:718B9:b28_init_loop:Init loop - clear $6F60-$7140
+P:718D8:b28_read_npc_mode:Read NPC mode byte
+P:718EF:b28_setup_indices:Setup array indices 3,4,5
+P:718FC:b28_store_npc_entry:Store NPC entry to arrays
+P:71901:b28_check_bit_08:Check bit $08 in mode
+P:71945:b28_advance_stream:Advance bit stream pointer
 
 # -- NPC Slot Search ($9A37-$9A73) --
-P:9A37:b28_find_npc_slot:Find empty NPC slot in $6E5E table
-P:9A3B:b28_slot_search_loop:Loop through $6E5E[0-15]
-P:9A4F:b28_empty_slot:Found empty slot ($FF)
-P:9A54:b28_calculate_index:Calculate final slot index
-P:9A61:b28_found_existing:Found existing entry
-P:9A6C:b28_check_player:Check if player slot (X=0)
-P:9A73:b28_slot_return:Return from slot search
+P:71A37:b28_find_npc_slot:Find empty NPC slot in $6E5E table
+P:71A3B:b28_slot_search_loop:Loop through $6E5E[0-15]
+P:71A4F:b28_empty_slot:Found empty slot ($FF)
+P:71A54:b28_calculate_index:Calculate final slot index
+P:71A61:b28_found_existing:Found existing entry
+P:71A6C:b28_check_player:Check if player slot (X=0)
+P:71A73:b28_slot_return:Return from slot search
 
 # -- NPC Type Processing ($9A74-$9AFF) --
-P:9A74:b28_process_type:Process NPC type value
-P:9A89:b28_type_high:Type >= 8 path
-P:9AB0:b28_clear_low_nibble:Clear low nibble of $00DF,Y
-P:9AB9:b28_type_even:Even type number path
-P:9ADE:b28_clear_high_nibble:Clear high nibble
-P:9AE7:b28_store_type:Store type to $7040,X
-P:9AFB:b28_shift_left_4:Shift left 4 bits
+P:71A74:b28_process_type:Process NPC type value
+P:71A89:b28_type_high:Type >= 8 path
+P:71AB0:b28_clear_low_nibble:Clear low nibble of $00DF,Y
+P:71AB9:b28_type_even:Even type number path
+P:71ADE:b28_clear_high_nibble:Clear high nibble
+P:71AE7:b28_store_type:Store type to $7040,X
+P:71AFB:b28_shift_left_4:Shift left 4 bits
 
 # -- Map Data Loading ($9B00-$9B70) --
-P:9B00:b28_load_map_npcs:Load NPCs for current map
-P:9B08:b28_setup_e0_e1:Setup pointers $E0/$E1
-P:9B26:b28_read_map_ptr:Read map NPC data pointer
-P:9B3F:b28_read_count:Read NPC count for map
-P:9B47:b28_npc_read_loop:Loop reading NPC entries
-P:9B5E:b28_inc_da:Increment $DA pointer
-P:9B68:b28_save_ptrs:Save $DA/$DB back to $3A/$3B
+P:71B00:b28_load_map_npcs:Load NPCs for current map
+P:71B08:b28_setup_e0_e1:Setup pointers $E0/$E1
+P:71B26:b28_read_map_ptr:Read map NPC data pointer
+P:71B3F:b28_read_count:Read NPC count for map
+P:71B47:b28_npc_read_loop:Loop reading NPC entries
+P:71B5E:b28_inc_da:Increment $DA pointer
+P:71B68:b28_save_ptrs:Save $DA/$DB back to $3A/$3B
 
 # -- Bit Stream Pointer Management ($9B71-$9BD8) --
-P:9B71:b28_advance_ptr:Advance bit stream pointer
-P:9B90:b28_check_flags:Check flag bits
-P:9BA2:b28_add_to_da:Add offset to $DA/$DB
-P:9BB0:b28_check_bit_10:Check bit $10 in $03
-P:9BB9:b28_bb9_return:Return
-P:9BBA:b28_check_bit_08_2:Check bit $08 in $03
-P:9BC4:b28_read_and_add:Read byte and add to pointer
-P:9BD8:b28_bd8_return:Return
+P:71B71:b28_advance_ptr:Advance bit stream pointer
+P:71B90:b28_check_flags:Check flag bits
+P:71BA2:b28_add_to_da:Add offset to $DA/$DB
+P:71BB0:b28_check_bit_10:Check bit $10 in $03
+P:71BB9:b28_bb9_return:Return
+P:71BBA:b28_check_bit_08_2:Check bit $08 in $03
+P:71BC4:b28_read_and_add:Read byte and add to pointer
+P:71BD8:b28_bd8_return:Return
 
 # -- Map Version Check ($9BD9-$9BDE) --
-P:9BD9:b28_check_map_version:Check if $62ED >= $78 (post-chapter marker)
-P:9BDF:b28_clear_npc_slot:Clear NPC slot data at index X
+P:71BD9:b28_check_map_version:Check if $62ED >= $78 (post-chapter marker)
+P:71BDF:b28_clear_npc_slot:Clear NPC slot data at index X
 
 # -- Clear/Initialize NPC Slot ($9BE1-$9C27) --
-P:9BE1:b28_clear_slot_arrays:Clear all arrays for slot X
-P:9C0F:b28_clear_slots_6_1f:Clear NPC slots 6-31
+P:71BE1:b28_clear_slot_arrays:Clear all arrays for slot X
+P:71C0F:b28_clear_slots_6_1f:Clear NPC slots 6-31
 
 # -- Map Event Triggers ($9C28-$9CC0) --
-P:9C28:b28_check_event_flags:Check event flags for current map
-P:9C2F:b28_event_search_loop:Search event table at $9E61
-P:9C65:b28_event_clear:Event found - clear carry
-P:9C67:b28_next_event:Next event entry (+4)
-P:9C6D:b28_no_event:No event - set carry
-P:9C6F:b28_special_event_check:Special event condition check
-P:9CBF:b28_clear_carry:Clear carry and return
-P:9CC0:b28_cc0_return:Simple return
+P:71C28:b28_check_event_flags:Check event flags for current map
+P:71C2F:b28_event_search_loop:Search event table at $9E61
+P:71C65:b28_event_clear:Event found - clear carry
+P:71C67:b28_next_event:Next event entry (+4)
+P:71C6D:b28_no_event:No event - set carry
+P:71C6F:b28_special_event_check:Special event condition check
+P:71CBF:b28_clear_carry:Clear carry and return
+P:71CC0:b28_cc0_return:Simple return
 
 # -- Map Override Table ($9CC1-$9D0D) --
-P:9CC1:b28_check_override_table:Check map override table at $9D0E
-P:9CCB:b28_override_loop:Loop through override entries
-P:9CF0:b28_set_override_ptr:Set override pointer $DA/$DB
-P:9D00:b28_next_override:Next override entry
+P:71CC1:b28_check_override_table:Check map override table at $9D0E
+P:71CCB:b28_override_loop:Loop through override entries
+P:71CF0:b28_set_override_ptr:Set override pointer $DA/$DB
+P:71D00:b28_next_override:Next override entry
 
 # -- Map Event/NPC Setup ($9EA6-$A057) --
-P:9EA6:b28_setup_map_entry:Main map setup entry point
-P:9EB5:b28_check_chapter_version:Check chapter/version for special NPCs
-P:9EBE:b28_special_npc_loop:Loop for chapter-specific NPCs
-P:9ECC:b28_npc_table_loop:Loop through NPC table at $9F8A
-P:9EE5:b28_setup_done:Setup complete
-P:9EE6:b28_setup_npc_slot:Setup individual NPC slot
-P:9F1C:b28_store_npc_type:Store NPC type data
-P:9F44:b28_lookup_tile:Lookup tile at NPC position
-P:9F55:b28_next_npc:Move to next NPC entry
-P:9F5A:b28_store_type_only:Store type without position
-P:9F66:b28_use_player_pos:Use player position for NPC
-P:9F76:b28_save_npc_pos:Save NPC position to $054E/$054F
+P:71EA6:b28_setup_map_entry:Main map setup entry point
+P:71EB5:b28_check_chapter_version:Check chapter/version for special NPCs
+P:71EBE:b28_special_npc_loop:Loop for chapter-specific NPCs
+P:71ECC:b28_npc_table_loop:Loop through NPC table at $9F8A
+P:71EE5:b28_setup_done:Setup complete
+P:71EE6:b28_setup_npc_slot:Setup individual NPC slot
+P:71F1C:b28_store_npc_type:Store NPC type data
+P:71F44:b28_lookup_tile:Lookup tile at NPC position
+P:71F55:b28_next_npc:Move to next NPC entry
+P:71F5A:b28_store_type_only:Store type without position
+P:71F66:b28_use_player_pos:Use player position for NPC
+P:71F76:b28_save_npc_pos:Save NPC position to $054E/$054F
 
 # -- Map Handler Dispatch ($A010-$A057) --
-P:A010:b28_handler_lookup:Lookup map-specific handler
-P:A012:b28_handler_loop:Loop through handler table at $ABF5
-P:A022:b28_next_handler:Next handler entry (+2)
-P:A027:b28_handler_done:No handler found
-P:A028:b28_handler_found:Handler found - dispatch
-P:A035:b28_clear_npc:Clear NPC at slot X
-P:A044:b28_check_wagon:Check wagon/party flags
-P:A04A:b28_set_npc_pos:Set NPC position (A=X, Y=Y coord)
-P:A057:b28_pos_return:Return from position set
+P:72010:b28_handler_lookup:Lookup map-specific handler
+P:72012:b28_handler_loop:Loop through handler table at $ABF5
+P:72022:b28_next_handler:Next handler entry (+2)
+P:72027:b28_handler_done:No handler found
+P:72028:b28_handler_found:Handler found - dispatch
+P:72035:b28_clear_npc:Clear NPC at slot X
+P:72044:b28_check_wagon:Check wagon/party flags
+P:7204A:b28_set_npc_pos:Set NPC position (A=X, Y=Y coord)
+P:72057:b28_pos_return:Return from position set
 
 # -- Map-Specific Handler Code ($A058-$ABF4) --
 # Note: This section contains many map-specific NPC setup routines
 # Each map has custom logic for placing NPCs based on story flags
-P:A058:b28_map_check_07:Check if player X == 7
-P:A068:b28_setup_wagon_npc:Setup wagon/chapter 4 NPC
-P:A07E:b28_check_party_flags:Check party member flags
-P:A0A0:b28_setup_default_npcs:Setup default NPC slots
-P:A0C6:b28_setup_chapter_npcs:Setup chapter-specific NPCs
+P:72058:b28_map_check_07:Check if player X == 7
+P:72068:b28_setup_wagon_npc:Setup wagon/chapter 4 NPC
+P:7207E:b28_check_party_flags:Check party member flags
+P:720A0:b28_setup_default_npcs:Setup default NPC slots
+P:720C6:b28_setup_chapter_npcs:Setup chapter-specific NPCs
 
 # -- Various Map Handlers --
-P:A177:b28_map_handler_bulk:Bulk NPC setup (slots 0C-14)
-P:A17B:b28_bulk_loop:Bulk setup loop
+P:72177:b28_map_handler_bulk:Bulk NPC setup (slots 0C-14)
+P:7217B:b28_bulk_loop:Bulk setup loop
 
 # -- Jump Table for Map Handlers ($AC8A-$AD1C) --
-P:AC8A:b28_map_handler_table:Jump table for 60+ map handlers
+P:72C8A:b28_map_handler_table:Jump table for 60+ map handlers
 
 # -- Map Handler Dispatcher ($AD5F-$AD6D) --
-P:AD5F:b28_dispatch_handler:Dispatch to map handler via table
-P:AD61:b28_load_handler_addr:Load handler address from $BF4B table
-P:AD6B:b28_jump_indirect:JMP ($0000) to handler
+P:72D5F:b28_dispatch_handler:Dispatch to map handler via table
+P:72D61:b28_load_handler_addr:Load handler address from $BF4B table
+P:72D6B:b28_jump_indirect:JMP ($0000) to handler
 
 # -- Map Condition Table ($AD32-$AD5A) --
-P:AD32:b28_check_conditions:Check map conditions table at $AD5A
-P:AD34:b28_condition_loop:Loop through conditions
-P:AD4C:b28_condition_match:Condition matched - clear NPC
-P:AD52:b28_next_condition:Next condition (+4)
-P:AD59:b28_condition_done:Done checking conditions
+P:72D32:b28_check_conditions:Check map conditions table at $AD5A
+P:72D34:b28_condition_loop:Loop through conditions
+P:72D4C:b28_condition_match:Condition matched - clear NPC
+P:72D52:b28_next_condition:Next condition (+4)
+P:72D59:b28_condition_done:Done checking conditions
 
 # -- NPC Tile Lookup ($AD1E-$AD31) --
-P:AD1E:b28_get_npc_tile:Get tile ID at NPC position
-P:AD27:b28_call_d3e6:Call tile lookup via bank switch
-P:AD2E:b28_store_tile:Store tile to $7146,X
+P:72D1E:b28_get_npc_tile:Get tile ID at NPC position
+P:72D27:b28_call_d3e6:Call tile lookup via bank switch
+P:72D2E:b28_store_tile:Store tile to $7146,X
 
 # -- Wagon/Vehicle Escort Code ($B05E-$B0B8) --
-P:B05E:b28_wagon_escort:Wagon escort sequence
-P:B083:b28_escort_loop_outer:Outer loop - step counter
-P:B087:b28_escort_loop_inner:Inner loop - animation frames
-P:B0B2:b28_escort_done:Escort sequence complete
+P:7305E:b28_wagon_escort:Wagon escort sequence
+P:73083:b28_escort_loop_outer:Outer loop - step counter
+P:73087:b28_escort_loop_inner:Inner loop - animation frames
+P:730B2:b28_escort_done:Escort sequence complete
 
 # -- Scene/Cutscene Handlers ($B0FC-$BD95) --
-P:B0FC:b28_cutscene_setup:Cutscene initialization
-P:B11D:b28_load_scene_data:Load scene-specific data
-P:BCEF:b28_find_character:Find character in party
-P:BCFF:b28_setup_display:Setup display for scene
-P:BD54:b28_save_sprites:Save sprite data to $7F00
-P:BD67:b28_restore_sprites:Restore sprite data from $7F00
-P:BD75:b28_restore_partial:Restore partial sprite data
-P:BD83:b28_save_partial:Save partial sprite data
+P:730FC:b28_cutscene_setup:Cutscene initialization
+P:7311D:b28_load_scene_data:Load scene-specific data
+P:73CEF:b28_find_character:Find character in party
+P:73CFF:b28_setup_display:Setup display for scene
+P:73D54:b28_save_sprites:Save sprite data to $7F00
+P:73D67:b28_restore_sprites:Restore sprite data from $7F00
+P:73D75:b28_restore_partial:Restore partial sprite data
+P:73D83:b28_save_partial:Save partial sprite data
 
 # -- Helper Functions ($BED3-$BF46) --
-P:BED3:b28_helper_0d:Helper - BRK $0D
-P:BEF2:b28_shift_delay:Shift and delay helper
-P:BEFE:b28_frame_delay:Frame delay with $0509
-P:BF12:b28_set_npc_mode:Set NPC mode to $8F
-P:BF14:b28_set_npc_mode_x:Set NPC mode with X index
-P:BF16:b28_store_mode:Store mode to $0530-$0533
-P:BF24:b28_bf24_return:Return
-P:BF25:b28_set_position:Set NPC position (A=X, Y=Y) at slot X
-P:BF33:b28_hide_npc_80:Hide NPC (set position to $80)
-P:BF37:b28_hide_npc_81:Hide NPC (set position to $81)
-P:BF39:b28_store_hidden:Store hidden position value
-P:BF46:b28_brk_07_6f:BRK $07, $6F, $43 - common helper
+P:73ED3:b28_helper_0d:Helper - BRK $0D
+P:73EF2:b28_shift_delay:Shift and delay helper
+P:73EFE:b28_frame_delay:Frame delay with $0509
+P:73F12:b28_set_npc_mode:Set NPC mode to $8F
+P:73F14:b28_set_npc_mode_x:Set NPC mode with X index
+P:73F16:b28_store_mode:Store mode to $0530-$0533
+P:73F24:b28_bf24_return:Return
+P:73F25:b28_set_position:Set NPC position (A=X, Y=Y) at slot X
+P:73F33:b28_hide_npc_80:Hide NPC (set position to $80)
+P:73F37:b28_hide_npc_81:Hide NPC (set position to $81)
+P:73F39:b28_store_hidden:Store hidden position value
+P:73F46:b28_brk_07_6f:BRK $07, $6F, $43 - common helper
 
 # -- Map Handler Jump Table Data ($BF4B-$BFAF) --
-P:BF4B:b28_handler_ptr_table:Pointer table for map handlers (low/high bytes)
+P:73F4B:b28_handler_ptr_table:Pointer table for map handlers (low/high bytes)
 
 # -- RAM Variables Used by Bank 28 --
 G:6E5E:b28_npc_type_table:NPC type table (16 entries)
@@ -2341,250 +2348,250 @@ G:62ED:b28_chapter_marker:Chapter progress marker
 # Heavily data-driven with code sections at $80xx-$8Axx and $AFxx-$B7xx.
 
 # -- Bank 08 Array Initialization ($803C-$8054) --
-P:803C:b08_init_arrays:Initialize tile/encounter arrays
-P:8040:b08_init_loop1:Clear $6F20, $6F40, $7600 arrays (32 entries)
-P:804E:b08_init_loop2:Clear $761F+ array (160 entries)
+P:2003C:b08_init_arrays:Initialize tile/encounter arrays
+P:20040:b08_init_loop1:Clear $6F20, $6F40, $7600 arrays (32 entries)
+P:2004E:b08_init_loop2:Clear $761F+ array (160 entries)
 
 # -- Bank 08 Pointer Calculation ($8055-$80B2) --
-P:8055:b08_calc_pointer:Calculate data pointer from $09 and $28
-P:806A:b08_store_ptr:Store calculated pointer to $00/$01
-P:8072:b08_shift_loop:16-bit shift left 5 times
-P:8082:b08_read_params:Read encounter parameters from ($0E)
-P:8099:b08_check_encounter_type:Check encounter type ($0A/$0B)
-P:80AB:b08_check_flag:Check $6286 flag bit 4
-P:80B3:b08_table_80b3:Data table - pointer bases
+P:20055:b08_calc_pointer:Calculate data pointer from $09 and $28
+P:2006A:b08_store_ptr:Store calculated pointer to $00/$01
+P:20072:b08_shift_loop:16-bit shift left 5 times
+P:20082:b08_read_params:Read encounter parameters from ($0E)
+P:20099:b08_check_encounter_type:Check encounter type ($0A/$0B)
+P:200AB:b08_check_flag:Check $6286 flag bit 4
+P:200B3:b08_table_80b3:Data table - pointer bases
 
 # -- Bank 08 Secondary Pointer ($80B7-$80C1) --
-P:80B7:b08_load_ptr_80c2:Load pointer from $80C2/$80C3
-P:80C2:b08_table_80c2:Data table - secondary pointer
+P:200B7:b08_load_ptr_80c2:Load pointer from $80C2/$80C3
+P:200C2:b08_table_80c2:Data table - secondary pointer
 
 # -- Bank 08 Read Encounter Data ($80C4-$80D4) --
-P:80C4:b08_read_encounter_data:Read 3-byte encounter data to $0A/$0B/$0C
+P:200C4:b08_read_encounter_data:Read 3-byte encounter data to $0A/$0B/$0C
 
 # -- Bank 08 Process Encounter ($80D5-$8187) --
-P:80D5:b08_process_encounter:Main encounter/tile data processor
-P:80E7:b08_mode_0_setup:Mode 0 path - setup for tile processing
-P:80F4:b08_load_data_ptr:Load data pointer from $8235/$8236
-P:8108:b08_extract_bits:Extract bits from tile data
-P:8114:b08_store_mode_flag:Store mode flag to $76
-P:812F:b08_handle_type_0f:Handle special type $0F
-P:8132:b08_mode_1_setup:Mode 1 path - alternate tile processing
-P:814A:b08_shift_and_lookup:Shift pointer and lookup data
-P:815A:b08_indexed_lookup:Indexed data lookup
-P:8171:b08_calc_offset:Calculate 3-byte offset (A * 3)
+P:200D5:b08_process_encounter:Main encounter/tile data processor
+P:200E7:b08_mode_0_setup:Mode 0 path - setup for tile processing
+P:200F4:b08_load_data_ptr:Load data pointer from $8235/$8236
+P:20108:b08_extract_bits:Extract bits from tile data
+P:20114:b08_store_mode_flag:Store mode flag to $76
+P:2012F:b08_handle_type_0f:Handle special type $0F
+P:20132:b08_mode_1_setup:Mode 1 path - alternate tile processing
+P:2014A:b08_shift_and_lookup:Shift pointer and lookup data
+P:2015A:b08_indexed_lookup:Indexed data lookup
+P:20171:b08_calc_offset:Calculate 3-byte offset (A * 3)
 
 # -- Bank 08 Monster Group Processing ($8187-$81C3) --
-P:8187:b08_process_monster_groups:Process 3 monster types loop
-P:8193:b08_sign_extend:Sign extend and shift left 4
-P:81B4:b08_store_monster_ptr:Store monster pointer to $0102-$0107
-P:81C3:b08_jump_to_rotation:Jump to monster rotation routine
+P:20187:b08_process_monster_groups:Process 3 monster types loop
+P:20193:b08_sign_extend:Sign extend and shift left 4
+P:201B4:b08_store_monster_ptr:Store monster pointer to $0102-$0107
+P:201C3:b08_jump_to_rotation:Jump to monster rotation routine
 
 # -- Bank 08 Special Type Handlers ($81C6-$8224) --
-P:81C6:b08_handle_type_0f_full:Type $0F - load 8 bytes to $0100
-P:81DF:b08_copy_8_bytes:Copy 8 bytes from ($00) to $0100
-P:81E8:b08_handle_type_0e:Type $0E - sequential monster setup
-P:8213:b08_increment_ptr_loop:Increment monster pointers by $10
-P:8225:b08_table_8225:Data table - type handler pointers
-P:8229:b08_table_8229:Data table - mode lookup (4 entries)
-P:8235:b08_table_8235:Data table - base pointer for tile data
-P:8237:b08_table_8237:Data table - secondary lookup
+P:201C6:b08_handle_type_0f_full:Type $0F - load 8 bytes to $0100
+P:201DF:b08_copy_8_bytes:Copy 8 bytes from ($00) to $0100
+P:201E8:b08_handle_type_0e:Type $0E - sequential monster setup
+P:20213:b08_increment_ptr_loop:Increment monster pointers by $10
+P:20225:b08_table_8225:Data table - type handler pointers
+P:20229:b08_table_8229:Data table - mode lookup (4 entries)
+P:20235:b08_table_8235:Data table - base pointer for tile data
+P:20237:b08_table_8237:Data table - secondary lookup
 
 # -- Bank 08 Tile Index Processing ($823D-$833E) --
-P:823D:b08_process_tile_index:Process tile index with lookup
-P:8254:b08_tile_loop_entry:Entry point for tile loop
-P:8256:b08_tile_loop:Main tile processing loop
-P:8264:b08_search_77xx:Search $7700 array for match
-P:828D:b08_no_match:No match found - increment $18
-P:8291:b08_found_or_new:Handle found/new tile entry
-P:82AD:b08_skip_tile:Skip to next tile
-P:82B0:b08_mode_1_store:Mode 1 specific storage
-P:82C2:b08_rotate_bits:Bit rotation for tile attributes
-P:82EC:b08_store_rotated:Store rotated result
-P:831F:b08_add_to_77xx:Add entry to $7700 array
-P:832F:b08_next_tile:Advance to next tile entry
-P:833E:b08_table_833e:Data table - tile lookup offset
+P:2023D:b08_process_tile_index:Process tile index with lookup
+P:20254:b08_tile_loop_entry:Entry point for tile loop
+P:20256:b08_tile_loop:Main tile processing loop
+P:20264:b08_search_77xx:Search $7700 array for match
+P:2028D:b08_no_match:No match found - increment $18
+P:20291:b08_found_or_new:Handle found/new tile entry
+P:202AD:b08_skip_tile:Skip to next tile
+P:202B0:b08_mode_1_store:Mode 1 specific storage
+P:202C2:b08_rotate_bits:Bit rotation for tile attributes
+P:202EC:b08_store_rotated:Store rotated result
+P:2031F:b08_add_to_77xx:Add entry to $7700 array
+P:2032F:b08_next_tile:Advance to next tile entry
+P:2033E:b08_table_833e:Data table - tile lookup offset
 
 # -- Bank 08 Map Index Processing ($8340-$839E) --
-P:8340:b08_process_map_index:Process map index from $16
-P:8362:b08_setup_ppu_addr:Setup PPU address for rendering
-P:8378:b08_calc_ppu_offset:Calculate PPU offset (*16)
-P:8389:b08_ppu_base_table:PPU base address table (lo/hi)
-P:838D:b08_write_ppu_addr:Write PPU address to $2006
-P:839F:b08_buffer_ppu_addr:Buffer PPU address to $0300
+P:20340:b08_process_map_index:Process map index from $16
+P:20362:b08_setup_ppu_addr:Setup PPU address for rendering
+P:20378:b08_calc_ppu_offset:Calculate PPU offset (*16)
+P:20389:b08_ppu_base_table:PPU base address table (lo/hi)
+P:2038D:b08_write_ppu_addr:Write PPU address to $2006
+P:2039F:b08_buffer_ppu_addr:Buffer PPU address to $0300
 
 # -- Bank 08 Tile Rendering ($83BD-$8405) --
-P:83BD:b08_render_tiles:Render tiles from $0100 array
-P:83D9:b08_bank_select:Bank select for tile rendering
-P:83DC:b08_render_call:Call render subroutines
-P:83F4:b08_write_ppu_data:Write 16 bytes to PPU $2007
-P:83FA:b08_write_loop:Write loop - 16 bytes
-P:8406:b08_buffer_tiles:Buffer tiles to $0300 for deferred PPU
+P:203BD:b08_render_tiles:Render tiles from $0100 array
+P:203D9:b08_bank_select:Bank select for tile rendering
+P:203DC:b08_render_call:Call render subroutines
+P:203F4:b08_write_ppu_data:Write 16 bytes to PPU $2007
+P:203FA:b08_write_loop:Write loop - 16 bytes
+P:20406:b08_buffer_tiles:Buffer tiles to $0300 for deferred PPU
 
 # -- Bank 08 Tile Lookup ($8433-$8467) --
-P:8433:b08_lookup_tile_data:Lookup tile data from table
-P:8450:b08_tile_lookup_ptr:Pointer for tile lookup ($76C0)
-P:8452:b08_store_tile_result:Store tile result to $6F20/$6F40
+P:20433:b08_lookup_tile_data:Lookup tile data from table
+P:20450:b08_tile_lookup_ptr:Pointer for tile lookup ($76C0)
+P:20452:b08_store_tile_result:Store tile result to $6F20/$6F40
 
 # -- Bank 08 Stack Restore ($8468-$8472) --
-P:8468:b08_restore_stack:Restore 16 bytes from stack to $00-$0F
+P:20468:b08_restore_stack:Restore 16 bytes from stack to $00-$0F
 
 # -- Bank 08 Main Tile Process ($8473-$84BC) --
-P:8473:b08_main_tile_process:Main tile processing entry
-P:8476:b08_check_tile_type:Check tile type (AND #$07)
-P:847E:b08_call_tile_handlers:Call tile handler chain
-P:84A6:b08_dec_counter:Decrement $6E5E counter
-P:84AB:b08_render_chain:Call render chain
-P:84B1:b08_advance_ptr:Advance pointer by 2
+P:20473:b08_main_tile_process:Main tile processing entry
+P:20476:b08_check_tile_type:Check tile type (AND #$07)
+P:2047E:b08_call_tile_handlers:Call tile handler chain
+P:204A6:b08_dec_counter:Decrement $6E5E counter
+P:204AB:b08_render_chain:Call render chain
+P:204B1:b08_advance_ptr:Advance pointer by 2
 
 # -- Bank 08 Tile Process Wrapper ($84BD-$84E2) --
-P:84BD:b08_tile_process_wrapper:Store $16 and call main processor
-P:84C2:b08_setup_mode_1:Setup mode 1 processing
-P:84CA:b08_save_zp:Save zero page to stack
-P:84DC:b08_init_6e5e:Initialize $6E5E to $FF (32 entries)
+P:204BD:b08_tile_process_wrapper:Store $16 and call main processor
+P:204C2:b08_setup_mode_1:Setup mode 1 processing
+P:204CA:b08_save_zp:Save zero page to stack
+P:204DC:b08_init_6e5e:Initialize $6E5E to $FF (32 entries)
 
 # -- Bank 08 BRK Interpreter ($84E3-$8538) --
-P:84E3:b08_brk_interpreter:BRK-based bytecode interpreter
-P:84EF:b08_init_encounter:Initialize encounter arrays
-P:8503:b08_setup_ppu:Setup PPU for encounter
-P:850E:b08_tile_loop_20:Process 32 tiles (0-$1F)
-P:8523:b08_tile_loop_30:Process tiles $20-$2F
-P:852F:b08_finalize:Finalize and cleanup
+P:204E3:b08_brk_interpreter:BRK-based bytecode interpreter
+P:204EF:b08_init_encounter:Initialize encounter arrays
+P:20503:b08_setup_ppu:Setup PPU for encounter
+P:2050E:b08_tile_loop_20:Process 32 tiles (0-$1F)
+P:20523:b08_tile_loop_30:Process tiles $20-$2F
+P:2052F:b08_finalize:Finalize and cleanup
 
 # -- Bank 08 Extended Tile ($853E-$859A) --
-P:853E:b08_extended_tile:Extended tile processing
-P:8562:b08_shift_for_quad:Shift for quadrant calculation
-P:856C:b08_get_quadrant:Get quadrant from shifted value
-P:8573:b08_load_quadrant_data:Load quadrant data from $8AAF
-P:8588:b08_load_second_quad:Load second quadrant entry
+P:2053E:b08_extended_tile:Extended tile processing
+P:20562:b08_shift_for_quad:Shift for quadrant calculation
+P:2056C:b08_get_quadrant:Get quadrant from shifted value
+P:20573:b08_load_quadrant_data:Load quadrant data from $8AAF
+P:20588:b08_load_second_quad:Load second quadrant entry
 
 # -- Bank 08 Zone Processing ($859B-$85D2) --
-P:859B:b08_process_zone:Process zone/region value
-P:85A6:b08_check_zone_range:Check zone range ($48-$4F)
-P:85BA:b08_store_zone:Store zone to $0E
-P:85CD:b08_set_mode_flag:Set $7A mode flag
+P:2059B:b08_process_zone:Process zone/region value
+P:205A6:b08_check_zone_range:Check zone range ($48-$4F)
+P:205BA:b08_store_zone:Store zone to $0E
+P:205CD:b08_set_mode_flag:Set $7A mode flag
 
 # -- Bank 08 Dungeon Setup ($85D3-$8667) --
-P:85D3:b08_dungeon_setup:Setup for dungeon encounter
-P:85E2:b08_dungeon_loop:Dungeon tile processing loop
-P:8617:b08_encounter_table_lookup:Lookup encounter table
+P:205D3:b08_dungeon_setup:Setup for dungeon encounter
+P:205E2:b08_dungeon_loop:Dungeon tile processing loop
+P:20617:b08_encounter_table_lookup:Lookup encounter table
 
 # -- Bank 08 Encounter Rate ($8668-$8702) --
-P:8668:b08_calc_encounter_rate:Calculate encounter rate
-P:8680:b08_apply_modifiers:Apply encounter rate modifiers
-P:8703:b08_encounter_table:Encounter rate table data
+P:20668:b08_calc_encounter_rate:Calculate encounter rate
+P:20680:b08_apply_modifiers:Apply encounter rate modifiers
+P:20703:b08_encounter_table:Encounter rate table data
 
 # -- Bank 08 Position Calculation ($8773-$87FF) --
-P:8773:b08_calc_position:Calculate position from coordinates
-P:8796:b08_position_table:Position lookup table
-P:8800:b08_coord_lookup:Coordinate lookup table
+P:20773:b08_calc_position:Calculate position from coordinates
+P:20796:b08_position_table:Position lookup table
+P:20800:b08_coord_lookup:Coordinate lookup table
 
 # -- Bank 08 Movement Direction ($880E-$88FD) --
-P:880E:b08_movement_dir:Determine movement direction
-P:882A:b08_cardinal_check:Check cardinal direction
-P:88D0:b08_diagonal_check:Check diagonal movement
-P:88ED:b08_calc_distance:Calculate distance to target
-P:88FE:b08_find_target:Find target position from tile type
+P:2080E:b08_movement_dir:Determine movement direction
+P:2082A:b08_cardinal_check:Check cardinal direction
+P:208D0:b08_diagonal_check:Check diagonal movement
+P:208ED:b08_calc_distance:Calculate distance to target
+P:208FE:b08_find_target:Find target position from tile type
 
 # -- Bank 08 Tile Type Lookup ($893D-$8980) --
-P:893D:b08_adjust_for_dir:Adjust position for direction
-P:8957:b08_get_tile_at_pos:Get tile type at position
-P:896F:b08_search_tile_type:Search for specific tile type
-P:897E:b08_return_index:Return found index
+P:2093D:b08_adjust_for_dir:Adjust position for direction
+P:20957:b08_get_tile_at_pos:Get tile type at position
+P:2096F:b08_search_tile_type:Search for specific tile type
+P:2097E:b08_return_index:Return found index
 
 # -- Bank 08 Monster Rotation ($8981-$89C8) --
-P:8981:b08_monster_rotation:Rotate monster group order
-P:8990:b08_rotation_loop:Rotation loop - shift $0100-$0107
+P:20981:b08_monster_rotation:Rotate monster group order
+P:20990:b08_rotation_loop:Rotation loop - shift $0100-$0107
 
 # -- Bank 08 Tile Transpose ($89C9-$8A29) --
-P:89C9:b08_tile_transpose:Transpose tile data
-P:89D8:b08_transpose_loop:Transpose outer loop
-P:89DC:b08_transpose_inner:Transpose inner loop
-P:8A00:b08_extract_bits_horiz:Extract horizontal bits
-P:8A15:b08_extract_bits_vert:Extract vertical bits
+P:209C9:b08_tile_transpose:Transpose tile data
+P:209D8:b08_transpose_loop:Transpose outer loop
+P:209DC:b08_transpose_inner:Transpose inner loop
+P:20A00:b08_extract_bits_horiz:Extract horizontal bits
+P:20A15:b08_extract_bits_vert:Extract vertical bits
 
 # -- Bank 08 Special Tile Handling ($8A2A-$8A91) --
-P:8A2A:b08_special_tile:Handle special tile types
-P:8A3F:b08_normal_tile:Normal tile path
-P:8A58:b08_return_result:Return tile result
-P:8A85:b08_post_process:Post-process tile data
+P:20A2A:b08_special_tile:Handle special tile types
+P:20A3F:b08_normal_tile:Normal tile path
+P:20A58:b08_return_result:Return tile result
+P:20A85:b08_post_process:Post-process tile data
 
 # -- Bank 08 Data Tables ($8A92-$8ABF) --
-P:8A92:b08_table_8a92:Tile type data table
-P:8AA2:b08_table_8aa2:Quadrant lookup table
-P:8AAF:b08_table_8aaf:Quadrant data table (4 bytes each)
+P:20A92:b08_table_8a92:Tile type data table
+P:20AA2:b08_table_8aa2:Quadrant lookup table
+P:20AAF:b08_table_8aaf:Quadrant data table (4 bytes each)
 
 # -- Bank 08 Location Data System ($AF00-$B036) --
-P:AED5:b08_location_entry:Location data entry point
-P:AEE8:b08_location_loop:Location search loop
-P:AF13:b08_store_map_num:Store map number to $63
-P:AF32:b08_location_setup:Location setup calls
-P:AF40:b08_load_location_data:Load location coordinates
-P:AF51:b08_check_special_loc:Check for special locations
-P:AF67:b08_check_loc_0e:Check location type $0E
-P:AF82:b08_store_loc_params:Store location parameters ($64, $44, $45)
-P:AF89:b08_get_loc_terrain:Get location terrain type
-P:AF99:b08_check_loc_special:Check special location cases
-P:AFBA:b08_loc_3a_handler:Location $3A special handler
-P:AFC9:b08_loc_39_handler:Location $39 special handler
-P:AFE1:b08_loc_19_handler:Location $19 special handler
-P:AFF3:b08_loc_45_handler:Location $45 special handler
-P:B00B:b08_loc_0b_handler:Location $0B special handler
-P:B01C:b08_loc_2c_handler:Location $2C special handler
-P:B036:b08_location_return:Location return
+P:22ED5:b08_location_entry:Location data entry point
+P:22EE8:b08_location_loop:Location search loop
+P:22F13:b08_store_map_num:Store map number to $63
+P:22F32:b08_location_setup:Location setup calls
+P:22F40:b08_load_location_data:Load location coordinates
+P:22F51:b08_check_special_loc:Check for special locations
+P:22F67:b08_check_loc_0e:Check location type $0E
+P:22F82:b08_store_loc_params:Store location parameters ($64, $44, $45)
+P:22F89:b08_get_loc_terrain:Get location terrain type
+P:22F99:b08_check_loc_special:Check special location cases
+P:22FBA:b08_loc_3a_handler:Location $3A special handler
+P:22FC9:b08_loc_39_handler:Location $39 special handler
+P:22FE1:b08_loc_19_handler:Location $19 special handler
+P:22FF3:b08_loc_45_handler:Location $45 special handler
+P:2300B:b08_loc_0b_handler:Location $0B special handler
+P:2301C:b08_loc_2c_handler:Location $2C special handler
+P:23036:b08_location_return:Location return
 
 # -- Bank 08 Location Lookup ($B037-$B05B) --
-P:B037:b08_lookup_location:Lookup location in table
-P:B043:b08_lookup_loop:Location lookup loop
-P:B05B:b08_lookup_done:Lookup complete
+P:23037:b08_lookup_location:Lookup location in table
+P:23043:b08_lookup_loop:Location lookup loop
+P:2305B:b08_lookup_done:Lookup complete
 
 # -- Bank 08 Location Read ($B05C-$B0AD) --
-P:B05C:b08_read_location_byte:Read single byte from location data
-P:B06A:b08_brk_loc_search:BRK-based location search
-P:B071:b08_loc_search_loop:Location search loop
-P:B08D:b08_found_location:Found matching location
+P:2305C:b08_read_location_byte:Read single byte from location data
+P:2306A:b08_brk_loc_search:BRK-based location search
+P:23071:b08_loc_search_loop:Location search loop
+P:2308D:b08_found_location:Found matching location
 
 # -- Bank 08 Location Processing ($B0AE-$B187) --
-P:B0AE:b08_process_location:Process location data
-P:B135:b08_calc_encounter:Calculate location encounter rate
-P:B145:b08_loc_not_found:Location not found handler
+P:230AE:b08_process_location:Process location data
+P:23135:b08_calc_encounter:Calculate location encounter rate
+P:23145:b08_loc_not_found:Location not found handler
 
 # -- Bank 08 Exit Processing ($B188-$B22D) --
-P:B188:b08_exit_handler:Exit/door handler
-P:B194:b08_check_door:Check door type
-P:B1D0:b08_exit_table:Exit point table
+P:23188:b08_exit_handler:Exit/door handler
+P:23194:b08_check_door:Check door type
+P:231D0:b08_exit_table:Exit point table
 
 # -- Bank 08 Treasure Processing ($B22E-$B322) --
-P:B22E:b08_treasure_handler:Treasure chest handler
-P:B27F:b08_item_check:Check item availability
-P:B2C2:b08_empty_chest:Empty chest handler
+P:2322E:b08_treasure_handler:Treasure chest handler
+P:2327F:b08_item_check:Check item availability
+P:232C2:b08_empty_chest:Empty chest handler
 
 # -- Bank 08 NPC Interaction ($B323-$B439) --
-P:B323:b08_npc_interact:NPC interaction handler
-P:B397:b08_npc_dialog:NPC dialog trigger
-P:B3D9:b08_npc_special:Special NPC handler
-P:B425:b08_npc_3a:NPC type $3A handler
-P:B43A:b08_npc_19:NPC type $19 handler
+P:23323:b08_npc_interact:NPC interaction handler
+P:23397:b08_npc_dialog:NPC dialog trigger
+P:233D9:b08_npc_special:Special NPC handler
+P:23425:b08_npc_3a:NPC type $3A handler
+P:2343A:b08_npc_19:NPC type $19 handler
 
 # -- Bank 08 Flag Checking ($B48E-$B553) --
-P:B48E:b08_compare_flags:Compare flags against saved state
-P:B4B9:b08_flag_changed:Handle flag change
-P:B4C1:b08_terrain_encounter:Terrain-based encounter modifier
-P:B4ED:b08_get_tile_table:Get tile table pointer
-P:B51F:b08_count_tiles:Count matching tiles
-P:B554:b08_search_tiles:Search for specific tile type
+P:2348E:b08_compare_flags:Compare flags against saved state
+P:234B9:b08_flag_changed:Handle flag change
+P:234C1:b08_terrain_encounter:Terrain-based encounter modifier
+P:234ED:b08_get_tile_table:Get tile table pointer
+P:2351F:b08_count_tiles:Count matching tiles
+P:23554:b08_search_tiles:Search for specific tile type
 
 # -- Bank 08 Warp/Teleport ($B5B3-$B5F0) --
-P:B5B3:b08_warp_check:Check warp availability
-P:B5BF:b08_warp_execute:Execute warp
-P:B5E2:b08_check_warp_flag:Check warp flag in $62AA
-P:B5F1:b08_return_result:Return warp result
+P:235B3:b08_warp_check:Check warp availability
+P:235BF:b08_warp_execute:Execute warp
+P:235E2:b08_check_warp_flag:Check warp flag in $62AA
+P:235F1:b08_return_result:Return warp result
 
 # -- Bank 08 Data Tables ($B5F2-$B7FF) --
-P:B5F2:b08_data_tables:Various data tables
-P:B671:b08_table_b671:Tile data table pointer
-P:B673:b08_table_b673:Secondary table pointer
-P:B67D:b08_table_b67d:Tertiary table pointer
-P:B7F7:b08_table_b7f7:Location data table pointer
+P:235F2:b08_data_tables:Various data tables
+P:23671:b08_table_b671:Tile data table pointer
+P:23673:b08_table_b673:Secondary table pointer
+P:2367D:b08_table_b67d:Tertiary table pointer
+P:237F7:b08_table_b7f7:Location data table pointer
 
 # -- Bank 08 Tileset Data (DataCrystal ROM Map) --
 # Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
@@ -2616,43 +2623,43 @@ G:7684:b08_quadrant_flags:Quadrant flags (4 bytes)
 G:7700:b08_tile_cache:Tile cache array (256 bytes)
 
 # -- Bank 08 Zero Page Variables --
-P:0000:b08_temp_00:Temporary pointer low
-P:0001:b08_temp_01:Temporary pointer high
-P:0002:b08_temp_02:Secondary temp low
-P:0003:b08_temp_03:Secondary temp high
-P:0004:b08_counter_04:Counter variable
-P:0005:b08_counter_05:Counter high byte
-P:0007:b08_mode_flag:Mode flag (0 or non-zero)
-P:0008:b08_shift_count:Shift counter
-P:0009:b08_mode_select:Mode selector (0 or 1)
-P:000A:b08_param_a:Parameter A - tile/encounter data
-P:000B:b08_param_b:Parameter B
-P:000C:b08_param_c:Parameter C
-P:000D:b08_buffer_mode:Buffer mode (0=direct, 1=deferred)
-P:000E:b08_ptr_0e:Data pointer low
-P:000F:b08_ptr_0f:Data pointer high
-P:0016:b08_tile_index:Current tile index
-P:0018:b08_tile_id_base:Tile ID base value
-P:0019:b08_ppu_addr_lo:PPU address low
-P:001A:b08_ppu_addr_hi:PPU address high
-P:0072:b08_calc_lo:Calculation temp low
-P:0073:b08_calc_hi:Calculation temp high
-P:0074:b08_rotation_cnt:Rotation count
-P:0075:b08_rotation_tmp:Rotation temp
-P:0076:b08_mode_76:Mode flag ($76)
-P:0079:b08_cache_index:Tile cache index
-P:007A:b08_transpose_flag:Transpose flag
-P:00DA:b08_loc_ptr_lo:Location pointer low
-P:00DB:b08_loc_ptr_hi:Location pointer high
-P:00DC:b08_loc_temp_dc:Location temp DC
-P:00DD:b08_loc_temp_dd:Location temp DD
-P:00DE:b08_encounter_mod_lo:Encounter modifier low
-P:00DF:b08_encounter_mod_hi:Encounter modifier high
-P:00E4:b08_last_map:Last map number
-P:00E5:b08_last_submap:Last submap number
-P:00E6:b08_last_x:Last X coordinate
-P:00E7:b08_last_y:Last Y coordinate
-P:00E9:b08_save_reg:Saved register temp
+R:0000:b08_temp_00:Temporary pointer low
+R:0001:b08_temp_01:Temporary pointer high
+R:0002:b08_temp_02:Secondary temp low
+R:0003:b08_temp_03:Secondary temp high
+R:0004:b08_counter_04:Counter variable
+R:0005:b08_counter_05:Counter high byte
+R:0007:b08_mode_flag:Mode flag (0 or non-zero)
+R:0008:b08_shift_count:Shift counter
+R:0009:b08_mode_select:Mode selector (0 or 1)
+R:000A:b08_param_a:Parameter A - tile/encounter data
+R:000B:b08_param_b:Parameter B
+R:000C:b08_param_c:Parameter C
+R:000D:b08_buffer_mode:Buffer mode (0=direct, 1=deferred)
+R:000E:b08_ptr_0e:Data pointer low
+R:000F:b08_ptr_0f:Data pointer high
+R:0016:b08_tile_index:Current tile index
+R:0018:b08_tile_id_base:Tile ID base value
+R:0019:b08_ppu_addr_lo:PPU address low
+R:001A:b08_ppu_addr_hi:PPU address high
+R:0072:b08_calc_lo:Calculation temp low
+R:0073:b08_calc_hi:Calculation temp high
+R:0074:b08_rotation_cnt:Rotation count
+R:0075:b08_rotation_tmp:Rotation temp
+R:0076:b08_mode_76:Mode flag ($76)
+R:0079:b08_cache_index:Tile cache index
+R:007A:b08_transpose_flag:Transpose flag
+R:00DA:b08_loc_ptr_lo:Location pointer low
+R:00DB:b08_loc_ptr_hi:Location pointer high
+R:00DC:b08_loc_temp_dc:Location temp DC
+R:00DD:b08_loc_temp_dd:Location temp DD
+R:00DE:b08_encounter_mod_lo:Encounter modifier low
+R:00DF:b08_encounter_mod_hi:Encounter modifier high
+R:00E4:b08_last_map:Last map number
+R:00E5:b08_last_submap:Last submap number
+R:00E6:b08_last_x:Last X coordinate
+R:00E7:b08_last_y:Last Y coordinate
+R:00E9:b08_save_reg:Saved register temp
 
 # ==============================================================================
 # PRG ROM - Bank 0E: Palette and Graphics Code ($8000-$BFFF when loaded)
@@ -2685,198 +2692,198 @@ P:38D9F:b0e_palette_table_2_end:End of secondary palette table
 # ~628 JSR calls - one of the most code-heavy banks.
 
 # -- Bank 20 Initialization ($8038-$8087) --
-P:8038:b20_init_loop:Main initialization loop
-P:803F:b20_init_after_loop:Post-loop initialization
-P:8046:b20_clear_06a0:Clear $06A0 array (8 bytes)
-P:804E:b20_clear_05fc:Clear $05FC array (26 bytes)
-P:8062:b20_clear_6e49:Clear party HP/status array
-P:806A:b20_clear_0444:Clear $0444 array (8 bytes)
+P:50038:b20_init_loop:Main initialization loop
+P:5003F:b20_init_after_loop:Post-loop initialization
+P:50046:b20_clear_06a0:Clear $06A0 array (8 bytes)
+P:5004E:b20_clear_05fc:Clear $05FC array (26 bytes)
+P:50062:b20_clear_6e49:Clear party HP/status array
+P:5006A:b20_clear_0444:Clear $0444 array (8 bytes)
 
 # -- Bank 20 BRK-based Operations ($8072-$80E4) --
-P:8072:b20_brk_party_init:BRK $29,$C3 - party initialization sequence
-P:808B:b20_check_party_slot:Check party slot ($6E45+X)
-P:80AD:b20_store_char_c4:Store character ID to $C4
-P:80B9:b20_init_char_data:Initialize character data subroutines
-P:80E1:b20_call_946e:Call $946E (character display)
-P:80E4:b20_next_slot:Increment $C6 for next party slot
+P:50072:b20_brk_party_init:BRK $29,$C3 - party initialization sequence
+P:5008B:b20_check_party_slot:Check party slot ($6E45+X)
+P:500AD:b20_store_char_c4:Store character ID to $C4
+P:500B9:b20_init_char_data:Initialize character data subroutines
+P:500E1:b20_call_946e:Call $946E (character display)
+P:500E4:b20_next_slot:Increment $C6 for next party slot
 
 # -- Bank 20 Monster Entry System ($80EE-$812C) --
-P:80EE:b20_monster_loop:Monster entry loop (8 monsters)
-P:8103:b20_monster_setup:Setup monster display
-P:8111:b20_store_monster_offset:Store monster offset to $06A0
-P:8126:b20_after_monsters:After monster processing
+P:500EE:b20_monster_loop:Monster entry loop (8 monsters)
+P:50103:b20_monster_setup:Setup monster display
+P:50111:b20_store_monster_offset:Store monster offset to $06A0
+P:50126:b20_after_monsters:After monster processing
 
 # -- Bank 20 Party Update System ($812F-$81CC) --
-P:812F:b20_party_update_entry:Party update entry point
-P:8141:b20_party_update_loop:Main party update loop
-P:8162:b20_check_conditions:Check various party conditions
-P:8184:b20_valid_char:Valid character - setup display
-P:81A4:b20_store_char_item:Store character item to $0440
-P:81AE:b20_remove_from_party:Remove character from party
-P:81B5:b20_next_char_slot:Next character slot
+P:5012F:b20_party_update_entry:Party update entry point
+P:50141:b20_party_update_loop:Main party update loop
+P:50162:b20_check_conditions:Check various party conditions
+P:50184:b20_valid_char:Valid character - setup display
+P:501A4:b20_store_char_item:Store character item to $0440
+P:501AE:b20_remove_from_party:Remove character from party
+P:501B5:b20_next_char_slot:Next character slot
 
 # -- Bank 20 OAM/Display ($81CF-$8210) --
-P:81CF:b20_clear_oam:Clear OAM buffer ($0200-$02FF)
-P:81E8:b20_sprite_loop:Sprite setup loop
-P:81F3:b20_clear_oam_rts:Return from OAM clear
-P:81F4:b20_shift_party:Shift party array down ($6E45-$6E4C)
-P:8210:b20_shift_rts:Return from shift
+P:501CF:b20_clear_oam:Clear OAM buffer ($0200-$02FF)
+P:501E8:b20_sprite_loop:Sprite setup loop
+P:501F3:b20_clear_oam_rts:Return from OAM clear
+P:501F4:b20_shift_party:Shift party array down ($6E45-$6E4C)
+P:50210:b20_shift_rts:Return from shift
 
 # -- Bank 20 Character Display ($8211-$822F) --
-P:8211:b20_char_display:Character display wrapper
-P:8220:b20_char_display_alt:Alternate character display
-P:822F:b20_display_setup:Display setup with check
+P:50211:b20_char_display:Character display wrapper
+P:50220:b20_char_display_alt:Alternate character display
+P:5022F:b20_display_setup:Display setup with check
 
 # -- Bank 20 Special Displays ($8237-$82CC) --
-P:8237:b20_check_ae:Check for character $AE
-P:8263:b20_standard_display:Standard character display
-P:8297:b20_clear_0303:Clear PPU buffer $0303
-P:82CC:b20_call_9a40:Call $9A40 (display subroutine)
-P:82CF:b20_call_9e7f:Call $9E7F (after display)
+P:50237:b20_check_ae:Check for character $AE
+P:50263:b20_standard_display:Standard character display
+P:50297:b20_clear_0303:Clear PPU buffer $0303
+P:502CC:b20_call_9a40:Call $9A40 (display subroutine)
+P:502CF:b20_call_9e7f:Call $9E7F (after display)
 
 # -- Bank 20 Animation System ($82E9-$8363) --
-P:82E9:b20_animation_entry:Animation entry point
-P:82F0:b20_animation_loop:Animation loop (4 frames)
-P:830F:b20_animation_frame:Single animation frame
-P:8328:b20_animation_alt:Alternate animation path
-P:8330:b20_animation_inner:Inner animation loop
+P:502E9:b20_animation_entry:Animation entry point
+P:502F0:b20_animation_loop:Animation loop (4 frames)
+P:5030F:b20_animation_frame:Single animation frame
+P:50328:b20_animation_alt:Alternate animation path
+P:50330:b20_animation_inner:Inner animation loop
 
 # -- Bank 20 Utility Functions ($8364-$83C1) --
-P:8364:b20_indirect_jump:Indirect jump via ($0000)
-P:8367:b20_check_party_full:Check if party is full
-P:8373:b20_set_carry_return:Set carry and return
-P:837F:b20_animation_helper:Animation helper with delay
-P:83A5:b20_clear_slots:Clear animation slots
-P:83B7:b20_fill_05fc:Fill $05FC array with A
+P:50364:b20_indirect_jump:Indirect jump via ($0000)
+P:50367:b20_check_party_full:Check if party is full
+P:50373:b20_set_carry_return:Set carry and return
+P:5037F:b20_animation_helper:Animation helper with delay
+P:503A5:b20_clear_slots:Clear animation slots
+P:503B7:b20_fill_05fc:Fill $05FC array with A
 
 # -- Bank 20 Scroll Animation ($83C2-$8413) --
-P:83C2:b20_scroll_init:Scroll animation initialization
-P:83CB:b20_scroll_loop:Main scroll animation loop
-P:83E3:b20_scroll_inner:Inner scroll processing
+P:503C2:b20_scroll_init:Scroll animation initialization
+P:503CB:b20_scroll_loop:Main scroll animation loop
+P:503E3:b20_scroll_inner:Inner scroll processing
 
 # -- Bank 20 Menu Functions ($8414-$8495) --
-P:8414:b20_menu_entry_a:Menu entry point A
-P:841C:b20_menu_entry_b:Menu entry point B
-P:8422:b20_menu_setup:Menu setup
+P:50414:b20_menu_entry_a:Menu entry point A
+P:5041C:b20_menu_entry_b:Menu entry point B
+P:50422:b20_menu_setup:Menu setup
 
 # -- Bank 20 Item/Inventory ($8496-$852D) --
-P:8496:b20_inventory_entry:Inventory entry point
-P:852D:b20_inventory_return:Inventory return
+P:50496:b20_inventory_entry:Inventory entry point
+P:5052D:b20_inventory_return:Inventory return
 
 # -- Bank 20 Character Stats ($852E-$85CE) --
-P:852E:b20_stats_display:Character stats display
-P:8582:b20_stats_return:Stats return
-P:85AB:b20_stats_helper:Stats helper function
+P:5052E:b20_stats_display:Character stats display
+P:50582:b20_stats_return:Stats return
+P:505AB:b20_stats_helper:Stats helper function
 
 # -- Bank 20 Party Swap ($85CF-$8665) --
-P:85CF:b20_swap_entry:Party swap entry
-P:8605:b20_swap_return:Swap return
-P:8624:b20_swap_complete:Swap complete handler
+P:505CF:b20_swap_entry:Party swap entry
+P:50605:b20_swap_return:Swap return
+P:50624:b20_swap_complete:Swap complete handler
 
 # -- Bank 20 Gold/Money ($8666-$86F6) --
-P:8666:b20_gold_display:Gold display routine
-P:86C4:b20_gold_update:Gold update
-P:86EC:b20_gold_return:Gold return
+P:50666:b20_gold_display:Gold display routine
+P:506C4:b20_gold_update:Gold update
+P:506EC:b20_gold_return:Gold return
 
 # -- Bank 20 Item Transfer ($86F7-$8779) --
-P:86F7:b20_item_transfer:Item transfer routine
-P:8736:b20_transfer_loop:Transfer loop
-P:8762:b20_transfer_done:Transfer done
+P:506F7:b20_item_transfer:Item transfer routine
+P:50736:b20_transfer_loop:Transfer loop
+P:50762:b20_transfer_done:Transfer done
 
 # -- Bank 20 Equipment ($877A-$88CB) --
-P:877A:b20_equipment_entry:Equipment entry
-P:87B0:b20_equipment_return:Equipment return
-P:88CB:b20_equipment_final:Equipment final
+P:5077A:b20_equipment_entry:Equipment entry
+P:507B0:b20_equipment_return:Equipment return
+P:508CB:b20_equipment_final:Equipment final
 
 # -- Bank 20 Wagon System ($88CC-$89EF) --
-P:88CC:b20_wagon_entry:Wagon menu entry
-P:8920:b20_wagon_process:Wagon processing
-P:89DA:b20_wagon_transfer:Wagon transfer
-P:89EF:b20_wagon_return:Wagon return
+P:508CC:b20_wagon_entry:Wagon menu entry
+P:50920:b20_wagon_process:Wagon processing
+P:509DA:b20_wagon_transfer:Wagon transfer
+P:509EF:b20_wagon_return:Wagon return
 
 # -- Bank 20 Shop/Buy ($89F0-$8ACA) --
-P:89F0:b20_shop_entry:Shop/buy entry
-P:8A01:b20_shop_item:Shop item display
-P:8A03:b20_shop_return:Shop return
-P:8ACA:b20_buy_complete:Buy complete
+P:509F0:b20_shop_entry:Shop/buy entry
+P:50A01:b20_shop_item:Shop item display
+P:50A03:b20_shop_return:Shop return
+P:50ACA:b20_buy_complete:Buy complete
 
 # -- Bank 20 Sell System ($8ACB-$8BC8) --
-P:8ACB:b20_sell_entry:Sell entry
-P:8B35:b20_sell_process:Sell processing
-P:8B52:b20_sell_item:Sell item handler
-P:8BC8:b20_sell_return:Sell return
+P:50ACB:b20_sell_entry:Sell entry
+P:50B35:b20_sell_process:Sell processing
+P:50B52:b20_sell_item:Sell item handler
+P:50BC8:b20_sell_return:Sell return
 
 # -- Bank 20 Appraise/Identify ($8BC9-$8C85) --
-P:8BC9:b20_appraise_entry:Appraise item entry
-P:8BE7:b20_appraise_process:Appraise processing
-P:8C06:b20_appraise_item:Appraise item handler
-P:8C1A:b20_appraise_return:Appraise return
-P:8C85:b20_appraise_final:Appraise final
+P:50BC9:b20_appraise_entry:Appraise item entry
+P:50BE7:b20_appraise_process:Appraise processing
+P:50C06:b20_appraise_item:Appraise item handler
+P:50C1A:b20_appraise_return:Appraise return
+P:50C85:b20_appraise_final:Appraise final
 
 # -- Bank 20 Monster Graphics ($8C86-$8DF0) --
-P:8C86:b20_monster_gfx_entry:Monster graphics entry
-P:8CD4:b20_monster_gfx_load:Load monster graphics
-P:8D28:b20_monster_gfx_process:Process monster graphics
-P:8D54:b20_monster_gfx_return:Monster graphics return
-P:8DF0:b20_monster_gfx_final:Monster graphics final
+P:50C86:b20_monster_gfx_entry:Monster graphics entry
+P:50CD4:b20_monster_gfx_load:Load monster graphics
+P:50D28:b20_monster_gfx_process:Process monster graphics
+P:50D54:b20_monster_gfx_return:Monster graphics return
+P:50DF0:b20_monster_gfx_final:Monster graphics final
 
 # -- Bank 20 Name Entry ($8DF1-$8F77) --
-P:8DF1:b20_name_entry:Name entry screen
-P:8F39:b20_name_process:Name processing
-P:8F53:b20_name_char:Process name character
-P:8F5B:b20_name_cursor:Name cursor handling
-P:8F77:b20_name_return:Name entry return
+P:50DF1:b20_name_entry:Name entry screen
+P:50F39:b20_name_process:Name processing
+P:50F53:b20_name_char:Process name character
+P:50F5B:b20_name_cursor:Name cursor handling
+P:50F77:b20_name_return:Name entry return
 
 # -- Bank 20 Character Selection ($8F78-$9292) --
-P:8F78:b20_select_entry:Character selection entry
-P:8F8F:b20_select_return:Selection return
-P:926B:b20_select_process:Selection processing
-P:9292:b20_select_final:Selection final
+P:50F78:b20_select_entry:Character selection entry
+P:50F8F:b20_select_return:Selection return
+P:5126B:b20_select_process:Selection processing
+P:51292:b20_select_final:Selection final
 
 # -- Bank 20 Status Effects ($9293-$9439) --
-P:9293:b20_status_entry:Status effect entry
-P:92EF:b20_status_process:Status processing
-P:9439:b20_status_return:Status return
+P:51293:b20_status_entry:Status effect entry
+P:512EF:b20_status_process:Status processing
+P:51439:b20_status_return:Status return
 
 # -- Bank 20 Party Order ($943A-$9496) --
-P:943A:b20_party_order_entry:Party order entry
-P:946E:b20_party_order_display:Display party order
-P:9496:b20_party_order_return:Party order return
+P:5143A:b20_party_order_entry:Party order entry
+P:5146E:b20_party_order_display:Display party order
+P:51496:b20_party_order_return:Party order return
 
 # -- Bank 20 Monster Sprite ($9497-$9682) --
-P:9497:b20_monster_sprite_entry:Monster sprite entry
-P:9C1D:b20_monster_sprite_load:Load monster sprite
-P:9C54:b20_monster_sprite_display:Display monster sprite
-P:9653:b20_monster_sprite_helper:Monster sprite helper
+P:51497:b20_monster_sprite_entry:Monster sprite entry
+P:51C1D:b20_monster_sprite_load:Load monster sprite
+P:51C54:b20_monster_sprite_display:Display monster sprite
+P:51653:b20_monster_sprite_helper:Monster sprite helper
 
 # -- Bank 20 Item Checks ($9682-$969C) --
-P:9682:b20_item_check_a:Item check routine A
-P:9686:b20_item_check_b:Item check routine B
-P:969C:b20_item_check_process:Item check processing
+P:51682:b20_item_check_a:Item check routine A
+P:51686:b20_item_check_b:Item check routine B
+P:5169C:b20_item_check_process:Item check processing
 
 # -- Bank 20 Price Calculation ($969D-$9782) --
-P:969D:b20_price_calc_entry:Price calculation entry
-P:96C5:b20_price_setup:Price setup
-P:9712:b20_price_display:Price display
-P:9783:b20_price_return:Price calculation return
+P:5169D:b20_price_calc_entry:Price calculation entry
+P:516C5:b20_price_setup:Price setup
+P:51712:b20_price_display:Price display
+P:51783:b20_price_return:Price calculation return
 
 # -- Bank 20 Decompression ($978A-$9E1C) --
-P:978A:b20_decompress_entry:Decompression entry
-P:9E0C:b20_decompress_check:Decompression check
-P:9E1C:b20_decompress_return:Decompression return
+P:5178A:b20_decompress_entry:Decompression entry
+P:51E0C:b20_decompress_check:Decompression check
+P:51E1C:b20_decompress_return:Decompression return
 
 # -- Bank 20 Display Wrappers ($9E7F-$9F66) --
-P:9E7F:b20_display_wrapper_a:Display wrapper A
-P:9ED1:b20_display_wrapper_b:Display wrapper B
-P:9EF4:b20_display_wrapper_c:Display wrapper C
-P:9F0C:b20_display_wrapper_d:Display wrapper D
-P:9F26:b20_display_wrapper_e:Display wrapper E
-P:9F66:b20_display_wrapper_f:Display wrapper F
+P:51E7F:b20_display_wrapper_a:Display wrapper A
+P:51ED1:b20_display_wrapper_b:Display wrapper B
+P:51EF4:b20_display_wrapper_c:Display wrapper C
+P:51F0C:b20_display_wrapper_d:Display wrapper D
+P:51F26:b20_display_wrapper_e:Display wrapper E
+P:51F66:b20_display_wrapper_f:Display wrapper F
 
 # -- Bank 20 Utility Helpers ($9F8D-$9FA9) --
-P:9F8D:b20_read_byte:Read byte helper
-P:9F9F:b20_advance_ptr:Advance pointer helper
-P:9FA9:b20_setup_ptr:Setup pointer helper
+P:51F8D:b20_read_byte:Read byte helper
+P:51F9F:b20_advance_ptr:Advance pointer helper
+P:51FA9:b20_setup_ptr:Setup pointer helper
 
 # -- Bank 20 RAM Variables --
 G:0440:b20_item_buffer:Item buffer (4 slots)
@@ -2896,26 +2903,26 @@ G:6E7E:b20_medal_count:Medal count
 G:7392:b20_monster_sizes:Monster size table
 
 # -- Bank 20 Zero Page Variables --
-P:00C0:b20_price_lo:Price low byte
-P:00C1:b20_price_hi:Price high byte
-P:00C4:b20_current_char:Current character ID
-P:00C5:b20_current_hp:Current HP value
-P:00C6:b20_slot_index:Current slot index
-P:00C7:b20_monster_index:Current monster index
-P:00C8:b20_item_slot:Current item slot
-P:00C9:b20_total_lo:Total low byte
-P:00CA:b20_total_hi:Total high byte
-P:00CB:b20_calc_lo:Calculation temp low
-P:00CC:b20_calc_hi:Calculation temp high
-P:00CD:b20_base_lo:Base value low
-P:00CE:b20_base_hi:Base value high
-P:00D1:b20_quantity:Quantity/count
-P:00D4:b20_modifier_lo:Modifier low
-P:00D5:b20_modifier_hi:Modifier high
-P:00D6:b20_scroll_dir:Scroll direction
-P:00D7:b20_scroll_cnt:Scroll counter
-P:00D8:b20_scroll_flag:Scroll flag
-P:00D9:b20_display_mode:Display mode
+R:00C0:b20_price_lo:Price low byte
+R:00C1:b20_price_hi:Price high byte
+R:00C4:b20_current_char:Current character ID
+R:00C5:b20_current_hp:Current HP value
+R:00C6:b20_slot_index:Current slot index
+R:00C7:b20_monster_index:Current monster index
+R:00C8:b20_item_slot:Current item slot
+R:00C9:b20_total_lo:Total low byte
+R:00CA:b20_total_hi:Total high byte
+R:00CB:b20_calc_lo:Calculation temp low
+R:00CC:b20_calc_hi:Calculation temp high
+R:00CD:b20_base_lo:Base value low
+R:00CE:b20_base_hi:Base value high
+R:00D1:b20_quantity:Quantity/count
+R:00D4:b20_modifier_lo:Modifier low
+R:00D5:b20_modifier_hi:Modifier high
+R:00D6:b20_scroll_dir:Scroll direction
+R:00D7:b20_scroll_cnt:Scroll counter
+R:00D8:b20_scroll_flag:Scroll flag
+R:00D9:b20_display_mode:Display mode
 
 # ============================================================
 # BANK 22 - TEXT/DIALOGUE PROCESSING SYSTEM
@@ -2924,293 +2931,293 @@ P:00D9:b20_display_mode:Display mode
 # ============================================================
 
 # -- Bank 22 Entry Points ($8028-$8035) --
-P:8028:b22_entry_point:Main entry point
-P:802B:b22_call_init:Call initialization
-P:802E:b22_call_setup:Call setup routine
-P:8031:b22_call_main_loop:Call main processing loop
-P:8035:b22_entry_return:Return from entry
+P:58028:b22_entry_point:Main entry point
+P:5802B:b22_call_init:Call initialization
+P:5802E:b22_call_setup:Call setup routine
+P:58031:b22_call_main_loop:Call main processing loop
+P:58035:b22_entry_return:Return from entry
 
 # -- Bank 22 Main Processing Loop ($8036-$8093) --
-P:8036:b22_main_loop:Main text processing loop
-P:803F:b22_check_state:Check dialog state ($5C)
-P:8043:b22_call_input:Call input handler
-P:8051:b22_check_char_id:Check character ID in $6E8A array
-P:8084:b22_set_char_6c:Set character $6C handler
-P:8089:b22_clear_state:Clear state variables ($5D, $57)
-P:8091:b22_return_state:Return current state
+P:58036:b22_main_loop:Main text processing loop
+P:5803F:b22_check_state:Check dialog state ($5C)
+P:58043:b22_call_input:Call input handler
+P:58051:b22_check_char_id:Check character ID in $6E8A array
+P:58084:b22_set_char_6c:Set character $6C handler
+P:58089:b22_clear_state:Clear state variables ($5D, $57)
+P:58091:b22_return_state:Return current state
 
 # -- Bank 22 Command Dispatch ($8094-$80C3) --
-P:8094:b22_dispatch_cmd:Dispatch text command
-P:80A4:b22_calc_handler:Calculate handler from command
-P:80B5:b22_default_handler:Default command handler
-P:80C4:b22_handler_table:Command handler jump table (16 entries)
+P:58094:b22_dispatch_cmd:Dispatch text command
+P:580A4:b22_calc_handler:Calculate handler from command
+P:580B5:b22_default_handler:Default command handler
+P:580C4:b22_handler_table:Command handler jump table (16 entries)
 
 # -- Bank 22 Text State ($80EA-$8123) --
-P:80EA:b22_check_text_state:Check text state ($5C, $60)
-P:8107:b22_clear_flag_60:Clear flag $60
-P:810B:b22_state_return:State check return
-P:810C:b22_call_handlers:Call multiple handlers
-P:8124:b22_pop_return:Pop and return handler
+P:580EA:b22_check_text_state:Check text state ($5C, $60)
+P:58107:b22_clear_flag_60:Clear flag $60
+P:5810B:b22_state_return:State check return
+P:5810C:b22_call_handlers:Call multiple handlers
+P:58124:b22_pop_return:Pop and return handler
 
 # -- Bank 22 Input Check ($812A-$8150) --
-P:812A:b22_check_input:Check for input ($0553)
-P:8137:b22_input_return:Input check return
-P:8138:b22_handle_input:Handle input action
-P:8140:b22_call_cd_cc:Call CD/CC handler
-P:8146:b22_compare_55:Compare $0551 with $55
-P:8150:b22_jump_cc:Jump to $81CC
+P:5812A:b22_check_input:Check for input ($0553)
+P:58137:b22_input_return:Input check return
+P:58138:b22_handle_input:Handle input action
+P:58140:b22_call_cd_cc:Call CD/CC handler
+P:58146:b22_compare_55:Compare $0551 with $55
+P:58150:b22_jump_cc:Jump to $81CC
 
 # -- Bank 22 Dialog Box ($816D-$81CB) --
-P:816D:b22_init_dialog:Initialize dialog box
-P:817E:b22_set_dialog_pos:Set dialog position ($56 = $13)
-P:8190:b22_dialog_scroll:Dialog scroll loop
-P:8199:b22_set_scroll_x:Set scroll X position
-P:81A1:b22_scroll_transfer:Transfer scroll position
-P:81B0:b22_check_scroll:Check scroll input
-P:81C6:b22_scroll_done:Scroll done return
-P:81C7:b22_clear_55:Clear $55 flag
-P:81CC:b22_validate_party:Validate party members
+P:5816D:b22_init_dialog:Initialize dialog box
+P:5817E:b22_set_dialog_pos:Set dialog position ($56 = $13)
+P:58190:b22_dialog_scroll:Dialog scroll loop
+P:58199:b22_set_scroll_x:Set scroll X position
+P:581A1:b22_scroll_transfer:Transfer scroll position
+P:581B0:b22_check_scroll:Check scroll input
+P:581C6:b22_scroll_done:Scroll done return
+P:581C7:b22_clear_55:Clear $55 flag
+P:581CC:b22_validate_party:Validate party members
 
 # -- Bank 22 Character Lookup ($81EA-$8218) --
-P:81EA:b22_lookup_char:Lookup character from $5D
-P:81FA:b22_push_lookup:Push and process lookup
-P:8212:b22_lookup_return:Lookup return
-P:8213:b22_lookup_table:Character lookup table
+P:581EA:b22_lookup_char:Lookup character from $5D
+P:581FA:b22_push_lookup:Push and process lookup
+P:58212:b22_lookup_return:Lookup return
+P:58213:b22_lookup_table:Character lookup table
 
 # -- Bank 22 Name Processing ($8219-$82D0) --
-P:8219:b22_jump_8338:Jump to $8338
-P:821C:b22_load_name:Load character name
-P:8235:b22_copy_name:Copy name to buffer ($0554)
-P:8244:b22_copy_name_loop:Name copy loop
-P:8257:b22_name_setup:Name setup routine
-P:826B:b22_name_check:Check name validity
-P:827E:b22_copy_from_03e3:Copy name from $03E3
-P:829A:b22_special_name:Special name handler
+P:58219:b22_jump_8338:Jump to $8338
+P:5821C:b22_load_name:Load character name
+P:58235:b22_copy_name:Copy name to buffer ($0554)
+P:58244:b22_copy_name_loop:Name copy loop
+P:58257:b22_name_setup:Name setup routine
+P:5826B:b22_name_check:Check name validity
+P:5827E:b22_copy_from_03e3:Copy name from $03E3
+P:5829A:b22_special_name:Special name handler
 
 # -- Bank 22 Level/Stats ($82DB-$8308) --
-P:82DB:b22_get_level:Get character level from $6E45
-P:82E7:b22_copy_level:Copy level to buffer
-P:8306:b22_level_done:Level done return
-P:8309:b22_check_level:Check level constraints
+P:582DB:b22_get_level:Get character level from $6E45
+P:582E7:b22_copy_level:Copy level to buffer
+P:58306:b22_level_done:Level done return
+P:58309:b22_check_level:Check level constraints
 
 # -- Bank 22 Buffer Operations ($8336-$8372) --
-P:8336:b22_set_x_zero:Set X = 0
-P:8338:b22_get_char_buffer:Get character from buffer ($0554)
-P:8346:b22_end_of_text:End of text marker ($40)
-P:8356:b22_read_script:Read from script ($F9 indexed by $5B)
-P:835D:b22_copy_to_buffer:Copy to buffer from $03E3
-P:836B:b22_store_output:Store output to $06AA
+P:58336:b22_set_x_zero:Set X = 0
+P:58338:b22_get_char_buffer:Get character from buffer ($0554)
+P:58346:b22_end_of_text:End of text marker ($40)
+P:58356:b22_read_script:Read from script ($F9 indexed by $5B)
+P:5835D:b22_copy_to_buffer:Copy to buffer from $03E3
+P:5836B:b22_store_output:Store output to $06AA
 
 # -- Bank 22 Display Setup ($8373-$8392) --
-P:8373:b22_display_setup:Setup display position
-P:8386:b22_call_c65a:Call C65A for character
-P:838B:b22_check_0553:Check $0553 state
-P:8393:b22_calc_position:Calculate screen position
+P:58373:b22_display_setup:Setup display position
+P:58386:b22_call_c65a:Call C65A for character
+P:5838B:b22_check_0553:Check $0553 state
+P:58393:b22_calc_position:Calculate screen position
 
 # -- Bank 22 Character Validation ($83A4-$83CD) --
-P:83A4:b22_validate_char:Validate character for display
-P:83BD:b22_check_special:Check special characters ($69, $6A)
-P:83CD:b22_call_8411:Call $8411 subroutine
+P:583A4:b22_validate_char:Validate character for display
+P:583BD:b22_check_special:Check special characters ($69, $6A)
+P:583CD:b22_call_8411:Call $8411 subroutine
 
 # -- Bank 22 Window Control ($83D2-$8450) --
-P:83D2:b22_window_init:Window initialization
-P:83FA:b22_window_draw:Draw window frame
-P:8411:b22_window_clear:Clear window area
-P:8423:b22_window_scroll:Window scroll handler
-P:843A:b22_window_close:Close window
+P:583D2:b22_window_init:Window initialization
+P:583FA:b22_window_draw:Draw window frame
+P:58411:b22_window_clear:Clear window area
+P:58423:b22_window_scroll:Window scroll handler
+P:5843A:b22_window_close:Close window
 
 # -- Bank 22 Text Commands ($8451-$85C7) --
-P:8451:b22_cmd_newline:Newline command handler
-P:8479:b22_cmd_pause:Pause command handler
-P:84A5:b22_cmd_clear:Clear screen command
-P:84C9:b22_cmd_wait:Wait for input command
-P:84F2:b22_cmd_choice:Choice/menu command
-P:8528:b22_cmd_name:Insert name command
-P:8563:b22_cmd_number:Insert number command
-P:8595:b22_cmd_item:Insert item name command
-P:85C8:b22_init_buffers:Initialize text buffers
+P:58451:b22_cmd_newline:Newline command handler
+P:58479:b22_cmd_pause:Pause command handler
+P:584A5:b22_cmd_clear:Clear screen command
+P:584C9:b22_cmd_wait:Wait for input command
+P:584F2:b22_cmd_choice:Choice/menu command
+P:58528:b22_cmd_name:Insert name command
+P:58563:b22_cmd_number:Insert number command
+P:58595:b22_cmd_item:Insert item name command
+P:585C8:b22_init_buffers:Initialize text buffers
 
 # -- Bank 22 Input Handler ($85E7-$8677) --
-P:85E7:b22_process_input:Process player input
-P:8626:b22_check_button:Check button press
-P:8652:b22_update_cursor:Update cursor position
-P:8678:b22_input_loop:Input processing loop
+P:585E7:b22_process_input:Process player input
+P:58626:b22_check_button:Check button press
+P:58652:b22_update_cursor:Update cursor position
+P:58678:b22_input_loop:Input processing loop
 
 # -- Bank 22 Text Rendering ($868F-$8891) --
-P:868F:b22_render_char:Render single character
-P:86BC:b22_render_special:Render special character codes
-P:86E8:b22_render_line:Render line of text
-P:871F:b22_render_box:Render text box frame
-P:872B:b22_render_init:Initialize render state
+P:5868F:b22_render_char:Render single character
+P:586BC:b22_render_special:Render special character codes
+P:586E8:b22_render_line:Render line of text
+P:5871F:b22_render_box:Render text box frame
+P:5872B:b22_render_init:Initialize render state
 
 # -- Bank 22 Script Interpreter ($8892-$9649) --
-P:8892:b22_script_exec:Execute script command
-P:88C2:b22_script_loop:Script execution loop
-P:8912:b22_script_branch:Script branch handler
-P:8956:b22_script_jump:Script jump command
-P:898A:b22_script_call:Script call subroutine
-P:89BE:b22_script_return:Script return from call
-P:89F2:b22_script_end:Script end marker
+P:58892:b22_script_exec:Execute script command
+P:588C2:b22_script_loop:Script execution loop
+P:58912:b22_script_branch:Script branch handler
+P:58956:b22_script_jump:Script jump command
+P:5898A:b22_script_call:Script call subroutine
+P:589BE:b22_script_return:Script return from call
+P:589F2:b22_script_end:Script end marker
 
 # -- Bank 22 Condition Processing ($964A-$96C4) --
-P:964A:b22_process_cond:Process condition flags ($F5)
-P:967C:b22_check_cond:Check condition result
-P:9694:b22_update_flags:Update flag registers
-P:96C4:b22_cond_return:Condition return
+P:5964A:b22_process_cond:Process condition flags ($F5)
+P:5967C:b22_check_cond:Check condition result
+P:59694:b22_update_flags:Update flag registers
+P:596C4:b22_cond_return:Condition return
 
 # -- Bank 22 Text Lookup ($96C5-$9751) --
-P:96C5:b22_lookup_text:Lookup text in table
-P:96E3:b22_get_text_ptr:Get text pointer from $03C8
-P:96F3:b22_process_text_id:Process text ID
-P:9716:b22_shift_text_ptr:Shift text pointer
-P:973B:b22_update_text_buffer:Update text buffer ($076A)
-P:9751:b22_lookup_return:Lookup return
+P:596C5:b22_lookup_text:Lookup text in table
+P:596E3:b22_get_text_ptr:Get text pointer from $03C8
+P:596F3:b22_process_text_id:Process text ID
+P:59716:b22_shift_text_ptr:Shift text pointer
+P:5973B:b22_update_text_buffer:Update text buffer ($076A)
+P:59751:b22_lookup_return:Lookup return
 
 # -- Bank 22 Message Processing ($975A-$982C) --
-P:975A:b22_msg_process:Process message data
-P:9768:b22_msg_loop:Message processing loop
-P:978C:b22_msg_lookup:Message lookup handler
-P:97B0:b22_msg_check:Message check ($F5)
-P:97BB:b22_msg_type:Message type handler
-P:97CE:b22_msg_offset:Calculate message offset
-P:97ED:b22_msg_special:Special message handler
-P:982C:b22_msg_return:Message return
+P:5975A:b22_msg_process:Process message data
+P:59768:b22_msg_loop:Message processing loop
+P:5978C:b22_msg_lookup:Message lookup handler
+P:597B0:b22_msg_check:Message check ($F5)
+P:597BB:b22_msg_type:Message type handler
+P:597CE:b22_msg_offset:Calculate message offset
+P:597ED:b22_msg_special:Special message handler
+P:5982C:b22_msg_return:Message return
 
 # -- Bank 22 Gold/Money ($982D-$9881) --
-P:982D:b22_gold_handler:Gold display handler
-P:9856:b22_format_gold:Format gold value
-P:9882:b22_gold_lookup:Gold table lookup
+P:5982D:b22_gold_handler:Gold display handler
+P:59856:b22_format_gold:Format gold value
+P:59882:b22_gold_lookup:Gold table lookup
 
 # -- Bank 22 Cursor Control ($98B3-$98FA) --
-P:98B3:b22_cursor_out:Output character at cursor
-P:98D2:b22_cursor_special:Handle special cursor codes
-P:98FB:b22_cursor_set:Set cursor position
+P:598B3:b22_cursor_out:Output character at cursor
+P:598D2:b22_cursor_special:Handle special cursor codes
+P:598FB:b22_cursor_set:Set cursor position
 
 # -- Bank 22 Number Formatting ($98FE-$9C18) --
-P:98FE:b22_format_num:Format number for display
-P:9930:b22_num_digits:Extract digits
-P:996B:b22_num_leading:Handle leading zeros
-P:998C:b22_num_output:Output formatted number
-P:99EB:b22_num_return:Number format return
+P:598FE:b22_format_num:Format number for display
+P:59930:b22_num_digits:Extract digits
+P:5996B:b22_num_leading:Handle leading zeros
+P:5998C:b22_num_output:Output formatted number
+P:599EB:b22_num_return:Number format return
 
 # -- Bank 22 Menu System ($9C19-$9FB5) --
-P:9C19:b22_menu_init:Initialize menu system
-P:9C54:b22_menu_draw:Draw menu frame
-P:9C8A:b22_menu_cursor:Position menu cursor
-P:9CC3:b22_menu_input:Handle menu input
-P:9D02:b22_menu_select:Process menu selection
-P:9D45:b22_menu_exit:Exit menu
-P:9FB6:b22_menu_numeric:Numeric input menu
+P:59C19:b22_menu_init:Initialize menu system
+P:59C54:b22_menu_draw:Draw menu frame
+P:59C8A:b22_menu_cursor:Position menu cursor
+P:59CC3:b22_menu_input:Handle menu input
+P:59D02:b22_menu_select:Process menu selection
+P:59D45:b22_menu_exit:Exit menu
+P:59FB6:b22_menu_numeric:Numeric input menu
 
 # -- Bank 22 Yes/No Prompt ($A004-$A0CF) --
-P:A004:b22_yesno_check1:Yes/No check option 1
-P:A020:b22_yesno_check2:Yes/No check option 2
-P:A032:b22_yesno_process:Process Yes/No result
-P:A04D:b22_yesno_up:Cursor up handler
-P:A067:b22_yesno_down:Cursor down handler
-P:A07C:b22_yesno_left:Cursor left handler
-P:A0AC:b22_yesno_right:Cursor right handler
-P:A0D0:b22_yesno_update:Update Yes/No display
+P:5A004:b22_yesno_check1:Yes/No check option 1
+P:5A020:b22_yesno_check2:Yes/No check option 2
+P:5A032:b22_yesno_process:Process Yes/No result
+P:5A04D:b22_yesno_up:Cursor up handler
+P:5A067:b22_yesno_down:Cursor down handler
+P:5A07C:b22_yesno_left:Cursor left handler
+P:5A0AC:b22_yesno_right:Cursor right handler
+P:5A0D0:b22_yesno_update:Update Yes/No display
 
 # -- Bank 22 Item Menu ($A0E1-$A150) --
-P:A0E1:b22_item_menu:Item selection menu
-P:A0F7:b22_item_init:Initialize item list
-P:A130:b22_item_loop:Item menu loop
-P:A14F:b22_item_return:Item menu return
+P:5A0E1:b22_item_menu:Item selection menu
+P:5A0F7:b22_item_init:Initialize item list
+P:5A130:b22_item_loop:Item menu loop
+P:5A14F:b22_item_return:Item menu return
 
 # -- Bank 22 String Operations ($A15A-$A214) --
-P:A15A:b22_str_compare:String comparison
-P:A163:b22_str_validate:Validate string
-P:A1A1:b22_str_search:Search in string
+P:5A15A:b22_str_compare:String comparison
+P:5A163:b22_str_validate:Validate string
+P:5A1A1:b22_str_search:Search in string
 
 # -- Bank 22 Party Menu ($A215-$A361) --
-P:A215:b22_party_check:Check party member
-P:A231:b22_party_select:Select party member
-P:A248:b22_party_cursor_up:Party cursor up
-P:A27B:b22_party_cursor_down:Party cursor down
-P:A2B1:b22_party_confirm:Confirm party selection
-P:A2DB:b22_party_cancel:Cancel party selection
+P:5A215:b22_party_check:Check party member
+P:5A231:b22_party_select:Select party member
+P:5A248:b22_party_cursor_up:Party cursor up
+P:5A27B:b22_party_cursor_down:Party cursor down
+P:5A2B1:b22_party_confirm:Confirm party selection
+P:5A2DB:b22_party_cancel:Cancel party selection
 
 # -- Bank 22 Text Bank Lookup ($A362-$A734) --
-P:A362:b22_text_bank_ptr:Get text bank pointer
-P:A3A2:b22_text_decompress:Decompress text data
-P:A735:b22_text_ptr_table:Text pointer table
+P:5A362:b22_text_bank_ptr:Get text bank pointer
+P:5A3A2:b22_text_decompress:Decompress text data
+P:5A735:b22_text_ptr_table:Text pointer table
 
 # -- Bank 22 Stat Display ($B24F-$B341) --
-P:B24F:b22_stat_display:Display character stats
-P:B278:b22_stat_hp:Display HP value
-P:B29D:b22_stat_mp:Display MP value
-P:B307:b22_stat_level:Display level
-P:B337:b22_stat_ptr:Get stat pointer
+P:5B24F:b22_stat_display:Display character stats
+P:5B278:b22_stat_hp:Display HP value
+P:5B29D:b22_stat_mp:Display MP value
+P:5B307:b22_stat_level:Display level
+P:5B337:b22_stat_ptr:Get stat pointer
 
 # -- Bank 22 Equipment Display ($B342-$B3A2) --
-P:B342:b22_equip_display:Display equipment
-P:B367:b22_equip_name:Display equipment name
-P:B37A:b22_equip_table:Equipment lookup table
-P:B37F:b22_equip_stats:Display equipment stats
+P:5B342:b22_equip_display:Display equipment
+P:5B367:b22_equip_name:Display equipment name
+P:5B37A:b22_equip_table:Equipment lookup table
+P:5B37F:b22_equip_stats:Display equipment stats
 
 # -- Bank 22 Shop Interface ($B3A3-$B746) --
-P:B3A3:b22_shop_init:Initialize shop interface
-P:B3E0:b22_shop_list:Display shop item list
-P:B428:b22_shop_select:Handle shop selection
-P:B480:b22_shop_buy:Process buy transaction
-P:B4D8:b22_shop_sell:Process sell transaction
-P:B540:b22_shop_price:Calculate item price
-P:B5A0:b22_shop_confirm:Confirm purchase/sale
+P:5B3A3:b22_shop_init:Initialize shop interface
+P:5B3E0:b22_shop_list:Display shop item list
+P:5B428:b22_shop_select:Handle shop selection
+P:5B480:b22_shop_buy:Process buy transaction
+P:5B4D8:b22_shop_sell:Process sell transaction
+P:5B540:b22_shop_price:Calculate item price
+P:5B5A0:b22_shop_confirm:Confirm purchase/sale
 
 # -- Bank 22 Character Data ($B747-$BA0D) --
-P:B747:b22_get_char_data:Get character data by index
-P:B780:b22_char_name_ptr:Get character name pointer
-P:B7B5:b22_char_stats_ptr:Get character stats pointer
-P:B810:b22_char_equip_ptr:Get equipment pointer
-P:B860:b22_char_spells_ptr:Get spell list pointer
+P:5B747:b22_get_char_data:Get character data by index
+P:5B780:b22_char_name_ptr:Get character name pointer
+P:5B7B5:b22_char_stats_ptr:Get character stats pointer
+P:5B810:b22_char_equip_ptr:Get equipment pointer
+P:5B860:b22_char_spells_ptr:Get spell list pointer
 
 # -- Bank 22 Number Conversion ($BA0E-$BAD1) --
-P:BA0E:b22_num_to_text:Convert number to text
-P:BA44:b22_digit_extract:Extract digits from number
-P:BA9F:b22_num_output2:Output converted number
-P:BAA9:b22_num_format:Format number with leading zeros
-P:BACA:b22_num_suffix:Add number suffix
-P:BAD2:b22_num_skip:Skip leading zeros
+P:5BA0E:b22_num_to_text:Convert number to text
+P:5BA44:b22_digit_extract:Extract digits from number
+P:5BA9F:b22_num_output2:Output converted number
+P:5BAA9:b22_num_format:Format number with leading zeros
+P:5BACA:b22_num_suffix:Add number suffix
+P:5BAD2:b22_num_skip:Skip leading zeros
 
 # -- Bank 22 BCD Operations ($BB4C-$BB8C) --
-P:BB4C:b22_bcd_convert:Convert to BCD
-P:BB56:b22_bcd_digit:Extract BCD digit
-P:BB75:b22_bcd_output:Output BCD value
-P:BB81:b22_bcd_loop:BCD output loop
+P:5BB4C:b22_bcd_convert:Convert to BCD
+P:5BB56:b22_bcd_digit:Extract BCD digit
+P:5BB75:b22_bcd_output:Output BCD value
+P:5BB81:b22_bcd_loop:BCD output loop
 
 # -- Bank 22 Special Display ($BB8D-$BC42) --
-P:BB8D:b22_display_special:Display special values
-P:BBB9:b22_display_time:Display time value
-P:BBC1:b22_display_date:Display date value
-P:BBD0:b22_display_coords:Display coordinates
-P:BBFD:b22_display_name:Display name from $03DB
+P:5BB8D:b22_display_special:Display special values
+P:5BBB9:b22_display_time:Display time value
+P:5BBC1:b22_display_date:Display date value
+P:5BBD0:b22_display_coords:Display coordinates
+P:5BBFD:b22_display_name:Display name from $03DB
 
 # -- Bank 22 Character Counter ($BC43-$BC6C) --
-P:BC43:b22_count_chars:Count available characters
-P:BC55:b22_count_loop:Character count loop
-P:BC63:b22_count_done:Count complete
+P:5BC43:b22_count_chars:Count available characters
+P:5BC55:b22_count_loop:Character count loop
+P:5BC63:b22_count_done:Count complete
 
 # -- Bank 22 Multi-Column ($BC6D-$BCC0) --
-P:BC6D:b22_multi_col_init:Multi-column display init
-P:BC81:b22_multi_col_loop:Multi-column loop
-P:BCA1:b22_multi_col_row:Process multi-column row
-P:BCC1:b22_multi_col_item:Display multi-column item
+P:5BC6D:b22_multi_col_init:Multi-column display init
+P:5BC81:b22_multi_col_loop:Multi-column loop
+P:5BCA1:b22_multi_col_row:Process multi-column row
+P:5BCC1:b22_multi_col_item:Display multi-column item
 
 # -- Bank 22 Validation ($BEEC-$BF63) --
-P:BEEC:b22_validate_slot:Validate character slot
-P:BEF0:b22_validate_upper:Validate upper nibble
-P:BEFA:b22_validate_lower:Validate lower nibble ($0F check)
-P:BF02:b22_calc_validation:Calculate validation value
-P:BF2D:b22_prep_validation:Prepare validation data
-P:BF4C:b22_get_slot_bits:Get slot bit pattern
-P:BF64:b22_set_slot_bits:Set slot bit pattern
+P:5BEEC:b22_validate_slot:Validate character slot
+P:5BEF0:b22_validate_upper:Validate upper nibble
+P:5BEFA:b22_validate_lower:Validate lower nibble ($0F check)
+P:5BF02:b22_calc_validation:Calculate validation value
+P:5BF2D:b22_prep_validation:Prepare validation data
+P:5BF4C:b22_get_slot_bits:Get slot bit pattern
+P:5BF64:b22_set_slot_bits:Set slot bit pattern
 
 # -- Bank 22 Final Check ($BF8E-$BFB5) --
-P:BF8E:b22_final_check:Final validation check
-P:BF9C:b22_check_fail:Check failed handler
-P:BFA6:b22_brk_check:BRK-based check
-P:BFB4:b22_clear_return:Clear and return
+P:5BF8E:b22_final_check:Final validation check
+P:5BF9C:b22_check_fail:Check failed handler
+P:5BFA6:b22_brk_check:BRK-based check
+P:5BFB4:b22_clear_return:Clear and return
 
 # -- Bank 22 RAM Variables --
 G:03C8:b22_text_id:Current text ID
@@ -3237,31 +3244,31 @@ G:0553:b22_input_flag:Input flag (negative = wait)
 G:0554:b22_output_buffer:Output buffer (8+ bytes)
 
 # -- Bank 22 Zero Page Variables --
-P:0052:b22_char_index:Character index
-P:0053:b22_screen_x:Screen X position
-P:0055:b22_active_flag:Active dialog flag
-P:0056:b22_screen_y:Screen Y position
-P:0057:b22_current_char:Current character code
-P:0059:b22_scroll_amount:Scroll amount
-P:005B:b22_script_index:Script read index
-P:005C:b22_string_index:String index (multi-char)
-P:005D:b22_command:Current command
-P:0060:b22_special_flag:Special character flag ($78)
-P:006F:b22_temp_calc:Temporary calculation
-P:0072:b22_value_lo:Value low byte
-P:0073:b22_value_mid:Value middle byte
-P:0074:b22_value_hi:Value high byte
-P:0075:b22_result:Result value
-P:00EE:b22_text_ptr_lo:Text pointer low
-P:00EF:b22_text_ptr_hi:Text pointer high
-P:00F0:b22_text_start:Text start index
-P:00F1:b22_text_end:Text end index
-P:00F2:b22_text_offset:Text offset
-P:00F3:b22_char_slot:Character slot
-P:00F5:b22_condition_flags:Condition flags
-P:00F7:b22_param1:Parameter 1
-P:00F8:b22_param2:Parameter 2
-P:00F9:b22_script_data:Script data array (6 bytes)
+R:0052:b22_char_index:Character index
+R:0053:b22_screen_x:Screen X position
+R:0055:b22_active_flag:Active dialog flag
+R:0056:b22_screen_y:Screen Y position
+R:0057:b22_current_char:Current character code
+R:0059:b22_scroll_amount:Scroll amount
+R:005B:b22_script_index:Script read index
+R:005C:b22_string_index:String index (multi-char)
+R:005D:b22_command:Current command
+R:0060:b22_special_flag:Special character flag ($78)
+R:006F:b22_temp_calc:Temporary calculation
+R:0072:b22_value_lo:Value low byte
+R:0073:b22_value_mid:Value middle byte
+R:0074:b22_value_hi:Value high byte
+R:0075:b22_result:Result value
+R:00EE:b22_text_ptr_lo:Text pointer low
+R:00EF:b22_text_ptr_hi:Text pointer high
+R:00F0:b22_text_start:Text start index
+R:00F1:b22_text_end:Text end index
+R:00F2:b22_text_offset:Text offset
+R:00F3:b22_char_slot:Character slot
+R:00F5:b22_condition_flags:Condition flags
+R:00F7:b22_param1:Parameter 1
+R:00F8:b22_param2:Parameter 2
+R:00F9:b22_script_data:Script data array (6 bytes)
 
 # ============================================================
 # BANK 23 - CASINO/MINI-GAME SYSTEM
@@ -3270,189 +3277,189 @@ P:00F9:b22_script_data:Script data array (6 bytes)
 # ============================================================
 
 # -- Bank 23 Entry and Jump Table ($8000-$804B) --
-P:8000:b23_entry_jump:Entry jump to main
-P:8003:b23_ptr_table:Pointer/handler table
-P:804C:b23_init_game:Initialize game mode
+P:5C000:b23_entry_jump:Entry jump to main
+P:5C003:b23_ptr_table:Pointer/handler table
+P:5C04C:b23_init_game:Initialize game mode
 
 # -- Bank 23 Slot Machine Main ($8052-$80B0) --
-P:8052:b23_slot_init:Initialize slot machine
-P:8068:b23_slot_setup:Setup slot graphics
-P:8078:b23_slot_render:Render slot display
-P:8084:b23_slot_main_loop:Slot machine main loop
-P:80B1:b23_check_win:Check for win condition
+P:5C052:b23_slot_init:Initialize slot machine
+P:5C068:b23_slot_setup:Setup slot graphics
+P:5C078:b23_slot_render:Render slot display
+P:5C084:b23_slot_main_loop:Slot machine main loop
+P:5C0B1:b23_check_win:Check for win condition
 
 # -- Bank 23 Win Processing ($80C1-$8118) --
-P:80C1:b23_process_win:Process winning combination
-P:80CF:b23_update_counter:Update win counter ($62B0)
-P:80E1:b23_calc_payout:Calculate payout amount
-P:80F4:b23_show_payout:Show payout on screen
-P:8107:b23_wait_display:Wait and display loop
+P:5C0C1:b23_process_win:Process winning combination
+P:5C0CF:b23_update_counter:Update win counter ($62B0)
+P:5C0E1:b23_calc_payout:Calculate payout amount
+P:5C0F4:b23_show_payout:Show payout on screen
+P:5C107:b23_wait_display:Wait and display loop
 
 # -- Bank 23 Input Loop ($8118-$8178) --
-P:8118:b23_clear_display:Clear slot display
-P:812E:b23_input_loop:Main input processing loop
-P:8141:b23_check_buttons:Check button input
-P:8150:b23_cursor_pos1:Move cursor to position 1
-P:8162:b23_cursor_pos2:Move cursor to position 2
-P:8174:b23_jump_payout:Jump to payout handler
-P:8179:b23_process_bet:Process bet amount
+P:5C118:b23_clear_display:Clear slot display
+P:5C12E:b23_input_loop:Main input processing loop
+P:5C141:b23_check_buttons:Check button input
+P:5C150:b23_cursor_pos1:Move cursor to position 1
+P:5C162:b23_cursor_pos2:Move cursor to position 2
+P:5C174:b23_jump_payout:Jump to payout handler
+P:5C179:b23_process_bet:Process bet amount
 
 # -- Bank 23 Display Helpers ($818F-$81D6) --
-P:818F:b23_save_regs:Save registers to $FD-$FF
-P:819F:b23_shift_regs:Shift registers for display
-P:81B2:b23_load_display:Load display value
-P:81C5:b23_payout_table:Payout multiplier table
+P:5C18F:b23_save_regs:Save registers to $FD-$FF
+P:5C19F:b23_shift_regs:Shift registers for display
+P:5C1B2:b23_load_display:Load display value
+P:5C1C5:b23_payout_table:Payout multiplier table
 
 # -- Bank 23 Spin Check ($81D7-$8236) --
-P:81D7:b23_check_spin:Check if spinning
-P:81DD:b23_set_spin_speed:Set spin speed ($2E-$30)
-P:81F2:b23_is_spinning:Check spin state, return in carry
+P:5C1D7:b23_check_spin:Check if spinning
+P:5C1DD:b23_set_spin_speed:Set spin speed ($2E-$30)
+P:5C1F2:b23_is_spinning:Check spin state, return in carry
 
 # -- Bank 23 Reel Animation ($8237-$8285) --
-P:8237:b23_animate_reels:Animate spinning reels
-P:8244:b23_stop_reel:Stop individual reel
-P:8260:b23_reel_update:Update reel position
-P:8286:b23_init_spin:Initialize spin sequence
+P:5C237:b23_animate_reels:Animate spinning reels
+P:5C244:b23_stop_reel:Stop individual reel
+P:5C260:b23_reel_update:Update reel position
+P:5C286:b23_init_spin:Initialize spin sequence
 
 # -- Bank 23 Symbol Drawing ($8654-$889) --
-P:8654:b23_draw_symbols:Draw slot symbols
-P:896E:b23_symbol_table:Symbol graphics table
-P:89EE:b23_animate_win:Animate winning combination
+P:5C654:b23_draw_symbols:Draw slot symbols
+P:5C96E:b23_symbol_table:Symbol graphics table
+P:5C9EE:b23_animate_win:Animate winning combination
 
 # -- Bank 23 Coin Operations ($8A3F-$8BE6) --
-P:8A3F:b23_coin_init:Initialize coin counter
-P:8A6B:b23_add_coins:Add coins to total
-P:8AAC:b23_update_coins:Update coin display
-P:8BE7:b23_load_coins:Load coin values
+P:5CA3F:b23_coin_init:Initialize coin counter
+P:5CA6B:b23_add_coins:Add coins to total
+P:5CAAC:b23_update_coins:Update coin display
+P:5CBE7:b23_load_coins:Load coin values
 
 # -- Bank 23 Display Update ($8BF4-$8C68) --
-P:8BF4:b23_check_display:Check display state
-P:8C04:b23_render_digits:Render digit display
-P:8C24:b23_scroll_display:Scroll display area
-P:8C39:b23_copy_digits:Copy digit values
-P:8C45:b23_output_digits:Output digits to screen
+P:5CBF4:b23_check_display:Check display state
+P:5CC04:b23_render_digits:Render digit display
+P:5CC24:b23_scroll_display:Scroll display area
+P:5CC39:b23_copy_digits:Copy digit values
+P:5CC45:b23_output_digits:Output digits to screen
 
 # -- Bank 23 Panel Update ($8C69-$8C9C) --
-P:8C69:b23_update_panel:Update info panel
-P:8C83:b23_init_panel:Initialize panel display
-P:8C9D:b23_refresh_panel:Refresh panel data
+P:5CC69:b23_update_panel:Update info panel
+P:5CC83:b23_init_panel:Initialize panel display
+P:5CC9D:b23_refresh_panel:Refresh panel data
 
 # -- Bank 23 Animation ($8CB7-$8D19) --
-P:8CB7:b23_anim_panel:Animate panel elements
-P:8CD0:b23_draw_panel:Draw panel frame
-P:8CDD:b23_load_gfx1:Load graphics set 1
-P:8CED:b23_load_gfx2:Load graphics set 2
-P:8CFD:b23_load_gfx3:Load graphics set 3
-P:8D0A:b23_setup_palette:Setup color palette
+P:5CCB7:b23_anim_panel:Animate panel elements
+P:5CCD0:b23_draw_panel:Draw panel frame
+P:5CCDD:b23_load_gfx1:Load graphics set 1
+P:5CCED:b23_load_gfx2:Load graphics set 2
+P:5CCFD:b23_load_gfx3:Load graphics set 3
+P:5CD0A:b23_setup_palette:Setup color palette
 
 # -- Bank 23 Reel Control ($8D1A-$8D7E) --
-P:8D1A:b23_stop_delay:Stop reel with delay
-P:8D1F:b23_reel_handler:Main reel handler
-P:8D25:b23_reel_animate:Reel animation step
-P:8D3E:b23_position_table:Reel position table
-P:8D43:b23_reel_init:Initialize reel state
-P:8D58:b23_reel_col2:Reel column 2 handler
-P:8D5D:b23_reel_col13:Reel column 1 and 3 handler
-P:8D67:b23_reel_col04:Reel column 0 and 4 handler
-P:8D6E:b23_copy_reel:Copy reel graphics
+P:5CD1A:b23_stop_delay:Stop reel with delay
+P:5CD1F:b23_reel_handler:Main reel handler
+P:5CD25:b23_reel_animate:Reel animation step
+P:5CD3E:b23_position_table:Reel position table
+P:5CD43:b23_reel_init:Initialize reel state
+P:5CD58:b23_reel_col2:Reel column 2 handler
+P:5CD5D:b23_reel_col13:Reel column 1 and 3 handler
+P:5CD67:b23_reel_col04:Reel column 0 and 4 handler
+P:5CD6E:b23_copy_reel:Copy reel graphics
 
 # -- Bank 23 Main Game Loop ($8D7F-$8DBB) --
-P:8D7F:b23_game_loop:Casino game loop
-P:8D8B:b23_frame_update:Frame update handler
-P:8DA0:b23_check_input_game:Check input during game
-P:8DA7:b23_handle_button:Handle button press
+P:5CD7F:b23_game_loop:Casino game loop
+P:5CD8B:b23_frame_update:Frame update handler
+P:5CDA0:b23_check_input_game:Check input during game
+P:5CDA7:b23_handle_button:Handle button press
 
 # -- Bank 23 Result Display ($8DC4-$8EA8) --
-P:8DC4:b23_show_result:Show spin result
-P:8DE5:b23_flash_win:Flash winning symbols
-P:8E30:b23_clear_flash:Clear flash state
-P:8E52:b23_increment_roll:Increment roll counter
-P:8EA9:b23_final_display:Final result display
+P:5CDC4:b23_show_result:Show spin result
+P:5CDE5:b23_flash_win:Flash winning symbols
+P:5CE30:b23_clear_flash:Clear flash state
+P:5CE52:b23_increment_roll:Increment roll counter
+P:5CEA9:b23_final_display:Final result display
 
 # -- Bank 23 Spin Control ($8ED6-$8F63) --
-P:8ED6:b23_start_spin:Start reel spinning
-P:8F37:b23_spin_check:Check spin status
-P:8F42:b23_spin_update:Update spin state
-P:8F5A:b23_init_spin_vars:Initialize spin variables
-P:8F64:b23_random_offset:Generate random offset
+P:5CED6:b23_start_spin:Start reel spinning
+P:5CF37:b23_spin_check:Check spin status
+P:5CF42:b23_spin_update:Update spin state
+P:5CF5A:b23_init_spin_vars:Initialize spin variables
+P:5CF64:b23_random_offset:Generate random offset
 
 # -- Bank 23 Probability ($8F9E-$90C3) --
-P:8F9E:b23_calc_random:Calculate random result
-P:8FC2:b23_weight_table:Probability weight table
-P:9042:b23_symbol_weights:Symbol probability weights
+P:5CF9E:b23_calc_random:Calculate random result
+P:5CFC2:b23_weight_table:Probability weight table
+P:5D042:b23_symbol_weights:Symbol probability weights
 
 # -- Bank 23 Graphics Data ($90C4-$9117) --
-P:90C4:b23_gfx_data1:Graphics data set 1
-P:90EE:b23_gfx_data2:Graphics data set 2
-P:9118:b23_gfx_data3:Graphics data set 3
+P:5D0C4:b23_gfx_data1:Graphics data set 1
+P:5D0EE:b23_gfx_data2:Graphics data set 2
+P:5D118:b23_gfx_data3:Graphics data set 3
 
 # -- Bank 23 Sound/VBlank ($91AF-$9241) --
-P:91AF:b23_vblank_wait:Wait for VBlank
-P:91E7:b23_play_sound:Play slot sound
-P:9242:b23_nmi_handler:NMI/VBlank handler
+P:5D1AF:b23_vblank_wait:Wait for VBlank
+P:5D1E7:b23_play_sound:Play slot sound
+P:5D242:b23_nmi_handler:NMI/VBlank handler
 
 # -- Bank 23 Display Setup ($92B4-$9313) --
-P:92B4:b23_setup_screen:Setup screen mode
-P:92C5:b23_clear_screen:Clear screen buffer
-P:92F6:b23_load_palette:Load color palette
-P:9314:b23_init_sprites:Initialize sprites
+P:5D2B4:b23_setup_screen:Setup screen mode
+P:5D2C5:b23_clear_screen:Clear screen buffer
+P:5D2F6:b23_load_palette:Load color palette
+P:5D314:b23_init_sprites:Initialize sprites
 
 # -- Bank 23 Win Check ($9446-$9598) --
-P:9446:b23_eval_win:Evaluate winning line
-P:9520:b23_check_line:Check single line
+P:5D446:b23_eval_win:Evaluate winning line
+P:5D520:b23_check_line:Check single line
 
 # -- Bank 23 Monster Arena ($9BF9-$9C93) --
-P:9BF9:b23_arena_init:Initialize monster arena
-P:9C0D:b23_arena_setup:Setup arena display
-P:9C35:b23_arena_main:Arena main loop
-P:9C44:b23_arena_update:Arena frame update
-P:9C5F:b23_arena_vars:Initialize arena variables
-P:9C7E:b23_arena_flags:Set arena flags
+P:5DBF9:b23_arena_init:Initialize monster arena
+P:5DC0D:b23_arena_setup:Setup arena display
+P:5DC35:b23_arena_main:Arena main loop
+P:5DC44:b23_arena_update:Arena frame update
+P:5DC5F:b23_arena_vars:Initialize arena variables
+P:5DC7E:b23_arena_flags:Set arena flags
 
 # -- Bank 23 Betting ($9C94-$9CD7) --
-P:9C94:b23_bet_menu:Betting menu
-P:9CAB:b23_bet_init:Initialize bet
-P:9CB5:b23_bet_input:Bet input loop
-P:9CD1:b23_confirm_bet:Confirm bet amount
-P:9CD8:b23_draw_bet:Draw bet display
+P:5DC94:b23_bet_menu:Betting menu
+P:5DCAB:b23_bet_init:Initialize bet
+P:5DCB5:b23_bet_input:Bet input loop
+P:5DCD1:b23_confirm_bet:Confirm bet amount
+P:5DCD8:b23_draw_bet:Draw bet display
 
 # -- Bank 23 Monster Fight ($9CFE-$9DE5) --
-P:9CFE:b23_fight_round:Process fight round
-P:9D08:b23_calc_damage:Calculate damage
-P:9D23:b23_check_ko:Check for knockout
-P:9D41:b23_update_hp:Update HP display
+P:5DCFE:b23_fight_round:Process fight round
+P:5DD08:b23_calc_damage:Calculate damage
+P:5DD23:b23_check_ko:Check for knockout
+P:5DD41:b23_update_hp:Update HP display
 
 # -- Bank 23 Fight Animation ($9DD0-$9EE5) --
-P:9DD0:b23_fight_anim:Fight animation
-P:9DE6:b23_show_damage:Show damage numbers
-P:9E76:b23_monster_anim:Monster animation
+P:5DDD0:b23_fight_anim:Fight animation
+P:5DDE6:b23_show_damage:Show damage numbers
+P:5DE76:b23_monster_anim:Monster animation
 
 # -- Bank 23 Arena Results ($9EE6-$9FE3) --
-P:9EE6:b23_fight_result:Process fight result
-P:9F32:b23_payout_arena:Calculate arena payout
-P:9FE4:b23_end_fight:End fight sequence
+P:5DEE6:b23_fight_result:Process fight result
+P:5DF32:b23_payout_arena:Calculate arena payout
+P:5DFE4:b23_end_fight:End fight sequence
 
 # -- Bank 23 Arena Display ($9FFC-$A04F) --
-P:9FFC:b23_draw_arena:Draw arena screen
-P:A026:b23_draw_monsters:Draw monster sprites
-P:A050:b23_update_arena:Update arena display
+P:5DFFC:b23_draw_arena:Draw arena screen
+P:5E026:b23_draw_monsters:Draw monster sprites
+P:5E050:b23_update_arena:Update arena display
 
 # -- Bank 23 Monster Stats ($A33C-$A599) --
-P:A33C:b23_load_monster:Load monster data
-P:A3A5:b23_calc_stats:Calculate monster stats
-P:A57A:b23_monster_table:Monster stat table
-P:A599:b23_monster_gfx:Monster graphics
+P:5E33C:b23_load_monster:Load monster data
+P:5E3A5:b23_calc_stats:Calculate monster stats
+P:5E57A:b23_monster_table:Monster stat table
+P:5E599:b23_monster_gfx:Monster graphics
 
 # -- Bank 23 Arena Helpers ($A7FE-$A874) --
-P:A7FE:b23_arena_helper1:Arena helper routine 1
-P:A875:b23_arena_helper2:Arena helper routine 2
+P:5E7FE:b23_arena_helper1:Arena helper routine 1
+P:5E875:b23_arena_helper2:Arena helper routine 2
 
 # -- Bank 23 Graphics/Tile Data ($AC55-$BFB5) --
-P:AC55:b23_tile_data:Tile graphics data
-P:B4C1:b23_palette_data:Palette data
-P:B6F8:b23_sprite_data:Sprite graphics
-P:BA44:b23_symbol_gfx:Slot symbol graphics
-P:BEFA:b23_bg_data:Background tile data
+P:5EC55:b23_tile_data:Tile graphics data
+P:5F4C1:b23_palette_data:Palette data
+P:5F6F8:b23_sprite_data:Sprite graphics
+P:5FA44:b23_symbol_gfx:Slot symbol graphics
+P:5FEFA:b23_bg_data:Background tile data
 
 # -- Bank 23 RAM Variables --
 G:0029:b23_reel_pos:Reel position array (6)
@@ -3483,59 +3490,59 @@ G:62B0:b23_win_counter:Win counter array (8)
 # ============================================================
 
 # -- Bank 24 Metatile Data ($8000-$A4BF) --
-P:8000:b24_metatile_data:Metatile definition table
-P:8047:b24_metatile_flags:Metatile flag bytes
-P:80C0:b24_tile_patterns:Tile pattern data
+P:60000:b24_metatile_data:Metatile definition table
+P:60047:b24_metatile_flags:Metatile flag bytes
+P:600C0:b24_tile_patterns:Tile pattern data
 
 # -- Bank 24 Map Position Calculation ($AFE6-$B025) --
-P:AFE6:b24_calc_map_pos:Calculate map position
-P:AFEA:b24_load_offsets:Load X/Y offsets from $E7-$E9
-P:B004:b24_add_y_offset:Add Y offset to position
-P:B010:b24_calc_nametable:Calculate nametable address
-P:B023:b24_jump_store:Jump to store result
+P:62FE6:b24_calc_map_pos:Calculate map position
+P:62FEA:b24_load_offsets:Load X/Y offsets from $E7-$E9
+P:63004:b24_add_y_offset:Add Y offset to position
+P:63010:b24_calc_nametable:Calculate nametable address
+P:63023:b24_jump_store:Jump to store result
 
 # -- Bank 24 Extended Map Calc ($B026-$B0B4) --
-P:B026:b24_extended_calc:Extended map calculation
-P:B04F:b24_store_x_pos:Store X position
-P:B06F:b24_add_y_extended:Add Y with extended check
-P:B080:b24_store_y_pos:Store Y position
-P:B0A0:b24_final_calc:Final position calculation
-P:B0B5:b24_call_store:Call store routine
+P:63026:b24_extended_calc:Extended map calculation
+P:6304F:b24_store_x_pos:Store X position
+P:6306F:b24_add_y_extended:Add Y with extended check
+P:63080:b24_store_y_pos:Store Y position
+P:630A0:b24_final_calc:Final position calculation
+P:630B5:b24_call_store:Call store routine
 
 # -- Bank 24 Map Split Handler ($B0BD-$B0E4) --
-P:B0BD:b24_split_check:Check for nametable split
-P:B0D2:b24_split_y:Handle Y split case
-P:B0DE:b24_split_finish:Finish split handling
+P:630BD:b24_split_check:Check for nametable split
+P:630D2:b24_split_y:Handle Y split case
+P:630DE:b24_split_finish:Finish split handling
 
 # -- Bank 24 Map Store ($B0E5-$B11F) --
-P:B0E5:b24_store_single:Store single tile update
-P:B0FA:b24_store_multi:Store multi-tile update
-P:B10E:b24_store_loop:Store data loop
-P:B116:b24_increment_index:Increment buffer index ($050A)
+P:630E5:b24_store_single:Store single tile update
+P:630FA:b24_store_multi:Store multi-tile update
+P:6310E:b24_store_loop:Store data loop
+P:63116:b24_increment_index:Increment buffer index ($050A)
 
 # -- Bank 24 Screen Init ($B120-$B148) --
-P:B120:b24_init_screen:Initialize screen position
-P:B126:b24_call_c662:Call C662 helper
-P:B12B:b24_calc_scroll:Calculate scroll offsets
-P:B140:b24_store_scroll:Store scroll values
+P:63120:b24_init_screen:Initialize screen position
+P:63126:b24_call_c662:Call C662 helper
+P:6312B:b24_calc_scroll:Calculate scroll offsets
+P:63140:b24_store_scroll:Store scroll values
 
 # -- Bank 24 Tile Lookup ($B149-$B1A4) --
-P:B149:b24_tile_lookup:Look up tile at position
-P:B15C:b24_check_y_bounds:Check Y boundary (0B-12)
-P:B166:b24_calc_tile_idx:Calculate tile table index
-P:B184:b24_read_tile:Read tile from table ($B20A)
-P:B192:b24_tile_not_found:Tile not found handler
-P:B197:b24_check_overflow:Check for buffer overflow
+P:63149:b24_tile_lookup:Look up tile at position
+P:6315C:b24_check_y_bounds:Check Y boundary (0B-12)
+P:63166:b24_calc_tile_idx:Calculate tile table index
+P:63184:b24_read_tile:Read tile from table ($B20A)
+P:63192:b24_tile_not_found:Tile not found handler
+P:63197:b24_check_overflow:Check for buffer overflow
 
 # -- Bank 24 Screen Update Loop ($B1A5-$B209) --
-P:B1A5:b24_update_screen:Update full screen
-P:B1AD:b24_update_loop_y:Y update loop
-P:B1AF:b24_update_loop_x:X update loop
-P:B1B8:b24_call_lookup:Call tile lookup
-P:B1C0:b24_next_y:Next Y position
+P:631A5:b24_update_screen:Update full screen
+P:631AD:b24_update_loop_y:Y update loop
+P:631AF:b24_update_loop_x:X update loop
+P:631B8:b24_call_lookup:Call tile lookup
+P:631C0:b24_next_y:Next Y position
 
 # -- Bank 24 Tile Table ($B20A) --
-P:B20A:b24_tile_table:Tile type lookup table
+P:6320A:b24_tile_table:Tile type lookup table
 
 # -- Bank 24 RAM Variables --
 G:00DA:b24_row_count:Row count for update
@@ -3564,162 +3571,162 @@ G:050B:b24_update_count:Update count
 # - $7140-$7143: Current tile data for collision
 
 # -- Bank 30 Entry Points ($8000-$80BD) --
-P:8000:b30_rst_handler:Bank 30 reset/entry point
-P:8094:b30_brk_entry:BRK $FB handler - NPC dispatcher
-P:809A:b30_jump_dispatch:Jump table dispatcher (ASL/TAX pattern)
-P:80AA:b30_jump_table:Jump table for NPC operations
-P:80BE:b30_npc_collision:NPC tile collision check entry
+P:78000:b30_rst_handler:Bank 30 reset/entry point
+P:78094:b30_brk_entry:BRK $FB handler - NPC dispatcher
+P:7809A:b30_jump_dispatch:Jump table dispatcher (ASL/TAX pattern)
+P:780AA:b30_jump_table:Jump table for NPC operations
+P:780BE:b30_npc_collision:NPC tile collision check entry
 
 # -- Bank 30 NPC Collision Check ($80BE-$8100) --
-P:80C5:b30_check_tile_type:Check tile type at NPC position
-P:80D2:b30_tile_passable:Test if tile is passable
-P:80E8:b30_collision_result:Return collision result
-P:80F9:b30_passable_exit:Exit - tile is passable
+P:780C5:b30_check_tile_type:Check tile type at NPC position
+P:780D2:b30_tile_passable:Test if tile is passable
+P:780E8:b30_collision_result:Return collision result
+P:780F9:b30_passable_exit:Exit - tile is passable
 
 # -- Bank 30 NPC Direction Update ($8101-$8125) --
-P:8101:b30_update_direction:Update NPC direction flags
-P:8108:b30_set_facing:Set NPC facing direction in $7000,X
-P:8115:b30_clear_motion:Clear motion flags
-P:8121:b30_direction_done:Direction update complete
+P:78101:b30_update_direction:Update NPC direction flags
+P:78108:b30_set_facing:Set NPC facing direction in $7000,X
+P:78115:b30_clear_motion:Clear motion flags
+P:78121:b30_direction_done:Direction update complete
 
 # -- Bank 30 NPC Slot Search ($8126-$8145) --
-P:8126:b30_find_npc_slot:Find empty NPC slot in $7020
-P:812E:b30_slot_search_loop:Loop through slots $06-$20
-P:813B:b30_slot_found:Empty slot found
-P:8140:b30_no_slot:No empty slot available
-P:8145:b30_slot_return:Return from slot search
+P:78126:b30_find_npc_slot:Find empty NPC slot in $7020
+P:7812E:b30_slot_search_loop:Loop through slots $06-$20
+P:7813B:b30_slot_found:Empty slot found
+P:78140:b30_no_slot:No empty slot available
+P:78145:b30_slot_return:Return from slot search
 
 # -- Bank 30 Map Special Handler ($8146-$81AD) --
-P:8146:b30_map_special:Handle special map locations
-P:814F:b30_check_location:Check against location table
-P:8160:b30_special_match:Location matched - execute handler
-P:8170:b30_no_match:No special location found
-P:819E:b30_location_table:Map location lookup table
+P:78146:b30_map_special:Handle special map locations
+P:7814F:b30_check_location:Check against location table
+P:78160:b30_special_match:Location matched - execute handler
+P:78170:b30_no_match:No special location found
+P:7819E:b30_location_table:Map location lookup table
 
 # -- Bank 30 Player Position ($81AE-$81CC) --
-P:81AE:b30_get_player_pos:Get player position from $6F60/$6F80
-P:81B5:b30_apply_direction:Apply direction offset
-P:81C2:b30_store_pos:Store position to $51/$52
-P:81CC:b30_pos_return:Return from position routine
+P:781AE:b30_get_player_pos:Get player position from $6F60/$6F80
+P:781B5:b30_apply_direction:Apply direction offset
+P:781C2:b30_store_pos:Store position to $51/$52
+P:781CC:b30_pos_return:Return from position routine
 
 # -- Bank 30 Sprite Y Adjust ($892A-$8949) --
-P:892A:b30_sprite_y_loop:Adjust sprite Y in OAM buffer
-P:8940:b30_store_sprite_y:Store adjusted Y
-P:8943:b30_next_sprite:Process next sprite (X+4)
+P:7892A:b30_sprite_y_loop:Adjust sprite Y in OAM buffer
+P:78940:b30_store_sprite_y:Store adjusted Y
+P:78943:b30_next_sprite:Process next sprite (X+4)
 
 # -- Bank 30 Map Transition Table ($894A-$89C4) --
-P:894A:b30_find_transition:Find map transition entry
-P:894C:b30_trans_search:Search transition table
-P:895D:b30_trans_infinite:Error - infinite loop trap
-P:8960:b30_trans_found:Transition entry found
-P:896A:b30_load_trans_data:Load transition data
-P:8986:b30_check_transition:Check transition at coords
-P:89BA:b30_apply_transition:Apply transition direction
-P:89C4:b30_trans_return:Return from transition
+P:7894A:b30_find_transition:Find map transition entry
+P:7894C:b30_trans_search:Search transition table
+P:7895D:b30_trans_infinite:Error - infinite loop trap
+P:78960:b30_trans_found:Transition entry found
+P:7896A:b30_load_trans_data:Load transition data
+P:78986:b30_check_transition:Check transition at coords
+P:789BA:b30_apply_transition:Apply transition direction
+P:789C4:b30_trans_return:Return from transition
 
 # -- Bank 30 Scroll Update ($8A0D-$8A67) --
-P:8A0D:b30_scroll_update:Update scroll position
-P:8A23:b30_scroll_done:Scroll update complete
-P:8A47:b30_scroll_special:Special scroll handling
-P:8A68:b30_calc_scroll:Calculate scroll parameters
+P:78A0D:b30_scroll_update:Update scroll position
+P:78A23:b30_scroll_done:Scroll update complete
+P:78A47:b30_scroll_special:Special scroll handling
+P:78A68:b30_calc_scroll:Calculate scroll parameters
 
 # -- Bank 30 Tile Write ($8A9A-$8ABB) --
-P:8A9A:b30_tile_write_loop:Write tiles to map buffer
-P:8AA4:b30_apply_tile:Apply tile to buffer
-P:8ABB:b30_write_done:Tile write complete
+P:78A9A:b30_tile_write_loop:Write tiles to map buffer
+P:78AA4:b30_apply_tile:Apply tile to buffer
+P:78ABB:b30_write_done:Tile write complete
 
 # -- Bank 30 Sprite Fade ($8ABC-$8AFA) --
-P:8ABC:b30_sprite_fade:Fade sprites out/in
-P:8ACB:b30_fade_loop:Fade animation loop
-P:8ACD:b30_process_sprite:Process sprite visibility
-P:8AE6:b30_next_fade_spr:Next sprite for fade
-P:8AFB:b30_adjust_sprite:Adjust sprite Y for fade
+P:78ABC:b30_sprite_fade:Fade sprites out/in
+P:78ACB:b30_fade_loop:Fade animation loop
+P:78ACD:b30_process_sprite:Process sprite visibility
+P:78AE6:b30_next_fade_spr:Next sprite for fade
+P:78AFB:b30_adjust_sprite:Adjust sprite Y for fade
 
 # -- Bank 30 Party Position Init ($9320-$9421) --
-P:9320:b30_init_party_pos:Initialize party positions
-P:9322:b30_set_hero_x:Set hero X at $6F60
-P:9327:b30_set_hero_y:Set hero Y at $6F80
-P:932A:b30_set_party_1:Set party member 1 position
-P:9336:b30_set_party_y:Set party Y positions
-P:9367:b30_clear_npc_flags:Clear NPC flags $7046-$7051
-P:9396:b30_chapter_3_setup:Chapter 3 party setup
-P:93CF:b30_count_party:Count active party members
-P:93E9:b30_setup_wagon:Setup wagon positions
-P:9421:b30_party_init_done:Party init complete
+P:79320:b30_init_party_pos:Initialize party positions
+P:79322:b30_set_hero_x:Set hero X at $6F60
+P:79327:b30_set_hero_y:Set hero Y at $6F80
+P:7932A:b30_set_party_1:Set party member 1 position
+P:79336:b30_set_party_y:Set party Y positions
+P:79367:b30_clear_npc_flags:Clear NPC flags $7046-$7051
+P:79396:b30_chapter_3_setup:Chapter 3 party setup
+P:793CF:b30_count_party:Count active party members
+P:793E9:b30_setup_wagon:Setup wagon positions
+P:79421:b30_party_init_done:Party init complete
 
 # -- Bank 30 Movement Calculation ($9EC0-$9F40) --
-P:9EC0:b30_calc_movement:Calculate movement delta
-P:9EE1:b30_move_check_fail:Movement check failed
-P:9F0C:b30_calc_offset:Calculate position offset
-P:9F21:b30_apply_offset:Apply offset to position
-P:9F40:b30_read_tile_pos:Read tile at position
+P:79EC0:b30_calc_movement:Calculate movement delta
+P:79EE1:b30_move_check_fail:Movement check failed
+P:79F0C:b30_calc_offset:Calculate position offset
+P:79F21:b30_apply_offset:Apply offset to position
+P:79F40:b30_read_tile_pos:Read tile at position
 
 # -- Bank 30 NPC Slot Management ($9F47-$A0A6) --
-P:9F47:b30_npc_slot_init:Initialize NPC slot data
-P:9F54:b30_scan_npc_slots:Scan NPC slots for type
-P:9F56:b30_slot_scan_loop:Loop through $6F20 array
-P:9F6F:b30_slot_scan_done:Slot scan complete
-P:9FA6:b30_check_slot_type:Check NPC type in slot
-P:A02B:b30_slot_mgmt_end:End slot management
-P:A046:b30_clear_npc_array:Clear $6E5E NPC array
-P:A0A6:b30_array_clear_done:Array clear complete
+P:79F47:b30_npc_slot_init:Initialize NPC slot data
+P:79F54:b30_scan_npc_slots:Scan NPC slots for type
+P:79F56:b30_slot_scan_loop:Loop through $6F20 array
+P:79F6F:b30_slot_scan_done:Slot scan complete
+P:79FA6:b30_check_slot_type:Check NPC type in slot
+P:7A02B:b30_slot_mgmt_end:End slot management
+P:7A046:b30_clear_npc_array:Clear $6E5E NPC array
+P:7A0A6:b30_array_clear_done:Array clear complete
 
 # -- Bank 30 Movement Validation ($A0B1-$A155) --
-P:A0B1:b30_validate_move:Validate movement for NPC
-P:A0B3:b30_validate_loop:Validation loop
-P:A0B8:b30_check_npc_tile:Check NPC tile at $6F40,X
-P:A0D6:b30_validate_done:Movement validation complete
+P:7A0B1:b30_validate_move:Validate movement for NPC
+P:7A0B3:b30_validate_loop:Validation loop
+P:7A0B8:b30_check_npc_tile:Check NPC tile at $6F40,X
+P:7A0D6:b30_validate_done:Movement validation complete
 
 # -- Bank 30 Party Shuffle ($AB6B-$AC1A) --
-P:AB6B:b30_copy_positions:Copy positions to previous arrays
-P:AB6D:b30_copy_loop:Copy $6F60->$6FA0, $6F80->$6FC0
-P:AB7E:b30_setup_party_vis:Setup party visibility flags
-P:AB90:b30_check_wagon_add:Check if adding wagon member
-P:ABB2:b30_shift_party:Shift party slots down
-P:ABE9:b30_clear_front:Clear front party slots
-P:ABFE:b30_shuffle_return:Return from shuffle
-P:AC04:b30_hide_wagon:Hide wagon party members
-P:AC12:b30_hide_last_two:Hide last two party slots
+P:7AB6B:b30_copy_positions:Copy positions to previous arrays
+P:7AB6D:b30_copy_loop:Copy $6F60->$6FA0, $6F80->$6FC0
+P:7AB7E:b30_setup_party_vis:Setup party visibility flags
+P:7AB90:b30_check_wagon_add:Check if adding wagon member
+P:7ABB2:b30_shift_party:Shift party slots down
+P:7ABE9:b30_clear_front:Clear front party slots
+P:7ABFE:b30_shuffle_return:Return from shuffle
+P:7AC04:b30_hide_wagon:Hide wagon party members
+P:7AC12:b30_hide_last_two:Hide last two party slots
 
 # -- Bank 30 Tile Position Lookup ($ACD9-$AD50) --
-P:ACD9:b30_get_tile_at:Get tile at party position
-P:ACE7:b30_tile_lookup_jmp:Jump to tile lookup
-P:ACEA:b30_update_party_dir:Update all party direction flags
-P:AD07:b30_follow_leader:Make party follow leader position
-P:AD21:b30_next_follower:Process next follower
+P:7ACD9:b30_get_tile_at:Get tile at party position
+P:7ACE7:b30_tile_lookup_jmp:Jump to tile lookup
+P:7ACEA:b30_update_party_dir:Update all party direction flags
+P:7AD07:b30_follow_leader:Make party follow leader position
+P:7AD21:b30_next_follower:Process next follower
 
 # -- Bank 30 Event Handler ($B447-$B4D2) --
-P:B447:b30_event_handler:Handle map/NPC events
-P:B44A:b30_event_check:Check for event trigger
-P:B462:b30_event_dispatch:Dispatch to event handler
-P:B476:b30_event_jmp_ind:Indirect jump to event routine
-P:B47F:b30_event_default:Default event handler
-P:B4B6:b30_event_no_match:No matching event
-P:B4D3:b30_event_return:Return from event
+P:7B447:b30_event_handler:Handle map/NPC events
+P:7B44A:b30_event_check:Check for event trigger
+P:7B462:b30_event_dispatch:Dispatch to event handler
+P:7B476:b30_event_jmp_ind:Indirect jump to event routine
+P:7B47F:b30_event_default:Default event handler
+P:7B4B6:b30_event_no_match:No matching event
+P:7B4D3:b30_event_return:Return from event
 
 # -- Bank 30 Dungeon Check ($B4DB-$B5A2) --
-P:B4DB:b30_dungeon_check:Check if in dungeon mode
-P:B4E1:b30_dungeon_table:Search dungeon table
-P:B4F4:b30_compare_map:Compare map number
-P:B519:b30_not_dungeon:Not in dungeon mode
-P:B52F:b30_dungeon_event:Handle dungeon-specific event
-P:B559:b30_dungeon_flags:Handle dungeon flags
+P:7B4DB:b30_dungeon_check:Check if in dungeon mode
+P:7B4E1:b30_dungeon_table:Search dungeon table
+P:7B4F4:b30_compare_map:Compare map number
+P:7B519:b30_not_dungeon:Not in dungeon mode
+P:7B52F:b30_dungeon_event:Handle dungeon-specific event
+P:7B559:b30_dungeon_flags:Handle dungeon flags
 
 # -- Bank 30 NPC Talk Handler ($B5A3-$B5C2) --
-P:B5A3:b30_npc_talk:Handle talking to NPC
-P:B5A5:b30_set_npc_id:Set current NPC ID at $627A
-P:B5B2:b30_talk_dispatch:Dispatch to talk handler
+P:7B5A3:b30_npc_talk:Handle talking to NPC
+P:7B5A5:b30_set_npc_id:Set current NPC ID at $627A
+P:7B5B2:b30_talk_dispatch:Dispatch to talk handler
 
 # -- Bank 30 Lookup Tables --
-P:BC34:b30_event_table_size:Event dispatch table size
-P:BC35:b30_event_id_table:Event ID lookup table
-P:BC3D:b30_event_ptr_table:Event handler pointer table
-P:BC55:b30_dungeon_tbl_size:Dungeon table size
-P:BC56:b30_dungeon_id_table:Dungeon ID lookup table
-P:BC62:b30_dungeon_ptr_table:Dungeon handler pointer table
-P:BDAB:b30_direction_masks:Direction bitmask table
-P:BDB3:b30_direction_offsets:Direction offset table
-P:BF59:b30_location_lookup:Location lookup data table
+P:7BC34:b30_event_table_size:Event dispatch table size
+P:7BC35:b30_event_id_table:Event ID lookup table
+P:7BC3D:b30_event_ptr_table:Event handler pointer table
+P:7BC55:b30_dungeon_tbl_size:Dungeon table size
+P:7BC56:b30_dungeon_id_table:Dungeon ID lookup table
+P:7BC62:b30_dungeon_ptr_table:Dungeon handler pointer table
+P:7BDAB:b30_direction_masks:Direction bitmask table
+P:7BDB3:b30_direction_offsets:Direction offset table
+P:7BF59:b30_location_lookup:Location lookup data table
 
 # -- Bank 30 RAM Variables --
 G:0051:b30_pos_x:Current X position
@@ -3771,152 +3778,152 @@ G:6272:b30_progress_flags:Progress/story flags
 # NMI/VBlank synchronization, and NPC AI/movement routines.
 
 # -- Bank 15 Jump Table ($8000-$803C) --
-P:8000:b15_jump_table:Bank 15 jump table entry
-P:8001:b15_jmp_e9ce:Jump to $E9CE
-P:8004:b15_jmp_e54b:Jump to $E54B
-P:8007:b15_jmp_f1ab:Jump to $F1AB
-P:800A:b15_jmp_efdb:Jump to $EFDB
-P:800D:b15_jmp_efd7:Jump to $EFD7
-P:8010:b15_jmp_f1fa:Jump to $F1FA
-P:8013:b15_jmp_f223:Jump to $F223
-P:8016:b15_jmp_e944:Jump to $E944
-P:802E:b15_jmp_f4ab:Jump to $F4AB
-P:8031:b15_jmp_f58a:Jump to $F58A
-P:8034:b15_jmp_f58b:Jump to $F58B
-P:8037:b15_jmp_fabe:Jump to $FABE
+P:3C000:b15_jump_table:Bank 15 jump table entry
+P:3C001:b15_jmp_e9ce:Jump to $E9CE
+P:3C004:b15_jmp_e54b:Jump to $E54B
+P:3C007:b15_jmp_f1ab:Jump to $F1AB
+P:3C00A:b15_jmp_efdb:Jump to $EFDB
+P:3C00D:b15_jmp_efd7:Jump to $EFD7
+P:3C010:b15_jmp_f1fa:Jump to $F1FA
+P:3C013:b15_jmp_f223:Jump to $F223
+P:3C016:b15_jmp_e944:Jump to $E944
+P:3C02E:b15_jmp_f4ab:Jump to $F4AB
+P:3C031:b15_jmp_f58a:Jump to $F58A
+P:3C034:b15_jmp_f58b:Jump to $F58B
+P:3C037:b15_jmp_fabe:Jump to $FABE
 
 # -- Bank 15 System Init ($803D-$80D1) --
-P:803D:b15_system_init:System initialization entry
-P:803E:b15_wait_vbl_1:Wait for VBlank (first)
-P:8043:b15_wait_vbl_2:Wait for VBlank (second)
-P:804E:b15_init_ppu:Initialize PPU registers
-P:8058:b15_init_mmc1:Initialize MMC1 mapper
-P:8067:b15_init_nmi_jmp:Setup NMI JMP opcode ($4C)
-P:806C:b15_init_nmi_vec:Setup NMI target from $C0D2
-P:8078:b15_init_stack:Initialize stack pointer
-P:807E:b15_clear_ram:Clear RAM loop
-P:8092:b15_init_shadow:Initialize PPU shadows
-P:809E:b15_call_c104:Call $C104 helper
-P:80A4:b15_init_ppu_addr:Setup PPU address $1000
-P:80B0:b15_clear_ppu:Clear PPU data loop
-P:80B6:b15_enable_nmi:Enable NMI
-P:80BE:b15_init_calls:Initialization subroutine calls
-P:80CF:b15_jmp_c968:Jump to main loop at $C968
+P:3C03D:b15_system_init:System initialization entry
+P:3C03E:b15_wait_vbl_1:Wait for VBlank (first)
+P:3C043:b15_wait_vbl_2:Wait for VBlank (second)
+P:3C04E:b15_init_ppu:Initialize PPU registers
+P:3C058:b15_init_mmc1:Initialize MMC1 mapper
+P:3C067:b15_init_nmi_jmp:Setup NMI JMP opcode ($4C)
+P:3C06C:b15_init_nmi_vec:Setup NMI target from $C0D2
+P:3C078:b15_init_stack:Initialize stack pointer
+P:3C07E:b15_clear_ram:Clear RAM loop
+P:3C092:b15_init_shadow:Initialize PPU shadows
+P:3C09E:b15_call_c104:Call $C104 helper
+P:3C0A4:b15_init_ppu_addr:Setup PPU address $1000
+P:3C0B0:b15_clear_ppu:Clear PPU data loop
+P:3C0B6:b15_enable_nmi:Enable NMI
+P:3C0BE:b15_init_calls:Initialization subroutine calls
+P:3C0CF:b15_jmp_c968:Jump to main loop at $C968
 
 # -- Bank 15 VBlank Routines ($80D2-$80E8) --
-P:80D2:b15_vblank_data:VBlank handler data
-P:80D6:b15_vblank_sync:VBlank synchronization
-P:80D9:b15_wait_vbl_neg:Wait for VBlank flag negative
-P:80DE:b15_wait_vbl_pos:Wait for VBlank flag positive
-P:80E3:b15_wait_vbl_neg2:Second wait negative
-P:80E8:b15_vblank_return:Return from VBlank sync
+P:3C0D2:b15_vblank_data:VBlank handler data
+P:3C0D6:b15_vblank_sync:VBlank synchronization
+P:3C0D9:b15_wait_vbl_neg:Wait for VBlank flag negative
+P:3C0DE:b15_wait_vbl_pos:Wait for VBlank flag positive
+P:3C0E3:b15_wait_vbl_neg2:Second wait negative
+P:3C0E8:b15_vblank_return:Return from VBlank sync
 
 # -- Bank 15 MMC1 Control ($8118-$8159) --
-P:8118:b15_write_chr0:Write CHR Bank 0 ($9FFF)
-P:812F:b15_write_chr1:Write CHR Bank 1 ($BFFF)
-P:8146:b15_write_prg:Write PRG Bank ($DFFF)
+P:3C118:b15_write_chr0:Write CHR Bank 0 ($9FFF)
+P:3C12F:b15_write_chr1:Write CHR Bank 1 ($BFFF)
+P:3C146:b15_write_prg:Write PRG Bank ($DFFF)
 
 # -- Bank 15 NMI Handler ($815A-$8218) --
-P:815A:b15_nmi_entry:NMI handler entry (push regs)
-P:815F:b15_check_busy:Check if system busy
-P:8163:b15_check_caller:Check caller return address
-P:8175:b15_do_vblank_update:Perform VBlank PPU update
-P:8181:b15_nmi_check_addr:Check address range
-P:819B:b15_nmi_process:Process NMI
-P:81A0:b15_increment_timer:Increment system timer ($C221)
-P:81B0:b15_switch_bank:Switch to current bank
-P:81BD:b15_check_addr_2:Check address range 2
-P:81EF:b15_increment_frame:Increment frame counter ($050C)
-P:81F2:b15_read_opcode:Read opcode at return address
-P:8213:b15_nmi_exit_normal:Normal NMI exit (pop+RTI)
-P:8219:b15_nmi_exit_brk:BRK handler NMI exit
+P:3C15A:b15_nmi_entry:NMI handler entry (push regs)
+P:3C15F:b15_check_busy:Check if system busy
+P:3C163:b15_check_caller:Check caller return address
+P:3C175:b15_do_vblank_update:Perform VBlank PPU update
+P:3C181:b15_nmi_check_addr:Check address range
+P:3C19B:b15_nmi_process:Process NMI
+P:3C1A0:b15_increment_timer:Increment system timer ($C221)
+P:3C1B0:b15_switch_bank:Switch to current bank
+P:3C1BD:b15_check_addr_2:Check address range 2
+P:3C1EF:b15_increment_frame:Increment frame counter ($050C)
+P:3C1F2:b15_read_opcode:Read opcode at return address
+P:3C213:b15_nmi_exit_normal:Normal NMI exit (pop+RTI)
+P:3C219:b15_nmi_exit_brk:BRK handler NMI exit
 
 # -- Bank 15 PPU Update ($8222-$8300) --
-P:8222:b15_ppu_update_entry:PPU update entry point
-P:8231:b15_ppu_update_mode:Select PPU update mode
+P:3C222:b15_ppu_update_entry:PPU update entry point
+P:3C231:b15_ppu_update_mode:Select PPU update mode
 
 # -- Bank 15 Direction Handling ($8DC9-$8E08) --
-P:8DC9:b15_get_direction:Get NPC direction from $7001
-P:8DD1:b15_set_timer:Set movement timer
-P:8DDC:b15_check_mode:Check mode flags at $41
-P:8DE5:b15_random_check:Random encounter check
-P:8DF3:b15_increment_enc:Increment encounter counter ($62ED)
-P:8E08:b15_direction_done:Direction handling done
+P:3CDC9:b15_get_direction:Get NPC direction from $7001
+P:3CDD1:b15_set_timer:Set movement timer
+P:3CDDC:b15_check_mode:Check mode flags at $41
+P:3CDE5:b15_random_check:Random encounter check
+P:3CDF3:b15_increment_enc:Increment encounter counter ($62ED)
+P:3CE08:b15_direction_done:Direction handling done
 
 # -- Bank 15 Movement Mode ($8E09-$8E9A) --
-P:8E09:b15_check_movement:Check movement mode
-P:8E0D:b15_dungeon_mode:Dungeon mode handler
-P:8E50:b15_overworld_check:Overworld movement check
-P:8E69:b15_special_check:Special movement check
-P:8E80:b15_normal_movement:Normal movement handler
-P:8E9A:b15_movement_finish:Finish movement processing
+P:3CE09:b15_check_movement:Check movement mode
+P:3CE0D:b15_dungeon_mode:Dungeon mode handler
+P:3CE50:b15_overworld_check:Overworld movement check
+P:3CE69:b15_special_check:Special movement check
+P:3CE80:b15_normal_movement:Normal movement handler
+P:3CE9A:b15_movement_finish:Finish movement processing
 
 # -- Bank 15 Tile Check ($8EA9-$8EF7) --
-P:8EA9:b15_read_input:Read controller input ($C000)
-P:8EBE:b15_check_tile_type:Check tile type at $059E
-P:8EC5:b15_tile_type_loop:Loop through tile types
-P:8ED1:b15_tile_found:Tile type found
-P:8EF3:b15_tile_special:Handle special tile
+P:3CEA9:b15_read_input:Read controller input ($C000)
+P:3CEBE:b15_check_tile_type:Check tile type at $059E
+P:3CEC5:b15_tile_type_loop:Loop through tile types
+P:3CED1:b15_tile_found:Tile type found
+P:3CEF3:b15_tile_special:Handle special tile
 
 # -- Bank 15 NPC Position Routines ($9B50-$9BF2) --
-P:9B50:b15_npc_random:Generate NPC random movement
-P:9B56:b15_call_random:Call random number routine
-P:9B61:b15_clear_flag:Clear movement flag
-P:9B66:b15_return_masked:Return masked value
-P:9B6A:b15_load_movement:Load movement parameters
-P:9B82:b15_movement_done:Movement loading done
-P:9B83:b15_npc_update:Update NPC position
-P:9BA7:b15_npc_call_dde0:Call $DDE0 helper
-P:9BAD:b15_npc_dest_check:Check NPC destination
-P:9BC1:b15_store_dest:Store destination coords
-P:9BD0:b15_set_npc_pos:Set NPC X/Y position
-P:9BE5:b15_lookup_tile:Look up tile at position
-P:9BF5:b15_store_npc_id:Store NPC ID at $059C
+P:3DB50:b15_npc_random:Generate NPC random movement
+P:3DB56:b15_call_random:Call random number routine
+P:3DB61:b15_clear_flag:Clear movement flag
+P:3DB66:b15_return_masked:Return masked value
+P:3DB6A:b15_load_movement:Load movement parameters
+P:3DB82:b15_movement_done:Movement loading done
+P:3DB83:b15_npc_update:Update NPC position
+P:3DBA7:b15_npc_call_dde0:Call $DDE0 helper
+P:3DBAD:b15_npc_dest_check:Check NPC destination
+P:3DBC1:b15_store_dest:Store destination coords
+P:3DBD0:b15_set_npc_pos:Set NPC X/Y position
+P:3DBE5:b15_lookup_tile:Look up tile at position
+P:3DBF5:b15_store_npc_id:Store NPC ID at $059C
 
 # -- Bank 15 NPC AI ($9C16-$9CDF) --
-P:9C16:b15_npc_ai_or:AI OR flags routine
-P:9C23:b15_npc_ai_and:AI AND flags routine
-P:9C30:b15_npc_ai_store:AI store flags routine
-P:9C3B:b15_load_ai_ptr:Load AI pointer from ($4D)
-P:9C4B:b15_calc_direction:Calculate direction to target
-P:9C59:b15_calc_hero_dist:Calculate distance to hero
-P:9C9F:b15_calc_dest_dist:Calculate distance to destination
-P:9CBF:b15_get_direction_bits:Get direction bits
-P:9CCD:b15_find_direction:Find best direction
-P:9CD3:b15_check_directions:Check all four directions
+P:3DC16:b15_npc_ai_or:AI OR flags routine
+P:3DC23:b15_npc_ai_and:AI AND flags routine
+P:3DC30:b15_npc_ai_store:AI store flags routine
+P:3DC3B:b15_load_ai_ptr:Load AI pointer from ($4D)
+P:3DC4B:b15_calc_direction:Calculate direction to target
+P:3DC59:b15_calc_hero_dist:Calculate distance to hero
+P:3DC9F:b15_calc_dest_dist:Calculate distance to destination
+P:3DCBF:b15_get_direction_bits:Get direction bits
+P:3DCCD:b15_find_direction:Find best direction
+P:3DCD3:b15_check_directions:Check all four directions
 
 # -- Bank 15 Map Routines ($A8DD-$A943) --
-P:A8DD:b15_store_indirect:Store A indirect at ($08),Y
-P:A8E1:b15_save_position:Save position to $6E8A array
-P:A8F8:b15_add_map_offset:Add map width to offset
-P:A904:b15_sub_map_offset:Subtract map width from offset
-P:A910:b15_write_tile_masked:Write tile with mask
-P:A91E:b15_calc_tile_addr:Calculate tile address
+P:3E8DD:b15_store_indirect:Store A indirect at ($08),Y
+P:3E8E1:b15_save_position:Save position to $6E8A array
+P:3E8F8:b15_add_map_offset:Add map width to offset
+P:3E904:b15_sub_map_offset:Subtract map width from offset
+P:3E910:b15_write_tile_masked:Write tile with mask
+P:3E91E:b15_calc_tile_addr:Calculate tile address
 
 # -- Bank 15 Map Bank Selection ($A944-$A9CD) --
-P:A944:b15_select_map_bank:Select map data bank
-P:A952:b15_load_map_header:Load map header data
-P:A9AD:b15_get_map_bank:Get bank for current map
+P:3E944:b15_select_map_bank:Select map data bank
+P:3E952:b15_load_map_header:Load map header data
+P:3E9AD:b15_get_map_bank:Get bank for current map
 
 # -- Bank 15 Movement Update ($A9CE-$AA24) --
-P:A9CE:b15_update_movement:Update movement state
-P:A9E0:b15_check_tile:Check current tile
-P:A9FA:b15_apply_movement:Apply movement delta
-P:AA03:b15_apply_direction:Apply direction to position
-P:AA1C:b15_toggle_scroll:Toggle scroll direction
+P:3E9CE:b15_update_movement:Update movement state
+P:3E9E0:b15_check_tile:Check current tile
+P:3E9FA:b15_apply_movement:Apply movement delta
+P:3EA03:b15_apply_direction:Apply direction to position
+P:3EA1C:b15_toggle_scroll:Toggle scroll direction
 
 # -- Bank 15 Graphics Data ($B600-$BF73) --
-P:B600:b15_gfx_data:Graphics/CHR data region
+P:3F600:b15_gfx_data:Graphics/CHR data region
 
 # -- Bank 15 Wait VBlank ($BF74-$BF85) --
-P:BF74:b15_wait_frame:Wait for next frame
-P:BF77:b15_wait_loop:Wait loop (check $050C)
-P:BF82:b15_call_c913:Call $C913 after wait
-P:BF85:b15_wait_return:Return from wait
+P:3FF74:b15_wait_frame:Wait for next frame
+P:3FF77:b15_wait_loop:Wait loop (check $050C)
+P:3FF82:b15_call_c913:Call $C913 after wait
+P:3FF85:b15_wait_return:Return from wait
 
 # -- Bank 15 Late Jump ($BF8E-$BF91) --
-P:BF8E:b15_jmp_c03d:Jump to $C03D
-P:BF91:b15_store_bank:Store bank to $0507
+P:3FF8E:b15_jmp_c03d:Jump to $C03D
+P:3FF91:b15_store_bank:Store bank to $0507
 
 # ==============================================================================
 # BANK 14 ($8000-$BFFF) - MAP/TILE DATA WITH SMALL CODE ROUTINES
@@ -3925,26 +3932,26 @@ P:BF91:b15_store_bank:Store bank to $0507
 # for map tile setup and palette loading.
 
 # -- Bank 14 Tile Setup ($8000-$8090) --
-P:8000:b14_data_header:Data header/entry point
-P:8008:b14_load_tile_ptr:Load tile pointer to $06/$07
-P:800A:b14_call_baf7:Call $BAF7 for tile lookup
-P:8010:b14_setup_tile:Setup tile data routine
-P:8017:b14_call_setup:Call tile setup with map check
-P:8026:b14_branch_0:Branch if map = 0
-P:8029:b14_restore_06:Restore $06 and return
-P:802D:b14_tile_setup_main:Main tile setup routine
-P:8040:b14_store_fc:Store to $05FC
-P:805C:b14_tile_loop:Tile processing loop
-P:807A:b14_copy_tile_data:Copy 3 bytes of tile data
-P:8090:b14_return:Return from tile setup
+P:38000:b14_data_header:Data header/entry point
+P:38008:b14_load_tile_ptr:Load tile pointer to $06/$07
+P:3800A:b14_call_baf7:Call $BAF7 for tile lookup
+P:38010:b14_setup_tile:Setup tile data routine
+P:38017:b14_call_setup:Call tile setup with map check
+P:38026:b14_branch_0:Branch if map = 0
+P:38029:b14_restore_06:Restore $06 and return
+P:3802D:b14_tile_setup_main:Main tile setup routine
+P:38040:b14_store_fc:Store to $05FC
+P:3805C:b14_tile_loop:Tile processing loop
+P:3807A:b14_copy_tile_data:Copy 3 bytes of tile data
+P:38090:b14_return:Return from tile setup
 
 # -- Bank 14 Data Tables ($8091-$8097) --
-P:8091:b14_ptr_table_lo:Pointer table low bytes
-P:8095:b14_ptr_table_hi:Pointer table high bytes
+P:38091:b14_ptr_table_lo:Pointer table low bytes
+P:38095:b14_ptr_table_hi:Pointer table high bytes
 
 # -- Bank 14 Late Routines ($BF00-$BF41) --
-P:BF02:b14_late_routine:Late code routine
-P:BF41:b14_helper:Helper routine called from $BF02
+P:3BF02:b14_late_routine:Late code routine
+P:3BF41:b14_helper:Helper routine called from $BF02
 
 # ==============================================================================
 # BANK 25 ($8000-$BFFF) - MUSIC/BGM SELECTION SYSTEM
@@ -3954,50 +3961,50 @@ P:BF41:b14_helper:Helper routine called from $BF02
 # Uses $615A (chapter), $63 (map number), $64 (submap) to select BGM.
 
 # -- Bank 25 Jump Table ($8000-$8025) --
-P:8000:b25_entry_table:Entry point jump table
-P:8014:b25_jmp_c01c:JMP to $C01C (fixed bank routine)
-P:8017:b25_jmp_c01f:JMP to $C01F (music set)
-P:801A:b25_jmp_c022:JMP to $C022
-P:801D:b25_jmp_c025:JMP to $C025
-P:8020:b25_jmp_c028:JMP to $C028
-P:8023:b25_jmp_c02b:JMP to $C02B
+P:64000:b25_entry_table:Entry point jump table
+P:64014:b25_jmp_c01c:JMP to $C01C (fixed bank routine)
+P:64017:b25_jmp_c01f:JMP to $C01F (music set)
+P:6401A:b25_jmp_c022:JMP to $C022
+P:6401D:b25_jmp_c025:JMP to $C025
+P:64020:b25_jmp_c028:JMP to $C028
+P:64023:b25_jmp_c02b:JMP to $C02B
 
 # -- Bank 25 Main BGM Selection ($8026-$803A) --
-P:8026:b25_bgm_select_main:Main BGM selection routine
-P:802D:b25_call_get_bgm:Call get_bgm_for_location ($803B)
-P:8030:b25_call_set_music:Call $8017 to set music
-P:803A:b25_bgm_return:Return from BGM selection
+P:64026:b25_bgm_select_main:Main BGM selection routine
+P:6402D:b25_call_get_bgm:Call get_bgm_for_location ($803B)
+P:64030:b25_call_set_music:Call $8017 to set music
+P:6403A:b25_bgm_return:Return from BGM selection
 
 # -- Bank 25 Get BGM for Location ($803B-$810A) --
-P:803B:b25_get_bgm_for_loc:Determine BGM based on state
-P:803F:b25_check_0515:Check $0515 flag (special state)
-P:8044:b25_check_chapter:Load chapter from $65
-P:8048:b25_chapter_lookup:Lookup chapter-based BGM
-P:8058:b25_chapter_check:Check chapter >= 4 (full party)
-P:805F:b25_check_6292:Check flag at $6292 (Psaro state?)
-P:807D:b25_pop_return:Stack cleanup and return
-P:807F:b25_table_lookup:Direct table lookup for BGM
-P:8083:b25_special_0515:Handle special $0515 case
-P:808B:b25_negative_state:Handle negative state ($41 < 0)
-P:8095:b25_search_loop_init:Initialize location search loop
-P:8097:b25_search_map_loop:Search map/location table
-P:809C:b25_compare_map:Compare with current map ($63)
-P:80A1:b25_check_wildcard:Check for $FF wildcard (any submap)
-P:80A5:b25_compare_submap:Compare with submap ($64)
-P:80BD:b25_found_match:Found matching location
-P:80C1:b25_check_chapter_4:Check if chapter 4+
-P:80CE:b25_ch4_return:Return #$03 for chapter 4
-P:80D1:b25_check_flag_62aa:Check flag $62AA for special case
-P:80DA:b25_special_case_0:Handle special case X=0 (start area)
-P:80E8:b25_special_case_0f:Handle special case X=$0F
-P:80F9:b25_search_return:Return from search
-P:80FA:b25_search_next:Advance to next table entry (3 bytes)
-P:8101:b25_default_bgm:Default BGM from $07BA
+P:6403B:b25_get_bgm_for_loc:Determine BGM based on state
+P:6403F:b25_check_0515:Check $0515 flag (special state)
+P:64044:b25_check_chapter:Load chapter from $65
+P:64048:b25_chapter_lookup:Lookup chapter-based BGM
+P:64058:b25_chapter_check:Check chapter >= 4 (full party)
+P:6405F:b25_check_6292:Check flag at $6292 (Psaro state?)
+P:6407D:b25_pop_return:Stack cleanup and return
+P:6407F:b25_table_lookup:Direct table lookup for BGM
+P:64083:b25_special_0515:Handle special $0515 case
+P:6408B:b25_negative_state:Handle negative state ($41 < 0)
+P:64095:b25_search_loop_init:Initialize location search loop
+P:64097:b25_search_map_loop:Search map/location table
+P:6409C:b25_compare_map:Compare with current map ($63)
+P:640A1:b25_check_wildcard:Check for $FF wildcard (any submap)
+P:640A5:b25_compare_submap:Compare with submap ($64)
+P:640BD:b25_found_match:Found matching location
+P:640C1:b25_check_chapter_4:Check if chapter 4+
+P:640CE:b25_ch4_return:Return #$03 for chapter 4
+P:640D1:b25_check_flag_62aa:Check flag $62AA for special case
+P:640DA:b25_special_case_0:Handle special case X=0 (start area)
+P:640E8:b25_special_case_0f:Handle special case X=$0F
+P:640F9:b25_search_return:Return from search
+P:640FA:b25_search_next:Advance to next table entry (3 bytes)
+P:64101:b25_default_bgm:Default BGM from $07BA
 
 # -- Bank 25 BGM Data Tables ($810B-$814D) --
-P:810B:b25_chapter_bgm_tbl:BGM table by chapter
-P:8116:b25_map_bgm_tbl:BGM table by map index
-P:8124:b25_location_tbl:Map/submap/BGM triplet table
+P:6410B:b25_chapter_bgm_tbl:BGM table by chapter
+P:64116:b25_map_bgm_tbl:BGM table by map index
+P:64124:b25_location_tbl:Map/submap/BGM triplet table
 
 # -- Bank 25 Event Script Data ($814E-$BFFF) --
 # Rest of bank is event script bytecode data, not 6502 code
@@ -4025,7 +4032,6 @@ P:8124:b25_location_tbl:Map/submap/BGM triplet table
 #
 # These banks are loaded into PPU pattern tables via CHR banking
 # or processed by decompression routines, not executed directly.
-
 
 
 
