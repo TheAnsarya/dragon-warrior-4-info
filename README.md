@@ -194,6 +194,13 @@ See the `docs/` folder for comprehensive documentation:
 - **[Quick Reference](docs/reference/QUICK_REFERENCE.md)** - Common values and lookups
 - **[Project Roadmap](docs/project/ROADMAP.md)** - Development milestones
 
+### Key Discoveries (Reverse Engineering)
+
+- **[EXP System](docs/exp_system_analysis.md)** - Formula-based EXP calculation in Bank 18 ($9F7C), not traditional tables
+- **[Battle System](docs/battle_system_deep.md)** - Damage formulas, AI tactics (7 modes), resistance system in Bank 19
+- **[Enemy Resistance](docs/enemy_data_table.md)** - Packed byte format at $B967 for elemental resistances
+- **[RE Summary](docs/REVERSE_ENGINEERING_SUMMARY.md)** - Complete overview of all reverse engineering findings
+
 ## 🔗 Related Projects
 
 - **[Dragon Warrior Info](https://github.com/TheAnsarya/dragon-warrior-info)** - DW1 disassembly (reference project)

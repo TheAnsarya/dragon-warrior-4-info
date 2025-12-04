@@ -39,6 +39,35 @@ Quick reference and guides.
 - [Quick Reference](reference/QUICK_REFERENCE.md) - Common values and quick lookups
 - [SNES Conversion](reference/SNES_CONVERSION.md) - Notes on SNES port differences
 
+### 📁 Analysis (Reverse Engineering)
+In-depth analysis of game systems from reverse engineering.
+
+- [Reverse Engineering Summary](REVERSE_ENGINEERING_SUMMARY.md) - Overview of RE findings
+- [EXP System Analysis](exp_system_analysis.md) - Experience formula (Bank 18)
+- [Battle System Analysis](battle_system_analysis.md) - Battle mechanics overview
+- [Battle System Deep Dive](battle_system_deep.md) - Damage formulas, AI tactics (Bank 19)
+- [Battle Tables](battle_tables.md) - Tactics multipliers, spell parameters
+- [Enemy Data Table](enemy_data_table.md) - Monster data format at $B967
+- [Monster Byte Structure](monster_byte_structure.md) - Monster record format
+- [Spell Tables](spell_tables.md) - Spell data and effects
+- [Text System Analysis](text_system_analysis.md) - Text encoding and display
+- [Bank Analysis](bank_analysis.md) - Per-bank purpose identification
+- [Bank Purposes](bank_purposes.md) - Summary of bank contents
+- [Memory Map](memory_map.md) - RAM/ROM address layout
+- [Cowness Reference](cowness_reference.md) - Data from cowness.net speedrun notes
+- [Code Analysis](code_analysis.md) - General disassembly notes
+
+### 📁 Disassembly
+Generated disassembly output and labels.
+
+- [labels.asm](labels.asm) - Label definitions for assembler
+- [disassembly/](disassembly/) - Per-bank disassembly output
+
+### 📁 Analysis Subdirectory
+Additional analysis documents.
+
+- [analysis/](analysis/) - Detailed analysis documents
+
 ## Quick Links
 
 | Resource | Description |
