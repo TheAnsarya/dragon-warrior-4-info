@@ -93,17 +93,17 @@ HERO_EXP_HIGH = {
 def search_16bit_exp(rom):
     """Search for exp as consecutive 16-bit values for all characters."""
     print("Searching for 16-bit exp tables...")
-    
+
     results = []
-    
+
     for char_name, exp_data in EXP_TABLES.items():
         # Get first 4 exp values that fit in 16-bit
         early_levels = sorted([l for l in exp_data.keys() if exp_data[l] < 65536])[:4]
         if len(early_levels) < 4:
             continue
-            
+
         exp_vals = [exp_data[l] for l in early_levels]
-        
+
         for i in range(len(rom) - 40):
             # Check first 4 values
             match = True
@@ -112,7 +112,7 @@ def search_16bit_exp(rom):
                 if val != expected:
                     match = False
                     break
-            
+
             if match:
                 bank = i // 0x4000
                 offset = i % 0x4000
@@ -129,16 +129,16 @@ def search_16bit_exp(rom):
                 print(f"  Levels {early_levels}")
                 print(f"  First 20 values: {values[:20]}")
                 results.append((char_name, i, values))
-    
+
     return results
 
 
 def search_24bit_exp(rom):
     """Search for exp as consecutive 24-bit values for all characters."""
     print("\nSearching for 24-bit exp tables...")
-    
+
     results = []
-    
+
     for char_name, exp_data in EXP_TABLES.items():
         # Get first 3 exp values
         early_levels = sorted(exp_data.keys())[:3]
@@ -152,7 +152,7 @@ def search_24bit_exp(rom):
                 if val != expected:
                     match = False
                     break
-            
+
             if match:
                 bank = i // 0x4000
                 offset = i % 0x4000
@@ -167,7 +167,7 @@ def search_24bit_exp(rom):
                         values.append(val)
                 print(f"  First 15 values: {values[:15]}")
                 results.append((char_name, i, values))
-    
+
     return results
 
 
@@ -182,9 +182,9 @@ def search_high_level_exp(rom):
         for level in [10, 15, 20, 25, 30]:
             if level not in exp_data:
                 continue
-            
+
             exp = exp_data[level]
-            
+
             # Convert to 3-byte little-endian
             low = exp & 0xFF
             mid = (exp >> 8) & 0xFF
@@ -215,7 +215,7 @@ def search_high_level_exp(rom):
 
     if results:
         print(f"\nFOUND {len(results)} matches for high-level EXP:")
-        
+
         # Group by character
         by_char = {}
         for r in results:
@@ -223,7 +223,7 @@ def search_high_level_exp(rom):
             if key not in by_char:
                 by_char[key] = []
             by_char[key].append(r)
-        
+
         for char_name, char_results in sorted(by_char.items()):
             print(f"\n  {char_name}:")
             for r in sorted(char_results, key=lambda x: x["level"])[:5]:
@@ -243,7 +243,7 @@ def search_high_level_exp(rom):
                 print(f"\n  Bank {bank}: {len(matches)} matches")
                 chars_found = set(m["character"] for m in matches)
                 print(f"    Characters: {', '.join(chars_found)}")
-                
+
                 # Check if they're evenly spaced
                 offsets = sorted([m["rom_offset"] for m in matches])
                 if len(offsets) >= 2:
@@ -251,7 +251,7 @@ def search_high_level_exp(rom):
                     for i in range(1, len(offsets)):
                         spacing = offsets[i] - offsets[i-1]
                         spacing_counts[spacing] = spacing_counts.get(spacing, 0) + 1
-                    
+
                     common_spacing = max(spacing_counts.items(), key=lambda x: x[1])
                     print(f"    Most common spacing: {common_spacing[0]} bytes ({common_spacing[1]} occurrences)")
     else:
@@ -265,13 +265,13 @@ def search_split_exp(rom):
     print("\nSearching for split byte exp tables...")
 
     results = []
-    
+
     for char_name, exp_data in EXP_TABLES.items():
         early_levels = sorted(exp_data.keys())[:6]
-        
+
         # Build low byte pattern
         low_bytes = bytes([exp_data[l] & 0xFF for l in early_levels])
-        
+
         for i in range(len(rom) - 100):
             if rom[i:i+len(low_bytes)] == low_bytes:
                 bank = i // 0x4000
@@ -281,16 +281,16 @@ def search_split_exp(rom):
                 print(f"\nFOUND {char_name} split low byte table at Bank {bank} ${cpu:04X} (ROM 0x{i:05X})")
                 print(f"  First 20 bytes: {list(rom[i:i+20])}")
                 results.append((char_name, i, "low"))
-    
+
     return results
 
 
 def search_delta_exp(rom):
     """Search for delta/incremental EXP values (exp needed to level up, not cumulative)."""
     print("\nSearching for delta/incremental EXP tables...")
-    
+
     results = []
-    
+
     for char_name, exp_data in EXP_TABLES.items():
         # Calculate deltas
         levels = sorted(exp_data.keys())
@@ -299,15 +299,15 @@ def search_delta_exp(rom):
             if levels[i+1] == levels[i] + 1:  # Consecutive levels
                 delta = exp_data[levels[i+1]] - exp_data[levels[i]]
                 deltas.append((levels[i+1], delta))
-        
+
         if len(deltas) < 4:
             continue
-        
+
         # Search for first 4 deltas as 16-bit values
         delta_vals = [d[1] for d in deltas[:4] if d[1] < 65536]
         if len(delta_vals) < 4:
             continue
-        
+
         for i in range(len(rom) - 20):
             match = True
             for j, expected in enumerate(delta_vals):
@@ -315,16 +315,16 @@ def search_delta_exp(rom):
                 if val != expected:
                     match = False
                     break
-            
+
             if match:
                 bank = i // 0x4000
                 offset = i % 0x4000
                 cpu = 0x8000 + offset if bank < 16 else 0xC000 + offset
-                
+
                 print(f"\nFOUND {char_name} delta exp table at Bank {bank} ${cpu:04X} (ROM 0x{i:05X})")
                 print(f"  Deltas: {delta_vals}")
                 results.append((char_name, i, "delta"))
-    
+
     return results
 
 
@@ -340,42 +340,42 @@ def search_fuzzy(rom):
         l3 = exp_data.get(3, 0)
         l4 = exp_data.get(4, 0)
         l5 = exp_data.get(5, 0)
-        
+
         if not all([l2, l3, l4, l5]):
             continue
-        
+
         # Check for similar ratios (within 20%)
         ratio_3_2 = l3 / l2 if l2 else 0
         ratio_4_3 = l4 / l3 if l3 else 0
         ratio_5_4 = l5 / l4 if l4 else 0
-        
+
         for i in range(len(rom) - 40):
             v2 = rom[i] + (rom[i+1] << 8)
             if v2 < 5 or v2 > 100:
                 continue
-            
+
             v3 = rom[i+2] + (rom[i+3] << 8)
             v4 = rom[i+4] + (rom[i+5] << 8)
             v5 = rom[i+6] + (rom[i+7] << 8)
-            
+
             if not all([v3, v4, v5]):
                 continue
-            
+
             # Check if ratios are similar
             try:
                 r_3_2 = v3 / v2
                 r_4_3 = v4 / v3
                 r_5_4 = v5 / v4
-                
+
                 # Allow 25% tolerance
                 if (abs(r_3_2 - ratio_3_2) / ratio_3_2 < 0.25 and
                     abs(r_4_3 - ratio_4_3) / ratio_4_3 < 0.25 and
                     abs(r_5_4 - ratio_5_4) / ratio_5_4 < 0.25):
-                    
+
                     bank = i // 0x4000
                     offset = i % 0x4000
                     cpu = 0x8000 + offset if bank < 16 else 0xC000 + offset
-                    
+
                     print(f"  {char_name} candidate: Bank {bank} ${cpu:04X} - [{v2}, {v3}, {v4}, {v5}]")
                     candidates.append((char_name, i, [v2, v3, v4, v5]))
             except ZeroDivisionError:
@@ -387,9 +387,9 @@ def search_fuzzy(rom):
 def search_by_unique_values(rom):
     """Search for unique identifying values specific to each character."""
     print("\nSearching for character-unique EXP values...")
-    
+
     results = {}
-    
+
     # Find values unique to each character
     all_values = {}
     for char_name, exp_data in EXP_TABLES.items():
@@ -397,19 +397,19 @@ def search_by_unique_values(rom):
             if exp not in all_values:
                 all_values[exp] = []
             all_values[exp].append((char_name, level))
-    
+
     # Get unique values (only appear for one character)
     unique_values = {exp: chars[0] for exp, chars in all_values.items() if len(chars) == 1}
-    
+
     print(f"  Found {len(unique_values)} character-unique EXP values")
-    
+
     # Search for unique values
     for exp, (char_name, level) in unique_values.items():
         if exp < 256:  # Single byte - too common
             continue
         if exp > 16777215:  # Too large for 3 bytes
             continue
-            
+
         # Try 2-byte search
         if exp < 65536:
             pattern = bytes([exp & 0xFF, (exp >> 8) & 0xFF])
@@ -418,11 +418,11 @@ def search_by_unique_values(rom):
                 pos = rom.find(pattern, pos)
                 if pos == -1:
                     break
-                
+
                 bank = pos // 0x4000
                 offset = pos % 0x4000
                 cpu = 0x8000 + offset if bank < 16 else 0xC000 + offset
-                
+
                 if char_name not in results:
                     results[char_name] = []
                 results[char_name].append({
@@ -434,7 +434,7 @@ def search_by_unique_values(rom):
                     'byte_size': 2
                 })
                 pos += 1
-        
+
         # Try 3-byte search
         pattern = bytes([exp & 0xFF, (exp >> 8) & 0xFF, (exp >> 16) & 0xFF])
         pos = 0
@@ -442,11 +442,11 @@ def search_by_unique_values(rom):
             pos = rom.find(pattern, pos)
             if pos == -1:
                 break
-            
+
             bank = pos // 0x4000
             offset = pos % 0x4000
             cpu = 0x8000 + offset if bank < 16 else 0xC000 + offset
-            
+
             if char_name not in results:
                 results[char_name] = []
             results[char_name].append({
@@ -458,25 +458,25 @@ def search_by_unique_values(rom):
                 'byte_size': 3
             })
             pos += 1
-    
+
     # Report results
     for char_name, matches in sorted(results.items()):
         if len(matches) > 0:
             print(f"\n  {char_name}: {len(matches)} unique value matches")
-            
+
             # Group by bank
             by_bank = {}
             for m in matches:
                 if m['bank'] not in by_bank:
                     by_bank[m['bank']] = []
                 by_bank[m['bank']].append(m)
-            
+
             for bank, bank_matches in sorted(by_bank.items()):
                 if len(bank_matches) >= 2:
                     print(f"    Bank {bank}: {len(bank_matches)} matches")
                     for m in sorted(bank_matches, key=lambda x: x['level'])[:5]:
                         print(f"      L{m['level']}: {m['exp']:,} @ ${m['addr']:04X}")
-    
+
     return results
 
 
@@ -501,7 +501,7 @@ def main():
     results_24 = search_24bit_exp(rom)
     results_split = search_split_exp(rom)
     results_delta = search_delta_exp(rom)
-    
+
     # Search for high-level EXP values
     high_results = search_high_level_exp(rom)
 
@@ -515,7 +515,7 @@ def main():
     print("\n" + "=" * 60)
     print("SUMMARY")
     print("=" * 60)
-    
+
     if any([results_16, results_24, results_split, results_delta]):
         print("\n--- Direct Table Matches ---")
         if results_16:
@@ -526,7 +526,7 @@ def main():
             print(f"  Split tables: {len(results_split)} found")
         if results_delta:
             print(f"  Delta tables: {len(results_delta)} found")
-    
+
     if high_results:
         # Find most promising banks
         by_bank = {}
@@ -534,12 +534,12 @@ def main():
             if r["bank"] not in by_bank:
                 by_bank[r["bank"]] = set()
             by_bank[r["bank"]].add(r["character"])
-        
+
         print("\n--- Most Promising Banks (by character coverage) ---")
         for bank, chars in sorted(by_bank.items(), key=lambda x: -len(x[1])):
             if len(chars) >= 2:
                 print(f"  Bank {bank}: {len(chars)} characters - {', '.join(sorted(chars))}")
-    
+
     if not any([results_16, results_24, results_split, results_delta, fuzzy_results]) and not high_results:
         print("\nNo exp tables found with exact matching.")
         print("Exp tables may be:")

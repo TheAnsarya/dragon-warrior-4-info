@@ -15,7 +15,7 @@ import struct
 import os
 
 # ROM path
-ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms', 
+ROM_PATH = os.path.join(os.path.dirname(__file__), '..', 'roms',
                         'Dragon Warrior IV (1992-10)(Enix)(US).nes')
 
 def read_rom():
@@ -36,11 +36,11 @@ def analyze_tactics_tables(rom, bank_offset):
     print("=" * 70)
     print("AI TACTICS SYSTEM ANALYSIS")
     print("=" * 70)
-    
+
     # $615B contains tactics setting (0-6)
     # 0=Normal, 1=Save MP, 2=Offensive, 3=Defensive, 4=Try Out, 5=Use No MP, 6=Manual(?)
     tactics_names = ['Normal', 'Save MP', 'Offensive', 'Defensive', 'Try Out', 'Use No MP', 'Manual']
-    
+
     # Attack multiplier table at $BB84 (7 entries)
     print("\n--- Attack Multiplier Table ($BB84) ---")
     print("Used in damage calculation: power *= table[tactics]")
@@ -48,7 +48,7 @@ def analyze_tactics_tables(rom, bank_offset):
     for i in range(7):
         val = rom[bb84_offset + i]
         print(f"  Tactics {i} ({tactics_names[i]:10}): {val:3d} (0x{val:02X})")
-    
+
     # Stat divisor table at $BB8B (7 entries)
     print("\n--- Stat Divisor/Multiplier Table ($BB8B) ---")
     print("Used to scale stats based on tactics")
@@ -56,7 +56,7 @@ def analyze_tactics_tables(rom, bank_offset):
     for i in range(7):
         val = rom[bb8b_offset + i]
         print(f"  Tactics {i} ({tactics_names[i]:10}): {val:3d} (0x{val:02X})")
-    
+
     # Hit threshold table at $BB92 (7 entries)
     print("\n--- Hit Threshold Table ($BB92) ---")
     print("Determines minimum hit chance per tactics mode")
@@ -64,10 +64,10 @@ def analyze_tactics_tables(rom, bank_offset):
     for i in range(7):
         val = rom[bb92_offset + i]
         print(f"  Tactics {i} ({tactics_names[i]:10}): {val:3d} (0x{val:02X})")
-    
+
     # Tactics spell selection tables
     print("\n--- Tactics Spell Selection Tables ---")
-    
+
     # $BA74: Tactics spell data table 1 (7*7=49 bytes)
     print("\n$BA74 - Primary Tactics/Spell Priority Table (7x7 matrix):")
     ba74_offset = cpu_to_rom(0xBA74, bank_offset)
@@ -77,14 +77,14 @@ def analyze_tactics_tables(rom, bank_offset):
             val = rom[ba74_offset + tactics * 7 + spell_slot]
             row.append(f"{val:02X}")
         print(f"  Tactics {tactics} ({tactics_names[tactics]:10}): {' '.join(row)}")
-    
+
     # $BAA5: Tactics spell data table 2 (48 bytes, 7*7=49, may overlap)
     print("\n$BAA5 - Secondary Tactics/Spell Data (48 bytes):")
     baa5_offset = cpu_to_rom(0xBAA5, bank_offset)
     for i in range(0, 48, 8):
         row = [f"{rom[baa5_offset + j]:02X}" for j in range(i, min(i+8, 48))]
         print(f"  ${0xBAA5 + i:04X}: {' '.join(row)}")
-    
+
     # $BAD5: Tactics spell data table 3 (18 bytes)
     print("\n$BAD5 - Tertiary Tactics Data (18 bytes):")
     bad5_offset = cpu_to_rom(0xBAD5, bank_offset)
@@ -96,21 +96,21 @@ def analyze_spell_tables(rom, bank_offset):
     print("\n" + "=" * 70)
     print("SPELL/ACTION DATA TABLES")
     print("=" * 70)
-    
+
     # $BB3F: Spell power table (9 entries)
     print("\n--- Spell Power Table ($BB3F) ---")
     bb3f_offset = cpu_to_rom(0xBB3F, bank_offset)
     for i in range(9):
         val = rom[bb3f_offset + i]
         print(f"  Spell Level {i}: Power = {val:3d} (0x{val:02X})")
-    
+
     # $BB49: Spell attribute table (9 entries)
     print("\n--- Spell Attribute Table ($BB49) ---")
     bb49_offset = cpu_to_rom(0xBB49, bank_offset)
     for i in range(9):
         val = rom[bb49_offset + i]
         print(f"  Spell Level {i}: Attr = {val:3d} (0x{val:02X})")
-    
+
     # $B80B: Spell/action effect type table (256 bytes)
     print("\n--- Action Effect Type Table ($B80B) - First 64 entries ---")
     b80b_offset = cpu_to_rom(0xB80B, bank_offset)
@@ -121,7 +121,7 @@ def analyze_spell_tables(rom, bank_offset):
             val = rom[b80b_offset + idx]
             vals.append(f"{val:02X}")
         print(f"  ${0xB80B + row*8:04X}: {' '.join(vals)}")
-    
+
     # $B915: Spell parameter table 1
     print("\n--- Spell Parameter Table 1 ($B915) ---")
     print("(Contains spell-specific modifiers)")
@@ -133,7 +133,7 @@ def analyze_spell_tables(rom, bank_offset):
             val = rom[b915_offset + idx]
             vals.append(f"{val:02X}")
         print(f"  ${0xB915 + row*8:04X}: {' '.join(vals)}")
-    
+
     # $B949: Spell parameter table 2
     print("\n--- Spell Parameter Table 2 ($B949) ---")
     b949_offset = cpu_to_rom(0xB949, bank_offset)
@@ -150,7 +150,7 @@ def analyze_enemy_data(rom, bank_offset):
     print("\n" + "=" * 70)
     print("ENEMY DATA TABLE ($B967)")
     print("=" * 70)
-    
+
     # $B967: Enemy resistance/type data table (256 bytes)
     # Each byte contains packed resistance/weakness flags
     print("\n--- Enemy Resistance Data (first 64 enemies) ---")
@@ -158,7 +158,7 @@ def analyze_enemy_data(rom, bank_offset):
     print("  Bit 7: Boss/special flag")
     print("  Bits 5-6: Resistance category")
     print("  Bits 0-4: Specific resistance flags")
-    
+
     b967_offset = cpu_to_rom(0xB967, bank_offset)
     for row in range(8):
         print(f"\nEnemies {row*8:03d}-{row*8+7:03d}:", end="")
@@ -167,7 +167,7 @@ def analyze_enemy_data(rom, bank_offset):
             val = rom[b967_offset + idx]
             print(f" {val:02X}", end="")
         print()
-        
+
         # Decode the flags for each enemy in this row
         for col in range(8):
             idx = row * 8 + col
@@ -182,7 +182,7 @@ def analyze_damage_formula(rom, bank_offset):
     print("\n" + "=" * 70)
     print("DAMAGE CALCULATION FORMULA")
     print("=" * 70)
-    
+
     print("""
 The damage calculation is performed at $AA67-$AB58:
 
@@ -221,11 +221,11 @@ FORMULA SUMMARY:
    Base = (Power * 16 + PartyStats) / TacticsDivisor
    Scaled = Base * TacticsMultiplier * 16
    Final = Scaled + (Power * Modifier) - (Defense * 8)
-   
+
    Where:
    - Power = Base attack/spell power
    - PartyStats = Sum of party member relevant stats
-   - TacticsDivisor = $BB8B[tactics] 
+   - TacticsDivisor = $BB8B[tactics]
    - TacticsMultiplier = $BB84[tactics]
    - Defense = Target defense value at $75EF
 """)
@@ -235,7 +235,7 @@ def analyze_hit_check(rom, bank_offset):
     print("\n" + "=" * 70)
     print("HIT/MISS DETERMINATION")
     print("=" * 70)
-    
+
     print("""
 Hit check is performed at $9135-$91A0:
 
@@ -269,7 +269,7 @@ def analyze_math_routines(rom, bank_offset):
     print("\n" + "=" * 70)
     print("MATH SUBROUTINES (Bank 19)")
     print("=" * 70)
-    
+
     print("""
 16-BIT LEFT SHIFT x4 (Multiply by 16) - $8176:
    Takes: Value at X,X+1 (zero page)
@@ -290,12 +290,12 @@ STAT SCALING - $8198:
    Takes: A = multiplier, X = pointer to 16-bit multiplicand
    Returns: Result at X,X+1 (with overflow in $19)
    Method: Shift-and-add algorithm
-   
+
 24-BIT MULTIPLY - $8366:
    Takes: A = multiplier, X = pointer to 24-bit value
    Returns: Result at X,X+1,X+2 (with overflow in $1A)
    Method: Extended shift-and-add
-   
+
 16-BIT DIVISION - $83AA-$83F3:
    Takes: X = dividend pointer, Y = divisor pointer
    Returns: Quotient at X,X+1, Remainder at $6E11-$6E12
@@ -312,19 +312,19 @@ def analyze_action_dispatch(rom, bank_offset):
     print("\n" + "=" * 70)
     print("ACTION DISPATCH SYSTEM")
     print("=" * 70)
-    
+
     # Jump table at $8078 (8 entries, 16 bytes)
     print("\n--- Action Jump Table ($8078) ---")
     jt_offset = cpu_to_rom(0x8078, bank_offset)
-    action_names = ['NOP/Return', 'Attack', 'Item Use', 'Unknown3', 
+    action_names = ['NOP/Return', 'Attack', 'Item Use', 'Unknown3',
                     'Skill/Spell', 'Defense', 'Unknown6', 'Unknown7']
-    
+
     for i in range(8):
         lo = rom[jt_offset + i * 2]
         hi = rom[jt_offset + i * 2 + 1]
         addr = lo | (hi << 8)
         print(f"  Action {i} ({action_names[i]:12}): ${addr:04X}")
-    
+
     print("""
 Action Dispatch Flow ($805B-$8074):
 1. Load current action mode from $6E80
@@ -345,7 +345,7 @@ def analyze_resistance_check(rom, bank_offset):
     print("\n" + "=" * 70)
     print("RESISTANCE CHECK SYSTEM ($AB59-$AB91)")
     print("=" * 70)
-    
+
     print("""
 Resistance Check at $AB59:
 
@@ -371,7 +371,7 @@ Resistance Data Format ($B967):
    Bits 5-6: Elemental category
       00 = No elemental
       01 = Fire type
-      10 = Ice type  
+      10 = Ice type
       11 = Electric/other
    Bits 0-4: Specific resistance value (0-31)
 """)
@@ -381,7 +381,7 @@ def generate_mlb_labels():
     print("\n" + "=" * 70)
     print("MLB LABELS FOR BANK 19 (Copy to debug/Dragon Warrior IV.mlb)")
     print("=" * 70)
-    
+
     labels = """
 # ==============================================================================
 # Bank 19 - Battle System Deep Analysis Labels
@@ -469,13 +469,13 @@ G:75F5:battle_spell_mask:Available spell mask
 def main():
     rom = read_rom()
     bank_offset = get_bank19_offset()
-    
+
     print("=" * 70)
     print("DRAGON WARRIOR IV - BANK 19 BATTLE SYSTEM ANALYSIS")
     print("=" * 70)
     print(f"\nBank 19 ROM offset: 0x{bank_offset:05X}")
     print(f"Bank 19 CPU range: $8000-$BFFF")
-    
+
     analyze_tactics_tables(rom, bank_offset)
     analyze_spell_tables(rom, bank_offset)
     analyze_enemy_data(rom, bank_offset)
@@ -485,7 +485,7 @@ def main():
     analyze_action_dispatch(rom, bank_offset)
     analyze_resistance_check(rom, bank_offset)
     generate_mlb_labels()
-    
+
     print("\n" + "=" * 70)
     print("ANALYSIS COMPLETE")
     print("=" * 70)

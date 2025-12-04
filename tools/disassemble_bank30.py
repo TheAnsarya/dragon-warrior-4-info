@@ -187,10 +187,10 @@ def disassemble(bank_data, labels=None):
     """Disassemble the bank data."""
     if labels is None:
         labels = {}
-    
+
     lines = []
     pc = 0
-    
+
     # Header
     lines.append(f"; Dragon Warrior IV (NES) - Bank {BANK} Disassembly")
     lines.append(f"; Switchable bank at $8000-$BFFF")
@@ -198,17 +198,17 @@ def disassemble(bank_data, labels=None):
     lines.append("")
     lines.append(f".org ${CPU_BASE:04X}")
     lines.append("")
-    
+
     # First pass: collect all branch/jump targets
     targets = set()
     temp_pc = 0
     while temp_pc < len(bank_data):
         cpu_addr = CPU_BASE + temp_pc
         opcode = bank_data[temp_pc]
-        
+
         if opcode in INSTRUCTIONS:
             mnem, size, _ = INSTRUCTIONS[opcode]
-            
+
             # Branch instructions
             if opcode in BRANCH_OPS and temp_pc + 1 < len(bank_data):
                 offset = bank_data[temp_pc + 1]
@@ -217,35 +217,35 @@ def disassemble(bank_data, labels=None):
                 target = cpu_addr + 2 + offset
                 if CPU_BASE <= target < CPU_BASE + BANK_SIZE:
                     targets.add(target)
-            
+
             # JSR/JMP absolute
             elif opcode in {0x20, 0x4C} and temp_pc + 2 < len(bank_data):
                 target = bank_data[temp_pc + 1] | (bank_data[temp_pc + 2] << 8)
                 if CPU_BASE <= target < CPU_BASE + BANK_SIZE:
                     targets.add(target)
-            
+
             temp_pc += size
         else:
             temp_pc += 1
-    
+
     # Second pass: disassemble with labels
     while pc < len(bank_data):
         cpu_addr = CPU_BASE + pc
-        
+
         # Add label if this is a target
         if cpu_addr in targets or cpu_addr in labels:
             label = labels.get(cpu_addr, f"loc_{cpu_addr:04X}")
             lines.append("")
             lines.append(f"{label}:")
-        
+
         opcode = bank_data[pc]
-        
+
         if opcode in INSTRUCTIONS:
             mnem, size, fmt = INSTRUCTIONS[opcode]
-            
+
             # Build instruction line
             hex_bytes = ' '.join(f'{bank_data[pc + i]:02X}' for i in range(min(size, len(bank_data) - pc)))
-            
+
             if size == 1:
                 operand = ""
             elif size == 2 and pc + 1 < len(bank_data):
@@ -263,19 +263,19 @@ def disassemble(bank_data, labels=None):
                 operand = fmt.format(addr)
             else:
                 operand = ""
-            
+
             inst_str = f"{mnem} {operand}".strip()
-            
+
             # Format line
             line = f"    {inst_str:24s} ; ${cpu_addr:04X}: {hex_bytes}"
             lines.append(line)
-            
+
             pc += size
         else:
             # Unknown opcode - output as data
             lines.append(f"    .byte ${opcode:02X}             ; ${cpu_addr:04X} - unknown opcode")
             pc += 1
-    
+
     return lines
 
 
@@ -283,28 +283,28 @@ def main():
     if not ROM_PATH.exists():
         print(f"ERROR: ROM not found at {ROM_PATH}")
         return
-    
+
     with open(ROM_PATH, "rb") as f:
         rom = f.read()
-    
+
     print(f"ROM loaded: {len(rom)} bytes")
-    
+
     bank_data = read_bank(rom)
     print(f"Bank {BANK} extracted: {len(bank_data)} bytes")
-    
+
     # Known labels (can be expanded)
     labels = {}
-    
+
     # Disassemble
     lines = disassemble(bank_data, labels)
-    
+
     # Write output
     OUTPUT_DIR.mkdir(exist_ok=True)
     output_file = OUTPUT_DIR / f"bank{BANK:02d}.asm"
-    
+
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
-    
+
     print(f"Disassembly written to {output_file}")
     print(f"Total lines: {len(lines)}")
 

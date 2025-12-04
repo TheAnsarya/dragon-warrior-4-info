@@ -86,20 +86,20 @@ KNOWN_LABELS = {
     0xC043: "vblank_wait_2",
     0xC067: "setup_nmi_vector",
     0xC07E: "clear_ram_loop",
-    
+
     # Bank Switching
     0xC104: "init_subroutine",
     0xC118: "mmc1_write_control",
     0xC12F: "mmc1_write_chr1",
     0xC146: "mmc1_write_prg",
-    
+
     # NMI Handler
     0xC15A: "NMI_main",
     0xC181: "NMI_check_stack",
     0xC1EF: "NMI_update_frame",
     0xC213: "NMI_return",
     0xC219: "NMI_to_irq",
-    
+
     # PPU Update
     0xC222: "ppu_buffer_transfer",
     0xC241: "ppu_write_loop",
@@ -108,7 +108,7 @@ KNOWN_LABELS = {
     0xC297: "ppu_update_tiles",
     0xC2EA: "ppu_set_scroll",
     0xC303: "oam_dma",
-    
+
     # IRQ Handler
     0xC408: "IRQ_handler",
     0xC423: "irq_read_operand",
@@ -117,11 +117,11 @@ KNOWN_LABELS = {
     0xC4CA: "irq_set_flag",
     0xC4E1: "irq_clear_flag",
     0xC4F8: "irq_extended",
-    
+
     # System Utilities
     0xC52F: "clear_system_state",
     0xC543: "clear_oam_buffer",
-    
+
     # RNG System (from cowness.net)
     0xC890: "rng_return",
     0xC891: "rng_main",
@@ -130,18 +130,18 @@ KNOWN_LABELS = {
     0xC8AD: "rng_shifter",
     0xC8CB: "rng_shifter_end",
     0xC913: "rng_related",
-    
+
     # Main Loop
     0xC968: "main_loop_entry",
     0xC97D: "main_loop",
     0xC983: "setup_bank_trampoline",
     0xC9ED: "main_frame_handler",
-    
+
     # Frame Handler
     0xCA21: "sub_CA21",
     0xCB98: "read_controller",
     0xCBB4: "timer_update",
-    
+
     # Battle System Access
     0xCC16: "fixed_cmp_limit_x",
     0xCC1D: "fixed_cmp_limit_y",
@@ -153,11 +153,11 @@ KNOWN_LABELS = {
     0xCF41: "fixed_read_actor_2",
     0xCFD7: "fixed_cmp_counter_1",
     0xCFDE: "fixed_cmp_counter_2",
-    
+
     # Map/Movement
     0xD542: "map_handler",
     0xE06E: "movement_update",
-    
+
     # High ROM
     0xF148: "fixed_read_actor_3",
     0xF15D: "fixed_read_actor_4",
@@ -168,11 +168,11 @@ KNOWN_LABELS = {
     0xFF82: "nmi_call_rng",
     0xFF8E: "jump_main_init",
     0xFF91: "bank_switch",
-    
+
     # Reset
     0xFFD8: "RESET_entry",
     0xFFDF: "mmc1_reset_trigger",
-    
+
     # Vectors
     0xFFFA: "vec_NMI",
     0xFFFC: "vec_RESET",
@@ -201,16 +201,16 @@ RAM_LABELS = {
 def disassemble_instruction(rom, addr, cpu_addr, bank_rom_end):
     """Disassemble a single instruction at the given address."""
     opcode = rom[addr]
-    
+
     if opcode not in OPCODES:
         return f".db ${opcode:02X}", 1, None
-    
+
     mnemonic, mode, size = OPCODES[opcode]
-    
+
     # Check bounds
     if addr + size > bank_rom_end:
         return f".db ${opcode:02X}", 1, None
-    
+
     if size == 1:
         operand_str = ""
         target = None
@@ -251,7 +251,7 @@ def disassemble_instruction(rom, addr, cpu_addr, bank_rom_end):
         operand_hi = rom[addr + 2]
         operand = operand_lo | (operand_hi << 8)
         target = operand
-        
+
         # Check for known labels
         if operand in KNOWN_LABELS:
             label = KNOWN_LABELS[operand]
@@ -259,7 +259,7 @@ def disassemble_instruction(rom, addr, cpu_addr, bank_rom_end):
             label = RAM_LABELS[operand]
         else:
             label = f"${operand:04X}"
-        
+
         if mode == "abs":
             operand_str = label
         elif mode == "abx":
@@ -270,10 +270,10 @@ def disassemble_instruction(rom, addr, cpu_addr, bank_rom_end):
             operand_str = f"({label})"
         else:
             operand_str = label
-    
+
     if mode == "acc":
         operand_str = "A"
-    
+
     instr = f"{mnemonic} {operand_str}".strip() if operand_str else mnemonic
     return instr, size, target
 
@@ -282,22 +282,22 @@ def find_jsr_targets(rom, bank_start, bank_end):
     """Find all JSR targets to identify subroutines."""
     targets = set()
     addr = bank_start
-    
+
     while addr < bank_end:
         opcode = rom[addr]
         if opcode not in OPCODES:
             addr += 1
             continue
-        
+
         mnemonic, mode, size = OPCODES[opcode]
-        
+
         if mnemonic == "JSR" and size == 3:
             target = rom[addr + 1] | (rom[addr + 2] << 8)
             if 0xC000 <= target <= 0xFFFF:
                 targets.add(target)
-        
+
         addr += size
-    
+
     return targets
 
 
@@ -307,19 +307,19 @@ def disassemble_fixed_bank(rom):
     # Actually for a 512KB ROM: Bank 31 = (31 * 0x4000) + 16 = $7C010
     bank_rom_start = 16 + 31 * 0x4000  # $7C010
     bank_rom_end = bank_rom_start + 0x4000  # $80010
-    
+
     cpu_start = 0xC000
     cpu_end = 0x10000
-    
+
     # Find all JSR targets
     jsr_targets = find_jsr_targets(rom, bank_rom_start, bank_rom_end)
-    
+
     # Combine with known labels
     all_labels = dict(KNOWN_LABELS)
     for target in jsr_targets:
         if target not in all_labels:
             all_labels[target] = f"sub_{target:04X}"
-    
+
     # Disassemble
     output = []
     output.append("; Dragon Warrior IV - Fixed Bank (Bank 31) Disassembly")
@@ -334,11 +334,11 @@ def disassemble_fixed_bank(rom):
     output.append("")
     output.append("; ============================================")
     output.append("")
-    
+
     addr = bank_rom_start
     cpu_addr = cpu_start
     last_was_end = False
-    
+
     while addr < bank_rom_end:
         # Check for label
         if cpu_addr in all_labels:
@@ -346,14 +346,14 @@ def disassemble_fixed_bank(rom):
                 output.append("")
             output.append(f"{all_labels[cpu_addr]}:")
             last_was_end = False
-        
+
         # Disassemble instruction
         instr, size, target = disassemble_instruction(rom, addr, cpu_addr, bank_rom_end)
-        
+
         # Format: address, hex bytes, instruction
         hex_bytes = " ".join(f"{rom[addr+i]:02X}" for i in range(size))
         output.append(f"  ${cpu_addr:04X}:  {hex_bytes:<8}  {instr}")
-        
+
         # Check if this ends a subroutine
         opcode = rom[addr]
         if opcode in (0x60, 0x40, 0x4C, 0x6C):  # RTS, RTI, JMP
@@ -361,10 +361,10 @@ def disassemble_fixed_bank(rom):
                 last_was_end = True
         else:
             last_was_end = False
-        
+
         addr += size
         cpu_addr += size
-    
+
     return output
 
 
@@ -373,26 +373,26 @@ def main():
     print("Dragon Warrior IV - Fixed Bank (Bank 31) Disassembly")
     print("=" * 70)
     print()
-    
+
     if not ROM_PATH.exists():
         print(f"ERROR: ROM not found at {ROM_PATH}")
         return
-    
+
     with open(ROM_PATH, "rb") as f:
         rom = f.read()
-    
+
     print(f"ROM loaded: {len(rom)} bytes")
-    
+
     # Disassemble
     output = disassemble_fixed_bank(rom)
-    
+
     # Write to file
     OUTPUT_DIR.mkdir(exist_ok=True)
     output_file = OUTPUT_DIR / "bank31_fixed.asm"
-    
+
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("\n".join(output))
-    
+
     print(f"Disassembly written to {output_file}")
     print(f"Total lines: {len(output)}")
 

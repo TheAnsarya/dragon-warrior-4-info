@@ -172,7 +172,7 @@ GAMEPLAY_MECHANICS = {
 def generate_mlb_labels():
     """Generate MLB format labels for Mesen debugger."""
     labels = []
-    
+
     # RAM labels for RNG
     for addr, info in RNG_ADDRESSES.items():
         # RAM addresses use different format (no bank prefix for $00-$1F typically)
@@ -180,18 +180,18 @@ def generate_mlb_labels():
             labels.append(f"R:{addr:04X}:{info['name']}")
         else:
             labels.append(f"S:{addr:04X}:{info['name']}")
-    
+
     # Code labels for RNG (Bank 31 = $1F)
     for addr, info in RNG_CODE.items():
         # Bank 31 is the fixed bank at $C000-$FFFF
         # PRG ROM offset = (bank * 0x4000) + (addr - $C000)
         prg_offset = (31 * 0x4000) + (addr - 0xC000)
         labels.append(f"P:{prg_offset:04X}:{info['name']}")
-    
+
     # Save file region markers
     for region, info in SAVE_FILE_ADDRESSES.items():
         labels.append(f"S:{info['start']:04X}:{info['name']}_Start")
-    
+
     return labels
 
 
@@ -202,7 +202,7 @@ def generate_reference_doc():
     doc.append("")
     doc.append("Data sourced from https://cowness.net/Speedrunning/DW4%20Notes/")
     doc.append("")
-    
+
     # Hero EXP Table
     doc.append("## Hero Experience Requirements")
     doc.append("")
@@ -218,7 +218,7 @@ def generate_reference_doc():
             diff = "-"
         doc.append(f"| {level} | {exp:,} | {diff if isinstance(diff, str) else f'{diff:,}'} |")
     doc.append("")
-    
+
     # Necrosaro HP
     doc.append("## Necrosaro Boss HP by Phase")
     doc.append("")
@@ -228,7 +228,7 @@ def generate_reference_doc():
         notes = "Regenerates 100/turn" if phase == 7 else ""
         doc.append(f"| {phase} | {hp} | {notes} |")
     doc.append("")
-    
+
     # Tournament
     doc.append("## Tournament Opponents (Chapter 2)")
     doc.append("")
@@ -240,7 +240,7 @@ def generate_reference_doc():
         notes = stats.get("behavior", "")
         doc.append(f"| {name} | {hp} | {mp} | {notes} |")
     doc.append("")
-    
+
     # RNG Addresses
     doc.append("## RNG System Addresses")
     doc.append("")
@@ -251,7 +251,7 @@ def generate_reference_doc():
     for addr, info in sorted(RNG_ADDRESSES.items()):
         doc.append(f"| ${addr:04X} | {info['name']} | {info['description']} |")
     doc.append("")
-    
+
     doc.append("### RNG Code (Bank 31 / $1F - Fixed Bank)")
     doc.append("")
     doc.append("| Address | Name | Description |")
@@ -259,7 +259,7 @@ def generate_reference_doc():
     for addr, info in sorted(RNG_CODE.items()):
         doc.append(f"| ${addr:04X} | {info['name']} | {info['description']} |")
     doc.append("")
-    
+
     # Save File Structure
     doc.append("## Save File Memory Layout")
     doc.append("")
@@ -269,7 +269,7 @@ def generate_reference_doc():
         size = info['end'] - info['start'] + 1
         doc.append(f"| {region} | ${info['start']:04X} | ${info['end']:04X} | {size} bytes | {info['name']} |")
     doc.append("")
-    
+
     # Monster Byte Flags
     doc.append("## Monster Data Byte Structure")
     doc.append("")
@@ -293,7 +293,7 @@ def generate_reference_doc():
             for val, meaning in byte_info["patterns"].items():
                 doc.append(f"| ${val:02X} | {meaning} |")
         doc.append("")
-    
+
     # Known Monster Patterns
     doc.append("## Known Monster Byte Patterns")
     doc.append("")
@@ -304,7 +304,7 @@ def generate_reference_doc():
         b24 = f"${data['byte_24']:02X}"
         doc.append(f"| {monster} | {b22} | {b24} | {data['notes']} |")
     doc.append("")
-    
+
     # Gameplay Mechanics
     doc.append("## Gameplay Mechanics")
     doc.append("")
@@ -317,7 +317,7 @@ def generate_reference_doc():
     for stat, range_data in stats.items():
         doc.append(f"- {stat}: {range_data['min']} - {range_data['max']}")
     doc.append("")
-    
+
     return "\n".join(doc)
 
 
@@ -357,15 +357,15 @@ def main():
     (DATA_DIR / "json").mkdir(exist_ok=True)
     DOCS_DIR.mkdir(exist_ok=True)
     DEBUG_DIR.mkdir(exist_ok=True)
-    
+
     print("=" * 60)
     print("Dragon Warrior IV - Cowness.net Data Integration")
     print("=" * 60)
     print()
-    
+
     # Generate and display EXP hex values
     convert_exp_to_hex()
-    
+
     # Generate reference documentation
     print("Generating reference documentation...")
     doc = generate_reference_doc()
@@ -373,7 +373,7 @@ def main():
     with open(doc_path, "w", encoding="utf-8") as f:
         f.write(doc)
     print(f"  Written: {doc_path}")
-    
+
     # Generate JSON data
     print("Generating JSON data file...")
     data = generate_json_data()
@@ -381,7 +381,7 @@ def main():
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
     print(f"  Written: {json_path}")
-    
+
     # Generate MLB labels
     print("Generating MLB labels...")
     labels = generate_mlb_labels()
@@ -392,7 +392,7 @@ def main():
         for label in labels:
             f.write(label + "\n")
     print(f"  Written: {mlb_path}")
-    
+
     print()
     print("=" * 60)
     print("Summary of integrated data:")

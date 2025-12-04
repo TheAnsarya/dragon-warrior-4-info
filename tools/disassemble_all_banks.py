@@ -187,13 +187,13 @@ def disassemble_bank(bank_data, bank_num, labels=None):
     """Disassemble a bank."""
     if labels is None:
         labels = {}
-    
+
     # Bank 31 is fixed at $C000-$FFFF, others at $8000-$BFFF
     cpu_base = 0xC000 if bank_num == 31 else 0x8000
     bank_size = len(bank_data)
-    
+
     lines = []
-    
+
     # Header
     lines.append(f"; Dragon Warrior IV (NES) - Bank {bank_num} Disassembly")
     if bank_num == 31:
@@ -204,17 +204,17 @@ def disassemble_bank(bank_data, bank_num, labels=None):
     lines.append("")
     lines.append(f".org ${cpu_base:04X}")
     lines.append("")
-    
+
     # First pass: collect branch/jump targets
     targets = set()
     pc = 0
     while pc < bank_size:
         cpu_addr = cpu_base + pc
         opcode = bank_data[pc]
-        
+
         if opcode in INSTRUCTIONS:
             mnem, size, _ = INSTRUCTIONS[opcode]
-            
+
             if opcode in BRANCH_OPS and pc + 1 < bank_size:
                 offset = bank_data[pc + 1]
                 if offset >= 0x80:
@@ -222,34 +222,34 @@ def disassemble_bank(bank_data, bank_num, labels=None):
                 target = cpu_addr + 2 + offset
                 if cpu_base <= target < cpu_base + bank_size:
                     targets.add(target)
-            
+
             elif opcode in {0x20, 0x4C} and pc + 2 < bank_size:
                 target = bank_data[pc + 1] | (bank_data[pc + 2] << 8)
                 if cpu_base <= target < cpu_base + bank_size:
                     targets.add(target)
-            
+
             pc += size
         else:
             pc += 1
-    
+
     # Second pass: disassemble
     pc = 0
     while pc < bank_size:
         cpu_addr = cpu_base + pc
-        
+
         if cpu_addr in targets or cpu_addr in labels:
             label = labels.get(cpu_addr, f"loc_{cpu_addr:04X}")
             lines.append("")
             lines.append(f"{label}:")
-        
+
         opcode = bank_data[pc]
-        
+
         if opcode in INSTRUCTIONS:
             mnem, size, fmt = INSTRUCTIONS[opcode]
-            
+
             bytes_left = bank_size - pc
             hex_bytes = ' '.join(f'{bank_data[pc + i]:02X}' for i in range(min(size, bytes_left)))
-            
+
             if size == 1:
                 operand = ""
             elif size == 2 and pc + 1 < bank_size:
@@ -266,16 +266,16 @@ def disassemble_bank(bank_data, bank_num, labels=None):
                 operand = fmt.format(addr)
             else:
                 operand = ""
-            
+
             inst_str = f"{mnem} {operand}".strip()
             line = f"    {inst_str:24s} ; ${cpu_addr:04X}: {hex_bytes}"
             lines.append(line)
-            
+
             pc += size
         else:
             lines.append(f"    .byte ${opcode:02X}             ; ${cpu_addr:04X} - unknown opcode")
             pc += 1
-    
+
     return lines
 
 
@@ -284,17 +284,17 @@ def main():
     parser.add_argument("-b", "--banks", help="Comma-separated list of banks to disassemble (e.g., 30,31)")
     parser.add_argument("-a", "--all", action="store_true", help="Disassemble all banks")
     args = parser.parse_args()
-    
+
     if not ROM_PATH.exists():
         print(f"ERROR: ROM not found at {ROM_PATH}")
         return
-    
+
     with open(ROM_PATH, "rb") as f:
         rom = f.read()
-    
+
     num_banks = (len(rom) - HEADER_SIZE) // BANK_SIZE
     print(f"ROM loaded: {len(rom)} bytes, {num_banks} banks")
-    
+
     # Determine which banks to disassemble
     if args.all:
         banks = list(range(num_banks))
@@ -303,25 +303,25 @@ def main():
     else:
         # Default: just show stats and disassemble banks 30, 31
         banks = [30, 31]
-    
+
     OUTPUT_DIR.mkdir(exist_ok=True)
-    
+
     total_lines = 0
     for bank in banks:
         if bank < 0 or bank >= num_banks:
             print(f"Skipping invalid bank {bank}")
             continue
-        
+
         bank_data = read_bank(rom, bank)
         lines = disassemble_bank(bank_data, bank)
-        
+
         output_file = OUTPUT_DIR / f"bank{bank:02d}.asm"
         with open(output_file, "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
-        
+
         print(f"Bank {bank:2d}: {len(lines):6d} lines -> {output_file.name}")
         total_lines += len(lines)
-    
+
     print(f"\nTotal: {total_lines} lines across {len(banks)} banks")
 
 
