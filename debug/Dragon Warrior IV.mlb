@@ -5079,7 +5079,7 @@ P:2E889:b0b_overworld_underworld_row_ptrs:Underworld Overworld row pointers
 # ==============================================================================
 # Day/Night timer is a single byte, cycles through specific ranges:
 # $00-$27 = Daytime (after sleeping at inn, starts at $00)
-# $28-$77 = Transition/afternoon  
+# $28-$77 = Transition/afternoon
 # $84-$BF = Nighttime (display night graphics)
 # Timer increments with each step on overworld
 
@@ -5123,7 +5123,7 @@ P:2E889:b0b_overworld_underworld_row_ptrs:Underworld Overworld row pointers
 # $20   | World Map (Zeneth.)   | Overworld - Zenethia area
 # $21   | Shrine of Avan        | Shrine
 # $22   | Shrine Near Garenb.   | Shrine
-# $23   | (Unknown)             | 
+# $23   | (Unknown)             |
 # $24   | Tower Near Lakanaba   | Tower dungeon
 # $25   | Birdsong Tower        | Tower dungeon
 # $26   | (Unknown)             |
