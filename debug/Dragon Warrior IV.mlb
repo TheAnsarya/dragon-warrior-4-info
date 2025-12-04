@@ -3718,4 +3718,32 @@ P:BF85:b15_wait_return:Return from wait
 P:BF8E:b15_jmp_c03d:Jump to $C03D
 P:BF91:b15_store_bank:Store bank to $0507
 
+# ==============================================================================
+# BANK 14 ($8000-$BFFF) - MAP/TILE DATA WITH SMALL CODE ROUTINES
+# ==============================================================================
+# Bank 14 is primarily map/metatile graphics data with small code routines
+# for map tile setup and palette loading.
+
+# -- Bank 14 Tile Setup ($8000-$8090) --
+P:8000:b14_data_header:Data header/entry point
+P:8008:b14_load_tile_ptr:Load tile pointer to $06/$07
+P:800A:b14_call_baf7:Call $BAF7 for tile lookup
+P:8010:b14_setup_tile:Setup tile data routine
+P:8017:b14_call_setup:Call tile setup with map check
+P:8026:b14_branch_0:Branch if map = 0
+P:8029:b14_restore_06:Restore $06 and return
+P:802D:b14_tile_setup_main:Main tile setup routine
+P:8040:b14_store_fc:Store to $05FC
+P:805C:b14_tile_loop:Tile processing loop
+P:807A:b14_copy_tile_data:Copy 3 bytes of tile data
+P:8090:b14_return:Return from tile setup
+
+# -- Bank 14 Data Tables ($8091-$8097) --
+P:8091:b14_ptr_table_lo:Pointer table low bytes
+P:8095:b14_ptr_table_hi:Pointer table high bytes
+
+# -- Bank 14 Late Routines ($BF00-$BF41) --
+P:BF02:b14_late_routine:Late code routine
+P:BF41:b14_helper:Helper routine called from $BF02
+
 
