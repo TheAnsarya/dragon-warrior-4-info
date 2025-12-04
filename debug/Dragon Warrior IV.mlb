@@ -17,7 +17,7 @@
 # Repository: https://github.com/mrisney/dragon-warrior-4-info
 # DataCrystal: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)
 #
-# Statistics: ~2,800 labels (P=1,482, G=464, R=851) across 4,030 lines
+# Statistics: ~3,060 labels (P=1,741, G=464, R=851) across 4,435 lines
 # Banks Covered: 08, 0E, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27-30
 # ==============================================================================
 
@@ -355,63 +355,461 @@ G:7025:battle_result_25:Battle result byte 25
 
 # ==============================================================================
 # Bank 09 - Map Data ($24000-$27FFF) - Locations 00-2D
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+# Address format: physical = (CPU_addr - $8000) + $24000
 # ==============================================================================
 P:24000:b09_map_data_start:Bank 09 map data start
 
 # Map 00: Keeleon (Town and Castle)
-P:24000:Map00_Keeleon_Outside:Keeleon - Outside area
-P:24085:Map00_Keeleon_F1:Keeleon - F1 (main floor)
-P:2412B:Map00_Keeleon_F2:Keeleon - F2
-P:241AE:Map00_Keeleon_F3:Keeleon - F3
-P:241C1:Map00_Keeleon_B1:Keeleon - B1, Jail
+P:24000:Map00_Keeleon_S0:Keeleon - Submap 0
+P:24085:Map00_Keeleon_S1:Keeleon - Submap 1
+P:2412B:Map00_Keeleon_S2:Keeleon - Submap 2
+P:241AE:Map00_Keeleon_S3:Keeleon - Submap 3
+P:241C1:Map00_Keeleon_S4:Keeleon - Submap 4 (Jail)
 
 # Map 01: Santeem (Chapter 2 Castle)
-P:24206:Map01_Santeem_F1:Santeem - F1 (main floor)
-P:242DD:Map01_Santeem_F2:Santeem - F2
-P:24344:Map01_Santeem_F3:Santeem - F3 (Alena's room)
+P:24206:Map01_Santeem_S0:Santeem - Submap 0 (Main floor)
+P:242DD:Map01_Santeem_S1:Santeem - Submap 1
+P:24344:Map01_Santeem_S2:Santeem - Submap 2 (Alena's room)
 
 # Map 02: Burland (Chapter 1 Castle)
-P:24398:Map02_Burland_Town:Burland - Town area
-P:2450C:Map02_Burland_Castle_F1:Burland - Castle, F1
-P:245DE:Map02_Burland_Castle_F2:Burland - Castle, F2
-P:2465D:Map02_Burland_Flora:Burland - Flora's House / Armor Shop, F2
+P:24398:Map02_Burland_S0:Burland - Submap 0 (Town)
+P:2450C:Map02_Burland_S1:Burland - Submap 1 (Castle F1)
+P:245DE:Map02_Burland_S2:Burland - Submap 2 (Castle F2)
+P:2465D:Map02_Burland_S3:Burland - Submap 3 (Flora's House)
 
 # Map 03: Dire Palace
-P:2469B:Map03_DirePalace_F1:Dire Palace - F1
-P:247B5:Map03_DirePalace_F2:Dire Palace - F2
-P:24834:Map03_DirePalace_B1_Kitchen:Dire Palace - B1, Kitchen/Jail
-P:248CF:Map03_DirePalace_B1_Tomb:Dire Palace - B1, Tomb
+P:2469B:Map03_DirePalace_S0:Dire Palace - Submap 0
+P:247B5:Map03_DirePalace_S1:Dire Palace - Submap 1
+P:24834:Map03_DirePalace_S2:Dire Palace - Submap 2 (Kitchen/Jail)
+P:248CF:Map03_DirePalace_S3:Dire Palace - Submap 3 (Tomb)
 
-# Map 04: Endor (Casino Town)
-P:248E7:Map04_Endor_Town:Endor - Town area
-P:24A45:Map04_Endor_Casino:Endor - Casino/Monster Arena
-P:24AAB:Map04_Endor_Castle_F1:Endor - Castle, F1
-P:24C77:Map04_Endor_Arena:Endor - Back Castle, Arena
+# Map 04: Endor (Casino Town) - many submaps
+P:248E7:Map04_Endor_S0:Endor - Submap 0 (Town)
+P:24A45:Map04_Endor_S1:Endor - Submap 1 (Casino)
+P:24AAB:Map04_Endor_S2:Endor - Submap 2 (Castle F1)
+P:24B7D:Map04_Endor_S3:Endor - Submap 3
+P:24B96:Map04_Endor_S4:Endor - Submap 4
+P:24BB5:Map04_Endor_S5:Endor - Submap 5
+P:24C04:Map04_Endor_S6:Endor - Submap 6
+P:24C77:Map04_Endor_S7:Endor - Submap 7 (Arena)
+P:24DD6:Map04_Endor_S8:Endor - Submap 8
+P:24DF4:Map04_Endor_S9:Endor - Submap 9
+P:24E0F:Map04_Endor_SA:Endor - Submap A
+P:24E2C:Map04_Endor_SB:Endor - Submap B
+P:24E5A:Map04_Endor_SC:Endor - Submap C
+P:24E92:Map04_Endor_SD:Endor - Submap D
+P:24EC9:Map04_Endor_SE:Endor - Submap E
 
-# Maps 05-2D: Additional locations continue in Bank 09
-# Full list available at DataCrystal ROM map page
+# Map 05: Bonmalmo
+P:24F28:Map05_Bonmalmo_S0:Bonmalmo - Submap 0
+P:24F62:Map05_Bonmalmo_S1:Bonmalmo - Submap 1
+
+# Map 06: Branca
+P:25063:Map06_Branca_S0:Branca - Submap 0
+P:25171:Map06_Branca_S1:Branca - Submap 1
+P:251C3:Map06_Branca_S2:Branca - Submap 2
+P:251D5:Map06_Branca_S3:Branca - Submap 3
+
+# Map 07: Soretta
+P:251ED:Map07_Soretta_S0:Soretta - Submap 0
+P:252CB:Map07_Soretta_S1:Soretta - Submap 1
+
+# Map 08: Gardenbur
+P:25313:Map08_Gardenbur_S0:Gardenbur - Submap 0
+P:253C9:Map08_Gardenbur_S1:Gardenbur - Submap 1
+P:25492:Map08_Gardenbur_S2:Gardenbur - Submap 2
+P:25506:Map08_Gardenbur_S3:Gardenbur - Submap 3
+P:25544:Map08_Gardenbur_S4:Gardenbur - Submap 4
+
+# Map 09: Stancia
+P:25563:Map09_Stancia_S0:Stancia - Submap 0
+P:2563A:Map09_Stancia_S1:Stancia - Submap 1
+P:25728:Map09_Stancia_S2:Stancia - Submap 2
+P:257A8:Map09_Stancia_S3:Stancia - Submap 3
+P:2584B:Map09_Stancia_S4:Stancia - Submap 4
+P:258B4:Map09_Stancia_S5:Stancia - Submap 5
+P:258D8:Map09_Stancia_S6:Stancia - Submap 6
+P:25931:Map09_Stancia_S7:Stancia - Submap 7
+
+# Map 0A: Aktemto (town portion)
+P:2597D:Map0A_Aktemto_S0:Aktemto - Submap 0
+
+# Map 0B: Riverton
+P:25A67:Map0B_Riverton_S0:Riverton - Submap 0
+P:25B5B:Map0B_Riverton_S1:Riverton - Submap 1
+
+# Map 0C: Bazaar
+P:25BA8:Map0C_Bazaar_S0:Bazaar - Submap 0
+
+# Map 0D: Mintos
+P:25C47:Map0D_Mintos_S0:Mintos - Submap 0
+P:25D2A:Map0D_Mintos_S1:Mintos - Submap 1
+P:25D86:Map0D_Mintos_S2:Mintos - Submap 2
+
+# Map 0E: Tempe
+P:25DD2:Map0E_Tempe_S0:Tempe - Submap 0
+
+# Map 0F: Frenor
+P:25EE9:Map0F_Frenor_S0:Frenor - Submap 0
+P:25FEA:Map0F_Frenor_S1:Frenor - Submap 1
+
+# Map 10: Aneaux
+P:2602F:Map10_Aneaux_S0:Aneaux - Submap 0
+P:26113:Map10_Aneaux_S1:Aneaux - Submap 1
+P:26136:Map10_Aneaux_S2:Aneaux - Submap 2
+P:26154:Map10_Aneaux_S3:Aneaux - Submap 3
+
+# Map 11: Haville
+P:26179:Map11_Haville_S0:Haville - Submap 0
+P:262CB:Map11_Haville_S1:Haville - Submap 1
+P:26321:Map11_Haville_S2:Haville - Submap 2
+P:26348:Map11_Haville_S3:Haville - Submap 3
+P:263EA:Map11_Haville_S4:Haville - Submap 4
+P:2643A:Map11_Haville_S5:Haville - Submap 5
+
+# Map 12: Izmit
+P:2645E:Map12_Izmit_S0:Izmit - Submap 0
+P:26548:Map12_Izmit_S1:Izmit - Submap 1
+P:26597:Map12_Izmit_S2:Izmit - Submap 2
+
+# Map 13: Surene
+P:265BB:Map13_Surene_S0:Surene - Submap 0
+P:266E6:Map13_Surene_S1:Surene - Submap 1
+P:2673A:Map13_Surene_S2:Surene - Submap 2
+P:26774:Map13_Surene_S3:Surene - Submap 3
+P:267B3:Map13_Surene_S4:Surene - Submap 4
+
+# Map 14: Hometown
+P:267D1:Map14_Hometown_S0:Hometown - Submap 0
+P:26873:Map14_Hometown_S1:Hometown - Submap 1
+P:2689C:Map14_Hometown_S2:Hometown - Submap 2
+
+# Map 15: Monbaraba
+P:2697F:Map15_Monbaraba_S0:Monbaraba - Submap 0
+P:26A95:Map15_Monbaraba_S1:Monbaraba - Submap 1
+P:26AE2:Map15_Monbaraba_S2:Monbaraba - Submap 2
+P:26B8A:Map15_Monbaraba_S3:Monbaraba - Submap 3
+
+# Map 16: Lakanaba
+P:26C9D:Map16_Lakanaba_S0:Lakanaba - Submap 0
+P:26DC1:Map16_Lakanaba_S1:Lakanaba - Submap 1
+P:26E03:Map16_Lakanaba_S2:Lakanaba - Submap 2
+
+# Map 17: Kievs
+P:26E2E:Map17_Kievs_S0:Kievs - Submap 0
+P:26F1C:Map17_Kievs_S1:Kievs - Submap 1
+
+# Map 18: Foxville
+P:26F51:Map18_Foxville_S0:Foxville - Submap 0
+P:26FE8:Map18_Foxville_S1:Foxville - Submap 1
+
+# Map 19: Seaside Village
+P:27013:Map19_Seaside_S0:Seaside Village - Submap 0
+P:270DA:Map19_Seaside_S1:Seaside Village - Submap 1
+P:27194:Map19_Seaside_S2:Seaside Village - Submap 2
+
+# Map 1A: Gottside
+P:271B6:Map1A_Gottside_S0:Gottside - Submap 0
+P:27369:Map1A_Gottside_S1:Gottside - Submap 1
+
+# Map 1B: Rosaville
+P:273AA:Map1B_Rosaville_S0:Rosaville - Submap 0
+P:274A4:Map1B_Rosaville_S1:Rosaville - Submap 1
+P:27505:Map1B_Rosaville_S2:Rosaville - Submap 2
+P:27528:Map1B_Rosaville_S3:Rosaville - Submap 3
+P:2756B:Map1B_Rosaville_S4:Rosaville - Submap 4
+
+# Map 1C: Secret Playground
+P:27570:Map1C_SecretPlayground_S0:Secret Playground - Submap 0
+P:275CD:Map1C_SecretPlayground_S1:Secret Playground - Submap 1
+
+# Map 1D: House of Prophecy
+P:275E6:Map1D_HouseOfProphecy_S0:House of Prophecy - Submap 0
+
+# Map 1E: Shrine to Endor
+P:27604:Map1E_ShrineEndor_S0:Shrine to Endor - Submap 0
+
+# Map 1F: Inn Shrine
+P:2762F:Map1F_InnShrine_S0:Inn Shrine - Submap 0
+
+# Map 20: Woodsman's Shack
+P:27672:Map20_WoodsmanShack_S0:Woodsman's Shack - Submap 0
+
+# Map 21: Desert Inn
+P:276BE:Map21_DesertInn_S0:Desert Inn - Submap 0
+
+# Map 22: Small Medal King
+P:27738:Map22_MedalKing_S0:Small Medal King - Submap 0
+P:2778D:Map22_MedalKing_S1:Small Medal King - Submap 1
+
+# Map 23: Soretta Shrine
+P:277CA:Map23_SorettaShrine_S0:Soretta Shrine - Submap 0
+
+# Map 24: Small Island
+P:2781F:Map24_SmallIsland_S0:Small Island - Submap 0
+
+# Map 25: Royal Crypt
+P:27854:Map25_RoyalCrypt_S0:Royal Crypt - Submap 0
+P:2788C:Map25_RoyalCrypt_S1:Royal Crypt - Submap 1
+
+# Map 26: Last Refuge
+P:278D3:Map26_LastRefuge_S0:Last Refuge - Submap 0
+
+# Map 27: Gigademon Shrine
+P:27947:Map27_GigademonShrine_S0:Gigademon Shrine - Submap 0
+P:279AB:Map27_GigademonShrine_S1:Gigademon Shrine - Submap 1
+P:279E5:Map27_GigademonShrine_S2:Gigademon Shrine - Submap 2
+
+# Map 28: Anderoug Shrine
+P:27A1D:Map28_AnderougShrine_S0:Anderoug Shrine - Submap 0
+P:27A34:Map28_AnderougShrine_S1:Anderoug Shrine - Submap 1
+P:27A4C:Map28_AnderougShrine_S2:Anderoug Shrine - Submap 2
+
+# Map 29: Infurnus Shadow Shrine
+P:27AAA:Map29_InfurnusShrine_S0:Infurnus Shadow Shrine - Submap 0
+P:27ADA:Map29_InfurnusShrine_S1:Infurnus Shadow Shrine - Submap 1
+
+# Map 2A: Final Cave (entrance)
+P:27B11:Map2A_FinalCave_S0:Final Cave - Submap 0
+
+# Map 2B: Riverton Travel Door
+P:27B41:Map2B_RivertonDoor_S0:Riverton Travel Door - Submap 0
+
+# Map 2C: Shrine of Colossus
+P:27B4D:Map2C_ShrineColossus_S0:Shrine of Colossus - Submap 0
+
+# Map 2D: Aktemto Mine (Bank 09 portion)
+P:27C25:Map2D_AktemtoMine_S0:Aktemto Mine - Submap 0
+P:27CBF:Map2D_AktemtoMine_S1:Aktemto Mine - Submap 1
+P:27D80:Map2D_AktemtoMine_S2:Aktemto Mine - Submap 2
+P:27DA1:Map2D_AktemtoMine_S3:Aktemto Mine - Submap 3
+P:27E5E:Map2D_AktemtoMine_S4:Aktemto Mine - Submap 4
+P:27EF7:Map2D_AktemtoMine_S5:Aktemto Mine - Submap 5
+P:27F68:Map2D_AktemtoMine_S6:Aktemto Mine - Submap 6
+P:27FBB:Map2D_AktemtoMine_S7:Aktemto Mine - Submap 7
+# Note: Aktemto Mine submaps 8-9 continue on Bank 0A
 
 # ==============================================================================
 # Bank 0A - Map Data ($28000-$2BFFF) - Locations 2D-45
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+# Address format: physical = (CPU_addr - $8000) + $28000
 # ==============================================================================
-# Continues from Bank 09, includes Aktemto Mine, Zenethian Tower, etc.
 P:28000:b0a_map_data_start:Bank 0A map data start
-# Map 2D: Aktemto Mine (continues from Bank 09)
+
+# Map 2D: Aktemto Mine (Bank 0A portion - submaps 8-9)
+P:2803E:Map2D_AktemtoMine_S8:Aktemto Mine - Submap 8
+P:282EF:Map2D_AktemtoMine_S9:Aktemto Mine - Submap 9
+
+# Map 2E: Shrine of Breaking Waves
+P:2830C:Map2E_ShrineWaves_S0:Shrine of Breaking Waves - Submap 0
+P:2847D:Map2E_ShrineWaves_S1:Shrine of Breaking Waves - Submap 1
+
+# Map 2F: Padaquea Cave
+P:284B9:Map2F_PadaqueaCave_S0:Padaquea Cave - Submap 0
+P:284F1:Map2F_PadaqueaCave_S1:Padaquea Cave - Submap 1
+P:28616:Map2F_PadaqueaCave_S2:Padaquea Cave - Submap 2
+
+# Map 30: Bakor's Hideout
+P:286C8:Map30_BakorHideout_S0:Bakor's Hideout - Submap 0
+P:286F0:Map30_BakorHideout_S1:Bakor's Hideout - Submap 1
+P:288D4:Map30_BakorHideout_S2:Bakor's Hideout - Submap 2
+
+# Map 31: Sphere of Silence Cave
+P:28B0C:Map31_SphereSilence_S0:Sphere of Silence Cave - Submap 0
+P:28B7E:Map31_SphereSilence_S1:Sphere of Silence Cave - Submap 1
+P:28C06:Map31_SphereSilence_S2:Sphere of Silence Cave - Submap 2
+P:28C39:Map31_SphereSilence_S3:Sphere of Silence Cave - Submap 3
+P:28CB7:Map31_SphereSilence_S4:Sphere of Silence Cave - Submap 4
+
+# Map 32: Golden Bracelet Cave
+P:28CF0:Map32_GoldenBracelet_S0:Golden Bracelet Cave - Submap 0
+P:28DBB:Map32_GoldenBracelet_S1:Golden Bracelet Cave - Submap 1
+
+# Map 33: Secret Playground (Dungeon)
+P:28E5C:Map33_SecretPlayDungeon_S0:Secret Playground Dungeon - Submap 0
+P:28EE9:Map33_SecretPlayDungeon_S1:Secret Playground Dungeon - Submap 1
+P:28F33:Map33_SecretPlayDungeon_S2:Secret Playground Dungeon - Submap 2
+P:28F53:Map33_SecretPlayDungeon_S3:Secret Playground Dungeon - Submap 3
+P:28FBF:Map33_SecretPlayDungeon_S4:Secret Playground Dungeon - Submap 4
+P:2900C:Map33_SecretPlayDungeon_S5:Secret Playground Dungeon - Submap 5
+P:2902A:Map33_SecretPlayDungeon_S6:Secret Playground Dungeon - Submap 6
+
+# Map 34: Cascade Cave
+P:29044:Map34_CascadeCave_S0:Cascade Cave - Submap 0
+P:29133:Map34_CascadeCave_S1:Cascade Cave - Submap 1
+P:29311:Map34_CascadeCave_S2:Cascade Cave - Submap 2
+P:293EB:Map34_CascadeCave_S3:Cascade Cave - Submap 3
+P:2940C:Map34_CascadeCave_S4:Cascade Cave - Submap 4
+
+# Map 35: Final Cave (Dungeon)
+P:29705:Map35_FinalCaveDungeon_S0:Final Cave Dungeon - Submap 0
+P:2978D:Map35_FinalCaveDungeon_S1:Final Cave Dungeon - Submap 1
+P:2984E:Map35_FinalCaveDungeon_S2:Final Cave Dungeon - Submap 2
+P:298FB:Map35_FinalCaveDungeon_S3:Final Cave Dungeon - Submap 3
+P:29988:Map35_FinalCaveDungeon_S4:Final Cave Dungeon - Submap 4
+P:299CE:Map35_FinalCaveDungeon_S5:Final Cave Dungeon - Submap 5
+P:299E9:Map35_FinalCaveDungeon_S6:Final Cave Dungeon - Submap 6
+P:29A0B:Map35_FinalCaveDungeon_S7:Final Cave Dungeon - Submap 7
+P:29A59:Map35_FinalCaveDungeon_S8:Final Cave Dungeon - Submap 8
+P:29A80:Map35_FinalCaveDungeon_S9:Final Cave Dungeon - Submap 9
+
+# Map 36: Iron Safe Cave
+P:29AA0:Map36_IronSafeCave_S0:Iron Safe Cave - Submap 0
+P:29AD2:Map36_IronSafeCave_S1:Iron Safe Cave - Submap 1
+P:29B2D:Map36_IronSafeCave_S2:Iron Safe Cave - Submap 2
+P:29B86:Map36_IronSafeCave_S3:Iron Safe Cave - Submap 3
+P:29BB0:Map36_IronSafeCave_S4:Iron Safe Cave - Submap 4
+P:29C4B:Map36_IronSafeCave_S5:Iron Safe Cave - Submap 5
+P:29C6A:Map36_IronSafeCave_S6:Iron Safe Cave - Submap 6
+
+# Map 37: Cave of Betrayal
+P:29C9D:Map37_CaveBetrayal_S0:Cave of Betrayal - Submap 0
+P:29D02:Map37_CaveBetrayal_S1:Cave of Betrayal - Submap 1
+P:29D59:Map37_CaveBetrayal_S2:Cave of Betrayal - Submap 2
+
+# Map 38: Silver Statuette Cave
+P:29DAB:Map38_SilverStatuette_S0:Silver Statuette Cave - Submap 0
+P:29DE1:Map38_SilverStatuette_S1:Silver Statuette Cave - Submap 1
+P:29E5C:Map38_SilverStatuette_S2:Silver Statuette Cave - Submap 2
+P:29EC0:Map38_SilverStatuette_S3:Silver Statuette Cave - Submap 3
+P:29F95:Map38_SilverStatuette_S4:Silver Statuette Cave - Submap 4
+P:2A026:Map38_SilverStatuette_S5:Silver Statuette Cave - Submap 5
+
+# Map 39: Branca-Izmit Tunnel
+P:2A070:Map39_BrancaIzmitTunnel_S0:Branca-Izmit Tunnel - Submap 0
+
+# Map 3A: Branca-Endor Tunnel
+P:2A0DF:Map3A_BrancaEndorTunnel_S0:Branca-Endor Tunnel - Submap 0
+P:2A111:Map3A_BrancaEndorTunnel_S1:Branca-Endor Tunnel - Submap 1
+
+# Map 3B: Royal Crypt Dungeon
+P:2A15A:Map3B_RoyalCryptDungeon_S0:Royal Crypt Dungeon - Submap 0
+P:2A1E1:Map3B_RoyalCryptDungeon_S1:Royal Crypt Dungeon - Submap 1
+P:2A269:Map3B_RoyalCryptDungeon_S2:Royal Crypt Dungeon - Submap 2
+
+# Map 3C: Necrosaro's Lair
+P:2A2F4:Map3C_NecrosarLair_S0:Necrosaro's Lair - Submap 0
+
 # Map 3D: Zenethian Tower
-# Map 45: Necrosaro's Palace (partial)
+P:2A507:Map3D_ZenethianTower_S0:Zenethian Tower - Submap 0
+P:2A6EA:Map3D_ZenethianTower_S1:Zenethian Tower - Submap 1
+P:2A79C:Map3D_ZenethianTower_S2:Zenethian Tower - Submap 2
+P:2A7C6:Map3D_ZenethianTower_S3:Zenethian Tower - Submap 3
+P:2A7F6:Map3D_ZenethianTower_S4:Zenethian Tower - Submap 4
+P:2A814:Map3D_ZenethianTower_S5:Zenethian Tower - Submap 5
+P:2A83D:Map3D_ZenethianTower_S6:Zenethian Tower - Submap 6
+P:2A856:Map3D_ZenethianTower_S7:Zenethian Tower - Submap 7
+P:2A88D:Map3D_ZenethianTower_S8:Zenethian Tower - Submap 8
+P:2A8D5:Map3D_ZenethianTower_S9:Zenethian Tower - Submap 9
+P:2A904:Map3D_ZenethianTower_SA:Zenethian Tower - Submap A
+P:2A94A:Map3D_ZenethianTower_SB:Zenethian Tower - Submap B
+P:2A979:Map3D_ZenethianTower_SC:Zenethian Tower - Submap C
+P:2A9A6:Map3D_ZenethianTower_SD:Zenethian Tower - Submap D
+P:2A9CC:Map3D_ZenethianTower_SE:Zenethian Tower - Submap E
+
+# Map 3E: Outside Zenethia
+P:2AB0F:Map3E_OutsideZenethia_S0:Outside Zenethia - Submap 0
+
+# Map 3F: Birdsong Tower
+P:2ABE1:Map3F_BirdsongTower_S0:Birdsong Tower - Submap 0
+P:2AC2D:Map3F_BirdsongTower_S1:Birdsong Tower - Submap 1
+P:2AC99:Map3F_BirdsongTower_S2:Birdsong Tower - Submap 2
+P:2ACEA:Map3F_BirdsongTower_S3:Birdsong Tower - Submap 3
+P:2AD52:Map3F_BirdsongTower_S4:Birdsong Tower - Submap 4
+P:2AD6C:Map3F_BirdsongTower_S5:Birdsong Tower - Submap 5
+
+# Map 40: World Tree
+P:2AD92:Map40_WorldTree_S0:World Tree - Submap 0
+P:2AE4E:Map40_WorldTree_S1:World Tree - Submap 1
+P:2AF97:Map40_WorldTree_S2:World Tree - Submap 2
+P:2B0D8:Map40_WorldTree_S3:World Tree - Submap 3
+P:2B212:Map40_WorldTree_S4:World Tree - Submap 4
+P:2B327:Map40_WorldTree_S5:World Tree - Submap 5
+
+# Map 41: Loch Tower
+P:2B40A:Map41_LochTower_S0:Loch Tower - Submap 0
+P:2B439:Map41_LochTower_S1:Loch Tower - Submap 1
+P:2B497:Map41_LochTower_S2:Loch Tower - Submap 2
+P:2B4F7:Map41_LochTower_S3:Loch Tower - Submap 3
+P:2B577:Map41_LochTower_S4:Loch Tower - Submap 4
+P:2B5CF:Map41_LochTower_S5:Loch Tower - Submap 5
+
+# Map 42: Lighthouse
+P:2B611:Map42_Lighthouse_S0:Lighthouse - Submap 0
+P:2B681:Map42_Lighthouse_S1:Lighthouse - Submap 1
+P:2B6B2:Map42_Lighthouse_S2:Lighthouse - Submap 2
+P:2B71B:Map42_Lighthouse_S3:Lighthouse - Submap 3
+P:2B784:Map42_Lighthouse_S4:Lighthouse - Submap 4
+
+# Map 43: Konenber
+P:2B7D6:Map43_Konenber_S0:Konenber - Submap 0
+P:2B898:Map43_Konenber_S1:Konenber - Submap 1
+P:2B8DD:Map43_Konenber_S2:Konenber - Submap 2
+P:2B904:Map43_Konenber_S3:Konenber - Submap 3
+P:2B91C:Map43_Konenber_S4:Konenber - Submap 4
+P:2B953:Map43_Konenber_S5:Konenber - Submap 5
+P:2B96A:Map43_Konenber_S6:Konenber - Submap 6
+P:2BAA7:Map43_Konenber_S7:Konenber - Submap 7
+P:2BB3A:Map43_Konenber_S8:Konenber - Submap 8
+P:2BB8A:Map43_Konenber_S9:Konenber - Submap 9
+P:2BBAE:Map43_Konenber_SA:Konenber - Submap A
+
+# Map 44: Radimvice Shrine
+P:2BBE4:Map44_RadimviceShrine_S0:Radimvice Shrine - Submap 0
+P:2BBFB:Map44_RadimviceShrine_S1:Radimvice Shrine - Submap 1
+P:2BC1B:Map44_RadimviceShrine_S2:Radimvice Shrine - Submap 2
+P:2BC59:Map44_RadimviceShrine_S3:Radimvice Shrine - Submap 3
+
+# Map 45: Necrosaro's Palace (Bank 0A portion - submaps 0-4)
+P:2BCA5:Map45_NecrosaroPalace_S0:Necrosaro's Palace - Submap 0
+P:2BE6C:Map45_NecrosaroPalace_S1:Necrosaro's Palace - Submap 1
+P:2BF10:Map45_NecrosaroPalace_S2:Necrosaro's Palace - Submap 2
+P:2BF6A:Map45_NecrosaroPalace_S3:Necrosaro's Palace - Submap 3
+P:2BFA1:Map45_NecrosaroPalace_S4:Necrosaro's Palace - Submap 4
+# Note: Necrosaro's Palace submaps 5-7 continue on Bank 0B
 
 # ==============================================================================
 # Bank 0B - Map Data ($2C000-$2FFFF) - Locations 45-48 + Overworld
+# Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+# Address format: physical = (CPU_addr - $8000) + $2C000
 # ==============================================================================
 P:2C000:b0b_map_data_start:Bank 0B map data start
 
-# Map 45-48: Final areas (continued from Bank 0A)
+# Map 45: Necrosaro's Palace (Bank 0B portion - submaps 5-7)
+P:2C075:Map45_NecrosaroPalace_S5:Necrosaro's Palace - Submap 5
+P:2C0C1:Map45_NecrosaroPalace_S6:Necrosaro's Palace - Submap 6
+P:2C158:Map45_NecrosaroPalace_S7:Necrosaro's Palace - Submap 7
+
+# Map 46: Zenethia
+P:2C1A8:Map46_Zenethia_S0:Zenethia - Submap 0
+P:2C313:Map46_Zenethia_S1:Zenethia - Submap 1
+P:2C34D:Map46_Zenethia_S2:Zenethia - Submap 2
+P:2C3B9:Map46_Zenethia_S3:Zenethia - Submap 3
+
+# Map 47: Shrine of the Horn
+P:2C4C1:Map47_ShrineHorn_S0:Shrine of the Horn - Submap 0
+P:2C57A:Map47_ShrineHorn_S1:Shrine of the Horn - Submap 1
+
+# Map 48: Shrine of Colossus (Final Dungeon)
+P:2C5A8:Map48_ShrineColossus_S0:Shrine of Colossus - Submap 0
+P:2C618:Map48_ShrineColossus_S1:Shrine of Colossus - Submap 1
+P:2C75B:Map48_ShrineColossus_S2:Shrine of Colossus - Submap 2
+P:2C848:Map48_ShrineColossus_S3:Shrine of Colossus - Submap 3
+P:2C945:Map48_ShrineColossus_S4:Shrine of Colossus - Submap 4
+P:2C9AF:Map48_ShrineColossus_S5:Shrine of Colossus - Submap 5
+P:2CA5B:Map48_ShrineColossus_S6:Shrine of Colossus - Submap 6
+P:2CB46:Map48_ShrineColossus_S7:Shrine of Colossus - Submap 7
+P:2CBDC:Map48_ShrineColossus_S8:Shrine of Colossus - Submap 8
+P:2CC49:Map48_ShrineColossus_S9:Shrine of Colossus - Submap 9
 
 # Overworld Maps
-P:2CCEE:b0b_overworld_main:Main overworld map data
-P:2D590:b0b_overworld_row_ptrs:Overworld row pointer table
-P:2D990:b0b_overworld_gottside:Gottside continent overworld
-P:2DC65:b0b_overworld_underworld:Underworld overworld map
+P:2CCEE:b0b_overworld_main:Main overworld map data (compressed)
+P:2D590:b0b_overworld_main_ptrs:Main overworld row pointers
+P:2D990:b0b_overworld_gottside:Gottside continent overworld data
+P:2DB65:b0b_overworld_gottside_ptrs:Gottside overworld row pointers
+P:2DC65:b0b_overworld_underworld:Underworld overworld data
+P:2DE89:b0b_overworld_underworld_ptrs:Underworld overworld row pointers
 
 # ==============================================================================
 # PRG ROM Banks - Text Data (Banks $0C-$0E typically)
