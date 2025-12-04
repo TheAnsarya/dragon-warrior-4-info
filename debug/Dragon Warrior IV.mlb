@@ -3564,4 +3564,158 @@ G:6283:b30_event_flags_2:Event flags 2
 G:628E:b30_chapter_flags:Chapter-specific flags
 G:6272:b30_progress_flags:Progress/story flags
 
+# ==============================================================================
+# BANK 15 ($8000-$BFFF) - SYSTEM INIT / HARDWARE / NPC AI
+# ==============================================================================
+# This bank handles system initialization, PPU/mapper control,
+# NMI/VBlank synchronization, and NPC AI/movement routines.
+
+# -- Bank 15 Jump Table ($8000-$803C) --
+P:8000:b15_jump_table:Bank 15 jump table entry
+P:8001:b15_jmp_e9ce:Jump to $E9CE
+P:8004:b15_jmp_e54b:Jump to $E54B
+P:8007:b15_jmp_f1ab:Jump to $F1AB
+P:800A:b15_jmp_efdb:Jump to $EFDB
+P:800D:b15_jmp_efd7:Jump to $EFD7
+P:8010:b15_jmp_f1fa:Jump to $F1FA
+P:8013:b15_jmp_f223:Jump to $F223
+P:8016:b15_jmp_e944:Jump to $E944
+P:802E:b15_jmp_f4ab:Jump to $F4AB
+P:8031:b15_jmp_f58a:Jump to $F58A
+P:8034:b15_jmp_f58b:Jump to $F58B
+P:8037:b15_jmp_fabe:Jump to $FABE
+
+# -- Bank 15 System Init ($803D-$80D1) --
+P:803D:b15_system_init:System initialization entry
+P:803E:b15_wait_vbl_1:Wait for VBlank (first)
+P:8043:b15_wait_vbl_2:Wait for VBlank (second)
+P:804E:b15_init_ppu:Initialize PPU registers
+P:8058:b15_init_mmc1:Initialize MMC1 mapper
+P:8067:b15_init_nmi_jmp:Setup NMI JMP opcode ($4C)
+P:806C:b15_init_nmi_vec:Setup NMI target from $C0D2
+P:8078:b15_init_stack:Initialize stack pointer
+P:807E:b15_clear_ram:Clear RAM loop
+P:8092:b15_init_shadow:Initialize PPU shadows
+P:809E:b15_call_c104:Call $C104 helper
+P:80A4:b15_init_ppu_addr:Setup PPU address $1000
+P:80B0:b15_clear_ppu:Clear PPU data loop
+P:80B6:b15_enable_nmi:Enable NMI
+P:80BE:b15_init_calls:Initialization subroutine calls
+P:80CF:b15_jmp_c968:Jump to main loop at $C968
+
+# -- Bank 15 VBlank Routines ($80D2-$80E8) --
+P:80D2:b15_vblank_data:VBlank handler data
+P:80D6:b15_vblank_sync:VBlank synchronization
+P:80D9:b15_wait_vbl_neg:Wait for VBlank flag negative
+P:80DE:b15_wait_vbl_pos:Wait for VBlank flag positive
+P:80E3:b15_wait_vbl_neg2:Second wait negative
+P:80E8:b15_vblank_return:Return from VBlank sync
+
+# -- Bank 15 MMC1 Control ($8118-$8159) --
+P:8118:b15_write_chr0:Write CHR Bank 0 ($9FFF)
+P:812F:b15_write_chr1:Write CHR Bank 1 ($BFFF)
+P:8146:b15_write_prg:Write PRG Bank ($DFFF)
+
+# -- Bank 15 NMI Handler ($815A-$8218) --
+P:815A:b15_nmi_entry:NMI handler entry (push regs)
+P:815F:b15_check_busy:Check if system busy
+P:8163:b15_check_caller:Check caller return address
+P:8175:b15_do_vblank_update:Perform VBlank PPU update
+P:8181:b15_nmi_check_addr:Check address range
+P:819B:b15_nmi_process:Process NMI
+P:81A0:b15_increment_timer:Increment system timer ($C221)
+P:81B0:b15_switch_bank:Switch to current bank
+P:81BD:b15_check_addr_2:Check address range 2
+P:81EF:b15_increment_frame:Increment frame counter ($050C)
+P:81F2:b15_read_opcode:Read opcode at return address
+P:8213:b15_nmi_exit_normal:Normal NMI exit (pop+RTI)
+P:8219:b15_nmi_exit_brk:BRK handler NMI exit
+
+# -- Bank 15 PPU Update ($8222-$8300) --
+P:8222:b15_ppu_update_entry:PPU update entry point
+P:8231:b15_ppu_update_mode:Select PPU update mode
+
+# -- Bank 15 Direction Handling ($8DC9-$8E08) --
+P:8DC9:b15_get_direction:Get NPC direction from $7001
+P:8DD1:b15_set_timer:Set movement timer
+P:8DDC:b15_check_mode:Check mode flags at $41
+P:8DE5:b15_random_check:Random encounter check
+P:8DF3:b15_increment_enc:Increment encounter counter ($62ED)
+P:8E08:b15_direction_done:Direction handling done
+
+# -- Bank 15 Movement Mode ($8E09-$8E9A) --
+P:8E09:b15_check_movement:Check movement mode
+P:8E0D:b15_dungeon_mode:Dungeon mode handler
+P:8E50:b15_overworld_check:Overworld movement check
+P:8E69:b15_special_check:Special movement check
+P:8E80:b15_normal_movement:Normal movement handler
+P:8E9A:b15_movement_finish:Finish movement processing
+
+# -- Bank 15 Tile Check ($8EA9-$8EF7) --
+P:8EA9:b15_read_input:Read controller input ($C000)
+P:8EBE:b15_check_tile_type:Check tile type at $059E
+P:8EC5:b15_tile_type_loop:Loop through tile types
+P:8ED1:b15_tile_found:Tile type found
+P:8EF3:b15_tile_special:Handle special tile
+
+# -- Bank 15 NPC Position Routines ($9B50-$9BF2) --
+P:9B50:b15_npc_random:Generate NPC random movement
+P:9B56:b15_call_random:Call random number routine
+P:9B61:b15_clear_flag:Clear movement flag
+P:9B66:b15_return_masked:Return masked value
+P:9B6A:b15_load_movement:Load movement parameters
+P:9B82:b15_movement_done:Movement loading done
+P:9B83:b15_npc_update:Update NPC position
+P:9BA7:b15_npc_call_dde0:Call $DDE0 helper
+P:9BAD:b15_npc_dest_check:Check NPC destination
+P:9BC1:b15_store_dest:Store destination coords
+P:9BD0:b15_set_npc_pos:Set NPC X/Y position
+P:9BE5:b15_lookup_tile:Look up tile at position
+P:9BF5:b15_store_npc_id:Store NPC ID at $059C
+
+# -- Bank 15 NPC AI ($9C16-$9CDF) --
+P:9C16:b15_npc_ai_or:AI OR flags routine
+P:9C23:b15_npc_ai_and:AI AND flags routine
+P:9C30:b15_npc_ai_store:AI store flags routine
+P:9C3B:b15_load_ai_ptr:Load AI pointer from ($4D)
+P:9C4B:b15_calc_direction:Calculate direction to target
+P:9C59:b15_calc_hero_dist:Calculate distance to hero
+P:9C9F:b15_calc_dest_dist:Calculate distance to destination
+P:9CBF:b15_get_direction_bits:Get direction bits
+P:9CCD:b15_find_direction:Find best direction
+P:9CD3:b15_check_directions:Check all four directions
+
+# -- Bank 15 Map Routines ($A8DD-$A943) --
+P:A8DD:b15_store_indirect:Store A indirect at ($08),Y
+P:A8E1:b15_save_position:Save position to $6E8A array
+P:A8F8:b15_add_map_offset:Add map width to offset
+P:A904:b15_sub_map_offset:Subtract map width from offset
+P:A910:b15_write_tile_masked:Write tile with mask
+P:A91E:b15_calc_tile_addr:Calculate tile address
+
+# -- Bank 15 Map Bank Selection ($A944-$A9CD) --
+P:A944:b15_select_map_bank:Select map data bank
+P:A952:b15_load_map_header:Load map header data
+P:A9AD:b15_get_map_bank:Get bank for current map
+
+# -- Bank 15 Movement Update ($A9CE-$AA24) --
+P:A9CE:b15_update_movement:Update movement state
+P:A9E0:b15_check_tile:Check current tile
+P:A9FA:b15_apply_movement:Apply movement delta
+P:AA03:b15_apply_direction:Apply direction to position
+P:AA1C:b15_toggle_scroll:Toggle scroll direction
+
+# -- Bank 15 Graphics Data ($B600-$BF73) --
+P:B600:b15_gfx_data:Graphics/CHR data region
+
+# -- Bank 15 Wait VBlank ($BF74-$BF85) --
+P:BF74:b15_wait_frame:Wait for next frame
+P:BF77:b15_wait_loop:Wait loop (check $050C)
+P:BF82:b15_call_c913:Call $C913 after wait
+P:BF85:b15_wait_return:Return from wait
+
+# -- Bank 15 Late Jump ($BF8E-$BF91) --
+P:BF8E:b15_jmp_c03d:Jump to $C03D
+P:BF91:b15_store_bank:Store bank to $0507
+
 
