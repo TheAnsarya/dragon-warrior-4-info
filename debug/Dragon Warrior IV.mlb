@@ -2178,5 +2178,304 @@ G:054F:b28_last_y:Last NPC Y position
 G:0598:b28_last_submap:Last submap number
 G:62ED:b28_chapter_marker:Chapter progress marker
 
+# ==============================================================================
+# PRG ROM - Bank 08: Map Tile Data and Encounter System ($8000-$BFFF when loaded)
+# ==============================================================================
+# Bank 08 handles map tile data, encounter tables, and location processing.
+# Uses arrays at $6F20, $6F40, $7600 for tile data.
+# Heavily data-driven with code sections at $80xx-$8Axx and $AFxx-$B7xx.
+
+# -- Bank 08 Array Initialization ($803C-$8054) --
+P:803C:b08_init_arrays:Initialize tile/encounter arrays
+P:8040:b08_init_loop1:Clear $6F20, $6F40, $7600 arrays (32 entries)
+P:804E:b08_init_loop2:Clear $761F+ array (160 entries)
+
+# -- Bank 08 Pointer Calculation ($8055-$80B2) --
+P:8055:b08_calc_pointer:Calculate data pointer from $09 and $28
+P:806A:b08_store_ptr:Store calculated pointer to $00/$01
+P:8072:b08_shift_loop:16-bit shift left 5 times
+P:8082:b08_read_params:Read encounter parameters from ($0E)
+P:8099:b08_check_encounter_type:Check encounter type ($0A/$0B)
+P:80AB:b08_check_flag:Check $6286 flag bit 4
+P:80B3:b08_table_80b3:Data table - pointer bases
+
+# -- Bank 08 Secondary Pointer ($80B7-$80C1) --
+P:80B7:b08_load_ptr_80c2:Load pointer from $80C2/$80C3
+P:80C2:b08_table_80c2:Data table - secondary pointer
+
+# -- Bank 08 Read Encounter Data ($80C4-$80D4) --
+P:80C4:b08_read_encounter_data:Read 3-byte encounter data to $0A/$0B/$0C
+
+# -- Bank 08 Process Encounter ($80D5-$8187) --
+P:80D5:b08_process_encounter:Main encounter/tile data processor
+P:80E7:b08_mode_0_setup:Mode 0 path - setup for tile processing
+P:80F4:b08_load_data_ptr:Load data pointer from $8235/$8236
+P:8108:b08_extract_bits:Extract bits from tile data
+P:8114:b08_store_mode_flag:Store mode flag to $76
+P:812F:b08_handle_type_0f:Handle special type $0F
+P:8132:b08_mode_1_setup:Mode 1 path - alternate tile processing
+P:814A:b08_shift_and_lookup:Shift pointer and lookup data
+P:815A:b08_indexed_lookup:Indexed data lookup
+P:8171:b08_calc_offset:Calculate 3-byte offset (A * 3)
+
+# -- Bank 08 Monster Group Processing ($8187-$81C3) --
+P:8187:b08_process_monster_groups:Process 3 monster types loop
+P:8193:b08_sign_extend:Sign extend and shift left 4
+P:81B4:b08_store_monster_ptr:Store monster pointer to $0102-$0107
+P:81C3:b08_jump_to_rotation:Jump to monster rotation routine
+
+# -- Bank 08 Special Type Handlers ($81C6-$8224) --
+P:81C6:b08_handle_type_0f_full:Type $0F - load 8 bytes to $0100
+P:81DF:b08_copy_8_bytes:Copy 8 bytes from ($00) to $0100
+P:81E8:b08_handle_type_0e:Type $0E - sequential monster setup
+P:8213:b08_increment_ptr_loop:Increment monster pointers by $10
+P:8225:b08_table_8225:Data table - type handler pointers
+P:8229:b08_table_8229:Data table - mode lookup (4 entries)
+P:8235:b08_table_8235:Data table - base pointer for tile data
+P:8237:b08_table_8237:Data table - secondary lookup
+
+# -- Bank 08 Tile Index Processing ($823D-$833E) --
+P:823D:b08_process_tile_index:Process tile index with lookup
+P:8254:b08_tile_loop_entry:Entry point for tile loop
+P:8256:b08_tile_loop:Main tile processing loop
+P:8264:b08_search_77xx:Search $7700 array for match
+P:828D:b08_no_match:No match found - increment $18
+P:8291:b08_found_or_new:Handle found/new tile entry
+P:82AD:b08_skip_tile:Skip to next tile
+P:82B0:b08_mode_1_store:Mode 1 specific storage
+P:82C2:b08_rotate_bits:Bit rotation for tile attributes
+P:82EC:b08_store_rotated:Store rotated result
+P:831F:b08_add_to_77xx:Add entry to $7700 array
+P:832F:b08_next_tile:Advance to next tile entry
+P:833E:b08_table_833e:Data table - tile lookup offset
+
+# -- Bank 08 Map Index Processing ($8340-$839E) --
+P:8340:b08_process_map_index:Process map index from $16
+P:8362:b08_setup_ppu_addr:Setup PPU address for rendering
+P:8378:b08_calc_ppu_offset:Calculate PPU offset (*16)
+P:8389:b08_ppu_base_table:PPU base address table (lo/hi)
+P:838D:b08_write_ppu_addr:Write PPU address to $2006
+P:839F:b08_buffer_ppu_addr:Buffer PPU address to $0300
+
+# -- Bank 08 Tile Rendering ($83BD-$8405) --
+P:83BD:b08_render_tiles:Render tiles from $0100 array
+P:83D9:b08_bank_select:Bank select for tile rendering
+P:83DC:b08_render_call:Call render subroutines
+P:83F4:b08_write_ppu_data:Write 16 bytes to PPU $2007
+P:83FA:b08_write_loop:Write loop - 16 bytes
+P:8406:b08_buffer_tiles:Buffer tiles to $0300 for deferred PPU
+
+# -- Bank 08 Tile Lookup ($8433-$8467) --
+P:8433:b08_lookup_tile_data:Lookup tile data from table
+P:8450:b08_tile_lookup_ptr:Pointer for tile lookup ($76C0)
+P:8452:b08_store_tile_result:Store tile result to $6F20/$6F40
+
+# -- Bank 08 Stack Restore ($8468-$8472) --
+P:8468:b08_restore_stack:Restore 16 bytes from stack to $00-$0F
+
+# -- Bank 08 Main Tile Process ($8473-$84BC) --
+P:8473:b08_main_tile_process:Main tile processing entry
+P:8476:b08_check_tile_type:Check tile type (AND #$07)
+P:847E:b08_call_tile_handlers:Call tile handler chain
+P:84A6:b08_dec_counter:Decrement $6E5E counter
+P:84AB:b08_render_chain:Call render chain
+P:84B1:b08_advance_ptr:Advance pointer by 2
+
+# -- Bank 08 Tile Process Wrapper ($84BD-$84E2) --
+P:84BD:b08_tile_process_wrapper:Store $16 and call main processor
+P:84C2:b08_setup_mode_1:Setup mode 1 processing
+P:84CA:b08_save_zp:Save zero page to stack
+P:84DC:b08_init_6e5e:Initialize $6E5E to $FF (32 entries)
+
+# -- Bank 08 BRK Interpreter ($84E3-$8538) --
+P:84E3:b08_brk_interpreter:BRK-based bytecode interpreter
+P:84EF:b08_init_encounter:Initialize encounter arrays
+P:8503:b08_setup_ppu:Setup PPU for encounter
+P:850E:b08_tile_loop_20:Process 32 tiles (0-$1F)
+P:8523:b08_tile_loop_30:Process tiles $20-$2F
+P:852F:b08_finalize:Finalize and cleanup
+
+# -- Bank 08 Extended Tile ($853E-$859A) --
+P:853E:b08_extended_tile:Extended tile processing
+P:8562:b08_shift_for_quad:Shift for quadrant calculation
+P:856C:b08_get_quadrant:Get quadrant from shifted value
+P:8573:b08_load_quadrant_data:Load quadrant data from $8AAF
+P:8588:b08_load_second_quad:Load second quadrant entry
+
+# -- Bank 08 Zone Processing ($859B-$85D2) --
+P:859B:b08_process_zone:Process zone/region value
+P:85A6:b08_check_zone_range:Check zone range ($48-$4F)
+P:85BA:b08_store_zone:Store zone to $0E
+P:85CD:b08_set_mode_flag:Set $7A mode flag
+
+# -- Bank 08 Dungeon Setup ($85D3-$8667) --
+P:85D3:b08_dungeon_setup:Setup for dungeon encounter
+P:85E2:b08_dungeon_loop:Dungeon tile processing loop
+P:8617:b08_encounter_table_lookup:Lookup encounter table
+
+# -- Bank 08 Encounter Rate ($8668-$8702) --
+P:8668:b08_calc_encounter_rate:Calculate encounter rate
+P:8680:b08_apply_modifiers:Apply encounter rate modifiers
+P:8703:b08_encounter_table:Encounter rate table data
+
+# -- Bank 08 Position Calculation ($8773-$87FF) --
+P:8773:b08_calc_position:Calculate position from coordinates
+P:8796:b08_position_table:Position lookup table
+P:8800:b08_coord_lookup:Coordinate lookup table
+
+# -- Bank 08 Movement Direction ($880E-$88FD) --
+P:880E:b08_movement_dir:Determine movement direction
+P:882A:b08_cardinal_check:Check cardinal direction
+P:88D0:b08_diagonal_check:Check diagonal movement
+P:88ED:b08_calc_distance:Calculate distance to target
+P:88FE:b08_find_target:Find target position from tile type
+
+# -- Bank 08 Tile Type Lookup ($893D-$8980) --
+P:893D:b08_adjust_for_dir:Adjust position for direction
+P:8957:b08_get_tile_at_pos:Get tile type at position
+P:896F:b08_search_tile_type:Search for specific tile type
+P:897E:b08_return_index:Return found index
+
+# -- Bank 08 Monster Rotation ($8981-$89C8) --
+P:8981:b08_monster_rotation:Rotate monster group order
+P:8990:b08_rotation_loop:Rotation loop - shift $0100-$0107
+
+# -- Bank 08 Tile Transpose ($89C9-$8A29) --
+P:89C9:b08_tile_transpose:Transpose tile data
+P:89D8:b08_transpose_loop:Transpose outer loop
+P:89DC:b08_transpose_inner:Transpose inner loop
+P:8A00:b08_extract_bits_horiz:Extract horizontal bits
+P:8A15:b08_extract_bits_vert:Extract vertical bits
+
+# -- Bank 08 Special Tile Handling ($8A2A-$8A91) --
+P:8A2A:b08_special_tile:Handle special tile types
+P:8A3F:b08_normal_tile:Normal tile path
+P:8A58:b08_return_result:Return tile result
+P:8A85:b08_post_process:Post-process tile data
+
+# -- Bank 08 Data Tables ($8A92-$8ABF) --
+P:8A92:b08_table_8a92:Tile type data table
+P:8AA2:b08_table_8aa2:Quadrant lookup table
+P:8AAF:b08_table_8aaf:Quadrant data table (4 bytes each)
+
+# -- Bank 08 Location Data System ($AF00-$B036) --
+P:AED5:b08_location_entry:Location data entry point
+P:AEE8:b08_location_loop:Location search loop
+P:AF13:b08_store_map_num:Store map number to $63
+P:AF32:b08_location_setup:Location setup calls
+P:AF40:b08_load_location_data:Load location coordinates
+P:AF51:b08_check_special_loc:Check for special locations
+P:AF67:b08_check_loc_0e:Check location type $0E
+P:AF82:b08_store_loc_params:Store location parameters ($64, $44, $45)
+P:AF89:b08_get_loc_terrain:Get location terrain type
+P:AF99:b08_check_loc_special:Check special location cases
+P:AFBA:b08_loc_3a_handler:Location $3A special handler
+P:AFC9:b08_loc_39_handler:Location $39 special handler
+P:AFE1:b08_loc_19_handler:Location $19 special handler
+P:AFF3:b08_loc_45_handler:Location $45 special handler
+P:B00B:b08_loc_0b_handler:Location $0B special handler
+P:B01C:b08_loc_2c_handler:Location $2C special handler
+P:B036:b08_location_return:Location return
+
+# -- Bank 08 Location Lookup ($B037-$B05B) --
+P:B037:b08_lookup_location:Lookup location in table
+P:B043:b08_lookup_loop:Location lookup loop
+P:B05B:b08_lookup_done:Lookup complete
+
+# -- Bank 08 Location Read ($B05C-$B0AD) --
+P:B05C:b08_read_location_byte:Read single byte from location data
+P:B06A:b08_brk_loc_search:BRK-based location search
+P:B071:b08_loc_search_loop:Location search loop
+P:B08D:b08_found_location:Found matching location
+
+# -- Bank 08 Location Processing ($B0AE-$B187) --
+P:B0AE:b08_process_location:Process location data
+P:B135:b08_calc_encounter:Calculate location encounter rate
+P:B145:b08_loc_not_found:Location not found handler
+
+# -- Bank 08 Exit Processing ($B188-$B22D) --
+P:B188:b08_exit_handler:Exit/door handler
+P:B194:b08_check_door:Check door type
+P:B1D0:b08_exit_table:Exit point table
+
+# -- Bank 08 Treasure Processing ($B22E-$B322) --
+P:B22E:b08_treasure_handler:Treasure chest handler
+P:B27F:b08_item_check:Check item availability
+P:B2C2:b08_empty_chest:Empty chest handler
+
+# -- Bank 08 NPC Interaction ($B323-$B439) --
+P:B323:b08_npc_interact:NPC interaction handler
+P:B397:b08_npc_dialog:NPC dialog trigger
+P:B3D9:b08_npc_special:Special NPC handler
+P:B425:b08_npc_3a:NPC type $3A handler
+P:B43A:b08_npc_19:NPC type $19 handler
+
+# -- Bank 08 Flag Checking ($B48E-$B553) --
+P:B48E:b08_compare_flags:Compare flags against saved state
+P:B4B9:b08_flag_changed:Handle flag change
+P:B4C1:b08_terrain_encounter:Terrain-based encounter modifier
+P:B4ED:b08_get_tile_table:Get tile table pointer
+P:B51F:b08_count_tiles:Count matching tiles
+P:B554:b08_search_tiles:Search for specific tile type
+
+# -- Bank 08 Warp/Teleport ($B5B3-$B5F0) --
+P:B5B3:b08_warp_check:Check warp availability
+P:B5BF:b08_warp_execute:Execute warp
+P:B5E2:b08_check_warp_flag:Check warp flag in $62AA
+P:B5F1:b08_return_result:Return warp result
+
+# -- Bank 08 Data Tables ($B5F2-$B7FF) --
+P:B5F2:b08_data_tables:Various data tables
+P:B671:b08_table_b671:Tile data table pointer
+P:B673:b08_table_b673:Secondary table pointer
+P:B67D:b08_table_b67d:Tertiary table pointer
+P:B7F7:b08_table_b7f7:Location data table pointer
+
+# -- Bank 08 RAM Variables --
+G:6F20:b08_tile_data_1:Tile data array 1 (32 entries)
+G:6F40:b08_tile_data_2:Tile data array 2 (32 entries)
+G:7600:b08_encounter_data:Encounter data array (160 entries)
+G:7684:b08_quadrant_flags:Quadrant flags (4 bytes)
+G:7700:b08_tile_cache:Tile cache array (256 bytes)
+
+# -- Bank 08 Zero Page Variables --
+P:0000:b08_temp_00:Temporary pointer low
+P:0001:b08_temp_01:Temporary pointer high
+P:0002:b08_temp_02:Secondary temp low
+P:0003:b08_temp_03:Secondary temp high
+P:0004:b08_counter_04:Counter variable
+P:0005:b08_counter_05:Counter high byte
+P:0007:b08_mode_flag:Mode flag (0 or non-zero)
+P:0008:b08_shift_count:Shift counter
+P:0009:b08_mode_select:Mode selector (0 or 1)
+P:000A:b08_param_a:Parameter A - tile/encounter data
+P:000B:b08_param_b:Parameter B
+P:000C:b08_param_c:Parameter C
+P:000D:b08_buffer_mode:Buffer mode (0=direct, 1=deferred)
+P:000E:b08_ptr_0e:Data pointer low
+P:000F:b08_ptr_0f:Data pointer high
+P:0016:b08_tile_index:Current tile index
+P:0018:b08_tile_id_base:Tile ID base value
+P:0019:b08_ppu_addr_lo:PPU address low
+P:001A:b08_ppu_addr_hi:PPU address high
+P:0072:b08_calc_lo:Calculation temp low
+P:0073:b08_calc_hi:Calculation temp high
+P:0074:b08_rotation_cnt:Rotation count
+P:0075:b08_rotation_tmp:Rotation temp
+P:0076:b08_mode_76:Mode flag ($76)
+P:0079:b08_cache_index:Tile cache index
+P:007A:b08_transpose_flag:Transpose flag
+P:00DA:b08_loc_ptr_lo:Location pointer low
+P:00DB:b08_loc_ptr_hi:Location pointer high
+P:00DC:b08_loc_temp_dc:Location temp DC
+P:00DD:b08_loc_temp_dd:Location temp DD
+P:00DE:b08_encounter_mod_lo:Encounter modifier low
+P:00DF:b08_encounter_mod_hi:Encounter modifier high
+P:00E4:b08_last_map:Last map number
+P:00E5:b08_last_submap:Last submap number
+P:00E6:b08_last_x:Last X coordinate
+P:00E7:b08_last_y:Last Y coordinate
+P:00E9:b08_save_reg:Saved register temp
+
 
 
