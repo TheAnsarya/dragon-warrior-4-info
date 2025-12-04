@@ -2477,5 +2477,245 @@ P:00E6:b08_last_x:Last X coordinate
 P:00E7:b08_last_y:Last Y coordinate
 P:00E9:b08_save_reg:Saved register temp
 
+# ==============================================================================
+# PRG ROM - Bank 20: Party/Wagon Management System ($8000-$BFFF when loaded)
+# ==============================================================================
+# Bank 20 handles party management, wagon system, monster displays, and menu UI.
+# Heavy use of $6E45-$6E49 (party slots), $0440-$0476 (item buffers).
+# ~628 JSR calls - one of the most code-heavy banks.
+
+# -- Bank 20 Initialization ($8038-$8087) --
+P:8038:b20_init_loop:Main initialization loop
+P:803F:b20_init_after_loop:Post-loop initialization
+P:8046:b20_clear_06a0:Clear $06A0 array (8 bytes)
+P:804E:b20_clear_05fc:Clear $05FC array (26 bytes)
+P:8062:b20_clear_6e49:Clear party HP/status array
+P:806A:b20_clear_0444:Clear $0444 array (8 bytes)
+
+# -- Bank 20 BRK-based Operations ($8072-$80E4) --
+P:8072:b20_brk_party_init:BRK $29,$C3 - party initialization sequence
+P:808B:b20_check_party_slot:Check party slot ($6E45+X)
+P:80AD:b20_store_char_c4:Store character ID to $C4
+P:80B9:b20_init_char_data:Initialize character data subroutines
+P:80E1:b20_call_946e:Call $946E (character display)
+P:80E4:b20_next_slot:Increment $C6 for next party slot
+
+# -- Bank 20 Monster Entry System ($80EE-$812C) --
+P:80EE:b20_monster_loop:Monster entry loop (8 monsters)
+P:8103:b20_monster_setup:Setup monster display
+P:8111:b20_store_monster_offset:Store monster offset to $06A0
+P:8126:b20_after_monsters:After monster processing
+
+# -- Bank 20 Party Update System ($812F-$81CC) --
+P:812F:b20_party_update_entry:Party update entry point
+P:8141:b20_party_update_loop:Main party update loop
+P:8162:b20_check_conditions:Check various party conditions
+P:8184:b20_valid_char:Valid character - setup display
+P:81A4:b20_store_char_item:Store character item to $0440
+P:81AE:b20_remove_from_party:Remove character from party
+P:81B5:b20_next_char_slot:Next character slot
+
+# -- Bank 20 OAM/Display ($81CF-$8210) --
+P:81CF:b20_clear_oam:Clear OAM buffer ($0200-$02FF)
+P:81E8:b20_sprite_loop:Sprite setup loop
+P:81F3:b20_clear_oam_rts:Return from OAM clear
+P:81F4:b20_shift_party:Shift party array down ($6E45-$6E4C)
+P:8210:b20_shift_rts:Return from shift
+
+# -- Bank 20 Character Display ($8211-$822F) --
+P:8211:b20_char_display:Character display wrapper
+P:8220:b20_char_display_alt:Alternate character display
+P:822F:b20_display_setup:Display setup with check
+
+# -- Bank 20 Special Displays ($8237-$82CC) --
+P:8237:b20_check_ae:Check for character $AE
+P:8263:b20_standard_display:Standard character display
+P:8297:b20_clear_0303:Clear PPU buffer $0303
+P:82CC:b20_call_9a40:Call $9A40 (display subroutine)
+P:82CF:b20_call_9e7f:Call $9E7F (after display)
+
+# -- Bank 20 Animation System ($82E9-$8363) --
+P:82E9:b20_animation_entry:Animation entry point
+P:82F0:b20_animation_loop:Animation loop (4 frames)
+P:830F:b20_animation_frame:Single animation frame
+P:8328:b20_animation_alt:Alternate animation path
+P:8330:b20_animation_inner:Inner animation loop
+
+# -- Bank 20 Utility Functions ($8364-$83C1) --
+P:8364:b20_indirect_jump:Indirect jump via ($0000)
+P:8367:b20_check_party_full:Check if party is full
+P:8373:b20_set_carry_return:Set carry and return
+P:837F:b20_animation_helper:Animation helper with delay
+P:83A5:b20_clear_slots:Clear animation slots
+P:83B7:b20_fill_05fc:Fill $05FC array with A
+
+# -- Bank 20 Scroll Animation ($83C2-$8413) --
+P:83C2:b20_scroll_init:Scroll animation initialization
+P:83CB:b20_scroll_loop:Main scroll animation loop
+P:83E3:b20_scroll_inner:Inner scroll processing
+
+# -- Bank 20 Menu Functions ($8414-$8495) --
+P:8414:b20_menu_entry_a:Menu entry point A
+P:841C:b20_menu_entry_b:Menu entry point B
+P:8422:b20_menu_setup:Menu setup
+
+# -- Bank 20 Item/Inventory ($8496-$852D) --
+P:8496:b20_inventory_entry:Inventory entry point
+P:852D:b20_inventory_return:Inventory return
+
+# -- Bank 20 Character Stats ($852E-$85CE) --
+P:852E:b20_stats_display:Character stats display
+P:8582:b20_stats_return:Stats return
+P:85AB:b20_stats_helper:Stats helper function
+
+# -- Bank 20 Party Swap ($85CF-$8665) --
+P:85CF:b20_swap_entry:Party swap entry
+P:8605:b20_swap_return:Swap return
+P:8624:b20_swap_complete:Swap complete handler
+
+# -- Bank 20 Gold/Money ($8666-$86F6) --
+P:8666:b20_gold_display:Gold display routine
+P:86C4:b20_gold_update:Gold update
+P:86EC:b20_gold_return:Gold return
+
+# -- Bank 20 Item Transfer ($86F7-$8779) --
+P:86F7:b20_item_transfer:Item transfer routine
+P:8736:b20_transfer_loop:Transfer loop
+P:8762:b20_transfer_done:Transfer done
+
+# -- Bank 20 Equipment ($877A-$88CB) --
+P:877A:b20_equipment_entry:Equipment entry
+P:87B0:b20_equipment_return:Equipment return
+P:88CB:b20_equipment_final:Equipment final
+
+# -- Bank 20 Wagon System ($88CC-$89EF) --
+P:88CC:b20_wagon_entry:Wagon menu entry
+P:8920:b20_wagon_process:Wagon processing
+P:89DA:b20_wagon_transfer:Wagon transfer
+P:89EF:b20_wagon_return:Wagon return
+
+# -- Bank 20 Shop/Buy ($89F0-$8ACA) --
+P:89F0:b20_shop_entry:Shop/buy entry
+P:8A01:b20_shop_item:Shop item display
+P:8A03:b20_shop_return:Shop return
+P:8ACA:b20_buy_complete:Buy complete
+
+# -- Bank 20 Sell System ($8ACB-$8BC8) --
+P:8ACB:b20_sell_entry:Sell entry
+P:8B35:b20_sell_process:Sell processing
+P:8B52:b20_sell_item:Sell item handler
+P:8BC8:b20_sell_return:Sell return
+
+# -- Bank 20 Appraise/Identify ($8BC9-$8C85) --
+P:8BC9:b20_appraise_entry:Appraise item entry
+P:8BE7:b20_appraise_process:Appraise processing
+P:8C06:b20_appraise_item:Appraise item handler
+P:8C1A:b20_appraise_return:Appraise return
+P:8C85:b20_appraise_final:Appraise final
+
+# -- Bank 20 Monster Graphics ($8C86-$8DF0) --
+P:8C86:b20_monster_gfx_entry:Monster graphics entry
+P:8CD4:b20_monster_gfx_load:Load monster graphics
+P:8D28:b20_monster_gfx_process:Process monster graphics
+P:8D54:b20_monster_gfx_return:Monster graphics return
+P:8DF0:b20_monster_gfx_final:Monster graphics final
+
+# -- Bank 20 Name Entry ($8DF1-$8F77) --
+P:8DF1:b20_name_entry:Name entry screen
+P:8F39:b20_name_process:Name processing
+P:8F53:b20_name_char:Process name character
+P:8F5B:b20_name_cursor:Name cursor handling
+P:8F77:b20_name_return:Name entry return
+
+# -- Bank 20 Character Selection ($8F78-$9292) --
+P:8F78:b20_select_entry:Character selection entry
+P:8F8F:b20_select_return:Selection return
+P:926B:b20_select_process:Selection processing
+P:9292:b20_select_final:Selection final
+
+# -- Bank 20 Status Effects ($9293-$9439) --
+P:9293:b20_status_entry:Status effect entry
+P:92EF:b20_status_process:Status processing
+P:9439:b20_status_return:Status return
+
+# -- Bank 20 Party Order ($943A-$9496) --
+P:943A:b20_party_order_entry:Party order entry
+P:946E:b20_party_order_display:Display party order
+P:9496:b20_party_order_return:Party order return
+
+# -- Bank 20 Monster Sprite ($9497-$9682) --
+P:9497:b20_monster_sprite_entry:Monster sprite entry
+P:9C1D:b20_monster_sprite_load:Load monster sprite
+P:9C54:b20_monster_sprite_display:Display monster sprite
+P:9653:b20_monster_sprite_helper:Monster sprite helper
+
+# -- Bank 20 Item Checks ($9682-$969C) --
+P:9682:b20_item_check_a:Item check routine A
+P:9686:b20_item_check_b:Item check routine B
+P:969C:b20_item_check_process:Item check processing
+
+# -- Bank 20 Price Calculation ($969D-$9782) --
+P:969D:b20_price_calc_entry:Price calculation entry
+P:96C5:b20_price_setup:Price setup
+P:9712:b20_price_display:Price display
+P:9783:b20_price_return:Price calculation return
+
+# -- Bank 20 Decompression ($978A-$9E1C) --
+P:978A:b20_decompress_entry:Decompression entry
+P:9E0C:b20_decompress_check:Decompression check
+P:9E1C:b20_decompress_return:Decompression return
+
+# -- Bank 20 Display Wrappers ($9E7F-$9F66) --
+P:9E7F:b20_display_wrapper_a:Display wrapper A
+P:9ED1:b20_display_wrapper_b:Display wrapper B
+P:9EF4:b20_display_wrapper_c:Display wrapper C
+P:9F0C:b20_display_wrapper_d:Display wrapper D
+P:9F26:b20_display_wrapper_e:Display wrapper E
+P:9F66:b20_display_wrapper_f:Display wrapper F
+
+# -- Bank 20 Utility Helpers ($9F8D-$9FA9) --
+P:9F8D:b20_read_byte:Read byte helper
+P:9F9F:b20_advance_ptr:Advance pointer helper
+P:9FA9:b20_setup_ptr:Setup pointer helper
+
+# -- Bank 20 RAM Variables --
+G:0440:b20_item_buffer:Item buffer (4 slots)
+G:0444:b20_char_flags:Character flags array
+G:044C:b20_item_id:Current item ID array
+G:045A:b20_item_price_lo:Item price low bytes
+G:0468:b20_item_price_hi:Item price high bytes
+G:05FC:b20_display_buffer:Display buffer (26 bytes)
+G:0600:b20_special_slots:Special slots (3 bytes for medals)
+G:0650:b20_temp_buffer:Temporary buffer (32 bytes)
+G:0690:b20_sprite_flags:Sprite flags array
+G:0698:b20_sprite_state:Sprite state array
+G:06A0:b20_monster_offsets:Monster offset array (8 entries)
+G:6E45:b20_party_ids:Party character IDs (4 slots)
+G:6E49:b20_party_hp:Party HP/status (4 slots)
+G:6E7E:b20_medal_count:Medal count
+G:7392:b20_monster_sizes:Monster size table
+
+# -- Bank 20 Zero Page Variables --
+P:00C0:b20_price_lo:Price low byte
+P:00C1:b20_price_hi:Price high byte
+P:00C4:b20_current_char:Current character ID
+P:00C5:b20_current_hp:Current HP value
+P:00C6:b20_slot_index:Current slot index
+P:00C7:b20_monster_index:Current monster index
+P:00C8:b20_item_slot:Current item slot
+P:00C9:b20_total_lo:Total low byte
+P:00CA:b20_total_hi:Total high byte
+P:00CB:b20_calc_lo:Calculation temp low
+P:00CC:b20_calc_hi:Calculation temp high
+P:00CD:b20_base_lo:Base value low
+P:00CE:b20_base_hi:Base value high
+P:00D1:b20_quantity:Quantity/count
+P:00D4:b20_modifier_lo:Modifier low
+P:00D5:b20_modifier_hi:Modifier high
+P:00D6:b20_scroll_dir:Scroll direction
+P:00D7:b20_scroll_cnt:Scroll counter
+P:00D8:b20_scroll_flag:Scroll flag
+P:00D9:b20_display_mode:Display mode
+
 
 
