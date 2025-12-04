@@ -924,3 +924,70 @@ G:7324:b17_actor_array_3:Actor array 3 (init to $F7)
 G:7330:b17_actor_array_4:Actor array 4 (init to $F7)
 G:733C:b17_actor_array_5:Actor array 5 (init to $F7)
 
+# ==============================================================================
+# Bank 29 - Formation / Party Data System (PRG ROM $8000-$BFFF when loaded)
+# Bank 29 has 68.7% code density with 372 subroutines
+# Contains party formation, positioning, battle setup data
+# First $200 bytes are data tables (graphics patterns, formation data)
+# ==============================================================================
+
+# Bank 29 Data Tables ($8000-$8095)
+R:8000:b29_data_start:Bank 29 data section start
+R:802B:b29_party_init:Party initialization entry (writes $0573)
+R:8033:b29_slot_lookup_loop:Party slot lookup loop
+R:8041:b29_compare_slot:Compare slot with $28
+R:8048:b29_slot_not_found:Return - slot not found
+R:8049:b29_slot_found:Slot found - process formation
+
+# Bank 29 Formation Processing
+R:8064:b29_copy_slot_data:Copy slot data from $7600 to $0574
+R:8082:b29_copy_position_data:Copy position data from $80DE to $057C/$0584
+R:8095:b29_formation_rts:Formation processing return
+R:8096:b29_slot_table:Party slot lookup table
+R:809E:b29_slot_flags:Party slot flags table
+R:80A2:b29_slot_config:Party slot configuration
+R:80A6:b29_slot_indices:Party slot index mapping (8 entries)
+R:80DE:b29_position_table:Party position data table
+
+# Bank 29 Graphics/Tile Data ($811E-$819D seems to be tile patterns)
+R:811E:b29_tile_pattern_1:Tile pattern data 1
+R:815E:b29_tile_pattern_2:Tile pattern data 2
+
+# Bank 29 Core Subroutines
+R:8660:b29_call_c0a0_1:Call fixed bank $C0A0
+R:86E8:b29_call_c0a0_2:Second call to $C0A0
+R:8AA6:b29_call_9f0f_1:Call $9F0F subroutine
+R:8AE6:b29_call_9f0f_2:Second call to $9F0F
+R:8B43:b29_call_8ce6:Call formation helper $8CE6
+R:8BC5:b29_call_8d2c:Call formation helper $8D2C
+
+# Bank 29 Formation Calculation
+R:8C9A:b29_calc_formation_entry:Formation calculation entry (4 calls to $8CAC)
+R:8CAC:b29_formation_helper:Formation calculation helper (called 4x)
+R:8CE6:b29_formation_setup:Formation setup routine
+R:8CF3:b29_rng_formation_1:RNG call for formation randomization
+R:8CFA:b29_rng_formation_2:Second RNG call for formation
+R:8D06:b29_formation_final:Final formation calculation
+R:8D2C:b29_formation_adjust:Formation adjustment routine
+R:8D56:b29_formation_adjust_2:Formation adjustment 2 (4 calls to $8CAC)
+
+# Bank 29 Party Management
+R:8D9E:b29_call_8009:Call party init at $8009
+R:8DF4:b29_party_setup_main:Main party setup (calls $C5C5, $C54E, etc)
+R:8EA9:b29_party_helper_1:Party setup helper 1
+R:8EC4:b29_party_helper_2:Party setup helper 2
+R:8E68:b29_party_helper_3:Party setup helper 3
+R:8E91:b29_party_helper_4:Party setup helper 4
+R:8EE0:b29_party_helper_5:Party setup helper 5
+
+# Bank 29 Data Access Routine
+R:9F0F:b29_data_access:Data table access routine (called from $8AA6, $8AE6)
+
+# Bank 29 RAM Variables
+G:0573:b29_party_slot_active:Active party slot ($0573)
+G:0574:b29_party_data_buffer:Party data buffer (8 bytes, $0574-$057B)
+G:057C:b29_position_y_buffer:Party Y position buffer (8 bytes, $057C-$0583)
+G:0584:b29_position_x_buffer:Party X position buffer (8 bytes, $0584-$058B)
+G:058D:b29_formation_flags:Formation flags
+G:7600:b29_char_data_source:Character data source array (indexed by X*4)
+
