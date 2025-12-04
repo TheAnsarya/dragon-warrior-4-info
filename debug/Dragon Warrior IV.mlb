@@ -3276,5 +3276,74 @@ G:0508:b23_coin_lo:Coin count low
 G:0509:b23_coin_hi:Coin count high
 G:62B0:b23_win_counter:Win counter array (8)
 
+# ============================================================
+# BANK 24 - MAP RENDERING AND METATILE SYSTEM
+# PRG Address: $8000-$BFFF (Bank 24)
+# PRG Offset: 0x60000
+# ============================================================
 
+# -- Bank 24 Metatile Data ($8000-$A4BF) --
+P:8000:b24_metatile_data:Metatile definition table
+P:8047:b24_metatile_flags:Metatile flag bytes
+P:80C0:b24_tile_patterns:Tile pattern data
+
+# -- Bank 24 Map Position Calculation ($AFE6-$B025) --
+P:AFE6:b24_calc_map_pos:Calculate map position
+P:AFEA:b24_load_offsets:Load X/Y offsets from $E7-$E9
+P:B004:b24_add_y_offset:Add Y offset to position
+P:B010:b24_calc_nametable:Calculate nametable address
+P:B023:b24_jump_store:Jump to store result
+
+# -- Bank 24 Extended Map Calc ($B026-$B0B4) --
+P:B026:b24_extended_calc:Extended map calculation
+P:B04F:b24_store_x_pos:Store X position
+P:B06F:b24_add_y_extended:Add Y with extended check
+P:B080:b24_store_y_pos:Store Y position
+P:B0A0:b24_final_calc:Final position calculation
+P:B0B5:b24_call_store:Call store routine
+
+# -- Bank 24 Map Split Handler ($B0BD-$B0E4) --
+P:B0BD:b24_split_check:Check for nametable split
+P:B0D2:b24_split_y:Handle Y split case
+P:B0DE:b24_split_finish:Finish split handling
+
+# -- Bank 24 Map Store ($B0E5-$B11F) --
+P:B0E5:b24_store_single:Store single tile update
+P:B0FA:b24_store_multi:Store multi-tile update
+P:B10E:b24_store_loop:Store data loop
+P:B116:b24_increment_index:Increment buffer index ($050A)
+
+# -- Bank 24 Screen Init ($B120-$B148) --
+P:B120:b24_init_screen:Initialize screen position
+P:B126:b24_call_c662:Call C662 helper
+P:B12B:b24_calc_scroll:Calculate scroll offsets
+P:B140:b24_store_scroll:Store scroll values
+
+# -- Bank 24 Tile Lookup ($B149-$B1A4) --
+P:B149:b24_tile_lookup:Look up tile at position
+P:B15C:b24_check_y_bounds:Check Y boundary (0B-12)
+P:B166:b24_calc_tile_idx:Calculate tile table index
+P:B184:b24_read_tile:Read tile from table ($B20A)
+P:B192:b24_tile_not_found:Tile not found handler
+P:B197:b24_check_overflow:Check for buffer overflow
+
+# -- Bank 24 Screen Update Loop ($B1A5-$B209) --
+P:B1A5:b24_update_screen:Update full screen
+P:B1AD:b24_update_loop_y:Y update loop
+P:B1AF:b24_update_loop_x:X update loop
+P:B1B8:b24_call_lookup:Call tile lookup
+P:B1C0:b24_next_y:Next Y position
+
+# -- Bank 24 Tile Table ($B20A) --
+P:B20A:b24_tile_table:Tile type lookup table
+
+# -- Bank 24 RAM Variables --
+G:00DA:b24_row_count:Row count for update
+G:00DB:b24_col_count:Column count for update
+G:00E7:b24_scroll_x:Scroll X position
+G:00E8:b24_scroll_y:Scroll Y position
+G:00E9:b24_nametable:Current nametable flags
+G:0300:b24_update_buffer:PPU update buffer
+G:050A:b24_buffer_index:Update buffer index
+G:050B:b24_update_count:Update count
 
