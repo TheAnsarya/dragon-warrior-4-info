@@ -783,3 +783,144 @@ G:75F3:battle_target_mask_lo:Valid target mask low byte
 G:75F4:battle_target_mask_hi:Valid target mask high byte
 G:75F5:battle_spell_mask:Available spell mask
 
+# ==============================================================================
+# Bank 16 - Game Logic / Scripted Events (PRG ROM $8000-$BFFF when loaded)
+# Bank 16 has 75.9% code density with 454 subroutines (most of any switchable bank)
+# Contains pointer tables, scripted battle events, and game flow control
+# ==============================================================================
+
+# Bank 16 Header / Pointer Tables ($8000-$807F)
+R:8000:b16_ptr_table_start:Bank 16 pointer table start (data section)
+R:8030:b16_ptr_table_2:Second pointer table section
+R:804A:b16_ptr_table_3:Third pointer table section
+
+# Bank 16 Code Entry Points ($8080+)
+R:8080:b16_script_entry_1:Script entry point 1 - save state, jump to $815F
+R:808A:b16_script_entry_2:Script entry point 2 - similar to $8080
+R:8091:b16_script_main:Main scripted event processor
+R:809D:b16_get_return_addr:Get return address from stack into $79-$7A
+R:80B3:b16_update_return:Update return address on stack
+R:80C5:b16_script_entry_3:Script entry point 3 - saves to $6E0B
+R:80D1:b16_script_entry_4:Script entry point 4
+R:80EA:b16_script_continue:Continue script execution
+
+# Bank 16 Utility Subroutines
+R:8157:b16_load_ptr_helper:Load pointer from $0517 into $79
+R:815F:b16_save_zp_state:Save zero page $00-$0F to stack
+R:8161:b16_save_zp_loop:Zero page save loop
+R:8188:b16_restore_zp:Restore zero page from stack
+R:8196:b16_process_event:Process scripted event
+R:8198:b16_event_loop:Event processing loop
+R:81B8:b16_event_done:Event processing complete (RTS)
+R:81B9:b16_battle_event:Battle event handler - checks $C000
+
+# Bank 16 Data/State Management
+R:8214:b16_copy_zp_76_78:Copy $6F-$71 to $76-$78
+R:8221:b16_dispatch_handler:Dispatch to handler via jump table at $9E30
+R:823E:b16_jmp_battle_event:Jump to battle event ($81B9)
+R:8241:b16_check_618E:Check battle state flag $618E
+R:825F:b16_check_618E_2:Second check of $618E
+R:8278:b16_compare_y:Compare Y for event type selection
+
+# Bank 16 Event Jump Table at $9E30
+R:9E30:b16_event_handler_table:Event handler pointer table (indexed by $6E0B*2)
+
+# Bank 16 Game Flow Control
+R:A077:b16_game_flow:Game flow control subroutine (called from $815F dispatcher)
+R:A680:b16_indirect_jump_1:Indirect jump via $0000
+R:B496:b16_indirect_jump_2:Indirect jump via $0004
+
+# Bank 16 Random Number Usage
+R:AC89:b16_rng_call_1:Call RNG ($C891) for event randomization
+R:ADC6:b16_rng_call_2:Second RNG call location
+R:AF78:b16_rng_call_3:Third RNG call location
+R:B09A:b16_rng_call_4:Fourth RNG call location
+R:B0A1:b16_rng_call_5:Fifth RNG call location
+
+# Bank 16 Text/Menu Related
+R:87C5:b16_text_call_1:Call text routine $C851
+R:A27D:b16_text_call_2:Second text routine call
+R:A9AD:b16_text_call_3:Third text routine call
+
+# Bank 16 RAM Variables Used
+G:6E0A:b16_event_param_a:Event parameter A (used in scripted events)
+G:6E0B:b16_event_param_b:Event parameter B (jump table index * 2)
+G:6E0C:b16_event_counter:Event counter/index
+G:6E0E:b16_event_y_save:Event Y register save
+G:6BDD:b16_flag_6bdd:Script flag (bit 7 checked/set)
+G:6BDE:b16_flag_6bde:Script flag 2 (saved/restored)
+
+# ==============================================================================
+# Bank 17 - Battle Display / AI System (PRG ROM $8000-$BFFF when loaded)
+# Bank 17 has 68.2% code density with 450 subroutines
+# Contains battle UI, message display, animations, and AI support routines
+# Heavy BRK usage indicates scripted event sequences
+# ==============================================================================
+
+# Bank 17 Header / Pointer Tables ($8000-$8031)
+R:8000:b17_ptr_table_start:Bank 17 pointer table (data section)
+R:8022:b17_jmp_to_c49e:Jump to fixed bank $C49E
+
+# Bank 17 Battle Initialization ($8032+)
+R:8032:b17_battle_init:Battle initialization - sets $72E9 flag
+R:803C:b17_store_72e9:Store battle flag to $72E9
+R:8050:b17_call_b9fb:Call battle helper $B9FB
+R:8053:b17_battle_loop_1:Battle loop segment 1 (BRK script)
+R:8080:b17_battle_segment:Battle segment with BRK scripts
+R:808B:b17_battle_segment_2:Battle segment 2
+R:809B:b17_rts_quick:Quick return (RTS)
+R:809C:b17_check_chapter:Check chapter number ($615A == 3?)
+
+# Bank 17 Battle State Checks
+R:80C4:b17_check_72e7:Check battle state $72E7 (bits 5-6)
+R:80CD:b17_return_carry_set:Return with carry set
+R:80CF:b17_init_battle_arrays:Initialize battle arrays at $72F4+
+
+# Bank 17 Battle Actor Setup
+R:80D9:b17_init_actor_loop:Initialize actor data loop ($72F4-$733C)
+R:80F7:b17_call_87fb:Call helper $87FB after init
+R:8108:b17_check_72e6:Check $72E6 battle flags
+R:810F:b17_call_ae0a:Call $AE0A (escape check?)
+R:8117:b17_return:Simple return point
+R:8118:b17_continue_battle:Continue battle after escape check
+
+# Bank 17 Battle Actor Validation
+R:880A:b17_validate_actor:Validate battle actor (uses A as actor type)
+R:87BB:b17_setup_actor:Set up actor for battle
+R:87FB:b17_actor_helper:Actor setup helper routine
+
+# Bank 17 Battle Display System
+R:885B:b17_display_battle:Battle display main routine
+R:9223:b17_display_helper:Display helper routine
+R:92CF:b17_display_update:Update battle display
+
+# Bank 17 Battle Text/Messages
+R:A8EC:b17_message_system:Battle message system
+R:AA4C:b17_message_display:Display battle message
+R:AB2A:b17_message_continue:Continue message display
+
+# Bank 17 AI/Enemy Actions
+R:AE0A:b17_enemy_escape:Enemy escape check routine
+R:B9F6:b17_ai_helper_1:AI helper routine 1
+R:B9FB:b17_ai_helper_2:AI helper routine 2
+R:BEB2:b17_ai_action:AI action execution
+
+# Bank 17 RAM Variables
+G:6E44:b17_battle_mode:Battle mode flag (AND #$03 compared)
+G:6E45:b17_battle_type:Battle type ($BB = special)
+G:6E49:b17_battle_var_49:Battle variable 49
+G:6E4A:b17_battle_var_4a:Battle variable 4A
+G:6E4B:b17_battle_var_4b:Battle variable 4B
+G:6E4C:b17_battle_var_4c:Battle variable 4C
+G:6E81:b17_event_state:Event state flag (cleared to 0)
+G:72E6:b17_battle_flags_e6:Battle flags E6 (bits 4-5 checked)
+G:72E7:b17_battle_flags_e7:Battle flags E7 (bits 5-6 checked)
+G:72E9:b17_battle_flag_e9:Battle flag E9 (set to $00/$40/$80)
+G:72F4:b17_actor_data_start:Actor data array start (12 entries)
+G:7300:b17_actor_array_0:Actor array 0
+G:730C:b17_actor_array_1:Actor array 1
+G:7318:b17_actor_array_2:Actor array 2
+G:7324:b17_actor_array_3:Actor array 3 (init to $F7)
+G:7330:b17_actor_array_4:Actor array 4 (init to $F7)
+G:733C:b17_actor_array_5:Actor array 5 (init to $F7)
+
