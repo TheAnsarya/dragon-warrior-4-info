@@ -3061,23 +3061,23 @@ P:237F7:b08_table_b7f7:Location data table pointer
 # Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
 # Tileset data defines tile graphics for each map type (town, dungeon, overworld).
 # 51 tilesets × 64 bytes each = $0CC0 bytes total.
-P:208229:b08_tileset_base_addr_table:Tile graphics base address table (3 entries)
-P:208ADB:b08_tileset_data_start:Tileset data start (51 tilesets × 64 bytes)
+P:20229:b08_tileset_base_addr_table:Tile graphics base address table (3 entries)
+P:20ADB:b08_tileset_data_start:Tileset data start (51 tilesets × 64 bytes)
 # Tileset format: each tileset = 64 bytes of tile definitions
 # Tileset 00-32: Various town/dungeon tilesets
 # Tileset 33-50: Additional map type tilesets
-P:20979B:b08_tileset_data_end:End of tileset data (after 51st tileset)
+P:2179B:b08_tileset_data_end:End of tileset data (after 51st tileset)
 
 # -- Bank 08 Tile Definition Tables (DataCrystal ROM Map) --
 # Tile table entries: 3 bytes per tile (tile number, pattern, behavior)
-P:20A1BB:b08_tile_increment_patterns:Tile increment patterns table
-P:20A28D:b08_tile_pattern_f_table:Pattern F tile table
-P:20A80D:b08_tile_definition_table:Main tile definition table (3 bytes/entry)
+P:221BB:b08_tile_increment_patterns:Tile increment patterns table
+P:2228D:b08_tile_pattern_f_table:Pattern F tile table
+P:2280D:b08_tile_definition_table:Main tile definition table (3 bytes/entry)
 # Each tile entry: [tile_number][pattern][behavior]
 # Pattern determines visual appearance, behavior determines gameplay effect
 
 # -- Bank 08 Animated Tiles (DataCrystal ROM Map) --
-P:20AEB7:b08_animated_tile_data:Animated tile data (waterfalls, etc.)
+P:22EB7:b08_animated_tile_data:Animated tile data (waterfalls, etc.)
 
 # -- Bank 08 RAM Variables --
 G:6F20:b08_tile_data_1:Tile data array 1 (32 entries)
