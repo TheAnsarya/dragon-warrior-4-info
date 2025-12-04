@@ -19,6 +19,35 @@
 #
 # Statistics: ~3,060 labels (P=1,741, G=464, R=851) across 4,435 lines
 # Banks Covered: 08, 0E, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27-30
+#
+# ==============================================================================
+# WHAT'S NEXT / TODO
+# ==============================================================================
+# High Priority:
+#   [ ] Bank 0C/0D: Graphics tile data (character sprites, map tiles)
+#   [x] Bank 0F: Map bank lookup function at $3E9AD (b15_get_map_bank) - DONE
+#   [ ] Bank 13: Unknown - needs initial analysis
+#   [ ] Text/dialogue table locations in Banks 0C-0E
+#
+# Medium Priority:
+#   [ ] Enemy data tables (HP, stats, attack patterns, drops)
+#   [ ] Item data tables (stats, prices, equipment flags)
+#   [ ] Spell data tables (MP cost, power, target type)
+#   [ ] Character growth tables (stat gains per level)
+#   [ ] Shop inventory tables
+#
+# Low Priority:
+#   [ ] Sound/music data in Bank 25
+#   [ ] Remaining NPC dialogue pointers
+#   [ ] Cutscene event script labels
+#   [ ] Casino mini-game odds tables
+#
+# Completed This Session:
+#   [x] Fixed MLB address format (P: for physical, R: for CPU)
+#   [x] Added all 73 map location labels (Maps 00-48 with submaps)
+#   [x] Integrated DataCrystal ROM map and RAM map information
+#   [x] Fixed party member data structure offsets
+#   [x] Added tile behavior documentation
 # ==============================================================================
 
 # ==============================================================================
