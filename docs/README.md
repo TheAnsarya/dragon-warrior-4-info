@@ -43,6 +43,7 @@ Quick reference and guides.
 In-depth analysis of game systems from reverse engineering.
 
 - [Reverse Engineering Summary](REVERSE_ENGINEERING_SUMMARY.md) - Overview of RE findings
+- [Bank Interconnections](bank_interconnections.md) - How banks call each other (NEW)
 - [EXP System Analysis](exp_system_analysis.md) - Experience formula (Bank 18)
 - [Battle System Analysis](battle_system_analysis.md) - Battle mechanics overview
 - [Battle System Deep Dive](battle_system_deep.md) - Damage formulas, AI tactics (Bank 19)
