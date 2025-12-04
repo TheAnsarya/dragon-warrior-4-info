@@ -991,3 +991,153 @@ G:0584:b29_position_x_buffer:Party X position buffer (8 bytes, $0584-$058B)
 G:058D:b29_formation_flags:Formation flags
 G:7600:b29_char_data_source:Character data source array (indexed by X*4)
 
+# ==============================================================================
+# Bank 22 - Menu/UI System (PRG ROM $8000-$BFFF when loaded)
+# Bank 22 has 876 subroutines with 519 JSR calls and 224 JMP instructions
+# Contains text input, number input, menu display, and UI state management
+# Heavy use of BRK-based dispatch for text engine calls
+# ==============================================================================
+
+# Bank 22 Entry Points ($8028-$8035)
+R:8028:b22_main_entry:Bank 22 main entry point (JSR $872B)
+R:802B:b22_init_1:Initialize routine 1 (JSR $85C8)
+R:802E:b22_init_2:Initialize routine 2 (JSR $85F9)
+R:8031:b22_init_3:Initialize routine 3 (JSR $8036)
+R:8035:b22_entry_return:Entry point return (SEC, RTS)
+
+# Bank 22 Main Loop ($8036-$803E)
+R:8036:b22_main_loop:Main processing loop
+R:803F:b22_check_state:Check state flag $5C
+
+# Bank 22 Character/Tile Validation ($8051-$808B)
+R:8051:b22_validate_char:Validate character at $6E8A,X
+R:8084:b22_set_char_6c:Set character code $6C
+R:8089:b22_clear_state:Clear state variables $5D, $57
+
+# Bank 22 Command Handler Dispatch ($8094-$80C3)
+R:8094:b22_cmd_dispatch:Command dispatch based on accumulator
+R:80A4:b22_cmd_table_lookup:Lookup handler in table at $80C4
+R:80B2:b22_jmp_indirect:Jump indirect through $0000-$0001
+R:80B5:b22_cmd_default:Default command handler
+R:80C4:b22_cmd_table:Command handler jump table (25 entries)
+
+# Bank 22 Input Processing ($810C-$8160)
+R:810C:b22_input_handler_1:Input handler routine 1
+R:8124:b22_input_cleanup:Input cleanup (PLA, PLA, RTS)
+R:812A:b22_check_buffer:Check buffer at $0553
+R:8137:b22_check_done:Check completion and return
+R:8140:b22_call_83cd:Call $83CD and $81CC
+R:8146:b22_compare_0551:Compare $0551 with $55
+R:816D:b22_init_input:Initialize input state
+
+# Bank 22 Text/Display Update ($8190-$81C6)
+R:8190:b22_display_loop:Display update loop
+R:8199:b22_update_cursor:Update cursor position
+R:81B0:b22_wait_input:Wait for input (JSR $C8EC)
+R:81CC:b22_process_result:Process input result
+
+# Bank 22 Character Code Lookup ($81EA-$8212)
+R:81EA:b22_char_lookup:Character code lookup ($5D AND #$0F)
+R:8210:b22_char_table:Character code table
+R:8212:b22_char_rts:Character lookup return
+
+# Bank 22 Number Display ($8225-$8254)
+R:8225:b22_number_init:Number display initialization
+R:823C:b22_number_loop:Number digit processing loop
+R:8244:b22_copy_digit:Copy digit to $0554 buffer
+R:8257:b22_number_handler_2:Number handler variant 2
+
+# Bank 22 String Buffer Management ($8336-$8355)
+R:8336:b22_buffer_start:Initialize buffer index X=0
+R:8338:b22_read_buffer:Read from $0554,X buffer
+R:8346:b22_clear_buffer_state:Clear buffer state ($5C, $60)
+R:8356:b22_get_param:Get parameter from $F9,X (increment $5B)
+
+# Bank 22 String Copy ($835D-$836A)
+R:835D:b22_copy_string:Copy string from $03E3 to $0554
+R:836B:b22_store_char:Store character at $06AA,X
+
+# Bank 22 Screen Update ($8373-$83A3)
+R:8373:b22_screen_update:Screen update routine
+R:8386:b22_display_char:Display character (JMP $C65A)
+R:838B:b22_check_sign:Check sign at $0553
+R:8393:b22_calc_position:Calculate screen position ($0551+$53, $0552+$56)
+
+# Bank 22 Text Validation ($83A4-$83BF)
+R:83A4:b22_validate_text:Validate text characters ($69, $6A, $6C, $72)
+R:83C0:b22_advance_column:Advance column position
+
+# Bank 22 Scroll/Display ($83CD-$83FA)
+R:83CD:b22_scroll_start:Start scroll display
+R:83D2:b22_scroll_row:Process scroll row
+R:83FB:b22_draw_box:Draw UI box/border
+
+# Bank 22 Box Drawing ($844F-$84ED)
+R:844F:b22_draw_top:Draw box top border
+R:848A:b22_draw_middle:Draw box middle rows
+R:84B1:b22_draw_content:Draw box content row
+R:84C4:b22_draw_bottom:Draw box bottom border
+R:84EE:b22_draw_box_alt:Alternative box drawing (shifted +3)
+
+# Bank 22 Number Input System ($9FB6-$A0CF)
+R:9FB6:b22_num_input_init:Number input initialization ($03DD=#$60)
+R:9FBB:b22_num_input_short:Short number input ($03DD=#$20)
+R:9FBD:b22_num_store_limit:Store input limit to $03DD, $03CF
+R:9FD8:b22_num_input_loop:Number input main loop
+R:A004:b22_num_check_confirm:Check confirm button (code #$01)
+R:A020:b22_num_check_cancel:Check cancel button (code #$02)
+R:A032:b22_num_check_select:Check select (bit check $03CC)
+R:A04D:b22_num_check_up:Check up button (code #$05)
+R:A067:b22_num_check_down:Check down button (code #$06)
+R:A07C:b22_num_check_left:Check left button (code #$07)
+R:A0AC:b22_num_check_right:Check right button (code #$08)
+R:A0D0:b22_num_update_digit:Update current digit
+
+# Bank 22 Text Input System ($A0E8-$A150)
+R:A0E8:b22_text_input_init:Text input initialization
+R:A0F7:b22_text_setup:Text input setup
+R:A102:b22_text_load_table:Load character table from $A151,X
+R:A130:b22_text_input_loop:Text input main loop
+R:A151:b22_text_table:Text input lookup table
+
+# Bank 22 Text Input Handlers ($A15A-$A212)
+R:A15A:b22_text_check_confirm:Text confirm handler
+R:A163:b22_text_call_a362:Call text helper $A362
+R:A175:b22_text_backspace:Handle backspace
+R:A1A1:b22_text_toggle:Handle toggle selection
+R:A1C1:b22_text_input_char:Input new character
+R:A1E6:b22_text_shift_buffer:Shift buffer contents
+
+# Bank 22 Helper Routines ($A362+)
+R:A362:b22_text_helper_1:Text input helper 1
+R:A391:b22_text_helper_2:Text input helper 2
+R:A397:b22_text_helper_3:Text input helper 3
+
+# Bank 22 Numeric Display ($B24F-$B341)
+R:B24F:b22_display_number:Display number routine
+R:B275:b22_digit_offset_table:Digit offset lookup table
+R:B278:b22_display_stat:Display stat value
+R:B29D:b22_display_error:Display error indicator
+R:B2A3:b22_count_table:Count lookup table
+R:B2DA:b22_count_check:Count validation check
+R:B303:b22_count_fail:Count validation failure
+R:B307:b22_display_value:Display numeric value
+R:B337:b22_load_pointer:Load pointer from $07B5-$07B6
+R:B342:b22_display_formatted:Display formatted value
+
+# Bank 22 RAM Variables Used
+G:03CA:b22_cursor_char:Cursor character code
+G:03CC:b22_input_code:Input button code
+G:03CF:b22_cursor_y:Cursor Y position
+G:03DC:b22_digit_index:Current digit index
+G:03DD:b22_input_limit:Input digit limit
+G:03DB:b22_current_digit:Current digit value (0-9)
+G:03E3:b22_input_buffer:Input buffer (8 bytes, $03E3-$03EA)
+G:03FF:b22_buffer_index:Buffer write index
+G:0551:b22_column_pos:Column position in text
+G:0552:b22_row_pos:Row position in text
+G:0553:b22_display_mode:Display mode flags
+G:0554:b22_text_buffer:Text output buffer (variable length)
+G:06AA:b22_char_output:Character output buffer
+
+
