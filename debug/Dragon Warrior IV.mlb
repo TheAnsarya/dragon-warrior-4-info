@@ -17,7 +17,7 @@
 # Repository: https://github.com/mrisney/dragon-warrior-4-info
 # DataCrystal: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)
 #
-# Statistics: 3,452 labels (P=2,169, G=470, R=813) across 5,367 lines
+# Statistics: 3,477 labels (P=2,194, G=470, R=813) across 5,403 lines
 # Banks Covered: 08, 09, 0A, 0B, 0C-0E, 0F, 14-19, 1B-1E, 20-25, 27-30, Fixed ($C000+)
 # Includes: Complete item/party/map value reference tables for debugging
 #
@@ -40,9 +40,12 @@
 #       - Battle actor arrays at G:72F4-733C (12 entries)
 #       - Bank 17 initializes actors at R:80CF-80F7
 #       - Need to trace battle init to find ROM source
+#       - Text search for "Slime" failed - names may be compressed
 #   [x] Item value reference ($00-$7F complete list) - DONE (in reference section)
 #   [ ] Spell data tables (MP cost, power, target type) - need ROM location
-#   [ ] Character growth tables (stat gains per level)
+#       - Spell table pointers at P:49164 (Bank 18)
+#       - Character spell data at P:4A291, P:4A2C1, P:4A2AD, etc.
+#   [x] Character growth tables (stat gains per level) - Found P:78C00 (Bank 30)
 #   [ ] Shop inventory tables
 #
 # Low Priority:
@@ -50,6 +53,11 @@
 #   [ ] Remaining NPC dialogue pointers
 #   [ ] Cutscene event script labels
 #   [ ] Casino mini-game odds tables
+#
+# Data Tables Found This Session:
+#   - P:78C00 (Bank 30): Character growth tables - ascending values 06-12
+#   - P:5E400 (Bank 23): AI behavior weight table - 240 bytes of 00-07 values
+#   - P:7BD00 (Bank 30): Item/equipment data with flags
 #
 # Completed This Session:
 #   [x] Fixed MLB address format (P: for physical, R: for CPU)
@@ -4055,6 +4063,27 @@ P:5E050:b23_update_arena:Update arena display
 # -- Bank 23 Monster Stats ($A33C-$A599) --
 P:5E33C:b23_load_monster:Load monster data
 P:5E3A5:b23_calc_stats:Calculate monster stats
+
+# -- Bank 23 AI Behavior Weight Table ($A400-$A4EF) --
+# 240 bytes of values 00-07 organized in patterns
+# Possibly AI action priorities or spell/ability weights per monster type
+# Format: 16 bytes per row (16 monsters?), values are priority weights
+P:5E400:b23_ai_weights:AI behavior weight table start
+P:5E410:b23_ai_row_1:AI weights row 1 (monsters 0x00-0x0F)
+P:5E420:b23_ai_row_2:AI weights row 2 (monsters 0x10-0x1F)
+P:5E430:b23_ai_row_3:AI weights row 3 (monsters 0x20-0x2F)
+P:5E440:b23_ai_row_4:AI weights row 4 (monsters 0x30-0x3F)
+P:5E450:b23_ai_row_5:AI weights row 5 (monsters 0x40-0x4F)
+P:5E460:b23_ai_row_6:AI weights row 6 (monsters 0x50-0x5F)
+P:5E470:b23_ai_row_7:AI weights row 7 (monsters 0x60-0x6F)
+P:5E480:b23_ai_row_8:AI weights row 8 (monsters 0x70-0x7F)
+P:5E490:b23_ai_row_9:AI weights row 9 (monsters 0x80-0x8F)
+P:5E4A0:b23_ai_row_a:AI weights row A (monsters 0x90-0x9F)
+P:5E4B0:b23_ai_row_b:AI weights row B (monsters 0xA0-0xAF)
+P:5E4C0:b23_ai_row_c:AI weights row C (monsters 0xB0-0xBF)
+P:5E4D0:b23_ai_row_d:AI weights row D (monsters 0xC0-0xCF)
+P:5E4E0:b23_ai_row_e:AI weights row E (monsters 0xD0-0xDF)
+
 P:5E57A:b23_monster_table:Monster stat table
 P:5E599:b23_monster_gfx:Monster graphics
 
@@ -4249,6 +4278,21 @@ P:78ACB:b30_fade_loop:Fade animation loop
 P:78ACD:b30_process_sprite:Process sprite visibility
 P:78AE6:b30_next_fade_spr:Next sprite for fade
 P:78AFB:b30_adjust_sprite:Adjust sprite Y for fade
+
+# -- Bank 30 Character Growth Tables ($8C00-$8C4F) --
+# Level-up stat increase amounts organized by character class
+# Values represent stat gains: 06,07,07,08,08,09,0A,0B... ascending
+# Format: 8 bytes per row, possibly per character or stat type
+P:78C00:b30_growth_table:Character stat growth table start
+P:78C08:b30_growth_row_1:Growth table row 1 (01,02,02,04,04,05,05,06)
+P:78C10:b30_growth_row_2:Growth table row 2 (07,08,09,09,0A,0B,0B,0C)
+P:78C18:b30_growth_row_3:Growth table row 3 (01,02,03,04,05,05,07,07)
+P:78C20:b30_growth_row_4:Growth table row 4 (08,09,0A,0A,0C,0C,0D,0E)
+P:78C28:b30_growth_row_5:Growth table row 5 (01,03,03,05,05,06,07,08)
+P:78C30:b30_growth_row_6:Growth table row 6 (0A,0A,0B,0C,0D,0E,0F,10)
+P:78C38:b30_growth_row_7:Growth table row 7 (02,02,04,05,06,07,08,09)
+P:78C40:b30_growth_row_8:Growth table row 8 (0A,0B,0D,0D,0F,0F,11,12)
+P:78C48:b30_growth_code:Code after growth tables
 
 # -- Bank 30 Party Position Init ($9320-$9421) --
 P:79320:b30_init_party_pos:Initialize party positions
