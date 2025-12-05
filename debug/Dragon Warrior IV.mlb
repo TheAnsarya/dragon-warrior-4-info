@@ -33,7 +33,13 @@
 #   [x] Bank 18: Character init + chapter transition + EXP system - DONE
 #
 # Medium Priority:
-#   [ ] Enemy data tables (HP, stats, attack patterns, drops) - need ROM location
+#   [ ] Enemy data tables (HP, stats, attack patterns, drops)
+#       - NOT in Bank 23 monster_table (that's arena graphics)
+#       - NOT at P:7BD34 (shop/item data coincidence)
+#       - Resistance data at R:B967 (Bank 19) = 256 bytes packed bits
+#       - Battle actor arrays at G:72F4-733C (12 entries)
+#       - Bank 17 initializes actors at R:80CF-80F7
+#       - Need to trace battle init to find ROM source
 #   [x] Item value reference ($00-$7F complete list) - DONE (in reference section)
 #   [ ] Spell data tables (MP cost, power, target type) - need ROM location
 #   [ ] Character growth tables (stat gains per level)
@@ -1712,13 +1718,24 @@ G:6E81:b17_event_state:Event state flag (cleared to 0)
 G:72E6:b17_battle_flags_e6:Battle flags E6 (bits 4-5 checked)
 G:72E7:b17_battle_flags_e7:Battle flags E7 (bits 5-6 checked)
 G:72E9:b17_battle_flag_e9:Battle flag E9 (set to $00/$40/$80)
-G:72F4:b17_actor_data_start:Actor data array start (12 entries)
-G:7300:b17_actor_array_0:Actor array 0
-G:730C:b17_actor_array_1:Actor array 1
-G:7318:b17_actor_array_2:Actor array 2
-G:7324:b17_actor_array_3:Actor array 3 (init to $F7)
-G:7330:b17_actor_array_4:Actor array 4 (init to $F7)
-G:733C:b17_actor_array_5:Actor array 5 (init to $F7)
+# Battle Actor Arrays ($72F4-$7347) - 12 entries × 12 bytes each
+# Each actor slot holds: HP, MP, status flags, AI state, etc.
+# Slots 0-3: Party members in formation
+# Slots 4-7: Enemy group A (up to 4 enemies)
+# Slots 8-11: Enemy group B (up to 4 enemies, large battles)
+G:72F4:b17_actor_data_start:Actor data array start (12 entries × 12 bytes)
+G:7300:b17_actor_array_0:Actor 0 data (party slot 0 or enemy)
+G:730C:b17_actor_array_1:Actor 1 data (party slot 1 or enemy)
+G:7318:b17_actor_array_2:Actor 2 data (party slot 2 or enemy)
+G:7324:b17_actor_array_3:Actor 3 data (init to $F7, unused slot marker)
+G:7330:b17_actor_array_4:Actor 4 data (init to $F7, enemy start)
+G:733C:b17_actor_array_5:Actor 5 data (init to $F7, enemy slot)
+G:7348:b17_actor_array_6:Actor 6 data (enemy slot)
+G:7354:b17_actor_array_7:Actor 7 data (enemy slot)
+G:7360:b17_actor_array_8:Actor 8 data (enemy group B)
+G:736C:b17_actor_array_9:Actor 9 data (enemy group B)
+G:7378:b17_actor_array_10:Actor 10 data (enemy group B)
+G:7384:b17_actor_array_11:Actor 11 data (enemy group B, max slot)
 
 # -- Bank 17 Map System (DataCrystal ROM Map) --
 # Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
