@@ -280,6 +280,219 @@ ITEMS = {
     0x86: "Iron Safe",
 }
 
+# Treasure chest descriptions - (byte_offset, bit_index) -> (location, reward)
+# byte_offset is relative to $625d (treasure_start)
+TREASURE_INFO = {
+    # $625d
+    (0, 0): ("Burland Castle F1, left group, bottom-left", "Agility Seed"),
+    (0, 1): ("Burland Castle F1, left group, top-right", "Iron Helmet"),
+    (0, 2): ("Burland Castle F1, left group, top-middle", "160 gold"),
+    (0, 3): ("Burland Castle F1, left group, top-left", "Lifeforce Nuts"),
+    (0, 4): ("Santeem F1, top-middle, right", "Magma Staff"),
+    (0, 5): ("Santeem F1, top-middle, middle", "Flute of Uncovering"),
+    (0, 6): ("Santeem F1, top-middle, left", "Strength Seed"),
+    (0, 7): ("Keeleon B1, Jail, bottom", "Boarding Pass"),
+    # $625e
+    (1, 2): ("Dire Palace B1, 4-Chest Room, bottom-right", "⚠️ Mimic!"),
+    (1, 3): ("Dire Palace B1, 4-Chest Room, bottom-left", "⚠️ Mimic!"),
+    (1, 4): ("Dire Palace B1, 4-Chest Room, top-right", "Aeolus' Shield"),
+    (1, 5): ("Dire Palace B1, 4-Chest Room, top-left", "Small Medal"),
+    (1, 6): ("Burland Castle F1, left group, bottom-right", "320 gold"),
+    (1, 7): ("Burland Castle F1, left group, bottom-middle", "Strength Seed"),
+    # $625f
+    (2, 2): ("Endor Castle F3, right room, bottom", "Feather Hat"),
+    (2, 3): ("Endor Castle F3, right room, top", "Pink Leotard"),
+    (2, 4): ("Endor Castle B1", "Lifeforce Nuts"),
+    (2, 5): ("Endor, Bottom-right building F1, bottom", "Multi-edge Sword"),
+    (2, 6): ("Endor, Bottom-right building F1, top", "Strength Seed"),
+    # $6260
+    (3, 1): ("Gardenbur B1, Flowers", "Zenithian Shield"),
+    (3, 2): ("Gardenbur B1, behind throne stairs", "Fire Claw"),
+    (3, 3): ("Branca, top-left, bottom", "Small Medal"),
+    (3, 4): ("Branca, top-left, top-right", "120 gold"),
+    (3, 5): ("Branca, top-left, top-left", "Mystic Acorns"),
+    # $6261
+    (4, 0): ("Aktemto Mine B1, top", "Silver Tarot Cards"),
+    (4, 1): ("Desert Inn, top", "Lunch"),
+    (4, 2): ("Kievs, Top-right house B1", "Empty!"),
+    (4, 3): ("Lakanaba Shop B1, top-left group, right", "Chain Sickle"),
+    (4, 4): ("Lakanaba Shop B1, top-left group, middle", "Ice Blade"),
+    (4, 5): ("Lakanaba Shop B1, top-left group, left", "Strength Seed"),
+    # $6262
+    (5, 0): ("Aktemto Mine Ruins F1, bottom-right, right", "⚠️ Mimic!"),
+    (5, 1): ("Aktemto Mine Ruins F1, bottom-right, left", "Small Medal"),
+    (5, 2): ("Aktemto Mine Ruins F1, middle, right room", "Small Medal"),
+    (5, 3): ("Aktemto Mine Ruins F1, middle, left room", "⚠️ Mimic!"),
+    (5, 4): ("Aktemto Mine Ruins F1, middle-left", "2480 gold"),
+    (5, 5): ("Aktemto Mine Ruins F1, top-right", "Gas Canister"),
+    (5, 6): ("Aktemto Mine B3", "Gunpowder Jar"),
+    (5, 7): ("Aktemto Mine B1, bottom right", "Mystic Acorns"),
+    # $6263
+    (6, 0): ("Padequia Cave B2, top-right", "800 gold"),
+    (6, 1): ("Padequia Cave B2, top-left", "Mystic Acorns"),
+    (6, 2): ("Padequia Cave B1", "Agility Seed"),
+    (6, 3): ("Shrine of Breaking Waves B1, right", "Zenithian Armor"),
+    (6, 4): ("Shrine of Breaking Waves B1, left", "Small Medal"),
+    (6, 5): ("Shrine of Breaking Waves, middle, bottom-right", "Small Medal"),
+    (6, 6): ("Aktemto Mine Ruins F1, bottom-left, right", "Strength Seed"),
+    (6, 7): ("Aktemto Mine Ruins F1, bottom-left, left", "Agility Seed"),
+    # $6264
+    (7, 0): ("Bakor's Hideout B2, middle-left", "Iron Mask"),
+    (7, 1): ("Bakor's Hideout B2, middle-right", "Strength Seed"),
+    (7, 2): ("Bakor's Hideout B1, middle", "Small Medal"),
+    (7, 3): ("Bakor's Hideout B1, top-right", "1200 gold"),
+    (7, 4): ("Bakor's Hideout B1, middle-top", "Agility Seed"),
+    (7, 5): ("Padequia Cave B3, bottom-left", "⚠️ Man-Eater!"),
+    (7, 6): ("Padequia Cave B3, middle", "Padequia Seed"),
+    (7, 7): ("Padequia Cave B2, middle-left", "Robe of Serenity"),
+    # $6265
+    (8, 0): ("Cave South Of Frenor B2, left", "Magic Potion"),
+    (8, 1): ("Cave West of Kievs B5", "Magic Key"),
+    (8, 2): ("Cave West of Kievs B4, middle (Silence)", "Sphere of Silence"),
+    (8, 3): ("Cave West of Kievs B4, middle (Lamp)", "Lamp of Darkness"),
+    (8, 4): ("Cave West of Kievs B2, bottom-left", "240 gold"),
+    (8, 5): ("Cave West of Kievs B2, right", "Lifeforce Nuts"),
+    (8, 6): ("Cave West of Kievs B1, top-left", "Wing of Wyvern"),
+    (8, 7): ("Bakor's Hideout B2, bottom-left", "Dragon Shield"),
+    # $6266
+    (9, 0): ("Cascade Cave B1, middle-left", "Small Medal"),
+    (9, 1): ("Secret Playground Dungeon B2, middle-right", "600 gold"),
+    (9, 2): ("Secret Playground Dungeon B2, top", "Flying Shoes"),
+    (9, 3): ("Secret Playground Dungeon B1, bottom-right", "Medical Herb"),
+    (9, 4): ("Cave South Of Frenor B1, bottom-right", "Wing of Wyvern"),
+    (9, 5): ("Cave South Of Frenor B1, middle", "Agility Seed"),
+    (9, 6): ("Cave South Of Frenor B1, top-left", "360 gold"),
+    (9, 7): ("Cave South Of Frenor B2, bottom", "Golden Bracelet"),
+    # $6267
+    (10, 1): ("Final Cave B2, bottom-left", "Demon Armor"),
+    (10, 2): ("Final Cave B2, bottom-right", "Small Medal"),
+    (10, 3): ("Final Cave B1, top-right", "Dress of Radiance"),
+    (10, 4): ("Cascade Cave B2, bottom-left", "Mask of Corruption"),
+    (10, 5): ("Cascade Cave B2, middle", "1040 gold"),
+    (10, 6): ("Cascade Cave F1, Behind Waterfall", "Sandglass of Regression"),
+    (10, 7): ("Cascade Cave B3, bottom", "Metal Babble Sword"),
+    # $6268
+    (11, 0): ("Final Cave B7, middle", "Mirror Shield"),
+    (11, 1): ("Final Cave B3 (from #2), bottom-right", "⚠️ Mimic!"),
+    (11, 2): ("Final Cave B3 (from #2), bottom-right", "Strength Seed"),
+    (11, 3): ("Final Cave B3 (from #2), bottom-left", "Agility Seed"),
+    (11, 4): ("Final Cave B3 (from #2), top-right", "3280 gold"),
+    (11, 5): ("Final Cave B3 (from #2), top-left", "Lifeforce Nuts"),
+    (11, 6): ("Final Cave B3 (from #2), top-middle", "Staff of Jubilation"),
+    (11, 7): ("Final Cave B4, bottom-middle", "Water Flying Clothes"),
+    # $6269
+    (12, 0): ("Silver Statuette Cave B2, after water, bottom", "Medical Herb"),
+    (12, 1): ("Silver Statuette Cave B2, after water, top-left", "760 gold"),
+    (12, 2): ("Silver Statuette Cave B2, after water, middle-left", "Morning Star"),
+    (12, 3): ("Silver Statuette Cave B2, after water, top-right", "Iron Spear"),
+    (12, 4): ("Cave of Betrayal B3", "Symbol of Faith"),
+    (12, 5): ("Cave North of Lakanaba B5 (left side), top", "Iron Safe"),
+    (12, 6): ("Cave North of Lakanaba B2, middle-left", "Chain Sickle"),
+    (12, 7): ("Final Cave B7, right", "Lifeforce Nuts"),
+    # $626a
+    (13, 0): ("Burland-Izmit tunnel, bottom-right", "Medical Herb"),
+    (13, 1): ("Burland-Izmit tunnel, top-left", "40 gold"),
+    (13, 2): ("Silver Statuette Cave B4", "Silver Statuette"),
+    (13, 3): ("Silver Statuette Cave B3, after water, bottom-middle", "Broad Sword"),
+    (13, 4): ("Silver Statuette Cave B3, before water, left", "Wing of Wyvern"),
+    (13, 5): ("Silver Statuette Cave B3, after water, top-right, right", "Empty!"),
+    (13, 6): ("Silver Statuette Cave B3, after water, top-right, left", "Empty!"),
+    (13, 7): ("Silver Statuette Cave B3, after water, top-left", "Half Plate Armor"),
+    # $626b
+    (14, 0): ("Zenithian Tower F6 (#23), middle-bottom", "Dragon Shield"),
+    (14, 1): ("Zenithian Tower F3 (#12)", "Small Medal"),
+    (14, 2): ("Zenithian Tower F2, right room", "Mystic Acorns"),
+    (14, 3): ("Zenithian Tower Outside #6", "Magic Potion"),
+    (14, 4): ("Zenithian Tower Outside #20", "Mysterious Bolero"),
+    (14, 5): ("Royal Crypt Dungeon B3, middle", "Small Medal"),
+    (14, 6): ("Royal Crypt Dungeon B3, top-middle", "Staff of Antimagic"),
+    (14, 7): ("Royal Crypt Dungeon B1, bottom", "Staff of Transform"),
+    # $626c
+    (15, 0): ("Loch Tower F3, left side", "Wing of Wyvern"),
+    (15, 1): ("Loch Tower F3, top-right", "Strength Seed"),
+    (15, 2): ("World Tree F2, top-left", "Staff of Healing"),
+    (15, 3): ("World Tree F4, bottom", "Dew of World Tree"),
+    (15, 4): ("World Tree F3-2, bottom-right", "Zenithian Sword"),
+    (15, 5): ("Birdsong Tower F3, middle, right", "1200 gold"),
+    (15, 6): ("Birdsong Tower F3, middle, left", "Strength Seed"),
+    (15, 7): ("Birdsong Tower F3, top-right", "Wing of Wyvern"),
+    # $626d
+    (16, 0): ("Great Lighthouse F3, top-right", "Full Moon Herb"),
+    (16, 1): ("Great Lighthouse F3, top-left", "Magic Potion"),
+    (16, 2): ("Great Lighthouse F4, middle", "Fire of Serenity"),
+    (16, 3): ("Great Lighthouse F5, top-left", "Golden Barrette"),
+    (16, 4): ("Loch Tower F1, top-right", "Luck Seed"),
+    (16, 5): ("Loch Tower F1, top-left", "Sword of Malice"),
+    (16, 6): ("Loch Tower F2, middle", "Scale Shield"),
+    (16, 7): ("Loch Tower F2, middle-right", "640 gold"),
+    # $626e
+    (17, 2): ("Konenber Inn F2, top-right room", "Sword of Decimation"),
+    (17, 3): ("Great Lighthouse F1, middle, right", "400 gold"),
+    (17, 4): ("Great Lighthouse F1, middle, left", "Luck Seed"),
+    (17, 5): ("Great Lighthouse F2, bottom-left", "Strength Seed"),
+    (17, 6): ("Great Lighthouse F3, left, right", "Boomerang"),
+    (17, 7): ("Great Lighthouse F3, left, left", "⚠️ Man-Eater!"),
+    # $626f
+    (18, 4): ("NE barrier shrine (Radimvice) F3, bottom-right", "Zombie Mail"),
+    # $6270
+    (19, 0): ("Shrine of Colossus Dungeon F4, left hand", "Demon Hammer"),
+    (19, 1): ("Shrine of Colossus Dungeon F4, top-right", "⚠️ Mimic!"),
+    (19, 2): ("Shrine of Colossus Dungeon B1, bottom-left", "640 gold"),
+    (19, 3): ("Shrine of Colossus Dungeon F2, right", "Agility Seed"),
+    (19, 4): ("Shrine of Colossus Dungeon F1, middle", "Small Medal"),
+    (19, 5): ("Shrine of the Horn B3", "Dress of Radiance"),
+    (19, 6): ("Shrine of the Horn B2 (search)", "Baron's Horn"),
+    (19, 7): ("Shrine of the Horn B2 (obtain)", "Baron's Horn"),
+    # $6272 - Search spots
+    (21, 0): ("Mintos, middle, left of well (search)", "Small Medal"),
+    (21, 1): ("Hometown Destroyed, flowers (search)", "Feather Hat"),
+    (21, 2): ("Aneaux Cemetery, middle tombstone", "Strength Seed"),
+    (21, 4): ("Tempe, red monster platform (search)", "Lifeforce Nuts"),
+    (21, 5): ("Riverton, Middle Island (search)", "Small Medal"),
+    (21, 6): ("Aktemto Mine B4, next to water (search)", "Small Medal"),
+    (21, 7): ("Dire Palace B1, Tomb (search)", "Lifeforce Nuts"),
+    # $6273 - Drawers/containers
+    (22, 0): ("Santeem F1, behind chapel, drawer #2", "Fairy Water"),
+    (22, 1): ("Santeem F1, top-left, right drawer", "Wing of Wyvern"),
+    (22, 2): ("Zenithian Castle F1, middle-top room, right drawer", "Small Medal"),
+    (22, 5): ("SW barrier shrine (Gigademon), outside (search)", "Small Medal"),
+    (22, 6): ("Shrine East of Mintos (search)", "Small Medal"),
+    (22, 7): ("Seaside Village, south of statue (search)", "Small Medal"),
+    # $6274
+    (23, 0): ("Stancia, top-right house F2, right pot", "Small Medal"),
+    (23, 1): ("Stancia Castle F1, top-right room, drawer #2", "Small Medal"),
+    (23, 2): ("Gardenbur F2, Top-right, right drawer", "Agility Seed"),
+    (23, 3): ("Gardenbur Castle, bottom-left, right pot", "Small Medal"),
+    (23, 4): ("Endor Castle F3, right room, right drawer", "Small Medal"),
+    (23, 5): ("Dire Palace B1, left pot", "Small Medal"),
+    (23, 6): ("Burland Castle F1, bottom-right room, drawer #4", "Medical Herb"),
+    (23, 7): ("Santeem F3, Alena's room, drawer #2", "Feather Hat"),
+    # $6275
+    (24, 0): ("Monbaraba Theater B1, top room, drawer #2", "Strength Seed"),
+    (24, 1): ("Monbaraba, top-right, top pot", "Medical Herb"),
+    (24, 2): ("Hometown B1, top-left pot", "Medical Herb"),
+    (24, 3): ("Izmit, middle-right house, right drawer", "Medical Herb"),
+    (24, 4): ("Haville B1, Jail, right cell, pot", "Small Medal"),
+    (24, 5): ("Haville B1, Jail, left cell, pot", "Small Medal"),
+    (24, 6): ("Bazaar, bottom-right, right pot", "Gum Pod"),
+    (24, 7): ("Bazaar, bottom-right, left pot", "Strength Seed"),
+    # $6276
+    (25, 0): ("Secret Playground Entrance B1, Exit, top-left pot", "Medical Herb"),
+    (25, 1): ("Cave West of Kievs B5, left pot", "Small Medal"),
+    (25, 2): ("Small Island Shack North of Haville, right pot", "Small Medal"),
+    (25, 4): ("Konenber Ship B1, bottom room, drawer", "Small Medal"),
+    (25, 5): ("Gottside, Top-right house B1, right drawer", "Small Medal"),
+    (25, 6): ("Kievs, top-right house, right pot", "Lifeforce Nuts"),
+    (25, 7): ("Lakanaba, Taloon's House F1, left pot", "Medical Herb"),
+    # $6277
+    (26, 0): ("Woodsman's Shack, right pot", "50 gold"),
+    (26, 1): ("Woodsman's Shack, middle pot", "Medical Herb"),
+    (26, 2): ("Woodsman's Shack, left pot", "Leather Armor"),
+    (26, 3): ("Secret Playground Entrance B1, Exit, top-middle pot", "Agility Seed"),
+    (26, 4): ("Seaside Village, beach (search)", "Stone of Drought"),
+    (26, 5): ("Frenor, Church Garden (search)", "Mystic Acorns"),
+}
+
 
 @dataclass
 class CharacterData:
@@ -612,6 +825,16 @@ class SaveEditorGUI:
         self.notebook.add(self.treasure_frame, text="Treasure")
         self._create_treasure_tab()
         
+        # Spells tab
+        self.spells_frame = ttk.Frame(self.notebook)
+        self.notebook.add(self.spells_frame, text="Spells")
+        self._create_spells_tab()
+        
+        # Events tab (raw hex editor for event flags)
+        self.events_frame = ttk.Frame(self.notebook)
+        self.notebook.add(self.events_frame, text="Events")
+        self._create_events_tab()
+        
         # Status bar
         self.status_var = tk.StringVar(value="No file loaded")
         status = ttk.Label(self.root, textvariable=self.status_var, relief='sunken')
@@ -708,6 +931,31 @@ class SaveEditorGUI:
         ttk.Entry(game_frame, textvariable=self.daynight_var, width=10).grid(row=1, column=1)
         ttk.Label(game_frame, text="(28=morning, 84=night)").grid(row=1, column=2, columnspan=2)
         
+        # Party order
+        party_frame = ttk.LabelFrame(self.general_frame, text="Party Order (slot 1-4)")
+        party_frame.pack(fill='x', padx=5, pady=5)
+        
+        char_names = ['(Empty)'] + [c[0] for c in CHARACTERS]
+        self.party_vars = []
+        for i in range(4):
+            ttk.Label(party_frame, text=f"Slot {i+1}:").grid(row=0, column=i*2, sticky='e', padx=5)
+            var = tk.StringVar()
+            self.party_vars.append(var)
+            combo = ttk.Combobox(party_frame, textvariable=var, values=char_names, width=10)
+            combo.grid(row=0, column=i*2+1, padx=2)
+            
+        # Return spell locations
+        return_frame = ttk.LabelFrame(self.general_frame, text="Return Spell Locations")
+        return_frame.pack(fill='x', padx=5, pady=5)
+        
+        self.return_vars = []
+        for i in range(3):
+            ttk.Label(return_frame, text=f"Location {i+1}:").grid(row=0, column=i*2, sticky='e', padx=5)
+            var = tk.StringVar()
+            self.return_vars.append(var)
+            ttk.Entry(return_frame, textvariable=var, width=8).grid(row=0, column=i*2+1, padx=2)
+        ttk.Label(return_frame, text="(map IDs - 0=none)").grid(row=0, column=6, padx=5)
+        
         # Apply button
         ttk.Button(self.general_frame, text="Apply Changes",
                    command=self._apply_general_changes).pack(pady=10)
@@ -723,20 +971,320 @@ class SaveEditorGUI:
         canvas.create_window((0, 0), window=scrollable, anchor="nw")
         canvas.configure(yscrollcommand=scrollbar.set)
         
+        # Enable mouse wheel scrolling
+        def _on_mousewheel(event):
+            canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        canvas.bind_all("<MouseWheel>", _on_mousewheel)
+        
         canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
         
+        # Buttons at top
+        btn_frame = ttk.Frame(scrollable)
+        btn_frame.pack(fill='x', pady=5)
+        ttk.Label(btn_frame, text="✓ = Already Opened").pack(side='left', padx=5)
+        ttk.Button(btn_frame, text="Open All", 
+                   command=lambda: self._set_all_treasure(True)).pack(side='left', padx=5)
+        ttk.Button(btn_frame, text="Reset All", 
+                   command=lambda: self._set_all_treasure(False)).pack(side='left', padx=5)
+        
         self.treasure_vars = []
-        ttk.Label(scrollable, text="Check = Already Opened").pack(anchor='w')
         
         for i in range(27 * 8):
             byte_idx = i // 8
             bit_idx = i % 8
             var = tk.BooleanVar()
             self.treasure_vars.append(var)
-            cb = ttk.Checkbutton(scrollable, text=f"Treasure ${625+byte_idx:02X}#{bit_idx}", 
-                                  variable=var)
+            
+            # Get description if available
+            info = TREASURE_INFO.get((byte_idx, bit_idx))
+            if info:
+                loc, reward = info
+                label = f"${625+byte_idx:02X}#{bit_idx}: {loc} → {reward}"
+            else:
+                label = f"${625+byte_idx:02X}#{bit_idx}: (undocumented)"
+                
+            cb = ttk.Checkbutton(scrollable, text=label, variable=var)
             cb.pack(anchor='w')
+            
+    def _set_all_treasure(self, opened: bool):
+        """Set all treasure flags to opened or closed"""
+        for var in self.treasure_vars:
+            var.set(opened)
+        self.status_var.set("Marked all treasures as " + ("opened" if opened else "available"))
+            
+    def _create_spells_tab(self):
+        """Create spells editing tab - shows checkboxes for each character's spells"""
+        # Create scrollable frame
+        canvas = tk.Canvas(self.spells_frame)
+        scrollbar = ttk.Scrollbar(self.spells_frame, orient="vertical", command=canvas.yview)
+        scrollable = ttk.Frame(canvas)
+        
+        scrollable.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.create_window((0, 0), window=scrollable, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+        
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+        
+        # Enable mouse wheel scrolling
+        def _on_mousewheel(event):
+            canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        canvas.bind_all("<MouseWheel>", _on_mousewheel)
+        
+        self.spell_vars = {}  # Dict of {char_name: {spell_byte_idx: {bit_mask: tk.BooleanVar}}}
+        
+        # Create section for each spellcasting character
+        for char_name, spell_defs in CHARACTER_SPELLS.items():
+            if spell_defs is None:
+                continue  # Skip non-spellcasters (Taloon, Ragnar, Alena)
+                
+            # Character header
+            char_frame = ttk.LabelFrame(scrollable, text=char_name)
+            char_frame.pack(fill='x', padx=5, pady=5, anchor='w')
+            
+            self.spell_vars[char_name] = {}
+            
+            # Create sub-frames for each spell byte
+            for byte_idx, (byte_name, spells) in enumerate(spell_defs.items()):
+                byte_frame = ttk.LabelFrame(char_frame, text=byte_name.replace('_', ' ').title())
+                byte_frame.pack(fill='x', padx=5, pady=2)
+                
+                self.spell_vars[char_name][byte_idx] = {}
+                
+                # Create checkboxes for each spell in this byte
+                for col_idx, (spell_name, bit_mask) in enumerate(spells):
+                    if spell_name == 'n/a':
+                        continue  # Skip unused spell slots
+                        
+                    var = tk.BooleanVar()
+                    self.spell_vars[char_name][byte_idx][bit_mask] = var
+                    
+                    cb = ttk.Checkbutton(byte_frame, text=spell_name, variable=var)
+                    cb.grid(row=0, column=col_idx, padx=3, pady=2, sticky='w')
+        
+        # Apply button at bottom
+        apply_frame = ttk.Frame(scrollable)
+        apply_frame.pack(fill='x', pady=10)
+        ttk.Button(apply_frame, text="Apply Spell Changes", 
+                   command=self._apply_spell_changes).pack()
+        
+        # Quick buttons
+        quick_frame = ttk.Frame(scrollable)
+        quick_frame.pack(fill='x', pady=5)
+        ttk.Button(quick_frame, text="Learn All Spells", 
+                   command=self._learn_all_spells).pack(side='left', padx=5)
+        ttk.Button(quick_frame, text="Clear All Spells", 
+                   command=self._clear_all_spells).pack(side='left', padx=5)
+                   
+    def _refresh_spells_ui(self):
+        """Refresh spell checkboxes from current data"""
+        if not self.handler.wram:
+            return
+            
+        for char_name, spell_defs in CHARACTER_SPELLS.items():
+            if spell_defs is None or char_name not in self.spell_vars:
+                continue
+                
+            # Get character's base address
+            char_addr = None
+            for name, addr in CHARACTERS:
+                if name == char_name:
+                    char_addr = addr
+                    break
+            if char_addr is None:
+                continue
+                
+            # Read the 3 spell bytes for this character
+            spell_offsets = [CHAR_OFFSETS['spells1'], CHAR_OFFSETS['spells2'], CHAR_OFFSETS['spells3']]
+            
+            for byte_idx, (byte_name, spells) in enumerate(spell_defs.items()):
+                wram_offset = char_addr - 0x6000 + spell_offsets[byte_idx]
+                spell_byte = self.handler.wram[wram_offset]
+                
+                if byte_idx not in self.spell_vars[char_name]:
+                    continue
+                    
+                for spell_name, bit_mask in spells:
+                    if bit_mask in self.spell_vars[char_name][byte_idx]:
+                        # Check if this spell is learned (bit is set)
+                        has_spell = (spell_byte & bit_mask) != 0
+                        self.spell_vars[char_name][byte_idx][bit_mask].set(has_spell)
+                        
+    def _apply_spell_changes(self):
+        """Apply spell checkbox changes to WRAM"""
+        if not self.handler.wram:
+            messagebox.showwarning("Warning", "No save data loaded")
+            return
+            
+        for char_name, spell_defs in CHARACTER_SPELLS.items():
+            if spell_defs is None or char_name not in self.spell_vars:
+                continue
+                
+            # Get character's base address
+            char_addr = None
+            for name, addr in CHARACTERS:
+                if name == char_name:
+                    char_addr = addr
+                    break
+            if char_addr is None:
+                continue
+                
+            spell_offsets = [CHAR_OFFSETS['spells1'], CHAR_OFFSETS['spells2'], CHAR_OFFSETS['spells3']]
+            
+            for byte_idx, (byte_name, spells) in enumerate(spell_defs.items()):
+                wram_offset = char_addr - 0x6000 + spell_offsets[byte_idx]
+                spell_byte = 0
+                
+                if byte_idx not in self.spell_vars[char_name]:
+                    continue
+                    
+                for spell_name, bit_mask in spells:
+                    if bit_mask in self.spell_vars[char_name][byte_idx]:
+                        if self.spell_vars[char_name][byte_idx][bit_mask].get():
+                            spell_byte |= bit_mask
+                            
+                self.handler.wram[wram_offset] = spell_byte
+                
+        # Reload characters from updated WRAM to keep objects in sync
+        self.handler.characters = []
+        for name, addr in CHARACTERS:
+            char = self.handler._read_character(name, addr)
+            self.handler.characters.append(char)
+        self.status_var.set("Spell changes applied")
+        
+    def _learn_all_spells(self):
+        """Set all spell checkboxes to checked"""
+        for char_name in self.spell_vars:
+            for byte_idx in self.spell_vars[char_name]:
+                for bit_mask, var in self.spell_vars[char_name][byte_idx].items():
+                    var.set(True)
+                    
+    def _clear_all_spells(self):
+        """Set all spell checkboxes to unchecked"""
+        for char_name in self.spell_vars:
+            for byte_idx in self.spell_vars[char_name]:
+                for bit_mask, var in self.spell_vars[char_name][byte_idx].items():
+                    var.set(False)
+                    
+    def _create_events_tab(self):
+        """Create events/flags editing tab - raw hex editor for event region"""
+        # Known event flags (partially documented)
+        known_events = ttk.LabelFrame(self.events_frame, text="Known Chapter 1 Events")
+        known_events.pack(fill='x', padx=5, pady=5)
+        
+        self.event_vars = {}
+        event_defs = [
+            ('$627e', '627e', 'Flora quest progress (10=waiting, 30=following, 50=returned)'),
+            ('$6281', '6281', 'Izmit school event ($80=talked to child)'),
+            ('$6283', '6283', 'Saro quest ($80=defeated, $a0=children following)'),
+            ('$6288', '6288', 'Saro post-battle ($80=talked after defeat)'),
+            ('$618f', '618f', 'Chapter progress ($02=chapter 1 started)'),
+            ('$62d5', '62d5', 'Chapter progress ($01=chapter 1 started)'),
+        ]
+        
+        for i, (label, addr_key, desc) in enumerate(event_defs):
+            row = i // 2
+            col = (i % 2) * 3
+            
+            ttk.Label(known_events, text=f"{label}:").grid(row=row, column=col, sticky='e', padx=2)
+            var = tk.StringVar()
+            self.event_vars[addr_key] = var
+            entry = ttk.Entry(known_events, textvariable=var, width=6)
+            entry.grid(row=row, column=col+1, padx=2)
+            ttk.Label(known_events, text=desc, font=('TkDefaultFont', 8)).grid(
+                row=row, column=col+2, sticky='w', padx=2)
+        
+        # Raw hex editor for event region $6278-$6291
+        raw_frame = ttk.LabelFrame(self.events_frame, text="Raw Event Flags ($6278-$6291)")
+        raw_frame.pack(fill='x', padx=5, pady=5)
+        
+        ttk.Label(raw_frame, text="Edit hex values (space-separated bytes):").pack(anchor='w')
+        
+        self.raw_events_var = tk.StringVar()
+        self.raw_events_entry = ttk.Entry(raw_frame, textvariable=self.raw_events_var, width=80)
+        self.raw_events_entry.pack(fill='x', padx=5, pady=5)
+        
+        ttk.Label(raw_frame, text="Addresses: $6278 6279 627a 627b 627c 627d 627e 627f 6280 6281 6282 6283 6284 6285 6286 6287 6288 6289 628a 628b 628c 628d 628e 628f 6290 6291",
+                  font=('TkDefaultFont', 8)).pack(anchor='w', padx=5)
+        
+        # Apply button
+        btn_frame = ttk.Frame(self.events_frame)
+        btn_frame.pack(fill='x', padx=5, pady=10)
+        ttk.Button(btn_frame, text="Apply Event Changes",
+                   command=self._apply_event_changes).pack(side='left', padx=5)
+        ttk.Button(btn_frame, text="Clear All Events",
+                   command=self._clear_all_events).pack(side='left', padx=5)
+                   
+    def _refresh_events_ui(self):
+        """Refresh event flag displays from WRAM"""
+        if not self.handler.wram:
+            return
+            
+        # Known events
+        known_addrs = {
+            '627e': 0x627e, '6281': 0x6281, '6283': 0x6283,
+            '6288': 0x6288, '618f': 0x618f, '62d5': 0x62d5
+        }
+        
+        for addr_key, addr in known_addrs.items():
+            if addr_key in self.event_vars:
+                offset = addr - 0x6000
+                val = self.handler.wram[offset]
+                self.event_vars[addr_key].set(f"{val:02X}")
+                
+        # Raw event region $6278-$6291
+        start = 0x6278 - 0x6000
+        end = 0x6292 - 0x6000
+        hex_str = ' '.join(f"{b:02X}" for b in self.handler.wram[start:end])
+        self.raw_events_var.set(hex_str)
+        
+    def _apply_event_changes(self):
+        """Apply event flag changes to WRAM"""
+        if not self.handler.wram:
+            messagebox.showwarning("Warning", "No save data loaded")
+            return
+            
+        try:
+            # Apply known events
+            known_addrs = {
+                '627e': 0x627e, '6281': 0x6281, '6283': 0x6283,
+                '6288': 0x6288, '618f': 0x618f, '62d5': 0x62d5
+            }
+            
+            for addr_key, addr in known_addrs.items():
+                if addr_key in self.event_vars:
+                    val_str = self.event_vars[addr_key].get().strip()
+                    if val_str:
+                        val = int(val_str, 16)
+                        offset = addr - 0x6000
+                        self.handler.wram[offset] = val & 0xFF
+                        
+            # Apply raw event region
+            hex_str = self.raw_events_var.get().strip()
+            if hex_str:
+                bytes_list = [int(b, 16) for b in hex_str.split()]
+                start = 0x6278 - 0x6000
+                for i, b in enumerate(bytes_list):
+                    if start + i < len(self.handler.wram):
+                        self.handler.wram[start + i] = b & 0xFF
+                        
+            self.status_var.set("Event changes applied")
+        except ValueError as e:
+            messagebox.showerror("Error", f"Invalid hex value: {e}")
+            
+    def _clear_all_events(self):
+        """Clear all event flags to zero"""
+        if not self.handler.wram:
+            return
+            
+        start = 0x6278 - 0x6000
+        end = 0x6292 - 0x6000
+        for i in range(start, end):
+            self.handler.wram[i] = 0
+            
+        self._refresh_events_ui()
+        self.status_var.set("Cleared event flags")
             
     def _open_mss(self):
         """Open Mesen save state"""
@@ -818,6 +1366,26 @@ class SaveEditorGUI:
             bit_idx = i % 8
             if byte_idx < len(self.handler.treasure_flags):
                 var.set(bool(self.handler.treasure_flags[byte_idx] & (1 << bit_idx)))
+                
+        # Party order
+        char_names = ['(Empty)'] + [c[0] for c in CHARACTERS]
+        for i, var in enumerate(self.party_vars):
+            party_idx = self.handler.party_order[i] if i < len(self.handler.party_order) else 0
+            if 0 <= party_idx < len(char_names):
+                var.set(char_names[party_idx])
+            else:
+                var.set(f"Unknown ({party_idx})")
+                
+        # Return locations
+        for i, var in enumerate(self.return_vars):
+            loc = self.handler.return_locations[i] if i < len(self.handler.return_locations) else 0
+            var.set(str(loc))
+                
+        # Spells
+        self._refresh_spells_ui()
+        
+        # Events
+        self._refresh_events_ui()
                 
     def _on_char_select(self, event):
         """Handle character selection"""
@@ -912,6 +1480,29 @@ class SaveEditorGUI:
                     break
                     
             self.handler.day_night = int(self.daynight_var.get())
+            
+            # Parse party order
+            char_names = ['(Empty)'] + [c[0] for c in CHARACTERS]
+            for i, var in enumerate(self.party_vars):
+                name = var.get()
+                if name in char_names:
+                    self.handler.party_order[i] = char_names.index(name)
+                else:
+                    # Try to parse as number
+                    try:
+                        self.handler.party_order[i] = int(name.split('(')[-1].rstrip(')'))
+                    except:
+                        pass
+                        
+            # Parse return locations
+            for i, var in enumerate(self.return_vars):
+                try:
+                    self.handler.return_locations[i] = int(var.get())
+                except ValueError:
+                    pass
+            
+            # Write general data back to WRAM
+            self.handler.write_general_data()
             
             self.status_var.set("Applied general changes")
         except ValueError as e:
