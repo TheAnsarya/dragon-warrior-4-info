@@ -54,6 +54,7 @@ consult the github issues (make one if it doesn't exist) make a complete save st
 
 It said "Sorry, the response hit the length limit. Please rephrase your prompt." so don't do that, use smaller responses; continue!
 
+git commit all files
 
 
 
