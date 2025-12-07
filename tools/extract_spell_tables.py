@@ -28,7 +28,7 @@ import os
 import sys
 
 # Configuration
-ROM_PATH = os.path.join(os.path.dirname(__file__), "..", "roms", 
+ROM_PATH = os.path.join(os.path.dirname(__file__), "..", "roms",
                         "Dragon Warrior IV (1992-10)(Enix)(US).nes")
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "json", "spell_tables.json")
 DOC_PATH = os.path.join(os.path.dirname(__file__), "..", "docs", "spell_tables.md")
@@ -119,7 +119,7 @@ SPELL_TABLES = {
 # Known spell names from DW4 (0x13 = Heal, etc.)
 SPELL_NAMES = {
     0x13: "Heal",
-    0x14: "Healmore", 
+    0x14: "Healmore",
     0x15: "Healall",
     0x16: "Healus",
     0x17: "Healusall",
@@ -195,7 +195,7 @@ def extract_table(rom_data, table_info):
     addr = table_info["address"]
     count = table_info["count"]
     offset = addr_to_offset(addr)
-    
+
     data = []
     for i in range(count):
         if offset + i < len(rom_data):
@@ -206,7 +206,7 @@ def extract_table(rom_data, table_info):
 def analyze_spell_effects(effects):
     """Analyze spell effect bytes to identify patterns."""
     analysis = {}
-    
+
     for i, effect in enumerate(effects):
         if i < 0x13:
             category = "physical"
@@ -220,9 +220,9 @@ def analyze_spell_effects(effects):
             category = "buff"
         else:
             category = "special"
-        
+
         spell_name = SPELL_NAMES.get(i, f"Action_{i:02X}")
-        
+
         # Decode effect byte
         analysis[i] = {
             "name": spell_name,
@@ -230,12 +230,12 @@ def analyze_spell_effects(effects):
             "effect_byte": effect,
             "effect_hex": f"${effect:02X}",
         }
-        
+
         # Try to decode effect byte structure
         # Many effects seem to use upper bits for type, lower for parameter
         analysis[i]["upper_nibble"] = (effect >> 4) & 0x0F
         analysis[i]["lower_nibble"] = effect & 0x0F
-    
+
     return analysis
 
 
@@ -283,13 +283,13 @@ Common effect bytes observed:
 | Code | Name | Effect | Category |
 |------|------|--------|----------|
 """
-    
+
     # Add spells to the markdown
     for code in range(0x13, 0x43):
         if code in spell_analysis:
             info = spell_analysis[code]
             md += f"| ${code:02X} | {info['name']} | {info['effect_hex']} | {info['category']} |\n"
-    
+
     md += """
 
 ## Tactics Modifier Tables
@@ -299,7 +299,7 @@ The AI tactics system uses several modifier tables to adjust spell behavior.
 ### Attack Multiplier ($BB84)
 
 """
-    
+
     tactics_names = ["Normal", "SaveMP", "Offensive", "Defensive", "TryOut", "UseNoMP", "Unknown"]
     if "attack_multiplier" in tables_data:
         md += "| Tactics | Multiplier | Effect |\n|---------|------------|--------|\n"
@@ -307,7 +307,7 @@ The AI tactics system uses several modifier tables to adjust spell behavior.
             name = tactics_names[i] if i < len(tactics_names) else f"Tactics_{i}"
             effect = "Normal" if val == 16 else f"{val/16:.1f}x"
             md += f"| {name} | {val} | {effect} |\n"
-    
+
     md += """
 
 ### Stat Multiplier ($BB8B)
@@ -319,7 +319,7 @@ The AI tactics system uses several modifier tables to adjust spell behavior.
             name = tactics_names[i] if i < len(tactics_names) else f"Tactics_{i}"
             effect = "Normal" if val == 16 else ("Disabled" if val == 0 else f"{val/16:.1f}x")
             md += f"| {name} | {val} | {effect} |\n"
-    
+
     md += """
 
 ### Hit Threshold ($BB92)
@@ -331,7 +331,7 @@ The AI tactics system uses several modifier tables to adjust spell behavior.
             name = tactics_names[i] if i < len(tactics_names) else f"Tactics_{i}"
             pct = f"{val/255*100:.0f}%"
             md += f"| {name} | {val} | ~{pct} |\n"
-    
+
     md += """
 
 ## Spell Power Table ($BB3F, $BB49)
@@ -343,12 +343,12 @@ These 9-entry tables (indexed by `$75E8` capped at 8) provide spell power and at
         md += "### Power Values ($BB3F)\n\n| Index | Value | Hex |\n|-------|-------|-----|\n"
         for i, val in enumerate(tables_data["spell_power"]):
             md += f"| {i} | {val} | ${val:02X} |\n"
-    
+
     if "spell_attribute" in tables_data:
         md += "\n### Attribute Values ($BB49)\n\n| Index | Value | Hex |\n|-------|-------|-----|\n"
         for i, val in enumerate(tables_data["spell_attribute"]):
             md += f"| {i} | {val} | ${val:02X} |\n"
-    
+
     md += """
 
 ## Raw Table Data
@@ -363,9 +363,9 @@ These 9-entry tables (indexed by `$75E8` capped at 8) provide spell power and at
             row = tables_data["spell_effects"][i:i+16]
             hex_str = " ".join(f"{b:02X}" for b in row)
             md += f"${addr:04X}: {hex_str}\n"
-    
+
     md += "```\n\n"
-    
+
     md += """## Subroutine References
 
 Key subroutines that use these tables:
@@ -393,37 +393,37 @@ Key subroutines that use these tables:
 4. Hit check result at `$75EC`
 5. Final spell effect output at `$75EF`
 """
-    
+
     return md
 
 
 def main():
     print("Dragon Warrior IV Spell Table Extractor")
     print("=" * 50)
-    
+
     # Check ROM exists
     if not os.path.exists(ROM_PATH):
         print(f"ERROR: ROM not found at {ROM_PATH}")
         sys.exit(1)
-    
+
     # Read ROM
     rom_data = read_rom()
     print(f"ROM size: {len(rom_data)} bytes")
-    
+
     # Extract all tables
     tables_data = {}
     for name, info in SPELL_TABLES.items():
         data = extract_table(rom_data, info)
         tables_data[name] = data
         print(f"Extracted {name}: {len(data)} bytes from ${info['address']:04X}")
-    
+
     # Analyze spell effects
     spell_analysis = analyze_spell_effects(tables_data.get("spell_effects", []))
-    
+
     # Create output directory
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     os.makedirs(os.path.dirname(DOC_PATH), exist_ok=True)
-    
+
     # Save JSON
     json_output = {
         "description": "Dragon Warrior IV spell effect tables from Bank 19",
@@ -442,38 +442,38 @@ def main():
             if k >= 0x13 and k <= 0x42
         },
     }
-    
+
     with open(OUTPUT_PATH, "w") as f:
         json.dump(json_output, f, indent=2)
     print(f"\nSaved JSON to: {OUTPUT_PATH}")
-    
+
     # Generate markdown
     md_content = generate_markdown(tables_data, spell_analysis)
     with open(DOC_PATH, "w") as f:
         f.write(md_content)
     print(f"Saved documentation to: {DOC_PATH}")
-    
+
     # Summary
     print("\n" + "=" * 50)
     print("SPELL ANALYSIS SUMMARY")
     print("=" * 50)
-    
+
     # Count spells by category
     categories = {}
     for code, info in spell_analysis.items():
         if code >= 0x13 and code <= 0x42:
             cat = info["category"]
             categories[cat] = categories.get(cat, 0) + 1
-    
+
     for cat, count in sorted(categories.items()):
         print(f"  {cat}: {count} spells")
-    
+
     # Show unique effect bytes
     unique_effects = set()
     for code in range(0x13, 0x43):
         if code in spell_analysis:
             unique_effects.add(spell_analysis[code]["effect_byte"])
-    
+
     print(f"\nUnique effect bytes: {len(unique_effects)}")
     print("Effect bytes:", " ".join(f"${e:02X}" for e in sorted(unique_effects)))
 

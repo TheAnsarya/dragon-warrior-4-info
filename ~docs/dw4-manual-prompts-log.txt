@@ -46,6 +46,27 @@ git commit and push everything in logical batches, related to issues and work do
 
 make sure all addresses in code and documentation are ROM addresses not file addresses (ignoring the first $10 bytes, as the header should be included in build and added in data extraction scripts from the original rom, but NOT included in code and label addresses, etc (it's part of the file, not part of the game ROM)); git commit and push everything in logical batches, related to issues and work done; take a look for town and dungeon maps; disassemble and analyze and comment and label all the code; keep todo-lists and github issues updated so we track all of our work; continue; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
 
+premium credits, don't rate limit me, I'm not using that much
+
+rate limited? how many requests have I made in the past hour?
+
+consult the github issues (make one if it doesn't exist) make a complete save state editor and an sram editor; keep todo-lists and github issues updated so we track all of our work; continue; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
+
+It said "Sorry, the response hit the length limit. Please rephrase your prompt." so don't do that, use smaller responses; continue!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

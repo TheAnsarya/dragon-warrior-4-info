@@ -23,18 +23,18 @@ def cpu_to_rom(cpu_addr):
 def main():
     with open(ROM_PATH, "rb") as f:
         rom_data = f.read()
-    
+
     # Read enemy data table at $B967
     # Based on code: LDA $B967,X where X = enemy index
     # Bits:
     #   [7:5] = Type? (values 0-7)
     #   [4:0] = Resistance flags or value
-    
+
     table_start = cpu_to_rom(0xB967)
     table_size = 256  # Full table
-    
+
     enemy_data = rom_data[table_start:table_start + table_size]
-    
+
     output = []
     output.append("# Dragon Warrior IV - Enemy Data Table")
     output.append("# Location: Bank 19, $B967")
@@ -59,33 +59,33 @@ def main():
     output.append("7 ($E0-$FF): Bosses/immune")
     output.append("```")
     output.append("")
-    
+
     # Analyze type distribution
     type_counts = [0] * 8
     for b in enemy_data:
         type_idx = (b >> 5) & 0x07
         type_counts[type_idx] += 1
-    
+
     output.append("## Type Distribution")
     output.append("```")
     for i, count in enumerate(type_counts):
         output.append(f"Type {i}: {count} enemies")
     output.append("```")
     output.append("")
-    
+
     # Resistance value distribution
     resist_counts = {}
     for b in enemy_data:
         resist = b & 0x1F
         resist_counts[resist] = resist_counts.get(resist, 0) + 1
-    
+
     output.append("## Resistance Value Distribution")
     output.append("```")
     for resist in sorted(resist_counts.keys()):
         output.append(f"Resist ${resist:02X} ({resist:2d}): {resist_counts[resist]} enemies")
     output.append("```")
     output.append("")
-    
+
     # Full hex dump
     output.append("## Raw Data")
     output.append("```")
@@ -97,31 +97,31 @@ def main():
         output.append(f"${addr:04X}: {hex_str}  {ascii_str}")
     output.append("```")
     output.append("")
-    
+
     # Known enemy analysis (first few entries)
     output.append("## Sample Enemy Analysis")
     output.append("")
     output.append("| Index | Byte | Type | Resist | Notes |")
     output.append("|-------|------|------|--------|-------|")
-    
+
     for i in range(min(32, len(enemy_data))):
         byte = enemy_data[i]
         type_val = (byte >> 5) & 0x07
         resist_val = byte & 0x1F
-        
+
         # Interpret type
-        type_names = ["Regular", "Undead?", "Flying?", "Magic?", 
+        type_names = ["Regular", "Undead?", "Flying?", "Magic?",
                       "Strong", "Boss-tier", "High-Res", "Boss/Immune"]
         type_name = type_names[type_val]
-        
+
         notes = ""
         if resist_val == 0x1F:
             notes = "Max resistance"
         elif resist_val == 0:
             notes = "No resistance"
-        
+
         output.append(f"| ${i:02X} | ${byte:02X} | {type_val} ({type_name}) | ${resist_val:02X} | {notes} |")
-    
+
     output.append("")
     output.append("## Usage in Battle Code")
     output.append("")
@@ -138,12 +138,12 @@ def main():
     output.append("   - `LDA $B967,Y; AND #$1F` checks resistance")
     output.append("   - Used to determine if action affects target")
     output.append("")
-    
+
     # Write output
     output_path = os.path.join(DOCS_DIR, "enemy_data_table.md")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(output))
-    
+
     print(f"Enemy data table extracted to: {output_path}")
 
 if __name__ == "__main__":

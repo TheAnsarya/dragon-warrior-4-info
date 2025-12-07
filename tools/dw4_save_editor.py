@@ -700,14 +700,33 @@ class MesenSaveState:
         
         data = self.raw_data
         
-        # Try to find WRAM by looking for "NesState" marker
-        # or by searching for the expected data pattern
+        # Try zlib decompression first (some Mesen versions compress)
+        try:
+            import zlib
+            # Try different header sizes
+            for header_size in [20, 24, 32, 36, 40]:
+                try:
+                    decompressed = zlib.decompress(data[header_size:])
+                    data = bytearray(decompressed)
+                    self.raw_data = data
+                    break
+                except:
+                    continue
+        except:
+            pass
+        
+        # Search for valid WRAM pattern
+        candidates = []
         for i in range(len(data) - 0x2000):
             # Check if this looks like WRAM start
             # $6001 should have Hero status, then HP
             if self._looks_like_wram(data[i:i+0x2000]):
-                self.wram_offset = i
-                return bytes(data[i:i+0x2000])
+                candidates.append(i)
+                
+        # Return first good candidate
+        if candidates:
+            self.wram_offset = candidates[0]
+            return bytes(data[candidates[0]:candidates[0]+0x2000])
                 
         return None
         
@@ -718,21 +737,25 @@ class MesenSaveState:
             
         # Check Hero at offset 1 ($6001)
         status = data[1]
-        hp = data[2] + (data[3] << 8)
+        hp_lo = data[2]
+        hp_hi = data[3]
+        hp = hp_lo + (hp_hi << 8)
         level = data[6]
         
-        # Sanity checks
+        # Sanity checks - be more lenient
         if level < 1 or level > 99:
             return False
         if hp > 999:
             return False
-        if status & 0x80 == 0 and hp > 0:
-            # Dead but has HP - unlikely
-            pass
             
         # Check gold at offset 0x157 (reasonable range)
         gold = data[0x157] + (data[0x158] << 8) + (data[0x159] << 16)
         if gold > 999999:
+            return False
+        
+        # Additional validation - check second character (Cristo at offset 0x1E)
+        cristo_level = data[0x1F + 5]  # Cristo level
+        if cristo_level > 0 and (cristo_level < 1 or cristo_level > 99):
             return False
             
         return True
