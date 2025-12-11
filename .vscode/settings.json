@@ -1,0 +1,84 @@
+{
+	// Editor settings for Dragon Warrior 4 disassembly
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.rulers": [80, 120],
+	"editor.wordWrap": "off",
+	"editor.renderWhitespace": "boundary",
+
+	// File associations
+	"files.associations": {
+		"*.asm": "asm",
+		"*.inc": "asm",
+		"*.tbl": "plaintext",
+		"*.mlb": "plaintext"
+	},
+
+	// Exclude patterns
+	"files.exclude": {
+		"**/__pycache__": true,
+		"**/*.pyc": true,
+		".git": true,
+		"build/intermediate": true
+	},
+
+	// Python settings
+	"python.defaultInterpreterPath": "python",
+	"python.analysis.typeCheckingMode": "basic",
+
+	// JSON settings
+	"json.schemas": [
+		{
+			"fileMatch": ["assets/json/data/monsters.json"],
+			"url": "./assets/schemas/monsters.schema.json"
+		},
+		{
+			"fileMatch": ["assets/json/data/items.json"],
+			"url": "./assets/schemas/items.schema.json"
+		}
+	],
+
+	// Search settings
+	"search.exclude": {
+		"roms/**": true,
+		"build/**": true,
+		"**/*.bin": true
+	},
+
+	// Terminal settings
+	"terminal.integrated.defaultProfile.windows": "PowerShell",
+	"terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+	"terminal.integrated.fontSize": 15,
+	"terminal.integrated.lineHeight": 1.2,
+	"terminal.integrated.fontWeight": "normal",
+	"terminal.integrated.fontWeightBold": "bold",
+	"terminal.integrated.minimumContrastRatio": 7,
+	"terminal.integrated.gpuAcceleration": "off",
+
+	// Terminal colors
+	"workbench.colorCustomizations": {
+		"terminal.foreground": "#E0E0E0",
+		"terminal.background": "#1E1E1E",
+		"terminal.ansiBlack": "#1E1E1E",
+		"terminal.ansiRed": "#F44747",
+		"terminal.ansiGreen": "#6A9955",
+		"terminal.ansiYellow": "#DCDCAA",
+		"terminal.ansiBlue": "#569CD6",
+		"terminal.ansiMagenta": "#C586C0",
+		"terminal.ansiCyan": "#4EC9B0",
+		"terminal.ansiWhite": "#D4D4D4",
+		"terminal.ansiBrightBlack": "#808080",
+		"terminal.ansiBrightRed": "#F14C4C",
+		"terminal.ansiBrightGreen": "#89D185",
+		"terminal.ansiBrightYellow": "#F5F543",
+		"terminal.ansiBrightBlue": "#6CB6FF",
+		"terminal.ansiBrightMagenta": "#D670D6",
+		"terminal.ansiBrightCyan": "#89D4CF",
+		"terminal.ansiBrightWhite": "#FFFFFF",
+		"terminalCursor.foreground": "#AEAFAD",
+		"terminalCursor.background": "#1E1E1E"
+	},
+
+	// Git settings
+	"git.ignoreLimitWarning": true
+}

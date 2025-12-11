@@ -1,8 +1,8 @@
 # Dragon Warrior 4 (NES) - Complete Disassembly Project
 
-[![Build Status](https://img.shields.io/badge/build-in_progress-yellow)]()
-[![License](https://img.shields.io/badge/license-MIT-blue)]()
-[![NES](https://img.shields.io/badge/platform-NES-red)]()
+[![Build Status](https://img.shields.io/badge/build-in_progress-yellow)](https://img.shields.io/badge/build-in_progress-yellow)
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://img.shields.io/badge/license-MIT-blue)
+[![NES](https://img.shields.io/badge/platform-NES-red)](https://img.shields.io/badge/platform-NES-red)
 
 A complete code and asset disassembly of **Dragon Warrior IV** (US NES version, 1992) with full editors for all assets and a comprehensive build pipeline that produces a byte-perfect ROM from source.
 
@@ -171,6 +171,7 @@ The Universal Editor provides GUI editing for all game assets:
 ### ROM Analyzer
 
 Comprehensive ROM inspection:
+
 - Hex viewer with pattern analysis
 - Data structure identification
 - Compression detection
@@ -179,6 +180,7 @@ Comprehensive ROM inspection:
 ### Build System
 
 Complete build pipeline:
+
 - JSON → ASM generation
 - Bank-by-bank assembly
 - CHR-ROM extraction/insertion
