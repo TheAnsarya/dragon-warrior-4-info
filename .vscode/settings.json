@@ -6,6 +6,11 @@
 	"editor.wordWrap": "off",
 	"editor.renderWhitespace": "boundary",
 
+	// Markdown lint settings - allow tabs
+	"markdownlint.config": {
+		"MD010": false
+	},
+
 	// File associations
 	"files.associations": {
 		"*.asm": "asm",
