@@ -56,6 +56,22 @@ It said "Sorry, the response hit the length limit. Please rephrase your prompt."
 
 git commit all files
 
+git commit the cdl in gameinfo
+
+In The `GameInfo` repos, please turn on github isuess, and then make todo-lists and github issues for each work item  and add CDL file definition documentation and create an CDL editor and a build process for CDL files
+
+make some todo-lists and guthub issues and then do that work;
+
+use tabs, not spaces; reformat all the python files; format everything;
+
+create issues! you can do it! use a script! like other repos,
+
+continue; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
+
+everything should use the the `.editorconfig` file, especially the fact that we use TABS not spaces, always tabs, fix all our files, python, py, json, etcs, always use tabs!; continue; implement the changes to make it awesome for as long as you can and use up all the tokens for each session, do not waste my money - use the entire token space;
+
+
+
 
 
 
