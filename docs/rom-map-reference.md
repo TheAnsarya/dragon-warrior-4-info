@@ -1,6 +1,6 @@
-# Dragon Warrior IV (NES) - Data Crystal ROM Map Integration
+# Dragon Warrior IV (NES) - ROM Map Reference
 
-Source: https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map
+Reference source: [Data Crystal ROM Map](https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES)/ROM_map)
 
 ## Bank $08 (File offset $20000)
 
