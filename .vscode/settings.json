@@ -85,5 +85,8 @@
 	},
 
 	// Git settings
-	"git.ignoreLimitWarning": true
+	"git.ignoreLimitWarning": true,
+	"cSpell.words": [
+		"pytest"
+	]
 }
