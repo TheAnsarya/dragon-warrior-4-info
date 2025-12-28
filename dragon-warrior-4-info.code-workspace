@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "../GameInfo"
+		},
+		{
+			"path": "../dq3r-info"
+		},
+		{
+			"path": "../logsmall"
 		}
 	],
 	"settings": {}
