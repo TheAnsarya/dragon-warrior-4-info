@@ -12,11 +12,11 @@
 |----------|---------------|
 | 🎮 **Overview** | [README](../README.md) · [Reverse Engineering Summary](REVERSE_ENGINEERING_SUMMARY.md) |
 | 📊 **Data** | [Monster Format](formats/MONSTER_FORMAT.md) · [Item Format](formats/ITEM_FORMAT.md) · [Spell Format](formats/SPELL_FORMAT.md) |
-| 🗺️ **Maps** | [Map Format](formats/MAP_FORMAT.md) · [World Map](#world-map) |
+| 🗺️ **Maps** | [ROM Map](formats/ROM_MAP.md) · [World Map](#world-map) |
 | 💬 **Text** | [Text System](formats/TEXT_SYSTEM.md) · [DTE Compression](#dte-compression) |
 | ⚔️ **Battle** | [Battle System](formats/BATTLE_SYSTEM.md) · [AI System](formats/AI_SYSTEM.md) |
 | 📖 **Chapters** | [Chapter System](formats/CHAPTER_SYSTEM.md) · [Wagon System](formats/WAGON_SYSTEM.md) |
-| 🛠️ **Technical** | [RAM Map](formats/RAM_MAP.md) · [Bank Analysis](bank_analysis.md) |
+| 💾 **Save** | [Save Data](formats/SAVE_DATA.md) · [RAM Map](formats/RAM_MAP.md) |
 
 ---
 
