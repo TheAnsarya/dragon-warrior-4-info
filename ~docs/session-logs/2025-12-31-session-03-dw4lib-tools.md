@@ -13,7 +13,8 @@
 3. ✅ Develop C# converter tools for DW4
 4. ✅ Create DQ3r target format converters
 5. ✅ Create Phase 2 planning documentation
-6. 🔄 Create GitHub issues for implementation tasks
+6. ✅ Create CLI extraction tool
+7. ✅ Test data extraction from ROM
 
 ## Work Completed
 
@@ -163,6 +164,14 @@ DQ3r/
   MonsterToDQ3r.cs      (new)
   DQ3rItem.cs           (new)
   ItemToDQ3r.cs         (new)
+  DQ3rSpell.cs          (new)
+  SpellToDQ3r.cs        (new)
+```
+
+### logsmall/DW4Extract/
+```
+DW4Extract.csproj  (new - CLI tool)
+Program.cs         (new)
 ```
 
 ### dragon-warrior-4-info/~docs/plans/
@@ -170,26 +179,40 @@ DQ3r/
 dw4lib-architecture.md  (new)
 ```
 
+### dragon-warrior-4-info/extracted/json/
+```
+monsters.json           (new - extracted data)
+items.json              (new)
+spells.json             (new)
+text.json               (new)
+text_monsternames.txt   (new)
+text_itemnames.txt      (new)
+text_spellnames.txt     (new)
+text_characternames.txt (new)
+```
+
 ## What's Next
 
 ### Immediate
-1. Create GitHub issues for remaining DW4Lib work
-2. Add DQ3r spell converter (DQ3rSpell.cs, SpellToDQ3r.cs)
+1. Verify extraction addresses against research docs
+2. Fix monster table offset (should be $A2A2 in Bank 6)
 3. Create unit tests for converters
 
 ### Short Term
-1. Build CLI extraction tool
-2. Extract actual data from DW4 ROM to JSON
-3. Document extracted data
+1. Add experience table extraction
+2. Document extracted data format
+3. Create data comparison tools
 
 ### Medium Term
-1. Experience table extraction
-2. Map data extraction
-3. Blazor WebAssembly editor
+1. Map data extraction
+2. Blazor WebAssembly editor
+3. Full DQ3r conversion pipeline
 
 ## Notes
 
 - DW4Lib builds successfully (`dotnet build` passes)
+- DW4Extract CLI tool works and extracts data
 - All code follows K&R brace style per project guidelines
 - Uses tabs for indentation per .editorconfig
 - System.Text.Json with camelCase naming policy
+- Monster table needs address verification (currently using placeholder)
