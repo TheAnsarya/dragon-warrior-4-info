@@ -10,7 +10,7 @@
 
 | Category | Key Documents |
 |----------|---------------|
-| 🎮 **Overview** | [README](../README.md) · [Reverse Engineering Summary](REVERSE_ENGINEERING_SUMMARY.md) |
+| 🎮 **Overview** | [README](../README.md) · [Quick Reference](QUICK_REFERENCE.md) · [Reverse Engineering Summary](REVERSE_ENGINEERING_SUMMARY.md) |
 | 📊 **Data** | [Monster Format](formats/MONSTER_FORMAT.md) · [Item Format](formats/ITEM_FORMAT.md) · [Spell Format](formats/SPELL_FORMAT.md) · [Data Tables](formats/DATA_TABLES.md) |
 | 🗺️ **Maps** | [Map Format](formats/MAP_FORMAT.md) · [ROM Map](formats/ROM_MAP.md) |
 | 💬 **Text** | [Text System](formats/TEXT_SYSTEM.md) · [Text Encoding](formats/TEXT_ENCODING.md) |
