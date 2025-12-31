@@ -194,12 +194,12 @@ text_characternames.txt (new)
 ## What's Next
 
 ### Immediate
-1. Verify extraction addresses against research docs
-2. Fix monster table offset (should be $A2A2 in Bank 6)
-3. Create unit tests for converters
+1. ~~Verify extraction addresses against research docs~~ ✅ Done
+2. ~~Fix monster table offset (should be $A2A2 in Bank 6)~~ ✅ Done
+3. ~~Create unit tests for converters~~ ✅ Done
 
 ### Short Term
-1. Add experience table extraction
+1. ~~Add experience table extraction~~ ✅ Done
 2. Document extracted data format
 3. Create data comparison tools
 
@@ -208,6 +208,79 @@ text_characternames.txt (new)
 2. Blazor WebAssembly editor
 3. Full DQ3r conversion pipeline
 
+---
+
+## Session Update - Phase 4 (Continued Dec 31, 2025)
+
+### 9. Monster Table Address Fix
+
+Updated monster data structure based on `bank6_monster_table.txt` research:
+
+**Changes:**
+- Monster size: 16 bytes → 27 bytes
+- Table address: `$8000` → `$A2A2` in Bank 6
+- Added known fields: EXP, Gold, ATK, DEF, AGI, Metal flag, Item drop, Status flags
+- Preserved unknown bytes (Byte4-Byte26) for future research
+
+**Commits:**
+- `fix(DW4Lib): update Monster to 27-byte format at $A2A2 Bank 6`
+
+### 10. Experience Table Extraction
+
+Added initial experience table support:
+
+**New Files:**
+- `DataStructures/ExperienceTable.cs` - Data structures
+- `Converters/ExperienceTableConverter.cs` - JSON serialization
+
+**Features:**
+- `ReadExperienceTables()` - Extract all character EXP tables
+- `ScanForExpTables()` - Search for potential table candidates
+- DW4Extract now supports `exp` command
+
+**Commits:**
+- `feat(DW4Lib): add experience table extraction`
+
+### 11. Unit Test Project
+
+Created comprehensive test suite:
+
+**New Project:** `DW4Lib.Tests` (xUnit)
+
+**Test Files:**
+| File | Tests | Coverage |
+|------|-------|----------|
+| `MonsterTests.cs` | 9 | FromBytes, ToBytes, round-trip, IsMetal |
+| `ItemTests.cs` | 8 | FromBytes, ToBytes, CanEquip, Price |
+| `SpellTests.cs` | 9 | FromBytes, ToBytes, TypeFlags extraction |
+| `ExperienceTableTests.cs` | 3 | GetLevelForExp, ExpToNextLevel |
+| `MonsterConverterTests.cs` | 6 | JSON serialization, raw byte preservation |
+
+**Result:** 35 tests, all passing
+
+**Commits:**
+- `test(DW4Lib): add unit tests for data structures`
+
+### 12. GitHub Issues Created/Updated
+
+**Updated Issues:**
+- #22 Monster data extraction - Added implementation details
+- #16 Document monster data tables - Added table documentation
+- #50 Experience and level-up tables - Added progress update
+
+**New Issue:**
+- #78 Tools: DW4Lib C# Library Integration - Full component documentation
+
+## Additional Git Commits (logsmall)
+
+| Commit | Message |
+|--------|---------|
+| 9c101cf | fix(DW4Lib): update Monster to 27-byte format |
+| b09b641 | feat(DW4Lib): add experience table extraction |
+| b57a762 | test(DW4Lib): add unit tests for data structures |
+
+All commits pushed to origin/master.
+
 ## Notes
 
 - DW4Lib builds successfully (`dotnet build` passes)
@@ -215,4 +288,6 @@ text_characternames.txt (new)
 - All code follows K&R brace style per project guidelines
 - Uses tabs for indentation per .editorconfig
 - System.Text.Json with camelCase naming policy
-- Monster table needs address verification (currently using placeholder)
+- Monster table now uses correct address from research
+- 35 unit tests passing
+
