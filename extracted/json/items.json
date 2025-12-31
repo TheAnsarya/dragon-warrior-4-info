@@ -1,0 +1,3002 @@
+[
+  {
+    "index": 0,
+    "name": "Item_000",
+    "nameIndex": 201,
+    "type": "Consumable",
+    "statBonus": 1,
+    "specialEffect": 15,
+    "price": 783,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 31
+  },
+  {
+    "index": 1,
+    "name": "Item_001",
+    "nameIndex": 63,
+    "type": "Shield",
+    "statBonus": 7,
+    "specialEffect": 31,
+    "price": 51471,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 255
+  },
+  {
+    "index": 2,
+    "name": "Item_002",
+    "nameIndex": 251,
+    "type": 15,
+    "statBonus": 127,
+    "specialEffect": 239,
+    "price": 28903,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 31
+  },
+  {
+    "index": 3,
+    "name": "Item_003",
+    "nameIndex": 187,
+    "type": "Accessory",
+    "statBonus": 245,
+    "specialEffect": 251,
+    "price": 8063,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 81
+  },
+  {
+    "index": 4,
+    "name": "Item_004",
+    "nameIndex": 15,
+    "type": 15,
+    "statBonus": 128,
+    "specialEffect": 192,
+    "price": 63728,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 192
+  },
+  {
+    "index": 5,
+    "name": "Item_005",
+    "nameIndex": 240,
+    "type": 8,
+    "statBonus": 201,
+    "specialEffect": 97,
+    "price": 64510,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 252
+  },
+  {
+    "index": 6,
+    "name": "Item_006",
+    "nameIndex": 238,
+    "type": 14,
+    "statBonus": 28,
+    "specialEffect": 240,
+    "price": 48892,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 94
+  },
+  {
+    "index": 7,
+    "name": "Item_007",
+    "nameIndex": 190,
+    "type": 12,
+    "statBonus": 240,
+    "specialEffect": 200,
+    "price": 848,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 1
+  },
+  {
+    "index": 8,
+    "name": "Item_008",
+    "nameIndex": 1,
+    "type": 8,
+    "statBonus": 96,
+    "specialEffect": 254,
+    "price": 318,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 2
+  },
+  {
+    "index": 9,
+    "name": "Item_009",
+    "nameIndex": 13,
+    "type": "Shield",
+    "statBonus": 2,
+    "specialEffect": 2,
+    "price": 3333,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 237
+  },
+  {
+    "index": 10,
+    "name": "Item_010",
+    "nameIndex": 3,
+    "type": 8,
+    "statBonus": 49,
+    "specialEffect": 15,
+    "price": 6145,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 13
+  },
+  {
+    "index": 11,
+    "name": "Item_011",
+    "nameIndex": 6,
+    "type": "Weapon",
+    "statBonus": 200,
+    "specialEffect": 65,
+    "price": 65280,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 29
+  },
+  {
+    "index": 12,
+    "name": "Item_012",
+    "nameIndex": 61,
+    "type": 13,
+    "statBonus": 53,
+    "specialEffect": 25,
+    "price": 2843,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 81
+  },
+  {
+    "index": 13,
+    "name": "Item_013",
+    "nameIndex": 14,
+    "type": "Consumable",
+    "statBonus": 128,
+    "specialEffect": 128,
+    "price": 51328,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 204
+  },
+  {
+    "index": 14,
+    "name": "Item_014",
+    "nameIndex": 204,
+    "type": "Consumable",
+    "statBonus": 128,
+    "specialEffect": 128,
+    "price": 32896,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 128
+  },
+  {
+    "index": 15,
+    "name": "Item_015",
+    "nameIndex": 128,
+    "type": 8,
+    "statBonus": 50,
+    "specialEffect": 15,
+    "price": 16384,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 193
+  },
+  {
+    "index": 16,
+    "name": "Item_016",
+    "nameIndex": 50,
+    "type": 8,
+    "statBonus": 66,
+    "specialEffect": 128,
+    "price": 639,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 195
+  },
+  {
+    "index": 17,
+    "name": "Item_017",
+    "nameIndex": 97,
+    "type": "Consumable",
+    "statBonus": 200,
+    "specialEffect": 240,
+    "price": 51425,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 0
+  },
+  {
+    "index": 18,
+    "name": "Item_018",
+    "nameIndex": 224,
+    "type": 14,
+    "statBonus": 111,
+    "specialEffect": 7,
+    "price": 13256,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 0
+  },
+  {
+    "index": 19,
+    "name": "Item_019",
+    "nameIndex": 32,
+    "type": 8,
+    "statBonus": 220,
+    "specialEffect": 52,
+    "price": 17352,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 255
+  },
+  {
+    "index": 20,
+    "name": "Item_020",
+    "nameIndex": 8,
+    "type": 12,
+    "statBonus": 244,
+    "specialEffect": 246,
+    "price": 59114,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 47
+  },
+  {
+    "index": 21,
+    "name": "Item_021",
+    "nameIndex": 192,
+    "type": 8,
+    "statBonus": 83,
+    "specialEffect": 0,
+    "price": 8128,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 200
+  },
+  {
+    "index": 22,
+    "name": "Item_022",
+    "nameIndex": 84,
+    "type": 15,
+    "statBonus": 0,
+    "specialEffect": 128,
+    "price": 49280,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 64
+  },
+  {
+    "index": 23,
+    "name": "Item_023",
+    "nameIndex": 96,
+    "type": "Consumable",
+    "statBonus": 200,
+    "specialEffect": 100,
+    "price": 248,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 24
+  },
+  {
+    "index": 24,
+    "name": "Item_024",
+    "nameIndex": 12,
+    "type": "Shield",
+    "statBonus": 1,
+    "specialEffect": 200,
+    "price": 3173,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 192
+  },
+  {
+    "index": 25,
+    "name": "Item_025",
+    "nameIndex": 112,
+    "type": 8,
+    "statBonus": 16,
+    "specialEffect": 254,
+    "price": 256,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 136
+  },
+  {
+    "index": 26,
+    "name": "Item_026",
+    "nameIndex": 8,
+    "type": "KeyItem",
+    "statBonus": 0,
+    "specialEffect": 127,
+    "price": 513,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 3
+  },
+  {
+    "index": 27,
+    "name": "Item_027",
+    "nameIndex": 55,
+    "type": 15,
+    "statBonus": 95,
+    "specialEffect": 136,
+    "price": 1552,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 255
+  },
+  {
+    "index": 28,
+    "name": "Item_028",
+    "nameIndex": 30,
+    "type": 15,
+    "statBonus": 255,
+    "specialEffect": 255,
+    "price": 65535,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 223
+  },
+  {
+    "index": 29,
+    "name": "Item_029",
+    "nameIndex": 32,
+    "type": 8,
+    "statBonus": 24,
+    "specialEffect": 6,
+    "price": 65280,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 152
+  },
+  {
+    "index": 30,
+    "name": "Item_030",
+    "nameIndex": 228,
+    "type": "Consumable",
+    "statBonus": 240,
+    "specialEffect": 240,
+    "price": 63728,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 8
+  },
+  {
+    "index": 31,
+    "name": "Item_031",
+    "nameIndex": 14,
+    "type": 15,
+    "statBonus": 190,
+    "specialEffect": 125,
+    "price": 22621,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 8
+  },
+  {
+    "index": 32,
+    "name": "Item_032",
+    "nameIndex": 8,
+    "type": "Consumable",
+    "statBonus": 1,
+    "specialEffect": 2,
+    "price": 1538,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 5
+  },
+  {
+    "index": 33,
+    "name": "Item_033",
+    "nameIndex": 2,
+    "type": "Consumable",
+    "statBonus": 16,
+    "specialEffect": 14,
+    "price": 48059,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 57
+  },
+  {
+    "index": 34,
+    "name": "Item_034",
+    "nameIndex": 28,
+    "type": 12,
+    "statBonus": 0,
+    "specialEffect": 0,
+    "price": 17476,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 198
+  },
+  {
+    "index": 35,
+    "name": "Item_035",
+    "nameIndex": 98,
+    "type": "Consumable",
+    "statBonus": 25,
+    "specialEffect": 16,
+    "price": 6272,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 248
+  },
+  {
+    "index": 36,
+    "name": "Item_036",
+    "nameIndex": 120,
+    "type": 8,
+    "statBonus": 56,
+    "specialEffect": 56,
+    "price": 36880,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 0
+  },
+  {
+    "index": 37,
+    "name": "Item_037",
+    "nameIndex": 128,
+    "type": "Consumable",
+    "statBonus": 192,
+    "specialEffect": 64,
+    "price": 32,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 136
+  },
+  {
+    "index": 38,
+    "name": "Item_038",
+    "nameIndex": 14,
+    "type": "KeyItem",
+    "statBonus": 253,
+    "specialEffect": 37,
+    "price": 354,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 130
+  },
+  {
+    "index": 39,
+    "name": "Item_039",
+    "nameIndex": 70,
+    "type": 11,
+    "statBonus": 127,
+    "specialEffect": 57,
+    "price": 1807,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 22
+  },
+  {
+    "index": 40,
+    "name": "Item_040",
+    "nameIndex": 22,
+    "type": "Consumable",
+    "statBonus": 245,
+    "specialEffect": 245,
+    "price": 13328,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 96
+  },
+  {
+    "index": 41,
+    "name": "Item_041",
+    "nameIndex": 32,
+    "type": "Consumable",
+    "statBonus": 20,
+    "specialEffect": 52,
+    "price": 57576,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 128
+  },
+  {
+    "index": 42,
+    "name": "Item_042",
+    "nameIndex": 152,
+    "type": "Consumable",
+    "statBonus": 16,
+    "specialEffect": 7,
+    "price": 9219,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 192
+  },
+  {
+    "index": 43,
+    "name": "Item_043",
+    "nameIndex": 195,
+    "type": "Armor",
+    "statBonus": 152,
+    "specialEffect": 16,
+    "price": 793,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 12
+  },
+  {
+    "index": 44,
+    "name": "Item_044",
+    "nameIndex": 12,
+    "type": "Consumable",
+    "statBonus": 18,
+    "specialEffect": 34,
+    "price": 24768,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 24
+  },
+  {
+    "index": 45,
+    "name": "Item_045",
+    "nameIndex": 12,
+    "type": "KeyItem",
+    "statBonus": 3,
+    "specialEffect": 1,
+    "price": 24768,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 24
+  },
+  {
+    "index": 46,
+    "name": "Item_046",
+    "nameIndex": 12,
+    "type": "KeyItem",
+    "statBonus": 3,
+    "specialEffect": 1,
+    "price": 4776,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 64
+  },
+  {
+    "index": 47,
+    "name": "Item_047",
+    "nameIndex": 64,
+    "type": "Shield",
+    "statBonus": 3,
+    "specialEffect": 152,
+    "price": 11024,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 0
+  },
+  {
+    "index": 48,
+    "name": "Item_048",
+    "nameIndex": 24,
+    "type": "Consumable",
+    "statBonus": 254,
+    "specialEffect": 16,
+    "price": 1540,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 28
+  },
+  {
+    "index": 49,
+    "name": "Item_049",
+    "nameIndex": 8,
+    "type": "Consumable",
+    "statBonus": 112,
+    "specialEffect": 240,
+    "price": 2050,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 32
+  },
+  {
+    "index": 50,
+    "name": "Item_050",
+    "nameIndex": 48,
+    "type": 8,
+    "statBonus": 112,
+    "specialEffect": 240,
+    "price": 65209,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 240
+  },
+  {
+    "index": 51,
+    "name": "Item_051",
+    "nameIndex": 63,
+    "type": 15,
+    "statBonus": 120,
+    "specialEffect": 120,
+    "price": 7740,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 0
+  },
+  {
+    "index": 52,
+    "name": "Item_052",
+    "nameIndex": 120,
+    "type": 8,
+    "statBonus": 60,
+    "specialEffect": 30,
+    "price": 12,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 4
+  },
+  {
+    "index": 53,
+    "name": "Item_053",
+    "nameIndex": 27,
+    "type": 15,
+    "statBonus": 7,
+    "specialEffect": 128,
+    "price": 16512,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 208
+  },
+  {
+    "index": 54,
+    "name": "Item_054",
+    "nameIndex": 168,
+    "type": "Helmet",
+    "statBonus": 104,
+    "specialEffect": 128,
+    "price": 8964,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 8
+  },
+  {
+    "index": 55,
+    "name": "Item_055",
+    "nameIndex": 8,
+    "type": "Helmet",
+    "statBonus": 2,
+    "specialEffect": 2,
+    "price": 1026,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 72
+  },
+  {
+    "index": 56,
+    "name": "Item_056",
+    "nameIndex": 120,
+    "type": 12,
+    "statBonus": 126,
+    "specialEffect": 62,
+    "price": 7230,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 28
+  },
+  {
+    "index": 57,
+    "name": "Item_057",
+    "nameIndex": 43,
+    "type": "Consumable",
+    "statBonus": 128,
+    "specialEffect": 64,
+    "price": 8256,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 16
+  },
+  {
+    "index": 58,
+    "name": "Item_058",
+    "nameIndex": 16,
+    "type": "Consumable",
+    "statBonus": 224,
+    "specialEffect": 112,
+    "price": 14448,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 24
+  },
+  {
+    "index": 59,
+    "name": "Item_059",
+    "nameIndex": 28,
+    "type": 8,
+    "statBonus": 32,
+    "specialEffect": 51,
+    "price": 57584,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 16
+  },
+  {
+    "index": 60,
+    "name": "Item_060",
+    "nameIndex": 132,
+    "type": "Consumable",
+    "statBonus": 156,
+    "specialEffect": 198,
+    "price": 38944,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 47
+  },
+  {
+    "index": 61,
+    "name": "Item_061",
+    "nameIndex": 15,
+    "type": 15,
+    "statBonus": 1,
+    "specialEffect": 131,
+    "price": 30974,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 131
+  },
+  {
+    "index": 62,
+    "name": "Item_062",
+    "nameIndex": 254,
+    "type": 8,
+    "statBonus": 168,
+    "specialEffect": 10,
+    "price": 61495,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 132
+  },
+  {
+    "index": 63,
+    "name": "Item_063",
+    "nameIndex": 120,
+    "type": "Helmet",
+    "statBonus": 120,
+    "specialEffect": 128,
+    "price": 43232,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 41
+  },
+  {
+    "index": 64,
+    "name": "Item_064",
+    "nameIndex": 32,
+    "type": 15,
+    "statBonus": 9,
+    "specialEffect": 23,
+    "price": 12054,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 47
+  },
+  {
+    "index": 65,
+    "name": "Item_065",
+    "nameIndex": 47,
+    "type": 15,
+    "statBonus": 1,
+    "specialEffect": 168,
+    "price": 10512,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 127
+  },
+  {
+    "index": 66,
+    "name": "Item_066",
+    "nameIndex": 128,
+    "type": "Consumable",
+    "statBonus": 32,
+    "specialEffect": 35,
+    "price": 33665,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 128
+  },
+  {
+    "index": 67,
+    "name": "Item_067",
+    "nameIndex": 132,
+    "type": "Helmet",
+    "statBonus": 80,
+    "specialEffect": 76,
+    "price": 6312,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 0
+  },
+  {
+    "index": 68,
+    "name": "Item_068",
+    "nameIndex": 15,
+    "type": "Consumable",
+    "statBonus": 176,
+    "specialEffect": 216,
+    "price": 43240,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 49
+  },
+  {
+    "index": 69,
+    "name": "Item_069",
+    "nameIndex": 0,
+    "type": "Consumable",
+    "statBonus": 47,
+    "specialEffect": 47,
+    "price": 43023,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 49
+  },
+  {
+    "index": 70,
+    "name": "Item_070",
+    "nameIndex": 255,
+    "type": "Consumable",
+    "statBonus": 131,
+    "specialEffect": 131,
+    "price": 257,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 12
+  },
+  {
+    "index": 71,
+    "name": "Item_071",
+    "nameIndex": 2,
+    "type": 10,
+    "statBonus": 5,
+    "specialEffect": 5,
+    "price": 258,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 24
+  },
+  {
+    "index": 72,
+    "name": "Item_072",
+    "nameIndex": 49,
+    "type": 15,
+    "statBonus": 252,
+    "specialEffect": 236,
+    "price": 63220,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 244
+  },
+  {
+    "index": 73,
+    "name": "Item_073",
+    "nameIndex": 112,
+    "type": "Armor",
+    "statBonus": 2,
+    "specialEffect": 134,
+    "price": 59636,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 8
+  },
+  {
+    "index": 74,
+    "name": "Item_074",
+    "nameIndex": 57,
+    "type": "Consumable",
+    "statBonus": 240,
+    "specialEffect": 65,
+    "price": 65223,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 65
+  },
+  {
+    "index": 75,
+    "name": "Item_075",
+    "nameIndex": 199,
+    "type": 14,
+    "statBonus": 120,
+    "specialEffect": 136,
+    "price": 14352,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 192
+  },
+  {
+    "index": 76,
+    "name": "Item_076",
+    "nameIndex": 128,
+    "type": "Consumable",
+    "statBonus": 128,
+    "specialEffect": 128,
+    "price": 20680,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 33
+  },
+  {
+    "index": 77,
+    "name": "Item_077",
+    "nameIndex": 3,
+    "type": 14,
+    "statBonus": 30,
+    "specialEffect": 200,
+    "price": 61536,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 97
+  },
+  {
+    "index": 78,
+    "name": "Item_078",
+    "nameIndex": 158,
+    "type": "Shield",
+    "statBonus": 28,
+    "specialEffect": 97,
+    "price": 25502,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 200
+  },
+  {
+    "index": 79,
+    "name": "Item_079",
+    "nameIndex": 65,
+    "type": "Special",
+    "statBonus": 31,
+    "specialEffect": 3,
+    "price": 26752,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 16
+  },
+  {
+    "index": 80,
+    "name": "Item_080",
+    "nameIndex": 4,
+    "type": "Helmet",
+    "statBonus": 10,
+    "specialEffect": 200,
+    "price": 81,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 56
+  },
+  {
+    "index": 81,
+    "name": "Item_081",
+    "nameIndex": 48,
+    "type": "Consumable",
+    "statBonus": 64,
+    "specialEffect": 128,
+    "price": 51328,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 254
+  },
+  {
+    "index": 82,
+    "name": "Item_082",
+    "nameIndex": 0,
+    "type": "Consumable",
+    "statBonus": 64,
+    "specialEffect": 96,
+    "price": 7216,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 65
+  },
+  {
+    "index": 83,
+    "name": "Item_083",
+    "nameIndex": 200,
+    "type": "Armor",
+    "statBonus": 28,
+    "specialEffect": 3,
+    "price": 2052,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 2
+  },
+  {
+    "index": 84,
+    "name": "Item_084",
+    "nameIndex": 4,
+    "type": 8,
+    "statBonus": 50,
+    "specialEffect": 0,
+    "price": 2303,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 16
+  },
+  {
+    "index": 85,
+    "name": "Item_085",
+    "nameIndex": 17,
+    "type": "Weapon",
+    "statBonus": 33,
+    "specialEffect": 35,
+    "price": 51234,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 0
+  },
+  {
+    "index": 86,
+    "name": "Item_086",
+    "nameIndex": 254,
+    "type": "Shield",
+    "statBonus": 47,
+    "specialEffect": 183,
+    "price": 65503,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 2
+  },
+  {
+    "index": 87,
+    "name": "Item_087",
+    "nameIndex": 200,
+    "type": "Armor",
+    "statBonus": 6,
+    "specialEffect": 0,
+    "price": 65281,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 35
+  },
+  {
+    "index": 88,
+    "name": "Item_088",
+    "nameIndex": 32,
+    "type": "Weapon",
+    "statBonus": 32,
+    "specialEffect": 128,
+    "price": 13256,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 255
+  },
+  {
+    "index": 89,
+    "name": "Item_089",
+    "nameIndex": 64,
+    "type": "Consumable",
+    "statBonus": 132,
+    "specialEffect": 136,
+    "price": 4368,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 34
+  },
+  {
+    "index": 90,
+    "name": "Item_090",
+    "nameIndex": 1,
+    "type": "Weapon",
+    "statBonus": 2,
+    "specialEffect": 192,
+    "price": 8771,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 254
+  },
+  {
+    "index": 91,
+    "name": "Item_091",
+    "nameIndex": 134,
+    "type": 15,
+    "statBonus": 14,
+    "specialEffect": 69,
+    "price": 516,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 1
+  },
+  {
+    "index": 92,
+    "name": "Item_092",
+    "nameIndex": 8,
+    "type": "Consumable",
+    "statBonus": 16,
+    "specialEffect": 80,
+    "price": 51306,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 135
+  },
+  {
+    "index": 93,
+    "name": "Item_093",
+    "nameIndex": 254,
+    "type": 13,
+    "statBonus": 31,
+    "specialEffect": 15,
+    "price": 775,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 1
+  },
+  {
+    "index": 94,
+    "name": "Item_094",
+    "nameIndex": 16,
+    "type": "Armor",
+    "statBonus": 2,
+    "specialEffect": 1,
+    "price": 25544,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 0
+  },
+  {
+    "index": 95,
+    "name": "Item_095",
+    "nameIndex": 1,
+    "type": "KeyItem",
+    "statBonus": 15,
+    "specialEffect": 31,
+    "price": 62591,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 4
+  },
+  {
+    "index": 96,
+    "name": "Item_096",
+    "nameIndex": 200,
+    "type": "Helmet",
+    "statBonus": 7,
+    "specialEffect": 7,
+    "price": 16512,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 128
+  },
+  {
+    "index": 97,
+    "name": "Item_097",
+    "nameIndex": 64,
+    "type": "Consumable",
+    "statBonus": 192,
+    "specialEffect": 68,
+    "price": 43088,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 212
+  },
+  {
+    "index": 98,
+    "name": "Item_098",
+    "nameIndex": 42,
+    "type": "Helmet",
+    "statBonus": 104,
+    "specialEffect": 196,
+    "price": 10256,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 20
+  },
+  {
+    "index": 99,
+    "name": "Item_099",
+    "nameIndex": 10,
+    "type": "Consumable",
+    "statBonus": 0,
+    "specialEffect": 16,
+    "price": 21704,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 255
+  },
+  {
+    "index": 100,
+    "name": "Item_100",
+    "nameIndex": 239,
+    "type": 12,
+    "statBonus": 198,
+    "specialEffect": 4,
+    "price": 12296,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 204
+  },
+  {
+    "index": 101,
+    "name": "Item_101",
+    "nameIndex": 51,
+    "type": "KeyItem",
+    "statBonus": 4,
+    "specialEffect": 16,
+    "price": 25800,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 192
+  },
+  {
+    "index": 102,
+    "name": "Item_102",
+    "nameIndex": 14,
+    "type": "Armor",
+    "statBonus": 208,
+    "specialEffect": 189,
+    "price": 49254,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 64
+  },
+  {
+    "index": 103,
+    "name": "Item_103",
+    "nameIndex": 200,
+    "type": "Accessory",
+    "statBonus": 15,
+    "specialEffect": 15,
+    "price": 26656,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 168
+  },
+  {
+    "index": 104,
+    "name": "Item_104",
+    "nameIndex": 32,
+    "type": 8,
+    "statBonus": 84,
+    "specialEffect": 40,
+    "price": 21952,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 204
+  },
+  {
+    "index": 105,
+    "name": "Item_105",
+    "nameIndex": 208,
+    "type": 12,
+    "statBonus": 84,
+    "specialEffect": 40,
+    "price": 30720,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 12
+  },
+  {
+    "index": 106,
+    "name": "Item_106",
+    "nameIndex": 16,
+    "type": 12,
+    "statBonus": 148,
+    "specialEffect": 168,
+    "price": 30720,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 101
+  },
+  {
+    "index": 107,
+    "name": "Item_107",
+    "nameIndex": 248,
+    "type": 8,
+    "statBonus": 134,
+    "specialEffect": 121,
+    "price": 14790,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 134
+  },
+  {
+    "index": 108,
+    "name": "Item_108",
+    "nameIndex": 121,
+    "type": "KeyItem",
+    "statBonus": 57,
+    "specialEffect": 6,
+    "price": 6280,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 0
+  },
+  {
+    "index": 109,
+    "name": "Item_109",
+    "nameIndex": 224,
+    "type": "Consumable",
+    "statBonus": 120,
+    "specialEffect": 48,
+    "price": 2184,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 31
+  },
+  {
+    "index": 110,
+    "name": "Item_110",
+    "nameIndex": 207,
+    "type": "Weapon",
+    "statBonus": 1,
+    "specialEffect": 1,
+    "price": 1029,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 1
+  },
+  {
+    "index": 111,
+    "name": "Item_111",
+    "nameIndex": 6,
+    "type": 8,
+    "statBonus": 16,
+    "specialEffect": 34,
+    "price": 4232,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 55
+  },
+  {
+    "index": 112,
+    "name": "Item_112",
+    "nameIndex": 95,
+    "type": "Consumable",
+    "statBonus": 84,
+    "specialEffect": 85,
+    "price": 23595,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 124
+  },
+  {
+    "index": 113,
+    "name": "Item_113",
+    "nameIndex": 131,
+    "type": 10,
+    "statBonus": 92,
+    "specialEffect": 208,
+    "price": 6280,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 15
+  },
+  {
+    "index": 114,
+    "name": "Item_114",
+    "nameIndex": 199,
+    "type": "Consumable",
+    "statBonus": 128,
+    "specialEffect": 64,
+    "price": 4160,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 32
+  },
+  {
+    "index": 115,
+    "name": "Item_115",
+    "nameIndex": 16,
+    "type": 8,
+    "statBonus": 136,
+    "specialEffect": 8,
+    "price": 65069,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 2
+  },
+  {
+    "index": 116,
+    "name": "Item_116",
+    "nameIndex": 32,
+    "type": "Consumable",
+    "statBonus": 5,
+    "specialEffect": 1,
+    "price": 2602,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 34
+  },
+  {
+    "index": 117,
+    "name": "Item_117",
+    "nameIndex": 16,
+    "type": 12,
+    "statBonus": 3,
+    "specialEffect": 137,
+    "price": 11536,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 15
+  },
+  {
+    "index": 118,
+    "name": "Item_118",
+    "nameIndex": 63,
+    "type": "Consumable",
+    "statBonus": 32,
+    "specialEffect": 0,
+    "price": 21589,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 32
+  },
+  {
+    "index": 119,
+    "name": "Item_119",
+    "nameIndex": 0,
+    "type": "Shield",
+    "statBonus": 254,
+    "specialEffect": 136,
+    "price": 11544,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 24
+  },
+  {
+    "index": 120,
+    "name": "Item_120",
+    "nameIndex": 16,
+    "type": "Consumable",
+    "statBonus": 8,
+    "specialEffect": 4,
+    "price": 4104,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 128
+  },
+  {
+    "index": 121,
+    "name": "Item_121",
+    "nameIndex": 200,
+    "type": "Consumable",
+    "statBonus": 127,
+    "specialEffect": 3,
+    "price": 1283,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 113
+  },
+  {
+    "index": 122,
+    "name": "Item_122",
+    "nameIndex": 61,
+    "type": 9,
+    "statBonus": 12,
+    "specialEffect": 11,
+    "price": 51205,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 192
+  },
+  {
+    "index": 123,
+    "name": "Item_123",
+    "nameIndex": 120,
+    "type": "KeyItem",
+    "statBonus": 9,
+    "specialEffect": 10,
+    "price": 1538,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 200
+  },
+  {
+    "index": 124,
+    "name": "Item_124",
+    "nameIndex": 64,
+    "type": "Accessory",
+    "statBonus": 25,
+    "specialEffect": 2,
+    "price": 258,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 1
+  },
+  {
+    "index": 125,
+    "name": "Item_125",
+    "nameIndex": 192,
+    "type": "Consumable",
+    "statBonus": 6,
+    "specialEffect": 13,
+    "price": 6941,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 59
+  },
+  {
+    "index": 126,
+    "name": "Item_126",
+    "nameIndex": 61,
+    "type": 14,
+    "statBonus": 6,
+    "specialEffect": 13,
+    "price": 6941,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 51
+  },
+  {
+    "index": 127,
+    "name": "Item_127",
+    "nameIndex": 53,
+    "type": 10,
+    "statBonus": 200,
+    "specialEffect": 96,
+    "price": 64752,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 46
+  },
+  {
+    "index": 128,
+    "name": "Item_128",
+    "nameIndex": 23,
+    "type": 9,
+    "statBonus": 6,
+    "specialEffect": 5,
+    "price": 3609,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 1
+  },
+  {
+    "index": 129,
+    "name": "Item_129",
+    "nameIndex": 200,
+    "type": "Weapon",
+    "statBonus": 63,
+    "specialEffect": 0,
+    "price": 12312,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": false
+    },
+    "iconID": 113
+  },
+  {
+    "index": 130,
+    "name": "Item_130",
+    "nameIndex": 178,
+    "type": "Accessory",
+    "statBonus": 200,
+    "specialEffect": 33,
+    "price": 511,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 171
+  },
+  {
+    "index": 131,
+    "name": "Item_131",
+    "nameIndex": 107,
+    "type": "Special",
+    "statBonus": 86,
+    "specialEffect": 41,
+    "price": 22950,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 192
+  },
+  {
+    "index": 132,
+    "name": "Item_132",
+    "nameIndex": 49,
+    "type": "Consumable",
+    "statBonus": 128,
+    "specialEffect": 64,
+    "price": 12416,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 27
+  },
+  {
+    "index": 133,
+    "name": "Item_133",
+    "nameIndex": 28,
+    "type": "Special",
+    "statBonus": 131,
+    "specialEffect": 199,
+    "price": 29519,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 35
+  },
+  {
+    "index": 134,
+    "name": "Item_134",
+    "nameIndex": 32,
+    "type": 9,
+    "statBonus": 65,
+    "specialEffect": 64,
+    "price": 64455,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 90
+  },
+  {
+    "index": 135,
+    "name": "Item_135",
+    "nameIndex": 48,
+    "type": "Consumable",
+    "statBonus": 160,
+    "specialEffect": 15,
+    "price": 8254,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 128
+  },
+  {
+    "index": 136,
+    "name": "Item_136",
+    "nameIndex": 15,
+    "type": "Consumable",
+    "statBonus": 192,
+    "specialEffect": 81,
+    "price": 46061,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 181
+  },
+  {
+    "index": 137,
+    "name": "Item_137",
+    "nameIndex": 167,
+    "type": "KeyItem",
+    "statBonus": 240,
+    "specialEffect": 127,
+    "price": 46061,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 133
+  },
+  {
+    "index": 138,
+    "name": "Item_138",
+    "nameIndex": 135,
+    "type": "KeyItem",
+    "statBonus": 240,
+    "specialEffect": 124,
+    "price": 25032,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 255
+  },
+  {
+    "index": 139,
+    "name": "Item_139",
+    "nameIndex": 143,
+    "type": "Consumable",
+    "statBonus": 191,
+    "specialEffect": 239,
+    "price": 49215,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 27
+  },
+  {
+    "index": 140,
+    "name": "Item_140",
+    "nameIndex": 143,
+    "type": "Consumable",
+    "statBonus": 191,
+    "specialEffect": 239,
+    "price": 51263,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": true,
+      "alena": false,
+      "cristo": false,
+      "brey": true,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 63
+  },
+  {
+    "index": 141,
+    "name": "Item_141",
+    "nameIndex": 0,
+    "type": 8,
+    "statBonus": 112,
+    "specialEffect": 240,
+    "price": 57584,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": true,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 200
+  },
+  {
+    "index": 142,
+    "name": "Item_142",
+    "nameIndex": 34,
+    "type": 15,
+    "statBonus": 0,
+    "specialEffect": 224,
+    "price": 49376,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 195
+  },
+  {
+    "index": 143,
+    "name": "Item_143",
+    "nameIndex": 63,
+    "type": 15,
+    "statBonus": 255,
+    "specialEffect": 200,
+    "price": 63282,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": true,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 128
+  },
+  {
+    "index": 144,
+    "name": "Item_144",
+    "nameIndex": 232,
+    "type": 13,
+    "statBonus": 252,
+    "specialEffect": 240,
+    "price": 32960,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": false,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 232
+  },
+  {
+    "index": 145,
+    "name": "Item_145",
+    "nameIndex": 253,
+    "type": 8,
+    "statBonus": 66,
+    "specialEffect": 135,
+    "price": 2047,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": false,
+      "mara": true,
+      "nara": true
+    },
+    "iconID": 55
+  },
+  {
+    "index": 146,
+    "name": "Item_146",
+    "nameIndex": 2,
+    "type": "Weapon",
+    "statBonus": 12,
+    "specialEffect": 50,
+    "price": 1996,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": false
+    },
+    "iconID": 50
+  },
+  {
+    "index": 147,
+    "name": "Item_147",
+    "nameIndex": 192,
+    "type": "Consumable",
+    "statBonus": 82,
+    "specialEffect": 186,
+    "price": 30050,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 243
+  },
+  {
+    "index": 148,
+    "name": "Item_148",
+    "nameIndex": 236,
+    "type": "Shield",
+    "statBonus": 254,
+    "specialEffect": 170,
+    "price": 29794,
+    "equippableBy": {
+      "hero": false,
+      "ragnar": false,
+      "alena": true,
+      "cristo": true,
+      "brey": false,
+      "taloon": false,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 240
+  },
+  {
+    "index": 149,
+    "name": "Item_149",
+    "nameIndex": 224,
+    "type": "Shield",
+    "statBonus": 62,
+    "specialEffect": 200,
+    "price": 47202,
+    "equippableBy": {
+      "hero": true,
+      "ragnar": true,
+      "alena": false,
+      "cristo": true,
+      "brey": true,
+      "taloon": true,
+      "mara": false,
+      "nara": true
+    },
+    "iconID": 255
+  }
+]

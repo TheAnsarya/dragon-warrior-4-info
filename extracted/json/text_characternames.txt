@@ -1,0 +1,12 @@
+# CharacterNames
+# Bank: $25
+
+000: t[$05][$05][$09][CLEAR]N[$05][$05]pndN[$09][$05][$60]F[NOP]p[NOP]F[DELAY]l[NOP]i[NOP][$20][$27](p:[$20][$51](l[DELAY]st[$04]pveF[NOP][$60][$20]
+001: ha[$1E].[$65]M[SCROLL][$1B]ll[$0F]me t[NOP]ha 9orst[$64]M[SCROLL][$1A]ll[$08]me[$1A][$1B]ll[$08] t[$64]M[$08][$67]G[$04][$1D]ll[$0C]ar[$6A]M[$08][$71][$06]7[$04]orst[$5E]M[$08]or![$71][$06]7[$04]meitofha 9he[$76]esneorst[$5A]G[NOP][WAIT][NUM][$18][$66][$60]V[$18]or!se[$26][$19][NUM]ve[$6B][$CE][NOP][$73][$06][$24][$1C]orA[$63]M[$06][$1C][$18][$1C][MONSTER][$1B][MONSTER][$1B]orA[$63]M[$06][$1C][$18][$1C][$19][$1D][$19][$1D][$19][$19][$49][$19][$19][$19]or!sees[NOP]orst[$31][$21][$1D][$30][$20][$1C]esneve t[CLEAR]me[$DA] t[NOP][$5F]M[SCROLL][NAME]ll
+002: [$72]j[NOP]c tg
+003: [$D0][CLEAR][$29][$1F][$29][$7F];[$0E]w
+004: [$47]l[$45])[$08][$D0][$41]l[$64])[DELAY][$D0][$3B][$20][$69]1tD[$62][$09][CLEAR][$29]seND[$62][NOP][NOP][$CB][CLEAR][$20]nd1[NOP][$5F][$3B][$4C][$55]vl[$64])[CLEAR][$D0][$1B]l[$44][$38]ed[CLEAR])[CLEAR]w[WAIT]l[$45][$38]ed[SCROLL])[SCROLL]w[$09][$20]nd1[NOP][$2A][$4B][$4C][$CB]v[$20][$71]1[$20]nd1[$20][$6D]1[$4C][$CB]v[NOP][$62][$23][$40]st[$23]t[$79][$62]u[$78][$62][NOP][$2C][$73]N[$79][$62]t[$78][$62]Fmet[$79][$62]Fll[NOP]e[$1B][$20]nd1[NOP][$36]ndQ[CLEAR][$18][$60][NOP];[$2B][$4C][$CB]v[$20][$71]1[$20]nd1[NOP][$41]nd[$18][$60]l[$41]
+005: ort[$09][$05];K[$D0]enlK)[NOP][$D0][LINE]
+[$20]Jk[$20];;pneNyo[$05][$20]5;[$4C]Rjt[$44][$6E][$30][$09][NOP]V t[NOP][CLEAR][$4F][$4C][$72]j[NOP]c tg
+006: Out[$79][$62]F[$6F]p[$30][$20][$26]1[$60]ineat982)nestal;[NOP][$D0]teKNme[$6D][$0A]q9[$7A]2F[NOP]9[$7B]2F[DELAY][$6C][NOP][NOP][$20][$71]1[$4C][$39]v[$20][$71]1[$20]nd1p[DELAY][$20][$33]1w[$2A][$20][$5A]v[$20][$6D]1[NOP][$27][$0F]i[ITEM][$20][$0C])[NOP][$07][$6F]
+007: [$06][$23][MONSTER][$29][$67][$48][$79]8[$38][$79]M[$0A][$79]I[$06][$2E][$2E] [NOP][$26][$1B][$70]q[$26][$6F][$06][$7A][$2A][$6C][$06][$77][$2A][$76][$06][$69][$2A][$68][$06][$73]([NOP]me:ha[$57],U[$18]ha[$57], t[NOP]ha[$CD].[$70]th[NOP]V[$30][$64][$04][$1E]7[SCROLL][$2A]/[CLEAR][$36]ofU[NOP]nenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenenene[$78]or[$DF],[$4C]OneA[$20][$44][$52][$41][$47][$4F][$4E][$20][$51][$55][$45][$53][$54][$20][$49][$56][NOP][NOP][NOP][NOP][$48][$04][DELAY][$0E][$07]e[$D8],[$D8],[$D8],[$38]A[$73]1[$6B]2[$2E]3[$32]3an1[$18]3J0[$53]1[$0B]5[NUM]5[$66]w[$30]5[$37]5[$49]5er
