@@ -11,11 +11,12 @@
 | Category | Key Documents |
 |----------|---------------|
 | 🎮 **Overview** | [README](../README.md) · [Reverse Engineering Summary](REVERSE_ENGINEERING_SUMMARY.md) |
-| 📊 **Data** | [Monster Format](formats/MONSTER_FORMAT.md) · [Item Format](formats/ITEM_FORMAT.md) · [Spell Format](formats/SPELL_FORMAT.md) |
-| 🗺️ **Maps** | [ROM Map](formats/ROM_MAP.md) · [World Map](#world-map) |
-| 💬 **Text** | [Text System](formats/TEXT_SYSTEM.md) · [DTE Compression](#dte-compression) |
+| 📊 **Data** | [Monster Format](formats/MONSTER_FORMAT.md) · [Item Format](formats/ITEM_FORMAT.md) · [Spell Format](formats/SPELL_FORMAT.md) · [Data Tables](formats/DATA_TABLES.md) |
+| 🗺️ **Maps** | [Map Format](formats/MAP_FORMAT.md) · [ROM Map](formats/ROM_MAP.md) |
+| 💬 **Text** | [Text System](formats/TEXT_SYSTEM.md) · [Text Encoding](formats/TEXT_ENCODING.md) |
 | ⚔️ **Battle** | [Battle System](formats/BATTLE_SYSTEM.md) · [AI System](formats/AI_SYSTEM.md) |
 | 📖 **Chapters** | [Chapter System](formats/CHAPTER_SYSTEM.md) · [Wagon System](formats/WAGON_SYSTEM.md) |
+| 🖼️ **Graphics** | [Graphics Format](formats/GRAPHICS_FORMAT.md) · [Audio Format](formats/AUDIO_FORMAT.md) |
 | 💾 **Save** | [Save Data](formats/SAVE_DATA.md) · [RAM Map](formats/RAM_MAP.md) |
 
 ---
