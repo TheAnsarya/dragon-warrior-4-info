@@ -11,11 +11,11 @@
 | Category | Key Documents |
 |----------|---------------|
 | 🎮 **Overview** | [README](../README.md) · [Reverse Engineering Summary](REVERSE_ENGINEERING_SUMMARY.md) |
-| 📊 **Data** | [Monster Data](#monster-data) · [Item Data](#item-data) · [Spell Data](#spell-data) |
+| 📊 **Data** | [Monster Format](formats/MONSTER_FORMAT.md) · [Item Format](formats/ITEM_FORMAT.md) · [Spell Format](formats/SPELL_FORMAT.md) |
 | 🗺️ **Maps** | [Map Format](formats/MAP_FORMAT.md) · [World Map](#world-map) |
 | 💬 **Text** | [Text Encoding](formats/TEXT_ENCODING.md) · [DTE Compression](#dte-compression) |
-| ⚔️ **Battle** | [Battle System](battle_system_analysis.md) · [AI System](#ai-system) |
-| 📖 **Chapters** | [Chapter System](#chapter-system) · [Character Data](#character-data) |
+| ⚔️ **Battle** | [Battle System](battle_system_analysis.md) · [AI System](formats/AI_SYSTEM.md) |
+| 📖 **Chapters** | [Chapter System](formats/CHAPTER_SYSTEM.md) · [Wagon System](formats/WAGON_SYSTEM.md) |
 | 🛠️ **Technical** | [ROM Map](memory_map.md) · [Bank Analysis](bank_analysis.md) |
 
 ---
