@@ -1,0 +1,310 @@
+= Dragon Warrior IV (NES) RAM Map =
+
+This page documents the RAM usage and memory locations for '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+Dragon Warrior IV uses the NES's internal 2KB RAM plus 8KB of battery-backed SRAM for save data and game state.
+
+== Zero Page ($00-$FF) ==
+
+Zero page is used for frequently accessed variables and temporary storage.
+
+{| class="wikitable"
+|-
+! Address !! Size !! Description
+|-
+| $00-$0F || 16 || Scratch registers
+|-
+| $10-$1F || 16 || Pointer workspace
+|-
+| $20-$2F || 16 || Math results
+|-
+| $30-$3F || 16 || Controller input state
+|-
+| $40-$4F || 16 || Graphics update flags
+|-
+| $50-$7F || 48 || Screen/scroll state
+|-
+| $80-$BF || 64 || Event/script state
+|-
+| $C0-$FF || 64 || Sound driver workspace
+|}
+
+== Stack ($0100-$01FF) ==
+
+Standard 6502 stack for subroutine calls and temporary storage.
+
+== Internal RAM ($0200-$07FF) ==
+
+{| class="wikitable"
+|-
+! Address Range !! Size !! Description
+|-
+| $0200-$02FF || 256 || OAM (Sprite) Shadow Buffer
+|-
+| $0300-$03FF || 256 || Nametable Update Buffer
+|-
+| $0400-$04FF || 256 || Palette Update Buffer
+|-
+| $0500-$05FF || 256 || Current Map Tile Cache
+|-
+| $0600-$06FF || 256 || NPC State Table
+|-
+| $0700-$07FF || 256 || Miscellaneous Working RAM
+|}
+
+== SRAM ($6000-$7FFF) ==
+
+8KB battery-backed SRAM for persistent game data.
+
+=== Party Data ($6000-$61FF) ===
+
+512 bytes for party member data.
+
+==== Character Record Structure ====
+
+Each character uses 64 bytes ($40), starting at $6000:
+
+{| class="wikitable"
+|-
+! Offset !! Size !! Description !! Access Pattern
+|-
+| $00 || 2 || Current HP || Read/Write, Indexed
+|-
+| $02 || 2 || Current MP || Read/Write, Indexed
+|-
+| $04 || 2 || Maximum HP || Read/Write, Indexed
+|-
+| $06 || 2 || Maximum MP || Read/Write, Indexed
+|-
+| $08 || 1 || Level || Read mostly
+|-
+| $09 || 1 || Status effects || Read/Modify/Write
+|-
+| $0A || 1 || Strength || Read mostly
+|-
+| $0B || 1 || Agility || Read mostly
+|-
+| $0C || 1 || Resilience/Stamina || Read mostly
+|-
+| $0D || 1 || Wisdom/Intelligence || Read mostly
+|-
+| $0E || 1 || Luck || Read mostly
+|-
+| $0F || 1 || Attack power (calculated) || Modified on equip
+|-
+| $10 || 1 || Defense power (calculated) || Modified on equip
+|-
+| $11 || 1 || Weapon equipped || Read/Write
+|-
+| $12 || 1 || Armor equipped || Read/Write
+|-
+| $13 || 1 || Shield equipped || Read/Write
+|-
+| $14 || 1 || Helmet equipped || Read/Write
+|-
+| $15 || 1 || Accessory equipped || Read/Write
+|-
+| $16-$1D || 8 || Spells known (bit flags) || Read/Modify on level up
+|-
+| $1E-$21 || 4 || Experience points || Read/Modify/Write
+|-
+| $22-$31 || 16 || Personal inventory || Read/Write
+|-
+| $32-$3F || 14 || Reserved/padding || Varies by chapter
+|}
+
+==== Character Base Addresses ====
+
+{| class="wikitable"
+|-
+! Character !! Base Address !! Index
+|-
+| Hero || $6000 || 0
+|-
+| Ragnar || $6040 || 1
+|-
+| Alena || $6080 || 2
+|-
+| Kiryl || $60C0 || 3
+|-
+| Borya || $6100 || 4
+|-
+| Torneko || $6140 || 5
+|-
+| Meena || $6180 || 6
+|-
+| Maya || $61C0 || 7
+|}
+
+=== Battle Workspace ($6150-$61FF) ===
+
+This region overlaps character data and is repurposed during battle.
+
+{| class="wikitable"
+|-
+! Address !! Description !! Read !! Write !! RMW
+|-
+| $6150 || Counter/Flag || 0 || 0 || Yes
+|-
+| $6151 || Input Variable || Yes || - || -
+|-
+| $6159 || Input Variable || 3 || 1 || 1
+|-
+| $615A || '''Current Battle Actor Index''' || 93 || 2 || 3
+|-
+| $615B || '''Tactics Setting''' || 1 || 2 || 1
+|-
+| $615C || Input Variable || 4 || 0 || 0
+|-
+| $615D || Indexed Variable || 6 || 0 || 0
+|-
+| $6165 || Indexed Data Table || 5 || 3 || 0
+|-
+| $6168 || Input Variable || 4 || 1 || 0
+|-
+| $616A || '''Battle Action Data (indexed)''' || 41 || 18 || 0
+|-
+| $618D || Input Variable || 1 || 0 || 5
+|-
+| $618E || '''Battle State Flags''' || 51 || 13 || 1
+|-
+| $618F || Unknown || 2 || 4 || 0
+|-
+| $6191 || Output Variable || 3 || 8 || 3
+|-
+| $6192 || Output Variable || 3 || 8 || 4
+|-
+| $6195 || Battle Counter 1 || 5 || 11 || 1
+|-
+| $6196 || Battle Counter 2 || 5 || 13 || 1
+|-
+| $6197 || Battle Limit X || 5 || 7 || 0
+|-
+| $6198 || Battle Limit Y || 5 || 7 || 0
+|-
+| $61DB || Indexed Data || 5 || 5 || 0
+|-
+| $61E8 || Input Variable || 6 || 0 || 0
+|}
+
+=== Story Flags ($6400-$67FF) ===
+
+1KB of bit flags tracking story progression, chest states, and event completion.
+
+==== Flag Organization ====
+
+{| class="wikitable"
+|-
+! Address Range !! Description
+|-
+| $6400-$643F || Chapter 1 story flags
+|-
+| $6440-$647F || Chapter 2 story flags
+|-
+| $6480-$64BF || Chapter 3 story flags
+|-
+| $64C0-$64FF || Chapter 4 story flags
+|-
+| $6500-$65FF || Chapter 5 story flags
+|-
+| $6600-$66FF || Treasure chest opened flags
+|-
+| $6700-$67FF || NPC/event flags
+|}
+
+=== Inventory ($6300-$63FF) ===
+
+256 bytes for party-wide and wagon inventory.
+
+{| class="wikitable"
+|-
+! Address Range !! Description
+|-
+| $6300-$633F || Party bag items (64 slots)
+|-
+| $6340-$636F || Wagon inventory (48 slots)
+|-
+| $6370-$637F || Key items (16 slots)
+|-
+| $6380-$639F || Gold (4 bytes) + Casino coins (4 bytes)
+|-
+| $63A0-$63FF || Item quantities and flags
+|}
+
+=== Save Slot Data ($7000-$7FFF) ===
+
+4KB for save game data structures.
+
+{| class="wikitable"
+|-
+! Address Range !! Description
+|-
+| $7000-$73FF || Save Slot 1 (1KB)
+|-
+| $7400-$77FF || Save Slot 2 (1KB)
+|-
+| $7800-$7BFF || Save Slot 3 (1KB)
+|-
+| $7C00-$7FFF || Adventure Log / Checksum
+|}
+
+== Status Effect Flags ==
+
+Status byte at character offset $09:
+
+{| class="wikitable"
+|-
+! Bit !! Value !! Status
+|-
+| 0 || $01 || Poisoned
+|-
+| 1 || $02 || Paralyzed
+|-
+| 2 || $04 || Asleep
+|-
+| 3 || $08 || Confused
+|-
+| 4 || $10 || Cursed
+|-
+| 5 || $20 || Silenced
+|-
+| 6 || $40 || Surround/Sapped
+|-
+| 7 || $80 || Dead
+|}
+
+== Tactics Values ==
+
+Value stored at $615B during battle:
+
+{| class="wikitable"
+|-
+! Value !! Tactics !! Description
+|-
+| $00 || Follow Orders || Player controls all actions
+|-
+| $01 || Show No Mercy || All-out attack, full MP usage
+|-
+| $02 || Use No MP || Physical attacks only
+|-
+| $03 || Fight Wisely || Balanced AI decisions
+|-
+| $04 || Watch My Back || Defensive, healing priority
+|-
+| $05 || Preserve MP || Conserve MP for healing
+|-
+| $06 || Try Out || Experiment with abilities
+|-
+| $07 || Normal || Default AI behavior
+|}
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - ROM structure
+* [[Dragon Warrior IV (NES)/Battle System|Battle System]] - Combat mechanics
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:RAM Maps]]

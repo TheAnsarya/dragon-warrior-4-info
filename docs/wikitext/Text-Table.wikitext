@@ -1,0 +1,251 @@
+= Dragon Warrior IV (NES) Text Table =
+
+This page documents the text encoding for '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+Dragon Warrior IV uses a custom text encoding. Each character in the game's text corresponds to a tile in the font graphics.
+
+== Standard Characters ==
+
+=== Uppercase Letters ===
+
+{| class="wikitable"
+|-
+! Hex !! Char !! Hex !! Char !! Hex !! Char !! Hex !! Char
+|-
+| $00 || A || $08 || I || $10 || Q || $18 || Y
+|-
+| $01 || B || $09 || J || $11 || R || $19 || Z
+|-
+| $02 || C || $0A || K || $12 || S ||  || 
+|-
+| $03 || D || $0B || L || $13 || T ||  || 
+|-
+| $04 || E || $0C || M || $14 || U ||  || 
+|-
+| $05 || F || $0D || N || $15 || V ||  || 
+|-
+| $06 || G || $0E || O || $16 || W ||  || 
+|-
+| $07 || H || $0F || P || $17 || X ||  || 
+|}
+
+=== Lowercase Letters ===
+
+{| class="wikitable"
+|-
+! Hex !! Char !! Hex !! Char !! Hex !! Char !! Hex !! Char
+|-
+| $1A || a || $22 || i || $2A || q || $32 || y
+|-
+| $1B || b || $23 || j || $2B || r || $33 || z
+|-
+| $1C || c || $24 || k || $2C || s ||  || 
+|-
+| $1D || d || $25 || l || $2D || t ||  || 
+|-
+| $1E || e || $26 || m || $2E || u ||  || 
+|-
+| $1F || f || $27 || n || $2F || v ||  || 
+|-
+| $20 || g || $28 || o || $30 || w ||  || 
+|-
+| $21 || h || $29 || p || $31 || x ||  || 
+|}
+
+=== Numbers ===
+
+{| class="wikitable"
+|-
+! Hex !! Char !! Hex !! Char
+|-
+| $34 || 0 || $39 || 5
+|-
+| $35 || 1 || $3A || 6
+|-
+| $36 || 2 || $3B || 7
+|-
+| $37 || 3 || $3C || 8
+|-
+| $38 || 4 || $3D || 9
+|}
+
+=== Punctuation ===
+
+{| class="wikitable"
+|-
+! Hex !! Char !! Description
+|-
+| $3E || . || Period
+|-
+| $3F || , || Comma
+|-
+| $40 || - || Hyphen
+|-
+| $41 || ? || Question mark
+|-
+| $42 || ! || Exclamation mark
+|-
+| $43 || ' || Apostrophe
+|-
+| $44 || " || Quote (open)
+|-
+| $45 || " || Quote (close)
+|-
+| $46 || ( || Left parenthesis
+|-
+| $47 || ) || Right parenthesis
+|-
+| $48 || : || Colon
+|-
+| $49 || ; || Semicolon
+|-
+| $4A || / || Forward slash
+|-
+| $FF || [space] || Space character
+|}
+
+== Control Codes ==
+
+{| class="wikitable"
+|-
+! Hex !! Code !! Description
+|-
+| $00 || [END] || End of text string
+|-
+| $01 || [LINE] || New line
+|-
+| $02 || [PAGE] || Page break (wait for button)
+|-
+| $03 || [HERO] || Insert Hero's name
+|-
+| $04 || [ITEM] || Insert item name from context
+|-
+| $05 || [NUM] || Insert number from context
+|-
+| $06 || [RAGNAR] || Insert "Ragnar"
+|-
+| $07 || [ALENA] || Insert "Alena"
+|-
+| $08 || [KIRYL] || Insert "Kiryl" (Cristo)
+|-
+| $09 || [BORYA] || Insert "Borya" (Brey)
+|-
+| $0A || [TORNEKO] || Insert "Torneko" (Taloon)
+|-
+| $0B || [MEENA] || Insert "Meena" (Nara)
+|-
+| $0C || [MAYA] || Insert "Maya" (Mara)
+|-
+| $0D || [GOLD] || Insert gold amount
+|-
+| $0E || [MONSTER] || Insert monster name
+|-
+| $0F || [WAIT] || Brief pause
+|-
+| $10 || [CLEAR] || Clear text window
+|}
+
+== Special Characters ==
+
+{| class="wikitable"
+|-
+! Hex !! Description
+|-
+| $50 || Heart symbol
+|-
+| $51 || Music note
+|-
+| $52 || Star
+|-
+| $53 || Right arrow (→)
+|-
+| $54 || Left arrow (←)
+|-
+| $55 || Up arrow (↑)
+|-
+| $56 || Down arrow (↓)
+|-
+| $57 || Cross/plus symbol
+|}
+
+== Menu Characters ==
+
+{| class="wikitable"
+|-
+! Hex !! Description
+|-
+| $60 || Window border: top-left
+|-
+| $61 || Window border: top
+|-
+| $62 || Window border: top-right
+|-
+| $63 || Window border: left
+|-
+| $64 || Window border: right
+|-
+| $65 || Window border: bottom-left
+|-
+| $66 || Window border: bottom
+|-
+| $67 || Window border: bottom-right
+|-
+| $68 || Cursor
+|-
+| $69 || Cursor (selected)
+|}
+
+== Usage Examples ==
+
+=== Simple Message ===
+
+<pre>
+Hello[LINE]World![END]
+</pre>
+
+Hex: <code>07 1E 25 25 28 01 16 28 2B 25 1D 42 00</code>
+
+=== Dynamic Text ===
+
+<pre>
+[HERO] found[LINE][ITEM]![END]
+</pre>
+
+Hex: <code>03 FF 1F 28 2E 27 1D 01 04 42 00</code>
+
+=== Page Break ===
+
+<pre>
+This is page one.[PAGE]This is page two.[END]
+</pre>
+
+== Thinktank File Format ==
+
+For use with common ROM hacking tools, create a .tbl file:
+
+<pre>
+00=A
+01=B
+02=C
+...
+1A=a
+1B=b
+...
+34=0
+35=1
+...
+3E=.
+3F=,
+FF= 
+</pre>
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - Text pointer locations
+* [[Dragon Warrior IV (NES)/Dialog List|Dialog List]] - All game text
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:Text Tables]]

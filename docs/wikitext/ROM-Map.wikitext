@@ -1,0 +1,381 @@
+= Dragon Warrior IV (NES) ROM Map =
+
+This page documents the ROM structure and data locations for '''Dragon Warrior IV''' (NES, US version).
+
+== ROM Information ==
+
+{| class="wikitable"
+|-
+! Property !! Value
+|-
+| '''Internal Name''' || DRAGON WARRIOR
+|-
+| '''System''' || NES/Famicom
+|-
+| '''Mapper''' || MMC5 (Mapper 5)
+|-
+| '''PRG-ROM''' || 512KB (32 banks × 16KB)
+|-
+| '''CHR-ROM''' || 256KB
+|-
+| '''Battery''' || Yes (8KB SRAM)
+|-
+| '''Mirroring''' || Vertical
+|-
+| '''CRC32''' || 0x????
+|}
+
+== Memory Map ==
+
+=== CPU Address Space ===
+
+{| class="wikitable"
+|-
+! Address Range !! Size !! Description
+|-
+| $0000-$07FF || 2KB || Internal RAM
+|-
+| $0800-$1FFF || - || Mirrors of $0000-$07FF
+|-
+| $2000-$2007 || 8 bytes || PPU Registers
+|-
+| $4000-$401F || 32 bytes || APU & I/O Registers
+|-
+| $5000-$5FFF || 4KB || MMC5 Registers & Expansion RAM
+|-
+| $6000-$7FFF || 8KB || Battery-backed SRAM (Save data)
+|-
+| $8000-$BFFF || 16KB || Switchable PRG Bank
+|-
+| $C000-$FFFF || 16KB || Fixed PRG Bank (Bank $1F)
+|}
+
+=== SRAM Structure ($6000-$7FFF) ===
+
+{| class="wikitable"
+|-
+! Address !! Size !! Description
+|-
+| $6000-$61FF || 512 bytes || Party/Character Data
+|-
+| $6200-$62FF || 256 bytes || Battle System Workspace
+|-
+| $6300-$63FF || 256 bytes || Item/Inventory Data
+|-
+| $6400-$67FF || 1KB || Story Flags
+|-
+| $6800-$6FFF || 2KB || Temporary/Working Data
+|-
+| $7000-$7FFF || 4KB || Save Slot Data
+|}
+
+== Bank Layout ==
+
+=== PRG-ROM Banks ===
+
+{| class="wikitable sortable"
+|-
+! Bank !! File Offset !! Primary Content
+|-
+| $00 || $00000 || Core Engine Code
+|-
+| $01 || $04000 || Menu System Code
+|-
+| $02 || $08000 || Battle System Code (Part 1)
+|-
+| $03 || $0C000 || Battle System Code (Part 2)
+|-
+| $04 || $10000 || NPC/Event Code
+|-
+| $05 || $14000 || AI/Monster Behavior Code
+|-
+| $06 || $18000 || Monster Data Tables
+|-
+| $07 || $1C000 || Item/Equipment Data
+|-
+| $08 || $20000 || Tileset Data & Graphics Info
+|-
+| $09 || $24000 || Map Data (Part 1)
+|-
+| $0A || $28000 || Map Data (Part 2)
+|-
+| $0B || $2C000 || Map Data (Part 3) & Overworld
+|-
+| $0C || $30000 || Map Tile Graphics (Page 0)
+|-
+| $0D || $34000 || Map Tile Graphics (Page 1-2)
+|-
+| $0E || $38000 || Character Sprite Graphics
+|-
+| $0F || $3C000 || Map Loading Code
+|-
+| $10-$14 || $40000-$54000 || Script/Dialog Text
+|-
+| $15 || $54000 || Window/Menu Graphics
+|-
+| $16 || $58000 || Battle Graphics
+|-
+| $17 || $5C000 || Map Pointer Tables
+|-
+| $18-$1B || $60000-$70000 || Music Data
+|-
+| $1C-$1E || $70000-$7C000 || Sound Effects
+|-
+| $1F || $7C000 || Fixed Bank (Vectors, Init)
+|}
+
+== Data Structures ==
+
+=== Character Data Structure ===
+
+Each playable character uses a 64-byte ($40) data block starting at $6000:
+
+{| class="wikitable"
+|-
+! Offset !! Size !! Description
+|-
+| +$00 || 2 || Current HP (little-endian)
+|-
+| +$02 || 2 || Current MP (little-endian)
+|-
+| +$04 || 2 || Max HP (little-endian)
+|-
+| +$06 || 2 || Max MP (little-endian)
+|-
+| +$08 || 1 || Level
+|-
+| +$09 || 1 || Status Flags
+|-
+| +$0A || 1 || Attack Power
+|-
+| +$0B || 1 || Defense Power
+|-
+| +$0C || 1 || Agility
+|-
+| +$0D || 1 || Luck
+|-
+| +$0E || 1 || Wisdom
+|-
+| +$0F || 1 || Equipment Slot 1 (Weapon)
+|-
+| +$10 || 1 || Equipment Slot 2 (Armor)
+|-
+| +$11 || 1 || Equipment Slot 3 (Shield)
+|-
+| +$12 || 1 || Equipment Slot 4 (Helmet)
+|-
+| +$13 || 1 || Equipment Slot 5 (Accessory)
+|-
+| +$14-$1B || 8 || Spells Known (bit flags)
+|-
+| +$1C-$1F || 4 || Experience Points
+|-
+| +$20-$2F || 16 || Inventory Items
+|-
+| +$30-$3F || 16 || Reserved/Chapter-specific
+|}
+
+=== Character Index ===
+
+{| class="wikitable"
+|-
+! Index !! Character !! Chapter Introduced
+|-
+| 0 || Hero/Heroine || Chapter 5
+|-
+| 1 || Ragnar McRyan || Chapter 1
+|-
+| 2 || Alena || Chapter 2
+|-
+| 3 || Kiryl (Cristo) || Chapter 2
+|-
+| 4 || Borya (Brey) || Chapter 2
+|-
+| 5 || Torneko (Taloon) || Chapter 3
+|-
+| 6 || Meena (Nara) || Chapter 4
+|-
+| 7 || Maya (Mara) || Chapter 4
+|}
+
+=== Monster Data Structure ===
+
+Monster data at Bank $06, $A2A2, 27 bytes per monster:
+
+{| class="wikitable"
+|-
+! Offset !! Size !! Description
+|-
+| +$00-$14 || 21 || Graphics/Animation Data
+|-
+| +$15 || 1 || HP High Byte
+|-
+| +$16 || 1 || HP Low Byte
+|-
+| +$17 || 1 || Attack
+|-
+| +$18 || 1 || Defense
+|-
+| +$19 || 1 || Agility
+|-
+| +$1A || 1 || Behavior Pattern/Flags
+|-
+| +$1B || 1 || Experience High Byte
+|-
+| +$1C || 1 || Experience Low Byte
+|-
+| +$1D || 1 || Gold High Byte
+|-
+| +$1E || 1 || Gold Low Byte
+|-
+| +$1F || 1 || Drop Rate (B22)
+|-
+| +$20 || 1 || Drop Item ID (B23)
+|-
+| +$21 || 1 || Status Immunities (B24)
+|}
+
+'''Drop Rate Values:'''
+* $01 = 100%
+* $02 = 1/2 (50%)
+* $04 = 1/4 (25%)
+* $08 = 1/8 (12.5%)
+* $10 = 1/16 (6.25%)
+* $20 = 1/32 (3.125%)
+* $40 = 1/64 (1.5625%)
+* $80 = 1/128 (0.78%)
+
+== Map System ==
+
+=== Map Pointer Table ===
+
+Located at Bank $17, $B08D-$B11F (146 bytes for 73 maps × 2 bytes)
+
+=== Map Data Format ===
+
+Each map entry (3 bytes per submap):
+* Byte 0: Tileset Number
+* Bytes 1-2: Map Data Address (little-endian)
+
+=== Overworld Compression ===
+
+Overworld map data uses RLE compression:
+* Bits 0-4: Length (add 1 for actual length)
+* Bits 5-7: Tile index (0-7)
+* Special: If byte >= $E8, subtract $E0 for tile number (for longer runs)
+
+== Tileset System ==
+
+=== Tileset Data ===
+
+Located at Bank $08, $8ADB-$979A (51 tilesets × 64 bytes each)
+
+Each tileset defines 32 tile entries × 2 bytes:
+* Byte 0: <code>yyyAAXXX</code>
+** <code>yyy</code> = Smoothing flags for front-facing tiles
+** <code>AA</code> = Attribute (palette)
+** <code>XXX</code> = High 3 bits of tile number
+* Byte 1: Low 8 bits of tile number
+
+=== Tile Increment Patterns ===
+
+Located at Bank $08, $A1BB (14 patterns × 3 bytes)
+
+Used for animated or multi-tile constructs:
+ 00: 01 01 01  (sequential)
+ 01: 00 00 00  (static)
+ 02: 00 01 00
+ 03: 01 00 FF
+ ... (see full list in data files)
+
+== Text System ==
+
+=== Text Encoding ===
+
+Uses custom encoding table. See [[Dragon Warrior IV (NES)/Text Table|Text Table]] for full mapping.
+
+=== Dialog Pointers ===
+
+Dialog text distributed across Banks $10-$14:
+* Bank $10: Chapter 1 dialog
+* Bank $11: Chapter 2 dialog
+* Bank $12: Chapter 3 dialog
+* Bank $13: Chapter 4 dialog
+* Bank $14: Chapter 5 and shared dialog
+
+=== Control Codes ===
+
+{| class="wikitable"
+|-
+! Code !! Meaning
+|-
+| $00 || End of string
+|-
+| $01 || Line break
+|-
+| $02 || Page break (wait for input)
+|-
+| $03 || Hero name
+|-
+| $04 || Item name (from variable)
+|-
+| $05 || Number (from variable)
+|-
+| $06-$0D || Character names (Ragnar, Alena, etc.)
+|}
+
+== Battle System ==
+
+=== Battle RAM ($6150-$61FF) ===
+
+{| class="wikitable"
+|-
+! Address !! Description
+|-
+| $615A || Current Acting Character Index
+|-
+| $615B || Tactics Setting
+|-
+| $616A || Battle Action Data (indexed)
+|-
+| $618E || Battle State Flags
+|-
+| $6195-$6196 || Battle Counters
+|-
+| $6197-$6198 || Battle Limits X/Y
+|}
+
+=== Tactics System ===
+
+DW4's AI tactics for non-Hero party members:
+* $00 = Follow Orders (manual control)
+* $01 = Show No Mercy
+* $02 = Use No MP
+* $03 = Fight Wisely
+* $04 = Watch My Back
+* $05 = Preserve MP (Chapter 2)
+* $06 = Try Out (experimenting)
+* $07 = Normal (default AI)
+
+== Experience/Level System ==
+
+Experience table located in Bank $27. Characters level up based on accumulated EXP reaching threshold values.
+
+See [[Dragon Warrior IV (NES)/Experience Table|Experience Table]] for full level-up values.
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/RAM Map|RAM Map]] - Detailed RAM documentation
+* [[Dragon Warrior IV (NES)/Text Table|Text Table]] - Character encoding
+* [[Dragon Warrior IV (NES)/Experience Table|Experience Table]] - Level progression
+* [[Dragon Warrior IV (NES)/Monster List|Monster List]] - Enemy statistics
+* [[Dragon Warrior IV (NES)/Item List|Item List]] - Item data
+* [[Dragon Warrior IV (NES)/Spell List|Spell List]] - Magic data
+
+== External Links ==
+
+* [https://datacrystal.tcrf.net/wiki/Dragon_Warrior_IV_(NES) Data Crystal - Dragon Warrior IV]
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:ROM Maps]]
