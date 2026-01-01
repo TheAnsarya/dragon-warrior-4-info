@@ -70,24 +70,67 @@ Created `DW4Lib.Tests/ChapterTests.cs`:
 3. `test(dw4): Add 47 Chapter system unit tests`
    - ChapterTests.cs
 
+4. `feat(dw4): Add data outlines for Chapters 2-5`
+   - Chapter2Data.cs through Chapter5Data.cs
+   - Refs: dragon-warrior-4-info#62
+
+5. `test(dw4): Add 39 tests for Chapters 2-5 data`
+   - ChapterDataTests.cs
+
+6. `feat(dw4): Add SaveData structure with 43 tests`
+   - SaveData.cs (752-byte save slots)
+   - SaveHeader, PartyConfig, CharacterSaveData, etc.
+   - Refs: dragon-warrior-4-info#62
+
+7. `feat(dw4): Add SaveStateConverter for DQ3r format`
+   - SaveStateConverter.cs (2048-byte DQ3r saves)
+   - SpellIdConverter
+   - 32 new tests
+   - Refs: dragon-warrior-4-info#62, #78
+
+8. `feat(dw4): Add Chapter 1 event flags and save helpers`
+   - Chapter1Flags.cs (story, treasure, optional flags)
+   - Chapter1SaveHelper (test save factories)
+   - 36 new tests
+   - Refs: dragon-warrior-4-info#62, #72
+
+9. `feat(dw4): Add text encoding and dialog system`
+   - DW4TextEncoder.cs
+   - DialogFormatter, DialogScript, DialogVariables
+   - 39 new tests
+   - Refs: dragon-warrior-4-info#62
+
 ## Files Created/Modified
 
 ### New Files
 - `DW4Lib/DataStructures/Chapter.cs` (~380 lines)
 - `DW4Lib/DataStructures/Chapter1/Chapter1Data.cs` (~380 lines)
 - `DW4Lib/DataStructures/Chapter1/Chapter1Dialog.cs` (~300 lines)
+- `DW4Lib/DataStructures/Chapter1/Chapter1Flags.cs` (~300 lines)
+- `DW4Lib/DataStructures/Chapter2/Chapter2Data.cs` (~250 lines)
+- `DW4Lib/DataStructures/Chapter3/Chapter3Data.cs` (~250 lines)
+- `DW4Lib/DataStructures/Chapter4/Chapter4Data.cs` (~250 lines)
+- `DW4Lib/DataStructures/Chapter5/Chapter5Data.cs` (~300 lines)
+- `DW4Lib/DataStructures/SaveData.cs` (~500 lines)
 - `DW4Lib/Converters/ChapterConverter.cs` (~500 lines)
-- `DW4Lib/Converters/ItemIdConverter.cs` (~130 lines)
+- `DW4Lib/Converters/SaveStateConverter.cs` (~400 lines)
+- `DW4Lib/Converters/ItemIdConverter.cs` (~160 lines)
 - `DW4Lib/Converters/MonsterIdConverter.cs` (~75 lines)
+- `DW4Lib/Text/DW4TextEncoder.cs` (~300 lines)
 - `DW4Lib.Tests/ChapterTests.cs` (~440 lines)
+- `DW4Lib.Tests/ChapterDataTests.cs` (~280 lines)
+- `DW4Lib.Tests/SaveDataTests.cs` (~330 lines)
+- `DW4Lib.Tests/SaveStateConverterTests.cs` (~295 lines)
+- `DW4Lib.Tests/Chapter1FlagsTests.cs` (~230 lines)
+- `DW4Lib.Tests/TextEncoderTests.cs` (~280 lines)
 
-### Total New Code: ~2,200 lines
+### Total New Code: ~5,900 lines
 
 ## Technical Decisions
 
 ### Chapter ID Mapping
 - DW4 Chapter IDs: 0x00-0x04 (5 chapters)
-- DQ3r Scenario IDs: 0x100+ (custom content range)
+- DQ3r Scenario IDs: 0x10+ (custom content range)
 
 ### Mechanics Flags
 Used flags enum for chapter-specific mechanics:
@@ -101,11 +144,22 @@ Used flags enum for chapter-specific mechanics:
 
 ### DQ3r Scaling
 Applied scaling factors for DQ3r conversion:
-- HP: 1.5x
+- HP/MP: 1.5x
 - Stats: 1.2x
 - Prices/Gold: 1.5x
-- Coordinates: 2x (larger world map)
-- Encounter rates: 8x (0-31 → 0-255)
+- Experience: 1.2x
+- Event flag offset: 0x200
+
+### Save Data Structure
+- DW4: 752-byte slots (3 slots in SRAM)
+- DQ3r: 2048-byte slots
+- Checksum calculation for validation
+- Factory methods for test saves
+
+### Text Encoding
+- 1 byte per character
+- Custom character table (numbers, letters, punctuation)
+- Control codes: 0xFD (page break), 0xFE (newline), 0xFF (terminator)
 
 ## Related GitHub Issues
 
@@ -115,16 +169,15 @@ Applied scaling factors for DQ3r conversion:
 
 ## Next Steps
 
-1. Create Chapter 2-5 data files (similar to Chapter1Data/Dialog)
-2. Implement Chapter 1 map data extraction
-3. Create save state converter for chapter testing
-4. Add spell/ability converters for character progression
-5. Update documentation (README, INDEX.md)
+1. Create map data converter
+2. Implement sprite/graphics extraction
+3. Create comprehensive event scripting system
+4. Add sound/music data extraction
+5. Test full chapter playthrough in DQ3r
 
 ## Session Statistics
 
-- Tests: 90 → 137 (+47)
-- New Files: 7
-- New Lines: ~2,200
-- Commits: 3
-- Issues Referenced: 3
+- Tests: 90 → 326 (+236)
+- New Files: 20
+- New Lines: ~5,900
+- Commits: 9
