@@ -1,0 +1,155 @@
+{
+	"casino": {
+		"name": "Endor Casino",
+		"location": {
+			"map_id": "0x04",
+			"submap_casino": "0x01",
+			"submap_arena": "0x07"
+		},
+		"code": {
+			"bank": 23,
+			"bank_hex": "0x17",
+			"rom_offset_start": "0x5C010",
+			"rom_offset_end": "0x5FFFF",
+			"cpu_address_start": "0x8000",
+			"cpu_address_end": "0xBFFF"
+		}
+	},
+	"coins": {
+		"storage": {
+			"address_low": "0x62AD",
+			"address_mid": "0x62AE",
+			"address_high": "0x62AF"
+		},
+		"maximum": 16777215,
+		"exchange_rate": {
+			"gold_per_coin": 20,
+			"description": "20 gold = 1 casino coin"
+		}
+	},
+	"poker": {
+		"max_bet": 10,
+		"payout_table": [
+			{ "hand": "Royal Flush", "multiplier": 500, "text_address": "0x82E4" },
+			{ "hand": "5 of a Kind", "multiplier": 250, "text_address": "0x82F8", "note": "With Joker" },
+			{ "hand": "Straight Flush", "multiplier": 100, "text_address": "0x8304" },
+			{ "hand": "4 of a Kind", "multiplier": 50, "text_address": "0x8313" },
+			{ "hand": "Full House", "multiplier": 20 },
+			{ "hand": "Flush", "multiplier": 10, "text_address": "0x832A" },
+			{ "hand": "Straight", "multiplier": 5 },
+			{ "hand": "3 of a Kind", "multiplier": 3, "text_address": "0x8339" },
+			{ "hand": "2 Pairs", "multiplier": 2, "text_address": "0x8345" },
+			{ "hand": "1 Pair", "multiplier": 1, "note": "Jacks or better" }
+		],
+		"payout_table_address": "0x81C5",
+		"evaluation_routines": {
+			"entry_point": "0x81F2",
+			"royal_flush": "0x84A0",
+			"five_of_kind": "0x84CD",
+			"straight_flush": "0x84EF",
+			"four_of_kind": "0x8510",
+			"full_house": "0x8522",
+			"flush": "0x8532",
+			"straight": "0x8544",
+			"three_of_kind": "0x8564",
+			"two_pairs": "0x8572",
+			"one_pair": "0x860C",
+			"nothing": "0x861F"
+		},
+		"double_up": {
+			"enabled": true,
+			"rng_address": "0x8654",
+			"text_address": "0x835A",
+			"high_score_text": "0x8392"
+		}
+	},
+	"arena": {
+		"bet_amounts": [10, 50, 100, 500, 1000],
+		"contender_count": 4,
+		"uses_battle_engine": true
+	},
+	"prizes": [
+		{
+			"item_id": "0x45",
+			"name": "Falcon Sword",
+			"cost": 65000,
+			"category": "weapon",
+			"note": "Attacks twice per turn"
+		},
+		{
+			"item_id": "0x56",
+			"name": "Metal Babble Helm",
+			"cost": 50000,
+			"category": "armor"
+		},
+		{
+			"item_id": "0x68",
+			"name": "Metal Babble Armor",
+			"cost": 50000,
+			"category": "armor"
+		},
+		{
+			"item_id": "0x78",
+			"name": "Metal Babble Shield",
+			"cost": 35000,
+			"category": "armor"
+		},
+		{
+			"item_id": "0x44",
+			"name": "Sword of Miracles",
+			"cost": 30000,
+			"category": "weapon",
+			"note": "Heals on hit"
+		},
+		{
+			"item_id": "0x54",
+			"name": "Helm of Awakening",
+			"cost": 20000,
+			"category": "armor"
+		},
+		{
+			"item_id": "0x66",
+			"name": "Pink Leotard",
+			"cost": 15000,
+			"category": "armor"
+		},
+		{
+			"item_id": "0x8E",
+			"name": "Meteorite Armband",
+			"cost": 15000,
+			"category": "accessory",
+			"note": "Increases agility"
+		},
+		{
+			"item_id": "0xA0",
+			"name": "Small Medal",
+			"cost": 500,
+			"category": "key_item"
+		},
+		{
+			"item_id": "0x90",
+			"name": "Prayer Ring",
+			"cost": 350,
+			"category": "accessory",
+			"note": "Restores MP"
+		},
+		{
+			"item_id": "0x31",
+			"name": "Staff of Force",
+			"cost": 200,
+			"category": "weapon"
+		}
+	],
+	"text_strings": {
+		"royal_flush": { "address": "0x82E4", "text": "Royal Flush" },
+		"five_of_kind": { "address": "0x82F8", "text": "5 of a Kind" },
+		"straight_flush": { "address": "0x8304", "text": "Straight Flush" },
+		"four_of_kind": { "address": "0x8313", "text": "4 of a Kind" },
+		"flush": { "address": "0x832A", "text": "Flush" },
+		"three_of_kind": { "address": "0x8339", "text": "3 of a Kind" },
+		"two_pairs": { "address": "0x8345", "text": "2 Pairs" },
+		"double_up": { "address": "0x835A", "text": "Double Up" },
+		"total_bets": { "address": "0x837B", "text": "Total Bets" },
+		"top_score": { "address": "0x8392", "text": "Top Score of Double Up" }
+	}
+}
