@@ -18,17 +18,17 @@ Dragon Warrior IV uses a custom text encoding. Each character in the game's text
 |-
 | $01 || B || $09 || J || $11 || R || $19 || Z
 |-
-| $02 || C || $0A || K || $12 || S ||  || 
+| $02 || C || $0A || K || $12 || S ||  ||
 |-
-| $03 || D || $0B || L || $13 || T ||  || 
+| $03 || D || $0B || L || $13 || T ||  ||
 |-
-| $04 || E || $0C || M || $14 || U ||  || 
+| $04 || E || $0C || M || $14 || U ||  ||
 |-
-| $05 || F || $0D || N || $15 || V ||  || 
+| $05 || F || $0D || N || $15 || V ||  ||
 |-
-| $06 || G || $0E || O || $16 || W ||  || 
+| $06 || G || $0E || O || $16 || W ||  ||
 |-
-| $07 || H || $0F || P || $17 || X ||  || 
+| $07 || H || $0F || P || $17 || X ||  ||
 |}
 
 === Lowercase Letters ===
@@ -41,17 +41,17 @@ Dragon Warrior IV uses a custom text encoding. Each character in the game's text
 |-
 | $1B || b || $23 || j || $2B || r || $33 || z
 |-
-| $1C || c || $24 || k || $2C || s ||  || 
+| $1C || c || $24 || k || $2C || s ||  ||
 |-
-| $1D || d || $25 || l || $2D || t ||  || 
+| $1D || d || $25 || l || $2D || t ||  ||
 |-
-| $1E || e || $26 || m || $2E || u ||  || 
+| $1E || e || $26 || m || $2E || u ||  ||
 |-
-| $1F || f || $27 || n || $2F || v ||  || 
+| $1F || f || $27 || n || $2F || v ||  ||
 |-
-| $20 || g || $28 || o || $30 || w ||  || 
+| $20 || g || $28 || o || $30 || w ||  ||
 |-
-| $21 || h || $29 || p || $31 || x ||  || 
+| $21 || h || $29 || p || $31 || x ||  ||
 |}
 
 === Numbers ===
@@ -238,7 +238,7 @@ For use with common ROM hacking tools, create a .tbl file:
 ...
 3E=.
 3F=,
-FF= 
+FF=
 </pre>
 
 == See Also ==

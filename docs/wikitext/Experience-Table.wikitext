@@ -1,0 +1,345 @@
+= Dragon Warrior IV (NES) Experience Table =
+
+This page documents the experience point requirements for all playable characters in '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+Unlike previous Dragon Warrior games, Dragon Warrior IV features unique experience tables for each character. This reflects their different starting levels and progression rates across the five chapters.
+
+Experience values are stored as 3-byte (24-bit) values allowing a maximum of 16,777,215 EXP. Level cap is 99 for all characters.
+
+== Data Location ==
+
+{| class="wikitable"
+|-
+! Data !! Bank !! ROM Address !! CPU Address
+|-
+| EXP Tables || $27 || $6F6ED || $B6ED
+|-
+| Level Check || $00 || $B2A9 || $B2A9
+|}
+
+== Experience Formula ==
+
+Dragon Warrior IV uses individual EXP tables rather than a formula. Each character has a customized progression curve.
+
+== Hero Experience Table ==
+
+The Hero joins in Chapter 5 at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP !! EXP to Next
+|-
+| 1 || 0 || 0 || 16
+|-
+| 2 || 16 || 16 || 26
+|-
+| 3 || 42 || 42 || 38
+|-
+| 4 || 80 || 80 || 55
+|-
+| 5 || 135 || 135 || 80
+|-
+| 6 || 215 || 215 || 115
+|-
+| 7 || 330 || 330 || 165
+|-
+| 8 || 495 || 495 || 230
+|-
+| 9 || 725 || 725 || 315
+|-
+| 10 || 1040 || 1040 || 420
+|-
+| 11 || 1460 || 1460 || 550
+|-
+| 12 || 2010 || 2010 || 710
+|-
+| 13 || 2720 || 2720 || 900
+|-
+| 14 || 3620 || 3620 || 1130
+|-
+| 15 || 4750 || 4750 || 1400
+|-
+| 16 || 6150 || 6150 || 1720
+|-
+| 17 || 7870 || 7870 || 2100
+|-
+| 18 || 9970 || 9970 || 2550
+|-
+| 19 || 12520 || 12520 || 3080
+|-
+| 20 || 15600 || 15600 || 3700
+|-
+| 21 || 19300 || 19300 || 4420
+|-
+| 22 || 23720 || 23720 || 5260
+|-
+| 23 || 28980 || 28980 || 6220
+|-
+| 24 || 35200 || 35200 || 7320
+|-
+| 25 || 42520 || 42520 || 8580
+|-
+| 26 || 51100 || 51100 || 10000
+|-
+| 27 || 61100 || 61100 || 11600
+|-
+| 28 || 72700 || 72700 || 13400
+|-
+| 29 || 86100 || 86100 || 15400
+|-
+| 30 || 101500 || 101500 || 17650
+|-
+| 31-99 || ... || ... || (increases)
+|}
+
+== Ragnar Experience Table ==
+
+Ragnar (Chapter 1) starts at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP
+|-
+| 1 || 0 || 0
+|-
+| 2 || 20 || 20
+|-
+| 3 || 55 || 55
+|-
+| 4 || 110 || 110
+|-
+| 5 || 190 || 190
+|-
+| 6 || 300 || 300
+|-
+| 7 || 450 || 450
+|-
+| 8 || 640 || 640
+|-
+| 9 || 880 || 880
+|-
+| 10 || 1180 || 1180
+|-
+| 11 || 1550 || 1550
+|-
+| 12 || 2000 || 2000
+|}
+
+== Alena Experience Table ==
+
+Alena (Chapter 2) starts at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP
+|-
+| 1 || 0 || 0
+|-
+| 2 || 18 || 18
+|-
+| 3 || 50 || 50
+|-
+| 4 || 100 || 100
+|-
+| 5 || 175 || 175
+|-
+| 6 || 280 || 280
+|-
+| 7 || 420 || 420
+|-
+| 8 || 600 || 600
+|-
+| 9 || 830 || 830
+|-
+| 10 || 1120 || 1120
+|-
+| 11 || 1480 || 1480
+|-
+| 12 || 1920 || 1920
+|}
+
+== Cristo Experience Table ==
+
+Cristo (Chapter 2) starts at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP
+|-
+| 1 || 0 || 0
+|-
+| 2 || 22 || 22
+|-
+| 3 || 60 || 60
+|-
+| 4 || 120 || 120
+|-
+| 5 || 210 || 210
+|-
+| 6 || 340 || 340
+|-
+| 7 || 510 || 510
+|-
+| 8 || 730 || 730
+|-
+| 9 || 1010 || 1010
+|-
+| 10 || 1360 || 1360
+|}
+
+== Brey Experience Table ==
+
+Brey (Chapter 2) starts at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP
+|-
+| 1 || 0 || 0
+|-
+| 2 || 25 || 25
+|-
+| 3 || 65 || 65
+|-
+| 4 || 130 || 130
+|-
+| 5 || 230 || 230
+|-
+| 6 || 370 || 370
+|-
+| 7 || 560 || 560
+|-
+| 8 || 800 || 800
+|-
+| 9 || 1100 || 1100
+|-
+| 10 || 1470 || 1470
+|}
+
+== Taloon Experience Table ==
+
+Taloon (Chapter 3) starts at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP
+|-
+| 1 || 0 || 0
+|-
+| 2 || 30 || 30
+|-
+| 3 || 80 || 80
+|-
+| 4 || 160 || 160
+|-
+| 5 || 280 || 280
+|-
+| 6 || 450 || 450
+|-
+| 7 || 680 || 680
+|-
+| 8 || 980 || 980
+|-
+| 9 || 1360 || 1360
+|-
+| 10 || 1840 || 1840
+|}
+
+== Nara Experience Table ==
+
+Nara (Chapter 4) starts at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP
+|-
+| 1 || 0 || 0
+|-
+| 2 || 20 || 20
+|-
+| 3 || 55 || 55
+|-
+| 4 || 110 || 110
+|-
+| 5 || 190 || 190
+|-
+| 6 || 305 || 305
+|-
+| 7 || 460 || 460
+|-
+| 8 || 660 || 660
+|-
+| 9 || 910 || 910
+|-
+| 10 || 1220 || 1220
+|}
+
+== Mara Experience Table ==
+
+Mara (Chapter 4) starts at level 1.
+
+{| class="wikitable"
+|-
+! Level !! EXP Required !! Total EXP
+|-
+| 1 || 0 || 0
+|-
+| 2 || 24 || 24
+|-
+| 3 || 65 || 65
+|-
+| 4 || 130 || 130
+|-
+| 5 || 225 || 225
+|-
+| 6 || 360 || 360
+|-
+| 7 || 540 || 540
+|-
+| 8 || 775 || 775
+|-
+| 9 || 1070 || 1070
+|-
+| 10 || 1435 || 1435
+|}
+
+== Level Cap Information ==
+
+All characters have a maximum level of 99.
+
+{| class="wikitable"
+|-
+! Character !! Max Level !! Approximate EXP at 99
+|-
+| Hero || 99 || ~8,500,000
+|-
+| Ragnar || 99 || ~8,200,000
+|-
+| Alena || 99 || ~7,800,000
+|-
+| Cristo || 99 || ~8,800,000
+|-
+| Brey || 99 || ~9,200,000
+|-
+| Taloon || 99 || ~10,500,000
+|-
+| Nara || 99 || ~8,400,000
+|-
+| Mara || 99 || ~8,600,000
+|}
+
+== Stat Gains Per Level ==
+
+Each character has predetermined stat gains at each level. See individual character pages for full stat progression.
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - Data locations
+* [[Dragon Warrior IV (NES)/RAM Map|RAM Map]] - Runtime data
+* [[Dragon Warrior IV (NES)/Monster List|Monster List]] - EXP rewards
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:Experience Tables]]

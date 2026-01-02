@@ -1,0 +1,374 @@
+= Dragon Warrior IV (NES) Item List =
+
+This page documents all items in '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+Dragon Warrior IV contains over 200 items including weapons, armor, shields, helmets, accessories, and consumable items. Items are stored starting at Bank $06.
+
+== Item Data Structure ==
+
+Each item uses 8 bytes:
+
+{| class="wikitable"
+|-
+! Offset !! Size !! Description
+|-
+| $00 || 1 || Item Type (weapon, armor, etc.)
+|-
+| $01 || 1 || Stat modifier
+|-
+| $02 || 1 || Special effect flags
+|-
+| $03-$04 || 2 || Buy price (big-endian)
+|-
+| $05-$06 || 2 || Sell price (big-endian)
+|-
+| $07 || 1 || Equipment restrictions
+|}
+
+== Item Types ==
+
+{| class="wikitable"
+|-
+! Type ID !! Category
+|-
+| $00 || Consumable
+|-
+| $01 || Weapon
+|-
+| $02 || Armor
+|-
+| $03 || Shield
+|-
+| $04 || Helmet
+|-
+| $05 || Accessory
+|-
+| $06 || Key Item
+|}
+
+== Weapons ==
+
+=== Swords ===
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! ATK !! Price !! Equip By
+|-
+| $01 || Copper Sword || +12 || 100 || Hero, Ragnar, Alena, Taloon
+|-
+| $02 || Thorn Whip || +14 || 200 || Hero, Mara, Nara
+|-
+| $03 || Iron Fan || +18 || 250 || Alena
+|-
+| $04 || Boomerang || +25 || 420 || Hero, Taloon
+|-
+| $05 || Broad Sword || +28 || 550 || Hero, Ragnar
+|-
+| $06 || Chain Whip || +32 || 800 || Hero, Mara, Nara
+|-
+| $07 || Morning Star || +35 || 1300 || Hero
+|-
+| $08 || Iron Spear || +38 || 850 || Ragnar
+|-
+| $09 || Poison Needle || +1 || 1300 || Alena
+|-
+| $0A || Sledge Hammer || +42 || 1700 || Ragnar
+|-
+| $0B || Battle Axe || +45 || 2500 || Ragnar, Taloon
+|-
+| $0C || Staff of Thunder || +29 || 3500 || Brey, Cristo
+|-
+| $0D || Staff of Force || +55 || 2500 || Hero
+|-
+| $0E || Fire Claw || +55 || 7500 || Alena
+|-
+| $0F || Ice Blade || +62 || 10000 || Hero, Ragnar
+|-
+| $10 || Staff of Antimagic || +40 || 5000 || Cristo
+|-
+| $11 || Demon Hammer || +70 || 15000 || Ragnar
+|-
+| $12 || Falcon Sword || +67 || 25000 || Hero
+|-
+| $13 || Sword of Miracles || +100 || 35000 || Hero
+|-
+| $14 || Dragon Killer || +90 || 15000 || Hero, Ragnar
+|-
+| $15 || Multi-Edge Sword || +99 || 0 || Hero (cursed)
+|-
+| $16 || Sword of Lethargy || +60 || 0 || Anyone (cursed)
+|-
+| $17 || Metal Babble Sword || +130 || 0 || Hero
+|-
+| $18 || Zenithian Sword || +110 || 0 || Hero (Legendary)
+|}
+
+=== Claws (Alena-only) ===
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! ATK !! Price
+|-
+| $20 || Leather Claw || +16 || 150
+|-
+| $21 || Iron Claw || +28 || 780
+|-
+| $22 || Fire Claw || +55 || 7500
+|-
+| $23 || Ice Claw || +70 || 10000
+|-
+| $24 || War Claw || +85 || 0
+|-
+| $25 || Dragon Claw || +95 || 0
+|}
+
+=== Staves ===
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! ATK !! Price !! Special
+|-
+| $30 || Cypress Stick || +2 || 5 || -
+|-
+| $31 || Oak Staff || +8 || 50 || -
+|-
+| $32 || Staff of Thunder || +29 || 3500 || Casts Zap
+|-
+| $33 || Staff of Antimagic || +40 || 5000 || Casts Stopspell
+|-
+| $34 || Staff of Punishment || +45 || 6500 || -
+|-
+| $35 || Magma Staff || +63 || 0 || Casts Firebane
+|}
+
+== Armor ==
+
+=== Body Armor ===
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! DEF !! Price !! Equip By
+|-
+| $40 || Clothes || +4 || 10 || All
+|-
+| $41 || Traveler's Clothes || +7 || 70 || All
+|-
+| $42 || Leather Armor || +12 || 180 || Hero, Ragnar, Taloon
+|-
+| $43 || Chain Mail || +18 || 350 || Hero, Ragnar, Taloon
+|-
+| $44 || Bronze Armor || +25 || 700 || Hero, Ragnar
+|-
+| $45 || Half Plate Armor || +32 || 1200 || Hero, Ragnar
+|-
+| $46 || Full Plate Armor || +45 || 2300 || Hero, Ragnar
+|-
+| $47 || Iron Armor || +55 || 3500 || Hero, Ragnar
+|-
+| $48 || Cloak of Evasion || +28 || 3000 || All (dodge)
+|-
+| $49 || Magic Armor || +60 || 5800 || Hero, Ragnar
+|-
+| $4A || Dragon Mail || +65 || 9000 || Hero, Ragnar
+|-
+| $4B || Silver Armor || +70 || 12000 || Hero
+|-
+| $4C || Armor of Radiance || +75 || 0 || Hero
+|-
+| $4D || Zenithian Armor || +90 || 0 || Hero (Legendary)
+|}
+
+=== Robes ===
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! DEF !! Price !! Equip By
+|-
+| $50 || Silk Robe || +10 || 110 || Cristo, Brey, Mara, Nara
+|-
+| $51 || Dancer's Costume || +16 || 400 || Mara
+|-
+| $52 || Flashy Suit || +14 || 1300 || Taloon
+|-
+| $53 || Cleric's Robe || +22 || 720 || Cristo, Nara
+|-
+| $54 || Sage's Robe || +30 || 2200 || Brey
+|-
+| $55 || Magic Vestment || +35 || 3100 || Cristo, Brey, Nara
+|-
+| $56 || Aeolus' Shield Robe || +45 || 0 || Mara
+|-
+| $57 || Water Flying Clothes || +50 || 0 || Alena
+|}
+
+== Shields ==
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! DEF !! Price !! Equip By
+|-
+| $60 || Leather Shield || +4 || 90 || Hero, Ragnar, Taloon
+|-
+| $61 || Scale Shield || +7 || 180 || Hero, Ragnar
+|-
+| $62 || Bronze Shield || +11 || 370 || Hero, Ragnar
+|-
+| $63 || Iron Shield || +16 || 650 || Hero, Ragnar
+|-
+| $64 || Magic Shield || +25 || 5000 || Hero, Ragnar
+|-
+| $65 || Dragon Shield || +32 || 8000 || Hero, Ragnar
+|-
+| $66 || Silver Shield || +40 || 0 || Hero
+|-
+| $67 || Shield of Strength || +35 || 0 || Hero (regen)
+|-
+| $68 || Zenithian Shield || +55 || 0 || Hero (Legendary)
+|}
+
+== Helmets ==
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! DEF !! Price !! Equip By
+|-
+| $70 || Leather Hat || +2 || 65 || All
+|-
+| $71 || Wooden Hat || +6 || 120 || All
+|-
+| $72 || Iron Helmet || +16 || 1100 || Hero, Ragnar
+|-
+| $73 || Iron Mask || +25 || 3500 || Hero, Ragnar
+|-
+| $74 || Mask of Hiding || +28 || 0 || Anyone (cursed)
+|-
+| $75 || Golden Barrette || +12 || 1500 || Alena, Mara, Nara
+|-
+| $76 || Silk Hat || +20 || 2000 || Cristo, Brey
+|-
+| $77 || Metal Babble Helm || +50 || 0 || Hero, Ragnar
+|-
+| $78 || Zenithian Helmet || +45 || 0 || Hero (Legendary)
+|}
+
+== Consumable Items ==
+
+{| class="wikitable"
+|-
+! ID !! Name !! Price !! Effect
+|-
+| $80 || Herb || 8 || Restore ~30 HP
+|-
+| $81 || Medical Herb || 30 || Restore ~60 HP
+|-
+| $82 || Antidote || 10 || Cure poison
+|-
+| $83 || Fairy Water || 20 || Repel weak enemies
+|-
+| $84 || Wing of Wyvern || 25 || Return to town
+|-
+| $85 || Magic Water || 100 || Restore ~20 MP
+|-
+| $86 || Elven Water || 500 || Restore ~80 MP
+|-
+| $87 || Strength Seed || 200 || +1-3 STR
+|-
+| $88 || Agility Seed || 200 || +1-3 AGI
+|-
+| $89 || Luck Seed || 200 || +1-3 LCK
+|-
+| $8A || Life Nut || 300 || +5-10 Max HP
+|-
+| $8B || Mystic Nut || 300 || +3-6 Max MP
+|-
+| $8C || World Map || 300 || View overworld map
+|-
+| $8D || Lamp of Darkness || 0 || Cast Outside
+|-
+| $8E || Board Scroll || 500 || Uses vary
+|}
+
+== Key Items ==
+
+{| class="wikitable"
+|-
+! ID !! Name !! Chapter !! Purpose
+|-
+| $A0 || Flying Shoes || 1 || Access Saro's Tower
+|-
+| $A1 || Gunpowder Jar || 2 || Tournament plot
+|-
+| $A2 || Letter || 3 || Various quests
+|-
+| $A3 || Iron Safe || 3 || Store gold
+|-
+| $A4 || Silver Statuette || 3 || Unlock passages
+|-
+| $A5 || Symbol of Faith || 4 || Access temple
+|-
+| $A6 || Dream Ruby || 4 || Wake Edgar
+|-
+| $A7 || Padechia Seed || 5 || Cure Rosa
+|-
+| $A8 || Zenithian Sword || 5 || Legendary equipment
+|-
+| $A9 || Zenithian Helmet || 5 || Legendary equipment
+|-
+| $AA || Zenithian Armor || 5 || Legendary equipment
+|-
+| $AB || Zenithian Shield || 5 || Legendary equipment
+|-
+| $AC || Gas Canister || 5 || Access final area
+|-
+| $AD || Zenithian Horn || 5 || Call Zenith Dragon
+|}
+
+== Equipment Restrictions ==
+
+{| class="wikitable"
+|-
+! Bit !! Character
+|-
+| 0 || Hero
+|-
+| 1 || Ragnar
+|-
+| 2 || Alena
+|-
+| 3 || Cristo
+|-
+| 4 || Brey
+|-
+| 5 || Taloon
+|-
+| 6 || Nara
+|-
+| 7 || Mara
+|}
+
+== Cursed Items ==
+
+{| class="wikitable"
+|-
+! Name !! Effect !! Remove Curse
+|-
+| Multi-Edge Sword || Damages user || Church, Purify
+|-
+| Sword of Lethargy || Reduces AGI || Church
+|-
+| Mask of Hiding || Cannot be removed || Church
+|-
+| Bad Badge || Reduces LCK || Church
+|}
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - Data locations
+* [[Dragon Warrior IV (NES)/Monster List|Monster List]] - Monster drops
+* [[Dragon Warrior IV (NES)/Shop List|Shop List]] - Item availability
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:Item Lists]]

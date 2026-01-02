@@ -1,0 +1,225 @@
+= Dragon Warrior IV (NES) Monster List =
+
+This page documents all monsters in '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+Dragon Warrior IV contains approximately 180 unique monster entries, though some slots are unused or duplicates. Monsters are stored in Bank $06 starting at address $A2A2, with 27 bytes per entry.
+
+== Monster Data Structure ==
+
+Each monster uses 27 bytes:
+
+{| class="wikitable"
+|-
+! Offset !! Size !! Description
+|-
+| $00-$14 || 21 || Graphics/Animation data
+|-
+| $15-$16 || 2 || HP (big-endian)
+|-
+| $17 || 1 || Attack
+|-
+| $18 || 1 || Defense
+|-
+| $19 || 1 || Agility
+|-
+| $1A || 1 || Behavior flags
+|-
+| $1B-$1C || 2 || Experience (big-endian)
+|-
+| $1D-$1E || 2 || Gold (big-endian)
+|-
+| $1F || 1 || Drop rate
+|-
+| $20 || 1 || Drop item ID
+|-
+| $21 || 1 || Status immunities
+|}
+
+== Drop Rates ==
+
+{| class="wikitable"
+|-
+! Value !! Rate !! Percentage
+|-
+| $01 || 1/1 || 100%
+|-
+| $02 || 1/2 || 50%
+|-
+| $04 || 1/4 || 25%
+|-
+| $08 || 1/8 || 12.5%
+|-
+| $10 || 1/16 || 6.25%
+|-
+| $20 || 1/32 || 3.125%
+|-
+| $40 || 1/64 || 1.5625%
+|-
+| $80 || 1/128 || 0.78%
+|}
+
+== Monster List ==
+
+=== Chapter 1 Monsters ===
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! HP !! ATK !! DEF !! AGI !! EXP !! Gold !! Drop
+|-
+| $30 || Slime || 8 || 9 || 4 || 4 || 1 || 2 || Herb (1/8)
+|-
+| $31 || Red Slime || 10 || 11 || 5 || 6 || 2 || 3 || Herb (1/8)
+|-
+| $32 || Drakee || 12 || 12 || 6 || 8 || 3 || 4 || Chimera Wing (1/16)
+|-
+| $33 || Stump || 15 || 14 || 8 || 4 || 4 || 5 || Club (1/32)
+|-
+| $34 || Lil' Devil || 18 || 16 || 10 || 12 || 6 || 7 || -
+|-
+| $35 || Healer || 22 || 18 || 8 || 6 || 8 || 10 || Medical Herb (1/4)
+|}
+
+=== Chapter 2 Monsters ===
+
+{| class="wikitable sortable"
+|-
+! ID !! Name !! HP !! ATK !! DEF !! AGI !! EXP !! Gold !! Drop
+|-
+| $40 || Ozwarg || 25 || 22 || 16 || 15 || 12 || 14 || Leather Hat (1/32)
+|-
+| $41 || Sizarmage || 30 || 25 || 12 || 20 || 18 || 16 || Wing of Wyvern (1/16)
+|-
+| $42 || Lethal Armor || 45 || 35 || 50 || 8 || 35 || 30 || Iron Armor (1/64)
+|}
+
+=== Metal Monsters ===
+
+Special monsters with high defense and experience:
+
+{| class="wikitable"
+|-
+! ID !! Name !! HP !! ATK !! DEF !! AGI !! EXP !! Gold !! Notes
+|-
+| $?? || Metal Slime || 4 || 20 || 255 || 255 || 1350 || 10 || Flees often
+|-
+| $?? || Metal Babble || 7 || 60 || 255 || 255 || 10050 || 15 || Very rare
+|-
+| $?? || Metal King || 15 || 150 || 255 || 255 || 30010 || 50 || Extremely rare
+|}
+
+== Boss Monsters ==
+
+=== Chapter 1 Boss ===
+
+{| class="wikitable"
+|-
+! Name !! HP !! ATK !! DEF !! AGI !! Location
+|-
+| Saro's Shadow || 250 || 55 || 40 || 35 || Loch Tower
+|}
+
+=== Chapter 2 Bosses ===
+
+{| class="wikitable"
+|-
+! Name !! HP !! ATK !! DEF !! AGI !! Location
+|-
+| Chameleon Humanoid || 300 || 65 || 45 || 50 || Tower South of Santeem
+|-
+| Balzack || 500 || 90 || 60 || 40 || Keeleon Castle
+|}
+
+=== Chapter 3 Boss ===
+
+{| class="wikitable"
+|-
+! Name !! HP !! ATK !! DEF !! AGI !! Location
+|-
+| Balzack || 500 || 90 || 60 || 40 || Endor Tournament (scripted loss)
+|}
+
+=== Chapter 4 Bosses ===
+
+{| class="wikitable"
+|-
+! Name !! HP !! ATK !! DEF !! AGI !! Location
+|-
+| Keeleon || 800 || 110 || 80 || 60 || Keeleon Castle
+|-
+| Balzack (evolved) || 1500 || 130 || 100 || 70 || Santeem Castle
+|}
+
+=== Chapter 5 Final Bosses ===
+
+{| class="wikitable"
+|-
+! Name !! HP !! ATK !! DEF !! AGI !! Location
+|-
+| Necrosaro (Form 1) || 2000 || 150 || 120 || 100 || Necrosaro's Palace
+|-
+| Necrosaro (Form 2) || 2500 || 180 || 140 || 110 || Necrosaro's Palace
+|-
+| Necrosaro (Final) || 3500 || 220 || 160 || 120 || Necrosaro's Palace
+|}
+
+== Monster Behavior Flags ==
+
+Byte at offset $1A controls AI behavior:
+
+{| class="wikitable"
+|-
+! Bit !! Meaning
+|-
+| 0 || Can use healing magic
+|-
+| 1 || Can use attack magic
+|-
+| 2 || Can use support magic
+|-
+| 3 || Can call for help
+|-
+| 4 || Prioritizes fleeing
+|-
+| 5 || Immune to flee
+|-
+| 6 || Boss flag
+|-
+| 7 || Metal flag (high DEF, EXP)
+|}
+
+== Status Immunities ==
+
+Byte at offset $21 indicates status immunity:
+
+{| class="wikitable"
+|-
+! Bit !! Status Immunity
+|-
+| 0 || Sleep
+|-
+| 1 || Stopspell
+|-
+| 2 || Surround
+|-
+| 3 || Sap
+|-
+| 4 || Slow
+|-
+| 5 || Poison
+|-
+| 6 || Paralysis
+|-
+| 7 || Instant Death
+|}
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - Data locations
+* [[Dragon Warrior IV (NES)/Battle System|Battle System]] - Combat mechanics
+* [[Dragon Warrior IV (NES)/Item List|Item List]] - Monster drops
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:Monster Lists]]
