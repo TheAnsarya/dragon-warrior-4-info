@@ -1,0 +1,2060 @@
+{
+	"rom_info": {
+		"name": "Dragon Warrior IV (US)",
+		"size": 524304,
+		"banks": 32
+	},
+	"pointer_tables": {
+		"bank_17": [
+			{
+				"offset": "0x5C018",
+				"count": 16
+			},
+			{
+				"offset": "0x5C038",
+				"count": 16
+			},
+			{
+				"offset": "0x5C129",
+				"count": 4
+			},
+			{
+				"offset": "0x5C19E",
+				"count": 6
+			},
+			{
+				"offset": "0x5C1C1",
+				"count": 5
+			},
+			{
+				"offset": "0x5C235",
+				"count": 4
+			},
+			{
+				"offset": "0x5C26C",
+				"count": 7
+			},
+			{
+				"offset": "0x5C296",
+				"count": 7
+			},
+			{
+				"offset": "0x5C2D5",
+				"count": 5
+			},
+			{
+				"offset": "0x5C3EE",
+				"count": 9
+			}
+		]
+	},
+	"dialogs": {
+		"bank_10": {
+			"0": {
+				"offset": "0x40010",
+				"text": "A 64 264  64  64NS64NS64a2 a2 G2 G2 3QUTIA QUQUQU'QU?QUthQUPEQU3ES,QUESQUW QUheW  CW 1QU9QUYQUNEQUt t t OGTCONMEkeMEBEMEQUY mNEwDoesMENUd QUQU 4GIELBEDVBEleIDo*Do*Doe Doe Do...QUQNEGIGIRUNU wDo  QU 4leRUledctuctDctTCa!A GE2 TCa!A GEvGI64OP)TC9! 5er64t?ct70TME0yoct80ME yoNE ES9!GEt?n-GI50OP' GI602 TCa!u !A GEE64A GEvGI64OP)TCa! 5OP, 6O[WAIT]5 5OP.TC9!er64u !A GEvGI64OP)TCa! 5OP, 6"
+			},
+			"1": {
+				"offset": "0x40204",
+				"text": "stq ya!yo   qOP!yo   qvFa 5E TCDV''TCEN'nOP:yo.OP*yo,OP-yo)NUqDod!vCHee ya!9NActLN yo ctMN yo0Dod!  es2 NE  yONf1NE3HON4GEn'rAS y9!E64  1TnNE7HON1NEhvGEd NU8 y9!E  1TnE3 m7NU5 mran1E9yo GEes'yo0fv0ee y9![WAIT]yo1NE 1NU3t fX1NU4t 9LO1NUtOP0Eu 64NU7 67[WAIT]3NUwanuNANEst RE   1ENA[WAIT]g1NU7OP0Eu 68an4  b![WAIT]a'AS 5 3   NE yb!'AS yb!oua!ct"
+			},
+			"2": {
+				"offset": "0x40453",
+				"text": "GI(  7  vt?eeDod!e ...()Ee ) M... 5CS 35  [WAIT]Dod!vcteee ...)E 5CS 35  aneE ouc!Dod!E 5 7  ouc!ct( GI:  7  TE F 7fA GE yONEv[WAIT]Q yONE64  J yONE6[WAIT]dNAOPfx 7[WAIT]c 7[WAIT]yEVd 'AS'NA'T yt?6 64[WAIT]a 63[WAIT]6 yTI 2[WAIT]TI'AS'NA'n yAN 2[WAIT]EV  [WAIT]verliNU6Eevbliyo...yo)OP...OPvhekeY'yo'yo...A vMBd verlianjEvd NUcfaOP...9yo...NU3E"
+			},
+			"3": {
+				"offset": "0x40536",
+				"text": "yo...EXNu verliNUcNE4t TME 2NActyoyo...hR3ttrDgeverliNU2ves2 OP...viESOP...yo(verlian3'yo...'E64yo...E QUqGIFI2 7fverliNUfNE4t  6 2an0ME 2n'7  mDob!es'E6  cQU6ctGIFI2 7fLfTME0QU6 3isou"
+			},
+			"4": {
+				"offset": "0x405BA",
+				"text": "2E GIFI2QU2ctFI2 M... 7fverlianyOP...yo E yoyo)vAA NUeOP...v3ESn- yo...NU1ACOP yo...Eivbliyo...QU1NEfEnvMBgeE1yoE yoyo(verlianYOP...yo QU u 0CSu )vAA NUbv3ESn- yo NU1AC0AC)OP) 63  TIOP yo...OP0yoEuvd NU7f5E yo...yoEmvbliyo...EnNEgQU1vMBgeE2yoE yoyo(NEbtd E yo,NEdtd E"
+			},
+			"5": {
+				"offset": "0x4067B",
+				"text": "5E0yo)Eyo2Dod!wd E64yo2EESyo3EGEyo4Dod!wd EA yo2Eu yo3E0yo4 yyo... yyo yyoNE wd E yo,d vcteee ...) M CS 35  NUfQU NE e  E 5CSRUc!  Tverlian0E0vbliyo...NEeQU1EnvMBgeE2yoE yoyo(verlian0E7vbliyo...E yoyoyo(TC!NE4t vQUYE yo,v 3eewd Dob!es'E 64NUMBverliNU5vliliNEbt NA 5t NE1Eyo0keA Eyo E0vbliyo...NEeQU1EnvMBgeE2Y...verliNU5vli"
+			},
+			"6": {
+				"offset": "0x408C1",
+				"text": "NEpETnvWkeanREE"
+			},
+			"7": {
+				"offset": "0x408D1",
+				"text": "yo7OP)Eyo6NEit  2)[WAIT]dE 26  bOP7 6"
+			},
+			"8": {
+				"offset": "0x408EB",
+				"text": "5t yo7d 8 5 mqNUFIOP7 6"
+			},
+			"9": {
+				"offset": "0x408FD",
+				"text": "kyoQU NEivSAA [WAIT]4 18[WAIT]7CS 5 mqNU\nnu ...Tes2 vWkeNUvTIA u 6RE3anpOP)GEOP6yo)vAA 'AS'yo)NU6OP...vQUan*vlieeE6NAt v3QUNUuvTIA vNA. 864EvQUNU7OP...Eyo...TOP...864yo...T864yo...nE [WAIT]9E0  5E1  1E2yo6OP)OP6yo)vAA 'yo)OP...NU4vQUannvA anaY6vNA. TE64yo...vSAA yo...P. Eyo...nGERE3anlu 6NEit vTIA GH6  3EE 5 mqNUPEY6'AS'E [WAIT]9E0  5E1  1E2yo6E yo7verlianuNEivSAA vTI"
+			},
+			"10": {
+				"offset": "0x40A59",
+				"text": "f6vTIA GH)[WAIT]6 5 m7NUNSnyo...TY)NEivSAA [WAIT]avTIA GH6  3 3)L6 5 mqNUERnTY)NE vN A [WAIT]avTIA GH6  3 3)L6 5 m7NUERnTt E 6vYA E 6GEA NE4t TME 2yomE yon5mBn5mBn5mBn yhaA DoptA QUmvs 5'NA'ASt mA QU NEivSAA [WAIT]0CS 5 mq  E 6[WAIT]dQU DV QUNU4CSRE3  'QU4'zYTCe!A  67an ye!E 6anY 6L[WAIT]b 6M[WAIT]7 6W[WAIT]3 6  lRE1[WAIT]hRE2[WAIT]dRE6[WAIT]9RE   s yNUmNAct-ESTCe!'NAvNU"
+			},
+			"11": {
+				"offset": "0x40C81",
+				"text": "v7\"ntn0ES5X64ttl0t"
+			},
+			"12": {
+				"offset": "0x40C9C",
+				"text": "FIvTCke\"\"LLTCTCGE5rt0 tTC,,\"0t"
+			},
+			"13": {
+				"offset": "0x40CBC",
+				"text": "TIES0"
+			},
+			"14": {
+				"offset": "0x40CC7",
+				"text": "10011000010L11289*211101011[WAIT]81* 1  00011 00i00111121*11818 002111*L 0010*70 **0[WAIT]d d d d GHd NEd GH[WAIT]*yo*yod d yoyo*[WAIT][WAIT]Lan*[WAIT]*[WAIT]*[WAIT][WAIT][WAIT][WAIT]d [WAIT]*[WAIT][WAIT] *[WAIT][WAIT]**qqqqqqqqA qqer  qquqTUqq9qqTUTUqTUTUqTUA TUTU 7TUTUqqqqqqqqaqqqqqqqqqq    qqqEDqqqA qA qA A qqqqqqqqqqGIksst"
+			},
+			"15": {
+				"offset": "0x41036",
+				"text": "NSyo...TOP) 67antvkkeyo6OP... 67ang 64ancvNUA n-)NAvNUan 6nes2 QUfAS  1QUhA GEA n'qASA E6NAvNUd MT  0n'AS'NAE NEhY...[WAIT]9NEbE5n'b 7  NAOP,DVoE[WAIT]6CSke  'nA Tt?00NA'TE NE7Y...[WAIT]5n'7 7  NAOP,DVE[WAIT]6CSke  'nA n'fY...   Tt?00NA'Tvkkev.NUNU4vNUan7vTCNUNU2vNUvkkev.NUNU2vNUvTCNUNU2vNUA GEA n'qASA E6NAvNUd gE'AS'NAlF OnK2GBsfC6"
+			},
+			"16": {
+				"offset": "0x4116D",
+				"text": "OFWQGLEVFLGHM"
+			},
+			"17": {
+				"offset": "0x4117B",
+				"text": "EJFLG"
+			},
+			"18": {
+				"offset": "0x4118B",
+				"text": "OQTR"
+			},
+			"19": {
+				"offset": "0x41193",
+				"text": "vquENUH yk4 60[WAIT]A yONE6  t yt?6LoOPTCTIOPTCEOPTCCH yONE80TCONvA  M yONFFF y fXvquENUS yONE6[WAIT]L 61anHQU1OPDV0CH[WAIT]4 7fL2ct3CHstTI  lOPstE  eOPstCH  7 yONETCONIOW9rAvquENUcOPTCEOPTCCHvEvquENUl yP4ERE 6v  c yONE6 60[WAIT]4 61[WAIT]bOPf yAN 2   yONETCONvquENUj yP4ERE 6v  aOPf6 yONE6[WAIT]0OP 6Q[WAIT]9 yONE81TCONOPTCANOPTCGEOPTCE"
+			},
+			"20": {
+				"offset": "0x41349",
+				"text": "yo0es'L7 10anbd 0NU7 6.   3EA yo  5 1e  ACNE7HON1NEh yONEv[WAIT]vGEn'9yoees'L7 10anbd 0NU7 6.   3EA yo  5 1e  ACTC0OP- 67'  68an864 S'ESb!v0ee yb!vGEd NUHt?A TME9NAPECSu 7E0yo8E64TC9!vEDvREPEvstPEvgePEvkEDvNUPEt?A n'9NAPE'TCb!'TC9!Y REkean1QUkeA  S'ESb!v0eeNE4OP- 67' n'leEvJlivliE6yo)vESBEAN yONLj864TCONDob!es'TC!E  S'es2  yONf y9!ETC9!t?A TME9"
+			},
+			"21": {
+				"offset": "0x415AE",
+				"text": "j 2[WAIT]2CS  ACv... MTC7es-46 S-1h0debl43km g9"
+			},
+			"22": {
+				"offset": "0x415D3",
+				"text": "534fc6 gk0d81h7qa29pB"
+			},
+			"23": {
+				"offset": "0x415EB",
+				"text": "2i1efcl54km ha"
+			},
+			"24": {
+				"offset": "0x415FA",
+				"text": "645god7 hk1e92i8pb3an0qv 3eewd vd E"
+			},
+			"25": {
+				"offset": "0x4161E",
+				"text": "yo2wd E6yo)vMSAQU NUxA  yEN'L7A [WAIT]4RE4n  7ctESyo)vMSA'NACSan5RE5  REQU"
+			},
+			"26": {
+				"offset": "0x41650",
+				"text": "CSu ...5fhij4OP...4  dE6yo)vMSANU4vGHESTnOP) 63[WAIT]B 664[WAIT]zvMBSAF0'gE7OP) 6f[WAIT]y 6r[WAIT]E 6o[WAIT]U 6v[WAIT]Dn yAC...EL[WAIT]1n yAC...8LTCAC...TNE7t 8EDNE8t E[WAIT]OP,Eeyo,'4,ED5,5,NE6t E4,EDOP,''E myo,NE8t E'4,EDOP) 63[WAIT]SvMBSA"
+			},
+			"27": {
+				"offset": "0x416FF",
+				"text": "ME7OP) 66  AE NE ENE0E 5E yEN'fiEfyo)vMBSAE NE4E 5E 5EDv-SANU9OPn'iASvTCkeTOP) 63[WAIT]JvMBSANUzOP) 63[WAIT]y 6f[WAIT]X 6r[WAIT] 6p[WAIT] 664[WAIT]c 6o[WAIT] 6v[WAIT]OP)vMBSAE yoNEit f8 6"
+			},
+			"28": {
+				"offset": "0x4177E",
+				"text": "4vQUan6 5 mqNUPEnGEMEiyoT7vleSAE9FFFyoDNE8t EeyovleSAETIyo7NE6t E3yoD7NE8t E m''yoDNE7t vMBSAOP) 6f[WAIT]5 664[WAIT]nnvleSAE[WAIT]gTMEvyo t EA 4 ETTnDob!v0eeOP) 6faneNAvNUd nNE MvES'vee'MEfyo OP E6NAvNUd yo 'n'4ASt A vESOP E9TCb!vspNU2v.spvspNU2v.spE9TNSb!yo... ya!E TCa!yo6OP!vGGEOP...yo7E yo!TC!Y!CSONb!v[WAIT]span"
+			},
+			"29": {
+				"offset": "0x419D7",
+				"text": "9CSha![WAIT]dCSRE3  Y7CSRE2  TI[WAIT]6'TC9!es2 vGEd anlvGGEQU NE es! L0CS 5 m3  GH...  ENvGGEOP...yo9t?A TME9NAPECSu 7E0yo8vEDvREPE yPEyob yPEyocvspGEQUbvi 5NE GEes!  6"
+			},
+			"30": {
+				"offset": "0x41A45",
+				"text": "6ASt 7NA'PEQU 'ASA Eb 5 m3  GHTC!vliPETC-vliPETC*vliPETC:vliPEvGEd NUbvstPEvgePEvkEDvNUPEvBEt?A n'9NAPE'TC9!' 2356401 m"
+			},
+			"31": {
+				"offset": "0x41A9A",
+				"text": "3E E7OPevspGEn'9yoeQU8es'LmGEes' S' 5 1e  E  S''AS 7  GH 5 1e  DV'yoeE NE8Ebkef yPEyob yPEyocvspGEQUbi 5E yoaYaCSONb!vspNUfv.sp  aes'TCaE7ACa  TTvspNUfv.sp  aes'TCaE7ACa    NE GEt 7fi 6. NUeECH\n7E E7'AS'Eb'AS 5 m9  RENE GEt 7fgE 67  1E NActPEAS'Eb'AS 5 m9  OGE NE8E7kef'TCb!'TC9!es2  y9! yb!vGEd NUCS y9!8TC9!vGGEY... 7L L"
+			},
+			"32": {
+				"offset": "0x4200D",
+				"text": "yo y t 3"
+			},
+			"33": {
+				"offset": "0x42025",
+				"text": "yo y t 3"
+			},
+			"34": {
+				"offset": "0x42045",
+				"text": "TCg!E TCh!TCi!TCj!g!NUle  n?h!TCh!e 0?i!TCi!NU2PEj!l R0 yg!  A yh! M  yi! M0 yj! M17A GEDoa!eshA yoeEv[WAIT]Dob!v0ee yb!vN W NAOPeEu 6n 1NE 61[WAIT]wTCd m3an 6c[WAIT] 65[WAIT] 66[WAIT] yDV'864TCDV'6W v 7NEv 7NE6W  y9!ETC9!vW vspQU3es'fqESb!A GEGEvN W v0eevW vEW vjW 'AS'NA 5 7  A'TC9!vEW 'AS'NA'DvW 6W Dob!es' 6keNU9YdctTI'8fGITI'NE t 9997t E m"
+			},
+			"35": {
+				"offset": "0x4217E",
+				"text": "s864yo)NEit  2)[WAIT]6 5 mq  [WAIT]6ctBEW 4cyocCS  AYdctTI'E\n4cGITI'V"
+			},
+			"36": {
+				"offset": "0x421AC",
+				"text": "37HONf2TME3HON2TMEr 63NU9ME3HONf2TME5yodyoA E yoQUA vYQUQUA vC 5'NAOPQUe 0  7e  vheW  M e 0n'0vheW ha0[WAIT]7 M0vYQU M e   6"
+			},
+			"37": {
+				"offset": "0x4220A",
+				"text": "'0vheW  M EuyoeQUf  5EeyoeQUvA u A A E yoQUvYQUAen-A yoA NU1ACQU 7  LL'NAOPA TME64yoA OPQUME   ptyoQUE 5Eeyoe[WAIT]bA QU3v'QU'NAOPenE yoeOPe[WAIT]A QU7v'QU'NAOPeGENE OPeNU0 5 7  u d 7u cGEQUcv 5vYQUyobQU eNUb[WAIT]cOPc-dyod 2ban2CS  NSu e'ASTNAREFan3ctt QU[WAIT]2'fE 01234789bcdeijkmnopqCuvrBtswxyLMNEFGEFGHIEyo...A GEvERQU'AS'NAQUqA ct'fnE 67anh"
+			},
+			"38": {
+				"offset": "0x42332",
+				"text": "a 664[WAIT]6 67NU2ESESQUee   7fQUeE  M  7fQU1e  M2  7f y! 6LNUr  5vANES2 ES 6M  5vhaES2 ES 6N  5v'OP2 ESY2 L5vOP2 ESCS[WAIT]5vEOP2 ESvleOPNEfQU ' M CSke  'AS'NAOPQU*E GI... 7  QU u 2 u ct! 6"
+			},
+			"39": {
+				"offset": "0x423B9",
+				"text": "yle![WAIT]tu spu GEA vhaES'NA'ASAC2 ACOP2  67[WAIT]bke[WAIT]1  ACCSRE3[WAIT]1    vIYE NEdEd ke  E mNE5Ed OPNEcEd EITC!E"
+			},
+			"40": {
+				"offset": "0x42404",
+				"text": "yo2 OPyospvleOPEKyo1vTCOP E yoQU2u spTCes!YspDV!  jEITC!E"
+			},
+			"41": {
+				"offset": "0x42432",
+				"text": "yo2 OPvleOP'4yo 3spfANEJd 1vTC5 5 ''''4 yo OPyo2 vIYOP NEcgd Ed EeTC!OPyospvOPOPNE Ed EiTC!OPyospvOPNE0vOPEmTC!OPyospvOPNE2vOPE0TC!OPyospvOPOPyo  6"
+			},
+			"42": {
+				"offset": "0x424AC",
+				"text": "dOP 62  7EanyoE3  O y!LLOPyo00\" 0\" AC   1AC0QU OPA OPQU ne'yoQU'yoA OPTTT yoOPTT0yoNE9vOPE7TC!OPyospvOPOPNEbEd OPyo0vrOP'anEETC!EdyospOP1vleOP'yo1'Ayo0E yo OP0QU6u 2 9NULY2 GH[WAIT]FOP OP0OP1TC!vOP'yo1'yo0'yo 'Y GH  9AC Y RE7NU 6n 32 f 6TOPEd OP 5Ed EETC!EdyospvleOPOPyoeeQU NE"
+			},
+			"43": {
+				"offset": "0x4258D",
+				"text": "EITC!u spA GEvleOP'AS'NAOPeeA[WAIT]4 5 1[WAIT]aCSRE3  ENQU"
+			},
+			"44": {
+				"offset": "0x425B1",
+				"text": "u nu TvleOPOPQU u 9NU1ACE"
+			},
+			"45": {
+				"offset": "0x425C9",
+				"text": "E6yo2  y! 6E[WAIT]3 63  eE vOP'F 32 fyo 6I  WE vOPNU7OP 2spn  0T'F 32 fRUyovxYvIYvXYvYv'YGENE5t d E64FNU2  0n'AS' yDV'864TCDV'Do!es...NAf1NEcOP2 9NAct5MEyod ct6MEyoyoE yoyoyo64Do!es...NAEYDo!es...NAf1E6NAlelMEES!ctOMETC!Do!veeY y!9NActYNAyo ctERNAyo0Do!  A QU t d  M 5CSRU!  'NA'vYOPE2NAct5...v 6YvYDo!QU GEA EnQU1vMBgeAS"
+			},
+			"46": {
+				"offset": "0x4295D",
+				"text": "Md Ed TNU1nA gd Ed TE"
+			},
+			"47": {
+				"offset": "0x42970",
+				"text": "yospE2yoeevAERE4AEE"
+			},
+			"48": {
+				"offset": "0x42980",
+				"text": "yospE yoeevwERE5AENE"
+			},
+			"49": {
+				"offset": "0x42990",
+				"text": "d  5d d eeE AENE0ANENE1ETIyoE2yoGEAEE yoeePNAvAERQUOPspv 5NE9t d TTT 5t d TTOP 2spvEee\"spNE9OPspEd  5OPeeEd NEbE Ed vYQU u 4t d  M3 5CSRU!  OP3n-spyospOP4-eeyoeeNU5E"
+			},
+			"50": {
+				"offset": "0x42A0F",
+				"text": "yospyoeeOPTTTspOPTTeean7OPyoeeOPyospDo!QU e spEd  5CSRU!  OPspTTT3yoOPeeTT4yo y! 69  5OP 6"
+			},
+			"51": {
+				"offset": "0x42A50",
+				"text": "DDo! y!yo1QU Te spEd  5CS 31  aneE ou!Do!Ed  5 7  OPspyoOPeeyo4QUQU4QUQUQU5A A 555A  . 64 0ES2 01TCsp1keONNUTIECHANGE MESSAGE SPEED222266666660ERAER\"EESEYEEsaE0ERwER...EA EctEhaE!E0ERwEREA E0ERAERESEESE0ERAEREEESEwERAERWERERERERERERER SERTCER wER SERTCER wERisER?ASYAS  AS1ER9ERiER...sp...NU...N ...Do...t?... 5...pt... 02479bc 1234567788acejjjkkk640110110010000"
+			},
+			"52": {
+				"offset": "0x42D47",
+				"text": "nF 7fv yyo8v yE TF 7fYESct...EeNAA TYESct...9'NA'A GEEyTC!OP  Ae9FFE2yo1'AS'NAOP1vB yNUtvI yQU"
+			},
+			"53": {
+				"offset": "0x42D9B",
+				"text": "EgedA8yo8QU658NU5 EgegNU 7fLuv yaniQU6 EgedNU5 EgegNUQ 7f\nL6 yAC...EL[WAIT]Ev[WAIT]DovE 5E 'ZyoaGIzTv yNUhvNAt NE ctES? 6q[WAIT]7CS 5 m5NUnv[WAIT]DoEsyoaGIzvWtov\"tov...tovgervquQU2A yo- \"NUBzNANEa G  1NEgd - 'NU7 6ENU3 6JNU5 3-fLLL4'v 2Se'NA 7fFaOP8[WAIT]METvB yNUzOP9 6k[WAIT]r 6W[WAIT]n 6[WAIT]j 6[WAIT]f 6uNUd 6xNU7 6NU5 6an1nT"
+			},
+			"54": {
+				"offset": "0x42E7F",
+				"text": "E!  :U *IkQU u 5veet an7vouan2v Mt AC5OP5 65NUERv ManvWtov...tovgervqutoanjOP9 6[WAIT]a 6xan2Tan6 6Dan2vasvNEerE yo5veet ancvhet NU4vCSouan2v Mt AC5OP5 65NUACv ManvCSouvNEervWtov...tovgervqutovasOP8  0nv ManvWtovB yan2v\"tov...tovgerTvNEerYESRE3NUsct...EeNA EgebNUgyo- \"Oyo!v wvCSouvNEerE yo5veet ancvhet NU4vCSouan2v Mt AC5OP5 65NUACv ManvCSouvNEerE TCEayo- GO  3"
+			},
+			"55": {
+				"offset": "0x4308F",
+				"text": "EgegeA8yo8vqutovasOP8  0nv3 yNUMvE 5 6an...vE 5E6v yNU4vB yNU7 61[WAIT]NS 66[WAIT]MEDo!f3 66[WAIT]REn'Fav[WAIT]DoGIzvNAt E ASnsa?CS 5 m5NUyo7NA[WAIT]OEuTC!OP  Ae5FFE2 62[WAIT]yOP7 meyo7vNAt E ASnsa?[WAIT]5 27[WAIT]1ancCS 5 m5NULLEN  avNt d 5vESt ctES?Eyo9 reyoav[WAIT]DoGIzvt vESt ctsa?  5vt Nt TC5OPESNAct9...NU3Eeyo5AC5OP5 65NU3E yo5OPESNAE[WAIT]NU9Ee55555555Y9...45GI9..."
+			},
+			"56": {
+				"offset": "0x4319B",
+				"text": "an6yo9 reyoavESt E"
+			},
+			"57": {
+				"offset": "0x431AA",
+				"text": "GIES?E GIsa?vNAt -5NAE7YESRE3NU4ct...E69yo19-1NAvouNUyOPa 9'NUqv- yASYESct...Eeke  gv yNUzNA EgeiA anrTnke[WAIT]f   v yNU8AS yAC...EL  RUGEDoGH...LACv yaneNA \"NA ANi'an CNU8NA Ege2'an 6OPa 9'AS'NAv yan8 \"NAGE bGE aerOPa 6C[WAIT]rvB yNU3E64  k b'E64an6v yan8NU4v yNU1E v[WAIT]DoGI v[WAIT]Doct 64GI E yoev[WAIT]DoOPa 6  av yE0an6E1NU2 d'v3 yNUy  gv yan5ct"
+			},
+			"58": {
+				"offset": "0x43341",
+				"text": "Egedqesv[WAIT]Doct Lu'  jYESct...Ee \"NATE F 7fL2 j'yo8'T'  5vY yerNA 7 7[WAIT]8QU"
+			},
+			"59": {
+				"offset": "0x43381",
+				"text": "EgederE yo8QU"
+			},
+			"60": {
+				"offset": "0x4338E",
+				"text": "Egedyo1E yo2E2yo IESnA1[WAIT]0TB2 3f\nOP2erNU9OP8  7OPb 62[WAIT]1nv[WAIT]Doct LFv3 yan6OPa 8'an9OP8 Geyo6  ervBasd 6Y6 'yo6v"
+			},
+			"61": {
+				"offset": "0x433EA",
+				"text": "erOP6erOP8TCb m1[WAIT]5 Geer Fen'7v[WAIT]Dos GI TOPa b'NUuEsTC!OP  AefiYESct...EeNA IerNAOP6864GI. OPpt99NAE"
+			},
+			"62": {
+				"offset": "0x4343E",
+				"text": "yo2vXasOP7 meyo2'NAE yo7OP8yo3NE 3NUbOP7n!ouyo7 22an6CS 5 m3NUMBked 6OPa 6  1Tyo151E ' yo2OP1n? Sasyo1OP2?PEasyo2NE t 1yo3 5t 1yo4v- yASv[WAIT]Doct 3 EDas Sis Sis Sis Lis Lis LisTUisTUisTUis Sis LisTUis Lis Lis Lis Lis(le(lele Sis LisQUe leA isis 5e is5quisesis-isQth-thA thAthmisleleleERe letoestoestoesTCt?TCt?leleeses Seslelelelelelelelele(le(le Lt? Lt?QUe (le(le(le,le,le(le,le(le"
+			},
+			"63": {
+				"offset": "0x4355A",
+				"text": "t?SlSeSeSeSePlePlePlePlePlePlePlePlePlePle.SeSeSeEe Ee Ee Ee QUe 5Se(leDoeses(leis(le(leDoes 5e v yanFOPaTME'yo 1v yu  4 aNUlYESct...LgEe \"NAE2yo- 'NUdnEeNAE2yo 3eran[NAME]T m2  hASL6E3visan7E3vesvELqu'QUiu cQU2u dququOPES 63an0v y EgebanctQU6 EgedNUn EgebNUhyo- \"OaASnE"
+			},
+			"64": {
+				"offset": "0x43624",
+				"text": "Fkefvqes 7fTUOP8QU69NU6 GE6 2...B8' 7fLLTke[WAIT]4vqu'ASLnE"
+			},
+			"65": {
+				"offset": "0x43652",
+				"text": "yocYpt r0T  0nBc 7fOPcqesE"
+			},
+			"66": {
+				"offset": "0x4366A",
+				"text": "yocQU6 lerT  0nBc 7fOPcqes m2  6v(qu'NUdASLcYpt r0  ' 7fnE"
+			},
+			"67": {
+				"offset": "0x4369C",
+				"text": "yocQU6 lerT  0nBc 7fELquLtE"
+			},
+			"68": {
+				"offset": "0x436B3",
+				"text": "yocYpt r0 6TINU3OP 62Bc 7fLLOPceqesE"
+			},
+			"69": {
+				"offset": "0x436D1",
+				"text": "yocQU6 ler 6TINU3OP 62Bc 7f[WAIT]OPc"
+			},
+			"70": {
+				"offset": "0x436EA",
+				"text": "qesASLmYpt r0 6TINU5OP 62an1T 7fNSnQU6OP858NUc ler 6TINUdOP 62NU7 7fRUn'yo8TanASLeYpt j0AS 5   8 7fnQU6OP858NU7 derTAS 5  3 7f\nn'yo8ke[WAIT]4vqu'ASLnE0yo-E yocYpt b0Bc 7fOPcqesE0vesOPcqes m0[WAIT]5vwesan0YESct...LdEe \"NA ANlNUgnEeNA Ege5NU5n m0  TTQUfu cQU [WAIT]QUfu cQU [WAIT]5QUgu cQU0u dv2esOP8T  0nv y Ege6'anA m0[WAIT]4vwes'an, m2"
+			},
+			"71": {
+				"offset": "0x437FB",
+				"text": "Ege5[WAIT]DonQUju cQU3u dMquQUfu cQU [WAIT]5QUhu cQU1u dke[WAIT]4vqu'ASL9OPc HeeqesQU"
+			},
+			"72": {
+				"offset": "0x43835",
+				"text": "OPdyo EES"
+			},
+			"73": {
+				"offset": "0x4383F",
+				"text": "qes m2  lNAOPcOPdA v(qu'yod'yoc'an0ququNAOPcOPdA QUlu cQU5u dv2es'QUmu cQU6u dv2es'yod'yocASL9El HeAS[WAIT]RnQU"
+			},
+			"74": {
+				"offset": "0x43894",
+				"text": "Ege5yocOP8yodE yodNUn Ier[WAIT]3Ac[WAIT]eTCnE"
+			},
+			"75": {
+				"offset": "0x438B4",
+				"text": "FkefA8yo8[WAIT]SlACOP 63  ATASL9OPc HeeqesQU"
+			},
+			"76": {
+				"offset": "0x438D7",
+				"text": "OPdyo Eer"
+			},
+			"77": {
+				"offset": "0x438E0",
+				"text": "yoc EgedAcyocOP8yodE yodNUi IerAc  bTCnE"
+			},
+			"78": {
+				"offset": "0x43902",
+				"text": "FkefvresACOP 63   LTASL9OPc HeeqesQU"
+			},
+			"79": {
+				"offset": "0x43922",
+				"text": "OPdyo Eer"
+			},
+			"80": {
+				"offset": "0x4392B",
+				"text": "TA8yo8v yNUBvB yankYptE1yo- X0  t 3-f 7fLLnvesOP8"
+			},
+			"81": {
+				"offset": "0x43957",
+				"text": "Ac[WAIT]E0vesOPc[WAIT]METQU6 Eged'NU4 aer'Bc 7fPEASLl yNAE TF 7  yo8 j'eANesQU"
+			},
+			"82": {
+				"offset": "0x43997",
+				"text": "Egeeyo8 Eged"
+			},
+			"83": {
+				"offset": "0x439A3",
+				"text": "TA8yo8vesQU1OP8an3  n 7  TExyo9'L'OP9 6AankGE  2GHesvGHesv1t?anOGvesv1t?GE  2esvesv1t?anstvGHesv1t?v y \"NAE TF 7fyo8vGHes"
+			},
+			"84": {
+				"offset": "0x43A0A",
+				"text": "yo8 j'ANesnQU7B8 7LdNU 'AN1NU2nNU[WAIT]TanNSnOP8[WAIT]0TOP9 6AanEGE  5v yANesvSAt?[WAIT]mvDt?  i'yo8vt?  9'yo8v)t?  2n'GE  4OP8t?vSAt?[WAIT]mv)t?  i'yo8vt?  9'yo8vDt?  2n'v. t?"
+			},
+			"85": {
+				"offset": "0x43A8C",
+				"text": "ANesv. t?vN yAANesv y Ieru QU"
+			},
+			"86": {
+				"offset": "0x43AA3",
+				"text": "IerQU"
+			},
+			"87": {
+				"offset": "0x43AA9",
+				"text": "3ge1"
+			},
+			"88": {
+				"offset": "0x43AAF",
+				"text": "A8yo8LkYptNE  'ee10an4 5 m1an3 7f\nnQU6NE 58NUf 3ge1an9vB yan8 5 m1an3 7fMEnv yanav y ANqan[WAIT]Tv y EgeaanTTTL LE4 HeeANes yGH..."
+			},
+			"89": {
+				"offset": "0x43B14",
+				"text": "9GEvQUe 'AS'an0 m0[WAIT]  9anDYptE yoyo  OP 2NUh  5OP... 2NU9OP...yoOPyou d 7fOGLCQU6E yo...yo...58NUq  erOP 2...NUh  5OP 2NU9OPyoOPyo...u d 7fENYdE TF 7fyo8TE7yoc  3E1yocvB yanXv yNUSQU"
+			},
+			"90": {
+				"offset": "0x43B9E",
+				"text": "Egedyo8 Egec"
+			},
+			"91": {
+				"offset": "0x43BAA",
+				"text": "A8yo8 Ege"
+			},
+			"92": {
+				"offset": "0x43BB4",
+				"text": "A8yo8v y IerQU"
+			},
+			"93": {
+				"offset": "0x43BC0",
+				"text": "IerA8QU NE69NU0CSkefGHcnASnE"
+			},
+			"94": {
+				"offset": "0x43BD9",
+				"text": "FkefA8yo8YESct...L1n y  5 OERSe yOP(TNSESNU1 64v yNUT euNUOu  4 5u IeryoNAct!yo 1OP OP0OPpt 4'yopt'yo0'yo NUbY 4E TF 7fyo8Tv yNU euNUu  4v[WAIT]DoOPaTMEAS 8 gyo 1OP OP0OPpt 4'yopt'yo0'yo NU 8Y 4E TF 7fSeyo8TTf yn LZ4GEES"
+			},
+			"95": {
+				"offset": "0x43CB6",
+				"text": ".-u  kmnprse  b"
+			},
+			"96": {
+				"offset": "0x43CD0",
+				"text": "LB MGE GE  LZ4brruussrwrrrroookgikmnprswnwvy4be auzzzzzwAAAAwwu-anKp\"ES yjfXGE  L d 3EE7CGTCnGE zyxwuxwGE  5v00*f 5LREREGE7fke7f 5M2 f 5'64vL7  CS.Lb 5646435 5h0 4 5x"
+			},
+			"97": {
+				"offset": "0x43D6E",
+				"text": "27f9lRdBy 5NW jvnyOY'r6n 5 37464TA6464 5 r15b 5y"
+			},
+			"98": {
+				"offset": "0x43DA0",
+				"text": "2GE64NENENENUGHPE mO9pjLNUHh[WAIT]RE64bt 5873310uKli620 5 615b 5P'2371339c8 5 tlnbffLRE5NEan[WAIT][WAIT]REASn020  A"
+			},
+			"99": {
+				"offset": "0x43DF9",
+				"text": "AS710 1ASf1e1v6u'ASi8TU[NAME]0"
+			},
+			"100": {
+				"offset": "0x43E11",
+				"text": "es64664Z"
+			},
+			"101": {
+				"offset": "0x43E18",
+				"text": "erMENEq8  64 mvjh.TGEENLLLLASa8uow11wuetZYASig 9ke0NEqgDfb"
+			},
+			"102": {
+				"offset": "0x43E57",
+				"text": "r  34NEagzzzf73X73NEso  vvf7rV!PEPj7kefmRE b7bNEbon77j1137TFptASbwREREvff'Lfke n'[WAIT]GHn3bp520ke7uli 64352keeC[WAIT]  mLfkevT* fnbGEft -21nX''GEnt LL m mf*GEeB6e0226007Z"
+			},
+			"103": {
+				"offset": "0x43EF7",
+				"text": "GEmB6)ON"
+			},
+			"104": {
+				"offset": "0x43F01",
+				"text": "RE646uGEuB6u6464v64 mRENUdJ2eo52 n"
+			},
+			"105": {
+				"offset": "0x43F24",
+				"text": "r NUmJ da43x"
+			},
+			"106": {
+				"offset": "0x43F37",
+				"text": "ZrGEuJ[WAIT][WAIT]vRE mRERERE mGElR[WAIT]zLfff 1vvGErS7bjjLREfLvv"
+			},
+			"107": {
+				"offset": "0x43FE8",
+				"text": ".PETUheON"
+			},
+			"108": {
+				"offset": "0x43FEF",
+				"text": "64vvv    30d6N  Lhe Lhe Lhe"
+			}
+		},
+		"bank_11": {
+			"0": {
+				"offset": "0x44010",
+				"text": "N64 LQU3ESJESESESGHQUgES'ESGEESUESpESESDoTUESasW ESN  1649ouhe  R64NUV64E [WAIT]5E64  1ETCME...E TC2 ! zK  K Ce 2Kves 3Kv  64 iKv 164NUF 6-Yvu SevesvyCH Levto tvRUASvke iKvNA a'v  CHv 164an 5 iKvFME 4K y! 6Se[WAIT]0 y 62  v 2 2v 2QU0ON! 7ON!ON!ON! c Ce 9N64 yTI...E[WAIT]1nT y4ETC4QUaE*GI...E GI GIbGInEGIzGILGIX 7fOGvli yME...Ln y"
+			},
+			"1": {
+				"offset": "0x441C1",
+				"text": "ERn- NActke[WAIT]r 60[WAIT]d y64[WAIT]EvliNUct2 EUv.liNUer2  y64[WAIT]gEVv.liNUESEWvliNURU2  6-Y -aQUNvb 6  64 y C2EuTC C2vvli y 6"
+			},
+			"2": {
+				"offset": "0x4421D",
+				"text": "TC  sQU ct...E* 6*[WAIT]eCSRE3NU[NAME]E"
+			},
+			"3": {
+				"offset": "0x44234",
+				"text": "TCTC  kONouRE"
+			},
+			"4": {
+				"offset": "0x44245",
+				"text": "a '8fouGI...vbliNU4RU  kouRE"
+			},
+			"5": {
+				"offset": "0x44261",
+				"text": "y G  tONouspONu ESvu vweeNU7v:eean2  64YESctzTCMB(ct LfE[WAIT]yo 'Ee \"4 TCER( 6-I 6- 6 [WAIT]l 60[WAIT]a 61  Z 6-SAsp 6-SAsp 6- 6"
+			},
+			"6": {
+				"offset": "0x442CC",
+				"text": "j 65anf  6- y C2TMEvTC C2n2 v2d QU2 0- 6"
+			},
+			"7": {
+				"offset": "0x442F1",
+				"text": "2TCPEn2 QU u ESONvu vweeNU7v:eean2vceePEACES y 2ES  FIOPES[WAIT]9 3ES  vweeNU[NAME] 3ES  ou AN6NUT AN5anN ANfanH ANganB ANnanv ANBanp G 67ank yTT...fb ' yAC...Ee 2...  1TnGEA  Ne'NA'ASnvSeli 6-INE v9ouNU3NE1  cou 7L6vzeeNUNE1vOGu  XAN yo  XAN04 yo  G  7 XAN14 yo OP   0 5GEouesCke  -yo NA'RE"
+			},
+			"8": {
+				"offset": "0x443D5",
+				"text": "xRE[WAIT]E999- NActGke[WAIT]q 60[WAIT]j 61[WAIT]c 62[WAIT], 63[WAIT]tTME0nLyod d QU2 0- 6"
+			},
+			"9": {
+				"offset": "0x4440C",
+				"text": "2TCPE:ee 6-Y eeE yo!E2 Ieyo ONEs 60[WAIT]1NEtGE 64FIvSu anz yGH...Eyo 'n'0E24 TCGH... y!E80TC! GHow3'' yTI...8TCTI...''Ev5liE v liTvMByoNUcv livu Ev5liT:eeou GNAASctTU'yo E yo0E5QU v 5GENE0 6   1NE1ou 1 NU6OP  X  lNE1 G[WAIT]1NE0d - X  5 3-fL-Y-ctzkevOGu   - 6"
+			},
+			"10": {
+				"offset": "0x444DE",
+				"text": "ou GNA'GITU'vOGu  'NUv5liouAS 'vME'NUs b''E64TC' c'NU4vyoNUB yv liT 6-Y' 6h  d y 63an5 qFyo 0avli:eeE TCou I  h 6-Y yyo 1avliIyoou 0-S 6"
+			},
+			"11": {
+				"offset": "0x44569",
+				"text": "owou HTCv5li aeRE   X GONA' 9eNUM 6-T 6"
+			},
+			"12": {
+				"offset": "0x4458F",
+				"text": "y 6 [WAIT]Aou WAN NU4 beanZ GNA y 9evMByo y8fv liT y keNUk le'E64TC' jeNU4vyoNUw y8vv liT 6-Y yyo yyo 2avliLyo:eeE64TC  4E TCEOouf1EJQU"
+			},
+			"13": {
+				"offset": "0x44611",
+				"text": "- 6"
+			},
+			"14": {
+				"offset": "0x44617",
+				"text": "I 6  a y64TCyo yL9'NA 'TCfb' Ner864n'7TCTnH!*,QU"
+			},
+			"15": {
+				"offset": "0x4464E",
+				"text": "Egedyo  Ege yo0 Egec40yo0 Ege140yo0 Egeg40A  2 [WAIT] y!E2 61[WAIT] yGH...E2 62[WAIT]UNActkeyo0E yo 0\" 0\" 0\" ve u OP(TNSESan3E7  7 64anfNActkeQU vC 5 qe 20NU1Tn 8 y 63NUwOP OP0E  9Kan7 8Y(  3 eNAu ('yo0'yo ou ANrNU5OP \"NA'ou 'YESGI...YESGI YESGIzQU  G[WAIT]a CSGH...  [NAME]nTQU  'GI... ANnanp ANBanj G 67NU4u ESv"
+			},
+			"16": {
+				"offset": "0x4476E",
+				"text": "mTC y 6"
+			},
+			"17": {
+				"offset": "0x44777",
+				"text": "7 6-X 6"
+			},
+			"18": {
+				"offset": "0x44780",
+				"text": "4TCTn  - 6"
+			},
+			"19": {
+				"offset": "0x4478E",
+				"text": "4TCTnA GEvACliQU3 y! 6ou[WAIT]3 6le  0 7A 999980TC[NAME]3EtTC3A  hTU'NA 7  TI'AS'NA'A GEvACliQUcA 999980TC[NAME]3EtTC3A  iTU'NA 7RE7  TT'AS'NA'E NAGI643CSRE  NAGIRE3CSREf  E"
+			},
+			"20": {
+				"offset": "0x4480D",
+				"text": "TCTCTCTCyo0QU u 1OP0 NU1AC1CSGH NU\nOP1 2 RQPKLMN 0314567 3214567 0214567 217456  01 0 16464 76543v 164NUs 6-YE TCQU ctEest[WAIT]8CSREb  \nvleu ESPE GKv 164NU[NAME]vlevGEke'kevGITCNUIvMETCNUDvFaTCNUy 3u 61anrvATCv\n. NUjvW SevTUSeNUbvNSSeNU6v 7kevESvDo y 63NU2  'vVA vATCvA v  A NUvA yNUYvu tovIe v:quNUNv\nleNUIvTTTCve ME"
+			},
+			"21": {
+				"offset": "0x44911",
+				"text": "wvESNUsvtoNUnvV. vVDov 164NUcPE ystNUe an2vDo 5uNUc yES 61an5 se te 2u d' 61NU 62[WAIT]9 0uL4 duLvADoNUE TCvNUvgESNUAvheDoNUvvDoNUqvcTCNUlv yNUgvkeESv 164NU5vASvleASvESv 164NUi 1uL3E3  1E7PEst  SevES wESvNUvn MNUX 6uan8*6 GHow?ER.  2u 6  4 6uan4vheDoNUsvDoNUnvcTCNUiv yNUdvkeESv 164NU5vASvleASvES wES yTT...fE yAC...Eeyo  \""
+			},
+			"22": {
+				"offset": "0x44CE3",
+				"text": "u  CSu 1 2uyo0Y1cttYyo2NE62E - yo OP0[WAIT]9 30kefLLAC1  OGOP 9NAct9Yyo ctaYyo0   2u 6C[WAIT]C 8'anx 0ust[WAIT]p yfmE6NA EgedNUb Ege5anU Ege6anET \"NA AN6NU ANlanw WAN0NUa 6Se  6 qe 6NUf ANmNUervJheDo CSowdn yTI...81TCTI... 0uTCvJhePE CSowe'f9E6NA EgedanTC \"NA AN6ansa yME...f6 0uL1nT y!E2 61[WAIT]g 60[WAIT]5 62[WAIT]6T 0uLn 0uf[NAME]n yAC...EL[WAIT]6"
+			},
+			"23": {
+				"offset": "0x44F67",
+				"text": "yo* p mTCd * ovBETI 6u  6E"
+			},
+			"24": {
+				"offset": "0x44F7F",
+				"text": "yo* tvBETI beNU8 h 6A vNUE 9u 4u 61  8vBETIvNU 9u 2uETCX\"'-*(,.eed you like. A ESTCONTIASDo you whees 8FahaDVENOGFIMEMB\n[NAME]"
+			},
+			"25": {
+				"offset": "0x44FEC",
+				"text": "dONESONONESONEDONONESONONESONu ONESONEDONESONESONEDONESON,ONESONESONERONEDONESONheONEDONESONEDONu ONEDONESONEDONESONMEONGHONELONMEON  ONMEON 7ONMEONESON1TIESONpTIESONkTIESONPEONESONuTIBTIuTIITIESONEDONEDON yTI...ETCTI... 6A  yTT...LsEcou!REle[WAIT]aREou  cou5...RESl[WAIT]3Et  1EQ 2A QUCDVQUNU[WAIT]6 7fE  2cterNUagmnpqstuvwxyb-7\"speed you like. A QUESTCONTINUECHANGEGE MESSAGE SPEEDBEGIN A NEW QUESTCOPERYv"
+			},
+			"26": {
+				"offset": "0x452D9",
+				"text": "yo 2er yME...L yTI...E  QU"
+			},
+			"27": {
+				"offset": "0x452ED",
+				"text": "Eged[WAIT]O Ege9"
+			},
+			"28": {
+				"offset": "0x452FA",
+				"text": "yo'A[WAIT]A ONU6 yONE6[WAIT]7 y[WAIT]7  r ya  l yTI...EA 8TCTI... yTI...EA 8vTCTI... ONUc yONE6[WAIT]5 y[WAIT] LQU64 Eged Egec' 2[WAIT]j 60  VQU"
+			},
+			"29": {
+				"offset": "0x4535A",
+				"text": "EgedQU anfCSRE3NUvlAN y!E2ANvlAN y!E2TC!RU!  6 y!8  4 y!864TC! yc yTI...80TCTI... yTI...ETCTI...QUeE GI 7f 1uL2?GEE 67ankNA EgedNUav m S'864TCT'ME7E2QU"
+			},
+			"30": {
+				"offset": "0x453DF",
+				"text": "Ier[WAIT]yo  EgedA [WAIT]Tyo  Ege1"
+			},
+			"31": {
+				"offset": "0x453F6",
+				"text": "A [WAIT]dyo  Egec"
+			},
+			"32": {
+				"offset": "0x45402",
+				"text": "A [WAIT]1yo  Ege"
+			},
+			"33": {
+				"offset": "0x4540E",
+				"text": "A [WAIT]1yo vtoGEQU cts  6CSRE7  nQU"
+			},
+			"34": {
+				"offset": "0x4542A",
+				"text": "u 0CSu 1u 2ctfHE[WAIT]eTC2[WAIT]l 22NU6ct 21anoOP2  kct 21NUdctEyo2ctyo1u 0CSRE7   7Y0ctTCctTCA 864TCTTC \"NA AN6NUS 1uNAv64 S ANhanF ANfNUy 0uLte\"de\"de\"d qeE2n-dTCOPe' TCTQU u SA NUv m SYSA yyo1GI yyo2GI 0u \"NAE  meQU1vC 5YSAnOP2yo1E yo0yo2YSA  erQU0NEvd PEYSAOP0GIOP1864GICSRE7  NEDV M 2"
+			},
+			"35": {
+				"offset": "0x45577",
+				"text": "Ieryo [WAIT] EgedA [WAIT]yo  Egec"
+			},
+			"36": {
+				"offset": "0x4558E",
+				"text": "A [WAIT]1yo  2u 6XanpQU"
+			},
+			"37": {
+				"offset": "0x4559D",
+				"text": "Ege5"
+			},
+			"38": {
+				"offset": "0x455A3",
+				"text": "A [WAIT]1yo  Ege6"
+			},
+			"39": {
+				"offset": "0x455AF",
+				"text": "A [WAIT]1yo  Ege1"
+			},
+			"40": {
+				"offset": "0x455BB",
+				"text": "A [WAIT]1yo vSl MNUb 0uTCTvSl M 6uNU4 5uNU3 GHow!nOP  Ge864TC 1uL4TCTE 67an7NA864TCTME7E2QU"
+			},
+			"41": {
+				"offset": "0x4560B",
+				"text": "Ieryo  Eged"
+			},
+			"42": {
+				"offset": "0x45616",
+				"text": "A  Ge864TC 1ufQU"
+			},
+			"43": {
+				"offset": "0x45628",
+				"text": "Eged 2u 6L[WAIT]e 6M[WAIT]a 6N  c EgeeTESOP"
+			},
+			"44": {
+				"offset": "0x45646",
+				"text": "yoOPyo  2u d' 62[WAIT]g 1uETME7QU"
+			},
+			"45": {
+				"offset": "0x45660",
+				"text": "IerA yo v  ES y864TC7 yME...L1D 2u b'NU9 0ust[WAIT]bD 0ust  1DDnE6 Heyo  2u 6CS[WAIT]7 6LNUl 6Oanhv  ESanh y y 2...anhNU4v  ESNUaou 'TCTn 1ufesQU"
+			},
+			"46": {
+				"offset": "0x456DA",
+				"text": "EgedESou  7fTI...dTI... 5uanB WAN  6ES  tvbSA yTI...E   y!an iKE0TCTC 5-vBEANNU 6uNU4vheDoNUhe 5uNU Ege3NU4vACSANUvZYNUNA Ege4NU2vmGE 6uanMyo0  TNSOPNSanwvuerNUr 20[WAIT]n qe 6angOP yo GHow'NA 'TCELSATTSAvGEvA Yan' 5u ANjNU4vACSANUvZYNUvFIYanS 5u ANkNU5vmGEerSA yTI...E7[WAIT]H yGH...E7  pE3yo  5u G 66  4 eyo  qe 2"
+			},
+			"47": {
+				"offset": "0x45E71",
+				"text": "yoY ker gES oES'yo \"NA nvptN  jer rOvptN  ner jOvptN  ferOP*E"
+			},
+			"48": {
+				"offset": "0x45EA6",
+				"text": "yo*Y! p l tu  'yo* \"NAyo0NA nv  N  oY0 rv  N  sY0 jv  N  kYu *Y Yu Y 6uNUg 4'yo 9ES ACow0'2A t 4'yo- a ACow1'yo  5uOP NU3 8er 8 6uNU5 merRA  qA  6uNUq lESOP'80yoOPyovuNE oES ACow0p rOP...'80yo-OPyo*vgNE t ACow1 6uNUe merA QUv. A 'NAEDA ME qA QU...v. A 'NAerA E2vC 5E1 5 6u"
+			},
+			"49": {
+				"offset": "0x46270",
+				"text": "yo ger kES oES eer fer ieryoOPyo jES meryoOPyo nES' S5...vANQUv  W E yo5 ueT GHowpn cQU6 Ggee 7fELTC!TC!TC6...E NA864TCE0yo MESvLLNE GHow y!82TC!A YESct...ETIESv LQULlNAOP!OP-A  \"'yo-'yo!Y...A nE6NATA ve ESct ETIES yETIf  LTTvsaESETITCe!ct E*ce!GI A ve ESctzESTCe!A ve ES ye!GIzESA YESct...ESA ve ESct"
+			},
+			"50": {
+				"offset": "0x469A4",
+				"text": "IerY  Ee"
+			},
+			"51": {
+				"offset": "0x469AE",
+				"text": "A[WAIT]yo  EgedA [WAIT]Xyo  EgecA [WAIT]Nyo  Ege A [WAIT]Dyo  EgegA [WAIT]tyo QU6A 5 NUb864 8uNU4E1 7u'NA 7fME'NA'NAEGIzA ct E*  actz 6[WAIT]6 6[WAIT]6'NAE [WAIT]1E0yo*yoEoQU8yo-u 'NAct...ffE6NA y!E1  2 FES'NAyo OP-OP  \"NA'yo- y!E0  2 'NAPE2 !vNAvESNAv MNAvt NAvPENAvRENANE es...E* 6*[WAIT]oes...f9E6NA Gge8u NAEe \"NA ANo 5 mb  EV y!ETC! yTT...fl yAC...E"
+			},
+			"52": {
+				"offset": "0x46B0E",
+				"text": "yoA CS 1erQU6 EgedNUn wer9ASesME menMEyoE yo 1ES 7fTUQU NE8E GIk...GIl...A n'9NAkef[WAIT]ES  7fbHjyo d 0GE 9'NUlyo1OP fsE6NAOP0 6N[WAIT]8OP1 aerNUaTE"
+			},
+			"53": {
+				"offset": "0x46B7D",
+				"text": "yo1 6ES  n \"NAOP0 6N[WAIT]9 6h[WAIT]iOP1 bE"
+			},
+			"54": {
+				"offset": "0x46B9C",
+				"text": "yo1 64   C[WAIT]DV y 63NUhaQU2OP1 bB2 7fOP2Ee 6e  es[WAIT]as 2uAS 0uvMENU'OP0 9'NUR 5uNUaOP1 9er GgeiTOP0 6h[WAIT]hOP1 6"
+			},
+			"55": {
+				"offset": "0x46BF3",
+				"text": "5 aME cMEQU2OP1 a 7f 6-GTOP0 6h[WAIT]e GHow0 5uNU3 Fgein y 63NUmQU 2an5u   2owCSRE3NU\n MEown TTown 2u 6Z[WAIT]p 6'[WAIT]l 6[WAIT]h 6[WAIT]d 5uNU4 Ggea ANqOP-OP 5uNU6 Egea...Do ANq'yo'yo- 6uNULA  5u'NU5yo GH [WAIT]x 6u Ege9NUou  4vJheER GHowee jvanDoNU6u  4 knTQU2 Ege9NU4 7fnTv5 yNUx 6uNUb EgegNUm TTowACnv  y[WAIT]b  v5 yNU4 1"
+			},
+			"56": {
+				"offset": "0x46EF2",
+				"text": "yo ger oES kES eES fer mESvA  w ner iESvA  w jer eES Gge2 Gge3 Gge4 Gge5 Gge6 GgegNU2vLLNE TTowQU ANrNU6vut  TTowES yTI...ELLTCTI...E"
+			},
+			"57": {
+				"offset": "0x46F51",
+				"text": "yo* l p t h k mvY w o qvY w s ANi ANj ANk ANl ANm ANnNU2vLLNE yAC...EL[WAIT]h yAC...E  TCAC... y!E80TC! TTowQUOPyoOPOPyo*OP... 5uany JKH!Lm GLLanm y 3...[WAIT]4 GHow' GHow' GHowE  OP( me HLLouq4PEct   6uaneE4GIE5QUcvGI  CH 5uanvu   4u 61  m y deane ceNU9Y  MNU2 L 5uan8 y M N ACow0 6uNUlA v"
+			},
+			"58": {
+				"offset": "0x4713A",
+				"text": "yo ker oES gES iESTCd  jer mESTCd  ner eES fer ANrE"
+			},
+			"59": {
+				"offset": "0x47166",
+				"text": "yo* p t l mTCd * o qTCd * s h kv  ESH!LX*V qe 664NUOHGH...*6 AowN t  AowE TCvgeESNUd 6uA vE'NA GgeePE y 67NUFIHGH...*4 TTow TTowEzQUkGIEAQUlGI TTowv 1DoNUSvJheke [WAIT]owvl S  NU TTowE2TCvJhe.   Lowv 1DoNU2v  ES yTI...E  4    GH  Low qe 664an 5u I 67anQU"
+			},
+			"60": {
+				"offset": "0x47242",
+				"text": "EgedQU an5CS  (toA 864TC rerTCE 6[WAIT]x feNU6E \"anl  Low 5u y J yTT...81TCTT...E 9uE64TC OGow 64t  5uan' G 64   y 61[WAIT] qeE2   4u 6   Ec meNActer 9u' d' 62  d 0u 8uE64 auerNE QU"
+			},
+			"61": {
+				"offset": "0x472DE",
+				"text": "GE Ier Eged'A  2 5  NSd  0u 8uNUaOPn'ke auver y 61[WAIT]w 2u 8'ano 5uNUjvuerNUeyovE 5 6fan5  2ownT y[WAIT]gyo QU  G 64[WAIT]6CSGH NUnu ! JeOP...yo NA fanPEOP T 0u 8uE  bu.ASENAMEZYE meTC ACow0 [NAME]ow0v 1DoNU3 ACow1 5u E  4 \nowh \nowivse  ACow0  NUEzQUmvGI OyoOPyoOPyo"
+			},
+			"62": {
+				"offset": "0x473C1",
+				"text": "ACow0 5u WAN NUbETC \nowf  er \nowg GHowp ACow0vse   NU TTowcvJheES GHow 'ow 5uNUdA v3CH 6K'NA GgeeQU1A vJhe.  GHowvJheES CSow6'NA 7fMEvJheAN \nowrv 1DoNU[NAME]vse  y'9TC  NU 5uE yo* WNUeETC ie p \nowj 5uE yo* WAN0NUtETC ie t \nowC 6uNU9 Egegan3 TTowDEGvASasandEFvASasan6EEvASasNUi 9uvJheONNEf 2 \nowvV. yo  5uu !E"
+			},
+			"63": {
+				"offset": "0x47500",
+				"text": "M! 7f 5uRE [WAIT]ru ! yNE QU0 1![WAIT]2GE!CS 5GH...NU OES GHowpE3 me'0TCE TC 5uan WAN2 6Fa  3 ANh ANhNUCS qe 664NU7 6 mankQU  1QUENE64 i'E 9u'kth qeE6E3 63an9NActAth 9ubthME3yo  5u G 67NU1E7AS99- yo  qeE2 m7  4E5 men- NActEth 9u' 6 3[WAIT]v 6 w[WAIT]r 6th[WAIT]z 6le[WAIT]H 6sa[WAIT]K 6 1[WAIT]R 6 2[WAIT]N 6 4[WAIT]yvbth 5u WAN NUIbth 5u WAN0NUwbth 5uRE [WAIT]m y"
+			},
+			"64": {
+				"offset": "0x4776B",
+				"text": "GI! 7fETC!TC5...QU64 EgedTC!QU"
+			},
+			"65": {
+				"offset": "0x47784",
+				"text": "EgedQU an6 GgeeESisE yo Mer'CSRE7NUCS y!E81TC!E BE ACow0 yTT...80TCTT... ACow0 5u  ED men'oQU...vC 5Evv 5E0vi 5OP...TCOPTCv  NUvES yTI...E0  f MEowGI 5u ANBEv7qu 2un'0 9uv CquvV. yo OPES 2u 1u y y y y 8uNUCu ESE  bu 3u 61anhYESE  7uOP  9uv Cquv 7keYESE1 7u'TC'TC'TC 0u 8u' au' 9u'yoESqu 4u"
+			},
+			"66": {
+				"offset": "0x478F2",
+				"text": "Eged Ge864yo  0u 8uOP  auTn 6RE[WAIT]1TQU2ct! 6[WAIT]e 7fQU"
+			},
+			"67": {
+				"offset": "0x47920",
+				"text": "Egeg  3 6n yGH...E  8fTCGH...' yGH...E  8vTCGH...'hapter LEVEL  ADVENTUREOGFIGHTTACTICSMEERNSLL\npt L  ENTUFIGHTTACTICSERLL\n y! 6ou[WAIT]HED* yED8TCEDvJheou -owSA qK y )v 3es Devu livES f' rK 64 yGH...83TCGH... yTT...f5  asesOPhe  2vNU''''''''''64 GHowpE"
+			},
+			"68": {
+				"offset": "0x479DC",
+				"text": "esQU2u  QU"
+			},
+			"69": {
+				"offset": "0x479E4",
+				"text": "EgedOP  Ier'AQU NU0CS 6   A Y GI! 3 fDVvt?NUcE yoev8t?vjt?vW t? yd Seyoke yyoSeyo. vqt?vMt?NE HON1NE2vMEt?HONf0 5vMEt?QU ctSAf8Eyo0you vt?CSREd  NSA E yoliQUu NE5 yspSeyoc yeeSeyodTOPu ME8andNEt y64Seyoc y2 SeyodOPu you GEvC 5OPcTCdvs 5NE OP0 68NU1NE3d  TC es)Seyo1esSevist?AC OP  64NUER'NANE5vMEt? maNUGEvTTt?vist?'AS 5yo2OPe  5vowt? 3t?vAt?AC1ACke  1AC.  32  TITC"
+			},
+			"70": {
+				"offset": "0x47B9C",
+				"text": "5 'TCouRE"
+			},
+			"71": {
+				"offset": "0x47BA9",
+				"text": "5 'TC 0uLQst[WAIT]4st  G y 6"
+			},
+			"72": {
+				"offset": "0x47BC6",
+				"text": "9vSe \"NA  y 6"
+			},
+			"73": {
+				"offset": "0x47BD7",
+				"text": "cv5le \"NA y vu livES Ce 5uan6 '[WAIT]1nT 5uNU Ege9NUnvhleesle FaFI'vhleesle FaFI' \"NANE0 AN6NUiNE1 AN5ana ANfan4u NE u  y2yo QU  eef2NU8CSGH NUE [WAIT]4u ! JeyoEF\"GH\"v 164NU O 63NU ONUPE yONE6  TI y   L yee[WAIT]   63NU1E3yo QU2E"
+			},
+			"74": {
+				"offset": "0x47C9A",
+				"text": "M0 7fQU u !Eee Ie M0CSGH NU[NAME]QU2e 0 M! 7f OE  5- yyoONQU A u  ANf ANg ANq ANy ANz ANA FaowG'NACSGHONNUEVvu livES Ce y!82TC! 4u 61   2uE 67   REow* 5uan G 61  WvctveectvJheerOPON 66  6 GHow,Hct GHow...YONctE t 9uNENA i' 0u 8uE  bu' auT GHow:n yCS... Gean1E7NA Ee"
+			},
+			"75": {
+				"offset": "0x47D73",
+				"text": "ICS...TCCS...'yoON9999TTTONNANE ctx t S4CS 5 meNU A  y4yoA  y4yoQUQUbA TC4n'vTC4ves 2QU3vb 6'NA 7fCSOPQUTC4OPA TC4ves 2QUeb 6vJhe2 QUnct4GI2 7fQUaA ELNEn S4ke  ves 2QU0vb 6vPEctQU0vb 6'NA 7fTUQUnct2GI4 7fes 2vEW  6uanr 0vE 5E''QU... f'OPTCOPTCv  NUJustice       Strength      Evil          the Tower     the S"
+			},
+			"76": {
+				"offset": "0x47F81",
+				"text": "3 6-  6"
+			},
+			"77": {
+				"offset": "0x47F8B",
+				"text": "6[WAIT][WAIT]KyoA  6-  6"
+			},
+			"78": {
+				"offset": "0x47F98",
+				"text": "oYA GI! 6-  6 [WAIT] 6"
+			},
+			"79": {
+				"offset": "0x47FA9",
+				"text": "TIYA GI!heYA GI!E GI![WAIT] 2 2"
+			},
+			"80": {
+				"offset": "0x47FE8",
+				"text": ".PETUheON"
+			},
+			"81": {
+				"offset": "0x47FEF",
+				"text": "64vvv    30d6N  Lhe Lhe Lhe"
+			}
+		},
+		"bank_12": {
+			"0": {
+				"offset": "0x48011",
+				"text": "642 -2 tod ME64thu  7yo 7yo...BEp2 4ouOP  sNADoxBEEGIES yOPTCTIyobAN yCHLLCH yONuct,u TCu R. . Zt?1A 9A GEt?5SeED6u TUyo CSecouXle 1le w  ankeENthRUNU3ES 6ct tst t yEN'864TCEN'vd2 vas64 LerE TCGH...TCTT...TCAC...TCTI...TC0...TC1...TC2...TC3...TC4...TC!E"
+			},
+			"1": {
+				"offset": "0x480A7",
+				"text": "TC ...TCCS...vp2 QU4E GI9... 7f yTI...EEDTCTI...E yoESQU-GI... 7fYES houb!ct'864YESGIMB...v2 GIf...YES mOv2 GIg...GEGIh...YES qOv2 GIi...GEGIj...E GIk...GIl...GIm...GIn...ACES O 2ES  erQU2ct!GI5... 7fE yo QU2ct! 6"
+			},
+			"2": {
+				"offset": "0x48136",
+				"text": "kNE2es! 6"
+			},
+			"3": {
+				"offset": "0x4813F",
+				"text": "8DV![WAIT]3Eyo kefNS 7f LOP cGH...TCGH...OPES9yo 99- NAOP...TCA GEv,2 'AS'NA'yo A GEOP v2 'AS'NA'v S2 642 vth2 vct2 vEL2 vesspvTIyov'spvanspvgespvMEspt?a0  2b0cta0yo ctb0yo0QU  ym4NE vMBgeyoTCOP)yoESOPESE2 61an6yoA OPTCyoQUOPTCvspyoA u QUan1'' yME...E m[WAIT]' 6[WAIT]XNE6esspE2 2A   6essp 2QU[WAIT]3kefNSesspf5 5u8sp 6uvQspNUhesspE2yoA esspyoQU 6  1 3A OPQU 6q  c 6uan7OPA"
+			},
+			"4": {
+				"offset": "0x483BC",
+				"text": "6[WAIT]4 664[WAIT]9 you  ee yL6OP...Y  eeOPYyou 9NActEd yo1ctCHd yo21 vCSee\nee 0u7d v4d OP1feEliyo1E6NAvHd 99941 y'LiNAOP...OPA  \"NA'yo'yo...A 8yo1 y 2uOPOP IESASes!yo2d 0A NE2 10[WAIT]mQU"
+			},
+			"5": {
+				"offset": "0x48457",
+				"text": "GE Ier Egee'A[WAIT]6es! 22[WAIT]tkefOGOP0QU"
+			},
+			"6": {
+				"offset": "0x48473",
+				"text": "Ier Egee'ANE6an4kefLf[WAIT]d'NA JerNA'yo'yoA 'QU7  leQURA esA OGeePEeeCSee4d zd Dd zd ...   m''''' y! 6 y[WAIT][WAIT] 6-Y 4-E yoESTCYESct! 6"
+			},
+			"7": {
+				"offset": "0x484DF",
+				"text": "bvMEyoA 8 myo Faow4ACESOPES 63  FIE myo y!E2[WAIT]z 60[WAIT]7 61  rNETU  1NE   qeE09yo GE- ASHGH...*0 5GE esFI iKvRyo fu y! 6t?[WAIT]0E"
+			},
+			"8": {
+				"offset": "0x48536",
+				"text": "yo 4 d LerQU   erstCH 6-YE  5-QU u ONA  EgeeNUu vHd 9998644yoE6NA CESE6 66[WAIT]ZASesleyoyo  qe 2 [WAIT]1anKY BESE2ASes 3yo Fer m2[WAIT]sGEn'uNAesgeyo9?4 69A NU6E  5-' RUFIACON'NACSRE7NU SA QU"
+			},
+			"9": {
+				"offset": "0x485BF",
+				"text": "IerQU"
+			},
+			"10": {
+				"offset": "0x485C5",
+				"text": "3CSNU'"
+			},
+			"11": {
+				"offset": "0x485CE",
+				"text": "ue62 001 c15 yPE 66[WAIT]vcu TC!n?b4TC! yPE 66  ERA  yPE 66[WAIT]jT y!NSb4st![WAIT]1an5NA[WAIT]2vb 6'NAvTIyoTUyoouPEctju ekqwDJRE yo1vRU 5E64vSu vu   9E vSu vu [WAIT]MEQUqu   7u 0v 3B 3QUeA v"
+			},
+			"12": {
+				"offset": "0x4865B",
+				"text": "vRU 5 yd   6v:u   k[WAIT]4v:u AC1'NA 7  OGOP1 6fan3E 'E"
+			},
+			"13": {
+				"offset": "0x48681",
+				"text": "OPjTCd ou!RE6[WAIT]aRE3an5ctNEu  CSFIvTIyo ONNEf 2 REow.  6u Fge5nu u li y! 6ou  8 y! 67an1Tn fuvp2  y4ETC4 yTI...E 6v[WAIT]8 6[WAIT]7 8A nMEli dE yo!E7 Ieyo 6-Y O 63ansNActliyo  Oyo0QU  G 2 [WAIT]6CSGH0  QU u  yME...E m 6  5 'aKli y7 60  5 qaKli heqvFa 5v 2 2OPuEyouQU"
+			},
+			"14": {
+				"offset": "0x4874D",
+				"text": "PE, 65642 y!E2yoNAvHd 9998644yo y!E m 6  fveeli 6- A a 6A li 664  6 6- 'a 8A jSl oTIOP1  sTOP MEfOP0MECanhOP MEOP0ME0an3 J K L yME...L M 6- g yGH...EL[WAIT]n 6v[WAIT]jHGH...*8vBEke 7aTIli 8aTIliHGH...*8vBEke 9aTIli aavONke yTT...NU8d2...J3...J4... y2...yoc3...c4...[WAIT] y3...yo y4...yo"
+			},
+			"15": {
+				"offset": "0x48820",
+				"text": "y8 60  gE yo!E8 Ieyo baIke caOPyo-OPyo*OP"
+			},
+			"16": {
+				"offset": "0x48847",
+				"text": "yo:'yo QU  C8CSGH   ou ...CS[WAIT]9 yTT...E1  2vDVE yTT...NU5d0...J1... y0...yo-c1...[WAIT]q y1...yo*E yo: OOP-yoOP*yoOP:yo"
+			},
+			"17": {
+				"offset": "0x48895",
+				"text": "geq 7KnSl 6A  y! 6ou[WAIT]2 8A QU"
+			},
+			"18": {
+				"offset": "0x488AE",
+				"text": "EerNA[WAIT]5QU"
+			},
+			"19": {
+				"offset": "0x488B7",
+				"text": "CSNUA 8 myo yME...fL y4ETC4 y2 ! 69NUevG.  spa y!E'TC!QU5A vRU 5'NAOPjE1  3 7f[WAIT]QU"
+			},
+			"20": {
+				"offset": "0x488F8",
+				"text": "Egedou! EeA[WAIT]r 6-Y a 6-!  xvG.  a y!8 mTC! 2 avG.  y!864TC!QUb 6 64av.  yTI...EA 8vTCTI...OPu87youv1A QU0u EvNU. v m. vxA ACEOPE 6[WAIT]NULL y74TC )anwOPu87youv1A E[WAIT]yoEvNU. vME. vxA  3E  E QU[WAIT]vpA E TC74v9A OPuEyouQUNb 6E yo0OPEyo QU vC 5E7v 5 y74n- TC74QU Tct21GI )TT GI21CSCSCSCS  PEE[WAIT]TTTE 6u[WAIT]f 6k[WAIT]f 6a[WAIT]f 60  FE  Ef  YEv  UEL  QE [WAIT]"
+			},
+			"21": {
+				"offset": "0x48A12",
+				"text": "EeTC 4nes y44ETC44EdTC 4nesyolvEN 2"
+			},
+			"22": {
+				"offset": "0x48A32",
+				"text": "QU ct )GI21CSCSCSCS  E TC74  G2 1111 1   1  0000011 110    000000g2n2nE010 000001000020sp0g200001101100  1      31 11      1111   00 1131 222 1  2    00     11      0000000101010g0 G222G2 yy22i222112221Gp22222i2i1012 222222G000g00 22ig22y 321021210   21121 MO"
+			},
+			"23": {
+				"offset": "0x48D13",
+				"text": "-\"nUnwTI''LL-*nK2YZLL-\"nwLLw CN pp0x wMBUW nUW n"
+			},
+			"24": {
+				"offset": "0x48D4F",
+				"text": "W -\"nUW nUW n"
+			},
+			"25": {
+				"offset": "0x48D5D",
+				"text": "W -*nUW n"
+			},
+			"26": {
+				"offset": "0x48D67",
+				"text": "W ''nTIW ''EW nLLW TITInEW nLLTC''nLLTCOPOPnLLTCnTITCwA TIN ''EERnASE  NATIN 2 2 TIMEDo yN DoTIou''"
+			},
+			"27": {
+				"offset": "0x48DAE",
+				"text": "TC!!nLLTC-*nant nwERTITC''N erN asN e N thN isTIqut?esTIN YYLLngLLLLLwb2s3de   TIuvxyz 3''AB EFwGwH0D 3JKwI 3LMNO 3PQ'wRSWXwTUVTIklm 3no pq stwYwZ 2LMy'pw1s'lmnr5rr 3''likeA QU 3ESTC  3CHCHd ,AN   3PEPEED' 3::BE 3'yoLL 3'' 3'' 3 3 3-\" 3-\"   3[WAIT][WAIT] 3[WAIT][WAIT]QUQU0NEN-*n(!n94M"
+			},
+			"28": {
+				"offset": "0x49081",
+				"text": "QU2GI0GI1QU0GI0GI1QUqGI0GI1GI2E yoE yoEtQUvC 5 yEDoEvs 5NEit  6'  3E"
+			},
+			"29": {
+				"offset": "0x490BF",
+				"text": "Et  6  3E"
+			},
+			"30": {
+				"offset": "0x490C9",
+				"text": "Et  6  3E"
+			},
+			"31": {
+				"offset": "0x490D3",
+				"text": "Et  6"
+			},
+			"32": {
+				"offset": "0x490D9",
+				"text": "f 5 mq[WAIT]bt E"
+			},
+			"33": {
+				"offset": "0x490E5",
+				"text": "E'keE 5 mq   4'n'0 67  Y 4 y 60  E: \"OPyo OP...NA G 66[WAIT]JOP  Lu 0E6 NAu 1 I 67  gE6 HE6 LY0' JY1E: J302201 0u liyoee64642 speed you li      WQUW W MEW   W aQUd567890EQUesQU yQUptQUNSQU SQU 6QUe QUENQUQU0    3         1   0    spTC 3"
+			},
+			"34": {
+				"offset": "0x491E2",
+				"text": "ffv64N   y 61  NEf meNANEfctTCCH  9E4 yo! eOyo0vE 5 20an6ctGICHyo 1  VCSREfNU1QU ke  erou ... rer 6yo 1[WAIT] feNU4 \"an Aer[WAIT]jNAvE 5DVyoCHanRE6  6vE 5 6fan'ou ... IerNAct!yoQU2ct! 6"
+			},
+			"35": {
+				"offset": "0x49269",
+				"text": "3 2  f 7f[NAME] y ...8 myo  4q:CH  5qE yo!E2 Ieyo  6qOP 1 hLL"
+			},
+			"36": {
+				"offset": "0x49296",
+				"text": "vf73100f311 331 333331301345ABCDYZ huNUX REowyoQU  Ege9NU4CSRE3NU  eru  4 d'QU2 Fge9 7fvE 5E2NA Gge9E"
+			},
+			"37": {
+				"offset": "0x492F3",
+				"text": "yo 2erAC' 1erQU A  Ege9NU4u  4 mu ...'NACSRE3NUMBOP...yo 4 y7  i O 60[WAIT]5   GnGE NAGnGE 6-h 6"
+			},
+			"38": {
+				"offset": "0x4933B",
+				"text": "hqGE 6- y.yo NAGnGETC.NA GTC 67anFI I[WAIT]ENY 0-i 6"
+			},
+			"39": {
+				"offset": "0x4936A",
+				"text": "2qGETCou. 0-jAS  2vSA y 64  8ke  5v MnGEke  yvSAan y7 60[WAIT]! 6-k 6"
+			},
+			"40": {
+				"offset": "0x493A6",
+				"text": "8TCNA G 67anIGEke   O 60  6E5 an' 6- you. Hyo deNU5 SlGnGE beNU9OPf5v\"SAnGE  tG 6-  2GEAN 6- yyo EGnGEE5 anpvF MOP J 6- y.yo SeGvFa 5   6- y.yo  8WnGERU.[WAIT]i I 67NUbu  6- EDGnGEvF MNU  ouRU.  1OP J 6-vGEnGEvZ Myoou.E6 NUE5 anEu ouGH[WAIT]ru E6 NUeE5 an3 toG er"
+			},
+			"41": {
+				"offset": "0x49625",
+				"text": "EVG y 6b[WAIT]n 6E[WAIT]j 62  dE6yo- Oan4 TTGTn LLGTQU4 y 9ean3 saW geW y 61[WAIT]7voESanQvESvYESE yo yo0QU6u -RE4n[WAIT]e ONU9 y 9eNU1AC0\"  7fTTOP0[WAIT]6 66  3 REGOP   LG'yo 'yo0 Oyo1E yo!yo3yo2OP0 63NU1AC2QU  GO 67anASE T'kefA [WAIT]UOP! MCSAC3 30[WAIT]POP3 61  DOP2[WAIT]zOP1OP0OP OP! er'yo!'yo 'yo0'yo1E yo2AC!MEESAC! 31  ouOP3E2NA[WAIT]d 7[WAIT]a 7[WAIT]3"
+			},
+			"42": {
+				"offset": "0x4982B",
+				"text": "vKGEvB 3QU4vb 6AC5Y5RE8  ENOP7  gyo0Etyo OP4vC 4 3  3 fOP6  gyo Eryo0OP4vC 4 30 30fEeQU2GI15 7  ves 2v"
+			},
+			"43": {
+				"offset": "0x4987B",
+				"text": "QUuu  QUtu 0E1vC 4 30fvB 3v"
+			},
+			"44": {
+				"offset": "0x49892",
+				"text": "3 fMEE1yo4QU8u 5vKGEvB 3vBED 35[WAIT]fY5vZ SvB 3QU4vrEDGEGENE d 9esMBGEyo4 tENGEvZ SvB 3v"
+			},
+			"45": {
+				"offset": "0x498D2",
+				"text": "TC9 tSlGEvGETC9 5 mb  EN 2 5 222 5 2011001221001001100011100NE1ctg S S55CSkefctd STC15ves 2QU5vb 64DmkTC3n6NEnesA S S4ke  Lhw fkeee6n3LhoLmBLziLB3ctth Syo1A 9ASesTC Syo2esOP Syo3Etyo8TC1t 2n'2Y6DVNE SNU1EeTTT69EZyo 46[WAIT]Ct 2EeTTT79Etyo0 6t[WAIT]m47[WAIT]iOP4vC 4 38  9vB 3v"
+			},
+			"46": {
+				"offset": "0x499A7",
+				"text": "Etyo8 31  e fghi t Ssa S   SEN S SlPEPE)PEtoPE3bfrrHPX'.'\",like. A '\")u SAGE SPEQU'-(yo MESYERASENAMEEDBEESWVUTSRd GEOPthisquest?SeDoGITC?XGFEDCBQOeeANESTCase  2 3 4 5 6 7 8Falect youN ON!ZYIHrqponmlkAzPxN...spCHQUtoerge 1 Chapter LEVEL  ADVst   the wA TI-'KJtscba9876543jiygwM:2 EW t essaSlowFIGHTTACTICSMEMBERRUNSPEENTU   man"
+			},
+			"47": {
+				"offset": "0x49AE2",
+				"text": "LLRE    est W E2 :Mwg0 [WAIT]"
+			},
+			"48": {
+				"offset": "0x49AF6",
+				"text": "LLPENSRUERMBMECSTIACTTGHFIOG[NAME]\n0vEDvkeEDY1ctDVED[WAIT]mverEDv"
+			},
+			"49": {
+				"offset": "0x49B1A",
+				"text": "QU2vrEDz2L3AC1  AC 31  OGu 9vBED 39  EXvES 4GENA01 3e  8E3yoeOPdGI01v"
+			},
+			"50": {
+				"offset": "0x49B51",
+				"text": "QU u  u 0u 2E3yoeOPTC ma[WAIT]dCSCS mb[WAIT]7CSCS mc[WAIT]1CSCS 6cNU0CSA ct64EDNE3NU1d  NU1d 0NU1\"2yo1\"\"this*:78QU6ctAC-v LNE t yod 5t EXvES 4Ed  S21E? S 1' S11' S01EXvES 4'Ee0NActEDn 1 S 1' NActEDn21 S21 \"mmCBzwgi CCSRQzwxy  013"
+			},
+			"51": {
+				"offset": "0x49C0D",
+				"text": "y7TCX!E yo! Gy7yo8  6HON1E7vGIAC!  X!  TI e7 6[WAIT]A Gy7yo 9- AS A7eso!TTT...yo esp!TTyo0esq!TTyo1n y7[WAIT]qTCX!E yo! ey7 6[WAIT]4yo9vEGIAC!  X!  RUE TC2! yEN'f2vEGI y8[WAIT]TCX!E yo! ey8 6[WAIT]Iyo9AC9 Gy8yo8 Ay8OP89-8NAOPDVq!NUh  POPDVp!NU8  GOP...DVo!anzAC!  X!   1 OOP(TCha yEN'Ldv L 5 y2![WAIT]5 6-"
+			},
+			"52": {
+				"offset": "0x49CF1",
+				"text": "Tn yEN'Lw y2!  rOP!OP-OP9OP8 6-'yo8'yo9'yo-'yo! Gy8yo8 y8v?GIDob!es'EvGIPE2!ESBEQU6A yo8  6HON1E7vGI'NA 7fER g'NE4t  6[WAIT]vyo9AC9E yoavA OP89-8NAOP GIo!OP0GIp!OP1GIq! 0 6A  8A vGIveeGIvYGI)N  JeOP...yoQU vN OP8OP9OP! 6-G'yo!'yo9'yo8QU0ONY! 7ONZ! yY! 66  5Y8RE4anyoavA  yZ!9NAct'N  82OP9n'9- yo NU1AC0OP 20NUdOP"
+			},
+			"53": {
+				"offset": "0x49E62",
+				"text": "A n'SlQU0 3-'yo-'yo!'yo9'yo8fg*iuvwxyz0279OP8 64an8vA vOA vu N E yoyoESyoTCE yoA TCTCt  yoQUQUNUiOPESyo*OP8yo- ?y8an2v 2N ACACESOPES 6[WAIT]cACA OPA  67  EVACTCONN TCt 1E 29[WAIT]1anwt 1fzEn?"
+			},
+			"54": {
+				"offset": "0x49EEA",
+				"text": "? 29[WAIT]pNUnt 1ETME0n?"
+			},
+			"55": {
+				"offset": "0x49EFB",
+				"text": "? 29[WAIT]2NU0vE 5ASLOPESyo*yo !y8QU7OPOP OP0OP1OP2OP8OP9vN 'yo9'yo8'yo2'yo1'yo0'yo 'yoOP89NActaW yo ctbW yo0ctmW yo1ctnW yo2E TC"
+			},
+			"56": {
+				"offset": "0x49F60",
+				"text": "?E3yoavA  wy8OP  2...[WAIT]dNUfOP...n'e 2 an2PE"
+			},
+			"57": {
+				"offset": "0x49F82",
+				"text": "?n'9 2...anOPa 65[WAIT]5vBEA esA E2yoavspA 5 B053B4'yoa9NActNEyobctNEyocOP8v!NEn-byobE -cyocvTNEE TCW!yodACdACdNA M CSRE7  OPyo yo3OPa[WAIT]7 yU!yo3MEA OP9 61[WAIT]ACdOPa[WAIT]c yU!yo3E yo4yo5yo6DoW!t bouW!  1EuE 2danf yW! 64[WAIT]8PEV!PEW!A ouV!ctQUQU3vNENE vTUNEOPd 29[WAIT]4ACdMEA NE t bt b9\" 5 m4  OPa[WAIT]4t bTCU!'ETCV!?V!Ya[WAIT]2n'nTCV!yoe99"
+			},
+			"58": {
+				"offset": "0x4A2E7",
+				"text": "0 NU 0AS 0iW 6dEDaSATCNU2N 7. k t  LE '00aEDvN  Ske2 MONi8liSAEOPu87youv(TC CHE yoA  y!L4 GLLan3EyoA  tKQU A vNEESv"
+			},
+			"59": {
+				"offset": "0x4A33F",
+				"text": "'NACS y44E1[WAIT]PE y84 2A   TIOPA  6   gv. TCv 2 2E"
+			},
+			"60": {
+				"offset": "0x4A35E",
+				"text": "TC4ves 2EES y!L8  M 1...ES BENEf 2QUjvb 6QU A vGTCv"
+			},
+			"61": {
+				"offset": "0x4A38C",
+				"text": "'NACS y44E1  PE GEE TC84GEESv 2 uKOPuEyou"
+			},
+			"62": {
+				"offset": "0x4A3B0",
+				"text": "vfTC y84vDVESTC84QU ct 1 6[WAIT]can8n- an3 6NU1EGI 1nct )- GI )ct0)' GI0)CSCSCSCS  Slyo0 y44E1[WAIT]nOP0TTT NU5 2A [WAIT]1an9T y84TTA yo OPA OP [WAIT] y4481TC44ELLTC84yo E yo0OP QU vC 5E 1v 5OP0[WAIT]3Eyo vfTC y84n- an3 6[WAIT]NUh y44ETC44TE[WAIT]NS84yo E TC84QU Tct )TT GI )ct0)ME GI0)  9ct ) 6an2GI 1CSCSCSCS  DVQU E GI0)ct 1GI )CSCSCSCS  LLQU2A ctW TCTC4ves 2QU2vb 6'NA 7fER"
+			},
+			"63": {
+				"offset": "0x4A56A",
+				"text": "OTCNU4yovisOPanE yNU4vtoOP 60[WAIT]H 61[WAIT]NouNU4 0-4 6"
+			},
+			"64": {
+				"offset": "0x4A58D",
+				"text": "fvELOPvGHOPan7vOPan2vtY 6-"
+			},
+			"65": {
+				"offset": "0x4A5A2",
+				"text": "E TCU4 LL 6-   GDoOP 6-   Gv L 5ONOPNA NA Z[WAIT]6 YO[WAIT]bn 6-  mGhaOP 6- esGv L 5TouNU4 TCCH4 yCH4 9'ouNU4 bNU1n 6- saGhaOP yCH4 c'NUa 6- 6"
+			},
+			"66": {
+				"offset": "0x4A61D",
+				"text": "4TCE4nTNA  ON yCH4 6O[WAIT]2vE yCH4QU"
+			},
+			"67": {
+				"offset": "0x4A63D",
+				"text": "CSDVcNA  A 9NActNSEyo ctPEEyo0 yE4  vWEYftYRE [WAIT]wRES[WAIT]sRE[WAIT]oREI  bNE3esCSE 2[WAIT]bkef DLLan2vASQU ctkeYGI4CSRE7   W L 5Outside 6-l 6"
+			},
+			"68": {
+				"offset": "0x4A6A7",
+				"text": "QvWE 6-vpYNEf 2 yNU4yo yCH4yo geGvLLe 'vEanf zLLan9 6-  1Gv L 5QU ct LYGI4CSRE6   W L 5ReturnvWEE"
+			},
+			"69": {
+				"offset": "0x4A6FD",
+				"text": "TC!  RUvWE LLQU 2aneQU 6AS[WAIT]9 7ke[WAIT]5 7ke[WAIT]1 7keA QU1 3- L 5vWEEcTC  [WAIT]OP- 62[WAIT]H yW Ev  A ykeLvOPfpOP 6c[WAIT]l 68[WAIT]h 6a[WAIT]d 6[WAIT]9 6Z[WAIT]5 67[WAIT]1nTvWEvEanpvwERankOPfc yt?6E 63[WAIT]d 64[WAIT]9 ehe  2G L 5 a L 5vWE QLLNURUvWEvtoOP 60  3  2GvENE vE 5vE meyo 'n- ouE4NE d * 1 yE4yo  7G CeQUjvb 6 6-f L 5vWEvtoOP 60[WAIT],vENE1A ERvWEvtoOP 60[WAIT]-"
+			},
+			"70": {
+				"offset": "0x4AABC",
+				"text": "AC FaqE64TCEN' 64an9NAct 7NAyo ct 8NAyo0   CNAfMERMEesMEMEMEv[WAIT]NAanlvxDo fKv 2 2v 2 3A E TCER''' 6-yoA  62OP OP0 6-yoA 'yo0'yo OPA  62v[WAIT]NAanvNA 0- 67anmvk y ysp yDoee yQU vs 5'NE E vTUDovNAanv' yvk yNE GEE v2 y   6-vk y yd  yDoyo yQU vs 5OP TCe 6OP0TCth6 6- 6- 61anvk y yu  yDoli yQU vs 5'NE E YA  0- 67anIvtMEvTUDoOPA TCA'vxDoETCyoQU7A  g'NE"
+			},
+			"71": {
+				"offset": "0x4AE06",
+				"text": "d *GE 3 5d * 5GE 1yo  Oiouyo  yyo0QU  G 2 [WAIT]gCSGH0NUQU u !E7 IeNAnT5642  yyo-E yoyoyo"
+			},
+			"72": {
+				"offset": "0x4AE53",
+				"text": "EHvBe yo  QeNUOP  6[WAIT]a 6[WAIT]6ve 'anJ 6[WAIT]t 6[WAIT]p 6[WAIT]lOP!OP-OP 6-'yo'yo-'yo!'yo ve wNU2v3 w  OP  6-' 6a[WAIT] 6NU3 6NUlyo y.yo N qvLLe   2Gv L 5ONouyo yyo-EHvBe OPLcENvBe fbQU0EA   dQU0ENE  7OPyoQU1EMB 3-v L 5nONou y.yo ACGvLLe   2Gv L 5ONou yyo-ELvBe QU"
+			},
+			"73": {
+				"offset": "0x4AF21",
+				"text": "CSctleth 6"
+			},
+			"74": {
+				"offset": "0x4AF29",
+				"text": "2   A TC?9NActthyo ctthyo0  v:e U wv:e vLLe E0vOe anFv wv?e  CeQUjvb 6 6-fv L 5TEavwe 'tyo-E yo*E1vHe v'e  wQU ONOP...TCv w yyo- LOv:e vLLe E4yo-EvHe NUowv?e  wY 6-l 6"
+			},
+			"75": {
+				"offset": "0x4AFB9",
+				"text": "z 6-u v:e QUbvb 6'vEann zLLanb 6-v?e v L 5nE TCU4TQU ctMB wGI4CSREe   W 8 wWing of WyvernEg  5Ei  1Ezv:e vwanvLLe 'vHe [WAIT]7yov?e  w  2G wE2vwe '0yo-E yo*yoyo"
+			},
+			"76": {
+				"offset": "0x4B043",
+				"text": "v:e vLLe E2vwe '3yo-E yo*E2vHe [WAIT]dyoE yoyo"
+			},
+			"77": {
+				"offset": "0x4B065",
+				"text": "v?e  w  2G wv:e vLLe E2vwe '2yo-E9   Cv:e vLLe E5yo-EvHe NU8v?e  CLL w  2G wv:e Eavwe 'jyo-E yo*yoyo"
+			},
+			"78": {
+				"offset": "0x4B0B8",
+				"text": "E8vHe yo[WAIT]5v?e t?anv'e E7vwe   8 eeGv-e  w 8 wv:e vLLe E0vOe anCE5vwe '9yo-E yo*yoyo"
+			},
+			"79": {
+				"offset": "0x4B0FB",
+				"text": "E8vHe yoNA[WAIT]5v?e  wv'e  wv-e  wv:e vLLe E6yo-EvHe NUHE4vHe v?e  Ceou '  i yNA yLL cli'AS BLL CLL LL wv'e  wv:e vLLe E TCU4v?e vLLe E"
+			},
+			"80": {
+				"offset": "0x4B16D",
+				"text": "zLLNUeE zLL yETCn 6-v'e  8 wv:e vLLe  y0yo E yo! 4y0AC! 3   v?e  wv:e  NAQU.vb 6OP9NUD yanxOP 6   rOP 60  lQU ctACt  2  6ctTIt  2[WAIT]bCSCSREf  RU a 8 w y80TCvnSlnmsnsosmtmumvmwmxETC!v:e  w yeeEb 6b  OP 60   yNS 6.anHOP 68  OP 67  OP 60  Wv'e  yee81ETCee   81vLLe  W wOP 61  qOPTME1 61anhOPTME2 62an8vLL"
+			},
+			"81": {
+				"offset": "0x4B3BB",
+				"text": "W wv?e vLLe v'e  8 wOPfYOP 6q  SOP 6   MOP 68NUGOP 67NUAEf 2NUuEc 2NUo yD 6l[WAIT]qvdasQUfNE7El 8LL pttovdasv:e  8 wvdas  2G 8 w 6-"
+			},
+			"82": {
+				"offset": "0x4B422",
+				"text": "6- y.yo vLLe  E 6A  8A v:e vLLe vEanxvwERansOPfc yt?6E 63[WAIT]l 64[WAIT]h yNS 6.an4vERn  2G 8 w a 8 wv:e vLLe  yW LuOPLkOP 6sa  eOP 6K  8 6-"
+			},
+			"83": {
+				"offset": "0x4B493",
+				"text": "4henv?e  8 w  2G 8 wv:e HW *[NAME]OPfCSOP 6P  OGOP 6   AQUeGH  ptNE8 1     6-"
+			},
+			"84": {
+				"offset": "0x4B4CC",
+				"text": "6henv:e OPf5OP 6R[WAIT]7vLLe  0TUn  2G 8 wv:e vLLe  aENTCER' wv:e vLLe OPLw yW Ev  j P 6A  8A v 2 2 -O ZLLnv?e  8 wvLLe  a 8 w menou.Ke ou  iEvHe ' 2...[WAIT]rnou 1 je y.NU5 6-L4TCnTou G 67E2  9E1  5E0  1E QU NE ES?RU?[WAIT]jese EL'1??TC?ASCS  TI'9n??ASese TC?9FFE2 y?E6[WAIT]S[WAIT]sandanF yyo y"
+			},
+			"85": {
+				"offset": "0x4B667",
+				"text": "N 64 2 N N ERN sp 764 2N N  N  N N 64 2N R w.  wNE w w w0anOanananGEanstan6t t t 0to"
+			},
+			"86": {
+				"offset": "0x4B6A9",
+				"text": "toJer'erNAtoSeerA toEDt t L wGasasGEasAasNSasesas*to*to*to-(.,'*\"t'!:..."
+			},
+			"87": {
+				"offset": "0x4B6EE",
+				"text": "E yoEOPstE  8OPstCH  1ACEOP 6r  2kequ 6Z  2Yqu 6  2  qu 6'  2bes 6  2es 6R  2PEqu y*esyo  y:esyo0NE t   6"
+			},
+			"88": {
+				"offset": "0x4B73F",
+				"text": "h 2[WAIT]a 5t  L2ENisLLisleisOP 6  e yyoE3[WAIT]7ENUyoEEVyoOPYE2  x yt?6[WAIT]7 64[WAIT]3 63  8OPE[WAIT]2  CH 3OPE[WAIT]2  CH 3this 60  p yt?6  8OPE[WAIT]2PEEACOPE[WAIT]2PEEACthis 61  bOPE[WAIT]2PECHACthisOPE[WAIT]2  E 3OPYE2n 5t  LD 2  o 5t  L...yo 5t  E'yo 5t  yoOPYE2T 5t  L1 5 5 5quE 2[WAIT]n 5t  f0 5 5 5t  L1 5 5 5'99anRUqu 5t  fVE'yo3 5t  E'yo4 5t  yo5vquNU7 5t  fTCLjkekeket  f0"
+			},
+			"89": {
+				"offset": "0x4BA4E",
+				"text": "yFI2yo  yDV2[WAIT]J 67  lNE6 ye 6yo  yth6yo0esFI2E kefnNU2)t?anE yDV2 61  4TOP0  s ye 6yo1 yth6yo2NE OP E1 yDV2 62NU5OP0 5E1n y 62E[WAIT]yo0 y 52Ee9yo AC ouDV2  iAC0AC0OP7n- yo AC  yGH2 3OP n?er6yo le0Se yDV2 67  w 30NE E- 11  1Eyov 3 30esFI2v 3AC0AC  5 m7  GHesFI2v 3AC  5 m4   210 TCEL2 yas6E8[WAIT]kOPTC  2EuTC  2 yas6E8TCas6OP 6[WAIT]NUS 6  aE TC  2EuTC  2nME[WAIT]yo"
+			},
+			"90": {
+				"offset": "0x4BC97",
+				"text": "vLLleNUththle yas6ETUTCas6v  levRU 5OPjE  fE TCFa2v"
+			},
+			"91": {
+				"offset": "0x4BCBB",
+				"text": "vLLleNUMBthlev 1le yFa2Ee 60  2 yonNE  5NUE TCFa2GEcFa2TCFa2v  lenQUb yas6Ev[WAIT]1QU5A n?b4TCst2 yst2stb4Lq yOG2stb4nfl yb4n'eTCOG2dFa2T!Fa2Tv  leT64vf7310 yto6yo1 yer6yo2OP8yo3NE0 33Lc 5t 1 6A [WAIT]: 6N   [WAIT]LLOP7yo3E yo6OP3L 5t 1LdY6[WAIT]4 36ct 33ct 6A [WAIT] 6N [WAIT]E 6NU  ft 1E6yo4OP3nTT4yo3ctt 1E m 6 m  xd 5t 1 5EL  0 5'EeNActctctyo4OP3TTT4yo3fYTC5MEct 33fGI"
+			},
+			"92": {
+				"offset": "0x4BDE1",
+				"text": "u  lor' MnPE m mlsot? DGvislB\"GElCDI?3Ex'le 64d 1AwPzv1TIES2pft tt t-ES2qe  7ctPE[WAIT]ES2p7pq7ES7\"u 3sb'ES7:5Se3PE[WAIT]ES7PE m:5Se3RU 7ct L)NS"
+			},
+			"93": {
+				"offset": "0x4BE62",
+				"text": "PE[WAIT]u  hkn\" MnPE mBok'   5zrPE64ES5rnrlqlqPE64ES5rnrososoooooPE mNS PE[WAIT]MwsLvrNS"
+			},
+			"94": {
+				"offset": "0x4BEAB",
+				"text": "1EL ES2ifth tth tME2je tES2i7kj7mlbsr3[WAIT]0u 3qtw-GEjanDnKxtanHswtanDx!ES9yyyyyod 1FBUEA1CSb[WAIT]faheGEnb-u v*-5I\"'5u(5ylE\"leTES9ke5JJ 7 Bq*NAB-5F5,F)5'F'5 5  1heGEnhe st t*RE  ML3tSe2F 41RGE"
+			},
+			"95": {
+				"offset": "0x4BFE8",
+				"text": ".PETUheON"
+			},
+			"96": {
+				"offset": "0x4BFEF",
+				"text": "64vvv    30d6N  Lhe Lhe Lhe"
+			}
+		},
+		"bank_13": {
+			"0": {
+				"offset": "0x4C010",
+				"text": "T64e 'thJisNisGHe nis. ase aeskes\"anLesSesesFIis\"eeth. eeSAERas 8SeMBleFIct2  tAS twhe-hevke64vW 64NU8v64vhCHv64v64vd QU"
+			},
+			"1": {
+				"offset": "0x4C063",
+				"text": "EgedTC,( y64! 63[WAIT]i yCS(9NAct.64yo ct64yo0   3AS64[WAIT] wSA wf w wananan yTC64![WAIT]3 61  9 y!f4E5TC64!nYESct...E* 6f   5uanPE AN6NUCS AN5anOG ANfanA ANganpt ANyan   ANzan 7 ANAan 1 ANhan t G 67anisTCCS( 6TCA(OP[WAIT]4E"
+			},
+			"2": {
+				"offset": "0x4C107",
+				"text": "TCA(QU ON C(ONha(ONer(ON L(ONEV(ONEL(ONAC(ONTI( 7ON  ( 5uanspvgou yyoCHQU64 EgedTCME(E QU2GIE(GI M( 7f yyoA QU  AN6NUAEfGIE(GI M( ANlan5 ANmNU4E GI M( ANoNU5E( M(CSGHA NU  Tl R0l R0l R0l R00) 0) 0) 0) QUGE 6 [WAIT]v 6f[WAIT]qvLeeo)0) o)0) o)0) o)0) E  M  M0vMsp 60[WAIT]i 61[WAIT]a 63[WAIT]2C 55GEB M5GEB MvMsp 60[WAIT]i 61[WAIT]a 63[WAIT]2 5 M\"GE"
+			},
+			"3": {
+				"offset": "0x4C24E",
+				"text": "avLeeOP MyoGEOPoyo MvRspOPGEn? y(TC y(OP M?ou(TCou(vRspOPGEn? w(TC w(OP M?an(TCan(vRspOPGEn?e (TCe (OP M?th(TCth(vRspOPGEn?is(TCis(OP M?qu(TCqu(vRspOPGEn?es(TCes(OP M?t?(TCt?(vRspOPGEn?Se(TCSe(OP M?le(TCle(vRspOPGEn?t (TCt (OP M?to(TCto(vRspOPGEn?er(TCer(OP M?as(TCas(vRspOPGEn?ct(TCct(OP M? t(TC t(vRspOPGEn?he(TChe(OP M? m(TC m(OPsp9yo9GE-9ASOPGEEke 5OP MEkeyolE yomyonyooyopl"
+			},
+			"4": {
+				"offset": "0x4C472",
+				"text": "EgedTC.( EgeeI.(TC.(vmyoE yoANvASd ACANOPAN 67NUBTIQUUE GI )GIV)GI)GIou)GICS)GIx,GI,GIES, 7fTTvbyoYAN EgebanLQU4OPAN9yo 9- yo A - ASessa?[WAIT]kTCPE(esES? 6"
+			},
+			"5": {
+				"offset": "0x4C4E1",
+				"text": "aTC S(ASA vMEd 'NA 7fhaXTCvEDyoXTC y Syoyo  yPEyoyo0QU GEvi 5'vi 5NE t  yo1 5t  yo21 E QUIGIES( 7fQU6EfGI(GI2 (GI. ( 7f y.(yo QU  NUEvv[NAME]yo  E3vPEyo  'E1vyo  TE0vPEyovTCyoE7v[NAME]yovANyoE7vPEyo[WAIT]4E GI2 (EfvPEyo[WAIT]4E5GI. (EvvPEyo[WAIT]2t. (CSRE7NUanE0GI(  E GI([WAIT]RU[WAIT]2([WAIT]t(QUQUE"
+			},
+			"6": {
+				"offset": "0x4C5AD",
+				"text": "TCPE(YANvBE. NE4t u E7  TNE8t u EevMEA  68anJE6 64'anyvth. NE4t  6NNU1ENyoGEE yo M'E6NActMEyoQUGEvC 5v)ESCHer42233NE4  5NE5  1NE6yo)vBE. t u A)NEcY2 vBE. t u E2 2TCv'A NURNE0QU u v'A NUF 68NUnOPOPvSeu yo1 yyo2'yo'yoTNEbQU1t  M  5t  M0TE yo yo0vNA NE2GEct'fkEevth. NE0nt - yo  5t -0yo0'ASCSkefENE yo1yo2vNA NE2GEct'fDEevth. ' 68NU5vSeu ASu"
+			},
+			"7": {
+				"offset": "0x4C8E4",
+				"text": "yo1NEqt yo3 5t yo4 5t yo5NEhOP [WAIT]1NEbd 0Y ctG. NA5\"4\"3NUActDerASes\"esEu 21[WAIT]1anlOP7f5GEvLesNUbesLLA n-GEyoGENU1AC MCS 30    'NA htFRE 1  1E3yo0E yoGEyo MvNA NE2GEct'fCEe 67anwvA   rOP v. NE4t A0  e 5t Ev  7vA   2v,. 'ASkefstA OP vth. NEit E 6\"anbNActzQU-GEyoGENU1AC M 5 mqNUTI'NAA 9you 999TTTu n?as. you  ye . ' yoli...yoA OP9NAct 8. yoctFa. yo'NA0uY"
+			},
+			"8": {
+				"offset": "0x4CCFE",
+				"text": "5NUn yPE(es(NU1E"
+			},
+			"9": {
+				"offset": "0x4CD0D",
+				"text": "Ses(ou S(ctptES[WAIT]vyo  yDo(4 TCDo(OP NE"
+			},
+			"10": {
+				"offset": "0x4CD27",
+				"text": "5NUn yPE( 6(NU1E"
+			},
+			"11": {
+				"offset": "0x4CD36",
+				"text": "S 6(7f64000111v1f    0vETCE TC  ,TC  ,OPANyo2 v'TC[WAIT]nv,TCvTITCvaONvONvONvN ONv  ONvlTIY2 ct"
+			},
+			"12": {
+				"offset": "0x4CD7E",
+				"text": "I.([WAIT]2ct(EVyokeE yo. OP2 QUkevC 5 yTITCDoNUTCs 5 )E TC  ,NE esE(GE9NActES(yoGEctTC(yo M'vGE2 OPGE4 M[WAIT]gOPCH99?  ,NActowTCvGE2 PE  ,GE9NAOPGEGIES(OP MGITC( 5 m3NUsaf   86  643 6420E2yospOPsp9ASesES(yoGEesTC(yo MY2 ct. (vGE2 NE vsee 3spf L y y(yo  you(yo0Y2 ct2 ([WAIT]AQU vPE2 vlspE2yospOP yoGEOP0yo MYspct M(vGE2 NE7vsee 3spfTI y w(yoGE yan(yo MY2 vRE2 E2yospNEfvsee 3spf yt (outo(NEnvkeON ye (ou"
+			},
+			"13": {
+				"offset": "0x4D128",
+				"text": "lGIz yEL(GI E* 6v  5 y[NAME](GIzEXGIz yEL(E*  o y  ( 6iNUQ 6rNU 6ENUE 6ONUC 6[WAIT]A  uQUgctEEst  ([WAIT]4 7fTA 9NActstEyo ct  Eyo0  Tn y SSeyo E yo0 yEV(QU vC 5vli2 OP0[WAIT]3E"
+			},
+			"14": {
+				"offset": "0x4D1A2",
+				"text": "yo  yRU( 2 E5stRU(E TC C(TCha(gmnpqstvy6464d 6464ee642 642 642 spsp2 eeee2 .E.EPEE.E.EPEE.E)E.E)EPEE)E)E)E)EPEE)E yow( 6fNU2vlee 9NActisyoA ouow(ct\"esEu 6u  1E yoQUE yo0yo1E6yo2 v,TCNE vCHNE7vCHNEfvCH 32 fMBE yo yo3Eisyo2QU NE2veeOP1[WAIT]5E"
+			},
+			"15": {
+				"offset": "0x4D259",
+				"text": "yo yo0OP TCNS(OP0TCPE(4   2PENS(E2yospt ke-0yo0 5t ke-1yo1 5 3spfPEouow(ctaquEuNActFaGEvOGCHyo E ouow(REn  3E3  5REu  1E3n- yo Y2 vBE. NEct u E2NAOP ct5...vasanAS'9yo GE9999- ASesAGEyo E yo0vE 5QU vC 5es  GEn-0 6fNU1EfyoESE2yo 'Eyo0OP2 99-0ASes(Y [WAIT]4 7  E2yo1E yo2E6vjAN 32 fY1ctaquEuNActFaGEE2yo 'Eyo0OP2 99-0ASes(Y [WAIT]4 7  E2NAct  GEn-2yo2"
+			},
+			"16": {
+				"offset": "0x4D372",
+				"text": "yoA A vQUANctOPt?TCg!'NA yg! y'A vQUANcthat?TCg!'NA yg! y64!999TNS64!?CS(NAA vQUANctt?TCg!'NA yg!OP2 864TCSl(  dOPTC8keTCSl(  4E64TCSl( y[WAIT](f7 ySl(8vTCSl(v LANNU9 yDVNU1nTQU2ct...LmE* 61angct...EeASesMB...E[WAIT]8 67[WAIT]4 7f LnTNE  y  ( 6"
+			},
+			"17": {
+				"offset": "0x4D41E",
+				"text": "Z 6kNU 6mNUR 6rNU 6t[WAIT] 6ENU 6JNUL 6ONUL 6XNUtNE64 6[WAIT]v 6[WAIT]j yEL(E*[WAIT]cQUgctEEst[NAME]([WAIT]6 7fGE84ctSeEGEGE80GE81GE82GE83nt ke(  M  5t ke(0 M0 5A QU v\"GE'NAes  yooes0 yopGENEnE yoqyolyomyonl R0R1BlBmBn OPlTTToOPmTTpOPnTTqan5pt ''NU7yon'yom'yolke    'AS10 432765a98dcbQOo \"QQB \"OOBO OOOOO ODBBB BDDUB B64 ?"
+			},
+			"18": {
+				"offset": "0x4D784",
+				"text": "yo OP TC  (vliSANE1vNAee!SAY2 v 4u  y64! 65  anOP 'yo NU1AC0QU )2 v,TCNERt keyo  5t keyo0NETt ke 5t keAS'QU s 5QU v)2  y  (E[WAIT]  3Ef  2 y  ( 5OP OP0 eTIY2 v 4u QU NE1v)2 vNAeeOP Euyo1'yo0'yo OP1PE2 OPES 6fan  QU PE2 E TCSl(v 2 SE yospOPE2[WAIT]2vB yvANv0CHve A TCSl(vsaANOPE2[WAIT]a99994TCyoTCv SACspOPsp 63NU 8E TCSl(vsaANv 2 S y64! 60[WAIT]OP 62NUE yospyoA OPE2[WAIT]Avfu"
+			},
+			"19": {
+				"offset": "0x4D8B4",
+				"text": "yoESyoTC 7MEvO S  6 y  ( 6E  2aGEvO S  A y  ( 6E[WAIT]i 6F[WAIT]e 6G[WAIT]4 6GE  6ou64! 7   yEL(EevMEA stCS(aGEvO S  aOP f9 y[NAME]( 6[WAIT]jaGEou64! 7[WAIT] y  ( 6G[WAIT]3 6H  RUvO S  iOP Lj y  ( 6G  cvY S 61an5vY S[WAIT]EvTCSl( 7MEv5GEyo E 60EvTCSl(v 2 SOPE yo yo0OPspvfu OPspvru vA  SOPA  6"
+			},
+			"20": {
+				"offset": "0x4D970",
+				"text": "OQU vi 5OPspvru QU v)2 NE1vNAeeOP E[WAIT]40  mOP yo0E yo v-AN 20NU7[WAIT]5v 5GE SE"
+			},
+			"21": {
+				"offset": "0x4D9A6",
+				"text": "yo E yo0CHMETOP1TT yo3OP2TT0yo4OPA  6"
+			},
+			"22": {
+				"offset": "0x4D9C1",
+				"text": "hOP4  5OP3 2A NU7OPA yo3E yo4vaPEE yoyoyospOPspvcEDNUy yow( 6TI  7v\"kestCS(  jv2PE4yokeL7v2PEn-yoACACspOPsp 63NU  OPsp9NAct"
+			},
+			"23": {
+				"offset": "0x4DA1B",
+				"text": "E yoA yoQUyoESyoTCyoONyoTIyoNUyoETCes(TCsa(TCge(TC 1(TC 2(TC 3(TC 4(TC 5(E6yo2 v,TCNE vPENE7vPENEfvPE 32 fMBE yospvNAPE 5Y2 ct"
+			},
+			"24": {
+				"offset": "0x4DA6D",
+				"text": "A[WAIT]'ket keyo0yo2 5t keyo1yo3vPEANQU0vPE2 vANQU2vLeeOPsp9NAOP0(A  MA OP1(QU MQUnctes(-3GIes(ctsa(-oGIsa( 5ACspOPsp 63NUMEGEvtoPE'ASv  ANNUuctyo ouMB( yER(LhE* 6v[WAIT]h 6f[WAIT]7REENU3REHNUdE"
+			},
+			"25": {
+				"offset": "0x4DAE8",
+				"text": "yo  IRE[WAIT]3RE  [NAME] yER(Ee 2sp  MEE yoQU6ctstNUa 2 an6ct"
+			},
+			"26": {
+				"offset": "0x4DB12",
+				"text": "4yo 7fMBOPOPspvru NUNE t f ySl(E*[WAIT]nv\"kestCS([WAIT]fv.  y[WAIT](L7NE4t E m  OPspv\"kev. NE4t E3  OPspvfu vSAEDNUE2ou64!RE2[WAIT]1E3QU1v 5OPspvfu OPsp9NATOP A yo3OP0QUyo4NE0NUlOP3TT1OP4TT2andOPspvru vSAEDNU3NE TnQU NE1v)2 vNAeeEc 2 v0CHE6yo2 v)CHvMEANvASBE 32 fv0CHE2yoTCvasANvVBE 3TCfv0CHE6yo2 v)CHvMEANvGI 32 f yCS(v. NE4t E m  v0CHE6yo2 E yo yo0v,TCNE7"
+			},
+			"27": {
+				"offset": "0x4DEF1",
+				"text": "ONSl(CSu GEu  ME6yo2 vzA OP 40[WAIT]mOP TTGEOP0TT MNUcOP yoGEOP0yoGEOP2 TCSl( 32 fA ySl( 6"
+			},
+			"28": {
+				"offset": "0x4DF27",
+				"text": "a864TCEL( yow(TC  (v 3ESNUzNEbt u [WAIT]tt u yo  6"
+			},
+			"29": {
+				"offset": "0x4DF45",
+				"text": "3E[WAIT]yo TE"
+			},
+			"30": {
+				"offset": "0x4DF4E",
+				"text": "TT v)CHvA 'QU vC 5TTT yo E yo0QU vEVESNUlv\nESE6yo2 vtoESNU5vMEANvt Do 32 f\nvEVESNUgv\nESE2yoTCvasANv\"ES 3TCfv5GEE 63[WAIT]7vTIQUNU2vATCv5GEEou64!RE2[WAIT]3 63[WAIT]7v)QUNU2vATCou64! 7[WAIT]7v[NAME]W NU2vATCvTTNENUkviW OPLdyospve A TCEL( yow(TC  (v5GEE 63[WAIT]wvyoNENUrE yospvNENUave A TCSl(NU2vd yACspOPsp 63NUCS y  ( 6w  JE yoyospvNENU9ve A TCSl(NU1ACACspOPsp 63NUMEOP 61NUa yow(TC  (E"
+			},
+			"31": {
+				"offset": "0x4E088",
+				"text": "yo OP ou64!DV)SenvOPNE y  ,yo  y  ,yo0NE QUGEv)2 vNAeeOP ou64!DV-SeE yoGEyo ME6yo2 v)GIOP TC0QUGEvs 5 32 f[WAIT]E yo yo0E6yo2 v,TCOPsp9' ASt ke- yo  5t ke-0yo0 32 fACE yoE6yo2 v 3ESNU8Y2 ct"
+			},
+			"32": {
+				"offset": "0x4E107",
+				"text": "4yo 32 fPEELyoGEOP[WAIT]2vKTCOPGEou64!DV'SevquW QU"
+			},
+			"33": {
+				"offset": "0x4E128",
+				"text": "u CSu spu u v\"keyoA NU'vth. NE t f9LOPA v. NE4t EP  t E m[WAIT]6OPA stCS(  v SW 41[WAIT]WQU1NEGEv)2 vNAeeOP2  I y SSe9 21NUAOP1ou64!DVSeNUqNE0Tt TT 5t TTNUct yoket yoOPspyoACspOPsp 63NU. NE0t yob 5t yocOPQUyodOPESyoevykeOPTCyo1OPONyo2QU u TCu ONA v 4u NE5t u fw9ftTOPTCTT OPONTT0aniOP yoTCOP0yoONNE2t u yoQU 5t u yoES'NACSRE7NUst y5... 6Sl  eQU u 2 vBE. NE4t u E m  OE yoyoyoQU2ct! 6[WAIT]"
+			},
+			"34": {
+				"offset": "0x4E3CF",
+				"text": "yovKTCOPGE 6nNUcY2 vgkeOPd4e[WAIT]1Tnv5GEE 63  a yow( 6u[WAIT]3 6v  1TnQU u spONTU(ONRE(v\"keNUBvth. NE t fs9LpvoliT yTU(TTb yRE(TTcan9OPbTCTU(OPcTCRE(ACspOPsp 63NUstOP2 vTCELyoGEOP[WAIT]2vkeTC'yo2 E yoyospv\"keNULyobvth. NE t fA9LxEayocvNAOPNUk mkangesaquEuNActFaGENAct"
+			},
+			"35": {
+				"offset": "0x4E487",
+				"text": "4yo 3cfOGACspOPsp 63NUgeE yoGEE6yo2 5NUKOPyo1E yo M1NUqOP MvOGCH9999yo2OPGEn-2yoGENA'[WAIT]3A yoGEAC MOP M 66NUEV 32 f 6 yFI(nOPES?FI(TCFI('[WAIT]2FI(E TCEL( yow(TC  (QU6u 2 Y2 ct( 6f[WAIT]eyo v,TCv8OPOP [WAIT]2vlTI 32 fGHQUileRUNUt keyoGE 5t keyo MA QUGEOP vLeeOPGEEe7vOP2 D[WAIT]4E0vi 5OPo[WAIT]5E"
+			},
+			"36": {
+				"offset": "0x4E546",
+				"text": "yoGEyo M'NAleRUNUOPGEEke 5OP MEke 7f mvOP'NUvTCOPNU yCS(9NActBYyou ctCYyoliOPc9ASt u yoke 5t u yo.  y[WAIT](ETC[WAIT](OPeTCow(Do64! m3[WAIT]2ke yoc yCS(yobvNAOPNUees\"esEuTNSA([WAIT]1an1TnvpYn-cNActA YyoeOPbvth.  yzYyou  yAYyoliQUu vpYvi 5NEqt yo  5t yo0NE 0\" NU5t u  2e[WAIT]6 5 mbNULLnTCe mN  6 yA(  1nT y64! 64[WAIT]k yGH...Lf yCS(v. NE4t E7  1TnOPb99yo 9- JerYYRY\"YYYYY"
+			},
+			"37": {
+				"offset": "0x4E72C",
+				"text": "ast[WAIT]7 5 5 5 5  LLn 5t  TCow( 5t  you  5t  yoliT y[WAIT](864TC[WAIT](u  ERERTCERCHERgeeO Mmd O MnyoYEDpu q MqliO MskeSeEDt.  MxTCSeEDyONO MCHOGEDGISeED"
+			},
+			"38": {
+				"offset": "0x4E78C",
+				"text": "vQUMEGETIleGEGEDoGENEd S"
+			},
+			"39": {
+				"offset": "0x4E7A2",
+				"text": "uA )A"
+			},
+			"40": {
+				"offset": "0x4E7A8",
+				"text": "A GEd 0ct\"esE64yo 'E[WAIT]b 6[WAIT]7 6v[WAIT]b 6[WAIT]:'AS'NA'OP OP fjE yo1QU6A vNAASB1'NA 7fLUE yo1QU2A v'A NUANE t 'EREyo3'v. NE4t yo2 5t Eu43yo3 5t yo4vASB1'NA 7fstOP1 Ge4 yo L9v)A NU4vt?A yo isEROP fE yo1QU6A vNAASNUdNEct u E2NAct"
+			},
+			"41": {
+				"offset": "0x4E853",
+				"text": "41yo1'NA 7fACOP1 Fen'74 yo isEROP3fUOP0yo5OP E7NActPEASE6ASes"
+			},
+			"42": {
+				"offset": "0x4E886",
+				"text": "yo6yo755an3E yo6'ASes2 7A6  7CSA E6  ptTndd165ceedg165ceevBE. NE4t u yo2 5t u yo3 5t u yo4AS y64! 63vhaASv LASv5EvJEfEE TC(TC(TC(QUaA vTCOPNU5 mNn[WAIT]0TJ(J('NA 7fCSELc(E'TC( yCS(vth. NEit E keNU4 6sET!( 5 mqNUME y("
+			},
+			"43": {
+				"offset": "0x4E93A",
+				"text": "TC( y[WAIT](ETC[WAIT](QU1ct( GeJEL(GI( 7f\n yEL(E6 FeNAct(RE1anxRE0  6n'7 6banTyo ouCS( 7A 99yo09-0- NActESYN E y[WAIT](864TC[WAIT]( yCS(vth. 'n'iASt ETC[NAME]( muN ENActasETC  (NANE REL[WAIT]9REM[WAIT]5RESA[WAIT]1NE64vSAERou[WAIT](f18vTCEL(OP 40[WAIT]Mv\"NA y  ( 6"
+			},
+			"44": {
+				"offset": "0x4E9E2",
+				"text": "T y C(TT9yoe yha(TTa4eyoe ypt(TTb4e[WAIT]3anNUxOPQU  6 y  ( 6[WAIT] y64! 65  8OPQUstTT(NUan6 yTT( 2QUNU y64! 61an9OPQU[WAIT]5OPES 66NUKvMENUFOP9TC C(OPaTCha(OPbTCpt(OPQUTCTT(OPESTCEV( y  (TCRU( yow(TC  (vNATn ySl(TCEL(E* 6v  5 yTC[NAME](E yo9yodyoeOP yoaOP0yobOPQUyocQUcv)2 n yNS(-cyoc yPE(-dyodOPe' yoeNU7E"
+			},
+			"45": {
+				"offset": "0x4EAA9",
+				"text": "yocyodyoeQU9NEcvd Do64!esQUSev\"ee59BaBbBp59BaBbBp59BaBbBp59BaBbBpOP yocOP0yodDo64!esd SeQUcvLeenOP9-cyocOPa-dyodOPb-oyoeE yo7yoaOPQU9Ba9Ba9Bayo9TNSLL(yo9OPaME yoa49[WAIT]PNUNE7QU9vi 5E7yo8QU7NE9vNAeeOP8[WAIT]7E yo8E"
+			},
+			"46": {
+				"offset": "0x4EB46",
+				"text": "yo7OP7QUcv\"eeOPdyo9OPeyoaOPpyobOPcyo9OPdyoaOPeyob yCS(vth. NE0t yo7 5t yo8 y L(yod yOG(yoeE yocQUcNE7veeOPd4e[WAIT]3E"
+			},
+			"47": {
+				"offset": "0x4EB97",
+				"text": "yocou64!ctCHSe 2cOP 40[WAIT] y  ( 6"
+			},
+			"48": {
+				"offset": "0x4EBAE",
+				"text": "Gv8DoNUvMENUvoDovXDoTOPbTT9yodOPcTTaNUd4d[WAIT]1anP yTT(TTTQUNUHOP TC C(OP0TCha(OP1TCer(OP2TC L(OPQUTCTT(OPESTCAC(OPTCTCTI( yow(TC  (vNAOP 60[WAIT]aTOPESNSAC(OPTCNSTI(OPsp9NATOP3es(OP4sa(OP yo9E yoaOP1yo9OP2yoaOP QU9vLeeOPayo9OPoyoali2  y C(yobE yoc yer(yob y L(yoc y C(QUbvLeeOPcyobOPoyocli2  y  ( 6ENU3 6INUP y  ( 6JNU3 6ONU4E TCAC(OPESstAC(NUsOP TC C(OP0TCha(OPQUTCTT(OPESTCAC( yow(TC"
+			},
+			"49": {
+				"offset": "0x4ED8A",
+				"text": "yo ' 2 [WAIT]1an2v m y'NA 7fowOP MEe[WAIT]3E"
+			},
+			"50": {
+				"offset": "0x4EDA3",
+				"text": "yo MOPGEyoESOP MEeyoTCOPspv'A NEit E 6[WAIT]eQU8DVhe y[WAIT]4 7fL2v m y OPc 6hanb9ctisyoA E yoQU[WAIT]7EyoA E0yoQUOPcv3ANYcct\"esE 6anbE yo3QU2 yME(v 5QUA OP2vPE2 TOPGETTA OP MTTQUan7OPA yoGEOPQUyo ME yospyoGEyo ME yoQUyoESOPspv'A NUPyoA NE t 9NUGLEOPA v. NE4t E3  rACESt E7[WAIT]2vYout Ef[WAIT]2vasout NU2v wouOPQUTCESQUGEvs 5ACspOPsp 63NUouTE TTGEyoQUE3TT MyoES yCS([WAIT]w 64ans y64!99?CS(ASes5SeQUQUvLeeOP"
+			},
+			"51": {
+				"offset": "0x4EEB0",
+				"text": "TC' 7ouv mouct'Set?ouES\"QUv mouctSeQUQUv 4ouCS(RE7NU1QU7E yoEayoc yCS(yobvNAOPNUaes\"esEu 2NU1yo 3cfRU y'yo E yo0OPQU vLeevli2 0\" OP0[WAIT]3E"
+			},
+			"52": {
+				"offset": "0x4EF18",
+				"text": "yo OP TCLL(vd  Mv 3YQU7A vOP'NA 7fv 7Yv  YvQENUfvNEEE8vOPE9vOPvSlYEavOPvREanfEvd  Mv 3YE vOPE0vOPE1vOPE2vOPE3vOPE5vOPv 7Yv  YvQENUpvNEEE6vOPE7vOPE8vOPE9vOPvSlYvREanfEvd  Mv 3YE vOPE0vOPE1vOPE2vOPE3vOPE5vOPE6vOPE7vOPv 7YE8vOPE9vOPEavOPv  YvQENUavNEEE4vOPvSlYvREanfEvd  Mv 3YE vOPE0vOPE1vOPE2v"
+			},
+			"53": {
+				"offset": "0x4F092",
+				"text": "2vESan'NA 7fMBvasanNAvE 5DVAan'anovctan 2 [WAIT]hn"
+			},
+			"54": {
+				"offset": "0x4F0B5",
+				"text": "yo0OP"
+			},
+			"55": {
+				"offset": "0x4F0BB",
+				"text": "YED40GIEDvctan9'kefvgeanA NA'E29ASes"
+			},
+			"56": {
+				"offset": "0x4F0DF",
+				"text": "yo es"
+			},
+			"57": {
+				"offset": "0x4F0E4",
+				"text": "4 yo ctED"
+			},
+			"58": {
+				"offset": "0x4F0ED",
+				"text": "64  y  ( 6   yRU(st SSeNUvNt NUY yCS(vth. NE0t yo0 5t yo1E yo NEbt yo2 5t yo3QU NE2veeOP041  fOP  6an9ETC  (E TCEL(Dokevt ct...f3E*[WAIT]6 5 mbNULLnTd  QU ctEe 2 [WAIT]5CSREb  [NAME]nv(keEhvGE2  6spvTTt EhvGE2 (spvTTt vNUt v(spv(kevNUt v 6spvL. vNUt A spEbGE2 vTTt vant v(spv(kevant v 6spvL. vant A spEnvGE2 RE2 vTTt 5GEB MvRE2 v(spv(ke5GEB MvRE2 v 6spvL. 5GEB MvRE2"
+			},
+			"59": {
+				"offset": "0x4F2E9",
+				"text": "u  OPe999 2 ankyoeE yodQUdOP v 5OPdf EfQU u GEu  Mct\"esEu 2 [WAIT]1anactLLA -GEyoGENU1AC MCSREQNUTT'GE2 E yoGEyo MlF OnK2GBsfC6IgLhPwEpFoGxHiLjMcEmFJGdznLeN u2r5D0134678u9taOrvqybA"
+			},
+			"60": {
+				"offset": "0x4F37C",
+				"text": "OFWQGLEVFLGHM"
+			},
+			"61": {
+				"offset": "0x4F38A",
+				"text": "EJFLG"
+			},
+			"62": {
+				"offset": "0x4F39A",
+				"text": "OQTR"
+			},
+			"63": {
+				"offset": "0x4F3A2",
+				"text": "vERerQU A vd livykevRspE3vi 5'NAvererCSRE3NUACvERerOPbyoGEOPcyo MvRspQU2A verer 7fvERerQUbE4vC 5e er9ASnesES(-GE SES(esTC(- M STC(YANvBE. NEct u E2NA fTIvCHervTUt voasvA spvkevoasvENspvP. voasasspEbvGE2 RE2 CHervCHervTUt vRE2 vA spvkevRE2 vENspvP. vRE2 asspveslivRE2 spvesliGE\" ME0QUGEvi 5E5vGE2 spGEOPspE yo!E2yospOPspv'A NU4NE t 9B! 3spfPE'yosp'ASOP!ve vESasvt?as"
+			},
+			"64": {
+				"offset": "0x4F60C",
+				"text": "9 men- yo NU3 3* 3 cuNU75 7B*DB'NAOP  2uQUsDVKth[WAIT]3 7fctthEFGHIQUTIGEEDNE SPEW QUESTCOPTU\n[NAME],*rERRU 01010021345666789abcdee02b111 yTI...E1 yME...L4 duL 2uNA yLfctaquERE 6RE[WAIT]Yv 8thvDVthctaquEuNActRisREfanG yE6NA' xer 2uQU  6n[WAIT]3 6u  1QU3u  'n- NAct2quv 8thE"
+			},
+			"65": {
+				"offset": "0x4F6DB",
+				"text": "yo  cuNU75 NU3E"
+			},
+			"66": {
+				"offset": "0x4F6E8",
+				"text": "yo OP yo  yLL \"NA yTE64TT...yo0E0ME yo11\"0QU0OP vC 5E64v 550B1an2OP1E"
+			},
+			"67": {
+				"offset": "0x4F725",
+				"text": "OP v'thyo OP [WAIT]8 qe 2 [WAIT]3NU1nTctt?ct*t?210654a98edcihg  v"
+			},
+			"68": {
+				"offset": "0x4F75A",
+				"text": "m64 76kNEEf8tcof8Pg.E96yaXko7gouXYk wO"
+			},
+			"69": {
+				"offset": "0x4F782",
+				"text": "E54tak83DkEh4Ia9565PaA98lcIaf8Pgg96taXkSc5cdktwk wO"
+			},
+			"70": {
+				"offset": "0x4F7BA",
+				"text": "O54tak84DkEh4Ia9582U4!hd3r5N47c2y4Y5b5n9Jf71y49a1N9.jtak"
+			},
+			"71": {
+				"offset": "0x4F7F9",
+				"text": "taNaja95023222012445e5kNa"
+			},
+			"72": {
+				"offset": "0x4F819",
+				"text": "to OGOGOG L L LRERERETTTTTTTTGHGHGHFIFIFI''PEME\" 4'YMB[NAME][NAME]stst[NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME]... L L LTTTTTT\"...M\"[NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME]\" L[NAME][NAME]ER\"[NAME]\"[NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME] LGH\" LTT'RENS[NAME][NAME]\" L[NAME]D[NAME][NAME][NAME][NAME]ME[NAME][NAME][NAME][NAME][NAME][NAME]MEER[NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME]\"[NAME]RU[NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME][NAME]CH8[NAME][NAME][NAME]AC"
+			},
+			"73": {
+				"offset": "0x4F9CE",
+				"text": "uuuuuuuuuuuuuuu"
+			},
+			"74": {
+				"offset": "0x4F9DF",
+				"text": "uuuuu"
+			},
+			"75": {
+				"offset": "0x4F9E7",
+				"text": "''uheTUheuTU"
+			},
+			"76": {
+				"offset": "0x4F9F8",
+				"text": "'heTUTUheheTUTU"
+			},
+			"77": {
+				"offset": "0x4FA01",
+				"text": "TU'heheTUu"
+			},
+			"78": {
+				"offset": "0x4FA08",
+				"text": "uuu'heu''uuTUTU"
+			},
+			"79": {
+				"offset": "0x4FA16",
+				"text": "uuuuuuhe'"
+			},
+			"80": {
+				"offset": "0x4FA20",
+				"text": "heheheuuuuuuheuheheheuuuuheuheheuheuuuheuu'heuheuuu'uuuuuhe"
+			},
+			"81": {
+				"offset": "0x4FA81",
+				"text": "m64ff77777ddfffffff     nnfffff7777777ffff777ec  f  ddddddd77dddddffffffffffffff44fffffff77f77fffffff64"
+			},
+			"82": {
+				"offset": "0x4FAED",
+				"text": "5 56464646464 5as"
+			},
+			"83": {
+				"offset": "0x4FB0D",
+				"text": "9 5 5"
+			},
+			"84": {
+				"offset": "0x4FB17",
+				"text": "tpBBb9h9    tpBBeeee        NXllvv"
+			},
+			"85": {
+				"offset": "0x4FB52",
+				"text": "m m   *vvNENENE*39907f137030701301070nvvnfn37b12f224401f1nDfnv"
+			},
+			"86": {
+				"offset": "0x4FB93",
+				"text": "ff fffffff f   \"OES0"
+			},
+			"87": {
+				"offset": "0x4FBA7",
+				"text": "0NE64646464646464 5 5 5 5 5 5 5"
+			},
+			"88": {
+				"offset": "0x4FBCD",
+				"text": "64646464646464 5 5 5 5 5 5 5 LPE[WAIT]  ClelileNSerPE[WAIT](ESa m5PE  FMEFPENEFMEFPE*FMEFCS"
+			},
+			"89": {
+				"offset": "0x4FC03",
+				"text": "GH NS lile,GEkwA,TCwESaAH5A,ES3isaHAC PE  -GEh7 LpNS"
+			},
+			"90": {
+				"offset": "0x4FC33",
+				"text": "PE  GEbBF'TChES7BF'GEbES7B(annuKz'GEbDzTCh'ES7DzGEbES7s-ann 5z)GEb*annPE  NS  L le0le  Se*u 3AAAAAAGEESbAPE  -GEb7PE[WAIT]GEkBF'TCwPE  ESaBFPE[WAIT]'GEkESaBGH(GEkuyTCw(ESauyGEk!ESaFGEkBF'TCwESaBF'GEkESaBu 3LHDzvrnj\"ESb  LZPE[WAIT] Cleu 2  ctFact4u 24  ctFact u 2  ctFactNSerPE[WAIT]kPE  uMEkPE"
+			},
+			"91": {
+				"offset": "0x4FD42",
+				"text": "GH NS PE[WAIT]u 2  ctFact4u 24  ctFact u 2  ctFactu 26  ctFact4u 2  ctFact u 2  ctFact MbGEGEGEkie-TCwESaie-GEkESa7anIdh 5GEkpanIhGEkPE   ctct0ctctMBleimimimim Mu 2u 286868686ES956 Cle' tESb 38 t6 34 t2 32 t1 31leb 38le6 34le2 32le1 31' tu 2FfuDf!GEk7!bGEGEGELGEkB"
+			},
+			"92": {
+				"offset": "0x4FFE8",
+				"text": ".PETUheON"
+			},
+			"93": {
+				"offset": "0x4FFEF",
+				"text": "64vvv    30d6N  Lhe Lhe Lhe"
+			}
+		},
+		"bank_14": {
+			"0": {
+				"offset": "0x50010",
+				"text": "vspMEspsaeerd jd TUd Jyou 'u u K2 SliNSu 3A TC 6liP64pA  LNUFakeqNELNU\nESPE tNUd QU6u  4vgsp 3 4fv w 2E"
+			},
+			"1": {
+				"offset": "0x50054",
+				"text": "QU6GINE5 7fQUoGI4 7f yj4TC4E yo 7yo 6QU2GI! 7fQU6GI3 7fQU6 EgedNU6 IerNA! 3YfNSQU u  3u  4le! m S  qA QU2 Egeb'NAaneErTC 5EUTC05EiTC15d  1 5[WAIT]Nct![WAIT]Iyo 2vbA vLLCHvBEvESGEOP 1Y 3GI3Y 3 EgebNUc gun'[WAIT]Y 3GI3yo 1v!GEAC 3Y 3RE3NUA QU u  4 EgedNUD Ieryo 3 Jeryo 2vTIN v  N vSlANvN ctCH[WAIT]cOP 6TC 4 SNE5nCHyo 6ACYRE7NU 5v:BEv  2"
+			},
+			"2": {
+				"offset": "0x5013F",
+				"text": "vowEv w 2vCHCHv'CHQU u  3u  4Y 3le!d  1 5[WAIT]'vbA ct!yo 2u  3vLLCHOP 1 6ou[WAIT]B 6le[WAIT]xvDVPENUvBENUvUGENUYv[NAME]ANNUTOP 1[WAIT]9vspESNUKvu ESNUFvBENUAv!GEvESGEOP 1 6ou[WAIT]2vEDY 3OP 1GI3[WAIT]2vBEESOP 2Y 3GI!e 2 Y 3v2  3 3AC 3Y 3RE3NUd vMEANv:BEvMEyov  2 v"
+			},
+			"3": {
+				"offset": "0x501DD",
+				"text": "he 2QU EGI 1CSCSCSCS  E1TCjvTI 2E yo 4vxGEAC 4OP 4 67  ct!GI!ct!GI!CSRE3  LL 7E"
+			},
+			"4": {
+				"offset": "0x50218",
+				"text": "GI!E GI!OP 4v  N vFasp'yo 4N OP 4v  N vKsp'yo 4N v\"eean2Faspou!REou  AELveeEvveeEfveeE vee  NE E'yo3vsBEEeeeE"
+			},
+			"5": {
+				"offset": "0x50275",
+				"text": "viseeves 2NE E'yo3vsBEv"
+			},
+			"6": {
+				"offset": "0x50287",
+				"text": "y! 6le[WAIT]OPu8youEW TC 2E64TC02ETC12E QUGI22 7fPEa4vI 3E mTC12PEa4vI 3EESTC 2EnTC02E  TC12PEa4vI 3OPuEheyou  spvPEvN u  3vESEDE Y 4GINU5GIGE5E"
+			},
+			"7": {
+				"offset": "0x502F3",
+				"text": "GINE5CHPEv\"eeNUVQU3A vESNE2E"
+			},
+			"8": {
+				"offset": "0x50309",
+				"text": "viseeou!REou  b y! 66  4ELvOPeeves 2QU2vb 6v-ESves 2QU2vb 6'NA 7   6OP 4v  N QU7A E09NActeeyo cteeyo0E2n?b4vee'TNSb4[WAIT]9NU7 62an3NAvb 6'NA 7    'yo 4  QU64 Eged 60[WAIT]1nTou4CS  PExGEvOPeeves 2v 3PEQUdvb 6v 3PEQUdvb 6v 3PEQUdvb 6v 3PEQUdb 6viseeE"
+			},
+			"9": {
+				"offset": "0x503BA",
+				"text": "TC55TC95TCc5TCe5NE2 S4 5 mpNUv"
+			},
+			"10": {
+				"offset": "0x503D5",
+				"text": "E1yoptNE d erGENE0E1[WAIT]2E2keNAes74n-pt S74NE'A QU v* 4'NAe  TTTpt M A QU vZ 4'NAkefGHQU1vb 6OPpt"
+			},
+			"11": {
+				"offset": "0x50418",
+				"text": "yoptACptTCer 5 mb  quQU2u ptQU4  5QU0u ptQU7EGETC0vA vESGEGI4 7  ves 2Yptvb 6v-ESves 2Yptvb 6'AS'NA 7  EVEnTC0v YE5yo2E5v64d  ERE8yo2E1v64d Eayo2E yo0vESd AC0OP0 62NUyo E yo0vESd AC0OP0 63NU 3   NSY0ct md yo1999n-1NANE ct 1d  S 5CS 5 m2  1NE8 meNUPEves 2Y2b 6 010f SGiyLAjMNVDmCLDnvfQNEURLkOP 4v  N anvN NUZOP 1vbA OP 1 6[WAIT]8vN annOP 1[WAIT]4vrN NUwvP"
+			},
+			"12": {
+				"offset": "0x505AD",
+				"text": "GINE5vFaGIY 4GINU5xGEEtTC!QU u  5ct3 6"
+			},
+			"13": {
+				"offset": "0x505CB",
+				"text": "6  fOPuEyouvAu OPu864youvpA  AeE yo0OP0n'8ASEnQU1vMBgeETMENU7 6aan3NAv9u AC0OP0 65  AAC 5Y 5REd   wEM  2ctu yo 1OP1OP2OP 5vBEES'yo 5'yo2'yo1 yu yo m yu yoesE64yolEyomEspyonENEyoohaESesu eIWSE*EW E yoptyo LEyo 1vAN Mv[NAME]ANan0PN v!GEves 2Y 3EGI3E GICHE1GIyoA 999864yo 2QU u  4ctNU5fFvN ctyoyoSlTC 4esGE5TC.3n-SlTC,3  ,3QU6v 2u  7  Y 4leNU5 5d  2"
+			},
+			"14": {
+				"offset": "0x508B8",
+				"text": "vxGEv 3. vw. E yo1 3pt5pt5pt5ptEDvBE. EEvBE. v 3. Tv  N vN u  3 NEvO. Y 4ctGE5ctNU5vKsp'Y 4GINU5'GIGE5EY 3GI3yo 1v!GEvxGEv 3. vw. E yo1 3pt5pt5pt5ptEDvBE. EEvBE. v 3. TELTC85EXTC95EHTCa5es 2Y 4ctGE5999yoptNE d 1NE2GEE0999-pt'7yo2GEE199'-yo GE'3yo0QU vZ 4kefENQU2vb 6E7v. En. yo LNEeGEE2999-ptyo2GEEb9'\"yo GE- Lyo0QU vZ 4kef LQU2b 6yo0NE2GEE NU1ED"
+			},
+			"15": {
+				"offset": "0x50AB9",
+				"text": "d 3 5esNU5fjesGE5TMEean3"
+			},
+			"16": {
+				"offset": "0x50ACB",
+				"text": "'0 23an3yo3d  4 5 m7  OGE,yo E yo0yo1Y 4ctGE5999yo2u ESY5ctETCyo7E0yo8OP8yo9OP599ASQU v* 4OP2 27[WAIT]PNU7OP9"
+			},
+			"17": {
+				"offset": "0x50B17",
+				"text": "yo9AC9viQUAC8NSA OP599ASQU v* 4OP2n-9an5 27NU7an3 27an1OP7yo2vu ESY5ctTCyo7NE GEQU OP599ASv* 4OP2 27  1' 6.an5AC2AC2  3 32 32'ASOP nMTCY5RE6  3nMTCyo Y 5ct3n'3yo0vu ES 5  t?OP5 61NUR99ASQU v* 4Y5ctTCyo E yo0vu ESOP5 66  pE3yobv 6QUv"
+			},
+			"18": {
+				"offset": "0x50BC2",
+				"text": "QU6vb 6E6yo5Eyobv 6QUv"
+			},
+			"19": {
+				"offset": "0x50BD5",
+				"text": "'yo5E TC5YbL8 m6[WAIT]4Y 5ct3 t!TCvCSQU 7   35fOGA OP599ASQU v* 4OP n-byo 'NA'yo0vESES'QU1vb 6NEuQU Eyo vZ 4kefELTCe5EXTCf5EHTCg5ves 2vbN Y 5ct3yo0vESQU4vb 6AC0vESQU2vb 6NE4Eyo QU vZ 4 5 mb  [NAME]"
+			},
+			"20": {
+				"offset": "0x50C6C",
+				"text": "E1yo1NE4GETME4Y0REb[WAIT]2n'69NActTCyo ctTCyo2QU vZ 4 5 mb  DVvESES"
+			},
+			"21": {
+				"offset": "0x50C9C",
+				"text": "A GEQU2u 6OP OP0OP2OP6n-0yo0'99E7-2yo2'9E7- yo OP599-6ASQU vZ 4'yo2'yo0'yo  36f 1'AS'NAOPu8youOPlTC 2ETC02OPmTC12QU NE t  mGI22AC m  1ACesCSRE  [WAIT]E0TCa4vI 3 y12n'TC12NU2PE 2 y 2 2nNU   y12 2oNU 5OPuEheyou*64GEGENU"
+			},
+			"22": {
+				"offset": "0x50D49",
+				"text": "001234 *64.ke'64*.,,\"\"\".*keGE.NE64'TNUAS64an00222446gW   ES MEAC 4  *OP 4QU0Et?GI!GI5...E0GI!u  3u  4 yyoGIyo yCHGICH y3GI3 y3GI3 y3GI3A 9GINE5vSlANAC 3AC 4Y 4RE3NUhe'yo 4vKONv'ONvGIONE yo vBETIEanyo1vTCQU En'6GIGE5CSRE3NUv'ONvGIONE yo1TCE yo0E0yo OP1yo2OP an5vBETInONvVTI7vEVONDNUERAC OP  64NUTUAC vBETIEVONQU EW yo3E?yo4"
+			},
+			"23": {
+				"offset": "0x50EEC",
+				"text": "NE0QU64MB 7  ke  H1vQUv 7fY0e 1TC4v y84TC4vOP 4  7EETC  m0[WAIT]9 y44e 19'FTC vQU5NE64ke   7   y74TC4v y84TC4v y44TC vOP00yo0OP 4  tOP E540ASY0esNUTIha1  5RE [WAIT]7TRE   rAC1nyo3 3353OP n-3ASesGETI 22[WAIT]u m1an3 32n m3an5 m1[WAIT]  9 m5an5 m3[WAIT]1  CSAC2nCS.  5NU 5NUT* 5*TOP 499yo3OP n-3NActACTIyo3QU NE E yo4ctTI S 2OP4 61  8ctTIn-3 S 2CS 5AC4OP4 68NU LRERNUEVE5TC"
+			},
+			"24": {
+				"offset": "0x5108C",
+				"text": "E1QU5v SNUQUIvb 6EQU1v SNUvmBEOPuEyouyo3A NE3QU v* 4OP n-3yo QU vZ 4 5 m7NUMBv"
+			},
+			"25": {
+				"offset": "0x510C8",
+				"text": "'NA 7fENOP 4v  N NENv)N  6a[WAIT]1NEEvGHED 1 6'yo 4v  N v)N u  3yo 1vvANOPowGICHY 4EBGINE5vxGEvt?BENUByo4vE 5 6GENUsvEOP 4OPyo 4vTIN v  N OP4veeyo'yo 4v'ETOPowE Y 3GICHvPEY 3'GICHE vEv'EvxGEnE Y 3GICHE"
+			},
+			"26": {
+				"offset": "0x51158",
+				"text": "Y 4GINE5OP4Y 4TGE5an4"
+			},
+			"27": {
+				"offset": "0x5116A",
+				"text": "NACSA yo3E yo5Y 3ctCHyo6Y 4ctNE5yo7TC7QU v* 4OP4Y 4DVGE5OP3an4"
+			},
+			"28": {
+				"offset": "0x51196",
+				"text": "NACSA n-2yo2Y5ctesEn- yo TC7QU vZ 4AC7 36  stv"
+			},
+			"29": {
+				"offset": "0x511B8",
+				"text": "AC5OP5 6f  asNEBEpyo3vsBEv"
+			},
+			"30": {
+				"offset": "0x511CC",
+				"text": "E yoowGHTI"
+			},
+			"31": {
+				"offset": "0x511D9",
+				"text": "00048bor5Eyo yo0yo1yo2NE'QU vZ 4kefE"
+			},
+			"32": {
+				"offset": "0x511F9",
+				"text": "QUnGI4 7fv"
+			},
+			"33": {
+				"offset": "0x51204",
+				"text": "ves 2v"
+			},
+			"34": {
+				"offset": "0x5120A",
+				"text": "yj4TC4E QUo M m 7fQU2GITC 7fQUGI5 7fQU'GI3 7fQUaGI! 7fTC74TC84ETCyoFaTC'3E0yo 8TC3E"
+			},
+			"35": {
+				"offset": "0x5124F",
+				"text": "QU2GI3 7fQUcGI3 7fE NAGI643CSRE*NUQUhGI5 7  QUNUGI"
+			},
+			"36": {
+				"offset": "0x51276",
+				"text": "( 7  QU E7T!an7!GI!E CSRE3  NSQU2ct!  4E"
+			},
+			"37": {
+				"offset": "0x5129B",
+				"text": "GI! 7f y! 6ou[WAIT]E yo 1vBEESEETC'3E3yo 8TC3E  yo Enyo0E64yo1Eyo2E yo3QU  y1vOP0TC5vOP TC5v y6v y6vGI22CSGH2NUQU1e 1GI 2 7fE0TCa4I 3vvANGEOP 1 6a[WAIT]i 6[WAIT]e 6ou  3Ec  8 y! 6t?  3E yoowTC 3OPSl SyoOPow SCH'ASA GEOP 1 6ou  hEdyoSlE yoowEyo CEJyoha  'vEA OPstyo mOP  yoesQU u  Cu hau owu SlvBA v\"A vTCA E[WAIT]hvTCA Ee 2SlNU1yoSlACha'fOGLnvA A vTCA n'REan2GI5CSACow'f 7AC CvER"
+			},
+			"38": {
+				"offset": "0x51431",
+				"text": "cst.3  f y"
+			},
+			"39": {
+				"offset": "0x51439",
+				"text": "4st3  7TOP 1 6[WAIT]anGHnve GE[WAIT]\nvAN Mv 2GENU2  )3 3ptf\nQU u EVOP L9- LASes4 6"
+			},
+			"40": {
+				"offset": "0x5146C",
+				"text": "1ACEV 5 5 5CSRE3  LLOPEVst)3vt GEvAN Mv 2GEandvLLGEan8veGENUhE yoEVvK M 3ptfFI yj4TC4Tve GE[WAIT]jvAN Mv 2GEan4vLLGENU7vK M 3ptfRUTE [WAIT]1E3yo Lv MDo)37ked ptDE yoEVOPEV9-EVTC L[WAIT]1'bASQU ct,3EV4  6 5CSRE2NU[NAME]ACEVE2 2EVan  NE d EVOPEV9-EVTC L[WAIT]1'bNAle4 5  1TACEVE2 2EVanGHct3 5ke[WAIT]4j ME2 5ke[WAIT]499v Ms3GI3OP 3n- LNATCptOPEVvu MQU OPEV9-EVTC L[WAIT]1'bASct,3 S4 5CSRE2  A GEOP"
+			},
+			"41": {
+				"offset": "0x51650",
+				"text": "S4 5 7  'NA'ASkefESQU2  1QU ct4GI5CSREo  QU2  1QU ct5GI4CSREo    110110 hq5CAiQU0  1QU A vrN 'NAan8e  8n( CNU1nTvrN an*vbN NU'vEA OPstyo mOP  yoesY 5ct'3yoFact3yo 8OP 1  3ETCyoFavBA OPEOP mOPesE yoEOP 1 6ou  7OP   6'an1ACEvhSA'yoes'yo mveeSANUs 3    ptY 5OP 1[WAIT]2GI3CSREd[WAIT]9OP 8GI3OPFaGI'3T'yoEE yoptE"
+			},
+			"42": {
+				"offset": "0x51728",
+				"text": "yoeryo Lv\"A vTCA NATCE  9E  2vA A vA A A fCSE3[WAIT]gNU4vTCA yoptvTCA yoervTCA yo LQU v\"A OPpt5erB LNU2vTCA GI5NE795ke  CSREf  GHQU A 86ASct5 S*5CSkeA E6  REv  ERE yoptv\"A vTCA yomE2NACSOPmE  0NATCE  8A   2vA A vA A A AS 5Evke  ASApt  GE4ptyoptNEfA   1ASCSd r 7A 9999yolE yosOPrE0NAe  8 8  1nNE3\"ske  4ryor y1vOPrTC5vOPsTC5vYlNEfct5TC6vCSke   y74TC4v y84TC4vOPmL2"
+			},
+			"43": {
+				"offset": "0x51A9B",
+				"text": "vGITnQU6ctNU5f8En 2 3[WAIT]x 7fLLY 3ct3 6[WAIT]4yo 1v 3PEY 3E"
+			},
+			"44": {
+				"offset": "0x51AC7",
+				"text": "GI3E GI3GI3TnE yo LvCS ME3yo LvCS M yj4TC45OP 6OPow[WAIT]-yoptEyo LE yoEVOP 6[WAIT]oyoerNE QU v* 4OP TTT L 67an1ACEV 5 1er  ERQU NE es5TTT L 67ankACEVOPEV 68NUcu  2A   q 7u  1'yo 6n 5 1pt  AOP 6n-pt 6anTTCSGH 2  FaAC LOP L 6 5  W 'yo 6TY 2A Y 4TCow  6E"
+			},
+			"45": {
+				"offset": "0x51B6A",
+				"text": "GINE5  AOP 6GINE5QU ct5yo E yo0GETC 6A QU vZ 4'NACSAC 6'ASke  OGAC 4'NA 7   2vGHEDOP 6TC 3TCHyo3Y 4ctNE5 6"
+			},
+			"46": {
+				"offset": "0x51BB2",
+				"text": "yo4nCHASvNBE'yo4TC 3esCHyo3OP 6TTT3ASvsBE'yo3QU6ctNE5 6"
+			},
+			"47": {
+				"offset": "0x51BDC",
+				"text": "i 24  6E"
+			},
+			"48": {
+				"offset": "0x51BE3",
+				"text": "GINE5  7NU5TTT3GINE5 7fFIA GEQU u  6 7NE6esNE5 6"
+			},
+			"49": {
+				"offset": "0x51C06",
+				"text": "7 2 6NU3yo 6GENAkefPECS[WAIT]b 7v2 N ctCHn- 6yo 6'AS'NA'NE Eyo3Eyo yo0yo1yo2QU vZ 4 5 33  QU v* 4ASTC4QU vZ 4'AS 5AC4 33  MEOP 7vBE'yo 7QU TC 3esyoT- 7 6van6yo 7CSGH 2  NSu  2A T  0n y! 6 y  3E1  9 6ou[WAIT]3 6le  5E9TCGE5 3 7OP 7yo 7EfTTT 7yo 7NE d  4v)N NUg 6"
+			},
+			"50": {
+				"offset": "0x51CB4",
+				"text": "cOP 7 SGE5ctyoT- 7yo 7AC 4 5 m7  FIOPSlyo L LEfTTT LyoptE0yoervERBENU0OPer0OPerNU1"
+			},
+			"51": {
+				"offset": "0x51CEC",
+				"text": "-pt[WAIT]' 6vanWyoptACer 8BEQU ctNU5fqEnASctGE5nyo 2ptNU9OPptn-SlDVGE5anhCSRE7    OPptn-Sl 6van3OPptTnA OPpt8TC[NAME]37Y 1REou[WAIT]3REle  4ELLTC[NAME]3DE FT-Sl8TC3'NA y3Ee 63an499NA  p8vTC3'9NAASvQUGI y[NAME]3n'vTC[NAME]3'NA9ASvQUGIOP 1 6ou[WAIT]3 6le   y38fEuTC3Eeyo NA99n- AS y[NAME]3n'vTC[NAME]3QUGIes5GITU3GEA 99NAGE99ASes"
+			},
+			"52": {
+				"offset": "0x51DC5",
+				"text": "(GI3ke 7A E2  'NA'ASke 7  EL hTUOP 3999864yo 3QU6ctNU5EGE 2 3[WAIT]a 7fTC 3'yo 3GETQU6ctNU5EA  2 3[WAIT]a 7fTC 3'yo 3GETAC 3OP 3E6  OGnOP 1E"
+			},
+			"53": {
+				"offset": "0x51E22",
+				"text": "yo 1vrN 'yo 1'GEOP 1NE EV3[WAIT]6 5 md  [WAIT]zd  5N OP 1E"
+			},
+			"54": {
+				"offset": "0x51E49",
+				"text": "yo 1vN 'yo 1GEOP 1NE EV3[WAIT]9 5 m3  'AS'nd  3'AS'GENE esNU5f8 5 m7  'ASnd  4'ASTY 4v2 N ct3Y 4ctNU597EnNADA GEOP 4NActTCan7E7[WAIT]6''n9anNE esNU5f6 5 m7NUnGE87ASOP 4NU5GE9999ASGEsTCGITC'AS'NATA OP 4NActTCNU3TE7  4''NAn'E6yo 4'NATA  y 4 NAE[WAIT]NU3YTCGITC'NAA Y 1cthatoyo 1'NA'QU DVhato[WAIT]2CS  A GEA NEjOP 1 6j[WAIT]I 6J[WAIT]E 6'[WAIT]"
+			},
+			"55": {
+				"offset": "0x52040",
+				"text": "yo E2yo1vNENU0vCHNENNEE yo0QU6ct5 2 n[WAIT]0TB0 7f[NAME]OP0  1T GeNAct5  GeASE TFkef5GI5 31   5nE [WAIT]1E"
+			},
+			"56": {
+				"offset": "0x52092",
+				"text": "QUeNE GI5GEGI5' 7fE64TC 2E TC12EfTC02E0TCa4QUect5GI22 7fI 3OPuEyouOPuEheyouOPuEyouv"
+			},
+			"57": {
+				"offset": "0x520D9",
+				"text": "yi4  OPu87youNEyE yo0E1yo1Y 4ctGE5999yo5d 3E yo4QU3E5v 5999-5yo2OP3999'yo QU vZ 4kef"
+			},
+			"58": {
+				"offset": "0x52137",
+				"text": "\"f0uuWu                64"
+			},
+			"59": {
+				"offset": "0x52157",
+				"text": "AC764TU wTU026euuu'02626eqQ'''Zrrd6QQW'uue6 64 mRE[WAIT][WAIT][WAIT] 64 mRE[WAIT][WAIT]an**RE mqu[WAIT][WAIT]RE m  014oYK  025lyN   mRE[WAIT][WAIT] 5X  64 vvan[WAIT]Os352   Zt662   .GHv m    1TRE m                      26eeLL   1377ke   RE[WAIT]                        26aa8b5213bbde62LL Lctrteeu'TIge"
+			},
+			"60": {
+				"offset": "0x52249",
+				"text": "3lu 5622  mRE[WAIT][WAIT][WAIT][WAIT]vRE     fRERE 0014aa8 0025bbdqueTULLLLTI 4"
+			},
+			"61": {
+				"offset": "0x5227C",
+				"text": "*LTXuA   TU"
+			},
+			"62": {
+				"offset": "0x52288",
+				"text": "LLesTI.*fvL m  mRE[WAIT][WAIT]RERE m6464   ffb52     e62      4WLL     TLL     is Le    .TUe      v m    LRERE m    144AME y t255ZAEN 4[WAIT]quctGI 2p  'e t t-es 2 mesW ED 4"
+			},
+			"63": {
+				"offset": "0x52311",
+				"text": "Xhe-...le v m64NUTCge  !LtK w wTI:'uM L LREuKer 8"
+			},
+			"64": {
+				"offset": "0x5233C",
+				"text": "RERERU,A -SAEDONctGEPE-) 3 3sa64AC"
+			},
+			"65": {
+				"offset": "0x52357",
+				"text": "erer7nTTisTU'fKhe  RE'uL mERA K  ou.[WAIT]REGHFI[WAIT]:ZliFaTUha wmAC*RU 6\"GE[WAIT] hehe'N [WAIT]spheis w  -Lu mFa L!*'uW SlNSER 8 yee'trH! 4ee 2ERfREJdeqo[WAIT]REENAC\"BE[WAIT] Uo26N [WAIT]  nHr  fL'r   nPDn    fDPn  vasNE y!9NActcTCyo ctdTCyo0veeOPuEyouqTC'TC STC  TCYRERkeASEESTC 2EnTC02E  TC12QUmEREfNU1E4GI22 7f[NAME]PEa4vI 3QU vNSanNE0"
+			},
+			"66": {
+				"offset": "0x52474",
+				"text": "E yoe[WAIT]3E0yoeQU v t vNEYevpDo ERvouYevNANEcEhyo3OPe[WAIT]5NE0Etyo3sBEE1yoeQU1vpDovNEACeYevpDo 3e ERvouACeYevNA 3eQU0vNSanQU3vNANE Ejyo3sBE anvNENE0d eke twYA vOPTCeke tMYvb 6 3evOPTCe tEYvb 6ACe'NA 7  ENvOPTCeke tY[WAIT]2vNAACeTCe m7NU 1NE Efyo3vsBENE2GEE yo v8YAC OP  63NU'ASke  MBE yo v8YAC OP  62NUQUdctYGI55 7fves 2v"
+			},
+			"67": {
+				"offset": "0x52567",
+				"text": "QU1vNSanCSRE8NUQUaA vNAQU3vb 6'NACSREgNULLQU8vNSanCSREaNUQUgA vNAQU1vb 6'NACSREiNULLvNSOPQUivNANE  tYGEvNSanQUbvpDo'ASQUevb 6 5 m2NUTIQUovb 6QU0A NE GE tYREc  2vNSOPvNSan'AS 5 m4NUMB'NA 7f LQUmct\"YGI 2 7fE7TCa4I 3QUavNSanCSREdNUNE Ejyo3vsBETCe tUYpDoOP 9NActYTC05ctYTC15ves 2QU4b 633357jz0lhd96210a86421003456789a4567 89CmDnEoDneEoLelL"
+			},
+			"68": {
+				"offset": "0x5268C",
+				"text": "oeZQUhvNSanCSRErNUQUcvpDoCSREfNUE"
+			},
+			"69": {
+				"offset": "0x526A5",
+				"text": "yo4E yo3E1yoaE3yo7E2yo8E8yo9 t vstou 64QUivpDov64NEQUjvpDoQUjvNACSRErNUE2yoev64ouNE1Enyo3vsBEQUfvpDoCSREiNUE0yo4E3yo3E1yoaE3yo7E2yo8E8yo9 t vstou 64NE1E6yo3vsBEQUkvpDoQUlvpDov64NEQUrvNACSREzNUE3yoev64ouNE8Enyo3sBEQUrvNSanCSREuNUQUmvpDoQUzvNAQUuvNSanCSREENUQUnvpDoQUAvNAQUrv t vNEQUovpDoE4yoe ERvouQUBvNA yj4TC85ves 2QUpvpDoE"
+			},
+			"70": {
+				"offset": "0x5279A",
+				"text": "yo4E7yo3E0yoaE2yo7E2yo8E5yo9 t vstouQUqvpDoCSREuNUQUCvNACSREKNUQUsv t v64NEE5yoev64ouNE5Efyo3vsBEQUuvpDoCSvpDoQUtv t v64NEE6yoev64ouQUwvpDoQUKvNAQUrv t vNEQUxvpDoE7yoe ERvouQULvNAQUyvpDoE0yo4Eayo3E0yoaE2yo7E2yo8E5yo9 t vstouQUzvpDoCSREDNUQUMvNACSREUNUQUsv t v64NEE8yoev64ouNE5Efyo3vsBEQUDvpDoCSvpDoQUtv t v64NEE9yoev64ouNElE1yo3vsBEELTC85es 2 3"
+			},
+			"71": {
+				"offset": "0x52902",
+				"text": "yo4Edyo3E4yoaE3yo7E yo8Etyo9 ASvstou 64 QQUVvNSanQUUvNAQU9vb 6QUWvNSanCSvNSanQUVvNACSvNAQU9vb 6QUYvNSanCSvNSanQU9vb 6QU'vNSanCSvNSanQULvpDoQUXvNAQU9vb 6E vEQUvNSanCSvNSanQU9vb 6QUvNSanCSvNSanE0vEQUYvNAQU9vb 6E1vEQUvNSanCSvNSanQU9vb 6E2vEQUvNSanCSvNSanCSvNSanQUZvNAQU9vb 6QUvNSanQUevb 6QUvNSanCSvNSanQUevb 6QUvNSanCSvNSanQUMvpDoCSvpDoQUevb 6QUvNSanQUevb"
+			},
+			"72": {
+				"offset": "0x52A31",
+				"text": "yo4T-2yo2'yo4QU vZ 4 5 m9NUptGHKNR120202 1ct\"NAyo4ctOPNAyo7ctGHNAyo8A 9NActyMEyo5ctzMEyo6vMB w'NAhh1715010250014123130012117300121173115010040001501004000000000 0111111111111111111        000000001          0000000000111111    TC   ERNSEAN M SES yEES 8ANSAER ye  4EVNSANSAER ye  4EVNS  E SA MEes 8  ER E SA MEes 8  ERha 2 Mer"
+			},
+			"73": {
+				"offset": "0x52B7E",
+				"text": "ME0Do6Do7Do9DoaDobDogDohDoiDo"
+			},
+			"74": {
+				"offset": "0x52B92",
+				"text": "ME0Do6Do7Do9DoaDobDogDohDoiDojDokDolDomDonDooDo 0fgvwxLMN3jklABQR-\")u -\")......sp...spwxLMNOP)u (d yoANGE MES()eed yoECHANGE MES32ji1hA ctN yyoact\"Doyo3ct SDoyo4ctFaDoE2yo7'yo9'E6449yo9'E79999yobct"
+			},
+			"75": {
+				"offset": "0x52C60",
+				"text": "Doyo8A 9NAct- yyo5ct\" yyo6vAS w'NAcc 3         128128egeg1575aclnlp575aclqls 5tzFL79bhh175579988500550551f1f1154181100154181100002222000fghh1h1111111 vv0wwvvwwxvvvvv f fwwwww0g0g11totototo19   7  9fnxHQZ"
+			},
+			"76": {
+				"offset": "0x52D3B",
+				"text": "-''!:...             000000       0  0000  0  000000    000 8 y 8 yFI yDV yTT yTT yER y y y6oufouoouuouvouxouJouvouxouJouVouXouVouXououououououou'ou'ou-ou-ouououououou'ou'ou-ou-ouvou:ououououou)ou.ouou 0fgvwxLMN3jklABQR-\")-\")u -\")u -\"()-\")-\")-\")xJtxBxJxtFB"
+			},
+			"77": {
+				"offset": "0x52E8E",
+				"text": "1E yo E0yo1OPevNE'yoeanu 2TCeessaouEeyo0'E[WAIT]yo1esisouEeyo4'E64yo5vand ou55 keke1ke2 1ke2 vPE64 1TI-yo5"
+			},
+			"78": {
+				"offset": "0x52EDD",
+				"text": "QU A GHaNU5CSGH7 7[WAIT] vMBou'NANUNSAC3CSGH7NUACTC9QU v* 4Y8e  n-4 M QU vZ 4 5GEY3DVs wNUGHct wNAvb 6Y8e  Y3DVK wT[WAIT]0n9bce9bce79a79azFLR(.(ANNUAN M64ESESke08jj08jj9jj9jj9jjjvE 5E0[WAIT]182yo5vE 5E0yo6AC6'L7OP4"
+			},
+			"79": {
+				"offset": "0x52F7F",
+				"text": "yo6AC6v.  wQU9vb 6OP6"
+			},
+			"80": {
+				"offset": "0x52F8F",
+				"text": "yo6AC6v.  w"
+			},
+			"81": {
+				"offset": "0x52F99",
+				"text": "TC9QU v* 4Y5e  n-6 M QU vZ 4 5GEY3DVs wNUGHOP7[WAIT]aE0  6yo7vt? wAC7t? wNE GEvnanTC3'Y8[WAIT]3n-8NAu 0OP9Y7[WAIT]184byo1QU vZ 4AC3'AS 5 14NUowOP7[WAIT]aE0  6yo7v"
+			},
+			"82": {
+				"offset": "0x53006",
+				"text": "wAC7v"
+			},
+			"83": {
+				"offset": "0x5300B",
+				"text": "wI 3NE vanOP8[WAIT]6GEn9-7-8v 3 5 14NUMBOPa  nvanOP 999yo2OP0TME7999n''yo GE9ASt 5n''yo  5t 5Y7[WAIT]8EPT\n59n:5n'yo2t 5E[WAIT]n'7yo0'EeY7[WAIT]ayo E5TTT 9T- n'9yo ct5TC12E TC 2ON02QU u 3OP0GI22GI52OP39999-1NU62252n-2GI32'7GI62'n-2AS y12OP5L3'"
+			},
+			"84": {
+				"offset": "0x530D1",
+				"text": "'U )GI42GE'7AS'U )GI72A n'5NAAC3OP3 24NUMEOP49TCa4PEa4I 3v t OPu8youvI 3OPuEheyouA E6yosact't Eeyo4'Efyo7ct't Ee9999TC02'[WAIT]2d02TC 2cttoEec 2864TC 2'E[WAIT]TC12E0TCa4OPEE yoERE1NU1ACEA 9NActt?t yo mctSet yoesv yto'yoE'NA5hgghjghijhhggjjjhgghihhjjj7170hghggjgggggggggggggggggghhggggggghghhhhghhg5211145ESt itoqu..."
+			},
+			"85": {
+				"offset": "0x53223",
+				"text": "ct9 tq tF tV t t t t( td  t M tY tle tEN tLL t t teheohexheIheXhehehe'heheEhe She yheheheleGElee leerle[NAME]lejctctPE LoU SpVELoVlesleleleUELGItENTI"
+			},
+			"86": {
+				"offset": "0x5328C",
+				"text": "o St?EDrle tot?oVot?Vot?uVoEDq LGIAXXXWES\"ESE yo0vhSAQU TC0ct5 S22 S )AC0CSREfNUPEOP7[WAIT]3REvNUAC 34  DV 013Ethl24p67banis9iDkehes...t5rquHs8ugGvIcdzmxCAqt?*wLUN TCONGEGE SQRPERSESVWPEXjFfJSAYoBZNEED MK'TGIQU-BE\"'AS\"Y''ESA W ?'-M!OPE(),:y.2 64d speeyolikeQU. u A"
+			},
+			"87": {
+				"offset": "0x53528",
+				"text": "t?fanu t?bzNAGEqukGId  t?tgE3eskPEes3 64is5N 2 ouesw7keJespee6t?b wTCquDKDot?bEqup 64jSeNRESAesqisAt?nTUAN 3isZerESESe5ER2 ht?AXSA\nt?A LctEt?s 5eeSeERPESelMEasTUquA5A  8t?i\nu MBisTCSeIW TISew7keQeskPEeskNSer5SeG0OPNAisntoEDaeskGE y[NAME]esp 64qSew 6GIEDSeuESyquZerESOSezpkeanSeNRESA64esh CyoMquoAE'qut?. liisj  A  qudptONququG0OPt isGzou tSet?ANowSeqTCN YquERPESeOyoSep 64xSe"
+			},
+			"88": {
+				"offset": "0x53E06",
+				"text": "ct'NACSRE3  NSEfyo8QU7es5Bc 7  OPc S5 5 38  ERGEE7yoyd zv  ge'ASGEA OPbyosaOP1yo mOP2yoesv\"A es tASQUevTCA  S5 5 7f'NA'AS fvL 5Lt2eui844284 6eBE5ri6 22bf3 m1fL 4emO1jR9 732 mUXuu6W836u62sZ mM0eeACPE 01ee L[WAIT]PE mu.W  Lant\"xiA? m16E'TULL 4Vm0sayLL 4 664OGOG2   2    5xi'fTb[WAIT]fL mNNE  W"
+			},
+			"89": {
+				"offset": "0x53EFD",
+				"text": "u yhe64REr 5'get[WAIT]64liOX0e.Nle m'*  ZPEle*esBPE 62A A  266ar  266ar  5y0 64 mO 02erlet dTI20LL0 m*es3tA 5toPdUREfGE8O, mTXctYesTUSeW'uu 6LLLLuAC64* TI w wTIRE  6P[WAIT]-   RE 3T 1r m BN  mENYJp9phe"
+			},
+			"90": {
+				"offset": "0x53FA5",
+				"text": "4Se   mlPESleGE[WAIT][WAIT]is,ON 5[WAIT]RERE m64[WAIT]RE mke5D REv[WAIT]keae .ouN * mke2e 900"
+			},
+			"91": {
+				"offset": "0x53FE8",
+				"text": ".PETUheON"
+			},
+			"92": {
+				"offset": "0x53FEF",
+				"text": "64vvv    30d6N  Lhe Lhe Lhe"
+			}
+		}
+	},
+	"event_handlers": [
+		{
+			"handler_addr": "$9FFD",
+			"call_count": 4,
+			"callers": [
+				"$884C",
+				"$98B6",
+				"$ABF3",
+				"$AFA6"
+			]
+		},
+		{
+			"handler_addr": "$9E6F",
+			"call_count": 1,
+			"callers": [
+				"$86FB"
+			]
+		},
+		{
+			"handler_addr": "$AEB1",
+			"call_count": 1,
+			"callers": [
+				"$8CD5"
+			]
+		},
+		{
+			"handler_addr": "$BAF1",
+			"call_count": 1,
+			"callers": [
+				"$91E5"
+			]
+		},
+		{
+			"handler_addr": "$B61E",
+			"call_count": 1,
+			"callers": [
+				"$958B"
+			]
+		},
+		{
+			"handler_addr": "$B73B",
+			"call_count": 1,
+			"callers": [
+				"$9C65"
+			]
+		},
+		{
+			"handler_addr": "$87FB",
+			"call_count": 1,
+			"callers": [
+				"$A4A6"
+			]
+		},
+		{
+			"handler_addr": "$AB4D",
+			"call_count": 1,
+			"callers": [
+				"$A57A"
+			]
+		},
+		{
+			"handler_addr": "$89DA",
+			"call_count": 1,
+			"callers": [
+				"$A5E2"
+			]
+		},
+		{
+			"handler_addr": "$B9C7",
+			"call_count": 1,
+			"callers": [
+				"$A619"
+			]
+		},
+		{
+			"handler_addr": "$8FDB",
+			"call_count": 1,
+			"callers": [
+				"$B6A7"
+			]
+		},
+		{
+			"handler_addr": "$9F7D",
+			"call_count": 1,
+			"callers": [
+				"$B785"
+			]
+		},
+		{
+			"handler_addr": "$AFD8",
+			"call_count": 1,
+			"callers": [
+				"$B79E"
+			]
+		}
+	],
+	"npc_data": []
+}
