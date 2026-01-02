@@ -123,16 +123,97 @@ Commit: `e547f91` - docs: Add Dark Repos wikitext documentation
 | dragon-warrior-4-info | 1 | 3 (+942 lines) |
 | dq4r-info | 1 | 5 (+303 lines) |
 
+## Session 2 - Continued Work
+
+### GitHub Sub-Issues Created
+
+Created 9 sub-issues linked to the epic issues:
+
+| Issue # | Title | Parent Epic |
+|---------|-------|-------------|
+| #12 | Set up DQ3r engine fork | #1 Foundation |
+| #13 | Complete DW4 NES ROM map documentation | #2 Documentation |
+| #14 | Extract and document all DW4 monster data | #2 Documentation |
+| #15 | Extract all DW4 dialog text to JSON | #5 Text System |
+| #16 | Convert NES 2bpp CHR to SNES 4bpp graphics | #3 Graphics |
+| #17 | Convert DW4 music to SNES SPC format | #4 Audio |
+| #18 | Implement DQ4r battle engine | #6 Battle System |
+| #19 | Implement Chapter 1 - Ragnar | #9 Chapters |
+| #20 | Create DQ4rLib unit tests | #11 Testing |
+
+### DQ4rLib.Tests Project Created
+
+Created xUnit test project with 46 passing tests:
+
+| Test File | Tests | Coverage Area |
+|-----------|-------|---------------|
+| GraphicsConverterTests.cs | 5 | 2bpp→4bpp conversion |
+| SnesPaletteTests.cs | 7 | RGB555 color handling |
+| AudioConverterTests.cs | 6 | DPCM→BRR conversion |
+| TextConverterTests.cs | 11 | Dialog text encoding |
+| SnesGraphicTests.cs | 5 | Graphic data structures |
+| SpcAudioTests.cs | 6 | SPC700 audio structures |
+
+**Bug Fixed:** AudioConverter.FindOptimalShift overflow when encountering `short.MinValue` (-32768). Fixed by special-casing the edge case.
+
+### Additional Wikitext Documentation
+
+Created 3 more comprehensive wikitext documents:
+
+**docs/wikitext/Monster-List.wikitext**
+- Monster data structure (27 bytes per entry)
+- Drop rate system (1/1 to 1/128)
+- Chapter-organized monster tables
+- Metal monster special stats
+- Boss monsters by chapter
+- Behavior flags and status immunities
+
+**docs/wikitext/Experience-Table.wikitext**
+- Per-character EXP tables (Hero, Ragnar, Alena, Cristo, Brey, Taloon, Nara, Mara)
+- Data locations (Bank $27)
+- Level cap information
+- Approximate max EXP values
+
+**docs/wikitext/Item-List.wikitext**
+- Item data structure (8 bytes)
+- Weapons: Swords, Claws, Staves
+- Armor: Body armor, Robes
+- Shields, Helmets
+- Consumable items
+- Key items
+- Equipment restrictions
+- Cursed items
+
+### Git Commits (Session 2)
+
+| Repository | Commit | Description |
+|------------|--------|-------------|
+| dragon-warrior-4-info | `5a3ea4c` | docs: Add wikitext documentation for monsters, items, experience tables |
+| logsmall | `75faba7` | feat(DQ4rLib): Add unit tests and fix AudioConverter overflow bug |
+
+## Wikitext Documentation Status
+
+| Document | Status | Lines |
+|----------|--------|-------|
+| ROM-Map.wikitext | ✅ Complete | ~400 |
+| RAM-Map.wikitext | ✅ Complete | ~250 |
+| Text-Table.wikitext | ✅ Complete | ~200 |
+| Monster-List.wikitext | ✅ Complete | ~250 |
+| Experience-Table.wikitext | ✅ Complete | ~300 |
+| Item-List.wikitext | ✅ Complete | ~400 |
+| Spell-List.wikitext | ⬜ Planned | - |
+| Shop-List.wikitext | ⬜ Planned | - |
+
 ## What's Next
 
 ### Immediate Tasks
-1. Create sub-issues for each epic (detailed task breakdown)
-2. Add DQ4rLib unit tests
-3. Expand wikitext documentation (Experience Table, Monster List)
-4. Create DW4 asset extraction workflows
+1. Create Spell-List.wikitext (magic system documentation)
+2. Create Shop-List.wikitext (item availability by location)
+3. Create asset extraction workflows for DW4 ROM
+4. Begin DQ3r engine fork setup
 
 ### Project Phase 1 Goals
-1. Complete DW4 NES reverse engineering documentation
+1. ✅ Complete DW4 NES reverse engineering documentation (6/8 docs done)
 2. Build NES→JSON extraction pipeline
 3. Set up DQ3r engine fork as base
 4. Begin graphics conversion tools testing

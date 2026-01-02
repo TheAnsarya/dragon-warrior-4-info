@@ -1,0 +1,685 @@
+= Dragon Warrior IV (NES) Shop List =
+
+This page documents all shops in '''Dragon Warrior IV''' (NES, US version), organized by chapter and location.
+
+== Overview ==
+
+Dragon Warrior IV features shops in towns throughout the five chapters. Item availability varies by location and story progression. Shop data is stored in Bank $06.
+
+== Shop Types ==
+
+{| class="wikitable"
+|-
+! Type !! Description
+|-
+| Weapon || Swords, claws, staves, whips
+|-
+| Armor || Body armor, robes
+|-
+| Tool || Consumables, key items
+|-
+| Inn || HP/MP restoration, save
+|}
+
+== Chapter 1 - Ragnar ==
+
+=== Burland ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Cypress Stick || 5
+|-
+| Copper Sword || 100
+|-
+| Club || 60
+|-
+| Leather Shield || 90
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Clothes || 10
+|-
+| Traveler's Clothes || 70
+|-
+| Leather Armor || 180
+|-
+| Leather Hat || 65
+|}
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Wing of Wyvern || 25
+|-
+| Torch || 8
+|}
+
+'''Inn''' - 4 Gold per person
+
+=== Izmit ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Chain Sickle || 330
+|-
+| Iron Spear || 850
+|-
+| Scale Shield || 180
+|}
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Fairy Water || 20
+|-
+| Wing of Wyvern || 25
+|}
+
+'''Inn''' - 8 Gold per person
+
+== Chapter 2 - Alena, Cristo, Brey ==
+
+=== Santeem Castle ===
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Holy Water || 20
+|}
+
+'''Inn''' - Free (castle)
+
+=== Surene ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Copper Sword || 100
+|-
+| Thorn Whip || 200
+|-
+| Iron Claw || 780
+|-
+| Leather Shield || 90
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Traveler's Clothes || 70
+|-
+| Silk Robe || 110
+|-
+| Leather Armor || 180
+|-
+| Wooden Hat || 120
+|}
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Wing of Wyvern || 25
+|-
+| Medical Herb || 30
+|}
+
+'''Inn''' - 6 Gold per person
+
+=== Tempe ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Iron Claw || 780
+|-
+| Chain Sickle || 330
+|-
+| Iron Fan || 250
+|}
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Fairy Water || 20
+|-
+| Medical Herb || 30
+|}
+
+'''Inn''' - 10 Gold per person
+
+=== Frenor ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Chain Whip || 800
+|-
+| Holy Lance || 1250
+|-
+| Fire Claw || 7500
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Half Plate Armor || 1200
+|-
+| Magic Vestment || 3100
+|-
+| Golden Barrette || 1500
+|}
+
+'''Inn''' - 15 Gold per person
+
+=== Bazaar ===
+
+'''Special Market'''
+{| class="wikitable"
+|-
+! Item !! Price !! Notes
+|-
+| Strength Seed || 200 || +1-3 STR
+|-
+| Agility Seed || 200 || +1-3 AGI
+|-
+| Luck Seed || 200 || +1-3 LCK
+|-
+| Life Nut || 300 || +5-10 Max HP
+|-
+| Mystic Nut || 300 || +3-6 Max MP
+|-
+| Lifeforce Nut || 500 || +10-20 Max HP (rare)
+|}
+
+=== Endor ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Boomerang || 420
+|-
+| Chain Whip || 800
+|-
+| Morning Star || 1300
+|-
+| Iron Shield || 650
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Bronze Armor || 700
+|-
+| Half Plate Armor || 1200
+|-
+| Chain Mail || 350
+|-
+| Iron Helmet || 1100
+|}
+
+'''Inn''' - 20 Gold per person
+
+'''Casino''' (Chapter 3+)
+- Tokens: 200 Gold = 10 Tokens
+- Prizes vary by chapter
+
+== Chapter 3 - Taloon ==
+
+=== Lakanaba ===
+
+'''Weapon Shop''' (Taloon's starting shop)
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Cypress Stick || 5
+|-
+| Club || 60
+|-
+| Copper Sword || 100
+|-
+| Leather Shield || 90
+|}
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Wing of Wyvern || 25
+|-
+| Full Moon Herb || 30
+|}
+
+'''Inn''' - 6 Gold per person
+
+=== Foxville ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Broad Sword || 550
+|-
+| Iron Spear || 850
+|-
+| Bronze Shield || 370
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Chain Mail || 350
+|-
+| Bronze Armor || 700
+|-
+| Iron Helmet || 1100
+|}
+
+'''Inn''' - 12 Gold per person
+
+=== Bonmalmo ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Battle Axe || 2500
+|-
+| Sledge Hammer || 1700
+|-
+| Iron Shield || 650
+|}
+
+'''Inn''' - 18 Gold per person
+
+=== Endor (Taloon's Shop) ===
+
+Once Taloon opens his shop, he can sell items for profit.
+
+'''Selling Tips:'''
+- Items sell for more than purchase price
+- Rare items have high margins
+- Story items cannot be sold
+
+== Chapter 4 - Nara, Mara ==
+
+=== Monbaraba ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Thorn Whip || 200
+|-
+| Chain Whip || 800
+|-
+| Dancer's Costume || 400
+|}
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Holy Water || 20
+|-
+| Wing of Wyvern || 25
+|}
+
+'''Inn''' - 8 Gold per person
+
+=== Konenber ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Iron Claw || 780
+|-
+| Staff of Force || 2500
+|-
+| Morning Star || 1300
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Magic Vestment || 3100
+|-
+| Cleric's Robe || 720
+|-
+| Silk Hat || 2000
+|}
+
+'''Inn''' - 15 Gold per person
+
+=== Haville ===
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Wing of Wyvern || 25
+|-
+| Medical Herb || 30
+|}
+
+'''Inn''' - 12 Gold per person
+
+=== Aktemto ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Staff of Thunder || 3500
+|-
+| Staff of Antimagic || 5000
+|-
+| Magma Staff || 6500
+|}
+
+'''Inn''' - 20 Gold per person
+
+== Chapter 5 - Hero ==
+
+=== Branca ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Cypress Stick || 5
+|-
+| Copper Sword || 100
+|-
+| Boomerang || 420
+|-
+| Leather Shield || 90
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Clothes || 10
+|-
+| Leather Armor || 180
+|-
+| Leather Hat || 65
+|}
+
+'''Item Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Herb || 8
+|-
+| Antidote || 10
+|-
+| Wing of Wyvern || 25
+|}
+
+'''Inn''' - 4 Gold per person
+
+=== Endor (Full Access) ===
+
+All Chapter 2-3 shops available, plus:
+
+'''Casino Prizes'''
+{| class="wikitable"
+|-
+! Item !! Tokens
+|-
+| Sword of Miracles || 35,000
+|-
+| Metal Babble Armor || 50,000
+|-
+| Gringham Whip || 25,000
+|-
+| Hat of Happiness || 1,250
+|}
+
+=== Mintos ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Staff of Force || 2500
+|-
+| Battle Axe || 2500
+|-
+| Demon Hammer || 15000
+|-
+| Dragon Shield || 8000
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Magic Armor || 5800
+|-
+| Dragon Mail || 9000
+|-
+| Iron Mask || 3500
+|}
+
+'''Inn''' - 30 Gold per person
+
+=== Riverton ===
+
+'''Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Ice Blade || 10000
+|-
+| Dragon Killer || 15000
+|-
+| Magic Shield || 5000
+|}
+
+'''Armor Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Silver Armor || 12000
+|-
+| Sage's Robe || 2200
+|-
+| Silk Hat || 2000
+|}
+
+'''Inn''' - 40 Gold per person
+
+=== Gardenbur ===
+
+'''High-End Weapon Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Falcon Sword || 25000
+|-
+| Sword of Miracles || 35000
+|-
+| Metal Babble Sword || (Not for sale)
+|}
+
+'''Inn''' - 50 Gold per person
+
+=== Elfville ===
+
+'''Special Items'''
+{| class="wikitable"
+|-
+! Item !! Price !! Effect
+|-
+| Sage's Stone || 0 || Free heal (found, not sold)
+|-
+| Staff of Transform || 3000 || Cast Transform
+|}
+
+=== Gottside ===
+
+'''Final Shop'''
+{| class="wikitable"
+|-
+! Item !! Price
+|-
+| Full Plate Armor || 2300
+|-
+| Iron Armor || 3500
+|-
+| Magic Armor || 5800
+|-
+| All consumables || Normal price
+|}
+
+'''Inn''' - 60 Gold per person
+
+== Special Shops ==
+
+=== Medal King ===
+
+Trade Small Medals for prizes:
+
+{| class="wikitable"
+|-
+! Medals !! Prize
+|-
+| 6 || Hat of Happiness
+|-
+| 12 || Staff of Transformation
+|-
+| 18 || Shield of Strength
+|-
+| 25 || Staff of Punishment
+|-
+| 34 || Falcon Sword
+|-
+| 52 || Metal Babble Shield
+|}
+
+=== Zenith Tower ===
+
+'''Legendary Equipment''' (found, not sold)
+{| class="wikitable"
+|-
+! Item !! Location
+|-
+| Zenithian Sword || World Tree
+|-
+| Zenithian Helmet || Royal Crypt
+|-
+| Zenithian Armor || Colossus
+|-
+| Zenithian Shield || Cave of Betrayal
+|}
+
+== Price Modifiers ==
+
+{| class="wikitable"
+|-
+! Condition !! Modifier
+|-
+| Taloon in party || Better sell prices
+|-
+| Chapter 5 (full party) || All shops accessible
+|-
+| Post-game || Some shops expanded
+|}
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/Item List|Item List]] - Complete item details
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - Data locations
+* [[Dragon Warrior IV (NES)/World Map|World Map]] - Town locations
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:Shop Lists]]

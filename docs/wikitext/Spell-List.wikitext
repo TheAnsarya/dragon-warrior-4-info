@@ -1,0 +1,480 @@
+= Dragon Warrior IV (NES) Spell List =
+
+This page documents all spells in '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+Dragon Warrior IV contains approximately 60 spells categorized into offensive, healing, support, and travel magic. Spells are learned at specific character levels.
+
+== Data Location ==
+
+{| class="wikitable"
+|-
+! Data !! Bank !! ROM Address !! Description
+|-
+| Spell Table || $05 || $8000 || Spell properties
+|-
+| Learn Table || $05 || $8200 || Level requirements
+|-
+| MP Costs || $05 || $8100 || MP cost per spell
+|}
+
+== Spell Data Structure ==
+
+Each spell uses 4 bytes:
+
+{| class="wikitable"
+|-
+! Offset !! Size !! Description
+|-
+| $00 || 1 || Effect type
+|-
+| $01 || 1 || Power/Base value
+|-
+| $02 || 1 || Target type
+|-
+| $03 || 1 || MP cost
+|}
+
+== Target Types ==
+
+{| class="wikitable"
+|-
+! Value !! Target
+|-
+| $00 || Single enemy
+|-
+| $01 || All enemies
+|-
+| $02 || Single ally
+|-
+| $03 || All allies
+|-
+| $04 || Self only
+|-
+| $05 || Party (field)
+|}
+
+== Offensive Spells ==
+
+=== Fire Spells ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Damage !! Learned By
+|-
+| Blaze || 2 || One enemy || 10-17 || Hero (3), Mara (4)
+|-
+| Firebal || 4 || All enemies || 20-30 || Hero (9), Mara (10)
+|-
+| Firebane || 6 || All enemies || 50-70 || Hero (17), Mara (18)
+|-
+| Firevolt || 10 || All enemies || 100-140 || Mara (32)
+|}
+
+=== Ice Spells ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Damage !! Learned By
+|-
+| Icebolt || 3 || One enemy || 15-25 || Brey (5)
+|-
+| Snowstorm || 5 || All enemies || 30-50 || Brey (14)
+|-
+| Blizzard || 8 || All enemies || 70-100 || Brey (26)
+|}
+
+=== Lightning Spells ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Damage !! Learned By
+|-
+| Zap || 4 || One enemy || 25-40 || Cristo (10)
+|-
+| Lightning || 8 || All enemies || 50-70 || Hero (22)
+|-
+| Thunderbolt || 15 || All enemies || 120-160 || Hero (33)
+|}
+
+=== Other Offensive ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Bang || 5 || All enemies || 20-35 dmg || Hero (14)
+|-
+| Boom || 8 || All enemies || 50-75 dmg || Hero (24)
+|-
+| Explodet || 15 || All enemies || 100-130 dmg || Hero (35)
+|-
+| Beat || 4 || One enemy || Instant death || Nara (8), Cristo (18)
+|-
+| Defeat || 7 || All enemies || Instant death || Nara (20)
+|-
+| Chance || 20 || Varies || Random effect || Mara (26)
+|}
+
+== Healing Spells ==
+
+=== HP Restoration ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Healing !! Learned By
+|-
+| Heal || 2 || One ally || 30-40 HP || Cristo (1), Hero (4), Nara (1)
+|-
+| Healmore || 5 || One ally || 80-100 HP || Cristo (8), Hero (13), Nara (10)
+|-
+| Healall || 7 || One ally || Full HP || Cristo (19), Nara (22)
+|-
+| Healus || 18 || All allies || 100-150 HP || Cristo (32)
+|-
+| Healusall || 36 || All allies || Full HP || Hero (37)
+|}
+
+=== Status Recovery ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Antidote || 2 || One ally || Cure poison || Cristo (3), Nara (3)
+|-
+| Awake || 3 || One ally || Cure sleep || Cristo (6)
+|-
+| NumbOff || 2 || One ally || Cure paralysis || Nara (6)
+|-
+| Curseoff || 5 || One ally || Remove curse || Cristo (16)
+|-
+| Purify || 10 || One ally || Remove all curses || Nara (24)
+|}
+
+=== Revival ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Vivify || 10 || One ally || 50% revive chance || Cristo (14), Nara (16)
+|-
+| Revive || 20 || One ally || Full revive || Cristo (28), Nara (30)
+|}
+
+== Support Spells ==
+
+=== Stat Boosting ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Upper || 3 || One ally || +DEF || Brey (3)
+|-
+| Increase || 4 || All allies || +DEF || Brey (10)
+|-
+| Bikill || 6 || One ally || 2x ATK || Cristo (12)
+|-
+| Sap || 3 || One enemy || -DEF || Brey (7)
+|-
+| Defense || 4 || All enemies || -DEF || Brey (16)
+|-
+| Slow || 3 || One enemy || -AGI || Brey (4)
+|-
+| Decelerate || 5 || All enemies || -AGI || Brey (12)
+|-
+| SpeedUp || 3 || Self || +AGI || Alena (3)
+|}
+
+=== Status Effects ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Sleep || 3 || One enemy || Sleep || Brey (1)
+|-
+| Sleepmore || 5 || All enemies || Sleep || Brey (18)
+|-
+| Stopspell || 3 || One enemy || Seal magic || Cristo (4), Brey (8)
+|-
+| Surround || 4 || All enemies || Lower accuracy || Brey (6)
+|-
+| Chaos || 5 || All enemies || Confusion || Mara (12)
+|-
+| RobMagic || 0 || One enemy || Steal MP || Mara (8)
+|}
+
+=== Barriers ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Barrier || 6 || Party || Reflect breath || Cristo (22)
+|-
+| Bounce || 4 || Self || Reflect magic || Mara (16)
+|-
+| StopSpell || 3 || One enemy || Seal enemy magic || Cristo (4)
+|}
+
+== Field Spells ==
+
+=== Travel ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Return || 8 || Party || Warp to town || Hero (6), Mara (6)
+|-
+| Outside || 6 || Party || Exit dungeon || Hero (5), Brey (9)
+|-
+| Stepguard || 4 || Party || Avoid floor damage || Nara (5)
+|-
+| X-Ray || 2 || Party || See hidden || Brey (2)
+|-
+| Day/Night || 6 || Party || Change time || Mara (22)
+|}
+
+=== Utility ===
+
+{| class="wikitable sortable"
+|-
+! Spell !! MP !! Target !! Effect !! Learned By
+|-
+| Repel || 6 || Party || Avoid weak enemies || Hero (10)
+|-
+| Identify || 3 || One item || Identify item || Brey (11)
+|-
+| Transform || 5 || Self || Change appearance || Mara (14)
+|-
+| Ironize || 6 || Party || Invincibility (temp) || Brey (22)
+|}
+
+== Character Spell Lists ==
+
+=== Hero Spells ===
+
+{| class="wikitable"
+|-
+! Level !! Spell
+|-
+| 3 || Blaze
+|-
+| 4 || Heal
+|-
+| 5 || Outside
+|-
+| 6 || Return
+|-
+| 9 || Firebal
+|-
+| 10 || Repel
+|-
+| 13 || Healmore
+|-
+| 14 || Bang
+|-
+| 17 || Firebane
+|-
+| 22 || Lightning
+|-
+| 24 || Boom
+|-
+| 33 || Thunderbolt
+|-
+| 35 || Explodet
+|-
+| 37 || Healusall
+|}
+
+=== Cristo Spells ===
+
+{| class="wikitable"
+|-
+! Level !! Spell
+|-
+| 1 || Heal
+|-
+| 3 || Antidote
+|-
+| 4 || Stopspell
+|-
+| 6 || Awake
+|-
+| 8 || Healmore
+|-
+| 10 || Zap
+|-
+| 12 || Bikill
+|-
+| 14 || Vivify
+|-
+| 16 || Curseoff
+|-
+| 18 || Beat
+|-
+| 19 || Healall
+|-
+| 22 || Barrier
+|-
+| 28 || Revive
+|-
+| 32 || Healus
+|}
+
+=== Brey Spells ===
+
+{| class="wikitable"
+|-
+! Level !! Spell
+|-
+| 1 || Sleep
+|-
+| 2 || X-Ray
+|-
+| 3 || Upper
+|-
+| 4 || Slow
+|-
+| 5 || Icebolt
+|-
+| 6 || Surround
+|-
+| 7 || Sap
+|-
+| 8 || Stopspell
+|-
+| 9 || Outside
+|-
+| 10 || Increase
+|-
+| 11 || Identify
+|-
+| 12 || Decelerate
+|-
+| 14 || Snowstorm
+|-
+| 16 || Defense
+|-
+| 18 || Sleepmore
+|-
+| 22 || Ironize
+|-
+| 26 || Blizzard
+|}
+
+=== Mara Spells ===
+
+{| class="wikitable"
+|-
+! Level !! Spell
+|-
+| 4 || Blaze
+|-
+| 6 || Return
+|-
+| 8 || RobMagic
+|-
+| 10 || Firebal
+|-
+| 12 || Chaos
+|-
+| 14 || Transform
+|-
+| 16 || Bounce
+|-
+| 18 || Firebane
+|-
+| 22 || Day/Night
+|-
+| 26 || Chance
+|-
+| 32 || Firevolt
+|}
+
+=== Nara Spells ===
+
+{| class="wikitable"
+|-
+! Level !! Spell
+|-
+| 1 || Heal
+|-
+| 3 || Antidote
+|-
+| 5 || Stepguard
+|-
+| 6 || NumbOff
+|-
+| 8 || Beat
+|-
+| 10 || Healmore
+|-
+| 16 || Vivify
+|-
+| 20 || Defeat
+|-
+| 22 || Healall
+|-
+| 24 || Purify
+|-
+| 30 || Revive
+|}
+
+=== Alena Spells ===
+
+{| class="wikitable"
+|-
+! Level !! Spell
+|-
+| 3 || SpeedUp
+|}
+
+Note: Alena only learns one spell, reflecting her martial arts focus.
+
+== Special Skills ==
+
+Some characters have skills that function like spells but don't use MP:
+
+{| class="wikitable"
+|-
+! Character !! Skill !! Effect
+|-
+| Ragnar || None || Pure physical fighter
+|-
+| Alena || Critical || Higher crit rate
+|-
+| Taloon || Merchant skills || Random effects (stumble, joke, etc.)
+|}
+
+== Spell Resistance ==
+
+Enemies may have innate spell resistance:
+
+{| class="wikitable"
+|-
+! Resistance Type !! Effect
+|-
+| Magic immunity || Unaffected by offensive spells
+|-
+| Fire resistance || Half fire damage
+|-
+| Ice resistance || Half ice damage
+|-
+| Status immunity || Immune to sleep, stopspell, etc.
+|}
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - Data locations
+* [[Dragon Warrior IV (NES)/Experience Table|Experience Table]] - When spells are learned
+* [[Dragon Warrior IV (NES)/Battle System|Battle System]] - Combat mechanics
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:Spell Lists]]
