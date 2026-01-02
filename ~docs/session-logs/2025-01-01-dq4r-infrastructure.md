@@ -189,6 +189,8 @@ Created 3 more comprehensive wikitext documents:
 | Repository | Commit | Description |
 |------------|--------|-------------|
 | dragon-warrior-4-info | `5a3ea4c` | docs: Add wikitext documentation for monsters, items, experience tables |
+| dragon-warrior-4-info | `876fb28` | docs: Add spell list, shop list wikitext and update session log |
+| dragon-warrior-4-info | `7665152` | docs: Add world map and battle system wikitext documentation |
 | logsmall | `75faba7` | feat(DQ4rLib): Add unit tests and fix AudioConverter overflow bug |
 
 ## Wikitext Documentation Status
@@ -201,22 +203,27 @@ Created 3 more comprehensive wikitext documents:
 | Monster-List.wikitext | ✅ Complete | ~250 |
 | Experience-Table.wikitext | ✅ Complete | ~300 |
 | Item-List.wikitext | ✅ Complete | ~400 |
-| Spell-List.wikitext | ⬜ Planned | - |
-| Shop-List.wikitext | ⬜ Planned | - |
+| Spell-List.wikitext | ✅ Complete | ~450 |
+| Shop-List.wikitext | ✅ Complete | ~500 |
+| World-Map.wikitext | ✅ Complete | ~350 |
+| Battle-System.wikitext | ✅ Complete | ~400 |
+
+**Total: 10 comprehensive wikitext documents (~3,500 lines)**
 
 ## What's Next
 
-### Immediate Tasks
-1. Create Spell-List.wikitext (magic system documentation)
-2. Create Shop-List.wikitext (item availability by location)
-3. Create asset extraction workflows for DW4 ROM
-4. Begin DQ3r engine fork setup
+### Phase 1 Completed ✅
+1. ✅ Complete DW4 NES reverse engineering documentation (10/10 docs done)
+2. ⬜ Build NES→JSON extraction pipeline
+3. ⬜ Set up DQ3r engine fork as base
+4. ⬜ Begin graphics conversion tools testing
 
-### Project Phase 1 Goals
-1. ✅ Complete DW4 NES reverse engineering documentation (6/8 docs done)
-2. Build NES→JSON extraction pipeline
-3. Set up DQ3r engine fork as base
-4. Begin graphics conversion tools testing
+### Recommended Next Tasks
+1. Create character data extraction workflow
+2. Extract monster stats to JSON format
+3. Fork DQ3r repository and set up as base
+4. Test 2bpp→4bpp graphics conversion on actual DW4 CHR data
+5. Create asset mapping JSON (ROM offset → asset type)
 
 ## Related Links
 
