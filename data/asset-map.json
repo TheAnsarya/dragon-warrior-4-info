@@ -1,0 +1,414 @@
+{
+	"$schema": "./schemas/asset-map.schema.json",
+	"_comment": "Dragon Warrior IV NES ROM Asset Map - Complete data locations",
+	"rom_info": {
+		"name": "Dragon Warrior IV (US)",
+		"system": "NES",
+		"mapper": "MMC5 (5)",
+		"prg_size": 524288,
+		"chr_size": 262144,
+		"prg_banks": 32,
+		"chr_banks": 32,
+		"header_size": 16
+	},
+	"banks": {
+		"0x00": {
+			"name": "Core Engine",
+			"type": "code",
+			"file_offset": "0x00010",
+			"cpu_address": "0x8000",
+			"size": 16384
+		},
+		"0x01": {
+			"name": "Menu System",
+			"type": "code",
+			"file_offset": "0x04010",
+			"cpu_address": "0x8000",
+			"size": 16384
+		},
+		"0x02": {
+			"name": "Battle System Part 1",
+			"type": "code",
+			"file_offset": "0x08010",
+			"cpu_address": "0x8000",
+			"size": 16384
+		},
+		"0x03": {
+			"name": "Battle System Part 2",
+			"type": "code",
+			"file_offset": "0x0C010",
+			"cpu_address": "0x8000",
+			"size": 16384
+		},
+		"0x04": {
+			"name": "NPC/Event Code",
+			"type": "code",
+			"file_offset": "0x10010",
+			"cpu_address": "0x8000",
+			"size": 16384
+		},
+		"0x05": {
+			"name": "AI/Monster Behavior",
+			"type": "code",
+			"file_offset": "0x14010",
+			"cpu_address": "0x8000",
+			"size": 16384
+		},
+		"0x06": {
+			"name": "Monster Data Tables",
+			"type": "data",
+			"file_offset": "0x18010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"assets": ["monsters", "monster_graphics_pointers"]
+		},
+		"0x07": {
+			"name": "Item/Equipment Data",
+			"type": "data",
+			"file_offset": "0x1C010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"assets": ["items", "equipment", "shops"]
+		},
+		"0x08": {
+			"name": "Tileset Data",
+			"type": "data",
+			"file_offset": "0x20010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"assets": ["tilesets", "encounter_zones"]
+		},
+		"0x09": {
+			"name": "Map Data Part 1",
+			"type": "data",
+			"file_offset": "0x24010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"assets": ["maps_0x00-0x1F"]
+		},
+		"0x0A": {
+			"name": "Map Data Part 2",
+			"type": "data",
+			"file_offset": "0x28010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"assets": ["maps_0x20-0x3F"]
+		},
+		"0x0B": {
+			"name": "Map Data Part 3 & Overworld",
+			"type": "data",
+			"file_offset": "0x2C010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"assets": ["maps_0x40-0x48", "overworld"]
+		},
+		"0x0C": {
+			"name": "Map Tile Graphics Page 0",
+			"type": "graphics",
+			"file_offset": "0x30010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "2bpp_nes"
+		},
+		"0x0D": {
+			"name": "Map Tile Graphics Page 1-2",
+			"type": "graphics",
+			"file_offset": "0x34010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "2bpp_nes"
+		},
+		"0x0E": {
+			"name": "Character Sprite Graphics",
+			"type": "graphics",
+			"file_offset": "0x38010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "2bpp_nes"
+		},
+		"0x0F": {
+			"name": "Map Loading Code",
+			"type": "code",
+			"file_offset": "0x3C010",
+			"cpu_address": "0x8000",
+			"size": 16384
+		},
+		"0x10": {
+			"name": "Script/Dialog Text 1",
+			"type": "text",
+			"file_offset": "0x40010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"encoding": "dw4_dte"
+		},
+		"0x11": {
+			"name": "Script/Dialog Text 2",
+			"type": "text",
+			"file_offset": "0x44010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"encoding": "dw4_dte"
+		},
+		"0x12": {
+			"name": "Script/Dialog Text 3",
+			"type": "text",
+			"file_offset": "0x48010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"encoding": "dw4_dte"
+		},
+		"0x13": {
+			"name": "Script/Dialog Text 4",
+			"type": "text",
+			"file_offset": "0x4C010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"encoding": "dw4_dte"
+		},
+		"0x14": {
+			"name": "Script/Dialog Text 5",
+			"type": "text",
+			"file_offset": "0x50010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"encoding": "dw4_dte"
+		},
+		"0x15": {
+			"name": "Window/Menu Graphics",
+			"type": "graphics",
+			"file_offset": "0x54010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "2bpp_nes"
+		},
+		"0x16": {
+			"name": "Battle Graphics",
+			"type": "graphics",
+			"file_offset": "0x58010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "2bpp_nes"
+		},
+		"0x17": {
+			"name": "Map Pointer Tables",
+			"type": "data",
+			"file_offset": "0x5C010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"assets": ["map_pointers", "npc_tables"]
+		},
+		"0x18": {
+			"name": "Music Data 1",
+			"type": "audio",
+			"file_offset": "0x60010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "nes_nsf"
+		},
+		"0x19": {
+			"name": "Music Data 2",
+			"type": "audio",
+			"file_offset": "0x64010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "nes_nsf"
+		},
+		"0x1A": {
+			"name": "Music Data 3",
+			"type": "audio",
+			"file_offset": "0x68010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "nes_nsf"
+		},
+		"0x1B": {
+			"name": "Music Data 4",
+			"type": "audio",
+			"file_offset": "0x6C010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "nes_nsf"
+		},
+		"0x1C": {
+			"name": "Sound Effects 1",
+			"type": "audio",
+			"file_offset": "0x70010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "nes_sfx"
+		},
+		"0x1D": {
+			"name": "Sound Effects 2",
+			"type": "audio",
+			"file_offset": "0x74010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "nes_sfx"
+		},
+		"0x1E": {
+			"name": "Sound Effects 3",
+			"type": "audio",
+			"file_offset": "0x78010",
+			"cpu_address": "0x8000",
+			"size": 16384,
+			"format": "nes_sfx"
+		},
+		"0x1F": {
+			"name": "Fixed Bank (Vectors)",
+			"type": "code",
+			"file_offset": "0x7C010",
+			"cpu_address": "0xC000",
+			"size": 16384,
+			"fixed": true
+		}
+	},
+	"assets": {
+		"monsters": {
+			"bank": "0x06",
+			"cpu_address": "0xA2A2",
+			"file_offset": "0x1A2B2",
+			"entry_size": 27,
+			"count": 180,
+			"format": "monster_data_v1",
+			"fields": [
+				{"name": "graphics", "offset": 0, "size": 21, "type": "bytes"},
+				{"name": "hp", "offset": 21, "size": 2, "type": "uint16_be"},
+				{"name": "attack", "offset": 23, "size": 1, "type": "uint8"},
+				{"name": "defense", "offset": 24, "size": 1, "type": "uint8"},
+				{"name": "agility", "offset": 25, "size": 1, "type": "uint8"},
+				{"name": "behavior", "offset": 26, "size": 1, "type": "flags"}
+			]
+		},
+		"monster_stats_extended": {
+			"bank": "0x06",
+			"cpu_address": "0xB000",
+			"file_offset": "0x1B010",
+			"entry_size": 8,
+			"count": 180,
+			"format": "monster_ext_v1",
+			"fields": [
+				{"name": "exp", "offset": 0, "size": 2, "type": "uint16_be"},
+				{"name": "gold", "offset": 2, "size": 2, "type": "uint16_be"},
+				{"name": "drop_rate", "offset": 4, "size": 1, "type": "uint8"},
+				{"name": "drop_item", "offset": 5, "size": 1, "type": "uint8"},
+				{"name": "resistances", "offset": 6, "size": 1, "type": "flags"},
+				{"name": "immunities", "offset": 7, "size": 1, "type": "flags"}
+			]
+		},
+		"items": {
+			"bank": "0x07",
+			"cpu_address": "0x8000",
+			"file_offset": "0x1C010",
+			"entry_size": 8,
+			"count": 220,
+			"format": "item_data_v1",
+			"fields": [
+				{"name": "type", "offset": 0, "size": 1, "type": "uint8"},
+				{"name": "modifier", "offset": 1, "size": 1, "type": "int8"},
+				{"name": "special", "offset": 2, "size": 1, "type": "flags"},
+				{"name": "buy_price", "offset": 3, "size": 2, "type": "uint16_be"},
+				{"name": "sell_price", "offset": 5, "size": 2, "type": "uint16_be"},
+				{"name": "equip_flags", "offset": 7, "size": 1, "type": "flags"}
+			]
+		},
+		"spells": {
+			"bank": "0x05",
+			"cpu_address": "0x8000",
+			"file_offset": "0x14010",
+			"entry_size": 4,
+			"count": 64,
+			"format": "spell_data_v1",
+			"fields": [
+				{"name": "effect_type", "offset": 0, "size": 1, "type": "uint8"},
+				{"name": "power", "offset": 1, "size": 1, "type": "uint8"},
+				{"name": "target", "offset": 2, "size": 1, "type": "uint8"},
+				{"name": "mp_cost", "offset": 3, "size": 1, "type": "uint8"}
+			]
+		},
+		"characters": {
+			"bank": "0x06",
+			"cpu_address": "0x8800",
+			"file_offset": "0x18810",
+			"entry_size": 64,
+			"count": 8,
+			"format": "character_base_v1",
+			"fields": [
+				{"name": "base_hp", "offset": 0, "size": 2, "type": "uint16"},
+				{"name": "base_mp", "offset": 2, "size": 2, "type": "uint16"},
+				{"name": "base_str", "offset": 4, "size": 1, "type": "uint8"},
+				{"name": "base_agi", "offset": 5, "size": 1, "type": "uint8"},
+				{"name": "base_vit", "offset": 6, "size": 1, "type": "uint8"},
+				{"name": "base_int", "offset": 7, "size": 1, "type": "uint8"},
+				{"name": "base_luck", "offset": 8, "size": 1, "type": "uint8"},
+				{"name": "growth_table_ptr", "offset": 9, "size": 2, "type": "pointer"}
+			]
+		},
+		"exp_tables": {
+			"bank": "0x27",
+			"cpu_address": "0xB6ED",
+			"file_offset": "0x6F6FD",
+			"entry_size": 3,
+			"count": 792,
+			"format": "exp_table_v1",
+			"notes": "99 levels × 8 characters = 792 entries, 3 bytes per entry (24-bit)"
+		},
+		"shops": {
+			"bank": "0x07",
+			"cpu_address": "0x9000",
+			"file_offset": "0x1D010",
+			"format": "shop_data_v1",
+			"notes": "Variable length, pointer table followed by item lists"
+		},
+		"maps": {
+			"banks": ["0x09", "0x0A", "0x0B"],
+			"count": 73,
+			"format": "rle_compressed",
+			"pointer_table": {
+				"bank": "0x17",
+				"cpu_address": "0x8000",
+				"file_offset": "0x5C010"
+			}
+		},
+		"text_dialog": {
+			"banks": ["0x10", "0x11", "0x12", "0x13", "0x14"],
+			"encoding": "dw4_dte",
+			"format": "pointer_indexed",
+			"notes": "DTE (Dual Tile Encoding) compressed text"
+		},
+		"chr_graphics": {
+			"file_offset": "0x80010",
+			"size": 262144,
+			"format": "nes_2bpp",
+			"tiles_per_bank": 256,
+			"tile_size": 16,
+			"banks": 32
+		}
+	},
+	"extraction_targets": [
+		{
+			"name": "monsters_full",
+			"output": "assets/json/monsters/monsters_extracted.json",
+			"sources": ["monsters", "monster_stats_extended"],
+			"merge_on": "id"
+		},
+		{
+			"name": "items_full",
+			"output": "assets/json/items/items_extracted.json",
+			"sources": ["items"],
+			"include_names": true
+		},
+		{
+			"name": "characters_full",
+			"output": "assets/json/characters/characters_extracted.json",
+			"sources": ["characters", "exp_tables"],
+			"include_growth": true
+		},
+		{
+			"name": "chr_tiles",
+			"output": "assets/graphics/chr/",
+			"sources": ["chr_graphics"],
+			"format": "png",
+			"palette": "default_grayscale"
+		}
+	]
+}
