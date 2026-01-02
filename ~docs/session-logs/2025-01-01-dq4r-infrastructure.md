@@ -210,20 +210,64 @@ Created 3 more comprehensive wikitext documents:
 
 **Total: 10 comprehensive wikitext documents (~3,500 lines)**
 
+## Session 3 - Asset Extraction Pipeline (2025-01-02)
+
+### Asset Map JSON Created
+
+Created comprehensive ROM asset mapping: [data/asset-map.json](data/asset-map.json)
+
+- Complete bank layout (32 PRG banks)
+- CPU address to file offset conversion formulas
+- Asset definitions with field types:
+  - Monsters: 27-byte structure at Bank $06, $A2A2
+  - Items: 8-byte structure at Bank $07, $8000
+  - Spells: 4-byte structure at Bank $05, $8000
+  - EXP tables: 3-byte per level at Bank $27, $B6ED
+  - CHR graphics: 256KB NES 2bpp data
+
+### DataExtractor Class (DW4Lib)
+
+Created `DW4Lib/Converters/DataExtractor.cs`:
+
+| Method | Description |
+|--------|-------------|
+| `BankAddressToFileOffset()` | Convert bank/CPU address to file offset |
+| `ExtractMonsters()` | Extract all 180 monsters to JSON |
+| `ExtractItems()` | Extract all 220 items to JSON |
+| `ExtractSpells()` | Extract all 64 spells to JSON |
+| `ExtractExpTables()` | Extract EXP tables for 8 characters |
+| `ExtractChrData()` | Extract 256KB CHR graphics data |
+| `ExportAll()` | Export all data to JSON files |
+
+### New Tests Added
+
+| Test File | Tests | Coverage |
+|-----------|-------|----------|
+| DataExtractorTests.cs | 11 | ROM extraction logic |
+| GraphicsConversionIntegrationTests.cs | 10 | NES→SNES graphics pipeline |
+
+**Total Tests: 67 passing** (up from 46)
+
+### Git Commits (Session 3)
+
+| Repository | Commit | Description |
+|------------|--------|-------------|
+| logsmall | `6040279` | feat(DW4Lib): Add DataExtractor for ROM asset extraction |
+| dragon-warrior-4-info | `d3eb899` | data: Add comprehensive ROM asset map JSON |
+
 ## What's Next
 
 ### Phase 1 Completed ✅
 1. ✅ Complete DW4 NES reverse engineering documentation (10/10 docs done)
-2. ⬜ Build NES→JSON extraction pipeline
+2. ✅ Build NES→JSON extraction pipeline (DataExtractor created)
 3. ⬜ Set up DQ3r engine fork as base
-4. ⬜ Begin graphics conversion tools testing
+4. ✅ Begin graphics conversion tools testing (10 integration tests)
 
 ### Recommended Next Tasks
-1. Create character data extraction workflow
-2. Extract monster stats to JSON format
-3. Fork DQ3r repository and set up as base
-4. Test 2bpp→4bpp graphics conversion on actual DW4 CHR data
-5. Create asset mapping JSON (ROM offset → asset type)
+1. Fork DQ3r repository and set up as DQ4r base
+2. Run DataExtractor on actual DW4 ROM to validate
+3. Create PNG export from converted CHR data
+4. Begin implementing DQ4r chapter system using DQ3r engine
 
 ## Related Links
 
