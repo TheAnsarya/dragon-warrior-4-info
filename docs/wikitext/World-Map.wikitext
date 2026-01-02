@@ -1,0 +1,355 @@
+= Dragon Warrior IV (NES) World Map =
+
+This page documents the world map and locations in '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+The world of Dragon Warrior IV spans multiple continents across five chapters. Each chapter focuses on different regions and characters before all converge in Chapter 5.
+
+== Map Data ==
+
+{| class="wikitable"
+|-
+! Data !! Bank !! ROM Address
+|-
+| Overworld Map || $09-$0B || $8000-$BFFF
+|-
+| Town Maps || $0C-$0E || $8000-$BFFF
+|-
+| Dungeon Maps || $0F-$11 || $8000-$BFFF
+|-
+| Map Tile Data || $12 || $8000
+|-
+| Encounter Zones || $13 || $8500
+|}
+
+== Chapter 1 Locations (Ragnar) ==
+
+{| class="wikitable"
+|-
+! Location !! Type !! Notes
+|-
+| Burland Castle || Town || Starting location, Ragnar's home
+|-
+| Izmit Village || Town || Northern village
+|-
+| Loch Tower || Dungeon || Final dungeon, Saro's Shadow boss
+|-
+| Cave of Betrayal || Dungeon || Hidden passage to tower
+|-
+| Children's Village || Special || Missing children found here
+|}
+
+'''Map Region:''' Northwest continent
+
+== Chapter 2 Locations (Alena, Cristo, Brey) ==
+
+{| class="wikitable"
+|-
+! Location !! Type !! Notes
+|-
+| Santeem Castle || Town || Royal castle, starting location
+|-
+| Surene || Town || First town outside castle
+|-
+| Tempe || Town || Mountain village
+|-
+| Frenor || Town || Tournament information
+|-
+| Bazaar || Town || Trading post with seeds
+|-
+| Endor || Town || Tournament city, casino
+|-
+| Birdsong Tower || Dungeon || Wake up village quest
+|-
+| Tower South of Santeem || Dungeon || Chameleon Humanoid boss
+|}
+
+'''Map Region:''' Central-East continent
+
+== Chapter 3 Locations (Taloon) ==
+
+{| class="wikitable"
+|-
+! Location !! Type !! Notes
+|-
+| Lakanaba || Town || Taloon's home shop
+|-
+| Foxville || Town || Hidden village
+|-
+| Bonmalmo || Town || Port town
+|-
+| Endor || Town || Goal: Open shop here
+|-
+| Cave of the Silver Statuette || Dungeon || Key item location
+|-
+| Tunnel to Endor || Dungeon || Main quest dungeon
+|}
+
+'''Map Region:''' Western continent
+
+== Chapter 4 Locations (Nara, Mara) ==
+
+{| class="wikitable"
+|-
+! Location !! Type !! Notes
+|-
+| Monbaraba || Town || Sisters' hometown
+|-
+| Konenber || Town || Desert oasis
+|-
+| Haville || Town || Seaside village
+|-
+| Keeleon Castle || Dungeon || Major boss location
+|-
+| Aktemto || Town || Magic town
+|-
+| Mine of Sorrows || Dungeon || Father's death site
+|-
+| Colossus || Dungeon || Giant statue dungeon
+|}
+
+'''Map Region:''' Southern desert continent
+
+== Chapter 5 Locations (Hero + All) ==
+
+=== Starting Area ===
+
+{| class="wikitable"
+|-
+! Location !! Type !! Notes
+|-
+| Branca || Town || Hero's hometown
+|-
+| Cave to Temple || Dungeon || First dungeon
+|-
+| Shrine of Breaking Dawn || Special || Party gathering point
+|}
+
+=== Revisited Areas ===
+
+All Chapter 1-4 locations become accessible with expanded content.
+
+=== New Locations ===
+
+{| class="wikitable"
+|-
+! Location !! Type !! Notes
+|-
+| Mintos || Town || Library town
+|-
+| Soretta || Town || Shrine town
+|-
+| Riverton || Town || Bridge town
+|-
+| Stancia || Town || Island castle
+|-
+| Gardenbur || Town || Queen Rosa's castle
+|-
+| Elfville || Town || Elven settlement
+|-
+| Gottside || Town || Final town before last dungeon
+|-
+| Zenith Tower || Dungeon || Sky castle
+|-
+| World Tree || Special || Zenithian Sword location
+|-
+| Royal Crypt || Dungeon || Zenithian Helmet location
+|-
+| Cascade Cave || Dungeon || Hidden waterfall
+|-
+| Lighthouse || Dungeon || Guide ships
+|-
+| Necrosaro's Palace || Dungeon || Final dungeon
+|}
+
+== Overworld Encounters ==
+
+=== Encounter Zone Structure ===
+
+{| class="wikitable"
+|-
+! Offset !! Size !! Description
+|-
+| $00 || 1 || Zone ID
+|-
+| $01-$02 || 2 || X coordinate range
+|-
+| $03-$04 || 2 || Y coordinate range
+|-
+| $05 || 1 || Encounter rate
+|-
+| $06-$0D || 8 || Monster group IDs (8 slots)
+|}
+
+=== Encounter Rates ===
+
+{| class="wikitable"
+|-
+! Terrain !! Base Rate !! With Repel
+|-
+| Grassland || 1/8 || 0 (weak enemies)
+|-
+| Forest || 1/6 || 1/12
+|-
+| Desert || 1/4 || 1/8
+|-
+| Swamp || 1/4 || 1/8
+|-
+| Mountain || 1/3 || 1/6
+|}
+
+== Map Tile Types ==
+
+{| class="wikitable"
+|-
+! ID !! Tile !! Passable !! Encounter
+|-
+| $00 || Grass || Yes || Normal
+|-
+| $01 || Forest || Yes || Higher
+|-
+| $02 || Hills || Yes || Higher
+|-
+| $03 || Mountain || No || -
+|-
+| $04 || Water || Boat only || None
+|-
+| $05 || Deep Water || Ship only || Low
+|-
+| $06 || Desert || Yes || Higher
+|-
+| $07 || Swamp || Yes (damage) || Higher
+|-
+| $08 || Town || Yes || None
+|-
+| $09 || Castle || Yes || None
+|-
+| $0A || Cave || Yes || None
+|-
+| $0B || Bridge || Yes || Normal
+|-
+| $0C || Shrine || Yes || None
+|}
+
+== Map Connections ==
+
+=== Chapter 1 → Chapter 5 ===
+{| class="wikitable"
+|-
+! From !! To !! Method
+|-
+| Burland || Endor || Walk (Chapter 5)
+|-
+| Burland || Branca || Ship
+|}
+
+=== Chapter 2 → Chapter 5 ===
+{| class="wikitable"
+|-
+! From !! To !! Method
+|-
+| Santeem || Endor || Walk
+|-
+| Endor || All regions || Ship/Balloon
+|}
+
+=== Chapter 3 → Chapter 5 ===
+{| class="wikitable"
+|-
+! From !! To !! Method
+|-
+| Lakanaba || Endor || Tunnel
+|-
+| Endor || Ship port || Walk south
+|}
+
+=== Chapter 4 → Chapter 5 ===
+{| class="wikitable"
+|-
+! From !! To !! Method
+|-
+| Monbaraba || Keeleon || Walk
+|-
+| Keeleon || Ship || After boss
+|}
+
+== Transportation ==
+
+{| class="wikitable"
+|-
+! Vehicle !! Obtained !! Ability
+|-
+| Ship || Ch5 (Mintos) || Cross shallow water
+|-
+| Balloon || Ch5 (Zenith Tower) || Fly over obstacles
+|-
+| Zenithian Chariot || Post Zenith || Travel to Necrosaro's Palace
+|}
+
+== Hidden Locations ==
+
+{| class="wikitable"
+|-
+! Location !! How to Find
+|-
+| Medal King's Castle || Behind falls (Balloon)
+|-
+| World Tree || Center of world (Balloon)
+|-
+| Zenith Tower || Above clouds (Balloon)
+|-
+| Secret Shop || Wall in Gardenbur
+|}
+
+== Map Coordinates ==
+
+The overworld uses a 256x256 tile grid.
+
+{| class="wikitable"
+|-
+! Location !! X !! Y
+|-
+| Branca || $30 || $80
+|-
+| Endor || $70 || $60
+|-
+| Santeem || $90 || $40
+|-
+| Burland || $20 || $30
+|-
+| Lakanaba || $50 || $70
+|-
+| Monbaraba || $A0 || $B0
+|-
+| Zenith Tower || $80 || $01
+|-
+| Necrosaro's Palace || $80 || $F0
+|}
+
+== Day/Night Cycle ==
+
+{| class="wikitable"
+|-
+! Time !! Steps !! Effects
+|-
+| Day || 0-255 || Normal shops, NPCs visible
+|-
+| Dusk || 256-383 || Some shops closing
+|-
+| Night || 384-639 || Different NPCs, closed shops
+|-
+| Dawn || 640-767 || Transition to day
+|}
+
+Note: Use '''Day/Night''' spell to toggle manually.
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/ROM Map|ROM Map]] - Data locations
+* [[Dragon Warrior IV (NES)/Monster List|Monster List]] - Area encounters
+* [[Dragon Warrior IV (NES)/Shop List|Shop List]] - Town services
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:World Maps]]

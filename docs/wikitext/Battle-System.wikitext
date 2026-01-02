@@ -1,0 +1,406 @@
+= Dragon Warrior IV (NES) Battle System =
+
+This page documents the battle system mechanics in '''Dragon Warrior IV''' (NES, US version).
+
+== Overview ==
+
+Dragon Warrior IV features turn-based combat with a unique AI-controlled party system. The Hero is the only directly controllable character; other party members act based on "Tactics" settings.
+
+== Battle Data Locations ==
+
+{| class="wikitable"
+|-
+! Data !! Bank !! ROM Address !! Description
+|-
+| Battle Engine || $00-$01 || $8000-$BFFF || Core battle logic
+|-
+| AI Routines || $02 || $8000 || Party AI behavior
+|-
+| Damage Formulas || $00 || $B000 || Attack calculations
+|-
+| Enemy AI || $06 || $A800 || Monster behavior scripts
+|-
+| Battle Sprites || $14-$15 || $8000 || Enemy graphics
+|-
+| Battle RAM || - || $6150-$61FF || Runtime battle data
+|}
+
+== Battle Flow ==
+
+```
+1. Encounter triggered
+2. Enemy group loaded
+3. Turn order calculated (AGI-based)
+4. Player inputs commands (Hero only)
+5. AI determines party actions
+6. Actions execute in order
+7. Check victory/defeat
+8. Repeat from step 3
+```
+
+== Damage Formulas ==
+
+=== Physical Attack ===
+
+Base physical damage:
+```
+BaseDamage = ATK / 2 - DEF / 4
+MinDamage = BaseDamage - BaseDamage / 4
+MaxDamage = BaseDamage + BaseDamage / 4
+FinalDamage = Random(MinDamage, MaxDamage)
+```
+
+With critical hit (1/32 base chance):
+```
+CritDamage = ATK - DEF / 2
+```
+
+=== Magic Damage ===
+
+Offensive spell damage:
+```
+BaseDamage = SpellPower + Random(0, SpellVariance)
+FinalDamage = BaseDamage * ResistMultiplier
+```
+
+Resistance multipliers:
+{| class="wikitable"
+|-
+! Resistance !! Multiplier
+|-
+| None || 1.0
+|-
+| Weak || 1.5
+|-
+| Resistant || 0.5
+|-
+| Immune || 0.0
+|}
+
+=== Breath Attacks ===
+
+Dragon breath damage:
+```
+BaseDamage = BreathPower
+Damage = BaseDamage (no defense reduction)
+```
+
+Note: Barrier spell halves breath damage.
+
+== Turn Order ==
+
+Turn order calculation:
+```
+Initiative = AGI + Random(0, AGI/4)
+```
+
+Higher initiative acts first. Ties broken randomly.
+
+=== Surprise Attacks ===
+
+{| class="wikitable"
+|-
+! Condition !! Effect
+|-
+| Player surprise || Party acts first, enemies skip turn 1
+|-
+| Enemy surprise || Enemies act first, party skips turn 1
+|-
+| Normal || Standard initiative order
+|}
+
+Surprise chance based on party's average AGI vs enemy group.
+
+== Tactics System ==
+
+The Tactics system controls AI party members:
+
+{| class="wikitable"
+|-
+! Tactic !! Byte Value !! Behavior
+|-
+| Show No Mercy || $00 || All-out offense, use strongest attacks
+|-
+| Use No Magic || $01 || Physical attacks only
+|-
+| Try to Defend || $02 || Prioritize survival, use Heal/Defend
+|-
+| Save MP for Boss || $03 || Conserve MP, basic attacks
+|-
+| Watch Out || $04 || Balanced, respond to threats
+|}
+
+RAM location for tactics: $00F0 (per party slot)
+
+== Party AI Behavior ==
+
+=== Healer Priority (Cristo, Nara) ===
+
+```
+if PartyMember.HP < 25%:
+    cast Healmore/Healall
+elif PartyMember.HP < 50%:
+    cast Heal
+elif PartyMember.Dead:
+    cast Vivify/Revive
+else:
+    attack or support
+```
+
+=== Mage Priority (Brey, Mara) ===
+
+```
+if EnemyCount > 3:
+    cast group spell
+elif StrongEnemy:
+    cast single-target spell
+elif LowMP:
+    physical attack
+else:
+    cast appropriate spell
+```
+
+=== Fighter Priority (Ragnar, Alena) ===
+
+```
+if Tactic == "Show No Mercy":
+    attack strongest enemy
+elif Tactic == "Try to Defend":
+    attack if HP > 50%, else Defend
+else:
+    attack nearest enemy
+```
+
+=== Taloon Special Behavior ===
+
+Taloon has random special actions:
+{| class="wikitable"
+|-
+! Action !! Chance !! Effect
+|-
+| Trip || 1/16 || Stun single enemy
+|-
+| Joke || 1/32 || Confuse enemies
+|-
+| Call Merchant || 1/64 || Random item toss
+|-
+| Stumble || 1/8 || Waste turn
+|-
+| Normal Attack || Default || Standard damage
+|}
+
+== Status Effects ==
+
+{| class="wikitable"
+|-
+! Status !! Byte Flag !! Duration !! Effect
+|-
+| Sleep || $01 || 2-4 turns || Skip turn, wake on damage
+|-
+| Confused || $02 || 2-3 turns || Random target (ally/enemy)
+|-
+| Paralyzed || $04 || Permanent || Cannot act until cured
+|-
+| Poisoned || $08 || Permanent || 1 damage per step, no battle effect
+|-
+| Surround || $10 || Battle || Miss attacks frequently
+|-
+| Stopspell || $20 || Battle || Cannot cast spells
+|-
+| Sapped || $40 || Battle || DEF reduced
+|-
+| Slowed || $80 || Battle || AGI reduced
+|}
+
+Status stored at: $6170 + (PartySlot * $20)
+
+== Enemy AI System ==
+
+Enemy AI uses behavior scripts with weighted actions:
+
+=== Behavior Script Format ===
+
+{| class="wikitable"
+|-
+! Byte !! Description
+|-
+| $00 || Number of possible actions
+|-
+| $01 || Action 1 ID
+|-
+| $02 || Action 1 weight (0-255)
+|-
+| $03 || Action 2 ID
+|-
+| $04 || Action 2 weight
+|-
+| ... || Additional actions
+|}
+
+=== Action Selection ===
+
+```
+TotalWeight = Sum(AllWeights)
+Roll = Random(0, TotalWeight)
+CurrentSum = 0
+for each Action:
+    CurrentSum += Action.Weight
+    if Roll < CurrentSum:
+        return Action
+```
+
+=== Special Conditions ===
+
+Some enemies have HP-based behavior changes:
+{| class="wikitable"
+|-
+! Condition !! Behavior Change
+|-
+| HP < 25% || May flee or use healing
+|-
+| Ally defeated || May call for help
+|-
+| All allies defeated || May change tactics
+|}
+
+== Critical Hits ==
+
+Base critical rate: 1/32 (3.125%)
+
+Modified by:
+{| class="wikitable"
+|-
+! Modifier !! Effect
+|-
+| Alena's level || +1% per 10 levels
+|-
+| Lucky weapons || Doubled rate
+|-
+| Metal enemies || Cannot be crit
+|}
+
+Critical damage ignores defense partially.
+
+== Fleeing ==
+
+Flee success chance:
+```
+FleeChance = (PartyAvgAGI / EnemyAvgAGI) * 50%
+```
+
+Minimum 10%, maximum 90%.
+
+Conditions that prevent fleeing:
+- Boss battles
+- Some enemy abilities
+- Surrounded status (reduces chance)
+
+== Experience Distribution ==
+
+After battle, EXP is divided:
+```
+BaseEXP = Sum(DefeatedEnemies.EXP)
+PerCharacterEXP = BaseEXP / AlivePartyMembers
+```
+
+Gold is not divided and goes directly to party total.
+
+== Wagon System ==
+
+Party wagon allows 8 characters total:
+- 4 in active party (battle)
+- 4 in wagon (reserve)
+
+=== Swap Conditions ===
+- Cannot swap during boss battles
+- Cannot swap if character has status effect
+- Wagon must be present (not all areas)
+
+=== Wagon RAM ===
+{| class="wikitable"
+|-
+! Address !! Data
+|-
+| $00E0-$00E3 || Active party slots
+|-
+| $00E4-$00E7 || Wagon party slots
+|-
+| $00E8 || Party size (active)
+|-
+| $00E9 || Total party size
+|}
+
+== Boss Battle Flags ==
+
+Boss battles have special properties:
+{| class="wikitable"
+|-
+! Flag !! Effect
+|-
+| No Flee || Cannot run from battle
+|-
+| No Swap || Cannot change party members
+|-
+| Fixed Init || Boss always acts first
+|-
+| Multi-Part || Boss has multiple forms
+|}
+
+Boss flag stored in enemy data byte $1A, bit 6.
+
+== Battle Rewards ==
+
+=== Item Drops ===
+
+Each enemy has:
+- Drop item ID
+- Drop rate (1/N chance)
+
+Drop check occurs once per enemy type defeated.
+
+=== Gold Calculation ===
+
+```
+TotalGold = Sum(DefeatedEnemies.Gold)
+GoldVariance = TotalGold * 0.125
+FinalGold = TotalGold + Random(-GoldVariance, GoldVariance)
+```
+
+== Battle RAM Layout ==
+
+{| class="wikitable"
+|-
+! Address !! Size !! Description
+|-
+| $6150 || 1 || Battle state
+|-
+| $6151 || 1 || Turn counter
+|-
+| $6152 || 1 || Active combatant
+|-
+| $6153-$6157 || 5 || Enemy count per group
+|-
+| $6158-$615F || 8 || Turn order array
+|-
+| $6160-$617F || 32 || Party battle stats (8 per member)
+|-
+| $6180-$619F || 32 || Enemy battle stats
+|-
+| $61A0-$61AF || 16 || Status effect timers
+|-
+| $61B0-$61BF || 16 || Damage totals
+|-
+| $61C0-$61CF || 16 || Action queue
+|-
+| $61D0-$61FF || 48 || Working memory
+|}
+
+== See Also ==
+
+* [[Dragon Warrior IV (NES)/Monster List|Monster List]] - Enemy stats and AI
+* [[Dragon Warrior IV (NES)/Spell List|Spell List]] - Magic damage and effects
+* [[Dragon Warrior IV (NES)/RAM Map|RAM Map]] - Full RAM documentation
+
+[[Category:Dragon Warrior IV]]
+[[Category:NES Games]]
+[[Category:Battle Systems]]
