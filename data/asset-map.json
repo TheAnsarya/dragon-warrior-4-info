@@ -12,34 +12,38 @@
 		"header_size": 16
 	},
 	"debugging": {
-		"cdl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US).cdl",
+		"cdl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US)-merged.cdl",
+		"cdl_sources": [
+			"Dragon Warrior IV (1992-10)(Enix)(US).cdl",
+			"Dragon Warrior IV (1992-10)(Enix)(US) (2).cdl"
+		],
 		"mlb_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US).mlb",
 		"tbl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior 4 (NES) - English.tbl",
 		"cdl_coverage": {
 			"verified_date": "2026-01-03",
-			"overall_coverage": "34.4%",
-			"code_bytes": 75600,
-			"data_bytes": 104735
+			"overall_coverage": "80.8%",
+			"code_bytes": 124411,
+			"data_bytes": 299008
 		}
 	},
 	"cdl_verification": {
 		"chapter2": {
-			"status": "VERIFIED",
+			"status": "FULLY_VERIFIED",
 			"verified_date": "2026-01-03",
 			"components": {
-				"santeem_castle": { "bank": "0x20", "coverage": "55.1%", "status": "verified" },
-				"santeem_basement": { "bank": "0x21", "coverage": "61.6%", "status": "verified" },
-				"santeem_tower": { "bank": "0x22", "coverage": "53.2%", "status": "verified" },
-				"surene": { "bank": "0x23", "coverage": "32.6%", "status": "verified" },
-				"tempe": { "bank": "0x24", "coverage": "44.5%", "status": "verified" },
-				"tempe_cave_b1": { "bank": "0x25", "coverage": "32.8%", "status": "verified" },
-				"tempe_cave_b2": { "bank": "0x26", "coverage": "1.6%", "status": "not_played" },
-				"frenor": { "bank": "0x27", "coverage": "19.9%", "status": "partial" },
-				"endor": { "bank": "0x28", "coverage": "55.0%", "status": "verified" },
-				"endor_colosseum": { "bank": "0x29", "coverage": "13.1%", "status": "partial" },
-				"endor_castle": { "bank": "0x2A", "coverage": "23.9%", "status": "verified" }
+				"santeem_castle": { "bank": "0x20", "coverage": "80.6%", "status": "verified" },
+				"santeem_basement": { "bank": "0x21", "coverage": "83.5%", "status": "verified" },
+				"santeem_tower": { "bank": "0x22", "coverage": "70.9%", "status": "verified" },
+				"surene": { "bank": "0x23", "coverage": "42.4%", "status": "verified" },
+				"tempe": { "bank": "0x24", "coverage": "68.3%", "status": "verified" },
+				"tempe_cave_b1": { "bank": "0x25", "coverage": "68.1%", "status": "verified" },
+				"tempe_cave_b2": { "bank": "0x26", "coverage": "79.7%", "status": "verified" },
+				"frenor": { "bank": "0x27", "coverage": "71.0%", "status": "verified" },
+				"endor": { "bank": "0x28", "coverage": "89.9%", "status": "verified" },
+				"endor_colosseum": { "bank": "0x29", "coverage": "49.5%", "status": "verified" },
+				"endor_castle": { "bank": "0x2A", "coverage": "78.7%", "status": "verified" }
 			},
-			"notes": "Chapter 2 map IDs (0x20-0x2A) align with CDL bank coverage. Tempe Cave B2 is optional."
+			"notes": "All 11/11 Chapter 2 locations verified with merged CDL (>40% coverage each)."
 		}
 	},
 	"banks": {
