@@ -679,14 +679,17 @@
 			"bank": "0x05",
 			"cpu_address": "0x8000",
 			"file_offset": "0x14010",
-			"entry_size": 4,
+			"entry_size": 6,
 			"count": 64,
-			"format": "spell_data_v1",
+			"format": "spell_data_v2",
+			"dw4lib_class": "DW4Lib.DataStructures.Spell",
 			"fields": [
-				{"name": "effect_type", "offset": 0, "size": 1, "type": "uint8"},
-				{"name": "power", "offset": 1, "size": 1, "type": "uint8"},
-				{"name": "target", "offset": 2, "size": 1, "type": "uint8"},
-				{"name": "mp_cost", "offset": 3, "size": 1, "type": "uint8"}
+				{"name": "name_index", "offset": 0, "size": 1, "type": "uint8", "description": "Spell name index for lookup in name table"},
+				{"name": "mp_cost", "offset": 1, "size": 1, "type": "uint8", "description": "MP cost to cast"},
+				{"name": "base_power", "offset": 2, "size": 1, "type": "uint8", "description": "Base damage or healing amount"},
+				{"name": "type_flags", "offset": 3, "size": 1, "type": "flags", "description": "Bits 0-2: target (0=single enemy, 1=all enemies, 2=single ally, 3=all allies, 4=self, 5=field), Bits 3-5: type (0=damage, 1=heal, 2=buff, 3=debuff, 4=status, 5=utility, 6=transport, 7=special), Bits 6-7: element (0=none, 1=fire, 2=ice, 3=electric)"},
+				{"name": "secondary_effect", "offset": 4, "size": 1, "type": "uint8", "description": "Secondary effect ID (0 = none)"},
+				{"name": "success_rate", "offset": 5, "size": 1, "type": "uint8", "description": "Success rate modifier (for status spells)"}
 			]
 		},
 		"casino": {

@@ -1,12 +1,78 @@
 ; ============================================================================
 ; Dragon Warrior IV - Spell Definitions
 ; ============================================================================
-; Spell constants and character spell assignments
-; Source: GameInfo wiki documentation (SRAM Map)
+; Spell constants, data structure, and character spell assignments
+; Source: DW4Lib.DataStructures.Spell + GameInfo wiki (SRAM Map)
+; Verified: 2026-01-03 (CDL cross-reference)
 ; ============================================================================
 
 ; ============================================================================
-; Spell Type Categories
+; Spell Table Location (Bank $05)
+; ============================================================================
+SPELL_TABLE_BANK	= $05
+SPELL_TABLE_ADDR	= $8000
+SPELL_RECORD_SIZE	= 6		; 6 bytes per spell
+SPELL_COUNT		= 64
+
+; ============================================================================
+; Spell Record Structure (6 bytes)
+; ============================================================================
+; Offset | Size | Field           | Description
+;--------|------|-----------------|-------------------------------------------
+;   0    |  1   | NameIndex       | Spell name index for lookup in name table
+;   1    |  1   | MPCost          | MP cost to cast
+;   2    |  1   | BasePower       | Base damage or healing amount
+;   3    |  1   | TypeFlags       | Type, target, and element flags (below)
+;   4    |  1   | SecondaryEffect | Secondary effect ID (0 = none)
+;   5    |  1   | SuccessRate     | Success rate modifier (status spells)
+; ============================================================================
+
+; Field offsets
+SPELL_NAME_INDEX	= 0
+SPELL_MP_COST		= 1
+SPELL_BASE_POWER	= 2
+SPELL_TYPE_FLAGS	= 3
+SPELL_SECONDARY_EFX	= 4
+SPELL_SUCCESS_RATE	= 5
+
+; ============================================================================
+; TypeFlags Bit Layout (byte 3)
+; ============================================================================
+; Bits 0-2: Target type
+; Bits 3-5: Spell type  
+; Bits 6-7: Element type
+
+; Target type masks and values
+SPELL_TARGET_MASK		= %00000111
+SPELL_TARGET_SINGLE_ENEMY	= 0
+SPELL_TARGET_ALL_ENEMIES	= 1
+SPELL_TARGET_SINGLE_ALLY	= 2
+SPELL_TARGET_ALL_ALLIES		= 3
+SPELL_TARGET_SELF		= 4
+SPELL_TARGET_FIELD		= 5
+
+; Spell type masks (shifted)
+SPELL_TYPE_MASK_SHIFTED		= %00111000
+SPELL_TYPE_SHIFT		= 3
+SPELL_TYPE_DAMAGE_S		= 0 << 3
+SPELL_TYPE_HEAL_S		= 1 << 3
+SPELL_TYPE_BUFF_S		= 2 << 3
+SPELL_TYPE_DEBUFF_S		= 3 << 3
+SPELL_TYPE_STATUS_S		= 4 << 3
+SPELL_TYPE_UTILITY_S		= 5 << 3
+SPELL_TYPE_TRANSPORT_S		= 6 << 3
+SPELL_TYPE_SPECIAL_S		= 7 << 3
+
+; Element type masks (shifted)
+SPELL_ELEMENT_MASK		= %11000000
+SPELL_ELEMENT_SHIFT		= 6
+SPELL_ELEMENT_NONE_S		= 0 << 6
+SPELL_ELEMENT_FIRE_S		= 1 << 6
+SPELL_ELEMENT_ICE_S		= 2 << 6
+SPELL_ELEMENT_ELECTRIC_S	= 3 << 6
+
+; ============================================================================
+; Spell Type Categories (legacy constants - kept for compatibility)
 ; ============================================================================
 SPELL_TYPE_HEAL		= $00		; Healing spells
 SPELL_TYPE_ATTACK	= $01		; Damage dealing spells
