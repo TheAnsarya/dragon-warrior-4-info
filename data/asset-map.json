@@ -174,6 +174,60 @@
 			}
 		}
 	},
+	"text_encoding": {
+		"_comment": "DW4 uses custom 8-bit encoding with DTE compression",
+		"csharp_impl": "DW4Lib.Text.DW4Text",
+		"python_impl": "tools/verify_dte_table.py",
+		"encoding_ranges": {
+			"uppercase_AZ": {"range": "0x80-0x99", "mapped_to": "A-Z (26 chars)"},
+			"lowercase_az": {"range": "0x9A-0xB3", "mapped_to": "a-z (26 chars)"},
+			"digits_09": {"range": "0xB4-0xBD", "mapped_to": "0-9 (10 chars)"},
+			"punctuation": {"range": "0xBE-0xCA", "mapped_to": ".,!?':;-/() and space"},
+			"dte_pairs": {"range": "0xE0-0xFF", "mapped_to": "32 common letter pairs"},
+			"control_codes": {"range": "0x00-0x10", "mapped_to": "text engine commands"}
+		},
+		"dte_table": {
+			"rom_location": {
+				"bank": "0x16",
+				"cpu_address": "0xB3A4",
+				"file_offset": "0x5B3B4"
+			},
+			"size": 256,
+			"entries": 128,
+			"entry_size": 2,
+			"common_pairs": [
+				{"byte": "0xE0", "pair": "th"},
+				{"byte": "0xE1", "pair": "he"},
+				{"byte": "0xE2", "pair": "in"},
+				{"byte": "0xE3", "pair": "er"},
+				{"byte": "0xE4", "pair": "an"},
+				{"byte": "0xE5", "pair": "re"},
+				{"byte": "0xE6", "pair": "on"},
+				{"byte": "0xE7", "pair": "en"},
+				{"byte": "0xE8", "pair": "at"},
+				{"byte": "0xE9", "pair": "ed"},
+				{"byte": "0xEA", "pair": "ou"},
+				{"byte": "0xEB", "pair": "to"}
+			],
+			"compression_ratio": "~33%",
+			"check_code_addr": "Bank 22 $8272",
+			"notes": "Bytes >= 0x80 trigger DTE lookup. Some entries are recursive (contain DTE codes)."
+		},
+		"control_codes": {
+			"0x00": "NOP",
+			"0x01": "DELAY",
+			"0x02": "CLEAR",
+			"0x03": "NEWLINE",
+			"0x04": "WAIT_KEY",
+			"0x10": "END_STRING"
+		},
+		"text_banks": ["0x10", "0x11", "0x12", "0x13", "0x14"],
+		"docs": [
+			"docs/formats/TEXT_SYSTEM.md",
+			"docs/analysis/dte_dictionary_table.md",
+			"docs/analysis/text_system_overview.md"
+		]
+	},
 	"banks": {
 		"0x00": {
 			"name": "Core Engine",
@@ -345,12 +399,34 @@
 			"format": "2bpp_nes"
 		},
 		"0x16": {
-			"name": "Battle Graphics",
-			"type": "graphics",
+			"name": "Battle Graphics & DTE Table",
+			"type": "mixed",
 			"file_offset": "0x58010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"format": "2bpp_nes"
+			"assets": ["battle_graphics", "dte_table"],
+			"subsections": {
+				"dte_table": {
+					"cpu_address": "0xB3A4",
+					"file_offset": "0x5B3B4",
+					"entry_count": 128,
+					"entry_size": 2,
+					"total_size": 256,
+					"byte_range": "0x80-0xFF",
+					"format": "Each 2-byte entry expands to character pair",
+					"csharp_impl": "DW4Lib.Text.DW4Text.DtePairs",
+					"check_code": "Bank 22 $8272 (CMP #$80; BCS $829A)",
+					"categories": {
+						"menu_ui": {"range": "0x80-0x8F", "desc": "Menu/UI text pairs"},
+						"dialogue": {"range": "0x90-0xAF", "desc": "Common dialogue pairs"},
+						"common": {"range": "0xB0-0xCF", "desc": "High-frequency letter pairs"},
+						"endings": {"range": "0xD0-0xEF", "desc": "Word endings and spaces"},
+						"special": {"range": "0xF0-0xFF", "desc": "Special/recursive DTE"}
+					},
+					"common_pairs": ["th", "he", "in", "er", "an", "re", "on", "en", "at", "ed", "ou", "to"],
+					"notes": "DTE provides ~33% text compression. Some entries are recursive (contain DTE codes themselves)."
+				}
+			}
 		},
 		"0x17": {
 			"name": "Casino Code & Map Pointer Tables",
@@ -359,6 +435,15 @@
 			"cpu_address": "0x8000",
 			"size": 16384,
 			"assets": ["casino", "map_pointers", "npc_tables"],
+			"cdl_coverage": {
+				"verified_date": "2026-01-03",
+				"total_bytes": 16384,
+				"code_bytes": 0,
+				"data_bytes": 3574,
+				"unlogged_bytes": 12810,
+				"coverage_percent": 21.81,
+				"notes": "Bank is primarily data (0 code bytes). Low coverage suggests many lookup tables not yet accessed in gameplay."
+			},
 			"subsections": {
 				"video_poker": {
 					"entry_point": "0x8000",
@@ -373,6 +458,33 @@
 					"place_bet": "0x9200",
 					"execute_fight": "0x9300",
 					"calc_payout": "0x9400"
+				},
+				"map_pointer_table": {
+					"cpu_address": "0xB08D",
+					"file_offset": "0x5F09D",
+					"entry_count": 73,
+					"entry_size": 2,
+					"total_size": 146,
+					"format": "array of 16-bit pointers to map info",
+					"csharp_impl": "DW4Lib.ROM.DW4Rom.ReadMapPointerTable()",
+					"notes": "Pointer table for all 73 map groups (0x00-0x48). Each 2-byte entry points to map info data."
+				},
+				"map_info_data": {
+					"cpu_address": "0xB121",
+					"cpu_address_end": "0xB4AE",
+					"file_offset": "0x5F131",
+					"format": "3 bytes per submap",
+					"csharp_impl": "DW4Lib.DataStructures.Maps.MapInfo",
+					"field_format": {
+						"byte0": "Tileset number (references Bank $08)",
+						"byte1_2": "Map data address (little-endian, in map data bank)"
+					},
+					"data_banks": {
+						"maps_0x00_to_0x2C": "Bank 0x09",
+						"maps_0x2D_to_0x45": "Bank 0x0A",
+						"maps_0x45_to_0x48": "Bank 0x0B"
+					},
+					"notes": "Each map group has 1-15 submaps. Bank for map data determined by GetMapDataBank(mapId) function at Bank $0F, $E9AD."
 				}
 			}
 		},
