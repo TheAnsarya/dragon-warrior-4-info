@@ -27,6 +27,27 @@
 		}
 	},
 	"cdl_verification": {
+		"chapter1": {
+			"status": "FULLY_VERIFIED",
+			"verified_date": "2026-01-03",
+			"location_count": 8,
+			"banks": ["0x09", "0x0A"],
+			"bank_coverage": {
+				"0x09": "96.7%",
+				"0x0A": "84.9%"
+			},
+			"components": {
+				"burland_castle": { "map_id": "0x02", "bank": "0x09", "status": "verified" },
+				"izmit": { "map_id": "0x0E", "bank": "0x09", "status": "verified" },
+				"strathbaile": { "map_id": "0x0F", "bank": "0x09", "status": "verified" },
+				"well_dungeon": { "map_id": "0x10", "bank": "0x0A", "status": "verified" },
+				"loch_tower_base": { "map_id": "0x11", "bank": "0x0A", "status": "verified" },
+				"loch_tower_mid": { "map_id": "0x12", "bank": "0x0A", "status": "verified" },
+				"loch_tower_top": { "map_id": "0x13", "bank": "0x0A", "status": "verified" },
+				"overworld": { "map_id": "0x00", "bank": "0x0B", "status": "verified" }
+			},
+			"notes": "All 8/8 Chapter 1 (Ragnar) locations verified with merged CDL."
+		},
 		"chapter2": {
 			"status": "FULLY_VERIFIED",
 			"verified_date": "2026-01-03",
