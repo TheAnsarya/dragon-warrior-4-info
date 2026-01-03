@@ -30,20 +30,125 @@
 		"chapter2": {
 			"status": "FULLY_VERIFIED",
 			"verified_date": "2026-01-03",
-			"components": {
-				"santeem_castle": { "bank": "0x20", "coverage": "80.6%", "status": "verified" },
-				"santeem_basement": { "bank": "0x21", "coverage": "83.5%", "status": "verified" },
-				"santeem_tower": { "bank": "0x22", "coverage": "70.9%", "status": "verified" },
-				"surene": { "bank": "0x23", "coverage": "42.4%", "status": "verified" },
-				"tempe": { "bank": "0x24", "coverage": "68.3%", "status": "verified" },
-				"tempe_cave_b1": { "bank": "0x25", "coverage": "68.1%", "status": "verified" },
-				"tempe_cave_b2": { "bank": "0x26", "coverage": "79.7%", "status": "verified" },
-				"frenor": { "bank": "0x27", "coverage": "71.0%", "status": "verified" },
-				"endor": { "bank": "0x28", "coverage": "89.9%", "status": "verified" },
-				"endor_colosseum": { "bank": "0x29", "coverage": "49.5%", "status": "verified" },
-				"endor_castle": { "bank": "0x2A", "coverage": "78.7%", "status": "verified" }
+			"location_count": 11,
+			"banks": ["0x0A"],
+			"bank_coverage": {
+				"0x0A": "84.9%"
 			},
-			"notes": "All 11/11 Chapter 2 locations verified with merged CDL (>40% coverage each)."
+			"components": {
+				"santeem_castle": { "map_id": "0x20", "coverage": "80.6%", "status": "verified" },
+				"santeem_basement": { "map_id": "0x21", "coverage": "83.5%", "status": "verified" },
+				"santeem_tower": { "map_id": "0x22", "coverage": "70.9%", "status": "verified" },
+				"surene": { "map_id": "0x23", "coverage": "42.4%", "status": "verified" },
+				"tempe": { "map_id": "0x24", "coverage": "68.3%", "status": "verified" },
+				"tempe_cave_b1": { "map_id": "0x25", "coverage": "68.1%", "status": "verified" },
+				"tempe_cave_b2": { "map_id": "0x26", "coverage": "79.7%", "status": "verified" },
+				"frenor": { "map_id": "0x27", "coverage": "71.0%", "status": "verified" },
+				"endor": { "map_id": "0x28", "coverage": "89.9%", "status": "verified" },
+				"endor_colosseum": { "map_id": "0x29", "coverage": "49.5%", "status": "verified" },
+				"endor_castle": { "map_id": "0x2A", "coverage": "78.7%", "status": "verified" }
+			},
+			"notes": "All 11/11 Chapter 2 (Alena) locations verified with merged CDL (>40% coverage each)."
+		},
+		"chapter3": {
+			"status": "FULLY_VERIFIED",
+			"verified_date": "2026-01-03",
+			"location_count": 12,
+			"banks": ["0x09", "0x0A"],
+			"bank_coverage": {
+				"0x09": "96.7%",
+				"0x0A": "84.9%"
+			},
+			"components": {
+				"lakanaba": { "map_id": "0x30", "bank": "0x09", "status": "verified" },
+				"lakanaba_weapon_shop": { "map_id": "0x31", "bank": "0x09", "status": "verified" },
+				"taloon_house": { "map_id": "0x32", "bank": "0x09", "status": "verified" },
+				"east_cave_f1": { "map_id": "0x33", "bank": "0x0A", "status": "verified" },
+				"east_cave_f2": { "map_id": "0x34", "bank": "0x0A", "status": "verified" },
+				"fox_village": { "map_id": "0x35", "bank": "0x09", "status": "verified" },
+				"bonmalmo": { "map_id": "0x36", "bank": "0x09", "status": "verified" },
+				"bonmalmo_castle": { "map_id": "0x37", "bank": "0x09", "status": "verified" },
+				"silver_cave_f1": { "map_id": "0x38", "bank": "0x0A", "status": "verified" },
+				"silver_cave_f2": { "map_id": "0x39", "bank": "0x0A", "status": "verified" },
+				"ship": { "map_id": "0x3A", "bank": "0x09", "status": "verified" },
+				"tunnel": { "map_id": "0x3B", "bank": "0x09", "status": "verified" }
+			},
+			"notes": "All 12/12 Chapter 3 (Taloon) locations verified with merged CDL."
+		},
+		"chapter4": {
+			"status": "FULLY_VERIFIED",
+			"verified_date": "2026-01-03",
+			"location_count": 12,
+			"banks": ["0x0D", "0x0E", "0x0F"],
+			"bank_coverage": {
+				"0x0D": "79.1%",
+				"0x0E": "92.2%",
+				"0x0F": "79.1%"
+			},
+			"components": {
+				"monbaraba": { "map_id": "0x40", "bank": "0x0D", "status": "verified" },
+				"theater": { "map_id": "0x41", "bank": "0x0D", "status": "verified" },
+				"sisters_room": { "map_id": "0x42", "bank": "0x0D", "status": "verified" },
+				"cave_monbaraba_f1": { "map_id": "0x43", "bank": "0x0D", "status": "verified" },
+				"cave_monbaraba_f2": { "map_id": "0x44", "bank": "0x0D", "status": "verified" },
+				"haville": { "map_id": "0x45", "bank": "0x0E", "status": "verified" },
+				"mine_upper": { "map_id": "0x46", "bank": "0x0E", "status": "verified" },
+				"mine_lower": { "map_id": "0x47", "bank": "0x0E", "status": "verified" },
+				"kievs": { "map_id": "0x48", "bank": "0x0F", "status": "verified" },
+				"kievs_castle_main": { "map_id": "0x49", "bank": "0x0F", "status": "verified" },
+				"kievs_castle_throne": { "map_id": "0x4A", "bank": "0x0F", "status": "verified" },
+				"kievs_castle_secret": { "map_id": "0x4B", "bank": "0x0F", "status": "verified" }
+			},
+			"notes": "All 12/12 Chapter 4 (Nara/Mara) locations verified with merged CDL."
+		},
+		"chapter5": {
+			"status": "FULLY_VERIFIED",
+			"verified_date": "2026-01-03",
+			"location_count": 16,
+			"banks": ["0x10", "0x11", "0x12", "0x13", "0x14"],
+			"bank_coverage": {
+				"0x10": "82.0%",
+				"0x11": "56.7%",
+				"0x12": "68.2%",
+				"0x13": "75.4%",
+				"0x14": "69.7%"
+			},
+			"components": {
+				"hero_village": { "map_id": "0x50", "bank": "0x10", "status": "verified" },
+				"hero_house": { "map_id": "0x51", "bank": "0x10", "status": "verified" },
+				"secret_passage": { "map_id": "0x52", "bank": "0x10", "status": "verified" },
+				"branca": { "map_id": "0x53", "bank": "0x10", "status": "verified" },
+				"endor_ch5": { "map_id": "0x54", "bank": "0x11", "status": "verified" },
+				"endor_castle_ch5": { "map_id": "0x55", "bank": "0x11", "status": "verified" },
+				"endor_casino": { "map_id": "0x56", "bank": "0x11", "status": "verified" },
+				"mintos": { "map_id": "0x57", "bank": "0x12", "status": "verified" },
+				"zenithian_tower_f1": { "map_id": "0x58", "bank": "0x12", "status": "verified" },
+				"zenithian_tower_f2": { "map_id": "0x59", "bank": "0x12", "status": "verified" },
+				"zenithian_tower_f3": { "map_id": "0x5A", "bank": "0x12", "status": "verified" },
+				"zenithia": { "map_id": "0x5B", "bank": "0x13", "status": "verified" },
+				"zenithia_throne": { "map_id": "0x5C", "bank": "0x13", "status": "verified" },
+				"psaro_entrance": { "map_id": "0x5D", "bank": "0x14", "status": "verified" },
+				"psaro_main": { "map_id": "0x5E", "bank": "0x14", "status": "verified" },
+				"psaro_throne": { "map_id": "0x5F", "bank": "0x14", "status": "verified" }
+			},
+			"notes": "All 16/16 Chapter 5 (Hero) locations verified with merged CDL."
+		},
+		"data_banks": {
+			"monster_data": {
+				"bank": "0x06",
+				"coverage": "99.8%",
+				"status": "VERIFIED",
+				"dw4lib_class": "DW4Lib.DataStructures.Monster",
+				"table_address": "0xA2A2",
+				"record_size": 27
+			},
+			"item_data": {
+				"bank": "0x07",
+				"coverage": "78.1%",
+				"status": "VERIFIED",
+				"dw4lib_class": "DW4Lib.DataStructures.Item",
+				"record_size": 8
+			}
 		}
 	},
 	"banks": {
