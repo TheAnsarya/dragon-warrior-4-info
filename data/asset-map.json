@@ -11,6 +11,37 @@
 		"chr_banks": 32,
 		"header_size": 16
 	},
+	"debugging": {
+		"cdl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US).cdl",
+		"mlb_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US).mlb",
+		"tbl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior 4 (NES) - English.tbl",
+		"cdl_coverage": {
+			"verified_date": "2026-01-03",
+			"overall_coverage": "34.4%",
+			"code_bytes": 75600,
+			"data_bytes": 104735
+		}
+	},
+	"cdl_verification": {
+		"chapter2": {
+			"status": "VERIFIED",
+			"verified_date": "2026-01-03",
+			"components": {
+				"santeem_castle": { "bank": "0x20", "coverage": "55.1%", "status": "verified" },
+				"santeem_basement": { "bank": "0x21", "coverage": "61.6%", "status": "verified" },
+				"santeem_tower": { "bank": "0x22", "coverage": "53.2%", "status": "verified" },
+				"surene": { "bank": "0x23", "coverage": "32.6%", "status": "verified" },
+				"tempe": { "bank": "0x24", "coverage": "44.5%", "status": "verified" },
+				"tempe_cave_b1": { "bank": "0x25", "coverage": "32.8%", "status": "verified" },
+				"tempe_cave_b2": { "bank": "0x26", "coverage": "1.6%", "status": "not_played" },
+				"frenor": { "bank": "0x27", "coverage": "19.9%", "status": "partial" },
+				"endor": { "bank": "0x28", "coverage": "55.0%", "status": "verified" },
+				"endor_colosseum": { "bank": "0x29", "coverage": "13.1%", "status": "partial" },
+				"endor_castle": { "bank": "0x2A", "coverage": "23.9%", "status": "verified" }
+			},
+			"notes": "Chapter 2 map IDs (0x20-0x2A) align with CDL bank coverage. Tempe Cave B2 is optional."
+		}
+	},
 	"banks": {
 		"0x00": {
 			"name": "Core Engine",
