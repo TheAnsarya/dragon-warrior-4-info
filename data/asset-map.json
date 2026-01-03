@@ -12,18 +12,20 @@
 		"header_size": 16
 	},
 	"debugging": {
-		"cdl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US)-merged.cdl",
-		"cdl_sources": [
-			"Dragon Warrior IV (1992-10)(Enix)(US).cdl",
-			"Dragon Warrior IV (1992-10)(Enix)(US) (2).cdl"
-		],
+		"cdl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US).cdl",
+		"cdl_sources_dir": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\cdls",
+		"cdl_merge_script": "C:\\Users\\me\\source\\repos\\GameInfo\\scripts\\merge-dw4-cdls.ps1",
 		"mlb_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior IV (1992-10)(Enix)(US).mlb",
 		"tbl_file": "C:\\Users\\me\\source\\repos\\GameInfo\\Games\\NES\\Dragon Warrior 4 (NES)\\Debugging\\Dragon Warrior 4 (NES) - English.tbl",
 		"cdl_coverage": {
 			"verified_date": "2026-01-03",
-			"overall_coverage": "80.8%",
-			"code_bytes": 124411,
-			"data_bytes": 299008
+			"files_merged": 13,
+			"overall_coverage": "80.76%",
+			"code_bytes": 124414,
+			"data_bytes": 312438,
+			"covered_bytes": 423428,
+			"unlogged_bytes": 100869,
+			"total_bytes": 524297
 		}
 	},
 	"cdl_verification": {
@@ -351,12 +353,28 @@
 			"format": "2bpp_nes"
 		},
 		"0x17": {
-			"name": "Map Pointer Tables",
-			"type": "data",
+			"name": "Casino Code & Map Pointer Tables",
+			"type": "code",
 			"file_offset": "0x5C010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"assets": ["map_pointers", "npc_tables"]
+			"assets": ["casino", "map_pointers", "npc_tables"],
+			"subsections": {
+				"video_poker": {
+					"entry_point": "0x8000",
+					"hand_eval": "0x81F2",
+					"payout_table": "0x81C5",
+					"double_up": "0x8654",
+					"main_loop": "0x8084-0x80AE"
+				},
+				"monster_arena": {
+					"entry_point": "0x9000",
+					"display_groups": "0x9100",
+					"place_bet": "0x9200",
+					"execute_fight": "0x9300",
+					"calc_payout": "0x9400"
+				}
+			}
 		},
 		"0x18": {
 			"name": "Music Data 1",
@@ -430,30 +448,27 @@
 			"file_offset": "0x1A2B2",
 			"entry_size": 27,
 			"count": 180,
-			"format": "monster_data_v1",
+			"format": "monster_data_v2",
+			"cdl_verified": true,
+			"cdl_coverage": "99.8%",
+			"dw4lib_class": "DW4Lib.DataStructures.Monster",
 			"fields": [
-				{"name": "graphics", "offset": 0, "size": 21, "type": "bytes"},
-				{"name": "hp", "offset": 21, "size": 2, "type": "uint16_be"},
-				{"name": "attack", "offset": 23, "size": 1, "type": "uint8"},
-				{"name": "defense", "offset": 24, "size": 1, "type": "uint8"},
-				{"name": "agility", "offset": 25, "size": 1, "type": "uint8"},
-				{"name": "behavior", "offset": 26, "size": 1, "type": "flags"}
-			]
-		},
-		"monster_stats_extended": {
-			"bank": "0x06",
-			"cpu_address": "0xB000",
-			"file_offset": "0x1B010",
-			"entry_size": 8,
-			"count": 180,
-			"format": "monster_ext_v1",
-			"fields": [
-				{"name": "exp", "offset": 0, "size": 2, "type": "uint16_be"},
-				{"name": "gold", "offset": 2, "size": 2, "type": "uint16_be"},
-				{"name": "drop_rate", "offset": 4, "size": 1, "type": "uint8"},
-				{"name": "drop_item", "offset": 5, "size": 1, "type": "uint8"},
-				{"name": "resistances", "offset": 6, "size": 1, "type": "flags"},
-				{"name": "immunities", "offset": 7, "size": 1, "type": "flags"}
+				{"name": "experience", "offset": 0, "size": 2, "type": "uint16_le", "description": "Experience points (little endian)"},
+				{"name": "gold", "offset": 2, "size": 2, "type": "uint16_le", "description": "Gold dropped (little endian)"},
+				{"name": "hit_points", "offset": 4, "size": 2, "type": "uint16_le", "description": "HP (little endian)"},
+				{"name": "attack", "offset": 6, "size": 1, "type": "uint8", "description": "Attack power"},
+				{"name": "defense", "offset": 7, "size": 1, "type": "uint8", "description": "Defense power"},
+				{"name": "agility", "offset": 8, "size": 1, "type": "uint8", "description": "Agility"},
+				{"name": "skill_data", "offset": 9, "size": 6, "type": "bytes", "description": "Skill/ability bytes - action chance, count, HP regen"},
+				{"name": "behavior_data", "offset": 15, "size": 4, "type": "bytes", "description": "AI behavior patterns"},
+				{"name": "item_drop_id", "offset": 19, "size": 1, "type": "uint8", "description": "Item drop ID (references item table)"},
+				{"name": "unknown20", "offset": 20, "size": 1, "type": "uint8", "description": "Unknown (Vaxherd: byte 17)"},
+				{"name": "unknown21", "offset": 21, "size": 1, "type": "uint8", "description": "Unknown (Vaxherd: byte 18)"},
+				{"name": "metal_flags", "offset": 22, "size": 1, "type": "flags", "description": "Metal monster flags - bits 0-1: metal type (takes 0-1 dmg)"},
+				{"name": "drop_rate_flags", "offset": 23, "size": 1, "type": "flags", "description": "Drop rate - bits 0-2: 0=0%, 1=1/2, 2=1/4, 3=1/8, 4=1/16, 5=1/32, 6=1/256, 7=100%"},
+				{"name": "status_vulnerability", "offset": 24, "size": 1, "type": "flags", "description": "Status vulnerability - bit 6: paralysis, bit 7: confusion/bounce"},
+				{"name": "unknown25", "offset": 25, "size": 1, "type": "uint8", "description": "Unknown byte"},
+				{"name": "unknown26", "offset": 26, "size": 1, "type": "uint8", "description": "Unknown byte"}
 			]
 		},
 		"items": {
@@ -462,14 +477,17 @@
 			"file_offset": "0x1C010",
 			"entry_size": 8,
 			"count": 220,
-			"format": "item_data_v1",
+			"format": "item_data_v2",
+			"cdl_verified": true,
+			"cdl_coverage": "78.1%",
+			"dw4lib_class": "DW4Lib.DataStructures.Item",
 			"fields": [
-				{"name": "type", "offset": 0, "size": 1, "type": "uint8"},
-				{"name": "modifier", "offset": 1, "size": 1, "type": "int8"},
-				{"name": "special", "offset": 2, "size": 1, "type": "flags"},
-				{"name": "buy_price", "offset": 3, "size": 2, "type": "uint16_be"},
-				{"name": "sell_price", "offset": 5, "size": 2, "type": "uint16_be"},
-				{"name": "equip_flags", "offset": 7, "size": 1, "type": "flags"}
+				{"name": "type_flags", "offset": 0, "size": 1, "type": "flags", "description": "Item type and equipment slot flags"},
+				{"name": "stat_modifier", "offset": 1, "size": 1, "type": "int8", "description": "Stat modifier (signed - negative = cursed)"},
+				{"name": "special_flags", "offset": 2, "size": 1, "type": "flags", "description": "Special effect flags"},
+				{"name": "buy_price", "offset": 3, "size": 2, "type": "uint16_be", "description": "Buy price (big endian)"},
+				{"name": "sell_price", "offset": 5, "size": 2, "type": "uint16_be", "description": "Sell price (big endian)"},
+				{"name": "equip_flags", "offset": 7, "size": 1, "type": "flags", "description": "Who can equip - bit per character"}
 			]
 		},
 		"spells": {
@@ -484,6 +502,72 @@
 				{"name": "power", "offset": 1, "size": 1, "type": "uint8"},
 				{"name": "target", "offset": 2, "size": 1, "type": "uint8"},
 				{"name": "mp_cost", "offset": 3, "size": 1, "type": "uint8"}
+			]
+		},
+		"casino": {
+			"bank": "0x17",
+			"location": {
+				"town": "Endor",
+				"map_id": "0x04",
+				"poker_submap": "0x01",
+				"arena_submap": "0x07"
+			},
+			"dq4rlib_class": "DQ4rLib.Casino.CasinoManager",
+			"coin_storage": {
+				"address_low": "0x62AD",
+				"address_mid": "0x62AE",
+				"address_high": "0x62AF",
+				"max_value": 16777215
+			},
+			"video_poker": {
+				"dq4rlib_class": "DQ4rLib.Casino.VideoPoker",
+				"entry_point": "0x8000",
+				"hand_eval": "0x81F2",
+				"payout_table": "0x81C5",
+				"double_up": "0x8654",
+				"bet_selection": "0x8AAC",
+				"card_buffer": "0x7635",
+				"bet_range": [1, 2, 5, 10],
+				"hands": [
+					{"name": "Royal Flush", "multiplier": 500, "text_addr": "0x82E4"},
+					{"name": "5 of a Kind", "multiplier": 250, "text_addr": "0x82F8"},
+					{"name": "Straight Flush", "multiplier": 100, "text_addr": "0x8304"},
+					{"name": "4 of a Kind", "multiplier": 50, "text_addr": "0x8313"},
+					{"name": "Full House", "multiplier": 20},
+					{"name": "Flush", "multiplier": 10, "text_addr": "0x832A"},
+					{"name": "Straight", "multiplier": 5},
+					{"name": "3 of a Kind", "multiplier": 3, "text_addr": "0x8339"},
+					{"name": "2 Pairs", "multiplier": 2, "text_addr": "0x8345"},
+					{"name": "1 Pair", "multiplier": 1}
+				],
+				"card_encoding": {
+					"rank_bits": "0-3",
+					"suit_bits": "4-5",
+					"joker_flag": "bit 6",
+					"suits": ["Spades", "Hearts", "Diamonds", "Clubs"]
+				}
+			},
+			"monster_arena": {
+				"dq4rlib_class": "DQ4rLib.Casino.MonsterArena",
+				"entry_point": "0x9000",
+				"display_groups": "0x9100",
+				"place_bet": "0x9200",
+				"execute_fight": "0x9300",
+				"calc_payout": "0x9400",
+				"bet_amounts": [10, 50, 100, 500],
+				"odds_system": [
+					{"odds": "2:1", "description": "Favorite", "payout": "2x"},
+					{"odds": "3:1", "description": "Even match", "payout": "3x"},
+					{"odds": "5:1", "description": "Underdog", "payout": "5x"},
+					{"odds": "10:1", "description": "Long shot", "payout": "10x"}
+				]
+			},
+			"documentation": [
+				"docs/casino/casino-overview.md",
+				"docs/casino/casino-poker.md",
+				"docs/casino/casino-arena.md",
+				"docs/casino/casino-prizes.md",
+				"docs/casino/casino-implementation-plan.md"
 			]
 		},
 		"characters": {
