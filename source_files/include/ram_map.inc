@@ -11,7 +11,7 @@
 ; These addresses are used for frequently accessed variables and pointers
 ; due to faster access times on 6502
 
-; System Variables ($00-$1F) - Estimated, needs verification
+; System Variables ($00-$1F) - Partially verified from Cowness
 zp_temp0		= $00		; Temporary variable 0
 zp_temp1		= $01		; Temporary variable 1
 zp_temp2		= $02		; Temporary variable 2
@@ -23,10 +23,10 @@ zp_temp7		= $07		; Temporary variable 7
 
 zp_ptr_lo		= $10		; General purpose pointer low
 zp_ptr_hi		= $11		; General purpose pointer high
-zp_ptr2_lo		= $12		; Second pointer low
-zp_ptr2_hi		= $13		; Second pointer high
-
-zp_frame_counter	= $18		; Frame counter (increments each NMI)
+zp_rng_seed_lo		= $12		; RNG seed low byte (verified: Cowness)
+zp_rng_seed_hi		= $13		; RNG seed high byte (verified: Cowness)
+zp_rng_temp		= $16		; RNG temporary (verified: Cowness)
+zp_encounter_rate	= $18		; Encounter rate (verified: Cowness)
 zp_random_seed		= $19		; Random number seed
 zp_controller1		= $1a		; Controller 1 current state
 zp_controller1_prev	= $1b		; Controller 1 previous state
@@ -63,6 +63,12 @@ map_number		= $63		; Current map ID (0-72)
 sub_map_number		= $64		; Current sub-map ID
 
 ; ============================================================================
+; RNG State ($050C-$050D) - Verified from Cowness
+; ============================================================================
+rng_counter_compare	= $050c		; RNG counter compare value
+rng_counter		= $050d		; RNG counter
+
+; ============================================================================
 ; Stack ($0100-$01FF)
 ; ============================================================================
 STACK_TOP		= $01ff		; Top of stack
@@ -79,6 +85,12 @@ OAM_SPRITE63		= $02fc		; Last sprite
 ; ============================================================================
 WRAM_START		= $6000
 WRAM_SIZE		= $2000		; 8KB
+
+; Save data locations (verified from Cowness)
+save_data_current	= $6000		; Current save data start
+save_file_1		= $62ef		; Save file 1 start
+save_file_2		= $65df		; Save file 2 start
+save_file_3		= $68cf		; Save file 3 start
 
 ; ============================================================================
 ; Party Member Data ($6001-$610E) - 30 bytes each

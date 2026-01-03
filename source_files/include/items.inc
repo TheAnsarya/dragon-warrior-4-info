@@ -2,11 +2,62 @@
 ; Dragon Warrior IV - Item Definitions
 ; ============================================================================
 ; Item index constants and definitions
-; Source: GameInfo wiki documentation
+; Source: DW4Lib.DataStructures.Item with CDL verification
+; Bank: 0x07, Address: $8000
+; CDL Coverage: 78.1% (verified 2026-01-03)
 ; ============================================================================
-; Item format: Bottom 7 bits ($00-$7F) = item ID
-;              High bit ($80) = equipped flag
+; Item ID format: Bottom 7 bits ($00-$7F) = item ID
+;                 High bit ($80) = equipped flag
 ; ============================================================================
+
+; ============================================================================
+; Item Table Location
+; ============================================================================
+ITEM_TABLE_BANK		= $07		; PRG bank containing item data
+ITEM_TABLE_ADDR		= $8000		; CPU address of item table
+ITEM_RECORD_SIZE	= 8		; Bytes per item record
+ITEM_COUNT		= 220		; Total items in game
+
+; ============================================================================
+; Item Record Structure (8 bytes)
+; ============================================================================
+; Offset  Size  Field               Description
+; ------  ----  -----               -----------
+;   0      1    type_flags          Equipment slot (bits 0-3), special flags (bits 4-7)
+;   1      1    stat_modifier       Attack/Defense bonus (signed, negative = cursed)
+;   2      1    special_flags       Elemental/status effects
+;   3      2    buy_price           Buy price (16-bit, big-endian)
+;   5      2    sell_price          Sell price (16-bit, big-endian)
+;   7      1    equip_flags         Character bitmask (who can equip)
+; ============================================================================
+
+; Item record field offsets
+ITEM_TYPE_FLAGS		= 0		; Type and special flags
+ITEM_STAT_MOD		= 1		; Stat modifier (signed)
+ITEM_SPECIAL		= 2		; Special effect flags
+ITEM_BUY_PRICE_HI	= 3		; Buy price high byte
+ITEM_BUY_PRICE_LO	= 4		; Buy price low byte
+ITEM_SELL_PRICE_HI	= 5		; Sell price high byte
+ITEM_SELL_PRICE_LO	= 6		; Sell price low byte
+ITEM_EQUIP_FLAGS	= 7		; Character equip bitmask
+
+; Equipment slot values (bits 0-3 of type_flags)
+ITEM_SLOT_CONSUMABLE	= 0		; Usable item
+ITEM_SLOT_WEAPON	= 1		; Weapon
+ITEM_SLOT_ARMOR		= 2		; Body armor
+ITEM_SLOT_SHIELD	= 3		; Shield
+ITEM_SLOT_HELMET	= 4		; Helmet/hat
+ITEM_SLOT_ACCESSORY	= 5		; Accessory
+
+; Character equip flags (bit positions)
+EQUIP_HERO		= $01		; Bit 0: Hero
+EQUIP_RAGNAR		= $02		; Bit 1: Ragnar
+EQUIP_ALENA		= $04		; Bit 2: Alena
+EQUIP_CRISTO		= $08		; Bit 3: Cristo
+EQUIP_BREY		= $10		; Bit 4: Brey
+EQUIP_TALOON		= $20		; Bit 5: Taloon
+EQUIP_MARA		= $40		; Bit 6: Mara
+EQUIP_NARA		= $80		; Bit 7: Nara
 
 ; ============================================================================
 ; Weapons ($00-$23)

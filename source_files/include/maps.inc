@@ -2,12 +2,38 @@
 ; Dragon Warrior IV - Map Definitions
 ; ============================================================================
 ; Map ID constants and definitions
-; Source: GameInfo wiki documentation
-; Maps stored in banks $09, $0A, $0B
+; Source: DW4Lib.DataStructures.Maps.MapInfo with CDL verification
+; Map pointer table: Bank 0x17, $B08D
+; Map info data: Bank 0x17, $B121-$B4AE
+; Map data banks: $09, $0A, $0B
 ; ============================================================================
 
 ; ============================================================================
-; Map Banks
+; Map Pointer Table Location (Bank 0x17)
+; ============================================================================
+MAP_PTR_TABLE_BANK	= $17		; Bank containing pointer table
+MAP_PTR_TABLE_ADDR	= $b08d		; Map pointer table (73 entries × 2 bytes)
+MAP_INFO_DATA_ADDR	= $b121		; Map info data start
+MAP_INFO_DATA_END	= $b4ae		; Map info data end
+MAP_INFO_SIZE		= 3		; Bytes per submap info
+MAP_COUNT		= 73		; Total map groups (0x00-0x48)
+
+; ============================================================================
+; Map Info Structure (3 bytes per submap)
+; ============================================================================
+; Offset  Size  Field               Description
+; ------  ----  -----               -----------
+;   0      1    tileset_num         Tileset number (references Bank $08)
+;   1      2    map_data_addr       Map data address (little-endian)
+; ============================================================================
+
+; Map info field offsets
+MAPINFO_TILESET		= 0		; Tileset number
+MAPINFO_DATA_ADDR_LO	= 1		; Map data address low byte
+MAPINFO_DATA_ADDR_HI	= 2		; Map data address high byte
+
+; ============================================================================
+; Map Data Banks
 ; ============================================================================
 MAP_BANK_1		= $09		; Maps $00-$2C (and part of $2D)
 MAP_BANK_2		= $0a		; Maps $2D-$44 (and part of $45)
