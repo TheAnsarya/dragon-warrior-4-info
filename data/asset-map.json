@@ -567,15 +567,36 @@
 			"file_offset": "0x60010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"format": "nes_nsf"
+			"format": "nes_custom",
+			"cdl_coverage": {
+				"code_bytes": 3066,
+				"data_bytes": 9290,
+				"coverage_percent": 75.4
+			},
+			"notes": "Contains music sequence data. 11.2% zero bytes."
 		},
 		"0x19": {
-			"name": "Music Data 2",
+			"name": "Music Data 2 / Sound Driver",
 			"type": "audio",
 			"file_offset": "0x64010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"format": "nes_nsf"
+			"format": "nes_custom",
+			"cdl_coverage": {
+				"code_bytes": 209,
+				"data_bytes": 9142,
+				"coverage_percent": 57.1
+			},
+			"driver_entry_points": {
+				"$8014": "Sound routine 0",
+				"$8017": "Sound routine 1",
+				"$801A": "Sound routine 2",
+				"$801D": "Sound routine 3",
+				"$8020": "Sound routine 4",
+				"$8023": "Sound routine 5",
+				"$803B": "Sound routine 6"
+			},
+			"notes": "Contains sound driver jump table and code. Lowest coverage music bank."
 		},
 		"0x1A": {
 			"name": "Music Data 3",
@@ -583,7 +604,13 @@
 			"file_offset": "0x68010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"format": "nes_nsf"
+			"format": "nes_custom",
+			"cdl_coverage": {
+				"code_bytes": 0,
+				"data_bytes": 14062,
+				"coverage_percent": 85.8
+			},
+			"notes": "Pure data bank (0 code bytes). Only 0.2% zero bytes - densely packed."
 		},
 		"0x1B": {
 			"name": "Music Data 4",
@@ -591,7 +618,13 @@
 			"file_offset": "0x6C010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"format": "nes_nsf"
+			"format": "nes_custom",
+			"cdl_coverage": {
+				"code_bytes": 4435,
+				"data_bytes": 6004,
+				"coverage_percent": 63.7
+			},
+			"notes": "Mixed code and data. 10.9% zero bytes."
 		},
 		"0x1C": {
 			"name": "Sound Effects 1",
@@ -599,7 +632,12 @@
 			"file_offset": "0x70010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"format": "nes_sfx"
+			"format": "nes_custom",
+			"cdl_coverage": {
+				"code_bytes": 7159,
+				"data_bytes": 5559,
+				"coverage_percent": 77.6
+			}
 		},
 		"0x1D": {
 			"name": "Sound Effects 2",
@@ -607,7 +645,12 @@
 			"file_offset": "0x74010",
 			"cpu_address": "0x8000",
 			"size": 16384,
-			"format": "nes_sfx"
+			"format": "nes_custom",
+			"cdl_coverage": {
+				"code_bytes": 10272,
+				"data_bytes": 4987,
+				"coverage_percent": 93.1
+			}
 		},
 		"0x1E": {
 			"name": "Sound Effects 3",
@@ -647,13 +690,13 @@
 				{"name": "skill_data", "offset": 9, "size": 6, "type": "bytes", "description": "Skill/ability bytes - action chance, count, HP regen"},
 				{"name": "behavior_data", "offset": 15, "size": 4, "type": "bytes", "description": "AI behavior patterns"},
 				{"name": "item_drop_id", "offset": 19, "size": 1, "type": "uint8", "description": "Item drop ID (references item table)"},
-				{"name": "unknown20", "offset": 20, "size": 1, "type": "uint8", "description": "Unknown (Vaxherd: byte 17)"},
-				{"name": "unknown21", "offset": 21, "size": 1, "type": "uint8", "description": "Unknown (Vaxherd: byte 18)"},
+				{"name": "unknown20", "offset": 20, "size": 1, "type": "uint8", "description": "Unknown AI/behavior flags (Vaxherd: byte 17). 82 unique values across 180 monsters, avg=102.9, 10 zeros. High variance suggests behavioral flags."},
+				{"name": "unknown21", "offset": 21, "size": 1, "type": "uint8", "description": "Unknown AI/behavior flags (Vaxherd: byte 18). 89 unique values across 180 monsters, avg=107.5, 2 zeros. High variance suggests behavioral flags."},
 				{"name": "metal_flags", "offset": 22, "size": 1, "type": "flags", "description": "Metal monster flags - bits 0-1: metal type (takes 0-1 dmg)"},
 				{"name": "drop_rate_flags", "offset": 23, "size": 1, "type": "flags", "description": "Drop rate - bits 0-2: 0=0%, 1=1/2, 2=1/4, 3=1/8, 4=1/16, 5=1/32, 6=1/256, 7=100%"},
 				{"name": "status_vulnerability", "offset": 24, "size": 1, "type": "flags", "description": "Status vulnerability - bit 6: paralysis, bit 7: confusion/bounce"},
-				{"name": "unknown25", "offset": 25, "size": 1, "type": "uint8", "description": "Unknown byte"},
-				{"name": "unknown26", "offset": 26, "size": 1, "type": "uint8", "description": "Unknown byte"}
+				{"name": "unknown25", "offset": 25, "size": 1, "type": "uint8", "description": "Unknown AI/behavior flags. 85 unique values across 180 monsters, avg=99.0, 10 zeros. High variance suggests behavioral flags."},
+				{"name": "unknown26", "offset": 26, "size": 1, "type": "uint8", "description": "Unknown AI/behavior flags. 78 unique values across 180 monsters, avg=107.6, 6 zeros. High variance suggests behavioral flags."}
 			]
 		},
 		"items": {
@@ -676,13 +719,15 @@
 			]
 		},
 		"spells": {
-			"bank": "0x05",
-			"cpu_address": "0x8000",
-			"file_offset": "0x14010",
+			"bank": "0x0D",
+			"cpu_address": "0x9000",
+			"file_offset": "0x35010",
 			"entry_size": 6,
 			"count": 64,
 			"format": "spell_data_v2",
 			"dw4lib_class": "DW4Lib.DataStructures.Spell",
+			"location_status": "unverified",
+			"location_notes": "Location from DW4Lib.DW4Rom (8KB bank 13, $9000). Original Bank 0x05 $8000 entry was incorrect - that location contains AI/Monster Behavior code. Needs CDL gameplay verification.",
 			"fields": [
 				{"name": "name_index", "offset": 0, "size": 1, "type": "uint8", "description": "Spell name index for lookup in name table"},
 				{"name": "mp_cost", "offset": 1, "size": 1, "type": "uint8", "description": "MP cost to cast"},
@@ -777,13 +822,18 @@
 			]
 		},
 		"exp_tables": {
-			"bank": "0x27",
-			"cpu_address": "0xB6ED",
-			"file_offset": "0x6F6FD",
-			"entry_size": 3,
-			"count": 792,
+			"bank": "UNKNOWN",
+			"cpu_address": "UNKNOWN",
+			"file_offset": "UNKNOWN",
+			"entry_size": "2 or 3",
+			"count": "unknown",
 			"format": "exp_table_v1",
-			"notes": "99 levels × 8 characters = 792 entries, 3 bytes per entry (24-bit)"
+			"location_status": "unverified",
+			"location_notes": "Original entry (Bank 0x27) was invalid - ROM only has 32 banks (0x00-0x1F). DW4Lib suggests Bank 8 $A866 but data there doesn't match expected EXP patterns. Bank 8 $AB48-$ADBE region has ascending sequences but values too linear. Needs gameplay CDL with level-up events to locate.",
+			"research_candidates": [
+				{"bank": "0x08", "cpu": "$AB48", "notes": "CDL DATA region, 522 bytes, has ascending sequences"},
+				{"bank": "0x08", "cpu": "$ADBE", "notes": "CDL DATA region, ascending 3-byte values"}
+			]
 		},
 		"shops": {
 			"bank": "0x07",
