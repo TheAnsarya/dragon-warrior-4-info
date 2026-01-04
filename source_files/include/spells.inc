@@ -39,7 +39,7 @@ SPELL_SUCCESS_RATE	= 5
 ; TypeFlags Bit Layout (byte 3)
 ; ============================================================================
 ; Bits 0-2: Target type
-; Bits 3-5: Spell type  
+; Bits 3-5: Spell type
 ; Bits 6-7: Element type
 
 ; Target type masks and values
