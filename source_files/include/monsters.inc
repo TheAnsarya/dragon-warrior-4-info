@@ -28,13 +28,13 @@ MONSTER_RECORD_SIZE	= 27		; Bytes per monster record
 ;   9      6    skill_data          Skill/ability bytes
 ;  15      4    behavior_data       AI behavior patterns
 ;  19      1    item_drop_id        Item drop ID (references item table)
-;  20      1    unknown20           Unknown (Vaxherd: byte 17)
-;  21      1    unknown21           Unknown (Vaxherd: byte 18)
+;  20      1    unknown20           AI/behavior flags (82 unique values, avg=102.9)
+;  21      1    unknown21           AI/behavior flags (89 unique values, avg=107.5)
 ;  22      1    metal_flags         Metal monster flags (bits 0-1)
 ;  23      1    drop_rate_flags     Drop rate (bits 0-2)
 ;  24      1    status_vuln         Status vulnerability flags
-;  25      1    unknown25           Unknown
-;  26      1    unknown26           Unknown
+;  25      1    unknown25           AI/behavior flags (85 unique values, avg=99.0)
+;  26      1    unknown26           AI/behavior flags (78 unique values, avg=107.6)
 ; ============================================================================
 
 ; Monster record field offsets
@@ -58,13 +58,13 @@ MONSTER_BEHAVIOR_1	= 16		; Behavior byte 1
 MONSTER_BEHAVIOR_2	= 17		; Behavior byte 2
 MONSTER_BEHAVIOR_3	= 18		; Behavior byte 3
 MONSTER_ITEM_DROP	= 19		; Item drop ID
-MONSTER_UNK20		= 20		; Unknown byte 20
-MONSTER_UNK21		= 21		; Unknown byte 21
+MONSTER_AI_FLAGS_0	= 20		; AI/behavior flags (82 unique values)
+MONSTER_AI_FLAGS_1	= 21		; AI/behavior flags (89 unique values)
 MONSTER_METAL_FLAGS	= 22		; Metal monster flags
 MONSTER_DROP_RATE	= 23		; Drop rate flags
 MONSTER_STATUS_VULN	= 24		; Status vulnerability
-MONSTER_UNK25		= 25		; Unknown byte 25
-MONSTER_UNK26		= 26		; Unknown byte 26
+MONSTER_AI_FLAGS_2	= 25		; AI/behavior flags (85 unique values)
+MONSTER_AI_FLAGS_3	= 26		; AI/behavior flags (78 unique values)
 
 ; ============================================================================
 ; Metal Flags (byte 22, bits 0-1)
