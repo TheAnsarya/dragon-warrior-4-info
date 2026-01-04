@@ -26,7 +26,8 @@ CHAR_RECORD_SIZE	= 32		; 32 bytes per character in save data
 ;  20    |  1   | Vitality        | VIT stat
 ;  21    |  1   | Intelligence    | INT stat
 ;  22    |  1   | Luck            | LUCK stat
-; 23-26  |  4   | Experience      | Total EXP (little endian, 32-bit)
+; 23-25  |  3   | Experience      | Total EXP (little endian, 24-bit)
+;  26    |  1   | AttackMod       | Attack modifier or accessory slot
 ;  27    |  1   | Weapon          | Equipped weapon ID
 ;  28    |  1   | Armor           | Equipped armor ID
 ;  29    |  1   | Shield          | Equipped shield ID
@@ -52,10 +53,10 @@ CHAR_AGILITY		= 19
 CHAR_VITALITY		= 20
 CHAR_INTELLIGENCE	= 21
 CHAR_LUCK		= 22
-CHAR_EXP_BYTE0		= 23		; EXP low byte
-CHAR_EXP_BYTE1		= 24
-CHAR_EXP_BYTE2		= 25
-CHAR_EXP_BYTE3		= 26		; EXP high byte
+CHAR_EXP_BYTE0		= 23		; EXP low byte (24-bit total)
+CHAR_EXP_BYTE1		= 24		; EXP mid byte
+CHAR_EXP_BYTE2		= 25		; EXP high byte (max 16,777,215)
+CHAR_ATTACK_MOD		= 26		; Attack modifier or accessory
 CHAR_WEAPON		= 27
 CHAR_ARMOR		= 28
 CHAR_SHIELD		= 29
