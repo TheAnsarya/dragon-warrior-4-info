@@ -11,6 +11,12 @@
 		},
 		{
 			"path": "../logsmall"
+		},
+		{
+			"path": "../ableton-snes-spc"
+		},
+		{
+			"path": "../ffmq-info"
 		}
 	],
 	"settings": {
