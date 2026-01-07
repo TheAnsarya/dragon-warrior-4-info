@@ -6,13 +6,13 @@
 
 ; Item data structure (8 bytes per entry):
 ;   Offset  Size  Description
-;   $00     2     Price (little endian)
-;   $02     1     Attack bonus
-;   $03     1     Defense bonus
-;   $04     1     Agility bonus (signed)
-;   $05     1     Equip flags
-;   $06     1     Effect ID
-;   $07     1     Item type
+;   $00	 2	 Price (little endian)
+;   $02	 1	 Attack bonus
+;   $03	 1	 Defense bonus
+;   $04	 1	 Agility bonus (signed)
+;   $05	 1	 Equip flags
+;   $06	 1	 Effect ID
+;   $07	 1	 Item type
 
 .segment "PRG_BANK_08"
 

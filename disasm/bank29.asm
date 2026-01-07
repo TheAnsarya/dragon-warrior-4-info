@@ -4,10267 +4,10267 @@
 
 .org $8000
 
-    ASL $ED8B,X              ; $8000: 1E 8B ED
-    STA $802A                ; $8003: 8D 2A 80
-    .byte $97             ; $8006 - unknown opcode
-    STX $9F,Y                ; $8007: 96 9F
+	ASL $ED8B,X			  ; $8000: 1E 8B ED
+	STA $802A				; $8003: 8D 2A 80
+	.byte $97			 ; $8006 - unknown opcode
+	STX $9F,Y				; $8007: 96 9F
 
 loc_8009:
-    TYA                      ; $8009: 98
-    .byte $F4             ; $800A - unknown opcode
-    .byte $BB             ; $800B - unknown opcode
-    .byte $AF             ; $800C - unknown opcode
-    LDA ($3E,X)              ; $800D: A1 3E
-    .byte $B7             ; $800F - unknown opcode
-    .byte $04             ; $8010 - unknown opcode
-    LDA $A97B,Y              ; $8011: B9 7B A9
-    .byte $5A             ; $8014 - unknown opcode
-    LDX #$E9                 ; $8015: A2 E9
-    .byte $B3             ; $8017 - unknown opcode
-    .byte $52             ; $8018 - unknown opcode
-    .byte $8F             ; $8019 - unknown opcode
-    STX $2A91                ; $801A: 8E 91 2A
-    .byte $92             ; $801D - unknown opcode
-    .byte $23             ; $801E - unknown opcode
-    STY $84,X                ; $801F: 94 84
-    STY $52,X                ; $8021: 94 52
-    TAX                      ; $8023: AA
-    ADC ($BD),Y              ; $8024: 71 BD
-    ADC #$BD                 ; $8026: 69 BD
-    ADC $A2BD                ; $8028: 6D BD A2
-    BRK                      ; $802B: 00
-    STX $0573                ; $802C: 8E 73 05
-    LDX #$FF                 ; $802F: A2 FF
-    LDY #$00                 ; $8031: A0 00
+	TYA					  ; $8009: 98
+	.byte $F4			 ; $800A - unknown opcode
+	.byte $BB			 ; $800B - unknown opcode
+	.byte $AF			 ; $800C - unknown opcode
+	LDA ($3E,X)			  ; $800D: A1 3E
+	.byte $B7			 ; $800F - unknown opcode
+	.byte $04			 ; $8010 - unknown opcode
+	LDA $A97B,Y			  ; $8011: B9 7B A9
+	.byte $5A			 ; $8014 - unknown opcode
+	LDX #$E9				 ; $8015: A2 E9
+	.byte $B3			 ; $8017 - unknown opcode
+	.byte $52			 ; $8018 - unknown opcode
+	.byte $8F			 ; $8019 - unknown opcode
+	STX $2A91				; $801A: 8E 91 2A
+	.byte $92			 ; $801D - unknown opcode
+	.byte $23			 ; $801E - unknown opcode
+	STY $84,X				; $801F: 94 84
+	STY $52,X				; $8021: 94 52
+	TAX					  ; $8023: AA
+	ADC ($BD),Y			  ; $8024: 71 BD
+	ADC #$BD				 ; $8026: 69 BD
+	ADC $A2BD				; $8028: 6D BD A2
+	BRK					  ; $802B: 00
+	STX $0573				; $802C: 8E 73 05
+	LDX #$FF				 ; $802F: A2 FF
+	LDY #$00				 ; $8031: A0 00
 
 loc_8033:
-    STY $00                  ; $8033: 84 00
-    LDA $8096,Y              ; $8035: B9 96 80
-    BPL $8041                ; $8038: 10 07
-    CMP #$FF                 ; $803A: C9 FF
-    BEQ $8048                ; $803C: F0 0A
-    INX                      ; $803E: E8
-    AND #$7F                 ; $803F: 29 7F
+	STY $00				  ; $8033: 84 00
+	LDA $8096,Y			  ; $8035: B9 96 80
+	BPL $8041				; $8038: 10 07
+	CMP #$FF				 ; $803A: C9 FF
+	BEQ $8048				; $803C: F0 0A
+	INX					  ; $803E: E8
+	AND #$7F				 ; $803F: 29 7F
 
 loc_8041:
-    CMP $28                  ; $8041: C5 28
-    BEQ $8049                ; $8043: F0 04
-    INY                      ; $8045: C8
-    BNE $8033                ; $8046: D0 EB
+	CMP $28				  ; $8041: C5 28
+	BEQ $8049				; $8043: F0 04
+	INY					  ; $8045: C8
+	BNE $8033				; $8046: D0 EB
 
 loc_8048:
-    RTS                      ; $8048: 60
+	RTS					  ; $8048: 60
 
 loc_8049:
-    ASL $00                  ; $8049: 06 00
-    ASL $00                  ; $804B: 06 00
-    ASL $00                  ; $804D: 06 00
-    LDA $809E,X              ; $804F: BD 9E 80
-    STA $0573                ; $8052: 8D 73 05
-    LDA $80A2,X              ; $8055: BD A2 80
-    STA $058D                ; $8058: 8D 8D 05
-    TXA                      ; $805B: 8A
-    ASL                      ; $805C: 0A
-    ASL                      ; $805D: 0A
-    ASL                      ; $805E: 0A
-    TAX                      ; $805F: AA
-    ASL                      ; $8060: 0A
-    PHA                      ; $8061: 48
-    LDY #$00                 ; $8062: A0 00
+	ASL $00				  ; $8049: 06 00
+	ASL $00				  ; $804B: 06 00
+	ASL $00				  ; $804D: 06 00
+	LDA $809E,X			  ; $804F: BD 9E 80
+	STA $0573				; $8052: 8D 73 05
+	LDA $80A2,X			  ; $8055: BD A2 80
+	STA $058D				; $8058: 8D 8D 05
+	TXA					  ; $805B: 8A
+	ASL					  ; $805C: 0A
+	ASL					  ; $805D: 0A
+	ASL					  ; $805E: 0A
+	TAX					  ; $805F: AA
+	ASL					  ; $8060: 0A
+	PHA					  ; $8061: 48
+	LDY #$00				 ; $8062: A0 00
 
 loc_8064:
-    TXA                      ; $8064: 8A
-    PHA                      ; $8065: 48
-    LDX $00                  ; $8066: A6 00
-    LDA $80A6,X              ; $8068: BD A6 80
-    ASL                      ; $806B: 0A
-    ASL                      ; $806C: 0A
-    TAX                      ; $806D: AA
-    LDA $7600,X              ; $806E: BD 00 76
-    STA $0574,Y              ; $8071: 99 74 05
-    PLA                      ; $8074: 68
-    TAX                      ; $8075: AA
-    INC $00                  ; $8076: E6 00
-    INX                      ; $8078: E8
-    INY                      ; $8079: C8
-    CPY #$08                 ; $807A: C0 08
-    BNE $8064                ; $807C: D0 E6
-    LDY #$00                 ; $807E: A0 00
-    PLA                      ; $8080: 68
-    TAX                      ; $8081: AA
+	TXA					  ; $8064: 8A
+	PHA					  ; $8065: 48
+	LDX $00				  ; $8066: A6 00
+	LDA $80A6,X			  ; $8068: BD A6 80
+	ASL					  ; $806B: 0A
+	ASL					  ; $806C: 0A
+	TAX					  ; $806D: AA
+	LDA $7600,X			  ; $806E: BD 00 76
+	STA $0574,Y			  ; $8071: 99 74 05
+	PLA					  ; $8074: 68
+	TAX					  ; $8075: AA
+	INC $00				  ; $8076: E6 00
+	INX					  ; $8078: E8
+	INY					  ; $8079: C8
+	CPY #$08				 ; $807A: C0 08
+	BNE $8064				; $807C: D0 E6
+	LDY #$00				 ; $807E: A0 00
+	PLA					  ; $8080: 68
+	TAX					  ; $8081: AA
 
 loc_8082:
-    LDA $80DE,X              ; $8082: BD DE 80
-    STA $0584,Y              ; $8085: 99 84 05
-    INX                      ; $8088: E8
-    LDA $80DE,X              ; $8089: BD DE 80
-    STA $057C,Y              ; $808C: 99 7C 05
-    INX                      ; $808F: E8
-    INY                      ; $8090: C8
-    CPY #$08                 ; $8091: C0 08
-    BNE $8082                ; $8093: D0 ED
-    RTS                      ; $8095: 60
-    LDA $8EAC                ; $8096: AD AC 8E
-    STA ($06,X)              ; $8099: 81 06
-    PHP                      ; $809B: 08
-    BPL $809D                ; $809C: 10 FF
-    .byte $FF             ; $809E - unknown opcode
-    .byte $1B             ; $809F - unknown opcode
-    PHP                      ; $80A0: 08
-    TAX                      ; $80A1: AA
-    BPL $80B4                ; $80A2: 10 10
-    BVS $80B6                ; $80A4: 70 10
-    ASL $100F                ; $80A6: 0E 0F 10
-    ORA ($12),Y              ; $80A9: 11 12
-    .byte $13             ; $80AB - unknown opcode
-    .byte $14             ; $80AC - unknown opcode
-    .byte $1F             ; $80AD - unknown opcode
-    BRK                      ; $80AE: 00
-    BRK                      ; $80AF: 00
-    BRK                      ; $80B0: 00
-    ORA $000E                ; $80B1: 0D 0E 00
+	LDA $80DE,X			  ; $8082: BD DE 80
+	STA $0584,Y			  ; $8085: 99 84 05
+	INX					  ; $8088: E8
+	LDA $80DE,X			  ; $8089: BD DE 80
+	STA $057C,Y			  ; $808C: 99 7C 05
+	INX					  ; $808F: E8
+	INY					  ; $8090: C8
+	CPY #$08				 ; $8091: C0 08
+	BNE $8082				; $8093: D0 ED
+	RTS					  ; $8095: 60
+	LDA $8EAC				; $8096: AD AC 8E
+	STA ($06,X)			  ; $8099: 81 06
+	PHP					  ; $809B: 08
+	BPL $809D				; $809C: 10 FF
+	.byte $FF			 ; $809E - unknown opcode
+	.byte $1B			 ; $809F - unknown opcode
+	PHP					  ; $80A0: 08
+	TAX					  ; $80A1: AA
+	BPL $80B4				; $80A2: 10 10
+	BVS $80B6				; $80A4: 70 10
+	ASL $100F				; $80A6: 0E 0F 10
+	ORA ($12),Y			  ; $80A9: 11 12
+	.byte $13			 ; $80AB - unknown opcode
+	.byte $14			 ; $80AC - unknown opcode
+	.byte $1F			 ; $80AD - unknown opcode
+	BRK					  ; $80AE: 00
+	BRK					  ; $80AF: 00
+	BRK					  ; $80B0: 00
+	ORA $000E				; $80B1: 0D 0E 00
 
 loc_80B4:
-    ORA $001B,Y              ; $80B4: 19 1B 00
-    BRK                      ; $80B7: 00
-    BRK                      ; $80B8: 00
-    BRK                      ; $80B9: 00
-    .byte $14             ; $80BA - unknown opcode
-    BRK                      ; $80BB: 00
-    BRK                      ; $80BC: 00
-    BRK                      ; $80BD: 00
-    .byte $0B             ; $80BE - unknown opcode
-    BRK                      ; $80BF: 00
-    .byte $0B             ; $80C0 - unknown opcode
-    BRK                      ; $80C1: 00
-    .byte $0B             ; $80C2 - unknown opcode
-    BRK                      ; $80C3: 00
-    .byte $0B             ; $80C4 - unknown opcode
-    BRK                      ; $80C5: 00
-    BPL $80C8                ; $80C6: 10 00
+	ORA $001B,Y			  ; $80B4: 19 1B 00
+	BRK					  ; $80B7: 00
+	BRK					  ; $80B8: 00
+	BRK					  ; $80B9: 00
+	.byte $14			 ; $80BA - unknown opcode
+	BRK					  ; $80BB: 00
+	BRK					  ; $80BC: 00
+	BRK					  ; $80BD: 00
+	.byte $0B			 ; $80BE - unknown opcode
+	BRK					  ; $80BF: 00
+	.byte $0B			 ; $80C0 - unknown opcode
+	BRK					  ; $80C1: 00
+	.byte $0B			 ; $80C2 - unknown opcode
+	BRK					  ; $80C3: 00
+	.byte $0B			 ; $80C4 - unknown opcode
+	BRK					  ; $80C5: 00
+	BPL $80C8				; $80C6: 10 00
 
 loc_80C8:
-    BPL $80CA                ; $80C8: 10 00
+	BPL $80CA				; $80C8: 10 00
 
 loc_80CA:
-    BPL $80CC                ; $80CA: 10 00
+	BPL $80CC				; $80CA: 10 00
 
 loc_80CC:
-    BPL $80CE                ; $80CC: 10 00
+	BPL $80CE				; $80CC: 10 00
 
 loc_80CE:
-    .byte $14             ; $80CE - unknown opcode
-    BRK                      ; $80CF: 00
-    .byte $14             ; $80D0 - unknown opcode
-    BRK                      ; $80D1: 00
-    .byte $14             ; $80D2 - unknown opcode
-    BRK                      ; $80D3: 00
-    .byte $14             ; $80D4 - unknown opcode
-    BRK                      ; $80D5: 00
-    .byte $1C             ; $80D6 - unknown opcode
-    BRK                      ; $80D7: 00
-    .byte $1C             ; $80D8 - unknown opcode
-    BRK                      ; $80D9: 00
-    .byte $1C             ; $80DA - unknown opcode
-    BRK                      ; $80DB: 00
-    .byte $1C             ; $80DC - unknown opcode
-    BRK                      ; $80DD: 00
-    ASL $9E81,X              ; $80DE: 1E 81 9E
-    STA ($1E,X)              ; $80E1: 81 1E
-    .byte $82             ; $80E3 - unknown opcode
-    .byte $9E             ; $80E4 - unknown opcode
-    .byte $82             ; $80E5 - unknown opcode
-    ASL $9E83,X              ; $80E6: 1E 83 9E
-    .byte $83             ; $80E9 - unknown opcode
-    ASL $9E84,X              ; $80EA: 1E 84 9E
-    STY $00                  ; $80ED: 84 00
-    BRK                      ; $80EF: 00
-    BRK                      ; $80F0: 00
-    BRK                      ; $80F1: 00
-    BRK                      ; $80F2: 00
-    BRK                      ; $80F3: 00
-    ASL $9E85,X              ; $80F4: 1E 85 9E
-    STA $00                  ; $80F7: 85 00
-    BRK                      ; $80F9: 00
-    ASL $9E86,X              ; $80FA: 1E 86 9E
-    STX $00                  ; $80FD: 86 00
-    BRK                      ; $80FF: 00
-    BRK                      ; $8100: 00
-    BRK                      ; $8101: 00
-    BRK                      ; $8102: 00
-    BRK                      ; $8103: 00
-    BRK                      ; $8104: 00
-    BRK                      ; $8105: 00
-    ASL $0087,X              ; $8106: 1E 87 00
-    BRK                      ; $8109: 00
-    BRK                      ; $810A: 00
-    BRK                      ; $810B: 00
-    BRK                      ; $810C: 00
-    BRK                      ; $810D: 00
+	.byte $14			 ; $80CE - unknown opcode
+	BRK					  ; $80CF: 00
+	.byte $14			 ; $80D0 - unknown opcode
+	BRK					  ; $80D1: 00
+	.byte $14			 ; $80D2 - unknown opcode
+	BRK					  ; $80D3: 00
+	.byte $14			 ; $80D4 - unknown opcode
+	BRK					  ; $80D5: 00
+	.byte $1C			 ; $80D6 - unknown opcode
+	BRK					  ; $80D7: 00
+	.byte $1C			 ; $80D8 - unknown opcode
+	BRK					  ; $80D9: 00
+	.byte $1C			 ; $80DA - unknown opcode
+	BRK					  ; $80DB: 00
+	.byte $1C			 ; $80DC - unknown opcode
+	BRK					  ; $80DD: 00
+	ASL $9E81,X			  ; $80DE: 1E 81 9E
+	STA ($1E,X)			  ; $80E1: 81 1E
+	.byte $82			 ; $80E3 - unknown opcode
+	.byte $9E			 ; $80E4 - unknown opcode
+	.byte $82			 ; $80E5 - unknown opcode
+	ASL $9E83,X			  ; $80E6: 1E 83 9E
+	.byte $83			 ; $80E9 - unknown opcode
+	ASL $9E84,X			  ; $80EA: 1E 84 9E
+	STY $00				  ; $80ED: 84 00
+	BRK					  ; $80EF: 00
+	BRK					  ; $80F0: 00
+	BRK					  ; $80F1: 00
+	BRK					  ; $80F2: 00
+	BRK					  ; $80F3: 00
+	ASL $9E85,X			  ; $80F4: 1E 85 9E
+	STA $00				  ; $80F7: 85 00
+	BRK					  ; $80F9: 00
+	ASL $9E86,X			  ; $80FA: 1E 86 9E
+	STX $00				  ; $80FD: 86 00
+	BRK					  ; $80FF: 00
+	BRK					  ; $8100: 00
+	BRK					  ; $8101: 00
+	BRK					  ; $8102: 00
+	BRK					  ; $8103: 00
+	BRK					  ; $8104: 00
+	BRK					  ; $8105: 00
+	ASL $0087,X			  ; $8106: 1E 87 00
+	BRK					  ; $8109: 00
+	BRK					  ; $810A: 00
+	BRK					  ; $810B: 00
+	BRK					  ; $810C: 00
+	BRK					  ; $810D: 00
 
 loc_810E:
-    ASL $0089,X              ; $810E: 1E 89 00
-    BRK                      ; $8111: 00
-    .byte $9E             ; $8112 - unknown opcode
-    .byte $89             ; $8113 - unknown opcode
+	ASL $0089,X			  ; $810E: 1E 89 00
+	BRK					  ; $8111: 00
+	.byte $9E			 ; $8112 - unknown opcode
+	.byte $89			 ; $8113 - unknown opcode
 
 loc_8114:
-    BRK                      ; $8114: 00
-    BRK                      ; $8115: 00
+	BRK					  ; $8114: 00
+	BRK					  ; $8115: 00
 
 loc_8116:
-    ASL $008A,X              ; $8116: 1E 8A 00
-    BRK                      ; $8119: 00
-    .byte $9E             ; $811A - unknown opcode
-    TXA                      ; $811B: 8A
-    BRK                      ; $811C: 00
-    BRK                      ; $811D: 00
-    DEC $FEFE,X              ; $811E: DE FE FE
-    DEC $F2EE,X              ; $8121: DE EE F2
-    BCS $8116                ; $8124: B0 F0
-    CMP $F1F1,Y              ; $8126: D9 F1 F1
-    CMP ($F1,X)              ; $8129: C1 F1
-    SBC $C8B7,X              ; $812B: FD B7 C8
-    .byte $7F             ; $812E - unknown opcode
-    ROR $7F7B,X              ; $812F: 7E 7B 7F
-    .byte $77             ; $8132 - unknown opcode
-    EOR $0F0F                ; $8133: 4D 0F 0F
-    .byte $9F             ; $8136 - unknown opcode
-    STX $878B                ; $8137: 8E 8B 87
-    .byte $8F             ; $813A - unknown opcode
+	ASL $008A,X			  ; $8116: 1E 8A 00
+	BRK					  ; $8119: 00
+	.byte $9E			 ; $811A - unknown opcode
+	TXA					  ; $811B: 8A
+	BRK					  ; $811C: 00
+	BRK					  ; $811D: 00
+	DEC $FEFE,X			  ; $811E: DE FE FE
+	DEC $F2EE,X			  ; $8121: DE EE F2
+	BCS $8116				; $8124: B0 F0
+	CMP $F1F1,Y			  ; $8126: D9 F1 F1
+	CMP ($F1,X)			  ; $8129: C1 F1
+	SBC $C8B7,X			  ; $812B: FD B7 C8
+	.byte $7F			 ; $812E - unknown opcode
+	ROR $7F7B,X			  ; $812F: 7E 7B 7F
+	.byte $77			 ; $8132 - unknown opcode
+	EOR $0F0F				; $8133: 4D 0F 0F
+	.byte $9F			 ; $8136 - unknown opcode
+	STX $878B				; $8137: 8E 8B 87
+	.byte $8F			 ; $813A - unknown opcode
 
 loc_813B:
-    LDA $13EF,X              ; $813B: BD EF 13
-    SED                      ; $813E: F8
-    .byte $F7             ; $813F - unknown opcode
-    .byte $B7             ; $8140 - unknown opcode
-    .byte $8F             ; $8141 - unknown opcode
-    .byte $EF             ; $8142 - unknown opcode
-    .byte $DF             ; $8143 - unknown opcode
-    .byte $80             ; $8144 - unknown opcode
-    .byte $FF             ; $8145 - unknown opcode
-    .byte $87             ; $8146 - unknown opcode
-    DEY                      ; $8147: 88
-    INY                      ; $8148: C8
-    BEQ $813B                ; $8149: F0 F0
-    CPX #$BF                 ; $814B: E0 BF
-    .byte $FF             ; $814D - unknown opcode
-    .byte $1F             ; $814E - unknown opcode
-    INC $F1ED                ; $814F: EE ED F1
-    SBC $0B,X                ; $8152: F5 0B
-    .byte $F3             ; $8154 - unknown opcode
-    .byte $0F             ; $8155 - unknown opcode
-    SBC ($10,X)              ; $8156: E1 10
-    .byte $13             ; $8158 - unknown opcode
-    .byte $0F             ; $8159 - unknown opcode
-    ORA $0FF7                ; $815A: 0D F7 0F
-    .byte $FF             ; $815D - unknown opcode
-    DEC $FEFE,X              ; $815E: DE FE FE
-    DEC $F2EE,X              ; $8161: DE EE F2
-    BCC $8116                ; $8164: 90 B0
-    CMP $F1F1,Y              ; $8166: D9 F1 F1
-    CMP ($F1,X)              ; $8169: C1 F1
-    SBC $C8F7,X              ; $816B: FD F7 C8
-    .byte $7F             ; $816E - unknown opcode
-    ROR $7F7B,X              ; $816F: 7E 7B 7F
-    .byte $77             ; $8172 - unknown opcode
-    EOR $0D09                ; $8173: 4D 09 0D
-    .byte $9F             ; $8176 - unknown opcode
-    STX $878B                ; $8177: 8E 8B 87
-    .byte $8F             ; $817A - unknown opcode
+	LDA $13EF,X			  ; $813B: BD EF 13
+	SED					  ; $813E: F8
+	.byte $F7			 ; $813F - unknown opcode
+	.byte $B7			 ; $8140 - unknown opcode
+	.byte $8F			 ; $8141 - unknown opcode
+	.byte $EF			 ; $8142 - unknown opcode
+	.byte $DF			 ; $8143 - unknown opcode
+	.byte $80			 ; $8144 - unknown opcode
+	.byte $FF			 ; $8145 - unknown opcode
+	.byte $87			 ; $8146 - unknown opcode
+	DEY					  ; $8147: 88
+	INY					  ; $8148: C8
+	BEQ $813B				; $8149: F0 F0
+	CPX #$BF				 ; $814B: E0 BF
+	.byte $FF			 ; $814D - unknown opcode
+	.byte $1F			 ; $814E - unknown opcode
+	INC $F1ED				; $814F: EE ED F1
+	SBC $0B,X				; $8152: F5 0B
+	.byte $F3			 ; $8154 - unknown opcode
+	.byte $0F			 ; $8155 - unknown opcode
+	SBC ($10,X)			  ; $8156: E1 10
+	.byte $13			 ; $8158 - unknown opcode
+	.byte $0F			 ; $8159 - unknown opcode
+	ORA $0FF7				; $815A: 0D F7 0F
+	.byte $FF			 ; $815D - unknown opcode
+	DEC $FEFE,X			  ; $815E: DE FE FE
+	DEC $F2EE,X			  ; $8161: DE EE F2
+	BCC $8116				; $8164: 90 B0
+	CMP $F1F1,Y			  ; $8166: D9 F1 F1
+	CMP ($F1,X)			  ; $8169: C1 F1
+	SBC $C8F7,X			  ; $816B: FD F7 C8
+	.byte $7F			 ; $816E - unknown opcode
+	ROR $7F7B,X			  ; $816F: 7E 7B 7F
+	.byte $77			 ; $8172 - unknown opcode
+	EOR $0D09				; $8173: 4D 09 0D
+	.byte $9F			 ; $8176 - unknown opcode
+	STX $878B				; $8177: 8E 8B 87
+	.byte $8F			 ; $817A - unknown opcode
 
 loc_817B:
-    LDA $13EF,X              ; $817B: BD EF 13
-    SED                      ; $817E: F8
-    .byte $F7             ; $817F - unknown opcode
-    .byte $F7             ; $8180 - unknown opcode
-    .byte $EF             ; $8181 - unknown opcode
+	LDA $13EF,X			  ; $817B: BD EF 13
+	SED					  ; $817E: F8
+	.byte $F7			 ; $817F - unknown opcode
+	.byte $F7			 ; $8180 - unknown opcode
+	.byte $EF			 ; $8181 - unknown opcode
 
 loc_8182:
-    .byte $EF             ; $8182 - unknown opcode
-    BNE $8114                ; $8183: D0 8F
-    BEQ $810E                ; $8185: F0 87
-    INY                      ; $8187: C8
-    INX                      ; $8188: E8
-    BEQ $817B                ; $8189: F0 F0
-    .byte $EF             ; $818B - unknown opcode
-    BCS $818D                ; $818C: B0 FF
-    .byte $1F             ; $818E - unknown opcode
-    INC $F7EF                ; $818F: EE EF F7
-    SBC $FB,X                ; $8192: F5 FB
-    .byte $03             ; $8194 - unknown opcode
-    .byte $F7             ; $8195 - unknown opcode
-    SBC ($12,X)              ; $8196: E1 12
-    .byte $17             ; $8198 - unknown opcode
-    .byte $0F             ; $8199 - unknown opcode
-    ORA $FF07                ; $819A: 0D 07 FF
-    .byte $F7             ; $819D - unknown opcode
-    CLD                      ; $819E: D8
-    .byte $F7             ; $819F - unknown opcode
-    .byte $EF             ; $81A0 - unknown opcode
-    .byte $C7             ; $81A1 - unknown opcode
-    SBC #$EE                 ; $81A2: E9 EE
-    LDX $F0,Y                ; $81A4: B6 F0
-    .byte $DF             ; $81A6 - unknown opcode
-    SED                      ; $81A7: F8
-    BEQ $8182                ; $81A8: F0 D8
-    INC $F1,X                ; $81AA: F6 F1
-    LDA $1FC7,Y              ; $81AC: B9 C7 1F
-    INC $E7F3                ; $81AF: EE F3 E7
-    .byte $97             ; $81B2 - unknown opcode
-    .byte $77             ; $81B3 - unknown opcode
-    ADC $FF0F                ; $81B4: 6D 0F FF
-    ASL $1F0B,X              ; $81B7: 1E 0B 1F
-    .byte $6F             ; $81BA - unknown opcode
-    .byte $8F             ; $81BB - unknown opcode
-    STA $D8E3,X              ; $81BC: 9D E3 D8
-    .byte $8F             ; $81BF - unknown opcode
-    .byte $9F             ; $81C0 - unknown opcode
-    BCC $81BE                ; $81C1: 90 FB
-    SBC $B0,X                ; $81C3: F5 B0
-    .byte $FF             ; $81C5 - unknown opcode
-    CPX #$F0                 ; $81C6: E0 F0
+	.byte $EF			 ; $8182 - unknown opcode
+	BNE $8114				; $8183: D0 8F
+	BEQ $810E				; $8185: F0 87
+	INY					  ; $8187: C8
+	INX					  ; $8188: E8
+	BEQ $817B				; $8189: F0 F0
+	.byte $EF			 ; $818B - unknown opcode
+	BCS $818D				; $818C: B0 FF
+	.byte $1F			 ; $818E - unknown opcode
+	INC $F7EF				; $818F: EE EF F7
+	SBC $FB,X				; $8192: F5 FB
+	.byte $03			 ; $8194 - unknown opcode
+	.byte $F7			 ; $8195 - unknown opcode
+	SBC ($12,X)			  ; $8196: E1 12
+	.byte $17			 ; $8198 - unknown opcode
+	.byte $0F			 ; $8199 - unknown opcode
+	ORA $FF07				; $819A: 0D 07 FF
+	.byte $F7			 ; $819D - unknown opcode
+	CLD					  ; $819E: D8
+	.byte $F7			 ; $819F - unknown opcode
+	.byte $EF			 ; $81A0 - unknown opcode
+	.byte $C7			 ; $81A1 - unknown opcode
+	SBC #$EE				 ; $81A2: E9 EE
+	LDX $F0,Y				; $81A4: B6 F0
+	.byte $DF			 ; $81A6 - unknown opcode
+	SED					  ; $81A7: F8
+	BEQ $8182				; $81A8: F0 D8
+	INC $F1,X				; $81AA: F6 F1
+	LDA $1FC7,Y			  ; $81AC: B9 C7 1F
+	INC $E7F3				; $81AF: EE F3 E7
+	.byte $97			 ; $81B2 - unknown opcode
+	.byte $77			 ; $81B3 - unknown opcode
+	ADC $FF0F				; $81B4: 6D 0F FF
+	ASL $1F0B,X			  ; $81B7: 1E 0B 1F
+	.byte $6F			 ; $81BA - unknown opcode
+	.byte $8F			 ; $81BB - unknown opcode
+	STA $D8E3,X			  ; $81BC: 9D E3 D8
+	.byte $8F			 ; $81BF - unknown opcode
+	.byte $9F			 ; $81C0 - unknown opcode
+	BCC $81BE				; $81C1: 90 FB
+	SBC $B0,X				; $81C3: F5 B0
+	.byte $FF			 ; $81C5 - unknown opcode
+	CPX #$F0				 ; $81C6: E0 F0
 
 loc_81C8:
-    CPX #$FF                 ; $81C8: E0 FF
+	CPX #$FF				 ; $81C8: E0 FF
 
 loc_81CA:
-    CPX #$E0                 ; $81CA: E0 E0
-    LDX $1BFF,Y              ; $81CC: BE FF 1B
-    BEQ $81CA                ; $81CF: F0 F9
-    ORA #$DF                 ; $81D1: 09 DF
-    .byte $AF             ; $81D3 - unknown opcode
-    ADC $070F,X              ; $81D4: 7D 0F 07
-    ASL $FF07                ; $81D7: 0E 07 FF
-    .byte $07             ; $81DA - unknown opcode
-    .byte $07             ; $81DB - unknown opcode
-    ORA $D8FF                ; $81DC: 0D FF D8
-    .byte $F7             ; $81DF - unknown opcode
-    .byte $EF             ; $81E0 - unknown opcode
-    .byte $C7             ; $81E1 - unknown opcode
-    SBC #$EE                 ; $81E2: E9 EE
-    STX $B0                  ; $81E4: 86 B0
-    .byte $DF             ; $81E6 - unknown opcode
+	CPX #$E0				 ; $81CA: E0 E0
+	LDX $1BFF,Y			  ; $81CC: BE FF 1B
+	BEQ $81CA				; $81CF: F0 F9
+	ORA #$DF				 ; $81D1: 09 DF
+	.byte $AF			 ; $81D3 - unknown opcode
+	ADC $070F,X			  ; $81D4: 7D 0F 07
+	ASL $FF07				; $81D7: 0E 07 FF
+	.byte $07			 ; $81DA - unknown opcode
+	.byte $07			 ; $81DB - unknown opcode
+	ORA $D8FF				; $81DC: 0D FF D8
+	.byte $F7			 ; $81DF - unknown opcode
+	.byte $EF			 ; $81E0 - unknown opcode
+	.byte $C7			 ; $81E1 - unknown opcode
+	SBC #$EE				 ; $81E2: E9 EE
+	STX $B0				  ; $81E4: 86 B0
+	.byte $DF			 ; $81E6 - unknown opcode
 
 loc_81E7:
-    SED                      ; $81E7: F8
-    BEQ $81C2                ; $81E8: F0 D8
-    INC $F1,X                ; $81EA: F6 F1
-    SBC #$C7                 ; $81EC: E9 C7
-    .byte $1F             ; $81EE - unknown opcode
-    INC $E7F3                ; $81EF: EE F3 E7
-    .byte $97             ; $81F2 - unknown opcode
-    .byte $77             ; $81F3 - unknown opcode
-    ADC ($0D,X)              ; $81F4: 61 0D
-    .byte $FF             ; $81F6 - unknown opcode
-    ASL $1F0B,X              ; $81F7: 1E 0B 1F
-    .byte $6F             ; $81FA - unknown opcode
-    .byte $8F             ; $81FB - unknown opcode
-    .byte $97             ; $81FC - unknown opcode
-    .byte $E3             ; $81FD - unknown opcode
+	SED					  ; $81E7: F8
+	BEQ $81C2				; $81E8: F0 D8
+	INC $F1,X				; $81EA: F6 F1
+	SBC #$C7				 ; $81EC: E9 C7
+	.byte $1F			 ; $81EE - unknown opcode
+	INC $E7F3				; $81EF: EE F3 E7
+	.byte $97			 ; $81F2 - unknown opcode
+	.byte $77			 ; $81F3 - unknown opcode
+	ADC ($0D,X)			  ; $81F4: 61 0D
+	.byte $FF			 ; $81F6 - unknown opcode
+	ASL $1F0B,X			  ; $81F7: 1E 0B 1F
+	.byte $6F			 ; $81FA - unknown opcode
+	.byte $8F			 ; $81FB - unknown opcode
+	.byte $97			 ; $81FC - unknown opcode
+	.byte $E3			 ; $81FD - unknown opcode
 
 loc_81FE:
-    TYA                      ; $81FE: 98
+	TYA					  ; $81FE: 98
 
 loc_81FF:
-    .byte $CF             ; $81FF - unknown opcode
-    .byte $FF             ; $8200 - unknown opcode
-    BEQ $81FE                ; $8201: F0 FB
+	.byte $CF			 ; $81FF - unknown opcode
+	.byte $FF			 ; $8200 - unknown opcode
+	BEQ $81FE				; $8201: F0 FB
 
 loc_8203:
-    SBC $BE,X                ; $8203: F5 BE
-    BEQ $81E7                ; $8205: F0 E0
-    BEQ $81E9                ; $8207: F0 E0
-    .byte $FF             ; $8209 - unknown opcode
-    CPX #$E0                 ; $820A: E0 E0
-    BCS $820D                ; $820C: B0 FF
-    ORA $FFF2,Y              ; $820E: 19 F2 FF
+	SBC $BE,X				; $8203: F5 BE
+	BEQ $81E7				; $8205: F0 E0
+	BEQ $81E9				; $8207: F0 E0
+	.byte $FF			 ; $8209 - unknown opcode
+	CPX #$E0				 ; $820A: E0 E0
+	BCS $820D				; $820C: B0 FF
+	ORA $FFF2,Y			  ; $820E: 19 F2 FF
 
 loc_8211:
-    .byte $0B             ; $8211 - unknown opcode
-    .byte $DF             ; $8212 - unknown opcode
-    .byte $AF             ; $8213 - unknown opcode
-    ORA $07FF                ; $8214: 0D FF 07
-    ASL $FB07                ; $8217: 0E 07 FB
-    .byte $07             ; $821A - unknown opcode
-    .byte $07             ; $821B - unknown opcode
+	.byte $0B			 ; $8211 - unknown opcode
+	.byte $DF			 ; $8212 - unknown opcode
+	.byte $AF			 ; $8213 - unknown opcode
+	ORA $07FF				; $8214: 0D FF 07
+	ASL $FB07				; $8217: 0E 07 FB
+	.byte $07			 ; $821A - unknown opcode
+	.byte $07			 ; $821B - unknown opcode
 
 loc_821C:
-    ADC $D8FF,X              ; $821C: 7D FF D8
-    BEQ $8211                ; $821F: F0 F0
-    BNE $8203                ; $8221: D0 E0
-    CPX #$F0                 ; $8223: E0 F0
-    BEQ $81FF                ; $8225: F0 D8
-    BEQ $821C                ; $8227: F0 F3
-    .byte $DC             ; $8229 - unknown opcode
-    .byte $E2             ; $822A - unknown opcode
-    SBC $ED                  ; $822B: E5 ED
-    .byte $C7             ; $822D - unknown opcode
-    .byte $1F             ; $822E - unknown opcode
-    ASL $0F0B                ; $822F: 0E 0B 0F
-    .byte $07             ; $8232 - unknown opcode
-    ORA $0F                  ; $8233: 05 0F
-    .byte $0F             ; $8235 - unknown opcode
-    .byte $1F             ; $8236 - unknown opcode
-    ASL $3FCB                ; $8237: 0E CB 3F
-    .byte $47             ; $823A - unknown opcode
-    LDA $B7                  ; $823B: A5 B7
-    .byte $E3             ; $823D - unknown opcode
-    SED                      ; $823E: F8
-    TXS                      ; $823F: 9A
-    .byte $9B             ; $8240 - unknown opcode
-    BEQ $8242                ; $8241: F0 FF
-    .byte $FF             ; $8243 - unknown opcode
-    .byte $BF             ; $8244 - unknown opcode
-    BEQ $81C8                ; $8245: F0 81
-    CPX $E4                  ; $8247: E4 E4
-    .byte $FF             ; $8249 - unknown opcode
-    CPX #$E0                 ; $824A: E0 E0
-    BCS $824D                ; $824C: B0 FF
-    .byte $1F             ; $824E - unknown opcode
-    EOR $0FD9,Y              ; $824F: 59 D9 0F
-    .byte $FF             ; $8252 - unknown opcode
-    SBC $F78F,X              ; $8253: FD 8F F7
+	ADC $D8FF,X			  ; $821C: 7D FF D8
+	BEQ $8211				; $821F: F0 F0
+	BNE $8203				; $8221: D0 E0
+	CPX #$F0				 ; $8223: E0 F0
+	BEQ $81FF				; $8225: F0 D8
+	BEQ $821C				; $8227: F0 F3
+	.byte $DC			 ; $8229 - unknown opcode
+	.byte $E2			 ; $822A - unknown opcode
+	SBC $ED				  ; $822B: E5 ED
+	.byte $C7			 ; $822D - unknown opcode
+	.byte $1F			 ; $822E - unknown opcode
+	ASL $0F0B				; $822F: 0E 0B 0F
+	.byte $07			 ; $8232 - unknown opcode
+	ORA $0F				  ; $8233: 05 0F
+	.byte $0F			 ; $8235 - unknown opcode
+	.byte $1F			 ; $8236 - unknown opcode
+	ASL $3FCB				; $8237: 0E CB 3F
+	.byte $47			 ; $823A - unknown opcode
+	LDA $B7				  ; $823B: A5 B7
+	.byte $E3			 ; $823D - unknown opcode
+	SED					  ; $823E: F8
+	TXS					  ; $823F: 9A
+	.byte $9B			 ; $8240 - unknown opcode
+	BEQ $8242				; $8241: F0 FF
+	.byte $FF			 ; $8243 - unknown opcode
+	.byte $BF			 ; $8244 - unknown opcode
+	BEQ $81C8				; $8245: F0 81
+	CPX $E4				  ; $8247: E4 E4
+	.byte $FF			 ; $8249 - unknown opcode
+	CPX #$E0				 ; $824A: E0 E0
+	BCS $824D				; $824C: B0 FF
+	.byte $1F			 ; $824E - unknown opcode
+	EOR $0FD9,Y			  ; $824F: 59 D9 0F
+	.byte $FF			 ; $8252 - unknown opcode
+	SBC $F78F,X			  ; $8253: FD 8F F7
 
 loc_8256:
-    STA ($27,X)              ; $8256: 81 27
-    .byte $27             ; $8258 - unknown opcode
-    .byte $FF             ; $8259 - unknown opcode
-    .byte $07             ; $825A - unknown opcode
-    ORA $FF                  ; $825B: 05 FF
-    .byte $F7             ; $825D - unknown opcode
-    CLD                      ; $825E: D8
-    BEQ $8251                ; $825F: F0 F0
-    BNE $81E3                ; $8261: D0 80
-    .byte $80             ; $8263 - unknown opcode
-    BEQ $8256                ; $8264: F0 F0
-    CLD                      ; $8266: D8
-    BEQ $825C                ; $8267: F0 F3
-    .byte $DC             ; $8269 - unknown opcode
-    .byte $E2             ; $826A - unknown opcode
-    SBC $8D                  ; $826B: E5 8D
-    .byte $87             ; $826D - unknown opcode
-    .byte $1F             ; $826E - unknown opcode
-    ASL $0F0B                ; $826F: 0E 0B 0F
-    ORA ($01,X)              ; $8272: 01 01
-    .byte $0F             ; $8274 - unknown opcode
-    .byte $0F             ; $8275 - unknown opcode
-    .byte $1F             ; $8276 - unknown opcode
-    ASL $3FCB                ; $8277: 0E CB 3F
-    .byte $47             ; $827A - unknown opcode
-    .byte $A7             ; $827B - unknown opcode
-    LDA ($E1),Y              ; $827C: B1 E1
-    SED                      ; $827E: F8
-    .byte $FA             ; $827F - unknown opcode
+	STA ($27,X)			  ; $8256: 81 27
+	.byte $27			 ; $8258 - unknown opcode
+	.byte $FF			 ; $8259 - unknown opcode
+	.byte $07			 ; $825A - unknown opcode
+	ORA $FF				  ; $825B: 05 FF
+	.byte $F7			 ; $825D - unknown opcode
+	CLD					  ; $825E: D8
+	BEQ $8251				; $825F: F0 F0
+	BNE $81E3				; $8261: D0 80
+	.byte $80			 ; $8263 - unknown opcode
+	BEQ $8256				; $8264: F0 F0
+	CLD					  ; $8266: D8
+	BEQ $825C				; $8267: F0 F3
+	.byte $DC			 ; $8269 - unknown opcode
+	.byte $E2			 ; $826A - unknown opcode
+	SBC $8D				  ; $826B: E5 8D
+	.byte $87			 ; $826D - unknown opcode
+	.byte $1F			 ; $826E - unknown opcode
+	ASL $0F0B				; $826F: 0E 0B 0F
+	ORA ($01,X)			  ; $8272: 01 01
+	.byte $0F			 ; $8274 - unknown opcode
+	.byte $0F			 ; $8275 - unknown opcode
+	.byte $1F			 ; $8276 - unknown opcode
+	ASL $3FCB				; $8277: 0E CB 3F
+	.byte $47			 ; $827A - unknown opcode
+	.byte $A7			 ; $827B - unknown opcode
+	LDA ($E1),Y			  ; $827C: B1 E1
+	SED					  ; $827E: F8
+	.byte $FA			 ; $827F - unknown opcode
 
 loc_8280:
-    .byte $FB             ; $8280 - unknown opcode
-    BEQ $8282                ; $8281: F0 FF
-    .byte $FF             ; $8283 - unknown opcode
-    LDA ($FF),Y              ; $8284: B1 FF
-    STA ($C4,X)              ; $8286: 81 C4
-    .byte $F4             ; $8288 - unknown opcode
-    .byte $FF             ; $8289 - unknown opcode
-    CPX #$E0                 ; $828A: E0 E0
-    .byte $BF             ; $828C - unknown opcode
-    .byte $FF             ; $828D - unknown opcode
-    .byte $1F             ; $828E - unknown opcode
-    .byte $5F             ; $828F - unknown opcode
-    .byte $DF             ; $8290 - unknown opcode
-    .byte $0F             ; $8291 - unknown opcode
-    .byte $FF             ; $8292 - unknown opcode
+	.byte $FB			 ; $8280 - unknown opcode
+	BEQ $8282				; $8281: F0 FF
+	.byte $FF			 ; $8283 - unknown opcode
+	LDA ($FF),Y			  ; $8284: B1 FF
+	STA ($C4,X)			  ; $8286: 81 C4
+	.byte $F4			 ; $8288 - unknown opcode
+	.byte $FF			 ; $8289 - unknown opcode
+	CPX #$E0				 ; $828A: E0 E0
+	.byte $BF			 ; $828C - unknown opcode
+	.byte $FF			 ; $828D - unknown opcode
+	.byte $1F			 ; $828E - unknown opcode
+	.byte $5F			 ; $828F - unknown opcode
+	.byte $DF			 ; $8290 - unknown opcode
+	.byte $0F			 ; $8291 - unknown opcode
+	.byte $FF			 ; $8292 - unknown opcode
 
 loc_8293:
-    SBC $0FFF,X              ; $8293: FD FF 0F
-    STA ($23,X)              ; $8296: 81 23
-    .byte $2F             ; $8298 - unknown opcode
-    .byte $FF             ; $8299 - unknown opcode
-    .byte $07             ; $829A - unknown opcode
-    ORA $0F                  ; $829B: 05 0F
-    .byte $FF             ; $829D - unknown opcode
-    DEC $F8FE,X              ; $829E: DE FE F8
-    BNE $8293                ; $82A1: D0 F0
-    BEQ $8295                ; $82A3: F0 F0
-    BEQ $8280                ; $82A5: F0 D9
-    SBC ($F7),Y              ; $82A7: F1 F7
-    CLD                      ; $82A9: D8
-    .byte $F3             ; $82AA - unknown opcode
-    SBC $ED,X                ; $82AB: F5 ED
-    .byte $C7             ; $82AD - unknown opcode
-    .byte $7F             ; $82AE - unknown opcode
-    ROR $0F1B,X              ; $82AF: 7E 1B 0F
-    .byte $0F             ; $82B2 - unknown opcode
-    ORA $0F0F                ; $82B3: 0D 0F 0F
-    .byte $9F             ; $82B6 - unknown opcode
-    STX $1FEB                ; $82B7: 8E EB 1F
-    .byte $CF             ; $82BA - unknown opcode
-    LDA $E3B7                ; $82BB: AD B7 E3
-    BEQ $8256                ; $82BE: F0 96
+	SBC $0FFF,X			  ; $8293: FD FF 0F
+	STA ($23,X)			  ; $8296: 81 23
+	.byte $2F			 ; $8298 - unknown opcode
+	.byte $FF			 ; $8299 - unknown opcode
+	.byte $07			 ; $829A - unknown opcode
+	ORA $0F				  ; $829B: 05 0F
+	.byte $FF			 ; $829D - unknown opcode
+	DEC $F8FE,X			  ; $829E: DE FE F8
+	BNE $8293				; $82A1: D0 F0
+	BEQ $8295				; $82A3: F0 F0
+	BEQ $8280				; $82A5: F0 D9
+	SBC ($F7),Y			  ; $82A7: F1 F7
+	CLD					  ; $82A9: D8
+	.byte $F3			 ; $82AA - unknown opcode
+	SBC $ED,X				; $82AB: F5 ED
+	.byte $C7			 ; $82AD - unknown opcode
+	.byte $7F			 ; $82AE - unknown opcode
+	ROR $0F1B,X			  ; $82AF: 7E 1B 0F
+	.byte $0F			 ; $82B2 - unknown opcode
+	ORA $0F0F				; $82B3: 0D 0F 0F
+	.byte $9F			 ; $82B6 - unknown opcode
+	STX $1FEB				; $82B7: 8E EB 1F
+	.byte $CF			 ; $82BA - unknown opcode
+	LDA $E3B7				; $82BB: AD B7 E3
+	BEQ $8256				; $82BE: F0 96
 
 loc_82C0:
-    .byte $97             ; $82C0 - unknown opcode
-    .byte $F7             ; $82C1 - unknown opcode
-    .byte $F7             ; $82C2 - unknown opcode
-    SED                      ; $82C3: F8
-    .byte $BF             ; $82C4 - unknown opcode
-    BEQ $8250                ; $82C5: F0 89
-    INX                      ; $82C7: E8
-    INX                      ; $82C8: E8
-    INX                      ; $82C9: E8
-    INX                      ; $82CA: E8
-    .byte $E7             ; $82CB - unknown opcode
-    BCS $82CD                ; $82CC: B0 FF
-    .byte $0F             ; $82CE - unknown opcode
-    ADC #$E9                 ; $82CF: 69 E9
-    .byte $EF             ; $82D1 - unknown opcode
-    .byte $1F             ; $82D2 - unknown opcode
-    SBC $F78F,X              ; $82D3: FD 8F F7
-    STA ($17),Y              ; $82D6: 91 17
-    .byte $17             ; $82D8 - unknown opcode
-    .byte $17             ; $82D9 - unknown opcode
-    .byte $E7             ; $82DA - unknown opcode
-    ORA $FF                  ; $82DB: 05 FF
-    .byte $F7             ; $82DD - unknown opcode
-    DEC $F8FE,X              ; $82DE: DE FE F8
-    BNE $8273                ; $82E1: D0 90
-    BCC $82D5                ; $82E3: 90 F0
-    BEQ $82C0                ; $82E5: F0 D9
-    SBC ($F7),Y              ; $82E7: F1 F7
-    CLD                      ; $82E9: D8
-    .byte $F3             ; $82EA - unknown opcode
-    SBC $8D,X                ; $82EB: F5 8D
-    .byte $87             ; $82ED - unknown opcode
-    .byte $7F             ; $82EE - unknown opcode
-    ROR $0F1B,X              ; $82EF: 7E 1B 0F
-    ORA #$09                 ; $82F2: 09 09
-    .byte $0F             ; $82F4 - unknown opcode
-    .byte $0F             ; $82F5 - unknown opcode
+	.byte $97			 ; $82C0 - unknown opcode
+	.byte $F7			 ; $82C1 - unknown opcode
+	.byte $F7			 ; $82C2 - unknown opcode
+	SED					  ; $82C3: F8
+	.byte $BF			 ; $82C4 - unknown opcode
+	BEQ $8250				; $82C5: F0 89
+	INX					  ; $82C7: E8
+	INX					  ; $82C8: E8
+	INX					  ; $82C9: E8
+	INX					  ; $82CA: E8
+	.byte $E7			 ; $82CB - unknown opcode
+	BCS $82CD				; $82CC: B0 FF
+	.byte $0F			 ; $82CE - unknown opcode
+	ADC #$E9				 ; $82CF: 69 E9
+	.byte $EF			 ; $82D1 - unknown opcode
+	.byte $1F			 ; $82D2 - unknown opcode
+	SBC $F78F,X			  ; $82D3: FD 8F F7
+	STA ($17),Y			  ; $82D6: 91 17
+	.byte $17			 ; $82D8 - unknown opcode
+	.byte $17			 ; $82D9 - unknown opcode
+	.byte $E7			 ; $82DA - unknown opcode
+	ORA $FF				  ; $82DB: 05 FF
+	.byte $F7			 ; $82DD - unknown opcode
+	DEC $F8FE,X			  ; $82DE: DE FE F8
+	BNE $8273				; $82E1: D0 90
+	BCC $82D5				; $82E3: 90 F0
+	BEQ $82C0				; $82E5: F0 D9
+	SBC ($F7),Y			  ; $82E7: F1 F7
+	CLD					  ; $82E9: D8
+	.byte $F3			 ; $82EA - unknown opcode
+	SBC $8D,X				; $82EB: F5 8D
+	.byte $87			 ; $82ED - unknown opcode
+	.byte $7F			 ; $82EE - unknown opcode
+	ROR $0F1B,X			  ; $82EF: 7E 1B 0F
+	ORA #$09				 ; $82F2: 09 09
+	.byte $0F			 ; $82F4 - unknown opcode
+	.byte $0F			 ; $82F5 - unknown opcode
 
 loc_82F6:
-    .byte $9F             ; $82F6 - unknown opcode
-    STX $1FEB                ; $82F7: 8E EB 1F
-    .byte $CF             ; $82FA - unknown opcode
-    .byte $AF             ; $82FB - unknown opcode
-    LDA ($E1),Y              ; $82FC: B1 E1
-    BEQ $82F6                ; $82FE: F0 F6
-    .byte $F7             ; $8300 - unknown opcode
+	.byte $9F			 ; $82F6 - unknown opcode
+	STX $1FEB				; $82F7: 8E EB 1F
+	.byte $CF			 ; $82FA - unknown opcode
+	.byte $AF			 ; $82FB - unknown opcode
+	LDA ($E1),Y			  ; $82FC: B1 E1
+	BEQ $82F6				; $82FE: F0 F6
+	.byte $F7			 ; $8300 - unknown opcode
 
 loc_8301:
-    .byte $F7             ; $8301 - unknown opcode
-    SED                      ; $8302: F8
-    .byte $FF             ; $8303 - unknown opcode
-    LDA ($FF),Y              ; $8304: B1 FF
-    .byte $89             ; $8306 - unknown opcode
-    INY                      ; $8307: C8
-    INX                      ; $8308: E8
+	.byte $F7			 ; $8301 - unknown opcode
+	SED					  ; $8302: F8
+	.byte $FF			 ; $8303 - unknown opcode
+	LDA ($FF),Y			  ; $8304: B1 FF
+	.byte $89			 ; $8306 - unknown opcode
+	INY					  ; $8307: C8
+	INX					  ; $8308: E8
 
 loc_8309:
-    INX                      ; $8309: E8
-    .byte $E7             ; $830A - unknown opcode
-    CPX #$BF                 ; $830B: E0 BF
-    .byte $FF             ; $830D - unknown opcode
-    .byte $0F             ; $830E - unknown opcode
-    .byte $6F             ; $830F - unknown opcode
-    .byte $EF             ; $8310 - unknown opcode
-    .byte $EF             ; $8311 - unknown opcode
-    .byte $EF             ; $8312 - unknown opcode
-    ORA $0FFF,X              ; $8313: 1D FF 0F
-    STA ($13),Y              ; $8316: 91 13
-    .byte $17             ; $8318 - unknown opcode
-    .byte $17             ; $8319 - unknown opcode
-    .byte $17             ; $831A - unknown opcode
-    SBC $0F                  ; $831B: E5 0F
-    .byte $FF             ; $831D - unknown opcode
-    CLD                      ; $831E: D8
-    BEQ $8301                ; $831F: F0 E0
-    INC $F0E1,X              ; $8321: FE E1 F0
+	INX					  ; $8309: E8
+	.byte $E7			 ; $830A - unknown opcode
+	CPX #$BF				 ; $830B: E0 BF
+	.byte $FF			 ; $830D - unknown opcode
+	.byte $0F			 ; $830E - unknown opcode
+	.byte $6F			 ; $830F - unknown opcode
+	.byte $EF			 ; $8310 - unknown opcode
+	.byte $EF			 ; $8311 - unknown opcode
+	.byte $EF			 ; $8312 - unknown opcode
+	ORA $0FFF,X			  ; $8313: 1D FF 0F
+	STA ($13),Y			  ; $8316: 91 13
+	.byte $17			 ; $8318 - unknown opcode
+	.byte $17			 ; $8319 - unknown opcode
+	.byte $17			 ; $831A - unknown opcode
+	SBC $0F				  ; $831B: E5 0F
+	.byte $FF			 ; $831D - unknown opcode
+	CLD					  ; $831E: D8
+	BEQ $8301				; $831F: F0 E0
+	INC $F0E1,X			  ; $8321: FE E1 F0
 
 loc_8324:
-    BCS $8317                ; $8324: B0 F1
-    CLD                      ; $8326: D8
-    BEQ $8309                ; $8327: F0 E0
-    CPX #$E4                 ; $8329: E0 E4
-    .byte $FA             ; $832B - unknown opcode
-    .byte $BB             ; $832C - unknown opcode
-    INC $0E1F,X              ; $832D: FE 1F 0E
-    .byte $07             ; $8330 - unknown opcode
-    .byte $03             ; $8331 - unknown opcode
-    .byte $C7             ; $8332 - unknown opcode
-    .byte $3F             ; $8333 - unknown opcode
-    .byte $0F             ; $8334 - unknown opcode
-    .byte $1F             ; $8335 - unknown opcode
-    .byte $1F             ; $8336 - unknown opcode
-    ASL $0307                ; $8337: 0E 07 03
-    .byte $07             ; $833A - unknown opcode
-    .byte $07             ; $833B - unknown opcode
-    .byte $0F             ; $833C - unknown opcode
+	BCS $8317				; $8324: B0 F1
+	CLD					  ; $8326: D8
+	BEQ $8309				; $8327: F0 E0
+	CPX #$E4				 ; $8329: E0 E4
+	.byte $FA			 ; $832B - unknown opcode
+	.byte $BB			 ; $832C - unknown opcode
+	INC $0E1F,X			  ; $832D: FE 1F 0E
+	.byte $07			 ; $8330 - unknown opcode
+	.byte $03			 ; $8331 - unknown opcode
+	.byte $C7			 ; $8332 - unknown opcode
+	.byte $3F			 ; $8333 - unknown opcode
+	.byte $0F			 ; $8334 - unknown opcode
+	.byte $1F			 ; $8335 - unknown opcode
+	.byte $1F			 ; $8336 - unknown opcode
+	ASL $0307				; $8337: 0E 07 03
+	.byte $07			 ; $833A - unknown opcode
+	.byte $07			 ; $833B - unknown opcode
+	.byte $0F			 ; $833C - unknown opcode
 
 loc_833D:
-    .byte $FF             ; $833D - unknown opcode
-    .byte $DA             ; $833E - unknown opcode
-    SBC $DAFB,X              ; $833F: FD FB DA
-    INC $FF,X                ; $8342: F6 FF
-    .byte $BF             ; $8344 - unknown opcode
-    BEQ $8324                ; $8345: F0 DD
-    .byte $FA             ; $8347 - unknown opcode
-    .byte $F4             ; $8348 - unknown opcode
+	.byte $FF			 ; $833D - unknown opcode
+	.byte $DA			 ; $833E - unknown opcode
+	SBC $DAFB,X			  ; $833F: FD FB DA
+	INC $FF,X				; $8342: F6 FF
+	.byte $BF			 ; $8344 - unknown opcode
+	BEQ $8324				; $8345: F0 DD
+	.byte $FA			 ; $8347 - unknown opcode
+	.byte $F4			 ; $8348 - unknown opcode
 
 loc_8349:
-    .byte $D4             ; $8349 - unknown opcode
-    SED                      ; $834A: F8
-    BEQ $82FD                ; $834B: F0 B0
-    .byte $EF             ; $834D - unknown opcode
-    .byte $CF             ; $834E - unknown opcode
-    INC $67                  ; $834F: E6 67
-    .byte $23             ; $8351 - unknown opcode
-    .byte $13             ; $8352 - unknown opcode
-    .byte $33             ; $8353 - unknown opcode
-    SBC $1FFD,Y              ; $8354: F9 FD 1F
-    ASL $C70F                ; $8357: 0E 0F C7
-    .byte $C7             ; $835A - unknown opcode
-    .byte $07             ; $835B - unknown opcode
-    .byte $03             ; $835C - unknown opcode
-    ORA ($D8,X)              ; $835D: 01 D8
-    BEQ $8341                ; $835F: F0 E0
-    INC $F0E1,X              ; $8361: FE E1 F0
-    BCS $8356                ; $8364: B0 F0
-    CLD                      ; $8366: D8
-    BEQ $8349                ; $8367: F0 E0
-    CPX #$E4                 ; $8369: E0 E4
-    .byte $FA             ; $836B - unknown opcode
-    .byte $BB             ; $836C - unknown opcode
-    .byte $FF             ; $836D - unknown opcode
-    .byte $1F             ; $836E - unknown opcode
-    ASL $0307                ; $836F: 0E 07 03
-    .byte $C7             ; $8372 - unknown opcode
-    .byte $3F             ; $8373 - unknown opcode
-    .byte $0F             ; $8374 - unknown opcode
-    .byte $1F             ; $8375 - unknown opcode
-    .byte $1F             ; $8376 - unknown opcode
-    ASL $0307                ; $8377: 0E 07 03
-    .byte $07             ; $837A - unknown opcode
-    .byte $07             ; $837B - unknown opcode
-    .byte $0F             ; $837C - unknown opcode
-    .byte $FF             ; $837D - unknown opcode
-    CLD                      ; $837E: D8
-    .byte $FF             ; $837F - unknown opcode
-    .byte $FB             ; $8380 - unknown opcode
-    CMP $FFF6,Y              ; $8381: D9 F6 FF
-    .byte $BF             ; $8384 - unknown opcode
-    .byte $FF             ; $8385 - unknown opcode
-    .byte $DF             ; $8386 - unknown opcode
-    SED                      ; $8387: F8
-    .byte $F4             ; $8388 - unknown opcode
-    .byte $D4             ; $8389 - unknown opcode
-    SED                      ; $838A: F8
-    BEQ $833D                ; $838B: F0 B0
-    CPX #$0F                 ; $838D: E0 0F
-    DEC $E7                  ; $838F: C6 E7
-    .byte $E3             ; $8391 - unknown opcode
-    .byte $73             ; $8392 - unknown opcode
-    .byte $F3             ; $8393 - unknown opcode
-    SBC $1F0D,Y              ; $8394: F9 0D 1F
-    ASL $070F                ; $8397: 0E 0F 07
-    .byte $07             ; $839A - unknown opcode
-    .byte $07             ; $839B - unknown opcode
-    .byte $03             ; $839C - unknown opcode
-    SBC ($D8),Y              ; $839D: F1 D8
-    .byte $F7             ; $839F - unknown opcode
-    .byte $EF             ; $83A0 - unknown opcode
-    .byte $E7             ; $83A1 - unknown opcode
+	.byte $D4			 ; $8349 - unknown opcode
+	SED					  ; $834A: F8
+	BEQ $82FD				; $834B: F0 B0
+	.byte $EF			 ; $834D - unknown opcode
+	.byte $CF			 ; $834E - unknown opcode
+	INC $67				  ; $834F: E6 67
+	.byte $23			 ; $8351 - unknown opcode
+	.byte $13			 ; $8352 - unknown opcode
+	.byte $33			 ; $8353 - unknown opcode
+	SBC $1FFD,Y			  ; $8354: F9 FD 1F
+	ASL $C70F				; $8357: 0E 0F C7
+	.byte $C7			 ; $835A - unknown opcode
+	.byte $07			 ; $835B - unknown opcode
+	.byte $03			 ; $835C - unknown opcode
+	ORA ($D8,X)			  ; $835D: 01 D8
+	BEQ $8341				; $835F: F0 E0
+	INC $F0E1,X			  ; $8361: FE E1 F0
+	BCS $8356				; $8364: B0 F0
+	CLD					  ; $8366: D8
+	BEQ $8349				; $8367: F0 E0
+	CPX #$E4				 ; $8369: E0 E4
+	.byte $FA			 ; $836B - unknown opcode
+	.byte $BB			 ; $836C - unknown opcode
+	.byte $FF			 ; $836D - unknown opcode
+	.byte $1F			 ; $836E - unknown opcode
+	ASL $0307				; $836F: 0E 07 03
+	.byte $C7			 ; $8372 - unknown opcode
+	.byte $3F			 ; $8373 - unknown opcode
+	.byte $0F			 ; $8374 - unknown opcode
+	.byte $1F			 ; $8375 - unknown opcode
+	.byte $1F			 ; $8376 - unknown opcode
+	ASL $0307				; $8377: 0E 07 03
+	.byte $07			 ; $837A - unknown opcode
+	.byte $07			 ; $837B - unknown opcode
+	.byte $0F			 ; $837C - unknown opcode
+	.byte $FF			 ; $837D - unknown opcode
+	CLD					  ; $837E: D8
+	.byte $FF			 ; $837F - unknown opcode
+	.byte $FB			 ; $8380 - unknown opcode
+	CMP $FFF6,Y			  ; $8381: D9 F6 FF
+	.byte $BF			 ; $8384 - unknown opcode
+	.byte $FF			 ; $8385 - unknown opcode
+	.byte $DF			 ; $8386 - unknown opcode
+	SED					  ; $8387: F8
+	.byte $F4			 ; $8388 - unknown opcode
+	.byte $D4			 ; $8389 - unknown opcode
+	SED					  ; $838A: F8
+	BEQ $833D				; $838B: F0 B0
+	CPX #$0F				 ; $838D: E0 0F
+	DEC $E7				  ; $838F: C6 E7
+	.byte $E3			 ; $8391 - unknown opcode
+	.byte $73			 ; $8392 - unknown opcode
+	.byte $F3			 ; $8393 - unknown opcode
+	SBC $1F0D,Y			  ; $8394: F9 0D 1F
+	ASL $070F				; $8397: 0E 0F 07
+	.byte $07			 ; $839A - unknown opcode
+	.byte $07			 ; $839B - unknown opcode
+	.byte $03			 ; $839C - unknown opcode
+	SBC ($D8),Y			  ; $839D: F1 D8
+	.byte $F7			 ; $839F - unknown opcode
+	.byte $EF			 ; $83A0 - unknown opcode
+	.byte $E7			 ; $83A1 - unknown opcode
 
 loc_83A2:
-    CPX #$F0                 ; $83A2: E0 F0
-    BMI $83D6                ; $83A4: 30 30
-    .byte $DF             ; $83A6 - unknown opcode
-    SED                      ; $83A7: F8
-    BEQ $83A2                ; $83A8: F0 F8
-    .byte $E7             ; $83AA - unknown opcode
-    .byte $FA             ; $83AB - unknown opcode
-    .byte $BB             ; $83AC - unknown opcode
-    INC $EE1F,X              ; $83AD: FE 1F EE
-    .byte $EB             ; $83B0 - unknown opcode
-    .byte $F7             ; $83B1 - unknown opcode
-    .byte $F7             ; $83B2 - unknown opcode
-    .byte $77             ; $83B3 - unknown opcode
-    AND $0F,X                ; $83B4: 35 0F
-    .byte $FF             ; $83B6 - unknown opcode
-    ASL $0F1B,X              ; $83B7: 1E 1B 0F
-    .byte $0F             ; $83BA - unknown opcode
-    .byte $8F             ; $83BB - unknown opcode
-    EOR $983F                ; $83BC: 4D 3F 98
-    CPY $F0FD                ; $83BF: CC FD F0
-    .byte $FC             ; $83C2 - unknown opcode
-    INC $F0BF,X              ; $83C3: FE BF F0
-    SBC $E0F0,X              ; $83C6: FD F0 E0
-    .byte $FC             ; $83C9 - unknown opcode
-    SBC ($E0,X)              ; $83CA: E1 E0
-    BCS $83CD                ; $83CC: B0 FF
-    .byte $0F             ; $83CE - unknown opcode
-    ASL $1F1F,X              ; $83CF: 1E 1F 1F
-    .byte $0F             ; $83D2 - unknown opcode
-    .byte $3F             ; $83D3 - unknown opcode
-    STA $87FF                ; $83D4: 8D FF 87
+	CPX #$F0				 ; $83A2: E0 F0
+	BMI $83D6				; $83A4: 30 30
+	.byte $DF			 ; $83A6 - unknown opcode
+	SED					  ; $83A7: F8
+	BEQ $83A2				; $83A8: F0 F8
+	.byte $E7			 ; $83AA - unknown opcode
+	.byte $FA			 ; $83AB - unknown opcode
+	.byte $BB			 ; $83AC - unknown opcode
+	INC $EE1F,X			  ; $83AD: FE 1F EE
+	.byte $EB			 ; $83B0 - unknown opcode
+	.byte $F7			 ; $83B1 - unknown opcode
+	.byte $F7			 ; $83B2 - unknown opcode
+	.byte $77			 ; $83B3 - unknown opcode
+	AND $0F,X				; $83B4: 35 0F
+	.byte $FF			 ; $83B6 - unknown opcode
+	ASL $0F1B,X			  ; $83B7: 1E 1B 0F
+	.byte $0F			 ; $83BA - unknown opcode
+	.byte $8F			 ; $83BB - unknown opcode
+	EOR $983F				; $83BC: 4D 3F 98
+	CPY $F0FD				; $83BF: CC FD F0
+	.byte $FC			 ; $83C2 - unknown opcode
+	INC $F0BF,X			  ; $83C3: FE BF F0
+	SBC $E0F0,X			  ; $83C6: FD F0 E0
+	.byte $FC			 ; $83C9 - unknown opcode
+	SBC ($E0,X)			  ; $83CA: E1 E0
+	BCS $83CD				; $83CC: B0 FF
+	.byte $0F			 ; $83CE - unknown opcode
+	ASL $1F1F,X			  ; $83CF: 1E 1F 1F
+	.byte $0F			 ; $83D2 - unknown opcode
+	.byte $3F			 ; $83D3 - unknown opcode
+	STA $87FF				; $83D4: 8D FF 87
 
 loc_83D7:
-    .byte $42             ; $83D7 - unknown opcode
-    .byte $43             ; $83D8 - unknown opcode
-    .byte $47             ; $83D9 - unknown opcode
-    .byte $8F             ; $83DA - unknown opcode
-    .byte $0F             ; $83DB - unknown opcode
-    ADC $D8FF,X              ; $83DC: 7D FF D8
-    .byte $F7             ; $83DF - unknown opcode
-    .byte $EF             ; $83E0 - unknown opcode
-    .byte $E7             ; $83E1 - unknown opcode
+	.byte $42			 ; $83D7 - unknown opcode
+	.byte $43			 ; $83D8 - unknown opcode
+	.byte $47			 ; $83D9 - unknown opcode
+	.byte $8F			 ; $83DA - unknown opcode
+	.byte $0F			 ; $83DB - unknown opcode
+	ADC $D8FF,X			  ; $83DC: 7D FF D8
+	.byte $F7			 ; $83DF - unknown opcode
+	.byte $EF			 ; $83E0 - unknown opcode
+	.byte $E7			 ; $83E1 - unknown opcode
 
 loc_83E2:
-    CPX #$F0                 ; $83E2: E0 F0
-    BCS $83D7                ; $83E4: B0 F1
-    .byte $DF             ; $83E6 - unknown opcode
-    SED                      ; $83E7: F8
-    BEQ $83E2                ; $83E8: F0 F8
-    .byte $E7             ; $83EA - unknown opcode
-    .byte $FA             ; $83EB - unknown opcode
-    .byte $BB             ; $83EC - unknown opcode
-    INC $EE1F,X              ; $83ED: FE 1F EE
-    .byte $EB             ; $83F0 - unknown opcode
-    .byte $F7             ; $83F1 - unknown opcode
-    .byte $F7             ; $83F2 - unknown opcode
-    .byte $77             ; $83F3 - unknown opcode
-    AND $CF,X                ; $83F4: 35 CF
-    .byte $FF             ; $83F6 - unknown opcode
-    ASL $0F1B,X              ; $83F7: 1E 1B 0F
-    .byte $0F             ; $83FA - unknown opcode
-    .byte $8F             ; $83FB - unknown opcode
-    EOR $7A3F                ; $83FC: 4D 3F 7A
-    .byte $3C             ; $83FF - unknown opcode
-    .byte $9C             ; $8400 - unknown opcode
+	CPX #$F0				 ; $83E2: E0 F0
+	BCS $83D7				; $83E4: B0 F1
+	.byte $DF			 ; $83E6 - unknown opcode
+	SED					  ; $83E7: F8
+	BEQ $83E2				; $83E8: F0 F8
+	.byte $E7			 ; $83EA - unknown opcode
+	.byte $FA			 ; $83EB - unknown opcode
+	.byte $BB			 ; $83EC - unknown opcode
+	INC $EE1F,X			  ; $83ED: FE 1F EE
+	.byte $EB			 ; $83F0 - unknown opcode
+	.byte $F7			 ; $83F1 - unknown opcode
+	.byte $F7			 ; $83F2 - unknown opcode
+	.byte $77			 ; $83F3 - unknown opcode
+	AND $CF,X				; $83F4: 35 CF
+	.byte $FF			 ; $83F6 - unknown opcode
+	ASL $0F1B,X			  ; $83F7: 1E 1B 0F
+	.byte $0F			 ; $83FA - unknown opcode
+	.byte $8F			 ; $83FB - unknown opcode
+	EOR $7A3F				; $83FC: 4D 3F 7A
+	.byte $3C			 ; $83FF - unknown opcode
+	.byte $9C			 ; $8400 - unknown opcode
 
 loc_8401:
-    CMP ($FC,X)              ; $8401: C1 FC
-    .byte $FC             ; $8403 - unknown opcode
-    LDA ($FF),Y              ; $8404: B1 FF
-    .byte $FC             ; $8406 - unknown opcode
-    SBC ($E0),Y              ; $8407: F1 E0
+	CMP ($FC,X)			  ; $8401: C1 FC
+	.byte $FC			 ; $8403 - unknown opcode
+	LDA ($FF),Y			  ; $8404: B1 FF
+	.byte $FC			 ; $8406 - unknown opcode
+	SBC ($E0),Y			  ; $8407: F1 E0
 
 loc_8409:
-    .byte $FC             ; $8409 - unknown opcode
-    CPX #$F1                 ; $840A: E0 F1
-    LDX $7FFF,Y              ; $840C: BE FF 7F
-    ASL $1F0F,X              ; $840F: 1E 0F 1F
-    .byte $1F             ; $8412 - unknown opcode
-    .byte $0F             ; $8413 - unknown opcode
-    SBC $0F0F,X              ; $8414: FD 0F 0F
-    STX $43                  ; $8417: 86 43
-    .byte $43             ; $8419 - unknown opcode
-    .byte $47             ; $841A - unknown opcode
-    .byte $8F             ; $841B - unknown opcode
-    ORA $D8FF                ; $841C: 0D FF D8
-    BEQ $8401                ; $841F: F0 E0
-    CPX #$F0                 ; $8421: E0 F0
-    CPX #$B0                 ; $8423: E0 B0
-    SED                      ; $8425: F8
-    CLD                      ; $8426: D8
-    BEQ $8409                ; $8427: F0 E0
-    .byte $E3             ; $8429 - unknown opcode
-    .byte $FC             ; $842A - unknown opcode
-    CPX #$B0                 ; $842B: E0 B0
-    SED                      ; $842D: F8
-    .byte $1F             ; $842E - unknown opcode
-    ASL $0B                  ; $842F: 06 0B
-    .byte $07             ; $8431 - unknown opcode
-    .byte $07             ; $8432 - unknown opcode
-    ORA $8F0F                ; $8433: 0D 0F 8F
-    .byte $1F             ; $8436 - unknown opcode
-    ASL $7B                  ; $8437: 06 7B
+	.byte $FC			 ; $8409 - unknown opcode
+	CPX #$F1				 ; $840A: E0 F1
+	LDX $7FFF,Y			  ; $840C: BE FF 7F
+	ASL $1F0F,X			  ; $840F: 1E 0F 1F
+	.byte $1F			 ; $8412 - unknown opcode
+	.byte $0F			 ; $8413 - unknown opcode
+	SBC $0F0F,X			  ; $8414: FD 0F 0F
+	STX $43				  ; $8417: 86 43
+	.byte $43			 ; $8419 - unknown opcode
+	.byte $47			 ; $841A - unknown opcode
+	.byte $8F			 ; $841B - unknown opcode
+	ORA $D8FF				; $841C: 0D FF D8
+	BEQ $8401				; $841F: F0 E0
+	CPX #$F0				 ; $8421: E0 F0
+	CPX #$B0				 ; $8423: E0 B0
+	SED					  ; $8425: F8
+	CLD					  ; $8426: D8
+	BEQ $8409				; $8427: F0 E0
+	.byte $E3			 ; $8429 - unknown opcode
+	.byte $FC			 ; $842A - unknown opcode
+	CPX #$B0				 ; $842B: E0 B0
+	SED					  ; $842D: F8
+	.byte $1F			 ; $842E - unknown opcode
+	ASL $0B				  ; $842F: 06 0B
+	.byte $07			 ; $8431 - unknown opcode
+	.byte $07			 ; $8432 - unknown opcode
+	ORA $8F0F				; $8433: 0D 0F 8F
+	.byte $1F			 ; $8436 - unknown opcode
+	ASL $7B				  ; $8437: 06 7B
 
 loc_8439:
-    .byte $87             ; $8439 - unknown opcode
-    .byte $27             ; $843A - unknown opcode
-    EOR $7FDF,X              ; $843B: 5D DF 7F
-    .byte $DF             ; $843E - unknown opcode
-    INC $D4FE,X              ; $843F: FE FE D4
-    BEQ $8443                ; $8442: F0 FF
-    LDA ($FE),Y              ; $8444: B1 FE
-    CLD                      ; $8446: D8
-    BEQ $8439                ; $8447: F0 F0
+	.byte $87			 ; $8439 - unknown opcode
+	.byte $27			 ; $843A - unknown opcode
+	EOR $7FDF,X			  ; $843B: 5D DF 7F
+	.byte $DF			 ; $843E - unknown opcode
+	INC $D4FE,X			  ; $843F: FE FE D4
+	BEQ $8443				; $8442: F0 FF
+	LDA ($FE),Y			  ; $8444: B1 FE
+	CLD					  ; $8446: D8
+	BEQ $8439				; $8447: F0 F0
 
 loc_8449:
-    .byte $D3             ; $8449 - unknown opcode
-    .byte $FB             ; $844A - unknown opcode
-    BEQ $840B                ; $844B: F0 BE
-    .byte $FF             ; $844D - unknown opcode
-    .byte $9F             ; $844E - unknown opcode
-    DEC $7FFB,X              ; $844F: DE FB 7F
-    .byte $0F             ; $8452 - unknown opcode
-    SBC $1FFF,X              ; $8453: FD FF 1F
-    .byte $3F             ; $8456 - unknown opcode
-    ASL $0F0B,X              ; $8457: 1E 0B 0F
-    .byte $7F             ; $845A - unknown opcode
-    ORA $FF1F                ; $845B: 0D 1F FF
-    CLD                      ; $845E: D8
+	.byte $D3			 ; $8449 - unknown opcode
+	.byte $FB			 ; $844A - unknown opcode
+	BEQ $840B				; $844B: F0 BE
+	.byte $FF			 ; $844D - unknown opcode
+	.byte $9F			 ; $844E - unknown opcode
+	DEC $7FFB,X			  ; $844F: DE FB 7F
+	.byte $0F			 ; $8452 - unknown opcode
+	SBC $1FFF,X			  ; $8453: FD FF 1F
+	.byte $3F			 ; $8456 - unknown opcode
+	ASL $0F0B,X			  ; $8457: 1E 0B 0F
+	.byte $7F			 ; $845A - unknown opcode
+	ORA $FF1F				; $845B: 0D 1F FF
+	CLD					  ; $845E: D8
 
 loc_845F:
-    BEQ $8441                ; $845F: F0 E0
-    CPX #$F0                 ; $8461: E0 F0
-    CPX #$B0                 ; $8463: E0 B0
-    SED                      ; $8465: F8
-    CLD                      ; $8466: D8
-    BEQ $8449                ; $8467: F0 E0
-    .byte $E3             ; $8469 - unknown opcode
-    .byte $FC             ; $846A - unknown opcode
-    CPX #$B0                 ; $846B: E0 B0
-    SED                      ; $846D: F8
-    .byte $1F             ; $846E - unknown opcode
-    ASL $0B                  ; $846F: 06 0B
-    .byte $07             ; $8471 - unknown opcode
-    .byte $07             ; $8472 - unknown opcode
-    ORA $8F0F                ; $8473: 0D 0F 8F
-    .byte $1F             ; $8476 - unknown opcode
-    ASL $7B                  ; $8477: 06 7B
+	BEQ $8441				; $845F: F0 E0
+	CPX #$F0				 ; $8461: E0 F0
+	CPX #$B0				 ; $8463: E0 B0
+	SED					  ; $8465: F8
+	CLD					  ; $8466: D8
+	BEQ $8449				; $8467: F0 E0
+	.byte $E3			 ; $8469 - unknown opcode
+	.byte $FC			 ; $846A - unknown opcode
+	CPX #$B0				 ; $846B: E0 B0
+	SED					  ; $846D: F8
+	.byte $1F			 ; $846E - unknown opcode
+	ASL $0B				  ; $846F: 06 0B
+	.byte $07			 ; $8471 - unknown opcode
+	.byte $07			 ; $8472 - unknown opcode
+	ORA $8F0F				; $8473: 0D 0F 8F
+	.byte $1F			 ; $8476 - unknown opcode
+	ASL $7B				  ; $8477: 06 7B
 
 loc_8479:
-    .byte $87             ; $8479 - unknown opcode
-    .byte $27             ; $847A - unknown opcode
-    EOR $7FDF,X              ; $847B: 5D DF 7F
-    CMP $FFFF,X              ; $847E: DD FF FF
-    .byte $DC             ; $8481 - unknown opcode
-    BEQ $8483                ; $8482: F0 FF
-    .byte $BF             ; $8484 - unknown opcode
-    BEQ $845F                ; $8485: F0 D8
-    BEQ $8479                ; $8487: F0 F0
-    BNE $848A                ; $8489: D0 FF
-    BEQ $843D                ; $848B: F0 B0
-    .byte $FF             ; $848D - unknown opcode
+	.byte $87			 ; $8479 - unknown opcode
+	.byte $27			 ; $847A - unknown opcode
+	EOR $7FDF,X			  ; $847B: 5D DF 7F
+	CMP $FFFF,X			  ; $847E: DD FF FF
+	.byte $DC			 ; $8481 - unknown opcode
+	BEQ $8483				; $8482: F0 FF
+	.byte $BF			 ; $8484 - unknown opcode
+	BEQ $845F				; $8485: F0 D8
+	BEQ $8479				; $8487: F0 F0
+	BNE $848A				; $8489: D0 FF
+	BEQ $843D				; $848B: F0 B0
+	.byte $FF			 ; $848D - unknown opcode
 
 loc_848E:
-    .byte $1F             ; $848E - unknown opcode
-    ASL $FF3B,X              ; $848F: 1E 3B FF
-    .byte $0F             ; $8492 - unknown opcode
-    SBC $FF1F,X              ; $8493: FD 1F FF
-    .byte $FF             ; $8496 - unknown opcode
-    DEC $0F0B,X              ; $8497: DE 0B 0F
-    .byte $FF             ; $849A - unknown opcode
-    ORA $FFFF                ; $849B: 0D FF FF
-    BNE $848E                ; $849E: D0 EE
-    DEC $C0DC,X              ; $84A0: DE DC C0
-    CPY #$C0                 ; $84A3: C0 C0
-    CPY $F1DF                ; $84A5: CC DF F1
-    SBC ($E3,X)              ; $84A8: E1 E3
-    INC $C3C1,X              ; $84AA: FE C1 C3
-    CMP ($3F,X)              ; $84AD: C1 3F
-    DEC $1FDB,X              ; $84AF: DE DB 1F
-    .byte $1F             ; $84B2 - unknown opcode
-    AND $2D3F,X              ; $84B3: 3D 3F 2D
-    .byte $FF             ; $84B6 - unknown opcode
-    ROL $DF3B,X              ; $84B7: 3E 3B DF
-    .byte $1F             ; $84BA - unknown opcode
-    ADC $EF7F,X              ; $84BB: 7D 7F EF
-    .byte $FB             ; $84BE - unknown opcode
-    .byte $FA             ; $84BF - unknown opcode
-    BEQ $84A2                ; $84C0: F0 E0
-    .byte $FF             ; $84C2 - unknown opcode
-    .byte $FF             ; $84C3 - unknown opcode
-    .byte $A3             ; $84C4 - unknown opcode
-    .byte $FC             ; $84C5 - unknown opcode
-    CPX #$E1                 ; $84C6: E0 E1
-    SBC $C0CD                ; $84C8: ED CD C0
-    CPX #$BC                 ; $84CB: E0 BC
-    .byte $FF             ; $84CD - unknown opcode
-    .byte $F3             ; $84CE - unknown opcode
-    DEC $FF3B                ; $84CF: CE 3B FF
-    .byte $FF             ; $84D2 - unknown opcode
-    .byte $FF             ; $84D3 - unknown opcode
-    SBC $7F2F,X              ; $84D4: FD 2F 7F
-    ROL $1FFB,X              ; $84D7: 3E FB 1F
-    .byte $1F             ; $84DA - unknown opcode
-    .byte $3F             ; $84DB - unknown opcode
-    AND $D0EF,X              ; $84DC: 3D EF D0
-    INC $DCDE                ; $84DF: EE DE DC
-    CPY #$C0                 ; $84E2: C0 C0
-    CPY #$DC                 ; $84E4: C0 DC
-    .byte $DF             ; $84E6 - unknown opcode
-    SBC ($E1),Y              ; $84E7: F1 E1
-    .byte $E3             ; $84E9 - unknown opcode
-    INC $C3C1,X              ; $84EA: FE C1 C3
-    CMP ($3F,X)              ; $84ED: C1 3F
-    DEC $1FDB,X              ; $84EF: DE DB 1F
-    .byte $1F             ; $84F2 - unknown opcode
-    AND $293E,X              ; $84F3: 3D 3E 29
-    .byte $FF             ; $84F6 - unknown opcode
-    ROL $DF3B,X              ; $84F7: 3E 3B DF
-    .byte $1F             ; $84FA - unknown opcode
-    ADC $EF7F,X              ; $84FB: 7D 7F EF
-    .byte $FA             ; $84FE - unknown opcode
-    SED                      ; $84FF: F8
-    INX                      ; $8500: E8
-    SBC ($FF),Y              ; $8501: F1 FF
-    .byte $FF             ; $8503 - unknown opcode
-    LDX $C0E1,Y              ; $8504: BE E1 C0
-    DEC $E6                  ; $8507: C6 E6
-    CPY #$C0                 ; $8509: C0 C0
-    CPX #$A1                 ; $850B: E0 A1
-    .byte $FF             ; $850D - unknown opcode
-    .byte $67             ; $850E - unknown opcode
-    ASL $FF7B,X              ; $850F: 1E 7B FF
-    .byte $FF             ; $8512 - unknown opcode
-    .byte $FF             ; $8513 - unknown opcode
-    AND $FFEF,X              ; $8514: 3D EF FF
-    INC $1FBB,X              ; $8517: FE BB 1F
-    .byte $1F             ; $851A - unknown opcode
-    .byte $3F             ; $851B - unknown opcode
-    SBC $EBEF,X              ; $851C: FD EF EB
-    .byte $D7             ; $851F - unknown opcode
-    .byte $97             ; $8520 - unknown opcode
-    .byte $7F             ; $8521 - unknown opcode
-    .byte $BF             ; $8522 - unknown opcode
-    .byte $AF             ; $8523 - unknown opcode
-    .byte $EF             ; $8524 - unknown opcode
-    .byte $E7             ; $8525 - unknown opcode
-    INX                      ; $8526: E8
-    BNE $84B9                ; $8527: D0 90
-    PLA                      ; $8529: 68
-    DEY                      ; $852A: 88
-    .byte $80             ; $852B - unknown opcode
-    CPX #$E0                 ; $852C: E0 E0
-    .byte $FB             ; $852E - unknown opcode
-    SBC $FFFE,X              ; $852F: FD FE FF
-    .byte $FF             ; $8532 - unknown opcode
-    .byte $FF             ; $8533 - unknown opcode
-    .byte $FF             ; $8534 - unknown opcode
-    .byte $FF             ; $8535 - unknown opcode
-    .byte $0B             ; $8536 - unknown opcode
-    ORA $06                  ; $8537: 05 06
-    ORA $04                  ; $8539: 05 04
-    .byte $02             ; $853B - unknown opcode
-    .byte $03             ; $853C - unknown opcode
-    .byte $07             ; $853D - unknown opcode
-    .byte $CF             ; $853E - unknown opcode
-    .byte $A7             ; $853F - unknown opcode
-    .byte $27             ; $8540 - unknown opcode
-    .byte $C7             ; $8541 - unknown opcode
-    .byte $DF             ; $8542 - unknown opcode
-    .byte $D7             ; $8543 - unknown opcode
-    INX                      ; $8544: E8
-    CPX $AFCE                ; $8545: EC CE AF
-    .byte $3F             ; $8548 - unknown opcode
-    CLD                      ; $8549: D8
-    CLD                      ; $854A: D8
-    .byte $D7             ; $854B - unknown opcode
-    .byte $EB             ; $854C - unknown opcode
-    CPX $FDF9                ; $854D: EC F9 FD
-    SBC $FDFE,X              ; $8550: FD FE FD
-    .byte $FB             ; $8553 - unknown opcode
-    .byte $07             ; $8554 - unknown opcode
-    .byte $07             ; $8555 - unknown opcode
-    .byte $1F             ; $8556 - unknown opcode
-    .byte $FF             ; $8557 - unknown opcode
-    SBC $0506,X              ; $8558: FD 06 05
-    .byte $FB             ; $855B - unknown opcode
-    .byte $77             ; $855C - unknown opcode
-    .byte $77             ; $855D - unknown opcode
-    .byte $EF             ; $855E - unknown opcode
-    .byte $DF             ; $855F - unknown opcode
+	.byte $1F			 ; $848E - unknown opcode
+	ASL $FF3B,X			  ; $848F: 1E 3B FF
+	.byte $0F			 ; $8492 - unknown opcode
+	SBC $FF1F,X			  ; $8493: FD 1F FF
+	.byte $FF			 ; $8496 - unknown opcode
+	DEC $0F0B,X			  ; $8497: DE 0B 0F
+	.byte $FF			 ; $849A - unknown opcode
+	ORA $FFFF				; $849B: 0D FF FF
+	BNE $848E				; $849E: D0 EE
+	DEC $C0DC,X			  ; $84A0: DE DC C0
+	CPY #$C0				 ; $84A3: C0 C0
+	CPY $F1DF				; $84A5: CC DF F1
+	SBC ($E3,X)			  ; $84A8: E1 E3
+	INC $C3C1,X			  ; $84AA: FE C1 C3
+	CMP ($3F,X)			  ; $84AD: C1 3F
+	DEC $1FDB,X			  ; $84AF: DE DB 1F
+	.byte $1F			 ; $84B2 - unknown opcode
+	AND $2D3F,X			  ; $84B3: 3D 3F 2D
+	.byte $FF			 ; $84B6 - unknown opcode
+	ROL $DF3B,X			  ; $84B7: 3E 3B DF
+	.byte $1F			 ; $84BA - unknown opcode
+	ADC $EF7F,X			  ; $84BB: 7D 7F EF
+	.byte $FB			 ; $84BE - unknown opcode
+	.byte $FA			 ; $84BF - unknown opcode
+	BEQ $84A2				; $84C0: F0 E0
+	.byte $FF			 ; $84C2 - unknown opcode
+	.byte $FF			 ; $84C3 - unknown opcode
+	.byte $A3			 ; $84C4 - unknown opcode
+	.byte $FC			 ; $84C5 - unknown opcode
+	CPX #$E1				 ; $84C6: E0 E1
+	SBC $C0CD				; $84C8: ED CD C0
+	CPX #$BC				 ; $84CB: E0 BC
+	.byte $FF			 ; $84CD - unknown opcode
+	.byte $F3			 ; $84CE - unknown opcode
+	DEC $FF3B				; $84CF: CE 3B FF
+	.byte $FF			 ; $84D2 - unknown opcode
+	.byte $FF			 ; $84D3 - unknown opcode
+	SBC $7F2F,X			  ; $84D4: FD 2F 7F
+	ROL $1FFB,X			  ; $84D7: 3E FB 1F
+	.byte $1F			 ; $84DA - unknown opcode
+	.byte $3F			 ; $84DB - unknown opcode
+	AND $D0EF,X			  ; $84DC: 3D EF D0
+	INC $DCDE				; $84DF: EE DE DC
+	CPY #$C0				 ; $84E2: C0 C0
+	CPY #$DC				 ; $84E4: C0 DC
+	.byte $DF			 ; $84E6 - unknown opcode
+	SBC ($E1),Y			  ; $84E7: F1 E1
+	.byte $E3			 ; $84E9 - unknown opcode
+	INC $C3C1,X			  ; $84EA: FE C1 C3
+	CMP ($3F,X)			  ; $84ED: C1 3F
+	DEC $1FDB,X			  ; $84EF: DE DB 1F
+	.byte $1F			 ; $84F2 - unknown opcode
+	AND $293E,X			  ; $84F3: 3D 3E 29
+	.byte $FF			 ; $84F6 - unknown opcode
+	ROL $DF3B,X			  ; $84F7: 3E 3B DF
+	.byte $1F			 ; $84FA - unknown opcode
+	ADC $EF7F,X			  ; $84FB: 7D 7F EF
+	.byte $FA			 ; $84FE - unknown opcode
+	SED					  ; $84FF: F8
+	INX					  ; $8500: E8
+	SBC ($FF),Y			  ; $8501: F1 FF
+	.byte $FF			 ; $8503 - unknown opcode
+	LDX $C0E1,Y			  ; $8504: BE E1 C0
+	DEC $E6				  ; $8507: C6 E6
+	CPY #$C0				 ; $8509: C0 C0
+	CPX #$A1				 ; $850B: E0 A1
+	.byte $FF			 ; $850D - unknown opcode
+	.byte $67			 ; $850E - unknown opcode
+	ASL $FF7B,X			  ; $850F: 1E 7B FF
+	.byte $FF			 ; $8512 - unknown opcode
+	.byte $FF			 ; $8513 - unknown opcode
+	AND $FFEF,X			  ; $8514: 3D EF FF
+	INC $1FBB,X			  ; $8517: FE BB 1F
+	.byte $1F			 ; $851A - unknown opcode
+	.byte $3F			 ; $851B - unknown opcode
+	SBC $EBEF,X			  ; $851C: FD EF EB
+	.byte $D7			 ; $851F - unknown opcode
+	.byte $97			 ; $8520 - unknown opcode
+	.byte $7F			 ; $8521 - unknown opcode
+	.byte $BF			 ; $8522 - unknown opcode
+	.byte $AF			 ; $8523 - unknown opcode
+	.byte $EF			 ; $8524 - unknown opcode
+	.byte $E7			 ; $8525 - unknown opcode
+	INX					  ; $8526: E8
+	BNE $84B9				; $8527: D0 90
+	PLA					  ; $8529: 68
+	DEY					  ; $852A: 88
+	.byte $80			 ; $852B - unknown opcode
+	CPX #$E0				 ; $852C: E0 E0
+	.byte $FB			 ; $852E - unknown opcode
+	SBC $FFFE,X			  ; $852F: FD FE FF
+	.byte $FF			 ; $8532 - unknown opcode
+	.byte $FF			 ; $8533 - unknown opcode
+	.byte $FF			 ; $8534 - unknown opcode
+	.byte $FF			 ; $8535 - unknown opcode
+	.byte $0B			 ; $8536 - unknown opcode
+	ORA $06				  ; $8537: 05 06
+	ORA $04				  ; $8539: 05 04
+	.byte $02			 ; $853B - unknown opcode
+	.byte $03			 ; $853C - unknown opcode
+	.byte $07			 ; $853D - unknown opcode
+	.byte $CF			 ; $853E - unknown opcode
+	.byte $A7			 ; $853F - unknown opcode
+	.byte $27			 ; $8540 - unknown opcode
+	.byte $C7			 ; $8541 - unknown opcode
+	.byte $DF			 ; $8542 - unknown opcode
+	.byte $D7			 ; $8543 - unknown opcode
+	INX					  ; $8544: E8
+	CPX $AFCE				; $8545: EC CE AF
+	.byte $3F			 ; $8548 - unknown opcode
+	CLD					  ; $8549: D8
+	CLD					  ; $854A: D8
+	.byte $D7			 ; $854B - unknown opcode
+	.byte $EB			 ; $854C - unknown opcode
+	CPX $FDF9				; $854D: EC F9 FD
+	SBC $FDFE,X			  ; $8550: FD FE FD
+	.byte $FB			 ; $8553 - unknown opcode
+	.byte $07			 ; $8554 - unknown opcode
+	.byte $07			 ; $8555 - unknown opcode
+	.byte $1F			 ; $8556 - unknown opcode
+	.byte $FF			 ; $8557 - unknown opcode
+	SBC $0506,X			  ; $8558: FD 06 05
+	.byte $FB			 ; $855B - unknown opcode
+	.byte $77			 ; $855C - unknown opcode
+	.byte $77			 ; $855D - unknown opcode
+	.byte $EF			 ; $855E - unknown opcode
+	.byte $DF			 ; $855F - unknown opcode
 
 loc_8560:
-    .byte $9F             ; $8560 - unknown opcode
-    .byte $7F             ; $8561 - unknown opcode
-    .byte $FF             ; $8562 - unknown opcode
-    .byte $BF             ; $8563 - unknown opcode
-    .byte $FF             ; $8564 - unknown opcode
-    .byte $DF             ; $8565 - unknown opcode
-    CPX #$C0                 ; $8566: E0 C0
-    .byte $80             ; $8568 - unknown opcode
-    JSR $0020                ; $8569: 20 20 00
-    CPY #$C0                 ; $856C: C0 C0
-    .byte $DB             ; $856E - unknown opcode
-    SBC $F9E6                ; $856F: ED E6 F9
-    .byte $FF             ; $8572 - unknown opcode
-    .byte $F7             ; $8573 - unknown opcode
-    .byte $F3             ; $8574 - unknown opcode
-    .byte $E7             ; $8575 - unknown opcode
-    .byte $1B             ; $8576 - unknown opcode
-    ORA $1106                ; $8577: 0D 06 11
-    .byte $13             ; $857A - unknown opcode
-    .byte $03             ; $857B - unknown opcode
-    .byte $03             ; $857C - unknown opcode
-    .byte $07             ; $857D - unknown opcode
-    .byte $9F             ; $857E - unknown opcode
-    .byte $BF             ; $857F - unknown opcode
-    .byte $3F             ; $8580 - unknown opcode
-    .byte $DF             ; $8581 - unknown opcode
-    .byte $DF             ; $8582 - unknown opcode
-    .byte $DF             ; $8583 - unknown opcode
-    CPX #$E0                 ; $8584: E0 E0
-    SED                      ; $8586: F8
-    .byte $FF             ; $8587 - unknown opcode
-    .byte $3F             ; $8588 - unknown opcode
-    CPY #$C0                 ; $8589: C0 C0
-    .byte $DF             ; $858B - unknown opcode
-    INC $F7EE                ; $858C: EE EE F7
-    .byte $E7             ; $858F - unknown opcode
-    SBC ($E4,X)              ; $8590: E1 E4
-    SBC $17EB                ; $8592: ED EB 17
-    .byte $47             ; $8595 - unknown opcode
-    .byte $77             ; $8596 - unknown opcode
-    .byte $F7             ; $8597 - unknown opcode
-    SBC $0D1C,Y              ; $8598: F9 1C 0D
-    .byte $EB             ; $859B - unknown opcode
-    .byte $D7             ; $859C - unknown opcode
-    .byte $47             ; $859D - unknown opcode
-    CPX $38D0                ; $859E: EC D0 38
-    LDY $D0D3,X              ; $85A1: BC D3 D0
-    INX                      ; $85A4: E8
-    CPX $03                  ; $85A5: E4 03
-    .byte $07             ; $85A7 - unknown opcode
-    .byte $07             ; $85A8 - unknown opcode
-    .byte $07             ; $85A9 - unknown opcode
-    .byte $0F             ; $85AA - unknown opcode
-    .byte $0F             ; $85AB - unknown opcode
-    .byte $07             ; $85AC - unknown opcode
-    .byte $07             ; $85AD - unknown opcode
-    .byte $CB             ; $85AE - unknown opcode
-    CMP $C6                  ; $85AF: C5 C6
-    CMP $03F3                ; $85B1: CD F3 03
-    .byte $07             ; $85B4 - unknown opcode
-    .byte $0F             ; $85B5 - unknown opcode
-    BEQ $85B0                ; $85B6: F0 F8
-    SED                      ; $85B8: F8
-    SED                      ; $85B9: F8
-    .byte $FC             ; $85BA - unknown opcode
-    .byte $FC             ; $85BB - unknown opcode
-    SED                      ; $85BC: F8
-    SED                      ; $85BD: F8
-    BNE $8560                ; $85BE: D0 A0
-    SEI                      ; $85C0: 78
-    SEI                      ; $85C1: 78
-    CLV                      ; $85C2: B8
-    .byte $DF             ; $85C3 - unknown opcode
-    CPX #$E8                 ; $85C4: E0 E8
-    .byte $0C             ; $85C6 - unknown opcode
-    .byte $1F             ; $85C7 - unknown opcode
-    .byte $1F             ; $85C8 - unknown opcode
-    .byte $1F             ; $85C9 - unknown opcode
-    .byte $07             ; $85CA - unknown opcode
-    .byte $07             ; $85CB - unknown opcode
-    .byte $07             ; $85CC - unknown opcode
-    BRK                      ; $85CD: 00
-    .byte $03             ; $85CE - unknown opcode
-    ORA ($01,X)              ; $85CF: 01 01
-    ASL $05                  ; $85D1: 06 05
-    .byte $FB             ; $85D3 - unknown opcode
-    .byte $7F             ; $85D4 - unknown opcode
-    .byte $07             ; $85D5 - unknown opcode
-    .byte $0F             ; $85D6 - unknown opcode
-    .byte $FF             ; $85D7 - unknown opcode
-    INC $F8F8,X              ; $85D8: FE F8 F8
-    SED                      ; $85DB: F8
-    SEI                      ; $85DC: 78
-    SEI                      ; $85DD: 78
-    .byte $E3             ; $85DE - unknown opcode
-    .byte $C3             ; $85DF - unknown opcode
-    .byte $23             ; $85E0 - unknown opcode
-    .byte $B3             ; $85E1 - unknown opcode
-    .byte $CF             ; $85E2 - unknown opcode
-    CPY #$E0                 ; $85E3: C0 E0
-    BEQ $85F6                ; $85E5: F0 0F
-    .byte $1F             ; $85E7 - unknown opcode
-    .byte $1F             ; $85E8 - unknown opcode
-    .byte $1F             ; $85E9 - unknown opcode
-    .byte $3F             ; $85EA - unknown opcode
-    .byte $3F             ; $85EB - unknown opcode
+	.byte $9F			 ; $8560 - unknown opcode
+	.byte $7F			 ; $8561 - unknown opcode
+	.byte $FF			 ; $8562 - unknown opcode
+	.byte $BF			 ; $8563 - unknown opcode
+	.byte $FF			 ; $8564 - unknown opcode
+	.byte $DF			 ; $8565 - unknown opcode
+	CPX #$C0				 ; $8566: E0 C0
+	.byte $80			 ; $8568 - unknown opcode
+	JSR $0020				; $8569: 20 20 00
+	CPY #$C0				 ; $856C: C0 C0
+	.byte $DB			 ; $856E - unknown opcode
+	SBC $F9E6				; $856F: ED E6 F9
+	.byte $FF			 ; $8572 - unknown opcode
+	.byte $F7			 ; $8573 - unknown opcode
+	.byte $F3			 ; $8574 - unknown opcode
+	.byte $E7			 ; $8575 - unknown opcode
+	.byte $1B			 ; $8576 - unknown opcode
+	ORA $1106				; $8577: 0D 06 11
+	.byte $13			 ; $857A - unknown opcode
+	.byte $03			 ; $857B - unknown opcode
+	.byte $03			 ; $857C - unknown opcode
+	.byte $07			 ; $857D - unknown opcode
+	.byte $9F			 ; $857E - unknown opcode
+	.byte $BF			 ; $857F - unknown opcode
+	.byte $3F			 ; $8580 - unknown opcode
+	.byte $DF			 ; $8581 - unknown opcode
+	.byte $DF			 ; $8582 - unknown opcode
+	.byte $DF			 ; $8583 - unknown opcode
+	CPX #$E0				 ; $8584: E0 E0
+	SED					  ; $8586: F8
+	.byte $FF			 ; $8587 - unknown opcode
+	.byte $3F			 ; $8588 - unknown opcode
+	CPY #$C0				 ; $8589: C0 C0
+	.byte $DF			 ; $858B - unknown opcode
+	INC $F7EE				; $858C: EE EE F7
+	.byte $E7			 ; $858F - unknown opcode
+	SBC ($E4,X)			  ; $8590: E1 E4
+	SBC $17EB				; $8592: ED EB 17
+	.byte $47			 ; $8595 - unknown opcode
+	.byte $77			 ; $8596 - unknown opcode
+	.byte $F7			 ; $8597 - unknown opcode
+	SBC $0D1C,Y			  ; $8598: F9 1C 0D
+	.byte $EB			 ; $859B - unknown opcode
+	.byte $D7			 ; $859C - unknown opcode
+	.byte $47			 ; $859D - unknown opcode
+	CPX $38D0				; $859E: EC D0 38
+	LDY $D0D3,X			  ; $85A1: BC D3 D0
+	INX					  ; $85A4: E8
+	CPX $03				  ; $85A5: E4 03
+	.byte $07			 ; $85A7 - unknown opcode
+	.byte $07			 ; $85A8 - unknown opcode
+	.byte $07			 ; $85A9 - unknown opcode
+	.byte $0F			 ; $85AA - unknown opcode
+	.byte $0F			 ; $85AB - unknown opcode
+	.byte $07			 ; $85AC - unknown opcode
+	.byte $07			 ; $85AD - unknown opcode
+	.byte $CB			 ; $85AE - unknown opcode
+	CMP $C6				  ; $85AF: C5 C6
+	CMP $03F3				; $85B1: CD F3 03
+	.byte $07			 ; $85B4 - unknown opcode
+	.byte $0F			 ; $85B5 - unknown opcode
+	BEQ $85B0				; $85B6: F0 F8
+	SED					  ; $85B8: F8
+	SED					  ; $85B9: F8
+	.byte $FC			 ; $85BA - unknown opcode
+	.byte $FC			 ; $85BB - unknown opcode
+	SED					  ; $85BC: F8
+	SED					  ; $85BD: F8
+	BNE $8560				; $85BE: D0 A0
+	SEI					  ; $85C0: 78
+	SEI					  ; $85C1: 78
+	CLV					  ; $85C2: B8
+	.byte $DF			 ; $85C3 - unknown opcode
+	CPX #$E8				 ; $85C4: E0 E8
+	.byte $0C			 ; $85C6 - unknown opcode
+	.byte $1F			 ; $85C7 - unknown opcode
+	.byte $1F			 ; $85C8 - unknown opcode
+	.byte $1F			 ; $85C9 - unknown opcode
+	.byte $07			 ; $85CA - unknown opcode
+	.byte $07			 ; $85CB - unknown opcode
+	.byte $07			 ; $85CC - unknown opcode
+	BRK					  ; $85CD: 00
+	.byte $03			 ; $85CE - unknown opcode
+	ORA ($01,X)			  ; $85CF: 01 01
+	ASL $05				  ; $85D1: 06 05
+	.byte $FB			 ; $85D3 - unknown opcode
+	.byte $7F			 ; $85D4 - unknown opcode
+	.byte $07			 ; $85D5 - unknown opcode
+	.byte $0F			 ; $85D6 - unknown opcode
+	.byte $FF			 ; $85D7 - unknown opcode
+	INC $F8F8,X			  ; $85D8: FE F8 F8
+	SED					  ; $85DB: F8
+	SEI					  ; $85DC: 78
+	SEI					  ; $85DD: 78
+	.byte $E3			 ; $85DE - unknown opcode
+	.byte $C3			 ; $85DF - unknown opcode
+	.byte $23			 ; $85E0 - unknown opcode
+	.byte $B3			 ; $85E1 - unknown opcode
+	.byte $CF			 ; $85E2 - unknown opcode
+	CPY #$E0				 ; $85E3: C0 E0
+	BEQ $85F6				; $85E5: F0 0F
+	.byte $1F			 ; $85E7 - unknown opcode
+	.byte $1F			 ; $85E8 - unknown opcode
+	.byte $1F			 ; $85E9 - unknown opcode
+	.byte $3F			 ; $85EA - unknown opcode
+	.byte $3F			 ; $85EB - unknown opcode
 
 loc_85EC:
-    .byte $1F             ; $85EC - unknown opcode
-    .byte $1F             ; $85ED - unknown opcode
-    .byte $1B             ; $85EE - unknown opcode
-    ORA $3D1E,X              ; $85EF: 1D 1E 3D
-    .byte $CB             ; $85F2 - unknown opcode
-    .byte $07             ; $85F3 - unknown opcode
-    .byte $17             ; $85F4 - unknown opcode
-    .byte $37             ; $85F5 - unknown opcode
+	.byte $1F			 ; $85EC - unknown opcode
+	.byte $1F			 ; $85ED - unknown opcode
+	.byte $1B			 ; $85EE - unknown opcode
+	ORA $3D1E,X			  ; $85EF: 1D 1E 3D
+	.byte $CB			 ; $85F2 - unknown opcode
+	.byte $07			 ; $85F3 - unknown opcode
+	.byte $17			 ; $85F4 - unknown opcode
+	.byte $37			 ; $85F5 - unknown opcode
 
 loc_85F6:
-    CPY #$E0                 ; $85F6: C0 E0
-    CPX #$E0                 ; $85F8: E0 E0
-    BEQ $85EC                ; $85FA: F0 F0
-    CPX #$E0                 ; $85FC: E0 E0
-    CPY #$80                 ; $85FE: C0 80
-    BRK                      ; $8600: 00
-    RTS                      ; $8601: 60
-    LDY #$DF                 ; $8602: A0 DF
-    INC $F0E0,X              ; $8604: FE E0 F0
-    .byte $FF             ; $8607 - unknown opcode
-    .byte $7F             ; $8608 - unknown opcode
-    .byte $1F             ; $8609 - unknown opcode
-    .byte $1F             ; $860A - unknown opcode
-    .byte $1F             ; $860B - unknown opcode
-    ASL $071E,X              ; $860C: 1E 1E 07
-    .byte $03             ; $860F - unknown opcode
+	CPY #$E0				 ; $85F6: C0 E0
+	CPX #$E0				 ; $85F8: E0 E0
+	BEQ $85EC				; $85FA: F0 F0
+	CPX #$E0				 ; $85FC: E0 E0
+	CPY #$80				 ; $85FE: C0 80
+	BRK					  ; $8600: 00
+	RTS					  ; $8601: 60
+	LDY #$DF				 ; $8602: A0 DF
+	INC $F0E0,X			  ; $8604: FE E0 F0
+	.byte $FF			 ; $8607 - unknown opcode
+	.byte $7F			 ; $8608 - unknown opcode
+	.byte $1F			 ; $8609 - unknown opcode
+	.byte $1F			 ; $860A - unknown opcode
+	.byte $1F			 ; $860B - unknown opcode
+	ASL $071E,X			  ; $860C: 1E 1E 07
+	.byte $03			 ; $860F - unknown opcode
 
 loc_8610:
-    ORA $1D1C,X              ; $8610: 1D 1C 1D
-    .byte $FB             ; $8613 - unknown opcode
-    .byte $17             ; $8614 - unknown opcode
-    .byte $07             ; $8615 - unknown opcode
-    BMI $8610                ; $8616: 30 F8
-    SED                      ; $8618: F8
-    SED                      ; $8619: F8
-    CPX #$E0                 ; $861A: E0 E0
-    CPX #$00                 ; $861C: E0 00
-    CPX $38D0                ; $861E: EC D0 38
-    CLV                      ; $8621: B8
-    BNE $85E4                ; $8622: D0 C0
-    CPX #$E0                 ; $8624: E0 E0
-    .byte $03             ; $8626 - unknown opcode
-    .byte $07             ; $8627 - unknown opcode
-    .byte $07             ; $8628 - unknown opcode
-    .byte $07             ; $8629 - unknown opcode
-    .byte $0F             ; $862A - unknown opcode
-    .byte $1F             ; $862B - unknown opcode
-    .byte $1F             ; $862C - unknown opcode
-    .byte $1F             ; $862D - unknown opcode
-    .byte $0B             ; $862E - unknown opcode
-    ORA $06                  ; $862F: 05 06
-    ORA $03                  ; $8631: 05 03
-    .byte $03             ; $8633 - unknown opcode
-    .byte $03             ; $8634 - unknown opcode
-    .byte $03             ; $8635 - unknown opcode
-    BEQ $8630                ; $8636: F0 F8
-    SED                      ; $8638: F8
-    SED                      ; $8639: F8
-    SED                      ; $863A: F8
-    .byte $FC             ; $863B - unknown opcode
-    .byte $FC             ; $863C - unknown opcode
-    .byte $FC             ; $863D - unknown opcode
-    CPY #$A0                 ; $863E: C0 A0
-    .byte $7F             ; $8640 - unknown opcode
-    .byte $7F             ; $8641 - unknown opcode
-    .byte $BF             ; $8642 - unknown opcode
-    .byte $D7             ; $8643 - unknown opcode
-    .byte $EB             ; $8644 - unknown opcode
-    INX                      ; $8645: E8
-    .byte $1F             ; $8646 - unknown opcode
-    .byte $0F             ; $8647 - unknown opcode
-    PHP                      ; $8648: 08
-    CLC                      ; $8649: 18
-    .byte $1F             ; $864A - unknown opcode
-    BRK                      ; $864B: 00
-    .byte $03             ; $864C - unknown opcode
-    BRK                      ; $864D: 00
-    .byte $07             ; $864E - unknown opcode
-    .byte $1F             ; $864F - unknown opcode
-    SBC $FBF8,X              ; $8650: FD F8 FB
-    .byte $FB             ; $8653 - unknown opcode
-    .byte $77             ; $8654 - unknown opcode
-    .byte $77             ; $8655 - unknown opcode
-    INC $00E2,X              ; $8656: FE E2 00
-    BRK                      ; $8659: 00
-    SED                      ; $865A: F8
-    BRK                      ; $865B: 00
-    BVS $86CE                ; $865C: 70 70
-    CPX #$C0                 ; $865E: E0 C0
-    JSR $C0A0                ; $8660: 20 A0 C0
-    CPY #$C0                 ; $8663: C0 C0
-    CPY #$0F                 ; $8665: C0 0F
-    .byte $1F             ; $8667 - unknown opcode
-    .byte $1F             ; $8668 - unknown opcode
-    .byte $1F             ; $8669 - unknown opcode
-    .byte $1F             ; $866A - unknown opcode
-    .byte $3F             ; $866B - unknown opcode
-    .byte $3F             ; $866C - unknown opcode
-    .byte $3F             ; $866D - unknown opcode
-    .byte $1B             ; $866E - unknown opcode
-    ORA $1D1E,X              ; $866F: 1D 1E 1D
-    .byte $03             ; $8672 - unknown opcode
-    .byte $07             ; $8673 - unknown opcode
+	ORA $1D1C,X			  ; $8610: 1D 1C 1D
+	.byte $FB			 ; $8613 - unknown opcode
+	.byte $17			 ; $8614 - unknown opcode
+	.byte $07			 ; $8615 - unknown opcode
+	BMI $8610				; $8616: 30 F8
+	SED					  ; $8618: F8
+	SED					  ; $8619: F8
+	CPX #$E0				 ; $861A: E0 E0
+	CPX #$00				 ; $861C: E0 00
+	CPX $38D0				; $861E: EC D0 38
+	CLV					  ; $8621: B8
+	BNE $85E4				; $8622: D0 C0
+	CPX #$E0				 ; $8624: E0 E0
+	.byte $03			 ; $8626 - unknown opcode
+	.byte $07			 ; $8627 - unknown opcode
+	.byte $07			 ; $8628 - unknown opcode
+	.byte $07			 ; $8629 - unknown opcode
+	.byte $0F			 ; $862A - unknown opcode
+	.byte $1F			 ; $862B - unknown opcode
+	.byte $1F			 ; $862C - unknown opcode
+	.byte $1F			 ; $862D - unknown opcode
+	.byte $0B			 ; $862E - unknown opcode
+	ORA $06				  ; $862F: 05 06
+	ORA $03				  ; $8631: 05 03
+	.byte $03			 ; $8633 - unknown opcode
+	.byte $03			 ; $8634 - unknown opcode
+	.byte $03			 ; $8635 - unknown opcode
+	BEQ $8630				; $8636: F0 F8
+	SED					  ; $8638: F8
+	SED					  ; $8639: F8
+	SED					  ; $863A: F8
+	.byte $FC			 ; $863B - unknown opcode
+	.byte $FC			 ; $863C - unknown opcode
+	.byte $FC			 ; $863D - unknown opcode
+	CPY #$A0				 ; $863E: C0 A0
+	.byte $7F			 ; $8640 - unknown opcode
+	.byte $7F			 ; $8641 - unknown opcode
+	.byte $BF			 ; $8642 - unknown opcode
+	.byte $D7			 ; $8643 - unknown opcode
+	.byte $EB			 ; $8644 - unknown opcode
+	INX					  ; $8645: E8
+	.byte $1F			 ; $8646 - unknown opcode
+	.byte $0F			 ; $8647 - unknown opcode
+	PHP					  ; $8648: 08
+	CLC					  ; $8649: 18
+	.byte $1F			 ; $864A - unknown opcode
+	BRK					  ; $864B: 00
+	.byte $03			 ; $864C - unknown opcode
+	BRK					  ; $864D: 00
+	.byte $07			 ; $864E - unknown opcode
+	.byte $1F			 ; $864F - unknown opcode
+	SBC $FBF8,X			  ; $8650: FD F8 FB
+	.byte $FB			 ; $8653 - unknown opcode
+	.byte $77			 ; $8654 - unknown opcode
+	.byte $77			 ; $8655 - unknown opcode
+	INC $00E2,X			  ; $8656: FE E2 00
+	BRK					  ; $8659: 00
+	SED					  ; $865A: F8
+	BRK					  ; $865B: 00
+	BVS $86CE				; $865C: 70 70
+	CPX #$C0				 ; $865E: E0 C0
+	JSR $C0A0				; $8660: 20 A0 C0
+	CPY #$C0				 ; $8663: C0 C0
+	CPY #$0F				 ; $8665: C0 0F
+	.byte $1F			 ; $8667 - unknown opcode
+	.byte $1F			 ; $8668 - unknown opcode
+	.byte $1F			 ; $8669 - unknown opcode
+	.byte $1F			 ; $866A - unknown opcode
+	.byte $3F			 ; $866B - unknown opcode
+	.byte $3F			 ; $866C - unknown opcode
+	.byte $3F			 ; $866D - unknown opcode
+	.byte $1B			 ; $866E - unknown opcode
+	ORA $1D1E,X			  ; $866F: 1D 1E 1D
+	.byte $03			 ; $8672 - unknown opcode
+	.byte $07			 ; $8673 - unknown opcode
 
 loc_8674:
-    .byte $07             ; $8674 - unknown opcode
-    .byte $07             ; $8675 - unknown opcode
-    CPY #$E0                 ; $8676: C0 E0
-    CPX #$E0                 ; $8678: E0 E0
-    BEQ $8674                ; $867A: F0 F8
+	.byte $07			 ; $8674 - unknown opcode
+	.byte $07			 ; $8675 - unknown opcode
+	CPY #$E0				 ; $8676: C0 E0
+	CPX #$E0				 ; $8678: E0 E0
+	BEQ $8674				; $867A: F0 F8
 
 loc_867C:
-    SED                      ; $867C: F8
-    SED                      ; $867D: F8
-    CPX #$F8                 ; $867E: E0 F8
-    .byte $3F             ; $8680 - unknown opcode
-    .byte $5F             ; $8681 - unknown opcode
-    .byte $9F             ; $8682 - unknown opcode
-    .byte $DF             ; $8683 - unknown opcode
-    INC $7FEE                ; $8684: EE EE 7F
-    .byte $47             ; $8687 - unknown opcode
-    BRK                      ; $8688: 00
-    BRK                      ; $8689: 00
-    .byte $1F             ; $868A - unknown opcode
-    BRK                      ; $868B: 00
-    ASL $070E                ; $868C: 0E 0E 07
-    .byte $03             ; $868F - unknown opcode
-    SBC $FBFC,X              ; $8690: FD FC FB
-    .byte $EB             ; $8693 - unknown opcode
-    .byte $D7             ; $8694 - unknown opcode
-    .byte $37             ; $8695 - unknown opcode
-    SED                      ; $8696: F8
-    BEQ $86A9                ; $8697: F0 10
-    CLC                      ; $8699: 18
-    SED                      ; $869A: F8
-    BRK                      ; $869B: 00
-    CPY #$00                 ; $869C: C0 00
-    .byte $EF             ; $869E - unknown opcode
-    .byte $D7             ; $869F - unknown opcode
-    .byte $3F             ; $86A0 - unknown opcode
-    LDA $DFDE,Y              ; $86A1: B9 DE DF
-    .byte $EF             ; $86A4 - unknown opcode
-    SBC ($EC,X)              ; $86A5: E1 EC
-    BNE $86E1                ; $86A7: D0 38
+	SED					  ; $867C: F8
+	SED					  ; $867D: F8
+	CPX #$F8				 ; $867E: E0 F8
+	.byte $3F			 ; $8680 - unknown opcode
+	.byte $5F			 ; $8681 - unknown opcode
+	.byte $9F			 ; $8682 - unknown opcode
+	.byte $DF			 ; $8683 - unknown opcode
+	INC $7FEE				; $8684: EE EE 7F
+	.byte $47			 ; $8687 - unknown opcode
+	BRK					  ; $8688: 00
+	BRK					  ; $8689: 00
+	.byte $1F			 ; $868A - unknown opcode
+	BRK					  ; $868B: 00
+	ASL $070E				; $868C: 0E 0E 07
+	.byte $03			 ; $868F - unknown opcode
+	SBC $FBFC,X			  ; $8690: FD FC FB
+	.byte $EB			 ; $8693 - unknown opcode
+	.byte $D7			 ; $8694 - unknown opcode
+	.byte $37			 ; $8695 - unknown opcode
+	SED					  ; $8696: F8
+	BEQ $86A9				; $8697: F0 10
+	CLC					  ; $8699: 18
+	SED					  ; $869A: F8
+	BRK					  ; $869B: 00
+	CPY #$00				 ; $869C: C0 00
+	.byte $EF			 ; $869E - unknown opcode
+	.byte $D7			 ; $869F - unknown opcode
+	.byte $3F			 ; $86A0 - unknown opcode
+	LDA $DFDE,Y			  ; $86A1: B9 DE DF
+	.byte $EF			 ; $86A4 - unknown opcode
+	SBC ($EC,X)			  ; $86A5: E1 EC
+	BNE $86E1				; $86A7: D0 38
 
 loc_86A9:
-    CLV                      ; $86A9: B8
-    BNE $867C                ; $86AA: D0 D0
-    INX                      ; $86AC: E8
-    .byte $E2             ; $86AD - unknown opcode
-    .byte $FB             ; $86AE - unknown opcode
-    SBC $E6FE,X              ; $86AF: FD FE E6
-    ORA $FFFF,X              ; $86B2: 1D FF FF
-    .byte $E7             ; $86B5 - unknown opcode
-    .byte $0B             ; $86B6 - unknown opcode
-    ORA $06                  ; $86B7: 05 06
-    ASL $01                  ; $86B9: 06 01
-    .byte $03             ; $86BB - unknown opcode
-    .byte $07             ; $86BC - unknown opcode
-    .byte $17             ; $86BD - unknown opcode
-    .byte $DF             ; $86BE - unknown opcode
-    .byte $BF             ; $86BF - unknown opcode
-    .byte $67             ; $86C0 - unknown opcode
-    .byte $67             ; $86C1 - unknown opcode
-    CLV                      ; $86C2: B8
-    CLD                      ; $86C3: D8
-    .byte $E7             ; $86C4 - unknown opcode
-    INX                      ; $86C5: E8
-    .byte $D7             ; $86C6 - unknown opcode
-    .byte $A7             ; $86C7 - unknown opcode
-    .byte $7F             ; $86C8 - unknown opcode
-    .byte $7F             ; $86C9 - unknown opcode
-    CLV                      ; $86CA: B8
-    .byte $DF             ; $86CB - unknown opcode
-    CPX #$E8                 ; $86CC: E0 E8
+	CLV					  ; $86A9: B8
+	BNE $867C				; $86AA: D0 D0
+	INX					  ; $86AC: E8
+	.byte $E2			 ; $86AD - unknown opcode
+	.byte $FB			 ; $86AE - unknown opcode
+	SBC $E6FE,X			  ; $86AF: FD FE E6
+	ORA $FFFF,X			  ; $86B2: 1D FF FF
+	.byte $E7			 ; $86B5 - unknown opcode
+	.byte $0B			 ; $86B6 - unknown opcode
+	ORA $06				  ; $86B7: 05 06
+	ASL $01				  ; $86B9: 06 01
+	.byte $03			 ; $86BB - unknown opcode
+	.byte $07			 ; $86BC - unknown opcode
+	.byte $17			 ; $86BD - unknown opcode
+	.byte $DF			 ; $86BE - unknown opcode
+	.byte $BF			 ; $86BF - unknown opcode
+	.byte $67			 ; $86C0 - unknown opcode
+	.byte $67			 ; $86C1 - unknown opcode
+	CLV					  ; $86C2: B8
+	CLD					  ; $86C3: D8
+	.byte $E7			 ; $86C4 - unknown opcode
+	INX					  ; $86C5: E8
+	.byte $D7			 ; $86C6 - unknown opcode
+	.byte $A7			 ; $86C7 - unknown opcode
+	.byte $7F			 ; $86C8 - unknown opcode
+	.byte $7F			 ; $86C9 - unknown opcode
+	CLV					  ; $86CA: B8
+	.byte $DF			 ; $86CB - unknown opcode
+	CPX #$E8				 ; $86CC: E0 E8
 
 loc_86CE:
-    .byte $FC             ; $86CE - unknown opcode
-    INC $3EFE,X              ; $86CF: FE FE 3E
-    ORA $03                  ; $86D2: 05 03
-    .byte $07             ; $86D4 - unknown opcode
-    .byte $7F             ; $86D5 - unknown opcode
-    .byte $FB             ; $86D6 - unknown opcode
-    SBC $3EF8,Y              ; $86D7: F9 F8 3E
-    CMP $FB                  ; $86DA: C5 FB
-    .byte $7F             ; $86DC - unknown opcode
-    .byte $07             ; $86DD - unknown opcode
-    .byte $EF             ; $86DE - unknown opcode
-    .byte $DF             ; $86DF - unknown opcode
-    .byte $3F             ; $86E0 - unknown opcode
+	.byte $FC			 ; $86CE - unknown opcode
+	INC $3EFE,X			  ; $86CF: FE FE 3E
+	ORA $03				  ; $86D2: 05 03
+	.byte $07			 ; $86D4 - unknown opcode
+	.byte $7F			 ; $86D5 - unknown opcode
+	.byte $FB			 ; $86D6 - unknown opcode
+	SBC $3EF8,Y			  ; $86D7: F9 F8 3E
+	CMP $FB				  ; $86DA: C5 FB
+	.byte $7F			 ; $86DC - unknown opcode
+	.byte $07			 ; $86DD - unknown opcode
+	.byte $EF			 ; $86DE - unknown opcode
+	.byte $DF			 ; $86DF - unknown opcode
+	.byte $3F			 ; $86E0 - unknown opcode
 
 loc_86E1:
-    .byte $A7             ; $86E1 - unknown opcode
-    SED                      ; $86E2: F8
-    .byte $FF             ; $86E3 - unknown opcode
-    .byte $FF             ; $86E4 - unknown opcode
-    .byte $E7             ; $86E5 - unknown opcode
-    CPX #$C0                 ; $86E6: E0 C0
-    JSR $C0A0                ; $86E8: 20 A0 C0
-    CPY #$E0                 ; $86EB: C0 E0
-    INX                      ; $86ED: E8
-    .byte $DB             ; $86EE - unknown opcode
-    SBC $9DFE,X              ; $86EF: FD FE 9D
-    .byte $7B             ; $86F2 - unknown opcode
-    .byte $F7             ; $86F3 - unknown opcode
-    .byte $F7             ; $86F4 - unknown opcode
-    .byte $B7             ; $86F5 - unknown opcode
-    .byte $1B             ; $86F6 - unknown opcode
-    ORA $1D1E,X              ; $86F7: 1D 1E 1D
-    .byte $0B             ; $86FA - unknown opcode
-    .byte $07             ; $86FB - unknown opcode
-    .byte $17             ; $86FC - unknown opcode
-    .byte $77             ; $86FD - unknown opcode
-    .byte $3F             ; $86FE - unknown opcode
-    .byte $7F             ; $86FF - unknown opcode
-    .byte $7F             ; $8700 - unknown opcode
-    .byte $7C             ; $8701 - unknown opcode
-    LDY #$C0                 ; $8702: A0 C0
-    CPX #$FE                 ; $8704: E0 FE
-    .byte $DF             ; $8706 - unknown opcode
-    .byte $9F             ; $8707 - unknown opcode
-    .byte $1F             ; $8708 - unknown opcode
-    .byte $7C             ; $8709 - unknown opcode
-    .byte $A3             ; $870A - unknown opcode
-    .byte $DF             ; $870B - unknown opcode
-    INC $F7E0,X              ; $870C: FE E0 F7
-    .byte $FB             ; $870F - unknown opcode
-    SBC $E4                  ; $8710: E5 E4
-    ORA $F71B,X              ; $8712: 1D 1B F7
-    .byte $07             ; $8715 - unknown opcode
-    .byte $E7             ; $8716 - unknown opcode
-    .byte $E3             ; $8717 - unknown opcode
-    SBC $1DFC,X              ; $8718: FD FC 1D
-    .byte $FB             ; $871B - unknown opcode
-    .byte $17             ; $871C - unknown opcode
-    .byte $07             ; $871D - unknown opcode
-    CLV                      ; $871E: B8
-    ASL $01                  ; $871F: 06 01
-    .byte $02             ; $8721 - unknown opcode
-    STY $73                  ; $8722: 84 73
-    CPY $02                  ; $8724: C4 02
-    .byte $FF             ; $8726 - unknown opcode
-    .byte $FF             ; $8727 - unknown opcode
-    .byte $FF             ; $8728 - unknown opcode
-    .byte $FF             ; $8729 - unknown opcode
-    .byte $FF             ; $872A - unknown opcode
-    .byte $FF             ; $872B - unknown opcode
-    .byte $FF             ; $872C - unknown opcode
-    .byte $FF             ; $872D - unknown opcode
-    ORA ($02,X)              ; $872E: 01 02
-    STY $8E72                ; $8730: 8C 72 8E
-    ORA ($00,X)              ; $8733: 01 00
-    ORA ($FF,X)              ; $8735: 01 FF
-    .byte $FF             ; $8737 - unknown opcode
-    .byte $FF             ; $8738 - unknown opcode
-    .byte $FF             ; $8739 - unknown opcode
-    .byte $FF             ; $873A - unknown opcode
-    .byte $FF             ; $873B - unknown opcode
-    .byte $FF             ; $873C - unknown opcode
-    .byte $FF             ; $873D - unknown opcode
-    .byte $03             ; $873E - unknown opcode
-    STY $78                  ; $873F: 84 78
-    STY $03                  ; $8741: 84 03
-    .byte $07             ; $8743 - unknown opcode
-    .byte $07             ; $8744 - unknown opcode
-    .byte $0B             ; $8745 - unknown opcode
-    .byte $FF             ; $8746 - unknown opcode
-    .byte $FF             ; $8747 - unknown opcode
-    .byte $FF             ; $8748 - unknown opcode
-    .byte $FF             ; $8749 - unknown opcode
-    .byte $FC             ; $874A - unknown opcode
-    .byte $FA             ; $874B - unknown opcode
-    .byte $FB             ; $874C - unknown opcode
-    SBC $B3,X                ; $874D: F5 B3
-    .byte $0C             ; $874F - unknown opcode
-    .byte $02             ; $8750 - unknown opcode
-    ORA ($01,X)              ; $8751: 01 01
-    INC $98                  ; $8753: E6 98
-    LSR $FF                  ; $8755: 46 FF
-    .byte $FF             ; $8757 - unknown opcode
-    .byte $FF             ; $8758 - unknown opcode
-    .byte $FF             ; $8759 - unknown opcode
-    .byte $FF             ; $875A - unknown opcode
-    .byte $7F             ; $875B - unknown opcode
-    .byte $7F             ; $875C - unknown opcode
-    .byte $BF             ; $875D - unknown opcode
-    CLV                      ; $875E: B8
-    ASL $01                  ; $875F: 06 01
-    BRK                      ; $8761: 00
-    .byte $83             ; $8762 - unknown opcode
-    .byte $77             ; $8763 - unknown opcode
-    .byte $CF             ; $8764 - unknown opcode
-    .byte $0F             ; $8765 - unknown opcode
-    .byte $FF             ; $8766 - unknown opcode
-    .byte $FF             ; $8767 - unknown opcode
-    .byte $FF             ; $8768 - unknown opcode
-    .byte $FF             ; $8769 - unknown opcode
-    .byte $FC             ; $876A - unknown opcode
-    SBC $F7F3,Y              ; $876B: F9 F3 F7
-    ORA ($02,X)              ; $876E: 01 02
-    STY $CE32                ; $8770: 8C 32 CE
-    SBC ($F0,X)              ; $8773: E1 F0
-    SBC ($FF),Y              ; $8775: F1 FF
-    .byte $FF             ; $8777 - unknown opcode
-    .byte $FF             ; $8778 - unknown opcode
-    .byte $FF             ; $8779 - unknown opcode
-    .byte $3F             ; $877A - unknown opcode
-    .byte $9F             ; $877B - unknown opcode
-    .byte $8F             ; $877C - unknown opcode
-    .byte $4F             ; $877D - unknown opcode
-    .byte $0F             ; $877E - unknown opcode
-    .byte $87             ; $877F - unknown opcode
-    ADC $85                  ; $8780: 65 85
-    ORA ($11,X)              ; $8782: 01 11
-    ORA $03                  ; $8784: 05 03
-    SBC $F9,X                ; $8786: F5 F9
-    .byte $FA             ; $8788 - unknown opcode
-    .byte $FA             ; $8789 - unknown opcode
-    INC $FAEE,X              ; $878A: FE EE FA
-    .byte $FF             ; $878D - unknown opcode
-    .byte $F3             ; $878E - unknown opcode
-    CPX $A2                  ; $878F: E4 A2
-    STA ($81,X)              ; $8791: 81 81
-    LDX $A498                ; $8793: AE 98 A4
-    .byte $6F             ; $8796 - unknown opcode
-    .byte $1F             ; $8797 - unknown opcode
-    .byte $5F             ; $8798 - unknown opcode
-    .byte $7F             ; $8799 - unknown opcode
-    .byte $7F             ; $879A - unknown opcode
-    .byte $77             ; $879B - unknown opcode
-    .byte $7F             ; $879C - unknown opcode
-    .byte $5F             ; $879D - unknown opcode
-    CLV                      ; $879E: B8
-    .byte $04             ; $879F - unknown opcode
-    .byte $03             ; $87A0 - unknown opcode
-    .byte $07             ; $87A1 - unknown opcode
-    .byte $8F             ; $87A2 - unknown opcode
-    .byte $6B             ; $87A3 - unknown opcode
-    .byte $CB             ; $87A4 - unknown opcode
-    ASL $FF,X                ; $87A5: 16 FF
-    .byte $FF             ; $87A7 - unknown opcode
-    .byte $FC             ; $87A8 - unknown opcode
-    SBC $F5F2,Y              ; $87A9: F9 F2 F5
-    .byte $F7             ; $87AC - unknown opcode
-    SBC $0201                ; $87AD: ED 01 02
-    JMP ($FAF2)              ; $87B0: 6C F2 FA
-    SBC #$E8                 ; $87B3: E9 E8
-    LDA $FF,X                ; $87B5: B5 FF
-    .byte $FF             ; $87B7 - unknown opcode
-    .byte $9F             ; $87B8 - unknown opcode
-    .byte $4F             ; $87B9 - unknown opcode
-    .byte $A7             ; $87BA - unknown opcode
-    .byte $57             ; $87BB - unknown opcode
-    .byte $77             ; $87BC - unknown opcode
-    .byte $5B             ; $87BD - unknown opcode
-    EOR $9D,X                ; $87BE: 55 9D
-    .byte $3F             ; $87C0 - unknown opcode
-    .byte $BF             ; $87C1 - unknown opcode
-    .byte $17             ; $87C2 - unknown opcode
-    .byte $87             ; $87C3 - unknown opcode
-    .byte $22             ; $87C4 - unknown opcode
-    .byte $0B             ; $87C5 - unknown opcode
-    .byte $AB             ; $87C6 - unknown opcode
-    .byte $EB             ; $87C7 - unknown opcode
-    .byte $D7             ; $87C8 - unknown opcode
-    .byte $D7             ; $87C9 - unknown opcode
-    NOP                      ; $87CA: EA
-    .byte $7A             ; $87CB - unknown opcode
-    CMP $55F7,X              ; $87CC: DD F7 55
-    .byte $DC             ; $87CF - unknown opcode
-    INC $75FE,X              ; $87D0: FE FE 75
-    ROR $28,X                ; $87D3: 76 28
-    .byte $0F             ; $87D5 - unknown opcode
-    NOP                      ; $87D6: EA
-    .byte $6B             ; $87D7 - unknown opcode
-    SBC $75,X                ; $87D8: F5 75
-    .byte $AB             ; $87DA - unknown opcode
-    .byte $AF             ; $87DB - unknown opcode
-    .byte $DF             ; $87DC - unknown opcode
-    INC $B8,X                ; $87DD: F6 B8
-    ASL $01                  ; $87DF: 06 01
-    .byte $02             ; $87E1 - unknown opcode
-    STY $72                  ; $87E2: 84 72
-    CPY $03                  ; $87E4: C4 03
-    .byte $FF             ; $87E6 - unknown opcode
-    .byte $FF             ; $87E7 - unknown opcode
-    .byte $FF             ; $87E8 - unknown opcode
-    .byte $FF             ; $87E9 - unknown opcode
-    .byte $FF             ; $87EA - unknown opcode
-    .byte $FF             ; $87EB - unknown opcode
-    .byte $FF             ; $87EC - unknown opcode
-    .byte $FC             ; $87ED - unknown opcode
-    ORA ($02,X)              ; $87EE: 01 02
-    STY $8E72                ; $87F0: 8C 72 8E
-    ORA ($00,X)              ; $87F3: 01 00
-    CMP ($FF,X)              ; $87F5: C1 FF
-    .byte $FF             ; $87F7 - unknown opcode
-    .byte $FF             ; $87F8 - unknown opcode
-    .byte $FF             ; $87F9 - unknown opcode
-    .byte $FF             ; $87FA - unknown opcode
-    .byte $FF             ; $87FB - unknown opcode
-    .byte $FF             ; $87FC - unknown opcode
-    .byte $3F             ; $87FD - unknown opcode
-    .byte $07             ; $87FE - unknown opcode
-    .byte $8F             ; $87FF - unknown opcode
-    .byte $4F             ; $8800 - unknown opcode
-    .byte $A7             ; $8801 - unknown opcode
-    EOR $41                  ; $8802: 45 41
-    LDA ($19,X)              ; $8804: A1 19
-    .byte $FB             ; $8806 - unknown opcode
-    .byte $F7             ; $8807 - unknown opcode
-    .byte $F3             ; $8808 - unknown opcode
-    CMP $BEBA,Y              ; $8809: D9 BA BE
-    LSR $E3E6,X              ; $880C: 5E E6 E3
-    BEQ $8805                ; $880F: F0 F4
-    .byte $A3             ; $8811 - unknown opcode
-    LDA ($A2,X)              ; $8812: A1 A2
-    STY $5A                  ; $8814: 84 5A
-    .byte $9F             ; $8816 - unknown opcode
-    .byte $CF             ; $8817 - unknown opcode
-    .byte $8B             ; $8818 - unknown opcode
-    EOR $7D5F,X              ; $8819: 5D 5F 7D
-    .byte $7B             ; $881C - unknown opcode
-    LDA $B8                  ; $881D: A5 B8
-    .byte $04             ; $881F - unknown opcode
-    .byte $03             ; $8820 - unknown opcode
-    .byte $07             ; $8821 - unknown opcode
-    .byte $8F             ; $8822 - unknown opcode
-    .byte $6B             ; $8823 - unknown opcode
-    .byte $CB             ; $8824 - unknown opcode
-    ASL $FF,X                ; $8825: 16 FF
-    .byte $FF             ; $8827 - unknown opcode
-    .byte $FC             ; $8828 - unknown opcode
-    SBC $F5F2,Y              ; $8829: F9 F2 F5
-    .byte $F7             ; $882C - unknown opcode
-    SBC $0201                ; $882D: ED 01 02
-    JMP ($FAF2)              ; $8830: 6C F2 FA
-    SBC #$E8                 ; $8833: E9 E8
-    LDA $FF,X                ; $8835: B5 FF
-    .byte $FF             ; $8837 - unknown opcode
-    .byte $9F             ; $8838 - unknown opcode
-    .byte $4F             ; $8839 - unknown opcode
-    .byte $A7             ; $883A - unknown opcode
-    .byte $57             ; $883B - unknown opcode
-    .byte $77             ; $883C - unknown opcode
-    .byte $5B             ; $883D - unknown opcode
-    EOR $9D,X                ; $883E: 55 9D
-    .byte $3F             ; $8840 - unknown opcode
-    .byte $BF             ; $8841 - unknown opcode
-    .byte $17             ; $8842 - unknown opcode
-    .byte $87             ; $8843 - unknown opcode
-    .byte $22             ; $8844 - unknown opcode
-    .byte $0B             ; $8845 - unknown opcode
-    .byte $AB             ; $8846 - unknown opcode
-    .byte $EB             ; $8847 - unknown opcode
-    .byte $D7             ; $8848 - unknown opcode
-    .byte $D7             ; $8849 - unknown opcode
-    NOP                      ; $884A: EA
-    .byte $7A             ; $884B - unknown opcode
-    CMP $55F7,X              ; $884C: DD F7 55
-    .byte $DC             ; $884F - unknown opcode
-    INC $75FE,X              ; $8850: FE FE 75
-    ROR $28,X                ; $8853: 76 28
-    .byte $0F             ; $8855 - unknown opcode
-    NOP                      ; $8856: EA
-    .byte $6B             ; $8857 - unknown opcode
-    SBC $75,X                ; $8858: F5 75
-    .byte $AB             ; $885A - unknown opcode
-    .byte $AF             ; $885B - unknown opcode
-    .byte $DF             ; $885C - unknown opcode
-    INC $00,X                ; $885D: F6 00
-    ASL $4B                  ; $885F: 06 4B
-    .byte $1F             ; $8861 - unknown opcode
-    ASL $BF,X                ; $8862: 16 BF
-    AND $FF1F,X              ; $8864: 3D 1F FF
-    SBC $E6B4,Y              ; $8867: F9 B4 E6
-    SBC $D353                ; $886A: ED 53 D3
-    .byte $EF             ; $886D - unknown opcode
-    BRK                      ; $886E: 00
-    BMI $88CA                ; $886F: 30 59
-    .byte $FC             ; $8871 - unknown opcode
-    LDY $DE,X                ; $8872: B4 DE
-    INC $FFFC,X              ; $8874: FE FC FF
-    .byte $CF             ; $8877 - unknown opcode
-    LDX $B3                  ; $8878: A6 B3
-    .byte $DB             ; $887A - unknown opcode
-    SBC $E5                  ; $887B: E5 E5
-    .byte $FB             ; $887D - unknown opcode
-    .byte $3F             ; $887E - unknown opcode
-    .byte $BF             ; $887F - unknown opcode
-    AND $1519,Y              ; $8880: 39 19 15
-    STX $5C,Y                ; $8883: 96 5C
-    .byte $9B             ; $8885 - unknown opcode
-    CMP $D651,Y              ; $8886: D9 51 D6
-    INC $EA                  ; $8889: E6 EA
-    ADC $64B7                ; $888B: 6D B7 64
-    LDX $CEFE,Y              ; $888E: BE FE CE
-    CPY $B4D4                ; $8891: CC D4 B4
-    STA $CD6C,X              ; $8894: 9D 6C CD
-    CMP $B5                  ; $8897: C5 B5
-    .byte $B3             ; $8899 - unknown opcode
-    .byte $AB             ; $889A - unknown opcode
-    .byte $5B             ; $889B - unknown opcode
-    ROR $93,X                ; $889C: 76 93
-    ASL $1F1F                ; $889E: 0E 1F 1F
-    .byte $3F             ; $88A1 - unknown opcode
-    .byte $3F             ; $88A2 - unknown opcode
-    .byte $3F             ; $88A3 - unknown opcode
-    .byte $7F             ; $88A4 - unknown opcode
-    .byte $7F             ; $88A5 - unknown opcode
-    SBC ($E6),Y              ; $88A6: F1 E6
-    .byte $E2             ; $88A8 - unknown opcode
-    CMP $D1D3                ; $88A9: CD D3 D1
-    LDX $AE                  ; $88AC: A6 AE
-    SEC                      ; $88AE: 38
-    .byte $7C             ; $88AF - unknown opcode
-    .byte $FC             ; $88B0 - unknown opcode
-    INC $FEFE,X              ; $88B1: FE FE FE
-    .byte $FF             ; $88B4 - unknown opcode
-    .byte $FF             ; $88B5 - unknown opcode
-    .byte $C7             ; $88B6 - unknown opcode
-    .byte $B3             ; $88B7 - unknown opcode
-    .byte $A3             ; $88B8 - unknown opcode
-    EOR $C5E5,Y              ; $88B9: 59 E5 C5
-    .byte $B2             ; $88BC - unknown opcode
-    TSX                      ; $88BD: BA
-    .byte $7F             ; $88BE - unknown opcode
-    .byte $7F             ; $88BF - unknown opcode
-    .byte $6F             ; $88C0 - unknown opcode
-    .byte $7B             ; $88C1 - unknown opcode
-    .byte $77             ; $88C2 - unknown opcode
-    .byte $7F             ; $88C3 - unknown opcode
-    ROL $95AF,X              ; $88C4: 3E AF 95
-    STA ($94),Y              ; $88C7: 91 94
-    LDY $A6AA                ; $88C9: AC AA A6
-    .byte $C7             ; $88CC - unknown opcode
-    ADC ($FF),Y              ; $88CD: 71 FF
-    .byte $FF             ; $88CF - unknown opcode
-    .byte $FB             ; $88D0 - unknown opcode
-    .byte $EF             ; $88D1 - unknown opcode
-    .byte $F7             ; $88D2 - unknown opcode
-    .byte $FF             ; $88D3 - unknown opcode
-    LDX $54FA,Y              ; $88D4: BE FA 54
-    CPY $94                  ; $88D7: C4 94
-    TXS                      ; $88D9: 9A
-    ROL                      ; $88DA: 2A
-    .byte $3A             ; $88DB - unknown opcode
-    ADC ($47),Y              ; $88DC: 71 47
-    CLV                      ; $88DE: B8
-    ASL $01                  ; $88DF: 06 01
-    .byte $02             ; $88E1 - unknown opcode
-    STY $72                  ; $88E2: 84 72
-    CMP $03                  ; $88E4: C5 03
-    .byte $FF             ; $88E6 - unknown opcode
-    .byte $FF             ; $88E7 - unknown opcode
-    .byte $FF             ; $88E8 - unknown opcode
-    .byte $FF             ; $88E9 - unknown opcode
-    .byte $FF             ; $88EA - unknown opcode
-    .byte $FF             ; $88EB - unknown opcode
-    INC $01FC,X              ; $88EC: FE FC 01
-    .byte $02             ; $88EF - unknown opcode
-    STY $8E72                ; $88F0: 8C 72 8E
-    ORA ($80,X)              ; $88F3: 01 80
-    CMP ($FF,X)              ; $88F5: C1 FF
-    .byte $FF             ; $88F7 - unknown opcode
-    .byte $FF             ; $88F8 - unknown opcode
-    .byte $FF             ; $88F9 - unknown opcode
-    .byte $FF             ; $88FA - unknown opcode
-    .byte $FF             ; $88FB - unknown opcode
-    .byte $7F             ; $88FC - unknown opcode
-    .byte $3F             ; $88FD - unknown opcode
-    .byte $07             ; $88FE - unknown opcode
-    .byte $87             ; $88FF - unknown opcode
-    .byte $6B             ; $8900 - unknown opcode
-    STA $160D                ; $8901: 8D 0D 16
-    ORA ($07,X)              ; $8904: 01 07
-    .byte $FB             ; $8906 - unknown opcode
-    SBC $F6F5,Y              ; $8907: F9 F5 F6
-    INC $EB,X                ; $890A: F6 EB
-    INC $E3FB,X              ; $890C: FE FB E3
-    CPX $D1F2                ; $890F: EC F2 D1
-    ADC ($AE),Y              ; $8912: 71 AE
-    CLI                      ; $8914: 58
-    ASL $9F,X                ; $8915: 16 9F
-    .byte $5F             ; $8917 - unknown opcode
-    .byte $4F             ; $8918 - unknown opcode
-    .byte $AF             ; $8919 - unknown opcode
-    .byte $EF             ; $891A - unknown opcode
-    .byte $D7             ; $891B - unknown opcode
-    .byte $BF             ; $891C - unknown opcode
-    .byte $EF             ; $891D - unknown opcode
-    AND ($0F,X)              ; $891E: 21 0F
-    .byte $9F             ; $8920 - unknown opcode
-    AND $BD9E,X              ; $8921: 3D 9E BD
-    .byte $9E             ; $8924 - unknown opcode
-    DEC $743E                ; $8925: CE 3E 74
-    .byte $EB             ; $8928 - unknown opcode
-    .byte $C7             ; $8929 - unknown opcode
-    .byte $EB             ; $892A - unknown opcode
-    DEC $6B                  ; $892B: C6 6B
-    .byte $74             ; $892D - unknown opcode
-    .byte $F4             ; $892E - unknown opcode
-    .byte $80             ; $892F - unknown opcode
-    AND #$7C                 ; $8930: 29 7C
-    INC $D6FE,X              ; $8932: FE FE D6
-    .byte $2F             ; $8935 - unknown opcode
-    .byte $3C             ; $8936 - unknown opcode
-    INC $83D7,X              ; $8937: FE D7 83
-    EOR $AB,X                ; $893A: 55 AB
-    ADC $F45C,X              ; $893C: 7D 5C F4
-    .byte $6B             ; $893F - unknown opcode
-    .byte $7F             ; $8940 - unknown opcode
-    .byte $7F             ; $8941 - unknown opcode
-    ROL $0194,X              ; $8942: 3E 94 01
-    .byte $27             ; $8945 - unknown opcode
-    .byte $3A             ; $8946 - unknown opcode
-    LDX $AAD5,Y              ; $8947: BE D5 AA
-    CMP ($EB,X)              ; $894A: C1 EB
-    .byte $7F             ; $894C - unknown opcode
-    ROL $7973,X              ; $894D: 3E 73 79
-    LDA $BC79,X              ; $8950: BD 79 BC
-    SBC $84F0,Y              ; $8953: F9 F0 84
-    ROL $63D6                ; $8956: 2E D6 63
-    .byte $D7             ; $8959 - unknown opcode
-    .byte $E3             ; $895A - unknown opcode
-    .byte $D7             ; $895B - unknown opcode
-    ROL $217C                ; $895C: 2E 7C 21
-    .byte $0F             ; $895F - unknown opcode
-    .byte $9F             ; $8960 - unknown opcode
-    AND $BD9E,X              ; $8961: 3D 9E BD
-    .byte $9E             ; $8964 - unknown opcode
-    DEC $743E                ; $8965: CE 3E 74
-    .byte $EB             ; $8968 - unknown opcode
-    .byte $C7             ; $8969 - unknown opcode
-    .byte $EB             ; $896A - unknown opcode
-    DEC $6B                  ; $896B: C6 6B
-    .byte $74             ; $896D - unknown opcode
-    .byte $F4             ; $896E - unknown opcode
-    .byte $80             ; $896F - unknown opcode
-    AND #$7C                 ; $8970: 29 7C
-    INC $D6FE,X              ; $8972: FE FE D6
-    .byte $2F             ; $8975 - unknown opcode
-    .byte $3C             ; $8976 - unknown opcode
-    INC $83D7,X              ; $8977: FE D7 83
-    EOR $AB,X                ; $897A: 55 AB
-    ADC $F45C,X              ; $897C: 7D 5C F4
-    .byte $6B             ; $897F - unknown opcode
-    .byte $7F             ; $8980 - unknown opcode
-    .byte $7F             ; $8981 - unknown opcode
-    ROL $0194,X              ; $8982: 3E 94 01
-    .byte $27             ; $8985 - unknown opcode
-    .byte $3A             ; $8986 - unknown opcode
-    LDX $AAD5,Y              ; $8987: BE D5 AA
-    CMP ($EB,X)              ; $898A: C1 EB
-    .byte $7F             ; $898C - unknown opcode
-    ROL $7973,X              ; $898D: 3E 73 79
-    LDA $BC79,X              ; $8990: BD 79 BC
-    SBC $84F0,Y              ; $8993: F9 F0 84
-    ROL $63D6                ; $8996: 2E D6 63
-    .byte $D7             ; $8999 - unknown opcode
-    .byte $E3             ; $899A - unknown opcode
-    .byte $D7             ; $899B - unknown opcode
-    ROL $1D7C                ; $899C: 2E 7C 1D
-    .byte $73             ; $899F - unknown opcode
-    .byte $67             ; $89A0 - unknown opcode
-    .byte $C7             ; $89A1 - unknown opcode
-    .byte $EB             ; $89A2 - unknown opcode
-    DEC $E3                  ; $89A3: C6 E3
-    .byte $F4             ; $89A5 - unknown opcode
-    ROL $F97C,X              ; $89A6: 3E 7C F9
-    SBC $F975,Y              ; $89A9: F9 75 F9
-    .byte $7C             ; $89AC - unknown opcode
-    SEI                      ; $89AD: 78
-    SED                      ; $89AE: F8
-    INC $83D6,X              ; $89AF: FE D6 83
-    ORA ($AD),Y              ; $89B2: 11 AD
-    ROR $2C5F,X              ; $89B4: 7E 5F 2C
-    INC $FFFF,X              ; $89B7: FE FF FF
-    .byte $EF             ; $89BA - unknown opcode
-    .byte $53             ; $89BB - unknown opcode
-    ORA ($3C,X)              ; $89BC: 01 3C
-    .byte $FA             ; $89BE - unknown opcode
-    ROR $88B5,X              ; $89BF: 7E B5 88
-    CMP ($6B,X)              ; $89C2: C1 6B
-    .byte $7F             ; $89C4 - unknown opcode
-    .byte $1F             ; $89C5 - unknown opcode
-    .byte $3C             ; $89C6 - unknown opcode
-    .byte $80             ; $89C7 - unknown opcode
-    DEX                      ; $89C8: CA
-    .byte $F7             ; $89C9 - unknown opcode
-    .byte $FF             ; $89CA - unknown opcode
-    .byte $FF             ; $89CB - unknown opcode
-    .byte $7F             ; $89CC - unknown opcode
-    .byte $34             ; $89CD - unknown opcode
-    .byte $2F             ; $89CE - unknown opcode
-    .byte $C7             ; $89CF - unknown opcode
-    .byte $63             ; $89D0 - unknown opcode
-    .byte $D7             ; $89D1 - unknown opcode
-    .byte $E3             ; $89D2 - unknown opcode
-    INC $CE                  ; $89D3: E6 CE
-    CLV                      ; $89D5: B8
-    ASL $9F3E,X              ; $89D6: 1E 3E 9F
-    LDX $9F9F                ; $89D9: AE 9F 9F
-    ROL $1D7C,X              ; $89DC: 3E 7C 1D
-    .byte $73             ; $89DF - unknown opcode
-    .byte $67             ; $89E0 - unknown opcode
-    .byte $C7             ; $89E1 - unknown opcode
-    .byte $EB             ; $89E2 - unknown opcode
-    DEC $E3                  ; $89E3: C6 E3
-    .byte $F4             ; $89E5 - unknown opcode
-    ROL $F97C,X              ; $89E6: 3E 7C F9
-    SBC $F975,Y              ; $89E9: F9 75 F9
-    .byte $7C             ; $89EC - unknown opcode
-    SEI                      ; $89ED: 78
-    SED                      ; $89EE: F8
-    INC $83D6,X              ; $89EF: FE D6 83
-    ORA ($AD),Y              ; $89F2: 11 AD
-    ROR $2C5F,X              ; $89F4: 7E 5F 2C
-    INC $FFFF,X              ; $89F7: FE FF FF
-    .byte $EF             ; $89FA - unknown opcode
-    .byte $53             ; $89FB - unknown opcode
-    ORA ($3C,X)              ; $89FC: 01 3C
-    .byte $FA             ; $89FE - unknown opcode
-    ROR $88B5,X              ; $89FF: 7E B5 88
-    CMP ($6B,X)              ; $8A02: C1 6B
-    .byte $7F             ; $8A04 - unknown opcode
-    .byte $1F             ; $8A05 - unknown opcode
-    .byte $3C             ; $8A06 - unknown opcode
-    .byte $80             ; $8A07 - unknown opcode
-    DEX                      ; $8A08: CA
-    .byte $F7             ; $8A09 - unknown opcode
-    .byte $FF             ; $8A0A - unknown opcode
-    .byte $FF             ; $8A0B - unknown opcode
-    .byte $7F             ; $8A0C - unknown opcode
-    .byte $34             ; $8A0D - unknown opcode
-    .byte $2F             ; $8A0E - unknown opcode
-    .byte $C7             ; $8A0F - unknown opcode
-    .byte $63             ; $8A10 - unknown opcode
-    .byte $D7             ; $8A11 - unknown opcode
-    .byte $E3             ; $8A12 - unknown opcode
-    INC $CE                  ; $8A13: E6 CE
-    CLV                      ; $8A15: B8
-    ASL $9F3E,X              ; $8A16: 1E 3E 9F
-    LDX $9F9F                ; $8A19: AE 9F 9F
-    ROL $1C7C,X              ; $8A1C: 3E 7C 1C
-    .byte $73             ; $8A1F - unknown opcode
-    .byte $6B             ; $8A20 - unknown opcode
-    .byte $C7             ; $8A21 - unknown opcode
-    .byte $CB             ; $8A22 - unknown opcode
-    .byte $C7             ; $8A23 - unknown opcode
-    NOP                      ; $8A24: EA
-    INC $2F,X                ; $8A25: F6 2F
-    .byte $3C             ; $8A27 - unknown opcode
-    .byte $FC             ; $8A28 - unknown opcode
-    ADC $7A75,Y              ; $8A29: 79 75 7A
-    .byte $77             ; $8A2C - unknown opcode
-    .byte $3C             ; $8A2D - unknown opcode
-    SED                      ; $8A2E: F8
-    INC $83C6,X              ; $8A2F: FE C6 83
-    EOR $A9,X                ; $8A32: 55 A9
-    INC $043E,X              ; $8A34: FE 3E 04
-    .byte $7C             ; $8A37 - unknown opcode
-    .byte $FF             ; $8A38 - unknown opcode
-    INC $D7AF,X              ; $8A39: FE AF D7
-    ADC ($59,X)              ; $8A3C: 61 59
-    .byte $7C             ; $8A3E - unknown opcode
-    .byte $7F             ; $8A3F - unknown opcode
-    STA $AA,X                ; $8A40: 95 AA
-    CMP ($63,X)              ; $8A42: C1 63
-    .byte $7F             ; $8A44 - unknown opcode
-    .byte $1F             ; $8A45 - unknown opcode
-    TXS                      ; $8A46: 9A
-    STX $EB                  ; $8A47: 86 EB
-    SBC $7F,X                ; $8A49: F5 7F
-    .byte $FF             ; $8A4B - unknown opcode
-    ROL $6F20,X              ; $8A4C: 3E 20 6F
-    .byte $57             ; $8A4F - unknown opcode
-    .byte $E3             ; $8A50 - unknown opcode
-    .byte $D3             ; $8A51 - unknown opcode
-    .byte $E3             ; $8A52 - unknown opcode
-    DEC $CE,X                ; $8A53: D6 CE
-    SEC                      ; $8A55: 38
-    .byte $3C             ; $8A56 - unknown opcode
-    INC $AE5E                ; $8A57: EE 5E AE
-    .byte $9E             ; $8A5A - unknown opcode
-    .byte $3F             ; $8A5B - unknown opcode
-    .byte $3C             ; $8A5C - unknown opcode
-    .byte $F4             ; $8A5D - unknown opcode
-    .byte $1C             ; $8A5E - unknown opcode
-    .byte $73             ; $8A5F - unknown opcode
-    .byte $6B             ; $8A60 - unknown opcode
-    .byte $C7             ; $8A61 - unknown opcode
-    .byte $CB             ; $8A62 - unknown opcode
-    .byte $C7             ; $8A63 - unknown opcode
-    NOP                      ; $8A64: EA
-    INC $2F,X                ; $8A65: F6 2F
-    .byte $3C             ; $8A67 - unknown opcode
-    .byte $FC             ; $8A68 - unknown opcode
-    ADC $7A75,Y              ; $8A69: 79 75 7A
-    .byte $77             ; $8A6C - unknown opcode
-    .byte $3C             ; $8A6D - unknown opcode
-    SED                      ; $8A6E: F8
-    INC $83C6,X              ; $8A6F: FE C6 83
-    EOR $A9,X                ; $8A72: 55 A9
-    INC $043E,X              ; $8A74: FE 3E 04
-    .byte $7C             ; $8A77 - unknown opcode
-    .byte $FF             ; $8A78 - unknown opcode
-    INC $D7AF,X              ; $8A79: FE AF D7
-    ADC ($59,X)              ; $8A7C: 61 59
-    .byte $7C             ; $8A7E - unknown opcode
-    .byte $7F             ; $8A7F - unknown opcode
-    STA $AA,X                ; $8A80: 95 AA
-    CMP ($63,X)              ; $8A82: C1 63
-    .byte $7F             ; $8A84 - unknown opcode
-    .byte $1F             ; $8A85 - unknown opcode
-    TXS                      ; $8A86: 9A
-    STX $EB                  ; $8A87: 86 EB
-    SBC $7F,X                ; $8A89: F5 7F
-    .byte $FF             ; $8A8B - unknown opcode
-    ROL $6F20,X              ; $8A8C: 3E 20 6F
-    .byte $57             ; $8A8F - unknown opcode
-    .byte $E3             ; $8A90 - unknown opcode
-    .byte $D3             ; $8A91 - unknown opcode
-    .byte $E3             ; $8A92 - unknown opcode
-    DEC $CE,X                ; $8A93: D6 CE
-    SEC                      ; $8A95: 38
-    .byte $3C             ; $8A96 - unknown opcode
-    INC $AE5E                ; $8A97: EE 5E AE
-    .byte $9E             ; $8A9A - unknown opcode
-    .byte $3F             ; $8A9B - unknown opcode
-    .byte $3C             ; $8A9C - unknown opcode
-    .byte $F4             ; $8A9D - unknown opcode
-    .byte $1F             ; $8A9E - unknown opcode
-    .byte $7A             ; $8A9F - unknown opcode
-    .byte $74             ; $8AA0 - unknown opcode
-    SBC $FBF5,Y              ; $8AA1: F9 F5 FB
-    .byte $77             ; $8AA4 - unknown opcode
-    .byte $7C             ; $8AA5 - unknown opcode
-    JSR $9F0F                ; $8AA6: 20 0F 9F
-    ROL $3D1E,X              ; $8AA9: 3E 1E 3D
-    .byte $9C             ; $8AAC - unknown opcode
-    .byte $8B             ; $8AAD - unknown opcode
-    SEC                      ; $8AAE: 38
-    INC $FFFE,X              ; $8AAF: FE FE FF
-    .byte $AB             ; $8AB2 - unknown opcode
-    CMP $63,X                ; $8AB3: D5 63
-    ADC $00C4,Y              ; $8AB5: 79 C4 00
-    AND #$7C                 ; $8AB8: 29 7C
-    INC $9E7E,X              ; $8ABA: FE 7E 9E
-    LDX $9E                  ; $8ABD: A6 9E
-    DEC $AB                  ; $8ABF: C6 AB
-    CMP $FF,X                ; $8AC1: D5 FF
-    .byte $7F             ; $8AC3 - unknown opcode
-    .byte $7F             ; $8AC4 - unknown opcode
-    .byte $1C             ; $8AC5 - unknown opcode
-    ADC $79                  ; $8AC6: 65 79
-    ROR $3E7F,X              ; $8AC8: 7E 7F 3E
-    STY $00,X                ; $8ACB: 94 00
-    .byte $23             ; $8ACD - unknown opcode
-    ROL $DFEE,X              ; $8ACE: 3E EE DF
-    .byte $AF             ; $8AD1 - unknown opcode
-    .byte $9F             ; $8AD2 - unknown opcode
-    ROL $F85E                ; $8AD3: 2E 5E F8
-    CMP ($39),Y              ; $8AD6: D1 39
-    LDY $7C78,X              ; $8AD8: BC 78 7C
-    SBC $04F0,Y              ; $8ADB: F9 F0 04
-    .byte $1F             ; $8ADE - unknown opcode
-    .byte $7A             ; $8ADF - unknown opcode
-    .byte $74             ; $8AE0 - unknown opcode
-    SBC $FBF5,Y              ; $8AE1: F9 F5 FB
-    .byte $77             ; $8AE4 - unknown opcode
-    .byte $7C             ; $8AE5 - unknown opcode
-    JSR $9F0F                ; $8AE6: 20 0F 9F
-    ROL $3D1E,X              ; $8AE9: 3E 1E 3D
-    .byte $9C             ; $8AEC - unknown opcode
-    .byte $8B             ; $8AED - unknown opcode
-    SEC                      ; $8AEE: 38
-    INC $FFFE,X              ; $8AEF: FE FE FF
-    .byte $AB             ; $8AF2 - unknown opcode
-    CMP $63,X                ; $8AF3: D5 63
-    ADC $00C4,Y              ; $8AF5: 79 C4 00
-    AND #$7C                 ; $8AF8: 29 7C
-    INC $9E7E,X              ; $8AFA: FE 7E 9E
-    LDX $9E                  ; $8AFD: A6 9E
-    DEC $AB                  ; $8AFF: C6 AB
-    CMP $FF,X                ; $8B01: D5 FF
-    .byte $7F             ; $8B03 - unknown opcode
-    .byte $7F             ; $8B04 - unknown opcode
-    .byte $1C             ; $8B05 - unknown opcode
-    ADC $79                  ; $8B06: 65 79
-    ROR $3E7F,X              ; $8B08: 7E 7F 3E
-    STY $00,X                ; $8B0B: 94 00
-    .byte $23             ; $8B0D - unknown opcode
-    ROL $DFEE,X              ; $8B0E: 3E EE DF
-    .byte $AF             ; $8B11 - unknown opcode
-    .byte $9F             ; $8B12 - unknown opcode
-    ROL $F85E                ; $8B13: 2E 5E F8
-    CMP ($39),Y              ; $8B16: D1 39
-    LDY $7C78,X              ; $8B18: BC 78 7C
-    SBC $04F0,Y              ; $8B1B: F9 F0 04
-    LDA $3E                  ; $8B1E: A5 3E
-    BEQ $8B29                ; $8B20: F0 07
-    LDA $058E                ; $8B22: AD 8E 05
-    CMP #$02                 ; $8B25: C9 02
-    BCS $8B37                ; $8B27: B0 0E
+	.byte $A7			 ; $86E1 - unknown opcode
+	SED					  ; $86E2: F8
+	.byte $FF			 ; $86E3 - unknown opcode
+	.byte $FF			 ; $86E4 - unknown opcode
+	.byte $E7			 ; $86E5 - unknown opcode
+	CPX #$C0				 ; $86E6: E0 C0
+	JSR $C0A0				; $86E8: 20 A0 C0
+	CPY #$E0				 ; $86EB: C0 E0
+	INX					  ; $86ED: E8
+	.byte $DB			 ; $86EE - unknown opcode
+	SBC $9DFE,X			  ; $86EF: FD FE 9D
+	.byte $7B			 ; $86F2 - unknown opcode
+	.byte $F7			 ; $86F3 - unknown opcode
+	.byte $F7			 ; $86F4 - unknown opcode
+	.byte $B7			 ; $86F5 - unknown opcode
+	.byte $1B			 ; $86F6 - unknown opcode
+	ORA $1D1E,X			  ; $86F7: 1D 1E 1D
+	.byte $0B			 ; $86FA - unknown opcode
+	.byte $07			 ; $86FB - unknown opcode
+	.byte $17			 ; $86FC - unknown opcode
+	.byte $77			 ; $86FD - unknown opcode
+	.byte $3F			 ; $86FE - unknown opcode
+	.byte $7F			 ; $86FF - unknown opcode
+	.byte $7F			 ; $8700 - unknown opcode
+	.byte $7C			 ; $8701 - unknown opcode
+	LDY #$C0				 ; $8702: A0 C0
+	CPX #$FE				 ; $8704: E0 FE
+	.byte $DF			 ; $8706 - unknown opcode
+	.byte $9F			 ; $8707 - unknown opcode
+	.byte $1F			 ; $8708 - unknown opcode
+	.byte $7C			 ; $8709 - unknown opcode
+	.byte $A3			 ; $870A - unknown opcode
+	.byte $DF			 ; $870B - unknown opcode
+	INC $F7E0,X			  ; $870C: FE E0 F7
+	.byte $FB			 ; $870F - unknown opcode
+	SBC $E4				  ; $8710: E5 E4
+	ORA $F71B,X			  ; $8712: 1D 1B F7
+	.byte $07			 ; $8715 - unknown opcode
+	.byte $E7			 ; $8716 - unknown opcode
+	.byte $E3			 ; $8717 - unknown opcode
+	SBC $1DFC,X			  ; $8718: FD FC 1D
+	.byte $FB			 ; $871B - unknown opcode
+	.byte $17			 ; $871C - unknown opcode
+	.byte $07			 ; $871D - unknown opcode
+	CLV					  ; $871E: B8
+	ASL $01				  ; $871F: 06 01
+	.byte $02			 ; $8721 - unknown opcode
+	STY $73				  ; $8722: 84 73
+	CPY $02				  ; $8724: C4 02
+	.byte $FF			 ; $8726 - unknown opcode
+	.byte $FF			 ; $8727 - unknown opcode
+	.byte $FF			 ; $8728 - unknown opcode
+	.byte $FF			 ; $8729 - unknown opcode
+	.byte $FF			 ; $872A - unknown opcode
+	.byte $FF			 ; $872B - unknown opcode
+	.byte $FF			 ; $872C - unknown opcode
+	.byte $FF			 ; $872D - unknown opcode
+	ORA ($02,X)			  ; $872E: 01 02
+	STY $8E72				; $8730: 8C 72 8E
+	ORA ($00,X)			  ; $8733: 01 00
+	ORA ($FF,X)			  ; $8735: 01 FF
+	.byte $FF			 ; $8737 - unknown opcode
+	.byte $FF			 ; $8738 - unknown opcode
+	.byte $FF			 ; $8739 - unknown opcode
+	.byte $FF			 ; $873A - unknown opcode
+	.byte $FF			 ; $873B - unknown opcode
+	.byte $FF			 ; $873C - unknown opcode
+	.byte $FF			 ; $873D - unknown opcode
+	.byte $03			 ; $873E - unknown opcode
+	STY $78				  ; $873F: 84 78
+	STY $03				  ; $8741: 84 03
+	.byte $07			 ; $8743 - unknown opcode
+	.byte $07			 ; $8744 - unknown opcode
+	.byte $0B			 ; $8745 - unknown opcode
+	.byte $FF			 ; $8746 - unknown opcode
+	.byte $FF			 ; $8747 - unknown opcode
+	.byte $FF			 ; $8748 - unknown opcode
+	.byte $FF			 ; $8749 - unknown opcode
+	.byte $FC			 ; $874A - unknown opcode
+	.byte $FA			 ; $874B - unknown opcode
+	.byte $FB			 ; $874C - unknown opcode
+	SBC $B3,X				; $874D: F5 B3
+	.byte $0C			 ; $874F - unknown opcode
+	.byte $02			 ; $8750 - unknown opcode
+	ORA ($01,X)			  ; $8751: 01 01
+	INC $98				  ; $8753: E6 98
+	LSR $FF				  ; $8755: 46 FF
+	.byte $FF			 ; $8757 - unknown opcode
+	.byte $FF			 ; $8758 - unknown opcode
+	.byte $FF			 ; $8759 - unknown opcode
+	.byte $FF			 ; $875A - unknown opcode
+	.byte $7F			 ; $875B - unknown opcode
+	.byte $7F			 ; $875C - unknown opcode
+	.byte $BF			 ; $875D - unknown opcode
+	CLV					  ; $875E: B8
+	ASL $01				  ; $875F: 06 01
+	BRK					  ; $8761: 00
+	.byte $83			 ; $8762 - unknown opcode
+	.byte $77			 ; $8763 - unknown opcode
+	.byte $CF			 ; $8764 - unknown opcode
+	.byte $0F			 ; $8765 - unknown opcode
+	.byte $FF			 ; $8766 - unknown opcode
+	.byte $FF			 ; $8767 - unknown opcode
+	.byte $FF			 ; $8768 - unknown opcode
+	.byte $FF			 ; $8769 - unknown opcode
+	.byte $FC			 ; $876A - unknown opcode
+	SBC $F7F3,Y			  ; $876B: F9 F3 F7
+	ORA ($02,X)			  ; $876E: 01 02
+	STY $CE32				; $8770: 8C 32 CE
+	SBC ($F0,X)			  ; $8773: E1 F0
+	SBC ($FF),Y			  ; $8775: F1 FF
+	.byte $FF			 ; $8777 - unknown opcode
+	.byte $FF			 ; $8778 - unknown opcode
+	.byte $FF			 ; $8779 - unknown opcode
+	.byte $3F			 ; $877A - unknown opcode
+	.byte $9F			 ; $877B - unknown opcode
+	.byte $8F			 ; $877C - unknown opcode
+	.byte $4F			 ; $877D - unknown opcode
+	.byte $0F			 ; $877E - unknown opcode
+	.byte $87			 ; $877F - unknown opcode
+	ADC $85				  ; $8780: 65 85
+	ORA ($11,X)			  ; $8782: 01 11
+	ORA $03				  ; $8784: 05 03
+	SBC $F9,X				; $8786: F5 F9
+	.byte $FA			 ; $8788 - unknown opcode
+	.byte $FA			 ; $8789 - unknown opcode
+	INC $FAEE,X			  ; $878A: FE EE FA
+	.byte $FF			 ; $878D - unknown opcode
+	.byte $F3			 ; $878E - unknown opcode
+	CPX $A2				  ; $878F: E4 A2
+	STA ($81,X)			  ; $8791: 81 81
+	LDX $A498				; $8793: AE 98 A4
+	.byte $6F			 ; $8796 - unknown opcode
+	.byte $1F			 ; $8797 - unknown opcode
+	.byte $5F			 ; $8798 - unknown opcode
+	.byte $7F			 ; $8799 - unknown opcode
+	.byte $7F			 ; $879A - unknown opcode
+	.byte $77			 ; $879B - unknown opcode
+	.byte $7F			 ; $879C - unknown opcode
+	.byte $5F			 ; $879D - unknown opcode
+	CLV					  ; $879E: B8
+	.byte $04			 ; $879F - unknown opcode
+	.byte $03			 ; $87A0 - unknown opcode
+	.byte $07			 ; $87A1 - unknown opcode
+	.byte $8F			 ; $87A2 - unknown opcode
+	.byte $6B			 ; $87A3 - unknown opcode
+	.byte $CB			 ; $87A4 - unknown opcode
+	ASL $FF,X				; $87A5: 16 FF
+	.byte $FF			 ; $87A7 - unknown opcode
+	.byte $FC			 ; $87A8 - unknown opcode
+	SBC $F5F2,Y			  ; $87A9: F9 F2 F5
+	.byte $F7			 ; $87AC - unknown opcode
+	SBC $0201				; $87AD: ED 01 02
+	JMP ($FAF2)			  ; $87B0: 6C F2 FA
+	SBC #$E8				 ; $87B3: E9 E8
+	LDA $FF,X				; $87B5: B5 FF
+	.byte $FF			 ; $87B7 - unknown opcode
+	.byte $9F			 ; $87B8 - unknown opcode
+	.byte $4F			 ; $87B9 - unknown opcode
+	.byte $A7			 ; $87BA - unknown opcode
+	.byte $57			 ; $87BB - unknown opcode
+	.byte $77			 ; $87BC - unknown opcode
+	.byte $5B			 ; $87BD - unknown opcode
+	EOR $9D,X				; $87BE: 55 9D
+	.byte $3F			 ; $87C0 - unknown opcode
+	.byte $BF			 ; $87C1 - unknown opcode
+	.byte $17			 ; $87C2 - unknown opcode
+	.byte $87			 ; $87C3 - unknown opcode
+	.byte $22			 ; $87C4 - unknown opcode
+	.byte $0B			 ; $87C5 - unknown opcode
+	.byte $AB			 ; $87C6 - unknown opcode
+	.byte $EB			 ; $87C7 - unknown opcode
+	.byte $D7			 ; $87C8 - unknown opcode
+	.byte $D7			 ; $87C9 - unknown opcode
+	NOP					  ; $87CA: EA
+	.byte $7A			 ; $87CB - unknown opcode
+	CMP $55F7,X			  ; $87CC: DD F7 55
+	.byte $DC			 ; $87CF - unknown opcode
+	INC $75FE,X			  ; $87D0: FE FE 75
+	ROR $28,X				; $87D3: 76 28
+	.byte $0F			 ; $87D5 - unknown opcode
+	NOP					  ; $87D6: EA
+	.byte $6B			 ; $87D7 - unknown opcode
+	SBC $75,X				; $87D8: F5 75
+	.byte $AB			 ; $87DA - unknown opcode
+	.byte $AF			 ; $87DB - unknown opcode
+	.byte $DF			 ; $87DC - unknown opcode
+	INC $B8,X				; $87DD: F6 B8
+	ASL $01				  ; $87DF: 06 01
+	.byte $02			 ; $87E1 - unknown opcode
+	STY $72				  ; $87E2: 84 72
+	CPY $03				  ; $87E4: C4 03
+	.byte $FF			 ; $87E6 - unknown opcode
+	.byte $FF			 ; $87E7 - unknown opcode
+	.byte $FF			 ; $87E8 - unknown opcode
+	.byte $FF			 ; $87E9 - unknown opcode
+	.byte $FF			 ; $87EA - unknown opcode
+	.byte $FF			 ; $87EB - unknown opcode
+	.byte $FF			 ; $87EC - unknown opcode
+	.byte $FC			 ; $87ED - unknown opcode
+	ORA ($02,X)			  ; $87EE: 01 02
+	STY $8E72				; $87F0: 8C 72 8E
+	ORA ($00,X)			  ; $87F3: 01 00
+	CMP ($FF,X)			  ; $87F5: C1 FF
+	.byte $FF			 ; $87F7 - unknown opcode
+	.byte $FF			 ; $87F8 - unknown opcode
+	.byte $FF			 ; $87F9 - unknown opcode
+	.byte $FF			 ; $87FA - unknown opcode
+	.byte $FF			 ; $87FB - unknown opcode
+	.byte $FF			 ; $87FC - unknown opcode
+	.byte $3F			 ; $87FD - unknown opcode
+	.byte $07			 ; $87FE - unknown opcode
+	.byte $8F			 ; $87FF - unknown opcode
+	.byte $4F			 ; $8800 - unknown opcode
+	.byte $A7			 ; $8801 - unknown opcode
+	EOR $41				  ; $8802: 45 41
+	LDA ($19,X)			  ; $8804: A1 19
+	.byte $FB			 ; $8806 - unknown opcode
+	.byte $F7			 ; $8807 - unknown opcode
+	.byte $F3			 ; $8808 - unknown opcode
+	CMP $BEBA,Y			  ; $8809: D9 BA BE
+	LSR $E3E6,X			  ; $880C: 5E E6 E3
+	BEQ $8805				; $880F: F0 F4
+	.byte $A3			 ; $8811 - unknown opcode
+	LDA ($A2,X)			  ; $8812: A1 A2
+	STY $5A				  ; $8814: 84 5A
+	.byte $9F			 ; $8816 - unknown opcode
+	.byte $CF			 ; $8817 - unknown opcode
+	.byte $8B			 ; $8818 - unknown opcode
+	EOR $7D5F,X			  ; $8819: 5D 5F 7D
+	.byte $7B			 ; $881C - unknown opcode
+	LDA $B8				  ; $881D: A5 B8
+	.byte $04			 ; $881F - unknown opcode
+	.byte $03			 ; $8820 - unknown opcode
+	.byte $07			 ; $8821 - unknown opcode
+	.byte $8F			 ; $8822 - unknown opcode
+	.byte $6B			 ; $8823 - unknown opcode
+	.byte $CB			 ; $8824 - unknown opcode
+	ASL $FF,X				; $8825: 16 FF
+	.byte $FF			 ; $8827 - unknown opcode
+	.byte $FC			 ; $8828 - unknown opcode
+	SBC $F5F2,Y			  ; $8829: F9 F2 F5
+	.byte $F7			 ; $882C - unknown opcode
+	SBC $0201				; $882D: ED 01 02
+	JMP ($FAF2)			  ; $8830: 6C F2 FA
+	SBC #$E8				 ; $8833: E9 E8
+	LDA $FF,X				; $8835: B5 FF
+	.byte $FF			 ; $8837 - unknown opcode
+	.byte $9F			 ; $8838 - unknown opcode
+	.byte $4F			 ; $8839 - unknown opcode
+	.byte $A7			 ; $883A - unknown opcode
+	.byte $57			 ; $883B - unknown opcode
+	.byte $77			 ; $883C - unknown opcode
+	.byte $5B			 ; $883D - unknown opcode
+	EOR $9D,X				; $883E: 55 9D
+	.byte $3F			 ; $8840 - unknown opcode
+	.byte $BF			 ; $8841 - unknown opcode
+	.byte $17			 ; $8842 - unknown opcode
+	.byte $87			 ; $8843 - unknown opcode
+	.byte $22			 ; $8844 - unknown opcode
+	.byte $0B			 ; $8845 - unknown opcode
+	.byte $AB			 ; $8846 - unknown opcode
+	.byte $EB			 ; $8847 - unknown opcode
+	.byte $D7			 ; $8848 - unknown opcode
+	.byte $D7			 ; $8849 - unknown opcode
+	NOP					  ; $884A: EA
+	.byte $7A			 ; $884B - unknown opcode
+	CMP $55F7,X			  ; $884C: DD F7 55
+	.byte $DC			 ; $884F - unknown opcode
+	INC $75FE,X			  ; $8850: FE FE 75
+	ROR $28,X				; $8853: 76 28
+	.byte $0F			 ; $8855 - unknown opcode
+	NOP					  ; $8856: EA
+	.byte $6B			 ; $8857 - unknown opcode
+	SBC $75,X				; $8858: F5 75
+	.byte $AB			 ; $885A - unknown opcode
+	.byte $AF			 ; $885B - unknown opcode
+	.byte $DF			 ; $885C - unknown opcode
+	INC $00,X				; $885D: F6 00
+	ASL $4B				  ; $885F: 06 4B
+	.byte $1F			 ; $8861 - unknown opcode
+	ASL $BF,X				; $8862: 16 BF
+	AND $FF1F,X			  ; $8864: 3D 1F FF
+	SBC $E6B4,Y			  ; $8867: F9 B4 E6
+	SBC $D353				; $886A: ED 53 D3
+	.byte $EF			 ; $886D - unknown opcode
+	BRK					  ; $886E: 00
+	BMI $88CA				; $886F: 30 59
+	.byte $FC			 ; $8871 - unknown opcode
+	LDY $DE,X				; $8872: B4 DE
+	INC $FFFC,X			  ; $8874: FE FC FF
+	.byte $CF			 ; $8877 - unknown opcode
+	LDX $B3				  ; $8878: A6 B3
+	.byte $DB			 ; $887A - unknown opcode
+	SBC $E5				  ; $887B: E5 E5
+	.byte $FB			 ; $887D - unknown opcode
+	.byte $3F			 ; $887E - unknown opcode
+	.byte $BF			 ; $887F - unknown opcode
+	AND $1519,Y			  ; $8880: 39 19 15
+	STX $5C,Y				; $8883: 96 5C
+	.byte $9B			 ; $8885 - unknown opcode
+	CMP $D651,Y			  ; $8886: D9 51 D6
+	INC $EA				  ; $8889: E6 EA
+	ADC $64B7				; $888B: 6D B7 64
+	LDX $CEFE,Y			  ; $888E: BE FE CE
+	CPY $B4D4				; $8891: CC D4 B4
+	STA $CD6C,X			  ; $8894: 9D 6C CD
+	CMP $B5				  ; $8897: C5 B5
+	.byte $B3			 ; $8899 - unknown opcode
+	.byte $AB			 ; $889A - unknown opcode
+	.byte $5B			 ; $889B - unknown opcode
+	ROR $93,X				; $889C: 76 93
+	ASL $1F1F				; $889E: 0E 1F 1F
+	.byte $3F			 ; $88A1 - unknown opcode
+	.byte $3F			 ; $88A2 - unknown opcode
+	.byte $3F			 ; $88A3 - unknown opcode
+	.byte $7F			 ; $88A4 - unknown opcode
+	.byte $7F			 ; $88A5 - unknown opcode
+	SBC ($E6),Y			  ; $88A6: F1 E6
+	.byte $E2			 ; $88A8 - unknown opcode
+	CMP $D1D3				; $88A9: CD D3 D1
+	LDX $AE				  ; $88AC: A6 AE
+	SEC					  ; $88AE: 38
+	.byte $7C			 ; $88AF - unknown opcode
+	.byte $FC			 ; $88B0 - unknown opcode
+	INC $FEFE,X			  ; $88B1: FE FE FE
+	.byte $FF			 ; $88B4 - unknown opcode
+	.byte $FF			 ; $88B5 - unknown opcode
+	.byte $C7			 ; $88B6 - unknown opcode
+	.byte $B3			 ; $88B7 - unknown opcode
+	.byte $A3			 ; $88B8 - unknown opcode
+	EOR $C5E5,Y			  ; $88B9: 59 E5 C5
+	.byte $B2			 ; $88BC - unknown opcode
+	TSX					  ; $88BD: BA
+	.byte $7F			 ; $88BE - unknown opcode
+	.byte $7F			 ; $88BF - unknown opcode
+	.byte $6F			 ; $88C0 - unknown opcode
+	.byte $7B			 ; $88C1 - unknown opcode
+	.byte $77			 ; $88C2 - unknown opcode
+	.byte $7F			 ; $88C3 - unknown opcode
+	ROL $95AF,X			  ; $88C4: 3E AF 95
+	STA ($94),Y			  ; $88C7: 91 94
+	LDY $A6AA				; $88C9: AC AA A6
+	.byte $C7			 ; $88CC - unknown opcode
+	ADC ($FF),Y			  ; $88CD: 71 FF
+	.byte $FF			 ; $88CF - unknown opcode
+	.byte $FB			 ; $88D0 - unknown opcode
+	.byte $EF			 ; $88D1 - unknown opcode
+	.byte $F7			 ; $88D2 - unknown opcode
+	.byte $FF			 ; $88D3 - unknown opcode
+	LDX $54FA,Y			  ; $88D4: BE FA 54
+	CPY $94				  ; $88D7: C4 94
+	TXS					  ; $88D9: 9A
+	ROL					  ; $88DA: 2A
+	.byte $3A			 ; $88DB - unknown opcode
+	ADC ($47),Y			  ; $88DC: 71 47
+	CLV					  ; $88DE: B8
+	ASL $01				  ; $88DF: 06 01
+	.byte $02			 ; $88E1 - unknown opcode
+	STY $72				  ; $88E2: 84 72
+	CMP $03				  ; $88E4: C5 03
+	.byte $FF			 ; $88E6 - unknown opcode
+	.byte $FF			 ; $88E7 - unknown opcode
+	.byte $FF			 ; $88E8 - unknown opcode
+	.byte $FF			 ; $88E9 - unknown opcode
+	.byte $FF			 ; $88EA - unknown opcode
+	.byte $FF			 ; $88EB - unknown opcode
+	INC $01FC,X			  ; $88EC: FE FC 01
+	.byte $02			 ; $88EF - unknown opcode
+	STY $8E72				; $88F0: 8C 72 8E
+	ORA ($80,X)			  ; $88F3: 01 80
+	CMP ($FF,X)			  ; $88F5: C1 FF
+	.byte $FF			 ; $88F7 - unknown opcode
+	.byte $FF			 ; $88F8 - unknown opcode
+	.byte $FF			 ; $88F9 - unknown opcode
+	.byte $FF			 ; $88FA - unknown opcode
+	.byte $FF			 ; $88FB - unknown opcode
+	.byte $7F			 ; $88FC - unknown opcode
+	.byte $3F			 ; $88FD - unknown opcode
+	.byte $07			 ; $88FE - unknown opcode
+	.byte $87			 ; $88FF - unknown opcode
+	.byte $6B			 ; $8900 - unknown opcode
+	STA $160D				; $8901: 8D 0D 16
+	ORA ($07,X)			  ; $8904: 01 07
+	.byte $FB			 ; $8906 - unknown opcode
+	SBC $F6F5,Y			  ; $8907: F9 F5 F6
+	INC $EB,X				; $890A: F6 EB
+	INC $E3FB,X			  ; $890C: FE FB E3
+	CPX $D1F2				; $890F: EC F2 D1
+	ADC ($AE),Y			  ; $8912: 71 AE
+	CLI					  ; $8914: 58
+	ASL $9F,X				; $8915: 16 9F
+	.byte $5F			 ; $8917 - unknown opcode
+	.byte $4F			 ; $8918 - unknown opcode
+	.byte $AF			 ; $8919 - unknown opcode
+	.byte $EF			 ; $891A - unknown opcode
+	.byte $D7			 ; $891B - unknown opcode
+	.byte $BF			 ; $891C - unknown opcode
+	.byte $EF			 ; $891D - unknown opcode
+	AND ($0F,X)			  ; $891E: 21 0F
+	.byte $9F			 ; $8920 - unknown opcode
+	AND $BD9E,X			  ; $8921: 3D 9E BD
+	.byte $9E			 ; $8924 - unknown opcode
+	DEC $743E				; $8925: CE 3E 74
+	.byte $EB			 ; $8928 - unknown opcode
+	.byte $C7			 ; $8929 - unknown opcode
+	.byte $EB			 ; $892A - unknown opcode
+	DEC $6B				  ; $892B: C6 6B
+	.byte $74			 ; $892D - unknown opcode
+	.byte $F4			 ; $892E - unknown opcode
+	.byte $80			 ; $892F - unknown opcode
+	AND #$7C				 ; $8930: 29 7C
+	INC $D6FE,X			  ; $8932: FE FE D6
+	.byte $2F			 ; $8935 - unknown opcode
+	.byte $3C			 ; $8936 - unknown opcode
+	INC $83D7,X			  ; $8937: FE D7 83
+	EOR $AB,X				; $893A: 55 AB
+	ADC $F45C,X			  ; $893C: 7D 5C F4
+	.byte $6B			 ; $893F - unknown opcode
+	.byte $7F			 ; $8940 - unknown opcode
+	.byte $7F			 ; $8941 - unknown opcode
+	ROL $0194,X			  ; $8942: 3E 94 01
+	.byte $27			 ; $8945 - unknown opcode
+	.byte $3A			 ; $8946 - unknown opcode
+	LDX $AAD5,Y			  ; $8947: BE D5 AA
+	CMP ($EB,X)			  ; $894A: C1 EB
+	.byte $7F			 ; $894C - unknown opcode
+	ROL $7973,X			  ; $894D: 3E 73 79
+	LDA $BC79,X			  ; $8950: BD 79 BC
+	SBC $84F0,Y			  ; $8953: F9 F0 84
+	ROL $63D6				; $8956: 2E D6 63
+	.byte $D7			 ; $8959 - unknown opcode
+	.byte $E3			 ; $895A - unknown opcode
+	.byte $D7			 ; $895B - unknown opcode
+	ROL $217C				; $895C: 2E 7C 21
+	.byte $0F			 ; $895F - unknown opcode
+	.byte $9F			 ; $8960 - unknown opcode
+	AND $BD9E,X			  ; $8961: 3D 9E BD
+	.byte $9E			 ; $8964 - unknown opcode
+	DEC $743E				; $8965: CE 3E 74
+	.byte $EB			 ; $8968 - unknown opcode
+	.byte $C7			 ; $8969 - unknown opcode
+	.byte $EB			 ; $896A - unknown opcode
+	DEC $6B				  ; $896B: C6 6B
+	.byte $74			 ; $896D - unknown opcode
+	.byte $F4			 ; $896E - unknown opcode
+	.byte $80			 ; $896F - unknown opcode
+	AND #$7C				 ; $8970: 29 7C
+	INC $D6FE,X			  ; $8972: FE FE D6
+	.byte $2F			 ; $8975 - unknown opcode
+	.byte $3C			 ; $8976 - unknown opcode
+	INC $83D7,X			  ; $8977: FE D7 83
+	EOR $AB,X				; $897A: 55 AB
+	ADC $F45C,X			  ; $897C: 7D 5C F4
+	.byte $6B			 ; $897F - unknown opcode
+	.byte $7F			 ; $8980 - unknown opcode
+	.byte $7F			 ; $8981 - unknown opcode
+	ROL $0194,X			  ; $8982: 3E 94 01
+	.byte $27			 ; $8985 - unknown opcode
+	.byte $3A			 ; $8986 - unknown opcode
+	LDX $AAD5,Y			  ; $8987: BE D5 AA
+	CMP ($EB,X)			  ; $898A: C1 EB
+	.byte $7F			 ; $898C - unknown opcode
+	ROL $7973,X			  ; $898D: 3E 73 79
+	LDA $BC79,X			  ; $8990: BD 79 BC
+	SBC $84F0,Y			  ; $8993: F9 F0 84
+	ROL $63D6				; $8996: 2E D6 63
+	.byte $D7			 ; $8999 - unknown opcode
+	.byte $E3			 ; $899A - unknown opcode
+	.byte $D7			 ; $899B - unknown opcode
+	ROL $1D7C				; $899C: 2E 7C 1D
+	.byte $73			 ; $899F - unknown opcode
+	.byte $67			 ; $89A0 - unknown opcode
+	.byte $C7			 ; $89A1 - unknown opcode
+	.byte $EB			 ; $89A2 - unknown opcode
+	DEC $E3				  ; $89A3: C6 E3
+	.byte $F4			 ; $89A5 - unknown opcode
+	ROL $F97C,X			  ; $89A6: 3E 7C F9
+	SBC $F975,Y			  ; $89A9: F9 75 F9
+	.byte $7C			 ; $89AC - unknown opcode
+	SEI					  ; $89AD: 78
+	SED					  ; $89AE: F8
+	INC $83D6,X			  ; $89AF: FE D6 83
+	ORA ($AD),Y			  ; $89B2: 11 AD
+	ROR $2C5F,X			  ; $89B4: 7E 5F 2C
+	INC $FFFF,X			  ; $89B7: FE FF FF
+	.byte $EF			 ; $89BA - unknown opcode
+	.byte $53			 ; $89BB - unknown opcode
+	ORA ($3C,X)			  ; $89BC: 01 3C
+	.byte $FA			 ; $89BE - unknown opcode
+	ROR $88B5,X			  ; $89BF: 7E B5 88
+	CMP ($6B,X)			  ; $89C2: C1 6B
+	.byte $7F			 ; $89C4 - unknown opcode
+	.byte $1F			 ; $89C5 - unknown opcode
+	.byte $3C			 ; $89C6 - unknown opcode
+	.byte $80			 ; $89C7 - unknown opcode
+	DEX					  ; $89C8: CA
+	.byte $F7			 ; $89C9 - unknown opcode
+	.byte $FF			 ; $89CA - unknown opcode
+	.byte $FF			 ; $89CB - unknown opcode
+	.byte $7F			 ; $89CC - unknown opcode
+	.byte $34			 ; $89CD - unknown opcode
+	.byte $2F			 ; $89CE - unknown opcode
+	.byte $C7			 ; $89CF - unknown opcode
+	.byte $63			 ; $89D0 - unknown opcode
+	.byte $D7			 ; $89D1 - unknown opcode
+	.byte $E3			 ; $89D2 - unknown opcode
+	INC $CE				  ; $89D3: E6 CE
+	CLV					  ; $89D5: B8
+	ASL $9F3E,X			  ; $89D6: 1E 3E 9F
+	LDX $9F9F				; $89D9: AE 9F 9F
+	ROL $1D7C,X			  ; $89DC: 3E 7C 1D
+	.byte $73			 ; $89DF - unknown opcode
+	.byte $67			 ; $89E0 - unknown opcode
+	.byte $C7			 ; $89E1 - unknown opcode
+	.byte $EB			 ; $89E2 - unknown opcode
+	DEC $E3				  ; $89E3: C6 E3
+	.byte $F4			 ; $89E5 - unknown opcode
+	ROL $F97C,X			  ; $89E6: 3E 7C F9
+	SBC $F975,Y			  ; $89E9: F9 75 F9
+	.byte $7C			 ; $89EC - unknown opcode
+	SEI					  ; $89ED: 78
+	SED					  ; $89EE: F8
+	INC $83D6,X			  ; $89EF: FE D6 83
+	ORA ($AD),Y			  ; $89F2: 11 AD
+	ROR $2C5F,X			  ; $89F4: 7E 5F 2C
+	INC $FFFF,X			  ; $89F7: FE FF FF
+	.byte $EF			 ; $89FA - unknown opcode
+	.byte $53			 ; $89FB - unknown opcode
+	ORA ($3C,X)			  ; $89FC: 01 3C
+	.byte $FA			 ; $89FE - unknown opcode
+	ROR $88B5,X			  ; $89FF: 7E B5 88
+	CMP ($6B,X)			  ; $8A02: C1 6B
+	.byte $7F			 ; $8A04 - unknown opcode
+	.byte $1F			 ; $8A05 - unknown opcode
+	.byte $3C			 ; $8A06 - unknown opcode
+	.byte $80			 ; $8A07 - unknown opcode
+	DEX					  ; $8A08: CA
+	.byte $F7			 ; $8A09 - unknown opcode
+	.byte $FF			 ; $8A0A - unknown opcode
+	.byte $FF			 ; $8A0B - unknown opcode
+	.byte $7F			 ; $8A0C - unknown opcode
+	.byte $34			 ; $8A0D - unknown opcode
+	.byte $2F			 ; $8A0E - unknown opcode
+	.byte $C7			 ; $8A0F - unknown opcode
+	.byte $63			 ; $8A10 - unknown opcode
+	.byte $D7			 ; $8A11 - unknown opcode
+	.byte $E3			 ; $8A12 - unknown opcode
+	INC $CE				  ; $8A13: E6 CE
+	CLV					  ; $8A15: B8
+	ASL $9F3E,X			  ; $8A16: 1E 3E 9F
+	LDX $9F9F				; $8A19: AE 9F 9F
+	ROL $1C7C,X			  ; $8A1C: 3E 7C 1C
+	.byte $73			 ; $8A1F - unknown opcode
+	.byte $6B			 ; $8A20 - unknown opcode
+	.byte $C7			 ; $8A21 - unknown opcode
+	.byte $CB			 ; $8A22 - unknown opcode
+	.byte $C7			 ; $8A23 - unknown opcode
+	NOP					  ; $8A24: EA
+	INC $2F,X				; $8A25: F6 2F
+	.byte $3C			 ; $8A27 - unknown opcode
+	.byte $FC			 ; $8A28 - unknown opcode
+	ADC $7A75,Y			  ; $8A29: 79 75 7A
+	.byte $77			 ; $8A2C - unknown opcode
+	.byte $3C			 ; $8A2D - unknown opcode
+	SED					  ; $8A2E: F8
+	INC $83C6,X			  ; $8A2F: FE C6 83
+	EOR $A9,X				; $8A32: 55 A9
+	INC $043E,X			  ; $8A34: FE 3E 04
+	.byte $7C			 ; $8A37 - unknown opcode
+	.byte $FF			 ; $8A38 - unknown opcode
+	INC $D7AF,X			  ; $8A39: FE AF D7
+	ADC ($59,X)			  ; $8A3C: 61 59
+	.byte $7C			 ; $8A3E - unknown opcode
+	.byte $7F			 ; $8A3F - unknown opcode
+	STA $AA,X				; $8A40: 95 AA
+	CMP ($63,X)			  ; $8A42: C1 63
+	.byte $7F			 ; $8A44 - unknown opcode
+	.byte $1F			 ; $8A45 - unknown opcode
+	TXS					  ; $8A46: 9A
+	STX $EB				  ; $8A47: 86 EB
+	SBC $7F,X				; $8A49: F5 7F
+	.byte $FF			 ; $8A4B - unknown opcode
+	ROL $6F20,X			  ; $8A4C: 3E 20 6F
+	.byte $57			 ; $8A4F - unknown opcode
+	.byte $E3			 ; $8A50 - unknown opcode
+	.byte $D3			 ; $8A51 - unknown opcode
+	.byte $E3			 ; $8A52 - unknown opcode
+	DEC $CE,X				; $8A53: D6 CE
+	SEC					  ; $8A55: 38
+	.byte $3C			 ; $8A56 - unknown opcode
+	INC $AE5E				; $8A57: EE 5E AE
+	.byte $9E			 ; $8A5A - unknown opcode
+	.byte $3F			 ; $8A5B - unknown opcode
+	.byte $3C			 ; $8A5C - unknown opcode
+	.byte $F4			 ; $8A5D - unknown opcode
+	.byte $1C			 ; $8A5E - unknown opcode
+	.byte $73			 ; $8A5F - unknown opcode
+	.byte $6B			 ; $8A60 - unknown opcode
+	.byte $C7			 ; $8A61 - unknown opcode
+	.byte $CB			 ; $8A62 - unknown opcode
+	.byte $C7			 ; $8A63 - unknown opcode
+	NOP					  ; $8A64: EA
+	INC $2F,X				; $8A65: F6 2F
+	.byte $3C			 ; $8A67 - unknown opcode
+	.byte $FC			 ; $8A68 - unknown opcode
+	ADC $7A75,Y			  ; $8A69: 79 75 7A
+	.byte $77			 ; $8A6C - unknown opcode
+	.byte $3C			 ; $8A6D - unknown opcode
+	SED					  ; $8A6E: F8
+	INC $83C6,X			  ; $8A6F: FE C6 83
+	EOR $A9,X				; $8A72: 55 A9
+	INC $043E,X			  ; $8A74: FE 3E 04
+	.byte $7C			 ; $8A77 - unknown opcode
+	.byte $FF			 ; $8A78 - unknown opcode
+	INC $D7AF,X			  ; $8A79: FE AF D7
+	ADC ($59,X)			  ; $8A7C: 61 59
+	.byte $7C			 ; $8A7E - unknown opcode
+	.byte $7F			 ; $8A7F - unknown opcode
+	STA $AA,X				; $8A80: 95 AA
+	CMP ($63,X)			  ; $8A82: C1 63
+	.byte $7F			 ; $8A84 - unknown opcode
+	.byte $1F			 ; $8A85 - unknown opcode
+	TXS					  ; $8A86: 9A
+	STX $EB				  ; $8A87: 86 EB
+	SBC $7F,X				; $8A89: F5 7F
+	.byte $FF			 ; $8A8B - unknown opcode
+	ROL $6F20,X			  ; $8A8C: 3E 20 6F
+	.byte $57			 ; $8A8F - unknown opcode
+	.byte $E3			 ; $8A90 - unknown opcode
+	.byte $D3			 ; $8A91 - unknown opcode
+	.byte $E3			 ; $8A92 - unknown opcode
+	DEC $CE,X				; $8A93: D6 CE
+	SEC					  ; $8A95: 38
+	.byte $3C			 ; $8A96 - unknown opcode
+	INC $AE5E				; $8A97: EE 5E AE
+	.byte $9E			 ; $8A9A - unknown opcode
+	.byte $3F			 ; $8A9B - unknown opcode
+	.byte $3C			 ; $8A9C - unknown opcode
+	.byte $F4			 ; $8A9D - unknown opcode
+	.byte $1F			 ; $8A9E - unknown opcode
+	.byte $7A			 ; $8A9F - unknown opcode
+	.byte $74			 ; $8AA0 - unknown opcode
+	SBC $FBF5,Y			  ; $8AA1: F9 F5 FB
+	.byte $77			 ; $8AA4 - unknown opcode
+	.byte $7C			 ; $8AA5 - unknown opcode
+	JSR $9F0F				; $8AA6: 20 0F 9F
+	ROL $3D1E,X			  ; $8AA9: 3E 1E 3D
+	.byte $9C			 ; $8AAC - unknown opcode
+	.byte $8B			 ; $8AAD - unknown opcode
+	SEC					  ; $8AAE: 38
+	INC $FFFE,X			  ; $8AAF: FE FE FF
+	.byte $AB			 ; $8AB2 - unknown opcode
+	CMP $63,X				; $8AB3: D5 63
+	ADC $00C4,Y			  ; $8AB5: 79 C4 00
+	AND #$7C				 ; $8AB8: 29 7C
+	INC $9E7E,X			  ; $8ABA: FE 7E 9E
+	LDX $9E				  ; $8ABD: A6 9E
+	DEC $AB				  ; $8ABF: C6 AB
+	CMP $FF,X				; $8AC1: D5 FF
+	.byte $7F			 ; $8AC3 - unknown opcode
+	.byte $7F			 ; $8AC4 - unknown opcode
+	.byte $1C			 ; $8AC5 - unknown opcode
+	ADC $79				  ; $8AC6: 65 79
+	ROR $3E7F,X			  ; $8AC8: 7E 7F 3E
+	STY $00,X				; $8ACB: 94 00
+	.byte $23			 ; $8ACD - unknown opcode
+	ROL $DFEE,X			  ; $8ACE: 3E EE DF
+	.byte $AF			 ; $8AD1 - unknown opcode
+	.byte $9F			 ; $8AD2 - unknown opcode
+	ROL $F85E				; $8AD3: 2E 5E F8
+	CMP ($39),Y			  ; $8AD6: D1 39
+	LDY $7C78,X			  ; $8AD8: BC 78 7C
+	SBC $04F0,Y			  ; $8ADB: F9 F0 04
+	.byte $1F			 ; $8ADE - unknown opcode
+	.byte $7A			 ; $8ADF - unknown opcode
+	.byte $74			 ; $8AE0 - unknown opcode
+	SBC $FBF5,Y			  ; $8AE1: F9 F5 FB
+	.byte $77			 ; $8AE4 - unknown opcode
+	.byte $7C			 ; $8AE5 - unknown opcode
+	JSR $9F0F				; $8AE6: 20 0F 9F
+	ROL $3D1E,X			  ; $8AE9: 3E 1E 3D
+	.byte $9C			 ; $8AEC - unknown opcode
+	.byte $8B			 ; $8AED - unknown opcode
+	SEC					  ; $8AEE: 38
+	INC $FFFE,X			  ; $8AEF: FE FE FF
+	.byte $AB			 ; $8AF2 - unknown opcode
+	CMP $63,X				; $8AF3: D5 63
+	ADC $00C4,Y			  ; $8AF5: 79 C4 00
+	AND #$7C				 ; $8AF8: 29 7C
+	INC $9E7E,X			  ; $8AFA: FE 7E 9E
+	LDX $9E				  ; $8AFD: A6 9E
+	DEC $AB				  ; $8AFF: C6 AB
+	CMP $FF,X				; $8B01: D5 FF
+	.byte $7F			 ; $8B03 - unknown opcode
+	.byte $7F			 ; $8B04 - unknown opcode
+	.byte $1C			 ; $8B05 - unknown opcode
+	ADC $79				  ; $8B06: 65 79
+	ROR $3E7F,X			  ; $8B08: 7E 7F 3E
+	STY $00,X				; $8B0B: 94 00
+	.byte $23			 ; $8B0D - unknown opcode
+	ROL $DFEE,X			  ; $8B0E: 3E EE DF
+	.byte $AF			 ; $8B11 - unknown opcode
+	.byte $9F			 ; $8B12 - unknown opcode
+	ROL $F85E				; $8B13: 2E 5E F8
+	CMP ($39),Y			  ; $8B16: D1 39
+	LDY $7C78,X			  ; $8B18: BC 78 7C
+	SBC $04F0,Y			  ; $8B1B: F9 F0 04
+	LDA $3E				  ; $8B1E: A5 3E
+	BEQ $8B29				; $8B20: F0 07
+	LDA $058E				; $8B22: AD 8E 05
+	CMP #$02				 ; $8B25: C9 02
+	BCS $8B37				; $8B27: B0 0E
 
 loc_8B29:
-    LDA $3C                  ; $8B29: A5 3C
-    AND #$0F                 ; $8B2B: 29 0F
-    LDX #$07                 ; $8B2D: A2 07
+	LDA $3C				  ; $8B29: A5 3C
+	AND #$0F				 ; $8B2B: 29 0F
+	LDX #$07				 ; $8B2D: A2 07
 
 loc_8B2F:
-    CMP $8B38,X              ; $8B2F: DD 38 8B
-    BEQ $8B40                ; $8B32: F0 0C
-    DEX                      ; $8B34: CA
-    BPL $8B2F                ; $8B35: 10 F8
+	CMP $8B38,X			  ; $8B2F: DD 38 8B
+	BEQ $8B40				; $8B32: F0 0C
+	DEX					  ; $8B34: CA
+	BPL $8B2F				; $8B35: 10 F8
 
 loc_8B37:
-    RTS                      ; $8B37: 60
-    .byte $0F             ; $8B38 - unknown opcode
-    ORA $090B                ; $8B39: 0D 0B 09
-    .byte $07             ; $8B3C - unknown opcode
-    ORA $03                  ; $8B3D: 05 03
-    ORA ($20,X)              ; $8B3F: 01 20
-    LSR                      ; $8B41: 4A
-    .byte $8B             ; $8B42 - unknown opcode
-    JSR $8CE6                ; $8B43: 20 E6 8C
-    RTS                      ; $8B46: 60
+	RTS					  ; $8B37: 60
+	.byte $0F			 ; $8B38 - unknown opcode
+	ORA $090B				; $8B39: 0D 0B 09
+	.byte $07			 ; $8B3C - unknown opcode
+	ORA $03				  ; $8B3D: 05 03
+	ORA ($20,X)			  ; $8B3F: 01 20
+	LSR					  ; $8B41: 4A
+	.byte $8B			 ; $8B42 - unknown opcode
+	JSR $8CE6				; $8B43: 20 E6 8C
+	RTS					  ; $8B46: 60
 
 loc_8B47:
-    JMP $8D26                ; $8B47: 4C 26 8D
-    LDY $28                  ; $8B4A: A4 28
-    BNE $8BCB                ; $8B4C: D0 7D
-    AND #$0F                 ; $8B4E: 29 0F
-    CMP #$0F                 ; $8B50: C9 0F
-    BNE $8B47                ; $8B52: D0 F3
-    LDY $050A                ; $8B54: AC 0A 05
-    LDA #$BF                 ; $8B57: A9 BF
-    STA $0300,Y              ; $8B59: 99 00 03
-    LDA #$02                 ; $8B5C: A9 02
-    STA $0301,Y              ; $8B5E: 99 01 03
-    LDA #$02                 ; $8B61: A9 02
-    STA $0302,Y              ; $8B63: 99 02 03
-    LDA $05FE                ; $8B66: AD FE 05
-    STA $00                  ; $8B69: 85 00
-    LDA $05FF                ; $8B6B: AD FF 05
-    STA $05FE                ; $8B6E: 8D FE 05
-    STA $0303,Y              ; $8B71: 99 03 03
-    LDA $00                  ; $8B74: A5 00
-    STA $05FF                ; $8B76: 8D FF 05
-    STA $0304,Y              ; $8B79: 99 04 03
-    TYA                      ; $8B7C: 98
-    CLC                      ; $8B7D: 18
-    ADC #$05                 ; $8B7E: 69 05
-    STA $050A                ; $8B80: 8D 0A 05
-    TAY                      ; $8B83: A8
-    INC $050B                ; $8B84: EE 0B 05
-    LDA $65                  ; $8B87: A5 65
-    CMP #$03                 ; $8B89: C9 03
-    BNE $8BC8                ; $8B8B: D0 3B
-    LDA #$BF                 ; $8B8D: A9 BF
-    STA $0300,Y              ; $8B8F: 99 00 03
-    LDA #$03                 ; $8B92: A9 03
-    STA $0301,Y              ; $8B94: 99 01 03
-    LDA #$0D                 ; $8B97: A9 0D
-    STA $0302,Y              ; $8B99: 99 02 03
-    LDA $0606                ; $8B9C: AD 06 06
-    STA $00                  ; $8B9F: 85 00
-    LDA $0608                ; $8BA1: AD 08 06
-    STA $0606                ; $8BA4: 8D 06 06
-    STA $0303,Y              ; $8BA7: 99 03 03
-    LDA $0607                ; $8BAA: AD 07 06
-    STA $0608                ; $8BAD: 8D 08 06
-    STA $0304,Y              ; $8BB0: 99 04 03
-    LDA $00                  ; $8BB3: A5 00
-    STA $0607                ; $8BB5: 8D 07 06
-    STA $0305,Y              ; $8BB8: 99 05 03
-    INC $050B                ; $8BBB: EE 0B 05
-    TYA                      ; $8BBE: 98
-    CLC                      ; $8BBF: 18
-    ADC #$06                 ; $8BC0: 69 06
-    STA $050A                ; $8BC2: 8D 0A 05
-    JSR $8D2C                ; $8BC5: 20 2C 8D
+	JMP $8D26				; $8B47: 4C 26 8D
+	LDY $28				  ; $8B4A: A4 28
+	BNE $8BCB				; $8B4C: D0 7D
+	AND #$0F				 ; $8B4E: 29 0F
+	CMP #$0F				 ; $8B50: C9 0F
+	BNE $8B47				; $8B52: D0 F3
+	LDY $050A				; $8B54: AC 0A 05
+	LDA #$BF				 ; $8B57: A9 BF
+	STA $0300,Y			  ; $8B59: 99 00 03
+	LDA #$02				 ; $8B5C: A9 02
+	STA $0301,Y			  ; $8B5E: 99 01 03
+	LDA #$02				 ; $8B61: A9 02
+	STA $0302,Y			  ; $8B63: 99 02 03
+	LDA $05FE				; $8B66: AD FE 05
+	STA $00				  ; $8B69: 85 00
+	LDA $05FF				; $8B6B: AD FF 05
+	STA $05FE				; $8B6E: 8D FE 05
+	STA $0303,Y			  ; $8B71: 99 03 03
+	LDA $00				  ; $8B74: A5 00
+	STA $05FF				; $8B76: 8D FF 05
+	STA $0304,Y			  ; $8B79: 99 04 03
+	TYA					  ; $8B7C: 98
+	CLC					  ; $8B7D: 18
+	ADC #$05				 ; $8B7E: 69 05
+	STA $050A				; $8B80: 8D 0A 05
+	TAY					  ; $8B83: A8
+	INC $050B				; $8B84: EE 0B 05
+	LDA $65				  ; $8B87: A5 65
+	CMP #$03				 ; $8B89: C9 03
+	BNE $8BC8				; $8B8B: D0 3B
+	LDA #$BF				 ; $8B8D: A9 BF
+	STA $0300,Y			  ; $8B8F: 99 00 03
+	LDA #$03				 ; $8B92: A9 03
+	STA $0301,Y			  ; $8B94: 99 01 03
+	LDA #$0D				 ; $8B97: A9 0D
+	STA $0302,Y			  ; $8B99: 99 02 03
+	LDA $0606				; $8B9C: AD 06 06
+	STA $00				  ; $8B9F: 85 00
+	LDA $0608				; $8BA1: AD 08 06
+	STA $0606				; $8BA4: 8D 06 06
+	STA $0303,Y			  ; $8BA7: 99 03 03
+	LDA $0607				; $8BAA: AD 07 06
+	STA $0608				; $8BAD: 8D 08 06
+	STA $0304,Y			  ; $8BB0: 99 04 03
+	LDA $00				  ; $8BB3: A5 00
+	STA $0607				; $8BB5: 8D 07 06
+	STA $0305,Y			  ; $8BB8: 99 05 03
+	INC $050B				; $8BBB: EE 0B 05
+	TYA					  ; $8BBE: 98
+	CLC					  ; $8BBF: 18
+	ADC #$06				 ; $8BC0: 69 06
+	STA $050A				; $8BC2: 8D 0A 05
+	JSR $8D2C				; $8BC5: 20 2C 8D
 
 loc_8BC8:
-    JMP $8C4B                ; $8BC8: 4C 4B 8C
+	JMP $8C4B				; $8BC8: 4C 4B 8C
 
 loc_8BCB:
-    CPY #$18                 ; $8BCB: C0 18
-    BEQ $8BD2                ; $8BCD: F0 03
-    JMP $8C52                ; $8BCF: 4C 52 8C
+	CPY #$18				 ; $8BCB: C0 18
+	BEQ $8BD2				; $8BCD: F0 03
+	JMP $8C52				; $8BCF: 4C 52 8C
 
 loc_8BD2:
-    LDY $050A                ; $8BD2: AC 0A 05
-    TAX                      ; $8BD5: AA
-    LDA #$BF                 ; $8BD6: A9 BF
-    STA $0300,Y              ; $8BD8: 99 00 03
-    TXA                      ; $8BDB: 8A
-    CMP #$0F                 ; $8BDC: C9 0F
-    BEQ $8BF3                ; $8BDE: F0 13
-    AND #$03                 ; $8BE0: 29 03
-    CMP #$03                 ; $8BE2: C9 03
-    BEQ $8BE7                ; $8BE4: F0 01
-    RTS                      ; $8BE6: 60
+	LDY $050A				; $8BD2: AC 0A 05
+	TAX					  ; $8BD5: AA
+	LDA #$BF				 ; $8BD6: A9 BF
+	STA $0300,Y			  ; $8BD8: 99 00 03
+	TXA					  ; $8BDB: 8A
+	CMP #$0F				 ; $8BDC: C9 0F
+	BEQ $8BF3				; $8BDE: F0 13
+	AND #$03				 ; $8BE0: 29 03
+	CMP #$03				 ; $8BE2: C9 03
+	BEQ $8BE7				; $8BE4: F0 01
+	RTS					  ; $8BE6: 60
 
 loc_8BE7:
-    LDA #$05                 ; $8BE7: A9 05
-    STA $0301,Y              ; $8BE9: 99 01 03
-    LDA #$07                 ; $8BEC: A9 07
-    STA $0302,Y              ; $8BEE: 99 02 03
-    BNE $8C15                ; $8BF1: D0 22
+	LDA #$05				 ; $8BE7: A9 05
+	STA $0301,Y			  ; $8BE9: 99 01 03
+	LDA #$07				 ; $8BEC: A9 07
+	STA $0302,Y			  ; $8BEE: 99 02 03
+	BNE $8C15				; $8BF1: D0 22
 
 loc_8BF3:
-    LDA #$07                 ; $8BF3: A9 07
-    STA $0301,Y              ; $8BF5: 99 01 03
-    LDA #$05                 ; $8BF8: A9 05
-    STA $0302,Y              ; $8BFA: 99 02 03
-    LDA $0600                ; $8BFD: AD 00 06
-    STA $00                  ; $8C00: 85 00
-    LDA $0601                ; $8C02: AD 01 06
-    STA $0600                ; $8C05: 8D 00 06
-    STA $0303,Y              ; $8C08: 99 03 03
-    LDA $00                  ; $8C0B: A5 00
-    STA $0601                ; $8C0D: 8D 01 06
-    STA $0304,Y              ; $8C10: 99 04 03
-    INY                      ; $8C13: C8
-    INY                      ; $8C14: C8
+	LDA #$07				 ; $8BF3: A9 07
+	STA $0301,Y			  ; $8BF5: 99 01 03
+	LDA #$05				 ; $8BF8: A9 05
+	STA $0302,Y			  ; $8BFA: 99 02 03
+	LDA $0600				; $8BFD: AD 00 06
+	STA $00				  ; $8C00: 85 00
+	LDA $0601				; $8C02: AD 01 06
+	STA $0600				; $8C05: 8D 00 06
+	STA $0303,Y			  ; $8C08: 99 03 03
+	LDA $00				  ; $8C0B: A5 00
+	STA $0601				; $8C0D: 8D 01 06
+	STA $0304,Y			  ; $8C10: 99 04 03
+	INY					  ; $8C13: C8
+	INY					  ; $8C14: C8
 
 loc_8C15:
-    INY                      ; $8C15: C8
-    INY                      ; $8C16: C8
-    INY                      ; $8C17: C8
-    LDA #$11                 ; $8C18: A9 11
-    STA $0300,Y              ; $8C1A: 99 00 03
-    LDA #$0F                 ; $8C1D: A9 0F
-    STA $0301,Y              ; $8C1F: 99 01 03
-    LDA $0605                ; $8C22: AD 05 06
-    STA $00                  ; $8C25: 85 00
-    LDA $0604                ; $8C27: AD 04 06
-    STA $0605                ; $8C2A: 8D 05 06
-    STA $0304,Y              ; $8C2D: 99 04 03
-    LDA $0603                ; $8C30: AD 03 06
-    STA $0604                ; $8C33: 8D 04 06
-    STA $0303,Y              ; $8C36: 99 03 03
-    LDA $00                  ; $8C39: A5 00
-    STA $0603                ; $8C3B: 8D 03 06
-    STA $0302,Y              ; $8C3E: 99 02 03
-    TYA                      ; $8C41: 98
-    CLC                      ; $8C42: 18
-    ADC #$05                 ; $8C43: 69 05
-    STA $050A                ; $8C45: 8D 0A 05
-    INC $050B                ; $8C48: EE 0B 05
+	INY					  ; $8C15: C8
+	INY					  ; $8C16: C8
+	INY					  ; $8C17: C8
+	LDA #$11				 ; $8C18: A9 11
+	STA $0300,Y			  ; $8C1A: 99 00 03
+	LDA #$0F				 ; $8C1D: A9 0F
+	STA $0301,Y			  ; $8C1F: 99 01 03
+	LDA $0605				; $8C22: AD 05 06
+	STA $00				  ; $8C25: 85 00
+	LDA $0604				; $8C27: AD 04 06
+	STA $0605				; $8C2A: 8D 05 06
+	STA $0304,Y			  ; $8C2D: 99 04 03
+	LDA $0603				; $8C30: AD 03 06
+	STA $0604				; $8C33: 8D 04 06
+	STA $0303,Y			  ; $8C36: 99 03 03
+	LDA $00				  ; $8C39: A5 00
+	STA $0603				; $8C3B: 8D 03 06
+	STA $0302,Y			  ; $8C3E: 99 02 03
+	TYA					  ; $8C41: 98
+	CLC					  ; $8C42: 18
+	ADC #$05				 ; $8C43: 69 05
+	STA $050A				; $8C45: 8D 0A 05
+	INC $050B				; $8C48: EE 0B 05
 
 loc_8C4B:
-    LDA $1F                  ; $8C4B: A5 1F
-    ORA #$20                 ; $8C4D: 09 20
-    STA $1F                  ; $8C4F: 85 1F
-    RTS                      ; $8C51: 60
+	LDA $1F				  ; $8C4B: A5 1F
+	ORA #$20				 ; $8C4D: 09 20
+	STA $1F				  ; $8C4F: 85 1F
+	RTS					  ; $8C51: 60
 
 loc_8C52:
-    TXA                      ; $8C52: 8A
-    TAY                      ; $8C53: A8
-    LDA $0573                ; $8C54: AD 73 05
+	TXA					  ; $8C52: 8A
+	TAY					  ; $8C53: A8
+	LDA $0573				; $8C54: AD 73 05
 
 loc_8C57:
-    ASL                      ; $8C57: 0A
-    DEX                      ; $8C58: CA
-    BPL $8C57                ; $8C59: 10 FC
-    BCS $8C5E                ; $8C5B: B0 01
-    RTS                      ; $8C5D: 60
+	ASL					  ; $8C57: 0A
+	DEX					  ; $8C58: CA
+	BPL $8C57				; $8C59: 10 FC
+	BCS $8C5E				; $8C5B: B0 01
+	RTS					  ; $8C5D: 60
 
 loc_8C5E:
-    TYA                      ; $8C5E: 98
-    LDA $0584,Y              ; $8C5F: B9 84 05
-    STA $02                  ; $8C62: 85 02
-    LDA $057C,Y              ; $8C64: B9 7C 05
-    STA $03                  ; $8C67: 85 03
-    LDA $3C                  ; $8C69: A5 3C
-    AND $058D                ; $8C6B: 2D 8D 05
-    ASL                      ; $8C6E: 0A
-    ASL                      ; $8C6F: 0A
-    BCC $8C74                ; $8C70: 90 02
-    INC $03                  ; $8C72: E6 03
+	TYA					  ; $8C5E: 98
+	LDA $0584,Y			  ; $8C5F: B9 84 05
+	STA $02				  ; $8C62: 85 02
+	LDA $057C,Y			  ; $8C64: B9 7C 05
+	STA $03				  ; $8C67: 85 03
+	LDA $3C				  ; $8C69: A5 3C
+	AND $058D				; $8C6B: 2D 8D 05
+	ASL					  ; $8C6E: 0A
+	ASL					  ; $8C6F: 0A
+	BCC $8C74				; $8C70: 90 02
+	INC $03				  ; $8C72: E6 03
 
 loc_8C74:
-    CLC                      ; $8C74: 18
-    ADC $02                  ; $8C75: 65 02
-    STA $02                  ; $8C77: 85 02
-    BCC $8C7D                ; $8C79: 90 02
-    INC $03                  ; $8C7B: E6 03
+	CLC					  ; $8C74: 18
+	ADC $02				  ; $8C75: 65 02
+	STA $02				  ; $8C77: 85 02
+	BCC $8C7D				; $8C79: 90 02
+	INC $03				  ; $8C7B: E6 03
 
 loc_8C7D:
-    LDA #$09                 ; $8C7D: A9 09
-    STA $04                  ; $8C7F: 85 04
-    LDA $0574,Y              ; $8C81: B9 74 05
-    STA $00                  ; $8C84: 85 00
-    BEQ $8CA9                ; $8C86: F0 21
-    ASL $00                  ; $8C88: 06 00
-    ROL $04                  ; $8C8A: 26 04
-    ASL $00                  ; $8C8C: 06 00
-    ROL $04                  ; $8C8E: 26 04
-    ASL $00                  ; $8C90: 06 00
-    ROL $04                  ; $8C92: 26 04
-    ASL $00                  ; $8C94: 06 00
-    ROL $04                  ; $8C96: 26 04
-    LDY #$00                 ; $8C98: A0 00
-    JSR $8CAC                ; $8C9A: 20 AC 8C
-    JSR $8CAC                ; $8C9D: 20 AC 8C
-    JSR $8CAC                ; $8CA0: 20 AC 8C
-    JSR $8CAC                ; $8CA3: 20 AC 8C
-    JSR $C626                ; $8CA6: 20 26 C6
+	LDA #$09				 ; $8C7D: A9 09
+	STA $04				  ; $8C7F: 85 04
+	LDA $0574,Y			  ; $8C81: B9 74 05
+	STA $00				  ; $8C84: 85 00
+	BEQ $8CA9				; $8C86: F0 21
+	ASL $00				  ; $8C88: 06 00
+	ROL $04				  ; $8C8A: 26 04
+	ASL $00				  ; $8C8C: 06 00
+	ROL $04				  ; $8C8E: 26 04
+	ASL $00				  ; $8C90: 06 00
+	ROL $04				  ; $8C92: 26 04
+	ASL $00				  ; $8C94: 06 00
+	ROL $04				  ; $8C96: 26 04
+	LDY #$00				 ; $8C98: A0 00
+	JSR $8CAC				; $8C9A: 20 AC 8C
+	JSR $8CAC				; $8C9D: 20 AC 8C
+	JSR $8CAC				; $8CA0: 20 AC 8C
+	JSR $8CAC				; $8CA3: 20 AC 8C
+	JSR $C626				; $8CA6: 20 26 C6
 
 loc_8CA9:
-    LDA #$FF                 ; $8CA9: A9 FF
-    RTS                      ; $8CAB: 60
+	LDA #$FF				 ; $8CA9: A9 FF
+	RTS					  ; $8CAB: 60
 
 loc_8CAC:
-    LDX $050A                ; $8CAC: AE 0A 05
-    LDA $04                  ; $8CAF: A5 04
-    STA $0300,X              ; $8CB1: 9D 00 03
-    LDA #$10                 ; $8CB4: A9 10
-    STA $0301,X              ; $8CB6: 9D 01 03
-    LDA $00                  ; $8CB9: A5 00
-    STA $0302,X              ; $8CBB: 9D 02 03
-    LDA #$10                 ; $8CBE: A9 10
-    STA $01                  ; $8CC0: 85 01
+	LDX $050A				; $8CAC: AE 0A 05
+	LDA $04				  ; $8CAF: A5 04
+	STA $0300,X			  ; $8CB1: 9D 00 03
+	LDA #$10				 ; $8CB4: A9 10
+	STA $0301,X			  ; $8CB6: 9D 01 03
+	LDA $00				  ; $8CB9: A5 00
+	STA $0302,X			  ; $8CBB: 9D 02 03
+	LDA #$10				 ; $8CBE: A9 10
+	STA $01				  ; $8CC0: 85 01
 
 loc_8CC2:
-    LDA ($02),Y              ; $8CC2: B1 02
-    STA $0303,X              ; $8CC4: 9D 03 03
-    INX                      ; $8CC7: E8
-    INY                      ; $8CC8: C8
-    TYA                      ; $8CC9: 98
-    DEC $01                  ; $8CCA: C6 01
-    BNE $8CC2                ; $8CCC: D0 F4
-    LDA $050A                ; $8CCE: AD 0A 05
-    CLC                      ; $8CD1: 18
-    ADC #$13                 ; $8CD2: 69 13
-    STA $050A                ; $8CD4: 8D 0A 05
-    INC $050B                ; $8CD7: EE 0B 05
-    LDA $00                  ; $8CDA: A5 00
-    CLC                      ; $8CDC: 18
-    ADC #$10                 ; $8CDD: 69 10
-    STA $00                  ; $8CDF: 85 00
-    BCC $8CE5                ; $8CE1: 90 02
-    INC $04                  ; $8CE3: E6 04
+	LDA ($02),Y			  ; $8CC2: B1 02
+	STA $0303,X			  ; $8CC4: 9D 03 03
+	INX					  ; $8CC7: E8
+	INY					  ; $8CC8: C8
+	TYA					  ; $8CC9: 98
+	DEC $01				  ; $8CCA: C6 01
+	BNE $8CC2				; $8CCC: D0 F4
+	LDA $050A				; $8CCE: AD 0A 05
+	CLC					  ; $8CD1: 18
+	ADC #$13				 ; $8CD2: 69 13
+	STA $050A				; $8CD4: 8D 0A 05
+	INC $050B				; $8CD7: EE 0B 05
+	LDA $00				  ; $8CDA: A5 00
+	CLC					  ; $8CDC: 18
+	ADC #$10				 ; $8CDD: 69 10
+	STA $00				  ; $8CDF: 85 00
+	BCC $8CE5				; $8CE1: 90 02
+	INC $04				  ; $8CE3: E6 04
 
 loc_8CE5:
-    RTS                      ; $8CE5: 60
+	RTS					  ; $8CE5: 60
 
 loc_8CE6:
-    LDA $629A                ; $8CE6: AD 9A 62
-    BPL $8D25                ; $8CE9: 10 3A
-    LDA $3C                  ; $8CEB: A5 3C
-    AND #$07                 ; $8CED: 29 07
-    CMP #$07                 ; $8CEF: C9 07
-    BNE $8D25                ; $8CF1: D0 32
-    JSR $C891                ; $8CF3: 20 91 C8
-    AND #$03                 ; $8CF6: 29 03
-    ASL                      ; $8CF8: 0A
-    TAX                      ; $8CF9: AA
-    JSR $C891                ; $8CFA: 20 91 C8
-    AND #$03                 ; $8CFD: 29 03
-    ASL                      ; $8CFF: 0A
-    TAY                      ; $8D00: A8
-    JSR $8D06                ; $8D01: 20 06 8D
-    INX                      ; $8D04: E8
-    INY                      ; $8D05: C8
+	LDA $629A				; $8CE6: AD 9A 62
+	BPL $8D25				; $8CE9: 10 3A
+	LDA $3C				  ; $8CEB: A5 3C
+	AND #$07				 ; $8CED: 29 07
+	CMP #$07				 ; $8CEF: C9 07
+	BNE $8D25				; $8CF1: D0 32
+	JSR $C891				; $8CF3: 20 91 C8
+	AND #$03				 ; $8CF6: 29 03
+	ASL					  ; $8CF8: 0A
+	TAX					  ; $8CF9: AA
+	JSR $C891				; $8CFA: 20 91 C8
+	AND #$03				 ; $8CFD: 29 03
+	ASL					  ; $8CFF: 0A
+	TAY					  ; $8D00: A8
+	JSR $8D06				; $8D01: 20 06 8D
+	INX					  ; $8D04: E8
+	INY					  ; $8D05: C8
 
 loc_8D06:
-    LDA $0508                ; $8D06: AD 08 05
-    CLC                      ; $8D09: 18
-    ADC $8D1D,X              ; $8D0A: 7D 1D 8D
-    STA $0508                ; $8D0D: 8D 08 05
-    LDA $0509                ; $8D10: AD 09 05
-    CLC                      ; $8D13: 18
-    ADC $8D1D,Y              ; $8D14: 79 1D 8D
-    STA $0509                ; $8D17: 8D 09 05
-    JMP $FF74                ; $8D1A: 4C 74 FF
-    BRK                      ; $8D1D: 00
-    BRK                      ; $8D1E: 00
-    ORA ($FF,X)              ; $8D1F: 01 FF
-    .byte $02             ; $8D21 - unknown opcode
-    INC $FC04,X              ; $8D22: FE 04 FC
+	LDA $0508				; $8D06: AD 08 05
+	CLC					  ; $8D09: 18
+	ADC $8D1D,X			  ; $8D0A: 7D 1D 8D
+	STA $0508				; $8D0D: 8D 08 05
+	LDA $0509				; $8D10: AD 09 05
+	CLC					  ; $8D13: 18
+	ADC $8D1D,Y			  ; $8D14: 79 1D 8D
+	STA $0509				; $8D17: 8D 09 05
+	JMP $FF74				; $8D1A: 4C 74 FF
+	BRK					  ; $8D1D: 00
+	BRK					  ; $8D1E: 00
+	ORA ($FF,X)			  ; $8D1F: 01 FF
+	.byte $02			 ; $8D21 - unknown opcode
+	INC $FC04,X			  ; $8D22: FE 04 FC
 
 loc_8D25:
-    RTS                      ; $8D25: 60
+	RTS					  ; $8D25: 60
 
 loc_8D26:
-    LDA $65                  ; $8D26: A5 65
-    CMP #$03                 ; $8D28: C9 03
-    BNE $8D68                ; $8D2A: D0 3C
+	LDA $65				  ; $8D26: A5 65
+	CMP #$03				 ; $8D28: C9 03
+	BNE $8D68				; $8D2A: D0 3C
 
 loc_8D2C:
-    LDA $3C                  ; $8D2C: A5 3C
-    AND #$02                 ; $8D2E: 29 02
-    TAX                      ; $8D30: AA
-    LDA $8D69,X              ; $8D31: BD 69 8D
-    STA $02                  ; $8D34: 85 02
-    LDA $8D6A,X              ; $8D36: BD 6A 8D
-    STA $03                  ; $8D39: 85 03
-    LDA $7500                ; $8D3B: AD 00 75
-    STA $00                  ; $8D3E: 85 00
-    LDA #$08                 ; $8D40: A9 08
-    STA $04                  ; $8D42: 85 04
-    ASL $00                  ; $8D44: 06 00
-    ROL $04                  ; $8D46: 26 04
-    ASL $00                  ; $8D48: 06 00
-    ROL $04                  ; $8D4A: 26 04
-    ASL $00                  ; $8D4C: 06 00
-    ROL $04                  ; $8D4E: 26 04
-    ASL $00                  ; $8D50: 06 00
-    ROL $04                  ; $8D52: 26 04
-    LDY #$00                 ; $8D54: A0 00
-    JSR $8CAC                ; $8D56: 20 AC 8C
-    JSR $8CAC                ; $8D59: 20 AC 8C
-    JSR $8CAC                ; $8D5C: 20 AC 8C
-    JSR $8CAC                ; $8D5F: 20 AC 8C
-    LDA $1F                  ; $8D62: A5 1F
-    ORA #$20                 ; $8D64: 09 20
-    STA $1F                  ; $8D66: 85 1F
+	LDA $3C				  ; $8D2C: A5 3C
+	AND #$02				 ; $8D2E: 29 02
+	TAX					  ; $8D30: AA
+	LDA $8D69,X			  ; $8D31: BD 69 8D
+	STA $02				  ; $8D34: 85 02
+	LDA $8D6A,X			  ; $8D36: BD 6A 8D
+	STA $03				  ; $8D39: 85 03
+	LDA $7500				; $8D3B: AD 00 75
+	STA $00				  ; $8D3E: 85 00
+	LDA #$08				 ; $8D40: A9 08
+	STA $04				  ; $8D42: 85 04
+	ASL $00				  ; $8D44: 06 00
+	ROL $04				  ; $8D46: 26 04
+	ASL $00				  ; $8D48: 06 00
+	ROL $04				  ; $8D4A: 26 04
+	ASL $00				  ; $8D4C: 06 00
+	ROL $04				  ; $8D4E: 26 04
+	ASL $00				  ; $8D50: 06 00
+	ROL $04				  ; $8D52: 26 04
+	LDY #$00				 ; $8D54: A0 00
+	JSR $8CAC				; $8D56: 20 AC 8C
+	JSR $8CAC				; $8D59: 20 AC 8C
+	JSR $8CAC				; $8D5C: 20 AC 8C
+	JSR $8CAC				; $8D5F: 20 AC 8C
+	LDA $1F				  ; $8D62: A5 1F
+	ORA #$20				 ; $8D64: 09 20
+	STA $1F				  ; $8D66: 85 1F
 
 loc_8D68:
-    RTS                      ; $8D68: 60
-    ADC $AD8D                ; $8D69: 6D 8D AD
-    STA $0200                ; $8D6C: 8D 00 02
-    RTI                      ; $8D6F: 40
-    BRK                      ; $8D70: 00
-    PHP                      ; $8D71: 08
-    BRK                      ; $8D72: 00
-    BRK                      ; $8D73: 00
-    .byte $02             ; $8D74 - unknown opcode
-    BRK                      ; $8D75: 00
-    BRK                      ; $8D76: 00
-    BRK                      ; $8D77: 00
-    BRK                      ; $8D78: 00
-    BRK                      ; $8D79: 00
-    BRK                      ; $8D7A: 00
-    BRK                      ; $8D7B: 00
-    BRK                      ; $8D7C: 00
-    BRK                      ; $8D7D: 00
-    BIT $00                  ; $8D7E: 24 00
-    BRK                      ; $8D80: 00
-    RTI                      ; $8D81: 40
-    .byte $02             ; $8D82 - unknown opcode
-    BPL $8DC5                ; $8D83: 10 40
-    BRK                      ; $8D85: 00
-    BRK                      ; $8D86: 00
-    BRK                      ; $8D87: 00
-    BRK                      ; $8D88: 00
-    BRK                      ; $8D89: 00
-    BRK                      ; $8D8A: 00
-    BRK                      ; $8D8B: 00
-    BRK                      ; $8D8C: 00
-    PHP                      ; $8D8D: 08
-    BPL $8D90                ; $8D8E: 10 00
+	RTS					  ; $8D68: 60
+	ADC $AD8D				; $8D69: 6D 8D AD
+	STA $0200				; $8D6C: 8D 00 02
+	RTI					  ; $8D6F: 40
+	BRK					  ; $8D70: 00
+	PHP					  ; $8D71: 08
+	BRK					  ; $8D72: 00
+	BRK					  ; $8D73: 00
+	.byte $02			 ; $8D74 - unknown opcode
+	BRK					  ; $8D75: 00
+	BRK					  ; $8D76: 00
+	BRK					  ; $8D77: 00
+	BRK					  ; $8D78: 00
+	BRK					  ; $8D79: 00
+	BRK					  ; $8D7A: 00
+	BRK					  ; $8D7B: 00
+	BRK					  ; $8D7C: 00
+	BRK					  ; $8D7D: 00
+	BIT $00				  ; $8D7E: 24 00
+	BRK					  ; $8D80: 00
+	RTI					  ; $8D81: 40
+	.byte $02			 ; $8D82 - unknown opcode
+	BPL $8DC5				; $8D83: 10 40
+	BRK					  ; $8D85: 00
+	BRK					  ; $8D86: 00
+	BRK					  ; $8D87: 00
+	BRK					  ; $8D88: 00
+	BRK					  ; $8D89: 00
+	BRK					  ; $8D8A: 00
+	BRK					  ; $8D8B: 00
+	BRK					  ; $8D8C: 00
+	PHP					  ; $8D8D: 08
+	BPL $8D90				; $8D8E: 10 00
 
 loc_8D90:
-    BRK                      ; $8D90: 00
-    BPL $8D93                ; $8D91: 10 00
+	BRK					  ; $8D90: 00
+	BPL $8D93				; $8D91: 10 00
 
 loc_8D93:
-    .byte $14             ; $8D93 - unknown opcode
-    BRK                      ; $8D94: 00
-    BRK                      ; $8D95: 00
-    BRK                      ; $8D96: 00
-    BRK                      ; $8D97: 00
-    BRK                      ; $8D98: 00
-    BRK                      ; $8D99: 00
-    BRK                      ; $8D9A: 00
-    BRK                      ; $8D9B: 00
-    BRK                      ; $8D9C: 00
-    BRK                      ; $8D9D: 00
-    JSR $8009                ; $8D9E: 20 09 80
-    BRK                      ; $8DA1: 00
-    RTI                      ; $8DA2: 40
-    .byte $02             ; $8DA3 - unknown opcode
-    BPL $8DA6                ; $8DA4: 10 00
+	.byte $14			 ; $8D93 - unknown opcode
+	BRK					  ; $8D94: 00
+	BRK					  ; $8D95: 00
+	BRK					  ; $8D96: 00
+	BRK					  ; $8D97: 00
+	BRK					  ; $8D98: 00
+	BRK					  ; $8D99: 00
+	BRK					  ; $8D9A: 00
+	BRK					  ; $8D9B: 00
+	BRK					  ; $8D9C: 00
+	BRK					  ; $8D9D: 00
+	JSR $8009				; $8D9E: 20 09 80
+	BRK					  ; $8DA1: 00
+	RTI					  ; $8DA2: 40
+	.byte $02			 ; $8DA3 - unknown opcode
+	BPL $8DA6				; $8DA4: 10 00
 
 loc_8DA6:
-    BRK                      ; $8DA6: 00
-    BRK                      ; $8DA7: 00
-    BRK                      ; $8DA8: 00
-    BRK                      ; $8DA9: 00
-    BRK                      ; $8DAA: 00
-    BRK                      ; $8DAB: 00
-    BRK                      ; $8DAC: 00
-    .byte $80             ; $8DAD - unknown opcode
-    BRK                      ; $8DAE: 00
-    .byte $04             ; $8DAF - unknown opcode
-    JSR $0280                ; $8DB0: 20 80 02
-    BRK                      ; $8DB3: 00
-    .byte $04             ; $8DB4 - unknown opcode
-    BRK                      ; $8DB5: 00
-    BRK                      ; $8DB6: 00
-    BRK                      ; $8DB7: 00
-    BRK                      ; $8DB8: 00
-    BRK                      ; $8DB9: 00
-    BRK                      ; $8DBA: 00
-    BRK                      ; $8DBB: 00
-    BRK                      ; $8DBC: 00
-    RTI                      ; $8DBD: 40
-    BRK                      ; $8DBE: 00
-    .byte $02             ; $8DBF - unknown opcode
-    JSR $0001                ; $8DC0: 20 01 00
-    RTI                      ; $8DC3: 40
-    ORA ($00,X)              ; $8DC4: 01 00
-    BRK                      ; $8DC6: 00
-    BRK                      ; $8DC7: 00
-    BRK                      ; $8DC8: 00
-    BRK                      ; $8DC9: 00
-    BRK                      ; $8DCA: 00
-    BRK                      ; $8DCB: 00
-    BRK                      ; $8DCC: 00
-    BRK                      ; $8DCD: 00
-    JSR $0004                ; $8DCE: 20 04 00
-    .byte $80             ; $8DD1 - unknown opcode
-    .byte $02             ; $8DD2 - unknown opcode
-    BRK                      ; $8DD3: 00
-    PHP                      ; $8DD4: 08
-    BRK                      ; $8DD5: 00
-    BRK                      ; $8DD6: 00
-    BRK                      ; $8DD7: 00
-    BRK                      ; $8DD8: 00
-    BRK                      ; $8DD9: 00
-    BRK                      ; $8DDA: 00
-    BRK                      ; $8DDB: 00
-    BRK                      ; $8DDC: 00
-    BRK                      ; $8DDD: 00
-    DEY                      ; $8DDE: 88
-    BRK                      ; $8DDF: 00
-    AND ($00,X)              ; $8DE0: 21 00
-    BRK                      ; $8DE2: 00
-    RTI                      ; $8DE3: 40
-    ASL                      ; $8DE4: 0A
-    BRK                      ; $8DE5: 00
-    BRK                      ; $8DE6: 00
-    BRK                      ; $8DE7: 00
-    BRK                      ; $8DE8: 00
-    BRK                      ; $8DE9: 00
-    BRK                      ; $8DEA: 00
-    BRK                      ; $8DEB: 00
-    BRK                      ; $8DEC: 00
-    LDA $65                  ; $8DED: A5 65
-    PHA                      ; $8DEF: 48
-    LDA #$00                 ; $8DF0: A9 00
-    STA $65                  ; $8DF2: 85 65
-    JSR $C5C5                ; $8DF4: 20 C5 C5
-    JSR $C54E                ; $8DF7: 20 4E C5
-    JSR $8EA9                ; $8DFA: 20 A9 8E
-    JSR $8EC4                ; $8DFD: 20 C4 8E
-    JSR $C5AF                ; $8E00: 20 AF C5
-    JSR $8E68                ; $8E03: 20 68 8E
-    JSR $8E91                ; $8E06: 20 91 8E
-    JSR $8EE0                ; $8E09: 20 E0 8E
-    JSR $C58F                ; $8E0C: 20 8F C5
-    JSR $C5BF                ; $8E0F: 20 BF C5
-    JSR $8E50                ; $8E12: 20 50 8E
-    JSR $C02E                ; $8E15: 20 2E C0
-    PLA                      ; $8E18: 68
-    PHA                      ; $8E19: 48
-    JSR $8EF9                ; $8E1A: 20 F9 8E
-    JSR $C8CC                ; $8E1D: 20 CC C8
-    JSR $C5C5                ; $8E20: 20 C5 C5
-    BRK                      ; $8E23: 00
-    PHP                      ; $8E24: 08
-    .byte $8F             ; $8E25 - unknown opcode
-    JSR $C5AF                ; $8E26: 20 AF C5
-    PLA                      ; $8E29: 68
-    STA $65                  ; $8E2A: 85 65
-    LDA $28                  ; $8E2C: A5 28
-    BRK                      ; $8E2E: 00
-    .byte $02             ; $8E2F - unknown opcode
-    .byte $87             ; $8E30 - unknown opcode
-    LDA $41                  ; $8E31: A5 41
-    BMI $8E38                ; $8E33: 30 03
-    BRK                      ; $8E35: 00
-    ROL                      ; $8E36: 2A
-    .byte $EF             ; $8E37 - unknown opcode
+	BRK					  ; $8DA6: 00
+	BRK					  ; $8DA7: 00
+	BRK					  ; $8DA8: 00
+	BRK					  ; $8DA9: 00
+	BRK					  ; $8DAA: 00
+	BRK					  ; $8DAB: 00
+	BRK					  ; $8DAC: 00
+	.byte $80			 ; $8DAD - unknown opcode
+	BRK					  ; $8DAE: 00
+	.byte $04			 ; $8DAF - unknown opcode
+	JSR $0280				; $8DB0: 20 80 02
+	BRK					  ; $8DB3: 00
+	.byte $04			 ; $8DB4 - unknown opcode
+	BRK					  ; $8DB5: 00
+	BRK					  ; $8DB6: 00
+	BRK					  ; $8DB7: 00
+	BRK					  ; $8DB8: 00
+	BRK					  ; $8DB9: 00
+	BRK					  ; $8DBA: 00
+	BRK					  ; $8DBB: 00
+	BRK					  ; $8DBC: 00
+	RTI					  ; $8DBD: 40
+	BRK					  ; $8DBE: 00
+	.byte $02			 ; $8DBF - unknown opcode
+	JSR $0001				; $8DC0: 20 01 00
+	RTI					  ; $8DC3: 40
+	ORA ($00,X)			  ; $8DC4: 01 00
+	BRK					  ; $8DC6: 00
+	BRK					  ; $8DC7: 00
+	BRK					  ; $8DC8: 00
+	BRK					  ; $8DC9: 00
+	BRK					  ; $8DCA: 00
+	BRK					  ; $8DCB: 00
+	BRK					  ; $8DCC: 00
+	BRK					  ; $8DCD: 00
+	JSR $0004				; $8DCE: 20 04 00
+	.byte $80			 ; $8DD1 - unknown opcode
+	.byte $02			 ; $8DD2 - unknown opcode
+	BRK					  ; $8DD3: 00
+	PHP					  ; $8DD4: 08
+	BRK					  ; $8DD5: 00
+	BRK					  ; $8DD6: 00
+	BRK					  ; $8DD7: 00
+	BRK					  ; $8DD8: 00
+	BRK					  ; $8DD9: 00
+	BRK					  ; $8DDA: 00
+	BRK					  ; $8DDB: 00
+	BRK					  ; $8DDC: 00
+	BRK					  ; $8DDD: 00
+	DEY					  ; $8DDE: 88
+	BRK					  ; $8DDF: 00
+	AND ($00,X)			  ; $8DE0: 21 00
+	BRK					  ; $8DE2: 00
+	RTI					  ; $8DE3: 40
+	ASL					  ; $8DE4: 0A
+	BRK					  ; $8DE5: 00
+	BRK					  ; $8DE6: 00
+	BRK					  ; $8DE7: 00
+	BRK					  ; $8DE8: 00
+	BRK					  ; $8DE9: 00
+	BRK					  ; $8DEA: 00
+	BRK					  ; $8DEB: 00
+	BRK					  ; $8DEC: 00
+	LDA $65				  ; $8DED: A5 65
+	PHA					  ; $8DEF: 48
+	LDA #$00				 ; $8DF0: A9 00
+	STA $65				  ; $8DF2: 85 65
+	JSR $C5C5				; $8DF4: 20 C5 C5
+	JSR $C54E				; $8DF7: 20 4E C5
+	JSR $8EA9				; $8DFA: 20 A9 8E
+	JSR $8EC4				; $8DFD: 20 C4 8E
+	JSR $C5AF				; $8E00: 20 AF C5
+	JSR $8E68				; $8E03: 20 68 8E
+	JSR $8E91				; $8E06: 20 91 8E
+	JSR $8EE0				; $8E09: 20 E0 8E
+	JSR $C58F				; $8E0C: 20 8F C5
+	JSR $C5BF				; $8E0F: 20 BF C5
+	JSR $8E50				; $8E12: 20 50 8E
+	JSR $C02E				; $8E15: 20 2E C0
+	PLA					  ; $8E18: 68
+	PHA					  ; $8E19: 48
+	JSR $8EF9				; $8E1A: 20 F9 8E
+	JSR $C8CC				; $8E1D: 20 CC C8
+	JSR $C5C5				; $8E20: 20 C5 C5
+	BRK					  ; $8E23: 00
+	PHP					  ; $8E24: 08
+	.byte $8F			 ; $8E25 - unknown opcode
+	JSR $C5AF				; $8E26: 20 AF C5
+	PLA					  ; $8E29: 68
+	STA $65				  ; $8E2A: 85 65
+	LDA $28				  ; $8E2C: A5 28
+	BRK					  ; $8E2E: 00
+	.byte $02			 ; $8E2F - unknown opcode
+	.byte $87			 ; $8E30 - unknown opcode
+	LDA $41				  ; $8E31: A5 41
+	BMI $8E38				; $8E33: 30 03
+	BRK					  ; $8E35: 00
+	ROL					  ; $8E36: 2A
+	.byte $EF			 ; $8E37 - unknown opcode
 
 loc_8E38:
-    LDA $0572                ; $8E38: AD 72 05
-    BRK                      ; $8E3B: 00
-    ORA ($87),Y              ; $8E3C: 11 87
-    BRK                      ; $8E3E: 00
-    .byte $07             ; $8E3F - unknown opcode
-    .byte $87             ; $8E40 - unknown opcode
-    LDX #$00                 ; $8E41: A2 00
-    BRK                      ; $8E43: 00
-    .byte $23             ; $8E44 - unknown opcode
-    .byte $EF             ; $8E45 - unknown opcode
-    BRK                      ; $8E46: 00
-    .byte $0B             ; $8E47 - unknown opcode
-    .byte $87             ; $8E48 - unknown opcode
-    BRK                      ; $8E49: 00
-    .byte $03             ; $8E4A - unknown opcode
-    .byte $EF             ; $8E4B - unknown opcode
-    JSR $C5BF                ; $8E4C: 20 BF C5
-    RTS                      ; $8E4F: 60
+	LDA $0572				; $8E38: AD 72 05
+	BRK					  ; $8E3B: 00
+	ORA ($87),Y			  ; $8E3C: 11 87
+	BRK					  ; $8E3E: 00
+	.byte $07			 ; $8E3F - unknown opcode
+	.byte $87			 ; $8E40 - unknown opcode
+	LDX #$00				 ; $8E41: A2 00
+	BRK					  ; $8E43: 00
+	.byte $23			 ; $8E44 - unknown opcode
+	.byte $EF			 ; $8E45 - unknown opcode
+	BRK					  ; $8E46: 00
+	.byte $0B			 ; $8E47 - unknown opcode
+	.byte $87			 ; $8E48 - unknown opcode
+	BRK					  ; $8E49: 00
+	.byte $03			 ; $8E4A - unknown opcode
+	.byte $EF			 ; $8E4B - unknown opcode
+	JSR $C5BF				; $8E4C: 20 BF C5
+	RTS					  ; $8E4F: 60
 
 loc_8E50:
-    LDA #$00                 ; $8E50: A9 00
-    STA $7D                  ; $8E52: 85 7D
-    STA $7E                  ; $8E54: 85 7E
-    STA $7F                  ; $8E56: 85 7F
-    STA $82                  ; $8E58: 85 82
-    STA $0302                ; $8E5A: 8D 02 03
-    LDA #$90                 ; $8E5D: A9 90
-    STA $0300                ; $8E5F: 8D 00 03
-    LDA #$80                 ; $8E62: A9 80
-    STA $0301                ; $8E64: 8D 01 03
-    RTS                      ; $8E67: 60
+	LDA #$00				 ; $8E50: A9 00
+	STA $7D				  ; $8E52: 85 7D
+	STA $7E				  ; $8E54: 85 7E
+	STA $7F				  ; $8E56: 85 7F
+	STA $82				  ; $8E58: 85 82
+	STA $0302				; $8E5A: 8D 02 03
+	LDA #$90				 ; $8E5D: A9 90
+	STA $0300				; $8E5F: 8D 00 03
+	LDA #$80				 ; $8E62: A9 80
+	STA $0301				; $8E64: 8D 01 03
+	RTS					  ; $8E67: 60
 
 loc_8E68:
-    LDA $2002                ; $8E68: AD 02 20
-    LDY #$00                 ; $8E6B: A0 00
-    LDX #$10                 ; $8E6D: A2 10
+	LDA $2002				; $8E68: AD 02 20
+	LDY #$00				 ; $8E6B: A0 00
+	LDX #$10				 ; $8E6D: A2 10
 
 loc_8E6F:
-    LDA $51                  ; $8E6F: A5 51
-    STA $2006                ; $8E71: 8D 06 20
-    LDA $52                  ; $8E74: A5 52
-    STA $2006                ; $8E76: 8D 06 20
+	LDA $51				  ; $8E6F: A5 51
+	STA $2006				; $8E71: 8D 06 20
+	LDA $52				  ; $8E74: A5 52
+	STA $2006				; $8E76: 8D 06 20
 
 loc_8E79:
-    STY $2007                ; $8E79: 8C 07 20
-    INY                      ; $8E7C: C8
-    TYA                      ; $8E7D: 98
-    AND #$0F                 ; $8E7E: 29 0F
-    BNE $8E79                ; $8E80: D0 F7
-    LDA $52                  ; $8E82: A5 52
-    CLC                      ; $8E84: 18
-    ADC #$20                 ; $8E85: 69 20
-    STA $52                  ; $8E87: 85 52
-    BCC $8E8D                ; $8E89: 90 02
-    INC $51                  ; $8E8B: E6 51
+	STY $2007				; $8E79: 8C 07 20
+	INY					  ; $8E7C: C8
+	TYA					  ; $8E7D: 98
+	AND #$0F				 ; $8E7E: 29 0F
+	BNE $8E79				; $8E80: D0 F7
+	LDA $52				  ; $8E82: A5 52
+	CLC					  ; $8E84: 18
+	ADC #$20				 ; $8E85: 69 20
+	STA $52				  ; $8E87: 85 52
+	BCC $8E8D				; $8E89: 90 02
+	INC $51				  ; $8E8B: E6 51
 
 loc_8E8D:
-    DEX                      ; $8E8D: CA
-    BNE $8E6F                ; $8E8E: D0 DF
-    RTS                      ; $8E90: 60
+	DEX					  ; $8E8D: CA
+	BNE $8E6F				; $8E8E: D0 DF
+	RTS					  ; $8E90: 60
 
 loc_8E91:
-    LDA $2002                ; $8E91: AD 02 20
-    LDY #$10                 ; $8E94: A0 10
-    STY $2006                ; $8E96: 8C 06 20
-    LDA #$00                 ; $8E99: A9 00
-    STA $2006                ; $8E9B: 8D 06 20
-    TAX                      ; $8E9E: AA
+	LDA $2002				; $8E91: AD 02 20
+	LDY #$10				 ; $8E94: A0 10
+	STY $2006				; $8E96: 8C 06 20
+	LDA #$00				 ; $8E99: A9 00
+	STA $2006				; $8E9B: 8D 06 20
+	TAX					  ; $8E9E: AA
 
 loc_8E9F:
-    STA $2007                ; $8E9F: 8D 07 20
-    DEX                      ; $8EA2: CA
-    BNE $8E9F                ; $8EA3: D0 FA
-    DEY                      ; $8EA5: 88
-    BNE $8E9F                ; $8EA6: D0 F7
-    RTS                      ; $8EA8: 60
+	STA $2007				; $8E9F: 8D 07 20
+	DEX					  ; $8EA2: CA
+	BNE $8E9F				; $8EA3: D0 FA
+	DEY					  ; $8EA5: 88
+	BNE $8E9F				; $8EA6: D0 F7
+	RTS					  ; $8EA8: 60
 
 loc_8EA9:
-    LDA #$00                 ; $8EA9: A9 00
-    STA $0508                ; $8EAB: 8D 08 05
-    STA $0509                ; $8EAE: 8D 09 05
-    LDA $0505                ; $8EB1: AD 05 05
-    AND #$FE                 ; $8EB4: 29 FE
-    STA $0505                ; $8EB6: 8D 05 05
-    LDA #$20                 ; $8EB9: A9 20
-    STA $51                  ; $8EBB: 85 51
-    LDA #$E8                 ; $8EBD: A9 E8
-    STA $52                  ; $8EBF: 85 52
-    JMP $FF74                ; $8EC1: 4C 74 FF
+	LDA #$00				 ; $8EA9: A9 00
+	STA $0508				; $8EAB: 8D 08 05
+	STA $0509				; $8EAE: 8D 09 05
+	LDA $0505				; $8EB1: AD 05 05
+	AND #$FE				 ; $8EB4: 29 FE
+	STA $0505				; $8EB6: 8D 05 05
+	LDA #$20				 ; $8EB9: A9 20
+	STA $51				  ; $8EBB: 85 51
+	LDA #$E8				 ; $8EBD: A9 E8
+	STA $52				  ; $8EBF: 85 52
+	JMP $FF74				; $8EC1: 4C 74 FF
 
 loc_8EC4:
-    LDX #$03                 ; $8EC4: A2 03
+	LDX #$03				 ; $8EC4: A2 03
 
 loc_8EC6:
-    LDA $8ED8,X              ; $8EC6: BD D8 8E
-    STA $05FC,X              ; $8EC9: 9D FC 05
-    LDA $8EDC,X              ; $8ECC: BD DC 8E
-    STA $0609,X              ; $8ECF: 9D 09 06
-    DEX                      ; $8ED2: CA
-    BPL $8EC6                ; $8ED3: 10 F1
-    JMP $C5B9                ; $8ED5: 4C B9 C5
-    .byte $12             ; $8ED8 - unknown opcode
-    SEC                      ; $8ED9: 38
-    ROL                      ; $8EDA: 2A
-    BPL $8F0D                ; $8EDB: 10 30
-    .byte $0F             ; $8EDD - unknown opcode
-    .byte $0F             ; $8EDE - unknown opcode
-    .byte $0F             ; $8EDF - unknown opcode
+	LDA $8ED8,X			  ; $8EC6: BD D8 8E
+	STA $05FC,X			  ; $8EC9: 9D FC 05
+	LDA $8EDC,X			  ; $8ECC: BD DC 8E
+	STA $0609,X			  ; $8ECF: 9D 09 06
+	DEX					  ; $8ED2: CA
+	BPL $8EC6				; $8ED3: 10 F1
+	JMP $C5B9				; $8ED5: 4C B9 C5
+	.byte $12			 ; $8ED8 - unknown opcode
+	SEC					  ; $8ED9: 38
+	ROL					  ; $8EDA: 2A
+	BPL $8F0D				; $8EDB: 10 30
+	.byte $0F			 ; $8EDD - unknown opcode
+	.byte $0F			 ; $8EDE - unknown opcode
+	.byte $0F			 ; $8EDF - unknown opcode
 
 loc_8EE0:
-    LDA $2002                ; $8EE0: AD 02 20
-    LDA #$00                 ; $8EE3: A9 00
-    STA $2006                ; $8EE5: 8D 06 20
-    STA $2006                ; $8EE8: 8D 06 20
-    LDX #$00                 ; $8EEB: A2 00
+	LDA $2002				; $8EE0: AD 02 20
+	LDA #$00				 ; $8EE3: A9 00
+	STA $2006				; $8EE5: 8D 06 20
+	STA $2006				; $8EE8: 8D 06 20
+	LDX #$00				 ; $8EEB: A2 00
 
 loc_8EED:
-    LDA $8F32,X              ; $8EED: BD 32 8F
-    STA $2007                ; $8EF0: 8D 07 20
-    INX                      ; $8EF3: E8
-    CPX #$20                 ; $8EF4: E0 20
-    BNE $8EED                ; $8EF6: D0 F5
-    RTS                      ; $8EF8: 60
+	LDA $8F32,X			  ; $8EED: BD 32 8F
+	STA $2007				; $8EF0: 8D 07 20
+	INX					  ; $8EF3: E8
+	CPX #$20				 ; $8EF4: E0 20
+	BNE $8EED				; $8EF6: D0 F5
+	RTS					  ; $8EF8: 60
 
 loc_8EF9:
-    BNE $8F15                ; $8EF9: D0 1A
-    LDA $42                  ; $8EFB: A5 42
-    LSR                      ; $8EFD: 4A
-    CLC                      ; $8EFE: 18
-    ADC #$40                 ; $8EFF: 69 40
-    STA $0207                ; $8F01: 8D 07 02
-    LDA $43                  ; $8F04: A5 43
-    LSR                      ; $8F06: 4A
-    CLC                      ; $8F07: 18
-    ADC #$37                 ; $8F08: 69 37
-    STA $0204                ; $8F0A: 8D 04 02
+	BNE $8F15				; $8EF9: D0 1A
+	LDA $42				  ; $8EFB: A5 42
+	LSR					  ; $8EFD: 4A
+	CLC					  ; $8EFE: 18
+	ADC #$40				 ; $8EFF: 69 40
+	STA $0207				; $8F01: 8D 07 02
+	LDA $43				  ; $8F04: A5 43
+	LSR					  ; $8F06: 4A
+	CLC					  ; $8F07: 18
+	ADC #$37				 ; $8F08: 69 37
+	STA $0204				; $8F0A: 8D 04 02
 
 loc_8F0D:
-    LDA #$00                 ; $8F0D: A9 00
-    STA $0205                ; $8F0F: 8D 05 02
-    STA $0206                ; $8F12: 8D 06 02
+	LDA #$00				 ; $8F0D: A9 00
+	STA $0205				; $8F0F: 8D 05 02
+	STA $0206				; $8F12: 8D 06 02
 
 loc_8F15:
-    LDA #$E3                 ; $8F15: A9 E3
-    LSR                      ; $8F17: 4A
-    CLC                      ; $8F18: 18
-    ADC #$3E                 ; $8F19: 69 3E
-    STA $0203                ; $8F1B: 8D 03 02
-    LDA #$8F                 ; $8F1E: A9 8F
-    LSR                      ; $8F20: 4A
-    CLC                      ; $8F21: 18
-    ADC #$35                 ; $8F22: 69 35
-    STA $0200                ; $8F24: 8D 00 02
-    LDA #$01                 ; $8F27: A9 01
-    STA $0201                ; $8F29: 8D 01 02
-    LDA #$00                 ; $8F2C: A9 00
-    STA $0202                ; $8F2E: 8D 02 02
-    RTS                      ; $8F31: 60
-    .byte $FC             ; $8F32 - unknown opcode
-    DEY                      ; $8F33: 88
-    DEY                      ; $8F34: 88
-    STY $E2                  ; $8F35: 84 E2
-    STA ($0A),Y              ; $8F37: 91 0A
-    .byte $04             ; $8F39 - unknown opcode
-    BRK                      ; $8F3A: 00
-    BVS $8FAD                ; $8F3B: 70 70
-    SEI                      ; $8F3D: 78
-    .byte $1C             ; $8F3E - unknown opcode
-    ASL $0004                ; $8F3F: 0E 04 00
-    .byte $C3             ; $8F42 - unknown opcode
-    LDA $5A                  ; $8F43: A5 5A
-    BIT $24                  ; $8F45: 24 24
-    .byte $5A             ; $8F47 - unknown opcode
-    LDA $C3                  ; $8F48: A5 C3
-    BRK                      ; $8F4A: 00
-    .byte $42             ; $8F4B - unknown opcode
-    BIT $18                  ; $8F4C: 24 18
-    CLC                      ; $8F4E: 18
-    BIT $42                  ; $8F4F: 24 42
-    BRK                      ; $8F51: 00
-    JSR $8F5F                ; $8F52: 20 5F 8F
-    JSR $9073                ; $8F55: 20 73 90
-    JSR $FF74                ; $8F58: 20 74 FF
-    JSR $8F6A                ; $8F5B: 20 6A 8F
-    RTS                      ; $8F5E: 60
+	LDA #$E3				 ; $8F15: A9 E3
+	LSR					  ; $8F17: 4A
+	CLC					  ; $8F18: 18
+	ADC #$3E				 ; $8F19: 69 3E
+	STA $0203				; $8F1B: 8D 03 02
+	LDA #$8F				 ; $8F1E: A9 8F
+	LSR					  ; $8F20: 4A
+	CLC					  ; $8F21: 18
+	ADC #$35				 ; $8F22: 69 35
+	STA $0200				; $8F24: 8D 00 02
+	LDA #$01				 ; $8F27: A9 01
+	STA $0201				; $8F29: 8D 01 02
+	LDA #$00				 ; $8F2C: A9 00
+	STA $0202				; $8F2E: 8D 02 02
+	RTS					  ; $8F31: 60
+	.byte $FC			 ; $8F32 - unknown opcode
+	DEY					  ; $8F33: 88
+	DEY					  ; $8F34: 88
+	STY $E2				  ; $8F35: 84 E2
+	STA ($0A),Y			  ; $8F37: 91 0A
+	.byte $04			 ; $8F39 - unknown opcode
+	BRK					  ; $8F3A: 00
+	BVS $8FAD				; $8F3B: 70 70
+	SEI					  ; $8F3D: 78
+	.byte $1C			 ; $8F3E - unknown opcode
+	ASL $0004				; $8F3F: 0E 04 00
+	.byte $C3			 ; $8F42 - unknown opcode
+	LDA $5A				  ; $8F43: A5 5A
+	BIT $24				  ; $8F45: 24 24
+	.byte $5A			 ; $8F47 - unknown opcode
+	LDA $C3				  ; $8F48: A5 C3
+	BRK					  ; $8F4A: 00
+	.byte $42			 ; $8F4B - unknown opcode
+	BIT $18				  ; $8F4C: 24 18
+	CLC					  ; $8F4E: 18
+	BIT $42				  ; $8F4F: 24 42
+	BRK					  ; $8F51: 00
+	JSR $8F5F				; $8F52: 20 5F 8F
+	JSR $9073				; $8F55: 20 73 90
+	JSR $FF74				; $8F58: 20 74 FF
+	JSR $8F6A				; $8F5B: 20 6A 8F
+	RTS					  ; $8F5E: 60
 
 loc_8F5F:
-    JSR $902F                ; $8F5F: 20 2F 90
-    LDX #$99                 ; $8F62: A2 99
-    LDY #$90                 ; $8F64: A0 90
-    JSR $9062                ; $8F66: 20 62 90
-    RTS                      ; $8F69: 60
+	JSR $902F				; $8F5F: 20 2F 90
+	LDX #$99				 ; $8F62: A2 99
+	LDY #$90				 ; $8F64: A0 90
+	JSR $9062				; $8F66: 20 62 90
+	RTS					  ; $8F69: 60
 
 loc_8F6A:
-    JSR $90B2                ; $8F6A: 20 B2 90
-    JSR $908C                ; $8F6D: 20 8C 90
-    JSR $8FC3                ; $8F70: 20 C3 8F
-    JSR $8F85                ; $8F73: 20 85 8F
-    JSR $8FC2                ; $8F76: 20 C2 8F
-    JSR $8FD3                ; $8F79: 20 D3 8F
-    JSR $FF74                ; $8F7C: 20 74 FF
-    JSR $9021                ; $8F7F: 20 21 90
-    JMP $8F6A                ; $8F82: 4C 6A 8F
+	JSR $90B2				; $8F6A: 20 B2 90
+	JSR $908C				; $8F6D: 20 8C 90
+	JSR $8FC3				; $8F70: 20 C3 8F
+	JSR $8F85				; $8F73: 20 85 8F
+	JSR $8FC2				; $8F76: 20 C2 8F
+	JSR $8FD3				; $8F79: 20 D3 8F
+	JSR $FF74				; $8F7C: 20 74 FF
+	JSR $9021				; $8F7F: 20 21 90
+	JMP $8F6A				; $8F82: 4C 6A 8F
 
 loc_8F85:
-    LDY #$01                 ; $8F85: A0 01
+	LDY #$01				 ; $8F85: A0 01
 
 loc_8F87:
-    LDX #$00                 ; $8F87: A2 00
+	LDX #$00				 ; $8F87: A2 00
 
 loc_8F89:
-    LDA $7F00,X              ; $8F89: BD 00 7F
-    STA $2005                ; $8F8C: 8D 05 20
-    LDA $0509                ; $8F8F: AD 09 05
-    STA $2005                ; $8F92: 8D 05 20
-    TXA                      ; $8F95: 8A
-    PHA                      ; $8F96: 48
-    LDX #$0C                 ; $8F97: A2 0C
+	LDA $7F00,X			  ; $8F89: BD 00 7F
+	STA $2005				; $8F8C: 8D 05 20
+	LDA $0509				; $8F8F: AD 09 05
+	STA $2005				; $8F92: 8D 05 20
+	TXA					  ; $8F95: 8A
+	PHA					  ; $8F96: 48
+	LDX #$0C				 ; $8F97: A2 0C
 
 loc_8F99:
-    DEX                      ; $8F99: CA
-    BNE $8F99                ; $8F9A: D0 FD
-    AND $00                  ; $8F9C: 25 00
-    PLA                      ; $8F9E: 68
-    TAX                      ; $8F9F: AA
-    INX                      ; $8FA0: E8
-    TXA                      ; $8FA1: 8A
-    AND #$07                 ; $8FA2: 29 07
-    BNE $8FA8                ; $8FA4: D0 02
-    BEQ $8FB0                ; $8FA6: F0 08
+	DEX					  ; $8F99: CA
+	BNE $8F99				; $8F9A: D0 FD
+	AND $00				  ; $8F9C: 25 00
+	PLA					  ; $8F9E: 68
+	TAX					  ; $8F9F: AA
+	INX					  ; $8FA0: E8
+	TXA					  ; $8FA1: 8A
+	AND #$07				 ; $8FA2: 29 07
+	BNE $8FA8				; $8FA4: D0 02
+	BEQ $8FB0				; $8FA6: F0 08
 
 loc_8FA8:
-    NOP                      ; $8FA8: EA
-    NOP                      ; $8FA9: EA
-    NOP                      ; $8FAA: EA
-    AND $00                  ; $8FAB: 25 00
+	NOP					  ; $8FA8: EA
+	NOP					  ; $8FA9: EA
+	NOP					  ; $8FAA: EA
+	AND $00				  ; $8FAB: 25 00
 
 loc_8FAD:
-    JMP $8F89                ; $8FAD: 4C 89 8F
+	JMP $8F89				; $8FAD: 4C 89 8F
 
 loc_8FB0:
-    AND $00                  ; $8FB0: 25 00
-    AND $00                  ; $8FB2: 25 00
-    AND $00                  ; $8FB4: 25 00
-    AND $00                  ; $8FB6: 25 00
-    NOP                      ; $8FB8: EA
-    NOP                      ; $8FB9: EA
-    CPX #$40                 ; $8FBA: E0 40
-    BNE $8F89                ; $8FBC: D0 CB
-    DEY                      ; $8FBE: 88
-    BNE $8F87                ; $8FBF: D0 C6
-    RTS                      ; $8FC1: 60
+	AND $00				  ; $8FB0: 25 00
+	AND $00				  ; $8FB2: 25 00
+	AND $00				  ; $8FB4: 25 00
+	AND $00				  ; $8FB6: 25 00
+	NOP					  ; $8FB8: EA
+	NOP					  ; $8FB9: EA
+	CPX #$40				 ; $8FBA: E0 40
+	BNE $8F89				; $8FBC: D0 CB
+	DEY					  ; $8FBE: 88
+	BNE $8F87				; $8FBF: D0 C6
+	RTS					  ; $8FC1: 60
 
 loc_8FC2:
-    RTS                      ; $8FC2: 60
+	RTS					  ; $8FC2: 60
 
 loc_8FC3:
-    LDY #$05                 ; $8FC3: A0 05
-    LDX #$00                 ; $8FC5: A2 00
+	LDY #$05				 ; $8FC3: A0 05
+	LDX #$00				 ; $8FC5: A2 00
 
 loc_8FC7:
-    DEX                      ; $8FC7: CA
-    BNE $8FC7                ; $8FC8: D0 FD
-    DEY                      ; $8FCA: 88
-    BNE $8FC7                ; $8FCB: D0 FA
+	DEX					  ; $8FC7: CA
+	BNE $8FC7				; $8FC8: D0 FD
+	DEY					  ; $8FCA: 88
+	BNE $8FC7				; $8FCB: D0 FA
 
 loc_8FCD:
-    BIT $2002                ; $8FCD: 2C 02 20
-    BVC $8FCD                ; $8FD0: 50 FB
-    RTS                      ; $8FD2: 60
+	BIT $2002				; $8FCD: 2C 02 20
+	BVC $8FCD				; $8FD0: 50 FB
+	RTS					  ; $8FD2: 60
 
 loc_8FD3:
-    LDA $53                  ; $8FD3: A5 53
-    CMP #$20                 ; $8FD5: C9 20
-    BCC $9020                ; $8FD7: 90 47
-    SBC #$20                 ; $8FD9: E9 20
-    LSR                      ; $8FDB: 4A
-    CLC                      ; $8FDC: 18
-    ADC #$01                 ; $8FDD: 69 01
-    ASL                      ; $8FDF: 0A
-    ASL                      ; $8FE0: 0A
-    ASL                      ; $8FE1: 0A
-    ASL                      ; $8FE2: 0A
-    STA $54                  ; $8FE3: 85 54
-    LDX #$00                 ; $8FE5: A2 00
-    LDA #$BF                 ; $8FE7: A9 BF
-    STA $0300,X              ; $8FE9: 9D 00 03
-    LDA #$20                 ; $8FEC: A9 20
-    STA $0301,X              ; $8FEE: 9D 01 03
-    LDA #$00                 ; $8FF1: A9 00
-    STA $0302,X              ; $8FF3: 9D 02 03
-    LDY #$01                 ; $8FF6: A0 01
+	LDA $53				  ; $8FD3: A5 53
+	CMP #$20				 ; $8FD5: C9 20
+	BCC $9020				; $8FD7: 90 47
+	SBC #$20				 ; $8FD9: E9 20
+	LSR					  ; $8FDB: 4A
+	CLC					  ; $8FDC: 18
+	ADC #$01				 ; $8FDD: 69 01
+	ASL					  ; $8FDF: 0A
+	ASL					  ; $8FE0: 0A
+	ASL					  ; $8FE1: 0A
+	ASL					  ; $8FE2: 0A
+	STA $54				  ; $8FE3: 85 54
+	LDX #$00				 ; $8FE5: A2 00
+	LDA #$BF				 ; $8FE7: A9 BF
+	STA $0300,X			  ; $8FE9: 9D 00 03
+	LDA #$20				 ; $8FEC: A9 20
+	STA $0301,X			  ; $8FEE: 9D 01 03
+	LDA #$00				 ; $8FF1: A9 00
+	STA $0302,X			  ; $8FF3: 9D 02 03
+	LDY #$01				 ; $8FF6: A0 01
 
 loc_8FF8:
-    TXA                      ; $8FF8: 8A
-    AND #$03                 ; $8FF9: 29 03
-    BEQ $9009                ; $8FFB: F0 0C
-    LDA $05FC,Y              ; $8FFD: B9 FC 05
-    SEC                      ; $9000: 38
-    SBC $54                  ; $9001: E5 54
-    CMP #$40                 ; $9003: C9 40
-    BCC $900D                ; $9005: 90 06
-    BCS $900A                ; $9007: B0 01
+	TXA					  ; $8FF8: 8A
+	AND #$03				 ; $8FF9: 29 03
+	BEQ $9009				; $8FFB: F0 0C
+	LDA $05FC,Y			  ; $8FFD: B9 FC 05
+	SEC					  ; $9000: 38
+	SBC $54				  ; $9001: E5 54
+	CMP #$40				 ; $9003: C9 40
+	BCC $900D				; $9005: 90 06
+	BCS $900A				; $9007: B0 01
 
 loc_9009:
-    DEY                      ; $9009: 88
+	DEY					  ; $9009: 88
 
 loc_900A:
-    LDA $05FC                ; $900A: AD FC 05
+	LDA $05FC				; $900A: AD FC 05
 
 loc_900D:
-    STA $0303,X              ; $900D: 9D 03 03
-    INX                      ; $9010: E8
-    INY                      ; $9011: C8
-    CPY #$20                 ; $9012: C0 20
-    BCC $8FF8                ; $9014: 90 E2
-    INC $050B                ; $9016: EE 0B 05
-    LDA $1F                  ; $9019: A5 1F
-    ORA #$20                 ; $901B: 09 20
-    STA $1F                  ; $901D: 85 1F
-    RTS                      ; $901F: 60
+	STA $0303,X			  ; $900D: 9D 03 03
+	INX					  ; $9010: E8
+	INY					  ; $9011: C8
+	CPY #$20				 ; $9012: C0 20
+	BCC $8FF8				; $9014: 90 E2
+	INC $050B				; $9016: EE 0B 05
+	LDA $1F				  ; $9019: A5 1F
+	ORA #$20				 ; $901B: 09 20
+	STA $1F				  ; $901D: 85 1F
+	RTS					  ; $901F: 60
 
 loc_9020:
-    RTS                      ; $9020: 60
+	RTS					  ; $9020: 60
 
 loc_9021:
-    LDA $53                  ; $9021: A5 53
-    CMP #$28                 ; $9023: C9 28
-    BCC $902E                ; $9025: 90 07
-    LDA $51                  ; $9027: A5 51
-    STA $059D                ; $9029: 8D 9D 05
-    PLA                      ; $902C: 68
-    PLA                      ; $902D: 68
+	LDA $53				  ; $9021: A5 53
+	CMP #$28				 ; $9023: C9 28
+	BCC $902E				; $9025: 90 07
+	LDA $51				  ; $9027: A5 51
+	STA $059D				; $9029: 8D 9D 05
+	PLA					  ; $902C: 68
+	PLA					  ; $902D: 68
 
 loc_902E:
-    RTS                      ; $902E: 60
+	RTS					  ; $902E: 60
 
 loc_902F:
-    LDX #$00                 ; $902F: A2 00
-    LDA #$80                 ; $9031: A9 80
-    STA $0300,X              ; $9033: 9D 00 03
-    LDA #$10                 ; $9036: A9 10
-    STA $0301,X              ; $9038: 9D 01 03
-    LDA #$00                 ; $903B: A9 00
-    STA $0302,X              ; $903D: 9D 02 03
+	LDX #$00				 ; $902F: A2 00
+	LDA #$80				 ; $9031: A9 80
+	STA $0300,X			  ; $9033: 9D 00 03
+	LDA #$10				 ; $9036: A9 10
+	STA $0301,X			  ; $9038: 9D 01 03
+	LDA #$00				 ; $903B: A9 00
+	STA $0302,X			  ; $903D: 9D 02 03
 
 loc_9040:
-    LDA $9052,X              ; $9040: BD 52 90
-    STA $0303,X              ; $9043: 9D 03 03
-    INX                      ; $9046: E8
-    CPX #$10                 ; $9047: E0 10
-    BCC $9040                ; $9049: 90 F5
-    INC $050B                ; $904B: EE 0B 05
-    JSR $C62D                ; $904E: 20 2D C6
-    RTS                      ; $9051: 60
-    .byte $FF             ; $9052 - unknown opcode
-    .byte $FF             ; $9053 - unknown opcode
-    BRK                      ; $9054: 00
-    BRK                      ; $9055: 00
-    BRK                      ; $9056: 00
-    BRK                      ; $9057: 00
-    BRK                      ; $9058: 00
-    BRK                      ; $9059: 00
-    .byte $FF             ; $905A - unknown opcode
-    .byte $FF             ; $905B - unknown opcode
-    BRK                      ; $905C: 00
-    BRK                      ; $905D: 00
-    BRK                      ; $905E: 00
-    BRK                      ; $905F: 00
-    BRK                      ; $9060: 00
-    BRK                      ; $9061: 00
+	LDA $9052,X			  ; $9040: BD 52 90
+	STA $0303,X			  ; $9043: 9D 03 03
+	INX					  ; $9046: E8
+	CPX #$10				 ; $9047: E0 10
+	BCC $9040				; $9049: 90 F5
+	INC $050B				; $904B: EE 0B 05
+	JSR $C62D				; $904E: 20 2D C6
+	RTS					  ; $9051: 60
+	.byte $FF			 ; $9052 - unknown opcode
+	.byte $FF			 ; $9053 - unknown opcode
+	BRK					  ; $9054: 00
+	BRK					  ; $9055: 00
+	BRK					  ; $9056: 00
+	BRK					  ; $9057: 00
+	BRK					  ; $9058: 00
+	BRK					  ; $9059: 00
+	.byte $FF			 ; $905A - unknown opcode
+	.byte $FF			 ; $905B - unknown opcode
+	BRK					  ; $905C: 00
+	BRK					  ; $905D: 00
+	BRK					  ; $905E: 00
+	BRK					  ; $905F: 00
+	BRK					  ; $9060: 00
+	BRK					  ; $9061: 00
 
 loc_9062:
-    STY $0200                ; $9062: 8C 00 02
-    LDA #$00                 ; $9065: A9 00
-    STA $0201                ; $9067: 8D 01 02
-    LDA #$20                 ; $906A: A9 20
-    STA $0202                ; $906C: 8D 02 02
-    STX $0203                ; $906F: 8E 03 02
-    RTS                      ; $9072: 60
+	STY $0200				; $9062: 8C 00 02
+	LDA #$00				 ; $9065: A9 00
+	STA $0201				; $9067: 8D 01 02
+	LDA #$20				 ; $906A: A9 20
+	STA $0202				; $906C: 8D 02 02
+	STX $0203				; $906F: 8E 03 02
+	RTS					  ; $9072: 60
 
 loc_9073:
-    LDA #$00                 ; $9073: A9 00
-    STA $51                  ; $9075: 85 51
-    STA $52                  ; $9077: 85 52
-    STA $53                  ; $9079: 85 53
-    LDX #$3F                 ; $907B: A2 3F
+	LDA #$00				 ; $9073: A9 00
+	STA $51				  ; $9075: 85 51
+	STA $52				  ; $9077: 85 52
+	STA $53				  ; $9079: 85 53
+	LDX #$3F				 ; $907B: A2 3F
 
 loc_907D:
-    LDA $0508                ; $907D: AD 08 05
-    STA $7F00,X              ; $9080: 9D 00 7F
-    LDA #$00                 ; $9083: A9 00
-    STA $7F40,X              ; $9085: 9D 40 7F
-    DEX                      ; $9088: CA
-    BPL $907D                ; $9089: 10 F2
-    RTS                      ; $908B: 60
+	LDA $0508				; $907D: AD 08 05
+	STA $7F00,X			  ; $9080: 9D 00 7F
+	LDA #$00				 ; $9083: A9 00
+	STA $7F40,X			  ; $9085: 9D 40 7F
+	DEX					  ; $9088: CA
+	BPL $907D				; $9089: 10 F2
+	RTS					  ; $908B: 60
 
 loc_908C:
-    LDX #$00                 ; $908C: A2 00
-    LDA $7F00,X              ; $908E: BD 00 7F
-    PHA                      ; $9091: 48
-    LDA $7F40,X              ; $9092: BD 40 7F
-    PHA                      ; $9095: 48
+	LDX #$00				 ; $908C: A2 00
+	LDA $7F00,X			  ; $908E: BD 00 7F
+	PHA					  ; $9091: 48
+	LDA $7F40,X			  ; $9092: BD 40 7F
+	PHA					  ; $9095: 48
 
 loc_9096:
-    LDA $7F01,X              ; $9096: BD 01 7F
-    STA $7F00,X              ; $9099: 9D 00 7F
-    LDA $7F41,X              ; $909C: BD 41 7F
-    STA $7F40,X              ; $909F: 9D 40 7F
-    INX                      ; $90A2: E8
-    CPX #$40                 ; $90A3: E0 40
-    BCC $9096                ; $90A5: 90 EF
-    PLA                      ; $90A7: 68
-    STA $7F7F                ; $90A8: 8D 7F 7F
+	LDA $7F01,X			  ; $9096: BD 01 7F
+	STA $7F00,X			  ; $9099: 9D 00 7F
+	LDA $7F41,X			  ; $909C: BD 41 7F
+	STA $7F40,X			  ; $909F: 9D 40 7F
+	INX					  ; $90A2: E8
+	CPX #$40				 ; $90A3: E0 40
+	BCC $9096				; $90A5: 90 EF
+	PLA					  ; $90A7: 68
+	STA $7F7F				; $90A8: 8D 7F 7F
 
 loc_90AB:
-    PLA                      ; $90AB: 68
-    STA $7F3F                ; $90AC: 8D 3F 7F
-    DEC $51                  ; $90AF: C6 51
-    RTS                      ; $90B1: 60
+	PLA					  ; $90AB: 68
+	STA $7F3F				; $90AC: 8D 3F 7F
+	DEC $51				  ; $90AF: C6 51
+	RTS					  ; $90B1: 60
 
 loc_90B2:
-    INC $52                  ; $90B2: E6 52
-    LDA $52                  ; $90B4: A5 52
-    AND #$07                 ; $90B6: 29 07
-    BNE $90E1                ; $90B8: D0 27
-    LDA $51                  ; $90BA: A5 51
-    AND #$3F                 ; $90BC: 29 3F
-    TAY                      ; $90BE: A8
-    LDX #$00                 ; $90BF: A2 00
+	INC $52				  ; $90B2: E6 52
+	LDA $52				  ; $90B4: A5 52
+	AND #$07				 ; $90B6: 29 07
+	BNE $90E1				; $90B8: D0 27
+	LDA $51				  ; $90BA: A5 51
+	AND #$3F				 ; $90BC: 29 3F
+	TAY					  ; $90BE: A8
+	LDX #$00				 ; $90BF: A2 00
 
 loc_90C1:
-    LDA $7F40,Y              ; $90C1: B9 40 7F
-    CLC                      ; $90C4: 18
-    ADC $90EF,X              ; $90C5: 7D EF 90
-    STA $7F40,Y              ; $90C8: 99 40 7F
-    LDA $7F00,Y              ; $90CB: B9 00 7F
-    ADC $912F,X              ; $90CE: 7D 2F 91
-    STA $7F00,Y              ; $90D1: 99 00 7F
-    INY                      ; $90D4: C8
+	LDA $7F40,Y			  ; $90C1: B9 40 7F
+	CLC					  ; $90C4: 18
+	ADC $90EF,X			  ; $90C5: 7D EF 90
+	STA $7F40,Y			  ; $90C8: 99 40 7F
+	LDA $7F00,Y			  ; $90CB: B9 00 7F
+	ADC $912F,X			  ; $90CE: 7D 2F 91
+	STA $7F00,Y			  ; $90D1: 99 00 7F
+	INY					  ; $90D4: C8
 
 loc_90D5:
-    TYA                      ; $90D5: 98
-    AND #$3F                 ; $90D6: 29 3F
+	TYA					  ; $90D5: 98
+	AND #$3F				 ; $90D6: 29 3F
 
 loc_90D8:
-    TAY                      ; $90D8: A8
-    INX                      ; $90D9: E8
-    CPX #$40                 ; $90DA: E0 40
-    BCC $90C1                ; $90DC: 90 E3
-    INC $53                  ; $90DE: E6 53
-    RTS                      ; $90E0: 60
+	TAY					  ; $90D8: A8
+	INX					  ; $90D9: E8
+	CPX #$40				 ; $90DA: E0 40
+	BCC $90C1				; $90DC: 90 E3
+	INC $53				  ; $90DE: E6 53
+	RTS					  ; $90E0: 60
 
 loc_90E1:
-    AND $00                  ; $90E1: 25 00
-    NOP                      ; $90E3: EA
-    NOP                      ; $90E4: EA
-    LDX #$00                 ; $90E5: A2 00
+	AND $00				  ; $90E1: 25 00
+	NOP					  ; $90E3: EA
+	NOP					  ; $90E4: EA
+	LDX #$00				 ; $90E5: A2 00
 
 loc_90E7:
-    AND $00                  ; $90E7: 25 00
-    NOP                      ; $90E9: EA
-    NOP                      ; $90EA: EA
+	AND $00				  ; $90E7: 25 00
+	NOP					  ; $90E9: EA
+	NOP					  ; $90EA: EA
 
 loc_90EB:
-    DEX                      ; $90EB: CA
-    BNE $90E7                ; $90EC: D0 F9
-    RTS                      ; $90EE: 60
-    BRK                      ; $90EF: 00
-    BMI $9152                ; $90F0: 30 60
-    .byte $80             ; $90F2 - unknown opcode
-    BCS $90D5                ; $90F3: B0 E0
-    BPL $9127                ; $90F5: 10 30
-    BVC $9169                ; $90F7: 50 70
-    BCC $90AB                ; $90F9: 90 B0
-    CPY #$D0                 ; $90FB: C0 D0
-    CPX #$E0                 ; $90FD: E0 E0
-    BEQ $90E1                ; $90FF: F0 E0
-    CPX #$D0                 ; $9101: E0 D0
-    CPY #$B0                 ; $9103: C0 B0
-    BCC $9177                ; $9105: 90 70
-    BVC $9139                ; $9107: 50 30
-    BPL $90EB                ; $9109: 10 E0
-    BCS $908D                ; $910B: B0 80
-    RTS                      ; $910D: 60
-    BMI $9110                ; $910E: 30 00
+	DEX					  ; $90EB: CA
+	BNE $90E7				; $90EC: D0 F9
+	RTS					  ; $90EE: 60
+	BRK					  ; $90EF: 00
+	BMI $9152				; $90F0: 30 60
+	.byte $80			 ; $90F2 - unknown opcode
+	BCS $90D5				; $90F3: B0 E0
+	BPL $9127				; $90F5: 10 30
+	BVC $9169				; $90F7: 50 70
+	BCC $90AB				; $90F9: 90 B0
+	CPY #$D0				 ; $90FB: C0 D0
+	CPX #$E0				 ; $90FD: E0 E0
+	BEQ $90E1				; $90FF: F0 E0
+	CPX #$D0				 ; $9101: E0 D0
+	CPY #$B0				 ; $9103: C0 B0
+	BCC $9177				; $9105: 90 70
+	BVC $9139				; $9107: 50 30
+	BPL $90EB				; $9109: 10 E0
+	BCS $908D				; $910B: B0 80
+	RTS					  ; $910D: 60
+	BMI $9110				; $910E: 30 00
 
 loc_9110:
-    BNE $90B2                ; $9110: D0 A0
-    .byte $80             ; $9112 - unknown opcode
-    BVC $9135                ; $9113: 50 20
-    BEQ $90E7                ; $9115: F0 D0
-    BCS $90A9                ; $9117: B0 90
-    BVS $916B                ; $9119: 70 50
-    RTI                      ; $911B: 40
-    BMI $913E                ; $911C: 30 20
-    JSR $2010                ; $911E: 20 10 20
-    JSR $4030                ; $9121: 20 30 40
-    BVC $9196                ; $9124: 50 70
-    BCC $90D8                ; $9126: 90 B0
-    BNE $911A                ; $9128: D0 F0
-    JSR $8050                ; $912A: 20 50 80
-    LDY #$D0                 ; $912D: A0 D0
-    BRK                      ; $912F: 00
-    BRK                      ; $9130: 00
-    BRK                      ; $9131: 00
-    BRK                      ; $9132: 00
-    BRK                      ; $9133: 00
-    BRK                      ; $9134: 00
+	BNE $90B2				; $9110: D0 A0
+	.byte $80			 ; $9112 - unknown opcode
+	BVC $9135				; $9113: 50 20
+	BEQ $90E7				; $9115: F0 D0
+	BCS $90A9				; $9117: B0 90
+	BVS $916B				; $9119: 70 50
+	RTI					  ; $911B: 40
+	BMI $913E				; $911C: 30 20
+	JSR $2010				; $911E: 20 10 20
+	JSR $4030				; $9121: 20 30 40
+	BVC $9196				; $9124: 50 70
+	BCC $90D8				; $9126: 90 B0
+	BNE $911A				; $9128: D0 F0
+	JSR $8050				; $912A: 20 50 80
+	LDY #$D0				 ; $912D: A0 D0
+	BRK					  ; $912F: 00
+	BRK					  ; $9130: 00
+	BRK					  ; $9131: 00
+	BRK					  ; $9132: 00
+	BRK					  ; $9133: 00
+	BRK					  ; $9134: 00
 
 loc_9135:
-    ORA ($01,X)              ; $9135: 01 01
-    ORA ($01,X)              ; $9137: 01 01
+	ORA ($01,X)			  ; $9135: 01 01
+	ORA ($01,X)			  ; $9137: 01 01
 
 loc_9139:
-    ORA ($01,X)              ; $9139: 01 01
-    ORA ($01,X)              ; $913B: 01 01
-    ORA ($01,X)              ; $913D: 01 01
-    ORA ($01,X)              ; $913F: 01 01
-    ORA ($01,X)              ; $9141: 01 01
-    ORA ($01,X)              ; $9143: 01 01
-    ORA ($01,X)              ; $9145: 01 01
-    ORA ($01,X)              ; $9147: 01 01
-    ORA ($00,X)              ; $9149: 01 00
-    BRK                      ; $914B: 00
-    BRK                      ; $914C: 00
-    BRK                      ; $914D: 00
-    BRK                      ; $914E: 00
-    BRK                      ; $914F: 00
-    .byte $FF             ; $9150 - unknown opcode
-    .byte $FF             ; $9151 - unknown opcode
+	ORA ($01,X)			  ; $9139: 01 01
+	ORA ($01,X)			  ; $913B: 01 01
+	ORA ($01,X)			  ; $913D: 01 01
+	ORA ($01,X)			  ; $913F: 01 01
+	ORA ($01,X)			  ; $9141: 01 01
+	ORA ($01,X)			  ; $9143: 01 01
+	ORA ($01,X)			  ; $9145: 01 01
+	ORA ($01,X)			  ; $9147: 01 01
+	ORA ($00,X)			  ; $9149: 01 00
+	BRK					  ; $914B: 00
+	BRK					  ; $914C: 00
+	BRK					  ; $914D: 00
+	BRK					  ; $914E: 00
+	BRK					  ; $914F: 00
+	.byte $FF			 ; $9150 - unknown opcode
+	.byte $FF			 ; $9151 - unknown opcode
 
 loc_9152:
-    .byte $FF             ; $9152 - unknown opcode
-    .byte $FF             ; $9153 - unknown opcode
-    .byte $FF             ; $9154 - unknown opcode
-    INC $FEFE,X              ; $9155: FE FE FE
-    INC $FEFE,X              ; $9158: FE FE FE
-    INC $FEFE,X              ; $915B: FE FE FE
-    INC $FEFE,X              ; $915E: FE FE FE
-    INC $FEFE,X              ; $9161: FE FE FE
-    INC $FEFE,X              ; $9164: FE FE FE
-    INC $FEFE,X              ; $9167: FE FE FE
-    .byte $FF             ; $916A - unknown opcode
+	.byte $FF			 ; $9152 - unknown opcode
+	.byte $FF			 ; $9153 - unknown opcode
+	.byte $FF			 ; $9154 - unknown opcode
+	INC $FEFE,X			  ; $9155: FE FE FE
+	INC $FEFE,X			  ; $9158: FE FE FE
+	INC $FEFE,X			  ; $915B: FE FE FE
+	INC $FEFE,X			  ; $915E: FE FE FE
+	INC $FEFE,X			  ; $9161: FE FE FE
+	INC $FEFE,X			  ; $9164: FE FE FE
+	INC $FEFE,X			  ; $9167: FE FE FE
+	.byte $FF			 ; $916A - unknown opcode
 
 loc_916B:
-    .byte $FF             ; $916B - unknown opcode
-    .byte $FF             ; $916C - unknown opcode
-    .byte $FF             ; $916D - unknown opcode
-    .byte $FF             ; $916E - unknown opcode
-    .byte $BF             ; $916F - unknown opcode
-    CMP $CB                  ; $9170: C5 CB
-    CMP ($D7),Y              ; $9172: D1 D7
-    CMP $EFE6,X              ; $9174: DD E6 EF
+	.byte $FF			 ; $916B - unknown opcode
+	.byte $FF			 ; $916C - unknown opcode
+	.byte $FF			 ; $916D - unknown opcode
+	.byte $FF			 ; $916E - unknown opcode
+	.byte $BF			 ; $916F - unknown opcode
+	CMP $CB				  ; $9170: C5 CB
+	CMP ($D7),Y			  ; $9172: D1 D7
+	CMP $EFE6,X			  ; $9174: DD E6 EF
 
 loc_9177:
-    SED                      ; $9177: F8
-    INC $1007,X              ; $9178: FE 07 10
-    ORA $2822,Y              ; $917B: 19 22 28
-    AND ($3A),Y              ; $917E: 31 3A
-    .byte $43             ; $9180 - unknown opcode
-    EOR #$4F                 ; $9181: 49 4F
-    EOR $5B,X                ; $9183: 55 5B
-    ADC ($64,X)              ; $9185: 61 64
-    .byte $67             ; $9187 - unknown opcode
-    ROR                      ; $9188: 6A
-    ROR                      ; $9189: 6A
-    LDY $B6B9,X              ; $918A: BC B9 B6
-    LDX $20,Y                ; $918D: B6 20
-    CPY $91                  ; $918F: C4 91
-    JSR $91B9                ; $9191: 20 B9 91
-    JSR $919B                ; $9194: 20 9B 91
-    JSR $91AE                ; $9197: 20 AE 91
-    RTS                      ; $919A: 60
+	SED					  ; $9177: F8
+	INC $1007,X			  ; $9178: FE 07 10
+	ORA $2822,Y			  ; $917B: 19 22 28
+	AND ($3A),Y			  ; $917E: 31 3A
+	.byte $43			 ; $9180 - unknown opcode
+	EOR #$4F				 ; $9181: 49 4F
+	EOR $5B,X				; $9183: 55 5B
+	ADC ($64,X)			  ; $9185: 61 64
+	.byte $67			 ; $9187 - unknown opcode
+	ROR					  ; $9188: 6A
+	ROR					  ; $9189: 6A
+	LDY $B6B9,X			  ; $918A: BC B9 B6
+	LDX $20,Y				; $918D: B6 20
+	CPY $91				  ; $918F: C4 91
+	JSR $91B9				; $9191: 20 B9 91
+	JSR $919B				; $9194: 20 9B 91
+	JSR $91AE				; $9197: 20 AE 91
+	RTS					  ; $919A: 60
 
 loc_919B:
-    LDA #$20                 ; $919B: A9 20
-    STA $00                  ; $919D: 85 00
-    LDA #$00                 ; $919F: A9 00
-    STA $01                  ; $91A1: 85 01
-    LDY #$00                 ; $91A3: A0 00
+	LDA #$20				 ; $919B: A9 20
+	STA $00				  ; $919D: 85 00
+	LDA #$00				 ; $919F: A9 00
+	STA $01				  ; $91A1: 85 01
+	LDY #$00				 ; $91A3: A0 00
 
 loc_91A5:
-    JSR $91F0                ; $91A5: 20 F0 91
-    INY                      ; $91A8: C8
-    CPY #$0F                 ; $91A9: C0 0F
-    BCC $91A5                ; $91AB: 90 F8
-    RTS                      ; $91AD: 60
+	JSR $91F0				; $91A5: 20 F0 91
+	INY					  ; $91A8: C8
+	CPY #$0F				 ; $91A9: C0 0F
+	BCC $91A5				; $91AB: 90 F8
+	RTS					  ; $91AD: 60
 
 loc_91AE:
-    LDY #$0E                 ; $91AE: A0 0E
+	LDY #$0E				 ; $91AE: A0 0E
 
 loc_91B0:
-    JSR $91F0                ; $91B0: 20 F0 91
-    DEY                      ; $91B3: 88
-    CPY #$FF                 ; $91B4: C0 FF
-    BNE $91B0                ; $91B6: D0 F8
-    RTS                      ; $91B8: 60
+	JSR $91F0				; $91B0: 20 F0 91
+	DEY					  ; $91B3: 88
+	CPY #$FF				 ; $91B4: C0 FF
+	BNE $91B0				; $91B6: D0 F8
+	RTS					  ; $91B8: 60
 
 loc_91B9:
-    LDY #$0E                 ; $91B9: A0 0E
+	LDY #$0E				 ; $91B9: A0 0E
 
 loc_91BB:
-    JSR $91D7                ; $91BB: 20 D7 91
-    DEY                      ; $91BE: 88
-    CPY #$FF                 ; $91BF: C0 FF
-    BNE $91BB                ; $91C1: D0 F8
-    RTS                      ; $91C3: 60
-    LDA #$24                 ; $91C4: A9 24
-    STA $00                  ; $91C6: 85 00
-    LDA #$0E                 ; $91C8: A9 0E
-    STA $01                  ; $91CA: 85 01
-    LDY #$00                 ; $91CC: A0 00
+	JSR $91D7				; $91BB: 20 D7 91
+	DEY					  ; $91BE: 88
+	CPY #$FF				 ; $91BF: C0 FF
+	BNE $91BB				; $91C1: D0 F8
+	RTS					  ; $91C3: 60
+	LDA #$24				 ; $91C4: A9 24
+	STA $00				  ; $91C6: 85 00
+	LDA #$0E				 ; $91C8: A9 0E
+	STA $01				  ; $91CA: 85 01
+	LDY #$00				 ; $91CC: A0 00
 
 loc_91CE:
-    JSR $91D7                ; $91CE: 20 D7 91
-    INY                      ; $91D1: C8
-    CPY #$0F                 ; $91D2: C0 0F
-    BCC $91CE                ; $91D4: 90 F8
-    RTS                      ; $91D6: 60
+	JSR $91D7				; $91CE: 20 D7 91
+	INY					  ; $91D1: C8
+	CPY #$0F				 ; $91D2: C0 0F
+	BCC $91CE				; $91D4: 90 F8
+	RTS					  ; $91D6: 60
 
 loc_91D7:
-    LDA $00                  ; $91D7: A5 00
-    STA $2006                ; $91D9: 8D 06 20
-    LDA $01                  ; $91DC: A5 01
-    STA $2006                ; $91DE: 8D 06 20
-    JSR $91F6                ; $91E1: 20 F6 91
+	LDA $00				  ; $91D7: A5 00
+	STA $2006				; $91D9: 8D 06 20
+	LDA $01				  ; $91DC: A5 01
+	STA $2006				; $91DE: 8D 06 20
+	JSR $91F6				; $91E1: 20 F6 91
 
 loc_91E4:
-    LDA $01                  ; $91E4: A5 01
-    CLC                      ; $91E6: 18
-    ADC #$20                 ; $91E7: 69 20
-    STA $01                  ; $91E9: 85 01
-    BCC $91EF                ; $91EB: 90 02
-    INC $00                  ; $91ED: E6 00
+	LDA $01				  ; $91E4: A5 01
+	CLC					  ; $91E6: 18
+	ADC #$20				 ; $91E7: 69 20
+	STA $01				  ; $91E9: 85 01
+	BCC $91EF				; $91EB: 90 02
+	INC $00				  ; $91ED: E6 00
 
 loc_91EF:
-    RTS                      ; $91EF: 60
+	RTS					  ; $91EF: 60
 
 loc_91F0:
-    JSR $9204                ; $91F0: 20 04 92
-    JMP $91E4                ; $91F3: 4C E4 91
+	JSR $9204				; $91F0: 20 04 92
+	JMP $91E4				; $91F3: 4C E4 91
 
 loc_91F6:
-    LDX $921B,Y              ; $91F6: BE 1B 92
-    BEQ $9203                ; $91F9: F0 08
-    LDA #$00                 ; $91FB: A9 00
+	LDX $921B,Y			  ; $91F6: BE 1B 92
+	BEQ $9203				; $91F9: F0 08
+	LDA #$00				 ; $91FB: A9 00
 
 loc_91FD:
-    STA $2007                ; $91FD: 8D 07 20
-    DEX                      ; $9200: CA
-    BNE $91FD                ; $9201: D0 FA
+	STA $2007				; $91FD: 8D 07 20
+	DEX					  ; $9200: CA
+	BNE $91FD				; $9201: D0 FA
 
 loc_9203:
-    RTS                      ; $9203: 60
+	RTS					  ; $9203: 60
 
 loc_9204:
-    LDA #$12                 ; $9204: A9 12
-    SEC                      ; $9206: 38
-    SBC $921B,Y              ; $9207: F9 1B 92
-    CLC                      ; $920A: 18
-    ADC $01                  ; $920B: 65 01
-    PHA                      ; $920D: 48
-    LDA $00                  ; $920E: A5 00
-    STA $2006                ; $9210: 8D 06 20
-    PLA                      ; $9213: 68
-    STA $2006                ; $9214: 8D 06 20
-    JMP $91F6                ; $9217: 4C F6 91
-    RTS                      ; $921A: 60
-    .byte $12             ; $921B - unknown opcode
-    .byte $12             ; $921C - unknown opcode
-    .byte $12             ; $921D - unknown opcode
-    .byte $12             ; $921E - unknown opcode
-    .byte $0F             ; $921F - unknown opcode
-    .byte $0C             ; $9220 - unknown opcode
-    ASL                      ; $9221: 0A
-    ORA #$08                 ; $9222: 09 08
-    .byte $07             ; $9224 - unknown opcode
-    ASL $06                  ; $9225: 06 06
-    ORA $05                  ; $9227: 05 05
-    .byte $04             ; $9229 - unknown opcode
-    JSR $93CA                ; $922A: 20 CA 93
-    JSR $C543                ; $922D: 20 43 C5
-    JSR $FF74                ; $9230: 20 74 FF
-    JSR $9240                ; $9233: 20 40 92
-    JSR $925C                ; $9236: 20 5C 92
-    JSR $924D                ; $9239: 20 4D 92
-    BRK                      ; $923C: 00
-    ASL                      ; $923D: 0A
-    .byte $6F             ; $923E - unknown opcode
-    RTS                      ; $923F: 60
+	LDA #$12				 ; $9204: A9 12
+	SEC					  ; $9206: 38
+	SBC $921B,Y			  ; $9207: F9 1B 92
+	CLC					  ; $920A: 18
+	ADC $01				  ; $920B: 65 01
+	PHA					  ; $920D: 48
+	LDA $00				  ; $920E: A5 00
+	STA $2006				; $9210: 8D 06 20
+	PLA					  ; $9213: 68
+	STA $2006				; $9214: 8D 06 20
+	JMP $91F6				; $9217: 4C F6 91
+	RTS					  ; $921A: 60
+	.byte $12			 ; $921B - unknown opcode
+	.byte $12			 ; $921C - unknown opcode
+	.byte $12			 ; $921D - unknown opcode
+	.byte $12			 ; $921E - unknown opcode
+	.byte $0F			 ; $921F - unknown opcode
+	.byte $0C			 ; $9220 - unknown opcode
+	ASL					  ; $9221: 0A
+	ORA #$08				 ; $9222: 09 08
+	.byte $07			 ; $9224 - unknown opcode
+	ASL $06				  ; $9225: 06 06
+	ORA $05				  ; $9227: 05 05
+	.byte $04			 ; $9229 - unknown opcode
+	JSR $93CA				; $922A: 20 CA 93
+	JSR $C543				; $922D: 20 43 C5
+	JSR $FF74				; $9230: 20 74 FF
+	JSR $9240				; $9233: 20 40 92
+	JSR $925C				; $9236: 20 5C 92
+	JSR $924D				; $9239: 20 4D 92
+	BRK					  ; $923C: 00
+	ASL					  ; $923D: 0A
+	.byte $6F			 ; $923E - unknown opcode
+	RTS					  ; $923F: 60
 
 loc_9240:
-    LDA $925A                ; $9240: AD 5A 92
-    STA $0503                ; $9243: 8D 03 05
-    LDA $925B                ; $9246: AD 5B 92
-    STA $0504                ; $9249: 8D 04 05
-    RTS                      ; $924C: 60
+	LDA $925A				; $9240: AD 5A 92
+	STA $0503				; $9243: 8D 03 05
+	LDA $925B				; $9246: AD 5B 92
+	STA $0504				; $9249: 8D 04 05
+	RTS					  ; $924C: 60
 
 loc_924D:
-    LDA $C0D2                ; $924D: AD D2 C0
-    STA $0503                ; $9250: 8D 03 05
-    LDA $C0D3                ; $9253: AD D3 C0
-    STA $0504                ; $9256: 8D 04 05
-    RTS                      ; $9259: 60
-    .byte $73             ; $925A - unknown opcode
-    .byte $92             ; $925B - unknown opcode
+	LDA $C0D2				; $924D: AD D2 C0
+	STA $0503				; $9250: 8D 03 05
+	LDA $C0D3				; $9253: AD D3 C0
+	STA $0504				; $9256: 8D 04 05
+	RTS					  ; $9259: 60
+	.byte $73			 ; $925A - unknown opcode
+	.byte $92			 ; $925B - unknown opcode
 
 loc_925C:
-    JSR $9282                ; $925C: 20 82 92
-    JSR $938D                ; $925F: 20 8D 93
-    JSR $908C                ; $9262: 20 8C 90
-    JSR $93F0                ; $9265: 20 F0 93
-    TSX                      ; $9268: BA
-    STX $0F                  ; $9269: 86 0F
-    LDY #$03                 ; $926B: A0 03
-    JSR $8F87                ; $926D: 20 87 8F
+	JSR $9282				; $925C: 20 82 92
+	JSR $938D				; $925F: 20 8D 93
+	JSR $908C				; $9262: 20 8C 90
+	JSR $93F0				; $9265: 20 F0 93
+	TSX					  ; $9268: BA
+	STX $0F				  ; $9269: 86 0F
+	LDY #$03				 ; $926B: A0 03
+	JSR $8F87				; $926D: 20 87 8F
 
 loc_9270:
-    JMP $9270                ; $9270: 4C 70 92
-    PLA                      ; $9273: 68
-    PLA                      ; $9274: 68
-    PLA                      ; $9275: 68
-    LDX $0F                  ; $9276: A6 0F
-    TXS                      ; $9278: 9A
-    JSR $92B5                ; $9279: 20 B5 92
-    JSR $9021                ; $927C: 20 21 90
-    JMP $925C                ; $927F: 4C 5C 92
+	JMP $9270				; $9270: 4C 70 92
+	PLA					  ; $9273: 68
+	PLA					  ; $9274: 68
+	PLA					  ; $9275: 68
+	LDX $0F				  ; $9276: A6 0F
+	TXS					  ; $9278: 9A
+	JSR $92B5				; $9279: 20 B5 92
+	JSR $9021				; $927C: 20 21 90
+	JMP $925C				; $927F: 4C 5C 92
 
 loc_9282:
-    LDA $2002                ; $9282: AD 02 20
-    BMI $9282                ; $9285: 30 FB
-    LDA $2002                ; $9287: AD 02 20
-    BMI $9282                ; $928A: 30 F6
-    LDA $2002                ; $928C: AD 02 20
-    BMI $9282                ; $928F: 30 F1
-    LDA $2002                ; $9291: AD 02 20
-    BMI $9282                ; $9294: 30 EC
-    LDA $2002                ; $9296: AD 02 20
-    BMI $9282                ; $9299: 30 E7
-    LDA $2002                ; $929B: AD 02 20
-    BMI $9282                ; $929E: 30 E2
-    LDA $2002                ; $92A0: AD 02 20
-    BMI $9282                ; $92A3: 30 DD
-    LDA $2002                ; $92A5: AD 02 20
-    BMI $9282                ; $92A8: 30 D8
-    LDA $2002                ; $92AA: AD 02 20
-    BMI $9282                ; $92AD: 30 D3
-    LDA $2002                ; $92AF: AD 02 20
-    BMI $9282                ; $92B2: 30 CE
-    RTS                      ; $92B4: 60
+	LDA $2002				; $9282: AD 02 20
+	BMI $9282				; $9285: 30 FB
+	LDA $2002				; $9287: AD 02 20
+	BMI $9282				; $928A: 30 F6
+	LDA $2002				; $928C: AD 02 20
+	BMI $9282				; $928F: 30 F1
+	LDA $2002				; $9291: AD 02 20
+	BMI $9282				; $9294: 30 EC
+	LDA $2002				; $9296: AD 02 20
+	BMI $9282				; $9299: 30 E7
+	LDA $2002				; $929B: AD 02 20
+	BMI $9282				; $929E: 30 E2
+	LDA $2002				; $92A0: AD 02 20
+	BMI $9282				; $92A3: 30 DD
+	LDA $2002				; $92A5: AD 02 20
+	BMI $9282				; $92A8: 30 D8
+	LDA $2002				; $92AA: AD 02 20
+	BMI $9282				; $92AD: 30 D3
+	LDA $2002				; $92AF: AD 02 20
+	BMI $9282				; $92B2: 30 CE
+	RTS					  ; $92B4: 60
 
 loc_92B5:
-    LDA $2002                ; $92B5: AD 02 20
-    LDA #$3F                 ; $92B8: A9 3F
-    STA $2006                ; $92BA: 8D 06 20
-    LDA #$00                 ; $92BD: A9 00
-    STA $2006                ; $92BF: 8D 06 20
-    LDA $0300                ; $92C2: AD 00 03
-    STA $2007                ; $92C5: 8D 07 20
-    LDA $0301                ; $92C8: AD 01 03
-    STA $2007                ; $92CB: 8D 07 20
-    LDA $0302                ; $92CE: AD 02 03
-    STA $2007                ; $92D1: 8D 07 20
-    LDA $0303                ; $92D4: AD 03 03
-    STA $2007                ; $92D7: 8D 07 20
-    LDA $0304                ; $92DA: AD 04 03
-    STA $2007                ; $92DD: 8D 07 20
-    LDA $0305                ; $92E0: AD 05 03
-    STA $2007                ; $92E3: 8D 07 20
-    LDA $0306                ; $92E6: AD 06 03
-    STA $2007                ; $92E9: 8D 07 20
-    LDA $0307                ; $92EC: AD 07 03
-    STA $2007                ; $92EF: 8D 07 20
-    LDA $0308                ; $92F2: AD 08 03
-    STA $2007                ; $92F5: 8D 07 20
-    LDA $0309                ; $92F8: AD 09 03
-    STA $2007                ; $92FB: 8D 07 20
-    LDA $030A                ; $92FE: AD 0A 03
-    STA $2007                ; $9301: 8D 07 20
-    LDA $030B                ; $9304: AD 0B 03
-    STA $2007                ; $9307: 8D 07 20
-    LDA $030C                ; $930A: AD 0C 03
-    STA $2007                ; $930D: 8D 07 20
-    LDA $030D                ; $9310: AD 0D 03
-    STA $2007                ; $9313: 8D 07 20
-    LDA $030E                ; $9316: AD 0E 03
-    STA $2007                ; $9319: 8D 07 20
-    LDA $030F                ; $931C: AD 0F 03
-    STA $2007                ; $931F: 8D 07 20
-    LDA $0310                ; $9322: AD 10 03
-    STA $2007                ; $9325: 8D 07 20
-    LDA $0311                ; $9328: AD 11 03
-    STA $2007                ; $932B: 8D 07 20
-    LDA $0312                ; $932E: AD 12 03
-    STA $2007                ; $9331: 8D 07 20
-    LDA $0313                ; $9334: AD 13 03
-    STA $2007                ; $9337: 8D 07 20
-    LDA $0314                ; $933A: AD 14 03
-    STA $2007                ; $933D: 8D 07 20
-    LDA $0315                ; $9340: AD 15 03
-    STA $2007                ; $9343: 8D 07 20
-    LDA $0316                ; $9346: AD 16 03
-    STA $2007                ; $9349: 8D 07 20
-    LDA $0317                ; $934C: AD 17 03
-    STA $2007                ; $934F: 8D 07 20
-    LDA $0318                ; $9352: AD 18 03
-    STA $2007                ; $9355: 8D 07 20
-    LDA $0319                ; $9358: AD 19 03
-    STA $2007                ; $935B: 8D 07 20
-    LDA $031A                ; $935E: AD 1A 03
-    STA $2007                ; $9361: 8D 07 20
-    LDA $031B                ; $9364: AD 1B 03
-    STA $2007                ; $9367: 8D 07 20
-    LDA $031C                ; $936A: AD 1C 03
-    STA $2007                ; $936D: 8D 07 20
-    LDA $031D                ; $9370: AD 1D 03
-    STA $2007                ; $9373: 8D 07 20
-    LDA $031E                ; $9376: AD 1E 03
-    STA $2007                ; $9379: 8D 07 20
-    LDA $031F                ; $937C: AD 1F 03
-    STA $2007                ; $937F: 8D 07 20
-    LDA #$80                 ; $9382: A9 80
-    STA $2005                ; $9384: 8D 05 20
-    LDA #$00                 ; $9387: A9 00
-    STA $2005                ; $9389: 8D 05 20
-    RTS                      ; $938C: 60
+	LDA $2002				; $92B5: AD 02 20
+	LDA #$3F				 ; $92B8: A9 3F
+	STA $2006				; $92BA: 8D 06 20
+	LDA #$00				 ; $92BD: A9 00
+	STA $2006				; $92BF: 8D 06 20
+	LDA $0300				; $92C2: AD 00 03
+	STA $2007				; $92C5: 8D 07 20
+	LDA $0301				; $92C8: AD 01 03
+	STA $2007				; $92CB: 8D 07 20
+	LDA $0302				; $92CE: AD 02 03
+	STA $2007				; $92D1: 8D 07 20
+	LDA $0303				; $92D4: AD 03 03
+	STA $2007				; $92D7: 8D 07 20
+	LDA $0304				; $92DA: AD 04 03
+	STA $2007				; $92DD: 8D 07 20
+	LDA $0305				; $92E0: AD 05 03
+	STA $2007				; $92E3: 8D 07 20
+	LDA $0306				; $92E6: AD 06 03
+	STA $2007				; $92E9: 8D 07 20
+	LDA $0307				; $92EC: AD 07 03
+	STA $2007				; $92EF: 8D 07 20
+	LDA $0308				; $92F2: AD 08 03
+	STA $2007				; $92F5: 8D 07 20
+	LDA $0309				; $92F8: AD 09 03
+	STA $2007				; $92FB: 8D 07 20
+	LDA $030A				; $92FE: AD 0A 03
+	STA $2007				; $9301: 8D 07 20
+	LDA $030B				; $9304: AD 0B 03
+	STA $2007				; $9307: 8D 07 20
+	LDA $030C				; $930A: AD 0C 03
+	STA $2007				; $930D: 8D 07 20
+	LDA $030D				; $9310: AD 0D 03
+	STA $2007				; $9313: 8D 07 20
+	LDA $030E				; $9316: AD 0E 03
+	STA $2007				; $9319: 8D 07 20
+	LDA $030F				; $931C: AD 0F 03
+	STA $2007				; $931F: 8D 07 20
+	LDA $0310				; $9322: AD 10 03
+	STA $2007				; $9325: 8D 07 20
+	LDA $0311				; $9328: AD 11 03
+	STA $2007				; $932B: 8D 07 20
+	LDA $0312				; $932E: AD 12 03
+	STA $2007				; $9331: 8D 07 20
+	LDA $0313				; $9334: AD 13 03
+	STA $2007				; $9337: 8D 07 20
+	LDA $0314				; $933A: AD 14 03
+	STA $2007				; $933D: 8D 07 20
+	LDA $0315				; $9340: AD 15 03
+	STA $2007				; $9343: 8D 07 20
+	LDA $0316				; $9346: AD 16 03
+	STA $2007				; $9349: 8D 07 20
+	LDA $0317				; $934C: AD 17 03
+	STA $2007				; $934F: 8D 07 20
+	LDA $0318				; $9352: AD 18 03
+	STA $2007				; $9355: 8D 07 20
+	LDA $0319				; $9358: AD 19 03
+	STA $2007				; $935B: 8D 07 20
+	LDA $031A				; $935E: AD 1A 03
+	STA $2007				; $9361: 8D 07 20
+	LDA $031B				; $9364: AD 1B 03
+	STA $2007				; $9367: 8D 07 20
+	LDA $031C				; $936A: AD 1C 03
+	STA $2007				; $936D: 8D 07 20
+	LDA $031D				; $9370: AD 1D 03
+	STA $2007				; $9373: 8D 07 20
+	LDA $031E				; $9376: AD 1E 03
+	STA $2007				; $9379: 8D 07 20
+	LDA $031F				; $937C: AD 1F 03
+	STA $2007				; $937F: 8D 07 20
+	LDA #$80				 ; $9382: A9 80
+	STA $2005				; $9384: 8D 05 20
+	LDA #$00				 ; $9387: A9 00
+	STA $2005				; $9389: 8D 05 20
+	RTS					  ; $938C: 60
 
 loc_938D:
-    INC $52                  ; $938D: E6 52
-    LDA $52                  ; $938F: A5 52
-    AND #$07                 ; $9391: 29 07
-    BNE $93BC                ; $9393: D0 27
-    LDA $51                  ; $9395: A5 51
-    AND #$3F                 ; $9397: 29 3F
-    TAY                      ; $9399: A8
-    LDX #$00                 ; $939A: A2 00
+	INC $52				  ; $938D: E6 52
+	LDA $52				  ; $938F: A5 52
+	AND #$07				 ; $9391: 29 07
+	BNE $93BC				; $9393: D0 27
+	LDA $51				  ; $9395: A5 51
+	AND #$3F				 ; $9397: 29 3F
+	TAY					  ; $9399: A8
+	LDX #$00				 ; $939A: A2 00
 
 loc_939C:
-    LDA $7F40,Y              ; $939C: B9 40 7F
-    SEC                      ; $939F: 38
-    SBC $90EF,X              ; $93A0: FD EF 90
-    STA $7F40,Y              ; $93A3: 99 40 7F
-    LDA $7F00,Y              ; $93A6: B9 00 7F
-    SBC $912F,X              ; $93A9: FD 2F 91
-    STA $7F00,Y              ; $93AC: 99 00 7F
-    INY                      ; $93AF: C8
-    TYA                      ; $93B0: 98
-    AND #$3F                 ; $93B1: 29 3F
-    TAY                      ; $93B3: A8
-    INX                      ; $93B4: E8
-    CPX #$40                 ; $93B5: E0 40
-    BCC $939C                ; $93B7: 90 E3
-    INC $53                  ; $93B9: E6 53
-    RTS                      ; $93BB: 60
+	LDA $7F40,Y			  ; $939C: B9 40 7F
+	SEC					  ; $939F: 38
+	SBC $90EF,X			  ; $93A0: FD EF 90
+	STA $7F40,Y			  ; $93A3: 99 40 7F
+	LDA $7F00,Y			  ; $93A6: B9 00 7F
+	SBC $912F,X			  ; $93A9: FD 2F 91
+	STA $7F00,Y			  ; $93AC: 99 00 7F
+	INY					  ; $93AF: C8
+	TYA					  ; $93B0: 98
+	AND #$3F				 ; $93B1: 29 3F
+	TAY					  ; $93B3: A8
+	INX					  ; $93B4: E8
+	CPX #$40				 ; $93B5: E0 40
+	BCC $939C				; $93B7: 90 E3
+	INC $53				  ; $93B9: E6 53
+	RTS					  ; $93BB: 60
 
 loc_93BC:
-    AND $00                  ; $93BC: 25 00
-    NOP                      ; $93BE: EA
-    NOP                      ; $93BF: EA
-    LDX #$00                 ; $93C0: A2 00
+	AND $00				  ; $93BC: 25 00
+	NOP					  ; $93BE: EA
+	NOP					  ; $93BF: EA
+	LDX #$00				 ; $93C0: A2 00
 
 loc_93C2:
-    AND $00                  ; $93C2: 25 00
-    NOP                      ; $93C4: EA
-    NOP                      ; $93C5: EA
-    DEX                      ; $93C6: CA
-    BNE $93C2                ; $93C7: D0 F9
-    RTS                      ; $93C9: 60
+	AND $00				  ; $93C2: 25 00
+	NOP					  ; $93C4: EA
+	NOP					  ; $93C5: EA
+	DEX					  ; $93C6: CA
+	BNE $93C2				; $93C7: D0 F9
+	RTS					  ; $93C9: 60
 
 loc_93CA:
-    LDA $059D                ; $93CA: AD 9D 05
-    STA $51                  ; $93CD: 85 51
-    LDX #$00                 ; $93CF: A2 00
-    STX $52                  ; $93D1: 86 52
-    STX $53                  ; $93D3: 86 53
-    LDY #$01                 ; $93D5: A0 01
+	LDA $059D				; $93CA: AD 9D 05
+	STA $51				  ; $93CD: 85 51
+	LDX #$00				 ; $93CF: A2 00
+	STX $52				  ; $93D1: 86 52
+	STX $53				  ; $93D3: 86 53
+	LDY #$01				 ; $93D5: A0 01
 
 loc_93D7:
-    TXA                      ; $93D7: 8A
-    AND #$03                 ; $93D8: 29 03
-    BEQ $93E2                ; $93DA: F0 06
-    LDA $05FC,Y              ; $93DC: B9 FC 05
-    JMP $93E6                ; $93DF: 4C E6 93
+	TXA					  ; $93D7: 8A
+	AND #$03				 ; $93D8: 29 03
+	BEQ $93E2				; $93DA: F0 06
+	LDA $05FC,Y			  ; $93DC: B9 FC 05
+	JMP $93E6				; $93DF: 4C E6 93
 
 loc_93E2:
-    DEY                      ; $93E2: 88
-    LDA $05FC                ; $93E3: AD FC 05
+	DEY					  ; $93E2: 88
+	LDA $05FC				; $93E3: AD FC 05
 
 loc_93E6:
-    STA $0300,X              ; $93E6: 9D 00 03
-    INX                      ; $93E9: E8
-    INY                      ; $93EA: C8
-    CPY #$20                 ; $93EB: C0 20
-    BCC $93D7                ; $93ED: 90 E8
-    RTS                      ; $93EF: 60
+	STA $0300,X			  ; $93E6: 9D 00 03
+	INX					  ; $93E9: E8
+	INY					  ; $93EA: C8
+	CPY #$20				 ; $93EB: C0 20
+	BCC $93D7				; $93ED: 90 E8
+	RTS					  ; $93EF: 60
 
 loc_93F0:
-    LDA $53                  ; $93F0: A5 53
-    CMP #$08                 ; $93F2: C9 08
-    BCS $9422                ; $93F4: B0 2C
-    LSR                      ; $93F6: 4A
-    EOR #$03                 ; $93F7: 49 03
-    ASL                      ; $93F9: 0A
+	LDA $53				  ; $93F0: A5 53
+	CMP #$08				 ; $93F2: C9 08
+	BCS $9422				; $93F4: B0 2C
+	LSR					  ; $93F6: 4A
+	EOR #$03				 ; $93F7: 49 03
+	ASL					  ; $93F9: 0A
 
 loc_93FA:
-    ASL                      ; $93FA: 0A
-    ASL                      ; $93FB: 0A
-    ASL                      ; $93FC: 0A
-    STA $54                  ; $93FD: 85 54
-    LDX #$00                 ; $93FF: A2 00
-    LDY #$01                 ; $9401: A0 01
+	ASL					  ; $93FA: 0A
+	ASL					  ; $93FB: 0A
+	ASL					  ; $93FC: 0A
+	STA $54				  ; $93FD: 85 54
+	LDX #$00				 ; $93FF: A2 00
+	LDY #$01				 ; $9401: A0 01
 
 loc_9403:
-    TXA                      ; $9403: 8A
-    AND #$03                 ; $9404: 29 03
-    BEQ $9414                ; $9406: F0 0C
-    LDA $05FC,Y              ; $9408: B9 FC 05
-    SEC                      ; $940B: 38
-    SBC $54                  ; $940C: E5 54
-    CMP #$40                 ; $940E: C9 40
-    BCC $9418                ; $9410: 90 06
-    BCS $9415                ; $9412: B0 01
+	TXA					  ; $9403: 8A
+	AND #$03				 ; $9404: 29 03
+	BEQ $9414				; $9406: F0 0C
+	LDA $05FC,Y			  ; $9408: B9 FC 05
+	SEC					  ; $940B: 38
+	SBC $54				  ; $940C: E5 54
+	CMP #$40				 ; $940E: C9 40
+	BCC $9418				; $9410: 90 06
+	BCS $9415				; $9412: B0 01
 
 loc_9414:
-    DEY                      ; $9414: 88
+	DEY					  ; $9414: 88
 
 loc_9415:
-    LDA $05FC                ; $9415: AD FC 05
+	LDA $05FC				; $9415: AD FC 05
 
 loc_9418:
-    STA $0300,X              ; $9418: 9D 00 03
-    INX                      ; $941B: E8
-    INY                      ; $941C: C8
-    CPY #$10                 ; $941D: C0 10
-    BCC $9403                ; $941F: 90 E2
-    RTS                      ; $9421: 60
+	STA $0300,X			  ; $9418: 9D 00 03
+	INX					  ; $941B: E8
+	INY					  ; $941C: C8
+	CPY #$10				 ; $941D: C0 10
+	BCC $9403				; $941F: 90 E2
+	RTS					  ; $9421: 60
 
 loc_9422:
-    RTS                      ; $9422: 60
-    LDA #$00                 ; $9423: A9 00
-    STA $059D                ; $9425: 8D 9D 05
-    JSR $9073                ; $9428: 20 73 90
-    JSR $93CA                ; $942B: 20 CA 93
-    JSR $C543                ; $942E: 20 43 C5
-    JSR $FF74                ; $9431: 20 74 FF
-    JSR $9441                ; $9434: 20 41 94
-    JSR $9450                ; $9437: 20 50 94
-    JSR $924D                ; $943A: 20 4D 92
-    BRK                      ; $943D: 00
-    .byte $0C             ; $943E - unknown opcode
-    .byte $BF             ; $943F - unknown opcode
-    RTS                      ; $9440: 60
+	RTS					  ; $9422: 60
+	LDA #$00				 ; $9423: A9 00
+	STA $059D				; $9425: 8D 9D 05
+	JSR $9073				; $9428: 20 73 90
+	JSR $93CA				; $942B: 20 CA 93
+	JSR $C543				; $942E: 20 43 C5
+	JSR $FF74				; $9431: 20 74 FF
+	JSR $9441				; $9434: 20 41 94
+	JSR $9450				; $9437: 20 50 94
+	JSR $924D				; $943A: 20 4D 92
+	BRK					  ; $943D: 00
+	.byte $0C			 ; $943E - unknown opcode
+	.byte $BF			 ; $943F - unknown opcode
+	RTS					  ; $9440: 60
 
 loc_9441:
-    LDA $944E                ; $9441: AD 4E 94
-    STA $0503                ; $9444: 8D 03 05
-    LDA $944F                ; $9447: AD 4F 94
-    STA $0504                ; $944A: 8D 04 05
-    RTS                      ; $944D: 60
-    .byte $67             ; $944E - unknown opcode
-    STY $20,X                ; $944F: 94 20
-    .byte $82             ; $9451 - unknown opcode
-    .byte $92             ; $9452 - unknown opcode
-    JSR $90B2                ; $9453: 20 B2 90
-    JSR $908C                ; $9456: 20 8C 90
-    JSR $9476                ; $9459: 20 76 94
-    TSX                      ; $945C: BA
-    STX $0F                  ; $945D: 86 0F
-    LDY #$03                 ; $945F: A0 03
-    JSR $8F87                ; $9461: 20 87 8F
+	LDA $944E				; $9441: AD 4E 94
+	STA $0503				; $9444: 8D 03 05
+	LDA $944F				; $9447: AD 4F 94
+	STA $0504				; $944A: 8D 04 05
+	RTS					  ; $944D: 60
+	.byte $67			 ; $944E - unknown opcode
+	STY $20,X				; $944F: 94 20
+	.byte $82			 ; $9451 - unknown opcode
+	.byte $92			 ; $9452 - unknown opcode
+	JSR $90B2				; $9453: 20 B2 90
+	JSR $908C				; $9456: 20 8C 90
+	JSR $9476				; $9459: 20 76 94
+	TSX					  ; $945C: BA
+	STX $0F				  ; $945D: 86 0F
+	LDY #$03				 ; $945F: A0 03
+	JSR $8F87				; $9461: 20 87 8F
 
 loc_9464:
-    JMP $9464                ; $9464: 4C 64 94
-    PLA                      ; $9467: 68
-    PLA                      ; $9468: 68
-    PLA                      ; $9469: 68
-    LDX $0F                  ; $946A: A6 0F
-    TXS                      ; $946C: 9A
-    JSR $92B5                ; $946D: 20 B5 92
-    JSR $9021                ; $9470: 20 21 90
-    JMP $9450                ; $9473: 4C 50 94
+	JMP $9464				; $9464: 4C 64 94
+	PLA					  ; $9467: 68
+	PLA					  ; $9468: 68
+	PLA					  ; $9469: 68
+	LDX $0F				  ; $946A: A6 0F
+	TXS					  ; $946C: 9A
+	JSR $92B5				; $946D: 20 B5 92
+	JSR $9021				; $9470: 20 21 90
+	JMP $9450				; $9473: 4C 50 94
 
 loc_9476:
-    LDA $53                  ; $9476: A5 53
-    CMP #$20                 ; $9478: C9 20
-    BCC $9483                ; $947A: 90 07
-    SBC #$20                 ; $947C: E9 20
-    AND #$FE                 ; $947E: 29 FE
-    JMP $93FA                ; $9480: 4C FA 93
+	LDA $53				  ; $9476: A5 53
+	CMP #$20				 ; $9478: C9 20
+	BCC $9483				; $947A: 90 07
+	SBC #$20				 ; $947C: E9 20
+	AND #$FE				 ; $947E: 29 FE
+	JMP $93FA				; $9480: 4C FA 93
 
 loc_9483:
-    RTS                      ; $9483: 60
-    BRK                      ; $9484: 00
-    ASL $CB,X                ; $9485: 16 CB
-    BPL $94A9                ; $9487: 10 20
-    ASL $96,X                ; $9489: 16 96
-    JSR $95B6                ; $948B: 20 B6 95
-    JSR $95AF                ; $948E: 20 AF 95
-    JSR $95A2                ; $9491: 20 A2 95
-    JSR $9509                ; $9494: 20 09 95
-    JSR $9501                ; $9497: 20 01 95
-    JSR $94C4                ; $949A: 20 C4 94
-    JSR $94AC                ; $949D: 20 AC 94
-    LDX #$14                 ; $94A0: A2 14
-    JSR $C90C                ; $94A2: 20 0C C9
-    LDA $1F                  ; $94A5: A5 1F
-    AND #$F7                 ; $94A7: 29 F7
+	RTS					  ; $9483: 60
+	BRK					  ; $9484: 00
+	ASL $CB,X				; $9485: 16 CB
+	BPL $94A9				; $9487: 10 20
+	ASL $96,X				; $9489: 16 96
+	JSR $95B6				; $948B: 20 B6 95
+	JSR $95AF				; $948E: 20 AF 95
+	JSR $95A2				; $9491: 20 A2 95
+	JSR $9509				; $9494: 20 09 95
+	JSR $9501				; $9497: 20 01 95
+	JSR $94C4				; $949A: 20 C4 94
+	JSR $94AC				; $949D: 20 AC 94
+	LDX #$14				 ; $94A0: A2 14
+	JSR $C90C				; $94A2: 20 0C C9
+	LDA $1F				  ; $94A5: A5 1F
+	AND #$F7				 ; $94A7: 29 F7
 
 loc_94A9:
-    STA $1F                  ; $94A9: 85 1F
-    RTS                      ; $94AB: 60
+	STA $1F				  ; $94A9: 85 1F
+	RTS					  ; $94AB: 60
 
 loc_94AC:
-    BRK                      ; $94AC: 00
-    ROL $4B,X                ; $94AD: 36 4B
-    LDX #$06                 ; $94AF: A2 06
-    LDA $7000,X              ; $94B1: BD 00 70
-    AND #$FC                 ; $94B4: 29 FC
-    ORA #$02                 ; $94B6: 09 02
-    STA $7000,X              ; $94B8: 9D 00 70
-    JSR $D804                ; $94BB: 20 04 D8
-    BRK                      ; $94BE: 00
-    .byte $37             ; $94BF - unknown opcode
-    .byte $4B             ; $94C0 - unknown opcode
-    JMP $D218                ; $94C1: 4C 18 D2
+	BRK					  ; $94AC: 00
+	ROL $4B,X				; $94AD: 36 4B
+	LDX #$06				 ; $94AF: A2 06
+	LDA $7000,X			  ; $94B1: BD 00 70
+	AND #$FC				 ; $94B4: 29 FC
+	ORA #$02				 ; $94B6: 09 02
+	STA $7000,X			  ; $94B8: 9D 00 70
+	JSR $D804				; $94BB: 20 04 D8
+	BRK					  ; $94BE: 00
+	.byte $37			 ; $94BF - unknown opcode
+	.byte $4B			 ; $94C0 - unknown opcode
+	JMP $D218				; $94C1: 4C 18 D2
 
 loc_94C4:
-    LDX #$08                 ; $94C4: A2 08
-    LDA $7000,X              ; $94C6: BD 00 70
-    AND #$FC                 ; $94C9: 29 FC
-    STA $7000,X              ; $94CB: 9D 00 70
-    JSR $D804                ; $94CE: 20 04 D8
-    BRK                      ; $94D1: 00
-    .byte $82             ; $94D2 - unknown opcode
-    .byte $FB             ; $94D3 - unknown opcode
-    LDY #$0C                 ; $94D4: A0 0C
+	LDX #$08				 ; $94C4: A2 08
+	LDA $7000,X			  ; $94C6: BD 00 70
+	AND #$FC				 ; $94C9: 29 FC
+	STA $7000,X			  ; $94CB: 9D 00 70
+	JSR $D804				; $94CE: 20 04 D8
+	BRK					  ; $94D1: 00
+	.byte $82			 ; $94D2 - unknown opcode
+	.byte $FB			 ; $94D3 - unknown opcode
+	LDY #$0C				 ; $94D4: A0 0C
 
 loc_94D6:
-    TYA                      ; $94D6: 98
-    PHA                      ; $94D7: 48
-    LDX $7B                  ; $94D8: A6 7B
-    INC $0200,X              ; $94DA: FE 00 02
-    INC $0204,X              ; $94DD: FE 04 02
-    INC $0208,X              ; $94E0: FE 08 02
-    INC $020C,X              ; $94E3: FE 0C 02
-    JSR $960D                ; $94E6: 20 0D 96
-    LDX #$05                 ; $94E9: A2 05
-    JSR $C90C                ; $94EB: 20 0C C9
-    PLA                      ; $94EE: 68
-    TAY                      ; $94EF: A8
-    DEY                      ; $94F0: 88
-    BNE $94D6                ; $94F1: D0 E3
-    LDX #$06                 ; $94F3: A2 06
-    LDA $7000,X              ; $94F5: BD 00 70
-    AND #$FC                 ; $94F8: 29 FC
-    STA $7000,X              ; $94FA: 9D 00 70
-    JSR $D804                ; $94FD: 20 04 D8
-    RTS                      ; $9500: 60
+	TYA					  ; $94D6: 98
+	PHA					  ; $94D7: 48
+	LDX $7B				  ; $94D8: A6 7B
+	INC $0200,X			  ; $94DA: FE 00 02
+	INC $0204,X			  ; $94DD: FE 04 02
+	INC $0208,X			  ; $94E0: FE 08 02
+	INC $020C,X			  ; $94E3: FE 0C 02
+	JSR $960D				; $94E6: 20 0D 96
+	LDX #$05				 ; $94E9: A2 05
+	JSR $C90C				; $94EB: 20 0C C9
+	PLA					  ; $94EE: 68
+	TAY					  ; $94EF: A8
+	DEY					  ; $94F0: 88
+	BNE $94D6				; $94F1: D0 E3
+	LDX #$06				 ; $94F3: A2 06
+	LDA $7000,X			  ; $94F5: BD 00 70
+	AND #$FC				 ; $94F8: 29 FC
+	STA $7000,X			  ; $94FA: 9D 00 70
+	JSR $D804				; $94FD: 20 04 D8
+	RTS					  ; $9500: 60
 
 loc_9501:
-    BRK                      ; $9501: 00
-    .byte $07             ; $9502 - unknown opcode
-    .byte $6F             ; $9503 - unknown opcode
-    .byte $43             ; $9504 - unknown opcode
-    BRK                      ; $9505: 00
-    AND $4B,X                ; $9506: 35 4B
-    RTS                      ; $9508: 60
+	BRK					  ; $9501: 00
+	.byte $07			 ; $9502 - unknown opcode
+	.byte $6F			 ; $9503 - unknown opcode
+	.byte $43			 ; $9504 - unknown opcode
+	BRK					  ; $9505: 00
+	AND $4B,X				; $9506: 35 4B
+	RTS					  ; $9508: 60
 
 loc_9509:
-    LDY #$10                 ; $9509: A0 10
-    LDX #$01                 ; $950B: A2 01
-    JSR $958A                ; $950D: 20 8A 95
-    BRK                      ; $9510: 00
-    .byte $82             ; $9511 - unknown opcode
-    .byte $FB             ; $9512 - unknown opcode
-    LDX $7B                  ; $9513: A6 7B
-    LDA #$F7                 ; $9515: A9 F7
-    STA $0200,X              ; $9517: 9D 00 02
-    STA $0204,X              ; $951A: 9D 04 02
-    STA $0208,X              ; $951D: 9D 08 02
-    STA $020C,X              ; $9520: 9D 0C 02
-    LDX #$B4                 ; $9523: A2 B4
-    JSR $C90C                ; $9525: 20 0C C9
-    LDX #$09                 ; $9528: A2 09
-    LDY #$08                 ; $952A: A0 08
-    LDA $6FE0,X              ; $952C: BD E0 6F
-    STA $6FE0,Y              ; $952F: 99 E0 6F
-    LDX $7B                  ; $9532: A6 7B
-    LDA #$37                 ; $9534: A9 37
-    STA $0200,X              ; $9536: 9D 00 02
-    STA $0204,X              ; $9539: 9D 04 02
-    LDA #$3F                 ; $953C: A9 3F
-    STA $0208,X              ; $953E: 9D 08 02
-    STA $020C,X              ; $9541: 9D 0C 02
-    LDA #$80                 ; $9544: A9 80
-    STA $0203,X              ; $9546: 9D 03 02
-    STA $020B,X              ; $9549: 9D 0B 02
-    LDA #$88                 ; $954C: A9 88
-    STA $0207,X              ; $954E: 9D 07 02
-    STA $020F,X              ; $9551: 9D 0F 02
-    LDX #$08                 ; $9554: A2 08
-    LDA $7000,X              ; $9556: BD 00 70
-    AND #$FC                 ; $9559: 29 FC
-    ORA #$02                 ; $955B: 09 02
-    STA $7000,X              ; $955D: 9D 00 70
-    JSR $D804                ; $9560: 20 04 D8
-    BRK                      ; $9563: 00
-    .byte $82             ; $9564 - unknown opcode
-    .byte $FB             ; $9565 - unknown opcode
-    LDY #$0C                 ; $9566: A0 0C
-    LDX #$05                 ; $9568: A2 05
-    JSR $958A                ; $956A: 20 8A 95
-    LDX #$08                 ; $956D: A2 08
-    LDA $7000,X              ; $956F: BD 00 70
-    ORA #$03                 ; $9572: 09 03
-    STA $7000,X              ; $9574: 9D 00 70
-    JSR $D804                ; $9577: 20 04 D8
-    LDX #$06                 ; $957A: A2 06
-    LDA $7000,X              ; $957C: BD 00 70
-    AND #$FC                 ; $957F: 29 FC
-    ORA #$01                 ; $9581: 09 01
-    STA $7000,X              ; $9583: 9D 00 70
-    JSR $D804                ; $9586: 20 04 D8
-    RTS                      ; $9589: 60
+	LDY #$10				 ; $9509: A0 10
+	LDX #$01				 ; $950B: A2 01
+	JSR $958A				; $950D: 20 8A 95
+	BRK					  ; $9510: 00
+	.byte $82			 ; $9511 - unknown opcode
+	.byte $FB			 ; $9512 - unknown opcode
+	LDX $7B				  ; $9513: A6 7B
+	LDA #$F7				 ; $9515: A9 F7
+	STA $0200,X			  ; $9517: 9D 00 02
+	STA $0204,X			  ; $951A: 9D 04 02
+	STA $0208,X			  ; $951D: 9D 08 02
+	STA $020C,X			  ; $9520: 9D 0C 02
+	LDX #$B4				 ; $9523: A2 B4
+	JSR $C90C				; $9525: 20 0C C9
+	LDX #$09				 ; $9528: A2 09
+	LDY #$08				 ; $952A: A0 08
+	LDA $6FE0,X			  ; $952C: BD E0 6F
+	STA $6FE0,Y			  ; $952F: 99 E0 6F
+	LDX $7B				  ; $9532: A6 7B
+	LDA #$37				 ; $9534: A9 37
+	STA $0200,X			  ; $9536: 9D 00 02
+	STA $0204,X			  ; $9539: 9D 04 02
+	LDA #$3F				 ; $953C: A9 3F
+	STA $0208,X			  ; $953E: 9D 08 02
+	STA $020C,X			  ; $9541: 9D 0C 02
+	LDA #$80				 ; $9544: A9 80
+	STA $0203,X			  ; $9546: 9D 03 02
+	STA $020B,X			  ; $9549: 9D 0B 02
+	LDA #$88				 ; $954C: A9 88
+	STA $0207,X			  ; $954E: 9D 07 02
+	STA $020F,X			  ; $9551: 9D 0F 02
+	LDX #$08				 ; $9554: A2 08
+	LDA $7000,X			  ; $9556: BD 00 70
+	AND #$FC				 ; $9559: 29 FC
+	ORA #$02				 ; $955B: 09 02
+	STA $7000,X			  ; $955D: 9D 00 70
+	JSR $D804				; $9560: 20 04 D8
+	BRK					  ; $9563: 00
+	.byte $82			 ; $9564 - unknown opcode
+	.byte $FB			 ; $9565 - unknown opcode
+	LDY #$0C				 ; $9566: A0 0C
+	LDX #$05				 ; $9568: A2 05
+	JSR $958A				; $956A: 20 8A 95
+	LDX #$08				 ; $956D: A2 08
+	LDA $7000,X			  ; $956F: BD 00 70
+	ORA #$03				 ; $9572: 09 03
+	STA $7000,X			  ; $9574: 9D 00 70
+	JSR $D804				; $9577: 20 04 D8
+	LDX #$06				 ; $957A: A2 06
+	LDA $7000,X			  ; $957C: BD 00 70
+	AND #$FC				 ; $957F: 29 FC
+	ORA #$01				 ; $9581: 09 01
+	STA $7000,X			  ; $9583: 9D 00 70
+	JSR $D804				; $9586: 20 04 D8
+	RTS					  ; $9589: 60
 
 loc_958A:
-    TYA                      ; $958A: 98
-    PHA                      ; $958B: 48
-    TXA                      ; $958C: 8A
-    PHA                      ; $958D: 48
-    JSR $95EC                ; $958E: 20 EC 95
-    JSR $960D                ; $9591: 20 0D 96
-    PLA                      ; $9594: 68
-    PHA                      ; $9595: 48
-    TAX                      ; $9596: AA
-    JSR $C90C                ; $9597: 20 0C C9
-    PLA                      ; $959A: 68
-    TAX                      ; $959B: AA
-    PLA                      ; $959C: 68
-    TAY                      ; $959D: A8
-    DEY                      ; $959E: 88
-    BNE $958A                ; $959F: D0 E9
-    RTS                      ; $95A1: 60
+	TYA					  ; $958A: 98
+	PHA					  ; $958B: 48
+	TXA					  ; $958C: 8A
+	PHA					  ; $958D: 48
+	JSR $95EC				; $958E: 20 EC 95
+	JSR $960D				; $9591: 20 0D 96
+	PLA					  ; $9594: 68
+	PHA					  ; $9595: 48
+	TAX					  ; $9596: AA
+	JSR $C90C				; $9597: 20 0C C9
+	PLA					  ; $959A: 68
+	TAX					  ; $959B: AA
+	PLA					  ; $959C: 68
+	TAY					  ; $959D: A8
+	DEY					  ; $959E: 88
+	BNE $958A				; $959F: D0 E9
+	RTS					  ; $95A1: 60
 
 loc_95A2:
-    LDX #$10                 ; $95A2: A2 10
-    LDY #$08                 ; $95A4: A0 08
-    LDA #$16                 ; $95A6: A9 16
-    BRK                      ; $95A8: 00
-    ORA #$EF                 ; $95A9: 09 EF
-    JSR $FF74                ; $95AB: 20 74 FF
-    RTS                      ; $95AE: 60
+	LDX #$10				 ; $95A2: A2 10
+	LDY #$08				 ; $95A4: A0 08
+	LDA #$16				 ; $95A6: A9 16
+	BRK					  ; $95A8: 00
+	ORA #$EF				 ; $95A9: 09 EF
+	JSR $FF74				; $95AB: 20 74 FF
+	RTS					  ; $95AE: 60
 
 loc_95AF:
-    BRK                      ; $95AF: 00
-    AND #$FB                 ; $95B0: 29 FB
-    BRK                      ; $95B2: 00
-    .byte $07             ; $95B3 - unknown opcode
-    .byte $9F             ; $95B4 - unknown opcode
-    RTS                      ; $95B5: 60
+	BRK					  ; $95AF: 00
+	AND #$FB				 ; $95B0: 29 FB
+	BRK					  ; $95B2: 00
+	.byte $07			 ; $95B3 - unknown opcode
+	.byte $9F			 ; $95B4 - unknown opcode
+	RTS					  ; $95B5: 60
 
 loc_95B6:
-    JSR $95C7                ; $95B6: 20 C7 95
+	JSR $95C7				; $95B6: 20 C7 95
 
 loc_95B9:
-    JSR $95D8                ; $95B9: 20 D8 95
-    JSR $960D                ; $95BC: 20 0D 96
-    INC $51                  ; $95BF: E6 51
-    JSR $FF74                ; $95C1: 20 74 FF
-    JMP $95B9                ; $95C4: 4C B9 95
+	JSR $95D8				; $95B9: 20 D8 95
+	JSR $960D				; $95BC: 20 0D 96
+	INC $51				  ; $95BF: E6 51
+	JSR $FF74				; $95C1: 20 74 FF
+	JMP $95B9				; $95C4: 4C B9 95
 
 loc_95C7:
-    LDA #$00                 ; $95C7: A9 00
-    STA $51                  ; $95C9: 85 51
-    LDX #$08                 ; $95CB: A2 08
-    LDA $7000,X              ; $95CD: BD 00 70
-    AND #$3C                 ; $95D0: 29 3C
-    JSR $C78C                ; $95D2: 20 8C C7
-    STY $7B                  ; $95D5: 84 7B
-    RTS                      ; $95D7: 60
+	LDA #$00				 ; $95C7: A9 00
+	STA $51				  ; $95C9: 85 51
+	LDX #$08				 ; $95CB: A2 08
+	LDA $7000,X			  ; $95CD: BD 00 70
+	AND #$3C				 ; $95D0: 29 3C
+	JSR $C78C				; $95D2: 20 8C C7
+	STY $7B				  ; $95D5: 84 7B
+	RTS					  ; $95D7: 60
 
 loc_95D8:
-    LDA $51                  ; $95D8: A5 51
-    CMP #$10                 ; $95DA: C9 10
-    BCC $95FB                ; $95DC: 90 1D
-    CMP #$40                 ; $95DE: C9 40
-    BCS $960A                ; $95E0: B0 28
-    LDX #$08                 ; $95E2: A2 08
-    LDA $7000,X              ; $95E4: BD 00 70
-    AND #$FC                 ; $95E7: 29 FC
-    STA $7000,X              ; $95E9: 9D 00 70
+	LDA $51				  ; $95D8: A5 51
+	CMP #$10				 ; $95DA: C9 10
+	BCC $95FB				; $95DC: 90 1D
+	CMP #$40				 ; $95DE: C9 40
+	BCS $960A				; $95E0: B0 28
+	LDX #$08				 ; $95E2: A2 08
+	LDA $7000,X			  ; $95E4: BD 00 70
+	AND #$FC				 ; $95E7: 29 FC
+	STA $7000,X			  ; $95E9: 9D 00 70
 
 loc_95EC:
-    LDX $7B                  ; $95EC: A6 7B
-    DEC $0200,X              ; $95EE: DE 00 02
-    DEC $0204,X              ; $95F1: DE 04 02
-    DEC $0208,X              ; $95F4: DE 08 02
-    DEC $020C,X              ; $95F7: DE 0C 02
-    RTS                      ; $95FA: 60
+	LDX $7B				  ; $95EC: A6 7B
+	DEC $0200,X			  ; $95EE: DE 00 02
+	DEC $0204,X			  ; $95F1: DE 04 02
+	DEC $0208,X			  ; $95F4: DE 08 02
+	DEC $020C,X			  ; $95F7: DE 0C 02
+	RTS					  ; $95FA: 60
 
 loc_95FB:
-    LDX $7B                  ; $95FB: A6 7B
-    INC $0203,X              ; $95FD: FE 03 02
-    INC $0207,X              ; $9600: FE 07 02
-    INC $020B,X              ; $9603: FE 0B 02
-    INC $020F,X              ; $9606: FE 0F 02
-    RTS                      ; $9609: 60
+	LDX $7B				  ; $95FB: A6 7B
+	INC $0203,X			  ; $95FD: FE 03 02
+	INC $0207,X			  ; $9600: FE 07 02
+	INC $020B,X			  ; $9603: FE 0B 02
+	INC $020F,X			  ; $9606: FE 0F 02
+	RTS					  ; $9609: 60
 
 loc_960A:
-    PLA                      ; $960A: 68
-    PLA                      ; $960B: 68
-    RTS                      ; $960C: 60
+	PLA					  ; $960A: 68
+	PLA					  ; $960B: 68
+	RTS					  ; $960C: 60
 
 loc_960D:
-    LDX #$08                 ; $960D: A2 08
-    JSR $D804                ; $960F: 20 04 D8
-    JSR $CBB4                ; $9612: 20 B4 CB
-    RTS                      ; $9615: 60
+	LDX #$08				 ; $960D: A2 08
+	JSR $D804				; $960F: 20 04 D8
+	JSR $CBB4				; $9612: 20 B4 CB
+	RTS					  ; $9615: 60
 
 loc_9616:
-    JSR $FF74                ; $9616: 20 74 FF
-    LDA #$F7                 ; $9619: A9 F7
-    CMP $02D0                ; $961B: CD D0 02
-    BNE $962A                ; $961E: D0 0A
-    CMP $02E0                ; $9620: CD E0 02
-    BNE $962A                ; $9623: D0 05
-    CMP $02F0                ; $9625: CD F0 02
-    BEQ $9616                ; $9628: F0 EC
+	JSR $FF74				; $9616: 20 74 FF
+	LDA #$F7				 ; $9619: A9 F7
+	CMP $02D0				; $961B: CD D0 02
+	BNE $962A				; $961E: D0 0A
+	CMP $02E0				; $9620: CD E0 02
+	BNE $962A				; $9623: D0 05
+	CMP $02F0				; $9625: CD F0 02
+	BEQ $9616				; $9628: F0 EC
 
 loc_962A:
-    LDA $1F                  ; $962A: A5 1F
-    ORA #$08                 ; $962C: 09 08
-    STA $1F                  ; $962E: 85 1F
-    LDX #$00                 ; $9630: A2 00
-    LDY #$38                 ; $9632: A0 38
-    STX $0203                ; $9634: 8E 03 02
-    STY $0200                ; $9637: 8C 00 02
-    STX $0207                ; $963A: 8E 07 02
-    STY $0204                ; $963D: 8C 04 02
-    STX $020B                ; $9640: 8E 0B 02
-    STY $0208                ; $9643: 8C 08 02
-    STX $020F                ; $9646: 8E 0F 02
-    STY $020C                ; $9649: 8C 0C 02
-    STX $0213                ; $964C: 8E 13 02
-    STY $0210                ; $964F: 8C 10 02
-    STX $0217                ; $9652: 8E 17 02
-    STY $0214                ; $9655: 8C 14 02
-    STX $021B                ; $9658: 8E 1B 02
-    STY $0218                ; $965B: 8C 18 02
-    STX $021F                ; $965E: 8E 1F 02
-    STY $021C                ; $9661: 8C 1C 02
-    LDY #$40                 ; $9664: A0 40
-    STX $0223                ; $9666: 8E 23 02
-    STY $0220                ; $9669: 8C 20 02
-    STX $0227                ; $966C: 8E 27 02
-    STY $0224                ; $966F: 8C 24 02
-    STX $022B                ; $9672: 8E 2B 02
-    STY $0228                ; $9675: 8C 28 02
-    STX $022F                ; $9678: 8E 2F 02
-    STY $022C                ; $967B: 8C 2C 02
-    STX $0233                ; $967E: 8E 33 02
-    STY $0230                ; $9681: 8C 30 02
-    STX $0237                ; $9684: 8E 37 02
-    STY $0234                ; $9687: 8C 34 02
-    STX $023B                ; $968A: 8E 3B 02
-    STY $0238                ; $968D: 8C 38 02
-    STX $023F                ; $9690: 8E 3F 02
-    STY $023C                ; $9693: 8C 3C 02
-    RTS                      ; $9696: 60
-    LDA $41                  ; $9697: A5 41
-    BPL $96B4                ; $9699: 10 19
-    LDX #$00                 ; $969B: A2 00
+	LDA $1F				  ; $962A: A5 1F
+	ORA #$08				 ; $962C: 09 08
+	STA $1F				  ; $962E: 85 1F
+	LDX #$00				 ; $9630: A2 00
+	LDY #$38				 ; $9632: A0 38
+	STX $0203				; $9634: 8E 03 02
+	STY $0200				; $9637: 8C 00 02
+	STX $0207				; $963A: 8E 07 02
+	STY $0204				; $963D: 8C 04 02
+	STX $020B				; $9640: 8E 0B 02
+	STY $0208				; $9643: 8C 08 02
+	STX $020F				; $9646: 8E 0F 02
+	STY $020C				; $9649: 8C 0C 02
+	STX $0213				; $964C: 8E 13 02
+	STY $0210				; $964F: 8C 10 02
+	STX $0217				; $9652: 8E 17 02
+	STY $0214				; $9655: 8C 14 02
+	STX $021B				; $9658: 8E 1B 02
+	STY $0218				; $965B: 8C 18 02
+	STX $021F				; $965E: 8E 1F 02
+	STY $021C				; $9661: 8C 1C 02
+	LDY #$40				 ; $9664: A0 40
+	STX $0223				; $9666: 8E 23 02
+	STY $0220				; $9669: 8C 20 02
+	STX $0227				; $966C: 8E 27 02
+	STY $0224				; $966F: 8C 24 02
+	STX $022B				; $9672: 8E 2B 02
+	STY $0228				; $9675: 8C 28 02
+	STX $022F				; $9678: 8E 2F 02
+	STY $022C				; $967B: 8C 2C 02
+	STX $0233				; $967E: 8E 33 02
+	STY $0230				; $9681: 8C 30 02
+	STX $0237				; $9684: 8E 37 02
+	STY $0234				; $9687: 8C 34 02
+	STX $023B				; $968A: 8E 3B 02
+	STY $0238				; $968D: 8C 38 02
+	STX $023F				; $9690: 8E 3F 02
+	STY $023C				; $9693: 8C 3C 02
+	RTS					  ; $9696: 60
+	LDA $41				  ; $9697: A5 41
+	BPL $96B4				; $9699: 10 19
+	LDX #$00				 ; $969B: A2 00
 
 loc_969D:
-    LDA $96B5,X              ; $969D: BD B5 96
-    CMP #$FF                 ; $96A0: C9 FF
-    BEQ $96B4                ; $96A2: F0 10
-    CMP $63                  ; $96A4: C5 63
-    BNE $96AF                ; $96A6: D0 07
-    LDA $96B6,X              ; $96A8: BD B6 96
-    CMP $64                  ; $96AB: C5 64
-    BEQ $96C4                ; $96AD: F0 15
+	LDA $96B5,X			  ; $969D: BD B5 96
+	CMP #$FF				 ; $96A0: C9 FF
+	BEQ $96B4				; $96A2: F0 10
+	CMP $63				  ; $96A4: C5 63
+	BNE $96AF				; $96A6: D0 07
+	LDA $96B6,X			  ; $96A8: BD B6 96
+	CMP $64				  ; $96AB: C5 64
+	BEQ $96C4				; $96AD: F0 15
 
 loc_96AF:
-    INX                      ; $96AF: E8
-    INX                      ; $96B0: E8
-    JMP $969D                ; $96B1: 4C 9D 96
+	INX					  ; $96AF: E8
+	INX					  ; $96B0: E8
+	JMP $969D				; $96B1: 4C 9D 96
 
 loc_96B4:
-    RTS                      ; $96B4: 60
-    AND $07,X                ; $96B5: 35 07
-    ORA ($02,X)              ; $96B7: 01 02
-    .byte $37             ; $96B9 - unknown opcode
-    BRK                      ; $96BA: 00
-    BRK                      ; $96BB: 00
-    ORA ($36,X)              ; $96BC: 01 36
-    .byte $04             ; $96BE - unknown opcode
-    .byte $34             ; $96BF - unknown opcode
-    BRK                      ; $96C0: 00
-    .byte $17             ; $96C1 - unknown opcode
-    BRK                      ; $96C2: 00
-    .byte $FF             ; $96C3 - unknown opcode
+	RTS					  ; $96B4: 60
+	AND $07,X				; $96B5: 35 07
+	ORA ($02,X)			  ; $96B7: 01 02
+	.byte $37			 ; $96B9 - unknown opcode
+	BRK					  ; $96BA: 00
+	BRK					  ; $96BB: 00
+	ORA ($36,X)			  ; $96BC: 01 36
+	.byte $04			 ; $96BE - unknown opcode
+	.byte $34			 ; $96BF - unknown opcode
+	BRK					  ; $96C0: 00
+	.byte $17			 ; $96C1 - unknown opcode
+	BRK					  ; $96C2: 00
+	.byte $FF			 ; $96C3 - unknown opcode
 
 loc_96C4:
-    LDA $96D1,X              ; $96C4: BD D1 96
-    STA $49                  ; $96C7: 85 49
-    LDA $96D2,X              ; $96C9: BD D2 96
-    STA $4A                  ; $96CC: 85 4A
-    JMP ($0049)              ; $96CE: 6C 49 00
-    .byte $DF             ; $96D1 - unknown opcode
-    STX $EE,Y                ; $96D2: 96 EE
-    STX $FA,Y                ; $96D4: 96 FA
-    STX $13,Y                ; $96D6: 96 13
-    .byte $97             ; $96D8 - unknown opcode
-    ROL $2497,X              ; $96D9: 3E 97 24
-    .byte $97             ; $96DC - unknown opcode
-    BMI $9676                ; $96DD: 30 97
-    LDA #$00                 ; $96DF: A9 00
-    STA $7684                ; $96E1: 8D 84 76
-    STA $7685                ; $96E4: 8D 85 76
-    STA $7686                ; $96E7: 8D 86 76
-    STA $7687                ; $96EA: 8D 87 76
-    RTS                      ; $96ED: 60
-    BRK                      ; $96EE: 00
-    .byte $04             ; $96EF - unknown opcode
-    .byte $EB             ; $96F0 - unknown opcode
-    .byte $02             ; $96F1 - unknown opcode
-    BEQ $96F9                ; $96F2: F0 05
-    LDA #$03                 ; $96F4: A9 03
-    STA $7872                ; $96F6: 8D 72 78
+	LDA $96D1,X			  ; $96C4: BD D1 96
+	STA $49				  ; $96C7: 85 49
+	LDA $96D2,X			  ; $96C9: BD D2 96
+	STA $4A				  ; $96CC: 85 4A
+	JMP ($0049)			  ; $96CE: 6C 49 00
+	.byte $DF			 ; $96D1 - unknown opcode
+	STX $EE,Y				; $96D2: 96 EE
+	STX $FA,Y				; $96D4: 96 FA
+	STX $13,Y				; $96D6: 96 13
+	.byte $97			 ; $96D8 - unknown opcode
+	ROL $2497,X			  ; $96D9: 3E 97 24
+	.byte $97			 ; $96DC - unknown opcode
+	BMI $9676				; $96DD: 30 97
+	LDA #$00				 ; $96DF: A9 00
+	STA $7684				; $96E1: 8D 84 76
+	STA $7685				; $96E4: 8D 85 76
+	STA $7686				; $96E7: 8D 86 76
+	STA $7687				; $96EA: 8D 87 76
+	RTS					  ; $96ED: 60
+	BRK					  ; $96EE: 00
+	.byte $04			 ; $96EF - unknown opcode
+	.byte $EB			 ; $96F0 - unknown opcode
+	.byte $02			 ; $96F1 - unknown opcode
+	BEQ $96F9				; $96F2: F0 05
+	LDA #$03				 ; $96F4: A9 03
+	STA $7872				; $96F6: 8D 72 78
 
 loc_96F9:
-    RTS                      ; $96F9: 60
-    BRK                      ; $96FA: 00
-    ASL                      ; $96FB: 0A
-    .byte $EB             ; $96FC - unknown opcode
-    .byte $80             ; $96FD - unknown opcode
-    BEQ $9712                ; $96FE: F0 12
-    LDX #$16                 ; $9700: A2 16
-    STX $798C                ; $9702: 8E 8C 79
-    INX                      ; $9705: E8
-    STX $798D                ; $9706: 8E 8D 79
-    LDX #$1A                 ; $9709: A2 1A
-    STX $79AE                ; $970B: 8E AE 79
-    INX                      ; $970E: E8
-    STX $79AF                ; $970F: 8E AF 79
+	RTS					  ; $96F9: 60
+	BRK					  ; $96FA: 00
+	ASL					  ; $96FB: 0A
+	.byte $EB			 ; $96FC - unknown opcode
+	.byte $80			 ; $96FD - unknown opcode
+	BEQ $9712				; $96FE: F0 12
+	LDX #$16				 ; $9700: A2 16
+	STX $798C				; $9702: 8E 8C 79
+	INX					  ; $9705: E8
+	STX $798D				; $9706: 8E 8D 79
+	LDX #$1A				 ; $9709: A2 1A
+	STX $79AE				; $970B: 8E AE 79
+	INX					  ; $970E: E8
+	STX $79AF				; $970F: 8E AF 79
 
 loc_9712:
-    RTS                      ; $9712: 60
-    BRK                      ; $9713: 00
-    ASL $EB,X                ; $9714: 16 EB
-    .byte $02             ; $9716 - unknown opcode
-    BEQ $9723                ; $9717: F0 0A
-    LDA $794A                ; $9719: AD 4A 79
-    AND #$1F                 ; $971C: 29 1F
-    ORA #$20                 ; $971E: 09 20
-    STA $7969                ; $9720: 8D 69 79
+	RTS					  ; $9712: 60
+	BRK					  ; $9713: 00
+	ASL $EB,X				; $9714: 16 EB
+	.byte $02			 ; $9716 - unknown opcode
+	BEQ $9723				; $9717: F0 0A
+	LDA $794A				; $9719: AD 4A 79
+	AND #$1F				 ; $971C: 29 1F
+	ORA #$20				 ; $971E: 09 20
+	STA $7969				; $9720: 8D 69 79
 
 loc_9723:
-    RTS                      ; $9723: 60
-    BRK                      ; $9724: 00
-    ROL $EB                  ; $9725: 26 EB
-    RTI                      ; $9727: 40
-    BEQ $972F                ; $9728: F0 05
-    LDA #$1A                 ; $972A: A9 1A
-    STA $78FF                ; $972C: 8D FF 78
+	RTS					  ; $9723: 60
+	BRK					  ; $9724: 00
+	ROL $EB				  ; $9725: 26 EB
+	RTI					  ; $9727: 40
+	BEQ $972F				; $9728: F0 05
+	LDA #$1A				 ; $972A: A9 1A
+	STA $78FF				; $972C: 8D FF 78
 
 loc_972F:
-    RTS                      ; $972F: 60
-    LDA $62A5                ; $9730: AD A5 62
-    BPL $973D                ; $9733: 10 08
-    LDA #$05                 ; $9735: A9 05
-    STA $788F                ; $9737: 8D 8F 78
-    STA $78AE                ; $973A: 8D AE 78
+	RTS					  ; $972F: 60
+	LDA $62A5				; $9730: AD A5 62
+	BPL $973D				; $9733: 10 08
+	LDA #$05				 ; $9735: A9 05
+	STA $788F				; $9737: 8D 8F 78
+	STA $78AE				; $973A: 8D AE 78
 
 loc_973D:
-    RTS                      ; $973D: 60
-    TSX                      ; $973E: BA
-    LDA $0108,X              ; $973F: BD 08 01
-    AND #$FE                 ; $9742: 29 FE
-    STA $0108,X              ; $9744: 9D 08 01
-    JSR $97A4                ; $9747: 20 A4 97
-    JSR $9771                ; $974A: 20 71 97
-    JSR $9751                ; $974D: 20 51 97
-    RTS                      ; $9750: 60
+	RTS					  ; $973D: 60
+	TSX					  ; $973E: BA
+	LDA $0108,X			  ; $973F: BD 08 01
+	AND #$FE				 ; $9742: 29 FE
+	STA $0108,X			  ; $9744: 9D 08 01
+	JSR $97A4				; $9747: 20 A4 97
+	JSR $9771				; $974A: 20 71 97
+	JSR $9751				; $974D: 20 51 97
+	RTS					  ; $9750: 60
 
 loc_9751:
-    LDX #$19                 ; $9751: A2 19
-    STX $7876                ; $9753: 8E 76 78
-    INX                      ; $9756: E8
-    STX $7877                ; $9757: 8E 77 78
-    INX                      ; $975A: E8
-    STX $788D                ; $975B: 8E 8D 78
-    INX                      ; $975E: E8
-    STX $788E                ; $975F: 8E 8E 78
-    LDA #$03                 ; $9762: A9 03
-    STA $62A3                ; $9764: 8D A3 62
-    LDA #$05                 ; $9767: A9 05
-    STA $62A0                ; $9769: 8D A0 62
-    BRK                      ; $976C: 00
-    .byte $1F             ; $976D - unknown opcode
-    .byte $DB             ; $976E - unknown opcode
-    .byte $BF             ; $976F - unknown opcode
-    RTS                      ; $9770: 60
+	LDX #$19				 ; $9751: A2 19
+	STX $7876				; $9753: 8E 76 78
+	INX					  ; $9756: E8
+	STX $7877				; $9757: 8E 77 78
+	INX					  ; $975A: E8
+	STX $788D				; $975B: 8E 8D 78
+	INX					  ; $975E: E8
+	STX $788E				; $975F: 8E 8E 78
+	LDA #$03				 ; $9762: A9 03
+	STA $62A3				; $9764: 8D A3 62
+	LDA #$05				 ; $9767: A9 05
+	STA $62A0				; $9769: 8D A0 62
+	BRK					  ; $976C: 00
+	.byte $1F			 ; $976D - unknown opcode
+	.byte $DB			 ; $976E - unknown opcode
+	.byte $BF			 ; $976F - unknown opcode
+	RTS					  ; $9770: 60
 
 loc_9771:
-    LDX #$17                 ; $9771: A2 17
+	LDX #$17				 ; $9771: A2 17
 
 loc_9773:
-    LDA $978C,X              ; $9773: BD 8C 97
-    STA $7664,X              ; $9776: 9D 64 76
-    DEX                      ; $9779: CA
-    BPL $9773                ; $977A: 10 F7
-    LDX #$05                 ; $977C: A2 05
+	LDA $978C,X			  ; $9773: BD 8C 97
+	STA $7664,X			  ; $9776: 9D 64 76
+	DEX					  ; $9779: CA
+	BPL $9773				; $977A: 10 F7
+	LDX #$05				 ; $977C: A2 05
 
 loc_977E:
-    LDA #$01                 ; $977E: A9 01
-    STA $76D9,X              ; $9780: 9D D9 76
-    LDA #$80                 ; $9783: A9 80
-    STA $6F59,X              ; $9785: 9D 59 6F
-    DEX                      ; $9788: CA
-    BPL $977E                ; $9789: 10 F3
-    RTS                      ; $978B: 60
-    .byte $F2             ; $978C - unknown opcode
-    .byte $F3             ; $978D - unknown opcode
-    INC $F7,X                ; $978E: F6 F7
-    .byte $F4             ; $9790 - unknown opcode
-    SBC $F7,X                ; $9791: F5 F7
-    SED                      ; $9793: F8
-    SBC $FCFA,Y              ; $9794: F9 FA FC
-    SBC $FBFA,X              ; $9797: FD FA FB
-    INC $ADFF,X              ; $979A: FE FF AD
-    LDX $B0AF                ; $979D: AE AF B0
-    LDA $AFAE                ; $97A0: AD AE AF
-    BCS $9752                ; $97A3: B0 AD
-    .byte $02             ; $97A5 - unknown opcode
-    JSR $1FA9                ; $97A6: 20 A9 1F
-    STA $2006                ; $97A9: 8D 06 20
-    LDA #$20                 ; $97AC: A9 20
-    STA $2006                ; $97AE: 8D 06 20
-    LDX #$00                 ; $97B1: A2 00
+	LDA #$01				 ; $977E: A9 01
+	STA $76D9,X			  ; $9780: 9D D9 76
+	LDA #$80				 ; $9783: A9 80
+	STA $6F59,X			  ; $9785: 9D 59 6F
+	DEX					  ; $9788: CA
+	BPL $977E				; $9789: 10 F3
+	RTS					  ; $978B: 60
+	.byte $F2			 ; $978C - unknown opcode
+	.byte $F3			 ; $978D - unknown opcode
+	INC $F7,X				; $978E: F6 F7
+	.byte $F4			 ; $9790 - unknown opcode
+	SBC $F7,X				; $9791: F5 F7
+	SED					  ; $9793: F8
+	SBC $FCFA,Y			  ; $9794: F9 FA FC
+	SBC $FBFA,X			  ; $9797: FD FA FB
+	INC $ADFF,X			  ; $979A: FE FF AD
+	LDX $B0AF				; $979D: AE AF B0
+	LDA $AFAE				; $97A0: AD AE AF
+	BCS $9752				; $97A3: B0 AD
+	.byte $02			 ; $97A5 - unknown opcode
+	JSR $1FA9				; $97A6: 20 A9 1F
+	STA $2006				; $97A9: 8D 06 20
+	LDA #$20				 ; $97AC: A9 20
+	STA $2006				; $97AE: 8D 06 20
+	LDX #$00				 ; $97B1: A2 00
 
 loc_97B3:
-    LDA $97BF,X              ; $97B3: BD BF 97
-    STA $2007                ; $97B6: 8D 07 20
-    INX                      ; $97B9: E8
-    CPX #$E0                 ; $97BA: E0 E0
-    BCC $97B3                ; $97BC: 90 F5
-    RTS                      ; $97BE: 60
-    .byte $FF             ; $97BF - unknown opcode
-    .byte $DF             ; $97C0 - unknown opcode
-    INC $F8FC,X              ; $97C1: FE FC F8
-    SBC ($E1),Y              ; $97C4: F1 E1
-    INC $FF                  ; $97C6: E6 FF
-    .byte $DF             ; $97C8 - unknown opcode
-    INC $FBFD,X              ; $97C9: FE FD FB
-    .byte $F7             ; $97CC - unknown opcode
-    .byte $EF             ; $97CD - unknown opcode
-    .byte $EF             ; $97CE - unknown opcode
-    BEQ $9751                ; $97CF: F0 80
-    .byte $17             ; $97D1 - unknown opcode
-    ADC ($6B),Y              ; $97D2: 71 6B
-    .byte $4B             ; $97D4 - unknown opcode
-    .byte $67             ; $97D5 - unknown opcode
-    LDA ($F0),Y              ; $97D6: B1 F0
-    .byte $8F             ; $97D8 - unknown opcode
-    .byte $7F             ; $97D9 - unknown opcode
-    .byte $FF             ; $97DA - unknown opcode
-    .byte $FF             ; $97DB - unknown opcode
-    .byte $FF             ; $97DC - unknown opcode
-    .byte $FF             ; $97DD - unknown opcode
-    .byte $FF             ; $97DE - unknown opcode
-    .byte $0F             ; $97DF - unknown opcode
-    ORA ($B0,X)              ; $97E0: 01 B0
-    .byte $7C             ; $97E2 - unknown opcode
-    EOR $FA32                ; $97E3: 4D 32 FA
-    STA $F10F,Y              ; $97E6: 99 0F F1
-    INC $FFFF,X              ; $97E9: FE FF FF
-    .byte $FF             ; $97EC - unknown opcode
-    .byte $FF             ; $97ED - unknown opcode
-    .byte $FF             ; $97EE - unknown opcode
-    .byte $FF             ; $97EF - unknown opcode
-    SBC $3F7F,X              ; $97F0: FD 7F 3F
-    .byte $1F             ; $97F3 - unknown opcode
-    .byte $0F             ; $97F4 - unknown opcode
-    .byte $A7             ; $97F5 - unknown opcode
-    ROR $FF                  ; $97F6: 66 FF
-    SBC $BF7F,X              ; $97F8: FD 7F BF
-    .byte $DF             ; $97FB - unknown opcode
-    .byte $EF             ; $97FC - unknown opcode
-    .byte $F7             ; $97FD - unknown opcode
-    INC $CC,X                ; $97FE: F6 CC
-    CMP $BE97,X              ; $9800: DD 97 BE
-    TSX                      ; $9803: BA
-    .byte $3F             ; $9804 - unknown opcode
-    ROR $DF7F,X              ; $9805: 7E 7F DF
-    .byte $D7             ; $9808 - unknown opcode
-    LDA $AFAF,Y              ; $9809: B9 AF AF
-    .byte $67             ; $980C - unknown opcode
-    EOR $BF5E,Y              ; $980D: 59 5E BF
-    .byte $FC             ; $9810 - unknown opcode
-    ADC $BBDB,X              ; $9811: 7D DB BB
-    ROL $F9AF,X              ; $9814: 3E AF F9
-    .byte $FF             ; $9817 - unknown opcode
-    .byte $DF             ; $9818 - unknown opcode
-    .byte $F3             ; $9819 - unknown opcode
-    .byte $FF             ; $981A - unknown opcode
-    .byte $FF             ; $981B - unknown opcode
-    .byte $EF             ; $981C - unknown opcode
-    .byte $F3             ; $981D - unknown opcode
-    .byte $BF             ; $981E - unknown opcode
-    .byte $F3             ; $981F - unknown opcode
-    .byte $D3             ; $9820 - unknown opcode
-    SBC $F5FD,Y              ; $9821: F9 FD F5
-    .byte $FC             ; $9824 - unknown opcode
-    LDX $FBFE,Y              ; $9825: BE FE FB
-    .byte $FB             ; $9828 - unknown opcode
-    ADC $FD9D,X              ; $9829: 7D 9D FD
-    DEC $CE,X                ; $982C: D6 CE
-    ROR $7F7D,X              ; $982E: 7E 7D 7F
-    .byte $7F             ; $9831 - unknown opcode
-    ADC $BFBE,X              ; $9832: 7D BE BF
-    .byte $BF             ; $9835 - unknown opcode
-    .byte $DF             ; $9836 - unknown opcode
-    .byte $2F             ; $9837 - unknown opcode
-    ADC $2F33                ; $9838: 6D 33 2F
-    .byte $97             ; $983B - unknown opcode
-    .byte $82             ; $983C - unknown opcode
-    .byte $89             ; $983D - unknown opcode
-    DEC $DEF3                ; $983E: CE F3 DE
-    .byte $EF             ; $9841 - unknown opcode
-    .byte $FB             ; $9842 - unknown opcode
-    .byte $FF             ; $9843 - unknown opcode
-    .byte $FF             ; $9844 - unknown opcode
-    .byte $FF             ; $9845 - unknown opcode
-    .byte $FF             ; $9846 - unknown opcode
-    .byte $7F             ; $9847 - unknown opcode
-    .byte $FB             ; $9848 - unknown opcode
-    .byte $7C             ; $9849 - unknown opcode
-    .byte $2F             ; $984A - unknown opcode
+	LDA $97BF,X			  ; $97B3: BD BF 97
+	STA $2007				; $97B6: 8D 07 20
+	INX					  ; $97B9: E8
+	CPX #$E0				 ; $97BA: E0 E0
+	BCC $97B3				; $97BC: 90 F5
+	RTS					  ; $97BE: 60
+	.byte $FF			 ; $97BF - unknown opcode
+	.byte $DF			 ; $97C0 - unknown opcode
+	INC $F8FC,X			  ; $97C1: FE FC F8
+	SBC ($E1),Y			  ; $97C4: F1 E1
+	INC $FF				  ; $97C6: E6 FF
+	.byte $DF			 ; $97C8 - unknown opcode
+	INC $FBFD,X			  ; $97C9: FE FD FB
+	.byte $F7			 ; $97CC - unknown opcode
+	.byte $EF			 ; $97CD - unknown opcode
+	.byte $EF			 ; $97CE - unknown opcode
+	BEQ $9751				; $97CF: F0 80
+	.byte $17			 ; $97D1 - unknown opcode
+	ADC ($6B),Y			  ; $97D2: 71 6B
+	.byte $4B			 ; $97D4 - unknown opcode
+	.byte $67			 ; $97D5 - unknown opcode
+	LDA ($F0),Y			  ; $97D6: B1 F0
+	.byte $8F			 ; $97D8 - unknown opcode
+	.byte $7F			 ; $97D9 - unknown opcode
+	.byte $FF			 ; $97DA - unknown opcode
+	.byte $FF			 ; $97DB - unknown opcode
+	.byte $FF			 ; $97DC - unknown opcode
+	.byte $FF			 ; $97DD - unknown opcode
+	.byte $FF			 ; $97DE - unknown opcode
+	.byte $0F			 ; $97DF - unknown opcode
+	ORA ($B0,X)			  ; $97E0: 01 B0
+	.byte $7C			 ; $97E2 - unknown opcode
+	EOR $FA32				; $97E3: 4D 32 FA
+	STA $F10F,Y			  ; $97E6: 99 0F F1
+	INC $FFFF,X			  ; $97E9: FE FF FF
+	.byte $FF			 ; $97EC - unknown opcode
+	.byte $FF			 ; $97ED - unknown opcode
+	.byte $FF			 ; $97EE - unknown opcode
+	.byte $FF			 ; $97EF - unknown opcode
+	SBC $3F7F,X			  ; $97F0: FD 7F 3F
+	.byte $1F			 ; $97F3 - unknown opcode
+	.byte $0F			 ; $97F4 - unknown opcode
+	.byte $A7			 ; $97F5 - unknown opcode
+	ROR $FF				  ; $97F6: 66 FF
+	SBC $BF7F,X			  ; $97F8: FD 7F BF
+	.byte $DF			 ; $97FB - unknown opcode
+	.byte $EF			 ; $97FC - unknown opcode
+	.byte $F7			 ; $97FD - unknown opcode
+	INC $CC,X				; $97FE: F6 CC
+	CMP $BE97,X			  ; $9800: DD 97 BE
+	TSX					  ; $9803: BA
+	.byte $3F			 ; $9804 - unknown opcode
+	ROR $DF7F,X			  ; $9805: 7E 7F DF
+	.byte $D7			 ; $9808 - unknown opcode
+	LDA $AFAF,Y			  ; $9809: B9 AF AF
+	.byte $67			 ; $980C - unknown opcode
+	EOR $BF5E,Y			  ; $980D: 59 5E BF
+	.byte $FC			 ; $9810 - unknown opcode
+	ADC $BBDB,X			  ; $9811: 7D DB BB
+	ROL $F9AF,X			  ; $9814: 3E AF F9
+	.byte $FF			 ; $9817 - unknown opcode
+	.byte $DF			 ; $9818 - unknown opcode
+	.byte $F3			 ; $9819 - unknown opcode
+	.byte $FF			 ; $981A - unknown opcode
+	.byte $FF			 ; $981B - unknown opcode
+	.byte $EF			 ; $981C - unknown opcode
+	.byte $F3			 ; $981D - unknown opcode
+	.byte $BF			 ; $981E - unknown opcode
+	.byte $F3			 ; $981F - unknown opcode
+	.byte $D3			 ; $9820 - unknown opcode
+	SBC $F5FD,Y			  ; $9821: F9 FD F5
+	.byte $FC			 ; $9824 - unknown opcode
+	LDX $FBFE,Y			  ; $9825: BE FE FB
+	.byte $FB			 ; $9828 - unknown opcode
+	ADC $FD9D,X			  ; $9829: 7D 9D FD
+	DEC $CE,X				; $982C: D6 CE
+	ROR $7F7D,X			  ; $982E: 7E 7D 7F
+	.byte $7F			 ; $9831 - unknown opcode
+	ADC $BFBE,X			  ; $9832: 7D BE BF
+	.byte $BF			 ; $9835 - unknown opcode
+	.byte $DF			 ; $9836 - unknown opcode
+	.byte $2F			 ; $9837 - unknown opcode
+	ADC $2F33				; $9838: 6D 33 2F
+	.byte $97			 ; $983B - unknown opcode
+	.byte $82			 ; $983C - unknown opcode
+	.byte $89			 ; $983D - unknown opcode
+	DEC $DEF3				; $983E: CE F3 DE
+	.byte $EF			 ; $9841 - unknown opcode
+	.byte $FB			 ; $9842 - unknown opcode
+	.byte $FF			 ; $9843 - unknown opcode
+	.byte $FF			 ; $9844 - unknown opcode
+	.byte $FF			 ; $9845 - unknown opcode
+	.byte $FF			 ; $9846 - unknown opcode
+	.byte $7F			 ; $9847 - unknown opcode
+	.byte $FB			 ; $9848 - unknown opcode
+	.byte $7C			 ; $9849 - unknown opcode
+	.byte $2F			 ; $984A - unknown opcode
 
 loc_984B:
-    STA $B3EC                ; $984B: 8D EC B3
-    .byte $3F             ; $984E - unknown opcode
-    INC $F6                  ; $984F: E6 F6
-    ROR $FDFE,X              ; $9851: 7E FE FD
-    SBC $FBFD,X              ; $9854: FD FD FB
-    .byte $3C             ; $9857 - unknown opcode
-    INC $E4D8,X              ; $9858: FE D8 E4
-    LDA $99A9,X              ; $985B: BD A9 99
-    .byte $43             ; $985E - unknown opcode
-    .byte $DF             ; $985F - unknown opcode
-    .byte $EF             ; $9860 - unknown opcode
-    .byte $F7             ; $9861 - unknown opcode
-    .byte $F7             ; $9862 - unknown opcode
-    SBC ($E0,X)              ; $9863: E1 E0
-    BEQ $9866                ; $9865: F0 FF
-    CMP $E1                  ; $9867: C5 E1
-    BEQ $984B                ; $9869: F0 E0
-    CPY #$C0                 ; $986B: C0 C0
-    CPY #$F0                 ; $986D: C0 F0
-    .byte $FF             ; $986F - unknown opcode
-    .byte $FF             ; $9870 - unknown opcode
-    .byte $FF             ; $9871 - unknown opcode
-    .byte $FF             ; $9872 - unknown opcode
-    .byte $FF             ; $9873 - unknown opcode
-    .byte $7F             ; $9874 - unknown opcode
-    .byte $0F             ; $9875 - unknown opcode
-    BRK                      ; $9876: 00
-    ADC $6D92                ; $9877: 6D 92 6D
-    .byte $02             ; $987A - unknown opcode
-    ORA ($00),Y              ; $987B: 11 00
-    BRK                      ; $987D: 00
-    BRK                      ; $987E: 00
-    .byte $FF             ; $987F - unknown opcode
-    .byte $FF             ; $9880 - unknown opcode
-    .byte $FF             ; $9881 - unknown opcode
-    .byte $FF             ; $9882 - unknown opcode
-    .byte $FF             ; $9883 - unknown opcode
-    INC $00F0,X              ; $9884: FE F0 00
-    .byte $FB             ; $9887 - unknown opcode
-    .byte $D4             ; $9888 - unknown opcode
-    ROL $08,X                ; $9889: 36 08
-    RTI                      ; $988B: 40
-    BRK                      ; $988C: 00
-    BRK                      ; $988D: 00
-    BRK                      ; $988E: 00
-    .byte $FB             ; $988F - unknown opcode
-    .byte $F7             ; $9890 - unknown opcode
-    .byte $EF             ; $9891 - unknown opcode
-    .byte $CF             ; $9892 - unknown opcode
-    .byte $87             ; $9893 - unknown opcode
-    .byte $07             ; $9894 - unknown opcode
-    .byte $0F             ; $9895 - unknown opcode
-    .byte $FF             ; $9896 - unknown opcode
-    .byte $63             ; $9897 - unknown opcode
-    .byte $87             ; $9898 - unknown opcode
-    .byte $0F             ; $9899 - unknown opcode
-    .byte $07             ; $989A - unknown opcode
-    .byte $03             ; $989B - unknown opcode
-    .byte $03             ; $989C - unknown opcode
-    .byte $03             ; $989D - unknown opcode
-    .byte $0F             ; $989E - unknown opcode
-    ASL                      ; $989F: 0A
-    TAX                      ; $98A0: AA
-    BCS $98B0                ; $98A1: B0 0D
-    LDA $B62A,X              ; $98A3: BD 2A B6
-    STA $4F                  ; $98A6: 85 4F
-    LDA $B62B,X              ; $98A8: BD 2B B6
-    STA $50                  ; $98AB: 85 50
-    JMP ($004F)              ; $98AD: 6C 4F 00
+	STA $B3EC				; $984B: 8D EC B3
+	.byte $3F			 ; $984E - unknown opcode
+	INC $F6				  ; $984F: E6 F6
+	ROR $FDFE,X			  ; $9851: 7E FE FD
+	SBC $FBFD,X			  ; $9854: FD FD FB
+	.byte $3C			 ; $9857 - unknown opcode
+	INC $E4D8,X			  ; $9858: FE D8 E4
+	LDA $99A9,X			  ; $985B: BD A9 99
+	.byte $43			 ; $985E - unknown opcode
+	.byte $DF			 ; $985F - unknown opcode
+	.byte $EF			 ; $9860 - unknown opcode
+	.byte $F7			 ; $9861 - unknown opcode
+	.byte $F7			 ; $9862 - unknown opcode
+	SBC ($E0,X)			  ; $9863: E1 E0
+	BEQ $9866				; $9865: F0 FF
+	CMP $E1				  ; $9867: C5 E1
+	BEQ $984B				; $9869: F0 E0
+	CPY #$C0				 ; $986B: C0 C0
+	CPY #$F0				 ; $986D: C0 F0
+	.byte $FF			 ; $986F - unknown opcode
+	.byte $FF			 ; $9870 - unknown opcode
+	.byte $FF			 ; $9871 - unknown opcode
+	.byte $FF			 ; $9872 - unknown opcode
+	.byte $FF			 ; $9873 - unknown opcode
+	.byte $7F			 ; $9874 - unknown opcode
+	.byte $0F			 ; $9875 - unknown opcode
+	BRK					  ; $9876: 00
+	ADC $6D92				; $9877: 6D 92 6D
+	.byte $02			 ; $987A - unknown opcode
+	ORA ($00),Y			  ; $987B: 11 00
+	BRK					  ; $987D: 00
+	BRK					  ; $987E: 00
+	.byte $FF			 ; $987F - unknown opcode
+	.byte $FF			 ; $9880 - unknown opcode
+	.byte $FF			 ; $9881 - unknown opcode
+	.byte $FF			 ; $9882 - unknown opcode
+	.byte $FF			 ; $9883 - unknown opcode
+	INC $00F0,X			  ; $9884: FE F0 00
+	.byte $FB			 ; $9887 - unknown opcode
+	.byte $D4			 ; $9888 - unknown opcode
+	ROL $08,X				; $9889: 36 08
+	RTI					  ; $988B: 40
+	BRK					  ; $988C: 00
+	BRK					  ; $988D: 00
+	BRK					  ; $988E: 00
+	.byte $FB			 ; $988F - unknown opcode
+	.byte $F7			 ; $9890 - unknown opcode
+	.byte $EF			 ; $9891 - unknown opcode
+	.byte $CF			 ; $9892 - unknown opcode
+	.byte $87			 ; $9893 - unknown opcode
+	.byte $07			 ; $9894 - unknown opcode
+	.byte $0F			 ; $9895 - unknown opcode
+	.byte $FF			 ; $9896 - unknown opcode
+	.byte $63			 ; $9897 - unknown opcode
+	.byte $87			 ; $9898 - unknown opcode
+	.byte $0F			 ; $9899 - unknown opcode
+	.byte $07			 ; $989A - unknown opcode
+	.byte $03			 ; $989B - unknown opcode
+	.byte $03			 ; $989C - unknown opcode
+	.byte $03			 ; $989D - unknown opcode
+	.byte $0F			 ; $989E - unknown opcode
+	ASL					  ; $989F: 0A
+	TAX					  ; $98A0: AA
+	BCS $98B0				; $98A1: B0 0D
+	LDA $B62A,X			  ; $98A3: BD 2A B6
+	STA $4F				  ; $98A6: 85 4F
+	LDA $B62B,X			  ; $98A8: BD 2B B6
+	STA $50				  ; $98AB: 85 50
+	JMP ($004F)			  ; $98AD: 6C 4F 00
 
 loc_98B0:
-    LDA $B72A,X              ; $98B0: BD 2A B7
-    STA $4F                  ; $98B3: 85 4F
-    LDA $B72B,X              ; $98B5: BD 2B B7
-    STA $50                  ; $98B8: 85 50
-    JMP ($004F)              ; $98BA: 6C 4F 00
+	LDA $B72A,X			  ; $98B0: BD 2A B7
+	STA $4F				  ; $98B3: 85 4F
+	LDA $B72B,X			  ; $98B5: BD 2B B7
+	STA $50				  ; $98B8: 85 50
+	JMP ($004F)			  ; $98BA: 6C 4F 00
 
 loc_98BD:
-    STX $5D                  ; $98BD: 86 5D
-    LDA $7000,X              ; $98BF: BD 00 70
-    AND #$03                 ; $98C2: 29 03
-    ASL                      ; $98C4: 0A
-    TAY                      ; $98C5: A8
-    STY $5E                  ; $98C6: 84 5E
-    JSR $98D2                ; $98C8: 20 D2 98
-    JSR $98DB                ; $98CB: 20 DB 98
-    JSR $98E1                ; $98CE: 20 E1 98
-    RTS                      ; $98D1: 60
+	STX $5D				  ; $98BD: 86 5D
+	LDA $7000,X			  ; $98BF: BD 00 70
+	AND #$03				 ; $98C2: 29 03
+	ASL					  ; $98C4: 0A
+	TAY					  ; $98C5: A8
+	STY $5E				  ; $98C6: 84 5E
+	JSR $98D2				; $98C8: 20 D2 98
+	JSR $98DB				; $98CB: 20 DB 98
+	JSR $98E1				; $98CE: 20 E1 98
+	RTS					  ; $98D1: 60
 
 loc_98D2:
-    JSR $98F9                ; $98D2: 20 F9 98
-    JSR $9935                ; $98D5: 20 35 99
-    JMP $98E7                ; $98D8: 4C E7 98
+	JSR $98F9				; $98D2: 20 F9 98
+	JSR $9935				; $98D5: 20 35 99
+	JMP $98E7				; $98D8: 4C E7 98
 
 loc_98DB:
-    JSR $98F9                ; $98DB: 20 F9 98
-    JMP $98E7                ; $98DE: 4C E7 98
+	JSR $98F9				; $98DB: 20 F9 98
+	JMP $98E7				; $98DE: 4C E7 98
 
 loc_98E1:
-    JSR $98F9                ; $98E1: 20 F9 98
-    JSR $992F                ; $98E4: 20 2F 99
+	JSR $98F9				; $98E1: 20 F9 98
+	JSR $992F				; $98E4: 20 2F 99
 
 loc_98E7:
-    JSR $9926                ; $98E7: 20 26 99
-    JSR $9916                ; $98EA: 20 16 99
-    BCS $98F7                ; $98ED: B0 08
-    JSR $9906                ; $98EF: 20 06 99
-    BCC $98E7                ; $98F2: 90 F3
-    PLA                      ; $98F4: 68
-    PLA                      ; $98F5: 68
-    RTS                      ; $98F6: 60
+	JSR $9926				; $98E7: 20 26 99
+	JSR $9916				; $98EA: 20 16 99
+	BCS $98F7				; $98ED: B0 08
+	JSR $9906				; $98EF: 20 06 99
+	BCC $98E7				; $98F2: 90 F3
+	PLA					  ; $98F4: 68
+	PLA					  ; $98F5: 68
+	RTS					  ; $98F6: 60
 
 loc_98F7:
-    CLC                      ; $98F7: 18
-    RTS                      ; $98F8: 60
+	CLC					  ; $98F7: 18
+	RTS					  ; $98F8: 60
 
 loc_98F9:
-    LDX $5D                  ; $98F9: A6 5D
-    LDA $6F60,X              ; $98FB: BD 60 6F
-    STA $5F                  ; $98FE: 85 5F
-    LDA $6F80,X              ; $9900: BD 80 6F
-    STA $60                  ; $9903: 85 60
-    RTS                      ; $9905: 60
+	LDX $5D				  ; $98F9: A6 5D
+	LDA $6F60,X			  ; $98FB: BD 60 6F
+	STA $5F				  ; $98FE: 85 5F
+	LDA $6F80,X			  ; $9900: BD 80 6F
+	STA $60				  ; $9903: 85 60
+	RTS					  ; $9905: 60
 
 loc_9906:
-    LDA $5F                  ; $9906: A5 5F
-    CMP $44                  ; $9908: C5 44
-    BNE $9912                ; $990A: D0 06
-    LDA $60                  ; $990C: A5 60
-    CMP $45                  ; $990E: C5 45
-    BEQ $9914                ; $9910: F0 02
+	LDA $5F				  ; $9906: A5 5F
+	CMP $44				  ; $9908: C5 44
+	BNE $9912				; $990A: D0 06
+	LDA $60				  ; $990C: A5 60
+	CMP $45				  ; $990E: C5 45
+	BEQ $9914				; $9910: F0 02
 
 loc_9912:
-    CLC                      ; $9912: 18
-    RTS                      ; $9913: 60
+	CLC					  ; $9912: 18
+	RTS					  ; $9913: 60
 
 loc_9914:
-    SEC                      ; $9914: 38
-    RTS                      ; $9915: 60
+	SEC					  ; $9914: 38
+	RTS					  ; $9915: 60
 
 loc_9916:
-    LDX $5F                  ; $9916: A6 5F
-    LDY $60                  ; $9918: A4 60
-    JSR $D3E6                ; $991A: 20 E6 D3
-    AND #$1F                 ; $991D: 29 1F
-    TAX                      ; $991F: AA
-    LDA $6F40,X              ; $9920: BD 40 6F
-    CMP #$80                 ; $9923: C9 80
-    RTS                      ; $9925: 60
+	LDX $5F				  ; $9916: A6 5F
+	LDY $60				  ; $9918: A4 60
+	JSR $D3E6				; $991A: 20 E6 D3
+	AND #$1F				 ; $991D: 29 1F
+	TAX					  ; $991F: AA
+	LDA $6F40,X			  ; $9920: BD 40 6F
+	CMP #$80				 ; $9923: C9 80
+	RTS					  ; $9925: 60
 
 loc_9926:
-    LDA $5E                  ; $9926: A5 5E
-    CLC                      ; $9928: 18
-    ADC #$10                 ; $9929: 69 10
-    TAY                      ; $992B: A8
-    JMP $9935                ; $992C: 4C 35 99
+	LDA $5E				  ; $9926: A5 5E
+	CLC					  ; $9928: 18
+	ADC #$10				 ; $9929: 69 10
+	TAY					  ; $992B: A8
+	JMP $9935				; $992C: 4C 35 99
 
 loc_992F:
-    LDA $5E                  ; $992F: A5 5E
-    CLC                      ; $9931: 18
-    ADC #$08                 ; $9932: 69 08
-    TAY                      ; $9934: A8
+	LDA $5E				  ; $992F: A5 5E
+	CLC					  ; $9931: 18
+	ADC #$08				 ; $9932: 69 08
+	TAY					  ; $9934: A8
 
 loc_9935:
-    LDA $5F                  ; $9935: A5 5F
-    CLC                      ; $9937: 18
-    ADC $9946,Y              ; $9938: 79 46 99
-    STA $5F                  ; $993B: 85 5F
-    LDA $60                  ; $993D: A5 60
-    CLC                      ; $993F: 18
-    ADC $9947,Y              ; $9940: 79 47 99
-    STA $60                  ; $9943: 85 60
-    RTS                      ; $9945: 60
-    .byte $FF             ; $9946 - unknown opcode
-    BRK                      ; $9947: 00
-    BRK                      ; $9948: 00
-    .byte $FF             ; $9949 - unknown opcode
-    ORA ($00,X)              ; $994A: 01 00
-    BRK                      ; $994C: 00
-    ORA ($01,X)              ; $994D: 01 01
-    BRK                      ; $994F: 00
-    BRK                      ; $9950: 00
-    ORA ($FF,X)              ; $9951: 01 FF
-    BRK                      ; $9953: 00
-    BRK                      ; $9954: 00
-    .byte $FF             ; $9955 - unknown opcode
-    BRK                      ; $9956: 00
-    .byte $FF             ; $9957 - unknown opcode
-    ORA ($00,X)              ; $9958: 01 00
-    BRK                      ; $995A: 00
-    ORA ($FF,X)              ; $995B: 01 FF
-    BRK                      ; $995D: 00
+	LDA $5F				  ; $9935: A5 5F
+	CLC					  ; $9937: 18
+	ADC $9946,Y			  ; $9938: 79 46 99
+	STA $5F				  ; $993B: 85 5F
+	LDA $60				  ; $993D: A5 60
+	CLC					  ; $993F: 18
+	ADC $9947,Y			  ; $9940: 79 47 99
+	STA $60				  ; $9943: 85 60
+	RTS					  ; $9945: 60
+	.byte $FF			 ; $9946 - unknown opcode
+	BRK					  ; $9947: 00
+	BRK					  ; $9948: 00
+	.byte $FF			 ; $9949 - unknown opcode
+	ORA ($00,X)			  ; $994A: 01 00
+	BRK					  ; $994C: 00
+	ORA ($01,X)			  ; $994D: 01 01
+	BRK					  ; $994F: 00
+	BRK					  ; $9950: 00
+	ORA ($FF,X)			  ; $9951: 01 FF
+	BRK					  ; $9953: 00
+	BRK					  ; $9954: 00
+	.byte $FF			 ; $9955 - unknown opcode
+	BRK					  ; $9956: 00
+	.byte $FF			 ; $9957 - unknown opcode
+	ORA ($00,X)			  ; $9958: 01 00
+	BRK					  ; $995A: 00
+	ORA ($FF,X)			  ; $995B: 01 FF
+	BRK					  ; $995D: 00
 
 loc_995E:
-    BRK                      ; $995E: 00
-    .byte $07             ; $995F - unknown opcode
-    .byte $6F             ; $9960 - unknown opcode
-    .byte $43             ; $9961 - unknown opcode
-    RTS                      ; $9962: 60
+	BRK					  ; $995E: 00
+	.byte $07			 ; $995F - unknown opcode
+	.byte $6F			 ; $9960 - unknown opcode
+	.byte $43			 ; $9961 - unknown opcode
+	RTS					  ; $9962: 60
 
 loc_9963:
-    STA $6F66,X              ; $9963: 9D 66 6F
-    STA $6F86,X              ; $9966: 9D 86 6F
-    STA $6FA6,X              ; $9969: 9D A6 6F
-    STA $6FC6,X              ; $996C: 9D C6 6F
-    RTS                      ; $996F: 60
-    LDY #$00                 ; $9970: A0 00
+	STA $6F66,X			  ; $9963: 9D 66 6F
+	STA $6F86,X			  ; $9966: 9D 86 6F
+	STA $6FA6,X			  ; $9969: 9D A6 6F
+	STA $6FC6,X			  ; $996C: 9D C6 6F
+	RTS					  ; $996F: 60
+	LDY #$00				 ; $9970: A0 00
 
 loc_9972:
-    LDA $6FA0                ; $9972: AD A0 6F
-    CMP $999C,Y              ; $9975: D9 9C 99
-    BEQ $9981                ; $9978: F0 07
+	LDA $6FA0				; $9972: AD A0 6F
+	CMP $999C,Y			  ; $9975: D9 9C 99
+	BEQ $9981				; $9978: F0 07
 
 loc_997A:
-    INY                      ; $997A: C8
-    CPY #$03                 ; $997B: C0 03
-    BCC $9972                ; $997D: 90 F3
-    CLC                      ; $997F: 18
-    RTS                      ; $9980: 60
+	INY					  ; $997A: C8
+	CPY #$03				 ; $997B: C0 03
+	BCC $9972				; $997D: 90 F3
+	CLC					  ; $997F: 18
+	RTS					  ; $9980: 60
 
 loc_9981:
-    LDA $6FC0                ; $9981: AD C0 6F
-    CMP $999F,Y              ; $9984: D9 9F 99
-    BNE $997A                ; $9987: D0 F1
-    LDX $51                  ; $9989: A6 51
-    LDA $7080,X              ; $998B: BD 80 70
-    CLC                      ; $998E: 18
-    ADC $99A2,Y              ; $998F: 79 A2 99
-    STA $7080,X              ; $9992: 9D 80 70
-    BCC $999A                ; $9995: 90 03
-    INC $7060,X              ; $9997: FE 60 70
+	LDA $6FC0				; $9981: AD C0 6F
+	CMP $999F,Y			  ; $9984: D9 9F 99
+	BNE $997A				; $9987: D0 F1
+	LDX $51				  ; $9989: A6 51
+	LDA $7080,X			  ; $998B: BD 80 70
+	CLC					  ; $998E: 18
+	ADC $99A2,Y			  ; $998F: 79 A2 99
+	STA $7080,X			  ; $9992: 9D 80 70
+	BCC $999A				; $9995: 90 03
+	INC $7060,X			  ; $9997: FE 60 70
 
 loc_999A:
-    SEC                      ; $999A: 38
-    RTS                      ; $999B: 60
-    .byte $04             ; $999C - unknown opcode
-    ORA $04                  ; $999D: 05 04
-    .byte $02             ; $999F - unknown opcode
-    .byte $03             ; $99A0 - unknown opcode
-    .byte $04             ; $99A1 - unknown opcode
-    BRK                      ; $99A2: 00
-    .byte $14             ; $99A3 - unknown opcode
-    ASL $A5                  ; $99A4: 06 A5
-    .byte $44             ; $99A6 - unknown opcode
-    SEC                      ; $99A7: 38
-    SBC #$0C                 ; $99A8: E9 0C
-    CMP #$03                 ; $99AA: C9 03
-    BCS $99CA                ; $99AC: B0 1C
-    LDA $45                  ; $99AE: A5 45
-    SEC                      ; $99B0: 38
-    SBC #$05                 ; $99B1: E9 05
-    CMP #$03                 ; $99B3: C9 03
-    BCS $99CA                ; $99B5: B0 13
-    PHA                      ; $99B7: 48
-    JSR $9B6B                ; $99B8: 20 6B 9B
-    PLA                      ; $99BB: 68
-    BRK                      ; $99BC: 00
-    ORA ($EB,X)              ; $99BD: 01 EB
-    .byte $02             ; $99BF - unknown opcode
-    BEQ $99C4                ; $99C0: F0 02
-    CLC                      ; $99C2: 18
-    RTS                      ; $99C3: 60
+	SEC					  ; $999A: 38
+	RTS					  ; $999B: 60
+	.byte $04			 ; $999C - unknown opcode
+	ORA $04				  ; $999D: 05 04
+	.byte $02			 ; $999F - unknown opcode
+	.byte $03			 ; $99A0 - unknown opcode
+	.byte $04			 ; $99A1 - unknown opcode
+	BRK					  ; $99A2: 00
+	.byte $14			 ; $99A3 - unknown opcode
+	ASL $A5				  ; $99A4: 06 A5
+	.byte $44			 ; $99A6 - unknown opcode
+	SEC					  ; $99A7: 38
+	SBC #$0C				 ; $99A8: E9 0C
+	CMP #$03				 ; $99AA: C9 03
+	BCS $99CA				; $99AC: B0 1C
+	LDA $45				  ; $99AE: A5 45
+	SEC					  ; $99B0: 38
+	SBC #$05				 ; $99B1: E9 05
+	CMP #$03				 ; $99B3: C9 03
+	BCS $99CA				; $99B5: B0 13
+	PHA					  ; $99B7: 48
+	JSR $9B6B				; $99B8: 20 6B 9B
+	PLA					  ; $99BB: 68
+	BRK					  ; $99BC: 00
+	ORA ($EB,X)			  ; $99BD: 01 EB
+	.byte $02			 ; $99BF - unknown opcode
+	BEQ $99C4				; $99C0: F0 02
+	CLC					  ; $99C2: 18
+	RTS					  ; $99C3: 60
 
 loc_99C4:
-    BRK                      ; $99C4: 00
-    ORA ($CB,X)              ; $99C5: 01 CB
-    .byte $02             ; $99C7 - unknown opcode
-    SEC                      ; $99C8: 38
-    RTS                      ; $99C9: 60
+	BRK					  ; $99C4: 00
+	ORA ($CB,X)			  ; $99C5: 01 CB
+	.byte $02			 ; $99C7 - unknown opcode
+	SEC					  ; $99C8: 38
+	RTS					  ; $99C9: 60
 
 loc_99CA:
-    BRK                      ; $99CA: 00
-    ORA ($DB,X)              ; $99CB: 01 DB
-    SBC $6018,X              ; $99CD: FD 18 60
+	BRK					  ; $99CA: 00
+	ORA ($DB,X)			  ; $99CB: 01 DB
+	SBC $6018,X			  ; $99CD: FD 18 60
 
 loc_99D0:
-    LDA $45                  ; $99D0: A5 45
-    CMP #$09                 ; $99D2: C9 09
-    BNE $99D8                ; $99D4: D0 02
-    SEC                      ; $99D6: 38
-    RTS                      ; $99D7: 60
+	LDA $45				  ; $99D0: A5 45
+	CMP #$09				 ; $99D2: C9 09
+	BNE $99D8				; $99D4: D0 02
+	SEC					  ; $99D6: 38
+	RTS					  ; $99D7: 60
 
 loc_99D8:
-    CLC                      ; $99D8: 18
-    RTS                      ; $99D9: 60
-    LDA $627B                ; $99DA: AD 7B 62
-    LSR                      ; $99DD: 4A
-    LSR                      ; $99DE: 4A
-    LSR                      ; $99DF: 4A
-    RTS                      ; $99E0: 60
-    LDA $44                  ; $99E1: A5 44
-    CMP #$16                 ; $99E3: C9 16
-    BCC $99EF                ; $99E5: 90 08
-    LDA $45                  ; $99E7: A5 45
-    CMP #$12                 ; $99E9: C9 12
-    BNE $99EF                ; $99EB: D0 02
-    SEC                      ; $99ED: 38
-    RTS                      ; $99EE: 60
+	CLC					  ; $99D8: 18
+	RTS					  ; $99D9: 60
+	LDA $627B				; $99DA: AD 7B 62
+	LSR					  ; $99DD: 4A
+	LSR					  ; $99DE: 4A
+	LSR					  ; $99DF: 4A
+	RTS					  ; $99E0: 60
+	LDA $44				  ; $99E1: A5 44
+	CMP #$16				 ; $99E3: C9 16
+	BCC $99EF				; $99E5: 90 08
+	LDA $45				  ; $99E7: A5 45
+	CMP #$12				 ; $99E9: C9 12
+	BNE $99EF				; $99EB: D0 02
+	SEC					  ; $99ED: 38
+	RTS					  ; $99EE: 60
 
 loc_99EF:
-    CLC                      ; $99EF: 18
-    RTS                      ; $99F0: 60
-    LDA $64                  ; $99F1: A5 64
-    CMP #$00                 ; $99F3: C9 00
-    BNE $9A23                ; $99F5: D0 2C
-    LDX #$00                 ; $99F7: A2 00
+	CLC					  ; $99EF: 18
+	RTS					  ; $99F0: 60
+	LDA $64				  ; $99F1: A5 64
+	CMP #$00				 ; $99F3: C9 00
+	BNE $9A23				; $99F5: D0 2C
+	LDX #$00				 ; $99F7: A2 00
 
 loc_99F9:
-    LDA #$02                 ; $99F9: A9 02
-    PHA                      ; $99FB: 48
+	LDA #$02				 ; $99F9: A9 02
+	PHA					  ; $99FB: 48
 
 loc_99FC:
-    LDA $3D                  ; $99FC: A5 3D
-    CMP $9A55,X              ; $99FE: DD 55 9A
-    BNE $9A11                ; $9A01: D0 0E
-    LDA $44                  ; $9A03: A5 44
-    CMP $9A41,X              ; $9A05: DD 41 9A
-    BNE $9A11                ; $9A08: D0 07
-    LDA $45                  ; $9A0A: A5 45
-    CMP $9A4B,X              ; $9A0C: DD 4B 9A
-    BEQ $9A25                ; $9A0F: F0 14
+	LDA $3D				  ; $99FC: A5 3D
+	CMP $9A55,X			  ; $99FE: DD 55 9A
+	BNE $9A11				; $9A01: D0 0E
+	LDA $44				  ; $9A03: A5 44
+	CMP $9A41,X			  ; $9A05: DD 41 9A
+	BNE $9A11				; $9A08: D0 07
+	LDA $45				  ; $9A0A: A5 45
+	CMP $9A4B,X			  ; $9A0C: DD 4B 9A
+	BEQ $9A25				; $9A0F: F0 14
 
 loc_9A11:
-    INX                      ; $9A11: E8
-    CPX #$06                 ; $9A12: E0 06
-    BEQ $9A1A                ; $9A14: F0 04
-    CPX #$0A                 ; $9A16: E0 0A
-    BCC $99FC                ; $9A18: 90 E2
+	INX					  ; $9A11: E8
+	CPX #$06				 ; $9A12: E0 06
+	BEQ $9A1A				; $9A14: F0 04
+	CPX #$0A				 ; $9A16: E0 0A
+	BCC $99FC				; $9A18: 90 E2
 
 loc_9A1A:
-    PLA                      ; $9A1A: 68
-    EOR #$FF                 ; $9A1B: 49 FF
-    AND $627C                ; $9A1D: 2D 7C 62
-    STA $627C                ; $9A20: 8D 7C 62
+	PLA					  ; $9A1A: 68
+	EOR #$FF				 ; $9A1B: 49 FF
+	AND $627C				; $9A1D: 2D 7C 62
+	STA $627C				; $9A20: 8D 7C 62
 
 loc_9A23:
-    CLC                      ; $9A23: 18
-    RTS                      ; $9A24: 60
+	CLC					  ; $9A23: 18
+	RTS					  ; $9A24: 60
 
 loc_9A25:
-    PLA                      ; $9A25: 68
-    PHA                      ; $9A26: 48
-    AND $627C                ; $9A27: 2D 7C 62
-    BEQ $9A2F                ; $9A2A: F0 03
-    PLA                      ; $9A2C: 68
-    CLC                      ; $9A2D: 18
-    RTS                      ; $9A2E: 60
+	PLA					  ; $9A25: 68
+	PHA					  ; $9A26: 48
+	AND $627C				; $9A27: 2D 7C 62
+	BEQ $9A2F				; $9A2A: F0 03
+	PLA					  ; $9A2C: 68
+	CLC					  ; $9A2D: 18
+	RTS					  ; $9A2E: 60
 
 loc_9A2F:
-    PLA                      ; $9A2F: 68
-    PHA                      ; $9A30: 48
-    CMP #$40                 ; $9A31: C9 40
-    BEQ $9A38                ; $9A33: F0 03
-    JSR $9B6B                ; $9A35: 20 6B 9B
+	PLA					  ; $9A2F: 68
+	PHA					  ; $9A30: 48
+	CMP #$40				 ; $9A31: C9 40
+	BEQ $9A38				; $9A33: F0 03
+	JSR $9B6B				; $9A35: 20 6B 9B
 
 loc_9A38:
-    PLA                      ; $9A38: 68
-    ORA $627C                ; $9A39: 0D 7C 62
-    STA $627C                ; $9A3C: 8D 7C 62
-    SEC                      ; $9A3F: 38
-    RTS                      ; $9A40: 60
-    .byte $14             ; $9A41 - unknown opcode
-    .byte $14             ; $9A42 - unknown opcode
-    ASL                      ; $9A43: 0A
-    .byte $0B             ; $9A44 - unknown opcode
-    ORA $120D                ; $9A45: 0D 0D 12
-    .byte $13             ; $9A48 - unknown opcode
-    ORA ($11),Y              ; $9A49: 11 11
-    .byte $0C             ; $9A4B - unknown opcode
-    ORA $1919                ; $9A4C: 0D 19 19
-    ROL $27                  ; $9A4F: 26 27
-    .byte $12             ; $9A51 - unknown opcode
-    .byte $12             ; $9A52 - unknown opcode
-    ROL                      ; $9A53: 2A
-    .byte $2B             ; $9A54 - unknown opcode
-    .byte $03             ; $9A55 - unknown opcode
-    .byte $03             ; $9A56 - unknown opcode
-    .byte $02             ; $9A57 - unknown opcode
-    .byte $02             ; $9A58 - unknown opcode
-    ORA ($01,X)              ; $9A59: 01 01
-    BRK                      ; $9A5B: 00
-    BRK                      ; $9A5C: 00
-    ORA ($01,X)              ; $9A5D: 01 01
+	PLA					  ; $9A38: 68
+	ORA $627C				; $9A39: 0D 7C 62
+	STA $627C				; $9A3C: 8D 7C 62
+	SEC					  ; $9A3F: 38
+	RTS					  ; $9A40: 60
+	.byte $14			 ; $9A41 - unknown opcode
+	.byte $14			 ; $9A42 - unknown opcode
+	ASL					  ; $9A43: 0A
+	.byte $0B			 ; $9A44 - unknown opcode
+	ORA $120D				; $9A45: 0D 0D 12
+	.byte $13			 ; $9A48 - unknown opcode
+	ORA ($11),Y			  ; $9A49: 11 11
+	.byte $0C			 ; $9A4B - unknown opcode
+	ORA $1919				; $9A4C: 0D 19 19
+	ROL $27				  ; $9A4F: 26 27
+	.byte $12			 ; $9A51 - unknown opcode
+	.byte $12			 ; $9A52 - unknown opcode
+	ROL					  ; $9A53: 2A
+	.byte $2B			 ; $9A54 - unknown opcode
+	.byte $03			 ; $9A55 - unknown opcode
+	.byte $03			 ; $9A56 - unknown opcode
+	.byte $02			 ; $9A57 - unknown opcode
+	.byte $02			 ; $9A58 - unknown opcode
+	ORA ($01,X)			  ; $9A59: 01 01
+	BRK					  ; $9A5B: 00
+	BRK					  ; $9A5C: 00
+	ORA ($01,X)			  ; $9A5D: 01 01
 
 loc_9A5F:
-    PHA                      ; $9A5F: 48
+	PHA					  ; $9A5F: 48
 
 loc_9A60:
-    LDA $44                  ; $9A60: A5 44
-    CMP $9A7D,X              ; $9A62: DD 7D 9A
-    BNE $9A75                ; $9A65: D0 0E
-    LDA $45                  ; $9A67: A5 45
-    CMP $9A95,X              ; $9A69: DD 95 9A
-    BNE $9A75                ; $9A6C: D0 07
-    LDA $3D                  ; $9A6E: A5 3D
-    CMP $9AAD,X              ; $9A70: DD AD 9A
-    BEQ $9A25                ; $9A73: F0 B0
+	LDA $44				  ; $9A60: A5 44
+	CMP $9A7D,X			  ; $9A62: DD 7D 9A
+	BNE $9A75				; $9A65: D0 0E
+	LDA $45				  ; $9A67: A5 45
+	CMP $9A95,X			  ; $9A69: DD 95 9A
+	BNE $9A75				; $9A6C: D0 07
+	LDA $3D				  ; $9A6E: A5 3D
+	CMP $9AAD,X			  ; $9A70: DD AD 9A
+	BEQ $9A25				; $9A73: F0 B0
 
 loc_9A75:
-    INX                      ; $9A75: E8
-    TXA                      ; $9A76: 8A
-    AND #$07                 ; $9A77: 29 07
-    BNE $9A60                ; $9A79: D0 E5
-    BEQ $9A1A                ; $9A7B: F0 9D
-    .byte $02             ; $9A7D - unknown opcode
-    .byte $03             ; $9A7E - unknown opcode
-    .byte $0C             ; $9A7F - unknown opcode
-    .byte $0C             ; $9A80 - unknown opcode
-    BPL $9A93                ; $9A81: 10 10
-    BRK                      ; $9A83: 00
-    BRK                      ; $9A84: 00
-    ORA ($11),Y              ; $9A85: 11 11
-    BRK                      ; $9A87: 00
-    BRK                      ; $9A88: 00
-    BRK                      ; $9A89: 00
-    BRK                      ; $9A8A: 00
-    BRK                      ; $9A8B: 00
-    BRK                      ; $9A8C: 00
-    .byte $14             ; $9A8D - unknown opcode
-    .byte $14             ; $9A8E - unknown opcode
-    ORA ($11),Y              ; $9A8F: 11 11
-    .byte $14             ; $9A91 - unknown opcode
-    .byte $14             ; $9A92 - unknown opcode
+	INX					  ; $9A75: E8
+	TXA					  ; $9A76: 8A
+	AND #$07				 ; $9A77: 29 07
+	BNE $9A60				; $9A79: D0 E5
+	BEQ $9A1A				; $9A7B: F0 9D
+	.byte $02			 ; $9A7D - unknown opcode
+	.byte $03			 ; $9A7E - unknown opcode
+	.byte $0C			 ; $9A7F - unknown opcode
+	.byte $0C			 ; $9A80 - unknown opcode
+	BPL $9A93				; $9A81: 10 10
+	BRK					  ; $9A83: 00
+	BRK					  ; $9A84: 00
+	ORA ($11),Y			  ; $9A85: 11 11
+	BRK					  ; $9A87: 00
+	BRK					  ; $9A88: 00
+	BRK					  ; $9A89: 00
+	BRK					  ; $9A8A: 00
+	BRK					  ; $9A8B: 00
+	BRK					  ; $9A8C: 00
+	.byte $14			 ; $9A8D - unknown opcode
+	.byte $14			 ; $9A8E - unknown opcode
+	ORA ($11),Y			  ; $9A8F: 11 11
+	.byte $14			 ; $9A91 - unknown opcode
+	.byte $14			 ; $9A92 - unknown opcode
 
 loc_9A93:
-    .byte $14             ; $9A93 - unknown opcode
-    .byte $14             ; $9A94 - unknown opcode
-    ORA $1A19,Y              ; $9A95: 19 19 1A
-    .byte $1B             ; $9A98 - unknown opcode
-    ROL $27                  ; $9A99: 26 27
-    BRK                      ; $9A9B: 00
-    BRK                      ; $9A9C: 00
-    .byte $0C             ; $9A9D - unknown opcode
-    ORA $0000                ; $9A9E: 0D 00 00
-    BRK                      ; $9AA1: 00
-    BRK                      ; $9AA2: 00
-    BRK                      ; $9AA3: 00
-    BRK                      ; $9AA4: 00
-    BPL $9AB8                ; $9AA5: 10 11
-    .byte $1C             ; $9AA7 - unknown opcode
-    ORA $1D1C,X              ; $9AA8: 1D 1C 1D
-    ROL                      ; $9AAB: 2A
-    .byte $2B             ; $9AAC - unknown opcode
-    BRK                      ; $9AAD: 00
-    BRK                      ; $9AAE: 00
-    ORA ($01,X)              ; $9AAF: 01 01
-    ORA ($01,X)              ; $9AB1: 01 01
-    BRK                      ; $9AB3: 00
-    BRK                      ; $9AB4: 00
-    .byte $03             ; $9AB5 - unknown opcode
-    .byte $03             ; $9AB6 - unknown opcode
-    BRK                      ; $9AB7: 00
+	.byte $14			 ; $9A93 - unknown opcode
+	.byte $14			 ; $9A94 - unknown opcode
+	ORA $1A19,Y			  ; $9A95: 19 19 1A
+	.byte $1B			 ; $9A98 - unknown opcode
+	ROL $27				  ; $9A99: 26 27
+	BRK					  ; $9A9B: 00
+	BRK					  ; $9A9C: 00
+	.byte $0C			 ; $9A9D - unknown opcode
+	ORA $0000				; $9A9E: 0D 00 00
+	BRK					  ; $9AA1: 00
+	BRK					  ; $9AA2: 00
+	BRK					  ; $9AA3: 00
+	BRK					  ; $9AA4: 00
+	BPL $9AB8				; $9AA5: 10 11
+	.byte $1C			 ; $9AA7 - unknown opcode
+	ORA $1D1C,X			  ; $9AA8: 1D 1C 1D
+	ROL					  ; $9AAB: 2A
+	.byte $2B			 ; $9AAC - unknown opcode
+	BRK					  ; $9AAD: 00
+	BRK					  ; $9AAE: 00
+	ORA ($01,X)			  ; $9AAF: 01 01
+	ORA ($01,X)			  ; $9AB1: 01 01
+	BRK					  ; $9AB3: 00
+	BRK					  ; $9AB4: 00
+	.byte $03			 ; $9AB5 - unknown opcode
+	.byte $03			 ; $9AB6 - unknown opcode
+	BRK					  ; $9AB7: 00
 
 loc_9AB8:
-    BRK                      ; $9AB8: 00
-    BRK                      ; $9AB9: 00
-    BRK                      ; $9ABA: 00
-    BRK                      ; $9ABB: 00
-    BRK                      ; $9ABC: 00
-    ORA ($01,X)              ; $9ABD: 01 01
-    .byte $03             ; $9ABF - unknown opcode
-    .byte $03             ; $9AC0 - unknown opcode
-    ORA ($01,X)              ; $9AC1: 01 01
-    ORA ($01,X)              ; $9AC3: 01 01
-    LDA $615A                ; $9AC5: AD 5A 61
-    CMP #$04                 ; $9AC8: C9 04
-    BNE $9B2D                ; $9ACA: D0 61
-    LDA $6FA0                ; $9ACC: AD A0 6F
-    CMP #$13                 ; $9ACF: C9 13
-    BNE $9B2D                ; $9AD1: D0 5A
-    LDA $6FC0                ; $9AD3: AD C0 6F
-    AND #$FE                 ; $9AD6: 29 FE
-    CMP #$04                 ; $9AD8: C9 04
-    BNE $9B2D                ; $9ADA: D0 51
-    BRK                      ; $9ADC: 00
-    ASL $EB,X                ; $9ADD: 16 EB
-    JSR $49D0                ; $9ADF: 20 D0 49
-    JSR $C891                ; $9AE2: 20 91 C8
-    AND #$1F                 ; $9AE5: 29 1F
-    BNE $9B2B                ; $9AE7: D0 42
-    JSR $B16B                ; $9AE9: 20 6B B1
-    LDA $51                  ; $9AEC: A5 51
-    PHA                      ; $9AEE: 48
-    JSR $995E                ; $9AEF: 20 5E 99
-    BRK                      ; $9AF2: 00
-    ORA ($FB,X)              ; $9AF3: 01 FB
-    BRK                      ; $9AF5: 00
-    .byte $07             ; $9AF6 - unknown opcode
-    .byte $9F             ; $9AF7 - unknown opcode
-    BRK                      ; $9AF8: 00
-    .byte $04             ; $9AF9 - unknown opcode
-    .byte $FB             ; $9AFA - unknown opcode
-    BRK                      ; $9AFB: 00
-    .byte $FC             ; $9AFC - unknown opcode
-    .byte $3B             ; $9AFD - unknown opcode
-    BRK                      ; $9AFE: 00
-    SBC $203B,X              ; $9AFF: FD 3B 20
-    ASL                      ; $9B02: 0A
-    .byte $D2             ; $9B03 - unknown opcode
-    BRK                      ; $9B04: 00
-    ORA #$9F                 ; $9B05: 09 9F
-    BRK                      ; $9B07: 00
-    ASL $CB,X                ; $9B08: 16 CB
-    JSR $0E00                ; $9B0A: 20 00 0E
-    .byte $CB             ; $9B0D - unknown opcode
-    .byte $80             ; $9B0E - unknown opcode
-    LDA $62AD                ; $9B0F: AD AD 62
-    CLC                      ; $9B12: 18
-    ADC #$D0                 ; $9B13: 69 D0
-    STA $62AD                ; $9B15: 8D AD 62
-    LDA $62AE                ; $9B18: AD AE 62
-    ADC #$07                 ; $9B1B: 69 07
-    STA $62AE                ; $9B1D: 8D AE 62
-    LDA $62AF                ; $9B20: AD AF 62
-    ADC #$00                 ; $9B23: 69 00
-    STA $62AF                ; $9B25: 8D AF 62
-    PLA                      ; $9B28: 68
-    STA $51                  ; $9B29: 85 51
+	BRK					  ; $9AB8: 00
+	BRK					  ; $9AB9: 00
+	BRK					  ; $9ABA: 00
+	BRK					  ; $9ABB: 00
+	BRK					  ; $9ABC: 00
+	ORA ($01,X)			  ; $9ABD: 01 01
+	.byte $03			 ; $9ABF - unknown opcode
+	.byte $03			 ; $9AC0 - unknown opcode
+	ORA ($01,X)			  ; $9AC1: 01 01
+	ORA ($01,X)			  ; $9AC3: 01 01
+	LDA $615A				; $9AC5: AD 5A 61
+	CMP #$04				 ; $9AC8: C9 04
+	BNE $9B2D				; $9ACA: D0 61
+	LDA $6FA0				; $9ACC: AD A0 6F
+	CMP #$13				 ; $9ACF: C9 13
+	BNE $9B2D				; $9AD1: D0 5A
+	LDA $6FC0				; $9AD3: AD C0 6F
+	AND #$FE				 ; $9AD6: 29 FE
+	CMP #$04				 ; $9AD8: C9 04
+	BNE $9B2D				; $9ADA: D0 51
+	BRK					  ; $9ADC: 00
+	ASL $EB,X				; $9ADD: 16 EB
+	JSR $49D0				; $9ADF: 20 D0 49
+	JSR $C891				; $9AE2: 20 91 C8
+	AND #$1F				 ; $9AE5: 29 1F
+	BNE $9B2B				; $9AE7: D0 42
+	JSR $B16B				; $9AE9: 20 6B B1
+	LDA $51				  ; $9AEC: A5 51
+	PHA					  ; $9AEE: 48
+	JSR $995E				; $9AEF: 20 5E 99
+	BRK					  ; $9AF2: 00
+	ORA ($FB,X)			  ; $9AF3: 01 FB
+	BRK					  ; $9AF5: 00
+	.byte $07			 ; $9AF6 - unknown opcode
+	.byte $9F			 ; $9AF7 - unknown opcode
+	BRK					  ; $9AF8: 00
+	.byte $04			 ; $9AF9 - unknown opcode
+	.byte $FB			 ; $9AFA - unknown opcode
+	BRK					  ; $9AFB: 00
+	.byte $FC			 ; $9AFC - unknown opcode
+	.byte $3B			 ; $9AFD - unknown opcode
+	BRK					  ; $9AFE: 00
+	SBC $203B,X			  ; $9AFF: FD 3B 20
+	ASL					  ; $9B02: 0A
+	.byte $D2			 ; $9B03 - unknown opcode
+	BRK					  ; $9B04: 00
+	ORA #$9F				 ; $9B05: 09 9F
+	BRK					  ; $9B07: 00
+	ASL $CB,X				; $9B08: 16 CB
+	JSR $0E00				; $9B0A: 20 00 0E
+	.byte $CB			 ; $9B0D - unknown opcode
+	.byte $80			 ; $9B0E - unknown opcode
+	LDA $62AD				; $9B0F: AD AD 62
+	CLC					  ; $9B12: 18
+	ADC #$D0				 ; $9B13: 69 D0
+	STA $62AD				; $9B15: 8D AD 62
+	LDA $62AE				; $9B18: AD AE 62
+	ADC #$07				 ; $9B1B: 69 07
+	STA $62AE				; $9B1D: 8D AE 62
+	LDA $62AF				; $9B20: AD AF 62
+	ADC #$00				 ; $9B23: 69 00
+	STA $62AF				; $9B25: 8D AF 62
+	PLA					  ; $9B28: 68
+	STA $51				  ; $9B29: 85 51
 
 loc_9B2B:
-    SEC                      ; $9B2B: 38
-    RTS                      ; $9B2C: 60
+	SEC					  ; $9B2B: 38
+	RTS					  ; $9B2C: 60
 
 loc_9B2D:
-    CLC                      ; $9B2D: 18
-    RTS                      ; $9B2E: 60
-    LDX #$00                 ; $9B2F: A2 00
-    LDA #$20                 ; $9B31: A9 20
-    JMP $9A5F                ; $9B33: 4C 5F 9A
-    LDX #$08                 ; $9B36: A2 08
-    LDA #$40                 ; $9B38: A9 40
-    JMP $9A5F                ; $9B3A: 4C 5F 9A
-    LDX #$06                 ; $9B3D: A2 06
-    JMP $99F9                ; $9B3F: 4C F9 99
-    LDA $44                  ; $9B42: A5 44
-    CMP #$06                 ; $9B44: C9 06
-    BNE $9B62                ; $9B46: D0 1A
-    LDA $45                  ; $9B48: A5 45
-    CMP #$06                 ; $9B4A: C9 06
-    BNE $9B62                ; $9B4C: D0 14
-    LDA $3E                  ; $9B4E: A5 3E
-    BEQ $9B59                ; $9B50: F0 07
-    LDA #$8F                 ; $9B52: A9 8F
-    JSR $A23A                ; $9B54: 20 3A A2
-    CLC                      ; $9B57: 18
-    RTS                      ; $9B58: 60
+	CLC					  ; $9B2D: 18
+	RTS					  ; $9B2E: 60
+	LDX #$00				 ; $9B2F: A2 00
+	LDA #$20				 ; $9B31: A9 20
+	JMP $9A5F				; $9B33: 4C 5F 9A
+	LDX #$08				 ; $9B36: A2 08
+	LDA #$40				 ; $9B38: A9 40
+	JMP $9A5F				; $9B3A: 4C 5F 9A
+	LDX #$06				 ; $9B3D: A2 06
+	JMP $99F9				; $9B3F: 4C F9 99
+	LDA $44				  ; $9B42: A5 44
+	CMP #$06				 ; $9B44: C9 06
+	BNE $9B62				; $9B46: D0 1A
+	LDA $45				  ; $9B48: A5 45
+	CMP #$06				 ; $9B4A: C9 06
+	BNE $9B62				; $9B4C: D0 14
+	LDA $3E				  ; $9B4E: A5 3E
+	BEQ $9B59				; $9B50: F0 07
+	LDA #$8F				 ; $9B52: A9 8F
+	JSR $A23A				; $9B54: 20 3A A2
+	CLC					  ; $9B57: 18
+	RTS					  ; $9B58: 60
 
 loc_9B59:
-    LDA #$23                 ; $9B59: A9 23
-    BRK                      ; $9B5B: 00
-    .byte $07             ; $9B5C - unknown opcode
-    .byte $CF             ; $9B5D - unknown opcode
-    LDA #$1E                 ; $9B5E: A9 1E
-    STA $51                  ; $9B60: 85 51
+	LDA #$23				 ; $9B59: A9 23
+	BRK					  ; $9B5B: 00
+	.byte $07			 ; $9B5C - unknown opcode
+	.byte $CF			 ; $9B5D - unknown opcode
+	LDA #$1E				 ; $9B5E: A9 1E
+	STA $51				  ; $9B60: 85 51
 
 loc_9B62:
-    CLC                      ; $9B62: 18
-    RTS                      ; $9B63: 60
-    LDX #$10                 ; $9B64: A2 10
-    LDA #$20                 ; $9B66: A9 20
-    JMP $9A5F                ; $9B68: 4C 5F 9A
+	CLC					  ; $9B62: 18
+	RTS					  ; $9B63: 60
+	LDX #$10				 ; $9B64: A2 10
+	LDA #$20				 ; $9B66: A9 20
+	JMP $9A5F				; $9B68: 4C 5F 9A
 
 loc_9B6B:
-    LDA #$6C                 ; $9B6B: A9 6C
-    BRK                      ; $9B6D: 00
-    ROR $73                  ; $9B6E: 66 73
-    BCC $9B76                ; $9B70: 90 04
-    PLA                      ; $9B72: 68
-    PLA                      ; $9B73: 68
-    PLA                      ; $9B74: 68
-    CLC                      ; $9B75: 18
+	LDA #$6C				 ; $9B6B: A9 6C
+	BRK					  ; $9B6D: 00
+	ROR $73				  ; $9B6E: 66 73
+	BCC $9B76				; $9B70: 90 04
+	PLA					  ; $9B72: 68
+	PLA					  ; $9B73: 68
+	PLA					  ; $9B74: 68
+	CLC					  ; $9B75: 18
 
 loc_9B76:
-    RTS                      ; $9B76: 60
-    BRK                      ; $9B77: 00
-    ASL $08EB                ; $9B78: 0E EB 08
-    BEQ $9B7F                ; $9B7B: F0 02
-    SEC                      ; $9B7D: 38
-    RTS                      ; $9B7E: 60
+	RTS					  ; $9B76: 60
+	BRK					  ; $9B77: 00
+	ASL $08EB				; $9B78: 0E EB 08
+	BEQ $9B7F				; $9B7B: F0 02
+	SEC					  ; $9B7D: 38
+	RTS					  ; $9B7E: 60
 
 loc_9B7F:
-    CLC                      ; $9B7F: 18
-    RTS                      ; $9B80: 60
-    CLC                      ; $9B81: 18
-    RTS                      ; $9B82: 60
-    LDA $44                  ; $9B83: A5 44
-    CMP #$1C                 ; $9B85: C9 1C
-    BCC $9B91                ; $9B87: 90 08
-    LDA $45                  ; $9B89: A5 45
-    CMP #$05                 ; $9B8B: C9 05
-    BNE $9B91                ; $9B8D: D0 02
-    SEC                      ; $9B8F: 38
-    RTS                      ; $9B90: 60
+	CLC					  ; $9B7F: 18
+	RTS					  ; $9B80: 60
+	CLC					  ; $9B81: 18
+	RTS					  ; $9B82: 60
+	LDA $44				  ; $9B83: A5 44
+	CMP #$1C				 ; $9B85: C9 1C
+	BCC $9B91				; $9B87: 90 08
+	LDA $45				  ; $9B89: A5 45
+	CMP #$05				 ; $9B8B: C9 05
+	BNE $9B91				; $9B8D: D0 02
+	SEC					  ; $9B8F: 38
+	RTS					  ; $9B90: 60
 
 loc_9B91:
-    CLC                      ; $9B91: 18
-    RTS                      ; $9B92: 60
-    LDA $44                  ; $9B93: A5 44
-    CMP #$1C                 ; $9B95: C9 1C
-    BCC $9BA1                ; $9B97: 90 08
-    LDA $45                  ; $9B99: A5 45
-    CMP #$07                 ; $9B9B: C9 07
-    BNE $9BA1                ; $9B9D: D0 02
-    SEC                      ; $9B9F: 38
-    RTS                      ; $9BA0: 60
+	CLC					  ; $9B91: 18
+	RTS					  ; $9B92: 60
+	LDA $44				  ; $9B93: A5 44
+	CMP #$1C				 ; $9B95: C9 1C
+	BCC $9BA1				; $9B97: 90 08
+	LDA $45				  ; $9B99: A5 45
+	CMP #$07				 ; $9B9B: C9 07
+	BNE $9BA1				; $9B9D: D0 02
+	SEC					  ; $9B9F: 38
+	RTS					  ; $9BA0: 60
 
 loc_9BA1:
-    CLC                      ; $9BA1: 18
-    RTS                      ; $9BA2: 60
-    LDY $615A                ; $9BA3: AC 5A 61
-    BRK                      ; $9BA6: 00
-    PHP                      ; $9BA7: 08
-    .byte $EB             ; $9BA8 - unknown opcode
-    .byte $02             ; $9BA9 - unknown opcode
-    BNE $9BB2                ; $9BAA: D0 06
-    LDX #$00                 ; $9BAC: A2 00
-    CPY #$01                 ; $9BAE: C0 01
-    BEQ $9BB8                ; $9BB0: F0 06
+	CLC					  ; $9BA1: 18
+	RTS					  ; $9BA2: 60
+	LDY $615A				; $9BA3: AC 5A 61
+	BRK					  ; $9BA6: 00
+	PHP					  ; $9BA7: 08
+	.byte $EB			 ; $9BA8 - unknown opcode
+	.byte $02			 ; $9BA9 - unknown opcode
+	BNE $9BB2				; $9BAA: D0 06
+	LDX #$00				 ; $9BAC: A2 00
+	CPY #$01				 ; $9BAE: C0 01
+	BEQ $9BB8				; $9BB0: F0 06
 
 loc_9BB2:
-    LDX #$02                 ; $9BB2: A2 02
-    CPY #$02                 ; $9BB4: C0 02
-    BNE $9BC8                ; $9BB6: D0 10
+	LDX #$02				 ; $9BB2: A2 02
+	CPY #$02				 ; $9BB4: C0 02
+	BNE $9BC8				; $9BB6: D0 10
 
 loc_9BB8:
-    LDA $9BCA,X              ; $9BB8: BD CA 9B
-    CMP $44                  ; $9BBB: C5 44
-    BNE $9BC8                ; $9BBD: D0 09
-    LDA $9BCB,X              ; $9BBF: BD CB 9B
-    CMP $45                  ; $9BC2: C5 45
-    BNE $9BC8                ; $9BC4: D0 02
-    SEC                      ; $9BC6: 38
-    RTS                      ; $9BC7: 60
+	LDA $9BCA,X			  ; $9BB8: BD CA 9B
+	CMP $44				  ; $9BBB: C5 44
+	BNE $9BC8				; $9BBD: D0 09
+	LDA $9BCB,X			  ; $9BBF: BD CB 9B
+	CMP $45				  ; $9BC2: C5 45
+	BNE $9BC8				; $9BC4: D0 02
+	SEC					  ; $9BC6: 38
+	RTS					  ; $9BC7: 60
 
 loc_9BC8:
-    CLC                      ; $9BC8: 18
-    RTS                      ; $9BC9: 60
-    ORA $09                  ; $9BCA: 05 09
-    .byte $04             ; $9BCC - unknown opcode
-    ORA $AD                  ; $9BCD: 05 AD
-    ADC $4A62,X              ; $9BCF: 7D 62 4A
-    RTS                      ; $9BD2: 60
-    BRK                      ; $9BD3: 00
-    .byte $02             ; $9BD4 - unknown opcode
-    .byte $EB             ; $9BD5 - unknown opcode
-    .byte $02             ; $9BD6 - unknown opcode
-    BEQ $9BF5                ; $9BD7: F0 1C
-    LDX #$06                 ; $9BD9: A2 06
-    JSR $98BD                ; $9BDB: 20 BD 98
-    LDX #$06                 ; $9BDE: A2 06
-    BCC $9BE9                ; $9BE0: 90 07
-    LDA #$00                 ; $9BE2: A9 00
-    STA $7040,X              ; $9BE4: 9D 40 70
-    CLC                      ; $9BE7: 18
-    RTS                      ; $9BE8: 60
+	CLC					  ; $9BC8: 18
+	RTS					  ; $9BC9: 60
+	ORA $09				  ; $9BCA: 05 09
+	.byte $04			 ; $9BCC - unknown opcode
+	ORA $AD				  ; $9BCD: 05 AD
+	ADC $4A62,X			  ; $9BCF: 7D 62 4A
+	RTS					  ; $9BD2: 60
+	BRK					  ; $9BD3: 00
+	.byte $02			 ; $9BD4 - unknown opcode
+	.byte $EB			 ; $9BD5 - unknown opcode
+	.byte $02			 ; $9BD6 - unknown opcode
+	BEQ $9BF5				; $9BD7: F0 1C
+	LDX #$06				 ; $9BD9: A2 06
+	JSR $98BD				; $9BDB: 20 BD 98
+	LDX #$06				 ; $9BDE: A2 06
+	BCC $9BE9				; $9BE0: 90 07
+	LDA #$00				 ; $9BE2: A9 00
+	STA $7040,X			  ; $9BE4: 9D 40 70
+	CLC					  ; $9BE7: 18
+	RTS					  ; $9BE8: 60
 
 loc_9BE9:
-    LDA $7040,X              ; $9BE9: BD 40 70
-    AND #$F0                 ; $9BEC: 29 F0
-    BNE $9BF5                ; $9BEE: D0 05
-    LDA #$22                 ; $9BF0: A9 22
-    STA $7040,X              ; $9BF2: 9D 40 70
+	LDA $7040,X			  ; $9BE9: BD 40 70
+	AND #$F0				 ; $9BEC: 29 F0
+	BNE $9BF5				; $9BEE: D0 05
+	LDA #$22				 ; $9BF0: A9 22
+	STA $7040,X			  ; $9BF2: 9D 40 70
 
 loc_9BF5:
-    CLC                      ; $9BF5: 18
-    RTS                      ; $9BF6: 60
-    LDA $44                  ; $9BF7: A5 44
-    CMP #$1F                 ; $9BF9: C9 1F
-    BNE $9C05                ; $9BFB: D0 08
-    LDA $45                  ; $9BFD: A5 45
-    CMP #$1B                 ; $9BFF: C9 1B
-    BNE $9C05                ; $9C01: D0 02
-    CLC                      ; $9C03: 18
-    RTS                      ; $9C04: 60
+	CLC					  ; $9BF5: 18
+	RTS					  ; $9BF6: 60
+	LDA $44				  ; $9BF7: A5 44
+	CMP #$1F				 ; $9BF9: C9 1F
+	BNE $9C05				; $9BFB: D0 08
+	LDA $45				  ; $9BFD: A5 45
+	CMP #$1B				 ; $9BFF: C9 1B
+	BNE $9C05				; $9C01: D0 02
+	CLC					  ; $9C03: 18
+	RTS					  ; $9C04: 60
 
 loc_9C05:
-    SEC                      ; $9C05: 38
-    RTS                      ; $9C06: 60
-    BRK                      ; $9C07: 00
-    .byte $02             ; $9C08 - unknown opcode
-    .byte $EB             ; $9C09 - unknown opcode
-    PHP                      ; $9C0A: 08
-    BEQ $9C24                ; $9C0B: F0 17
-    LDA $44                  ; $9C0D: A5 44
-    CMP #$04                 ; $9C0F: C9 04
-    BNE $9C19                ; $9C11: D0 06
-    LDA $45                  ; $9C13: A5 45
-    CMP #$03                 ; $9C15: C9 03
-    BEQ $9C24                ; $9C17: F0 0B
+	SEC					  ; $9C05: 38
+	RTS					  ; $9C06: 60
+	BRK					  ; $9C07: 00
+	.byte $02			 ; $9C08 - unknown opcode
+	.byte $EB			 ; $9C09 - unknown opcode
+	PHP					  ; $9C0A: 08
+	BEQ $9C24				; $9C0B: F0 17
+	LDA $44				  ; $9C0D: A5 44
+	CMP #$04				 ; $9C0F: C9 04
+	BNE $9C19				; $9C11: D0 06
+	LDA $45				  ; $9C13: A5 45
+	CMP #$03				 ; $9C15: C9 03
+	BEQ $9C24				; $9C17: F0 0B
 
 loc_9C19:
-    JSR $9C34                ; $9C19: 20 34 9C
-    BCS $9C24                ; $9C1C: B0 06
-    LDA $56                  ; $9C1E: A5 56
-    BMI $9C24                ; $9C20: 30 02
-    SEC                      ; $9C22: 38
-    RTS                      ; $9C23: 60
+	JSR $9C34				; $9C19: 20 34 9C
+	BCS $9C24				; $9C1C: B0 06
+	LDA $56				  ; $9C1E: A5 56
+	BMI $9C24				; $9C20: 30 02
+	SEC					  ; $9C22: 38
+	RTS					  ; $9C23: 60
 
 loc_9C24:
-    CLC                      ; $9C24: 18
-    RTS                      ; $9C25: 60
-    LDA $44                  ; $9C26: A5 44
-    CMP #$04                 ; $9C28: C9 04
-    BNE $9C34                ; $9C2A: D0 08
-    LDA $45                  ; $9C2C: A5 45
-    CMP #$03                 ; $9C2E: C9 03
-    BNE $9C34                ; $9C30: D0 02
+	CLC					  ; $9C24: 18
+	RTS					  ; $9C25: 60
+	LDA $44				  ; $9C26: A5 44
+	CMP #$04				 ; $9C28: C9 04
+	BNE $9C34				; $9C2A: D0 08
+	LDA $45				  ; $9C2C: A5 45
+	CMP #$03				 ; $9C2E: C9 03
+	BNE $9C34				; $9C30: D0 02
 
 loc_9C32:
-    SEC                      ; $9C32: 38
-    RTS                      ; $9C33: 60
+	SEC					  ; $9C32: 38
+	RTS					  ; $9C33: 60
 
 loc_9C34:
-    LDX #$01                 ; $9C34: A2 01
-    JSR $9C40                ; $9C36: 20 40 9C
-    BCS $9C32                ; $9C39: B0 F7
-    LDX #$00                 ; $9C3B: A2 00
-    JMP $9C40                ; $9C3D: 4C 40 9C
+	LDX #$01				 ; $9C34: A2 01
+	JSR $9C40				; $9C36: 20 40 9C
+	BCS $9C32				; $9C39: B0 F7
+	LDX #$00				 ; $9C3B: A2 00
+	JMP $9C40				; $9C3D: 4C 40 9C
 
 loc_9C40:
-    LDA $6F66,X              ; $9C40: BD 66 6F
-    CMP #$04                 ; $9C43: C9 04
-    BNE $9C50                ; $9C45: D0 09
-    LDA $6F86,X              ; $9C47: BD 86 6F
-    CMP #$03                 ; $9C4A: C9 03
-    BNE $9C50                ; $9C4C: D0 02
-    SEC                      ; $9C4E: 38
-    RTS                      ; $9C4F: 60
+	LDA $6F66,X			  ; $9C40: BD 66 6F
+	CMP #$04				 ; $9C43: C9 04
+	BNE $9C50				; $9C45: D0 09
+	LDA $6F86,X			  ; $9C47: BD 86 6F
+	CMP #$03				 ; $9C4A: C9 03
+	BNE $9C50				; $9C4C: D0 02
+	SEC					  ; $9C4E: 38
+	RTS					  ; $9C4F: 60
 
 loc_9C50:
-    CLC                      ; $9C50: 18
-    RTS                      ; $9C51: 60
-    LDX $51                  ; $9C52: A6 51
-    LDA $6F60,X              ; $9C54: BD 60 6F
-    SEC                      ; $9C57: 38
-    SBC $6FA0                ; $9C58: ED A0 6F
-    CLC                      ; $9C5B: 18
-    ADC #$01                 ; $9C5C: 69 01
-    CMP #$03                 ; $9C5E: C9 03
-    BCS $9C8E                ; $9C60: B0 2C
-    LDA $6F80,X              ; $9C62: BD 80 6F
-    SEC                      ; $9C65: 38
-    SBC $6FC0                ; $9C66: ED C0 6F
-    CLC                      ; $9C69: 18
-    ADC #$01                 ; $9C6A: 69 01
-    CMP #$03                 ; $9C6C: C9 03
-    BCS $9C8E                ; $9C6E: B0 1E
-    LDA #$81                 ; $9C70: A9 81
-    STA $6F60,X              ; $9C72: 9D 60 6F
-    STA $6F80,X              ; $9C75: 9D 80 6F
-    STA $6FA0,X              ; $9C78: 9D A0 6F
-    STA $6FC0,X              ; $9C7B: 9D C0 6F
-    TXA                      ; $9C7E: 8A
-    PHA                      ; $9C7F: 48
-    JSR $9C93                ; $9C80: 20 93 9C
-    LDA #$06                 ; $9C83: A9 06
-    BRK                      ; $9C85: 00
-    ORA ($8F,X)              ; $9C86: 01 8F
-    BRK                      ; $9C88: 00
-    ORA $EF,X                ; $9C89: 15 EF
-    PLA                      ; $9C8B: 68
-    STA $51                  ; $9C8C: 85 51
+	CLC					  ; $9C50: 18
+	RTS					  ; $9C51: 60
+	LDX $51				  ; $9C52: A6 51
+	LDA $6F60,X			  ; $9C54: BD 60 6F
+	SEC					  ; $9C57: 38
+	SBC $6FA0				; $9C58: ED A0 6F
+	CLC					  ; $9C5B: 18
+	ADC #$01				 ; $9C5C: 69 01
+	CMP #$03				 ; $9C5E: C9 03
+	BCS $9C8E				; $9C60: B0 2C
+	LDA $6F80,X			  ; $9C62: BD 80 6F
+	SEC					  ; $9C65: 38
+	SBC $6FC0				; $9C66: ED C0 6F
+	CLC					  ; $9C69: 18
+	ADC #$01				 ; $9C6A: 69 01
+	CMP #$03				 ; $9C6C: C9 03
+	BCS $9C8E				; $9C6E: B0 1E
+	LDA #$81				 ; $9C70: A9 81
+	STA $6F60,X			  ; $9C72: 9D 60 6F
+	STA $6F80,X			  ; $9C75: 9D 80 6F
+	STA $6FA0,X			  ; $9C78: 9D A0 6F
+	STA $6FC0,X			  ; $9C7B: 9D C0 6F
+	TXA					  ; $9C7E: 8A
+	PHA					  ; $9C7F: 48
+	JSR $9C93				; $9C80: 20 93 9C
+	LDA #$06				 ; $9C83: A9 06
+	BRK					  ; $9C85: 00
+	ORA ($8F,X)			  ; $9C86: 01 8F
+	BRK					  ; $9C88: 00
+	ORA $EF,X				; $9C89: 15 EF
+	PLA					  ; $9C8B: 68
+	STA $51				  ; $9C8C: 85 51
 
 loc_9C8E:
-    LDA $3E                  ; $9C8E: A5 3E
-    CMP #$10                 ; $9C90: C9 10
+	LDA $3E				  ; $9C8E: A5 3E
+	CMP #$10				 ; $9C90: C9 10
 
 loc_9C92:
-    RTS                      ; $9C92: 60
+	RTS					  ; $9C92: 60
 
 loc_9C93:
-    LDA $3E                  ; $9C93: A5 3E
-    BEQ $9C92                ; $9C95: F0 FB
-    LDX #$05                 ; $9C97: A2 05
+	LDA $3E				  ; $9C93: A5 3E
+	BEQ $9C92				; $9C95: F0 FB
+	LDX #$05				 ; $9C97: A2 05
 
 loc_9C99:
-    LDA $7000,X              ; $9C99: BD 00 70
-    AND #$7F                 ; $9C9C: 29 7F
-    STA $7000,X              ; $9C9E: 9D 00 70
-    LDA $6F60,X              ; $9CA1: BD 60 6F
-    STA $6FA0,X              ; $9CA4: 9D A0 6F
-    LDA $6F80,X              ; $9CA7: BD 80 6F
-    STA $6FC0,X              ; $9CAA: 9D C0 6F
-    DEX                      ; $9CAD: CA
-    BNE $9C99                ; $9CAE: D0 E9
-    LDA #$00                 ; $9CB0: A9 00
-    STA $3E                  ; $9CB2: 85 3E
-    JMP $C010                ; $9CB4: 4C 10 C0
-    LDA $44                  ; $9CB7: A5 44
-    SEC                      ; $9CB9: 38
-    SBC #$03                 ; $9CBA: E9 03
-    CMP #$02                 ; $9CBC: C9 02
-    BCS $9CD7                ; $9CBE: B0 17
-    LDA $45                  ; $9CC0: A5 45
-    CMP #$0E                 ; $9CC2: C9 0E
-    BNE $9CD7                ; $9CC4: D0 11
-    BRK                      ; $9CC6: 00
-    .byte $02             ; $9CC7 - unknown opcode
-    .byte $CB             ; $9CC8 - unknown opcode
-    JSR $1F00                ; $9CC9: 20 00 1F
-    .byte $DB             ; $9CCC - unknown opcode
-    .byte $FC             ; $9CCD - unknown opcode
-    BRK                      ; $9CCE: 00
-    .byte $1F             ; $9CCF - unknown opcode
-    .byte $CB             ; $9CD0 - unknown opcode
-    .byte $02             ; $9CD1 - unknown opcode
-    BRK                      ; $9CD2: 00
-    STA $FB,X                ; $9CD3: 95 FB
-    SEC                      ; $9CD5: 38
-    RTS                      ; $9CD6: 60
+	LDA $7000,X			  ; $9C99: BD 00 70
+	AND #$7F				 ; $9C9C: 29 7F
+	STA $7000,X			  ; $9C9E: 9D 00 70
+	LDA $6F60,X			  ; $9CA1: BD 60 6F
+	STA $6FA0,X			  ; $9CA4: 9D A0 6F
+	LDA $6F80,X			  ; $9CA7: BD 80 6F
+	STA $6FC0,X			  ; $9CAA: 9D C0 6F
+	DEX					  ; $9CAD: CA
+	BNE $9C99				; $9CAE: D0 E9
+	LDA #$00				 ; $9CB0: A9 00
+	STA $3E				  ; $9CB2: 85 3E
+	JMP $C010				; $9CB4: 4C 10 C0
+	LDA $44				  ; $9CB7: A5 44
+	SEC					  ; $9CB9: 38
+	SBC #$03				 ; $9CBA: E9 03
+	CMP #$02				 ; $9CBC: C9 02
+	BCS $9CD7				; $9CBE: B0 17
+	LDA $45				  ; $9CC0: A5 45
+	CMP #$0E				 ; $9CC2: C9 0E
+	BNE $9CD7				; $9CC4: D0 11
+	BRK					  ; $9CC6: 00
+	.byte $02			 ; $9CC7 - unknown opcode
+	.byte $CB			 ; $9CC8 - unknown opcode
+	JSR $1F00				; $9CC9: 20 00 1F
+	.byte $DB			 ; $9CCC - unknown opcode
+	.byte $FC			 ; $9CCD - unknown opcode
+	BRK					  ; $9CCE: 00
+	.byte $1F			 ; $9CCF - unknown opcode
+	.byte $CB			 ; $9CD0 - unknown opcode
+	.byte $02			 ; $9CD1 - unknown opcode
+	BRK					  ; $9CD2: 00
+	STA $FB,X				; $9CD3: 95 FB
+	SEC					  ; $9CD5: 38
+	RTS					  ; $9CD6: 60
 
 loc_9CD7:
-    BRK                      ; $9CD7: 00
-    .byte $1F             ; $9CD8 - unknown opcode
-    .byte $DB             ; $9CD9 - unknown opcode
-    .byte $7F             ; $9CDA - unknown opcode
-    CLC                      ; $9CDB: 18
-    RTS                      ; $9CDC: 60
-    LDA $629A                ; $9CDD: AD 9A 62
-    AND #$03                 ; $9CE0: 29 03
-    BEQ $9CD7                ; $9CE2: F0 F3
-    CMP #$02                 ; $9CE4: C9 02
-    BEQ $9CFD                ; $9CE6: F0 15
-    LDX $62A0                ; $9CE8: AE A0 62
-    JSR $9E2D                ; $9CEB: 20 2D 9E
-    BCS $9D1C                ; $9CEE: B0 2C
-    INX                      ; $9CF0: E8
-    JSR $9E2D                ; $9CF1: 20 2D 9E
-    BCS $9D1C                ; $9CF4: B0 26
+	BRK					  ; $9CD7: 00
+	.byte $1F			 ; $9CD8 - unknown opcode
+	.byte $DB			 ; $9CD9 - unknown opcode
+	.byte $7F			 ; $9CDA - unknown opcode
+	CLC					  ; $9CDB: 18
+	RTS					  ; $9CDC: 60
+	LDA $629A				; $9CDD: AD 9A 62
+	AND #$03				 ; $9CE0: 29 03
+	BEQ $9CD7				; $9CE2: F0 F3
+	CMP #$02				 ; $9CE4: C9 02
+	BEQ $9CFD				; $9CE6: F0 15
+	LDX $62A0				; $9CE8: AE A0 62
+	JSR $9E2D				; $9CEB: 20 2D 9E
+	BCS $9D1C				; $9CEE: B0 2C
+	INX					  ; $9CF0: E8
+	JSR $9E2D				; $9CF1: 20 2D 9E
+	BCS $9D1C				; $9CF4: B0 26
 
 loc_9CF6:
-    BRK                      ; $9CF6: 00
-    .byte $1F             ; $9CF7 - unknown opcode
-    .byte $DB             ; $9CF8 - unknown opcode
-    .byte $DF             ; $9CF9 - unknown opcode
-    JMP $9D38                ; $9CFA: 4C 38 9D
+	BRK					  ; $9CF6: 00
+	.byte $1F			 ; $9CF7 - unknown opcode
+	.byte $DB			 ; $9CF8 - unknown opcode
+	.byte $DF			 ; $9CF9 - unknown opcode
+	JMP $9D38				; $9CFA: 4C 38 9D
 
 loc_9CFD:
-    LDX $62A3                ; $9CFD: AE A3 62
-    JSR $9E42                ; $9D00: 20 42 9E
-    BCS $9D0B                ; $9D03: B0 06
-    INX                      ; $9D05: E8
-    JSR $9E42                ; $9D06: 20 42 9E
-    BCC $9CF6                ; $9D09: 90 EB
+	LDX $62A3				; $9CFD: AE A3 62
+	JSR $9E42				; $9D00: 20 42 9E
+	BCS $9D0B				; $9D03: B0 06
+	INX					  ; $9D05: E8
+	JSR $9E42				; $9D06: 20 42 9E
+	BCC $9CF6				; $9D09: 90 EB
 
 loc_9D0B:
-    LDX $62A0                ; $9D0B: AE A0 62
-    INX                      ; $9D0E: E8
-    INX                      ; $9D0F: E8
-    JSR $9E2D                ; $9D10: 20 2D 9E
-    BCC $9CF6                ; $9D13: 90 E1
+	LDX $62A0				; $9D0B: AE A0 62
+	INX					  ; $9D0E: E8
+	INX					  ; $9D0F: E8
+	JSR $9E2D				; $9D10: 20 2D 9E
+	BCC $9CF6				; $9D13: 90 E1
 
 loc_9D15:
-    BRK                      ; $9D15: 00
-    .byte $1F             ; $9D16 - unknown opcode
-    .byte $CB             ; $9D17 - unknown opcode
-    JSR $384C                ; $9D18: 20 4C 38
-    STA $9AAD,X              ; $9D1B: 9D AD 9A
-    .byte $62             ; $9D1E - unknown opcode
-    AND #$03                 ; $9D1F: 29 03
-    CMP #$01                 ; $9D21: C9 01
-    BEQ $9D30                ; $9D23: F0 0B
-    LDX $62A3                ; $9D25: AE A3 62
-    DEX                      ; $9D28: CA
+	BRK					  ; $9D15: 00
+	.byte $1F			 ; $9D16 - unknown opcode
+	.byte $CB			 ; $9D17 - unknown opcode
+	JSR $384C				; $9D18: 20 4C 38
+	STA $9AAD,X			  ; $9D1B: 9D AD 9A
+	.byte $62			 ; $9D1E - unknown opcode
+	AND #$03				 ; $9D1F: 29 03
+	CMP #$01				 ; $9D21: C9 01
+	BEQ $9D30				; $9D23: F0 0B
+	LDX $62A3				; $9D25: AE A3 62
+	DEX					  ; $9D28: CA
 
 loc_9D29:
-    JSR $9E42                ; $9D29: 20 42 9E
-    BCC $9CF6                ; $9D2C: 90 C8
-    BCS $9D15                ; $9D2E: B0 E5
+	JSR $9E42				; $9D29: 20 42 9E
+	BCC $9CF6				; $9D2C: 90 C8
+	BCS $9D15				; $9D2E: B0 E5
 
 loc_9D30:
-    LDX $62A3                ; $9D30: AE A3 62
-    INX                      ; $9D33: E8
-    INX                      ; $9D34: E8
-    JMP $9D29                ; $9D35: 4C 29 9D
+	LDX $62A3				; $9D30: AE A3 62
+	INX					  ; $9D33: E8
+	INX					  ; $9D34: E8
+	JMP $9D29				; $9D35: 4C 29 9D
 
 loc_9D38:
-    BRK                      ; $9D38: 00
-    .byte $1F             ; $9D39 - unknown opcode
-    .byte $EB             ; $9D3A - unknown opcode
-    JSR $99D0                ; $9D3B: 20 D0 99
-    BRK                      ; $9D3E: 00
-    .byte $1F             ; $9D3F - unknown opcode
-    .byte $CB             ; $9D40 - unknown opcode
-    .byte $80             ; $9D41 - unknown opcode
-    JSR $9F8F                ; $9D42: 20 8F 9F
-    JSR $9E53                ; $9D45: 20 53 9E
-    BRK                      ; $9D48: 00
-    .byte $1F             ; $9D49 - unknown opcode
-    .byte $EB             ; $9D4A - unknown opcode
-    RTI                      ; $9D4B: 40
-    BEQ $9D6D                ; $9D4C: F0 1F
-    LDA $629A                ; $9D4E: AD 9A 62
-    AND #$03                 ; $9D51: 29 03
-    CMP #$01                 ; $9D53: C9 01
-    BEQ $9D61                ; $9D55: F0 0A
-    CMP #$02                 ; $9D57: C9 02
-    BEQ $9D67                ; $9D59: F0 0C
-    DEC $62A3                ; $9D5B: CE A3 62
-    JMP $9E20                ; $9D5E: 4C 20 9E
+	BRK					  ; $9D38: 00
+	.byte $1F			 ; $9D39 - unknown opcode
+	.byte $EB			 ; $9D3A - unknown opcode
+	JSR $99D0				; $9D3B: 20 D0 99
+	BRK					  ; $9D3E: 00
+	.byte $1F			 ; $9D3F - unknown opcode
+	.byte $CB			 ; $9D40 - unknown opcode
+	.byte $80			 ; $9D41 - unknown opcode
+	JSR $9F8F				; $9D42: 20 8F 9F
+	JSR $9E53				; $9D45: 20 53 9E
+	BRK					  ; $9D48: 00
+	.byte $1F			 ; $9D49 - unknown opcode
+	.byte $EB			 ; $9D4A - unknown opcode
+	RTI					  ; $9D4B: 40
+	BEQ $9D6D				; $9D4C: F0 1F
+	LDA $629A				; $9D4E: AD 9A 62
+	AND #$03				 ; $9D51: 29 03
+	CMP #$01				 ; $9D53: C9 01
+	BEQ $9D61				; $9D55: F0 0A
+	CMP #$02				 ; $9D57: C9 02
+	BEQ $9D67				; $9D59: F0 0C
+	DEC $62A3				; $9D5B: CE A3 62
+	JMP $9E20				; $9D5E: 4C 20 9E
 
 loc_9D61:
-    INC $62A3                ; $9D61: EE A3 62
-    JMP $9E20                ; $9D64: 4C 20 9E
+	INC $62A3				; $9D61: EE A3 62
+	JMP $9E20				; $9D64: 4C 20 9E
 
 loc_9D67:
-    INC $62A0                ; $9D67: EE A0 62
-    JMP $9DA4                ; $9D6A: 4C A4 9D
+	INC $62A0				; $9D67: EE A0 62
+	JMP $9DA4				; $9D6A: 4C A4 9D
 
 loc_9D6D:
-    LDA $629A                ; $9D6D: AD 9A 62
-    AND #$03                 ; $9D70: 29 03
-    CMP #$01                 ; $9D72: C9 01
-    BEQ $9D8F                ; $9D74: F0 19
-    CMP #$02                 ; $9D76: C9 02
-    BEQ $9DE6                ; $9D78: F0 6C
-    LDA $62A3                ; $9D7A: AD A3 62
-    CMP #$03                 ; $9D7D: C9 03
-    BEQ $9D84                ; $9D7F: F0 03
-    JMP $9E20                ; $9D81: 4C 20 9E
+	LDA $629A				; $9D6D: AD 9A 62
+	AND #$03				 ; $9D70: 29 03
+	CMP #$01				 ; $9D72: C9 01
+	BEQ $9D8F				; $9D74: F0 19
+	CMP #$02				 ; $9D76: C9 02
+	BEQ $9DE6				; $9D78: F0 6C
+	LDA $62A3				; $9D7A: AD A3 62
+	CMP #$03				 ; $9D7D: C9 03
+	BEQ $9D84				; $9D7F: F0 03
+	JMP $9E20				; $9D81: 4C 20 9E
 
 loc_9D84:
-    BRK                      ; $9D84: 00
-    .byte $1F             ; $9D85 - unknown opcode
-    .byte $DB             ; $9D86 - unknown opcode
-    .byte $FC             ; $9D87 - unknown opcode
-    BRK                      ; $9D88: 00
-    .byte $1F             ; $9D89 - unknown opcode
-    .byte $CB             ; $9D8A - unknown opcode
-    .byte $02             ; $9D8B - unknown opcode
-    JMP $9E20                ; $9D8C: 4C 20 9E
+	BRK					  ; $9D84: 00
+	.byte $1F			 ; $9D85 - unknown opcode
+	.byte $DB			 ; $9D86 - unknown opcode
+	.byte $FC			 ; $9D87 - unknown opcode
+	BRK					  ; $9D88: 00
+	.byte $1F			 ; $9D89 - unknown opcode
+	.byte $CB			 ; $9D8A - unknown opcode
+	.byte $02			 ; $9D8B - unknown opcode
+	JMP $9E20				; $9D8C: 4C 20 9E
 
 loc_9D8F:
-    LDA $62A3                ; $9D8F: AD A3 62
-    CMP #$0B                 ; $9D92: C9 0B
-    BEQ $9D99                ; $9D94: F0 03
-    JMP $9E20                ; $9D96: 4C 20 9E
+	LDA $62A3				; $9D8F: AD A3 62
+	CMP #$0B				 ; $9D92: C9 0B
+	BEQ $9D99				; $9D94: F0 03
+	JMP $9E20				; $9D96: 4C 20 9E
 
 loc_9D99:
-    BRK                      ; $9D99: 00
-    .byte $1F             ; $9D9A - unknown opcode
-    .byte $DB             ; $9D9B - unknown opcode
-    .byte $FC             ; $9D9C - unknown opcode
-    BRK                      ; $9D9D: 00
-    .byte $1F             ; $9D9E - unknown opcode
-    .byte $CB             ; $9D9F - unknown opcode
-    .byte $02             ; $9DA0 - unknown opcode
-    JMP $9E20                ; $9DA1: 4C 20 9E
+	BRK					  ; $9D99: 00
+	.byte $1F			 ; $9D9A - unknown opcode
+	.byte $DB			 ; $9D9B - unknown opcode
+	.byte $FC			 ; $9D9C - unknown opcode
+	BRK					  ; $9D9D: 00
+	.byte $1F			 ; $9D9E - unknown opcode
+	.byte $CB			 ; $9D9F - unknown opcode
+	.byte $02			 ; $9DA0 - unknown opcode
+	JMP $9E20				; $9DA1: 4C 20 9E
 
 loc_9DA4:
-    LDA $62A0                ; $9DA4: AD A0 62
-    CMP #$13                 ; $9DA7: C9 13
-    BNE $9DC6                ; $9DA9: D0 1B
-    LDA $44                  ; $9DAB: A5 44
-    CMP #$0B                 ; $9DAD: C9 0B
-    BCS $9DBB                ; $9DAF: B0 0A
-    CMP #$05                 ; $9DB1: C9 05
-    BCC $9E20                ; $9DB3: 90 6B
-    LDA $45                  ; $9DB5: A5 45
-    CMP #$1E                 ; $9DB7: C9 1E
-    BCS $9E20                ; $9DB9: B0 65
+	LDA $62A0				; $9DA4: AD A0 62
+	CMP #$13				 ; $9DA7: C9 13
+	BNE $9DC6				; $9DA9: D0 1B
+	LDA $44				  ; $9DAB: A5 44
+	CMP #$0B				 ; $9DAD: C9 0B
+	BCS $9DBB				; $9DAF: B0 0A
+	CMP #$05				 ; $9DB1: C9 05
+	BCC $9E20				; $9DB3: 90 6B
+	LDA $45				  ; $9DB5: A5 45
+	CMP #$1E				 ; $9DB7: C9 1E
+	BCS $9E20				; $9DB9: B0 65
 
 loc_9DBB:
-    BRK                      ; $9DBB: 00
-    .byte $1F             ; $9DBC - unknown opcode
-    .byte $DB             ; $9DBD - unknown opcode
-    .byte $FC             ; $9DBE - unknown opcode
-    BRK                      ; $9DBF: 00
-    .byte $1F             ; $9DC0 - unknown opcode
-    .byte $CB             ; $9DC1 - unknown opcode
-    ORA ($4C,X)              ; $9DC2: 01 4C
-    JSR $C99E                ; $9DC4: 20 9E C9
-    ASL $56D0,X              ; $9DC7: 1E D0 56
-    LDA $62A3                ; $9DCA: AD A3 62
-    CMP #$08                 ; $9DCD: C9 08
-    BCC $9DDE                ; $9DCF: 90 0D
-    LDA $44                  ; $9DD1: A5 44
-    CMP #$0B                 ; $9DD3: C9 0B
-    BCS $9D99                ; $9DD5: B0 C2
-    BRK                      ; $9DD7: 00
-    .byte $1F             ; $9DD8 - unknown opcode
-    .byte $CB             ; $9DD9 - unknown opcode
-    .byte $03             ; $9DDA - unknown opcode
-    JMP $9E20                ; $9DDB: 4C 20 9E
+	BRK					  ; $9DBB: 00
+	.byte $1F			 ; $9DBC - unknown opcode
+	.byte $DB			 ; $9DBD - unknown opcode
+	.byte $FC			 ; $9DBE - unknown opcode
+	BRK					  ; $9DBF: 00
+	.byte $1F			 ; $9DC0 - unknown opcode
+	.byte $CB			 ; $9DC1 - unknown opcode
+	ORA ($4C,X)			  ; $9DC2: 01 4C
+	JSR $C99E				; $9DC4: 20 9E C9
+	ASL $56D0,X			  ; $9DC7: 1E D0 56
+	LDA $62A3				; $9DCA: AD A3 62
+	CMP #$08				 ; $9DCD: C9 08
+	BCC $9DDE				; $9DCF: 90 0D
+	LDA $44				  ; $9DD1: A5 44
+	CMP #$0B				 ; $9DD3: C9 0B
+	BCS $9D99				; $9DD5: B0 C2
+	BRK					  ; $9DD7: 00
+	.byte $1F			 ; $9DD8 - unknown opcode
+	.byte $CB			 ; $9DD9 - unknown opcode
+	.byte $03			 ; $9DDA - unknown opcode
+	JMP $9E20				; $9DDB: 4C 20 9E
 
 loc_9DDE:
-    LDA $44                  ; $9DDE: A5 44
-    CMP #$05                 ; $9DE0: C9 05
-    BCC $9D99                ; $9DE2: 90 B5
-    BCS $9DBB                ; $9DE4: B0 D5
+	LDA $44				  ; $9DDE: A5 44
+	CMP #$05				 ; $9DE0: C9 05
+	BCC $9D99				; $9DE2: 90 B5
+	BCS $9DBB				; $9DE4: B0 D5
 
 loc_9DE6:
-    LDA $62A0                ; $9DE6: AD A0 62
-    CMP #$25                 ; $9DE9: C9 25
-    BCC $9E20                ; $9DEB: 90 33
-    BRK                      ; $9DED: 00
-    .byte $1F             ; $9DEE - unknown opcode
-    .byte $DB             ; $9DEF - unknown opcode
-    .byte $FC             ; $9DF0 - unknown opcode
-    LDY #$03                 ; $9DF1: A0 03
+	LDA $62A0				; $9DE6: AD A0 62
+	CMP #$25				 ; $9DE9: C9 25
+	BCC $9E20				; $9DEB: 90 33
+	BRK					  ; $9DED: 00
+	.byte $1F			 ; $9DEE - unknown opcode
+	.byte $DB			 ; $9DEF - unknown opcode
+	.byte $FC			 ; $9DF0 - unknown opcode
+	LDY #$03				 ; $9DF1: A0 03
 
 loc_9DF3:
-    TYA                      ; $9DF3: 98
-    PHA                      ; $9DF4: 48
-    BRK                      ; $9DF5: 00
-    STY $FB                  ; $9DF6: 84 FB
-    LDX #$04                 ; $9DF8: A2 04
-    JSR $C90C                ; $9DFA: 20 0C C9
-    PLA                      ; $9DFD: 68
-    TAY                      ; $9DFE: A8
-    DEY                      ; $9DFF: 88
-    BNE $9DF3                ; $9E00: D0 F1
-    BRK                      ; $9E02: 00
-    ORA $DF                  ; $9E03: 05 DF
-    LDY #$02                 ; $9E05: A0 02
+	TYA					  ; $9DF3: 98
+	PHA					  ; $9DF4: 48
+	BRK					  ; $9DF5: 00
+	STY $FB				  ; $9DF6: 84 FB
+	LDX #$04				 ; $9DF8: A2 04
+	JSR $C90C				; $9DFA: 20 0C C9
+	PLA					  ; $9DFD: 68
+	TAY					  ; $9DFE: A8
+	DEY					  ; $9DFF: 88
+	BNE $9DF3				; $9E00: D0 F1
+	BRK					  ; $9E02: 00
+	ORA $DF				  ; $9E03: 05 DF
+	LDY #$02				 ; $9E05: A0 02
 
 loc_9E07:
-    TYA                      ; $9E07: 98
-    PHA                      ; $9E08: 48
-    BRK                      ; $9E09: 00
-    STY $FB                  ; $9E0A: 84 FB
-    LDX #$04                 ; $9E0C: A2 04
-    JSR $C90C                ; $9E0E: 20 0C C9
-    PLA                      ; $9E11: 68
-    TAY                      ; $9E12: A8
-    DEY                      ; $9E13: 88
-    BNE $9E07                ; $9E14: D0 F1
-    LDX #$05                 ; $9E16: A2 05
-    LDA #$00                 ; $9E18: A9 00
+	TYA					  ; $9E07: 98
+	PHA					  ; $9E08: 48
+	BRK					  ; $9E09: 00
+	STY $FB				  ; $9E0A: 84 FB
+	LDX #$04				 ; $9E0C: A2 04
+	JSR $C90C				; $9E0E: 20 0C C9
+	PLA					  ; $9E11: 68
+	TAY					  ; $9E12: A8
+	DEY					  ; $9E13: 88
+	BNE $9E07				; $9E14: D0 F1
+	LDX #$05				 ; $9E16: A2 05
+	LDA #$00				 ; $9E18: A9 00
 
 loc_9E1A:
-    STA $6F59,X              ; $9E1A: 9D 59 6F
-    DEX                      ; $9E1D: CA
-    BPL $9E1A                ; $9E1E: 10 FA
+	STA $6F59,X			  ; $9E1A: 9D 59 6F
+	DEX					  ; $9E1D: CA
+	BPL $9E1A				; $9E1E: 10 FA
 
 loc_9E20:
-    LDA $629A                ; $9E20: AD 9A 62
-    EOR #$40                 ; $9E23: 49 40
-    STA $629A                ; $9E25: 8D 9A 62
-    BRK                      ; $9E28: 00
-    STA $FB,X                ; $9E29: 95 FB
-    CLC                      ; $9E2B: 18
-    RTS                      ; $9E2C: 60
+	LDA $629A				; $9E20: AD 9A 62
+	EOR #$40				 ; $9E23: 49 40
+	STA $629A				; $9E25: 8D 9A 62
+	BRK					  ; $9E28: 00
+	STA $FB,X				; $9E29: 95 FB
+	CLC					  ; $9E2B: 18
+	RTS					  ; $9E2C: 60
 
 loc_9E2D:
-    LDY #$00                 ; $9E2D: A0 00
+	LDY #$00				 ; $9E2D: A0 00
 
 loc_9E2F:
-    LDA $7020,Y              ; $9E2F: B9 20 70
-    BMI $9E40                ; $9E32: 30 0C
-    TXA                      ; $9E34: 8A
-    CMP $6F80,Y              ; $9E35: D9 80 6F
-    BEQ $9E3E                ; $9E38: F0 04
-    INY                      ; $9E3A: C8
-    JMP $9E2F                ; $9E3B: 4C 2F 9E
+	LDA $7020,Y			  ; $9E2F: B9 20 70
+	BMI $9E40				; $9E32: 30 0C
+	TXA					  ; $9E34: 8A
+	CMP $6F80,Y			  ; $9E35: D9 80 6F
+	BEQ $9E3E				; $9E38: F0 04
+	INY					  ; $9E3A: C8
+	JMP $9E2F				; $9E3B: 4C 2F 9E
 
 loc_9E3E:
-    SEC                      ; $9E3E: 38
-    RTS                      ; $9E3F: 60
+	SEC					  ; $9E3E: 38
+	RTS					  ; $9E3F: 60
 
 loc_9E40:
-    CLC                      ; $9E40: 18
-    RTS                      ; $9E41: 60
+	CLC					  ; $9E40: 18
+	RTS					  ; $9E41: 60
 
 loc_9E42:
-    LDY #$00                 ; $9E42: A0 00
+	LDY #$00				 ; $9E42: A0 00
 
 loc_9E44:
-    LDA $7020,Y              ; $9E44: B9 20 70
-    BMI $9E40                ; $9E47: 30 F7
-    TXA                      ; $9E49: 8A
-    CMP $6F60,Y              ; $9E4A: D9 60 6F
-    BEQ $9E3E                ; $9E4D: F0 EF
-    INY                      ; $9E4F: C8
-    JMP $9E44                ; $9E50: 4C 44 9E
+	LDA $7020,Y			  ; $9E44: B9 20 70
+	BMI $9E40				; $9E47: 30 F7
+	TXA					  ; $9E49: 8A
+	CMP $6F60,Y			  ; $9E4A: D9 60 6F
+	BEQ $9E3E				; $9E4D: F0 EF
+	INY					  ; $9E4F: C8
+	JMP $9E44				; $9E50: 4C 44 9E
 
 loc_9E53:
-    LDX $62A3                ; $9E53: AE A3 62
-    LDY $62A0                ; $9E56: AC A0 62
-    LDA #$19                 ; $9E59: A9 19
-    JSR $9F79                ; $9E5B: 20 79 9F
-    LDX $62A3                ; $9E5E: AE A3 62
-    INX                      ; $9E61: E8
-    LDY $62A0                ; $9E62: AC A0 62
-    LDA #$1A                 ; $9E65: A9 1A
-    JSR $9F79                ; $9E67: 20 79 9F
-    LDX $62A3                ; $9E6A: AE A3 62
-    LDY $62A0                ; $9E6D: AC A0 62
-    INY                      ; $9E70: C8
-    LDA #$1B                 ; $9E71: A9 1B
-    JSR $9F79                ; $9E73: 20 79 9F
-    LDX $62A3                ; $9E76: AE A3 62
-    INX                      ; $9E79: E8
-    LDY $62A0                ; $9E7A: AC A0 62
-    INY                      ; $9E7D: C8
-    LDA #$1C                 ; $9E7E: A9 1C
-    JSR $9F79                ; $9E80: 20 79 9F
-    BRK                      ; $9E83: 00
-    .byte $1F             ; $9E84 - unknown opcode
-    .byte $EB             ; $9E85 - unknown opcode
-    RTI                      ; $9E86: 40
-    BEQ $9EEE                ; $9E87: F0 65
-    LDA $629A                ; $9E89: AD 9A 62
-    AND #$03                 ; $9E8C: 29 03
-    CMP #$01                 ; $9E8E: C9 01
-    BEQ $9EB2                ; $9E90: F0 20
-    CMP #$02                 ; $9E92: C9 02
-    BEQ $9ED0                ; $9E94: F0 3A
-    LDX $62A3                ; $9E96: AE A3 62
-    INX                      ; $9E99: E8
-    LDY $62A0                ; $9E9A: AC A0 62
-    LDA #$1D                 ; $9E9D: A9 1D
-    JSR $9F51                ; $9E9F: 20 51 9F
-    LDX $62A3                ; $9EA2: AE A3 62
-    INX                      ; $9EA5: E8
-    LDY $62A0                ; $9EA6: AC A0 62
-    INY                      ; $9EA9: C8
-    LDA #$1E                 ; $9EAA: A9 1E
-    JSR $9F51                ; $9EAC: 20 51 9F
-    JMP $FF74                ; $9EAF: 4C 74 FF
+	LDX $62A3				; $9E53: AE A3 62
+	LDY $62A0				; $9E56: AC A0 62
+	LDA #$19				 ; $9E59: A9 19
+	JSR $9F79				; $9E5B: 20 79 9F
+	LDX $62A3				; $9E5E: AE A3 62
+	INX					  ; $9E61: E8
+	LDY $62A0				; $9E62: AC A0 62
+	LDA #$1A				 ; $9E65: A9 1A
+	JSR $9F79				; $9E67: 20 79 9F
+	LDX $62A3				; $9E6A: AE A3 62
+	LDY $62A0				; $9E6D: AC A0 62
+	INY					  ; $9E70: C8
+	LDA #$1B				 ; $9E71: A9 1B
+	JSR $9F79				; $9E73: 20 79 9F
+	LDX $62A3				; $9E76: AE A3 62
+	INX					  ; $9E79: E8
+	LDY $62A0				; $9E7A: AC A0 62
+	INY					  ; $9E7D: C8
+	LDA #$1C				 ; $9E7E: A9 1C
+	JSR $9F79				; $9E80: 20 79 9F
+	BRK					  ; $9E83: 00
+	.byte $1F			 ; $9E84 - unknown opcode
+	.byte $EB			 ; $9E85 - unknown opcode
+	RTI					  ; $9E86: 40
+	BEQ $9EEE				; $9E87: F0 65
+	LDA $629A				; $9E89: AD 9A 62
+	AND #$03				 ; $9E8C: 29 03
+	CMP #$01				 ; $9E8E: C9 01
+	BEQ $9EB2				; $9E90: F0 20
+	CMP #$02				 ; $9E92: C9 02
+	BEQ $9ED0				; $9E94: F0 3A
+	LDX $62A3				; $9E96: AE A3 62
+	INX					  ; $9E99: E8
+	LDY $62A0				; $9E9A: AC A0 62
+	LDA #$1D				 ; $9E9D: A9 1D
+	JSR $9F51				; $9E9F: 20 51 9F
+	LDX $62A3				; $9EA2: AE A3 62
+	INX					  ; $9EA5: E8
+	LDY $62A0				; $9EA6: AC A0 62
+	INY					  ; $9EA9: C8
+	LDA #$1E				 ; $9EAA: A9 1E
+	JSR $9F51				; $9EAC: 20 51 9F
+	JMP $FF74				; $9EAF: 4C 74 FF
 
 loc_9EB2:
-    LDX $62A3                ; $9EB2: AE A3 62
-    INX                      ; $9EB5: E8
-    INX                      ; $9EB6: E8
-    LDY $62A0                ; $9EB7: AC A0 62
-    LDA #$1D                 ; $9EBA: A9 1D
-    JSR $9F51                ; $9EBC: 20 51 9F
-    LDX $62A3                ; $9EBF: AE A3 62
-    INX                      ; $9EC2: E8
-    INX                      ; $9EC3: E8
-    LDY $62A0                ; $9EC4: AC A0 62
-    INY                      ; $9EC7: C8
-    LDA #$1E                 ; $9EC8: A9 1E
-    JSR $9F51                ; $9ECA: 20 51 9F
-    JMP $FF74                ; $9ECD: 4C 74 FF
+	LDX $62A3				; $9EB2: AE A3 62
+	INX					  ; $9EB5: E8
+	INX					  ; $9EB6: E8
+	LDY $62A0				; $9EB7: AC A0 62
+	LDA #$1D				 ; $9EBA: A9 1D
+	JSR $9F51				; $9EBC: 20 51 9F
+	LDX $62A3				; $9EBF: AE A3 62
+	INX					  ; $9EC2: E8
+	INX					  ; $9EC3: E8
+	LDY $62A0				; $9EC4: AC A0 62
+	INY					  ; $9EC7: C8
+	LDA #$1E				 ; $9EC8: A9 1E
+	JSR $9F51				; $9ECA: 20 51 9F
+	JMP $FF74				; $9ECD: 4C 74 FF
 
 loc_9ED0:
-    LDX $62A3                ; $9ED0: AE A3 62
-    LDY $62A0                ; $9ED3: AC A0 62
-    INY                      ; $9ED6: C8
-    INY                      ; $9ED7: C8
-    LDA #$1D                 ; $9ED8: A9 1D
-    JSR $9F51                ; $9EDA: 20 51 9F
-    LDX $62A3                ; $9EDD: AE A3 62
-    INX                      ; $9EE0: E8
-    LDY $62A0                ; $9EE1: AC A0 62
-    INY                      ; $9EE4: C8
-    INY                      ; $9EE5: C8
-    LDA #$1E                 ; $9EE6: A9 1E
-    JSR $9F51                ; $9EE8: 20 51 9F
-    JMP $FF74                ; $9EEB: 4C 74 FF
+	LDX $62A3				; $9ED0: AE A3 62
+	LDY $62A0				; $9ED3: AC A0 62
+	INY					  ; $9ED6: C8
+	INY					  ; $9ED7: C8
+	LDA #$1D				 ; $9ED8: A9 1D
+	JSR $9F51				; $9EDA: 20 51 9F
+	LDX $62A3				; $9EDD: AE A3 62
+	INX					  ; $9EE0: E8
+	LDY $62A0				; $9EE1: AC A0 62
+	INY					  ; $9EE4: C8
+	INY					  ; $9EE5: C8
+	LDA #$1E				 ; $9EE6: A9 1E
+	JSR $9F51				; $9EE8: 20 51 9F
+	JMP $FF74				; $9EEB: 4C 74 FF
 
 loc_9EEE:
-    LDA $629A                ; $9EEE: AD 9A 62
-    AND #$03                 ; $9EF1: 29 03
-    CMP #$01                 ; $9EF3: C9 01
-    BEQ $9F19                ; $9EF5: F0 22
-    CMP #$02                 ; $9EF7: C9 02
-    BEQ $9F35                ; $9EF9: F0 3A
-    LDX $62A3                ; $9EFB: AE A3 62
-    INX                      ; $9EFE: E8
-    INX                      ; $9EFF: E8
-    LDY $62A0                ; $9F00: AC A0 62
-    LDA #$0A                 ; $9F03: A9 0A
-    JSR $9F51                ; $9F05: 20 51 9F
-    LDX $62A3                ; $9F08: AE A3 62
-    INX                      ; $9F0B: E8
-    INX                      ; $9F0C: E8
-    LDY $62A0                ; $9F0D: AC A0 62
-    INY                      ; $9F10: C8
-    LDA #$0A                 ; $9F11: A9 0A
-    JSR $9F51                ; $9F13: 20 51 9F
-    JMP $FF74                ; $9F16: 4C 74 FF
+	LDA $629A				; $9EEE: AD 9A 62
+	AND #$03				 ; $9EF1: 29 03
+	CMP #$01				 ; $9EF3: C9 01
+	BEQ $9F19				; $9EF5: F0 22
+	CMP #$02				 ; $9EF7: C9 02
+	BEQ $9F35				; $9EF9: F0 3A
+	LDX $62A3				; $9EFB: AE A3 62
+	INX					  ; $9EFE: E8
+	INX					  ; $9EFF: E8
+	LDY $62A0				; $9F00: AC A0 62
+	LDA #$0A				 ; $9F03: A9 0A
+	JSR $9F51				; $9F05: 20 51 9F
+	LDX $62A3				; $9F08: AE A3 62
+	INX					  ; $9F0B: E8
+	INX					  ; $9F0C: E8
+	LDY $62A0				; $9F0D: AC A0 62
+	INY					  ; $9F10: C8
+	LDA #$0A				 ; $9F11: A9 0A
+	JSR $9F51				; $9F13: 20 51 9F
+	JMP $FF74				; $9F16: 4C 74 FF
 
 loc_9F19:
-    LDX $62A3                ; $9F19: AE A3 62
-    DEX                      ; $9F1C: CA
-    LDY $62A0                ; $9F1D: AC A0 62
-    LDA #$0A                 ; $9F20: A9 0A
-    JSR $9F51                ; $9F22: 20 51 9F
-    LDX $62A3                ; $9F25: AE A3 62
-    DEX                      ; $9F28: CA
-    LDY $62A0                ; $9F29: AC A0 62
-    INY                      ; $9F2C: C8
-    LDA #$0A                 ; $9F2D: A9 0A
-    JSR $9F51                ; $9F2F: 20 51 9F
-    JMP $FF74                ; $9F32: 4C 74 FF
+	LDX $62A3				; $9F19: AE A3 62
+	DEX					  ; $9F1C: CA
+	LDY $62A0				; $9F1D: AC A0 62
+	LDA #$0A				 ; $9F20: A9 0A
+	JSR $9F51				; $9F22: 20 51 9F
+	LDX $62A3				; $9F25: AE A3 62
+	DEX					  ; $9F28: CA
+	LDY $62A0				; $9F29: AC A0 62
+	INY					  ; $9F2C: C8
+	LDA #$0A				 ; $9F2D: A9 0A
+	JSR $9F51				; $9F2F: 20 51 9F
+	JMP $FF74				; $9F32: 4C 74 FF
 
 loc_9F35:
-    LDX $62A3                ; $9F35: AE A3 62
-    LDY $62A0                ; $9F38: AC A0 62
-    DEY                      ; $9F3B: 88
-    LDA #$0A                 ; $9F3C: A9 0A
-    JSR $9F51                ; $9F3E: 20 51 9F
-    LDX $62A3                ; $9F41: AE A3 62
-    INX                      ; $9F44: E8
-    LDY $62A0                ; $9F45: AC A0 62
-    DEY                      ; $9F48: 88
-    LDA #$0A                 ; $9F49: A9 0A
-    JSR $9F51                ; $9F4B: 20 51 9F
-    JMP $FF74                ; $9F4E: 4C 74 FF
+	LDX $62A3				; $9F35: AE A3 62
+	LDY $62A0				; $9F38: AC A0 62
+	DEY					  ; $9F3B: 88
+	LDA #$0A				 ; $9F3C: A9 0A
+	JSR $9F51				; $9F3E: 20 51 9F
+	LDX $62A3				; $9F41: AE A3 62
+	INX					  ; $9F44: E8
+	LDY $62A0				; $9F45: AC A0 62
+	DEY					  ; $9F48: 88
+	LDA #$0A				 ; $9F49: A9 0A
+	JSR $9F51				; $9F4B: 20 51 9F
+	JMP $FF74				; $9F4E: 4C 74 FF
 
 loc_9F51:
-    CPX #$02                 ; $9F51: E0 02
-    BEQ $9F5D                ; $9F53: F0 08
-    CPX #$0D                 ; $9F55: E0 0D
-    BEQ $9F5D                ; $9F57: F0 04
-    BRK                      ; $9F59: 00
-    ORA #$EF                 ; $9F5A: 09 EF
-    RTS                      ; $9F5C: 60
+	CPX #$02				 ; $9F51: E0 02
+	BEQ $9F5D				; $9F53: F0 08
+	CPX #$0D				 ; $9F55: E0 0D
+	BEQ $9F5D				; $9F57: F0 04
+	BRK					  ; $9F59: 00
+	ORA #$EF				 ; $9F5A: 09 EF
+	RTS					  ; $9F5C: 60
 
 loc_9F5D:
-    LDX $62A3                ; $9F5D: AE A3 62
-    LDY $62A0                ; $9F60: AC A0 62
-    DEY                      ; $9F63: 88
-    LDA #$0A                 ; $9F64: A9 0A
-    BRK                      ; $9F66: 00
-    ORA #$EF                 ; $9F67: 09 EF
-    LDX $62A3                ; $9F69: AE A3 62
-    INX                      ; $9F6C: E8
-    LDY $62A0                ; $9F6D: AC A0 62
-    DEY                      ; $9F70: 88
-    LDA #$0A                 ; $9F71: A9 0A
-    BRK                      ; $9F73: 00
-    ORA #$EF                 ; $9F74: 09 EF
-    JMP $FF74                ; $9F76: 4C 74 FF
+	LDX $62A3				; $9F5D: AE A3 62
+	LDY $62A0				; $9F60: AC A0 62
+	DEY					  ; $9F63: 88
+	LDA #$0A				 ; $9F64: A9 0A
+	BRK					  ; $9F66: 00
+	ORA #$EF				 ; $9F67: 09 EF
+	LDX $62A3				; $9F69: AE A3 62
+	INX					  ; $9F6C: E8
+	LDY $62A0				; $9F6D: AC A0 62
+	DEY					  ; $9F70: 88
+	LDA #$0A				 ; $9F71: A9 0A
+	BRK					  ; $9F73: 00
+	ORA #$EF				 ; $9F74: 09 EF
+	JMP $FF74				; $9F76: 4C 74 FF
 
 loc_9F79:
-    BRK                      ; $9F79: 00
-    .byte $1F             ; $9F7A - unknown opcode
-    .byte $EB             ; $9F7B - unknown opcode
-    ORA ($F0,X)              ; $9F7C: 01 F0
-    .byte $D2             ; $9F7E - unknown opcode
-    BRK                      ; $9F7F: 00
-    .byte $1F             ; $9F80 - unknown opcode
-    .byte $EB             ; $9F81 - unknown opcode
-    .byte $02             ; $9F82 - unknown opcode
-    BEQ $9F51                ; $9F83: F0 CC
-    BRK                      ; $9F85: 00
-    .byte $1F             ; $9F86 - unknown opcode
-    .byte $EB             ; $9F87 - unknown opcode
-    RTI                      ; $9F88: 40
-    BEQ $9F51                ; $9F89: F0 C6
-    DEX                      ; $9F8B: CA
-    JMP $9F51                ; $9F8C: 4C 51 9F
+	BRK					  ; $9F79: 00
+	.byte $1F			 ; $9F7A - unknown opcode
+	.byte $EB			 ; $9F7B - unknown opcode
+	ORA ($F0,X)			  ; $9F7C: 01 F0
+	.byte $D2			 ; $9F7E - unknown opcode
+	BRK					  ; $9F7F: 00
+	.byte $1F			 ; $9F80 - unknown opcode
+	.byte $EB			 ; $9F81 - unknown opcode
+	.byte $02			 ; $9F82 - unknown opcode
+	BEQ $9F51				; $9F83: F0 CC
+	BRK					  ; $9F85: 00
+	.byte $1F			 ; $9F86 - unknown opcode
+	.byte $EB			 ; $9F87 - unknown opcode
+	RTI					  ; $9F88: 40
+	BEQ $9F51				; $9F89: F0 C6
+	DEX					  ; $9F8B: CA
+	JMP $9F51				; $9F8C: 4C 51 9F
 
 loc_9F8F:
-    LDY #$17                 ; $9F8F: A0 17
-    LDX #$17                 ; $9F91: A2 17
-    BRK                      ; $9F93: 00
-    .byte $1F             ; $9F94 - unknown opcode
-    .byte $EB             ; $9F95 - unknown opcode
-    RTI                      ; $9F96: 40
-    BEQ $9FA6                ; $9F97: F0 0D
-    LDX #$2F                 ; $9F99: A2 2F
-    LDA $629A                ; $9F9B: AD 9A 62
-    AND #$03                 ; $9F9E: 29 03
-    CMP #$02                 ; $9FA0: C9 02
-    BEQ $9FA6                ; $9FA2: F0 02
-    LDX #$47                 ; $9FA4: A2 47
+	LDY #$17				 ; $9F8F: A0 17
+	LDX #$17				 ; $9F91: A2 17
+	BRK					  ; $9F93: 00
+	.byte $1F			 ; $9F94 - unknown opcode
+	.byte $EB			 ; $9F95 - unknown opcode
+	RTI					  ; $9F96: 40
+	BEQ $9FA6				; $9F97: F0 0D
+	LDX #$2F				 ; $9F99: A2 2F
+	LDA $629A				; $9F9B: AD 9A 62
+	AND #$03				 ; $9F9E: 29 03
+	CMP #$02				 ; $9FA0: C9 02
+	BEQ $9FA6				; $9FA2: F0 02
+	LDX #$47				 ; $9FA4: A2 47
 
 loc_9FA6:
-    LDA $9FB1,X              ; $9FA6: BD B1 9F
-    STA $7664,Y              ; $9FA9: 99 64 76
-    DEX                      ; $9FAC: CA
-    DEY                      ; $9FAD: 88
-    BPL $9FA6                ; $9FAE: 10 F6
-    RTS                      ; $9FB0: 60
-    .byte $F2             ; $9FB1 - unknown opcode
-    .byte $F3             ; $9FB2 - unknown opcode
-    INC $F7,X                ; $9FB3: F6 F7
-    .byte $F4             ; $9FB5 - unknown opcode
-    SBC $F7,X                ; $9FB6: F5 F7
-    SED                      ; $9FB8: F8
-    SBC $FCFA,Y              ; $9FB9: F9 FA FC
-    SBC $FBFA,X              ; $9FBC: FD FA FB
-    INC $ADFF,X              ; $9FBF: FE FF AD
-    LDX $B0AF                ; $9FC2: AE AF B0
-    LDA $AFAE                ; $9FC5: AD AE AF
-    BCS $9F77                ; $9FC8: B0 AD
-    LDX $F3F2                ; $9FCA: AE F2 F3
-    LDA $F4AE                ; $9FCD: AD AE F4
-    SBC $F6,X                ; $9FD0: F5 F6
-    .byte $F7             ; $9FD2 - unknown opcode
-    SBC $F7FA,Y              ; $9FD3: F9 FA F7
-    SED                      ; $9FD6: F8
-    .byte $FA             ; $9FD7 - unknown opcode
-    .byte $FB             ; $9FD8 - unknown opcode
-    .byte $FC             ; $9FD9 - unknown opcode
-    SBC $B0AF,X              ; $9FDA: FD AF B0
-    INC $AFFF,X              ; $9FDD: FE FF AF
-    BCS $9F8F                ; $9FE0: B0 AD
-    .byte $F2             ; $9FE2 - unknown opcode
-    .byte $AF             ; $9FE3 - unknown opcode
-    INC $F3,X                ; $9FE4: F6 F3
-    .byte $F4             ; $9FE6 - unknown opcode
-    .byte $F7             ; $9FE7 - unknown opcode
-    .byte $F7             ; $9FE8 - unknown opcode
-    LDA $AFF9                ; $9FE9: AD F9 AF
-    .byte $FC             ; $9FEC - unknown opcode
-    .byte $FA             ; $9FED - unknown opcode
-    .byte $FA             ; $9FEE - unknown opcode
-    SBC $F5FE,X              ; $9FEF: FD FE F5
-    LDX $B0F8                ; $9FF2: AE F8 B0
-    .byte $FB             ; $9FF5 - unknown opcode
-    LDX $B0FF                ; $9FF6: AE FF B0
-    BRK                      ; $9FF9: 00
-    ASL                      ; $9FFA: 0A
-    .byte $EB             ; $9FFB - unknown opcode
-    .byte $04             ; $9FFC - unknown opcode
-    BNE $A043                ; $9FFD: D0 44
-    LDA $6FC0                ; $9FFF: AD C0 6F
-    CMP #$0B                 ; $A002: C9 0B
-    BNE $A03F                ; $A004: D0 39
-    LDA $44                  ; $A006: A5 44
-    SEC                      ; $A008: 38
-    SBC #$06                 ; $A009: E9 06
-    CMP #$03                 ; $A00B: C9 03
-    BCS $A03F                ; $A00D: B0 30
-    BRK                      ; $A00F: 00
-    ROL $EB                  ; $A010: 26 EB
-    PHP                      ; $A012: 08
-    BNE $A043                ; $A013: D0 2E
-    BRK                      ; $A015: 00
-    ROL $CB                  ; $A016: 26 CB
-    PHP                      ; $A018: 08
-    JSR $B16B                ; $A019: 20 6B B1
-    BRK                      ; $A01C: 00
-    .byte $07             ; $A01D - unknown opcode
-    .byte $6F             ; $A01E - unknown opcode
-    .byte $43             ; $A01F - unknown opcode
-    BRK                      ; $A020: 00
-    .byte $C3             ; $A021 - unknown opcode
-    .byte $4B             ; $A022 - unknown opcode
-    BRK                      ; $A023: 00
-    .byte $07             ; $A024 - unknown opcode
-    .byte $6F             ; $A025 - unknown opcode
-    PHA                      ; $A026: 48
-    CMP #$01                 ; $A027: C9 01
-    BCS $A045                ; $A029: B0 1A
-    BRK                      ; $A02B: 00
-    CMP ($4B,X)              ; $A02C: C1 4B
-    JSR $D20A                ; $A02E: 20 0A D2
-    LDA #$8F                 ; $A031: A9 8F
-    JSR $A23A                ; $A033: 20 3A A2
-    LDA #$2F                 ; $A036: A9 2F
-    BRK                      ; $A038: 00
-    .byte $07             ; $A039 - unknown opcode
-    .byte $CF             ; $A03A - unknown opcode
-    LDA #$10                 ; $A03B: A9 10
-    STA $51                  ; $A03D: 85 51
+	LDA $9FB1,X			  ; $9FA6: BD B1 9F
+	STA $7664,Y			  ; $9FA9: 99 64 76
+	DEX					  ; $9FAC: CA
+	DEY					  ; $9FAD: 88
+	BPL $9FA6				; $9FAE: 10 F6
+	RTS					  ; $9FB0: 60
+	.byte $F2			 ; $9FB1 - unknown opcode
+	.byte $F3			 ; $9FB2 - unknown opcode
+	INC $F7,X				; $9FB3: F6 F7
+	.byte $F4			 ; $9FB5 - unknown opcode
+	SBC $F7,X				; $9FB6: F5 F7
+	SED					  ; $9FB8: F8
+	SBC $FCFA,Y			  ; $9FB9: F9 FA FC
+	SBC $FBFA,X			  ; $9FBC: FD FA FB
+	INC $ADFF,X			  ; $9FBF: FE FF AD
+	LDX $B0AF				; $9FC2: AE AF B0
+	LDA $AFAE				; $9FC5: AD AE AF
+	BCS $9F77				; $9FC8: B0 AD
+	LDX $F3F2				; $9FCA: AE F2 F3
+	LDA $F4AE				; $9FCD: AD AE F4
+	SBC $F6,X				; $9FD0: F5 F6
+	.byte $F7			 ; $9FD2 - unknown opcode
+	SBC $F7FA,Y			  ; $9FD3: F9 FA F7
+	SED					  ; $9FD6: F8
+	.byte $FA			 ; $9FD7 - unknown opcode
+	.byte $FB			 ; $9FD8 - unknown opcode
+	.byte $FC			 ; $9FD9 - unknown opcode
+	SBC $B0AF,X			  ; $9FDA: FD AF B0
+	INC $AFFF,X			  ; $9FDD: FE FF AF
+	BCS $9F8F				; $9FE0: B0 AD
+	.byte $F2			 ; $9FE2 - unknown opcode
+	.byte $AF			 ; $9FE3 - unknown opcode
+	INC $F3,X				; $9FE4: F6 F3
+	.byte $F4			 ; $9FE6 - unknown opcode
+	.byte $F7			 ; $9FE7 - unknown opcode
+	.byte $F7			 ; $9FE8 - unknown opcode
+	LDA $AFF9				; $9FE9: AD F9 AF
+	.byte $FC			 ; $9FEC - unknown opcode
+	.byte $FA			 ; $9FED - unknown opcode
+	.byte $FA			 ; $9FEE - unknown opcode
+	SBC $F5FE,X			  ; $9FEF: FD FE F5
+	LDX $B0F8				; $9FF2: AE F8 B0
+	.byte $FB			 ; $9FF5 - unknown opcode
+	LDX $B0FF				; $9FF6: AE FF B0
+	BRK					  ; $9FF9: 00
+	ASL					  ; $9FFA: 0A
+	.byte $EB			 ; $9FFB - unknown opcode
+	.byte $04			 ; $9FFC - unknown opcode
+	BNE $A043				; $9FFD: D0 44
+	LDA $6FC0				; $9FFF: AD C0 6F
+	CMP #$0B				 ; $A002: C9 0B
+	BNE $A03F				; $A004: D0 39
+	LDA $44				  ; $A006: A5 44
+	SEC					  ; $A008: 38
+	SBC #$06				 ; $A009: E9 06
+	CMP #$03				 ; $A00B: C9 03
+	BCS $A03F				; $A00D: B0 30
+	BRK					  ; $A00F: 00
+	ROL $EB				  ; $A010: 26 EB
+	PHP					  ; $A012: 08
+	BNE $A043				; $A013: D0 2E
+	BRK					  ; $A015: 00
+	ROL $CB				  ; $A016: 26 CB
+	PHP					  ; $A018: 08
+	JSR $B16B				; $A019: 20 6B B1
+	BRK					  ; $A01C: 00
+	.byte $07			 ; $A01D - unknown opcode
+	.byte $6F			 ; $A01E - unknown opcode
+	.byte $43			 ; $A01F - unknown opcode
+	BRK					  ; $A020: 00
+	.byte $C3			 ; $A021 - unknown opcode
+	.byte $4B			 ; $A022 - unknown opcode
+	BRK					  ; $A023: 00
+	.byte $07			 ; $A024 - unknown opcode
+	.byte $6F			 ; $A025 - unknown opcode
+	PHA					  ; $A026: 48
+	CMP #$01				 ; $A027: C9 01
+	BCS $A045				; $A029: B0 1A
+	BRK					  ; $A02B: 00
+	CMP ($4B,X)			  ; $A02C: C1 4B
+	JSR $D20A				; $A02E: 20 0A D2
+	LDA #$8F				 ; $A031: A9 8F
+	JSR $A23A				; $A033: 20 3A A2
+	LDA #$2F				 ; $A036: A9 2F
+	BRK					  ; $A038: 00
+	.byte $07			 ; $A039 - unknown opcode
+	.byte $CF			 ; $A03A - unknown opcode
+	LDA #$10				 ; $A03B: A9 10
+	STA $51				  ; $A03D: 85 51
 
 loc_A03F:
-    BRK                      ; $A03F: 00
-    ROL $DB                  ; $A040: 26 DB
-    .byte $F7             ; $A042 - unknown opcode
+	BRK					  ; $A03F: 00
+	ROL $DB				  ; $A040: 26 DB
+	.byte $F7			 ; $A042 - unknown opcode
 
 loc_A043:
-    CLC                      ; $A043: 18
-    RTS                      ; $A044: 60
+	CLC					  ; $A043: 18
+	RTS					  ; $A044: 60
 
 loc_A045:
-    JSR $D1F3                ; $A045: 20 F3 D1
-    LDA #$10                 ; $A048: A9 10
-    STA $51                  ; $A04A: 85 51
-    CLC                      ; $A04C: 18
-    RTS                      ; $A04D: 60
-    BRK                      ; $A04E: 00
-    ASL                      ; $A04F: 0A
-    .byte $CB             ; $A050 - unknown opcode
-    .byte $04             ; $A051 - unknown opcode
-    LDA #$30                 ; $A052: A9 30
-    BRK                      ; $A054: 00
-    .byte $07             ; $A055 - unknown opcode
-    .byte $CF             ; $A056 - unknown opcode
-    LDA #$06                 ; $A057: A9 06
-    STA $51                  ; $A059: 85 51
-    CLC                      ; $A05B: 18
-    RTS                      ; $A05C: 60
-    LDA $51                  ; $A05D: A5 51
-    PHA                      ; $A05F: 48
-    BRK                      ; $A060: 00
-    .byte $07             ; $A061 - unknown opcode
-    .byte $6F             ; $A062 - unknown opcode
-    .byte $43             ; $A063 - unknown opcode
-    BRK                      ; $A064: 00
-    ROR $3B                  ; $A065: 66 3B
-    LDA #$76                 ; $A067: A9 76
-    BRK                      ; $A069: 00
-    ROR $73                  ; $A06A: 66 73
-    STA $F9                  ; $A06C: 85 F9
-    LDA #$71                 ; $A06E: A9 71
-    STA $FA                  ; $A070: 85 FA
-    BRK                      ; $A072: 00
-    LDY #$2B                 ; $A073: A0 2B
-    BRK                      ; $A075: 00
-    .byte $2B             ; $A076 - unknown opcode
-    .byte $FB             ; $A077 - unknown opcode
-    BRK                      ; $A078: 00
-    .byte $07             ; $A079 - unknown opcode
-    .byte $9F             ; $A07A - unknown opcode
-    BRK                      ; $A07B: 00
-    ORA #$9F                 ; $A07C: 09 9F
-    JSR $A7A4                ; $A07E: 20 A4 A7
-    BCC $A089                ; $A081: 90 06
-    BRK                      ; $A083: 00
-    STX $4C4B                ; $A084: 8E 4B 4C
-    STY $00A0                ; $A087: 8C A0 00
-    .byte $27             ; $A08A - unknown opcode
-    .byte $4B             ; $A08B - unknown opcode
-    JSR $D214                ; $A08C: 20 14 D2
-    JSR $D1F3                ; $A08F: 20 F3 D1
-    PLA                      ; $A092: 68
-    STA $51                  ; $A093: 85 51
-    SEC                      ; $A095: 38
-    RTS                      ; $A096: 60
-    LDA #$8F                 ; $A097: A9 8F
-    JSR $A23A                ; $A099: 20 3A A2
-    LDX #$0F                 ; $A09C: A2 0F
-    LDY #$07                 ; $A09E: A0 07
-    JSR $A0A5                ; $A0A0: 20 A5 A0
-    LDY #$08                 ; $A0A3: A0 08
+	JSR $D1F3				; $A045: 20 F3 D1
+	LDA #$10				 ; $A048: A9 10
+	STA $51				  ; $A04A: 85 51
+	CLC					  ; $A04C: 18
+	RTS					  ; $A04D: 60
+	BRK					  ; $A04E: 00
+	ASL					  ; $A04F: 0A
+	.byte $CB			 ; $A050 - unknown opcode
+	.byte $04			 ; $A051 - unknown opcode
+	LDA #$30				 ; $A052: A9 30
+	BRK					  ; $A054: 00
+	.byte $07			 ; $A055 - unknown opcode
+	.byte $CF			 ; $A056 - unknown opcode
+	LDA #$06				 ; $A057: A9 06
+	STA $51				  ; $A059: 85 51
+	CLC					  ; $A05B: 18
+	RTS					  ; $A05C: 60
+	LDA $51				  ; $A05D: A5 51
+	PHA					  ; $A05F: 48
+	BRK					  ; $A060: 00
+	.byte $07			 ; $A061 - unknown opcode
+	.byte $6F			 ; $A062 - unknown opcode
+	.byte $43			 ; $A063 - unknown opcode
+	BRK					  ; $A064: 00
+	ROR $3B				  ; $A065: 66 3B
+	LDA #$76				 ; $A067: A9 76
+	BRK					  ; $A069: 00
+	ROR $73				  ; $A06A: 66 73
+	STA $F9				  ; $A06C: 85 F9
+	LDA #$71				 ; $A06E: A9 71
+	STA $FA				  ; $A070: 85 FA
+	BRK					  ; $A072: 00
+	LDY #$2B				 ; $A073: A0 2B
+	BRK					  ; $A075: 00
+	.byte $2B			 ; $A076 - unknown opcode
+	.byte $FB			 ; $A077 - unknown opcode
+	BRK					  ; $A078: 00
+	.byte $07			 ; $A079 - unknown opcode
+	.byte $9F			 ; $A07A - unknown opcode
+	BRK					  ; $A07B: 00
+	ORA #$9F				 ; $A07C: 09 9F
+	JSR $A7A4				; $A07E: 20 A4 A7
+	BCC $A089				; $A081: 90 06
+	BRK					  ; $A083: 00
+	STX $4C4B				; $A084: 8E 4B 4C
+	STY $00A0				; $A087: 8C A0 00
+	.byte $27			 ; $A08A - unknown opcode
+	.byte $4B			 ; $A08B - unknown opcode
+	JSR $D214				; $A08C: 20 14 D2
+	JSR $D1F3				; $A08F: 20 F3 D1
+	PLA					  ; $A092: 68
+	STA $51				  ; $A093: 85 51
+	SEC					  ; $A095: 38
+	RTS					  ; $A096: 60
+	LDA #$8F				 ; $A097: A9 8F
+	JSR $A23A				; $A099: 20 3A A2
+	LDX #$0F				 ; $A09C: A2 0F
+	LDY #$07				 ; $A09E: A0 07
+	JSR $A0A5				; $A0A0: 20 A5 A0
+	LDY #$08				 ; $A0A3: A0 08
 
 loc_A0A5:
-    LDA $7060,X              ; $A0A5: BD 60 70
-    STA $7060,Y              ; $A0A8: 99 60 70
-    LDA $7080,X              ; $A0AB: BD 80 70
-    STA $7080,Y              ; $A0AE: 99 80 70
-    SEC                      ; $A0B1: 38
-    RTS                      ; $A0B2: 60
-    BRK                      ; $A0B3: 00
-    .byte $07             ; $A0B4 - unknown opcode
-    .byte $6F             ; $A0B5 - unknown opcode
-    .byte $43             ; $A0B6 - unknown opcode
-    BRK                      ; $A0B7: 00
-    CPY $4B                  ; $A0B8: C4 4B
-    JSR $D218                ; $A0BA: 20 18 D2
-    LDA #$11                 ; $A0BD: A9 11
-    BRK                      ; $A0BF: 00
-    .byte $07             ; $A0C0 - unknown opcode
-    .byte $CF             ; $A0C1 - unknown opcode
-    LDA #$1E                 ; $A0C2: A9 1E
-    STA $51                  ; $A0C4: 85 51
-    CLC                      ; $A0C6: 18
-    RTS                      ; $A0C7: 60
-    LDA #$00                 ; $A0C8: A9 00
-    STA $54                  ; $A0CA: 85 54
+	LDA $7060,X			  ; $A0A5: BD 60 70
+	STA $7060,Y			  ; $A0A8: 99 60 70
+	LDA $7080,X			  ; $A0AB: BD 80 70
+	STA $7080,Y			  ; $A0AE: 99 80 70
+	SEC					  ; $A0B1: 38
+	RTS					  ; $A0B2: 60
+	BRK					  ; $A0B3: 00
+	.byte $07			 ; $A0B4 - unknown opcode
+	.byte $6F			 ; $A0B5 - unknown opcode
+	.byte $43			 ; $A0B6 - unknown opcode
+	BRK					  ; $A0B7: 00
+	CPY $4B				  ; $A0B8: C4 4B
+	JSR $D218				; $A0BA: 20 18 D2
+	LDA #$11				 ; $A0BD: A9 11
+	BRK					  ; $A0BF: 00
+	.byte $07			 ; $A0C0 - unknown opcode
+	.byte $CF			 ; $A0C1 - unknown opcode
+	LDA #$1E				 ; $A0C2: A9 1E
+	STA $51				  ; $A0C4: 85 51
+	CLC					  ; $A0C6: 18
+	RTS					  ; $A0C7: 60
+	LDA #$00				 ; $A0C8: A9 00
+	STA $54				  ; $A0CA: 85 54
 
 loc_A0CC:
-    LDA $54                  ; $A0CC: A5 54
-    ASL                      ; $A0CE: 0A
-    TAX                      ; $A0CF: AA
-    LDY $A113,X              ; $A0D0: BC 13 A1
-    LDA $A112,X              ; $A0D3: BD 12 A1
-    TAX                      ; $A0D6: AA
-    LDA #$10                 ; $A0D7: A9 10
-    BRK                      ; $A0D9: 00
-    ORA #$EF                 ; $A0DA: 09 EF
-    LDX #$0A                 ; $A0DC: A2 0A
-    JSR $C90C                ; $A0DE: 20 0C C9
-    INC $54                  ; $A0E1: E6 54
-    LDA $54                  ; $A0E3: A5 54
-    CMP #$09                 ; $A0E5: C9 09
-    BCC $A0CC                ; $A0E7: 90 E3
-    LDA #$80                 ; $A0E9: A9 80
-    STA $0300                ; $A0EB: 8D 00 03
-    LDA #$40                 ; $A0EE: A9 40
-    STA $0301                ; $A0F0: 8D 01 03
-    LDA #$00                 ; $A0F3: A9 00
-    STA $0302                ; $A0F5: 8D 02 03
-    LDX #$3F                 ; $A0F8: A2 3F
+	LDA $54				  ; $A0CC: A5 54
+	ASL					  ; $A0CE: 0A
+	TAX					  ; $A0CF: AA
+	LDY $A113,X			  ; $A0D0: BC 13 A1
+	LDA $A112,X			  ; $A0D3: BD 12 A1
+	TAX					  ; $A0D6: AA
+	LDA #$10				 ; $A0D7: A9 10
+	BRK					  ; $A0D9: 00
+	ORA #$EF				 ; $A0DA: 09 EF
+	LDX #$0A				 ; $A0DC: A2 0A
+	JSR $C90C				; $A0DE: 20 0C C9
+	INC $54				  ; $A0E1: E6 54
+	LDA $54				  ; $A0E3: A5 54
+	CMP #$09				 ; $A0E5: C9 09
+	BCC $A0CC				; $A0E7: 90 E3
+	LDA #$80				 ; $A0E9: A9 80
+	STA $0300				; $A0EB: 8D 00 03
+	LDA #$40				 ; $A0EE: A9 40
+	STA $0301				; $A0F0: 8D 01 03
+	LDA #$00				 ; $A0F3: A9 00
+	STA $0302				; $A0F5: 8D 02 03
+	LDX #$3F				 ; $A0F8: A2 3F
 
 loc_A0FA:
-    LDA $A124,X              ; $A0FA: BD 24 A1
-    STA $0303,X              ; $A0FD: 9D 03 03
-    DEX                      ; $A100: CA
-    BPL $A0FA                ; $A101: 10 F7
-    INC $050B                ; $A103: EE 0B 05
-    JSR $C62D                ; $A106: 20 2D C6
-    LDX #$00                 ; $A109: A2 00
-    LDA #$11                 ; $A10B: A9 11
-    STA $7046,X              ; $A10D: 9D 46 70
-    SEC                      ; $A110: 38
-    RTS                      ; $A111: 60
-    .byte $0B             ; $A112 - unknown opcode
-    ASL $0B0E                ; $A113: 0E 0E 0B
-    .byte $0B             ; $A116 - unknown opcode
-    .byte $0C             ; $A117 - unknown opcode
-    ASL $0C0D                ; $A118: 0E 0D 0C
-    ASL $0B0D                ; $A11B: 0E 0D 0B
-    .byte $0B             ; $A11E - unknown opcode
-    ORA $0C0E                ; $A11F: 0D 0E 0C
-    ORA $070E                ; $A122: 0D 0E 07
-    .byte $0F             ; $A125 - unknown opcode
-    .byte $1F             ; $A126 - unknown opcode
-    .byte $9F             ; $A127 - unknown opcode
-    .byte $5F             ; $A128 - unknown opcode
-    .byte $7F             ; $A129 - unknown opcode
-    .byte $3F             ; $A12A - unknown opcode
-    .byte $3F             ; $A12B - unknown opcode
-    .byte $07             ; $A12C - unknown opcode
-    .byte $0F             ; $A12D - unknown opcode
-    .byte $1F             ; $A12E - unknown opcode
-    ORA $1E1C,X              ; $A12F: 1D 1C 1E
-    .byte $1F             ; $A132 - unknown opcode
-    ROL $ECD8,X              ; $A133: 3E D8 EC
-    .byte $F4             ; $A136 - unknown opcode
-    INC $F6,X                ; $A137: F6 F6
-    LDX $ECB6                ; $A139: AE B6 EC
-    SED                      ; $A13C: F8
-    .byte $9C             ; $A13D - unknown opcode
-    .byte $7C             ; $A13E - unknown opcode
-    INC $5EBE,X              ; $A13F: FE BE 5E
-    LSR $791C                ; $A142: 4E 1C 79
-    BVS $A178                ; $A145: 70 31
-    ORA $0100                ; $A147: 0D 00 01
-    BRK                      ; $A14A: 00
-    .byte $07             ; $A14B - unknown opcode
-    ROR $3E7F,X              ; $A14C: 7E 7F 3E
-    .byte $02             ; $A14F - unknown opcode
-    .byte $0F             ; $A150 - unknown opcode
-    ASL $381F,X              ; $A151: 1E 1F 38
-    .byte $80             ; $A154 - unknown opcode
-    CLI                      ; $A155: 58
-    SEI                      ; $A156: 78
-    .byte $74             ; $A157 - unknown opcode
-    RTI                      ; $A158: 40
-    .byte $80             ; $A159 - unknown opcode
-    .byte $1C             ; $A15A - unknown opcode
-    LDY $A67C,X              ; $A15B: BC 7C A6
-    STX $88                  ; $A15E: 86 88
-    LDX $E07E,Y              ; $A160: BE 7E E0
-    .byte $7C             ; $A163 - unknown opcode
-    LDA $45                  ; $A164: A5 45
-    CMP #$13                 ; $A166: C9 13
-    BNE $A18A                ; $A168: D0 20
-    DEC $45                  ; $A16A: C6 45
-    DEC $6F80                ; $A16C: CE 80 6F
-    LDA #$00                 ; $A16F: A9 00
-    STA $3E                  ; $A171: 85 3E
-    JSR $A179                ; $A173: 20 79 A1
-    JSR $C007                ; $A176: 20 07 C0
+	LDA $A124,X			  ; $A0FA: BD 24 A1
+	STA $0303,X			  ; $A0FD: 9D 03 03
+	DEX					  ; $A100: CA
+	BPL $A0FA				; $A101: 10 F7
+	INC $050B				; $A103: EE 0B 05
+	JSR $C62D				; $A106: 20 2D C6
+	LDX #$00				 ; $A109: A2 00
+	LDA #$11				 ; $A10B: A9 11
+	STA $7046,X			  ; $A10D: 9D 46 70
+	SEC					  ; $A110: 38
+	RTS					  ; $A111: 60
+	.byte $0B			 ; $A112 - unknown opcode
+	ASL $0B0E				; $A113: 0E 0E 0B
+	.byte $0B			 ; $A116 - unknown opcode
+	.byte $0C			 ; $A117 - unknown opcode
+	ASL $0C0D				; $A118: 0E 0D 0C
+	ASL $0B0D				; $A11B: 0E 0D 0B
+	.byte $0B			 ; $A11E - unknown opcode
+	ORA $0C0E				; $A11F: 0D 0E 0C
+	ORA $070E				; $A122: 0D 0E 07
+	.byte $0F			 ; $A125 - unknown opcode
+	.byte $1F			 ; $A126 - unknown opcode
+	.byte $9F			 ; $A127 - unknown opcode
+	.byte $5F			 ; $A128 - unknown opcode
+	.byte $7F			 ; $A129 - unknown opcode
+	.byte $3F			 ; $A12A - unknown opcode
+	.byte $3F			 ; $A12B - unknown opcode
+	.byte $07			 ; $A12C - unknown opcode
+	.byte $0F			 ; $A12D - unknown opcode
+	.byte $1F			 ; $A12E - unknown opcode
+	ORA $1E1C,X			  ; $A12F: 1D 1C 1E
+	.byte $1F			 ; $A132 - unknown opcode
+	ROL $ECD8,X			  ; $A133: 3E D8 EC
+	.byte $F4			 ; $A136 - unknown opcode
+	INC $F6,X				; $A137: F6 F6
+	LDX $ECB6				; $A139: AE B6 EC
+	SED					  ; $A13C: F8
+	.byte $9C			 ; $A13D - unknown opcode
+	.byte $7C			 ; $A13E - unknown opcode
+	INC $5EBE,X			  ; $A13F: FE BE 5E
+	LSR $791C				; $A142: 4E 1C 79
+	BVS $A178				; $A145: 70 31
+	ORA $0100				; $A147: 0D 00 01
+	BRK					  ; $A14A: 00
+	.byte $07			 ; $A14B - unknown opcode
+	ROR $3E7F,X			  ; $A14C: 7E 7F 3E
+	.byte $02			 ; $A14F - unknown opcode
+	.byte $0F			 ; $A150 - unknown opcode
+	ASL $381F,X			  ; $A151: 1E 1F 38
+	.byte $80			 ; $A154 - unknown opcode
+	CLI					  ; $A155: 58
+	SEI					  ; $A156: 78
+	.byte $74			 ; $A157 - unknown opcode
+	RTI					  ; $A158: 40
+	.byte $80			 ; $A159 - unknown opcode
+	.byte $1C			 ; $A15A - unknown opcode
+	LDY $A67C,X			  ; $A15B: BC 7C A6
+	STX $88				  ; $A15E: 86 88
+	LDX $E07E,Y			  ; $A160: BE 7E E0
+	.byte $7C			 ; $A163 - unknown opcode
+	LDA $45				  ; $A164: A5 45
+	CMP #$13				 ; $A166: C9 13
+	BNE $A18A				; $A168: D0 20
+	DEC $45				  ; $A16A: C6 45
+	DEC $6F80				; $A16C: CE 80 6F
+	LDA #$00				 ; $A16F: A9 00
+	STA $3E				  ; $A171: 85 3E
+	JSR $A179				; $A173: 20 79 A1
+	JSR $C007				; $A176: 20 07 C0
 
 loc_A179:
-    LDX #$02                 ; $A179: A2 02
+	LDX #$02				 ; $A179: A2 02
 
 loc_A17B:
-    LDA $7001,X              ; $A17B: BD 01 70
-    EOR #$02                 ; $A17E: 49 02
-    AND #$7F                 ; $A180: 29 7F
-    STA $7001,X              ; $A182: 9D 01 70
-    DEX                      ; $A185: CA
-    BPL $A17B                ; $A186: 10 F3
-    SEC                      ; $A188: 38
-    RTS                      ; $A189: 60
+	LDA $7001,X			  ; $A17B: BD 01 70
+	EOR #$02				 ; $A17E: 49 02
+	AND #$7F				 ; $A180: 29 7F
+	STA $7001,X			  ; $A182: 9D 01 70
+	DEX					  ; $A185: CA
+	BPL $A17B				; $A186: 10 F3
+	SEC					  ; $A188: 38
+	RTS					  ; $A189: 60
 
 loc_A18A:
-    CLC                      ; $A18A: 18
-    RTS                      ; $A18B: 60
-    JSR $C891                ; $A18C: 20 91 C8
-    AND #$07                 ; $A18F: 29 07
-    LDX $51                  ; $A191: A6 51
-    STA $7180,X              ; $A193: 9D 80 71
-    INC $7180,X              ; $A196: FE 80 71
-    INC $7180,X              ; $A199: FE 80 71
-    LDA $7080,X              ; $A19C: BD 80 70
-    CLC                      ; $A19F: 18
-    ADC #$02                 ; $A1A0: 69 02
-    STA $70C0,X              ; $A1A2: 9D C0 70
-    LDA $7060,X              ; $A1A5: BD 60 70
-    ADC #$00                 ; $A1A8: 69 00
-    STA $70A0,X              ; $A1AA: 9D A0 70
-    SEC                      ; $A1AD: 38
-    RTS                      ; $A1AE: 60
+	CLC					  ; $A18A: 18
+	RTS					  ; $A18B: 60
+	JSR $C891				; $A18C: 20 91 C8
+	AND #$07				 ; $A18F: 29 07
+	LDX $51				  ; $A191: A6 51
+	STA $7180,X			  ; $A193: 9D 80 71
+	INC $7180,X			  ; $A196: FE 80 71
+	INC $7180,X			  ; $A199: FE 80 71
+	LDA $7080,X			  ; $A19C: BD 80 70
+	CLC					  ; $A19F: 18
+	ADC #$02				 ; $A1A0: 69 02
+	STA $70C0,X			  ; $A1A2: 9D C0 70
+	LDA $7060,X			  ; $A1A5: BD 60 70
+	ADC #$00				 ; $A1A8: 69 00
+	STA $70A0,X			  ; $A1AA: 9D A0 70
+	SEC					  ; $A1AD: 38
+	RTS					  ; $A1AE: 60
 
 loc_A1AF:
-    STA $00                  ; $A1AF: 85 00
-    LDA $6F66,X              ; $A1B1: BD 66 6F
-    STA $6F61,Y              ; $A1B4: 99 61 6F
-    LDA $6F86,X              ; $A1B7: BD 86 6F
-    STA $6F81,Y              ; $A1BA: 99 81 6F
-    LDA $6FA6,X              ; $A1BD: BD A6 6F
-    STA $6FA1,Y              ; $A1C0: 99 A1 6F
-    LDA $6FC6,X              ; $A1C3: BD C6 6F
-    STA $6FC1,Y              ; $A1C6: 99 C1 6F
-    LDA $6FE6,X              ; $A1C9: BD E6 6F
-    STA $6FE1,Y              ; $A1CC: 99 E1 6F
-    LDA #$00                 ; $A1CF: A9 00
-    STA $7021,Y              ; $A1D1: 99 21 70
-    LDA #$81                 ; $A1D4: A9 81
-    STA $6F66,X              ; $A1D6: 9D 66 6F
-    STA $6F86,X              ; $A1D9: 9D 86 6F
-    STA $6FA6,X              ; $A1DC: 9D A6 6F
-    STA $6FC6,X              ; $A1DF: 9D C6 6F
-    LDA $7001,Y              ; $A1E2: B9 01 70
-    AND #$BC                 ; $A1E5: 29 BC
-    ORA #$40                 ; $A1E7: 09 40
-    ORA $00                  ; $A1E9: 05 00
-    STA $7001,Y              ; $A1EB: 99 01 70
-    INY                      ; $A1EE: C8
-    SEC                      ; $A1EF: 38
-    RTS                      ; $A1F0: 60
-    .byte $03             ; $A1F1 - unknown opcode
-    .byte $02             ; $A1F2 - unknown opcode
-    .byte $03             ; $A1F3 - unknown opcode
-    .byte $02             ; $A1F4 - unknown opcode
-    LDA $627E                ; $A1F5: AD 7E 62
-    ASL                      ; $A1F8: 0A
-    ASL                      ; $A1F9: 0A
-    ASL                      ; $A1FA: 0A
-    ASL                      ; $A1FB: 0A
-    RTS                      ; $A1FC: 60
-    LDA $627E                ; $A1FD: AD 7E 62
-    EOR #$80                 ; $A200: 49 80
-    ASL                      ; $A202: 0A
-    RTS                      ; $A203: 60
-    LDX #$02                 ; $A204: A2 02
+	STA $00				  ; $A1AF: 85 00
+	LDA $6F66,X			  ; $A1B1: BD 66 6F
+	STA $6F61,Y			  ; $A1B4: 99 61 6F
+	LDA $6F86,X			  ; $A1B7: BD 86 6F
+	STA $6F81,Y			  ; $A1BA: 99 81 6F
+	LDA $6FA6,X			  ; $A1BD: BD A6 6F
+	STA $6FA1,Y			  ; $A1C0: 99 A1 6F
+	LDA $6FC6,X			  ; $A1C3: BD C6 6F
+	STA $6FC1,Y			  ; $A1C6: 99 C1 6F
+	LDA $6FE6,X			  ; $A1C9: BD E6 6F
+	STA $6FE1,Y			  ; $A1CC: 99 E1 6F
+	LDA #$00				 ; $A1CF: A9 00
+	STA $7021,Y			  ; $A1D1: 99 21 70
+	LDA #$81				 ; $A1D4: A9 81
+	STA $6F66,X			  ; $A1D6: 9D 66 6F
+	STA $6F86,X			  ; $A1D9: 9D 86 6F
+	STA $6FA6,X			  ; $A1DC: 9D A6 6F
+	STA $6FC6,X			  ; $A1DF: 9D C6 6F
+	LDA $7001,Y			  ; $A1E2: B9 01 70
+	AND #$BC				 ; $A1E5: 29 BC
+	ORA #$40				 ; $A1E7: 09 40
+	ORA $00				  ; $A1E9: 05 00
+	STA $7001,Y			  ; $A1EB: 99 01 70
+	INY					  ; $A1EE: C8
+	SEC					  ; $A1EF: 38
+	RTS					  ; $A1F0: 60
+	.byte $03			 ; $A1F1 - unknown opcode
+	.byte $02			 ; $A1F2 - unknown opcode
+	.byte $03			 ; $A1F3 - unknown opcode
+	.byte $02			 ; $A1F4 - unknown opcode
+	LDA $627E				; $A1F5: AD 7E 62
+	ASL					  ; $A1F8: 0A
+	ASL					  ; $A1F9: 0A
+	ASL					  ; $A1FA: 0A
+	ASL					  ; $A1FB: 0A
+	RTS					  ; $A1FC: 60
+	LDA $627E				; $A1FD: AD 7E 62
+	EOR #$80				 ; $A200: 49 80
+	ASL					  ; $A202: 0A
+	RTS					  ; $A203: 60
+	LDX #$02				 ; $A204: A2 02
 
 loc_A206:
-    LDA $7000,X              ; $A206: BD 00 70
-    AND #$FC                 ; $A209: 29 FC
-    STA $7000,X              ; $A20B: 9D 00 70
-    DEX                      ; $A20E: CA
-    BPL $A206                ; $A20F: 10 F5
-    SEC                      ; $A211: 38
-    RTS                      ; $A212: 60
-    LDX #$0B                 ; $A213: A2 0B
-    JSR $A21C                ; $A215: 20 1C A2
-    BCS $A24B                ; $A218: B0 31
-    LDX #$0A                 ; $A21A: A2 0A
+	LDA $7000,X			  ; $A206: BD 00 70
+	AND #$FC				 ; $A209: 29 FC
+	STA $7000,X			  ; $A20B: 9D 00 70
+	DEX					  ; $A20E: CA
+	BPL $A206				; $A20F: 10 F5
+	SEC					  ; $A211: 38
+	RTS					  ; $A212: 60
+	LDX #$0B				 ; $A213: A2 0B
+	JSR $A21C				; $A215: 20 1C A2
+	BCS $A24B				; $A218: B0 31
+	LDX #$0A				 ; $A21A: A2 0A
 
 loc_A21C:
-    TXA                      ; $A21C: 8A
-    PHA                      ; $A21D: 48
-    JSR $98BD                ; $A21E: 20 BD 98
-    PLA                      ; $A221: 68
-    TAX                      ; $A222: AA
-    BCC $A24B                ; $A223: 90 26
-    LDY #$07                 ; $A225: A0 07
-    LDA $7080,Y              ; $A227: B9 80 70
-    CLC                      ; $A22A: 18
-    ADC #$01                 ; $A22B: 69 01
-    STA $7080,X              ; $A22D: 9D 80 70
-    LDA $7060,Y              ; $A230: B9 60 70
-    ADC #$00                 ; $A233: 69 00
-    STA $7060,X              ; $A235: 9D 60 70
-    LDA #$8F                 ; $A238: A9 8F
+	TXA					  ; $A21C: 8A
+	PHA					  ; $A21D: 48
+	JSR $98BD				; $A21E: 20 BD 98
+	PLA					  ; $A221: 68
+	TAX					  ; $A222: AA
+	BCC $A24B				; $A223: 90 26
+	LDY #$07				 ; $A225: A0 07
+	LDA $7080,Y			  ; $A227: B9 80 70
+	CLC					  ; $A22A: 18
+	ADC #$01				 ; $A22B: 69 01
+	STA $7080,X			  ; $A22D: 9D 80 70
+	LDA $7060,Y			  ; $A230: B9 60 70
+	ADC #$00				 ; $A233: 69 00
+	STA $7060,X			  ; $A235: 9D 60 70
+	LDA #$8F				 ; $A238: A9 8F
 
 loc_A23A:
-    STA $0530                ; $A23A: 8D 30 05
-    LDA #$01                 ; $A23D: A9 01
-    STA $0531                ; $A23F: 8D 31 05
-    LDA #$00                 ; $A242: A9 00
-    STA $0533                ; $A244: 8D 33 05
-    STA $0532                ; $A247: 8D 32 05
-    SEC                      ; $A24A: 38
+	STA $0530				; $A23A: 8D 30 05
+	LDA #$01				 ; $A23D: A9 01
+	STA $0531				; $A23F: 8D 31 05
+	LDA #$00				 ; $A242: A9 00
+	STA $0533				; $A244: 8D 33 05
+	STA $0532				; $A247: 8D 32 05
+	SEC					  ; $A24A: 38
 
 loc_A24B:
-    RTS                      ; $A24B: 60
-    JSR $995E                ; $A24C: 20 5E 99
-    BRK                      ; $A24F: 00
-    LSR                      ; $A250: 4A
-    .byte $3B             ; $A251 - unknown opcode
-    JSR $D20A                ; $A252: 20 0A D2
-    LDA #$00                 ; $A255: A9 00
-    STA $0530                ; $A257: 8D 30 05
-    BRK                      ; $A25A: 00
-    .byte $82             ; $A25B - unknown opcode
-    .byte $FB             ; $A25C - unknown opcode
-    JSR $C5C5                ; $A25D: 20 C5 C5
-    LDA #$01                 ; $A260: A9 01
-    STA $64                  ; $A262: 85 64
-    LDA #$19                 ; $A264: A9 19
-    STA $44                  ; $A266: 85 44
-    LDA #$02                 ; $A268: A9 02
-    STA $45                  ; $A26A: 85 45
-    LDA #$83                 ; $A26C: A9 83
-    BRK                      ; $A26E: 00
-    AND ($EF),Y              ; $A26F: 31 EF
-    LDA #$06                 ; $A271: A9 06
-    STA $51                  ; $A273: 85 51
-    JSR $C5BF                ; $A275: 20 BF C5
-    CLC                      ; $A278: 18
-    RTS                      ; $A279: 60
-    LDX #$00                 ; $A27A: A2 00
+	RTS					  ; $A24B: 60
+	JSR $995E				; $A24C: 20 5E 99
+	BRK					  ; $A24F: 00
+	LSR					  ; $A250: 4A
+	.byte $3B			 ; $A251 - unknown opcode
+	JSR $D20A				; $A252: 20 0A D2
+	LDA #$00				 ; $A255: A9 00
+	STA $0530				; $A257: 8D 30 05
+	BRK					  ; $A25A: 00
+	.byte $82			 ; $A25B - unknown opcode
+	.byte $FB			 ; $A25C - unknown opcode
+	JSR $C5C5				; $A25D: 20 C5 C5
+	LDA #$01				 ; $A260: A9 01
+	STA $64				  ; $A262: 85 64
+	LDA #$19				 ; $A264: A9 19
+	STA $44				  ; $A266: 85 44
+	LDA #$02				 ; $A268: A9 02
+	STA $45				  ; $A26A: 85 45
+	LDA #$83				 ; $A26C: A9 83
+	BRK					  ; $A26E: 00
+	AND ($EF),Y			  ; $A26F: 31 EF
+	LDA #$06				 ; $A271: A9 06
+	STA $51				  ; $A273: 85 51
+	JSR $C5BF				; $A275: 20 BF C5
+	CLC					  ; $A278: 18
+	RTS					  ; $A279: 60
+	LDX #$00				 ; $A27A: A2 00
 
 loc_A27C:
-    LDA $6FA0                ; $A27C: AD A0 6F
-    AND #$FE                 ; $A27F: 29 FE
-    CMP $A2EF,X              ; $A281: DD EF A2
-    BEQ $A29C                ; $A284: F0 16
+	LDA $6FA0				; $A27C: AD A0 6F
+	AND #$FE				 ; $A27F: 29 FE
+	CMP $A2EF,X			  ; $A281: DD EF A2
+	BEQ $A29C				; $A284: F0 16
 
 loc_A286:
-    LDA $64                  ; $A286: A5 64
-    CMP #$02                 ; $A288: C9 02
-    BEQ $A292                ; $A28A: F0 06
-    INX                      ; $A28C: E8
-    INX                      ; $A28D: E8
-    CPX #$04                 ; $A28E: E0 04
-    BCC $A27C                ; $A290: 90 EA
+	LDA $64				  ; $A286: A5 64
+	CMP #$02				 ; $A288: C9 02
+	BEQ $A292				; $A28A: F0 06
+	INX					  ; $A28C: E8
+	INX					  ; $A28D: E8
+	CPX #$04				 ; $A28E: E0 04
+	BCC $A27C				; $A290: 90 EA
 
 loc_A292:
-    BRK                      ; $A292: 00
-    ASL $FBDB                ; $A293: 0E DB FB
+	BRK					  ; $A292: 00
+	ASL $FBDB				; $A293: 0E DB FB
 
 loc_A296:
-    LDA #$06                 ; $A296: A9 06
-    STA $51                  ; $A298: 85 51
-    CLC                      ; $A29A: 18
-    RTS                      ; $A29B: 60
+	LDA #$06				 ; $A296: A9 06
+	STA $51				  ; $A298: 85 51
+	CLC					  ; $A29A: 18
+	RTS					  ; $A29B: 60
 
 loc_A29C:
-    LDA $6FC0                ; $A29C: AD C0 6F
-    CMP $A2F0,X              ; $A29F: DD F0 A2
-    BNE $A286                ; $A2A2: D0 E2
-    BRK                      ; $A2A4: 00
-    ASL $04EB                ; $A2A5: 0E EB 04
-    BNE $A296                ; $A2A8: D0 EC
-    BRK                      ; $A2AA: 00
-    ASL $04CB                ; $A2AB: 0E CB 04
-    JSR $B16B                ; $A2AE: 20 6B B1
-    JSR $995E                ; $A2B1: 20 5E 99
-    BRK                      ; $A2B4: 00
-    .byte $B3             ; $A2B5 - unknown opcode
-    .byte $3B             ; $A2B6 - unknown opcode
-    BRK                      ; $A2B7: 00
-    .byte $07             ; $A2B8 - unknown opcode
-    .byte $6F             ; $A2B9 - unknown opcode
-    PHA                      ; $A2BA: 48
-    CMP #$01                 ; $A2BB: C9 01
-    BCS $A2E9                ; $A2BD: B0 2A
-    BRK                      ; $A2BF: 00
-    LDX $FB                  ; $A2C0: A6 FB
-    LDA $6FA0                ; $A2C2: AD A0 6F
-    AND #$FE                 ; $A2C5: 29 FE
-    TAY                      ; $A2C7: A8
-    LDX #$07                 ; $A2C8: A2 07
-    JSR $A2F3                ; $A2CA: 20 F3 A2
-    INY                      ; $A2CD: C8
-    LDX #$08                 ; $A2CE: A2 08
-    JSR $A2F3                ; $A2D0: 20 F3 A2
-    LDX #$09                 ; $A2D3: A2 09
-    STA $7040,X              ; $A2D5: 9D 40 70
-    LDA #$00                 ; $A2D8: A9 00
-    STA $6F58                ; $A2DA: 8D 58 6F
-    STA $6F48                ; $A2DD: 8D 48 6F
-    STA $6F49                ; $A2E0: 8D 49 6F
-    STA $6F4C                ; $A2E3: 8D 4C 6F
-    STA $6F4D                ; $A2E6: 8D 4D 6F
+	LDA $6FC0				; $A29C: AD C0 6F
+	CMP $A2F0,X			  ; $A29F: DD F0 A2
+	BNE $A286				; $A2A2: D0 E2
+	BRK					  ; $A2A4: 00
+	ASL $04EB				; $A2A5: 0E EB 04
+	BNE $A296				; $A2A8: D0 EC
+	BRK					  ; $A2AA: 00
+	ASL $04CB				; $A2AB: 0E CB 04
+	JSR $B16B				; $A2AE: 20 6B B1
+	JSR $995E				; $A2B1: 20 5E 99
+	BRK					  ; $A2B4: 00
+	.byte $B3			 ; $A2B5 - unknown opcode
+	.byte $3B			 ; $A2B6 - unknown opcode
+	BRK					  ; $A2B7: 00
+	.byte $07			 ; $A2B8 - unknown opcode
+	.byte $6F			 ; $A2B9 - unknown opcode
+	PHA					  ; $A2BA: 48
+	CMP #$01				 ; $A2BB: C9 01
+	BCS $A2E9				; $A2BD: B0 2A
+	BRK					  ; $A2BF: 00
+	LDX $FB				  ; $A2C0: A6 FB
+	LDA $6FA0				; $A2C2: AD A0 6F
+	AND #$FE				 ; $A2C5: 29 FE
+	TAY					  ; $A2C7: A8
+	LDX #$07				 ; $A2C8: A2 07
+	JSR $A2F3				; $A2CA: 20 F3 A2
+	INY					  ; $A2CD: C8
+	LDX #$08				 ; $A2CE: A2 08
+	JSR $A2F3				; $A2D0: 20 F3 A2
+	LDX #$09				 ; $A2D3: A2 09
+	STA $7040,X			  ; $A2D5: 9D 40 70
+	LDA #$00				 ; $A2D8: A9 00
+	STA $6F58				; $A2DA: 8D 58 6F
+	STA $6F48				; $A2DD: 8D 48 6F
+	STA $6F49				; $A2E0: 8D 49 6F
+	STA $6F4C				; $A2E3: 8D 4C 6F
+	STA $6F4D				; $A2E6: 8D 4D 6F
 
 loc_A2E9:
-    JSR $D1F3                ; $A2E9: 20 F3 D1
-    JMP $A296                ; $A2EC: 4C 96 A2
-    .byte $14             ; $A2EF - unknown opcode
-    ASL                      ; $A2F0: 0A
-    PHP                      ; $A2F1: 08
-    ASL $9D98                ; $A2F2: 0E 98 9D
-    RTS                      ; $A2F5: 60
-    .byte $6F             ; $A2F6 - unknown opcode
-    STA $6FA0,X              ; $A2F7: 9D A0 6F
-    LDA $6FC0                ; $A2FA: AD C0 6F
-    SEC                      ; $A2FD: 38
-    SBC #$02                 ; $A2FE: E9 02
-    STA $6F80,X              ; $A300: 9D 80 6F
-    STA $6FC0,X              ; $A303: 9D C0 6F
-    LDA #$11                 ; $A306: A9 11
-    STA $7040,X              ; $A308: 9D 40 70
-    RTS                      ; $A30B: 60
-    LDX #$07                 ; $A30C: A2 07
-    JSR $A313                ; $A30E: 20 13 A3
-    LDX #$08                 ; $A311: A2 08
+	JSR $D1F3				; $A2E9: 20 F3 D1
+	JMP $A296				; $A2EC: 4C 96 A2
+	.byte $14			 ; $A2EF - unknown opcode
+	ASL					  ; $A2F0: 0A
+	PHP					  ; $A2F1: 08
+	ASL $9D98				; $A2F2: 0E 98 9D
+	RTS					  ; $A2F5: 60
+	.byte $6F			 ; $A2F6 - unknown opcode
+	STA $6FA0,X			  ; $A2F7: 9D A0 6F
+	LDA $6FC0				; $A2FA: AD C0 6F
+	SEC					  ; $A2FD: 38
+	SBC #$02				 ; $A2FE: E9 02
+	STA $6F80,X			  ; $A300: 9D 80 6F
+	STA $6FC0,X			  ; $A303: 9D C0 6F
+	LDA #$11				 ; $A306: A9 11
+	STA $7040,X			  ; $A308: 9D 40 70
+	RTS					  ; $A30B: 60
+	LDX #$07				 ; $A30C: A2 07
+	JSR $A313				; $A30E: 20 13 A3
+	LDX #$08				 ; $A311: A2 08
 
 loc_A313:
-    LDY $6FC0,X              ; $A313: BC C0 6F
-    LDA $6FA0,X              ; $A316: BD A0 6F
-    TAX                      ; $A319: AA
-    LDA #$18                 ; $A31A: A9 18
-    BRK                      ; $A31C: 00
-    ORA #$EF                 ; $A31D: 09 EF
-    CLC                      ; $A31F: 18
-    RTS                      ; $A320: 60
-    LDA #$F3                 ; $A321: A9 F3
-    STA $55                  ; $A323: 85 55
-    LDA #$02                 ; $A325: A9 02
-    STA $57                  ; $A327: 85 57
-    LDA #$04                 ; $A329: A9 04
-    STA $56                  ; $A32B: 85 56
-    LDA #$1E                 ; $A32D: A9 1E
-    STA $58                  ; $A32F: 85 58
-    BRK                      ; $A331: 00
-    .byte $93             ; $A332 - unknown opcode
-    .byte $FB             ; $A333 - unknown opcode
-    BRK                      ; $A334: 00
-    BMI $A326                ; $A335: 30 EF
-    BRK                      ; $A337: 00
-    .byte $2F             ; $A338 - unknown opcode
-    .byte $EF             ; $A339 - unknown opcode
-    LDA #$06                 ; $A33A: A9 06
-    STA $51                  ; $A33C: 85 51
-    JSR $B16B                ; $A33E: 20 6B B1
-    CLC                      ; $A341: 18
-    RTS                      ; $A342: 60
-    LDX #$02                 ; $A343: A2 02
+	LDY $6FC0,X			  ; $A313: BC C0 6F
+	LDA $6FA0,X			  ; $A316: BD A0 6F
+	TAX					  ; $A319: AA
+	LDA #$18				 ; $A31A: A9 18
+	BRK					  ; $A31C: 00
+	ORA #$EF				 ; $A31D: 09 EF
+	CLC					  ; $A31F: 18
+	RTS					  ; $A320: 60
+	LDA #$F3				 ; $A321: A9 F3
+	STA $55				  ; $A323: 85 55
+	LDA #$02				 ; $A325: A9 02
+	STA $57				  ; $A327: 85 57
+	LDA #$04				 ; $A329: A9 04
+	STA $56				  ; $A32B: 85 56
+	LDA #$1E				 ; $A32D: A9 1E
+	STA $58				  ; $A32F: 85 58
+	BRK					  ; $A331: 00
+	.byte $93			 ; $A332 - unknown opcode
+	.byte $FB			 ; $A333 - unknown opcode
+	BRK					  ; $A334: 00
+	BMI $A326				; $A335: 30 EF
+	BRK					  ; $A337: 00
+	.byte $2F			 ; $A338 - unknown opcode
+	.byte $EF			 ; $A339 - unknown opcode
+	LDA #$06				 ; $A33A: A9 06
+	STA $51				  ; $A33C: 85 51
+	JSR $B16B				; $A33E: 20 6B B1
+	CLC					  ; $A341: 18
+	RTS					  ; $A342: 60
+	LDX #$02				 ; $A343: A2 02
 
 loc_A345:
-    LDA $7000,X              ; $A345: BD 00 70
-    ORA #$03                 ; $A348: 09 03
-    STA $7000,X              ; $A34A: 9D 00 70
-    DEX                      ; $A34D: CA
-    BPL $A345                ; $A34E: 10 F5
-    SEC                      ; $A350: 38
-    RTS                      ; $A351: 60
-    LDA $6FA0                ; $A352: AD A0 6F
-    AND #$FE                 ; $A355: 29 FE
-    CMP #$0E                 ; $A357: C9 0E
-    BNE $A365                ; $A359: D0 0A
-    LDA $6FC0                ; $A35B: AD C0 6F
-    CMP #$03                 ; $A35E: C9 03
-    BNE $A365                ; $A360: D0 03
-    JMP $AE46                ; $A362: 4C 46 AE
+	LDA $7000,X			  ; $A345: BD 00 70
+	ORA #$03				 ; $A348: 09 03
+	STA $7000,X			  ; $A34A: 9D 00 70
+	DEX					  ; $A34D: CA
+	BPL $A345				; $A34E: 10 F5
+	SEC					  ; $A350: 38
+	RTS					  ; $A351: 60
+	LDA $6FA0				; $A352: AD A0 6F
+	AND #$FE				 ; $A355: 29 FE
+	CMP #$0E				 ; $A357: C9 0E
+	BNE $A365				; $A359: D0 0A
+	LDA $6FC0				; $A35B: AD C0 6F
+	CMP #$03				 ; $A35E: C9 03
+	BNE $A365				; $A360: D0 03
+	JMP $AE46				; $A362: 4C 46 AE
 
 loc_A365:
-    CLC                      ; $A365: 18
-    RTS                      ; $A366: 60
-    LDA $44                  ; $A367: A5 44
-    CMP #$0C                 ; $A369: C9 0C
-    BNE $A38C                ; $A36B: D0 1F
-    LDA $45                  ; $A36D: A5 45
-    CMP #$24                 ; $A36F: C9 24
-    BNE $A38C                ; $A371: D0 19
-    LDA #$83                 ; $A373: A9 83
-    STA $6F41                ; $A375: 8D 41 6F
-    STA $6F46                ; $A378: 8D 46 6F
-    STA $6F47                ; $A37B: 8D 47 6F
-    LDA #$11                 ; $A37E: A9 11
-    LDX #$01                 ; $A380: A2 01
-    STA $7046,X              ; $A382: 9D 46 70
-    LDX #$02                 ; $A385: A2 02
-    STA $7046,X              ; $A387: 9D 46 70
-    SEC                      ; $A38A: 38
-    RTS                      ; $A38B: 60
+	CLC					  ; $A365: 18
+	RTS					  ; $A366: 60
+	LDA $44				  ; $A367: A5 44
+	CMP #$0C				 ; $A369: C9 0C
+	BNE $A38C				; $A36B: D0 1F
+	LDA $45				  ; $A36D: A5 45
+	CMP #$24				 ; $A36F: C9 24
+	BNE $A38C				; $A371: D0 19
+	LDA #$83				 ; $A373: A9 83
+	STA $6F41				; $A375: 8D 41 6F
+	STA $6F46				; $A378: 8D 46 6F
+	STA $6F47				; $A37B: 8D 47 6F
+	LDA #$11				 ; $A37E: A9 11
+	LDX #$01				 ; $A380: A2 01
+	STA $7046,X			  ; $A382: 9D 46 70
+	LDX #$02				 ; $A385: A2 02
+	STA $7046,X			  ; $A387: 9D 46 70
+	SEC					  ; $A38A: 38
+	RTS					  ; $A38B: 60
 
 loc_A38C:
-    CLC                      ; $A38C: 18
-    RTS                      ; $A38D: 60
-    LDA #$05                 ; $A38E: A9 05
-    STA $6F47                ; $A390: 8D 47 6F
-    LDA #$FF                 ; $A393: A9 FF
-    STA $054E                ; $A395: 8D 4E 05
-    STA $054F                ; $A398: 8D 4F 05
-    SEC                      ; $A39B: 38
-    RTS                      ; $A39C: 60
-    LDX $6FA0                ; $A39D: AE A0 6F
-    CPX #$02                 ; $A3A0: E0 02
-    BNE $A3D8                ; $A3A2: D0 34
-    LDY $6FC0                ; $A3A4: AC C0 6F
-    CPY #$1A                 ; $A3A7: C0 1A
-    BNE $A3D8                ; $A3A9: D0 2D
-    STX $44                  ; $A3AB: 86 44
-    STX $6F60                ; $A3AD: 8E 60 6F
-    STY $45                  ; $A3B0: 84 45
-    STY $6F80                ; $A3B2: 8C 80 6F
-    LDA $7000                ; $A3B5: AD 00 70
-    AND #$FC                 ; $A3B8: 29 FC
-    ORA #$01                 ; $A3BA: 09 01
-    STA $7000                ; $A3BC: 8D 00 70
-    LDX $51                  ; $A3BF: A6 51
-    LDA $7000,X              ; $A3C1: BD 00 70
-    ORA #$03                 ; $A3C4: 09 03
-    STA $7000,X              ; $A3C6: 9D 00 70
-    LDA #$00                 ; $A3C9: A9 00
-    STA $3E                  ; $A3CB: 85 3E
-    LDA $51                  ; $A3CD: A5 51
-    PHA                      ; $A3CF: 48
-    BRK                      ; $A3D0: 00
-    ORA ($5F),Y              ; $A3D1: 11 5F
-    PLA                      ; $A3D3: 68
-    STA $51                  ; $A3D4: 85 51
-    SEC                      ; $A3D6: 38
-    RTS                      ; $A3D7: 60
+	CLC					  ; $A38C: 18
+	RTS					  ; $A38D: 60
+	LDA #$05				 ; $A38E: A9 05
+	STA $6F47				; $A390: 8D 47 6F
+	LDA #$FF				 ; $A393: A9 FF
+	STA $054E				; $A395: 8D 4E 05
+	STA $054F				; $A398: 8D 4F 05
+	SEC					  ; $A39B: 38
+	RTS					  ; $A39C: 60
+	LDX $6FA0				; $A39D: AE A0 6F
+	CPX #$02				 ; $A3A0: E0 02
+	BNE $A3D8				; $A3A2: D0 34
+	LDY $6FC0				; $A3A4: AC C0 6F
+	CPY #$1A				 ; $A3A7: C0 1A
+	BNE $A3D8				; $A3A9: D0 2D
+	STX $44				  ; $A3AB: 86 44
+	STX $6F60				; $A3AD: 8E 60 6F
+	STY $45				  ; $A3B0: 84 45
+	STY $6F80				; $A3B2: 8C 80 6F
+	LDA $7000				; $A3B5: AD 00 70
+	AND #$FC				 ; $A3B8: 29 FC
+	ORA #$01				 ; $A3BA: 09 01
+	STA $7000				; $A3BC: 8D 00 70
+	LDX $51				  ; $A3BF: A6 51
+	LDA $7000,X			  ; $A3C1: BD 00 70
+	ORA #$03				 ; $A3C4: 09 03
+	STA $7000,X			  ; $A3C6: 9D 00 70
+	LDA #$00				 ; $A3C9: A9 00
+	STA $3E				  ; $A3CB: 85 3E
+	LDA $51				  ; $A3CD: A5 51
+	PHA					  ; $A3CF: 48
+	BRK					  ; $A3D0: 00
+	ORA ($5F),Y			  ; $A3D1: 11 5F
+	PLA					  ; $A3D3: 68
+	STA $51				  ; $A3D4: 85 51
+	SEC					  ; $A3D6: 38
+	RTS					  ; $A3D7: 60
 
 loc_A3D8:
-    CLC                      ; $A3D8: 18
-    RTS                      ; $A3D9: 60
-    BRK                      ; $A3DA: 00
-    ORA #$EB                 ; $A3DB: 09 EB
-    .byte $04             ; $A3DD - unknown opcode
-    BNE $A404                ; $A3DE: D0 24
-    JSR $C891                ; $A3E0: 20 91 C8
-    AND #$07                 ; $A3E3: 29 07
-    TAX                      ; $A3E5: AA
-    LDA $A3FC,X              ; $A3E6: BD FC A3
-    LDX #$03                 ; $A3E9: A2 03
-    BRK                      ; $A3EB: 00
-    ORA $A687                ; $A3EC: 0D 87 A6
-    EOR ($BD),Y              ; $A3EF: 51 BD
-    CPX #$6F                 ; $A3F1: E0 6F
-    AND #$F0                 ; $A3F3: 29 F0
-    ORA #$03                 ; $A3F5: 09 03
-    STA $6FE0,X              ; $A3F7: 9D E0 6F
-    SEC                      ; $A3FA: 38
-    RTS                      ; $A3FB: 60
-    ORA ($14),Y              ; $A3FC: 11 14
-    .byte $17             ; $A3FE - unknown opcode
-    CLC                      ; $A3FF: 18
-    .byte $3B             ; $A400 - unknown opcode
-    .byte $1F             ; $A401 - unknown opcode
-    .byte $22             ; $A402 - unknown opcode
-    AND ($A6,X)              ; $A403: 21 A6
-    EOR ($A9),Y              ; $A405: 51 A9
-    .byte $80             ; $A407 - unknown opcode
-    STA $6F60,X              ; $A408: 9D 60 6F
-    STA $6FA0,X              ; $A40B: 9D A0 6F
-    STA $6F80,X              ; $A40E: 9D 80 6F
-    STA $6FC0,X              ; $A411: 9D C0 6F
-    CLC                      ; $A414: 18
-    RTS                      ; $A415: 60
-    JSR $C8EC                ; $A416: 20 EC C8
-    LDA $14                  ; $A419: A5 14
-    AND #$F0                 ; $A41B: 29 F0
-    BEQ $A42F                ; $A41D: F0 10
-    LDX #$00                 ; $A41F: A2 00
-    STX $6FE0                ; $A421: 8E E0 6F
-    DEC $7000                ; $A424: CE 00 70
-    JSR $D7F1                ; $A427: 20 F1 D7
-    JSR $A42F                ; $A42A: 20 2F A4
-    SEC                      ; $A42D: 38
-    RTS                      ; $A42E: 60
+	CLC					  ; $A3D8: 18
+	RTS					  ; $A3D9: 60
+	BRK					  ; $A3DA: 00
+	ORA #$EB				 ; $A3DB: 09 EB
+	.byte $04			 ; $A3DD - unknown opcode
+	BNE $A404				; $A3DE: D0 24
+	JSR $C891				; $A3E0: 20 91 C8
+	AND #$07				 ; $A3E3: 29 07
+	TAX					  ; $A3E5: AA
+	LDA $A3FC,X			  ; $A3E6: BD FC A3
+	LDX #$03				 ; $A3E9: A2 03
+	BRK					  ; $A3EB: 00
+	ORA $A687				; $A3EC: 0D 87 A6
+	EOR ($BD),Y			  ; $A3EF: 51 BD
+	CPX #$6F				 ; $A3F1: E0 6F
+	AND #$F0				 ; $A3F3: 29 F0
+	ORA #$03				 ; $A3F5: 09 03
+	STA $6FE0,X			  ; $A3F7: 9D E0 6F
+	SEC					  ; $A3FA: 38
+	RTS					  ; $A3FB: 60
+	ORA ($14),Y			  ; $A3FC: 11 14
+	.byte $17			 ; $A3FE - unknown opcode
+	CLC					  ; $A3FF: 18
+	.byte $3B			 ; $A400 - unknown opcode
+	.byte $1F			 ; $A401 - unknown opcode
+	.byte $22			 ; $A402 - unknown opcode
+	AND ($A6,X)			  ; $A403: 21 A6
+	EOR ($A9),Y			  ; $A405: 51 A9
+	.byte $80			 ; $A407 - unknown opcode
+	STA $6F60,X			  ; $A408: 9D 60 6F
+	STA $6FA0,X			  ; $A40B: 9D A0 6F
+	STA $6F80,X			  ; $A40E: 9D 80 6F
+	STA $6FC0,X			  ; $A411: 9D C0 6F
+	CLC					  ; $A414: 18
+	RTS					  ; $A415: 60
+	JSR $C8EC				; $A416: 20 EC C8
+	LDA $14				  ; $A419: A5 14
+	AND #$F0				 ; $A41B: 29 F0
+	BEQ $A42F				; $A41D: F0 10
+	LDX #$00				 ; $A41F: A2 00
+	STX $6FE0				; $A421: 8E E0 6F
+	DEC $7000				; $A424: CE 00 70
+	JSR $D7F1				; $A427: 20 F1 D7
+	JSR $A42F				; $A42A: 20 2F A4
+	SEC					  ; $A42D: 38
+	RTS					  ; $A42E: 60
 
 loc_A42F:
-    LDA #$82                 ; $A42F: A9 82
-    STA $0530                ; $A431: 8D 30 05
-    LDA #$01                 ; $A434: A9 01
-    STA $0531                ; $A436: 8D 31 05
-    LDA #$00                 ; $A439: A9 00
-    STA $0533                ; $A43B: 8D 33 05
-    STA $0532                ; $A43E: 8D 32 05
-    CLC                      ; $A441: 18
-    RTS                      ; $A442: 60
-    LDA $7021                ; $A443: AD 21 70
-    ORA #$80                 ; $A446: 09 80
-    STA $7021                ; $A448: 8D 21 70
-    SEC                      ; $A44B: 38
-    RTS                      ; $A44C: 60
-    JSR $B73E                ; $A44D: 20 3E B7
-    BRK                      ; $A450: 00
-    PHP                      ; $A451: 08
-    .byte $CB             ; $A452 - unknown opcode
-    JSR $00A9                ; $A453: 20 A9 00
-    STA $0530                ; $A456: 8D 30 05
-    SEC                      ; $A459: 38
-    RTS                      ; $A45A: 60
-    LDA $6FA0                ; $A45B: AD A0 6F
-    SEC                      ; $A45E: 38
-    SBC #$10                 ; $A45F: E9 10
-    CMP #$05                 ; $A461: C9 05
-    BCS $A49D                ; $A463: B0 38
-    LDA $6FC0                ; $A465: AD C0 6F
-    CMP #$03                 ; $A468: C9 03
-    BNE $A49D                ; $A46A: D0 31
-    BRK                      ; $A46C: 00
-    .byte $0F             ; $A46D - unknown opcode
-    .byte $EB             ; $A46E - unknown opcode
-    ORA ($D0,X)              ; $A46F: 01 D0
-    .byte $2F             ; $A471 - unknown opcode
-    LDA $3D                  ; $A472: A5 3D
-    BNE $A49D                ; $A474: D0 27
-    BRK                      ; $A476: 00
-    .byte $0F             ; $A477 - unknown opcode
-    .byte $CB             ; $A478 - unknown opcode
-    ORA ($20,X)              ; $A479: 01 20
-    .byte $6B             ; $A47B - unknown opcode
-    LDA ($A5),Y              ; $A47C: B1 A5
-    EOR ($48),Y              ; $A47E: 51 48
-    JSR $995E                ; $A480: 20 5E 99
-    BRK                      ; $A483: 00
-    TXA                      ; $A484: 8A
-    .byte $3B             ; $A485 - unknown opcode
-    BRK                      ; $A486: 00
-    .byte $07             ; $A487 - unknown opcode
-    .byte $6F             ; $A488 - unknown opcode
-    PHA                      ; $A489: 48
-    TAX                      ; $A48A: AA
-    PLA                      ; $A48B: 68
-    STA $51                  ; $A48C: 85 51
-    CPX #$01                 ; $A48E: E0 01
-    BCS $A4A3                ; $A490: B0 11
-    LDA $51                  ; $A492: A5 51
-    PHA                      ; $A494: 48
-    BRK                      ; $A495: 00
-    .byte $02             ; $A496 - unknown opcode
-    .byte $7F             ; $A497 - unknown opcode
-    PLA                      ; $A498: 68
-    STA $51                  ; $A499: 85 51
-    SEC                      ; $A49B: 38
-    RTS                      ; $A49C: 60
+	LDA #$82				 ; $A42F: A9 82
+	STA $0530				; $A431: 8D 30 05
+	LDA #$01				 ; $A434: A9 01
+	STA $0531				; $A436: 8D 31 05
+	LDA #$00				 ; $A439: A9 00
+	STA $0533				; $A43B: 8D 33 05
+	STA $0532				; $A43E: 8D 32 05
+	CLC					  ; $A441: 18
+	RTS					  ; $A442: 60
+	LDA $7021				; $A443: AD 21 70
+	ORA #$80				 ; $A446: 09 80
+	STA $7021				; $A448: 8D 21 70
+	SEC					  ; $A44B: 38
+	RTS					  ; $A44C: 60
+	JSR $B73E				; $A44D: 20 3E B7
+	BRK					  ; $A450: 00
+	PHP					  ; $A451: 08
+	.byte $CB			 ; $A452 - unknown opcode
+	JSR $00A9				; $A453: 20 A9 00
+	STA $0530				; $A456: 8D 30 05
+	SEC					  ; $A459: 38
+	RTS					  ; $A45A: 60
+	LDA $6FA0				; $A45B: AD A0 6F
+	SEC					  ; $A45E: 38
+	SBC #$10				 ; $A45F: E9 10
+	CMP #$05				 ; $A461: C9 05
+	BCS $A49D				; $A463: B0 38
+	LDA $6FC0				; $A465: AD C0 6F
+	CMP #$03				 ; $A468: C9 03
+	BNE $A49D				; $A46A: D0 31
+	BRK					  ; $A46C: 00
+	.byte $0F			 ; $A46D - unknown opcode
+	.byte $EB			 ; $A46E - unknown opcode
+	ORA ($D0,X)			  ; $A46F: 01 D0
+	.byte $2F			 ; $A471 - unknown opcode
+	LDA $3D				  ; $A472: A5 3D
+	BNE $A49D				; $A474: D0 27
+	BRK					  ; $A476: 00
+	.byte $0F			 ; $A477 - unknown opcode
+	.byte $CB			 ; $A478 - unknown opcode
+	ORA ($20,X)			  ; $A479: 01 20
+	.byte $6B			 ; $A47B - unknown opcode
+	LDA ($A5),Y			  ; $A47C: B1 A5
+	EOR ($48),Y			  ; $A47E: 51 48
+	JSR $995E				; $A480: 20 5E 99
+	BRK					  ; $A483: 00
+	TXA					  ; $A484: 8A
+	.byte $3B			 ; $A485 - unknown opcode
+	BRK					  ; $A486: 00
+	.byte $07			 ; $A487 - unknown opcode
+	.byte $6F			 ; $A488 - unknown opcode
+	PHA					  ; $A489: 48
+	TAX					  ; $A48A: AA
+	PLA					  ; $A48B: 68
+	STA $51				  ; $A48C: 85 51
+	CPX #$01				 ; $A48E: E0 01
+	BCS $A4A3				; $A490: B0 11
+	LDA $51				  ; $A492: A5 51
+	PHA					  ; $A494: 48
+	BRK					  ; $A495: 00
+	.byte $02			 ; $A496 - unknown opcode
+	.byte $7F			 ; $A497 - unknown opcode
+	PLA					  ; $A498: 68
+	STA $51				  ; $A499: 85 51
+	SEC					  ; $A49B: 38
+	RTS					  ; $A49C: 60
 
 loc_A49D:
-    BRK                      ; $A49D: 00
-    .byte $0F             ; $A49E - unknown opcode
-    .byte $DB             ; $A49F - unknown opcode
-    INC $6018,X              ; $A4A0: FE 18 60
+	BRK					  ; $A49D: 00
+	.byte $0F			 ; $A49E - unknown opcode
+	.byte $DB			 ; $A49F - unknown opcode
+	INC $6018,X			  ; $A4A0: FE 18 60
 
 loc_A4A3:
-    JSR $D1F3                ; $A4A3: 20 F3 D1
-    CLC                      ; $A4A6: 18
-    RTS                      ; $A4A7: 60
-    LDA $6FC0                ; $A4A8: AD C0 6F
-    CMP #$17                 ; $A4AB: C9 17
-    BNE $A507                ; $A4AD: D0 58
-    LDA #$8F                 ; $A4AF: A9 8F
-    STA $0530                ; $A4B1: 8D 30 05
-    LDA #$01                 ; $A4B4: A9 01
-    STA $0531                ; $A4B6: 8D 31 05
-    LDA #$00                 ; $A4B9: A9 00
-    STA $0533                ; $A4BB: 8D 33 05
-    STA $0532                ; $A4BE: 8D 32 05
-    LDY #$00                 ; $A4C1: A0 00
-    LDA $51                  ; $A4C3: A5 51
-    SEC                      ; $A4C5: 38
-    SBC #$06                 ; $A4C6: E9 06
-    TAX                      ; $A4C8: AA
-    CPX #$11                 ; $A4C9: E0 11
-    BEQ $A4CE                ; $A4CB: F0 01
-    INY                      ; $A4CD: C8
+	JSR $D1F3				; $A4A3: 20 F3 D1
+	CLC					  ; $A4A6: 18
+	RTS					  ; $A4A7: 60
+	LDA $6FC0				; $A4A8: AD C0 6F
+	CMP #$17				 ; $A4AB: C9 17
+	BNE $A507				; $A4AD: D0 58
+	LDA #$8F				 ; $A4AF: A9 8F
+	STA $0530				; $A4B1: 8D 30 05
+	LDA #$01				 ; $A4B4: A9 01
+	STA $0531				; $A4B6: 8D 31 05
+	LDA #$00				 ; $A4B9: A9 00
+	STA $0533				; $A4BB: 8D 33 05
+	STA $0532				; $A4BE: 8D 32 05
+	LDY #$00				 ; $A4C1: A0 00
+	LDA $51				  ; $A4C3: A5 51
+	SEC					  ; $A4C5: 38
+	SBC #$06				 ; $A4C6: E9 06
+	TAX					  ; $A4C8: AA
+	CPX #$11				 ; $A4C9: E0 11
+	BEQ $A4CE				; $A4CB: F0 01
+	INY					  ; $A4CD: C8
 
 loc_A4CE:
-    BIT $6281                ; $A4CE: 2C 81 62
-    BVC $A4E8                ; $A4D1: 50 15
-    LDA $6FA1                ; $A4D3: AD A1 6F
-    STA $6F61                ; $A4D6: 8D 61 6F
-    LDA $6FC1                ; $A4D9: AD C1 6F
-    STA $6F81                ; $A4DC: 8D 81 6F
-    LDA $7001                ; $A4DF: AD 01 70
-    AND #$7F                 ; $A4E2: 29 7F
-    STA $7001                ; $A4E4: 8D 01 70
-    INY                      ; $A4E7: C8
+	BIT $6281				; $A4CE: 2C 81 62
+	BVC $A4E8				; $A4D1: 50 15
+	LDA $6FA1				; $A4D3: AD A1 6F
+	STA $6F61				; $A4D6: 8D 61 6F
+	LDA $6FC1				; $A4D9: AD C1 6F
+	STA $6F81				; $A4DC: 8D 81 6F
+	LDA $7001				; $A4DF: AD 01 70
+	AND #$7F				 ; $A4E2: 29 7F
+	STA $7001				; $A4E4: 8D 01 70
+	INY					  ; $A4E7: C8
 
 loc_A4E8:
-    JSR $A51F                ; $A4E8: 20 1F A5
-    JSR $A509                ; $A4EB: 20 09 A5
-    LDA $51                  ; $A4EE: A5 51
-    PHA                      ; $A4F0: 48
-    CMP #$0F                 ; $A4F1: C9 0F
-    BNE $A502                ; $A4F3: D0 0D
-    BRK                      ; $A4F5: 00
-    .byte $07             ; $A4F6 - unknown opcode
-    .byte $6F             ; $A4F7 - unknown opcode
-    .byte $43             ; $A4F8 - unknown opcode
-    BRK                      ; $A4F9: 00
-    .byte $72             ; $A4FA - unknown opcode
-    .byte $4B             ; $A4FB - unknown opcode
-    JSR $D214                ; $A4FC: 20 14 D2
-    JSR $D1F3                ; $A4FF: 20 F3 D1
+	JSR $A51F				; $A4E8: 20 1F A5
+	JSR $A509				; $A4EB: 20 09 A5
+	LDA $51				  ; $A4EE: A5 51
+	PHA					  ; $A4F0: 48
+	CMP #$0F				 ; $A4F1: C9 0F
+	BNE $A502				; $A4F3: D0 0D
+	BRK					  ; $A4F5: 00
+	.byte $07			 ; $A4F6 - unknown opcode
+	.byte $6F			 ; $A4F7 - unknown opcode
+	.byte $43			 ; $A4F8 - unknown opcode
+	BRK					  ; $A4F9: 00
+	.byte $72			 ; $A4FA - unknown opcode
+	.byte $4B			 ; $A4FB - unknown opcode
+	JSR $D214				; $A4FC: 20 14 D2
+	JSR $D1F3				; $A4FF: 20 F3 D1
 
 loc_A502:
-    PLA                      ; $A502: 68
-    STA $51                  ; $A503: 85 51
-    SEC                      ; $A505: 38
-    RTS                      ; $A506: 60
+	PLA					  ; $A502: 68
+	STA $51				  ; $A503: 85 51
+	SEC					  ; $A505: 38
+	RTS					  ; $A506: 60
 
 loc_A507:
-    CLC                      ; $A507: 18
-    RTS                      ; $A508: 60
+	CLC					  ; $A507: 18
+	RTS					  ; $A508: 60
 
 loc_A509:
-    LDA $6FA0                ; $A509: AD A0 6F
-    STA $6F60                ; $A50C: 8D 60 6F
-    STA $44                  ; $A50F: 85 44
-    LDA $6FC0                ; $A511: AD C0 6F
-    STA $6F80                ; $A514: 8D 80 6F
-    STA $45                  ; $A517: 85 45
-    LDA #$00                 ; $A519: A9 00
-    STA $3E                  ; $A51B: 85 3E
-    SEC                      ; $A51D: 38
-    RTS                      ; $A51E: 60
+	LDA $6FA0				; $A509: AD A0 6F
+	STA $6F60				; $A50C: 8D 60 6F
+	STA $44				  ; $A50F: 85 44
+	LDA $6FC0				; $A511: AD C0 6F
+	STA $6F80				; $A514: 8D 80 6F
+	STA $45				  ; $A517: 85 45
+	LDA #$00				 ; $A519: A9 00
+	STA $3E				  ; $A51B: 85 3E
+	SEC					  ; $A51D: 38
+	RTS					  ; $A51E: 60
 
 loc_A51F:
-    LDA $6FA1,Y              ; $A51F: B9 A1 6F
-    STA $6F66,X              ; $A522: 9D 66 6F
-    LDA $6FA1,Y              ; $A525: B9 A1 6F
-    STA $6FA6,X              ; $A528: 9D A6 6F
-    LDA $6FC1,Y              ; $A52B: B9 C1 6F
-    STA $6F86,X              ; $A52E: 9D 86 6F
-    LDA $6FC1,Y              ; $A531: B9 C1 6F
-    STA $6FC6,X              ; $A534: 9D C6 6F
-    LDA #$80                 ; $A537: A9 80
-    STA $7021,Y              ; $A539: 99 21 70
-    INY                      ; $A53C: C8
-    RTS                      ; $A53D: 60
-    LDA $51                  ; $A53E: A5 51
-    PHA                      ; $A540: 48
-    BRK                      ; $A541: 00
-    .byte $12             ; $A542 - unknown opcode
-    .byte $5F             ; $A543 - unknown opcode
-    PLA                      ; $A544: 68
-    STA $51                  ; $A545: 85 51
-    SEC                      ; $A547: 38
-    RTS                      ; $A548: 60
-    LDX #$07                 ; $A549: A2 07
-    LDY #$11                 ; $A54B: A0 11
-    LDA $6F66,Y              ; $A54D: B9 66 6F
-    STA $6F66,X              ; $A550: 9D 66 6F
-    LDA $6FA6,Y              ; $A553: B9 A6 6F
-    STA $6FA6,X              ; $A556: 9D A6 6F
-    LDA $6F86,Y              ; $A559: B9 86 6F
-    STA $6F86,X              ; $A55C: 9D 86 6F
-    LDA $6FC6,Y              ; $A55F: B9 C6 6F
-    STA $6FC6,X              ; $A562: 9D C6 6F
-    LDA #$80                 ; $A565: A9 80
-    STA $6F66,Y              ; $A567: 99 66 6F
-    STA $6FA6,Y              ; $A56A: 99 A6 6F
-    STA $6F86,Y              ; $A56D: 99 86 6F
-    STA $6FC6,Y              ; $A570: 99 C6 6F
-    LDA #$11                 ; $A573: A9 11
-    STA $7046,X              ; $A575: 9D 46 70
-    LDX #$10                 ; $A578: A2 10
-    STA $7046,X              ; $A57A: 9D 46 70
-    BRK                      ; $A57D: 00
-    PHP                      ; $A57E: 08
-    .byte $DB             ; $A57F - unknown opcode
-    .byte $DF             ; $A580 - unknown opcode
-    LDA #$00                 ; $A581: A9 00
-    STA $0530                ; $A583: 8D 30 05
-    SEC                      ; $A586: 38
-    RTS                      ; $A587: 60
-    LDA $45                  ; $A588: A5 45
-    CMP #$19                 ; $A58A: C9 19
-    BNE $A5A5                ; $A58C: D0 17
-    LDY #$07                 ; $A58E: A0 07
-    LDA #$11                 ; $A590: A9 11
+	LDA $6FA1,Y			  ; $A51F: B9 A1 6F
+	STA $6F66,X			  ; $A522: 9D 66 6F
+	LDA $6FA1,Y			  ; $A525: B9 A1 6F
+	STA $6FA6,X			  ; $A528: 9D A6 6F
+	LDA $6FC1,Y			  ; $A52B: B9 C1 6F
+	STA $6F86,X			  ; $A52E: 9D 86 6F
+	LDA $6FC1,Y			  ; $A531: B9 C1 6F
+	STA $6FC6,X			  ; $A534: 9D C6 6F
+	LDA #$80				 ; $A537: A9 80
+	STA $7021,Y			  ; $A539: 99 21 70
+	INY					  ; $A53C: C8
+	RTS					  ; $A53D: 60
+	LDA $51				  ; $A53E: A5 51
+	PHA					  ; $A540: 48
+	BRK					  ; $A541: 00
+	.byte $12			 ; $A542 - unknown opcode
+	.byte $5F			 ; $A543 - unknown opcode
+	PLA					  ; $A544: 68
+	STA $51				  ; $A545: 85 51
+	SEC					  ; $A547: 38
+	RTS					  ; $A548: 60
+	LDX #$07				 ; $A549: A2 07
+	LDY #$11				 ; $A54B: A0 11
+	LDA $6F66,Y			  ; $A54D: B9 66 6F
+	STA $6F66,X			  ; $A550: 9D 66 6F
+	LDA $6FA6,Y			  ; $A553: B9 A6 6F
+	STA $6FA6,X			  ; $A556: 9D A6 6F
+	LDA $6F86,Y			  ; $A559: B9 86 6F
+	STA $6F86,X			  ; $A55C: 9D 86 6F
+	LDA $6FC6,Y			  ; $A55F: B9 C6 6F
+	STA $6FC6,X			  ; $A562: 9D C6 6F
+	LDA #$80				 ; $A565: A9 80
+	STA $6F66,Y			  ; $A567: 99 66 6F
+	STA $6FA6,Y			  ; $A56A: 99 A6 6F
+	STA $6F86,Y			  ; $A56D: 99 86 6F
+	STA $6FC6,Y			  ; $A570: 99 C6 6F
+	LDA #$11				 ; $A573: A9 11
+	STA $7046,X			  ; $A575: 9D 46 70
+	LDX #$10				 ; $A578: A2 10
+	STA $7046,X			  ; $A57A: 9D 46 70
+	BRK					  ; $A57D: 00
+	PHP					  ; $A57E: 08
+	.byte $DB			 ; $A57F - unknown opcode
+	.byte $DF			 ; $A580 - unknown opcode
+	LDA #$00				 ; $A581: A9 00
+	STA $0530				; $A583: 8D 30 05
+	SEC					  ; $A586: 38
+	RTS					  ; $A587: 60
+	LDA $45				  ; $A588: A5 45
+	CMP #$19				 ; $A58A: C9 19
+	BNE $A5A5				; $A58C: D0 17
+	LDY #$07				 ; $A58E: A0 07
+	LDA #$11				 ; $A590: A9 11
 
 loc_A592:
-    LDX $A59D,Y              ; $A592: BE 9D A5
-    STA $7046,X              ; $A595: 9D 46 70
-    DEY                      ; $A598: 88
-    BPL $A592                ; $A599: 10 F7
-    SEC                      ; $A59B: 38
-    RTS                      ; $A59C: 60
-    .byte $04             ; $A59D - unknown opcode
-    ORA $06                  ; $A59E: 05 06
-    .byte $07             ; $A5A0 - unknown opcode
-    PHP                      ; $A5A1: 08
-    ORA #$0A                 ; $A5A2: 09 0A
-    .byte $0B             ; $A5A4 - unknown opcode
+	LDX $A59D,Y			  ; $A592: BE 9D A5
+	STA $7046,X			  ; $A595: 9D 46 70
+	DEY					  ; $A598: 88
+	BPL $A592				; $A599: 10 F7
+	SEC					  ; $A59B: 38
+	RTS					  ; $A59C: 60
+	.byte $04			 ; $A59D - unknown opcode
+	ORA $06				  ; $A59E: 05 06
+	.byte $07			 ; $A5A0 - unknown opcode
+	PHP					  ; $A5A1: 08
+	ORA #$0A				 ; $A5A2: 09 0A
+	.byte $0B			 ; $A5A4 - unknown opcode
 
 loc_A5A5:
-    CLC                      ; $A5A5: 18
-    RTS                      ; $A5A6: 60
-    LDA $51                  ; $A5A7: A5 51
-    PHA                      ; $A5A9: 48
-    JSR $995E                ; $A5AA: 20 5E 99
-    LDX #$03                 ; $A5AD: A2 03
-    LDY #$44                 ; $A5AF: A0 44
-    LDA $6283                ; $A5B1: AD 83 62
-    AND #$20                 ; $A5B4: 29 20
-    PHA                      ; $A5B6: 48
-    BEQ $A5BA                ; $A5B7: F0 01
-    DEY                      ; $A5B9: 88
+	CLC					  ; $A5A5: 18
+	RTS					  ; $A5A6: 60
+	LDA $51				  ; $A5A7: A5 51
+	PHA					  ; $A5A9: 48
+	JSR $995E				; $A5AA: 20 5E 99
+	LDX #$03				 ; $A5AD: A2 03
+	LDY #$44				 ; $A5AF: A0 44
+	LDA $6283				; $A5B1: AD 83 62
+	AND #$20				 ; $A5B4: 29 20
+	PHA					  ; $A5B6: 48
+	BEQ $A5BA				; $A5B7: F0 01
+	DEY					  ; $A5B9: 88
 
 loc_A5BA:
-    TYA                      ; $A5BA: 98
-    BRK                      ; $A5BB: 00
-    .byte $04             ; $A5BC - unknown opcode
-    .byte $6F             ; $A5BD - unknown opcode
-    JSR $D1F3                ; $A5BE: 20 F3 D1
-    PLA                      ; $A5C1: 68
-    BNE $A604                ; $A5C2: D0 40
-    LDX #$00                 ; $A5C4: A2 00
-    BRK                      ; $A5C6: 00
-    ORA ($6F,X)              ; $A5C7: 01 6F
-    .byte $0B             ; $A5C9 - unknown opcode
-    JSR $D210                ; $A5CA: 20 10 D2
-    LDY #$02                 ; $A5CD: A0 02
+	TYA					  ; $A5BA: 98
+	BRK					  ; $A5BB: 00
+	.byte $04			 ; $A5BC - unknown opcode
+	.byte $6F			 ; $A5BD - unknown opcode
+	JSR $D1F3				; $A5BE: 20 F3 D1
+	PLA					  ; $A5C1: 68
+	BNE $A604				; $A5C2: D0 40
+	LDX #$00				 ; $A5C4: A2 00
+	BRK					  ; $A5C6: 00
+	ORA ($6F,X)			  ; $A5C7: 01 6F
+	.byte $0B			 ; $A5C9 - unknown opcode
+	JSR $D210				; $A5CA: 20 10 D2
+	LDY #$02				 ; $A5CD: A0 02
 
 loc_A5CF:
-    TYA                      ; $A5CF: 98
-    PHA                      ; $A5D0: 48
-    LDX #$96                 ; $A5D1: A2 96
+	TYA					  ; $A5CF: 98
+	PHA					  ; $A5D0: 48
+	LDX #$96				 ; $A5D1: A2 96
 
 loc_A5D3:
-    TXA                      ; $A5D3: 8A
-    PHA                      ; $A5D4: 48
-    LDA #$00                 ; $A5D5: A9 00
-    STA $6E                  ; $A5D7: 85 6E
-    STA $70                  ; $A5D9: 85 70
-    STA $71                  ; $A5DB: 85 71
-    LDA #$0A                 ; $A5DD: A9 0A
-    STA $6F                  ; $A5DF: 85 6F
-    BRK                      ; $A5E1: 00
-    .byte $27             ; $A5E2 - unknown opcode
-    .byte $33             ; $A5E3 - unknown opcode
-    BRK                      ; $A5E4: 00
-    STA $FB                  ; $A5E5: 85 FB
-    JSR $A612                ; $A5E7: 20 12 A6
-    PLA                      ; $A5EA: 68
-    TAX                      ; $A5EB: AA
-    DEX                      ; $A5EC: CA
-    BNE $A5D3                ; $A5ED: D0 E4
-    PLA                      ; $A5EF: 68
-    TAY                      ; $A5F0: A8
-    DEY                      ; $A5F1: 88
-    BNE $A5CF                ; $A5F2: D0 DB
-    JSR $D20A                ; $A5F4: 20 0A D2
-    BRK                      ; $A5F7: 00
-    PHP                      ; $A5F8: 08
-    .byte $2F             ; $A5F9 - unknown opcode
-    JSR $D1F3                ; $A5FA: 20 F3 D1
-    BRK                      ; $A5FD: 00
-    ASL                      ; $A5FE: 0A
-    .byte $CB             ; $A5FF - unknown opcode
-    .byte $04             ; $A600 - unknown opcode
-    JMP $A60B                ; $A601: 4C 0B A6
+	TXA					  ; $A5D3: 8A
+	PHA					  ; $A5D4: 48
+	LDA #$00				 ; $A5D5: A9 00
+	STA $6E				  ; $A5D7: 85 6E
+	STA $70				  ; $A5D9: 85 70
+	STA $71				  ; $A5DB: 85 71
+	LDA #$0A				 ; $A5DD: A9 0A
+	STA $6F				  ; $A5DF: 85 6F
+	BRK					  ; $A5E1: 00
+	.byte $27			 ; $A5E2 - unknown opcode
+	.byte $33			 ; $A5E3 - unknown opcode
+	BRK					  ; $A5E4: 00
+	STA $FB				  ; $A5E5: 85 FB
+	JSR $A612				; $A5E7: 20 12 A6
+	PLA					  ; $A5EA: 68
+	TAX					  ; $A5EB: AA
+	DEX					  ; $A5EC: CA
+	BNE $A5D3				; $A5ED: D0 E4
+	PLA					  ; $A5EF: 68
+	TAY					  ; $A5F0: A8
+	DEY					  ; $A5F1: 88
+	BNE $A5CF				; $A5F2: D0 DB
+	JSR $D20A				; $A5F4: 20 0A D2
+	BRK					  ; $A5F7: 00
+	PHP					  ; $A5F8: 08
+	.byte $2F			 ; $A5F9 - unknown opcode
+	JSR $D1F3				; $A5FA: 20 F3 D1
+	BRK					  ; $A5FD: 00
+	ASL					  ; $A5FE: 0A
+	.byte $CB			 ; $A5FF - unknown opcode
+	.byte $04			 ; $A600 - unknown opcode
+	JMP $A60B				; $A601: 4C 0B A6
 
 loc_A604:
-    LDA #$00                 ; $A604: A9 00
-    LDX #$01                 ; $A606: A2 01
-    STA $7046,X              ; $A608: 9D 46 70
+	LDA #$00				 ; $A604: A9 00
+	LDX #$01				 ; $A606: A2 01
+	STA $7046,X			  ; $A608: 9D 46 70
 
 loc_A60B:
-    PLA                      ; $A60B: 68
-    STA $51                  ; $A60C: 85 51
-    SEC                      ; $A60E: 38
-    RTS                      ; $A60F: 60
-    CLC                      ; $A610: 18
-    RTS                      ; $A611: 60
+	PLA					  ; $A60B: 68
+	STA $51				  ; $A60C: 85 51
+	SEC					  ; $A60E: 38
+	RTS					  ; $A60F: 60
+	CLC					  ; $A610: 18
+	RTS					  ; $A611: 60
 
 loc_A612:
-    LDA #$13                 ; $A612: A9 13
-    STA $00                  ; $A614: 85 00
-    LDA #$1A                 ; $A616: A9 1A
-    STA $01                  ; $A618: 85 01
-    JSR $C662                ; $A61A: 20 62 C6
-    LDX #$00                 ; $A61D: A2 00
-    BRK                      ; $A61F: 00
-    AND $73                  ; $A620: 25 73
-    BRK                      ; $A622: 00
-    .byte $0C             ; $A623 - unknown opcode
-    .byte $6F             ; $A624 - unknown opcode
-    LDX $050A                ; $A625: AE 0A 05
-    LDA $1C                  ; $A628: A5 1C
-    ORA #$80                 ; $A62A: 09 80
-    STA $0300,X              ; $A62C: 9D 00 03
-    LDA #$08                 ; $A62F: A9 08
-    STA $0301,X              ; $A631: 9D 01 03
-    LDA $1D                  ; $A634: A5 1D
-    STA $0302,X              ; $A636: 9D 02 03
-    LDY #$00                 ; $A639: A0 00
+	LDA #$13				 ; $A612: A9 13
+	STA $00				  ; $A614: 85 00
+	LDA #$1A				 ; $A616: A9 1A
+	STA $01				  ; $A618: 85 01
+	JSR $C662				; $A61A: 20 62 C6
+	LDX #$00				 ; $A61D: A2 00
+	BRK					  ; $A61F: 00
+	AND $73				  ; $A620: 25 73
+	BRK					  ; $A622: 00
+	.byte $0C			 ; $A623 - unknown opcode
+	.byte $6F			 ; $A624 - unknown opcode
+	LDX $050A				; $A625: AE 0A 05
+	LDA $1C				  ; $A628: A5 1C
+	ORA #$80				 ; $A62A: 09 80
+	STA $0300,X			  ; $A62C: 9D 00 03
+	LDA #$08				 ; $A62F: A9 08
+	STA $0301,X			  ; $A631: 9D 01 03
+	LDA $1D				  ; $A634: A5 1D
+	STA $0302,X			  ; $A636: 9D 02 03
+	LDY #$00				 ; $A639: A0 00
 
 loc_A63B:
-    LDA $0000,Y              ; $A63B: B9 00 00
-    STA $0303,X              ; $A63E: 9D 03 03
-    INX                      ; $A641: E8
-    INY                      ; $A642: C8
-    CPX #$08                 ; $A643: E0 08
-    BCC $A63B                ; $A645: 90 F4
-    INC $050B                ; $A647: EE 0B 05
-    JMP $C62D                ; $A64A: 4C 2D C6
-    LDX #$00                 ; $A64D: A2 00
-    BRK                      ; $A64F: 00
-    .byte $23             ; $A650 - unknown opcode
-    .byte $EF             ; $A651 - unknown opcode
-    CMP #$3D                 ; $A652: C9 3D
-    BNE $A66F                ; $A654: D0 19
-    LDX #$01                 ; $A656: A2 01
-    BRK                      ; $A658: 00
-    ORA $A287                ; $A659: 0D 87 A2
-    BRK                      ; $A65C: 00
-    LDA #$06                 ; $A65D: A9 06
-    BRK                      ; $A65F: 00
-    ORA $A287                ; $A660: 0D 87 A2
-    ORA ($A9,X)              ; $A663: 01 A9
-    .byte $FF             ; $A665 - unknown opcode
-    STA $70                  ; $A666: 85 70
-    STA $71                  ; $A668: 85 71
-    LDA #$00                 ; $A66A: A9 00
-    BRK                      ; $A66C: 00
-    LSR $3873,X              ; $A66D: 5E 73 38
-    RTS                      ; $A670: 60
-    BIT $6280                ; $A671: 2C 80 62
-    BVC $A6D4                ; $A674: 50 5E
-    LDA $45                  ; $A676: A5 45
-    CMP #$1C                 ; $A678: C9 1C
-    BNE $A6D4                ; $A67A: D0 58
-    LDA $44                  ; $A67C: A5 44
-    CMP #$0C                 ; $A67E: C9 0C
-    BNE $A6D4                ; $A680: D0 52
-    LDA $0531                ; $A682: AD 31 05
-    CMP #$07                 ; $A685: C9 07
-    BEQ $A68E                ; $A687: F0 05
-    LDA #$8F                 ; $A689: A9 8F
-    JSR $A23A                ; $A68B: 20 3A A2
+	LDA $0000,Y			  ; $A63B: B9 00 00
+	STA $0303,X			  ; $A63E: 9D 03 03
+	INX					  ; $A641: E8
+	INY					  ; $A642: C8
+	CPX #$08				 ; $A643: E0 08
+	BCC $A63B				; $A645: 90 F4
+	INC $050B				; $A647: EE 0B 05
+	JMP $C62D				; $A64A: 4C 2D C6
+	LDX #$00				 ; $A64D: A2 00
+	BRK					  ; $A64F: 00
+	.byte $23			 ; $A650 - unknown opcode
+	.byte $EF			 ; $A651 - unknown opcode
+	CMP #$3D				 ; $A652: C9 3D
+	BNE $A66F				; $A654: D0 19
+	LDX #$01				 ; $A656: A2 01
+	BRK					  ; $A658: 00
+	ORA $A287				; $A659: 0D 87 A2
+	BRK					  ; $A65C: 00
+	LDA #$06				 ; $A65D: A9 06
+	BRK					  ; $A65F: 00
+	ORA $A287				; $A660: 0D 87 A2
+	ORA ($A9,X)			  ; $A663: 01 A9
+	.byte $FF			 ; $A665 - unknown opcode
+	STA $70				  ; $A666: 85 70
+	STA $71				  ; $A668: 85 71
+	LDA #$00				 ; $A66A: A9 00
+	BRK					  ; $A66C: 00
+	LSR $3873,X			  ; $A66D: 5E 73 38
+	RTS					  ; $A670: 60
+	BIT $6280				; $A671: 2C 80 62
+	BVC $A6D4				; $A674: 50 5E
+	LDA $45				  ; $A676: A5 45
+	CMP #$1C				 ; $A678: C9 1C
+	BNE $A6D4				; $A67A: D0 58
+	LDA $44				  ; $A67C: A5 44
+	CMP #$0C				 ; $A67E: C9 0C
+	BNE $A6D4				; $A680: D0 52
+	LDA $0531				; $A682: AD 31 05
+	CMP #$07				 ; $A685: C9 07
+	BEQ $A68E				; $A687: F0 05
+	LDA #$8F				 ; $A689: A9 8F
+	JSR $A23A				; $A68B: 20 3A A2
 
 loc_A68E:
-    LDX #$02                 ; $A68E: A2 02
-    LDA $6BE9                ; $A690: AD E9 6B
-    BPL $A697                ; $A693: 10 02
-    LDX #$00                 ; $A695: A2 00
+	LDX #$02				 ; $A68E: A2 02
+	LDA $6BE9				; $A690: AD E9 6B
+	BPL $A697				; $A693: 10 02
+	LDX #$00				 ; $A695: A2 00
 
 loc_A697:
-    LDA $7020,X              ; $A697: BD 20 70
-    BPL $A6D4                ; $A69A: 10 38
-    LDA #$11                 ; $A69C: A9 11
-    LDX #$02                 ; $A69E: A2 02
-    STA $7046,X              ; $A6A0: 9D 46 70
-    LDX #$03                 ; $A6A3: A2 03
-    STA $7046,X              ; $A6A5: 9D 46 70
-    LDX #$00                 ; $A6A8: A2 00
-    STA $7046,X              ; $A6AA: 9D 46 70
-    LDX #$04                 ; $A6AD: A2 04
-    STA $7046,X              ; $A6AF: 9D 46 70
-    LDA $70E6,X              ; $A6B2: BD E6 70
-    AND #$F8                 ; $A6B5: 29 F8
-    STA $70E6,X              ; $A6B7: 9D E6 70
-    LDA #$00                 ; $A6BA: A9 00
-    STA $0515                ; $A6BC: 8D 15 05
-    LDX #$00                 ; $A6BF: A2 00
-    LDA #$53                 ; $A6C1: A9 53
-    BRK                      ; $A6C3: 00
-    ORA $A287                ; $A6C4: 0D 87 A2
-    ORA ($A9,X)              ; $A6C7: 01 A9
-    .byte $53             ; $A6C9 - unknown opcode
-    BRK                      ; $A6CA: 00
-    ORA $A287                ; $A6CB: 0D 87 A2
-    .byte $02             ; $A6CE - unknown opcode
-    LDA #$53                 ; $A6CF: A9 53
-    BRK                      ; $A6D1: 00
-    ORA $1887                ; $A6D2: 0D 87 18
-    RTS                      ; $A6D5: 60
-    LDX $51                  ; $A6D6: A6 51
-    LDA #$00                 ; $A6D8: A9 00
-    STA $7040,X              ; $A6DA: 9D 40 70
-    SEC                      ; $A6DD: 38
-    RTS                      ; $A6DE: 60
-    LDA #$02                 ; $A6DF: A9 02
-    BRK                      ; $A6E1: 00
-    .byte $07             ; $A6E2 - unknown opcode
-    .byte $CF             ; $A6E3 - unknown opcode
-    LDA #$1E                 ; $A6E4: A9 1E
-    STA $51                  ; $A6E6: 85 51
-    CLC                      ; $A6E8: 18
-    RTS                      ; $A6E9: 60
-    LDA $7000                ; $A6EA: AD 00 70
-    AND #$FC                 ; $A6ED: 29 FC
-    ORA #$01                 ; $A6EF: 09 01
-    STA $7000                ; $A6F1: 8D 00 70
-    LDA $51                  ; $A6F4: A5 51
-    PHA                      ; $A6F6: 48
-    JSR $995E                ; $A6F7: 20 5E 99
-    BRK                      ; $A6FA: 00
-    .byte $62             ; $A6FB - unknown opcode
-    .byte $3B             ; $A6FC - unknown opcode
+	LDA $7020,X			  ; $A697: BD 20 70
+	BPL $A6D4				; $A69A: 10 38
+	LDA #$11				 ; $A69C: A9 11
+	LDX #$02				 ; $A69E: A2 02
+	STA $7046,X			  ; $A6A0: 9D 46 70
+	LDX #$03				 ; $A6A3: A2 03
+	STA $7046,X			  ; $A6A5: 9D 46 70
+	LDX #$00				 ; $A6A8: A2 00
+	STA $7046,X			  ; $A6AA: 9D 46 70
+	LDX #$04				 ; $A6AD: A2 04
+	STA $7046,X			  ; $A6AF: 9D 46 70
+	LDA $70E6,X			  ; $A6B2: BD E6 70
+	AND #$F8				 ; $A6B5: 29 F8
+	STA $70E6,X			  ; $A6B7: 9D E6 70
+	LDA #$00				 ; $A6BA: A9 00
+	STA $0515				; $A6BC: 8D 15 05
+	LDX #$00				 ; $A6BF: A2 00
+	LDA #$53				 ; $A6C1: A9 53
+	BRK					  ; $A6C3: 00
+	ORA $A287				; $A6C4: 0D 87 A2
+	ORA ($A9,X)			  ; $A6C7: 01 A9
+	.byte $53			 ; $A6C9 - unknown opcode
+	BRK					  ; $A6CA: 00
+	ORA $A287				; $A6CB: 0D 87 A2
+	.byte $02			 ; $A6CE - unknown opcode
+	LDA #$53				 ; $A6CF: A9 53
+	BRK					  ; $A6D1: 00
+	ORA $1887				; $A6D2: 0D 87 18
+	RTS					  ; $A6D5: 60
+	LDX $51				  ; $A6D6: A6 51
+	LDA #$00				 ; $A6D8: A9 00
+	STA $7040,X			  ; $A6DA: 9D 40 70
+	SEC					  ; $A6DD: 38
+	RTS					  ; $A6DE: 60
+	LDA #$02				 ; $A6DF: A9 02
+	BRK					  ; $A6E1: 00
+	.byte $07			 ; $A6E2 - unknown opcode
+	.byte $CF			 ; $A6E3 - unknown opcode
+	LDA #$1E				 ; $A6E4: A9 1E
+	STA $51				  ; $A6E6: 85 51
+	CLC					  ; $A6E8: 18
+	RTS					  ; $A6E9: 60
+	LDA $7000				; $A6EA: AD 00 70
+	AND #$FC				 ; $A6ED: 29 FC
+	ORA #$01				 ; $A6EF: 09 01
+	STA $7000				; $A6F1: 8D 00 70
+	LDA $51				  ; $A6F4: A5 51
+	PHA					  ; $A6F6: 48
+	JSR $995E				; $A6F7: 20 5E 99
+	BRK					  ; $A6FA: 00
+	.byte $62			 ; $A6FB - unknown opcode
+	.byte $3B			 ; $A6FC - unknown opcode
 
 loc_A6FD:
-    BRK                      ; $A6FD: 00
-    .byte $07             ; $A6FE - unknown opcode
-    .byte $6F             ; $A6FF - unknown opcode
-    PHA                      ; $A700: 48
-    CMP #$01                 ; $A701: C9 01
-    BCC $A70B                ; $A703: 90 06
-    BRK                      ; $A705: 00
-    .byte $64             ; $A706 - unknown opcode
-    .byte $3B             ; $A707 - unknown opcode
-    JMP $A6FD                ; $A708: 4C FD A6
+	BRK					  ; $A6FD: 00
+	.byte $07			 ; $A6FE - unknown opcode
+	.byte $6F			 ; $A6FF - unknown opcode
+	PHA					  ; $A700: 48
+	CMP #$01				 ; $A701: C9 01
+	BCC $A70B				; $A703: 90 06
+	BRK					  ; $A705: 00
+	.byte $64			 ; $A706 - unknown opcode
+	.byte $3B			 ; $A707 - unknown opcode
+	JMP $A6FD				; $A708: 4C FD A6
 
 loc_A70B:
-    BRK                      ; $A70B: 00
-    .byte $63             ; $A70C - unknown opcode
-    .byte $3B             ; $A70D - unknown opcode
-    LDX #$0F                 ; $A70E: A2 0F
-    LDA #$81                 ; $A710: A9 81
-    JSR $9963                ; $A712: 20 63 99
-    LDX #$0E                 ; $A715: A2 0E
-    LDA #$11                 ; $A717: A9 11
-    STA $7046,X              ; $A719: 9D 46 70
-    JSR $D20A                ; $A71C: 20 0A D2
-    PLA                      ; $A71F: 68
-    STA $51                  ; $A720: 85 51
-    SEC                      ; $A722: 38
-    RTS                      ; $A723: 60
-    LDA #$11                 ; $A724: A9 11
-    LDX #$12                 ; $A726: A2 12
-    STA $7046,X              ; $A728: 9D 46 70
-    LDX #$11                 ; $A72B: A2 11
-    STA $7046,X              ; $A72D: 9D 46 70
-    SEC                      ; $A730: 38
-    RTS                      ; $A731: 60
-    JSR $995E                ; $A732: 20 5E 99
-    BRK                      ; $A735: 00
-    .byte $67             ; $A736 - unknown opcode
-    .byte $3B             ; $A737 - unknown opcode
-    JSR $D214                ; $A738: 20 14 D2
-    LDA #$76                 ; $A73B: A9 76
-    BRK                      ; $A73D: 00
-    ROR $73                  ; $A73E: 66 73
-    TAX                      ; $A740: AA
-    LDA $73                  ; $A741: A5 73
-    BRK                      ; $A743: 00
-    BMI $A7B9                ; $A744: 30 73
-    LDA #$71                 ; $A746: A9 71
-    BRK                      ; $A748: 00
-    ROL $2073                ; $A749: 2E 73 20
-    CMP $C5                  ; $A74C: C5 C5
-    LDA #$00                 ; $A74E: A9 00
-    STA $0530                ; $A750: 8D 30 05
-    LDA #$1E                 ; $A753: A9 1E
-    STA $62ED                ; $A755: 8D ED 62
-    BRK                      ; $A758: 00
-    BRK                      ; $A759: 00
-    .byte $CB             ; $A75A - unknown opcode
-    RTI                      ; $A75B: 40
-    BRK                      ; $A75C: 00
-    .byte $32             ; $A75D - unknown opcode
-    .byte $EF             ; $A75E - unknown opcode
-    LDA #$1E                 ; $A75F: A9 1E
-    STA $51                  ; $A761: 85 51
-    SEC                      ; $A763: 38
-    RTS                      ; $A764: 60
-    BRK                      ; $A765: 00
-    PHP                      ; $A766: 08
-    .byte $EB             ; $A767 - unknown opcode
-    ASL $D0                  ; $A768: 06 D0
-    CLC                      ; $A76A: 18
-    LDA $45                  ; $A76B: A5 45
-    CMP #$0A                 ; $A76D: C9 0A
-    BCC $A783                ; $A76F: 90 12
-    CMP #$0F                 ; $A771: C9 0F
-    BCS $A783                ; $A773: B0 0E
-    LDY #$0A                 ; $A775: A0 0A
-    LDA $44                  ; $A777: A5 44
-    CMP #$09                 ; $A779: C9 09
-    BEQ $A785                ; $A77B: F0 08
-    LDY #$0C                 ; $A77D: A0 0C
-    CMP #$0D                 ; $A77F: C9 0D
-    BEQ $A785                ; $A781: F0 02
+	BRK					  ; $A70B: 00
+	.byte $63			 ; $A70C - unknown opcode
+	.byte $3B			 ; $A70D - unknown opcode
+	LDX #$0F				 ; $A70E: A2 0F
+	LDA #$81				 ; $A710: A9 81
+	JSR $9963				; $A712: 20 63 99
+	LDX #$0E				 ; $A715: A2 0E
+	LDA #$11				 ; $A717: A9 11
+	STA $7046,X			  ; $A719: 9D 46 70
+	JSR $D20A				; $A71C: 20 0A D2
+	PLA					  ; $A71F: 68
+	STA $51				  ; $A720: 85 51
+	SEC					  ; $A722: 38
+	RTS					  ; $A723: 60
+	LDA #$11				 ; $A724: A9 11
+	LDX #$12				 ; $A726: A2 12
+	STA $7046,X			  ; $A728: 9D 46 70
+	LDX #$11				 ; $A72B: A2 11
+	STA $7046,X			  ; $A72D: 9D 46 70
+	SEC					  ; $A730: 38
+	RTS					  ; $A731: 60
+	JSR $995E				; $A732: 20 5E 99
+	BRK					  ; $A735: 00
+	.byte $67			 ; $A736 - unknown opcode
+	.byte $3B			 ; $A737 - unknown opcode
+	JSR $D214				; $A738: 20 14 D2
+	LDA #$76				 ; $A73B: A9 76
+	BRK					  ; $A73D: 00
+	ROR $73				  ; $A73E: 66 73
+	TAX					  ; $A740: AA
+	LDA $73				  ; $A741: A5 73
+	BRK					  ; $A743: 00
+	BMI $A7B9				; $A744: 30 73
+	LDA #$71				 ; $A746: A9 71
+	BRK					  ; $A748: 00
+	ROL $2073				; $A749: 2E 73 20
+	CMP $C5				  ; $A74C: C5 C5
+	LDA #$00				 ; $A74E: A9 00
+	STA $0530				; $A750: 8D 30 05
+	LDA #$1E				 ; $A753: A9 1E
+	STA $62ED				; $A755: 8D ED 62
+	BRK					  ; $A758: 00
+	BRK					  ; $A759: 00
+	.byte $CB			 ; $A75A - unknown opcode
+	RTI					  ; $A75B: 40
+	BRK					  ; $A75C: 00
+	.byte $32			 ; $A75D - unknown opcode
+	.byte $EF			 ; $A75E - unknown opcode
+	LDA #$1E				 ; $A75F: A9 1E
+	STA $51				  ; $A761: 85 51
+	SEC					  ; $A763: 38
+	RTS					  ; $A764: 60
+	BRK					  ; $A765: 00
+	PHP					  ; $A766: 08
+	.byte $EB			 ; $A767 - unknown opcode
+	ASL $D0				  ; $A768: 06 D0
+	CLC					  ; $A76A: 18
+	LDA $45				  ; $A76B: A5 45
+	CMP #$0A				 ; $A76D: C9 0A
+	BCC $A783				; $A76F: 90 12
+	CMP #$0F				 ; $A771: C9 0F
+	BCS $A783				; $A773: B0 0E
+	LDY #$0A				 ; $A775: A0 0A
+	LDA $44				  ; $A777: A5 44
+	CMP #$09				 ; $A779: C9 09
+	BEQ $A785				; $A77B: F0 08
+	LDY #$0C				 ; $A77D: A0 0C
+	CMP #$0D				 ; $A77F: C9 0D
+	BEQ $A785				; $A781: F0 02
 
 loc_A783:
-    CLC                      ; $A783: 18
-    RTS                      ; $A784: 60
+	CLC					  ; $A783: 18
+	RTS					  ; $A784: 60
 
 loc_A785:
-    LDX $51                  ; $A785: A6 51
-    TYA                      ; $A787: 98
-    STA $71A0,X              ; $A788: 9D A0 71
-    LDA $45                  ; $A78B: A5 45
-    STA $71C0,X              ; $A78D: 9D C0 71
-    JSR $A7A4                ; $A790: 20 A4 A7
-    BCS $A7A2                ; $A793: B0 0D
-    LDX #$00                 ; $A795: A2 00
+	LDX $51				  ; $A785: A6 51
+	TYA					  ; $A787: 98
+	STA $71A0,X			  ; $A788: 9D A0 71
+	LDA $45				  ; $A78B: A5 45
+	STA $71C0,X			  ; $A78D: 9D C0 71
+	JSR $A7A4				; $A790: 20 A4 A7
+	BCS $A7A2				; $A793: B0 0D
+	LDX #$00				 ; $A795: A2 00
 
 loc_A797:
-    LDA $053A,X              ; $A797: BD 3A 05
-    BEQ $A7A0                ; $A79A: F0 04
-    INX                      ; $A79C: E8
-    JMP $A797                ; $A79D: 4C 97 A7
+	LDA $053A,X			  ; $A797: BD 3A 05
+	BEQ $A7A0				; $A79A: F0 04
+	INX					  ; $A79C: E8
+	JMP $A797				; $A79D: 4C 97 A7
 
 loc_A7A0:
-    STX $F9                  ; $A7A0: 86 F9
+	STX $F9				  ; $A7A0: 86 F9
 
 loc_A7A2:
-    SEC                      ; $A7A2: 38
-    RTS                      ; $A7A3: 60
+	SEC					  ; $A7A2: 38
+	RTS					  ; $A7A3: 60
 
 loc_A7A4:
-    LDA #$07                 ; $A7A4: A9 07
-    BRK                      ; $A7A6: 00
-    .byte $63             ; $A7A7 - unknown opcode
-    .byte $73             ; $A7A8 - unknown opcode
-    TAX                      ; $A7A9: AA
-    STX $F9                  ; $A7AA: 86 F9
-    BRK                      ; $A7AC: 00
-    LSR $93                  ; $A7AD: 46 93
-    .byte $07             ; $A7AF - unknown opcode
-    RTS                      ; $A7B0: 60
-    LDA $44                  ; $A7B1: A5 44
-    SEC                      ; $A7B3: 38
-    SBC #$0D                 ; $A7B4: E9 0D
-    CMP #$04                 ; $A7B6: C9 04
-    BCS $A7D5                ; $A7B8: B0 1B
-    LDY #$22                 ; $A7BA: A0 22
-    LDX $45                  ; $A7BC: A6 45
-    CPX #$1A                 ; $A7BE: E0 1A
-    BEQ $A7D7                ; $A7C0: F0 15
-    BRK                      ; $A7C2: 00
-    BRK                      ; $A7C3: 00
-    .byte $EB             ; $A7C4 - unknown opcode
-    .byte $02             ; $A7C5 - unknown opcode
-    BEQ $A7D5                ; $A7C6: F0 0D
-    LDY #$68                 ; $A7C8: A0 68
-    LDA $44                  ; $A7CA: A5 44
-    CMP #$0F                 ; $A7CC: C9 0F
-    BCC $A7D1                ; $A7CE: 90 01
-    INY                      ; $A7D0: C8
+	LDA #$07				 ; $A7A4: A9 07
+	BRK					  ; $A7A6: 00
+	.byte $63			 ; $A7A7 - unknown opcode
+	.byte $73			 ; $A7A8 - unknown opcode
+	TAX					  ; $A7A9: AA
+	STX $F9				  ; $A7AA: 86 F9
+	BRK					  ; $A7AC: 00
+	LSR $93				  ; $A7AD: 46 93
+	.byte $07			 ; $A7AF - unknown opcode
+	RTS					  ; $A7B0: 60
+	LDA $44				  ; $A7B1: A5 44
+	SEC					  ; $A7B3: 38
+	SBC #$0D				 ; $A7B4: E9 0D
+	CMP #$04				 ; $A7B6: C9 04
+	BCS $A7D5				; $A7B8: B0 1B
+	LDY #$22				 ; $A7BA: A0 22
+	LDX $45				  ; $A7BC: A6 45
+	CPX #$1A				 ; $A7BE: E0 1A
+	BEQ $A7D7				; $A7C0: F0 15
+	BRK					  ; $A7C2: 00
+	BRK					  ; $A7C3: 00
+	.byte $EB			 ; $A7C4 - unknown opcode
+	.byte $02			 ; $A7C5 - unknown opcode
+	BEQ $A7D5				; $A7C6: F0 0D
+	LDY #$68				 ; $A7C8: A0 68
+	LDA $44				  ; $A7CA: A5 44
+	CMP #$0F				 ; $A7CC: C9 0F
+	BCC $A7D1				; $A7CE: 90 01
+	INY					  ; $A7D0: C8
 
 loc_A7D1:
-    CPX #$18                 ; $A7D1: E0 18
-    BEQ $A7D7                ; $A7D3: F0 02
+	CPX #$18				 ; $A7D1: E0 18
+	BEQ $A7D7				; $A7D3: F0 02
 
 loc_A7D5:
-    CLC                      ; $A7D5: 18
-    RTS                      ; $A7D6: 60
+	CLC					  ; $A7D5: 18
+	RTS					  ; $A7D6: 60
 
 loc_A7D7:
-    LDA #$03                 ; $A7D7: A9 03
-    STA $0594                ; $A7D9: 8D 94 05
-    STY $0593                ; $A7DC: 8C 93 05
-    LDA #$80                 ; $A7DF: A9 80
-    STA $0527                ; $A7E1: 8D 27 05
-    BRK                      ; $A7E4: 00
-    ASL $F7DB                ; $A7E5: 0E DB F7
-    CPY #$22                 ; $A7E8: C0 22
-    BEQ $A7FF                ; $A7EA: F0 13
-    BRK                      ; $A7EC: 00
-    ASL $08CB                ; $A7ED: 0E CB 08
-    LDX #$00                 ; $A7F0: A2 00
-    JSR $A7F7                ; $A7F2: 20 F7 A7
-    LDX #$01                 ; $A7F5: A2 01
+	LDA #$03				 ; $A7D7: A9 03
+	STA $0594				; $A7D9: 8D 94 05
+	STY $0593				; $A7DC: 8C 93 05
+	LDA #$80				 ; $A7DF: A9 80
+	STA $0527				; $A7E1: 8D 27 05
+	BRK					  ; $A7E4: 00
+	ASL $F7DB				; $A7E5: 0E DB F7
+	CPY #$22				 ; $A7E8: C0 22
+	BEQ $A7FF				; $A7EA: F0 13
+	BRK					  ; $A7EC: 00
+	ASL $08CB				; $A7ED: 0E CB 08
+	LDX #$00				 ; $A7F0: A2 00
+	JSR $A7F7				; $A7F2: 20 F7 A7
+	LDX #$01				 ; $A7F5: A2 01
 
 loc_A7F7:
-    LDA $7006,X              ; $A7F7: BD 06 70
-    AND #$FC                 ; $A7FA: 29 FC
-    STA $7006,X              ; $A7FC: 9D 06 70
+	LDA $7006,X			  ; $A7F7: BD 06 70
+	AND #$FC				 ; $A7FA: 29 FC
+	STA $7006,X			  ; $A7FC: 9D 06 70
 
 loc_A7FF:
-    SEC                      ; $A7FF: 38
-    RTS                      ; $A800: 60
-    BRK                      ; $A801: 00
-    BRK                      ; $A802: 00
-    .byte $EB             ; $A803 - unknown opcode
-    .byte $02             ; $A804 - unknown opcode
-    BNE $A815                ; $A805: D0 0E
-    LDX #$02                 ; $A807: A2 02
+	SEC					  ; $A7FF: 38
+	RTS					  ; $A800: 60
+	BRK					  ; $A801: 00
+	BRK					  ; $A802: 00
+	.byte $EB			 ; $A803 - unknown opcode
+	.byte $02			 ; $A804 - unknown opcode
+	BNE $A815				; $A805: D0 0E
+	LDX #$02				 ; $A807: A2 02
 
 loc_A809:
-    LDA $6F80,X              ; $A809: BD 80 6F
-    CMP #$19                 ; $A80C: C9 19
-    BCS $A815                ; $A80E: B0 05
-    DEX                      ; $A810: CA
-    BPL $A809                ; $A811: 10 F6
-    SEC                      ; $A813: 38
-    RTS                      ; $A814: 60
+	LDA $6F80,X			  ; $A809: BD 80 6F
+	CMP #$19				 ; $A80C: C9 19
+	BCS $A815				; $A80E: B0 05
+	DEX					  ; $A810: CA
+	BPL $A809				; $A811: 10 F6
+	SEC					  ; $A813: 38
+	RTS					  ; $A814: 60
 
 loc_A815:
-    CLC                      ; $A815: 18
-    RTS                      ; $A816: 60
-    BRK                      ; $A817: 00
-    PHP                      ; $A818: 08
-    .byte $EB             ; $A819 - unknown opcode
-    .byte $04             ; $A81A - unknown opcode
-    BNE $A84D                ; $A81B: D0 30
-    BRK                      ; $A81D: 00
-    PHP                      ; $A81E: 08
-    .byte $EB             ; $A81F - unknown opcode
-    PHP                      ; $A820: 08
-    BEQ $A84D                ; $A821: F0 2A
-    LDX #$00                 ; $A823: A2 00
+	CLC					  ; $A815: 18
+	RTS					  ; $A816: 60
+	BRK					  ; $A817: 00
+	PHP					  ; $A818: 08
+	.byte $EB			 ; $A819 - unknown opcode
+	.byte $04			 ; $A81A - unknown opcode
+	BNE $A84D				; $A81B: D0 30
+	BRK					  ; $A81D: 00
+	PHP					  ; $A81E: 08
+	.byte $EB			 ; $A81F - unknown opcode
+	PHP					  ; $A820: 08
+	BEQ $A84D				; $A821: F0 2A
+	LDX #$00				 ; $A823: A2 00
 
 loc_A825:
-    LDA $44                  ; $A825: A5 44
-    CMP $A84F,X              ; $A827: DD 4F A8
-    BNE $A846                ; $A82A: D0 1A
-    LDA $45                  ; $A82C: A5 45
-    CMP $A850,X              ; $A82E: DD 50 A8
-    BNE $A846                ; $A831: D0 13
-    LDY $51                  ; $A833: A4 51
-    LDA $7000,Y              ; $A835: B9 00 70
-    AND #$FC                 ; $A838: 29 FC
-    ORA $A851,X              ; $A83A: 1D 51 A8
-    STA $7000,Y              ; $A83D: 99 00 70
-    BRK                      ; $A840: 00
-    PHP                      ; $A841: 08
-    .byte $CB             ; $A842 - unknown opcode
-    .byte $04             ; $A843 - unknown opcode
-    SEC                      ; $A844: 38
-    RTS                      ; $A845: 60
+	LDA $44				  ; $A825: A5 44
+	CMP $A84F,X			  ; $A827: DD 4F A8
+	BNE $A846				; $A82A: D0 1A
+	LDA $45				  ; $A82C: A5 45
+	CMP $A850,X			  ; $A82E: DD 50 A8
+	BNE $A846				; $A831: D0 13
+	LDY $51				  ; $A833: A4 51
+	LDA $7000,Y			  ; $A835: B9 00 70
+	AND #$FC				 ; $A838: 29 FC
+	ORA $A851,X			  ; $A83A: 1D 51 A8
+	STA $7000,Y			  ; $A83D: 99 00 70
+	BRK					  ; $A840: 00
+	PHP					  ; $A841: 08
+	.byte $CB			 ; $A842 - unknown opcode
+	.byte $04			 ; $A843 - unknown opcode
+	SEC					  ; $A844: 38
+	RTS					  ; $A845: 60
 
 loc_A846:
-    INX                      ; $A846: E8
-    INX                      ; $A847: E8
-    INX                      ; $A848: E8
-    CPX #$09                 ; $A849: E0 09
-    BCC $A825                ; $A84B: 90 D8
+	INX					  ; $A846: E8
+	INX					  ; $A847: E8
+	INX					  ; $A848: E8
+	CPX #$09				 ; $A849: E0 09
+	BCC $A825				; $A84B: 90 D8
 
 loc_A84D:
-    CLC                      ; $A84D: 18
-    RTS                      ; $A84E: 60
-    .byte $0B             ; $A84F - unknown opcode
-    BPL $A853                ; $A850: 10 01
-    .byte $0C             ; $A852 - unknown opcode
+	CLC					  ; $A84D: 18
+	RTS					  ; $A84E: 60
+	.byte $0B			 ; $A84F - unknown opcode
+	BPL $A853				; $A850: 10 01
+	.byte $0C			 ; $A852 - unknown opcode
 
 loc_A853:
-    BPL $A856                ; $A853: 10 01
-    ASL                      ; $A855: 0A
+	BPL $A856				; $A853: 10 01
+	ASL					  ; $A855: 0A
 
 loc_A856:
-    ORA ($02),Y              ; $A856: 11 02
-    BRK                      ; $A858: 00
-    .byte $0B             ; $A859 - unknown opcode
-    .byte $EB             ; $A85A - unknown opcode
-    .byte $02             ; $A85B - unknown opcode
-    BNE $A891                ; $A85C: D0 33
-    LDA $45                  ; $A85E: A5 45
-    CMP #$0C                 ; $A860: C9 0C
-    BNE $A891                ; $A862: D0 2D
-    LDA #$84                 ; $A864: A9 84
-    JSR $A23A                ; $A866: 20 3A A2
-    LDX #$00                 ; $A869: A2 00
-    LDY #$02                 ; $A86B: A0 02
-    JSR $A874                ; $A86D: 20 74 A8
-    LDX #$01                 ; $A870: A2 01
-    LDY #$03                 ; $A872: A0 03
+	ORA ($02),Y			  ; $A856: 11 02
+	BRK					  ; $A858: 00
+	.byte $0B			 ; $A859 - unknown opcode
+	.byte $EB			 ; $A85A - unknown opcode
+	.byte $02			 ; $A85B - unknown opcode
+	BNE $A891				; $A85C: D0 33
+	LDA $45				  ; $A85E: A5 45
+	CMP #$0C				 ; $A860: C9 0C
+	BNE $A891				; $A862: D0 2D
+	LDA #$84				 ; $A864: A9 84
+	JSR $A23A				; $A866: 20 3A A2
+	LDX #$00				 ; $A869: A2 00
+	LDY #$02				 ; $A86B: A0 02
+	JSR $A874				; $A86D: 20 74 A8
+	LDX #$01				 ; $A870: A2 01
+	LDY #$03				 ; $A872: A0 03
 
 loc_A874:
-    LDA $7066,Y              ; $A874: B9 66 70
-    STA $7066,X              ; $A877: 9D 66 70
-    LDA $7086,Y              ; $A87A: B9 86 70
-    STA $7086,X              ; $A87D: 9D 86 70
-    LDA $7006,X              ; $A880: BD 06 70
-    AND #$7C                 ; $A883: 29 7C
-    ORA #$02                 ; $A885: 09 02
-    STA $7006,X              ; $A887: 9D 06 70
-    LDA #$11                 ; $A88A: A9 11
-    STA $7046,X              ; $A88C: 9D 46 70
-    SEC                      ; $A88F: 38
-    RTS                      ; $A890: 60
+	LDA $7066,Y			  ; $A874: B9 66 70
+	STA $7066,X			  ; $A877: 9D 66 70
+	LDA $7086,Y			  ; $A87A: B9 86 70
+	STA $7086,X			  ; $A87D: 9D 86 70
+	LDA $7006,X			  ; $A880: BD 06 70
+	AND #$7C				 ; $A883: 29 7C
+	ORA #$02				 ; $A885: 09 02
+	STA $7006,X			  ; $A887: 9D 06 70
+	LDA #$11				 ; $A88A: A9 11
+	STA $7046,X			  ; $A88C: 9D 46 70
+	SEC					  ; $A88F: 38
+	RTS					  ; $A890: 60
 
 loc_A891:
-    CLC                      ; $A891: 18
-    RTS                      ; $A892: 60
-    LDA $6FA0                ; $A893: AD A0 6F
-    CMP #$0E                 ; $A896: C9 0E
-    BNE $A90B                ; $A898: D0 71
-    LDA $6FC0                ; $A89A: AD C0 6F
-    CMP #$0C                 ; $A89D: C9 0C
-    BNE $A90B                ; $A89F: D0 6A
-    LDA $7000                ; $A8A1: AD 00 70
-    AND #$FC                 ; $A8A4: 29 FC
-    ORA #$02                 ; $A8A6: 09 02
-    STA $7000                ; $A8A8: 8D 00 70
-    BRK                      ; $A8AB: 00
-    .byte $0C             ; $A8AC - unknown opcode
-    .byte $DB             ; $A8AD - unknown opcode
-    SED                      ; $A8AE: F8
-    LDX #$0D                 ; $A8AF: A2 0D
-    LDY #$01                 ; $A8B1: A0 01
-    JSR $A90D                ; $A8B3: 20 0D A9
-    LDX #$0E                 ; $A8B6: A2 0E
-    JSR $A90D                ; $A8B8: 20 0D A9
-    LDA $51                  ; $A8BB: A5 51
-    PHA                      ; $A8BD: 48
-    TAY                      ; $A8BE: A8
-    LDX $6FE0,Y              ; $A8BF: BE E0 6F
-    LDA #$3B                 ; $A8C2: A9 3B
-    BRK                      ; $A8C4: 00
-    ORA $2087                ; $A8C5: 0D 87 20
-    DEC $68A8                ; $A8C8: CE A8 68
-    STA $51                  ; $A8CB: 85 51
-    RTS                      ; $A8CD: 60
-    LDA $6BE8                ; $A8CE: AD E8 6B
-    AND #$7F                 ; $A8D1: 29 7F
-    CLC                      ; $A8D3: 18
-    BNE $A8E0                ; $A8D4: D0 0A
-    JSR $995E                ; $A8D6: 20 5E 99
-    BRK                      ; $A8D9: 00
-    ROR $203B,X              ; $A8DA: 7E 3B 20
-    CLC                      ; $A8DD: 18
-    .byte $D2             ; $A8DE - unknown opcode
-    SEC                      ; $A8DF: 38
+	CLC					  ; $A891: 18
+	RTS					  ; $A892: 60
+	LDA $6FA0				; $A893: AD A0 6F
+	CMP #$0E				 ; $A896: C9 0E
+	BNE $A90B				; $A898: D0 71
+	LDA $6FC0				; $A89A: AD C0 6F
+	CMP #$0C				 ; $A89D: C9 0C
+	BNE $A90B				; $A89F: D0 6A
+	LDA $7000				; $A8A1: AD 00 70
+	AND #$FC				 ; $A8A4: 29 FC
+	ORA #$02				 ; $A8A6: 09 02
+	STA $7000				; $A8A8: 8D 00 70
+	BRK					  ; $A8AB: 00
+	.byte $0C			 ; $A8AC - unknown opcode
+	.byte $DB			 ; $A8AD - unknown opcode
+	SED					  ; $A8AE: F8
+	LDX #$0D				 ; $A8AF: A2 0D
+	LDY #$01				 ; $A8B1: A0 01
+	JSR $A90D				; $A8B3: 20 0D A9
+	LDX #$0E				 ; $A8B6: A2 0E
+	JSR $A90D				; $A8B8: 20 0D A9
+	LDA $51				  ; $A8BB: A5 51
+	PHA					  ; $A8BD: 48
+	TAY					  ; $A8BE: A8
+	LDX $6FE0,Y			  ; $A8BF: BE E0 6F
+	LDA #$3B				 ; $A8C2: A9 3B
+	BRK					  ; $A8C4: 00
+	ORA $2087				; $A8C5: 0D 87 20
+	DEC $68A8				; $A8C8: CE A8 68
+	STA $51				  ; $A8CB: 85 51
+	RTS					  ; $A8CD: 60
+	LDA $6BE8				; $A8CE: AD E8 6B
+	AND #$7F				 ; $A8D1: 29 7F
+	CLC					  ; $A8D3: 18
+	BNE $A8E0				; $A8D4: D0 0A
+	JSR $995E				; $A8D6: 20 5E 99
+	BRK					  ; $A8D9: 00
+	ROR $203B,X			  ; $A8DA: 7E 3B 20
+	CLC					  ; $A8DD: 18
+	.byte $D2			 ; $A8DE - unknown opcode
+	SEC					  ; $A8DF: 38
 
 loc_A8E0:
-    LDA $6BE9                ; $A8E0: AD E9 6B
-    AND #$7F                 ; $A8E3: 29 7F
-    BNE $A8FF                ; $A8E5: D0 18
-    BCS $A8EC                ; $A8E7: B0 03
-    JSR $995E                ; $A8E9: 20 5E 99
+	LDA $6BE9				; $A8E0: AD E9 6B
+	AND #$7F				 ; $A8E3: 29 7F
+	BNE $A8FF				; $A8E5: D0 18
+	BCS $A8EC				; $A8E7: B0 03
+	JSR $995E				; $A8E9: 20 5E 99
 
 loc_A8EC:
-    BRK                      ; $A8EC: 00
-    .byte $7F             ; $A8ED - unknown opcode
-    .byte $3B             ; $A8EE - unknown opcode
-    JSR $D218                ; $A8EF: 20 18 D2
-    JSR $D1F3                ; $A8F2: 20 F3 D1
-    LDX #$00                 ; $A8F5: A2 00
-    BRK                      ; $A8F7: 00
-    .byte $53             ; $A8F8 - unknown opcode
-    .byte $73             ; $A8F9 - unknown opcode
-    BRK                      ; $A8FA: 00
-    .byte $27             ; $A8FB - unknown opcode
-    .byte $0F             ; $A8FC - unknown opcode
-    SEC                      ; $A8FD: 38
-    RTS                      ; $A8FE: 60
+	BRK					  ; $A8EC: 00
+	.byte $7F			 ; $A8ED - unknown opcode
+	.byte $3B			 ; $A8EE - unknown opcode
+	JSR $D218				; $A8EF: 20 18 D2
+	JSR $D1F3				; $A8F2: 20 F3 D1
+	LDX #$00				 ; $A8F5: A2 00
+	BRK					  ; $A8F7: 00
+	.byte $53			 ; $A8F8 - unknown opcode
+	.byte $73			 ; $A8F9 - unknown opcode
+	BRK					  ; $A8FA: 00
+	.byte $27			 ; $A8FB - unknown opcode
+	.byte $0F			 ; $A8FC - unknown opcode
+	SEC					  ; $A8FD: 38
+	RTS					  ; $A8FE: 60
 
 loc_A8FF:
-    BCC $A904                ; $A8FF: 90 03
-    JSR $D1F3                ; $A901: 20 F3 D1
+	BCC $A904				; $A8FF: 90 03
+	JSR $D1F3				; $A901: 20 F3 D1
 
 loc_A904:
-    LDX #$00                 ; $A904: A2 00
-    BRK                      ; $A906: 00
-    .byte $53             ; $A907 - unknown opcode
-    .byte $73             ; $A908 - unknown opcode
-    SEC                      ; $A909: 38
-    RTS                      ; $A90A: 60
+	LDX #$00				 ; $A904: A2 00
+	BRK					  ; $A906: 00
+	.byte $53			 ; $A907 - unknown opcode
+	.byte $73			 ; $A908 - unknown opcode
+	SEC					  ; $A909: 38
+	RTS					  ; $A90A: 60
 
 loc_A90B:
-    CLC                      ; $A90B: 18
-    RTS                      ; $A90C: 60
+	CLC					  ; $A90B: 18
+	RTS					  ; $A90C: 60
 
 loc_A90D:
-    LDA $6F60,Y              ; $A90D: B9 60 6F
-    STA $6F66,X              ; $A910: 9D 66 6F
-    LDA $6FA0,Y              ; $A913: B9 A0 6F
-    STA $6FA6,X              ; $A916: 9D A6 6F
-    LDA $6F80,Y              ; $A919: B9 80 6F
-    STA $6F86,X              ; $A91C: 9D 86 6F
-    LDA $6FC0,Y              ; $A91F: B9 C0 6F
-    STA $6FC6,X              ; $A922: 9D C6 6F
-    LDA $6FE0,Y              ; $A925: B9 E0 6F
-    STA $6FE6,X              ; $A928: 9D E6 6F
-    LDA #$81                 ; $A92B: A9 81
-    STA $6F60,Y              ; $A92D: 99 60 6F
-    STA $6F80,Y              ; $A930: 99 80 6F
-    STA $6FA0,Y              ; $A933: 99 A0 6F
-    STA $6FC0,Y              ; $A936: 99 C0 6F
-    INY                      ; $A939: C8
-    RTS                      ; $A93A: 60
-    LDA $6FC0                ; $A93B: AD C0 6F
-    CMP #$0A                 ; $A93E: C9 0A
-    BNE $A966                ; $A940: D0 24
-    LDA $51                  ; $A942: A5 51
-    PHA                      ; $A944: 48
-    JSR $995E                ; $A945: 20 5E 99
-    BRK                      ; $A948: 00
-    .byte $80             ; $A949 - unknown opcode
-    .byte $3B             ; $A94A - unknown opcode
-    JSR $D218                ; $A94B: 20 18 D2
-    JSR $D1F3                ; $A94E: 20 F3 D1
-    JSR $A97B                ; $A951: 20 7B A9
-    PLA                      ; $A954: 68
-    STA $51                  ; $A955: 85 51
-    TAX                      ; $A957: AA
-    LDA $6FE0,X              ; $A958: BD E0 6F
-    STA $059B                ; $A95B: 8D 9B 05
-    LDA $A9BC                ; $A95E: AD BC A9
-    STA $059A                ; $A961: 8D 9A 05
-    SEC                      ; $A964: 38
-    RTS                      ; $A965: 60
+	LDA $6F60,Y			  ; $A90D: B9 60 6F
+	STA $6F66,X			  ; $A910: 9D 66 6F
+	LDA $6FA0,Y			  ; $A913: B9 A0 6F
+	STA $6FA6,X			  ; $A916: 9D A6 6F
+	LDA $6F80,Y			  ; $A919: B9 80 6F
+	STA $6F86,X			  ; $A91C: 9D 86 6F
+	LDA $6FC0,Y			  ; $A91F: B9 C0 6F
+	STA $6FC6,X			  ; $A922: 9D C6 6F
+	LDA $6FE0,Y			  ; $A925: B9 E0 6F
+	STA $6FE6,X			  ; $A928: 9D E6 6F
+	LDA #$81				 ; $A92B: A9 81
+	STA $6F60,Y			  ; $A92D: 99 60 6F
+	STA $6F80,Y			  ; $A930: 99 80 6F
+	STA $6FA0,Y			  ; $A933: 99 A0 6F
+	STA $6FC0,Y			  ; $A936: 99 C0 6F
+	INY					  ; $A939: C8
+	RTS					  ; $A93A: 60
+	LDA $6FC0				; $A93B: AD C0 6F
+	CMP #$0A				 ; $A93E: C9 0A
+	BNE $A966				; $A940: D0 24
+	LDA $51				  ; $A942: A5 51
+	PHA					  ; $A944: 48
+	JSR $995E				; $A945: 20 5E 99
+	BRK					  ; $A948: 00
+	.byte $80			 ; $A949 - unknown opcode
+	.byte $3B			 ; $A94A - unknown opcode
+	JSR $D218				; $A94B: 20 18 D2
+	JSR $D1F3				; $A94E: 20 F3 D1
+	JSR $A97B				; $A951: 20 7B A9
+	PLA					  ; $A954: 68
+	STA $51				  ; $A955: 85 51
+	TAX					  ; $A957: AA
+	LDA $6FE0,X			  ; $A958: BD E0 6F
+	STA $059B				; $A95B: 8D 9B 05
+	LDA $A9BC				; $A95E: AD BC A9
+	STA $059A				; $A961: 8D 9A 05
+	SEC					  ; $A964: 38
+	RTS					  ; $A965: 60
 
 loc_A966:
-    CLC                      ; $A966: 18
-    RTS                      ; $A967: 60
-    LDA $51                  ; $A968: A5 51
-    PHA                      ; $A96A: 48
-    LDA #$03                 ; $A96B: A9 03
-    BRK                      ; $A96D: 00
-    .byte $07             ; $A96E - unknown opcode
-    .byte $CF             ; $A96F - unknown opcode
-    JSR $A97B                ; $A970: 20 7B A9
-    PLA                      ; $A973: 68
-    STA $51                  ; $A974: 85 51
-    INC $6287                ; $A976: EE 87 62
-    SEC                      ; $A979: 38
-    RTS                      ; $A97A: 60
+	CLC					  ; $A966: 18
+	RTS					  ; $A967: 60
+	LDA $51				  ; $A968: A5 51
+	PHA					  ; $A96A: 48
+	LDA #$03				 ; $A96B: A9 03
+	BRK					  ; $A96D: 00
+	.byte $07			 ; $A96E - unknown opcode
+	.byte $CF			 ; $A96F - unknown opcode
+	JSR $A97B				; $A970: 20 7B A9
+	PLA					  ; $A973: 68
+	STA $51				  ; $A974: 85 51
+	INC $6287				; $A976: EE 87 62
+	SEC					  ; $A979: 38
+	RTS					  ; $A97A: 60
 
 loc_A97B:
-    LDA #$03                 ; $A97B: A9 03
-    STA $058E                ; $A97D: 8D 8E 05
-    LDA #$08                 ; $A980: A9 08
-    STA $45                  ; $A982: 85 45
-    LDX #$0E                 ; $A984: A2 0E
-    LDY #$07                 ; $A986: A0 07
-    JSR $D3E6                ; $A988: 20 E6 D3
-    AND #$1F                 ; $A98B: 29 1F
-    TAX                      ; $A98D: AA
-    LDA $6F40,X              ; $A98E: BD 40 6F
-    AND #$7F                 ; $A991: 29 7F
-    BRK                      ; $A993: 00
-    .byte $12             ; $A994 - unknown opcode
-    .byte $87             ; $A995 - unknown opcode
-    BRK                      ; $A996: 00
-    .byte $03             ; $A997 - unknown opcode
-    .byte $BF             ; $A998 - unknown opcode
-    LDA #$0A                 ; $A999: A9 0A
-    STA $45                  ; $A99B: 85 45
-    LDA #$01                 ; $A99D: A9 01
-    STA $058E                ; $A99F: 8D 8E 05
-    RTS                      ; $A9A2: 60
-    LDA $6287                ; $A9A3: AD 87 62
-    AND #$07                 ; $A9A6: 29 07
-    TAX                      ; $A9A8: AA
-    LDA $A9BC,X              ; $A9A9: BD BC A9
-    LDY $51                  ; $A9AC: A4 51
-    LDX $6FE0,Y              ; $A9AE: BE E0 6F
-    STX $059B                ; $A9B1: 8E 9B 05
-    STA $059A                ; $A9B4: 8D 9A 05
-    BRK                      ; $A9B7: 00
-    ORA $3887                ; $A9B8: 0D 87 38
-    RTS                      ; $A9BB: 60
-    .byte $3B             ; $A9BC - unknown opcode
-    .byte $14             ; $A9BD - unknown opcode
-    .byte $3A             ; $A9BE - unknown opcode
-    AND $A242,Y              ; $A9BF: 39 42 A2
-    ASL $A9                  ; $A9C2: 06 A9
-    ORA ($9D),Y              ; $A9C4: 11 9D
-    LSR $70                  ; $A9C6: 46 70
-    SEC                      ; $A9C8: 38
-    RTS                      ; $A9C9: 60
-    LDA #$11                 ; $A9CA: A9 11
-    LDX #$0D                 ; $A9CC: A2 0D
-    STA $7046,X              ; $A9CE: 9D 46 70
-    LDX #$0E                 ; $A9D1: A2 0E
-    STA $7046,X              ; $A9D3: 9D 46 70
-    SEC                      ; $A9D6: 38
-    RTS                      ; $A9D7: 60
-    LDA $7000                ; $A9D8: AD 00 70
-    AND #$FC                 ; $A9DB: 29 FC
-    ORA #$02                 ; $A9DD: 09 02
-    STA $7000                ; $A9DF: 8D 00 70
-    JSR $995E                ; $A9E2: 20 5E 99
-    BRK                      ; $A9E5: 00
-    STX $3B                  ; $A9E6: 86 3B
-    BRK                      ; $A9E8: 00
-    .byte $87             ; $A9E9 - unknown opcode
-    .byte $3B             ; $A9EA - unknown opcode
-    JSR $D218                ; $A9EB: 20 18 D2
-    BRK                      ; $A9EE: 00
-    .byte $54             ; $A9EF - unknown opcode
-    .byte $33             ; $A9F0 - unknown opcode
-    JSR $C5C5                ; $A9F1: 20 C5 C5
-    LDA #$0B                 ; $A9F4: A9 0B
-    STA $44                  ; $A9F6: 85 44
-    STA $45                  ; $A9F8: 85 45
-    LDA #$06                 ; $A9FA: A9 06
-    STA $64                  ; $A9FC: 85 64
-    BRK                      ; $A9FE: 00
-    ORA #$CB                 ; $A9FF: 09 CB
-    RTI                      ; $AA01: 40
-    BRK                      ; $AA02: 00
-    ORA $80CB                ; $AA03: 0D CB 80
-    LDA #$00                 ; $AA06: A9 00
-    JSR $AA1B                ; $AA08: 20 1B AA
-    JSR $C5BF                ; $AA0B: 20 BF C5
-    BRK                      ; $AA0E: 00
-    .byte $07             ; $AA0F - unknown opcode
-    .byte $6F             ; $AA10 - unknown opcode
-    .byte $43             ; $AA11 - unknown opcode
-    BRK                      ; $AA12: 00
-    .byte $D2             ; $AA13 - unknown opcode
-    .byte $4B             ; $AA14 - unknown opcode
-    JSR $D20A                ; $AA15: 20 0A D2
-    JMP $B624                ; $AA18: 4C 24 B6
+	LDA #$03				 ; $A97B: A9 03
+	STA $058E				; $A97D: 8D 8E 05
+	LDA #$08				 ; $A980: A9 08
+	STA $45				  ; $A982: 85 45
+	LDX #$0E				 ; $A984: A2 0E
+	LDY #$07				 ; $A986: A0 07
+	JSR $D3E6				; $A988: 20 E6 D3
+	AND #$1F				 ; $A98B: 29 1F
+	TAX					  ; $A98D: AA
+	LDA $6F40,X			  ; $A98E: BD 40 6F
+	AND #$7F				 ; $A991: 29 7F
+	BRK					  ; $A993: 00
+	.byte $12			 ; $A994 - unknown opcode
+	.byte $87			 ; $A995 - unknown opcode
+	BRK					  ; $A996: 00
+	.byte $03			 ; $A997 - unknown opcode
+	.byte $BF			 ; $A998 - unknown opcode
+	LDA #$0A				 ; $A999: A9 0A
+	STA $45				  ; $A99B: 85 45
+	LDA #$01				 ; $A99D: A9 01
+	STA $058E				; $A99F: 8D 8E 05
+	RTS					  ; $A9A2: 60
+	LDA $6287				; $A9A3: AD 87 62
+	AND #$07				 ; $A9A6: 29 07
+	TAX					  ; $A9A8: AA
+	LDA $A9BC,X			  ; $A9A9: BD BC A9
+	LDY $51				  ; $A9AC: A4 51
+	LDX $6FE0,Y			  ; $A9AE: BE E0 6F
+	STX $059B				; $A9B1: 8E 9B 05
+	STA $059A				; $A9B4: 8D 9A 05
+	BRK					  ; $A9B7: 00
+	ORA $3887				; $A9B8: 0D 87 38
+	RTS					  ; $A9BB: 60
+	.byte $3B			 ; $A9BC - unknown opcode
+	.byte $14			 ; $A9BD - unknown opcode
+	.byte $3A			 ; $A9BE - unknown opcode
+	AND $A242,Y			  ; $A9BF: 39 42 A2
+	ASL $A9				  ; $A9C2: 06 A9
+	ORA ($9D),Y			  ; $A9C4: 11 9D
+	LSR $70				  ; $A9C6: 46 70
+	SEC					  ; $A9C8: 38
+	RTS					  ; $A9C9: 60
+	LDA #$11				 ; $A9CA: A9 11
+	LDX #$0D				 ; $A9CC: A2 0D
+	STA $7046,X			  ; $A9CE: 9D 46 70
+	LDX #$0E				 ; $A9D1: A2 0E
+	STA $7046,X			  ; $A9D3: 9D 46 70
+	SEC					  ; $A9D6: 38
+	RTS					  ; $A9D7: 60
+	LDA $7000				; $A9D8: AD 00 70
+	AND #$FC				 ; $A9DB: 29 FC
+	ORA #$02				 ; $A9DD: 09 02
+	STA $7000				; $A9DF: 8D 00 70
+	JSR $995E				; $A9E2: 20 5E 99
+	BRK					  ; $A9E5: 00
+	STX $3B				  ; $A9E6: 86 3B
+	BRK					  ; $A9E8: 00
+	.byte $87			 ; $A9E9 - unknown opcode
+	.byte $3B			 ; $A9EA - unknown opcode
+	JSR $D218				; $A9EB: 20 18 D2
+	BRK					  ; $A9EE: 00
+	.byte $54			 ; $A9EF - unknown opcode
+	.byte $33			 ; $A9F0 - unknown opcode
+	JSR $C5C5				; $A9F1: 20 C5 C5
+	LDA #$0B				 ; $A9F4: A9 0B
+	STA $44				  ; $A9F6: 85 44
+	STA $45				  ; $A9F8: 85 45
+	LDA #$06				 ; $A9FA: A9 06
+	STA $64				  ; $A9FC: 85 64
+	BRK					  ; $A9FE: 00
+	ORA #$CB				 ; $A9FF: 09 CB
+	RTI					  ; $AA01: 40
+	BRK					  ; $AA02: 00
+	ORA $80CB				; $AA03: 0D CB 80
+	LDA #$00				 ; $AA06: A9 00
+	JSR $AA1B				; $AA08: 20 1B AA
+	JSR $C5BF				; $AA0B: 20 BF C5
+	BRK					  ; $AA0E: 00
+	.byte $07			 ; $AA0F - unknown opcode
+	.byte $6F			 ; $AA10 - unknown opcode
+	.byte $43			 ; $AA11 - unknown opcode
+	BRK					  ; $AA12: 00
+	.byte $D2			 ; $AA13 - unknown opcode
+	.byte $4B			 ; $AA14 - unknown opcode
+	JSR $D20A				; $AA15: 20 0A D2
+	JMP $B624				; $AA18: 4C 24 B6
 
 loc_AA1B:
-    PHA                      ; $AA1B: 48
-    LDA #$00                 ; $AA1C: A9 00
-    STA $0530                ; $AA1E: 8D 30 05
-    PLA                      ; $AA21: 68
-    BRK                      ; $AA22: 00
-    AND ($EF),Y              ; $AA23: 31 EF
-    LDA #$1E                 ; $AA25: A9 1E
-    STA $51                  ; $AA27: 85 51
-    RTS                      ; $AA29: 60
-    LDX #$06                 ; $AA2A: A2 06
-    JSR $98BD                ; $AA2C: 20 BD 98
-    BCC $AA4C                ; $AA2F: 90 1B
-    LDX #$06                 ; $AA31: A2 06
-    LDY #$07                 ; $AA33: A0 07
-    LDA $7060,Y              ; $AA35: B9 60 70
-    STA $7060,X              ; $AA38: 9D 60 70
-    LDA $7080,Y              ; $AA3B: B9 80 70
-    STA $7080,X              ; $AA3E: 9D 80 70
-    LDA #$11                 ; $AA41: A9 11
-    STA $7040,X              ; $AA43: 9D 40 70
-    LDA #$8F                 ; $AA46: A9 8F
-    JSR $A23A                ; $AA48: 20 3A A2
-    SEC                      ; $AA4B: 38
+	PHA					  ; $AA1B: 48
+	LDA #$00				 ; $AA1C: A9 00
+	STA $0530				; $AA1E: 8D 30 05
+	PLA					  ; $AA21: 68
+	BRK					  ; $AA22: 00
+	AND ($EF),Y			  ; $AA23: 31 EF
+	LDA #$1E				 ; $AA25: A9 1E
+	STA $51				  ; $AA27: 85 51
+	RTS					  ; $AA29: 60
+	LDX #$06				 ; $AA2A: A2 06
+	JSR $98BD				; $AA2C: 20 BD 98
+	BCC $AA4C				; $AA2F: 90 1B
+	LDX #$06				 ; $AA31: A2 06
+	LDY #$07				 ; $AA33: A0 07
+	LDA $7060,Y			  ; $AA35: B9 60 70
+	STA $7060,X			  ; $AA38: 9D 60 70
+	LDA $7080,Y			  ; $AA3B: B9 80 70
+	STA $7080,X			  ; $AA3E: 9D 80 70
+	LDA #$11				 ; $AA41: A9 11
+	STA $7040,X			  ; $AA43: 9D 40 70
+	LDA #$8F				 ; $AA46: A9 8F
+	JSR $A23A				; $AA48: 20 3A A2
+	SEC					  ; $AA4B: 38
 
 loc_AA4C:
-    RTS                      ; $AA4C: 60
-    LDA #$00                 ; $AA4D: A9 00
-    STA $0530                ; $AA4F: 8D 30 05
-    BRK                      ; $AA52: 00
-    .byte $82             ; $AA53 - unknown opcode
-    .byte $FB             ; $AA54 - unknown opcode
-    JSR $C5C5                ; $AA55: 20 C5 C5
-    LDA #$00                 ; $AA58: A9 00
-    STA $64                  ; $AA5A: 85 64
-    LDA #$17                 ; $AA5C: A9 17
-    STA $44                  ; $AA5E: 85 44
-    LDA #$0A                 ; $AA60: A9 0A
-    STA $45                  ; $AA62: 85 45
-    LDA #$82                 ; $AA64: A9 82
-    BRK                      ; $AA66: 00
-    AND ($EF),Y              ; $AA67: 31 EF
-    LDA #$06                 ; $AA69: A9 06
-    STA $51                  ; $AA6B: 85 51
-    JSR $C5BF                ; $AA6D: 20 BF C5
-    CLC                      ; $AA70: 18
-    RTS                      ; $AA71: 60
-    BIT $6284                ; $AA72: 2C 84 62
-    BVC $AA9D                ; $AA75: 50 26
-    LDA $45                  ; $AA77: A5 45
-    CMP #$0A                 ; $AA79: C9 0A
-    BNE $AA9D                ; $AA7B: D0 20
-    LDX $51                  ; $AA7D: A6 51
-    STA $71C0,X              ; $AA7F: 9D C0 71
-    LDA #$11                 ; $AA82: A9 11
-    STA $7040,X              ; $AA84: 9D 40 70
-    LDA #$8F                 ; $AA87: A9 8F
-    JSR $A23A                ; $AA89: 20 3A A2
-    LDY $44                  ; $AA8C: A4 44
-    CPY #$1E                 ; $AA8E: C0 1E
-    BEQ $AA96                ; $AA90: F0 04
-    INY                      ; $AA92: C8
-    JMP $AA97                ; $AA93: 4C 97 AA
+	RTS					  ; $AA4C: 60
+	LDA #$00				 ; $AA4D: A9 00
+	STA $0530				; $AA4F: 8D 30 05
+	BRK					  ; $AA52: 00
+	.byte $82			 ; $AA53 - unknown opcode
+	.byte $FB			 ; $AA54 - unknown opcode
+	JSR $C5C5				; $AA55: 20 C5 C5
+	LDA #$00				 ; $AA58: A9 00
+	STA $64				  ; $AA5A: 85 64
+	LDA #$17				 ; $AA5C: A9 17
+	STA $44				  ; $AA5E: 85 44
+	LDA #$0A				 ; $AA60: A9 0A
+	STA $45				  ; $AA62: 85 45
+	LDA #$82				 ; $AA64: A9 82
+	BRK					  ; $AA66: 00
+	AND ($EF),Y			  ; $AA67: 31 EF
+	LDA #$06				 ; $AA69: A9 06
+	STA $51				  ; $AA6B: 85 51
+	JSR $C5BF				; $AA6D: 20 BF C5
+	CLC					  ; $AA70: 18
+	RTS					  ; $AA71: 60
+	BIT $6284				; $AA72: 2C 84 62
+	BVC $AA9D				; $AA75: 50 26
+	LDA $45				  ; $AA77: A5 45
+	CMP #$0A				 ; $AA79: C9 0A
+	BNE $AA9D				; $AA7B: D0 20
+	LDX $51				  ; $AA7D: A6 51
+	STA $71C0,X			  ; $AA7F: 9D C0 71
+	LDA #$11				 ; $AA82: A9 11
+	STA $7040,X			  ; $AA84: 9D 40 70
+	LDA #$8F				 ; $AA87: A9 8F
+	JSR $A23A				; $AA89: 20 3A A2
+	LDY $44				  ; $AA8C: A4 44
+	CPY #$1E				 ; $AA8E: C0 1E
+	BEQ $AA96				; $AA90: F0 04
+	INY					  ; $AA92: C8
+	JMP $AA97				; $AA93: 4C 97 AA
 
 loc_AA96:
-    DEY                      ; $AA96: 88
+	DEY					  ; $AA96: 88
 
 loc_AA97:
-    TYA                      ; $AA97: 98
-    STA $71A0,X              ; $AA98: 9D A0 71
-    SEC                      ; $AA9B: 38
-    RTS                      ; $AA9C: 60
+	TYA					  ; $AA97: 98
+	STA $71A0,X			  ; $AA98: 9D A0 71
+	SEC					  ; $AA9B: 38
+	RTS					  ; $AA9C: 60
 
 loc_AA9D:
-    CLC                      ; $AA9D: 18
-    RTS                      ; $AA9E: 60
-    LDA $51                  ; $AA9F: A5 51
-    STA $059C                ; $AAA1: 8D 9C 05
-    PHA                      ; $AAA4: 48
-    JSR $995E                ; $AAA5: 20 5E 99
-    BRK                      ; $AAA8: 00
-    .byte $8F             ; $AAA9 - unknown opcode
-    .byte $3B             ; $AAAA - unknown opcode
-    JSR $D218                ; $AAAB: 20 18 D2
-    JSR $D1F3                ; $AAAE: 20 F3 D1
-    PLA                      ; $AAB1: 68
-    STA $51                  ; $AAB2: 85 51
-    LDA #$00                 ; $AAB4: A9 00
-    STA $0530                ; $AAB6: 8D 30 05
-    BRK                      ; $AAB9: 00
-    .byte $0C             ; $AABA - unknown opcode
-    .byte $CB             ; $AABB - unknown opcode
-    JSR $6038                ; $AABC: 20 38 60
-    LDA $6FA0                ; $AABF: AD A0 6F
-    CMP #$0E                 ; $AAC2: C9 0E
-    BNE $AAF4                ; $AAC4: D0 2E
-    LDA $6FC0                ; $AAC6: AD C0 6F
-    CMP #$03                 ; $AAC9: C9 03
-    BNE $AAF4                ; $AACB: D0 27
-    LDA $7000                ; $AACD: AD 00 70
-    ORA #$03                 ; $AAD0: 09 03
-    STA $7000                ; $AAD2: 8D 00 70
-    LDA $51                  ; $AAD5: A5 51
-    PHA                      ; $AAD7: 48
-    TAX                      ; $AAD8: AA
-    LDA $7000,X              ; $AAD9: BD 00 70
-    AND #$FC                 ; $AADC: 29 FC
-    ORA #$01                 ; $AADE: 09 01
-    STA $7000,X              ; $AAE0: 9D 00 70
-    JSR $995E                ; $AAE3: 20 5E 99
-    BRK                      ; $AAE6: 00
-    .byte $13             ; $AAE7 - unknown opcode
-    .byte $3B             ; $AAE8 - unknown opcode
-    JSR $D214                ; $AAE9: 20 14 D2
-    JSR $D1F3                ; $AAEC: 20 F3 D1
-    PLA                      ; $AAEF: 68
-    STA $51                  ; $AAF0: 85 51
-    SEC                      ; $AAF2: 38
-    RTS                      ; $AAF3: 60
+	CLC					  ; $AA9D: 18
+	RTS					  ; $AA9E: 60
+	LDA $51				  ; $AA9F: A5 51
+	STA $059C				; $AAA1: 8D 9C 05
+	PHA					  ; $AAA4: 48
+	JSR $995E				; $AAA5: 20 5E 99
+	BRK					  ; $AAA8: 00
+	.byte $8F			 ; $AAA9 - unknown opcode
+	.byte $3B			 ; $AAAA - unknown opcode
+	JSR $D218				; $AAAB: 20 18 D2
+	JSR $D1F3				; $AAAE: 20 F3 D1
+	PLA					  ; $AAB1: 68
+	STA $51				  ; $AAB2: 85 51
+	LDA #$00				 ; $AAB4: A9 00
+	STA $0530				; $AAB6: 8D 30 05
+	BRK					  ; $AAB9: 00
+	.byte $0C			 ; $AABA - unknown opcode
+	.byte $CB			 ; $AABB - unknown opcode
+	JSR $6038				; $AABC: 20 38 60
+	LDA $6FA0				; $AABF: AD A0 6F
+	CMP #$0E				 ; $AAC2: C9 0E
+	BNE $AAF4				; $AAC4: D0 2E
+	LDA $6FC0				; $AAC6: AD C0 6F
+	CMP #$03				 ; $AAC9: C9 03
+	BNE $AAF4				; $AACB: D0 27
+	LDA $7000				; $AACD: AD 00 70
+	ORA #$03				 ; $AAD0: 09 03
+	STA $7000				; $AAD2: 8D 00 70
+	LDA $51				  ; $AAD5: A5 51
+	PHA					  ; $AAD7: 48
+	TAX					  ; $AAD8: AA
+	LDA $7000,X			  ; $AAD9: BD 00 70
+	AND #$FC				 ; $AADC: 29 FC
+	ORA #$01				 ; $AADE: 09 01
+	STA $7000,X			  ; $AAE0: 9D 00 70
+	JSR $995E				; $AAE3: 20 5E 99
+	BRK					  ; $AAE6: 00
+	.byte $13			 ; $AAE7 - unknown opcode
+	.byte $3B			 ; $AAE8 - unknown opcode
+	JSR $D214				; $AAE9: 20 14 D2
+	JSR $D1F3				; $AAEC: 20 F3 D1
+	PLA					  ; $AAEF: 68
+	STA $51				  ; $AAF0: 85 51
+	SEC					  ; $AAF2: 38
+	RTS					  ; $AAF3: 60
 
 loc_AAF4:
-    CLC                      ; $AAF4: 18
-    RTS                      ; $AAF5: 60
-    LDA $7000                ; $AAF6: AD 00 70
-    AND #$FC                 ; $AAF9: 29 FC
-    STA $7000                ; $AAFB: 8D 00 70
-    LDX #$01                 ; $AAFE: A2 01
-    LDA $7006,X              ; $AB00: BD 06 70
-    AND #$FC                 ; $AB03: 29 FC
-    STA $7006,X              ; $AB05: 9D 06 70
-    JSR $995E                ; $AB08: 20 5E 99
-    BRK                      ; $AB0B: 00
-    .byte $14             ; $AB0C - unknown opcode
-    .byte $3B             ; $AB0D - unknown opcode
-    BRK                      ; $AB0E: 00
-    ORA $3B,X                ; $AB0F: 15 3B
-    JSR $D218                ; $AB11: 20 18 D2
-    BRK                      ; $AB14: 00
-    .byte $0F             ; $AB15 - unknown opcode
-    .byte $FB             ; $AB16 - unknown opcode
-    JSR $C5C5                ; $AB17: 20 C5 C5
-    LDA #$00                 ; $AB1A: A9 00
-    STA $62ED                ; $AB1C: 8D ED 62
-    LDA #$1A                 ; $AB1F: A9 1A
-    STA $44                  ; $AB21: 85 44
-    LDA #$02                 ; $AB23: A9 02
-    STA $45                  ; $AB25: 85 45
-    LDA #$00                 ; $AB27: A9 00
-    STA $64                  ; $AB29: 85 64
-    LDA #$02                 ; $AB2B: A9 02
-    BRK                      ; $AB2D: 00
-    .byte $52             ; $AB2E - unknown opcode
-    .byte $73             ; $AB2F - unknown opcode
-    LDX #$FF                 ; $AB30: A2 FF
-    STX $70                  ; $AB32: 86 70
-    STX $71                  ; $AB34: 86 71
-    INX                      ; $AB36: E8
-    TXA                      ; $AB37: 8A
-    INX                      ; $AB38: E8
-    BRK                      ; $AB39: 00
-    LSR $A273,X              ; $AB3A: 5E 73 A2
-    BRK                      ; $AB3D: 00
-    LDA #$02                 ; $AB3E: A9 02
-    BRK                      ; $AB40: 00
-    ORA $A287                ; $AB41: 0D 87 A2
-    ORA ($A9,X)              ; $AB44: 01 A9
-    .byte $03             ; $AB46 - unknown opcode
-    BRK                      ; $AB47: 00
-    ORA $A287                ; $AB48: 0D 87 A2
-    .byte $02             ; $AB4B - unknown opcode
-    LDA #$83                 ; $AB4C: A9 83
-    BRK                      ; $AB4E: 00
-    ORA $0087                ; $AB4F: 0D 87 00
-    .byte $07             ; $AB52 - unknown opcode
-    .byte $9F             ; $AB53 - unknown opcode
-    LDA #$02                 ; $AB54: A9 02
-    JSR $AA1B                ; $AB56: 20 1B AA
-    LDA #$02                 ; $AB59: A9 02
-    STA $6FE1                ; $AB5B: 8D E1 6F
-    LDA $7001                ; $AB5E: AD 01 70
-    AND #$FC                 ; $AB61: 29 FC
-    ORA #$01                 ; $AB63: 09 01
-    STA $7001                ; $AB65: 8D 01 70
-    LDA $7000                ; $AB68: AD 00 70
-    AND #$FC                 ; $AB6B: 29 FC
-    STA $7000                ; $AB6D: 8D 00 70
-    LDA #$00                 ; $AB70: A9 00
-    STA $3D                  ; $AB72: 85 3D
-    BRK                      ; $AB74: 00
-    ASL                      ; $AB75: 0A
-    .byte $6F             ; $AB76 - unknown opcode
-    JSR $C5BF                ; $AB77: 20 BF C5
-    JSR $995E                ; $AB7A: 20 5E 99
-    BRK                      ; $AB7D: 00
-    ASL $3B,X                ; $AB7E: 16 3B
-    LDA #$01                 ; $AB80: A9 01
-    STA $6FE1                ; $AB82: 8D E1 6F
-    LDA $7001                ; $AB85: AD 01 70
-    AND #$FC                 ; $AB88: 29 FC
-    ORA #$02                 ; $AB8A: 09 02
-    STA $7001                ; $AB8C: 8D 01 70
-    JSR $D218                ; $AB8F: 20 18 D2
-    JSR $D1F3                ; $AB92: 20 F3 D1
-    JMP $B624                ; $AB95: 4C 24 B6
-    JSR $D1F3                ; $AB98: 20 F3 D1
-    LDX #$02                 ; $AB9B: A2 02
-    LDA $6FE6,X              ; $AB9D: BD E6 6F
-    LDX #$01                 ; $ABA0: A2 01
-    STA $6FE6,X              ; $ABA2: 9D E6 6F
-    LDA $7006,X              ; $ABA5: BD 06 70
-    AND #$FC                 ; $ABA8: 29 FC
-    STA $7006,X              ; $ABAA: 9D 06 70
-    BRK                      ; $ABAD: 00
-    ASL                      ; $ABAE: 0A
-    .byte $6F             ; $ABAF - unknown opcode
-    JSR $995E                ; $ABB0: 20 5E 99
-    BRK                      ; $ABB3: 00
-    .byte $A7             ; $ABB4 - unknown opcode
-    .byte $3B             ; $ABB5 - unknown opcode
-    JSR $D218                ; $ABB6: 20 18 D2
-    BRK                      ; $ABB9: 00
-    .byte $0F             ; $ABBA - unknown opcode
-    .byte $CB             ; $ABBB - unknown opcode
-    .byte $04             ; $ABBC - unknown opcode
-    LDA #$1E                 ; $ABBD: A9 1E
-    STA $62ED                ; $ABBF: 8D ED 62
-    LDA #$03                 ; $ABC2: A9 03
-    BRK                      ; $ABC4: 00
-    ORA ($8F,X)              ; $ABC5: 01 8F
-    RTS                      ; $ABC7: 60
-    LDX #$06                 ; $ABC8: A2 06
-    LDA $6F62                ; $ABCA: AD 62 6F
-    STA $6F66,X              ; $ABCD: 9D 66 6F
-    LDA $6FA2                ; $ABD0: AD A2 6F
-    STA $6FA6,X              ; $ABD3: 9D A6 6F
-    LDA $6F82                ; $ABD6: AD 82 6F
-    STA $6F86,X              ; $ABD9: 9D 86 6F
-    LDA $6FC2                ; $ABDC: AD C2 6F
-    STA $6FC6,X              ; $ABDF: 9D C6 6F
-    LDA $7002                ; $ABE2: AD 02 70
-    AND #$FC                 ; $ABE5: 29 FC
-    STA $7006,X              ; $ABE7: 9D 06 70
-    LDA #$11                 ; $ABEA: A9 11
-    STA $7046,X              ; $ABEC: 9D 46 70
-    LDA #$80                 ; $ABEF: A9 80
-    STA $6F62                ; $ABF1: 8D 62 6F
-    STA $6FA2                ; $ABF4: 8D A2 6F
-    STA $6F82                ; $ABF7: 8D 82 6F
-    STA $6FC2                ; $ABFA: 8D C2 6F
-    LDA #$00                 ; $ABFD: A9 00
-    STA $7002                ; $ABFF: 8D 02 70
-    LDX #$02                 ; $AC02: A2 02
-    LDA #$FF                 ; $AC04: A9 FF
-    BRK                      ; $AC06: 00
-    EOR ($73),Y              ; $AC07: 51 73
-    SEC                      ; $AC09: 38
-    RTS                      ; $AC0A: 60
-    LDA $51                  ; $AC0B: A5 51
-    PHA                      ; $AC0D: 48
-    LDA #$03                 ; $AC0E: A9 03
-    STA $058E                ; $AC10: 8D 8E 05
-    LDA #$00                 ; $AC13: A9 00
-    STA $3D                  ; $AC15: 85 3D
-    LDA #$0F                 ; $AC17: A9 0F
-    STA $45                  ; $AC19: 85 45
-    STA $44                  ; $AC1B: 85 44
-    LDX #$0F                 ; $AC1D: A2 0F
-    LDY #$0E                 ; $AC1F: A0 0E
-    JSR $D3E6                ; $AC21: 20 E6 D3
-    AND #$1F                 ; $AC24: 29 1F
-    TAX                      ; $AC26: AA
-    LDA $6F40,X              ; $AC27: BD 40 6F
-    AND #$7F                 ; $AC2A: 29 7F
-    BRK                      ; $AC2C: 00
-    .byte $12             ; $AC2D - unknown opcode
-    .byte $87             ; $AC2E - unknown opcode
-    BRK                      ; $AC2F: 00
-    .byte $03             ; $AC30 - unknown opcode
-    .byte $BF             ; $AC31 - unknown opcode
-    LDA #$0A                 ; $AC32: A9 0A
-    STA $44                  ; $AC34: 85 44
-    LDA #$13                 ; $AC36: A9 13
-    STA $45                  ; $AC38: 85 45
-    LDA #$01                 ; $AC3A: A9 01
-    STA $3D                  ; $AC3C: 85 3D
-    STA $058E                ; $AC3E: 8D 8E 05
-    LDA #$11                 ; $AC41: A9 11
-    LDX #$05                 ; $AC43: A2 05
-    STA $7046,X              ; $AC45: 9D 46 70
-    LDX #$03                 ; $AC48: A2 03
-    STA $7046,X              ; $AC4A: 9D 46 70
-    LDX #$01                 ; $AC4D: A2 01
-    STA $7046,X              ; $AC4F: 9D 46 70
-    LDX #$02                 ; $AC52: A2 02
-    STA $7046,X              ; $AC54: 9D 46 70
-    PLA                      ; $AC57: 68
-    STA $51                  ; $AC58: 85 51
-    BRK                      ; $AC5A: 00
-    .byte $0F             ; $AC5B - unknown opcode
-    .byte $CB             ; $AC5C - unknown opcode
-    PHP                      ; $AC5D: 08
-    SEC                      ; $AC5E: 38
-    RTS                      ; $AC5F: 60
-    BRK                      ; $AC60: 00
-    ORA $EB                  ; $AC61: 05 EB
-    JSR $02F0                ; $AC63: 20 F0 02
-    SEC                      ; $AC66: 38
-    RTS                      ; $AC67: 60
-    CLC                      ; $AC68: 18
-    RTS                      ; $AC69: 60
-    LDA $615A                ; $AC6A: AD 5A 61
-    CMP #$02                 ; $AC6D: C9 02
-    BNE $AC98                ; $AC6F: D0 27
-    LDX $51                  ; $AC71: A6 51
-    LDA $6F60,X              ; $AC73: BD 60 6F
-    SEC                      ; $AC76: 38
-    SBC #$0C                 ; $AC77: E9 0C
-    CMP #$05                 ; $AC79: C9 05
-    BCS $AC98                ; $AC7B: B0 1B
-    LDA $6F80,X              ; $AC7D: BD 80 6F
-    SEC                      ; $AC80: 38
-    SBC #$04                 ; $AC81: E9 04
-    CMP #$03                 ; $AC83: C9 03
-    BCS $AC98                ; $AC85: B0 11
-    LDA $70E0,X              ; $AC87: BD E0 70
-    AND #$F7                 ; $AC8A: 29 F7
-    STA $70E0,X              ; $AC8C: 9D E0 70
-    BRK                      ; $AC8F: 00
-    ORA $DB                  ; $AC90: 05 DB
-    .byte $DF             ; $AC92 - unknown opcode
-    BRK                      ; $AC93: 00
-    ORA $5F,X                ; $AC94: 15 5F
-    SEC                      ; $AC96: 38
-    RTS                      ; $AC97: 60
+	CLC					  ; $AAF4: 18
+	RTS					  ; $AAF5: 60
+	LDA $7000				; $AAF6: AD 00 70
+	AND #$FC				 ; $AAF9: 29 FC
+	STA $7000				; $AAFB: 8D 00 70
+	LDX #$01				 ; $AAFE: A2 01
+	LDA $7006,X			  ; $AB00: BD 06 70
+	AND #$FC				 ; $AB03: 29 FC
+	STA $7006,X			  ; $AB05: 9D 06 70
+	JSR $995E				; $AB08: 20 5E 99
+	BRK					  ; $AB0B: 00
+	.byte $14			 ; $AB0C - unknown opcode
+	.byte $3B			 ; $AB0D - unknown opcode
+	BRK					  ; $AB0E: 00
+	ORA $3B,X				; $AB0F: 15 3B
+	JSR $D218				; $AB11: 20 18 D2
+	BRK					  ; $AB14: 00
+	.byte $0F			 ; $AB15 - unknown opcode
+	.byte $FB			 ; $AB16 - unknown opcode
+	JSR $C5C5				; $AB17: 20 C5 C5
+	LDA #$00				 ; $AB1A: A9 00
+	STA $62ED				; $AB1C: 8D ED 62
+	LDA #$1A				 ; $AB1F: A9 1A
+	STA $44				  ; $AB21: 85 44
+	LDA #$02				 ; $AB23: A9 02
+	STA $45				  ; $AB25: 85 45
+	LDA #$00				 ; $AB27: A9 00
+	STA $64				  ; $AB29: 85 64
+	LDA #$02				 ; $AB2B: A9 02
+	BRK					  ; $AB2D: 00
+	.byte $52			 ; $AB2E - unknown opcode
+	.byte $73			 ; $AB2F - unknown opcode
+	LDX #$FF				 ; $AB30: A2 FF
+	STX $70				  ; $AB32: 86 70
+	STX $71				  ; $AB34: 86 71
+	INX					  ; $AB36: E8
+	TXA					  ; $AB37: 8A
+	INX					  ; $AB38: E8
+	BRK					  ; $AB39: 00
+	LSR $A273,X			  ; $AB3A: 5E 73 A2
+	BRK					  ; $AB3D: 00
+	LDA #$02				 ; $AB3E: A9 02
+	BRK					  ; $AB40: 00
+	ORA $A287				; $AB41: 0D 87 A2
+	ORA ($A9,X)			  ; $AB44: 01 A9
+	.byte $03			 ; $AB46 - unknown opcode
+	BRK					  ; $AB47: 00
+	ORA $A287				; $AB48: 0D 87 A2
+	.byte $02			 ; $AB4B - unknown opcode
+	LDA #$83				 ; $AB4C: A9 83
+	BRK					  ; $AB4E: 00
+	ORA $0087				; $AB4F: 0D 87 00
+	.byte $07			 ; $AB52 - unknown opcode
+	.byte $9F			 ; $AB53 - unknown opcode
+	LDA #$02				 ; $AB54: A9 02
+	JSR $AA1B				; $AB56: 20 1B AA
+	LDA #$02				 ; $AB59: A9 02
+	STA $6FE1				; $AB5B: 8D E1 6F
+	LDA $7001				; $AB5E: AD 01 70
+	AND #$FC				 ; $AB61: 29 FC
+	ORA #$01				 ; $AB63: 09 01
+	STA $7001				; $AB65: 8D 01 70
+	LDA $7000				; $AB68: AD 00 70
+	AND #$FC				 ; $AB6B: 29 FC
+	STA $7000				; $AB6D: 8D 00 70
+	LDA #$00				 ; $AB70: A9 00
+	STA $3D				  ; $AB72: 85 3D
+	BRK					  ; $AB74: 00
+	ASL					  ; $AB75: 0A
+	.byte $6F			 ; $AB76 - unknown opcode
+	JSR $C5BF				; $AB77: 20 BF C5
+	JSR $995E				; $AB7A: 20 5E 99
+	BRK					  ; $AB7D: 00
+	ASL $3B,X				; $AB7E: 16 3B
+	LDA #$01				 ; $AB80: A9 01
+	STA $6FE1				; $AB82: 8D E1 6F
+	LDA $7001				; $AB85: AD 01 70
+	AND #$FC				 ; $AB88: 29 FC
+	ORA #$02				 ; $AB8A: 09 02
+	STA $7001				; $AB8C: 8D 01 70
+	JSR $D218				; $AB8F: 20 18 D2
+	JSR $D1F3				; $AB92: 20 F3 D1
+	JMP $B624				; $AB95: 4C 24 B6
+	JSR $D1F3				; $AB98: 20 F3 D1
+	LDX #$02				 ; $AB9B: A2 02
+	LDA $6FE6,X			  ; $AB9D: BD E6 6F
+	LDX #$01				 ; $ABA0: A2 01
+	STA $6FE6,X			  ; $ABA2: 9D E6 6F
+	LDA $7006,X			  ; $ABA5: BD 06 70
+	AND #$FC				 ; $ABA8: 29 FC
+	STA $7006,X			  ; $ABAA: 9D 06 70
+	BRK					  ; $ABAD: 00
+	ASL					  ; $ABAE: 0A
+	.byte $6F			 ; $ABAF - unknown opcode
+	JSR $995E				; $ABB0: 20 5E 99
+	BRK					  ; $ABB3: 00
+	.byte $A7			 ; $ABB4 - unknown opcode
+	.byte $3B			 ; $ABB5 - unknown opcode
+	JSR $D218				; $ABB6: 20 18 D2
+	BRK					  ; $ABB9: 00
+	.byte $0F			 ; $ABBA - unknown opcode
+	.byte $CB			 ; $ABBB - unknown opcode
+	.byte $04			 ; $ABBC - unknown opcode
+	LDA #$1E				 ; $ABBD: A9 1E
+	STA $62ED				; $ABBF: 8D ED 62
+	LDA #$03				 ; $ABC2: A9 03
+	BRK					  ; $ABC4: 00
+	ORA ($8F,X)			  ; $ABC5: 01 8F
+	RTS					  ; $ABC7: 60
+	LDX #$06				 ; $ABC8: A2 06
+	LDA $6F62				; $ABCA: AD 62 6F
+	STA $6F66,X			  ; $ABCD: 9D 66 6F
+	LDA $6FA2				; $ABD0: AD A2 6F
+	STA $6FA6,X			  ; $ABD3: 9D A6 6F
+	LDA $6F82				; $ABD6: AD 82 6F
+	STA $6F86,X			  ; $ABD9: 9D 86 6F
+	LDA $6FC2				; $ABDC: AD C2 6F
+	STA $6FC6,X			  ; $ABDF: 9D C6 6F
+	LDA $7002				; $ABE2: AD 02 70
+	AND #$FC				 ; $ABE5: 29 FC
+	STA $7006,X			  ; $ABE7: 9D 06 70
+	LDA #$11				 ; $ABEA: A9 11
+	STA $7046,X			  ; $ABEC: 9D 46 70
+	LDA #$80				 ; $ABEF: A9 80
+	STA $6F62				; $ABF1: 8D 62 6F
+	STA $6FA2				; $ABF4: 8D A2 6F
+	STA $6F82				; $ABF7: 8D 82 6F
+	STA $6FC2				; $ABFA: 8D C2 6F
+	LDA #$00				 ; $ABFD: A9 00
+	STA $7002				; $ABFF: 8D 02 70
+	LDX #$02				 ; $AC02: A2 02
+	LDA #$FF				 ; $AC04: A9 FF
+	BRK					  ; $AC06: 00
+	EOR ($73),Y			  ; $AC07: 51 73
+	SEC					  ; $AC09: 38
+	RTS					  ; $AC0A: 60
+	LDA $51				  ; $AC0B: A5 51
+	PHA					  ; $AC0D: 48
+	LDA #$03				 ; $AC0E: A9 03
+	STA $058E				; $AC10: 8D 8E 05
+	LDA #$00				 ; $AC13: A9 00
+	STA $3D				  ; $AC15: 85 3D
+	LDA #$0F				 ; $AC17: A9 0F
+	STA $45				  ; $AC19: 85 45
+	STA $44				  ; $AC1B: 85 44
+	LDX #$0F				 ; $AC1D: A2 0F
+	LDY #$0E				 ; $AC1F: A0 0E
+	JSR $D3E6				; $AC21: 20 E6 D3
+	AND #$1F				 ; $AC24: 29 1F
+	TAX					  ; $AC26: AA
+	LDA $6F40,X			  ; $AC27: BD 40 6F
+	AND #$7F				 ; $AC2A: 29 7F
+	BRK					  ; $AC2C: 00
+	.byte $12			 ; $AC2D - unknown opcode
+	.byte $87			 ; $AC2E - unknown opcode
+	BRK					  ; $AC2F: 00
+	.byte $03			 ; $AC30 - unknown opcode
+	.byte $BF			 ; $AC31 - unknown opcode
+	LDA #$0A				 ; $AC32: A9 0A
+	STA $44				  ; $AC34: 85 44
+	LDA #$13				 ; $AC36: A9 13
+	STA $45				  ; $AC38: 85 45
+	LDA #$01				 ; $AC3A: A9 01
+	STA $3D				  ; $AC3C: 85 3D
+	STA $058E				; $AC3E: 8D 8E 05
+	LDA #$11				 ; $AC41: A9 11
+	LDX #$05				 ; $AC43: A2 05
+	STA $7046,X			  ; $AC45: 9D 46 70
+	LDX #$03				 ; $AC48: A2 03
+	STA $7046,X			  ; $AC4A: 9D 46 70
+	LDX #$01				 ; $AC4D: A2 01
+	STA $7046,X			  ; $AC4F: 9D 46 70
+	LDX #$02				 ; $AC52: A2 02
+	STA $7046,X			  ; $AC54: 9D 46 70
+	PLA					  ; $AC57: 68
+	STA $51				  ; $AC58: 85 51
+	BRK					  ; $AC5A: 00
+	.byte $0F			 ; $AC5B - unknown opcode
+	.byte $CB			 ; $AC5C - unknown opcode
+	PHP					  ; $AC5D: 08
+	SEC					  ; $AC5E: 38
+	RTS					  ; $AC5F: 60
+	BRK					  ; $AC60: 00
+	ORA $EB				  ; $AC61: 05 EB
+	JSR $02F0				; $AC63: 20 F0 02
+	SEC					  ; $AC66: 38
+	RTS					  ; $AC67: 60
+	CLC					  ; $AC68: 18
+	RTS					  ; $AC69: 60
+	LDA $615A				; $AC6A: AD 5A 61
+	CMP #$02				 ; $AC6D: C9 02
+	BNE $AC98				; $AC6F: D0 27
+	LDX $51				  ; $AC71: A6 51
+	LDA $6F60,X			  ; $AC73: BD 60 6F
+	SEC					  ; $AC76: 38
+	SBC #$0C				 ; $AC77: E9 0C
+	CMP #$05				 ; $AC79: C9 05
+	BCS $AC98				; $AC7B: B0 1B
+	LDA $6F80,X			  ; $AC7D: BD 80 6F
+	SEC					  ; $AC80: 38
+	SBC #$04				 ; $AC81: E9 04
+	CMP #$03				 ; $AC83: C9 03
+	BCS $AC98				; $AC85: B0 11
+	LDA $70E0,X			  ; $AC87: BD E0 70
+	AND #$F7				 ; $AC8A: 29 F7
+	STA $70E0,X			  ; $AC8C: 9D E0 70
+	BRK					  ; $AC8F: 00
+	ORA $DB				  ; $AC90: 05 DB
+	.byte $DF			 ; $AC92 - unknown opcode
+	BRK					  ; $AC93: 00
+	ORA $5F,X				; $AC94: 15 5F
+	SEC					  ; $AC96: 38
+	RTS					  ; $AC97: 60
 
 loc_AC98:
-    CLC                      ; $AC98: 18
-    RTS                      ; $AC99: 60
-    LDA $51                  ; $AC9A: A5 51
-    PHA                      ; $AC9C: 48
-    JSR $995E                ; $AC9D: 20 5E 99
-    BRK                      ; $ACA0: 00
-    SBC ($2B),Y              ; $ACA1: F1 2B
-    BRK                      ; $ACA3: 00
-    .byte $EB             ; $ACA4 - unknown opcode
-    .byte $2B             ; $ACA5 - unknown opcode
-    BRK                      ; $ACA6: 00
-    LDA $A23B                ; $ACA7: AD 3B A2
-    .byte $03             ; $ACAA - unknown opcode
-    LDY #$00                 ; $ACAB: A0 00
-    LDA $3D                  ; $ACAD: A5 3D
-    EOR #$02                 ; $ACAF: 49 02
-    JSR $A1AF                ; $ACB1: 20 AF A1
-    LDX #$01                 ; $ACB4: A2 01
-    LDA #$24                 ; $ACB6: A9 24
-    BRK                      ; $ACB8: 00
-    ORA $A987                ; $ACB9: 0D 87 A9
-    BRK                      ; $ACBC: 00
-    STA $0530                ; $ACBD: 8D 30 05
-    JSR $D20A                ; $ACC0: 20 0A D2
-    PLA                      ; $ACC3: 68
-    STA $51                  ; $ACC4: 85 51
-    SEC                      ; $ACC6: 38
-    RTS                      ; $ACC7: 60
-    BRK                      ; $ACC8: 00
-    .byte $0B             ; $ACC9 - unknown opcode
-    .byte $EB             ; $ACCA - unknown opcode
-    .byte $04             ; $ACCB - unknown opcode
-    BEQ $ACD0                ; $ACCC: F0 02
-    SEC                      ; $ACCE: 38
-    RTS                      ; $ACCF: 60
+	CLC					  ; $AC98: 18
+	RTS					  ; $AC99: 60
+	LDA $51				  ; $AC9A: A5 51
+	PHA					  ; $AC9C: 48
+	JSR $995E				; $AC9D: 20 5E 99
+	BRK					  ; $ACA0: 00
+	SBC ($2B),Y			  ; $ACA1: F1 2B
+	BRK					  ; $ACA3: 00
+	.byte $EB			 ; $ACA4 - unknown opcode
+	.byte $2B			 ; $ACA5 - unknown opcode
+	BRK					  ; $ACA6: 00
+	LDA $A23B				; $ACA7: AD 3B A2
+	.byte $03			 ; $ACAA - unknown opcode
+	LDY #$00				 ; $ACAB: A0 00
+	LDA $3D				  ; $ACAD: A5 3D
+	EOR #$02				 ; $ACAF: 49 02
+	JSR $A1AF				; $ACB1: 20 AF A1
+	LDX #$01				 ; $ACB4: A2 01
+	LDA #$24				 ; $ACB6: A9 24
+	BRK					  ; $ACB8: 00
+	ORA $A987				; $ACB9: 0D 87 A9
+	BRK					  ; $ACBC: 00
+	STA $0530				; $ACBD: 8D 30 05
+	JSR $D20A				; $ACC0: 20 0A D2
+	PLA					  ; $ACC3: 68
+	STA $51				  ; $ACC4: 85 51
+	SEC					  ; $ACC6: 38
+	RTS					  ; $ACC7: 60
+	BRK					  ; $ACC8: 00
+	.byte $0B			 ; $ACC9 - unknown opcode
+	.byte $EB			 ; $ACCA - unknown opcode
+	.byte $04			 ; $ACCB - unknown opcode
+	BEQ $ACD0				; $ACCC: F0 02
+	SEC					  ; $ACCE: 38
+	RTS					  ; $ACCF: 60
 
 loc_ACD0:
-    CLC                      ; $ACD0: 18
-    RTS                      ; $ACD1: 60
-    LDX #$00                 ; $ACD2: A2 00
-    LDA $6F61                ; $ACD4: AD 61 6F
-    STA $6F66,X              ; $ACD7: 9D 66 6F
-    STA $6FA6,X              ; $ACDA: 9D A6 6F
-    LDA $6F81                ; $ACDD: AD 81 6F
-    STA $6F86,X              ; $ACE0: 9D 86 6F
-    STA $6FC6,X              ; $ACE3: 9D C6 6F
-    LDA #$01                 ; $ACE6: A9 01
-    STA $6FE6,X              ; $ACE8: 9D E6 6F
-    LDA #$80                 ; $ACEB: A9 80
-    STA $7021                ; $ACED: 8D 21 70
-    BRK                      ; $ACF0: 00
-    ASL                      ; $ACF1: 0A
-    .byte $6F             ; $ACF2 - unknown opcode
-    SEC                      ; $ACF3: 38
-    RTS                      ; $ACF4: 60
-    BRK                      ; $ACF5: 00
-    ORA $EB                  ; $ACF6: 05 EB
-    .byte $02             ; $ACF8 - unknown opcode
-    BEQ $ACFD                ; $ACF9: F0 02
-    SEC                      ; $ACFB: 38
-    RTS                      ; $ACFC: 60
+	CLC					  ; $ACD0: 18
+	RTS					  ; $ACD1: 60
+	LDX #$00				 ; $ACD2: A2 00
+	LDA $6F61				; $ACD4: AD 61 6F
+	STA $6F66,X			  ; $ACD7: 9D 66 6F
+	STA $6FA6,X			  ; $ACDA: 9D A6 6F
+	LDA $6F81				; $ACDD: AD 81 6F
+	STA $6F86,X			  ; $ACE0: 9D 86 6F
+	STA $6FC6,X			  ; $ACE3: 9D C6 6F
+	LDA #$01				 ; $ACE6: A9 01
+	STA $6FE6,X			  ; $ACE8: 9D E6 6F
+	LDA #$80				 ; $ACEB: A9 80
+	STA $7021				; $ACED: 8D 21 70
+	BRK					  ; $ACF0: 00
+	ASL					  ; $ACF1: 0A
+	.byte $6F			 ; $ACF2 - unknown opcode
+	SEC					  ; $ACF3: 38
+	RTS					  ; $ACF4: 60
+	BRK					  ; $ACF5: 00
+	ORA $EB				  ; $ACF6: 05 EB
+	.byte $02			 ; $ACF8 - unknown opcode
+	BEQ $ACFD				; $ACF9: F0 02
+	SEC					  ; $ACFB: 38
+	RTS					  ; $ACFC: 60
 
 loc_ACFD:
-    CLC                      ; $ACFD: 18
-    RTS                      ; $ACFE: 60
-    JSR $C5C5                ; $ACFF: 20 C5 C5
-    LDA #$8C                 ; $AD02: A9 8C
-    STA $62ED                ; $AD04: 8D ED 62
-    LDA #$07                 ; $AD07: A9 07
-    STA $44                  ; $AD09: 85 44
-    LDA #$1A                 ; $AD0B: A9 1A
-    STA $45                  ; $AD0D: 85 45
-    LDA #$01                 ; $AD0F: A9 01
-    BRK                      ; $AD11: 00
-    AND ($EF),Y              ; $AD12: 31 EF
-    JSR $C5BF                ; $AD14: 20 BF C5
-    JMP $B624                ; $AD17: 4C 24 B6
-    LDA #$22                 ; $AD1A: A9 22
-    LDX $3D                  ; $AD1C: A6 3D
-    CPX #$02                 ; $AD1E: E0 02
-    BEQ $AD2A                ; $AD20: F0 08
-    LDA #$82                 ; $AD22: A9 82
-    CPX #$01                 ; $AD24: E0 01
-    BEQ $AD2A                ; $AD26: F0 02
-    LDA #$12                 ; $AD28: A9 12
+	CLC					  ; $ACFD: 18
+	RTS					  ; $ACFE: 60
+	JSR $C5C5				; $ACFF: 20 C5 C5
+	LDA #$8C				 ; $AD02: A9 8C
+	STA $62ED				; $AD04: 8D ED 62
+	LDA #$07				 ; $AD07: A9 07
+	STA $44				  ; $AD09: 85 44
+	LDA #$1A				 ; $AD0B: A9 1A
+	STA $45				  ; $AD0D: 85 45
+	LDA #$01				 ; $AD0F: A9 01
+	BRK					  ; $AD11: 00
+	AND ($EF),Y			  ; $AD12: 31 EF
+	JSR $C5BF				; $AD14: 20 BF C5
+	JMP $B624				; $AD17: 4C 24 B6
+	LDA #$22				 ; $AD1A: A9 22
+	LDX $3D				  ; $AD1C: A6 3D
+	CPX #$02				 ; $AD1E: E0 02
+	BEQ $AD2A				; $AD20: F0 08
+	LDA #$82				 ; $AD22: A9 82
+	CPX #$01				 ; $AD24: E0 01
+	BEQ $AD2A				; $AD26: F0 02
+	LDA #$12				 ; $AD28: A9 12
 
 loc_AD2A:
-    STA $0554                ; $AD2A: 8D 54 05
-    LDA #$81                 ; $AD2D: A9 81
-    STA $0555                ; $AD2F: 8D 55 05
-    LDA #$02                 ; $AD32: A9 02
-    STA $0531                ; $AD34: 8D 31 05
-    LDA #$82                 ; $AD37: A9 82
-    STA $0530                ; $AD39: 8D 30 05
-    LDA $AD4A                ; $AD3C: AD 4A AD
-    STA $0532                ; $AD3F: 8D 32 05
-    LDA $AD4B                ; $AD42: AD 4B AD
-    STA $0533                ; $AD45: 8D 33 05
-    SEC                      ; $AD48: 38
-    RTS                      ; $AD49: 60
-    .byte $54             ; $AD4A - unknown opcode
-    ORA $A9                  ; $AD4B: 05 A9
-    ORA ($A2),Y              ; $AD4D: 11 A2
-    ORA $9D                  ; $AD4F: 05 9D
-    LSR $70                  ; $AD51: 46 70
-    LDX #$06                 ; $AD53: A2 06
-    STA $7046,X              ; $AD55: 9D 46 70
-    LDX #$08                 ; $AD58: A2 08
-    STA $7046,X              ; $AD5A: 9D 46 70
-    LDX #$07                 ; $AD5D: A2 07
-    STA $7046,X              ; $AD5F: 9D 46 70
-    LDX #$02                 ; $AD62: A2 02
-    STA $7046,X              ; $AD64: 9D 46 70
-    LDX #$03                 ; $AD67: A2 03
-    STA $7046,X              ; $AD69: 9D 46 70
-    LDX #$04                 ; $AD6C: A2 04
-    STA $7046,X              ; $AD6E: 9D 46 70
-    SEC                      ; $AD71: 38
-    RTS                      ; $AD72: 60
-    JSR $C543                ; $AD73: 20 43 C5
-    LDX #$0F                 ; $AD76: A2 0F
+	STA $0554				; $AD2A: 8D 54 05
+	LDA #$81				 ; $AD2D: A9 81
+	STA $0555				; $AD2F: 8D 55 05
+	LDA #$02				 ; $AD32: A9 02
+	STA $0531				; $AD34: 8D 31 05
+	LDA #$82				 ; $AD37: A9 82
+	STA $0530				; $AD39: 8D 30 05
+	LDA $AD4A				; $AD3C: AD 4A AD
+	STA $0532				; $AD3F: 8D 32 05
+	LDA $AD4B				; $AD42: AD 4B AD
+	STA $0533				; $AD45: 8D 33 05
+	SEC					  ; $AD48: 38
+	RTS					  ; $AD49: 60
+	.byte $54			 ; $AD4A - unknown opcode
+	ORA $A9				  ; $AD4B: 05 A9
+	ORA ($A2),Y			  ; $AD4D: 11 A2
+	ORA $9D				  ; $AD4F: 05 9D
+	LSR $70				  ; $AD51: 46 70
+	LDX #$06				 ; $AD53: A2 06
+	STA $7046,X			  ; $AD55: 9D 46 70
+	LDX #$08				 ; $AD58: A2 08
+	STA $7046,X			  ; $AD5A: 9D 46 70
+	LDX #$07				 ; $AD5D: A2 07
+	STA $7046,X			  ; $AD5F: 9D 46 70
+	LDX #$02				 ; $AD62: A2 02
+	STA $7046,X			  ; $AD64: 9D 46 70
+	LDX #$03				 ; $AD67: A2 03
+	STA $7046,X			  ; $AD69: 9D 46 70
+	LDX #$04				 ; $AD6C: A2 04
+	STA $7046,X			  ; $AD6E: 9D 46 70
+	SEC					  ; $AD71: 38
+	RTS					  ; $AD72: 60
+	JSR $C543				; $AD73: 20 43 C5
+	LDX #$0F				 ; $AD76: A2 0F
 
 loc_AD78:
-    LDA $AD8E,X              ; $AD78: BD 8E AD
-    STA $0200,X              ; $AD7B: 9D 00 02
-    DEX                      ; $AD7E: CA
-    BPL $AD78                ; $AD7F: 10 F7
-    LDX #$78                 ; $AD81: A2 78
-    JSR $C90C                ; $AD83: 20 0C C9
-    JSR $E501                ; $AD86: 20 01 E5
-    JSR $DFF1                ; $AD89: 20 F1 DF
-    SEC                      ; $AD8C: 38
-    RTS                      ; $AD8D: 60
-    .byte $3B             ; $AD8E - unknown opcode
-    BRK                      ; $AD8F: 00
-    BRK                      ; $AD90: 00
-    SEI                      ; $AD91: 78
-    .byte $3B             ; $AD92 - unknown opcode
-    ORA ($00,X)              ; $AD93: 01 00
-    .byte $80             ; $AD95 - unknown opcode
-    .byte $43             ; $AD96 - unknown opcode
-    .byte $02             ; $AD97 - unknown opcode
-    BRK                      ; $AD98: 00
-    SEI                      ; $AD99: 78
-    .byte $43             ; $AD9A - unknown opcode
-    .byte $03             ; $AD9B - unknown opcode
-    BRK                      ; $AD9C: 00
-    .byte $80             ; $AD9D - unknown opcode
-    LDA $51                  ; $AD9E: A5 51
-    PHA                      ; $ADA0: 48
-    LDA $6FA0                ; $ADA1: AD A0 6F
-    CMP #$11                 ; $ADA4: C9 11
-    BNE $AE08                ; $ADA6: D0 60
-    LDA $6FC0                ; $ADA8: AD C0 6F
-    CMP #$02                 ; $ADAB: C9 02
-    BNE $AE08                ; $ADAD: D0 59
-    BRK                      ; $ADAF: 00
-    BRK                      ; $ADB0: 00
-    .byte $EB             ; $ADB1 - unknown opcode
-    .byte $80             ; $ADB2 - unknown opcode
-    BNE $AE03                ; $ADB3: D0 4E
-    JSR $B16B                ; $ADB5: 20 6B B1
-    JSR $995E                ; $ADB8: 20 5E 99
-    BRK                      ; $ADBB: 00
-    .byte $B3             ; $ADBC - unknown opcode
-    .byte $3B             ; $ADBD - unknown opcode
-    BRK                      ; $ADBE: 00
-    .byte $07             ; $ADBF - unknown opcode
-    .byte $6F             ; $ADC0 - unknown opcode
-    PHA                      ; $ADC1: 48
-    CMP #$01                 ; $ADC2: C9 01
-    BCS $ADFC                ; $ADC4: B0 36
-    BRK                      ; $ADC6: 00
-    .byte $23             ; $ADC7 - unknown opcode
-    .byte $FB             ; $ADC8 - unknown opcode
-    LDA $62AA                ; $ADC9: AD AA 62
-    ORA #$20                 ; $ADCC: 09 20
-    STA $62AA                ; $ADCE: 8D AA 62
-    JSR $D1F3                ; $ADD1: 20 F3 D1
-    LDA #$02                 ; $ADD4: A9 02
-    STA $64                  ; $ADD6: 85 64
-    JSR $C016                ; $ADD8: 20 16 C0
-    CLC                      ; $ADDB: 18
-    JSR $C004                ; $ADDC: 20 04 C0
-    LDX #$AA                 ; $ADDF: A2 AA
+	LDA $AD8E,X			  ; $AD78: BD 8E AD
+	STA $0200,X			  ; $AD7B: 9D 00 02
+	DEX					  ; $AD7E: CA
+	BPL $AD78				; $AD7F: 10 F7
+	LDX #$78				 ; $AD81: A2 78
+	JSR $C90C				; $AD83: 20 0C C9
+	JSR $E501				; $AD86: 20 01 E5
+	JSR $DFF1				; $AD89: 20 F1 DF
+	SEC					  ; $AD8C: 38
+	RTS					  ; $AD8D: 60
+	.byte $3B			 ; $AD8E - unknown opcode
+	BRK					  ; $AD8F: 00
+	BRK					  ; $AD90: 00
+	SEI					  ; $AD91: 78
+	.byte $3B			 ; $AD92 - unknown opcode
+	ORA ($00,X)			  ; $AD93: 01 00
+	.byte $80			 ; $AD95 - unknown opcode
+	.byte $43			 ; $AD96 - unknown opcode
+	.byte $02			 ; $AD97 - unknown opcode
+	BRK					  ; $AD98: 00
+	SEI					  ; $AD99: 78
+	.byte $43			 ; $AD9A - unknown opcode
+	.byte $03			 ; $AD9B - unknown opcode
+	BRK					  ; $AD9C: 00
+	.byte $80			 ; $AD9D - unknown opcode
+	LDA $51				  ; $AD9E: A5 51
+	PHA					  ; $ADA0: 48
+	LDA $6FA0				; $ADA1: AD A0 6F
+	CMP #$11				 ; $ADA4: C9 11
+	BNE $AE08				; $ADA6: D0 60
+	LDA $6FC0				; $ADA8: AD C0 6F
+	CMP #$02				 ; $ADAB: C9 02
+	BNE $AE08				; $ADAD: D0 59
+	BRK					  ; $ADAF: 00
+	BRK					  ; $ADB0: 00
+	.byte $EB			 ; $ADB1 - unknown opcode
+	.byte $80			 ; $ADB2 - unknown opcode
+	BNE $AE03				; $ADB3: D0 4E
+	JSR $B16B				; $ADB5: 20 6B B1
+	JSR $995E				; $ADB8: 20 5E 99
+	BRK					  ; $ADBB: 00
+	.byte $B3			 ; $ADBC - unknown opcode
+	.byte $3B			 ; $ADBD - unknown opcode
+	BRK					  ; $ADBE: 00
+	.byte $07			 ; $ADBF - unknown opcode
+	.byte $6F			 ; $ADC0 - unknown opcode
+	PHA					  ; $ADC1: 48
+	CMP #$01				 ; $ADC2: C9 01
+	BCS $ADFC				; $ADC4: B0 36
+	BRK					  ; $ADC6: 00
+	.byte $23			 ; $ADC7 - unknown opcode
+	.byte $FB			 ; $ADC8 - unknown opcode
+	LDA $62AA				; $ADC9: AD AA 62
+	ORA #$20				 ; $ADCC: 09 20
+	STA $62AA				; $ADCE: 8D AA 62
+	JSR $D1F3				; $ADD1: 20 F3 D1
+	LDA #$02				 ; $ADD4: A9 02
+	STA $64				  ; $ADD6: 85 64
+	JSR $C016				; $ADD8: 20 16 C0
+	CLC					  ; $ADDB: 18
+	JSR $C004				; $ADDC: 20 04 C0
+	LDX #$AA				 ; $ADDF: A2 AA
 
 loc_ADE1:
-    JSR $AE11                ; $ADE1: 20 11 AE
-    DEX                      ; $ADE4: CA
-    BNE $ADE1                ; $ADE5: D0 FA
-    BRK                      ; $ADE7: 00
-    .byte $07             ; $ADE8 - unknown opcode
-    .byte $9F             ; $ADE9 - unknown opcode
-    BRK                      ; $ADEA: 00
-    ASL $FB                  ; $ADEB: 06 FB
-    PLA                      ; $ADED: 68
-    TAX                      ; $ADEE: AA
-    LDA #$80                 ; $ADEF: A9 80
-    STA $6F60,X              ; $ADF1: 9D 60 6F
-    STA $6F80,X              ; $ADF4: 9D 80 6F
-    LDA #$1E                 ; $ADF7: A9 1E
-    STA $51                  ; $ADF9: 85 51
-    RTS                      ; $ADFB: 60
+	JSR $AE11				; $ADE1: 20 11 AE
+	DEX					  ; $ADE4: CA
+	BNE $ADE1				; $ADE5: D0 FA
+	BRK					  ; $ADE7: 00
+	.byte $07			 ; $ADE8 - unknown opcode
+	.byte $9F			 ; $ADE9 - unknown opcode
+	BRK					  ; $ADEA: 00
+	ASL $FB				  ; $ADEB: 06 FB
+	PLA					  ; $ADED: 68
+	TAX					  ; $ADEE: AA
+	LDA #$80				 ; $ADEF: A9 80
+	STA $6F60,X			  ; $ADF1: 9D 60 6F
+	STA $6F80,X			  ; $ADF4: 9D 80 6F
+	LDA #$1E				 ; $ADF7: A9 1E
+	STA $51				  ; $ADF9: 85 51
+	RTS					  ; $ADFB: 60
 
 loc_ADFC:
-    JSR $D1F3                ; $ADFC: 20 F3 D1
-    BRK                      ; $ADFF: 00
-    BRK                      ; $AE00: 00
-    .byte $CB             ; $AE01 - unknown opcode
-    .byte $80             ; $AE02 - unknown opcode
+	JSR $D1F3				; $ADFC: 20 F3 D1
+	BRK					  ; $ADFF: 00
+	BRK					  ; $AE00: 00
+	.byte $CB			 ; $AE01 - unknown opcode
+	.byte $80			 ; $AE02 - unknown opcode
 
 loc_AE03:
-    PLA                      ; $AE03: 68
-    STA $51                  ; $AE04: 85 51
-    CLC                      ; $AE06: 18
-    RTS                      ; $AE07: 60
+	PLA					  ; $AE03: 68
+	STA $51				  ; $AE04: 85 51
+	CLC					  ; $AE06: 18
+	RTS					  ; $AE07: 60
 
 loc_AE08:
-    BRK                      ; $AE08: 00
-    BRK                      ; $AE09: 00
-    .byte $DB             ; $AE0A - unknown opcode
-    .byte $7F             ; $AE0B - unknown opcode
-    PLA                      ; $AE0C: 68
-    STA $51                  ; $AE0D: 85 51
-    CLC                      ; $AE0F: 18
-    RTS                      ; $AE10: 60
+	BRK					  ; $AE08: 00
+	BRK					  ; $AE09: 00
+	.byte $DB			 ; $AE0A - unknown opcode
+	.byte $7F			 ; $AE0B - unknown opcode
+	PLA					  ; $AE0C: 68
+	STA $51				  ; $AE0D: 85 51
+	CLC					  ; $AE0F: 18
+	RTS					  ; $AE10: 60
 
 loc_AE11:
-    LDA $0509                ; $AE11: AD 09 05
-    PHA                      ; $AE14: 48
-    TXA                      ; $AE15: 8A
-    AND #$C0                 ; $AE16: 29 C0
-    LSR                      ; $AE18: 4A
-    LSR                      ; $AE19: 4A
-    LSR                      ; $AE1A: 4A
-    LSR                      ; $AE1B: 4A
-    LSR                      ; $AE1C: 4A
-    LSR                      ; $AE1D: 4A
-    CLC                      ; $AE1E: 18
-    ADC #$02                 ; $AE1F: 69 02
-    ADC $0509                ; $AE21: 6D 09 05
-    STA $0509                ; $AE24: 8D 09 05
-    JSR $FF74                ; $AE27: 20 74 FF
-    PLA                      ; $AE2A: 68
-    STA $0509                ; $AE2B: 8D 09 05
-    JMP $FF74                ; $AE2E: 4C 74 FF
-    LDA #$8F                 ; $AE31: A9 8F
-    JSR $A23A                ; $AE33: 20 3A A2
-    SEC                      ; $AE36: 38
-    RTS                      ; $AE37: 60
-    LDA $6FA0                ; $AE38: AD A0 6F
-    CMP #$08                 ; $AE3B: C9 08
-    BNE $AE55                ; $AE3D: D0 16
-    LDA $6FC0                ; $AE3F: AD C0 6F
-    CMP #$03                 ; $AE42: C9 03
-    BNE $AE55                ; $AE44: D0 0F
+	LDA $0509				; $AE11: AD 09 05
+	PHA					  ; $AE14: 48
+	TXA					  ; $AE15: 8A
+	AND #$C0				 ; $AE16: 29 C0
+	LSR					  ; $AE18: 4A
+	LSR					  ; $AE19: 4A
+	LSR					  ; $AE1A: 4A
+	LSR					  ; $AE1B: 4A
+	LSR					  ; $AE1C: 4A
+	LSR					  ; $AE1D: 4A
+	CLC					  ; $AE1E: 18
+	ADC #$02				 ; $AE1F: 69 02
+	ADC $0509				; $AE21: 6D 09 05
+	STA $0509				; $AE24: 8D 09 05
+	JSR $FF74				; $AE27: 20 74 FF
+	PLA					  ; $AE2A: 68
+	STA $0509				; $AE2B: 8D 09 05
+	JMP $FF74				; $AE2E: 4C 74 FF
+	LDA #$8F				 ; $AE31: A9 8F
+	JSR $A23A				; $AE33: 20 3A A2
+	SEC					  ; $AE36: 38
+	RTS					  ; $AE37: 60
+	LDA $6FA0				; $AE38: AD A0 6F
+	CMP #$08				 ; $AE3B: C9 08
+	BNE $AE55				; $AE3D: D0 16
+	LDA $6FC0				; $AE3F: AD C0 6F
+	CMP #$03				 ; $AE42: C9 03
+	BNE $AE55				; $AE44: D0 0F
 
 loc_AE46:
-    LDA #$07                 ; $AE46: A9 07
-    BRK                      ; $AE48: 00
-    .byte $12             ; $AE49 - unknown opcode
-    .byte $2F             ; $AE4A - unknown opcode
-    LDY #$10                 ; $AE4B: A0 10
-    BRK                      ; $AE4D: 00
-    .byte $03             ; $AE4E - unknown opcode
-    .byte $4F             ; $AE4F - unknown opcode
-    BRK                      ; $AE50: 00
-    .byte $27             ; $AE51 - unknown opcode
-    .byte $0F             ; $AE52 - unknown opcode
-    SEC                      ; $AE53: 38
-    RTS                      ; $AE54: 60
+	LDA #$07				 ; $AE46: A9 07
+	BRK					  ; $AE48: 00
+	.byte $12			 ; $AE49 - unknown opcode
+	.byte $2F			 ; $AE4A - unknown opcode
+	LDY #$10				 ; $AE4B: A0 10
+	BRK					  ; $AE4D: 00
+	.byte $03			 ; $AE4E - unknown opcode
+	.byte $4F			 ; $AE4F - unknown opcode
+	BRK					  ; $AE50: 00
+	.byte $27			 ; $AE51 - unknown opcode
+	.byte $0F			 ; $AE52 - unknown opcode
+	SEC					  ; $AE53: 38
+	RTS					  ; $AE54: 60
 
 loc_AE55:
-    CLC                      ; $AE55: 18
-    RTS                      ; $AE56: 60
-    LDX #$00                 ; $AE57: A2 00
+	CLC					  ; $AE55: 18
+	RTS					  ; $AE56: 60
+	LDX #$00				 ; $AE57: A2 00
 
 loc_AE59:
-    LDA $44                  ; $AE59: A5 44
-    CMP $AEB3,X              ; $AE5B: DD B3 AE
-    BNE $AE67                ; $AE5E: D0 07
-    LDA $45                  ; $AE60: A5 45
-    CMP $AEB4,X              ; $AE62: DD B4 AE
-    BEQ $AE6D                ; $AE65: F0 06
+	LDA $44				  ; $AE59: A5 44
+	CMP $AEB3,X			  ; $AE5B: DD B3 AE
+	BNE $AE67				; $AE5E: D0 07
+	LDA $45				  ; $AE60: A5 45
+	CMP $AEB4,X			  ; $AE62: DD B4 AE
+	BEQ $AE6D				; $AE65: F0 06
 
 loc_AE67:
-    INX                      ; $AE67: E8
-    INX                      ; $AE68: E8
-    CPX #$04                 ; $AE69: E0 04
-    BCC $AE59                ; $AE6B: 90 EC
+	INX					  ; $AE67: E8
+	INX					  ; $AE68: E8
+	CPX #$04				 ; $AE69: E0 04
+	BCC $AE59				; $AE6B: 90 EC
 
 loc_AE6D:
-    LDA $AEB7,X              ; $AE6D: BD B7 AE
-    STA $0563                ; $AE70: 8D 63 05
-    AND #$0F                 ; $AE73: 29 0F
-    ORA #$80                 ; $AE75: 09 80
-    STA $0530                ; $AE77: 8D 30 05
-    LDA $AEB8,X              ; $AE7A: BD B8 AE
-    STA $0564                ; $AE7D: 8D 64 05
-    LDA #$01                 ; $AE80: A9 01
-    STA $0565                ; $AE82: 8D 65 05
-    LDA #$03                 ; $AE85: A9 03
-    STA $0531                ; $AE87: 8D 31 05
-    LDA $AEBD                ; $AE8A: AD BD AE
-    STA $0532                ; $AE8D: 8D 32 05
-    LDA $AEBE                ; $AE90: AD BE AE
-    STA $0533                ; $AE93: 8D 33 05
-    LDA #$11                 ; $AE96: A9 11
-    LDX #$03                 ; $AE98: A2 03
-    STA $7046,X              ; $AE9A: 9D 46 70
-    LDX #$07                 ; $AE9D: A2 07
-    STA $7046,X              ; $AE9F: 9D 46 70
-    LDX #$04                 ; $AEA2: A2 04
-    STA $7046,X              ; $AEA4: 9D 46 70
-    LDX #$02                 ; $AEA7: A2 02
-    STA $7046,X              ; $AEA9: 9D 46 70
-    LDA #$FF                 ; $AEAC: A9 FF
-    STA $6C0C                ; $AEAE: 8D 0C 6C
-    SEC                      ; $AEB1: 38
-    RTS                      ; $AEB2: 60
-    .byte $03             ; $AEB3 - unknown opcode
-    BPL $AEBB                ; $AEB4: 10 05
-    BPL $AEDB                ; $AEB6: 10 23
-    .byte $83             ; $AEB8 - unknown opcode
-    .byte $23             ; $AEB9 - unknown opcode
-    STA ($82,X)              ; $AEBA: 81 82
-    STA ($63,X)              ; $AEBC: 81 63
-    ORA $A4                  ; $AEBE: 05 A4
-    EOR ($B9),Y              ; $AEC0: 51 B9
-    CPX #$70                 ; $AEC2: E0 70
-    ORA #$80                 ; $AEC4: 09 80
-    STA $70E0,Y              ; $AEC6: 99 E0 70
-    LDX $6FE0,Y              ; $AEC9: BE E0 6F
-    LDA #$1E                 ; $AECC: A9 1E
-    BRK                      ; $AECE: 00
-    ORA $3887                ; $AECF: 0D 87 38
-    RTS                      ; $AED2: 60
-    LDX #$02                 ; $AED3: A2 02
-    LDA #$11                 ; $AED5: A9 11
-    STA $7046,X              ; $AED7: 9D 46 70
-    SEC                      ; $AEDA: 38
+	LDA $AEB7,X			  ; $AE6D: BD B7 AE
+	STA $0563				; $AE70: 8D 63 05
+	AND #$0F				 ; $AE73: 29 0F
+	ORA #$80				 ; $AE75: 09 80
+	STA $0530				; $AE77: 8D 30 05
+	LDA $AEB8,X			  ; $AE7A: BD B8 AE
+	STA $0564				; $AE7D: 8D 64 05
+	LDA #$01				 ; $AE80: A9 01
+	STA $0565				; $AE82: 8D 65 05
+	LDA #$03				 ; $AE85: A9 03
+	STA $0531				; $AE87: 8D 31 05
+	LDA $AEBD				; $AE8A: AD BD AE
+	STA $0532				; $AE8D: 8D 32 05
+	LDA $AEBE				; $AE90: AD BE AE
+	STA $0533				; $AE93: 8D 33 05
+	LDA #$11				 ; $AE96: A9 11
+	LDX #$03				 ; $AE98: A2 03
+	STA $7046,X			  ; $AE9A: 9D 46 70
+	LDX #$07				 ; $AE9D: A2 07
+	STA $7046,X			  ; $AE9F: 9D 46 70
+	LDX #$04				 ; $AEA2: A2 04
+	STA $7046,X			  ; $AEA4: 9D 46 70
+	LDX #$02				 ; $AEA7: A2 02
+	STA $7046,X			  ; $AEA9: 9D 46 70
+	LDA #$FF				 ; $AEAC: A9 FF
+	STA $6C0C				; $AEAE: 8D 0C 6C
+	SEC					  ; $AEB1: 38
+	RTS					  ; $AEB2: 60
+	.byte $03			 ; $AEB3 - unknown opcode
+	BPL $AEBB				; $AEB4: 10 05
+	BPL $AEDB				; $AEB6: 10 23
+	.byte $83			 ; $AEB8 - unknown opcode
+	.byte $23			 ; $AEB9 - unknown opcode
+	STA ($82,X)			  ; $AEBA: 81 82
+	STA ($63,X)			  ; $AEBC: 81 63
+	ORA $A4				  ; $AEBE: 05 A4
+	EOR ($B9),Y			  ; $AEC0: 51 B9
+	CPX #$70				 ; $AEC2: E0 70
+	ORA #$80				 ; $AEC4: 09 80
+	STA $70E0,Y			  ; $AEC6: 99 E0 70
+	LDX $6FE0,Y			  ; $AEC9: BE E0 6F
+	LDA #$1E				 ; $AECC: A9 1E
+	BRK					  ; $AECE: 00
+	ORA $3887				; $AECF: 0D 87 38
+	RTS					  ; $AED2: 60
+	LDX #$02				 ; $AED3: A2 02
+	LDA #$11				 ; $AED5: A9 11
+	STA $7046,X			  ; $AED7: 9D 46 70
+	SEC					  ; $AEDA: 38
 
 loc_AEDB:
-    RTS                      ; $AEDB: 60
-    LDX $51                  ; $AEDC: A6 51
-    LDA $7180,X              ; $AEDE: BD 80 71
-    PHA                      ; $AEE1: 48
-    TAX                      ; $AEE2: AA
-    LDA $AEFD,X              ; $AEE3: BD FD AE
-    BRK                      ; $AEE6: 00
-    .byte $03             ; $AEE7 - unknown opcode
-    .byte $9F             ; $AEE8 - unknown opcode
-    PLA                      ; $AEE9: 68
-    CMP #$06                 ; $AEEA: C9 06
-    BEQ $AEF7                ; $AEEC: F0 09
-    AND #$01                 ; $AEEE: 29 01
-    BEQ $AEFC                ; $AEF0: F0 0A
-    BRK                      ; $AEF2: 00
-    .byte $02             ; $AEF3 - unknown opcode
-    .byte $4F             ; $AEF4 - unknown opcode
-    SEC                      ; $AEF5: 38
-    RTS                      ; $AEF6: 60
+	RTS					  ; $AEDB: 60
+	LDX $51				  ; $AEDC: A6 51
+	LDA $7180,X			  ; $AEDE: BD 80 71
+	PHA					  ; $AEE1: 48
+	TAX					  ; $AEE2: AA
+	LDA $AEFD,X			  ; $AEE3: BD FD AE
+	BRK					  ; $AEE6: 00
+	.byte $03			 ; $AEE7 - unknown opcode
+	.byte $9F			 ; $AEE8 - unknown opcode
+	PLA					  ; $AEE9: 68
+	CMP #$06				 ; $AEEA: C9 06
+	BEQ $AEF7				; $AEEC: F0 09
+	AND #$01				 ; $AEEE: 29 01
+	BEQ $AEFC				; $AEF0: F0 0A
+	BRK					  ; $AEF2: 00
+	.byte $02			 ; $AEF3 - unknown opcode
+	.byte $4F			 ; $AEF4 - unknown opcode
+	SEC					  ; $AEF5: 38
+	RTS					  ; $AEF6: 60
 
 loc_AEF7:
-    LDY #$10                 ; $AEF7: A0 10
-    BRK                      ; $AEF9: 00
-    .byte $03             ; $AEFA - unknown opcode
-    .byte $4F             ; $AEFB - unknown opcode
+	LDY #$10				 ; $AEF7: A0 10
+	BRK					  ; $AEF9: 00
+	.byte $03			 ; $AEFA - unknown opcode
+	.byte $4F			 ; $AEFB - unknown opcode
 
 loc_AEFC:
-    SEC                      ; $AEFC: 38
-    RTS                      ; $AEFD: 60
-    TXA                      ; $AEFE: 8A
-    DEY                      ; $AEFF: 88
-    TXA                      ; $AF00: 8A
-    .byte $8B             ; $AF01 - unknown opcode
-    TXA                      ; $AF02: 8A
-    STX $8B8A                ; $AF03: 8E 8A 8B
-    LDA $7000                ; $AF06: AD 00 70
-    AND #$FC                 ; $AF09: 29 FC
-    ORA #$01                 ; $AF0B: 09 01
-    STA $7000                ; $AF0D: 8D 00 70
-    LDA $51                  ; $AF10: A5 51
-    PHA                      ; $AF12: 48
-    JSR $995E                ; $AF13: 20 5E 99
-    BRK                      ; $AF16: 00
-    SBC ($3B,X)              ; $AF17: E1 3B
-    LDX #$00                 ; $AF19: A2 00
-    BRK                      ; $AF1B: 00
-    AND #$73                 ; $AF1C: 29 73
-    PHA                      ; $AF1E: 48
-    BEQ $AF24                ; $AF1F: F0 03
-    BRK                      ; $AF21: 00
-    .byte $E2             ; $AF22 - unknown opcode
-    .byte $3B             ; $AF23 - unknown opcode
+	SEC					  ; $AEFC: 38
+	RTS					  ; $AEFD: 60
+	TXA					  ; $AEFE: 8A
+	DEY					  ; $AEFF: 88
+	TXA					  ; $AF00: 8A
+	.byte $8B			 ; $AF01 - unknown opcode
+	TXA					  ; $AF02: 8A
+	STX $8B8A				; $AF03: 8E 8A 8B
+	LDA $7000				; $AF06: AD 00 70
+	AND #$FC				 ; $AF09: 29 FC
+	ORA #$01				 ; $AF0B: 09 01
+	STA $7000				; $AF0D: 8D 00 70
+	LDA $51				  ; $AF10: A5 51
+	PHA					  ; $AF12: 48
+	JSR $995E				; $AF13: 20 5E 99
+	BRK					  ; $AF16: 00
+	SBC ($3B,X)			  ; $AF17: E1 3B
+	LDX #$00				 ; $AF19: A2 00
+	BRK					  ; $AF1B: 00
+	AND #$73				 ; $AF1C: 29 73
+	PHA					  ; $AF1E: 48
+	BEQ $AF24				; $AF1F: F0 03
+	BRK					  ; $AF21: 00
+	.byte $E2			 ; $AF22 - unknown opcode
+	.byte $3B			 ; $AF23 - unknown opcode
 
 loc_AF24:
-    BRK                      ; $AF24: 00
-    .byte $E3             ; $AF25 - unknown opcode
-    .byte $3B             ; $AF26 - unknown opcode
-    BRK                      ; $AF27: 00
-    CPX $3B                  ; $AF28: E4 3B
-    BRK                      ; $AF2A: 00
-    STX $A0FB                ; $AF2B: 8E FB A0
-    BPL $AF30                ; $AF2E: 10 00
+	BRK					  ; $AF24: 00
+	.byte $E3			 ; $AF25 - unknown opcode
+	.byte $3B			 ; $AF26 - unknown opcode
+	BRK					  ; $AF27: 00
+	CPX $3B				  ; $AF28: E4 3B
+	BRK					  ; $AF2A: 00
+	STX $A0FB				; $AF2B: 8E FB A0
+	BPL $AF30				; $AF2E: 10 00
 
 loc_AF30:
-    .byte $03             ; $AF30 - unknown opcode
-    .byte $4F             ; $AF31 - unknown opcode
-    PLA                      ; $AF32: 68
-    ASL                      ; $AF33: 0A
-    ASL                      ; $AF34: 0A
-    ASL                      ; $AF35: 0A
-    TAY                      ; $AF36: A8
-    PLA                      ; $AF37: 68
-    PHA                      ; $AF38: 48
-    TAX                      ; $AF39: AA
-    LDA $6FE0,X              ; $AF3A: BD E0 6F
-    TAX                      ; $AF3D: AA
-    TYA                      ; $AF3E: 98
-    BRK                      ; $AF3F: 00
-    ORA $0087                ; $AF40: 0D 87 00
-    ASL                      ; $AF43: 0A
-    .byte $6F             ; $AF44 - unknown opcode
-    BRK                      ; $AF45: 00
-    SBC $3B                  ; $AF46: E5 3B
-    JSR $D20A                ; $AF48: 20 0A D2
-    PLA                      ; $AF4B: 68
-    STA $51                  ; $AF4C: 85 51
-    SEC                      ; $AF4E: 38
-    RTS                      ; $AF4F: 60
-    LDY $51                  ; $AF50: A4 51
-    LDX $6FE0,Y              ; $AF52: BE E0 6F
-    LDA #$1E                 ; $AF55: A9 1E
-    BRK                      ; $AF57: 00
-    ORA $3887                ; $AF58: 0D 87 38
-    RTS                      ; $AF5B: 60
-    BRK                      ; $AF5C: 00
-    .byte $02             ; $AF5D - unknown opcode
-    .byte $9F             ; $AF5E - unknown opcode
-    SEC                      ; $AF5F: 38
-    RTS                      ; $AF60: 60
-    LDX $3D                  ; $AF61: A6 3D
-    LDA $AF81,X              ; $AF63: BD 81 AF
-    STA $0563                ; $AF66: 8D 63 05
-    LDA #$01                 ; $AF69: A9 01
-    STA $0531                ; $AF6B: 8D 31 05
-    LDA #$82                 ; $AF6E: A9 82
-    STA $0530                ; $AF70: 8D 30 05
-    LDA $AEBD                ; $AF73: AD BD AE
-    STA $0532                ; $AF76: 8D 32 05
-    LDA $AEBE                ; $AF79: AD BE AE
-    STA $0533                ; $AF7C: 8D 33 05
-    SEC                      ; $AF7F: 38
-    RTS                      ; $AF80: 60
-    .byte $12             ; $AF81 - unknown opcode
-    .byte $82             ; $AF82 - unknown opcode
-    .byte $22             ; $AF83 - unknown opcode
-    .byte $42             ; $AF84 - unknown opcode
-    LDA $44                  ; $AF85: A5 44
-    AND #$FE                 ; $AF87: 29 FE
-    CMP #$0E                 ; $AF89: C9 0E
-    BNE $AF95                ; $AF8B: D0 08
-    LDA $45                  ; $AF8D: A5 45
-    CMP #$15                 ; $AF8F: C9 15
-    BNE $AF95                ; $AF91: D0 02
-    SEC                      ; $AF93: 38
-    RTS                      ; $AF94: 60
+	.byte $03			 ; $AF30 - unknown opcode
+	.byte $4F			 ; $AF31 - unknown opcode
+	PLA					  ; $AF32: 68
+	ASL					  ; $AF33: 0A
+	ASL					  ; $AF34: 0A
+	ASL					  ; $AF35: 0A
+	TAY					  ; $AF36: A8
+	PLA					  ; $AF37: 68
+	PHA					  ; $AF38: 48
+	TAX					  ; $AF39: AA
+	LDA $6FE0,X			  ; $AF3A: BD E0 6F
+	TAX					  ; $AF3D: AA
+	TYA					  ; $AF3E: 98
+	BRK					  ; $AF3F: 00
+	ORA $0087				; $AF40: 0D 87 00
+	ASL					  ; $AF43: 0A
+	.byte $6F			 ; $AF44 - unknown opcode
+	BRK					  ; $AF45: 00
+	SBC $3B				  ; $AF46: E5 3B
+	JSR $D20A				; $AF48: 20 0A D2
+	PLA					  ; $AF4B: 68
+	STA $51				  ; $AF4C: 85 51
+	SEC					  ; $AF4E: 38
+	RTS					  ; $AF4F: 60
+	LDY $51				  ; $AF50: A4 51
+	LDX $6FE0,Y			  ; $AF52: BE E0 6F
+	LDA #$1E				 ; $AF55: A9 1E
+	BRK					  ; $AF57: 00
+	ORA $3887				; $AF58: 0D 87 38
+	RTS					  ; $AF5B: 60
+	BRK					  ; $AF5C: 00
+	.byte $02			 ; $AF5D - unknown opcode
+	.byte $9F			 ; $AF5E - unknown opcode
+	SEC					  ; $AF5F: 38
+	RTS					  ; $AF60: 60
+	LDX $3D				  ; $AF61: A6 3D
+	LDA $AF81,X			  ; $AF63: BD 81 AF
+	STA $0563				; $AF66: 8D 63 05
+	LDA #$01				 ; $AF69: A9 01
+	STA $0531				; $AF6B: 8D 31 05
+	LDA #$82				 ; $AF6E: A9 82
+	STA $0530				; $AF70: 8D 30 05
+	LDA $AEBD				; $AF73: AD BD AE
+	STA $0532				; $AF76: 8D 32 05
+	LDA $AEBE				; $AF79: AD BE AE
+	STA $0533				; $AF7C: 8D 33 05
+	SEC					  ; $AF7F: 38
+	RTS					  ; $AF80: 60
+	.byte $12			 ; $AF81 - unknown opcode
+	.byte $82			 ; $AF82 - unknown opcode
+	.byte $22			 ; $AF83 - unknown opcode
+	.byte $42			 ; $AF84 - unknown opcode
+	LDA $44				  ; $AF85: A5 44
+	AND #$FE				 ; $AF87: 29 FE
+	CMP #$0E				 ; $AF89: C9 0E
+	BNE $AF95				; $AF8B: D0 08
+	LDA $45				  ; $AF8D: A5 45
+	CMP #$15				 ; $AF8F: C9 15
+	BNE $AF95				; $AF91: D0 02
+	SEC					  ; $AF93: 38
+	RTS					  ; $AF94: 60
 
 loc_AF95:
-    CLC                      ; $AF95: 18
-    RTS                      ; $AF96: 60
-    LDA $6289                ; $AF97: AD 89 62
-    BPL $AFB6                ; $AF9A: 10 1A
-    LDA $3E                  ; $AF9C: A5 3E
-    BEQ $AFB2                ; $AF9E: F0 12
-    JSR $B16B                ; $AFA0: 20 6B B1
-    BRK                      ; $AFA3: 00
-    .byte $07             ; $AFA4 - unknown opcode
-    .byte $6F             ; $AFA5 - unknown opcode
-    .byte $43             ; $AFA6 - unknown opcode
-    BRK                      ; $AFA7: 00
-    .byte $64             ; $AFA8 - unknown opcode
-    .byte $4B             ; $AFA9 - unknown opcode
-    JSR $D218                ; $AFAA: 20 18 D2
-    LDA #$25                 ; $AFAD: A9 25
-    BRK                      ; $AFAF: 00
-    .byte $07             ; $AFB0 - unknown opcode
-    .byte $CF             ; $AFB1 - unknown opcode
+	CLC					  ; $AF95: 18
+	RTS					  ; $AF96: 60
+	LDA $6289				; $AF97: AD 89 62
+	BPL $AFB6				; $AF9A: 10 1A
+	LDA $3E				  ; $AF9C: A5 3E
+	BEQ $AFB2				; $AF9E: F0 12
+	JSR $B16B				; $AFA0: 20 6B B1
+	BRK					  ; $AFA3: 00
+	.byte $07			 ; $AFA4 - unknown opcode
+	.byte $6F			 ; $AFA5 - unknown opcode
+	.byte $43			 ; $AFA6 - unknown opcode
+	BRK					  ; $AFA7: 00
+	.byte $64			 ; $AFA8 - unknown opcode
+	.byte $4B			 ; $AFA9 - unknown opcode
+	JSR $D218				; $AFAA: 20 18 D2
+	LDA #$25				 ; $AFAD: A9 25
+	BRK					  ; $AFAF: 00
+	.byte $07			 ; $AFB0 - unknown opcode
+	.byte $CF			 ; $AFB1 - unknown opcode
 
 loc_AFB2:
-    LDA #$1E                 ; $AFB2: A9 1E
-    STA $51                  ; $AFB4: 85 51
+	LDA #$1E				 ; $AFB2: A9 1E
+	STA $51				  ; $AFB4: 85 51
 
 loc_AFB6:
-    CLC                      ; $AFB6: 18
-    RTS                      ; $AFB7: 60
-    LDA $45                  ; $AFB8: A5 45
-    CMP #$05                 ; $AFBA: C9 05
-    BEQ $AFC0                ; $AFBC: F0 02
-    CLC                      ; $AFBE: 18
-    RTS                      ; $AFBF: 60
+	CLC					  ; $AFB6: 18
+	RTS					  ; $AFB7: 60
+	LDA $45				  ; $AFB8: A5 45
+	CMP #$05				 ; $AFBA: C9 05
+	BEQ $AFC0				; $AFBC: F0 02
+	CLC					  ; $AFBE: 18
+	RTS					  ; $AFBF: 60
 
 loc_AFC0:
-    LDA #$8F                 ; $AFC0: A9 8F
-    JSR $A23A                ; $AFC2: 20 3A A2
-    INC $0531                ; $AFC5: EE 31 05
-    SEC                      ; $AFC8: 38
-    RTS                      ; $AFC9: 60
-    LDA $51                  ; $AFCA: A5 51
-    PHA                      ; $AFCC: 48
-    TAX                      ; $AFCD: AA
-    LDA $7000,X              ; $AFCE: BD 00 70
-    AND #$FC                 ; $AFD1: 29 FC
-    STA $7000,X              ; $AFD3: 9D 00 70
-    LDY #$03                 ; $AFD6: A0 03
-    LDA $44                  ; $AFD8: A5 44
-    CMP #$0F                 ; $AFDA: C9 0F
-    BCC $AFE0                ; $AFDC: 90 02
-    LDY #$01                 ; $AFDE: A0 01
+	LDA #$8F				 ; $AFC0: A9 8F
+	JSR $A23A				; $AFC2: 20 3A A2
+	INC $0531				; $AFC5: EE 31 05
+	SEC					  ; $AFC8: 38
+	RTS					  ; $AFC9: 60
+	LDA $51				  ; $AFCA: A5 51
+	PHA					  ; $AFCC: 48
+	TAX					  ; $AFCD: AA
+	LDA $7000,X			  ; $AFCE: BD 00 70
+	AND #$FC				 ; $AFD1: 29 FC
+	STA $7000,X			  ; $AFD3: 9D 00 70
+	LDY #$03				 ; $AFD6: A0 03
+	LDA $44				  ; $AFD8: A5 44
+	CMP #$0F				 ; $AFDA: C9 0F
+	BCC $AFE0				; $AFDC: 90 02
+	LDY #$01				 ; $AFDE: A0 01
 
 loc_AFE0:
-    TYA                      ; $AFE0: 98
-    ORA $7000,X              ; $AFE1: 1D 00 70
-    STA $7000,X              ; $AFE4: 9D 00 70
-    TYA                      ; $AFE7: 98
-    EOR #$02                 ; $AFE8: 49 02
-    ORA $7000                ; $AFEA: 0D 00 70
-    STA $7000                ; $AFED: 8D 00 70
-    BRK                      ; $AFF0: 00
-    ORA #$5F                 ; $AFF1: 09 5F
-    PLA                      ; $AFF3: 68
-    TAX                      ; $AFF4: AA
-    STA $51                  ; $AFF5: 85 51
-    LDY #$00                 ; $AFF7: A0 00
-    LDA $44                  ; $AFF9: A5 44
-    CMP #$0F                 ; $AFFB: C9 0F
-    BCC $B001                ; $AFFD: 90 02
-    LDY #$01                 ; $AFFF: A0 01
+	TYA					  ; $AFE0: 98
+	ORA $7000,X			  ; $AFE1: 1D 00 70
+	STA $7000,X			  ; $AFE4: 9D 00 70
+	TYA					  ; $AFE7: 98
+	EOR #$02				 ; $AFE8: 49 02
+	ORA $7000				; $AFEA: 0D 00 70
+	STA $7000				; $AFED: 8D 00 70
+	BRK					  ; $AFF0: 00
+	ORA #$5F				 ; $AFF1: 09 5F
+	PLA					  ; $AFF3: 68
+	TAX					  ; $AFF4: AA
+	STA $51				  ; $AFF5: 85 51
+	LDY #$00				 ; $AFF7: A0 00
+	LDA $44				  ; $AFF9: A5 44
+	CMP #$0F				 ; $AFFB: C9 0F
+	BCC $B001				; $AFFD: 90 02
+	LDY #$01				 ; $AFFF: A0 01
 
 loc_B001:
-    LDA $7066,Y              ; $B001: B9 66 70
-    STA $7060,X              ; $B004: 9D 60 70
-    LDA $7086,Y              ; $B007: B9 86 70
-    STA $7080,X              ; $B00A: 9D 80 70
-    SEC                      ; $B00D: 38
-    RTS                      ; $B00E: 60
-    LDA $45                  ; $B00F: A5 45
-    CMP #$10                 ; $B011: C9 10
-    BNE $B03B                ; $B013: D0 26
-    LDA $44                  ; $B015: A5 44
-    CMP #$0B                 ; $B017: C9 0B
-    BCC $B03B                ; $B019: 90 20
-    CMP #$0F                 ; $B01B: C9 0F
-    BCS $B03B                ; $B01D: B0 1C
-    LDY #$04                 ; $B01F: A0 04
-    LDX #$06                 ; $B021: A2 06
-    JSR $B001                ; $B023: 20 01 B0
-    LDY #$05                 ; $B026: A0 05
-    LDX #$07                 ; $B028: A2 07
-    JSR $B001                ; $B02A: 20 01 B0
-    LDY #$06                 ; $B02D: A0 06
-    LDX #$08                 ; $B02F: A2 08
-    JSR $B001                ; $B031: 20 01 B0
-    LDA #$8F                 ; $B034: A9 8F
-    JSR $A23A                ; $B036: 20 3A A2
-    SEC                      ; $B039: 38
-    RTS                      ; $B03A: 60
+	LDA $7066,Y			  ; $B001: B9 66 70
+	STA $7060,X			  ; $B004: 9D 60 70
+	LDA $7086,Y			  ; $B007: B9 86 70
+	STA $7080,X			  ; $B00A: 9D 80 70
+	SEC					  ; $B00D: 38
+	RTS					  ; $B00E: 60
+	LDA $45				  ; $B00F: A5 45
+	CMP #$10				 ; $B011: C9 10
+	BNE $B03B				; $B013: D0 26
+	LDA $44				  ; $B015: A5 44
+	CMP #$0B				 ; $B017: C9 0B
+	BCC $B03B				; $B019: 90 20
+	CMP #$0F				 ; $B01B: C9 0F
+	BCS $B03B				; $B01D: B0 1C
+	LDY #$04				 ; $B01F: A0 04
+	LDX #$06				 ; $B021: A2 06
+	JSR $B001				; $B023: 20 01 B0
+	LDY #$05				 ; $B026: A0 05
+	LDX #$07				 ; $B028: A2 07
+	JSR $B001				; $B02A: 20 01 B0
+	LDY #$06				 ; $B02D: A0 06
+	LDX #$08				 ; $B02F: A2 08
+	JSR $B001				; $B031: 20 01 B0
+	LDA #$8F				 ; $B034: A9 8F
+	JSR $A23A				; $B036: 20 3A A2
+	SEC					  ; $B039: 38
+	RTS					  ; $B03A: 60
 
 loc_B03B:
-    CLC                      ; $B03B: 18
-    RTS                      ; $B03C: 60
-    JSR $995E                ; $B03D: 20 5E 99
-    BRK                      ; $B040: 00
-    INX                      ; $B041: E8
-    .byte $3B             ; $B042 - unknown opcode
-    JSR $D218                ; $B043: 20 18 D2
-    LDA #$0D                 ; $B046: A9 0D
-    BRK                      ; $B048: 00
-    ORA ($8F,X)              ; $B049: 01 8F
-    BRK                      ; $B04B: 00
-    .byte $1F             ; $B04C - unknown opcode
-    .byte $EF             ; $B04D - unknown opcode
-    LDA #$80                 ; $B04E: A9 80
-    LDX #$02                 ; $B050: A2 02
-    JSR $9963                ; $B052: 20 63 99
-    LDX #$00                 ; $B055: A2 00
-    JSR $9963                ; $B057: 20 63 99
-    LDX #$01                 ; $B05A: A2 01
-    JSR $9963                ; $B05C: 20 63 99
-    BRK                      ; $B05F: 00
-    .byte $03             ; $B060 - unknown opcode
-    .byte $EF             ; $B061 - unknown opcode
-    JSR $C5BF                ; $B062: 20 BF C5
-    LDA #$1E                 ; $B065: A9 1E
-    STA $51                  ; $B067: 85 51
-    LDA #$00                 ; $B069: A9 00
-    STA $0530                ; $B06B: 8D 30 05
-    BRK                      ; $B06E: 00
-    CLC                      ; $B06F: 18
-    .byte $CB             ; $B070 - unknown opcode
-    .byte $04             ; $B071 - unknown opcode
-    RTS                      ; $B072: 60
-    LDA #$01                 ; $B073: A9 01
-    STA $0515                ; $B075: 8D 15 05
-    JSR $C5C5                ; $B078: 20 C5 C5
-    BRK                      ; $B07B: 00
-    ROL $20EF,X              ; $B07C: 3E EF 20
-    LSR $0099,X              ; $B07F: 5E 99 00
-    DEC $3B                  ; $B082: C6 3B
-    JSR $D20A                ; $B084: 20 0A D2
-    LDA #$00                 ; $B087: A9 00
-    STA $0530                ; $B089: 8D 30 05
-    JMP $B624                ; $B08C: 4C 24 B6
-    LDA $6FA0                ; $B08F: AD A0 6F
-    CMP #$1A                 ; $B092: C9 1A
-    BNE $B0CC                ; $B094: D0 36
-    LDA $6FC0                ; $B096: AD C0 6F
-    CMP #$0F                 ; $B099: C9 0F
-    BNE $B0CC                ; $B09B: D0 2F
-    LDA $3E                  ; $B09D: A5 3E
-    BEQ $B0C5                ; $B09F: F0 24
-    LDX #$05                 ; $B0A1: A2 05
+	CLC					  ; $B03B: 18
+	RTS					  ; $B03C: 60
+	JSR $995E				; $B03D: 20 5E 99
+	BRK					  ; $B040: 00
+	INX					  ; $B041: E8
+	.byte $3B			 ; $B042 - unknown opcode
+	JSR $D218				; $B043: 20 18 D2
+	LDA #$0D				 ; $B046: A9 0D
+	BRK					  ; $B048: 00
+	ORA ($8F,X)			  ; $B049: 01 8F
+	BRK					  ; $B04B: 00
+	.byte $1F			 ; $B04C - unknown opcode
+	.byte $EF			 ; $B04D - unknown opcode
+	LDA #$80				 ; $B04E: A9 80
+	LDX #$02				 ; $B050: A2 02
+	JSR $9963				; $B052: 20 63 99
+	LDX #$00				 ; $B055: A2 00
+	JSR $9963				; $B057: 20 63 99
+	LDX #$01				 ; $B05A: A2 01
+	JSR $9963				; $B05C: 20 63 99
+	BRK					  ; $B05F: 00
+	.byte $03			 ; $B060 - unknown opcode
+	.byte $EF			 ; $B061 - unknown opcode
+	JSR $C5BF				; $B062: 20 BF C5
+	LDA #$1E				 ; $B065: A9 1E
+	STA $51				  ; $B067: 85 51
+	LDA #$00				 ; $B069: A9 00
+	STA $0530				; $B06B: 8D 30 05
+	BRK					  ; $B06E: 00
+	CLC					  ; $B06F: 18
+	.byte $CB			 ; $B070 - unknown opcode
+	.byte $04			 ; $B071 - unknown opcode
+	RTS					  ; $B072: 60
+	LDA #$01				 ; $B073: A9 01
+	STA $0515				; $B075: 8D 15 05
+	JSR $C5C5				; $B078: 20 C5 C5
+	BRK					  ; $B07B: 00
+	ROL $20EF,X			  ; $B07C: 3E EF 20
+	LSR $0099,X			  ; $B07F: 5E 99 00
+	DEC $3B				  ; $B082: C6 3B
+	JSR $D20A				; $B084: 20 0A D2
+	LDA #$00				 ; $B087: A9 00
+	STA $0530				; $B089: 8D 30 05
+	JMP $B624				; $B08C: 4C 24 B6
+	LDA $6FA0				; $B08F: AD A0 6F
+	CMP #$1A				 ; $B092: C9 1A
+	BNE $B0CC				; $B094: D0 36
+	LDA $6FC0				; $B096: AD C0 6F
+	CMP #$0F				 ; $B099: C9 0F
+	BNE $B0CC				; $B09B: D0 2F
+	LDA $3E				  ; $B09D: A5 3E
+	BEQ $B0C5				; $B09F: F0 24
+	LDX #$05				 ; $B0A1: A2 05
 
 loc_B0A3:
-    LDA $7000,X              ; $B0A3: BD 00 70
-    AND #$7F                 ; $B0A6: 29 7F
-    STA $7000,X              ; $B0A8: 9D 00 70
-    LDA $6FA0,X              ; $B0AB: BD A0 6F
-    STA $6F60,X              ; $B0AE: 9D 60 6F
-    LDA $6FC0,X              ; $B0B1: BD C0 6F
-    STA $6F80,X              ; $B0B4: 9D 80 6F
-    DEX                      ; $B0B7: CA
-    BPL $B0A3                ; $B0B8: 10 E9
-    STA $45                  ; $B0BA: 85 45
-    LDA $6F60                ; $B0BC: AD 60 6F
-    STA $44                  ; $B0BF: 85 44
-    LDA #$00                 ; $B0C1: A9 00
-    STA $3E                  ; $B0C3: 85 3E
+	LDA $7000,X			  ; $B0A3: BD 00 70
+	AND #$7F				 ; $B0A6: 29 7F
+	STA $7000,X			  ; $B0A8: 9D 00 70
+	LDA $6FA0,X			  ; $B0AB: BD A0 6F
+	STA $6F60,X			  ; $B0AE: 9D 60 6F
+	LDA $6FC0,X			  ; $B0B1: BD C0 6F
+	STA $6F80,X			  ; $B0B4: 9D 80 6F
+	DEX					  ; $B0B7: CA
+	BPL $B0A3				; $B0B8: 10 E9
+	STA $45				  ; $B0BA: 85 45
+	LDA $6F60				; $B0BC: AD 60 6F
+	STA $44				  ; $B0BF: 85 44
+	LDA #$00				 ; $B0C1: A9 00
+	STA $3E				  ; $B0C3: 85 3E
 
 loc_B0C5:
-    LDA #$12                 ; $B0C5: A9 12
-    BRK                      ; $B0C7: 00
-    .byte $07             ; $B0C8 - unknown opcode
+	LDA #$12				 ; $B0C5: A9 12
+	BRK					  ; $B0C7: 00
+	.byte $07			 ; $B0C8 - unknown opcode
 
 loc_B0C9:
-    .byte $CF             ; $B0C9 - unknown opcode
-    SEC                      ; $B0CA: 38
-    RTS                      ; $B0CB: 60
+	.byte $CF			 ; $B0C9 - unknown opcode
+	SEC					  ; $B0CA: 38
+	RTS					  ; $B0CB: 60
 
 loc_B0CC:
-    CLC                      ; $B0CC: 18
-    RTS                      ; $B0CD: 60
-    BRK                      ; $B0CE: 00
-    .byte $13             ; $B0CF - unknown opcode
-    .byte $EB             ; $B0D0 - unknown opcode
-    PHP                      ; $B0D1: 08
-    BNE $B0F4                ; $B0D2: D0 20
-    BRK                      ; $B0D4: 00
-    .byte $13             ; $B0D5 - unknown opcode
-    .byte $EB             ; $B0D6 - unknown opcode
-    BPL $B0C9                ; $B0D7: 10 F0
-    .byte $1A             ; $B0D9 - unknown opcode
-    LDA $3E                  ; $B0DA: A5 3E
-    BEQ $B0F4                ; $B0DC: F0 16
-    BRK                      ; $B0DE: 00
-    .byte $13             ; $B0DF - unknown opcode
-    .byte $DB             ; $B0E0 - unknown opcode
-    .byte $EF             ; $B0E1 - unknown opcode
-    JSR $B16B                ; $B0E2: 20 6B B1
-    LDA $51                  ; $B0E5: A5 51
-    PHA                      ; $B0E7: 48
-    JSR $995E                ; $B0E8: 20 5E 99
-    BRK                      ; $B0EB: 00
-    ROL $204B                ; $B0EC: 2E 4B 20
-    ASL                      ; $B0EF: 0A
-    .byte $D2             ; $B0F0 - unknown opcode
-    PLA                      ; $B0F1: 68
-    STA $51                  ; $B0F2: 85 51
+	CLC					  ; $B0CC: 18
+	RTS					  ; $B0CD: 60
+	BRK					  ; $B0CE: 00
+	.byte $13			 ; $B0CF - unknown opcode
+	.byte $EB			 ; $B0D0 - unknown opcode
+	PHP					  ; $B0D1: 08
+	BNE $B0F4				; $B0D2: D0 20
+	BRK					  ; $B0D4: 00
+	.byte $13			 ; $B0D5 - unknown opcode
+	.byte $EB			 ; $B0D6 - unknown opcode
+	BPL $B0C9				; $B0D7: 10 F0
+	.byte $1A			 ; $B0D9 - unknown opcode
+	LDA $3E				  ; $B0DA: A5 3E
+	BEQ $B0F4				; $B0DC: F0 16
+	BRK					  ; $B0DE: 00
+	.byte $13			 ; $B0DF - unknown opcode
+	.byte $DB			 ; $B0E0 - unknown opcode
+	.byte $EF			 ; $B0E1 - unknown opcode
+	JSR $B16B				; $B0E2: 20 6B B1
+	LDA $51				  ; $B0E5: A5 51
+	PHA					  ; $B0E7: 48
+	JSR $995E				; $B0E8: 20 5E 99
+	BRK					  ; $B0EB: 00
+	ROL $204B				; $B0EC: 2E 4B 20
+	ASL					  ; $B0EF: 0A
+	.byte $D2			 ; $B0F0 - unknown opcode
+	PLA					  ; $B0F1: 68
+	STA $51				  ; $B0F2: 85 51
 
 loc_B0F4:
-    CLC                      ; $B0F4: 18
-    RTS                      ; $B0F5: 60
-    BRK                      ; $B0F6: 00
-    ASL $EB,X                ; $B0F7: 16 EB
-    PHP                      ; $B0F9: 08
-    BNE $B169                ; $B0FA: D0 6D
-    LDA $6FA0                ; $B0FC: AD A0 6F
-    CMP #$12                 ; $B0FF: C9 12
-    BNE $B169                ; $B101: D0 66
-    LDA $6FC0                ; $B103: AD C0 6F
-    CMP #$04                 ; $B106: C9 04
-    BNE $B169                ; $B108: D0 5F
-    JSR $B16B                ; $B10A: 20 6B B1
-    LDA $51                  ; $B10D: A5 51
-    PHA                      ; $B10F: 48
-    TAX                      ; $B110: AA
-    LDA $7000,X              ; $B111: BD 00 70
-    AND #$FC                 ; $B114: 29 FC
-    STA $7000,X              ; $B116: 9D 00 70
-    LDX #$03                 ; $B119: A2 03
+	CLC					  ; $B0F4: 18
+	RTS					  ; $B0F5: 60
+	BRK					  ; $B0F6: 00
+	ASL $EB,X				; $B0F7: 16 EB
+	PHP					  ; $B0F9: 08
+	BNE $B169				; $B0FA: D0 6D
+	LDA $6FA0				; $B0FC: AD A0 6F
+	CMP #$12				 ; $B0FF: C9 12
+	BNE $B169				; $B101: D0 66
+	LDA $6FC0				; $B103: AD C0 6F
+	CMP #$04				 ; $B106: C9 04
+	BNE $B169				; $B108: D0 5F
+	JSR $B16B				; $B10A: 20 6B B1
+	LDA $51				  ; $B10D: A5 51
+	PHA					  ; $B10F: 48
+	TAX					  ; $B110: AA
+	LDA $7000,X			  ; $B111: BD 00 70
+	AND #$FC				 ; $B114: 29 FC
+	STA $7000,X			  ; $B116: 9D 00 70
+	LDX #$03				 ; $B119: A2 03
 
 loc_B11B:
-    LDA $7006,X              ; $B11B: BD 06 70
-    AND #$FC                 ; $B11E: 29 FC
-    STA $7006,X              ; $B120: 9D 06 70
-    JSR $995E                ; $B123: 20 5E 99
-    BRK                      ; $B126: 00
-    .byte $17             ; $B127 - unknown opcode
-    .byte $EB             ; $B128 - unknown opcode
-    BPL $B11B                ; $B129: 10 F0
-    BIT $6200                ; $B12B: 2C 00 62
-    .byte $23             ; $B12E - unknown opcode
-    RTI                      ; $B12F: 40
-    CMP #$02                 ; $B130: C9 02
-    BCS $B158                ; $B132: B0 24
-    LDX #$00                 ; $B134: A2 00
-    BRK                      ; $B136: 00
-    .byte $2B             ; $B137 - unknown opcode
-    .byte $73             ; $B138 - unknown opcode
-    CMP #$04                 ; $B139: C9 04
-    BNE $B158                ; $B13B: D0 1B
-    BRK                      ; $B13D: 00
-    ROR $93                  ; $B13E: 66 93
-    .byte $7B             ; $B140 - unknown opcode
-    BCS $B14C                ; $B141: B0 09
-    BRK                      ; $B143: 00
-    EOR $004B,Y              ; $B144: 59 4B 00
-    .byte $5A             ; $B147 - unknown opcode
-    .byte $4B             ; $B148 - unknown opcode
-    JMP $B15E                ; $B149: 4C 5E B1
+	LDA $7006,X			  ; $B11B: BD 06 70
+	AND #$FC				 ; $B11E: 29 FC
+	STA $7006,X			  ; $B120: 9D 06 70
+	JSR $995E				; $B123: 20 5E 99
+	BRK					  ; $B126: 00
+	.byte $17			 ; $B127 - unknown opcode
+	.byte $EB			 ; $B128 - unknown opcode
+	BPL $B11B				; $B129: 10 F0
+	BIT $6200				; $B12B: 2C 00 62
+	.byte $23			 ; $B12E - unknown opcode
+	RTI					  ; $B12F: 40
+	CMP #$02				 ; $B130: C9 02
+	BCS $B158				; $B132: B0 24
+	LDX #$00				 ; $B134: A2 00
+	BRK					  ; $B136: 00
+	.byte $2B			 ; $B137 - unknown opcode
+	.byte $73			 ; $B138 - unknown opcode
+	CMP #$04				 ; $B139: C9 04
+	BNE $B158				; $B13B: D0 1B
+	BRK					  ; $B13D: 00
+	ROR $93				  ; $B13E: 66 93
+	.byte $7B			 ; $B140 - unknown opcode
+	BCS $B14C				; $B141: B0 09
+	BRK					  ; $B143: 00
+	EOR $004B,Y			  ; $B144: 59 4B 00
+	.byte $5A			 ; $B147 - unknown opcode
+	.byte $4B			 ; $B148 - unknown opcode
+	JMP $B15E				; $B149: 4C 5E B1
 
 loc_B14C:
-    BRK                      ; $B14C: 00
-    EOR $004B,Y              ; $B14D: 59 4B 00
-    .byte $5B             ; $B150 - unknown opcode
-    .byte $4B             ; $B151 - unknown opcode
-    BRK                      ; $B152: 00
-    INC $4C3B                ; $B153: EE 3B 4C
-    LSR $00B1,X              ; $B156: 5E B1 00
-    SBC $003B                ; $B159: ED 3B 00
-    INC $683B                ; $B15C: EE 3B 68
-    PHA                      ; $B15F: 48
-    TAX                      ; $B160: AA
-    JSR $D20A                ; $B161: 20 0A D2
-    PLA                      ; $B164: 68
-    STA $51                  ; $B165: 85 51
-    SEC                      ; $B167: 38
-    RTS                      ; $B168: 60
+	BRK					  ; $B14C: 00
+	EOR $004B,Y			  ; $B14D: 59 4B 00
+	.byte $5B			 ; $B150 - unknown opcode
+	.byte $4B			 ; $B151 - unknown opcode
+	BRK					  ; $B152: 00
+	INC $4C3B				; $B153: EE 3B 4C
+	LSR $00B1,X			  ; $B156: 5E B1 00
+	SBC $003B				; $B159: ED 3B 00
+	INC $683B				; $B15C: EE 3B 68
+	PHA					  ; $B15F: 48
+	TAX					  ; $B160: AA
+	JSR $D20A				; $B161: 20 0A D2
+	PLA					  ; $B164: 68
+	STA $51				  ; $B165: 85 51
+	SEC					  ; $B167: 38
+	RTS					  ; $B168: 60
 
 loc_B169:
-    CLC                      ; $B169: 18
-    RTS                      ; $B16A: 60
+	CLC					  ; $B169: 18
+	RTS					  ; $B16A: 60
 
 loc_B16B:
-    JSR $A509                ; $B16B: 20 09 A5
-    LDX #$05                 ; $B16E: A2 05
+	JSR $A509				; $B16B: 20 09 A5
+	LDX #$05				 ; $B16E: A2 05
 
 loc_B170:
-    LDA $7020,X              ; $B170: BD 20 70
-    BMI $B181                ; $B173: 30 0C
-    LDA $6FA0,X              ; $B175: BD A0 6F
-    STA $6F60,X              ; $B178: 9D 60 6F
-    LDA $6FC0,X              ; $B17B: BD C0 6F
-    STA $6F80,X              ; $B17E: 9D 80 6F
+	LDA $7020,X			  ; $B170: BD 20 70
+	BMI $B181				; $B173: 30 0C
+	LDA $6FA0,X			  ; $B175: BD A0 6F
+	STA $6F60,X			  ; $B178: 9D 60 6F
+	LDA $6FC0,X			  ; $B17B: BD C0 6F
+	STA $6F80,X			  ; $B17E: 9D 80 6F
 
 loc_B181:
-    LDA $7000,X              ; $B181: BD 00 70
-    AND #$7F                 ; $B184: 29 7F
-    STA $7000,X              ; $B186: 9D 00 70
-    DEX                      ; $B189: CA
-    BPL $B170                ; $B18A: 10 E4
-    RTS                      ; $B18C: 60
-    LDA $6F60                ; $B18D: AD 60 6F
-    CMP #$12                 ; $B190: C9 12
-    BNE $B1AA                ; $B192: D0 16
-    LDA $6F80                ; $B194: AD 80 6F
-    CMP #$03                 ; $B197: C9 03
-    BNE $B1AA                ; $B199: D0 0F
-    BRK                      ; $B19B: 00
-    .byte $17             ; $B19C - unknown opcode
-    .byte $EB             ; $B19D - unknown opcode
-    .byte $04             ; $B19E - unknown opcode
-    BEQ $B1AA                ; $B19F: F0 09
-    LDA $3D                  ; $B1A1: A5 3D
-    BNE $B1AA                ; $B1A3: D0 05
-    LDA #$8F                 ; $B1A5: A9 8F
-    JMP $A23A                ; $B1A7: 4C 3A A2
+	LDA $7000,X			  ; $B181: BD 00 70
+	AND #$7F				 ; $B184: 29 7F
+	STA $7000,X			  ; $B186: 9D 00 70
+	DEX					  ; $B189: CA
+	BPL $B170				; $B18A: 10 E4
+	RTS					  ; $B18C: 60
+	LDA $6F60				; $B18D: AD 60 6F
+	CMP #$12				 ; $B190: C9 12
+	BNE $B1AA				; $B192: D0 16
+	LDA $6F80				; $B194: AD 80 6F
+	CMP #$03				 ; $B197: C9 03
+	BNE $B1AA				; $B199: D0 0F
+	BRK					  ; $B19B: 00
+	.byte $17			 ; $B19C - unknown opcode
+	.byte $EB			 ; $B19D - unknown opcode
+	.byte $04			 ; $B19E - unknown opcode
+	BEQ $B1AA				; $B19F: F0 09
+	LDA $3D				  ; $B1A1: A5 3D
+	BNE $B1AA				; $B1A3: D0 05
+	LDA #$8F				 ; $B1A5: A9 8F
+	JMP $A23A				; $B1A7: 4C 3A A2
 
 loc_B1AA:
-    CLC                      ; $B1AA: 18
-    RTS                      ; $B1AB: 60
-    LDA $51                  ; $B1AC: A5 51
-    PHA                      ; $B1AE: 48
-    LDA $7000                ; $B1AF: AD 00 70
-    ORA #$01                 ; $B1B2: 09 01
-    STA $7000                ; $B1B4: 8D 00 70
-    LDA #$01                 ; $B1B7: A9 01
-    STA $3D                  ; $B1B9: 85 3D
-    JSR $995E                ; $B1BB: 20 5E 99
-    BRK                      ; $B1BE: 00
-    .byte $0B             ; $B1BF - unknown opcode
-    .byte $EF             ; $B1C0 - unknown opcode
-    STA $F9                  ; $B1C1: 85 F9
-    BRK                      ; $B1C3: 00
-    BEQ $B201                ; $B1C4: F0 3B
-    BRK                      ; $B1C6: 00
-    SBC ($3B),Y              ; $B1C7: F1 3B
-    JSR $D20A                ; $B1C9: 20 0A D2
-    LDA #$00                 ; $B1CC: A9 00
-    STA $0530                ; $B1CE: 8D 30 05
-    BRK                      ; $B1D1: 00
-    ORA $20CB,Y              ; $B1D2: 19 CB 20
-    PLA                      ; $B1D5: 68
-    STA $51                  ; $B1D6: 85 51
-    SEC                      ; $B1D8: 38
-    RTS                      ; $B1D9: 60
-    LDA $45                  ; $B1DA: A5 45
-    AND #$FE                 ; $B1DC: 29 FE
-    CMP #$0C                 ; $B1DE: C9 0C
-    BNE $B1FF                ; $B1E0: D0 1D
-    LDA $44                  ; $B1E2: A5 44
-    CMP #$10                 ; $B1E4: C9 10
-    BEQ $B1EC                ; $B1E6: F0 04
-    CMP #$18                 ; $B1E8: C9 18
-    BNE $B1FF                ; $B1EA: D0 13
+	CLC					  ; $B1AA: 18
+	RTS					  ; $B1AB: 60
+	LDA $51				  ; $B1AC: A5 51
+	PHA					  ; $B1AE: 48
+	LDA $7000				; $B1AF: AD 00 70
+	ORA #$01				 ; $B1B2: 09 01
+	STA $7000				; $B1B4: 8D 00 70
+	LDA #$01				 ; $B1B7: A9 01
+	STA $3D				  ; $B1B9: 85 3D
+	JSR $995E				; $B1BB: 20 5E 99
+	BRK					  ; $B1BE: 00
+	.byte $0B			 ; $B1BF - unknown opcode
+	.byte $EF			 ; $B1C0 - unknown opcode
+	STA $F9				  ; $B1C1: 85 F9
+	BRK					  ; $B1C3: 00
+	BEQ $B201				; $B1C4: F0 3B
+	BRK					  ; $B1C6: 00
+	SBC ($3B),Y			  ; $B1C7: F1 3B
+	JSR $D20A				; $B1C9: 20 0A D2
+	LDA #$00				 ; $B1CC: A9 00
+	STA $0530				; $B1CE: 8D 30 05
+	BRK					  ; $B1D1: 00
+	ORA $20CB,Y			  ; $B1D2: 19 CB 20
+	PLA					  ; $B1D5: 68
+	STA $51				  ; $B1D6: 85 51
+	SEC					  ; $B1D8: 38
+	RTS					  ; $B1D9: 60
+	LDA $45				  ; $B1DA: A5 45
+	AND #$FE				 ; $B1DC: 29 FE
+	CMP #$0C				 ; $B1DE: C9 0C
+	BNE $B1FF				; $B1E0: D0 1D
+	LDA $44				  ; $B1E2: A5 44
+	CMP #$10				 ; $B1E4: C9 10
+	BEQ $B1EC				; $B1E6: F0 04
+	CMP #$18				 ; $B1E8: C9 18
+	BNE $B1FF				; $B1EA: D0 13
 
 loc_B1EC:
-    LDA #$11                 ; $B1EC: A9 11
-    LDX #$03                 ; $B1EE: A2 03
-    STA $7046,X              ; $B1F0: 9D 46 70
-    LDX #$02                 ; $B1F3: A2 02
-    STA $7046,X              ; $B1F5: 9D 46 70
-    LDA #$8F                 ; $B1F8: A9 8F
-    JSR $A23A                ; $B1FA: 20 3A A2
-    SEC                      ; $B1FD: 38
-    RTS                      ; $B1FE: 60
+	LDA #$11				 ; $B1EC: A9 11
+	LDX #$03				 ; $B1EE: A2 03
+	STA $7046,X			  ; $B1F0: 9D 46 70
+	LDX #$02				 ; $B1F3: A2 02
+	STA $7046,X			  ; $B1F5: 9D 46 70
+	LDA #$8F				 ; $B1F8: A9 8F
+	JSR $A23A				; $B1FA: 20 3A A2
+	SEC					  ; $B1FD: 38
+	RTS					  ; $B1FE: 60
 
 loc_B1FF:
-    CLC                      ; $B1FF: 18
-    RTS                      ; $B200: 60
+	CLC					  ; $B1FF: 18
+	RTS					  ; $B200: 60
 
 loc_B201:
-    BRK                      ; $B201: 00
-    ASL $10EB                ; $B202: 0E EB 10
-    BNE $B221                ; $B205: D0 1A
-    LDX #$00                 ; $B207: A2 00
+	BRK					  ; $B201: 00
+	ASL $10EB				; $B202: 0E EB 10
+	BNE $B221				; $B205: D0 1A
+	LDX #$00				 ; $B207: A2 00
 
 loc_B209:
-    LDA $B27F,X              ; $B209: BD 7F B2
-    CMP $44                  ; $B20C: C5 44
-    BNE $B217                ; $B20E: D0 07
-    LDA $B280,X              ; $B210: BD 80 B2
-    CMP $45                  ; $B213: C5 45
-    BEQ $B223                ; $B215: F0 0C
+	LDA $B27F,X			  ; $B209: BD 7F B2
+	CMP $44				  ; $B20C: C5 44
+	BNE $B217				; $B20E: D0 07
+	LDA $B280,X			  ; $B210: BD 80 B2
+	CMP $45				  ; $B213: C5 45
+	BEQ $B223				; $B215: F0 0C
 
 loc_B217:
-    INX                      ; $B217: E8
-    INX                      ; $B218: E8
-    CPX #$06                 ; $B219: E0 06
-    BCC $B209                ; $B21B: 90 EC
-    BRK                      ; $B21D: 00
-    ASL $EFDB                ; $B21E: 0E DB EF
+	INX					  ; $B217: E8
+	INX					  ; $B218: E8
+	CPX #$06				 ; $B219: E0 06
+	BCC $B209				; $B21B: 90 EC
+	BRK					  ; $B21D: 00
+	ASL $EFDB				; $B21E: 0E DB EF
 
 loc_B221:
-    CLC                      ; $B221: 18
-    RTS                      ; $B222: 60
+	CLC					  ; $B221: 18
+	RTS					  ; $B222: 60
 
 loc_B223:
-    LDY $51                  ; $B223: A4 51
-    LDA $7000,Y              ; $B225: B9 00 70
-    AND #$FC                 ; $B228: 29 FC
-    STA $7000,Y              ; $B22A: 99 00 70
-    TXA                      ; $B22D: 8A
-    LSR                      ; $B22E: 4A
-    TAX                      ; $B22F: AA
-    INX                      ; $B230: E8
-    TXA                      ; $B231: 8A
-    PHA                      ; $B232: 48
-    ORA $7000,Y              ; $B233: 19 00 70
-    STA $7000,Y              ; $B236: 99 00 70
-    BRK                      ; $B239: 00
-    ASL $10CB                ; $B23A: 0E CB 10
-    LDA #$00                 ; $B23D: A9 00
-    BRK                      ; $B23F: 00
-    .byte $63             ; $B240 - unknown opcode
-    .byte $63             ; $B241 - unknown opcode
-    .byte $43             ; $B242 - unknown opcode
-    PLA                      ; $B243: 68
-    LDX #$04                 ; $B244: A2 04
-    LDY #$01                 ; $B246: A0 01
-    BCC $B273                ; $B248: 90 29
-    TAX                      ; $B24A: AA
-    LDA #$02                 ; $B24B: A9 02
-    STA $0563                ; $B24D: 8D 63 05
-    AND #$0F                 ; $B250: 29 0F
-    ORA #$80                 ; $B252: 09 80
-    STA $0530                ; $B254: 8D 30 05
-    LDA $B284,X              ; $B257: BD 84 B2
-    STA $0564                ; $B25A: 8D 64 05
-    LDA #$02                 ; $B25D: A9 02
-    STA $0531                ; $B25F: 8D 31 05
-    LDA $AEBD                ; $B262: AD BD AE
-    STA $0532                ; $B265: 8D 32 05
-    LDA $AEBE                ; $B268: AD BE AE
-    STA $0533                ; $B26B: 8D 33 05
-    LDX #$04                 ; $B26E: A2 04
-    LDY #$02                 ; $B270: A0 02
-    SEC                      ; $B272: 38
+	LDY $51				  ; $B223: A4 51
+	LDA $7000,Y			  ; $B225: B9 00 70
+	AND #$FC				 ; $B228: 29 FC
+	STA $7000,Y			  ; $B22A: 99 00 70
+	TXA					  ; $B22D: 8A
+	LSR					  ; $B22E: 4A
+	TAX					  ; $B22F: AA
+	INX					  ; $B230: E8
+	TXA					  ; $B231: 8A
+	PHA					  ; $B232: 48
+	ORA $7000,Y			  ; $B233: 19 00 70
+	STA $7000,Y			  ; $B236: 99 00 70
+	BRK					  ; $B239: 00
+	ASL $10CB				; $B23A: 0E CB 10
+	LDA #$00				 ; $B23D: A9 00
+	BRK					  ; $B23F: 00
+	.byte $63			 ; $B240 - unknown opcode
+	.byte $63			 ; $B241 - unknown opcode
+	.byte $43			 ; $B242 - unknown opcode
+	PLA					  ; $B243: 68
+	LDX #$04				 ; $B244: A2 04
+	LDY #$01				 ; $B246: A0 01
+	BCC $B273				; $B248: 90 29
+	TAX					  ; $B24A: AA
+	LDA #$02				 ; $B24B: A9 02
+	STA $0563				; $B24D: 8D 63 05
+	AND #$0F				 ; $B250: 29 0F
+	ORA #$80				 ; $B252: 09 80
+	STA $0530				; $B254: 8D 30 05
+	LDA $B284,X			  ; $B257: BD 84 B2
+	STA $0564				; $B25A: 8D 64 05
+	LDA #$02				 ; $B25D: A9 02
+	STA $0531				; $B25F: 8D 31 05
+	LDA $AEBD				; $B262: AD BD AE
+	STA $0532				; $B265: 8D 32 05
+	LDA $AEBE				; $B268: AD BE AE
+	STA $0533				; $B26B: 8D 33 05
+	LDX #$04				 ; $B26E: A2 04
+	LDY #$02				 ; $B270: A0 02
+	SEC					  ; $B272: 38
 
 loc_B273:
-    STY $0593                ; $B273: 8C 93 05
-    STX $0594                ; $B276: 8E 94 05
-    LDA #$80                 ; $B279: A9 80
-    STA $0527                ; $B27B: 8D 27 05
-    RTS                      ; $B27E: 60
-    ORA $0C,X                ; $B27F: 15 0C
-    .byte $14             ; $B281 - unknown opcode
-    ORA $0C13                ; $B282: 0D 13 0C
-    .byte $42             ; $B285 - unknown opcode
-    .byte $12             ; $B286 - unknown opcode
-    .byte $82             ; $B287 - unknown opcode
-    LDA $44                  ; $B288: A5 44
-    CMP #$05                 ; $B28A: C9 05
-    BNE $B294                ; $B28C: D0 06
-    LDA $45                  ; $B28E: A5 45
-    CMP #$05                 ; $B290: C9 05
-    BEQ $B2A2                ; $B292: F0 0E
+	STY $0593				; $B273: 8C 93 05
+	STX $0594				; $B276: 8E 94 05
+	LDA #$80				 ; $B279: A9 80
+	STA $0527				; $B27B: 8D 27 05
+	RTS					  ; $B27E: 60
+	ORA $0C,X				; $B27F: 15 0C
+	.byte $14			 ; $B281 - unknown opcode
+	ORA $0C13				; $B282: 0D 13 0C
+	.byte $42			 ; $B285 - unknown opcode
+	.byte $12			 ; $B286 - unknown opcode
+	.byte $82			 ; $B287 - unknown opcode
+	LDA $44				  ; $B288: A5 44
+	CMP #$05				 ; $B28A: C9 05
+	BNE $B294				; $B28C: D0 06
+	LDA $45				  ; $B28E: A5 45
+	CMP #$05				 ; $B290: C9 05
+	BEQ $B2A2				; $B292: F0 0E
 
 loc_B294:
-    LDA $44                  ; $B294: A5 44
-    CMP #$07                 ; $B296: C9 07
-    BNE $B2A0                ; $B298: D0 06
-    LDA $45                  ; $B29A: A5 45
-    CMP #$03                 ; $B29C: C9 03
-    BEQ $B2A2                ; $B29E: F0 02
+	LDA $44				  ; $B294: A5 44
+	CMP #$07				 ; $B296: C9 07
+	BNE $B2A0				; $B298: D0 06
+	LDA $45				  ; $B29A: A5 45
+	CMP #$03				 ; $B29C: C9 03
+	BEQ $B2A2				; $B29E: F0 02
 
 loc_B2A0:
-    CLC                      ; $B2A0: 18
-    RTS                      ; $B2A1: 60
+	CLC					  ; $B2A0: 18
+	RTS					  ; $B2A1: 60
 
 loc_B2A2:
-    LDA $51                  ; $B2A2: A5 51
-    PHA                      ; $B2A4: 48
-    JSR $B16B                ; $B2A5: 20 6B B1
-    BRK                      ; $B2A8: 00
-    .byte $07             ; $B2A9 - unknown opcode
-    .byte $6F             ; $B2AA - unknown opcode
-    .byte $43             ; $B2AB - unknown opcode
-    BRK                      ; $B2AC: 00
-    .byte $62             ; $B2AD - unknown opcode
-    .byte $23             ; $B2AE - unknown opcode
-    RTI                      ; $B2AF: 40
-    TAX                      ; $B2B0: AA
-    DEX                      ; $B2B1: CA
+	LDA $51				  ; $B2A2: A5 51
+	PHA					  ; $B2A4: 48
+	JSR $B16B				; $B2A5: 20 6B B1
+	BRK					  ; $B2A8: 00
+	.byte $07			 ; $B2A9 - unknown opcode
+	.byte $6F			 ; $B2AA - unknown opcode
+	.byte $43			 ; $B2AB - unknown opcode
+	BRK					  ; $B2AC: 00
+	.byte $62			 ; $B2AD - unknown opcode
+	.byte $23			 ; $B2AE - unknown opcode
+	RTI					  ; $B2AF: 40
+	TAX					  ; $B2B0: AA
+	DEX					  ; $B2B1: CA
 
 loc_B2B2:
-    LDA #$37                 ; $B2B2: A9 37
-    BRK                      ; $B2B4: 00
-    AND ($73),Y              ; $B2B5: 31 73
-    BCS $B2C2                ; $B2B7: B0 09
-    DEX                      ; $B2B9: CA
-    BPL $B2B2                ; $B2BA: 10 F6
-    BRK                      ; $B2BC: 00
-    LDA $4C4B                ; $B2BD: AD 4B 4C
-    CMP $B2                  ; $B2C0: C5 B2
+	LDA #$37				 ; $B2B2: A9 37
+	BRK					  ; $B2B4: 00
+	AND ($73),Y			  ; $B2B5: 31 73
+	BCS $B2C2				; $B2B7: B0 09
+	DEX					  ; $B2B9: CA
+	BPL $B2B2				; $B2BA: 10 F6
+	BRK					  ; $B2BC: 00
+	LDA $4C4B				; $B2BD: AD 4B 4C
+	CMP $B2				  ; $B2C0: C5 B2
 
 loc_B2C2:
-    BRK                      ; $B2C2: 00
-    LDX $204B                ; $B2C3: AE 4B 20
-    ASL                      ; $B2C6: 0A
-    .byte $D2             ; $B2C7 - unknown opcode
-    PLA                      ; $B2C8: 68
-    STA $51                  ; $B2C9: 85 51
-    SEC                      ; $B2CB: 38
-    RTS                      ; $B2CC: 60
-    LDX #$00                 ; $B2CD: A2 00
-    LDA $3D                  ; $B2CF: A5 3D
-    BEQ $B2D5                ; $B2D1: F0 02
-    LDX #$03                 ; $B2D3: A2 03
+	BRK					  ; $B2C2: 00
+	LDX $204B				; $B2C3: AE 4B 20
+	ASL					  ; $B2C6: 0A
+	.byte $D2			 ; $B2C7 - unknown opcode
+	PLA					  ; $B2C8: 68
+	STA $51				  ; $B2C9: 85 51
+	SEC					  ; $B2CB: 38
+	RTS					  ; $B2CC: 60
+	LDX #$00				 ; $B2CD: A2 00
+	LDA $3D				  ; $B2CF: A5 3D
+	BEQ $B2D5				; $B2D1: F0 02
+	LDX #$03				 ; $B2D3: A2 03
 
 loc_B2D5:
-    LDY $51                  ; $B2D5: A4 51
-    LDA $B302,X              ; $B2D7: BD 02 B3
-    STA $71A0,Y              ; $B2DA: 99 A0 71
-    LDA $B303,X              ; $B2DD: BD 03 B3
-    STA $71C0,Y              ; $B2E0: 99 C0 71
-    LDA $7000,Y              ; $B2E3: B9 00 70
-    AND #$FC                 ; $B2E6: 29 FC
-    ORA $B304,X              ; $B2E8: 1D 04 B3
-    STA $7000,Y              ; $B2EB: 99 00 70
-    LDA #$80                 ; $B2EE: A9 80
-    LDX #$0B                 ; $B2F0: A2 0B
-    STA $6F66,X              ; $B2F2: 9D 66 6F
-    STA $6FA6,X              ; $B2F5: 9D A6 6F
-    LDX #$02                 ; $B2F8: A2 02
-    STA $6F66,X              ; $B2FA: 9D 66 6F
-    STA $6FA6,X              ; $B2FD: 9D A6 6F
-    SEC                      ; $B300: 38
-    RTS                      ; $B301: 60
-    ORA ($09),Y              ; $B302: 11 09
-    ORA ($10,X)              ; $B304: 01 10
-    .byte $0B             ; $B306 - unknown opcode
-    .byte $02             ; $B307 - unknown opcode
-    LDA $44                  ; $B308: A5 44
-    CMP #$11                 ; $B30A: C9 11
-    BNE $B335                ; $B30C: D0 27
-    LDA $45                  ; $B30E: A5 45
-    CMP #$09                 ; $B310: C9 09
-    BEQ $B318                ; $B312: F0 04
-    CMP #$0B                 ; $B314: C9 0B
-    BNE $B335                ; $B316: D0 1D
+	LDY $51				  ; $B2D5: A4 51
+	LDA $B302,X			  ; $B2D7: BD 02 B3
+	STA $71A0,Y			  ; $B2DA: 99 A0 71
+	LDA $B303,X			  ; $B2DD: BD 03 B3
+	STA $71C0,Y			  ; $B2E0: 99 C0 71
+	LDA $7000,Y			  ; $B2E3: B9 00 70
+	AND #$FC				 ; $B2E6: 29 FC
+	ORA $B304,X			  ; $B2E8: 1D 04 B3
+	STA $7000,Y			  ; $B2EB: 99 00 70
+	LDA #$80				 ; $B2EE: A9 80
+	LDX #$0B				 ; $B2F0: A2 0B
+	STA $6F66,X			  ; $B2F2: 9D 66 6F
+	STA $6FA6,X			  ; $B2F5: 9D A6 6F
+	LDX #$02				 ; $B2F8: A2 02
+	STA $6F66,X			  ; $B2FA: 9D 66 6F
+	STA $6FA6,X			  ; $B2FD: 9D A6 6F
+	SEC					  ; $B300: 38
+	RTS					  ; $B301: 60
+	ORA ($09),Y			  ; $B302: 11 09
+	ORA ($10,X)			  ; $B304: 01 10
+	.byte $0B			 ; $B306 - unknown opcode
+	.byte $02			 ; $B307 - unknown opcode
+	LDA $44				  ; $B308: A5 44
+	CMP #$11				 ; $B30A: C9 11
+	BNE $B335				; $B30C: D0 27
+	LDA $45				  ; $B30E: A5 45
+	CMP #$09				 ; $B310: C9 09
+	BEQ $B318				; $B312: F0 04
+	CMP #$0B				 ; $B314: C9 0B
+	BNE $B335				; $B316: D0 1D
 
 loc_B318:
-    LDX #$0D                 ; $B318: A2 0D
-    LDA #$11                 ; $B31A: A9 11
-    STA $7046,X              ; $B31C: 9D 46 70
-    LDX #$0E                 ; $B31F: A2 0E
-    STA $7046,X              ; $B321: 9D 46 70
-    LDA #$12                 ; $B324: A9 12
-    STA $71A6,X              ; $B326: 9D A6 71
-    LDA $45                  ; $B329: A5 45
-    STA $71C6,X              ; $B32B: 9D C6 71
-    LDA #$8F                 ; $B32E: A9 8F
-    JSR $A23A                ; $B330: 20 3A A2
-    SEC                      ; $B333: 38
-    RTS                      ; $B334: 60
+	LDX #$0D				 ; $B318: A2 0D
+	LDA #$11				 ; $B31A: A9 11
+	STA $7046,X			  ; $B31C: 9D 46 70
+	LDX #$0E				 ; $B31F: A2 0E
+	STA $7046,X			  ; $B321: 9D 46 70
+	LDA #$12				 ; $B324: A9 12
+	STA $71A6,X			  ; $B326: 9D A6 71
+	LDA $45				  ; $B329: A5 45
+	STA $71C6,X			  ; $B32B: 9D C6 71
+	LDA #$8F				 ; $B32E: A9 8F
+	JSR $A23A				; $B330: 20 3A A2
+	SEC					  ; $B333: 38
+	RTS					  ; $B334: 60
 
 loc_B335:
-    CLC                      ; $B335: 18
-    RTS                      ; $B336: 60
-    LDA $45                  ; $B337: A5 45
-    SEC                      ; $B339: 38
-    SBC #$09                 ; $B33A: E9 09
-    TAX                      ; $B33C: AA
-    LDA $B363,X              ; $B33D: BD 63 B3
-    STA $0563                ; $B340: 8D 63 05
-    AND #$0F                 ; $B343: 29 0F
-    ORA #$80                 ; $B345: 09 80
-    STA $0530                ; $B347: 8D 30 05
-    LDA $B364,X              ; $B34A: BD 64 B3
-    STA $0564                ; $B34D: 8D 64 05
-    LDA #$02                 ; $B350: A9 02
-    STA $0531                ; $B352: 8D 31 05
-    LDA $AEBD                ; $B355: AD BD AE
-    STA $0532                ; $B358: 8D 32 05
-    LDA $AEBE                ; $B35B: AD BE AE
-    STA $0533                ; $B35E: 8D 33 05
-    SEC                      ; $B361: 38
-    RTS                      ; $B362: 60
-    .byte $82             ; $B363 - unknown opcode
-    STA ($82,X)              ; $B364: 81 82
-    .byte $12             ; $B366 - unknown opcode
-    LDA $7831                ; $B367: AD 31 78
-    CMP #$27                 ; $B36A: C9 27
-    BNE $B375                ; $B36C: D0 07
-    LDX $51                  ; $B36E: A6 51
-    LDA #$01                 ; $B370: A9 01
-    STA $7180,X              ; $B372: 9D 80 71
+	CLC					  ; $B335: 18
+	RTS					  ; $B336: 60
+	LDA $45				  ; $B337: A5 45
+	SEC					  ; $B339: 38
+	SBC #$09				 ; $B33A: E9 09
+	TAX					  ; $B33C: AA
+	LDA $B363,X			  ; $B33D: BD 63 B3
+	STA $0563				; $B340: 8D 63 05
+	AND #$0F				 ; $B343: 29 0F
+	ORA #$80				 ; $B345: 09 80
+	STA $0530				; $B347: 8D 30 05
+	LDA $B364,X			  ; $B34A: BD 64 B3
+	STA $0564				; $B34D: 8D 64 05
+	LDA #$02				 ; $B350: A9 02
+	STA $0531				; $B352: 8D 31 05
+	LDA $AEBD				; $B355: AD BD AE
+	STA $0532				; $B358: 8D 32 05
+	LDA $AEBE				; $B35B: AD BE AE
+	STA $0533				; $B35E: 8D 33 05
+	SEC					  ; $B361: 38
+	RTS					  ; $B362: 60
+	.byte $82			 ; $B363 - unknown opcode
+	STA ($82,X)			  ; $B364: 81 82
+	.byte $12			 ; $B366 - unknown opcode
+	LDA $7831				; $B367: AD 31 78
+	CMP #$27				 ; $B36A: C9 27
+	BNE $B375				; $B36C: D0 07
+	LDX $51				  ; $B36E: A6 51
+	LDA #$01				 ; $B370: A9 01
+	STA $7180,X			  ; $B372: 9D 80 71
 
 loc_B375:
-    SEC                      ; $B375: 38
-    RTS                      ; $B376: 60
-    LDA #$FF                 ; $B377: A9 FF
-    STA $6C0C                ; $B379: 8D 0C 6C
-    BRK                      ; $B37C: 00
-    .byte $82             ; $B37D - unknown opcode
-    .byte $FB             ; $B37E - unknown opcode
-    JSR $C5C5                ; $B37F: 20 C5 C5
-    LDA #$02                 ; $B382: A9 02
-    STA $64                  ; $B384: 85 64
-    LDA #$09                 ; $B386: A9 09
-    STA $44                  ; $B388: 85 44
-    LDA #$07                 ; $B38A: A9 07
-    STA $45                  ; $B38C: 85 45
-    LDA #$00                 ; $B38E: A9 00
-    BRK                      ; $B390: 00
-    AND ($EF),Y              ; $B391: 31 EF
-    JSR $C5BF                ; $B393: 20 BF C5
-    BRK                      ; $B396: 00
-    ORA $005F,Y              ; $B397: 19 5F 00
-    .byte $82             ; $B39A - unknown opcode
-    .byte $FB             ; $B39B - unknown opcode
-    JSR $C5C5                ; $B39C: 20 C5 C5
-    BRK                      ; $B39F: 00
-    .byte $6F             ; $B3A0 - unknown opcode
-    .byte $33             ; $B3A1 - unknown opcode
-    BRK                      ; $B3A2: 00
-    LSR $33,X                ; $B3A3: 56 33
-    LDX #$01                 ; $B3A5: A2 01
+	SEC					  ; $B375: 38
+	RTS					  ; $B376: 60
+	LDA #$FF				 ; $B377: A9 FF
+	STA $6C0C				; $B379: 8D 0C 6C
+	BRK					  ; $B37C: 00
+	.byte $82			 ; $B37D - unknown opcode
+	.byte $FB			 ; $B37E - unknown opcode
+	JSR $C5C5				; $B37F: 20 C5 C5
+	LDA #$02				 ; $B382: A9 02
+	STA $64				  ; $B384: 85 64
+	LDA #$09				 ; $B386: A9 09
+	STA $44				  ; $B388: 85 44
+	LDA #$07				 ; $B38A: A9 07
+	STA $45				  ; $B38C: 85 45
+	LDA #$00				 ; $B38E: A9 00
+	BRK					  ; $B390: 00
+	AND ($EF),Y			  ; $B391: 31 EF
+	JSR $C5BF				; $B393: 20 BF C5
+	BRK					  ; $B396: 00
+	ORA $005F,Y			  ; $B397: 19 5F 00
+	.byte $82			 ; $B39A - unknown opcode
+	.byte $FB			 ; $B39B - unknown opcode
+	JSR $C5C5				; $B39C: 20 C5 C5
+	BRK					  ; $B39F: 00
+	.byte $6F			 ; $B3A0 - unknown opcode
+	.byte $33			 ; $B3A1 - unknown opcode
+	BRK					  ; $B3A2: 00
+	LSR $33,X				; $B3A3: 56 33
+	LDX #$01				 ; $B3A5: A2 01
 
 loc_B3A7:
-    BRK                      ; $B3A7: 00
-    .byte $2B             ; $B3A8 - unknown opcode
-    .byte $73             ; $B3A9 - unknown opcode
-    BEQ $B3B0                ; $B3AA: F0 04
-    CMP #$08                 ; $B3AC: C9 08
-    BCC $B3B4                ; $B3AE: 90 04
+	BRK					  ; $B3A7: 00
+	.byte $2B			 ; $B3A8 - unknown opcode
+	.byte $73			 ; $B3A9 - unknown opcode
+	BEQ $B3B0				; $B3AA: F0 04
+	CMP #$08				 ; $B3AC: C9 08
+	BCC $B3B4				; $B3AE: 90 04
 
 loc_B3B0:
-    INX                      ; $B3B0: E8
-    JMP $B3A7                ; $B3B1: 4C A7 B3
+	INX					  ; $B3B0: E8
+	JMP $B3A7				; $B3B1: 4C A7 B3
 
 loc_B3B4:
-    ORA #$80                 ; $B3B4: 09 80
-    STA $6299                ; $B3B6: 8D 99 62
-    BRK                      ; $B3B9: 00
-    .byte $42             ; $B3BA - unknown opcode
-    .byte $73             ; $B3BB - unknown opcode
-    CMP #$01                 ; $B3BC: C9 01
-    BNE $B3C4                ; $B3BE: D0 04
-    BRK                      ; $B3C0: 00
-    ASL $40CB,X              ; $B3C1: 1E CB 40
+	ORA #$80				 ; $B3B4: 09 80
+	STA $6299				; $B3B6: 8D 99 62
+	BRK					  ; $B3B9: 00
+	.byte $42			 ; $B3BA - unknown opcode
+	.byte $73			 ; $B3BB - unknown opcode
+	CMP #$01				 ; $B3BC: C9 01
+	BNE $B3C4				; $B3BE: D0 04
+	BRK					  ; $B3C0: 00
+	ASL $40CB,X			  ; $B3C1: 1E CB 40
 
 loc_B3C4:
-    STX $F9                  ; $B3C4: 86 F9
-    BRK                      ; $B3C6: 00
-    JMP $A24B                ; $B3C7: 4C 4B A2
-    .byte $03             ; $B3CA - unknown opcode
+	STX $F9				  ; $B3C4: 86 F9
+	BRK					  ; $B3C6: 00
+	JMP $A24B				; $B3C7: 4C 4B A2
+	.byte $03			 ; $B3CA - unknown opcode
 
 loc_B3CB:
-    LDA $0554,X              ; $B3CB: BD 54 05
-    STA $629C,X              ; $B3CE: 9D 9C 62
-    DEX                      ; $B3D1: CA
-    BPL $B3CB                ; $B3D2: 10 F7
-    BRK                      ; $B3D4: 00
-    ORA $B7                  ; $B3D5: 05 B7
-    JSR $995E                ; $B3D7: 20 5E 99
-    JSR $B3E9                ; $B3DA: 20 E9 B3
-    BRK                      ; $B3DD: 00
-    RTI                      ; $B3DE: 40
-    .byte $4B             ; $B3DF - unknown opcode
-    BRK                      ; $B3E0: 00
-    EOR ($4B,X)              ; $B3E1: 41 4B
-    JSR $D20A                ; $B3E3: 20 0A D2
-    JMP $B624                ; $B3E6: 4C 24 B6
+	LDA $0554,X			  ; $B3CB: BD 54 05
+	STA $629C,X			  ; $B3CE: 9D 9C 62
+	DEX					  ; $B3D1: CA
+	BPL $B3CB				; $B3D2: 10 F7
+	BRK					  ; $B3D4: 00
+	ORA $B7				  ; $B3D5: 05 B7
+	JSR $995E				; $B3D7: 20 5E 99
+	JSR $B3E9				; $B3DA: 20 E9 B3
+	BRK					  ; $B3DD: 00
+	RTI					  ; $B3DE: 40
+	.byte $4B			 ; $B3DF - unknown opcode
+	BRK					  ; $B3E0: 00
+	EOR ($4B,X)			  ; $B3E1: 41 4B
+	JSR $D20A				; $B3E3: 20 0A D2
+	JMP $B624				; $B3E6: 4C 24 B6
 
 loc_B3E9:
-    LDA #$40                 ; $B3E9: A9 40
-    STA $055A                ; $B3EB: 8D 5A 05
-    LDA $62A7                ; $B3EE: AD A7 62
-    STA $0559                ; $B3F1: 8D 59 05
-    LDA $62A6                ; $B3F4: AD A6 62
-    STA $0558                ; $B3F7: 8D 58 05
-    LDX #$03                 ; $B3FA: A2 03
+	LDA #$40				 ; $B3E9: A9 40
+	STA $055A				; $B3EB: 8D 5A 05
+	LDA $62A7				; $B3EE: AD A7 62
+	STA $0559				; $B3F1: 8D 59 05
+	LDA $62A6				; $B3F4: AD A6 62
+	STA $0558				; $B3F7: 8D 58 05
+	LDX #$03				 ; $B3FA: A2 03
 
 loc_B3FC:
-    LDA $629C,X              ; $B3FC: BD 9C 62
-    STA $0554,X              ; $B3FF: 9D 54 05
-    DEX                      ; $B402: CA
-    BPL $B3FC                ; $B403: 10 F7
-    RTS                      ; $B405: 60
-    LDA $6296                ; $B406: AD 96 62
-    BEQ $B42A                ; $B409: F0 1F
-    LDA $6297                ; $B40B: AD 97 62
-    BPL $B42A                ; $B40E: 10 1A
-    LDA $44                  ; $B410: A5 44
-    SEC                      ; $B412: 38
-    SBC #$03                 ; $B413: E9 03
-    CMP #$09                 ; $B415: C9 09
-    BCS $B42A                ; $B417: B0 11
-    CMP #$04                 ; $B419: C9 04
-    BEQ $B42A                ; $B41B: F0 0D
-    AND #$01                 ; $B41D: 29 01
-    BNE $B42A                ; $B41F: D0 09
-    LDA $45                  ; $B421: A5 45
-    SEC                      ; $B423: 38
-    SBC #$12                 ; $B424: E9 12
-    CMP #$04                 ; $B426: C9 04
-    BCC $B431                ; $B428: 90 07
+	LDA $629C,X			  ; $B3FC: BD 9C 62
+	STA $0554,X			  ; $B3FF: 9D 54 05
+	DEX					  ; $B402: CA
+	BPL $B3FC				; $B403: 10 F7
+	RTS					  ; $B405: 60
+	LDA $6296				; $B406: AD 96 62
+	BEQ $B42A				; $B409: F0 1F
+	LDA $6297				; $B40B: AD 97 62
+	BPL $B42A				; $B40E: 10 1A
+	LDA $44				  ; $B410: A5 44
+	SEC					  ; $B412: 38
+	SBC #$03				 ; $B413: E9 03
+	CMP #$09				 ; $B415: C9 09
+	BCS $B42A				; $B417: B0 11
+	CMP #$04				 ; $B419: C9 04
+	BEQ $B42A				; $B41B: F0 0D
+	AND #$01				 ; $B41D: 29 01
+	BNE $B42A				; $B41F: D0 09
+	LDA $45				  ; $B421: A5 45
+	SEC					  ; $B423: 38
+	SBC #$12				 ; $B424: E9 12
+	CMP #$04				 ; $B426: C9 04
+	BCC $B431				; $B428: 90 07
 
 loc_B42A:
-    LDX $51                  ; $B42A: A6 51
-    LDA #$0F                 ; $B42C: A9 0F
-    STA $7180,X              ; $B42E: 9D 80 71
+	LDX $51				  ; $B42A: A6 51
+	LDA #$0F				 ; $B42C: A9 0F
+	STA $7180,X			  ; $B42E: 9D 80 71
 
 loc_B431:
-    SEC                      ; $B431: 38
-    RTS                      ; $B432: 60
-    LDA $51                  ; $B433: A5 51
-    PHA                      ; $B435: 48
-    JSR $995E                ; $B436: 20 5E 99
-    BRK                      ; $B439: 00
-    EOR #$4B                 ; $B43A: 49 4B
-    LDY #$10                 ; $B43C: A0 10
-    BRK                      ; $B43E: 00
-    .byte $03             ; $B43F - unknown opcode
-    .byte $4F             ; $B440 - unknown opcode
-    LDA #$21                 ; $B441: A9 21
-    BRK                      ; $B443: 00
-    .byte $07             ; $B444 - unknown opcode
-    .byte $CF             ; $B445 - unknown opcode
-    LDA #$11                 ; $B446: A9 11
-    LDX #$02                 ; $B448: A2 02
-    STA $7046,X              ; $B44A: 9D 46 70
-    LDX #$03                 ; $B44D: A2 03
-    STA $7046,X              ; $B44F: 9D 46 70
-    LDX #$04                 ; $B452: A2 04
-    STA $7046,X              ; $B454: 9D 46 70
-    LDX #$05                 ; $B457: A2 05
-    STA $7046,X              ; $B459: 9D 46 70
-    LDX #$06                 ; $B45C: A2 06
-    STA $7046,X              ; $B45E: 9D 46 70
-    PLA                      ; $B461: 68
-    STA $51                  ; $B462: 85 51
-    TAX                      ; $B464: AA
-    LDA #$80                 ; $B465: A9 80
-    STA $6F60,X              ; $B467: 9D 60 6F
-    STA $6FA0,X              ; $B46A: 9D A0 6F
-    STA $6F80,X              ; $B46D: 9D 80 6F
-    STA $6FC0,X              ; $B470: 9D C0 6F
-    BRK                      ; $B473: 00
-    .byte $1A             ; $B474 - unknown opcode
-    .byte $CB             ; $B475 - unknown opcode
-    ORA ($38,X)              ; $B476: 01 38
-    RTS                      ; $B478: 60
-    LDA $6FA0                ; $B479: AD A0 6F
-    CMP #$06                 ; $B47C: C9 06
-    BNE $B48A                ; $B47E: D0 0A
-    LDA $6FC0                ; $B480: AD C0 6F
-    CMP #$07                 ; $B483: C9 07
-    BNE $B48A                ; $B485: D0 03
-    JMP $AE46                ; $B487: 4C 46 AE
+	SEC					  ; $B431: 38
+	RTS					  ; $B432: 60
+	LDA $51				  ; $B433: A5 51
+	PHA					  ; $B435: 48
+	JSR $995E				; $B436: 20 5E 99
+	BRK					  ; $B439: 00
+	EOR #$4B				 ; $B43A: 49 4B
+	LDY #$10				 ; $B43C: A0 10
+	BRK					  ; $B43E: 00
+	.byte $03			 ; $B43F - unknown opcode
+	.byte $4F			 ; $B440 - unknown opcode
+	LDA #$21				 ; $B441: A9 21
+	BRK					  ; $B443: 00
+	.byte $07			 ; $B444 - unknown opcode
+	.byte $CF			 ; $B445 - unknown opcode
+	LDA #$11				 ; $B446: A9 11
+	LDX #$02				 ; $B448: A2 02
+	STA $7046,X			  ; $B44A: 9D 46 70
+	LDX #$03				 ; $B44D: A2 03
+	STA $7046,X			  ; $B44F: 9D 46 70
+	LDX #$04				 ; $B452: A2 04
+	STA $7046,X			  ; $B454: 9D 46 70
+	LDX #$05				 ; $B457: A2 05
+	STA $7046,X			  ; $B459: 9D 46 70
+	LDX #$06				 ; $B45C: A2 06
+	STA $7046,X			  ; $B45E: 9D 46 70
+	PLA					  ; $B461: 68
+	STA $51				  ; $B462: 85 51
+	TAX					  ; $B464: AA
+	LDA #$80				 ; $B465: A9 80
+	STA $6F60,X			  ; $B467: 9D 60 6F
+	STA $6FA0,X			  ; $B46A: 9D A0 6F
+	STA $6F80,X			  ; $B46D: 9D 80 6F
+	STA $6FC0,X			  ; $B470: 9D C0 6F
+	BRK					  ; $B473: 00
+	.byte $1A			 ; $B474 - unknown opcode
+	.byte $CB			 ; $B475 - unknown opcode
+	ORA ($38,X)			  ; $B476: 01 38
+	RTS					  ; $B478: 60
+	LDA $6FA0				; $B479: AD A0 6F
+	CMP #$06				 ; $B47C: C9 06
+	BNE $B48A				; $B47E: D0 0A
+	LDA $6FC0				; $B480: AD C0 6F
+	CMP #$07				 ; $B483: C9 07
+	BNE $B48A				; $B485: D0 03
+	JMP $AE46				; $B487: 4C 46 AE
 
 loc_B48A:
-    CLC                      ; $B48A: 18
-    RTS                      ; $B48B: 60
-    LDA $3E                  ; $B48C: A5 3E
-    BEQ $B4AF                ; $B48E: F0 1F
-    JSR $B16B                ; $B490: 20 6B B1
-    LDA #$8F                 ; $B493: A9 8F
-    JSR $A23A                ; $B495: 20 3A A2
-    INC $0531                ; $B498: EE 31 05
-    INC $0531                ; $B49B: EE 31 05
-    INC $0531                ; $B49E: EE 31 05
-    LDA #$11                 ; $B4A1: A9 11
-    LDX #$05                 ; $B4A3: A2 05
-    STA $7046,X              ; $B4A5: 9D 46 70
-    LDX #$06                 ; $B4A8: A2 06
-    STA $7046,X              ; $B4AA: 9D 46 70
-    SEC                      ; $B4AD: 38
-    RTS                      ; $B4AE: 60
+	CLC					  ; $B48A: 18
+	RTS					  ; $B48B: 60
+	LDA $3E				  ; $B48C: A5 3E
+	BEQ $B4AF				; $B48E: F0 1F
+	JSR $B16B				; $B490: 20 6B B1
+	LDA #$8F				 ; $B493: A9 8F
+	JSR $A23A				; $B495: 20 3A A2
+	INC $0531				; $B498: EE 31 05
+	INC $0531				; $B49B: EE 31 05
+	INC $0531				; $B49E: EE 31 05
+	LDA #$11				 ; $B4A1: A9 11
+	LDX #$05				 ; $B4A3: A2 05
+	STA $7046,X			  ; $B4A5: 9D 46 70
+	LDX #$06				 ; $B4A8: A2 06
+	STA $7046,X			  ; $B4AA: 9D 46 70
+	SEC					  ; $B4AD: 38
+	RTS					  ; $B4AE: 60
 
 loc_B4AF:
-    CLC                      ; $B4AF: 18
-    RTS                      ; $B4B0: 60
-    LDA $3D                  ; $B4B1: A5 3D
-    BNE $B4E1                ; $B4B3: D0 2C
-    LDA #$8F                 ; $B4B5: A9 8F
-    JSR $A23A                ; $B4B7: 20 3A A2
-    LDA #$00                 ; $B4BA: A9 00
-    BRK                      ; $B4BC: 00
-    ROL $2F                  ; $B4BD: 26 2F
-    BCC $B4F2                ; $B4BF: 90 31
-    LDA #$94                 ; $B4C1: A9 94
-    JSR $B4E3                ; $B4C3: 20 E3 B4
-    BCC $B4CD                ; $B4C6: 90 05
-    LDA #$A1                 ; $B4C8: A9 A1
-    JSR $B4E7                ; $B4CA: 20 E7 B4
+	CLC					  ; $B4AF: 18
+	RTS					  ; $B4B0: 60
+	LDA $3D				  ; $B4B1: A5 3D
+	BNE $B4E1				; $B4B3: D0 2C
+	LDA #$8F				 ; $B4B5: A9 8F
+	JSR $A23A				; $B4B7: 20 3A A2
+	LDA #$00				 ; $B4BA: A9 00
+	BRK					  ; $B4BC: 00
+	ROL $2F				  ; $B4BD: 26 2F
+	BCC $B4F2				; $B4BF: 90 31
+	LDA #$94				 ; $B4C1: A9 94
+	JSR $B4E3				; $B4C3: 20 E3 B4
+	BCC $B4CD				; $B4C6: 90 05
+	LDA #$A1				 ; $B4C8: A9 A1
+	JSR $B4E7				; $B4CA: 20 E7 B4
 
 loc_B4CD:
-    LDA #$C4                 ; $B4CD: A9 C4
-    JSR $B4E7                ; $B4CF: 20 E7 B4
-    LDA #$B7                 ; $B4D2: A9 B7
-    JSR $B4E7                ; $B4D4: 20 E7 B4
-    LDA #$CB                 ; $B4D7: A9 CB
-    JSR $B4E7                ; $B4D9: 20 E7 B4
-    LDA #$00                 ; $B4DC: A9 00
-    STA $0530                ; $B4DE: 8D 30 05
+	LDA #$C4				 ; $B4CD: A9 C4
+	JSR $B4E7				; $B4CF: 20 E7 B4
+	LDA #$B7				 ; $B4D2: A9 B7
+	JSR $B4E7				; $B4D4: 20 E7 B4
+	LDA #$CB				 ; $B4D7: A9 CB
+	JSR $B4E7				; $B4D9: 20 E7 B4
+	LDA #$00				 ; $B4DC: A9 00
+	STA $0530				; $B4DE: 8D 30 05
 
 loc_B4E1:
-    CLC                      ; $B4E1: 18
-    RTS                      ; $B4E2: 60
+	CLC					  ; $B4E1: 18
+	RTS					  ; $B4E2: 60
 
 loc_B4E3:
-    JSR $B4E7                ; $B4E3: 20 E7 B4
-    RTS                      ; $B4E6: 60
+	JSR $B4E7				; $B4E3: 20 E7 B4
+	RTS					  ; $B4E6: 60
 
 loc_B4E7:
-    BRK                      ; $B4E7: 00
-    AND ($73),Y              ; $B4E8: 31 73
-    BCC $B4F0                ; $B4EA: 90 04
-    LDA $73                  ; $B4EC: A5 73
-    BMI $B4F4                ; $B4EE: 30 04
+	BRK					  ; $B4E7: 00
+	AND ($73),Y			  ; $B4E8: 31 73
+	BCC $B4F0				; $B4EA: 90 04
+	LDA $73				  ; $B4EC: A5 73
+	BMI $B4F4				; $B4EE: 30 04
 
 loc_B4F0:
-    PLA                      ; $B4F0: 68
-    PLA                      ; $B4F1: 68
+	PLA					  ; $B4F0: 68
+	PLA					  ; $B4F1: 68
 
 loc_B4F2:
-    SEC                      ; $B4F2: 38
-    RTS                      ; $B4F3: 60
+	SEC					  ; $B4F2: 38
+	RTS					  ; $B4F3: 60
 
 loc_B4F4:
-    CLC                      ; $B4F4: 18
-    RTS                      ; $B4F5: 60
-    LDX $51                  ; $B4F6: A6 51
-    TXA                      ; $B4F8: 8A
-    PHA                      ; $B4F9: 48
-    LDA $6F60,X              ; $B4FA: BD 60 6F
-    SEC                      ; $B4FD: 38
-    SBC $6FA0                ; $B4FE: ED A0 6F
-    CLC                      ; $B501: 18
-    ADC #$01                 ; $B502: 69 01
-    CMP #$03                 ; $B504: C9 03
-    BCS $B546                ; $B506: B0 3E
-    STA $51                  ; $B508: 85 51
-    LDA $6F80,X              ; $B50A: BD 80 6F
-    SEC                      ; $B50D: 38
-    SBC $6FC0                ; $B50E: ED C0 6F
-    CLC                      ; $B511: 18
-    ADC #$01                 ; $B512: 69 01
-    CMP #$03                 ; $B514: C9 03
-    BCS $B546                ; $B516: B0 2E
-    ADC $51                  ; $B518: 65 51
-    AND #$01                 ; $B51A: 29 01
-    BEQ $B546                ; $B51C: F0 28
-    PLA                      ; $B51E: 68
-    JSR $B16B                ; $B51F: 20 6B B1
-    BRK                      ; $B522: 00
-    .byte $07             ; $B523 - unknown opcode
-    .byte $6F             ; $B524 - unknown opcode
-    .byte $43             ; $B525 - unknown opcode
-    BRK                      ; $B526: 00
-    .byte $CB             ; $B527 - unknown opcode
-    .byte $4B             ; $B528 - unknown opcode
-    BRK                      ; $B529: 00
-    .byte $82             ; $B52A - unknown opcode
-    .byte $FB             ; $B52B - unknown opcode
-    JSR $C5C5                ; $B52C: 20 C5 C5
-    LDA #$00                 ; $B52F: A9 00
-    STA $64                  ; $B531: 85 64
-    LDA #$0B                 ; $B533: A9 0B
-    STA $44                  ; $B535: 85 44
-    LDA #$15                 ; $B537: A9 15
-    STA $45                  ; $B539: 85 45
-    LDA #$81                 ; $B53B: A9 81
-    BRK                      ; $B53D: 00
-    AND ($EF),Y              ; $B53E: 31 EF
-    JSR $C5BF                ; $B540: 20 BF C5
-    JMP $B624                ; $B543: 4C 24 B6
+	CLC					  ; $B4F4: 18
+	RTS					  ; $B4F5: 60
+	LDX $51				  ; $B4F6: A6 51
+	TXA					  ; $B4F8: 8A
+	PHA					  ; $B4F9: 48
+	LDA $6F60,X			  ; $B4FA: BD 60 6F
+	SEC					  ; $B4FD: 38
+	SBC $6FA0				; $B4FE: ED A0 6F
+	CLC					  ; $B501: 18
+	ADC #$01				 ; $B502: 69 01
+	CMP #$03				 ; $B504: C9 03
+	BCS $B546				; $B506: B0 3E
+	STA $51				  ; $B508: 85 51
+	LDA $6F80,X			  ; $B50A: BD 80 6F
+	SEC					  ; $B50D: 38
+	SBC $6FC0				; $B50E: ED C0 6F
+	CLC					  ; $B511: 18
+	ADC #$01				 ; $B512: 69 01
+	CMP #$03				 ; $B514: C9 03
+	BCS $B546				; $B516: B0 2E
+	ADC $51				  ; $B518: 65 51
+	AND #$01				 ; $B51A: 29 01
+	BEQ $B546				; $B51C: F0 28
+	PLA					  ; $B51E: 68
+	JSR $B16B				; $B51F: 20 6B B1
+	BRK					  ; $B522: 00
+	.byte $07			 ; $B523 - unknown opcode
+	.byte $6F			 ; $B524 - unknown opcode
+	.byte $43			 ; $B525 - unknown opcode
+	BRK					  ; $B526: 00
+	.byte $CB			 ; $B527 - unknown opcode
+	.byte $4B			 ; $B528 - unknown opcode
+	BRK					  ; $B529: 00
+	.byte $82			 ; $B52A - unknown opcode
+	.byte $FB			 ; $B52B - unknown opcode
+	JSR $C5C5				; $B52C: 20 C5 C5
+	LDA #$00				 ; $B52F: A9 00
+	STA $64				  ; $B531: 85 64
+	LDA #$0B				 ; $B533: A9 0B
+	STA $44				  ; $B535: 85 44
+	LDA #$15				 ; $B537: A9 15
+	STA $45				  ; $B539: 85 45
+	LDA #$81				 ; $B53B: A9 81
+	BRK					  ; $B53D: 00
+	AND ($EF),Y			  ; $B53E: 31 EF
+	JSR $C5BF				; $B540: 20 BF C5
+	JMP $B624				; $B543: 4C 24 B6
 
 loc_B546:
-    PLA                      ; $B546: 68
-    STA $51                  ; $B547: 85 51
-    LDA $3E                  ; $B549: A5 3E
-    CMP #$10                 ; $B54B: C9 10
-    RTS                      ; $B54D: 60
-    LDA $629B                ; $B54E: AD 9B 62
-    AND #$22                 ; $B551: 29 22
-    CMP #$20                 ; $B553: C9 20
-    BNE $B56B                ; $B555: D0 14
-    BRK                      ; $B557: 00
-    .byte $62             ; $B558 - unknown opcode
-    .byte $23             ; $B559 - unknown opcode
-    RTI                      ; $B55A: 40
-    STA $00                  ; $B55B: 85 00
-    LDX #$00                 ; $B55D: A2 00
+	PLA					  ; $B546: 68
+	STA $51				  ; $B547: 85 51
+	LDA $3E				  ; $B549: A5 3E
+	CMP #$10				 ; $B54B: C9 10
+	RTS					  ; $B54D: 60
+	LDA $629B				; $B54E: AD 9B 62
+	AND #$22				 ; $B551: 29 22
+	CMP #$20				 ; $B553: C9 20
+	BNE $B56B				; $B555: D0 14
+	BRK					  ; $B557: 00
+	.byte $62			 ; $B558 - unknown opcode
+	.byte $23			 ; $B559 - unknown opcode
+	RTI					  ; $B55A: 40
+	STA $00				  ; $B55B: 85 00
+	LDX #$00				 ; $B55D: A2 00
 
 loc_B55F:
-    BRK                      ; $B55F: 00
-    .byte $2B             ; $B560 - unknown opcode
-    .byte $73             ; $B561 - unknown opcode
-    CMP #$0E                 ; $B562: C9 0E
-    BEQ $B56D                ; $B564: F0 07
-    INX                      ; $B566: E8
-    CPX $00                  ; $B567: E4 00
-    BCC $B55F                ; $B569: 90 F4
+	BRK					  ; $B55F: 00
+	.byte $2B			 ; $B560 - unknown opcode
+	.byte $73			 ; $B561 - unknown opcode
+	CMP #$0E				 ; $B562: C9 0E
+	BEQ $B56D				; $B564: F0 07
+	INX					  ; $B566: E8
+	CPX $00				  ; $B567: E4 00
+	BCC $B55F				; $B569: 90 F4
 
 loc_B56B:
-    CLC                      ; $B56B: 18
-    RTS                      ; $B56C: 60
+	CLC					  ; $B56B: 18
+	RTS					  ; $B56C: 60
 
 loc_B56D:
-    LDA $51                  ; $B56D: A5 51
-    PHA                      ; $B56F: 48
-    TXA                      ; $B570: 8A
-    PHA                      ; $B571: 48
-    JSR $B16B                ; $B572: 20 6B B1
-    PLA                      ; $B575: 68
-    PHA                      ; $B576: 48
-    TAX                      ; $B577: AA
-    LDA $6BE7,X              ; $B578: BD E7 6B
-    AND #$40                 ; $B57B: 29 40
-    BEQ $B593                ; $B57D: F0 14
-    BRK                      ; $B57F: 00
-    .byte $44             ; $B580 - unknown opcode
-    .byte $93             ; $B581 - unknown opcode
-    .byte $07             ; $B582 - unknown opcode
-    BRK                      ; $B583: 00
-    ORA $33                  ; $B584: 05 33
-    BRK                      ; $B586: 00
-    .byte $07             ; $B587 - unknown opcode
-    .byte $6F             ; $B588 - unknown opcode
-    .byte $43             ; $B589 - unknown opcode
-    BRK                      ; $B58A: 00
-    .byte $3B             ; $B58B - unknown opcode
-    .byte $EF             ; $B58C - unknown opcode
-    BRK                      ; $B58D: 00
-    .byte $62             ; $B58E - unknown opcode
-    .byte $4B             ; $B58F - unknown opcode
-    JMP $B597                ; $B590: 4C 97 B5
+	LDA $51				  ; $B56D: A5 51
+	PHA					  ; $B56F: 48
+	TXA					  ; $B570: 8A
+	PHA					  ; $B571: 48
+	JSR $B16B				; $B572: 20 6B B1
+	PLA					  ; $B575: 68
+	PHA					  ; $B576: 48
+	TAX					  ; $B577: AA
+	LDA $6BE7,X			  ; $B578: BD E7 6B
+	AND #$40				 ; $B57B: 29 40
+	BEQ $B593				; $B57D: F0 14
+	BRK					  ; $B57F: 00
+	.byte $44			 ; $B580 - unknown opcode
+	.byte $93			 ; $B581 - unknown opcode
+	.byte $07			 ; $B582 - unknown opcode
+	BRK					  ; $B583: 00
+	ORA $33				  ; $B584: 05 33
+	BRK					  ; $B586: 00
+	.byte $07			 ; $B587 - unknown opcode
+	.byte $6F			 ; $B588 - unknown opcode
+	.byte $43			 ; $B589 - unknown opcode
+	BRK					  ; $B58A: 00
+	.byte $3B			 ; $B58B - unknown opcode
+	.byte $EF			 ; $B58C - unknown opcode
+	BRK					  ; $B58D: 00
+	.byte $62			 ; $B58E - unknown opcode
+	.byte $4B			 ; $B58F - unknown opcode
+	JMP $B597				; $B590: 4C 97 B5
 
 loc_B593:
-    BRK                      ; $B593: 00
-    .byte $07             ; $B594 - unknown opcode
-    .byte $6F             ; $B595 - unknown opcode
-    .byte $43             ; $B596 - unknown opcode
+	BRK					  ; $B593: 00
+	.byte $07			 ; $B594 - unknown opcode
+	.byte $6F			 ; $B595 - unknown opcode
+	.byte $43			 ; $B596 - unknown opcode
 
 loc_B597:
-    BRK                      ; $B597: 00
-    .byte $63             ; $B598 - unknown opcode
-    .byte $4B             ; $B599 - unknown opcode
-    JSR $D214                ; $B59A: 20 14 D2
-    PLA                      ; $B59D: 68
-    TAX                      ; $B59E: AA
-    LDA #$FF                 ; $B59F: A9 FF
-    BRK                      ; $B5A1: 00
-    EOR ($73),Y              ; $B5A2: 51 73
-    LDA $053A,X              ; $B5A4: BD 3A 05
-    TAX                      ; $B5A7: AA
-    LDY #$02                 ; $B5A8: A0 02
-    LDA $6F60,X              ; $B5AA: BD 60 6F
-    STA $6F66,Y              ; $B5AD: 99 66 6F
-    STA $6FA6,Y              ; $B5B0: 99 A6 6F
-    LDA $6F80,X              ; $B5B3: BD 80 6F
-    STA $6F86,Y              ; $B5B6: 99 86 6F
-    STA $6FC6,Y              ; $B5B9: 99 C6 6F
-    LDA #$80                 ; $B5BC: A9 80
-    STA $7020,X              ; $B5BE: 9D 20 70
-    BRK                      ; $B5C1: 00
-    JSR $02CB                ; $B5C2: 20 CB 02
+	BRK					  ; $B597: 00
+	.byte $63			 ; $B598 - unknown opcode
+	.byte $4B			 ; $B599 - unknown opcode
+	JSR $D214				; $B59A: 20 14 D2
+	PLA					  ; $B59D: 68
+	TAX					  ; $B59E: AA
+	LDA #$FF				 ; $B59F: A9 FF
+	BRK					  ; $B5A1: 00
+	EOR ($73),Y			  ; $B5A2: 51 73
+	LDA $053A,X			  ; $B5A4: BD 3A 05
+	TAX					  ; $B5A7: AA
+	LDY #$02				 ; $B5A8: A0 02
+	LDA $6F60,X			  ; $B5AA: BD 60 6F
+	STA $6F66,Y			  ; $B5AD: 99 66 6F
+	STA $6FA6,Y			  ; $B5B0: 99 A6 6F
+	LDA $6F80,X			  ; $B5B3: BD 80 6F
+	STA $6F86,Y			  ; $B5B6: 99 86 6F
+	STA $6FC6,Y			  ; $B5B9: 99 C6 6F
+	LDA #$80				 ; $B5BC: A9 80
+	STA $7020,X			  ; $B5BE: 9D 20 70
+	BRK					  ; $B5C1: 00
+	JSR $02CB				; $B5C2: 20 CB 02
 
 loc_B5C5:
-    LDA #$85                 ; $B5C5: A9 85
-    JSR $A23A                ; $B5C7: 20 3A A2
-    BRK                      ; $B5CA: 00
-    .byte $3B             ; $B5CB - unknown opcode
-    .byte $EF             ; $B5CC - unknown opcode
-    JSR $D1F3                ; $B5CD: 20 F3 D1
-    PLA                      ; $B5D0: 68
-    STA $51                  ; $B5D1: 85 51
-    SEC                      ; $B5D3: 38
-    RTS                      ; $B5D4: 60
-    LDA $51                  ; $B5D5: A5 51
-    PHA                      ; $B5D7: 48
-    LDA #$2A                 ; $B5D8: A9 2A
-    BRK                      ; $B5DA: 00
-    .byte $07             ; $B5DB - unknown opcode
-    .byte $CF             ; $B5DC - unknown opcode
-    PLA                      ; $B5DD: 68
-    STA $51                  ; $B5DE: 85 51
-    CLC                      ; $B5E0: 18
-    RTS                      ; $B5E1: 60
-    LDA $45                  ; $B5E2: A5 45
-    CMP #$04                 ; $B5E4: C9 04
-    BNE $B5F7                ; $B5E6: D0 0F
-    LDA $44                  ; $B5E8: A5 44
-    AND #$FE                 ; $B5EA: 29 FE
-    CMP #$14                 ; $B5EC: C9 14
-    BNE $B5F7                ; $B5EE: D0 07
-    LDA #$8F                 ; $B5F0: A9 8F
-    JSR $A23A                ; $B5F2: 20 3A A2
-    SEC                      ; $B5F5: 38
-    RTS                      ; $B5F6: 60
+	LDA #$85				 ; $B5C5: A9 85
+	JSR $A23A				; $B5C7: 20 3A A2
+	BRK					  ; $B5CA: 00
+	.byte $3B			 ; $B5CB - unknown opcode
+	.byte $EF			 ; $B5CC - unknown opcode
+	JSR $D1F3				; $B5CD: 20 F3 D1
+	PLA					  ; $B5D0: 68
+	STA $51				  ; $B5D1: 85 51
+	SEC					  ; $B5D3: 38
+	RTS					  ; $B5D4: 60
+	LDA $51				  ; $B5D5: A5 51
+	PHA					  ; $B5D7: 48
+	LDA #$2A				 ; $B5D8: A9 2A
+	BRK					  ; $B5DA: 00
+	.byte $07			 ; $B5DB - unknown opcode
+	.byte $CF			 ; $B5DC - unknown opcode
+	PLA					  ; $B5DD: 68
+	STA $51				  ; $B5DE: 85 51
+	CLC					  ; $B5E0: 18
+	RTS					  ; $B5E1: 60
+	LDA $45				  ; $B5E2: A5 45
+	CMP #$04				 ; $B5E4: C9 04
+	BNE $B5F7				; $B5E6: D0 0F
+	LDA $44				  ; $B5E8: A5 44
+	AND #$FE				 ; $B5EA: 29 FE
+	CMP #$14				 ; $B5EC: C9 14
+	BNE $B5F7				; $B5EE: D0 07
+	LDA #$8F				 ; $B5F0: A9 8F
+	JSR $A23A				; $B5F2: 20 3A A2
+	SEC					  ; $B5F5: 38
+	RTS					  ; $B5F6: 60
 
 loc_B5F7:
-    CLC                      ; $B5F7: 18
-    RTS                      ; $B5F8: 60
-    LDA $44                  ; $B5F9: A5 44
-    CMP #$07                 ; $B5FB: C9 07
-    BNE $B60C                ; $B5FD: D0 0D
-    LDA $45                  ; $B5FF: A5 45
-    CMP #$07                 ; $B601: C9 07
-    BNE $B60C                ; $B603: D0 07
-    LDA #$84                 ; $B605: A9 84
-    JSR $A23A                ; $B607: 20 3A A2
-    SEC                      ; $B60A: 38
-    RTS                      ; $B60B: 60
+	CLC					  ; $B5F7: 18
+	RTS					  ; $B5F8: 60
+	LDA $44				  ; $B5F9: A5 44
+	CMP #$07				 ; $B5FB: C9 07
+	BNE $B60C				; $B5FD: D0 0D
+	LDA $45				  ; $B5FF: A5 45
+	CMP #$07				 ; $B601: C9 07
+	BNE $B60C				; $B603: D0 07
+	LDA #$84				 ; $B605: A9 84
+	JSR $A23A				; $B607: 20 3A A2
+	SEC					  ; $B60A: 38
+	RTS					  ; $B60B: 60
 
 loc_B60C:
-    CLC                      ; $B60C: 18
-    RTS                      ; $B60D: 60
-    LDA #$2B                 ; $B60E: A9 2B
-    BRK                      ; $B610: 00
-    .byte $07             ; $B611 - unknown opcode
-    .byte $CF             ; $B612 - unknown opcode
-    JMP $B624                ; $B613: 4C 24 B6
-    JSR $B95C                ; $B616: 20 5C B9
-    LDA #$06                 ; $B619: A9 06
-    STA $51                  ; $B61B: 85 51
-    CLC                      ; $B61D: 18
-    RTS                      ; $B61E: 60
-    JSR $FDFB                ; $B61F: 20 FB FD
-    CLC                      ; $B622: 18
-    RTS                      ; $B623: 60
+	CLC					  ; $B60C: 18
+	RTS					  ; $B60D: 60
+	LDA #$2B				 ; $B60E: A9 2B
+	BRK					  ; $B610: 00
+	.byte $07			 ; $B611 - unknown opcode
+	.byte $CF			 ; $B612 - unknown opcode
+	JMP $B624				; $B613: 4C 24 B6
+	JSR $B95C				; $B616: 20 5C B9
+	LDA #$06				 ; $B619: A9 06
+	STA $51				  ; $B61B: 85 51
+	CLC					  ; $B61D: 18
+	RTS					  ; $B61E: 60
+	JSR $FDFB				; $B61F: 20 FB FD
+	CLC					  ; $B622: 18
+	RTS					  ; $B623: 60
 
 loc_B624:
-    LDA #$1E                 ; $B624: A9 1E
-    STA $51                  ; $B626: 85 51
-    CLC                      ; $B628: 18
-    RTS                      ; $B629: 60
-    BVS $B5C5                ; $B62A: 70 99
-    LDA $99                  ; $B62C: A5 99
-    BNE $B5C9                ; $B62E: D0 99
-    .byte $DA             ; $B630 - unknown opcode
-    STA $99E1,Y              ; $B631: 99 E1 99
-    SBC ($99),Y              ; $B634: F1 99
-    CMP $9A                  ; $B636: C5 9A
-    .byte $2F             ; $B638 - unknown opcode
-    .byte $9B             ; $B639 - unknown opcode
-    ROL $9B,X                ; $B63A: 36 9B
-    AND $429B,X              ; $B63C: 3D 9B 42
-    .byte $9B             ; $B63F - unknown opcode
-    .byte $64             ; $B640 - unknown opcode
-    .byte $9B             ; $B641 - unknown opcode
-    .byte $77             ; $B642 - unknown opcode
-    .byte $9B             ; $B643 - unknown opcode
-    STA ($9B,X)              ; $B644: 81 9B
-    .byte $83             ; $B646 - unknown opcode
-    .byte $9B             ; $B647 - unknown opcode
-    .byte $93             ; $B648 - unknown opcode
-    .byte $9B             ; $B649 - unknown opcode
-    .byte $A3             ; $B64A - unknown opcode
-    .byte $9B             ; $B64B - unknown opcode
-    DEC $D39B                ; $B64C: CE 9B D3
-    .byte $9B             ; $B64F - unknown opcode
-    .byte $F7             ; $B650 - unknown opcode
-    .byte $9B             ; $B651 - unknown opcode
-    .byte $07             ; $B652 - unknown opcode
-    .byte $9C             ; $B653 - unknown opcode
-    ROL $9C                  ; $B654: 26 9C
-    .byte $52             ; $B656 - unknown opcode
-    .byte $9C             ; $B657 - unknown opcode
-    .byte $B7             ; $B658 - unknown opcode
-    .byte $9C             ; $B659 - unknown opcode
-    CMP $F99C,X              ; $B65A: DD 9C F9
-    .byte $9F             ; $B65D - unknown opcode
-    LSR $5DA0                ; $B65E: 4E A0 5D
-    LDY #$97                 ; $B661: A0 97
-    LDY #$B3                 ; $B663: A0 B3
-    LDY #$C8                 ; $B665: A0 C8
-    LDY #$64                 ; $B667: A0 64
-    LDA ($8C,X)              ; $B669: A1 8C
-    LDA ($F5,X)              ; $B66B: A1 F5
-    LDA ($FD,X)              ; $B66D: A1 FD
-    LDA ($04,X)              ; $B66F: A1 04
-    LDX #$13                 ; $B671: A2 13
-    LDX #$4C                 ; $B673: A2 4C
-    LDX #$7A                 ; $B675: A2 7A
-    LDX #$0C                 ; $B677: A2 0C
-    .byte $A3             ; $B679 - unknown opcode
-    AND ($A3,X)              ; $B67A: 21 A3
-    .byte $43             ; $B67C - unknown opcode
-    .byte $A3             ; $B67D - unknown opcode
-    .byte $52             ; $B67E - unknown opcode
-    .byte $A3             ; $B67F - unknown opcode
-    .byte $67             ; $B680 - unknown opcode
-    .byte $A3             ; $B681 - unknown opcode
-    STX $9DA3                ; $B682: 8E A3 9D
-    .byte $A3             ; $B685 - unknown opcode
-    .byte $DA             ; $B686 - unknown opcode
-    .byte $A3             ; $B687 - unknown opcode
-    ASL $A4,X                ; $B688: 16 A4
-    .byte $43             ; $B68A - unknown opcode
-    LDY $4D                  ; $B68B: A4 4D
-    LDY $5B                  ; $B68D: A4 5B
-    LDY $A8                  ; $B68F: A4 A8
-    LDY $3E                  ; $B691: A4 3E
-    LDA $49                  ; $B693: A5 49
-    LDA $88                  ; $B695: A5 88
-    LDA $A7                  ; $B697: A5 A7
-    LDA $4D                  ; $B699: A5 4D
-    LDX $71                  ; $B69B: A6 71
-    LDX $D6                  ; $B69D: A6 D6
-    LDX $DF                  ; $B69F: A6 DF
-    LDX $EA                  ; $B6A1: A6 EA
-    LDX $24                  ; $B6A3: A6 24
-    .byte $A7             ; $B6A5 - unknown opcode
-    .byte $32             ; $B6A6 - unknown opcode
+	LDA #$1E				 ; $B624: A9 1E
+	STA $51				  ; $B626: 85 51
+	CLC					  ; $B628: 18
+	RTS					  ; $B629: 60
+	BVS $B5C5				; $B62A: 70 99
+	LDA $99				  ; $B62C: A5 99
+	BNE $B5C9				; $B62E: D0 99
+	.byte $DA			 ; $B630 - unknown opcode
+	STA $99E1,Y			  ; $B631: 99 E1 99
+	SBC ($99),Y			  ; $B634: F1 99
+	CMP $9A				  ; $B636: C5 9A
+	.byte $2F			 ; $B638 - unknown opcode
+	.byte $9B			 ; $B639 - unknown opcode
+	ROL $9B,X				; $B63A: 36 9B
+	AND $429B,X			  ; $B63C: 3D 9B 42
+	.byte $9B			 ; $B63F - unknown opcode
+	.byte $64			 ; $B640 - unknown opcode
+	.byte $9B			 ; $B641 - unknown opcode
+	.byte $77			 ; $B642 - unknown opcode
+	.byte $9B			 ; $B643 - unknown opcode
+	STA ($9B,X)			  ; $B644: 81 9B
+	.byte $83			 ; $B646 - unknown opcode
+	.byte $9B			 ; $B647 - unknown opcode
+	.byte $93			 ; $B648 - unknown opcode
+	.byte $9B			 ; $B649 - unknown opcode
+	.byte $A3			 ; $B64A - unknown opcode
+	.byte $9B			 ; $B64B - unknown opcode
+	DEC $D39B				; $B64C: CE 9B D3
+	.byte $9B			 ; $B64F - unknown opcode
+	.byte $F7			 ; $B650 - unknown opcode
+	.byte $9B			 ; $B651 - unknown opcode
+	.byte $07			 ; $B652 - unknown opcode
+	.byte $9C			 ; $B653 - unknown opcode
+	ROL $9C				  ; $B654: 26 9C
+	.byte $52			 ; $B656 - unknown opcode
+	.byte $9C			 ; $B657 - unknown opcode
+	.byte $B7			 ; $B658 - unknown opcode
+	.byte $9C			 ; $B659 - unknown opcode
+	CMP $F99C,X			  ; $B65A: DD 9C F9
+	.byte $9F			 ; $B65D - unknown opcode
+	LSR $5DA0				; $B65E: 4E A0 5D
+	LDY #$97				 ; $B661: A0 97
+	LDY #$B3				 ; $B663: A0 B3
+	LDY #$C8				 ; $B665: A0 C8
+	LDY #$64				 ; $B667: A0 64
+	LDA ($8C,X)			  ; $B669: A1 8C
+	LDA ($F5,X)			  ; $B66B: A1 F5
+	LDA ($FD,X)			  ; $B66D: A1 FD
+	LDA ($04,X)			  ; $B66F: A1 04
+	LDX #$13				 ; $B671: A2 13
+	LDX #$4C				 ; $B673: A2 4C
+	LDX #$7A				 ; $B675: A2 7A
+	LDX #$0C				 ; $B677: A2 0C
+	.byte $A3			 ; $B679 - unknown opcode
+	AND ($A3,X)			  ; $B67A: 21 A3
+	.byte $43			 ; $B67C - unknown opcode
+	.byte $A3			 ; $B67D - unknown opcode
+	.byte $52			 ; $B67E - unknown opcode
+	.byte $A3			 ; $B67F - unknown opcode
+	.byte $67			 ; $B680 - unknown opcode
+	.byte $A3			 ; $B681 - unknown opcode
+	STX $9DA3				; $B682: 8E A3 9D
+	.byte $A3			 ; $B685 - unknown opcode
+	.byte $DA			 ; $B686 - unknown opcode
+	.byte $A3			 ; $B687 - unknown opcode
+	ASL $A4,X				; $B688: 16 A4
+	.byte $43			 ; $B68A - unknown opcode
+	LDY $4D				  ; $B68B: A4 4D
+	LDY $5B				  ; $B68D: A4 5B
+	LDY $A8				  ; $B68F: A4 A8
+	LDY $3E				  ; $B691: A4 3E
+	LDA $49				  ; $B693: A5 49
+	LDA $88				  ; $B695: A5 88
+	LDA $A7				  ; $B697: A5 A7
+	LDA $4D				  ; $B699: A5 4D
+	LDX $71				  ; $B69B: A6 71
+	LDX $D6				  ; $B69D: A6 D6
+	LDX $DF				  ; $B69F: A6 DF
+	LDX $EA				  ; $B6A1: A6 EA
+	LDX $24				  ; $B6A3: A6 24
+	.byte $A7			 ; $B6A5 - unknown opcode
+	.byte $32			 ; $B6A6 - unknown opcode
 
 loc_B6A7:
-    .byte $A7             ; $B6A7 - unknown opcode
-    ADC $A7                  ; $B6A8: 65 A7
-    LDA ($A7),Y              ; $B6AA: B1 A7
-    ORA ($A8,X)              ; $B6AC: 01 A8
-    .byte $17             ; $B6AE - unknown opcode
-    TAY                      ; $B6AF: A8
-    CLI                      ; $B6B0: 58
-    TAY                      ; $B6B1: A8
-    .byte $93             ; $B6B2 - unknown opcode
-    TAY                      ; $B6B3: A8
-    .byte $3B             ; $B6B4 - unknown opcode
-    LDA #$68                 ; $B6B5: A9 68
-    LDA #$A3                 ; $B6B7: A9 A3
-    LDA #$C1                 ; $B6B9: A9 C1
-    LDA #$CA                 ; $B6BB: A9 CA
-    LDA #$D8                 ; $B6BD: A9 D8
-    LDA #$2A                 ; $B6BF: A9 2A
-    TAX                      ; $B6C1: AA
-    EOR $72AA                ; $B6C2: 4D AA 72
-    TAX                      ; $B6C5: AA
-    .byte $9F             ; $B6C6 - unknown opcode
-    TAX                      ; $B6C7: AA
-    .byte $BF             ; $B6C8 - unknown opcode
-    TAX                      ; $B6C9: AA
-    INC $AA,X                ; $B6CA: F6 AA
-    TYA                      ; $B6CC: 98
-    .byte $AB             ; $B6CD - unknown opcode
-    INY                      ; $B6CE: C8
-    .byte $AB             ; $B6CF - unknown opcode
-    .byte $0B             ; $B6D0 - unknown opcode
-    LDY $AC60                ; $B6D1: AC 60 AC
-    ROR                      ; $B6D4: 6A
-    LDY $AC9A                ; $B6D5: AC 9A AC
-    INY                      ; $B6D8: C8
-    LDY $ACD2                ; $B6D9: AC D2 AC
-    SBC $AC,X                ; $B6DC: F5 AC
-    .byte $FF             ; $B6DE - unknown opcode
-    LDY $AD1A                ; $B6DF: AC 1A AD
-    JMP $73AD                ; $B6E2: 4C AD 73
-    LDA $AD9E                ; $B6E5: AD 9E AD
-    AND ($AE),Y              ; $B6E8: 31 AE
-    SEC                      ; $B6EA: 38
-    LDX $AE57                ; $B6EB: AE 57 AE
-    .byte $BF             ; $B6EE - unknown opcode
-    LDX $AED3                ; $B6EF: AE D3 AE
-    .byte $DC             ; $B6F2 - unknown opcode
-    LDX $AF06                ; $B6F3: AE 06 AF
-    BVC $B6A7                ; $B6F6: 50 AF
-    .byte $5C             ; $B6F8 - unknown opcode
-    .byte $AF             ; $B6F9 - unknown opcode
-    ADC ($AF,X)              ; $B6FA: 61 AF
-    STA $AF                  ; $B6FC: 85 AF
-    .byte $97             ; $B6FE - unknown opcode
-    .byte $AF             ; $B6FF - unknown opcode
-    CLV                      ; $B700: B8
-    .byte $AF             ; $B701 - unknown opcode
-    DEX                      ; $B702: CA
-    .byte $AF             ; $B703 - unknown opcode
-    .byte $0F             ; $B704 - unknown opcode
+	.byte $A7			 ; $B6A7 - unknown opcode
+	ADC $A7				  ; $B6A8: 65 A7
+	LDA ($A7),Y			  ; $B6AA: B1 A7
+	ORA ($A8,X)			  ; $B6AC: 01 A8
+	.byte $17			 ; $B6AE - unknown opcode
+	TAY					  ; $B6AF: A8
+	CLI					  ; $B6B0: 58
+	TAY					  ; $B6B1: A8
+	.byte $93			 ; $B6B2 - unknown opcode
+	TAY					  ; $B6B3: A8
+	.byte $3B			 ; $B6B4 - unknown opcode
+	LDA #$68				 ; $B6B5: A9 68
+	LDA #$A3				 ; $B6B7: A9 A3
+	LDA #$C1				 ; $B6B9: A9 C1
+	LDA #$CA				 ; $B6BB: A9 CA
+	LDA #$D8				 ; $B6BD: A9 D8
+	LDA #$2A				 ; $B6BF: A9 2A
+	TAX					  ; $B6C1: AA
+	EOR $72AA				; $B6C2: 4D AA 72
+	TAX					  ; $B6C5: AA
+	.byte $9F			 ; $B6C6 - unknown opcode
+	TAX					  ; $B6C7: AA
+	.byte $BF			 ; $B6C8 - unknown opcode
+	TAX					  ; $B6C9: AA
+	INC $AA,X				; $B6CA: F6 AA
+	TYA					  ; $B6CC: 98
+	.byte $AB			 ; $B6CD - unknown opcode
+	INY					  ; $B6CE: C8
+	.byte $AB			 ; $B6CF - unknown opcode
+	.byte $0B			 ; $B6D0 - unknown opcode
+	LDY $AC60				; $B6D1: AC 60 AC
+	ROR					  ; $B6D4: 6A
+	LDY $AC9A				; $B6D5: AC 9A AC
+	INY					  ; $B6D8: C8
+	LDY $ACD2				; $B6D9: AC D2 AC
+	SBC $AC,X				; $B6DC: F5 AC
+	.byte $FF			 ; $B6DE - unknown opcode
+	LDY $AD1A				; $B6DF: AC 1A AD
+	JMP $73AD				; $B6E2: 4C AD 73
+	LDA $AD9E				; $B6E5: AD 9E AD
+	AND ($AE),Y			  ; $B6E8: 31 AE
+	SEC					  ; $B6EA: 38
+	LDX $AE57				; $B6EB: AE 57 AE
+	.byte $BF			 ; $B6EE - unknown opcode
+	LDX $AED3				; $B6EF: AE D3 AE
+	.byte $DC			 ; $B6F2 - unknown opcode
+	LDX $AF06				; $B6F3: AE 06 AF
+	BVC $B6A7				; $B6F6: 50 AF
+	.byte $5C			 ; $B6F8 - unknown opcode
+	.byte $AF			 ; $B6F9 - unknown opcode
+	ADC ($AF,X)			  ; $B6FA: 61 AF
+	STA $AF				  ; $B6FC: 85 AF
+	.byte $97			 ; $B6FE - unknown opcode
+	.byte $AF			 ; $B6FF - unknown opcode
+	CLV					  ; $B700: B8
+	.byte $AF			 ; $B701 - unknown opcode
+	DEX					  ; $B702: CA
+	.byte $AF			 ; $B703 - unknown opcode
+	.byte $0F			 ; $B704 - unknown opcode
 
 loc_B705:
-    BCS $B744                ; $B705: B0 3D
-    BCS $B77C                ; $B707: B0 73
-    BCS $B69A                ; $B709: B0 8F
-    BCS $B6DB                ; $B70B: B0 CE
-    BCS $B705                ; $B70D: B0 F6
-    BCS $B69E                ; $B70F: B0 8D
-    LDA ($AC),Y              ; $B711: B1 AC
-    LDA ($DA),Y              ; $B713: B1 DA
-    LDA ($01),Y              ; $B715: B1 01
-    .byte $B2             ; $B717 - unknown opcode
-    DEY                      ; $B718: 88
-    .byte $B2             ; $B719 - unknown opcode
-    CMP $08B2                ; $B71A: CD B2 08
-    .byte $B3             ; $B71D - unknown opcode
-    .byte $37             ; $B71E - unknown opcode
-    .byte $B3             ; $B71F - unknown opcode
-    .byte $67             ; $B720 - unknown opcode
-    .byte $B3             ; $B721 - unknown opcode
-    .byte $77             ; $B722 - unknown opcode
-    .byte $B3             ; $B723 - unknown opcode
-    ASL $B4                  ; $B724: 06 B4
-    .byte $33             ; $B726 - unknown opcode
-    LDY $79,X                ; $B727: B4 79
-    LDY $8C,X                ; $B729: B4 8C
-    LDY $B1,X                ; $B72B: B4 B1
-    LDY $F6,X                ; $B72D: B4 F6
-    LDY $4E,X                ; $B72F: B4 4E
-    LDA $D5,X                ; $B731: B5 D5
-    LDA $E2,X                ; $B733: B5 E2
-    LDA $F9,X                ; $B735: B5 F9
-    LDA $0E,X                ; $B737: B5 0E
-    LDX $16,Y                ; $B739: B6 16
-    LDX $1F,Y                ; $B73B: B6 1F
-    LDX $A0,Y                ; $B73D: B6 A0
-    BRK                      ; $B73F: 00
+	BCS $B744				; $B705: B0 3D
+	BCS $B77C				; $B707: B0 73
+	BCS $B69A				; $B709: B0 8F
+	BCS $B6DB				; $B70B: B0 CE
+	BCS $B705				; $B70D: B0 F6
+	BCS $B69E				; $B70F: B0 8D
+	LDA ($AC),Y			  ; $B711: B1 AC
+	LDA ($DA),Y			  ; $B713: B1 DA
+	LDA ($01),Y			  ; $B715: B1 01
+	.byte $B2			 ; $B717 - unknown opcode
+	DEY					  ; $B718: 88
+	.byte $B2			 ; $B719 - unknown opcode
+	CMP $08B2				; $B71A: CD B2 08
+	.byte $B3			 ; $B71D - unknown opcode
+	.byte $37			 ; $B71E - unknown opcode
+	.byte $B3			 ; $B71F - unknown opcode
+	.byte $67			 ; $B720 - unknown opcode
+	.byte $B3			 ; $B721 - unknown opcode
+	.byte $77			 ; $B722 - unknown opcode
+	.byte $B3			 ; $B723 - unknown opcode
+	ASL $B4				  ; $B724: 06 B4
+	.byte $33			 ; $B726 - unknown opcode
+	LDY $79,X				; $B727: B4 79
+	LDY $8C,X				; $B729: B4 8C
+	LDY $B1,X				; $B72B: B4 B1
+	LDY $F6,X				; $B72D: B4 F6
+	LDY $4E,X				; $B72F: B4 4E
+	LDA $D5,X				; $B731: B5 D5
+	LDA $E2,X				; $B733: B5 E2
+	LDA $F9,X				; $B735: B5 F9
+	LDA $0E,X				; $B737: B5 0E
+	LDX $16,Y				; $B739: B6 16
+	LDX $1F,Y				; $B73B: B6 1F
+	LDX $A0,Y				; $B73D: B6 A0
+	BRK					  ; $B73F: 00
 
 loc_B740:
-    LDA $B8BB,Y              ; $B740: B9 BB B8
-    CMP #$FF                 ; $B743: C9 FF
-    BEQ $B77E                ; $B745: F0 37
-    CMP $63                  ; $B747: C5 63
-    BNE $B776                ; $B749: D0 2B
-    LDA $B8BE,Y              ; $B74B: B9 BE B8
-    LSR                      ; $B74E: 4A
-    LSR                      ; $B74F: 4A
-    LSR                      ; $B750: 4A
-    LSR                      ; $B751: 4A
-    CMP $615A                ; $B752: CD 5A 61
-    BNE $B776                ; $B755: D0 1F
-    CPY #$00                 ; $B757: C0 00
-    BNE $B765                ; $B759: D0 0A
-    BIT $6281                ; $B75B: 2C 81 62
-    BVC $B76F                ; $B75E: 50 0F
-    LDY #$06                 ; $B760: A0 06
-    JMP $B76F                ; $B762: 4C 6F B7
+	LDA $B8BB,Y			  ; $B740: B9 BB B8
+	CMP #$FF				 ; $B743: C9 FF
+	BEQ $B77E				; $B745: F0 37
+	CMP $63				  ; $B747: C5 63
+	BNE $B776				; $B749: D0 2B
+	LDA $B8BE,Y			  ; $B74B: B9 BE B8
+	LSR					  ; $B74E: 4A
+	LSR					  ; $B74F: 4A
+	LSR					  ; $B750: 4A
+	LSR					  ; $B751: 4A
+	CMP $615A				; $B752: CD 5A 61
+	BNE $B776				; $B755: D0 1F
+	CPY #$00				 ; $B757: C0 00
+	BNE $B765				; $B759: D0 0A
+	BIT $6281				; $B75B: 2C 81 62
+	BVC $B76F				; $B75E: 50 0F
+	LDY #$06				 ; $B760: A0 06
+	JMP $B76F				; $B762: 4C 6F B7
 
 loc_B765:
-    CPY #$0C                 ; $B765: C0 0C
-    BNE $B76F                ; $B767: D0 06
-    BIT $6281                ; $B769: 2C 81 62
-    BVS $B76F                ; $B76C: 70 01
-    RTS                      ; $B76E: 60
+	CPY #$0C				 ; $B765: C0 0C
+	BNE $B76F				; $B767: D0 06
+	BIT $6281				; $B769: 2C 81 62
+	BVS $B76F				; $B76C: 70 01
+	RTS					  ; $B76E: 60
 
 loc_B76F:
-    LDA $B8BC,Y              ; $B76F: B9 BC B8
-    CMP $64                  ; $B772: C5 64
-    BEQ $B782                ; $B774: F0 0C
+	LDA $B8BC,Y			  ; $B76F: B9 BC B8
+	CMP $64				  ; $B772: C5 64
+	BEQ $B782				; $B774: F0 0C
 
 loc_B776:
-    TYA                      ; $B776: 98
-    CLC                      ; $B777: 18
-    ADC #$06                 ; $B778: 69 06
-    TAY                      ; $B77A: A8
-    JMP $B740                ; $B77B: 4C 40 B7
+	TYA					  ; $B776: 98
+	CLC					  ; $B777: 18
+	ADC #$06				 ; $B778: 69 06
+	TAY					  ; $B77A: A8
+	JMP $B740				; $B77B: 4C 40 B7
 
 loc_B77E:
-    RTS                      ; $B77E: 60
+	RTS					  ; $B77E: 60
 
 loc_B77F:
-    JMP $B893                ; $B77F: 4C 93 B8
+	JMP $B893				; $B77F: 4C 93 B8
 
 loc_B782:
-    LDA $B8BD,Y              ; $B782: B9 BD B8
-    BMI $B77F                ; $B785: 30 F8
-    BRK                      ; $B787: 00
-    .byte $52             ; $B788 - unknown opcode
-    .byte $73             ; $B789 - unknown opcode
-    CPY #$12                 ; $B78A: C0 12
-    BNE $B7CD                ; $B78C: D0 3F
-    LDA $6283                ; $B78E: AD 83 62
-    AND #$20                 ; $B791: 29 20
-    BEQ $B77F                ; $B793: F0 EA
-    LDX #$01                 ; $B795: A2 01
-    LDA #$3D                 ; $B797: A9 3D
-    BRK                      ; $B799: 00
-    ORA $A287                ; $B79A: 0D 87 A2
-    .byte $03             ; $B79D - unknown opcode
-    LDA #$15                 ; $B79E: A9 15
-    BRK                      ; $B7A0: 00
-    ORA $AD87                ; $B7A1: 0D 87 AD
-    .byte $23             ; $B7A4 - unknown opcode
-    BVS $B7D0                ; $B7A5: 70 29
-    .byte $7F             ; $B7A7 - unknown opcode
-    STA $7023                ; $B7A8: 8D 23 70
-    LDA $6F63                ; $B7AB: AD 63 6F
-    STA $6FA3                ; $B7AE: 8D A3 6F
-    LDA $6F83                ; $B7B1: AD 83 6F
-    STA $6FC3                ; $B7B4: 8D C3 6F
-    LDX #$07                 ; $B7B7: A2 07
+	LDA $B8BD,Y			  ; $B782: B9 BD B8
+	BMI $B77F				; $B785: 30 F8
+	BRK					  ; $B787: 00
+	.byte $52			 ; $B788 - unknown opcode
+	.byte $73			 ; $B789 - unknown opcode
+	CPY #$12				 ; $B78A: C0 12
+	BNE $B7CD				; $B78C: D0 3F
+	LDA $6283				; $B78E: AD 83 62
+	AND #$20				 ; $B791: 29 20
+	BEQ $B77F				; $B793: F0 EA
+	LDX #$01				 ; $B795: A2 01
+	LDA #$3D				 ; $B797: A9 3D
+	BRK					  ; $B799: 00
+	ORA $A287				; $B79A: 0D 87 A2
+	.byte $03			 ; $B79D - unknown opcode
+	LDA #$15				 ; $B79E: A9 15
+	BRK					  ; $B7A0: 00
+	ORA $AD87				; $B7A1: 0D 87 AD
+	.byte $23			 ; $B7A4 - unknown opcode
+	BVS $B7D0				; $B7A5: 70 29
+	.byte $7F			 ; $B7A7 - unknown opcode
+	STA $7023				; $B7A8: 8D 23 70
+	LDA $6F63				; $B7AB: AD 63 6F
+	STA $6FA3				; $B7AE: 8D A3 6F
+	LDA $6F83				; $B7B1: AD 83 6F
+	STA $6FC3				; $B7B4: 8D C3 6F
+	LDX #$07				 ; $B7B7: A2 07
 
 loc_B7B9:
-    LDA $7020,X              ; $B7B9: BD 20 70
-    ORA #$80                 ; $B7BC: 09 80
-    STA $7020,X              ; $B7BE: 9D 20 70
-    LDA #$80                 ; $B7C1: A9 80
-    STA $6F60,X              ; $B7C3: 9D 60 6F
-    STA $6F80,X              ; $B7C6: 9D 80 6F
-    BRK                      ; $B7C9: 00
-    ASL                      ; $B7CA: 0A
-    .byte $6F             ; $B7CB - unknown opcode
-    RTS                      ; $B7CC: 60
+	LDA $7020,X			  ; $B7B9: BD 20 70
+	ORA #$80				 ; $B7BC: 09 80
+	STA $7020,X			  ; $B7BE: 9D 20 70
+	LDA #$80				 ; $B7C1: A9 80
+	STA $6F60,X			  ; $B7C3: 9D 60 6F
+	STA $6F80,X			  ; $B7C6: 9D 80 6F
+	BRK					  ; $B7C9: 00
+	ASL					  ; $B7CA: 0A
+	.byte $6F			 ; $B7CB - unknown opcode
+	RTS					  ; $B7CC: 60
 
 loc_B7CD:
-    CPY #$24                 ; $B7CD: C0 24
-    BNE $B7F5                ; $B7CF: D0 24
-    LDY #$19                 ; $B7D1: A0 19
-    LDA #$06                 ; $B7D3: A9 06
+	CPY #$24				 ; $B7CD: C0 24
+	BNE $B7F5				; $B7CF: D0 24
+	LDY #$19				 ; $B7D1: A0 19
+	LDA #$06				 ; $B7D3: A9 06
 
 loc_B7D5:
-    PHA                      ; $B7D5: 48
-    TYA                      ; $B7D6: 98
-    LDX #$02                 ; $B7D7: A2 02
-    BRK                      ; $B7D9: 00
-    ORA $AD87                ; $B7DA: 0D 87 AD
-    .byte $22             ; $B7DD - unknown opcode
-    BVS $B809                ; $B7DE: 70 29
-    .byte $7F             ; $B7E0 - unknown opcode
-    STA $7022                ; $B7E1: 8D 22 70
-    LDA $6F62                ; $B7E4: AD 62 6F
-    STA $6FA2                ; $B7E7: 8D A2 6F
-    LDA $6F82                ; $B7EA: AD 82 6F
-    STA $6FC2                ; $B7ED: 8D C2 6F
-    PLA                      ; $B7F0: 68
-    TAX                      ; $B7F1: AA
-    JMP $B7B9                ; $B7F2: 4C B9 B7
+	PHA					  ; $B7D5: 48
+	TYA					  ; $B7D6: 98
+	LDX #$02				 ; $B7D7: A2 02
+	BRK					  ; $B7D9: 00
+	ORA $AD87				; $B7DA: 0D 87 AD
+	.byte $22			 ; $B7DD - unknown opcode
+	BVS $B809				; $B7DE: 70 29
+	.byte $7F			 ; $B7E0 - unknown opcode
+	STA $7022				; $B7E1: 8D 22 70
+	LDA $6F62				; $B7E4: AD 62 6F
+	STA $6FA2				; $B7E7: 8D A2 6F
+	LDA $6F82				; $B7EA: AD 82 6F
+	STA $6FC2				; $B7ED: 8D C2 6F
+	PLA					  ; $B7F0: 68
+	TAX					  ; $B7F1: AA
+	JMP $B7B9				; $B7F2: 4C B9 B7
 
 loc_B7F5:
-    CPY #$2A                 ; $B7F5: C0 2A
-    BNE $B81B                ; $B7F7: D0 22
-    BRK                      ; $B7F9: 00
-    .byte $13             ; $B7FA - unknown opcode
-    .byte $EB             ; $B7FB - unknown opcode
-    .byte $80             ; $B7FC - unknown opcode
-    BNE $B814                ; $B7FD: D0 15
-    BRK                      ; $B7FF: 00
-    .byte $0B             ; $B800 - unknown opcode
-    .byte $EB             ; $B801 - unknown opcode
-    .byte $04             ; $B802 - unknown opcode
-    BNE $B808                ; $B803: D0 03
-    JMP $B893                ; $B805: 4C 93 B8
+	CPY #$2A				 ; $B7F5: C0 2A
+	BNE $B81B				; $B7F7: D0 22
+	BRK					  ; $B7F9: 00
+	.byte $13			 ; $B7FA - unknown opcode
+	.byte $EB			 ; $B7FB - unknown opcode
+	.byte $80			 ; $B7FC - unknown opcode
+	BNE $B814				; $B7FD: D0 15
+	BRK					  ; $B7FF: 00
+	.byte $0B			 ; $B800 - unknown opcode
+	.byte $EB			 ; $B801 - unknown opcode
+	.byte $04			 ; $B802 - unknown opcode
+	BNE $B808				; $B803: D0 03
+	JMP $B893				; $B805: 4C 93 B8
 
 loc_B808:
-    LDA #$12                 ; $B808: A9 12
-    LDX #$01                 ; $B80A: A2 01
-    BRK                      ; $B80C: 00
-    ORA $A087                ; $B80D: 0D 87 A0
-    BIT $4C                  ; $B810: 24 4C
-    ASL $B8,X                ; $B812: 16 B8
+	LDA #$12				 ; $B808: A9 12
+	LDX #$01				 ; $B80A: A2 01
+	BRK					  ; $B80C: 00
+	ORA $A087				; $B80D: 0D 87 A0
+	BIT $4C				  ; $B810: 24 4C
+	ASL $B8,X				; $B812: 16 B8
 
 loc_B814:
-    LDY #$12                 ; $B814: A0 12
-    LDA #$06                 ; $B816: A9 06
-    JMP $B7D5                ; $B818: 4C D5 B7
+	LDY #$12				 ; $B814: A0 12
+	LDA #$06				 ; $B816: A9 06
+	JMP $B7D5				; $B818: 4C D5 B7
 
 loc_B81B:
-    CPY #$30                 ; $B81B: C0 30
-    BNE $B82C                ; $B81D: D0 0D
-    BRK                      ; $B81F: 00
-    .byte $13             ; $B820 - unknown opcode
-    .byte $EB             ; $B821 - unknown opcode
-    RTI                      ; $B822: 40
-    BEQ $B893                ; $B823: F0 6E
-    LDY #$11                 ; $B825: A0 11
-    LDA #$0D                 ; $B827: A9 0D
-    JMP $B7D5                ; $B829: 4C D5 B7
+	CPY #$30				 ; $B81B: C0 30
+	BNE $B82C				; $B81D: D0 0D
+	BRK					  ; $B81F: 00
+	.byte $13			 ; $B820 - unknown opcode
+	.byte $EB			 ; $B821 - unknown opcode
+	RTI					  ; $B822: 40
+	BEQ $B893				; $B823: F0 6E
+	LDY #$11				 ; $B825: A0 11
+	LDA #$0D				 ; $B827: A9 0D
+	JMP $B7D5				; $B829: 4C D5 B7
 
 loc_B82C:
-    CPY #$36                 ; $B82C: C0 36
-    BCC $B869                ; $B82E: 90 39
-    TYA                      ; $B830: 98
-    PHA                      ; $B831: 48
-    BRK                      ; $B832: 00
-    .byte $62             ; $B833 - unknown opcode
-    .byte $33             ; $B834 - unknown opcode
-    TAX                      ; $B835: AA
-    DEX                      ; $B836: CA
-    PLA                      ; $B837: 68
-    TAY                      ; $B838: A8
-    CPX #$01                 ; $B839: E0 01
-    BEQ $B893                ; $B83B: F0 56
-    PHA                      ; $B83D: 48
-    TAY                      ; $B83E: A8
-    TXA                      ; $B83F: 8A
-    PHA                      ; $B840: 48
-    LDA $B8BF,Y              ; $B841: B9 BF B8
-    BRK                      ; $B844: 00
-    ORA $6887                ; $B845: 0D 87 68
-    TAX                      ; $B848: AA
-    LDA $7020,X              ; $B849: BD 20 70
-    AND #$7F                 ; $B84C: 29 7F
-    STA $7020,X              ; $B84E: 9D 20 70
-    LDA $6F60,X              ; $B851: BD 60 6F
-    STA $6FA0,X              ; $B854: 9D A0 6F
-    LDA $6F80,X              ; $B857: BD 80 6F
-    STA $6FC0,X              ; $B85A: 9D C0 6F
-    PLA                      ; $B85D: 68
-    TAY                      ; $B85E: A8
-    LDA $B8C0,Y              ; $B85F: B9 C0 B8
-    CLC                      ; $B862: 18
-    ADC #$06                 ; $B863: 69 06
-    TAX                      ; $B865: AA
-    JMP $B7B9                ; $B866: 4C B9 B7
+	CPY #$36				 ; $B82C: C0 36
+	BCC $B869				; $B82E: 90 39
+	TYA					  ; $B830: 98
+	PHA					  ; $B831: 48
+	BRK					  ; $B832: 00
+	.byte $62			 ; $B833 - unknown opcode
+	.byte $33			 ; $B834 - unknown opcode
+	TAX					  ; $B835: AA
+	DEX					  ; $B836: CA
+	PLA					  ; $B837: 68
+	TAY					  ; $B838: A8
+	CPX #$01				 ; $B839: E0 01
+	BEQ $B893				; $B83B: F0 56
+	PHA					  ; $B83D: 48
+	TAY					  ; $B83E: A8
+	TXA					  ; $B83F: 8A
+	PHA					  ; $B840: 48
+	LDA $B8BF,Y			  ; $B841: B9 BF B8
+	BRK					  ; $B844: 00
+	ORA $6887				; $B845: 0D 87 68
+	TAX					  ; $B848: AA
+	LDA $7020,X			  ; $B849: BD 20 70
+	AND #$7F				 ; $B84C: 29 7F
+	STA $7020,X			  ; $B84E: 9D 20 70
+	LDA $6F60,X			  ; $B851: BD 60 6F
+	STA $6FA0,X			  ; $B854: 9D A0 6F
+	LDA $6F80,X			  ; $B857: BD 80 6F
+	STA $6FC0,X			  ; $B85A: 9D C0 6F
+	PLA					  ; $B85D: 68
+	TAY					  ; $B85E: A8
+	LDA $B8C0,Y			  ; $B85F: B9 C0 B8
+	CLC					  ; $B862: 18
+	ADC #$06				 ; $B863: 69 06
+	TAX					  ; $B865: AA
+	JMP $B7B9				; $B866: 4C B9 B7
 
 loc_B869:
-    CPY #$42                 ; $B869: C0 42
-    BNE $B893                ; $B86B: D0 26
-    BRK                      ; $B86D: 00
-    .byte $62             ; $B86E - unknown opcode
-    .byte $23             ; $B86F - unknown opcode
-    RTI                      ; $B870: 40
-    PHA                      ; $B871: 48
-    TAX                      ; $B872: AA
-    LDY #$2F                 ; $B873: A0 2F
-    BRK                      ; $B875: 00
-    ORA $6887                ; $B876: 0D 87 68
-    TAX                      ; $B879: AA
-    LDA $7020,X              ; $B87A: BD 20 70
-    AND #$7F                 ; $B87D: 29 7F
-    STA $7020,X              ; $B87F: 9D 20 70
-    LDA $6F60,X              ; $B882: BD 60 6F
-    STA $6FA0,X              ; $B885: 9D A0 6F
-    LDA $6F80,X              ; $B888: BD 80 6F
-    STA $6FC0,X              ; $B88B: 9D C0 6F
-    LDX #$06                 ; $B88E: A2 06
-    JMP $B7B9                ; $B890: 4C B9 B7
+	CPY #$42				 ; $B869: C0 42
+	BNE $B893				; $B86B: D0 26
+	BRK					  ; $B86D: 00
+	.byte $62			 ; $B86E - unknown opcode
+	.byte $23			 ; $B86F - unknown opcode
+	RTI					  ; $B870: 40
+	PHA					  ; $B871: 48
+	TAX					  ; $B872: AA
+	LDY #$2F				 ; $B873: A0 2F
+	BRK					  ; $B875: 00
+	ORA $6887				; $B876: 0D 87 68
+	TAX					  ; $B879: AA
+	LDA $7020,X			  ; $B87A: BD 20 70
+	AND #$7F				 ; $B87D: 29 7F
+	STA $7020,X			  ; $B87F: 9D 20 70
+	LDA $6F60,X			  ; $B882: BD 60 6F
+	STA $6FA0,X			  ; $B885: 9D A0 6F
+	LDA $6F80,X			  ; $B888: BD 80 6F
+	STA $6FC0,X			  ; $B88B: 9D C0 6F
+	LDX #$06				 ; $B88E: A2 06
+	JMP $B7B9				; $B890: 4C B9 B7
 
 loc_B893:
-    TYA                      ; $B893: 98
-    PHA                      ; $B894: 48
-    LDA $B8BE,Y              ; $B895: B9 BE B8
-    AND #$0F                 ; $B898: 29 0F
-    TAX                      ; $B89A: AA
-    INX                      ; $B89B: E8
-    LDA $B8BF,Y              ; $B89C: B9 BF B8
-    BRK                      ; $B89F: 00
-    ORA $6887                ; $B8A0: 0D 87 68
-    PHA                      ; $B8A3: 48
-    TAY                      ; $B8A4: A8
-    LDX $B8C0,Y              ; $B8A5: BE C0 B8
-    LDA $B8BE,Y              ; $B8A8: B9 BE B8
-    AND #$0F                 ; $B8AB: 29 0F
-    TAY                      ; $B8AD: A8
-    LDA $7006,X              ; $B8AE: BD 06 70
-    AND #$03                 ; $B8B1: 29 03
-    JSR $A1AF                ; $B8B3: 20 AF A1
-    PLA                      ; $B8B6: 68
-    TAY                      ; $B8B7: A8
-    JMP $B776                ; $B8B8: 4C 76 B7
-    EOR ($04,X)              ; $B8BB: 41 04
-    .byte $FF             ; $B8BD - unknown opcode
-    BRK                      ; $B8BE: 00
-    ORA $08,X                ; $B8BF: 15 08
-    EOR ($04,X)              ; $B8C1: 41 04
-    .byte $FF             ; $B8C3 - unknown opcode
-    ORA ($15,X)              ; $B8C4: 01 15
-    ASL $41                  ; $B8C6: 06 41
-    .byte $04             ; $B8C8 - unknown opcode
-    .byte $FF             ; $B8C9 - unknown opcode
-    .byte $02             ; $B8CA - unknown opcode
-    ORA $07,X                ; $B8CB: 15 07
-    .byte $33             ; $B8CD - unknown opcode
-    .byte $04             ; $B8CE - unknown opcode
-    PHP                      ; $B8CF: 08
-    BRK                      ; $B8D0: 00
-    AND $0201,X              ; $B8D1: 3D 01 02
-    BRK                      ; $B8D4: 00
-    .byte $FF             ; $B8D5 - unknown opcode
-    BRK                      ; $B8D6: 00
-    .byte $13             ; $B8D7 - unknown opcode
-    .byte $0B             ; $B8D8 - unknown opcode
-    .byte $02             ; $B8D9 - unknown opcode
-    .byte $03             ; $B8DA - unknown opcode
-    .byte $FF             ; $B8DB - unknown opcode
-    BRK                      ; $B8DC: 00
-    .byte $13             ; $B8DD - unknown opcode
-    .byte $02             ; $B8DE - unknown opcode
-    AND ($03),Y              ; $B8DF: 31 03
-    ORA #$32                 ; $B8E1: 09 32
-    ORA $0400,Y              ; $B8E3: 19 00 04
-    .byte $0B             ; $B8E6 - unknown opcode
-    ASL                      ; $B8E7: 0A
-    JSR $0012                ; $B8E8: 20 12 00
-    .byte $04             ; $B8EB - unknown opcode
-    BRK                      ; $B8EC: 00
-    .byte $0B             ; $B8ED - unknown opcode
-    JSR $0711                ; $B8EE: 20 11 07
-    .byte $04             ; $B8F1 - unknown opcode
-    BRK                      ; $B8F2: 00
-    .byte $02             ; $B8F3 - unknown opcode
-    RTI                      ; $B8F4: 40
-    .byte $02             ; $B8F5 - unknown opcode
-    ORA ($04,X)              ; $B8F6: 01 04
-    ORA ($03,X)              ; $B8F8: 01 03
-    EOR ($03,X)              ; $B8FA: 41 03
-    BRK                      ; $B8FC: 00
-    RTI                      ; $B8FD: 40
-    BRK                      ; $B8FE: 00
-    ASL $2F40                ; $B8FF: 0E 40 2F
-    BRK                      ; $B902: 00
-    .byte $FF             ; $B903 - unknown opcode
-    LDY #$00                 ; $B904: A0 00
+	TYA					  ; $B893: 98
+	PHA					  ; $B894: 48
+	LDA $B8BE,Y			  ; $B895: B9 BE B8
+	AND #$0F				 ; $B898: 29 0F
+	TAX					  ; $B89A: AA
+	INX					  ; $B89B: E8
+	LDA $B8BF,Y			  ; $B89C: B9 BF B8
+	BRK					  ; $B89F: 00
+	ORA $6887				; $B8A0: 0D 87 68
+	PHA					  ; $B8A3: 48
+	TAY					  ; $B8A4: A8
+	LDX $B8C0,Y			  ; $B8A5: BE C0 B8
+	LDA $B8BE,Y			  ; $B8A8: B9 BE B8
+	AND #$0F				 ; $B8AB: 29 0F
+	TAY					  ; $B8AD: A8
+	LDA $7006,X			  ; $B8AE: BD 06 70
+	AND #$03				 ; $B8B1: 29 03
+	JSR $A1AF				; $B8B3: 20 AF A1
+	PLA					  ; $B8B6: 68
+	TAY					  ; $B8B7: A8
+	JMP $B776				; $B8B8: 4C 76 B7
+	EOR ($04,X)			  ; $B8BB: 41 04
+	.byte $FF			 ; $B8BD - unknown opcode
+	BRK					  ; $B8BE: 00
+	ORA $08,X				; $B8BF: 15 08
+	EOR ($04,X)			  ; $B8C1: 41 04
+	.byte $FF			 ; $B8C3 - unknown opcode
+	ORA ($15,X)			  ; $B8C4: 01 15
+	ASL $41				  ; $B8C6: 06 41
+	.byte $04			 ; $B8C8 - unknown opcode
+	.byte $FF			 ; $B8C9 - unknown opcode
+	.byte $02			 ; $B8CA - unknown opcode
+	ORA $07,X				; $B8CB: 15 07
+	.byte $33			 ; $B8CD - unknown opcode
+	.byte $04			 ; $B8CE - unknown opcode
+	PHP					  ; $B8CF: 08
+	BRK					  ; $B8D0: 00
+	AND $0201,X			  ; $B8D1: 3D 01 02
+	BRK					  ; $B8D4: 00
+	.byte $FF			 ; $B8D5 - unknown opcode
+	BRK					  ; $B8D6: 00
+	.byte $13			 ; $B8D7 - unknown opcode
+	.byte $0B			 ; $B8D8 - unknown opcode
+	.byte $02			 ; $B8D9 - unknown opcode
+	.byte $03			 ; $B8DA - unknown opcode
+	.byte $FF			 ; $B8DB - unknown opcode
+	BRK					  ; $B8DC: 00
+	.byte $13			 ; $B8DD - unknown opcode
+	.byte $02			 ; $B8DE - unknown opcode
+	AND ($03),Y			  ; $B8DF: 31 03
+	ORA #$32				 ; $B8E1: 09 32
+	ORA $0400,Y			  ; $B8E3: 19 00 04
+	.byte $0B			 ; $B8E6 - unknown opcode
+	ASL					  ; $B8E7: 0A
+	JSR $0012				; $B8E8: 20 12 00
+	.byte $04			 ; $B8EB - unknown opcode
+	BRK					  ; $B8EC: 00
+	.byte $0B			 ; $B8ED - unknown opcode
+	JSR $0711				; $B8EE: 20 11 07
+	.byte $04			 ; $B8F1 - unknown opcode
+	BRK					  ; $B8F2: 00
+	.byte $02			 ; $B8F3 - unknown opcode
+	RTI					  ; $B8F4: 40
+	.byte $02			 ; $B8F5 - unknown opcode
+	ORA ($04,X)			  ; $B8F6: 01 04
+	ORA ($03,X)			  ; $B8F8: 01 03
+	EOR ($03,X)			  ; $B8FA: 41 03
+	BRK					  ; $B8FC: 00
+	RTI					  ; $B8FD: 40
+	BRK					  ; $B8FE: 00
+	ASL $2F40				; $B8FF: 0E 40 2F
+	BRK					  ; $B902: 00
+	.byte $FF			 ; $B903 - unknown opcode
+	LDY #$00				 ; $B904: A0 00
 
 loc_B906:
-    LDA $B952,Y              ; $B906: B9 52 B9
-    CMP #$FF                 ; $B909: C9 FF
-    BEQ $B920                ; $B90B: F0 13
-    CMP $63                  ; $B90D: C5 63
-    BNE $B918                ; $B90F: D0 07
-    LDA $B953,Y              ; $B911: B9 53 B9
-    CMP $64                  ; $B914: C5 64
-    BEQ $B921                ; $B916: F0 09
+	LDA $B952,Y			  ; $B906: B9 52 B9
+	CMP #$FF				 ; $B909: C9 FF
+	BEQ $B920				; $B90B: F0 13
+	CMP $63				  ; $B90D: C5 63
+	BNE $B918				; $B90F: D0 07
+	LDA $B953,Y			  ; $B911: B9 53 B9
+	CMP $64				  ; $B914: C5 64
+	BEQ $B921				; $B916: F0 09
 
 loc_B918:
-    TYA                      ; $B918: 98
-    CLC                      ; $B919: 18
-    ADC #$04                 ; $B91A: 69 04
-    TAY                      ; $B91C: A8
-    JMP $B906                ; $B91D: 4C 06 B9
+	TYA					  ; $B918: 98
+	CLC					  ; $B919: 18
+	ADC #$04				 ; $B91A: 69 04
+	TAY					  ; $B91C: A8
+	JMP $B906				; $B91D: 4C 06 B9
 
 loc_B920:
-    RTS                      ; $B920: 60
+	RTS					  ; $B920: 60
 
 loc_B921:
-    TYA                      ; $B921: 98
-    PHA                      ; $B922: 48
-    LDX $B955,Y              ; $B923: BE 55 B9
-    LDA $6FE0,X              ; $B926: BD E0 6F
-    LDX $B954,Y              ; $B929: BE 54 B9
-    STA $6FE0,X              ; $B92C: 9D E0 6F
-    LDX $B955,Y              ; $B92F: BE 55 B9
-    LDA $7000,X              ; $B932: BD 00 70
-    AND #$03                 ; $B935: 29 03
-    PHA                      ; $B937: 48
-    LDX $B954,Y              ; $B938: BE 54 B9
-    LDA $7000,X              ; $B93B: BD 00 70
-    AND #$FC                 ; $B93E: 29 FC
-    STA $7000,X              ; $B940: 9D 00 70
-    PLA                      ; $B943: 68
-    ORA $7000,X              ; $B944: 1D 00 70
-    STA $7000,X              ; $B947: 9D 00 70
-    JSR $D7F1                ; $B94A: 20 F1 D7
-    PLA                      ; $B94D: 68
-    TAY                      ; $B94E: A8
-    JMP $B918                ; $B94F: 4C 18 B9
-    EOR ($04,X)              ; $B952: 41 04
-    ASL $0A                  ; $B954: 06 0A
-    EOR ($04,X)              ; $B956: 41 04
-    ORA #$0B                 ; $B958: 09 0B
-    .byte $FF             ; $B95A - unknown opcode
-    RTS                      ; $B95B: 60
+	TYA					  ; $B921: 98
+	PHA					  ; $B922: 48
+	LDX $B955,Y			  ; $B923: BE 55 B9
+	LDA $6FE0,X			  ; $B926: BD E0 6F
+	LDX $B954,Y			  ; $B929: BE 54 B9
+	STA $6FE0,X			  ; $B92C: 9D E0 6F
+	LDX $B955,Y			  ; $B92F: BE 55 B9
+	LDA $7000,X			  ; $B932: BD 00 70
+	AND #$03				 ; $B935: 29 03
+	PHA					  ; $B937: 48
+	LDX $B954,Y			  ; $B938: BE 54 B9
+	LDA $7000,X			  ; $B93B: BD 00 70
+	AND #$FC				 ; $B93E: 29 FC
+	STA $7000,X			  ; $B940: 9D 00 70
+	PLA					  ; $B943: 68
+	ORA $7000,X			  ; $B944: 1D 00 70
+	STA $7000,X			  ; $B947: 9D 00 70
+	JSR $D7F1				; $B94A: 20 F1 D7
+	PLA					  ; $B94D: 68
+	TAY					  ; $B94E: A8
+	JMP $B918				; $B94F: 4C 18 B9
+	EOR ($04,X)			  ; $B952: 41 04
+	ASL $0A				  ; $B954: 06 0A
+	EOR ($04,X)			  ; $B956: 41 04
+	ORA #$0B				 ; $B958: 09 0B
+	.byte $FF			 ; $B95A - unknown opcode
+	RTS					  ; $B95B: 60
 
 loc_B95C:
-    BRK                      ; $B95C: 00
-    ORA #$FB                 ; $B95D: 09 FB
-    JSR $B9D5                ; $B95F: 20 D5 B9
-    LDA $1F                  ; $B962: A5 1F
-    ORA #$08                 ; $B964: 09 08
-    STA $1F                  ; $B966: 85 1F
-    JSR $B9DE                ; $B968: 20 DE B9
-    JSR $BAEB                ; $B96B: 20 EB BA
-    JSR $B980                ; $B96E: 20 80 B9
-    JSR $C5C5                ; $B971: 20 C5 C5
-    LDA $1F                  ; $B974: A5 1F
-    AND #$F7                 ; $B976: 29 F7
-    STA $1F                  ; $B978: 85 1F
-    LDA #$2C                 ; $B97A: A9 2C
-    BRK                      ; $B97C: 00
-    .byte $07             ; $B97D - unknown opcode
-    .byte $CF             ; $B97E - unknown opcode
-    RTS                      ; $B97F: 60
+	BRK					  ; $B95C: 00
+	ORA #$FB				 ; $B95D: 09 FB
+	JSR $B9D5				; $B95F: 20 D5 B9
+	LDA $1F				  ; $B962: A5 1F
+	ORA #$08				 ; $B964: 09 08
+	STA $1F				  ; $B966: 85 1F
+	JSR $B9DE				; $B968: 20 DE B9
+	JSR $BAEB				; $B96B: 20 EB BA
+	JSR $B980				; $B96E: 20 80 B9
+	JSR $C5C5				; $B971: 20 C5 C5
+	LDA $1F				  ; $B974: A5 1F
+	AND #$F7				 ; $B976: 29 F7
+	STA $1F				  ; $B978: 85 1F
+	LDA #$2C				 ; $B97A: A9 2C
+	BRK					  ; $B97C: 00
+	.byte $07			 ; $B97D - unknown opcode
+	.byte $CF			 ; $B97E - unknown opcode
+	RTS					  ; $B97F: 60
 
 loc_B980:
-    LDA $3E                  ; $B980: A5 3E
-    BNE $B993                ; $B982: D0 0F
-    DEC $45                  ; $B984: C6 45
-    LDA #$10                 ; $B986: A9 10
-    STA $3E                  ; $B988: 85 3E
-    DEC $60                  ; $B98A: C6 60
-    BNE $B993                ; $B98C: D0 05
-    LDA #$10                 ; $B98E: A9 10
-    STA $45                  ; $B990: 85 45
-    RTS                      ; $B992: 60
+	LDA $3E				  ; $B980: A5 3E
+	BNE $B993				; $B982: D0 0F
+	DEC $45				  ; $B984: C6 45
+	LDA #$10				 ; $B986: A9 10
+	STA $3E				  ; $B988: 85 3E
+	DEC $60				  ; $B98A: C6 60
+	BNE $B993				; $B98C: D0 05
+	LDA #$10				 ; $B98E: A9 10
+	STA $45				  ; $B990: 85 45
+	RTS					  ; $B992: 60
 
 loc_B993:
-    LDA $3E                  ; $B993: A5 3E
-    AND #$03                 ; $B995: 29 03
-    BNE $B99B                ; $B997: D0 02
-    INC $5E                  ; $B999: E6 5E
+	LDA $3E				  ; $B993: A5 3E
+	AND #$03				 ; $B995: 29 03
+	BNE $B99B				; $B997: D0 02
+	INC $5E				  ; $B999: E6 5E
 
 loc_B99B:
-    JSR $C001                ; $B99B: 20 01 C0
-    JSR $BB09                ; $B99E: 20 09 BB
-    JSR $BB3C                ; $B9A1: 20 3C BB
-    LDX #$01                 ; $B9A4: A2 01
-    LDY $5E                  ; $B9A6: A4 5E
-    CPY #$1E                 ; $B9A8: C0 1E
-    BCS $B9AF                ; $B9AA: B0 03
-    LDX $B9B7,Y              ; $B9AC: BE B7 B9
+	JSR $C001				; $B99B: 20 01 C0
+	JSR $BB09				; $B99E: 20 09 BB
+	JSR $BB3C				; $B9A1: 20 3C BB
+	LDX #$01				 ; $B9A4: A2 01
+	LDY $5E				  ; $B9A6: A4 5E
+	CPY #$1E				 ; $B9A8: C0 1E
+	BCS $B9AF				; $B9AA: B0 03
+	LDX $B9B7,Y			  ; $B9AC: BE B7 B9
 
 loc_B9AF:
-    JSR $C90C                ; $B9AF: 20 0C C9
-    INC $5F                  ; $B9B2: E6 5F
-    JMP $B980                ; $B9B4: 4C 80 B9
-    .byte $0F             ; $B9B7 - unknown opcode
-    ASL                      ; $B9B8: 0A
-    ASL                      ; $B9B9: 0A
-    ORA #$09                 ; $B9BA: 09 09
-    PHP                      ; $B9BC: 08
-    PHP                      ; $B9BD: 08
-    .byte $07             ; $B9BE - unknown opcode
-    ASL $06                  ; $B9BF: 06 06
-    ORA $05                  ; $B9C1: 05 05
-    .byte $04             ; $B9C3 - unknown opcode
-    .byte $04             ; $B9C4 - unknown opcode
-    .byte $04             ; $B9C5 - unknown opcode
-    .byte $04             ; $B9C6 - unknown opcode
-    .byte $03             ; $B9C7 - unknown opcode
-    .byte $03             ; $B9C8 - unknown opcode
-    .byte $03             ; $B9C9 - unknown opcode
-    .byte $03             ; $B9CA - unknown opcode
-    .byte $02             ; $B9CB - unknown opcode
-    .byte $02             ; $B9CC - unknown opcode
-    .byte $02             ; $B9CD - unknown opcode
-    .byte $02             ; $B9CE - unknown opcode
-    .byte $02             ; $B9CF - unknown opcode
-    .byte $02             ; $B9D0 - unknown opcode
-    .byte $02             ; $B9D1 - unknown opcode
-    .byte $02             ; $B9D2 - unknown opcode
-    ORA ($01,X)              ; $B9D3: 01 01
+	JSR $C90C				; $B9AF: 20 0C C9
+	INC $5F				  ; $B9B2: E6 5F
+	JMP $B980				; $B9B4: 4C 80 B9
+	.byte $0F			 ; $B9B7 - unknown opcode
+	ASL					  ; $B9B8: 0A
+	ASL					  ; $B9B9: 0A
+	ORA #$09				 ; $B9BA: 09 09
+	PHP					  ; $B9BC: 08
+	PHP					  ; $B9BD: 08
+	.byte $07			 ; $B9BE - unknown opcode
+	ASL $06				  ; $B9BF: 06 06
+	ORA $05				  ; $B9C1: 05 05
+	.byte $04			 ; $B9C3 - unknown opcode
+	.byte $04			 ; $B9C4 - unknown opcode
+	.byte $04			 ; $B9C5 - unknown opcode
+	.byte $04			 ; $B9C6 - unknown opcode
+	.byte $03			 ; $B9C7 - unknown opcode
+	.byte $03			 ; $B9C8 - unknown opcode
+	.byte $03			 ; $B9C9 - unknown opcode
+	.byte $03			 ; $B9CA - unknown opcode
+	.byte $02			 ; $B9CB - unknown opcode
+	.byte $02			 ; $B9CC - unknown opcode
+	.byte $02			 ; $B9CD - unknown opcode
+	.byte $02			 ; $B9CE - unknown opcode
+	.byte $02			 ; $B9CF - unknown opcode
+	.byte $02			 ; $B9D0 - unknown opcode
+	.byte $02			 ; $B9D1 - unknown opcode
+	.byte $02			 ; $B9D2 - unknown opcode
+	ORA ($01,X)			  ; $B9D3: 01 01
 
 loc_B9D5:
-    JSR $FF74                ; $B9D5: 20 74 FF
-    LDA $0513                ; $B9D8: AD 13 05
-    BNE $B9D5                ; $B9DB: D0 F8
-    RTS                      ; $B9DD: 60
+	JSR $FF74				; $B9D5: 20 74 FF
+	LDA $0513				; $B9D8: AD 13 05
+	BNE $B9D5				; $B9DB: D0 F8
+	RTS					  ; $B9DD: 60
 
 loc_B9DE:
-    LDX #$00                 ; $B9DE: A2 00
-    LDY $050A                ; $B9E0: AC 0A 05
-    LDA #$8F                 ; $B9E3: A9 8F
-    STA $0300,Y              ; $B9E5: 99 00 03
-    LDA #$30                 ; $B9E8: A9 30
-    STA $0301,Y              ; $B9EA: 99 01 03
-    LDA #$D0                 ; $B9ED: A9 D0
-    STA $0302,Y              ; $B9EF: 99 02 03
+	LDX #$00				 ; $B9DE: A2 00
+	LDY $050A				; $B9E0: AC 0A 05
+	LDA #$8F				 ; $B9E3: A9 8F
+	STA $0300,Y			  ; $B9E5: 99 00 03
+	LDA #$30				 ; $B9E8: A9 30
+	STA $0301,Y			  ; $B9EA: 99 01 03
+	LDA #$D0				 ; $B9ED: A9 D0
+	STA $0302,Y			  ; $B9EF: 99 02 03
 
 loc_B9F2:
-    LDA $BA9B,X              ; $B9F2: BD 9B BA
-    STA $0303,Y              ; $B9F5: 99 03 03
-    INY                      ; $B9F8: C8
-    INX                      ; $B9F9: E8
-    CPX #$30                 ; $B9FA: E0 30
-    BCC $B9F2                ; $B9FC: 90 F4
-    INC $050B                ; $B9FE: EE 0B 05
-    JSR $C62D                ; $BA01: 20 2D C6
-    LDX #$00                 ; $BA04: A2 00
+	LDA $BA9B,X			  ; $B9F2: BD 9B BA
+	STA $0303,Y			  ; $B9F5: 99 03 03
+	INY					  ; $B9F8: C8
+	INX					  ; $B9F9: E8
+	CPX #$30				 ; $B9FA: E0 30
+	BCC $B9F2				; $B9FC: 90 F4
+	INC $050B				; $B9FE: EE 0B 05
+	JSR $C62D				; $BA01: 20 2D C6
+	LDX #$00				 ; $BA04: A2 00
 
 loc_BA06:
-    LDA $BACB,X              ; $BA06: BD CB BA
-    STA $02E0,X              ; $BA09: 9D E0 02
-    INX                      ; $BA0C: E8
-    CPX #$20                 ; $BA0D: E0 20
-    BCC $BA06                ; $BA0F: 90 F5
-    LDX #$14                 ; $BA11: A2 14
-    LDY #$13                 ; $BA13: A0 13
-    LDA #$00                 ; $BA15: A9 00
-    BRK                      ; $BA17: 00
-    ORA #$EF                 ; $BA18: 09 EF
-    LDX #$15                 ; $BA1A: A2 15
-    LDY #$13                 ; $BA1C: A0 13
-    LDA #$00                 ; $BA1E: A9 00
-    BRK                      ; $BA20: 00
-    ORA #$EF                 ; $BA21: 09 EF
-    LDX $050A                ; $BA23: AE 0A 05
-    LDA #$BF                 ; $BA26: A9 BF
-    STA $0300,X              ; $BA28: 9D 00 03
-    LDA #$03                 ; $BA2B: A9 03
-    STA $0301,X              ; $BA2D: 9D 01 03
-    LDA #$11                 ; $BA30: A9 11
-    STA $0302,X              ; $BA32: 9D 02 03
-    LDA #$17                 ; $BA35: A9 17
-    STA $0303,X              ; $BA37: 9D 03 03
-    STA $0609                ; $BA3A: 8D 09 06
-    LDA #$27                 ; $BA3D: A9 27
-    STA $0304,X              ; $BA3F: 9D 04 03
-    STA $060A                ; $BA42: 8D 0A 06
-    LDA #$0F                 ; $BA45: A9 0F
-    STA $0305,X              ; $BA47: 9D 05 03
-    STA $060B                ; $BA4A: 8D 0B 06
-    INC $050B                ; $BA4D: EE 0B 05
-    JSR $FF74                ; $BA50: 20 74 FF
-    LDY #$FF                 ; $BA53: A0 FF
-    LDX #$60                 ; $BA55: A2 60
-    JSR $BA74                ; $BA57: 20 74 BA
-    JSR $BA74                ; $BA5A: 20 74 BA
-    JSR $BA74                ; $BA5D: 20 74 BA
-    JSR $BA74                ; $BA60: 20 74 BA
-    LDA #$F7                 ; $BA63: A9 F7
-    STA $02B8                ; $BA65: 8D B8 02
-    STA $02BC                ; $BA68: 8D BC 02
-    STA $02D8                ; $BA6B: 8D D8 02
-    STA $02DC                ; $BA6E: 8D DC 02
-    JMP $FF74                ; $BA71: 4C 74 FF
+	LDA $BACB,X			  ; $BA06: BD CB BA
+	STA $02E0,X			  ; $BA09: 9D E0 02
+	INX					  ; $BA0C: E8
+	CPX #$20				 ; $BA0D: E0 20
+	BCC $BA06				; $BA0F: 90 F5
+	LDX #$14				 ; $BA11: A2 14
+	LDY #$13				 ; $BA13: A0 13
+	LDA #$00				 ; $BA15: A9 00
+	BRK					  ; $BA17: 00
+	ORA #$EF				 ; $BA18: 09 EF
+	LDX #$15				 ; $BA1A: A2 15
+	LDY #$13				 ; $BA1C: A0 13
+	LDA #$00				 ; $BA1E: A9 00
+	BRK					  ; $BA20: 00
+	ORA #$EF				 ; $BA21: 09 EF
+	LDX $050A				; $BA23: AE 0A 05
+	LDA #$BF				 ; $BA26: A9 BF
+	STA $0300,X			  ; $BA28: 9D 00 03
+	LDA #$03				 ; $BA2B: A9 03
+	STA $0301,X			  ; $BA2D: 9D 01 03
+	LDA #$11				 ; $BA30: A9 11
+	STA $0302,X			  ; $BA32: 9D 02 03
+	LDA #$17				 ; $BA35: A9 17
+	STA $0303,X			  ; $BA37: 9D 03 03
+	STA $0609				; $BA3A: 8D 09 06
+	LDA #$27				 ; $BA3D: A9 27
+	STA $0304,X			  ; $BA3F: 9D 04 03
+	STA $060A				; $BA42: 8D 0A 06
+	LDA #$0F				 ; $BA45: A9 0F
+	STA $0305,X			  ; $BA47: 9D 05 03
+	STA $060B				; $BA4A: 8D 0B 06
+	INC $050B				; $BA4D: EE 0B 05
+	JSR $FF74				; $BA50: 20 74 FF
+	LDY #$FF				 ; $BA53: A0 FF
+	LDX #$60				 ; $BA55: A2 60
+	JSR $BA74				; $BA57: 20 74 BA
+	JSR $BA74				; $BA5A: 20 74 BA
+	JSR $BA74				; $BA5D: 20 74 BA
+	JSR $BA74				; $BA60: 20 74 BA
+	LDA #$F7				 ; $BA63: A9 F7
+	STA $02B8				; $BA65: 8D B8 02
+	STA $02BC				; $BA68: 8D BC 02
+	STA $02D8				; $BA6B: 8D D8 02
+	STA $02DC				; $BA6E: 8D DC 02
+	JMP $FF74				; $BA71: 4C 74 FF
 
 loc_BA74:
-    JSR $BA80                ; $BA74: 20 80 BA
-    JSR $BA80                ; $BA77: 20 80 BA
-    TYA                      ; $BA7A: 98
-    CLC                      ; $BA7B: 18
-    ADC #$08                 ; $BA7C: 69 08
-    TAY                      ; $BA7E: A8
+	JSR $BA80				; $BA74: 20 80 BA
+	JSR $BA80				; $BA77: 20 80 BA
+	TYA					  ; $BA7A: 98
+	CLC					  ; $BA7B: 18
+	ADC #$08				 ; $BA7C: 69 08
+	TAY					  ; $BA7E: A8
 
 loc_BA7F:
-    RTS                      ; $BA7F: 60
+	RTS					  ; $BA7F: 60
 
 loc_BA80:
-    TYA                      ; $BA80: 98
-    STA $0200,X              ; $BA81: 9D 00 02
-    LDA #$FD                 ; $BA84: A9 FD
-    STA $0201,X              ; $BA86: 9D 01 02
-    LDA #$00                 ; $BA89: A9 00
-    STA $0202,X              ; $BA8B: 9D 02 02
-    STA $0203,X              ; $BA8E: 9D 03 02
-    INX                      ; $BA91: E8
-    INX                      ; $BA92: E8
-    INX                      ; $BA93: E8
-    INX                      ; $BA94: E8
-    TXA                      ; $BA95: 8A
-    AND #$0F                 ; $BA96: 29 0F
-    BNE $BA80                ; $BA98: D0 E6
-    RTS                      ; $BA9A: 60
-    BRK                      ; $BA9B: 00
-    BRK                      ; $BA9C: 00
-    BRK                      ; $BA9D: 00
-    BRK                      ; $BA9E: 00
-    BRK                      ; $BA9F: 00
-    BRK                      ; $BAA0: 00
-    BRK                      ; $BAA1: 00
-    BRK                      ; $BAA2: 00
-    BRK                      ; $BAA3: 00
-    BRK                      ; $BAA4: 00
-    BRK                      ; $BAA5: 00
-    BRK                      ; $BAA6: 00
-    BRK                      ; $BAA7: 00
-    BRK                      ; $BAA8: 00
-    BRK                      ; $BAA9: 00
-    BRK                      ; $BAAA: 00
-    INC $CCDD                ; $BAAB: EE DD CC
-    INC $DDCC                ; $BAAE: EE CC DD
-    CPY $99DD                ; $BAB1: CC DD 99
-    TAX                      ; $BAB4: AA
-    .byte $BB             ; $BAB5 - unknown opcode
-    STA $AABB,Y              ; $BAB6: 99 BB AA
-    .byte $BB             ; $BAB9 - unknown opcode
-    TAX                      ; $BABA: AA
-    CMP $EEEE,X              ; $BABB: DD EE EE
-    .byte $FF             ; $BABE - unknown opcode
-    .byte $FF             ; $BABF - unknown opcode
-    .byte $FF             ; $BAC0 - unknown opcode
-    .byte $FF             ; $BAC1 - unknown opcode
-    .byte $FF             ; $BAC2 - unknown opcode
-    TAX                      ; $BAC3: AA
-    STA $AA99,Y              ; $BAC4: 99 99 AA
-    CMP $DD88,X              ; $BAC7: DD 88 DD
-    .byte $FF             ; $BACA - unknown opcode
-    .byte $9F             ; $BACB - unknown opcode
-    INC $F000,X              ; $BACC: FE 00 F0
-    .byte $9F             ; $BACF - unknown opcode
-    INC $F800,X              ; $BAD0: FE 00 F8
-    .byte $A7             ; $BAD3 - unknown opcode
-    .byte $FF             ; $BAD4 - unknown opcode
-    BRK                      ; $BAD5: 00
-    BEQ $BA7F                ; $BAD6: F0 A7
-    .byte $FF             ; $BAD8 - unknown opcode
-    BRK                      ; $BAD9: 00
-    SED                      ; $BADA: F8
-    .byte $9F             ; $BADB - unknown opcode
-    INC $E000,X              ; $BADC: FE 00 E0
-    .byte $9F             ; $BADF - unknown opcode
-    INC $E800,X              ; $BAE0: FE 00 E8
-    .byte $A7             ; $BAE3 - unknown opcode
-    .byte $FF             ; $BAE4 - unknown opcode
-    BRK                      ; $BAE5: 00
-    CPX #$A7                 ; $BAE6: E0 A7
-    .byte $FF             ; $BAE8 - unknown opcode
-    BRK                      ; $BAE9: 00
-    INX                      ; $BAEA: E8
+	TYA					  ; $BA80: 98
+	STA $0200,X			  ; $BA81: 9D 00 02
+	LDA #$FD				 ; $BA84: A9 FD
+	STA $0201,X			  ; $BA86: 9D 01 02
+	LDA #$00				 ; $BA89: A9 00
+	STA $0202,X			  ; $BA8B: 9D 02 02
+	STA $0203,X			  ; $BA8E: 9D 03 02
+	INX					  ; $BA91: E8
+	INX					  ; $BA92: E8
+	INX					  ; $BA93: E8
+	INX					  ; $BA94: E8
+	TXA					  ; $BA95: 8A
+	AND #$0F				 ; $BA96: 29 0F
+	BNE $BA80				; $BA98: D0 E6
+	RTS					  ; $BA9A: 60
+	BRK					  ; $BA9B: 00
+	BRK					  ; $BA9C: 00
+	BRK					  ; $BA9D: 00
+	BRK					  ; $BA9E: 00
+	BRK					  ; $BA9F: 00
+	BRK					  ; $BAA0: 00
+	BRK					  ; $BAA1: 00
+	BRK					  ; $BAA2: 00
+	BRK					  ; $BAA3: 00
+	BRK					  ; $BAA4: 00
+	BRK					  ; $BAA5: 00
+	BRK					  ; $BAA6: 00
+	BRK					  ; $BAA7: 00
+	BRK					  ; $BAA8: 00
+	BRK					  ; $BAA9: 00
+	BRK					  ; $BAAA: 00
+	INC $CCDD				; $BAAB: EE DD CC
+	INC $DDCC				; $BAAE: EE CC DD
+	CPY $99DD				; $BAB1: CC DD 99
+	TAX					  ; $BAB4: AA
+	.byte $BB			 ; $BAB5 - unknown opcode
+	STA $AABB,Y			  ; $BAB6: 99 BB AA
+	.byte $BB			 ; $BAB9 - unknown opcode
+	TAX					  ; $BABA: AA
+	CMP $EEEE,X			  ; $BABB: DD EE EE
+	.byte $FF			 ; $BABE - unknown opcode
+	.byte $FF			 ; $BABF - unknown opcode
+	.byte $FF			 ; $BAC0 - unknown opcode
+	.byte $FF			 ; $BAC1 - unknown opcode
+	.byte $FF			 ; $BAC2 - unknown opcode
+	TAX					  ; $BAC3: AA
+	STA $AA99,Y			  ; $BAC4: 99 99 AA
+	CMP $DD88,X			  ; $BAC7: DD 88 DD
+	.byte $FF			 ; $BACA - unknown opcode
+	.byte $9F			 ; $BACB - unknown opcode
+	INC $F000,X			  ; $BACC: FE 00 F0
+	.byte $9F			 ; $BACF - unknown opcode
+	INC $F800,X			  ; $BAD0: FE 00 F8
+	.byte $A7			 ; $BAD3 - unknown opcode
+	.byte $FF			 ; $BAD4 - unknown opcode
+	BRK					  ; $BAD5: 00
+	BEQ $BA7F				; $BAD6: F0 A7
+	.byte $FF			 ; $BAD8 - unknown opcode
+	BRK					  ; $BAD9: 00
+	SED					  ; $BADA: F8
+	.byte $9F			 ; $BADB - unknown opcode
+	INC $E000,X			  ; $BADC: FE 00 E0
+	.byte $9F			 ; $BADF - unknown opcode
+	INC $E800,X			  ; $BAE0: FE 00 E8
+	.byte $A7			 ; $BAE3 - unknown opcode
+	.byte $FF			 ; $BAE4 - unknown opcode
+	BRK					  ; $BAE5: 00
+	CPX #$A7				 ; $BAE6: E0 A7
+	.byte $FF			 ; $BAE8 - unknown opcode
+	BRK					  ; $BAE9: 00
+	INX					  ; $BAEA: E8
 
 loc_BAEB:
-    LDA #$20                 ; $BAEB: A9 20
-    STA $0520                ; $BAED: 8D 20 05
-    LDX #$50                 ; $BAF0: A2 50
+	LDA #$20				 ; $BAEB: A9 20
+	STA $0520				; $BAED: 8D 20 05
+	LDX #$50				 ; $BAF0: A2 50
 
 loc_BAF2:
-    STA $7800,X              ; $BAF2: 9D 00 78
-    DEX                      ; $BAF5: CA
-    BNE $BAF2                ; $BAF6: D0 FA
-    LDA #$00                 ; $BAF8: A9 00
-    STA $3D                  ; $BAFA: 85 3D
-    STA $3E                  ; $BAFC: 85 3E
-    STA $5E                  ; $BAFE: 85 5E
-    LDA #$01                 ; $BB00: A9 01
-    STA $5F                  ; $BB02: 85 5F
-    LDA #$15                 ; $BB04: A9 15
-    STA $60                  ; $BB06: 85 60
-    RTS                      ; $BB08: 60
+	STA $7800,X			  ; $BAF2: 9D 00 78
+	DEX					  ; $BAF5: CA
+	BNE $BAF2				; $BAF6: D0 FA
+	LDA #$00				 ; $BAF8: A9 00
+	STA $3D				  ; $BAFA: 85 3D
+	STA $3E				  ; $BAFC: 85 3E
+	STA $5E				  ; $BAFE: 85 5E
+	LDA #$01				 ; $BB00: A9 01
+	STA $5F				  ; $BB02: 85 5F
+	LDA #$15				 ; $BB04: A9 15
+	STA $60				  ; $BB06: 85 60
+	RTS					  ; $BB08: 60
 
 loc_BB09:
-    LDX #$00                 ; $BB09: A2 00
+	LDX #$00				 ; $BB09: A2 00
 
 loc_BB0B:
-    LDA $0200,X              ; $BB0B: BD 00 02
-    CLC                      ; $BB0E: 18
-    ADC #$01                 ; $BB0F: 69 01
-    CMP #$F7                 ; $BB11: C9 F7
-    BCC $BB17                ; $BB13: 90 02
-    LDA #$F7                 ; $BB15: A9 F7
+	LDA $0200,X			  ; $BB0B: BD 00 02
+	CLC					  ; $BB0E: 18
+	ADC #$01				 ; $BB0F: 69 01
+	CMP #$F7				 ; $BB11: C9 F7
+	BCC $BB17				; $BB13: 90 02
+	LDA #$F7				 ; $BB15: A9 F7
 
 loc_BB17:
-    STA $0200,X              ; $BB17: 9D 00 02
-    INX                      ; $BB1A: E8
-    INX                      ; $BB1B: E8
-    INX                      ; $BB1C: E8
-    INX                      ; $BB1D: E8
-    CPX #$E0                 ; $BB1E: E0 E0
-    BCC $BB0B                ; $BB20: 90 E9
-    LDA $5F                  ; $BB22: A5 5F
-    CMP #$B1                 ; $BB24: C9 B1
-    BNE $BB3B                ; $BB26: D0 13
-    LDX #$60                 ; $BB28: A2 60
+	STA $0200,X			  ; $BB17: 9D 00 02
+	INX					  ; $BB1A: E8
+	INX					  ; $BB1B: E8
+	INX					  ; $BB1C: E8
+	INX					  ; $BB1D: E8
+	CPX #$E0				 ; $BB1E: E0 E0
+	BCC $BB0B				; $BB20: 90 E9
+	LDA $5F				  ; $BB22: A5 5F
+	CMP #$B1				 ; $BB24: C9 B1
+	BNE $BB3B				; $BB26: D0 13
+	LDX #$60				 ; $BB28: A2 60
 
 loc_BB2A:
-    LDA $0200,X              ; $BB2A: BD 00 02
-    SEC                      ; $BB2D: 38
-    SBC #$30                 ; $BB2E: E9 30
-    STA $0200,X              ; $BB30: 9D 00 02
-    INX                      ; $BB33: E8
-    INX                      ; $BB34: E8
-    INX                      ; $BB35: E8
-    INX                      ; $BB36: E8
-    CPX #$E0                 ; $BB37: E0 E0
-    BCC $BB2A                ; $BB39: 90 EF
+	LDA $0200,X			  ; $BB2A: BD 00 02
+	SEC					  ; $BB2D: 38
+	SBC #$30				 ; $BB2E: E9 30
+	STA $0200,X			  ; $BB30: 9D 00 02
+	INX					  ; $BB33: E8
+	INX					  ; $BB34: E8
+	INX					  ; $BB35: E8
+	INX					  ; $BB36: E8
+	CPX #$E0				 ; $BB37: E0 E0
+	BCC $BB2A				; $BB39: 90 EF
 
 loc_BB3B:
-    RTS                      ; $BB3B: 60
+	RTS					  ; $BB3B: 60
 
 loc_BB3C:
-    LDA $5F                  ; $BB3C: A5 5F
-    AND #$0F                 ; $BB3E: 29 0F
-    TAX                      ; $BB40: AA
-    LDY $050A                ; $BB41: AC 0A 05
-    LDA #$D0                 ; $BB44: A9 D0
-    JSR $BB69                ; $BB46: 20 69 BB
-    LDA #$F0                 ; $BB49: A9 F0
-    JSR $BB69                ; $BB4B: 20 69 BB
-    TXA                      ; $BB4E: 8A
-    CLC                      ; $BB4F: 18
-    ADC #$10                 ; $BB50: 69 10
-    TAX                      ; $BB52: AA
-    LDA #$E0                 ; $BB53: A9 E0
-    JSR $BB69                ; $BB55: 20 69 BB
-    LDA #$00                 ; $BB58: A9 00
-    JSR $BB69                ; $BB5A: 20 69 BB
-    LDA #$99                 ; $BB5D: A9 99
-    STA $02F5,Y              ; $BB5F: 99 F5 02
-    LDA $1F                  ; $BB62: A5 1F
-    ORA #$20                 ; $BB64: 09 20
-    STA $1F                  ; $BB66: 85 1F
-    RTS                      ; $BB68: 60
+	LDA $5F				  ; $BB3C: A5 5F
+	AND #$0F				 ; $BB3E: 29 0F
+	TAX					  ; $BB40: AA
+	LDY $050A				; $BB41: AC 0A 05
+	LDA #$D0				 ; $BB44: A9 D0
+	JSR $BB69				; $BB46: 20 69 BB
+	LDA #$F0				 ; $BB49: A9 F0
+	JSR $BB69				; $BB4B: 20 69 BB
+	TXA					  ; $BB4E: 8A
+	CLC					  ; $BB4F: 18
+	ADC #$10				 ; $BB50: 69 10
+	TAX					  ; $BB52: AA
+	LDA #$E0				 ; $BB53: A9 E0
+	JSR $BB69				; $BB55: 20 69 BB
+	LDA #$00				 ; $BB58: A9 00
+	JSR $BB69				; $BB5A: 20 69 BB
+	LDA #$99				 ; $BB5D: A9 99
+	STA $02F5,Y			  ; $BB5F: 99 F5 02
+	LDA $1F				  ; $BB62: A5 1F
+	ORA #$20				 ; $BB64: 09 20
+	STA $1F				  ; $BB66: 85 1F
+	RTS					  ; $BB68: 60
 
 loc_BB69:
-    STA $0302,Y              ; $BB69: 99 02 03
-    LDA #$98                 ; $BB6C: A9 98
-    STA $0300,Y              ; $BB6E: 99 00 03
-    LDA #$08                 ; $BB71: A9 08
-    STA $0301,Y              ; $BB73: 99 01 03
-    LDA $BBB4,X              ; $BB76: BD B4 BB
-    STA $0303,Y              ; $BB79: 99 03 03
-    LDA $BBB5,X              ; $BB7C: BD B5 BB
-    STA $0304,Y              ; $BB7F: 99 04 03
-    LDA $BBB6,X              ; $BB82: BD B6 BB
-    STA $0305,Y              ; $BB85: 99 05 03
-    LDA $BBB7,X              ; $BB88: BD B7 BB
-    STA $0306,Y              ; $BB8B: 99 06 03
-    LDA $BBB8,X              ; $BB8E: BD B8 BB
-    STA $0307,Y              ; $BB91: 99 07 03
-    LDA $BBB9,X              ; $BB94: BD B9 BB
-    STA $0308,Y              ; $BB97: 99 08 03
-    LDA $BBBA,X              ; $BB9A: BD BA BB
-    STA $0309,Y              ; $BB9D: 99 09 03
-    LDA $BBBB,X              ; $BBA0: BD BB BB
-    STA $030A,Y              ; $BBA3: 99 0A 03
-    TXA                      ; $BBA6: 8A
-    CLC                      ; $BBA7: 18
-    ADC #$08                 ; $BBA8: 69 08
-    TAX                      ; $BBAA: AA
-    TYA                      ; $BBAB: 98
-    CLC                      ; $BBAC: 18
-    ADC #$0B                 ; $BBAD: 69 0B
-    TAY                      ; $BBAF: A8
-    INC $050B                ; $BBB0: EE 0B 05
-    RTS                      ; $BBB3: 60
-    CLV                      ; $BBB4: B8
-    ASL $01                  ; $BBB5: 06 01
-    .byte $02             ; $BBB7 - unknown opcode
-    STY $73                  ; $BBB8: 84 73
-    CPY $02                  ; $BBBA: C4 02
-    .byte $03             ; $BBBC - unknown opcode
-    STY $78                  ; $BBBD: 84 78
-    STY $03                  ; $BBBF: 84 03
-    BRK                      ; $BBC1: 00
-    BRK                      ; $BBC2: 00
-    .byte $03             ; $BBC3 - unknown opcode
-    CLV                      ; $BBC4: B8
-    ASL $01                  ; $BBC5: 06 01
-    .byte $02             ; $BBC7 - unknown opcode
-    STY $73                  ; $BBC8: 84 73
-    CPY $02                  ; $BBCA: C4 02
-    .byte $03             ; $BBCC - unknown opcode
-    STY $78                  ; $BBCD: 84 78
-    STY $03                  ; $BBCF: 84 03
-    BRK                      ; $BBD1: 00
-    BRK                      ; $BBD2: 00
-    .byte $03             ; $BBD3 - unknown opcode
-    ORA ($02,X)              ; $BBD4: 01 02
-    STY $8E72                ; $BBD6: 8C 72 8E
-    ORA ($00,X)              ; $BBD9: 01 00
-    ORA ($B3,X)              ; $BBDB: 01 B3
-    .byte $0C             ; $BBDD - unknown opcode
-    .byte $02             ; $BBDE - unknown opcode
-    ORA ($01,X)              ; $BBDF: 01 01
-    INC $98                  ; $BBE1: E6 98
-    ASL $01                  ; $BBE3: 06 01
-    .byte $02             ; $BBE5 - unknown opcode
-    STY $8E72                ; $BBE6: 8C 72 8E
-    ORA ($00,X)              ; $BBE9: 01 00
-    ORA ($B3,X)              ; $BBEB: 01 B3
-    .byte $0C             ; $BBED - unknown opcode
-    .byte $02             ; $BBEE - unknown opcode
-    ORA ($01,X)              ; $BBEF: 01 01
-    INC $98                  ; $BBF1: E6 98
-    ASL $20                  ; $BBF3: 06 20
-    AND $20C6                ; $BBF5: 2D C6 20
-    .byte $9C             ; $BBF8 - unknown opcode
-    LDY $1320,X              ; $BBF9: BC 20 13
-    LDY $1FA5,X              ; $BBFC: BC A5 1F
-    ORA #$40                 ; $BBFF: 09 40
-    STA $1F                  ; $BC01: 85 1F
-    JSR $C62D                ; $BC03: 20 2D C6
-    JSR $BC5D                ; $BC06: 20 5D BC
-    JSR $C62D                ; $BC09: 20 2D C6
-    LDA $1F                  ; $BC0C: A5 1F
-    AND #$BF                 ; $BC0E: 29 BF
-    STA $1F                  ; $BC10: 85 1F
-    RTS                      ; $BC12: 60
-    LDA #$9F                 ; $BC13: A9 9F
-    STA $0300                ; $BC15: 8D 00 03
-    LDA #$50                 ; $BC18: A9 50
-    STA $0301                ; $BC1A: 8D 01 03
-    LDA #$20                 ; $BC1D: A9 20
-    STA $0302                ; $BC1F: 8D 02 03
-    LDX #$00                 ; $BC22: A2 00
-    LDY #$00                 ; $BC24: A0 00
+	STA $0302,Y			  ; $BB69: 99 02 03
+	LDA #$98				 ; $BB6C: A9 98
+	STA $0300,Y			  ; $BB6E: 99 00 03
+	LDA #$08				 ; $BB71: A9 08
+	STA $0301,Y			  ; $BB73: 99 01 03
+	LDA $BBB4,X			  ; $BB76: BD B4 BB
+	STA $0303,Y			  ; $BB79: 99 03 03
+	LDA $BBB5,X			  ; $BB7C: BD B5 BB
+	STA $0304,Y			  ; $BB7F: 99 04 03
+	LDA $BBB6,X			  ; $BB82: BD B6 BB
+	STA $0305,Y			  ; $BB85: 99 05 03
+	LDA $BBB7,X			  ; $BB88: BD B7 BB
+	STA $0306,Y			  ; $BB8B: 99 06 03
+	LDA $BBB8,X			  ; $BB8E: BD B8 BB
+	STA $0307,Y			  ; $BB91: 99 07 03
+	LDA $BBB9,X			  ; $BB94: BD B9 BB
+	STA $0308,Y			  ; $BB97: 99 08 03
+	LDA $BBBA,X			  ; $BB9A: BD BA BB
+	STA $0309,Y			  ; $BB9D: 99 09 03
+	LDA $BBBB,X			  ; $BBA0: BD BB BB
+	STA $030A,Y			  ; $BBA3: 99 0A 03
+	TXA					  ; $BBA6: 8A
+	CLC					  ; $BBA7: 18
+	ADC #$08				 ; $BBA8: 69 08
+	TAX					  ; $BBAA: AA
+	TYA					  ; $BBAB: 98
+	CLC					  ; $BBAC: 18
+	ADC #$0B				 ; $BBAD: 69 0B
+	TAY					  ; $BBAF: A8
+	INC $050B				; $BBB0: EE 0B 05
+	RTS					  ; $BBB3: 60
+	CLV					  ; $BBB4: B8
+	ASL $01				  ; $BBB5: 06 01
+	.byte $02			 ; $BBB7 - unknown opcode
+	STY $73				  ; $BBB8: 84 73
+	CPY $02				  ; $BBBA: C4 02
+	.byte $03			 ; $BBBC - unknown opcode
+	STY $78				  ; $BBBD: 84 78
+	STY $03				  ; $BBBF: 84 03
+	BRK					  ; $BBC1: 00
+	BRK					  ; $BBC2: 00
+	.byte $03			 ; $BBC3 - unknown opcode
+	CLV					  ; $BBC4: B8
+	ASL $01				  ; $BBC5: 06 01
+	.byte $02			 ; $BBC7 - unknown opcode
+	STY $73				  ; $BBC8: 84 73
+	CPY $02				  ; $BBCA: C4 02
+	.byte $03			 ; $BBCC - unknown opcode
+	STY $78				  ; $BBCD: 84 78
+	STY $03				  ; $BBCF: 84 03
+	BRK					  ; $BBD1: 00
+	BRK					  ; $BBD2: 00
+	.byte $03			 ; $BBD3 - unknown opcode
+	ORA ($02,X)			  ; $BBD4: 01 02
+	STY $8E72				; $BBD6: 8C 72 8E
+	ORA ($00,X)			  ; $BBD9: 01 00
+	ORA ($B3,X)			  ; $BBDB: 01 B3
+	.byte $0C			 ; $BBDD - unknown opcode
+	.byte $02			 ; $BBDE - unknown opcode
+	ORA ($01,X)			  ; $BBDF: 01 01
+	INC $98				  ; $BBE1: E6 98
+	ASL $01				  ; $BBE3: 06 01
+	.byte $02			 ; $BBE5 - unknown opcode
+	STY $8E72				; $BBE6: 8C 72 8E
+	ORA ($00,X)			  ; $BBE9: 01 00
+	ORA ($B3,X)			  ; $BBEB: 01 B3
+	.byte $0C			 ; $BBED - unknown opcode
+	.byte $02			 ; $BBEE - unknown opcode
+	ORA ($01,X)			  ; $BBEF: 01 01
+	INC $98				  ; $BBF1: E6 98
+	ASL $20				  ; $BBF3: 06 20
+	AND $20C6				; $BBF5: 2D C6 20
+	.byte $9C			 ; $BBF8 - unknown opcode
+	LDY $1320,X			  ; $BBF9: BC 20 13
+	LDY $1FA5,X			  ; $BBFC: BC A5 1F
+	ORA #$40				 ; $BBFF: 09 40
+	STA $1F				  ; $BC01: 85 1F
+	JSR $C62D				; $BC03: 20 2D C6
+	JSR $BC5D				; $BC06: 20 5D BC
+	JSR $C62D				; $BC09: 20 2D C6
+	LDA $1F				  ; $BC0C: A5 1F
+	AND #$BF				 ; $BC0E: 29 BF
+	STA $1F				  ; $BC10: 85 1F
+	RTS					  ; $BC12: 60
+	LDA #$9F				 ; $BC13: A9 9F
+	STA $0300				; $BC15: 8D 00 03
+	LDA #$50				 ; $BC18: A9 50
+	STA $0301				; $BC1A: 8D 01 03
+	LDA #$20				 ; $BC1D: A9 20
+	STA $0302				; $BC1F: 8D 02 03
+	LDX #$00				 ; $BC22: A2 00
+	LDY #$00				 ; $BC24: A0 00
 
 loc_BC26:
-    LDA ($49),Y              ; $BC26: B1 49
-    STA $0303,X              ; $BC28: 9D 03 03
-    INX                      ; $BC2B: E8
-    INY                      ; $BC2C: C8
-    CPY #$50                 ; $BC2D: C0 50
-    BCC $BC26                ; $BC2F: 90 F5
-    LDA #$9F                 ; $BC31: A9 9F
-    STA $0303,X              ; $BC33: 9D 03 03
-    LDA #$10                 ; $BC36: A9 10
-    STA $0304,X              ; $BC38: 9D 04 03
-    LDA #$80                 ; $BC3B: A9 80
-    STA $0305,X              ; $BC3D: 9D 05 03
+	LDA ($49),Y			  ; $BC26: B1 49
+	STA $0303,X			  ; $BC28: 9D 03 03
+	INX					  ; $BC2B: E8
+	INY					  ; $BC2C: C8
+	CPY #$50				 ; $BC2D: C0 50
+	BCC $BC26				; $BC2F: 90 F5
+	LDA #$9F				 ; $BC31: A9 9F
+	STA $0303,X			  ; $BC33: 9D 03 03
+	LDA #$10				 ; $BC36: A9 10
+	STA $0304,X			  ; $BC38: 9D 04 03
+	LDA #$80				 ; $BC3B: A9 80
+	STA $0305,X			  ; $BC3D: 9D 05 03
 
 loc_BC40:
-    LDA ($49),Y              ; $BC40: B1 49
-    STA $0306,X              ; $BC42: 9D 06 03
-    INX                      ; $BC45: E8
-    INY                      ; $BC46: C8
-    CPY #$60                 ; $BC47: C0 60
-    BCC $BC40                ; $BC49: 90 F5
-    INC $050B                ; $BC4B: EE 0B 05
-    INC $050B                ; $BC4E: EE 0B 05
-    LDA $49                  ; $BC51: A5 49
-    CLC                      ; $BC53: 18
-    ADC #$60                 ; $BC54: 69 60
-    STA $49                  ; $BC56: 85 49
-    BCC $BC5C                ; $BC58: 90 02
-    INC $4A                  ; $BC5A: E6 4A
+	LDA ($49),Y			  ; $BC40: B1 49
+	STA $0306,X			  ; $BC42: 9D 06 03
+	INX					  ; $BC45: E8
+	INY					  ; $BC46: C8
+	CPY #$60				 ; $BC47: C0 60
+	BCC $BC40				; $BC49: 90 F5
+	INC $050B				; $BC4B: EE 0B 05
+	INC $050B				; $BC4E: EE 0B 05
+	LDA $49				  ; $BC51: A5 49
+	CLC					  ; $BC53: 18
+	ADC #$60				 ; $BC54: 69 60
+	STA $49				  ; $BC56: 85 49
+	BCC $BC5C				; $BC58: 90 02
+	INC $4A				  ; $BC5A: E6 4A
 
 loc_BC5C:
-    RTS                      ; $BC5C: 60
+	RTS					  ; $BC5C: 60
 
 loc_BC5D:
-    LDA #$9F                 ; $BC5D: A9 9F
-    STA $0300                ; $BC5F: 8D 00 03
-    LDA #$10                 ; $BC62: A9 10
-    STA $0301                ; $BC64: 8D 01 03
-    LDA #$90                 ; $BC67: A9 90
-    STA $0302                ; $BC69: 8D 02 03
-    LDX #$00                 ; $BC6C: A2 00
-    LDY #$00                 ; $BC6E: A0 00
+	LDA #$9F				 ; $BC5D: A9 9F
+	STA $0300				; $BC5F: 8D 00 03
+	LDA #$10				 ; $BC62: A9 10
+	STA $0301				; $BC64: 8D 01 03
+	LDA #$90				 ; $BC67: A9 90
+	STA $0302				; $BC69: 8D 02 03
+	LDX #$00				 ; $BC6C: A2 00
+	LDY #$00				 ; $BC6E: A0 00
 
 loc_BC70:
-    LDA ($49),Y              ; $BC70: B1 49
-    STA $0303,X              ; $BC72: 9D 03 03
-    INX                      ; $BC75: E8
-    INY                      ; $BC76: C8
-    CPY #$10                 ; $BC77: C0 10
-    BCC $BC70                ; $BC79: 90 F5
-    LDA #$9F                 ; $BC7B: A9 9F
-    STA $0303,X              ; $BC7D: 9D 03 03
-    LDA #$50                 ; $BC80: A9 50
-    STA $0304,X              ; $BC82: 9D 04 03
-    LDA #$B0                 ; $BC85: A9 B0
-    STA $0305,X              ; $BC87: 9D 05 03
+	LDA ($49),Y			  ; $BC70: B1 49
+	STA $0303,X			  ; $BC72: 9D 03 03
+	INX					  ; $BC75: E8
+	INY					  ; $BC76: C8
+	CPY #$10				 ; $BC77: C0 10
+	BCC $BC70				; $BC79: 90 F5
+	LDA #$9F				 ; $BC7B: A9 9F
+	STA $0303,X			  ; $BC7D: 9D 03 03
+	LDA #$50				 ; $BC80: A9 50
+	STA $0304,X			  ; $BC82: 9D 04 03
+	LDA #$B0				 ; $BC85: A9 B0
+	STA $0305,X			  ; $BC87: 9D 05 03
 
 loc_BC8A:
-    LDA ($49),Y              ; $BC8A: B1 49
-    STA $0306,X              ; $BC8C: 9D 06 03
-    INX                      ; $BC8F: E8
-    INY                      ; $BC90: C8
-    CPY #$60                 ; $BC91: C0 60
-    BCC $BC8A                ; $BC93: 90 F5
+	LDA ($49),Y			  ; $BC8A: B1 49
+	STA $0306,X			  ; $BC8C: 9D 06 03
+	INX					  ; $BC8F: E8
+	INY					  ; $BC90: C8
+	CPY #$60				 ; $BC91: C0 60
+	BCC $BC8A				; $BC93: 90 F5
 
 loc_BC95:
-    INC $050B                ; $BC95: EE 0B 05
-    INC $050B                ; $BC98: EE 0B 05
-    RTS                      ; $BC9B: 60
-    LDA $BCA7                ; $BC9C: AD A7 BC
-    STA $49                  ; $BC9F: 85 49
-    LDA $BCA8                ; $BCA1: AD A8 BC
-    STA $4A                  ; $BCA4: 85 4A
-    RTS                      ; $BCA6: 60
-    LDA #$BC                 ; $BCA7: A9 BC
-    .byte $FF             ; $BCA9 - unknown opcode
-    DEC $F8FA,X              ; $BCAA: DE FA F8
-    .byte $AB             ; $BCAD - unknown opcode
-    .byte $47             ; $BCAE - unknown opcode
-    .byte $4F             ; $BCAF - unknown opcode
-    .byte $0F             ; $BCB0 - unknown opcode
-    .byte $FF             ; $BCB1 - unknown opcode
-    CLD                      ; $BCB2: D8
-    BEQ $BC35                ; $BCB3: F0 80
-    BRK                      ; $BCB5: 00
-    BRK                      ; $BCB6: 00
-    ORA ($02,X)              ; $BCB7: 01 02
-    .byte $FF             ; $BCB9 - unknown opcode
-    LDY #$1F                 ; $BCBA: A0 1F
-    .byte $FF             ; $BCBC - unknown opcode
-    .byte $FF             ; $BCBD - unknown opcode
-    .byte $FF             ; $BCBE - unknown opcode
-    .byte $FF             ; $BCBF - unknown opcode
-    .byte $FF             ; $BCC0 - unknown opcode
-    BRK                      ; $BCC1: 00
-    BRK                      ; $BCC2: 00
-    BRK                      ; $BCC3: 00
-    BRK                      ; $BCC4: 00
-    ORA ($0B,X)              ; $BCC5: 01 0B
-    .byte $67             ; $BCC7 - unknown opcode
-    LDA ($FF),Y              ; $BCC8: B1 FF
-    ORA $F8                  ; $BCCA: 05 F8
-    .byte $FF             ; $BCCC - unknown opcode
-    .byte $FF             ; $BCCD - unknown opcode
-    .byte $FF             ; $BCCE - unknown opcode
-    .byte $FF             ; $BCCF - unknown opcode
-    .byte $DB             ; $BCD0 - unknown opcode
-    BRK                      ; $BCD1: 00
-    BRK                      ; $BCD2: 00
-    BRK                      ; $BCD3: 00
-    BRK                      ; $BCD4: 00
-    JMP $FA32                ; $BCD5: 4C 32 FA
-    LDA $7DFF,X              ; $BCD8: BD FF 7D
-    .byte $5F             ; $BCDB - unknown opcode
-    .byte $1F             ; $BCDC - unknown opcode
-    CMP $E2                  ; $BCDD: C5 E2
-    .byte $F2             ; $BCDF - unknown opcode
-    BEQ $BCE1                ; $BCE0: F0 FF
-    ORA $010F,X              ; $BCE2: 1D 0F 01
-    BRK                      ; $BCE5: 00
-    BRK                      ; $BCE6: 00
-    .byte $80             ; $BCE7 - unknown opcode
-    RTI                      ; $BCE8: 40
-    .byte $9F             ; $BCE9 - unknown opcode
-    .byte $5F             ; $BCEA - unknown opcode
-    .byte $3F             ; $BCEB - unknown opcode
-    .byte $3F             ; $BCEC - unknown opcode
-    .byte $BF             ; $BCED - unknown opcode
-    .byte $7F             ; $BCEE - unknown opcode
-    .byte $7F             ; $BCEF - unknown opcode
-    .byte $7F             ; $BCF0 - unknown opcode
-    .byte $04             ; $BCF1 - unknown opcode
-    ORA $01                  ; $BCF2: 05 01
-    ASL $070A                ; $BCF4: 0E 0A 07
-    CLC                      ; $BCF7: 18
-    ASL $F9                  ; $BCF8: 06 F9
-    .byte $FA             ; $BCFA - unknown opcode
-    .byte $FC             ; $BCFB - unknown opcode
-    .byte $FC             ; $BCFC - unknown opcode
-    SBC $FEFE,X              ; $BCFD: FD FE FE
-    INC $C0E0,X              ; $BD00: FE E0 C0
-    BVS $BC95                ; $BD03: 70 90
-    BEQ $BCD7                ; $BD05: F0 D0
-    .byte $80             ; $BD07 - unknown opcode
-    BVS $BD89                ; $BD08: 70 7F
-    .byte $7F             ; $BD0A - unknown opcode
-    .byte $7F             ; $BD0B - unknown opcode
-    .byte $7F             ; $BD0C - unknown opcode
-    .byte $3F             ; $BD0D - unknown opcode
-    .byte $BF             ; $BD0E - unknown opcode
-    .byte $3F             ; $BD0F - unknown opcode
-    .byte $9F             ; $BD10 - unknown opcode
-    ORA $030D                ; $BD11: 0D 0D 03
-    ORA $0206                ; $BD14: 0D 06 02
-    ORA ($02,X)              ; $BD17: 01 02
-    INC $7EFE,X              ; $BD19: FE FE 7E
-    INC $FDFC,X              ; $BD1C: FE FC FD
-    .byte $FC             ; $BD1F - unknown opcode
-    SBC $F020,Y              ; $BD20: F9 20 F0
-    CLD                      ; $BD23: D8
-    CPX #$B0                 ; $BD24: E0 B0
-    LDY #$90                 ; $BD26: A0 90
-    RTI                      ; $BD28: 40
-    .byte $1F             ; $BD29 - unknown opcode
-    .byte $4F             ; $BD2A - unknown opcode
-    .byte $87             ; $BD2B - unknown opcode
-    .byte $E3             ; $BD2C - unknown opcode
-    BEQ $BD27                ; $BD2D: F0 F8
-    .byte $FF             ; $BD2F - unknown opcode
-    .byte $FF             ; $BD30 - unknown opcode
-    BRK                      ; $BD31: 00
-    BRK                      ; $BD32: 00
-    BRK                      ; $BD33: 00
-    .byte $80             ; $BD34 - unknown opcode
-    CPX #$F0                 ; $BD35: E0 F0
-    SED                      ; $BD37: F8
-    .byte $FF             ; $BD38 - unknown opcode
-    .byte $FF             ; $BD39 - unknown opcode
-    .byte $FF             ; $BD3A - unknown opcode
-    .byte $FF             ; $BD3B - unknown opcode
-    .byte $FF             ; $BD3C - unknown opcode
-    .byte $FF             ; $BD3D - unknown opcode
-    .byte $1F             ; $BD3E - unknown opcode
-    BRK                      ; $BD3F: 00
-    .byte $FF             ; $BD40 - unknown opcode
-    ADC $0112                ; $BD41: 6D 12 01
-    BRK                      ; $BD44: 00
-    BRK                      ; $BD45: 00
-    BRK                      ; $BD46: 00
-    BRK                      ; $BD47: 00
-    BRK                      ; $BD48: 00
-    .byte $FF             ; $BD49 - unknown opcode
-    .byte $FF             ; $BD4A - unknown opcode
-    .byte $FF             ; $BD4B - unknown opcode
-    .byte $FF             ; $BD4C - unknown opcode
-    .byte $FF             ; $BD4D - unknown opcode
-    SED                      ; $BD4E: F8
-    BRK                      ; $BD4F: 00
-    .byte $FF             ; $BD50 - unknown opcode
-    .byte $FB             ; $BD51 - unknown opcode
-    .byte $D4             ; $BD52 - unknown opcode
-    .byte $34             ; $BD53 - unknown opcode
-    BRK                      ; $BD54: 00
-    BRK                      ; $BD55: 00
-    BRK                      ; $BD56: 00
-    BRK                      ; $BD57: 00
-    BRK                      ; $BD58: 00
-    SED                      ; $BD59: F8
-    .byte $F2             ; $BD5A - unknown opcode
-    SBC ($C7,X)              ; $BD5B: E1 C7
-    .byte $0F             ; $BD5D - unknown opcode
-    .byte $1F             ; $BD5E - unknown opcode
-    .byte $FF             ; $BD5F - unknown opcode
-    .byte $FF             ; $BD60 - unknown opcode
-    BRK                      ; $BD61: 00
-    BRK                      ; $BD62: 00
-    BRK                      ; $BD63: 00
-    ORA ($07,X)              ; $BD64: 01 07
-    .byte $0F             ; $BD66 - unknown opcode
-    .byte $1F             ; $BD67 - unknown opcode
-    .byte $FF             ; $BD68 - unknown opcode
-    LDA #$40                 ; $BD69: A9 40
-    BNE $BD73                ; $BD6B: D0 06
-    LDA #$80                 ; $BD6D: A9 80
-    BNE $BD73                ; $BD6F: D0 02
-    LDA #$00                 ; $BD71: A9 00
+	INC $050B				; $BC95: EE 0B 05
+	INC $050B				; $BC98: EE 0B 05
+	RTS					  ; $BC9B: 60
+	LDA $BCA7				; $BC9C: AD A7 BC
+	STA $49				  ; $BC9F: 85 49
+	LDA $BCA8				; $BCA1: AD A8 BC
+	STA $4A				  ; $BCA4: 85 4A
+	RTS					  ; $BCA6: 60
+	LDA #$BC				 ; $BCA7: A9 BC
+	.byte $FF			 ; $BCA9 - unknown opcode
+	DEC $F8FA,X			  ; $BCAA: DE FA F8
+	.byte $AB			 ; $BCAD - unknown opcode
+	.byte $47			 ; $BCAE - unknown opcode
+	.byte $4F			 ; $BCAF - unknown opcode
+	.byte $0F			 ; $BCB0 - unknown opcode
+	.byte $FF			 ; $BCB1 - unknown opcode
+	CLD					  ; $BCB2: D8
+	BEQ $BC35				; $BCB3: F0 80
+	BRK					  ; $BCB5: 00
+	BRK					  ; $BCB6: 00
+	ORA ($02,X)			  ; $BCB7: 01 02
+	.byte $FF			 ; $BCB9 - unknown opcode
+	LDY #$1F				 ; $BCBA: A0 1F
+	.byte $FF			 ; $BCBC - unknown opcode
+	.byte $FF			 ; $BCBD - unknown opcode
+	.byte $FF			 ; $BCBE - unknown opcode
+	.byte $FF			 ; $BCBF - unknown opcode
+	.byte $FF			 ; $BCC0 - unknown opcode
+	BRK					  ; $BCC1: 00
+	BRK					  ; $BCC2: 00
+	BRK					  ; $BCC3: 00
+	BRK					  ; $BCC4: 00
+	ORA ($0B,X)			  ; $BCC5: 01 0B
+	.byte $67			 ; $BCC7 - unknown opcode
+	LDA ($FF),Y			  ; $BCC8: B1 FF
+	ORA $F8				  ; $BCCA: 05 F8
+	.byte $FF			 ; $BCCC - unknown opcode
+	.byte $FF			 ; $BCCD - unknown opcode
+	.byte $FF			 ; $BCCE - unknown opcode
+	.byte $FF			 ; $BCCF - unknown opcode
+	.byte $DB			 ; $BCD0 - unknown opcode
+	BRK					  ; $BCD1: 00
+	BRK					  ; $BCD2: 00
+	BRK					  ; $BCD3: 00
+	BRK					  ; $BCD4: 00
+	JMP $FA32				; $BCD5: 4C 32 FA
+	LDA $7DFF,X			  ; $BCD8: BD FF 7D
+	.byte $5F			 ; $BCDB - unknown opcode
+	.byte $1F			 ; $BCDC - unknown opcode
+	CMP $E2				  ; $BCDD: C5 E2
+	.byte $F2			 ; $BCDF - unknown opcode
+	BEQ $BCE1				; $BCE0: F0 FF
+	ORA $010F,X			  ; $BCE2: 1D 0F 01
+	BRK					  ; $BCE5: 00
+	BRK					  ; $BCE6: 00
+	.byte $80			 ; $BCE7 - unknown opcode
+	RTI					  ; $BCE8: 40
+	.byte $9F			 ; $BCE9 - unknown opcode
+	.byte $5F			 ; $BCEA - unknown opcode
+	.byte $3F			 ; $BCEB - unknown opcode
+	.byte $3F			 ; $BCEC - unknown opcode
+	.byte $BF			 ; $BCED - unknown opcode
+	.byte $7F			 ; $BCEE - unknown opcode
+	.byte $7F			 ; $BCEF - unknown opcode
+	.byte $7F			 ; $BCF0 - unknown opcode
+	.byte $04			 ; $BCF1 - unknown opcode
+	ORA $01				  ; $BCF2: 05 01
+	ASL $070A				; $BCF4: 0E 0A 07
+	CLC					  ; $BCF7: 18
+	ASL $F9				  ; $BCF8: 06 F9
+	.byte $FA			 ; $BCFA - unknown opcode
+	.byte $FC			 ; $BCFB - unknown opcode
+	.byte $FC			 ; $BCFC - unknown opcode
+	SBC $FEFE,X			  ; $BCFD: FD FE FE
+	INC $C0E0,X			  ; $BD00: FE E0 C0
+	BVS $BC95				; $BD03: 70 90
+	BEQ $BCD7				; $BD05: F0 D0
+	.byte $80			 ; $BD07 - unknown opcode
+	BVS $BD89				; $BD08: 70 7F
+	.byte $7F			 ; $BD0A - unknown opcode
+	.byte $7F			 ; $BD0B - unknown opcode
+	.byte $7F			 ; $BD0C - unknown opcode
+	.byte $3F			 ; $BD0D - unknown opcode
+	.byte $BF			 ; $BD0E - unknown opcode
+	.byte $3F			 ; $BD0F - unknown opcode
+	.byte $9F			 ; $BD10 - unknown opcode
+	ORA $030D				; $BD11: 0D 0D 03
+	ORA $0206				; $BD14: 0D 06 02
+	ORA ($02,X)			  ; $BD17: 01 02
+	INC $7EFE,X			  ; $BD19: FE FE 7E
+	INC $FDFC,X			  ; $BD1C: FE FC FD
+	.byte $FC			 ; $BD1F - unknown opcode
+	SBC $F020,Y			  ; $BD20: F9 20 F0
+	CLD					  ; $BD23: D8
+	CPX #$B0				 ; $BD24: E0 B0
+	LDY #$90				 ; $BD26: A0 90
+	RTI					  ; $BD28: 40
+	.byte $1F			 ; $BD29 - unknown opcode
+	.byte $4F			 ; $BD2A - unknown opcode
+	.byte $87			 ; $BD2B - unknown opcode
+	.byte $E3			 ; $BD2C - unknown opcode
+	BEQ $BD27				; $BD2D: F0 F8
+	.byte $FF			 ; $BD2F - unknown opcode
+	.byte $FF			 ; $BD30 - unknown opcode
+	BRK					  ; $BD31: 00
+	BRK					  ; $BD32: 00
+	BRK					  ; $BD33: 00
+	.byte $80			 ; $BD34 - unknown opcode
+	CPX #$F0				 ; $BD35: E0 F0
+	SED					  ; $BD37: F8
+	.byte $FF			 ; $BD38 - unknown opcode
+	.byte $FF			 ; $BD39 - unknown opcode
+	.byte $FF			 ; $BD3A - unknown opcode
+	.byte $FF			 ; $BD3B - unknown opcode
+	.byte $FF			 ; $BD3C - unknown opcode
+	.byte $FF			 ; $BD3D - unknown opcode
+	.byte $1F			 ; $BD3E - unknown opcode
+	BRK					  ; $BD3F: 00
+	.byte $FF			 ; $BD40 - unknown opcode
+	ADC $0112				; $BD41: 6D 12 01
+	BRK					  ; $BD44: 00
+	BRK					  ; $BD45: 00
+	BRK					  ; $BD46: 00
+	BRK					  ; $BD47: 00
+	BRK					  ; $BD48: 00
+	.byte $FF			 ; $BD49 - unknown opcode
+	.byte $FF			 ; $BD4A - unknown opcode
+	.byte $FF			 ; $BD4B - unknown opcode
+	.byte $FF			 ; $BD4C - unknown opcode
+	.byte $FF			 ; $BD4D - unknown opcode
+	SED					  ; $BD4E: F8
+	BRK					  ; $BD4F: 00
+	.byte $FF			 ; $BD50 - unknown opcode
+	.byte $FB			 ; $BD51 - unknown opcode
+	.byte $D4			 ; $BD52 - unknown opcode
+	.byte $34			 ; $BD53 - unknown opcode
+	BRK					  ; $BD54: 00
+	BRK					  ; $BD55: 00
+	BRK					  ; $BD56: 00
+	BRK					  ; $BD57: 00
+	BRK					  ; $BD58: 00
+	SED					  ; $BD59: F8
+	.byte $F2			 ; $BD5A - unknown opcode
+	SBC ($C7,X)			  ; $BD5B: E1 C7
+	.byte $0F			 ; $BD5D - unknown opcode
+	.byte $1F			 ; $BD5E - unknown opcode
+	.byte $FF			 ; $BD5F - unknown opcode
+	.byte $FF			 ; $BD60 - unknown opcode
+	BRK					  ; $BD61: 00
+	BRK					  ; $BD62: 00
+	BRK					  ; $BD63: 00
+	ORA ($07,X)			  ; $BD64: 01 07
+	.byte $0F			 ; $BD66 - unknown opcode
+	.byte $1F			 ; $BD67 - unknown opcode
+	.byte $FF			 ; $BD68 - unknown opcode
+	LDA #$40				 ; $BD69: A9 40
+	BNE $BD73				; $BD6B: D0 06
+	LDA #$80				 ; $BD6D: A9 80
+	BNE $BD73				; $BD6F: D0 02
+	LDA #$00				 ; $BD71: A9 00
 
 loc_BD73:
-    STA $1B                  ; $BD73: 85 1B
-    JSR $BD87                ; $BD75: 20 87 BD
-    JSR $BDAF                ; $BD78: 20 AF BD
-    JSR $BDB8                ; $BD7B: 20 B8 BD
-    JSR $BDE0                ; $BD7E: 20 E0 BD
-    JSR $BF0A                ; $BD81: 20 0A BF
-    JMP $C62D                ; $BD84: 4C 2D C6
+	STA $1B				  ; $BD73: 85 1B
+	JSR $BD87				; $BD75: 20 87 BD
+	JSR $BDAF				; $BD78: 20 AF BD
+	JSR $BDB8				; $BD7B: 20 B8 BD
+	JSR $BDE0				; $BD7E: 20 E0 BD
+	JSR $BF0A				; $BD81: 20 0A BF
+	JMP $C62D				; $BD84: 4C 2D C6
 
 loc_BD87:
-    LDA $04F2                ; $BD87: AD F2 04
-    PHA                      ; $BD8A: 48
-    ASL                      ; $BD8B: 0A
-    AND #$1E                 ; $BD8C: 29 1E
-    STA $00                  ; $BD8E: 85 00
-    PLA                      ; $BD90: 68
-    LSR                      ; $BD91: 4A
-    LSR                      ; $BD92: 4A
-    LSR                      ; $BD93: 4A
-    AND #$1E                 ; $BD94: 29 1E
-    STA $01                  ; $BD96: 85 01
-    JSR $C662                ; $BD98: 20 62 C6
-    BIT $1B                  ; $BD9B: 24 1B
-    BPL $BDAE                ; $BD9D: 10 0F
-    LDX #$04                 ; $BD9F: A2 04
-    LDA $0500                ; $BDA1: AD 00 05
-    LSR                      ; $BDA4: 4A
-    BCC $BDA9                ; $BDA5: 90 02
-    LDX #$08                 ; $BDA7: A2 08
+	LDA $04F2				; $BD87: AD F2 04
+	PHA					  ; $BD8A: 48
+	ASL					  ; $BD8B: 0A
+	AND #$1E				 ; $BD8C: 29 1E
+	STA $00				  ; $BD8E: 85 00
+	PLA					  ; $BD90: 68
+	LSR					  ; $BD91: 4A
+	LSR					  ; $BD92: 4A
+	LSR					  ; $BD93: 4A
+	AND #$1E				 ; $BD94: 29 1E
+	STA $01				  ; $BD96: 85 01
+	JSR $C662				; $BD98: 20 62 C6
+	BIT $1B				  ; $BD9B: 24 1B
+	BPL $BDAE				; $BD9D: 10 0F
+	LDX #$04				 ; $BD9F: A2 04
+	LDA $0500				; $BDA1: AD 00 05
+	LSR					  ; $BDA4: 4A
+	BCC $BDA9				; $BDA5: 90 02
+	LDX #$08				 ; $BDA7: A2 08
 
 loc_BDA9:
-    TXA                      ; $BDA9: 8A
-    EOR $1C                  ; $BDAA: 45 1C
-    STA $1C                  ; $BDAC: 85 1C
+	TXA					  ; $BDA9: 8A
+	EOR $1C				  ; $BDAA: 45 1C
+	STA $1C				  ; $BDAC: 85 1C
 
 loc_BDAE:
-    RTS                      ; $BDAE: 60
+	RTS					  ; $BDAE: 60
 
 loc_BDAF:
-    LDA $050B                ; $BDAF: AD 0B 05
-    BEQ $BDB7                ; $BDB2: F0 03
-    JSR $C62D                ; $BDB4: 20 2D C6
+	LDA $050B				; $BDAF: AD 0B 05
+	BEQ $BDB7				; $BDB2: F0 03
+	JSR $C62D				; $BDB4: 20 2D C6
 
 loc_BDB7:
-    RTS                      ; $BDB7: 60
+	RTS					  ; $BDB7: 60
 
 loc_BDB8:
-    LDA $1D                  ; $BDB8: A5 1D
-    ORA #$E0                 ; $BDBA: 09 E0
-    EOR #$FF                 ; $BDBC: 49 FF
-    STA $01                  ; $BDBE: 85 01
-    INC $01                  ; $BDC0: E6 01
-    LDA $04F3                ; $BDC2: AD F3 04
-    PHA                      ; $BDC5: 48
-    LSR                      ; $BDC6: 4A
-    LSR                      ; $BDC7: 4A
-    LSR                      ; $BDC8: 4A
-    LSR                      ; $BDC9: 4A
-    AND #$0F                 ; $BDCA: 29 0F
-    STA $17                  ; $BDCC: 85 17
-    PLA                      ; $BDCE: 68
-    ASL                      ; $BDCF: 0A
-    AND #$1E                 ; $BDD0: 29 1E
-    STA $16                  ; $BDD2: 85 16
-    SEC                      ; $BDD4: 38
-    SBC $01                  ; $BDD5: E5 01
-    STA $03                  ; $BDD7: 85 03
-    BCS $BDDF                ; $BDD9: B0 04
-    LDA $16                  ; $BDDB: A5 16
-    STA $01                  ; $BDDD: 85 01
+	LDA $1D				  ; $BDB8: A5 1D
+	ORA #$E0				 ; $BDBA: 09 E0
+	EOR #$FF				 ; $BDBC: 49 FF
+	STA $01				  ; $BDBE: 85 01
+	INC $01				  ; $BDC0: E6 01
+	LDA $04F3				; $BDC2: AD F3 04
+	PHA					  ; $BDC5: 48
+	LSR					  ; $BDC6: 4A
+	LSR					  ; $BDC7: 4A
+	LSR					  ; $BDC8: 4A
+	LSR					  ; $BDC9: 4A
+	AND #$0F				 ; $BDCA: 29 0F
+	STA $17				  ; $BDCC: 85 17
+	PLA					  ; $BDCE: 68
+	ASL					  ; $BDCF: 0A
+	AND #$1E				 ; $BDD0: 29 1E
+	STA $16				  ; $BDD2: 85 16
+	SEC					  ; $BDD4: 38
+	SBC $01				  ; $BDD5: E5 01
+	STA $03				  ; $BDD7: 85 03
+	BCS $BDDF				; $BDD9: B0 04
+	LDA $16				  ; $BDDB: A5 16
+	STA $01				  ; $BDDD: 85 01
 
 loc_BDDF:
-    RTS                      ; $BDDF: 60
+	RTS					  ; $BDDF: 60
 
 loc_BDE0:
-    LDY #$00                 ; $BDE0: A0 00
-    STY $04                  ; $BDE2: 84 04
+	LDY #$00				 ; $BDE0: A0 00
+	STY $04				  ; $BDE2: 84 04
 
 loc_BDE4:
-    LDX $050A                ; $BDE4: AE 0A 05
-    LDA $1C                  ; $BDE7: A5 1C
-    STA $19                  ; $BDE9: 85 19
-    LDA $1D                  ; $BDEB: A5 1D
-    STA $18                  ; $BDED: 85 18
-    JSR $BE0F                ; $BDEF: 20 0F BE
-    JSR $BE38                ; $BDF2: 20 38 BE
-    JSR $BE0F                ; $BDF5: 20 0F BE
-    JSR $BE38                ; $BDF8: 20 38 BE
-    LDA $1C                  ; $BDFB: A5 1C
-    PHA                      ; $BDFD: 48
-    LDA $1D                  ; $BDFE: A5 1D
-    PHA                      ; $BE00: 48
-    JSR $BE8E                ; $BE01: 20 8E BE
-    PLA                      ; $BE04: 68
-    STA $1D                  ; $BE05: 85 1D
-    PLA                      ; $BE07: 68
-    STA $1C                  ; $BE08: 85 1C
-    DEC $17                  ; $BE0A: C6 17
-    BNE $BDE4                ; $BE0C: D0 D6
-    RTS                      ; $BE0E: 60
+	LDX $050A				; $BDE4: AE 0A 05
+	LDA $1C				  ; $BDE7: A5 1C
+	STA $19				  ; $BDE9: 85 19
+	LDA $1D				  ; $BDEB: A5 1D
+	STA $18				  ; $BDED: 85 18
+	JSR $BE0F				; $BDEF: 20 0F BE
+	JSR $BE38				; $BDF2: 20 38 BE
+	JSR $BE0F				; $BDF5: 20 0F BE
+	JSR $BE38				; $BDF8: 20 38 BE
+	LDA $1C				  ; $BDFB: A5 1C
+	PHA					  ; $BDFD: 48
+	LDA $1D				  ; $BDFE: A5 1D
+	PHA					  ; $BE00: 48
+	JSR $BE8E				; $BE01: 20 8E BE
+	PLA					  ; $BE04: 68
+	STA $1D				  ; $BE05: 85 1D
+	PLA					  ; $BE07: 68
+	STA $1C				  ; $BE08: 85 1C
+	DEC $17				  ; $BE0A: C6 17
+	BNE $BDE4				; $BE0C: D0 D6
+	RTS					  ; $BE0E: 60
 
 loc_BE0F:
-    LDA $1C                  ; $BE0F: A5 1C
-    ORA #$80                 ; $BE11: 09 80
-    STA $0300,X              ; $BE13: 9D 00 03
-    INX                      ; $BE16: E8
-    LDA $01                  ; $BE17: A5 01
-    STA $0300,X              ; $BE19: 9D 00 03
-    STA $02                  ; $BE1C: 85 02
-    INX                      ; $BE1E: E8
-    LDA $1D                  ; $BE1F: A5 1D
-    STA $0300,X              ; $BE21: 9D 00 03
-    INX                      ; $BE24: E8
+	LDA $1C				  ; $BE0F: A5 1C
+	ORA #$80				 ; $BE11: 09 80
+	STA $0300,X			  ; $BE13: 9D 00 03
+	INX					  ; $BE16: E8
+	LDA $01				  ; $BE17: A5 01
+	STA $0300,X			  ; $BE19: 9D 00 03
+	STA $02				  ; $BE1C: 85 02
+	INX					  ; $BE1E: E8
+	LDA $1D				  ; $BE1F: A5 1D
+	STA $0300,X			  ; $BE21: 9D 00 03
+	INX					  ; $BE24: E8
 
 loc_BE25:
-    LDA $0480,Y              ; $BE25: B9 80 04
-    STA $0300,X              ; $BE28: 9D 00 03
-    INY                      ; $BE2B: C8
-    INX                      ; $BE2C: E8
-    DEC $02                  ; $BE2D: C6 02
-    BNE $BE25                ; $BE2F: D0 F4
-    INC $050B                ; $BE31: EE 0B 05
-    STX $050A                ; $BE34: 8E 0A 05
-    RTS                      ; $BE37: 60
+	LDA $0480,Y			  ; $BE25: B9 80 04
+	STA $0300,X			  ; $BE28: 9D 00 03
+	INY					  ; $BE2B: C8
+	INX					  ; $BE2C: E8
+	DEC $02				  ; $BE2D: C6 02
+	BNE $BE25				; $BE2F: D0 F4
+	INC $050B				; $BE31: EE 0B 05
+	STX $050A				; $BE34: 8E 0A 05
+	RTS					  ; $BE37: 60
 
 loc_BE38:
-    LDA $03                  ; $BE38: A5 03
-    BEQ $BE6A                ; $BE3A: F0 2E
-    BMI $BE6A                ; $BE3C: 30 2C
-    LDA $1C                  ; $BE3E: A5 1C
-    EOR #$04                 ; $BE40: 49 04
-    ORA #$80                 ; $BE42: 09 80
-    STA $0300,X              ; $BE44: 9D 00 03
-    INX                      ; $BE47: E8
-    LDA $03                  ; $BE48: A5 03
-    STA $0300,X              ; $BE4A: 9D 00 03
-    STA $02                  ; $BE4D: 85 02
-    INX                      ; $BE4F: E8
-    LDA $1D                  ; $BE50: A5 1D
-    AND #$E0                 ; $BE52: 29 E0
-    STA $0300,X              ; $BE54: 9D 00 03
-    INX                      ; $BE57: E8
+	LDA $03				  ; $BE38: A5 03
+	BEQ $BE6A				; $BE3A: F0 2E
+	BMI $BE6A				; $BE3C: 30 2C
+	LDA $1C				  ; $BE3E: A5 1C
+	EOR #$04				 ; $BE40: 49 04
+	ORA #$80				 ; $BE42: 09 80
+	STA $0300,X			  ; $BE44: 9D 00 03
+	INX					  ; $BE47: E8
+	LDA $03				  ; $BE48: A5 03
+	STA $0300,X			  ; $BE4A: 9D 00 03
+	STA $02				  ; $BE4D: 85 02
+	INX					  ; $BE4F: E8
+	LDA $1D				  ; $BE50: A5 1D
+	AND #$E0				 ; $BE52: 29 E0
+	STA $0300,X			  ; $BE54: 9D 00 03
+	INX					  ; $BE57: E8
 
 loc_BE58:
-    LDA $0480,Y              ; $BE58: B9 80 04
-    STA $0300,X              ; $BE5B: 9D 00 03
-    INY                      ; $BE5E: C8
-    INX                      ; $BE5F: E8
-    DEC $02                  ; $BE60: C6 02
-    BNE $BE58                ; $BE62: D0 F4
-    INC $050B                ; $BE64: EE 0B 05
-    STX $050A                ; $BE67: 8E 0A 05
+	LDA $0480,Y			  ; $BE58: B9 80 04
+	STA $0300,X			  ; $BE5B: 9D 00 03
+	INY					  ; $BE5E: C8
+	INX					  ; $BE5F: E8
+	DEC $02				  ; $BE60: C6 02
+	BNE $BE58				; $BE62: D0 F4
+	INC $050B				; $BE64: EE 0B 05
+	STX $050A				; $BE67: 8E 0A 05
 
 loc_BE6A:
-    LDA $1D                  ; $BE6A: A5 1D
-    CLC                      ; $BE6C: 18
-    ADC #$20                 ; $BE6D: 69 20
-    STA $1D                  ; $BE6F: 85 1D
-    BCC $BE75                ; $BE71: 90 02
-    INC $1C                  ; $BE73: E6 1C
+	LDA $1D				  ; $BE6A: A5 1D
+	CLC					  ; $BE6C: 18
+	ADC #$20				 ; $BE6D: 69 20
+	STA $1D				  ; $BE6F: 85 1D
+	BCC $BE75				; $BE71: 90 02
+	INC $1C				  ; $BE73: E6 1C
 
 loc_BE75:
-    CMP #$C0                 ; $BE75: C9 C0
-    BCC $BE8D                ; $BE77: 90 14
-    LDA $1C                  ; $BE79: A5 1C
-    AND #$FB                 ; $BE7B: 29 FB
-    CMP #$23                 ; $BE7D: C9 23
-    BCC $BE8D                ; $BE7F: 90 0C
-    LDA $1C                  ; $BE81: A5 1C
-    AND #$FC                 ; $BE83: 29 FC
-    STA $1C                  ; $BE85: 85 1C
-    LDA $1D                  ; $BE87: A5 1D
-    AND #$1F                 ; $BE89: 29 1F
-    STA $1D                  ; $BE8B: 85 1D
+	CMP #$C0				 ; $BE75: C9 C0
+	BCC $BE8D				; $BE77: 90 14
+	LDA $1C				  ; $BE79: A5 1C
+	AND #$FB				 ; $BE7B: 29 FB
+	CMP #$23				 ; $BE7D: C9 23
+	BCC $BE8D				; $BE7F: 90 0C
+	LDA $1C				  ; $BE81: A5 1C
+	AND #$FC				 ; $BE83: 29 FC
+	STA $1C				  ; $BE85: 85 1C
+	LDA $1D				  ; $BE87: A5 1D
+	AND #$1F				 ; $BE89: 29 1F
+	STA $1D				  ; $BE8B: 85 1D
 
 loc_BE8D:
-    RTS                      ; $BE8D: 60
+	RTS					  ; $BE8D: 60
 
 loc_BE8E:
-    BIT $1B                  ; $BE8E: 24 1B
-    BVS $BEC3                ; $BE90: 70 31
-    LDA $04F3                ; $BE92: AD F3 04
-    AND #$0F                 ; $BE95: 29 0F
-    STA $1A                  ; $BE97: 85 1A
+	BIT $1B				  ; $BE8E: 24 1B
+	BVS $BEC3				; $BE90: 70 31
+	LDA $04F3				; $BE92: AD F3 04
+	AND #$0F				 ; $BE95: 29 0F
+	STA $1A				  ; $BE97: 85 1A
 
 loc_BE99:
-    LDA $18                  ; $BE99: A5 18
-    STA $1D                  ; $BE9B: 85 1D
-    LDA $19                  ; $BE9D: A5 19
-    STA $1C                  ; $BE9F: 85 1C
-    LDX $04                  ; $BEA1: A6 04
-    LDA $04E0,X              ; $BEA3: BD E0 04
-    INC $04                  ; $BEA6: E6 04
-    JSR $C6BF                ; $BEA8: 20 BF C6
-    JSR $BEC4                ; $BEAB: 20 C4 BE
-    LDA $18                  ; $BEAE: A5 18
-    CLC                      ; $BEB0: 18
-    ADC #$02                 ; $BEB1: 69 02
-    STA $18                  ; $BEB3: 85 18
-    AND #$1F                 ; $BEB5: 29 1F
-    BNE $BEBF                ; $BEB7: D0 06
-    LDA $19                  ; $BEB9: A5 19
-    EOR #$04                 ; $BEBB: 49 04
-    STA $19                  ; $BEBD: 85 19
+	LDA $18				  ; $BE99: A5 18
+	STA $1D				  ; $BE9B: 85 1D
+	LDA $19				  ; $BE9D: A5 19
+	STA $1C				  ; $BE9F: 85 1C
+	LDX $04				  ; $BEA1: A6 04
+	LDA $04E0,X			  ; $BEA3: BD E0 04
+	INC $04				  ; $BEA6: E6 04
+	JSR $C6BF				; $BEA8: 20 BF C6
+	JSR $BEC4				; $BEAB: 20 C4 BE
+	LDA $18				  ; $BEAE: A5 18
+	CLC					  ; $BEB0: 18
+	ADC #$02				 ; $BEB1: 69 02
+	STA $18				  ; $BEB3: 85 18
+	AND #$1F				 ; $BEB5: 29 1F
+	BNE $BEBF				; $BEB7: D0 06
+	LDA $19				  ; $BEB9: A5 19
+	EOR #$04				 ; $BEBB: 49 04
+	STA $19				  ; $BEBD: 85 19
 
 loc_BEBF:
-    DEC $1A                  ; $BEBF: C6 1A
-    BNE $BE99                ; $BEC1: D0 D6
+	DEC $1A				  ; $BEBF: C6 1A
+	BNE $BE99				; $BEC1: D0 D6
 
 loc_BEC3:
-    RTS                      ; $BEC3: 60
+	RTS					  ; $BEC3: 60
 
 loc_BEC4:
-    PHA                      ; $BEC4: 48
-    LDX #$00                 ; $BEC5: A2 00
+	PHA					  ; $BEC4: 48
+	LDX #$00				 ; $BEC5: A2 00
 
 loc_BEC7:
-    CPX $050A                ; $BEC7: EC 0A 05
-    BEQ $BEED                ; $BECA: F0 21
-    LDA $0300,X              ; $BECC: BD 00 03
-    BMI $BEE2                ; $BECF: 30 11
-    CMP $0E                  ; $BED1: C5 0E
-    BNE $BEDC                ; $BED3: D0 07
-    LDA $0301,X              ; $BED5: BD 01 03
-    CMP $0F                  ; $BED8: C5 0F
-    BEQ $BF05                ; $BEDA: F0 29
+	CPX $050A				; $BEC7: EC 0A 05
+	BEQ $BEED				; $BECA: F0 21
+	LDA $0300,X			  ; $BECC: BD 00 03
+	BMI $BEE2				; $BECF: 30 11
+	CMP $0E				  ; $BED1: C5 0E
+	BNE $BEDC				; $BED3: D0 07
+	LDA $0301,X			  ; $BED5: BD 01 03
+	CMP $0F				  ; $BED8: C5 0F
+	BEQ $BF05				; $BEDA: F0 29
 
 loc_BEDC:
-    INX                      ; $BEDC: E8
-    INX                      ; $BEDD: E8
-    INX                      ; $BEDE: E8
-    JMP $BEC7                ; $BEDF: 4C C7 BE
+	INX					  ; $BEDC: E8
+	INX					  ; $BEDD: E8
+	INX					  ; $BEDE: E8
+	JMP $BEC7				; $BEDF: 4C C7 BE
 
 loc_BEE2:
-    TXA                      ; $BEE2: 8A
-    CLC                      ; $BEE3: 18
-    ADC $0301,X              ; $BEE4: 7D 01 03
-    ADC #$03                 ; $BEE7: 69 03
-    TAX                      ; $BEE9: AA
-    JMP $BEC7                ; $BEEA: 4C C7 BE
+	TXA					  ; $BEE2: 8A
+	CLC					  ; $BEE3: 18
+	ADC $0301,X			  ; $BEE4: 7D 01 03
+	ADC #$03				 ; $BEE7: 69 03
+	TAX					  ; $BEE9: AA
+	JMP $BEC7				; $BEEA: 4C C7 BE
 
 loc_BEED:
-    LDA $0E                  ; $BEED: A5 0E
-    STA $0300,X              ; $BEEF: 9D 00 03
-    INX                      ; $BEF2: E8
-    LDA $0F                  ; $BEF3: A5 0F
-    STA $0300,X              ; $BEF5: 9D 00 03
-    INX                      ; $BEF8: E8
-    PLA                      ; $BEF9: 68
-    STA $0300,X              ; $BEFA: 9D 00 03
-    INX                      ; $BEFD: E8
-    STX $050A                ; $BEFE: 8E 0A 05
-    INC $050B                ; $BF01: EE 0B 05
-    RTS                      ; $BF04: 60
+	LDA $0E				  ; $BEED: A5 0E
+	STA $0300,X			  ; $BEEF: 9D 00 03
+	INX					  ; $BEF2: E8
+	LDA $0F				  ; $BEF3: A5 0F
+	STA $0300,X			  ; $BEF5: 9D 00 03
+	INX					  ; $BEF8: E8
+	PLA					  ; $BEF9: 68
+	STA $0300,X			  ; $BEFA: 9D 00 03
+	INX					  ; $BEFD: E8
+	STX $050A				; $BEFE: 8E 0A 05
+	INC $050B				; $BF01: EE 0B 05
+	RTS					  ; $BF04: 60
 
 loc_BF05:
-    PLA                      ; $BF05: 68
-    STA $0302,X              ; $BF06: 9D 02 03
-    RTS                      ; $BF09: 60
+	PLA					  ; $BF05: 68
+	STA $0302,X			  ; $BF06: 9D 02 03
+	RTS					  ; $BF09: 60
 
 loc_BF0A:
-    LDA #$00                 ; $BF0A: A9 00
-    STA $05                  ; $BF0C: 85 05
+	LDA #$00				 ; $BF0A: A9 00
+	STA $05				  ; $BF0C: 85 05
 
 loc_BF0E:
-    LDX $05                  ; $BF0E: A6 05
-    CPX $050A                ; $BF10: EC 0A 05
-    BCC $BF16                ; $BF13: 90 01
-    RTS                      ; $BF15: 60
+	LDX $05				  ; $BF0E: A6 05
+	CPX $050A				; $BF10: EC 0A 05
+	BCC $BF16				; $BF13: 90 01
+	RTS					  ; $BF15: 60
 
 loc_BF16:
-    LDA $0300,X              ; $BF16: BD 00 03
-    BPL $BF27                ; $BF19: 10 0C
-    TXA                      ; $BF1B: 8A
-    CLC                      ; $BF1C: 18
-    ADC $0301,X              ; $BF1D: 7D 01 03
-    ADC #$03                 ; $BF20: 69 03
-    STA $05                  ; $BF22: 85 05
-    JMP $BF0E                ; $BF24: 4C 0E BF
+	LDA $0300,X			  ; $BF16: BD 00 03
+	BPL $BF27				; $BF19: 10 0C
+	TXA					  ; $BF1B: 8A
+	CLC					  ; $BF1C: 18
+	ADC $0301,X			  ; $BF1D: 7D 01 03
+	ADC #$03				 ; $BF20: 69 03
+	STA $05				  ; $BF22: 85 05
+	JMP $BF0E				; $BF24: 4C 0E BF
 
 loc_BF27:
-    STA $0E                  ; $BF27: 85 0E
-    LDA #$01                 ; $BF29: A9 01
-    STA $04                  ; $BF2B: 85 04
-    TXA                      ; $BF2D: 8A
-    TAY                      ; $BF2E: A8
-    INY                      ; $BF2F: C8
-    INY                      ; $BF30: C8
-    INY                      ; $BF31: C8
-    LDA $0301,X              ; $BF32: BD 01 03
-    STA $0F                  ; $BF35: 85 0F
+	STA $0E				  ; $BF27: 85 0E
+	LDA #$01				 ; $BF29: A9 01
+	STA $04				  ; $BF2B: 85 04
+	TXA					  ; $BF2D: 8A
+	TAY					  ; $BF2E: A8
+	INY					  ; $BF2F: C8
+	INY					  ; $BF30: C8
+	INY					  ; $BF31: C8
+	LDA $0301,X			  ; $BF32: BD 01 03
+	STA $0F				  ; $BF35: 85 0F
 
 loc_BF37:
-    INC $0F                  ; $BF37: E6 0F
-    BNE $BF3D                ; $BF39: D0 02
-    INC $0E                  ; $BF3B: E6 0E
+	INC $0F				  ; $BF37: E6 0F
+	BNE $BF3D				; $BF39: D0 02
+	INC $0E				  ; $BF3B: E6 0E
 
 loc_BF3D:
-    LDA $0E                  ; $BF3D: A5 0E
-    CMP $0300,Y              ; $BF3F: D9 00 03
-    BNE $BF55                ; $BF42: D0 11
-    LDA $0F                  ; $BF44: A5 0F
-    CMP $0301,Y              ; $BF46: D9 01 03
-    BNE $BF55                ; $BF49: D0 0A
-    INY                      ; $BF4B: C8
-    INY                      ; $BF4C: C8
-    INY                      ; $BF4D: C8
-    INC $04                  ; $BF4E: E6 04
-    CPY $050A                ; $BF50: CC 0A 05
-    BNE $BF37                ; $BF53: D0 E2
+	LDA $0E				  ; $BF3D: A5 0E
+	CMP $0300,Y			  ; $BF3F: D9 00 03
+	BNE $BF55				; $BF42: D0 11
+	LDA $0F				  ; $BF44: A5 0F
+	CMP $0301,Y			  ; $BF46: D9 01 03
+	BNE $BF55				; $BF49: D0 0A
+	INY					  ; $BF4B: C8
+	INY					  ; $BF4C: C8
+	INY					  ; $BF4D: C8
+	INC $04				  ; $BF4E: E6 04
+	CPY $050A				; $BF50: CC 0A 05
+	BNE $BF37				; $BF53: D0 E2
 
 loc_BF55:
-    STY $05                  ; $BF55: 84 05
-    LDA $04                  ; $BF57: A5 04
-    CMP #$02                 ; $BF59: C9 02
-    BCS $BF60                ; $BF5B: B0 03
-    JMP $BF0E                ; $BF5D: 4C 0E BF
+	STY $05				  ; $BF55: 84 05
+	LDA $04				  ; $BF57: A5 04
+	CMP #$02				 ; $BF59: C9 02
+	BCS $BF60				; $BF5B: B0 03
+	JMP $BF0E				; $BF5D: 4C 0E BF
 
 loc_BF60:
-    TYA                      ; $BF60: 98
-    PHA                      ; $BF61: 48
-    LDA $04                  ; $BF62: A5 04
-    STA $0E                  ; $BF64: 85 0E
-    SEC                      ; $BF66: 38
-    SBC #$02                 ; $BF67: E9 02
-    ASL                      ; $BF69: 0A
-    CLC                      ; $BF6A: 18
-    ADC #$01                 ; $BF6B: 69 01
-    STA $0F                  ; $BF6D: 85 0F
-    LDA $05                  ; $BF6F: A5 05
-    SEC                      ; $BF71: 38
-    SBC $0F                  ; $BF72: E5 0F
-    STA $05                  ; $BF74: 85 05
+	TYA					  ; $BF60: 98
+	PHA					  ; $BF61: 48
+	LDA $04				  ; $BF62: A5 04
+	STA $0E				  ; $BF64: 85 0E
+	SEC					  ; $BF66: 38
+	SBC #$02				 ; $BF67: E9 02
+	ASL					  ; $BF69: 0A
+	CLC					  ; $BF6A: 18
+	ADC #$01				 ; $BF6B: 69 01
+	STA $0F				  ; $BF6D: 85 0F
+	LDA $05				  ; $BF6F: A5 05
+	SEC					  ; $BF71: 38
+	SBC $0F				  ; $BF72: E5 0F
+	STA $05				  ; $BF74: 85 05
 
 loc_BF76:
-    LDA $02FF,Y              ; $BF76: B9 FF 02
-    PHA                      ; $BF79: 48
-    DEC $04                  ; $BF7A: C6 04
-    BEQ $BF84                ; $BF7C: F0 06
-    DEY                      ; $BF7E: 88
-    DEY                      ; $BF7F: 88
-    DEY                      ; $BF80: 88
-    JMP $BF76                ; $BF81: 4C 76 BF
+	LDA $02FF,Y			  ; $BF76: B9 FF 02
+	PHA					  ; $BF79: 48
+	DEC $04				  ; $BF7A: C6 04
+	BEQ $BF84				; $BF7C: F0 06
+	DEY					  ; $BF7E: 88
+	DEY					  ; $BF7F: 88
+	DEY					  ; $BF80: 88
+	JMP $BF76				; $BF81: 4C 76 BF
 
 loc_BF84:
-    LDA $0301,X              ; $BF84: BD 01 03
-    STA $0302,X              ; $BF87: 9D 02 03
-    LDA $0E                  ; $BF8A: A5 0E
-    STA $0F                  ; $BF8C: 85 0F
-    STA $0301,X              ; $BF8E: 9D 01 03
-    LDA $0300,X              ; $BF91: BD 00 03
-    ORA #$80                 ; $BF94: 09 80
-    STA $0300,X              ; $BF96: 9D 00 03
+	LDA $0301,X			  ; $BF84: BD 01 03
+	STA $0302,X			  ; $BF87: 9D 02 03
+	LDA $0E				  ; $BF8A: A5 0E
+	STA $0F				  ; $BF8C: 85 0F
+	STA $0301,X			  ; $BF8E: 9D 01 03
+	LDA $0300,X			  ; $BF91: BD 00 03
+	ORA #$80				 ; $BF94: 09 80
+	STA $0300,X			  ; $BF96: 9D 00 03
 
 loc_BF99:
-    PLA                      ; $BF99: 68
-    STA $0303,X              ; $BF9A: 9D 03 03
-    INX                      ; $BF9D: E8
-    DEC $0E                  ; $BF9E: C6 0E
-    BNE $BF99                ; $BFA0: D0 F7
-    PLA                      ; $BFA2: 68
-    TAY                      ; $BFA3: A8
+	PLA					  ; $BF99: 68
+	STA $0303,X			  ; $BF9A: 9D 03 03
+	INX					  ; $BF9D: E8
+	DEC $0E				  ; $BF9E: C6 0E
+	BNE $BF99				; $BFA0: D0 F7
+	PLA					  ; $BFA2: 68
+	TAY					  ; $BFA3: A8
 
 loc_BFA4:
-    CPY $050A                ; $BFA4: CC 0A 05
-    BEQ $BFB4                ; $BFA7: F0 0B
-    LDA $0300,Y              ; $BFA9: B9 00 03
-    STA $0303,X              ; $BFAC: 9D 03 03
-    INY                      ; $BFAF: C8
-    INX                      ; $BFB0: E8
-    JMP $BFA4                ; $BFB1: 4C A4 BF
+	CPY $050A				; $BFA4: CC 0A 05
+	BEQ $BFB4				; $BFA7: F0 0B
+	LDA $0300,Y			  ; $BFA9: B9 00 03
+	STA $0303,X			  ; $BFAC: 9D 03 03
+	INY					  ; $BFAF: C8
+	INX					  ; $BFB0: E8
+	JMP $BFA4				; $BFB1: 4C A4 BF
 
 loc_BFB4:
-    INX                      ; $BFB4: E8
-    INX                      ; $BFB5: E8
-    INX                      ; $BFB6: E8
-    STX $050A                ; $BFB7: 8E 0A 05
-    DEC $0F                  ; $BFBA: C6 0F
-    LDA $050B                ; $BFBC: AD 0B 05
-    SEC                      ; $BFBF: 38
-    SBC $0F                  ; $BFC0: E5 0F
-    STA $050B                ; $BFC2: 8D 0B 05
-    JMP $BF0E                ; $BFC5: 4C 0E BF
-    .byte $FF             ; $BFC8 - unknown opcode
-    .byte $FF             ; $BFC9 - unknown opcode
-    .byte $FF             ; $BFCA - unknown opcode
-    .byte $FF             ; $BFCB - unknown opcode
-    .byte $FF             ; $BFCC - unknown opcode
-    .byte $FF             ; $BFCD - unknown opcode
-    .byte $FF             ; $BFCE - unknown opcode
-    .byte $FF             ; $BFCF - unknown opcode
-    .byte $FF             ; $BFD0 - unknown opcode
-    .byte $FF             ; $BFD1 - unknown opcode
-    .byte $FF             ; $BFD2 - unknown opcode
-    .byte $FF             ; $BFD3 - unknown opcode
-    .byte $FF             ; $BFD4 - unknown opcode
-    .byte $FF             ; $BFD5 - unknown opcode
-    .byte $FF             ; $BFD6 - unknown opcode
-    .byte $FF             ; $BFD7 - unknown opcode
-    SEI                      ; $BFD8: 78
-    INC $BFDF                ; $BFD9: EE DF BF
-    JMP $FF8E                ; $BFDC: 4C 8E FF
-    .byte $80             ; $BFDF - unknown opcode
-    JSR $5244                ; $BFE0: 20 44 52
-    EOR ($47,X)              ; $BFE3: 41 47
-    .byte $4F             ; $BFE5 - unknown opcode
-    LSR $5120                ; $BFE6: 4E 20 51
-    EOR $45,X                ; $BFE9: 55 45
-    .byte $53             ; $BFEB - unknown opcode
-    .byte $54             ; $BFEC - unknown opcode
-    JSR $5649                ; $BFED: 20 49 56
-    BRK                      ; $BFF0: 00
-    BRK                      ; $BFF1: 00
-    BRK                      ; $BFF2: 00
-    BRK                      ; $BFF3: 00
-    PHA                      ; $BFF4: 48
-    .byte $04             ; $BFF5 - unknown opcode
-    ORA ($0E,X)              ; $BFF6: 01 0E
-    .byte $07             ; $BFF8 - unknown opcode
-    .byte $9E             ; $BFF9 - unknown opcode
-    CLD                      ; $BFFA: D8
-    .byte $BF             ; $BFFB - unknown opcode
-    CLD                      ; $BFFC: D8
-    .byte $BF             ; $BFFD - unknown opcode
-    CLD                      ; $BFFE: D8
-    .byte $BF             ; $BFFF - unknown opcode
+	INX					  ; $BFB4: E8
+	INX					  ; $BFB5: E8
+	INX					  ; $BFB6: E8
+	STX $050A				; $BFB7: 8E 0A 05
+	DEC $0F				  ; $BFBA: C6 0F
+	LDA $050B				; $BFBC: AD 0B 05
+	SEC					  ; $BFBF: 38
+	SBC $0F				  ; $BFC0: E5 0F
+	STA $050B				; $BFC2: 8D 0B 05
+	JMP $BF0E				; $BFC5: 4C 0E BF
+	.byte $FF			 ; $BFC8 - unknown opcode
+	.byte $FF			 ; $BFC9 - unknown opcode
+	.byte $FF			 ; $BFCA - unknown opcode
+	.byte $FF			 ; $BFCB - unknown opcode
+	.byte $FF			 ; $BFCC - unknown opcode
+	.byte $FF			 ; $BFCD - unknown opcode
+	.byte $FF			 ; $BFCE - unknown opcode
+	.byte $FF			 ; $BFCF - unknown opcode
+	.byte $FF			 ; $BFD0 - unknown opcode
+	.byte $FF			 ; $BFD1 - unknown opcode
+	.byte $FF			 ; $BFD2 - unknown opcode
+	.byte $FF			 ; $BFD3 - unknown opcode
+	.byte $FF			 ; $BFD4 - unknown opcode
+	.byte $FF			 ; $BFD5 - unknown opcode
+	.byte $FF			 ; $BFD6 - unknown opcode
+	.byte $FF			 ; $BFD7 - unknown opcode
+	SEI					  ; $BFD8: 78
+	INC $BFDF				; $BFD9: EE DF BF
+	JMP $FF8E				; $BFDC: 4C 8E FF
+	.byte $80			 ; $BFDF - unknown opcode
+	JSR $5244				; $BFE0: 20 44 52
+	EOR ($47,X)			  ; $BFE3: 41 47
+	.byte $4F			 ; $BFE5 - unknown opcode
+	LSR $5120				; $BFE6: 4E 20 51
+	EOR $45,X				; $BFE9: 55 45
+	.byte $53			 ; $BFEB - unknown opcode
+	.byte $54			 ; $BFEC - unknown opcode
+	JSR $5649				; $BFED: 20 49 56
+	BRK					  ; $BFF0: 00
+	BRK					  ; $BFF1: 00
+	BRK					  ; $BFF2: 00
+	BRK					  ; $BFF3: 00
+	PHA					  ; $BFF4: 48
+	.byte $04			 ; $BFF5 - unknown opcode
+	ORA ($0E,X)			  ; $BFF6: 01 0E
+	.byte $07			 ; $BFF8 - unknown opcode
+	.byte $9E			 ; $BFF9 - unknown opcode
+	CLD					  ; $BFFA: D8
+	.byte $BF			 ; $BFFB - unknown opcode
+	CLD					  ; $BFFC: D8
+	.byte $BF			 ; $BFFD - unknown opcode
+	CLD					  ; $BFFE: D8
+	.byte $BF			 ; $BFFF - unknown opcode

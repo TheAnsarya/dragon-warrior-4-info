@@ -6,18 +6,18 @@
 
 ; Monster data structure (16 bytes per entry):
 ;   Offset  Size  Description
-;   $00     2     HP (little endian)
-;   $02     1     MP
-;   $03     2     Attack (little endian)
-;   $05     1     Defense
-;   $06     1     Agility
-;   $07     2     Experience (little endian)
-;   $09     2     Gold (little endian)
-;   $0b     1     Drop item ID
-;   $0c     1     Drop rate (1/N)
-;   $0d     1     Action pattern
-;   $0e     1     Resistances (bitmask)
-;   $0f     1     Sprite/palette info
+;   $00	 2	 HP (little endian)
+;   $02	 1	 MP
+;   $03	 2	 Attack (little endian)
+;   $05	 1	 Defense
+;   $06	 1	 Agility
+;   $07	 2	 Experience (little endian)
+;   $09	 2	 Gold (little endian)
+;   $0b	 1	 Drop item ID
+;   $0c	 1	 Drop rate (1/N)
+;   $0d	 1	 Action pattern
+;   $0e	 1	 Resistances (bitmask)
+;   $0f	 1	 Sprite/palette info
 
 .segment "PRG_BANK_08"
 

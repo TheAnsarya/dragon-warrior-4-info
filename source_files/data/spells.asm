@@ -6,13 +6,13 @@
 
 ; Spell data structure (8 bytes per entry):
 ;   Offset  Size  Description
-;   $00     1     MP cost
-;   $01     1     Effect type
-;   $02     1     Power/healing amount
-;   $03     1     Target type
-;   $04     1     Element
-;   $05     1     Accuracy
-;   $06     2     Flags
+;   $00	 1	 MP cost
+;   $01	 1	 Effect type
+;   $02	 1	 Power/healing amount
+;   $03	 1	 Target type
+;   $04	 1	 Element
+;   $05	 1	 Accuracy
+;   $06	 2	 Flags
 
 .segment "PRG_BANK_08"
 

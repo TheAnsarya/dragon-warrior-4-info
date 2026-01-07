@@ -12,27 +12,27 @@
 ; ============================================
 ; Hardware Registers
 ; ============================================
-PPUCTRL    = $2000
-PPUMASK    = $2001
+PPUCTRL	= $2000
+PPUMASK	= $2001
 PPUSTATUS  = $2002
-OAMADDR    = $2003
-OAMDATA    = $2004
+OAMADDR	= $2003
+OAMDATA	= $2004
 PPUSCROLL  = $2005
-PPUADDR    = $2006
-PPUDATA    = $2007
-OAMDMA     = $4014
+PPUADDR	= $2006
+PPUDATA	= $2007
+OAMDMA	 = $4014
 APU_STATUS = $4015
-JOY1       = $4016
-JOY2       = $4017
+JOY1	   = $4016
+JOY2	   = $4017
 
 ; ============================================
 ; RAM Variables
 ; ============================================
-MapNumber     = $63
+MapNumber	 = $63
 SubmapNumber  = $64
 vblank_flag   = $0500
 ppuctrl_shad  = $0501
-NMI_JMP       = $0502
+NMI_JMP	   = $0502
 NMI_target_lo = $0503
 NMI_target_hi = $0504
 current_bank  = $0507
@@ -42,7 +42,7 @@ current_bank  = $0507
 ; ============================================
 
 RESET_entry:
-$FFD8:  SEI    ; Entry point from RESET vector
+$FFD8:  SEI	; Entry point from RESET vector
 $FFD9:  INC  $FFDF
 $FFDC:  JMP  main_init
 $FFDF:  .byte $80
@@ -76,7 +76,7 @@ $FFF9:  STA  NMI_JMP,X
 ; ============================================
 
 main_init:
-$C03D:  CLD    ; Main initialization routine
+$C03D:  CLD	; Main initialization routine
 
 loc_C03E:
 $C03E:  LDA  PPUSTATUS
