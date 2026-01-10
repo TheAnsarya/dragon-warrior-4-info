@@ -97,6 +97,23 @@ python tools/cdl_compare.py $baseCdl debug/spells-test.cdl "roms/Dragon Warrior 
 ## After Testing
 
 1. Update `data/asset-map.json` with verified locations
-2. Update include files if needed
-3. Commit changes with results
-4. Close GitHub issue #XX (once created)
+2. Update include files if needed (`source_files/include/spells.inc`, `experience.inc`)
+3. Update DW4Lib if addresses change (`logsmall/DW4Lib/DataStructures/`)
+4. Commit changes with results
+5. Close GitHub Issue #81 (CDL verification)
+
+---
+
+## Current Status (2026-01-09)
+
+| Table | Status | Location | Notes |
+|-------|--------|----------|-------|
+| Spells | **UNVERIFIED** | Bank 0x0D $9000 | DW4Lib location, needs CDL |
+| Experience | **UNKNOWN** | ??? | Original Bank 0x27 invalid |
+
+## Related Files
+
+- Master plan: `~docs/plans/master-project-plan.md`
+- Priority actions: `~docs/plans/priority-actions.md`
+- Detailed CDL guide: `~docs/plans/cdl-verification-testing.md`
+- Level-up testing: `~manual-testing/levelup-testing.md`
