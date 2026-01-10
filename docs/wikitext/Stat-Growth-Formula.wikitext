@@ -149,7 +149,7 @@ Indexed by <code>(char_id × 2 + gender) × 2</code>:
 
 Each character's growth data consists of signed bytes (3 per level):
 * Byte 0: HP growth increment
-* Byte 1: MP growth increment  
+* Byte 1: MP growth increment
 * Byte 2: Other stat increment
 
 Example: Hero growth at $A1BB:
@@ -300,7 +300,7 @@ When level index = $0E (14), uses alternate calculation with pointer at $8227. S
 === add_16bit ($C813) ===
 Adds 8-bit value in A to 16-bit value at zero page offset X.
 
-=== add_extended ($C81D) ===  
+=== add_extended ($C81D) ===
 Adds 16-bit value (A=low, Y=high) to value at zero page offset X.
 
 === multiply_8x16 ($C827) ===
@@ -316,21 +316,21 @@ function calculate_stats(char_id, gender, level, stat_bytes):
         # Additional Hero-specific logic
     else:
         level_idx = (stat_byte_2 >> 2) & $3F
-        
+
     if level_idx == $0F:  # Max level
         return copy_from_table($8225 + result * 8)
-        
+
     if level_idx == $0E:  # Variant
         return variant_calculation()
-    
+
     # Normal calculation
     stat_base = (level_idx * 16) + base_params[(char_id*2 + gender)*2]
     growth_ptr = growth_pointers[char_id] + (level_idx * 3)
-    
+
     for n in 0..2:
         growth_byte = growth_data[growth_ptr + n]  # signed
         stats[n] = stat_base + (sign_extend(growth_byte) * 16)
-    
+
     return stats
 </pre>
 

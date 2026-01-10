@@ -46,7 +46,7 @@ def try_polynomial(deltas: List[int], degree: int) -> Tuple[bool, str]:
 		diffs = new_diffs
 		if len(diffs) == 0:
 			break
-	
+
 	if len(set(diffs[:10])) == 1:  # Check if constant (first 10)
 		return True, f"Constant {degree}th difference = {diffs[0]}"
 	else:
@@ -59,10 +59,10 @@ def try_exponential(values: List[int], start_idx: int = 3) -> Tuple[bool, float,
 	for i in range(start_idx, len(values)-1):
 		if values[i] > 0:
 			ratios.append(values[i+1] / values[i])
-	
+
 	avg_ratio = sum(ratios) / len(ratios) if ratios else 0
 	variance = sum((r - avg_ratio)**2 for r in ratios) / len(ratios) if ratios else 0
-	
+
 	if variance < 0.01:  # Low variance = likely exponential
 		return True, avg_ratio, f"Avg ratio={avg_ratio:.4f}, var={variance:.6f}"
 	else:
@@ -72,33 +72,33 @@ def try_exponential(values: List[int], start_idx: int = 3) -> Tuple[bool, float,
 def try_recursive(deltas: List[int]) -> Tuple[bool, str]:
 	"""Check if delta(N) = delta(N-1) + f(N) for some simple f."""
 	second_diffs = [deltas[i+1] - deltas[i] for i in range(len(deltas)-1)]
-	
+
 	# Check if second diffs follow a pattern
 	# Try: second_diff = a*N + b
 	# Using first few points to estimate
 	if len(second_diffs) < 5:
 		return False, "Not enough data"
-	
+
 	# Linear fit on second differences
 	n_vals = list(range(len(second_diffs)))
 	n_sum = sum(n_vals)
 	sd_sum = sum(second_diffs)
 	n2_sum = sum(n**2 for n in n_vals)
 	nsd_sum = sum(n * sd for n, sd in zip(n_vals, second_diffs))
-	
+
 	n_count = len(n_vals)
 	denom = n_count * n2_sum - n_sum**2
 	if denom == 0:
 		return False, "Degenerate"
-	
+
 	a = (n_count * nsd_sum - n_sum * sd_sum) / denom
 	b = (sd_sum - a * n_sum) / n_count
-	
+
 	# Check fit
 	predicted = [a * n + b for n in n_vals]
 	errors = [abs(p - a) for p, a in zip(predicted, second_diffs)]
 	avg_error = sum(errors) / len(errors)
-	
+
 	if avg_error < 5:  # Good fit
 		return True, f"Second diff ≈ {a:.2f}*N + {b:.2f}, avg_err={avg_error:.2f}"
 	else:
@@ -109,47 +109,47 @@ def main():
 	print("=" * 70)
 	print("Dragon Warrior IV Experience Formula Analysis")
 	print("=" * 70)
-	
+
 	datasets = {
 		"Hero": HERO_EXP,
 		"Alena": ALENA_EXP,
 		"Taloon": TALOON_EXP,
 	}
-	
+
 	for name, exp_data in datasets.items():
 		print(f"\n{'='*70}")
 		print(f"=== {name} ===")
 		print(f"{'='*70}")
-		
+
 		deltas = compute_deltas(exp_data)
 		print(f"\nDeltas (first 15): {deltas[:15]}")
-		
+
 		# Try polynomial fits
 		print("\n--- Polynomial Analysis ---")
 		for degree in range(1, 5):
 			success, msg = try_polynomial(deltas, degree)
 			status = "✓" if success else "✗"
 			print(f"  Degree {degree}: {status} {msg}")
-		
+
 		# Try exponential fit
 		print("\n--- Exponential Analysis ---")
 		success, ratio, msg = try_exponential(deltas)
 		status = "✓" if success else "✗"
 		print(f"  {status} {msg}")
-		
+
 		# Try recursive pattern
 		print("\n--- Recursive Pattern Analysis ---")
 		success, msg = try_recursive(deltas)
 		status = "✓" if success else "✗"
 		print(f"  {status} {msg}")
-		
+
 		# Analyze ratios between characters
 		print("\n--- Delta Pattern ---")
 		# Check if deltas can be expressed as: delta(L) = base * L + c or similar
 		for start_l in [1, 2, 3]:
 			test_deltas = deltas[start_l-1:]
 			levels = list(range(start_l, start_l + len(test_deltas)))
-			
+
 			# Try delta = a*L^2 + b*L + c using least squares on first 10 points
 			n = min(10, len(test_deltas))
 			sum_l = sum(levels[:n])
@@ -159,38 +159,38 @@ def main():
 			sum_d = sum(test_deltas[:n])
 			sum_ld = sum(l*d for l, d in zip(levels[:n], test_deltas[:n]))
 			sum_l2d = sum(l**2 * d for l, d in zip(levels[:n], test_deltas[:n]))
-			
+
 			# Simplified: try delta = k * L^2 and find best k
 			k_sum = sum(d / (l**2) for l, d in zip(levels[:n], test_deltas[:n]) if l > 0)
 			k = k_sum / n
-			
+
 			predicted = [k * l**2 for l in levels[:n]]
 			errors = [abs(p - a) for p, a in zip(predicted, test_deltas[:n])]
 			avg_error = sum(errors) / n
 			max_error = max(errors)
-			
+
 			print(f"  delta ≈ {k:.4f} * L² (starting L={start_l}): avg_err={avg_error:.1f}, max_err={max_error:.1f}")
-	
+
 	print("\n" + "=" * 70)
 	print("Summary: Compare character formulas")
 	print("=" * 70)
-	
+
 	# Check if characters share same formula with different coefficients
 	print("\nRatio of first delta (L=1->2) between characters:")
 	print(f"  Hero/Alena:   {HERO_EXP[2]/ALENA_EXP[2]:.3f}")
 	print(f"  Hero/Taloon:  {HERO_EXP[2]/TALOON_EXP[2]:.3f}")
 	print(f"  Alena/Taloon: {ALENA_EXP[2]/TALOON_EXP[2]:.3f}")
-	
+
 	print("\nRatio at L=10:")
 	print(f"  Hero/Alena:   {HERO_EXP[10]/ALENA_EXP[10]:.3f}")
 	print(f"  Hero/Taloon:  {HERO_EXP[10]/TALOON_EXP[10]:.3f}")
 	print(f"  Alena/Taloon: {ALENA_EXP[10]/TALOON_EXP[10]:.3f}")
-	
+
 	print("\nRatio at L=20:")
 	print(f"  Hero/Alena:   {HERO_EXP[20]/ALENA_EXP[20]:.3f}")
 	print(f"  Hero/Taloon:  {HERO_EXP[20]/TALOON_EXP[20]:.3f}")
 	print(f"  Alena/Taloon: {ALENA_EXP[20]/TALOON_EXP[20]:.3f}")
-	
+
 	# The ratios staying constant would suggest same formula with multiplier
 	# Ratios changing suggests different exponents or base values
 

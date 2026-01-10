@@ -61,7 +61,7 @@ def main():
 	for bank in range(32):
 		bank_offset = header_size + (bank * 0x4000)
 		bank_data = rom[bank_offset:bank_offset + 0x4000]
-		
+
 		# Look for ascending 3-byte sequences
 		for i in range(0, len(bank_data) - 150, 3):
 			# Read 10 consecutive 3-byte little-endian values
@@ -74,10 +74,10 @@ def main():
 					break
 				val = bank_data[offset] | (bank_data[offset+1] << 8) | (bank_data[offset+2] << 16)
 				vals.append(val)
-			
+
 			if not valid:
 				continue
-			
+
 			# Check if strictly ascending and reasonable EXP values
 			if all(vals[k] < vals[k+1] for k in range(len(vals)-1)):
 				if vals[0] > 0 and vals[0] < 100 and vals[-1] < 500000:

@@ -367,8 +367,8 @@ def extract_maps(rom_data: bytes, map_table_offset: int,
 
 ```json
 {
-  "id": 0,
-  "name": "Burland",
+	"id": 0,
+	"name": "Burland",
   "type": "town",
   "width": 32,
   "height": 32,
