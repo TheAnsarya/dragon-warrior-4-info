@@ -6,6 +6,19 @@
 
 This is a significant difference from Dragon Warrior I, which uses a simple 2-byte lookup table (`LVL_TBL_LAST = $3A`).
 
+## IMPORTANT CLARIFICATION (2026-01-10)
+
+**The Bank 8 code at $80D5-$81E8 is the STAT GROWTH handler, NOT the EXP threshold calculation!**
+
+This code handles what stats (HP, MP, Str, Agi, etc.) increase when a character levels up. It uses:
+- Growth data tables with signed byte increments
+- Per-character growth curves
+- Multiplication by 16 scaling
+
+The actual EXP threshold comparison/computation is elsewhere - likely in battle code or menu code that checks "current EXP >= next level threshold".
+
+See: [disasm/levelup_stats.asm](../../disasm/levelup_stats.asm) for full documented disassembly.
+
 ## Evidence
 
 ### 1. CDL Analysis
