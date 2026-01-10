@@ -93,7 +93,7 @@ This page documents the ROM structure and data locations for '''Dragon Warrior I
 |-
 | $07 || $1C000 || Item/Equipment Data
 |-
-| $08 || $20000 || Tileset Data & Graphics Info
+| $08 || $20000 || [[#Bank_08_Details|Level-Up & Stat Growth Code]]
 |-
 | $09 || $24000 || Map Data (Part 1)
 |-
@@ -117,7 +117,9 @@ This page documents the ROM structure and data locations for '''Dragon Warrior I
 |-
 | $17 || $5C000 || Map Pointer Tables
 |-
-| $18-$1B || $60000-$70000 || Music Data
+| $18 || $60000 || [[#Bank_18_Details|EXP Computation Code & Character Data]]
+|-
+| $19-$1B || $64000-$70000 || Music Data
 |-
 | $1C-$1E || $70000-$7C000 || Sound Effects
 |-
@@ -363,11 +365,166 @@ Experience table located in Bank $27. Characters level up based on accumulated E
 
 See [[Dragon Warrior IV (NES)/Experience Table|Experience Table]] for full level-up values.
 
+== Bank 08 Details ==
+<span id="Bank_08_Details"></span>
+
+Bank 8 (file offset $20000) contains the level-up and stat growth calculation system.
+
+=== Stat Growth Code ($80D5-$81E8) ===
+
+{| class="wikitable"
+|-
+! Address !! Size !! Description
+|-
+| $80D5 || entry || Stat calculation entry point
+|-
+| $80D5-$80E2 || ~14 bytes || Initialize, extract level from stat bytes
+|-
+| $80E3-$80E6 || 4 bytes || Check if Hero (special handling)
+|-
+| $80E7-$812F || ~73 bytes || Hero-specific calculation path
+|-
+| $8132-$8148 || ~23 bytes || Non-Hero: extract level and gender
+|-
+| $814A-$8186 || ~61 bytes || Main calculation: level×16 + base_param + growth offset
+|-
+| $8187-$81C3 || ~61 bytes || Growth data processing loop (3 bytes)
+|-
+| $81C6-$81E7 || ~34 bytes || Max level handler (copy from table)
+|-
+| $81E8-$8224 || ~61 bytes || Variant character handler
+|}
+
+=== Data Tables (Bank 8) ===
+
+{| class="wikitable"
+|-
+! Address !! Size !! Description
+|-
+| $8225-$8226 || 2 bytes || Special pointer (max level table)
+|-
+| $8227-$8228 || 2 bytes || Variant character pointer
+|-
+| $8229-$8234 || 12 bytes || Base parameter table (6 entries × 2 bytes)
+|-
+| $8235-$8236 || 2 bytes || Global base offset ($A80D)
+|-
+| $8237-$823F || 9 bytes || Growth data pointers (per character)
+|-
+| $A1BB+ || ~150 bytes || Hero growth data (3 bytes/level)
+|}
+
+=== Growth Data Pointers ===
+
+{| class="wikitable"
+|-
+! Character !! Pointer !! File Offset
+|-
+| Hero || $A1BB || $221CB
+|-
+| Ragnar || $A1D0 || $221E0
+|-
+| Alena || $A200 || $22210
+|-
+| Cristo || $A230 || $22240
+|-
+| Brey || $A260 || $22270
+|-
+| Taloon || $A290 || $222A0
+|-
+| Nara || $A2C0 || $222D0
+|-
+| Mara || $A2F0 || $22300
+|}
+
+See [[Dragon Warrior IV (NES)/Stat Growth Formula|Stat Growth Formula]] for the complete algorithm.
+
+== Bank 18 Details ==
+<span id="Bank_18_Details"></span>
+
+Bank 18 (file offset $60000) contains the EXP threshold computation code and character data.
+
+=== EXP Computation Code ($9FB9-$A037) ===
+
+{| class="wikitable"
+|-
+! Address !! Size !! Description
+|-
+| $9FB9-$9FCE || ~22 bytes || Initialize, parse character data
+|-
+| $9FCF-$9FE8 || ~26 bytes || Set up initial values and loop
+|-
+| $9FE9-$A019 || ~49 bytes || Threshold check loop
+|-
+| $A01C-$A037 || ~28 bytes || Growth rate multiply and accumulate
+|-
+| $A038-$A07C || ~69 bytes || Character data parsing subroutine
+|-
+| $A07D-$A0DE || ~98 bytes || Multiply subroutine (shift-and-add)
+|-
+| $A0DF+ || ~30 bytes || Add to total subroutine
+|}
+
+=== Character EXP Data ($A123-$A14A) ===
+
+5 bytes per character encoding:
+* Initial EXP value (bit 7 of each byte, decoded via ROR)
+* Starting growth rate index (byte 0, bits 6-5)
+* Level thresholds (byte 0: 5 bits, bytes 1-4: 7 bits each)
+
+{| class="wikitable"
+|-
+! Slot !! Character !! Raw Data !! Initial !! Rate Idx !! Thresholds
+|-
+| 0 || Hero || 85 8b 0f 2b e3 || 19 || 0 || 5, 11, 15, 43, 99
+|-
+| 1 || Ragnar || 24 8c 11 2c e3 || 18 || 4 || 4, 12, 17, 44, 99
+|-
+| 2 || Alena || 04 0c 92 2b e3 || 20 || 0 || 4, 12, 18, 43, 99
+|-
+| 3 || Cristo || 84 8c 91 ad 63 || 15 || 0 || 4, 12, 17, 45, 99
+|-
+| 4 || Brey || a4 8c 11 2d e3 || 19 || 4 || 4, 12, 17, 45, 99
+|-
+| 5 || Taloon || 04 8c 13 ac 63 || 10 || 0 || 4, 12, 19, 44, 99
+|-
+| 6 || Nara || 04 0c 94 aa 63 || 12 || 0 || 4, 12, 20, 42, 99
+|-
+| 7 || Mara || 24 0c 11 2c e3 || 16 || 4 || 4, 12, 17, 44, 99
+|}
+
+=== Growth Rate Table ($A259-$A264) ===
+
+12-byte table of growth multipliers (rate/16 = multiplier):
+
+{| class="wikitable"
+|-
+! Index !! Value !! Multiplier
+|-
+| 0 || $20 (32) || ×2.0
+|-
+| 1 || $18 (24) || ×1.5
+|-
+| 2 || $14 (20) || ×1.25
+|-
+| 3 || $12 (18) || ×1.125
+|-
+| 4-5 || $10 (16) || ×1.0
+|-
+| 6 || $1e (30) || ×1.875
+|-
+| 7-11 || varies || (mirrors 1-5)
+|}
+
+See [[Dragon Warrior IV (NES)/Experience Formula|Experience Formula]] for the complete algorithm.
+
 == See Also ==
 
 * [[Dragon Warrior IV (NES)/RAM Map|RAM Map]] - Detailed RAM documentation
 * [[Dragon Warrior IV (NES)/Text Table|Text Table]] - Character encoding
 * [[Dragon Warrior IV (NES)/Experience Table|Experience Table]] - Level progression
+* [[Dragon Warrior IV (NES)/Experience Formula|Experience Formula]] - EXP computation algorithm
+* [[Dragon Warrior IV (NES)/Stat Growth Formula|Stat Growth Formula]] - Stat calculation algorithm
 * [[Dragon Warrior IV (NES)/Monster List|Monster List]] - Enemy statistics
 * [[Dragon Warrior IV (NES)/Item List|Item List]] - Item data
 * [[Dragon Warrior IV (NES)/Spell List|Spell List]] - Magic data
