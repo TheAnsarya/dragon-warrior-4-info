@@ -2,7 +2,7 @@
 
 ## Overview
 
-Dragon Warrior IV computes EXP thresholds dynamically using a formula rather than storing them in a lookup table. The computation is performed in Bank 18 at addresses $9FB9-$A037.
+Dragon Warrior IV computes EXP thresholds dynamically using a formula rather than storing them in a lookup table. The computation is performed in Bank 18 at addresses $9fb9-$a037.
 
 ## Formula Summary
 
@@ -22,7 +22,7 @@ Where:
 
 ## Character Data Structure
 
-Located at $A123 in Bank 18 (file offset 0x24133), 5 bytes per character slot.
+Located at $a123 in Bank 18 (file offset 0x24133), 5 bytes per character slot.
 
 ### Byte Layout
 
@@ -36,9 +36,9 @@ Located at $A123 in Bank 18 (file offset 0x24133), 5 bytes per character slot.
 
 ### Initial Value Calculation
 
-The high bits (bit 7) from all 5 bytes are collected using ROR (rotate right with carry):
-1. For each byte, ASL A puts bit 7 into carry
-2. ROR $7B rotates carry into bit 7 of the result
+The high bits (bit 7) from all 5 bytes are collected using ror (rotate right with carry):
+1. For each byte, asl A puts bit 7 into carry
+2. ror $7b rotates carry into bit 7 of the result
 3. After 5 iterations, 3 LSRs shift the result right
 
 This produces a value from 0-31.
@@ -58,7 +58,7 @@ This produces a value from 0-31.
 
 ## Growth Rate Table
 
-Located at $A259 in Bank 18, 12 bytes:
+Located at $a259 in Bank 18, 12 bytes:
 
 ```
 Index:  0   1   2   3   4   5   6   7   8   9  10  11
@@ -107,51 +107,51 @@ def compute_exp(character_data, target_level):
 
 ## Assembly Code Reference
 
-### Main Entry Point ($9FB9)
+### Main Entry Point ($9fb9)
 
 ```asm
-$9FB9: JSR $A038    ; Initialize - parse char data
-$9FBC: LDA #$00
-$9FBE: STA $6E3B    ; Threshold index = 0
-$9FC1: STA $0E      ; Level counter
-$9FC3: INC $0E      ; Level = 1
-$9FC5: INC $0E      ; Level = 2
+$9fb9: jsr $a038    ; Initialize - parse char data
+$9fbc: lda #$00
+$9fbe: sta $6e3b    ; Threshold index = 0
+$9fc1: sta $0e      ; Level counter
+$9fc3: inc $0e      ; Level = 1
+$9fc5: inc $0e      ; Level = 2
 ...
-$9FCF: LDA $7B      ; Load initial value
-$9FD1: STA $00      ; Delta = initial
-$9FD3: STA $04      ; Total = initial
+$9fcf: lda $7b      ; Load initial value
+$9fd1: sta $00      ; Delta = initial
+$9fd3: sta $04      ; Total = initial
 ```
 
-### Main Loop ($9FE9-$A037)
+### Main Loop ($9fe9-$a037)
 
 ```asm
-$9FFA: LDY $6E3B        ; Y = threshold index
-$9FFD: LDA ($0C),Y      ; Load threshold byte
-$9FFF: LDX $6E3B
-$A002: BNE $A006        ; If not first byte...
-$A004: AND #$1F         ; ...mask to 5 bits
-$A006: AND #$7F         ; Mask to 7 bits
-$A008: CMP $0E          ; Compare with level
-$A00A: BCS $A01C        ; If threshold >= level, skip
-$A013: INC $6E3A        ; Advance rate index
-$A016: INC $6E3B        ; Advance threshold index
-$A019: JMP $9FFA        ; Loop to check next threshold
+$9ffa: ldy $6e3b        ; Y = threshold index
+$9ffd: lda ($0c),Y      ; Load threshold byte
+$9fff: ldx $6e3b
+$a002: bne $a006        ; If not first byte...
+$a004: and #$1f         ; ...mask to 5 bits
+$a006: and #$7f         ; Mask to 7 bits
+$a008: cmp $0e          ; Compare with level
+$a00a: bcs $a01c        ; If threshold >= level, skip
+$a013: inc $6e3a        ; Advance rate index
+$a016: inc $6e3b        ; Advance threshold index
+$a019: jmp $9ffa        ; Loop to check next threshold
 
-$A01C: LDX $6E3A        ; X = rate index
-$A01F: LDA $A259,X      ; Load rate from table
-$A022: LDX #$04         ; X = 4 (work area)
-$A024: JSR $A07D        ; Multiply subroutine
-$A027: LDY #$00
-$A029: JSR $A0DF        ; Add to total
-$A02C: LDA $0E
-$A02E: CMP $0A          ; Check if done
-$A030: BEQ $A037        ; If level == target, return
-$A032: INC $0E          ; Level++
-$A034: JMP $9FE9        ; Continue loop
-$A037: RTS
+$a01c: ldx $6e3a        ; X = rate index
+$a01f: lda $a259,X      ; Load rate from table
+$a022: ldx #$04         ; X = 4 (work area)
+$a024: jsr $a07d        ; Multiply subroutine
+$a027: ldy #$00
+$a029: jsr $a0df        ; Add to total
+$a02c: lda $0e
+$a02e: cmp $0a          ; Check if done
+$a030: beq $a037        ; If level == target, return
+$a032: inc $0e          ; Level++
+$a034: jmp $9fe9        ; Continue loop
+$a037: rts
 ```
 
-### Multiply Subroutine ($A07D)
+### Multiply Subroutine ($a07d)
 
 Performs: `result = (value * rate) >> 4`
 
@@ -175,5 +175,5 @@ Uses shift-and-add multiplication followed by 4-bit right shift.
 
 - `tools/compute_exp.py` - EXP calculator tool
 - `tools/exact_emulate.py` - Step-by-step emulation
-- Bank 18 character data: $A123-$A14A (40 bytes)
-- Bank 18 rate table: $A259-$A264 (12 bytes)
+- Bank 18 character data: $a123-$a14a (40 bytes)
+- Bank 18 rate table: $a259-$a264 (12 bytes)

@@ -178,51 +178,51 @@ Alena's parameters:
 
 == Assembly Code ==
 
-=== Main Entry ($9FB9) ===
+=== Main Entry ($9fb9) ===
 
 <pre>
-$9FB9: JSR $A038    ; Initialize - parse character data
-$9FBC: LDA #$00
-$9FBE: STA $6E3B    ; Threshold index = 0
-$9FC1: STA $0E      ; Level counter
-$9FC3: INC $0E      ; Level = 1
-$9FC5: INC $0E      ; Level = 2
+$9fb9: jsr $a038    ; Initialize - parse character data
+$9fbc: lda #$00
+$9fbe: sta $6e3b    ; Threshold index = 0
+$9fc1: sta $0e      ; Level counter
+$9fc3: inc $0e      ; Level = 1
+$9fc5: inc $0e      ; Level = 2
 ...
-$9FCF: LDA $7B      ; Load initial value
-$9FD1: STA $00      ; Delta = initial
-$9FD3: STA $04      ; Total = initial
+$9fcf: lda $7b      ; Load initial value
+$9fd1: sta $00      ; Delta = initial
+$9fd3: sta $04      ; Total = initial
 </pre>
 
-=== Main Loop ($9FE9-$A037) ===
+=== Main Loop ($9fe9-$a037) ===
 
 <pre>
-$9FFA: LDY $6E3B        ; Y = threshold index
-$9FFD: LDA ($0C),Y      ; Load threshold byte
-$9FFF: LDX $6E3B
-$A002: BNE $A006        ; If not first byte...
-$A004: AND #$1F         ; ...mask to 5 bits
-$A006: AND #$7F         ; Mask to 7 bits
-$A008: CMP $0E          ; Compare with level
-$A00A: BCS $A01C        ; If threshold >= level, skip
-$A013: INC $6E3A        ; Advance rate index
-$A016: INC $6E3B        ; Advance threshold index
-$A019: JMP $9FFA        ; Loop to check next threshold
+$9ffa: ldy $6e3b        ; Y = threshold index
+$9ffd: lda ($0c),y      ; Load threshold byte
+$9fff: ldx $6e3b
+$a002: bne $a006        ; If not first byte...
+$a004: and #$1f         ; ...mask to 5 bits
+$a006: and #$7f         ; Mask to 7 bits
+$a008: cmp $0e          ; Compare with level
+$a00a: bcs $a01c        ; If threshold >= level, skip
+$a013: inc $6e3a        ; Advance rate index
+$a016: inc $6e3b        ; Advance threshold index
+$a019: jmp $9ffa        ; Loop to check next threshold
 
-$A01C: LDX $6E3A        ; X = rate index
-$A01F: LDA $A259,X      ; Load rate from table
-$A022: LDX #$04         ; X = 4 (work area offset)
-$A024: JSR $A07D        ; Call multiply subroutine
-$A027: LDY #$00
-$A029: JSR $A0DF        ; Add delta to total
-$A02C: LDA $0E
-$A02E: CMP $0A          ; Check if level == target
-$A030: BEQ $A037        ; If yes, done
-$A032: INC $0E          ; Level++
-$A034: JMP $9FE9        ; Continue loop
-$A037: RTS
+$a01c: ldx $6e3a        ; X = rate index
+$a01f: lda $a259,x      ; Load rate from table
+$a022: ldx #$04         ; X = 4 (work area offset)
+$a024: jsr $a07d        ; Call multiply subroutine
+$a027: ldy #$00
+$a029: jsr $a0df        ; Add delta to total
+$a02c: lda $0e
+$a02e: cmp $0a          ; Check if level == target
+$a030: beq $a037        ; If yes, done
+$a032: inc $0e          ; Level++
+$a034: jmp $9fe9        ; Continue loop
+$a037: rts
 </pre>
 
-=== Multiply Subroutine ($A07D) ===
+=== Multiply Subroutine ($a07d) ===
 
 Performs: <code>result = (value × rate) >> 4</code>
 

@@ -9,7 +9,7 @@ Unlike Dragon Warrior I-III which use lookup tables for stats, DW4 computes stat
 * '''Growth data''' - Signed bytes indicating stat changes per level (3 bytes per level)
 * '''Level multiplier''' - Level value shifted left 4 (×16)
 
-The computation occurs in '''Bank 8''' at addresses $80D5-$81E8.
+The computation occurs in '''Bank 8''' at addresses $80d5-$81e8.
 
 == Formula ==
 
@@ -32,19 +32,19 @@ Where:
 |-
 ! Data !! Bank !! CPU Address !! Size !! Description
 |-
-| Computation Code || $08 || $80D5-$81E8 || ~275 bytes || Stat calculation routine
+| Computation Code || $08 || $80d5-$81e8 || ~275 bytes || Stat calculation routine
 |-
-| Math Subroutines || $1F || $C813-$C850 || ~62 bytes || 16-bit add/multiply (fixed bank)
+| Math Subroutines || $1f || $c813-$c850 || ~62 bytes || 16-bit add/multiply (fixed bank)
 |-
 | Base Param Table || $08 || $8229 || 12 bytes || 6 entries × 2 bytes
 |-
 | Growth Pointers || $08 || $8237 || 9 bytes || Low+high pointers per character
 |-
-| Hero Growth Data || $08 || $A1BB || ~150 bytes || 3 bytes per level
+| Hero Growth Data || $08 || $a1bb || ~150 bytes || 3 bytes per level
 |-
 | Special Ptr || $08 || $8225 || 2 bytes || Max level handling
 |-
-| Global Base || $08 || $8235 || 2 bytes || Hero-specific offset ($A80D)
+| Global Base || $08 || $8235 || 2 bytes || Hero-specific offset ($a80d)
 |}
 
 == Character ID Values ==
@@ -90,9 +90,9 @@ Where:
 |-
 | $09 || char_id || Character ID (0-7)
 |-
-| $0A-$0C || stat_bytes || 3 bytes from character record
+| $0a-$0c || stat_bytes || 3 bytes from character record
 |-
-| $0E-$0F || data_ptr || General data pointer
+| $0e-$0f || data_ptr || General data pointer
 |-
 | $72-$73 || temp_16 || 16-bit temp for signed math
 |-
@@ -109,13 +109,13 @@ Indexed by <code>(char_id × 2 + gender) × 2</code>:
 |-
 | 0 || $00 $80 || $8000
 |-
-| 1 || $01 $7F || $7F01
+| 1 || $01 $7f || $7f01
 |-
-| 2 || $14 $9E || $9E14
+| 2 || $14 $9e || $9e14
 |-
 | 3 || $00 $00 || $0000
 |-
-| 4 || $04 $B3 || $B304
+| 4 || $04 $b3 || $b304
 |-
 | 5 || $97 $80 || $8097
 |}
@@ -126,17 +126,17 @@ Indexed by <code>(char_id × 2 + gender) × 2</code>:
 |-
 ! Character !! Low Byte !! High Byte !! Pointer
 |-
-| Hero || $BB || $A1 || $A1BB
+| Hero || $bb || $a1 || $a1bb
 |-
-| Ragnar || $D0 || $A1* || $A1D0
+| Ragnar || $d0 || $a1* || $a1d0
 |-
 | Alena || $00 || || (derived)
 |-
 | Cristo || $76 || || (derived)
 |-
-| Brey || $A9 || || (derived)
+| Brey || $a9 || || (derived)
 |-
-| Taloon || $8D || || (derived)
+| Taloon || $8d || || (derived)
 |-
 | Nara || $85 || || (derived)
 |-
@@ -152,158 +152,158 @@ Each character's growth data consists of signed bytes (3 per level):
 * Byte 1: MP growth increment
 * Byte 2: Other stat increment
 
-Example: Hero growth at $A1BB:
+Example: Hero growth at $a1bb:
 <pre>
-$A1BB: 01 01 01 00 00 00 00 01 00 01 00 FF ...
+$a1bb: 01 01 01 00 00 00 00 01 00 01 00 FF ...
        +1 +1 +1 +0 +0 +0 +0 +1 +0 +1 +0 -1
 </pre>
 
 Values are:
-* Positive ($00-$7F): Add 0-127
-* Negative ($80-$FF): Add -128 to -1
+* Positive ($00-$7f): Add 0-127
+* Negative ($80-$ff): Add -128 to -1
 
 == Calculation Flow ==
 
-=== Entry Point ($80D5) ===
+=== Entry Point ($80d5) ===
 
 <pre>
-$80D5: LDA #$00
-$80D7: STA $76        ; Clear gender flag
-$80D9: LDA $0A        ; Load stat byte
-$80DB: AND #$07       ; Extract level bits
-$80DD: STA $01
+$80d5: lda #$00
+$80d7: sta $76        ; Clear gender flag
+$80d9: lda $0a        ; Load stat byte
+$80db: and #$07       ; Extract level bits
+$80dd: sta $01
 ...
-$80E3: LDX $09        ; Load char_id
-$80E5: BNE @not_hero  ; Branch if not Hero
+$80e3: ldx $09        ; Load char_id
+$80e5: bne @not_hero  ; Branch if not Hero
 </pre>
 
 === Hero-Specific Path ===
 
-The Hero has special handling that multiplies by 3 and adds a global base ($A80D).
+The Hero has special handling that multiplies by 3 and adds a global base ($a80d).
 
 === Non-Hero Path ($8132) ===
 
 <pre>
-$8132: LDA $0A        ; Load stat byte
-$8134: AND #$03       ; Extract bits
-$8136: STA $01
-$8138: LDA $0C
-$813A: LSR A
-$813B: LSR A
-$813C: CMP #$3F       ; Check max level (63)
-$813E: BEQ handle_max
-$8140: STA $08        ; Store level index
+$8132: lda $0a        ; Load stat byte
+$8134: and #$03       ; Extract bits
+$8136: sta $01
+$8138: lda $0c
+$813a: lsr A
+$813b: lsr A
+$813c: cmp #$3f       ; Check max level (63)
+$813e: beq handle_max
+$8140: sta $08        ; Store level index
 </pre>
 
-=== Main Calculation ($814A) ===
+=== Main Calculation ($814a) ===
 
 <pre>
 ; Multiply level by 16
-$814A: LDX #$04
+$814a: ldx #$04
 shift_loop:
-$814C: ASL $00
-$814E: ROL $01
-$8150: DEX
-$8151: BNE shift_loop
+$814c: asl $00
+$814e: rol $01
+$8150: dex
+$8151: bne shift_loop
 
 ; Get base param index
-$8153: LDA $09        ; char_id
-$8155: ASL A          ; × 2
-$8156: ORA $76        ; + gender
-$8158: ASL A          ; × 2 for word offset
-$8159: TAX
+$8153: lda $09        ; char_id
+$8155: asl A          ; × 2
+$8156: ora $76        ; + gender
+$8158: asl A          ; × 2 for word offset
+$8159: tax
 
 ; Add base parameter
-$815A: LDA $8229,X    ; base_params low
-$815D: LDY $822A,X    ; base_params high
-$8160: LDX #$00
-$8162: JSR $C81D      ; add_extended
+$815a: lda $8229,X    ; base_params low
+$815d: ldy $822a,X    ; base_params high
+$8160: ldx #$00
+$8162: jsr $c81d      ; add_extended
 
 ; Get growth pointer
-$8165: LDX $09        ; char_id
-$8167: LDA $8237,X    ; growth_ptr low
-$816A: STA $02
-$816C: LDA $8238,X    ; growth_ptr high
-$816F: STA $03
+$8165: ldx $09        ; char_id
+$8167: lda $8237,X    ; growth_ptr low
+$816a: sta $02
+$816c: lda $8238,X    ; growth_ptr high
+$816f: sta $03
 
 ; Calculate offset: level × 3
-$8171: LDA $08        ; level
-$8173: ASL A          ; × 2
-$8174: ADC $08        ; + level = × 3
-$8176: LDX #$02
-$8178: JSR $C813      ; add growth_ptr
+$8171: lda $08        ; level
+$8173: asl A          ; × 2
+$8174: adc $08        ; + level = × 3
+$8176: ldx #$02
+$8178: jsr $c813      ; add growth_ptr
 </pre>
 
 === Growth Loop ($8187) ===
 
 <pre>
 growth_loop:
-$8187: TYA
-$8188: PHA            ; Save counter
+$8187: tya
+$8188: pha            ; Save counter
 
 ; Load signed byte
-$8189: LDA ($02),Y    ; growth[n]
-$818B: PHP            ; Save sign flag
+$8189: lda ($02),Y    ; growth[n]
+$818b: php            ; Save sign flag
 
 ; Sign extend to 16-bit
-$818C: LDY #$00
-$818E: PLP
-$818F: BPL positive
-$8191: LDY #$FF       ; Negative: high = $FF
+$818c: ldy #$00
+$818e: plp
+$818f: bpl positive
+$8191: ldy #$ff       ; Negative: high = $ff
 positive:
-$8193: STA $72        ; temp_lo
+$8193: sta $72        ; temp_lo
 $8195: STY $73        ; temp_hi
 
 ; Multiply by 16
-$8197: ASL $72
-$8199: ROL $73        ; × 2
-$819B: ASL $72
-$819D: ROL $73        ; × 4
-$819F: ASL $72
-$81A1: ROL $73        ; × 8
-$81A3: ASL $72
-$81A5: ROL $73        ; × 16
+$8197: asl $72
+$8199: rol $73        ; × 2
+$819b: asl $72
+$819d: rol $73        ; × 4
+$819f: asl $72
+$81a1: rol $73        ; × 8
+$81a3: asl $72
+$81a5: rol $73        ; × 16
 
 ; Add to result
-$81A7: LDA $72
-$81A9: LDY $73
-$81AB: LDX #$00
-$81AD: JSR $C81D      ; add_extended
+$81a7: lda $72
+$81a9: ldy $73
+$81ab: ldx #$00
+$81ad: jsr $c81d      ; add_extended
 
 ; Store result
-$81B0: PLA
-$81B1: TAY            ; Restore counter
-$81B2: ASL A          ; × 2 for word index
-$81B3: TAX
-$81B4: LDA $00
-$81B6: STA $0102,X    ; result[n] low
-$81B9: LDA $01
-$81BB: STA $0103,X    ; result[n] high
+$81b0: pla
+$81b1: tay            ; Restore counter
+$81b2: asl A          ; × 2 for word index
+$81b3: tax
+$81b4: lda $00
+$81b6: sta $0102,X    ; result[n] low
+$81b9: lda $01
+$81bb: sta $0103,X    ; result[n] high
 
-$81BE: INY
-$81BF: CPY #$03       ; Loop 3 times
-$81C1: BNE growth_loop
+$81be: iny
+$81bf: cpy #$03       ; Loop 3 times
+$81c1: bne growth_loop
 </pre>
 
 == Special Cases ==
 
-=== Max Level ($81C6) ===
+=== Max Level ($81c6) ===
 
-When level index = $0F (15), stats are copied from a fixed table rather than calculated. Uses pointer at $8225 and copies 8 bytes directly to $0100.
+When level index = $0f (15), stats are copied from a fixed table rather than calculated. Uses pointer at $8225 and copies 8 bytes directly to $0100.
 
-=== Variant Characters ($81E8) ===
+=== Variant Characters ($81e8) ===
 
-When level index = $0E (14), uses alternate calculation with pointer at $8227. Sets gender_flag to $11 and applies different formula.
+When level index = $0e (14), uses alternate calculation with pointer at $8227. Sets gender_flag to $11 and applies different formula.
 
-== Math Subroutines (Bank $1F) ==
+== Math Subroutines (Bank $1f) ==
 
-=== add_16bit ($C813) ===
+=== add_16bit ($c813) ===
 Adds 8-bit value in A to 16-bit value at zero page offset X.
 
-=== add_extended ($C81D) ===
+=== add_extended ($c81d) ===
 Adds 16-bit value (A=low, Y=high) to value at zero page offset X.
 
-=== multiply_8x16 ($C827) ===
+=== multiply_8x16 ($c827) ===
 Standard shift-and-add multiplication. Multiplies A (8-bit) by 16-bit value at offset X.
 
 == Algorithm Summary ==
@@ -311,16 +311,16 @@ Standard shift-and-add multiplication. Multiplies A (8-bit) by 16-bit value at o
 <pre>
 function calculate_stats(char_id, gender, level, stat_bytes):
     if char_id == HERO:
-        result = stat_bytes * 3 + $A80D
+        result = stat_bytes * 3 + $a80d
         level_idx = extracted from result
         # Additional Hero-specific logic
     else:
-        level_idx = (stat_byte_2 >> 2) & $3F
+        level_idx = (stat_byte_2 >> 2) & $3f
 
-    if level_idx == $0F:  # Max level
+    if level_idx == $0f:  # Max level
         return copy_from_table($8225 + result * 8)
 
-    if level_idx == $0E:  # Variant
+    if level_idx == $0e:  # Variant
         return variant_calculation()
 
     # Normal calculation
