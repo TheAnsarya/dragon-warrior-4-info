@@ -1,7 +1,7 @@
 # Dragon Warrior IV - Master Project Plan
 
 **Created:** 2026-01-09  
-**Last Updated:** 2026-01-09  
+**Last Updated:** 2026-01-10  
 **Status:** Active Development  
 **Related:** [DW4Lib](../../../logsmall/DW4Lib), [GameInfo](../../../GameInfo/Games/NES/Dragon%20Warrior%204%20(NES))
 
@@ -16,7 +16,16 @@ Complete disassembly, documentation, and tooling for Dragon Warrior IV (NES, US 
 4. Universal editor GUI for all asset types
 5. Comprehensive documentation for Dark Repos wiki
 
-## Current Status Summary (2026-01-09)
+## Current Status Summary (2026-01-10)
+
+### ⭐ Major Breakthrough: Experience System
+
+**Discovery:** Experience thresholds are **computed via formula**, NOT stored as lookup tables!
+
+- Per-character growth parameters at Bank 8 `$8229-$8238`
+- Multiplication subroutines at Bank F `$C813/$C81D/$C827`
+- 135 arithmetic opcodes in level-up code
+- See [experience-computation.md](../../docs/research/experience-computation.md)
 
 ### Repositories
 
@@ -35,13 +44,13 @@ Complete disassembly, documentation, and tooling for Dragon Warrior IV (NES, US 
 | **Monster Data** | ✅ Complete | 100% | 27-byte format documented |
 | **Item Data** | ✅ Complete | 100% | 8-byte format documented |
 | **Spell Data** | 🔄 Partial | ~80% | Location unverified (Bank 0x0D) |
-| **Experience Tables** | ❌ Unknown | 0% | Location undiscovered |
+| **Experience Tables** | 🔄 Research | ~50% | COMPUTED, not stored - formula partially traced |
 | **Text/DTE System** | ✅ Complete | 100% | Full encoding documented |
 | **Maps** | 🔄 Partial | ~60% | Pointer tables found |
 | **Audio** | 🔄 Partial | ~40% | Banks documented |
 | **Labels/MLB** | 🔄 Active | ~30% | Include files started |
 | **C# Library** | 🔄 Active | ~60% | Core structures done |
-| **Documentation** | 🔄 Active | ~70% | Formats documented |
+| **Documentation** | 🔄 Active | ~75% | EXP research added |
 
 ---
 
