@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "../dragon-warrior-info"
+		},
+		{
+			"path": "../project-base"
 		}
 	],
 	"settings": {
