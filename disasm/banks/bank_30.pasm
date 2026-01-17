@@ -1,0 +1,8838 @@
+; Dragon Warrior IV - Bank 30 Disassembly
+; ROM Offset: $78010 - $7c00f
+; CPU Address: $8000-$bfff (when mapped)
+; ======================================================================
+
+	BEQ $7f86			   ; $8000: F0 84
+	CMP $8e				 ; $8002: C5 8E
+	EOR $91,X			   ; $8004: 55 91
+	TXA					 ; $8006: 8A
+	STA $5a,X			   ; $8007: 95 5A
+	STA $6e				 ; $8009: 85 6E
+	STA $7b				 ; $800b: 85 7B
+	BCC $7fcc			   ; $800d: 90 BD
+	STA $8577,Y			 ; $800f: 99 77 85
+	STY $e59e			   ; $8012: 8C 9E E5
+	.db $a7			; $8015
+	.db $3f			; $8016
+	.db $9e			; $8017
+	.db $4f			; $8018
+	.db $a3			; $8019
+	BRK					 ; $801a: 00
+	STA ($b4),Y			 ; $801b: 91 B4
+	TAX					 ; $801d: AA
+	NOP					 ; $801e: EA
+	LDY $9799			   ; $801f: AC 99 97
+	.db $47			; $8022
+	.db $9f			; $8023
+	SBC ($b3,X)			 ; $8024: E1 B3
+	.db $5c			; $8026
+	LDX #$90				; $8027: A2 90
+	.db $80			; $8029
+	CMP #$a1				; $802a: C9 A1
+	JMP $5798			   ; $802c: 4C 98 57
+	LDA ($1e),Y			 ; $802f: B1 1E
+	STX $48				 ; $8031: 86 48
+	STX $90,Y			   ; $8033: 96 90
+	BCC $80ad			   ; $8035: 90 76
+	STX $a8				 ; $8037: 86 A8
+	BCC $8081			   ; $8039: 90 46
+	LDY #$d6				; $803b: A0 D6
+	STX $a1d2			   ; $803d: 8E D2 A1
+	.db $a7			; $8040
+	LDY #$00				; $8041: A0 00
+	.db $87			; $8043
+	TSX					 ; $8044: BA
+	.db $a3			; $8045
+	JMP ($8396)			 ; $8046: 6C 96 83
+	LDA $ad83			   ; $8049: AD 83 AD
+	ASL $6b98			   ; $804c: 0E 98 6B
+	.db $ab			; $804f
+	CPX #$af				; $8050: E0 AF
+	.db $6b			; $8052
+	LDA ($80,X)			 ; $8053: A1 80
+	LDX #$ee				; $8055: A2 EE
+	LDX $aded			   ; $8057: AE ED AD
+	TAY					 ; $805a: A8
+	LDX #$13				; $805b: A2 13
+	.db $9c			; $805d
+	LDA $8486			   ; $805e: AD 86 84
+	STY $8eea			   ; $8061: 8C EA 8E
+	INY					 ; $8064: C8
+	STX $92ec			   ; $8065: 8E EC 92
+	JSR $46a6			   ; $8068: 20 A6 46
+	.db $83			; $806b
+	.db $3b			; $806c
+	.db $b3			; $806d
+	.db $3f			; $806e
+	.db $a7			; $806f
+	.db $5f			; $8070
+	STA $67,X			   ; $8071: 95 67
+	STA $e5,X			   ; $8073: 95 E5
+	.db $b3			; $8075
+	CLV					 ; $8076: B8
+	.db $97			; $8077
+	INY					 ; $8078: C8
+	BCC $8088			   ; $8079: 90 0D
+	STA $92e3			   ; $807b: 8D E3 92
+	.db $5c			; $807e
+	STA $bbe9			   ; $807f: 8D E9 BB
+	.db $2f			; $8082
+	BCS $8032			   ; $8083: B0 AD
+	BCS $800a			   ; $8085: B0 83
+	BCC $8062			   ; $8087: 90 D9
+	.db $83			; $8089
+	.db $32			; $808a
+	LDX #$22				; $808b: A2 22
+	.db $b7			; $808d
+	ASL $00bc,X			 ; $808e: 1E BC 00
+	.db $27			; $8091
+	.db $0f			; $8092
+	BRK					 ; $8093: 00
+	STA $fb				 ; $8094: 85 FB
+	BRK					 ; $8096: 00
+	.db $07			; $8097
+	.db $6f			; $8098
+	.db $03			; $8099
+	BMI $80a7			   ; $809a: 30 0B
+	ASL					 ; $809c: 0A
+	TAX					 ; $809d: AA
+	LDA $80ab,X			 ; $809e: BD AB 80
+	PHA					 ; $80a1: 48
+	LDA $80aa,X			 ; $80a2: BD AA 80
+	PHA					 ; $80a5: 48
+	RTS					 ; $80a6: 60
+	JMP $d1f3			   ; $80a7: 4C F3 D1
+	LDA $cc80,Y			 ; $80aa: B9 80 CC
+	STA ($d0,X)			 ; $80ad: 81 D0
+	STA ($60,X)			 ; $80af: 81 60
+	.db $82			; $80b1
+	.db $64			; $80b2
+	.db $82			; $80b3
+	SBC $4283,X			 ; $80b4: FD 83 42
+	.db $83			; $80b7
+	.db $3f			; $80b8
+	.db $83			; $80b9
+	BIT $41				 ; $80ba: 24 41
+	BPL $80ea			   ; $80bc: 10 2C
+	JSR $81ae			   ; $80be: 20 AE 81
+	JSR $8126			   ; $80c1: 20 26 81
+	BCS $80f9			   ; $80c4: B0 33
+	LDX $51				 ; $80c6: A6 51
+	LDY $52				 ; $80c8: A4 52
+	JSR $d3e6			   ; $80ca: 20 E6 D3
+	AND #$1f				; $80cd: 29 1F
+	TAX					 ; $80cf: AA
+	LDY #$00				; $80d0: A0 00
+	LDA $6f40,X			 ; $80d2: BD 40 6F
+	AND #$7f				; $80d5: 29 7F
+	CMP #$27				; $80d7: C9 27
+	BEQ $80e2			   ; $80d9: F0 07
+	DEY					 ; $80db: 88
+	CMP #$17				; $80dc: C9 17
+	BNE $80e5			   ; $80de: D0 05
+	INY					 ; $80e0: C8
+	INY					 ; $80e1: C8
+	JSR $81b8			   ; $80e2: 20 B8 81
+	JSR $8126			   ; $80e5: 20 26 81
+	BCS $80f9			   ; $80e8: B0 0F
+	JSR $baea			   ; $80ea: 20 EA BA
+	BCC $80f2			   ; $80ed: 90 03
+	JMP $84b6			   ; $80ef: 4C B6 84
+	LDA #$f0				; $80f2: A9 F0
+	LDX #$02				; $80f4: A2 02
+	JMP $d1ed			   ; $80f6: 4C ED D1
+	STX $059c			   ; $80f9: 8E 9C 05
+	LDA $70e0,X			 ; $80fc: BD E0 70
+	BPL $8146			   ; $80ff: 10 45
+	LDA $7000,X			 ; $8101: BD 00 70
+	STA $51				 ; $8104: 85 51
+	AND #$fc				; $8106: 29 FC
+	ORA $3d				 ; $8108: 05 3D
+	EOR #$02				; $810a: 49 02
+	STA $7000,X			 ; $810c: 9D 00 70
+	CMP $51				 ; $810f: C5 51
+	BEQ $8121			   ; $8111: F0 0E
+	TXA					 ; $8113: 8A
+	PHA					 ; $8114: 48
+	TYA					 ; $8115: 98
+	PHA					 ; $8116: 48
+	JSR $d7fc			   ; $8117: 20 FC D7
+	JSR $ff74			   ; $811a: 20 74 FF
+	PLA					 ; $811d: 68
+	TAY					 ; $811e: A8
+	PLA					 ; $811f: 68
+	TAX					 ; $8120: AA
+	TXA					 ; $8121: 8A
+	BRK					 ; $8122: 00
+	.db $0f			; $8123
+	.db $5f			; $8124
+	RTS					 ; $8125: 60
+	LDX #$06				; $8126: A2 06
+	LDA $7020,X			 ; $8128: BD 20 70
+	CMP #$ff				; $812b: C9 FF
+	BEQ $8142			   ; $812d: F0 13
+	LDA $6f60,X			 ; $812f: BD 60 6F
+	CMP $51				 ; $8132: C5 51
+	BNE $813d			   ; $8134: D0 07
+	LDA $6f80,X			 ; $8136: BD 80 6F
+	CMP $52				 ; $8139: C5 52
+	BEQ $8144			   ; $813b: F0 07
+	INX					 ; $813d: E8
+	CPX #$20				; $813e: E0 20
+	BCC $8128			   ; $8140: 90 E6
+	CLC					 ; $8142: 18
+	RTS					 ; $8143: 60
+	SEC					 ; $8144: 38
+	RTS					 ; $8145: 60
+	TYA					 ; $8146: 98
+	PHA					 ; $8147: 48
+	TXA					 ; $8148: 8A
+	PHA					 ; $8149: 48
+	LDX #$00				; $814a: A2 00
+	LDA $819e,X			 ; $814c: BD 9E 81
+	CMP #$ff				; $814f: C9 FF
+	BEQ $8197			   ; $8151: F0 44
+	CMP $63				 ; $8153: C5 63
+	BNE $818f			   ; $8155: D0 38
+	LDA $819f,X			 ; $8157: BD 9F 81
+	CMP $64				 ; $815a: C5 64
+	BNE $818f			   ; $815c: D0 31
+	PLA					 ; $815e: 68
+	PHA					 ; $815f: 48
+	CMP $81a0,X			 ; $8160: DD A0 81
+	BNE $818f			   ; $8163: D0 2A
+	LDA $62ed			   ; $8165: AD ED 62
+	CMP #$78				; $8168: C9 78
+	LDA #$40				; $816a: A9 40
+	BCC $816f			   ; $816c: 90 01
+	ASL					 ; $816e: 0A
+	AND $81a2,X			 ; $816f: 3D A2 81
+	BEQ $818f			   ; $8172: F0 1B
+	TXA					 ; $8174: 8A
+	TAY					 ; $8175: A8
+	PLA					 ; $8176: 68
+	TAX					 ; $8177: AA
+	LDA $81a1,Y			 ; $8178: B9 A1 81
+	TAY					 ; $817b: A8
+	LDA $6fe0,Y			 ; $817c: B9 E0 6F
+	STA $6fe0,X			 ; $817f: 9D E0 6F
+	LDA $70e0,X			 ; $8182: BD E0 70
+	ORA #$80				; $8185: 09 80
+	STA $70e0,X			 ; $8187: 9D E0 70
+	PLA					 ; $818a: 68
+	TAY					 ; $818b: A8
+	JMP $8101			   ; $818c: 4C 01 81
+	INX					 ; $818f: E8
+	INX					 ; $8190: E8
+	INX					 ; $8191: E8
+	INX					 ; $8192: E8
+	INX					 ; $8193: E8
+	JMP $814c			   ; $8194: 4C 4C 81
+	PLA					 ; $8197: 68
+	TAX					 ; $8198: AA
+	PLA					 ; $8199: 68
+	TAY					 ; $819a: A8
+	JMP $8121			   ; $819b: 4C 21 81
+	.db $1f			; $819e
+	BRK					 ; $819f: 00
+	PHP					 ; $81a0: 08
+	ORA #$80				; $81a1: 09 80
+	ASL tmp1,X			  ; $81a3: 16 01
+	ASL $0b				 ; $81a5: 06 0B
+	.db $80			; $81a7
+	ORA $0700			   ; $81a8: 0D 00 07
+	.db $0b			; $81ab
+	.db $80			; $81ac
+	.db $ff			; $81ad
+	LDA $6f60			   ; $81ae: AD 60 6F
+	STA $51				 ; $81b1: 85 51
+	LDA $6f80			   ; $81b3: AD 80 6F
+	STA $52				 ; $81b6: 85 52
+	LDA $3d				 ; $81b8: A5 3D
+	ASL					 ; $81ba: 0A
+	TAX					 ; $81bb: AA
+	LDA $51				 ; $81bc: A5 51
+	CLC					 ; $81be: 18
+	ADC $d239,X			 ; $81bf: 7D 39 D2
+	STA $51				 ; $81c2: 85 51
+	LDA $52				 ; $81c4: A5 52
+	CLC					 ; $81c6: 18
+	ADC $d23a,X			 ; $81c7: 7D 3A D2
+	STA $52				 ; $81ca: 85 52
+	RTS					 ; $81cc: 60
+	BRK					 ; $81cd: 00
+	.db $0b			; $81ce
+	.db $2f			; $81cf
+	RTS					 ; $81d0: 60
+	BRK					 ; $81d1: 00
+	.db $07			; $81d2
+	.db $6f			; $81d3
+	.db $07			; $81d4
+	BRK					 ; $81d5: 00
+	.db $07			; $81d6
+	.db $6f			; $81d7
+	ASL $c9				 ; $81d8: 06 C9
+	.db $ff			; $81da
+	BEQ $823d			   ; $81db: F0 60
+	CMP #$01				; $81dd: C9 01
+	BEQ $8240			   ; $81df: F0 5F
+	BRK					 ; $81e1: 00
+	.db $07			; $81e2
+	.db $6f			; $81e3
+	PHP					 ; $81e4: 08
+	CMP #$ff				; $81e5: C9 FF
+	BEQ $823d			   ; $81e7: F0 54
+	STA $07b9			   ; $81e9: 8D B9 07
+	LDA $07b9			   ; $81ec: AD B9 07
+	BRK					 ; $81ef: 00
+	.db $37			; $81f0
+	.db $0f			; $81f1
+	BCS $81fb			   ; $81f2: B0 07
+	BRK					 ; $81f4: 00
+	ORA #$6f				; $81f5: 09 6F
+	.db $0b			; $81f7
+	JMP $81ff			   ; $81f8: 4C FF 81
+	BRK					 ; $81fb: 00
+	ORA #$6f				; $81fc: 09 6F
+	.db $52			; $81fe
+	JSR $c8cc			   ; $81ff: 20 CC C8
+	BRK					 ; $8202: 00
+	ORA #$6f				; $8203: 09 6F
+	ORA #$00				; $8205: 09 00
+	ORA #$6f				; $8207: 09 6F
+	ASL					 ; $8209: 0A
+	LDX $07b9			   ; $820a: AE B9 07
+	BRK					 ; $820d: 00
+	.db $2b			; $820e
+	.db $53			; $820f
+	CMP #$05				; $8210: C9 05
+	BCC $821f			   ; $8212: 90 0B
+	CMP #$08				; $8214: C9 08
+	BCC $823a			   ; $8216: 90 22
+	LDA #$00				; $8218: A9 00
+	BRK					 ; $821a: 00
+	.db $3c			; $821b
+	.db $73			; $821c
+	BEQ $823a			   ; $821d: F0 1B
+	JSR $c8cc			   ; $821f: 20 CC C8
+	BRK					 ; $8222: 00
+	STA $fb				 ; $8223: 85 FB
+	BRK					 ; $8225: 00
+	ORA #$6f				; $8226: 09 6F
+	.db $0c			; $8228
+	LDX $07b9			   ; $8229: AE B9 07
+	BRK					 ; $822c: 00
+	.db $2b			; $822d
+	.db $53			; $822e
+	CMP #$05				; $822f: C9 05
+	BCS $823a			   ; $8231: B0 07
+	JSR $c8cc			   ; $8233: 20 CC C8
+	BRK					 ; $8236: 00
+	ORA #$6f				; $8237: 09 6F
+	ORA $b64c			   ; $8239: 0D 4C B6
+	STY $4c				 ; $823c: 84 4C
+	.db $f3			; $823e
+	CMP (tmp0),Y			; $823f: D1 00
+	.db $07			; $8241
+	.db $6f			; $8242
+	ASL $ffc9			   ; $8243: 0E C9 FF
+	BEQ $825a			   ; $8246: F0 12
+	CMP #$00				; $8248: C9 00
+	BEQ $8253			   ; $824a: F0 07
+	BRK					 ; $824c: 00
+	.db $07			; $824d
+	.db $6f			; $824e
+	ORA ($4c),Y			 ; $824f: 11 4C
+	LDX $84,Y			   ; $8251: B6 84
+	BRK					 ; $8253: 00
+	.db $07			; $8254
+	.db $6f			; $8255
+	BPL $82a4			   ; $8256: 10 4C
+	LDX $84,Y			   ; $8258: B6 84
+	JMP $d1f3			   ; $825a: 4C F3 D1
+	.db $43			; $825d
+	ASL $12				 ; $825e: 06 12
+	BRK					 ; $8260: 00
+	BRK					 ; $8261: 00
+	.db $14			; $8262
+	.db $2f			; $8263
+	RTS					 ; $8264: 60
+	BRK					 ; $8265: 00
+	.db $07			; $8266
+	.db $6f			; $8267
+	.db $17			; $8268
+	BMI $8292			   ; $8269: 30 27
+	STA $07b9			   ; $826b: 8D B9 07
+	TAX					 ; $826e: AA
+	STA $f9				 ; $826f: 85 F9
+	BRK					 ; $8271: 00
+	.db $2b			; $8272
+	.db $73			; $8273
+	CMP #$08				; $8274: C9 08
+	BCC $8282			   ; $8276: 90 0A
+	BRK					 ; $8278: 00
+	.db $07			; $8279
+	.db $6f			; $827a
+	BVC $827d			   ; $827b: 50 00
+	.db $fb			; $827d
+	.db $3b			; $827e
+	JMP $84b6			   ; $827f: 4C B6 84
+	BRK					 ; $8282: 00
+	.db $07			; $8283
+	.db $6f			; $8284
+	SBC $0900,X			 ; $8285: FD 00 09
+	.db $6f			; $8288
+	ORA $0900,Y			 ; $8289: 19 00 09
+	.db $6f			; $828c
+	ORA $ffc9,X			 ; $828d: 1D C9 FF
+	BNE $8295			   ; $8290: D0 03
+	JMP $d1f3			   ; $8292: 4C F3 D1
+	LDX $07b9			   ; $8295: AE B9 07
+	BRK					 ; $8298: 00
+	.db $33			; $8299
+	.db $73			; $829a
+	JSR $8308			   ; $829b: 20 08 83
+	BPL $82a8			   ; $829e: 10 08
+	BCS $82a8			   ; $82a0: B0 06
+	JSR $832d			   ; $82a2: 20 2D 83
+	JMP $8286			   ; $82a5: 4C 86 82
+	BRK					 ; $82a8: 00
+	ORA #$6f				; $82a9: 09 6F
+	ORA $0900,Y			 ; $82ab: 19 00 09
+	.db $6f			; $82ae
+	.db $1c			; $82af
+	CMP #$ff				; $82b0: C9 FF
+	BEQ $8286			   ; $82b2: F0 D2
+	LDX $07b9			   ; $82b4: AE B9 07
+	BRK					 ; $82b7: 00
+	.db $34			; $82b8
+	.db $73			; $82b9
+	JSR $8308			   ; $82ba: 20 08 83
+	BPL $82c7			   ; $82bd: 10 08
+	BCS $82c7			   ; $82bf: B0 06
+	JSR $832d			   ; $82c1: 20 2D 83
+	JMP $82a8			   ; $82c4: 4C A8 82
+	BRK					 ; $82c7: 00
+	ORA #$6f				; $82c8: 09 6F
+	ORA $0900,Y			 ; $82ca: 19 00 09
+	.db $6f			; $82cd
+	.db $1b			; $82ce
+	CMP #$ff				; $82cf: C9 FF
+	BEQ $82a8			   ; $82d1: F0 D5
+	LDX $07b9			   ; $82d3: AE B9 07
+	BRK					 ; $82d6: 00
+	AND $73,X			   ; $82d7: 35 73
+	JSR $8308			   ; $82d9: 20 08 83
+	BPL $82e6			   ; $82dc: 10 08
+	BCS $82e6			   ; $82de: B0 06
+	JSR $832d			   ; $82e0: 20 2D 83
+	JMP $82c7			   ; $82e3: 4C C7 82
+	BRK					 ; $82e6: 00
+	ORA #$6f				; $82e7: 09 6F
+	ORA $0900,Y			 ; $82e9: 19 00 09
+	.db $6f			; $82ec
+	.db $1a			; $82ed
+	CMP #$ff				; $82ee: C9 FF
+	BEQ $82c7			   ; $82f0: F0 D5
+	LDX $07b9			   ; $82f2: AE B9 07
+	BRK					 ; $82f5: 00
+	ROL $73,X			   ; $82f6: 36 73
+	JSR $8308			   ; $82f8: 20 08 83
+	BPL $8305			   ; $82fb: 10 08
+	BCS $8305			   ; $82fd: B0 06
+	JSR $832d			   ; $82ff: 20 2D 83
+	JMP $82e6			   ; $8302: 4C E6 82
+	JMP $d1f3			   ; $8305: 4C F3 D1
+	PHP					 ; $8308: 08
+	PHA					 ; $8309: 48
+	BMI $832a			   ; $830a: 30 1E
+	PHP					 ; $830c: 08
+	AND #$7f				; $830d: 29 7F
+	STA $f9				 ; $830f: 85 F9
+	BRK					 ; $8311: 00
+	.db $12			; $8312
+	.db $fb			; $8313
+	BRK					 ; $8314: 00
+	.db $07			; $8315
+	.db $6f			; $8316
+	BVC $82bb			   ; $8317: 50 A2
+	.db $02			; $8319
+	LDA #$ea				; $831a: A9 EA
+	PLP					 ; $831c: 28
+	BCS $8321			   ; $831d: B0 02
+	LDA #$dc				; $831f: A9 DC
+	BRK					 ; $8321: 00
+	.db $04			; $8322
+	.db $6f			; $8323
+	BRK					 ; $8324: 00
+	.db $07			; $8325
+	.db $9f			; $8326
+	BRK					 ; $8327: 00
+	ORA #$9f				; $8328: 09 9F
+	PLA					 ; $832a: 68
+	PLP					 ; $832b: 28
+	RTS					 ; $832c: 60
+	AND #$7f				; $832d: 29 7F
+	STA $fa				 ; $832f: 85 FA
+	LDA $07b9			   ; $8331: AD B9 07
+	STA $f9				 ; $8334: 85 F9
+	BRK					 ; $8336: 00
+	.db $07			; $8337
+	.db $6f			; $8338
+	BVC $833b			   ; $8339: 50 00
+	EOR $4c3b,X			 ; $833b: 5D 3B 4C
+	CPY $4cc8			   ; $833e: CC C8 4C
+	.db $f3			; $8341
+	.db $b3			; $8342
+	JMP $b2a6			   ; $8343: 4C A6 B2
+	JSR $83d9			   ; $8346: 20 D9 83
+	CMP #$14				; $8349: C9 14
+	BCC $835b			   ; $834b: 90 0E
+	CMP #$24				; $834d: C9 24
+	BCS $835b			   ; $834f: B0 0A
+	PHA					 ; $8351: 48
+	JSR $d1f3			   ; $8352: 20 F3 D1
+	PLA					 ; $8355: 68
+	JSR $835d			   ; $8356: 20 5D 83
+	SEC					 ; $8359: 38
+	RTS					 ; $835a: 60
+	CLC					 ; $835b: 18
+	RTS					 ; $835c: 60
+	BRK					 ; $835d: 00
+	.db $12			; $835e
+	.db $87			; $835f
+	BCS $8383			   ; $8360: B0 21
+	PHA					 ; $8362: 48
+	JSR $9e8c			   ; $8363: 20 8C 9E
+	JSR $83ec			   ; $8366: 20 EC 83
+	LDA ptr0_lo			 ; $8369: A5 04
+	STA $6c0d,X			 ; $836b: 9D 0D 6C
+	LDA ptr0_hi			 ; $836e: A5 05
+	STA $6c0c,X			 ; $8370: 9D 0C 6C
+	LDA $64				 ; $8373: A5 64
+	STA $6c0e,X			 ; $8375: 9D 0E 6C
+	PLA					 ; $8378: 68
+	STA $6c0f,X			 ; $8379: 9D 0F 6C
+	BRK					 ; $837c: 00
+	BCC $837a			   ; $837d: 90 FB
+	JSR $ff74			   ; $837f: 20 74 FF
+	RTS					 ; $8382: 60
+	CMP #$00				; $8383: C9 00
+	BEQ $8392			   ; $8385: F0 0B
+	TXA					 ; $8387: 8A
+	PHA					 ; $8388: 48
+	BRK					 ; $8389: 00
+	LDA #$fb				; $838a: A9 FB
+	PLA					 ; $838c: 68
+	TAX					 ; $838d: AA
+	BRK					 ; $838e: 00
+	.db $03			; $838f
+	.db $bf			; $8390
+	RTS					 ; $8391: 60
+	LDX $51				 ; $8392: A6 51
+	LDY $52				 ; $8394: A4 52
+	LDA $53				 ; $8396: A5 53
+	JSR $9e8c			   ; $8398: 20 8C 9E
+	LDX $51				 ; $839b: A6 51
+	INX					 ; $839d: E8
+	LDY $52				 ; $839e: A4 52
+	LDA $53				 ; $83a0: A5 53
+	JSR $9e8c			   ; $83a2: 20 8C 9E
+	LDX $51				 ; $83a5: A6 51
+	LDY $52				 ; $83a7: A4 52
+	INY					 ; $83a9: C8
+	LDA $53				 ; $83aa: A5 53
+	JSR $9e8c			   ; $83ac: 20 8C 9E
+	LDX $51				 ; $83af: A6 51
+	LDY $52				 ; $83b1: A4 52
+	INX					 ; $83b3: E8
+	INY					 ; $83b4: C8
+	LDA $53				 ; $83b5: A5 53
+	JSR $9e8c			   ; $83b7: 20 8C 9E
+	JSR $83ec			   ; $83ba: 20 EC 83
+	LDA ptr0_lo			 ; $83bd: A5 04
+	STA $6c0d,X			 ; $83bf: 9D 0D 6C
+	LDA ptr0_hi			 ; $83c2: A5 05
+	STA $6c0c,X			 ; $83c4: 9D 0C 6C
+	LDA #$80				; $83c7: A9 80
+	ORA $64				 ; $83c9: 05 64
+	STA $6c0e,X			 ; $83cb: 9D 0E 6C
+	LDA $53				 ; $83ce: A5 53
+	STA $6c0f,X			 ; $83d0: 9D 0F 6C
+	BRK					 ; $83d3: 00
+	BCC $83d1			   ; $83d4: 90 FB
+	JMP $ff74			   ; $83d6: 4C 74 FF
+	JSR $81ae			   ; $83d9: 20 AE 81
+	LDX $51				 ; $83dc: A6 51
+	LDY $52				 ; $83de: A4 52
+	JSR $d3e6			   ; $83e0: 20 E6 D3
+	AND #$1f				; $83e3: 29 1F
+	TAX					 ; $83e5: AA
+	LDA $6f40,X			 ; $83e6: BD 40 6F
+	AND #$7f				; $83e9: 29 7F
+	RTS					 ; $83eb: 60
+	LDX #$00				; $83ec: A2 00
+	LDA $6c0c,X			 ; $83ee: BD 0C 6C
+	CMP #$ff				; $83f1: C9 FF
+	BEQ $83fd			   ; $83f3: F0 08
+	INX					 ; $83f5: E8
+	INX					 ; $83f6: E8
+	INX					 ; $83f7: E8
+	INX					 ; $83f8: E8
+	CPX #$a0				; $83f9: E0 A0
+	BCC $83ee			   ; $83fb: 90 F1
+	RTS					 ; $83fd: 60
+	BRK					 ; $83fe: 00
+	.db $07			; $83ff
+	.db $6f			; $8400
+	ASL $ffc9,X			 ; $8401: 1E C9 FF
+	BNE $8409			   ; $8404: D0 03
+	JMP $84b9			   ; $8406: 4C B9 84
+	CMP #$01				; $8409: C9 01
+	BNE $8410			   ; $840b: D0 03
+	JMP $84a3			   ; $840d: 4C A3 84
+	JSR $84cc			   ; $8410: 20 CC 84
+	BRK					 ; $8413: 00
+	.db $07			; $8414
+	.db $6f			; $8415
+	ROL tmp0				; $8416: 26 00
+	.db $07			; $8418
+	.db $6f			; $8419
+	AND ($c9,X)			 ; $841a: 21 C9
+	.db $ff			; $841c
+	BNE $8422			   ; $841d: D0 03
+	JMP $8497			   ; $841f: 4C 97 84
+	CMP #$f0				; $8422: C9 F0
+	BEQ $8477			   ; $8424: F0 51
+	JSR $84db			   ; $8426: 20 DB 84
+	CMP #$01				; $8429: C9 01
+	BEQ $8473			   ; $842b: F0 46
+	JSR $84cc			   ; $842d: 20 CC 84
+	BRK					 ; $8430: 00
+	.db $07			; $8431
+	.db $6f			; $8432
+	AND tmp0				; $8433: 25 00
+	.db $07			; $8435
+	.db $6f			; $8436
+	AND ($c9,X)			 ; $8437: 21 C9
+	.db $ff			; $8439
+	BEQ $8410			   ; $843a: F0 D4
+	CMP #$f0				; $843c: C9 F0
+	BEQ $8477			   ; $843e: F0 37
+	JSR $84db			   ; $8440: 20 DB 84
+	CMP #$02				; $8443: C9 02
+	BEQ $8473			   ; $8445: F0 2C
+	JSR $84cc			   ; $8447: 20 CC 84
+	BRK					 ; $844a: 00
+	.db $07			; $844b
+	.db $6f			; $844c
+	BIT tmp0				; $844d: 24 00
+	.db $07			; $844f
+	.db $6f			; $8450
+	AND ($c9,X)			 ; $8451: 21 C9
+	.db $ff			; $8453
+	BEQ $8426			   ; $8454: F0 D0
+	CMP #$f0				; $8456: C9 F0
+	BEQ $8477			   ; $8458: F0 1D
+	JSR $84db			   ; $845a: 20 DB 84
+	CMP #$03				; $845d: C9 03
+	BEQ $8473			   ; $845f: F0 12
+	JSR $84cc			   ; $8461: 20 CC 84
+	BRK					 ; $8464: 00
+	.db $07			; $8465
+	.db $6f			; $8466
+	.db $23			; $8467
+	BRK					 ; $8468: 00
+	.db $07			; $8469
+	.db $6f			; $846a
+	AND ($c9,X)			 ; $846b: 21 C9
+	.db $ff			; $846d
+	BEQ $8440			   ; $846e: F0 D0
+	JSR $84cc			   ; $8470: 20 CC 84
+	BRK					 ; $8473: 00
+	.db $07			; $8474
+	.db $6f			; $8475
+	.db $22			; $8476
+	BRK					 ; $8477: 00
+	LSR $a233,X			 ; $8478: 5E 33 A2
+	ORA $bd				 ; $847b: 05 BD
+	RTS					 ; $847d: 60
+	.db $6f			; $847e
+	STA $6fa0,X			 ; $847f: 9D A0 6F
+	LDA $6f80,X			 ; $8482: BD 80 6F
+	STA $6fc0,X			 ; $8485: 9D C0 6F
+	DEX					 ; $8488: CA
+	BPL $847c			   ; $8489: 10 F1
+	JSR $97b8			   ; $848b: 20 B8 97
+	BRK					 ; $848e: 00
+	ASL $efdb			   ; $848f: 0E DB EF
+	LDA #$82				; $8492: A9 82
+	JSR $84bc			   ; $8494: 20 BC 84
+	BRK					 ; $8497: 00
+	.db $27			; $8498
+	.db $0f			; $8499
+	BRK					 ; $849a: 00
+	ORA #$9f				; $849b: 09 9F
+	JSR $a232			   ; $849d: 20 32 A2
+	JMP $84b6			   ; $84a0: 4C B6 84
+	BRK					 ; $84a3: 00
+	.db $07			; $84a4
+	.db $6f			; $84a5
+	AND #$00				; $84a6: 29 00
+	.db $07			; $84a8
+	.db $6f			; $84a9
+	.db $27			; $84aa
+	CMP #$ff				; $84ab: C9 FF
+	BEQ $84b9			   ; $84ad: F0 0A
+	BRK					 ; $84af: 00
+	LSR $0073			   ; $84b0: 4E 73 00
+	.db $07			; $84b3
+	.db $6f			; $84b4
+	AND #$20				; $84b5: 29 20
+	CPY $4cc8			   ; $84b7: CC C8 4C
+	.db $f3			; $84ba
+	CMP ($8d),Y			 ; $84bb: D1 8D
+	BMI $84c4			   ; $84bd: 30 05
+	LDX #$01				; $84bf: A2 01
+	STX $0531			   ; $84c1: 8E 31 05
+	DEX					 ; $84c4: CA
+	STX $0533			   ; $84c5: 8E 33 05
+	STX $0532			   ; $84c8: 8E 32 05
+	RTS					 ; $84cb: 60
+	LDX #$02				; $84cc: A2 02
+	LDA $078a			   ; $84ce: AD 8A 07
+	CMP #$1e				; $84d1: C9 1E
+	BEQ $84d6			   ; $84d3: F0 01
+	DEX					 ; $84d5: CA
+	BRK					 ; $84d6: 00
+	ORA ($6f,X)			 ; $84d7: 01 6F
+	INC $0060,X			 ; $84d9: FE 60 00
+	EOR $9033,X			 ; $84dc: 5D 33 90
+	.db $0b			; $84df
+	LDA $618e			   ; $84e0: AD 8E 61
+	AND #$07				; $84e3: 29 07
+	BNE $84eb			   ; $84e5: D0 04
+	BRK					 ; $84e7: 00
+	.db $62			; $84e8
+	.db $33			; $84e9
+	RTS					 ; $84ea: 60
+	BRK					 ; $84eb: 00
+	.db $62			; $84ec
+	.db $23			; $84ed
+	RTI					 ; $84ee: 40
+	RTS					 ; $84ef: 60
+	BRK					 ; $84f0: 00
+	CLI					 ; $84f1: 58
+	.db $33			; $84f2
+	LDA $058e			   ; $84f3: AD 8E 05
+	EOR #$03				; $84f6: 49 03
+	TAX					 ; $84f8: AA
+	INX					 ; $84f9: E8
+	INX					 ; $84fa: E8
+	LDA #$03				; $84fb: A9 03
+	JSR $b157			   ; $84fd: 20 57 B1
+	LDA #$03				; $8500: A9 03
+	BCS $8524			   ; $8502: B0 20
+	BRK					 ; $8504: 00
+	.db $62			; $8505
+	.db $23			; $8506
+	RTI					 ; $8507: 40
+	CMP #$03				; $8508: C9 03
+	BCS $8500			   ; $850a: B0 F4
+	CMP #$02				; $850c: C9 02
+	LDA #$03				; $850e: A9 03
+	BCS $8524			   ; $8510: B0 12
+	TXA					 ; $8512: 8A
+	PHA					 ; $8513: 48
+	LDX #$01				; $8514: A2 01
+	JSR $aaff			   ; $8516: 20 FF AA
+	PLA					 ; $8519: 68
+	TAX					 ; $851a: AA
+	LDA #$03				; $851b: A9 03
+	BCS $8524			   ; $851d: B0 05
+	LDX #$00				; $851f: A2 00
+	JMP $856e			   ; $8521: 4C 6E 85
+	ASL					 ; $8524: 0A
+	DEX					 ; $8525: CA
+	BNE $8524			   ; $8526: D0 FC
+	STA $55				 ; $8528: 85 55
+	JSR $8547			   ; $852a: 20 47 85
+	LDA $41				 ; $852d: A5 41
+	BMI $8534			   ; $852f: 30 03
+	JSR $d542			   ; $8531: 20 42 D5
+	JSR $e06e			   ; $8534: 20 6E E0
+	JSR $d7d5			   ; $8537: 20 D5 D7
+	JSR $ff74			   ; $853a: 20 74 FF
+	JSR $cbb4			   ; $853d: 20 B4 CB
+	INC $3c				 ; $8540: E6 3C
+	DEC $55				 ; $8542: C6 55
+	BNE $852a			   ; $8544: D0 E4
+	RTS					 ; $8546: 60
+	LDA #$1e				; $8547: A9 1E
+	LDX $058e			   ; $8549: AE 8E 05
+	LSR					 ; $854c: 4A
+	DEX					 ; $854d: CA
+	BNE $854c			   ; $854e: D0 FC
+	AND $3c				 ; $8550: 25 3C
+	BNE $8576			   ; $8552: D0 22
+	JSR $c010			   ; $8554: 20 10 C0
+	JSR $c007			   ; $8557: 20 07 C0
+	LDA $058e			   ; $855a: AD 8E 05
+	EOR #$03				; $855d: 49 03
+	TAX					 ; $855f: AA
+	INX					 ; $8560: E8
+	INX					 ; $8561: E8
+	LDA $55				 ; $8562: A5 55
+	CLC					 ; $8564: 18
+	ADC #$01				; $8565: 69 01
+	LSR					 ; $8567: 4A
+	DEX					 ; $8568: CA
+	BNE $8567			   ; $8569: D0 FC
+	EOR #$03				; $856b: 49 03
+	TAX					 ; $856d: AA
+	LDA $7020,X			 ; $856e: BD 20 70
+	ORA #$80				; $8571: 09 80
+	STA $7020,X			 ; $8573: 9D 20 70
+	RTS					 ; $8576: 60
+	BRK					 ; $8577: 00
+	.db $5a			; $8578
+	.db $33			; $8579
+	LDA #$02				; $857a: A9 02
+	STA $0515			   ; $857c: 8D 15 05
+	LDA $62a5			   ; $857f: AD A5 62
+	BMI $8587			   ; $8582: 30 03
+	BRK					 ; $8584: 00
+	ORA #$9f				; $8585: 09 9F
+	INC $3c				 ; $8587: E6 3C
+	JSR $c007			   ; $8589: 20 07 C0
+	JSR $c013			   ; $858c: 20 13 C0
+	LDX #$00				; $858f: A2 00
+	JSR $856e			   ; $8591: 20 6E 85
+	JSR $84f3			   ; $8594: 20 F3 84
+	JSR $85a4			   ; $8597: 20 A4 85
+	DEC $3c				 ; $859a: C6 3C
+	DEC $3c				 ; $859c: C6 3C
+	LDA #$00				; $859e: A9 00
+	STA $0597			   ; $85a0: 8D 97 05
+	RTS					 ; $85a3: 60
+	JSR $ff74			   ; $85a4: 20 74 FF
+	LDA $7007			   ; $85a7: AD 07 70
+	AND #$fc				; $85aa: 29 FC
+	ORA #$80				; $85ac: 09 80
+	STA $7007			   ; $85ae: 8D 07 70
+	LDA $7008			   ; $85b1: AD 08 70
+	AND #$fc				; $85b4: 29 FC
+	ORA #$80				; $85b6: 09 80
+	STA $7008			   ; $85b8: 8D 08 70
+	LDA $7009			   ; $85bb: AD 09 70
+	AND #$7c				; $85be: 29 7C
+	STA $7009			   ; $85c0: 8D 09 70
+	LDA #$0a				; $85c3: A9 0A
+	STA $6fe9			   ; $85c5: 8D E9 6F
+	LDA #$00				; $85c8: A9 00
+	STA $7029			   ; $85ca: 8D 29 70
+	LDA #$00				; $85cd: A9 00
+	STA $7169			   ; $85cf: 8D 69 71
+	LDA #$0f				; $85d2: A9 0F
+	STA $060a			   ; $85d4: 8D 0A 06
+	LDA $62a5			   ; $85d7: AD A5 62
+	BMI $85df			   ; $85da: 30 03
+	JSR $c5b9			   ; $85dc: 20 B9 C5
+	LDX #$09				; $85df: A2 09
+	JSR $d804			   ; $85e1: 20 04 D8
+	LDA #$02				; $85e4: A9 02
+	JSR $85ec			   ; $85e6: 20 EC 85
+	JMP $9c13			   ; $85e9: 4C 13 9C
+	PHA					 ; $85ec: 48
+	LDA $058f			   ; $85ed: AD 8F 05
+	EOR #$30				; $85f0: 49 30
+	STA $51				 ; $85f2: 85 51
+	PLA					 ; $85f4: 68
+	PHA					 ; $85f5: 48
+	JSR $e06e			   ; $85f6: 20 6E E0
+	PLA					 ; $85f9: 68
+	PHA					 ; $85fa: 48
+	TAX					 ; $85fb: AA
+	JSR $c90c			   ; $85fc: 20 0C C9
+	PLA					 ; $85ff: 68
+	DEC $51				 ; $8600: C6 51
+	BNE $85f5			   ; $8602: D0 F1
+	LDX #$02				; $8604: A2 02
+	LDA $7007,X			 ; $8606: BD 07 70
+	AND #$7f				; $8609: 29 7F
+	STA $7007,X			 ; $860b: 9D 07 70
+	DEX					 ; $860e: CA
+	BPL $8606			   ; $860f: 10 F5
+	LDA #$0a				; $8611: A9 0A
+	STA $6fe9			   ; $8613: 8D E9 6F
+	LDX #$09				; $8616: A2 09
+	JSR $d804			   ; $8618: 20 04 D8
+	JMP $ff74			   ; $861b: 4C 74 FF
+	JSR $9c13			   ; $861e: 20 13 9C
+	JSR $ff74			   ; $8621: 20 74 FF
+	LDA $7007			   ; $8624: AD 07 70
+	AND #$fc				; $8627: 29 FC
+	ORA #$82				; $8629: 09 82
+	STA $7007			   ; $862b: 8D 07 70
+	LDA $7008			   ; $862e: AD 08 70
+	AND #$fc				; $8631: 29 FC
+	ORA #$82				; $8633: 09 82
+	STA $7008			   ; $8635: 8D 08 70
+	LDA $7009			   ; $8638: AD 09 70
+	AND #$7c				; $863b: 29 7C
+	STA $7009			   ; $863d: 8D 09 70
+	LDA #$0a				; $8640: A9 0A
+	STA $6fe9			   ; $8642: 8D E9 6F
+	LDX #$09				; $8645: A2 09
+	JSR $d804			   ; $8647: 20 04 D8
+	LDA #$01				; $864a: A9 01
+	JSR $85ec			   ; $864c: 20 EC 85
+	LDA #$ff				; $864f: A9 FF
+	STA $7029			   ; $8651: 8D 29 70
+	STA $7009			   ; $8654: 8D 09 70
+	LDA #$00				; $8657: A9 00
+	STA $7169			   ; $8659: 8D 69 71
+	LDA $6fc7			   ; $865c: AD C7 6F
+	STA $6f87			   ; $865f: 8D 87 6F
+	LDA $6fc8			   ; $8662: AD C8 6F
+	STA $6f88			   ; $8665: 8D 88 6F
+	LDA $62a5			   ; $8668: AD A5 62
+	BMI $8675			   ; $866b: 30 08
+	LDA #$12				; $866d: A9 12
+	STA $060a			   ; $866f: 8D 0A 06
+	JSR $c5b9			   ; $8672: 20 B9 C5
+	RTS					 ; $8675: 60
+	BRK					 ; $8676: 00
+	.db $93			; $8677
+	.db $fb			; $8678
+	LDA $058e			   ; $8679: AD 8E 05
+	EOR #$03				; $867c: 49 03
+	TAX					 ; $867e: AA
+	INX					 ; $867f: E8
+	INX					 ; $8680: E8
+	LDA #$03				; $8681: A9 03
+	ASL					 ; $8683: 0A
+	DEX					 ; $8684: CA
+	BNE $8683			   ; $8685: D0 FC
+	CLC					 ; $8687: 18
+	ADC #$04				; $8688: 69 04
+	STA $55				 ; $868a: 85 55
+	LDA $0515			   ; $868c: AD 15 05
+	PHA					 ; $868f: 48
+	LDA #$03				; $8690: A9 03
+	STA $0515			   ; $8692: 8D 15 05
+	JSR $86e6			   ; $8695: 20 E6 86
+	JSR $86dd			   ; $8698: 20 DD 86
+	JSR $86dd			   ; $869b: 20 DD 86
+	JSR $ff74			   ; $869e: 20 74 FF
+	INC $3c				 ; $86a1: E6 3C
+	DEC $55				 ; $86a3: C6 55
+	DEC $55				 ; $86a5: C6 55
+	BNE $8695			   ; $86a7: D0 EC
+	PLA					 ; $86a9: 68
+	STA $0515			   ; $86aa: 8D 15 05
+	BRK					 ; $86ad: 00
+	BIT $902f			   ; $86ae: 2C 2F 90
+	AND $48				 ; $86b1: 25 48
+	BRK					 ; $86b3: 00
+	ORA ($87,X)			 ; $86b4: 01 87
+	JSR $c5c5			   ; $86b6: 20 C5 C5
+	LDA $63				 ; $86b9: A5 63
+	CMP #$48				; $86bb: C9 48
+	BNE $86ce			   ; $86bd: D0 0F
+	LDA $64				 ; $86bf: A5 64
+	CMP #$09				; $86c1: C9 09
+	BNE $86ce			   ; $86c3: D0 09
+	PLA					 ; $86c5: 68
+	ORA #$80				; $86c6: 09 80
+	JSR $8eea			   ; $86c8: 20 EA 8E
+	JMP $c5bf			   ; $86cb: 4C BF C5
+	PLA					 ; $86ce: 68
+	ORA #$80				; $86cf: 09 80
+	JSR $8eea			   ; $86d1: 20 EA 8E
+	JMP $8c48			   ; $86d4: 4C 48 8C
+	JSR $c5c5			   ; $86d7: 20 C5 C5
+	JMP $92e3			   ; $86da: 4C E3 92
+	JSR $e06e			   ; $86dd: 20 6E E0
+	JSR $d7d5			   ; $86e0: 20 D5 D7
+	JMP $cbb4			   ; $86e3: 4C B4 CB
+	LDA #$0e				; $86e6: A9 0E
+	LDX $058e			   ; $86e8: AE 8E 05
+	LSR					 ; $86eb: 4A
+	DEX					 ; $86ec: CA
+	BNE $86eb			   ; $86ed: D0 FC
+	AND $3c				 ; $86ef: 25 3C
+	BNE $86ff			   ; $86f1: D0 0C
+	JSR $c010			   ; $86f3: 20 10 C0
+	JSR $c007			   ; $86f6: 20 07 C0
+	JSR $855a			   ; $86f9: 20 5A 85
+	JSR $c013			   ; $86fc: 20 13 C0
+	RTS					 ; $86ff: 60
+	JSR $ff74			   ; $8700: 20 74 FF
+	JSR $894a			   ; $8703: 20 4A 89
+	LDA $63				 ; $8706: A5 63
+	CMP #$45				; $8708: C9 45
+	BNE $8726			   ; $870a: D0 1A
+	LDA $64				 ; $870c: A5 64
+	CMP #$04				; $870e: C9 04
+	BEQ $871e			   ; $8710: F0 0C
+	CMP #$06				; $8712: C9 06
+	BEQ $871e			   ; $8714: F0 08
+	LDA $62aa			   ; $8716: AD AA 62
+	EOR #$02				; $8719: 49 02
+	JMP $8723			   ; $871b: 4C 23 87
+	LDA $62aa			   ; $871e: AD AA 62
+	EOR #$10				; $8721: 49 10
+	STA $62aa			   ; $8723: 8D AA 62
+	LDA $7e				 ; $8726: A5 7E
+	PHA					 ; $8728: 48
+	JSR $8a0d			   ; $8729: 20 0D 8A
+	JSR $c016			   ; $872c: 20 16 C0
+	CLC					 ; $872f: 18
+	JSR $c004			   ; $8730: 20 04 C0
+	JSR $90ef			   ; $8733: 20 EF 90
+	LDA $7000			   ; $8736: AD 00 70
+	AND #$bc				; $8739: 29 BC
+	ORA #$02				; $873b: 09 02
+	JSR $aabb			   ; $873d: 20 BB AA
+	BRK					 ; $8740: 00
+	LDA ($fb,X)			 ; $8741: A1 FB
+	JSR $87ae			   ; $8743: 20 AE 87
+	BRK					 ; $8746: 00
+	.db $0c			; $8747
+	.db $bf			; $8748
+	JSR $c5af			   ; $8749: 20 AF C5
+	LDA $28				 ; $874c: A5 28
+	BRK					 ; $874e: 00
+	.db $02			; $874f
+	.db $87			; $8750
+	JSR $a02e			   ; $8751: 20 2E A0
+	LDA $0572			   ; $8754: AD 72 05
+	BRK					 ; $8757: 00
+	ORA ($87),Y			 ; $8758: 11 87
+	JSR $a16b			   ; $875a: 20 6B A1
+	BRK					 ; $875d: 00
+	BRK					 ; $875e: 00
+	.db $cf			; $875f
+	BRK					 ; $8760: 00
+	PHP					 ; $8761: 08
+	.db $cf			; $8762
+	JSR $8795			   ; $8763: 20 95 87
+	BRK					 ; $8766: 00
+	.db $03			; $8767
+	.db $cf			; $8768
+	JSR $e501			   ; $8769: 20 01 E5
+	JSR $dff1			   ; $876c: 20 F1 DF
+	LDX #$88				; $876f: A2 88
+	JSR $888a			   ; $8771: 20 8A 88
+	JSR $c58f			   ; $8774: 20 8F C5
+	BRK					 ; $8777: 00
+	BRK					 ; $8778: 00
+	.db $e7			; $8779
+	BRK					 ; $877a: 00
+	.db $07			; $877b
+	.db $87			; $877c
+	JSR $c5b9			   ; $877d: 20 B9 C5
+	JSR $ff74			   ; $8780: 20 74 FF
+	PLA					 ; $8783: 68
+	STA $7e				 ; $8784: 85 7E
+	JSR $88a2			   ; $8786: 20 A2 88
+	JSR $8a48			   ; $8789: 20 48 8A
+	BRK					 ; $878c: 00
+	.db $03			; $878d
+	.db $cf			; $878e
+	JSR $e501			   ; $878f: 20 01 E5
+	JMP $dff1			   ; $8792: 4C F1 DF
+	LDA $7f				 ; $8795: A5 7F
+	BMI $87a2			   ; $8797: 30 09
+	JSR $8a68			   ; $8799: 20 68 8A
+	JSR $8a9a			   ; $879c: 20 9A 8A
+	JMP $87ad			   ; $879f: 4C AD 87
+	LDX $44				 ; $87a2: A6 44
+	LDY $45				 ; $87a4: A4 45
+	JSR $d3e6			   ; $87a6: 20 E6 D3
+	AND #$e0				; $87a9: 29 E0
+	STA $46				 ; $87ab: 85 46
+	RTS					 ; $87ad: 60
+	LDA #$02				; $87ae: A9 02
+	STA $058e			   ; $87b0: 8D 8E 05
+	LDA #$20				; $87b3: A9 20
+	STA $058f			   ; $87b5: 8D 8F 05
+	LDA #$f2				; $87b8: A9 F2
+	STA $7b				 ; $87ba: 85 7B
+	LDX #$78				; $87bc: A2 78
+	JSR $8870			   ; $87be: 20 70 88
+	TXA					 ; $87c1: 8A
+	PHA					 ; $87c2: 48
+	JSR $880c			   ; $87c3: 20 0C 88
+	JSR $8928			   ; $87c6: 20 28 89
+	PLA					 ; $87c9: 68
+	PHA					 ; $87ca: 48
+	JSR $87d7			   ; $87cb: 20 D7 87
+	JSR $c62d			   ; $87ce: 20 2D C6
+	PLA					 ; $87d1: 68
+	TAX					 ; $87d2: AA
+	DEX					 ; $87d3: CA
+	BNE $87be			   ; $87d4: D0 E8
+	RTS					 ; $87d6: 60
+	CMP #$59				; $87d7: C9 59
+	BCC $87fb			   ; $87d9: 90 20
+	SBC #$59				; $87db: E9 59
+	LSR					 ; $87dd: 4A
+	TAX					 ; $87de: AA
+	LDA $87fc,X			 ; $87df: BD FC 87
+	CLC					 ; $87e2: 18
+	ADC $0508			   ; $87e3: 6D 08 05
+	STA $0508			   ; $87e6: 8D 08 05
+	LDY #$00				; $87e9: A0 00
+	LDA $0203,Y			 ; $87eb: B9 03 02
+	SEC					 ; $87ee: 38
+	SBC $87fc,X			 ; $87ef: FD FC 87
+	STA $0203,Y			 ; $87f2: 99 03 02
+	INY					 ; $87f5: C8
+	INY					 ; $87f6: C8
+	INY					 ; $87f7: C8
+	INY					 ; $87f8: C8
+	BNE $87eb			   ; $87f9: D0 F0
+	RTS					 ; $87fb: 60
+	.db $ff			; $87fc
+	ORA ($ff,X)			 ; $87fd: 01 FF
+	ORA ($ff,X)			 ; $87ff: 01 FF
+	ORA ($fe,X)			 ; $8801: 01 FE
+	.db $02			; $8803
+	INC $fd02,X			 ; $8804: FE 02 FD
+	.db $03			; $8807
+	.db $fc			; $8808
+	.db $04			; $8809
+	.db $fb			; $880a
+	ORA $ad				 ; $880b: 05 AD
+	ORA #$05				; $880d: 09 05
+	AND #$07				; $880f: 29 07
+	CMP #$02				; $8811: C9 02
+	BCC $8816			   ; $8813: 90 01
+	RTS					 ; $8815: 60
+	LDA #$00				; $8816: A9 00
+	STA tmp0				; $8818: 85 00
+	LDA #$1d				; $881a: A9 1D
+	STA tmp1				; $881c: 85 01
+	JSR $c662			   ; $881e: 20 62 C6
+	LDX $050a			   ; $8821: AE 0A 05
+	LDA $1c				 ; $8824: A5 1C
+	ORA #$80				; $8826: 09 80
+	STA $0300,X			 ; $8828: 9D 00 03
+	LDA $1d				 ; $882b: A5 1D
+	STA $0302,X			 ; $882d: 9D 02 03
+	AND #$1e				; $8830: 29 1E
+	PHA					 ; $8832: 48
+	STA $0301,X			 ; $8833: 9D 01 03
+	LDA #$20				; $8836: A9 20
+	SEC					 ; $8838: 38
+	SBC $0301,X			 ; $8839: FD 01 03
+	STA $0301,X			 ; $883c: 9D 01 03
+	TAY					 ; $883f: A8
+	LDA #$00				; $8840: A9 00
+	STA $0303,X			 ; $8842: 9D 03 03
+	INX					 ; $8845: E8
+	DEY					 ; $8846: 88
+	BNE $8842			   ; $8847: D0 F9
+	LDA $1c				 ; $8849: A5 1C
+	EOR #$04				; $884b: 49 04
+	ORA #$80				; $884d: 09 80
+	STA $0303,X			 ; $884f: 9D 03 03
+	PLA					 ; $8852: 68
+	TAY					 ; $8853: A8
+	STA $0304,X			 ; $8854: 9D 04 03
+	BEQ $886c			   ; $8857: F0 13
+	LDA $1d				 ; $8859: A5 1D
+	AND #$e0				; $885b: 29 E0
+	STA $0305,X			 ; $885d: 9D 05 03
+	LDA #$00				; $8860: A9 00
+	STA $0306,X			 ; $8862: 9D 06 03
+	INX					 ; $8865: E8
+	DEY					 ; $8866: 88
+	BNE $8862			   ; $8867: D0 F9
+	INC $050b			   ; $8869: EE 0B 05
+	INC $050b			   ; $886c: EE 0B 05
+	RTS					 ; $886f: 60
+	LDA $0509			   ; $8870: AD 09 05
+	TAY					 ; $8873: A8
+	SEC					 ; $8874: 38
+	SBC $7e				 ; $8875: E5 7E
+	CMP #$f0				; $8877: C9 F0
+	BCC $8886			   ; $8879: 90 0B
+	CPY #$80				; $887b: C0 80
+	BCS $8884			   ; $887d: B0 05
+	SBC #$0f				; $887f: E9 0F
+	JMP $8886			   ; $8881: 4C 86 88
+	ADC #$0f				; $8884: 69 0F
+	STA $0509			   ; $8886: 8D 09 05
+	RTS					 ; $8889: 60
+	STX $7d				 ; $888a: 86 7D
+	LDX #$00				; $888c: A2 00
+	LDA $0200,X			 ; $888e: BD 00 02
+	CMP #$f7				; $8891: C9 F7
+	BEQ $889b			   ; $8893: F0 06
+	CLC					 ; $8895: 18
+	ADC $7d				 ; $8896: 65 7D
+	STA $0200,X			 ; $8898: 9D 00 02
+	INX					 ; $889b: E8
+	INX					 ; $889c: E8
+	INX					 ; $889d: E8
+	INX					 ; $889e: E8
+	BNE $888e			   ; $889f: D0 ED
+	RTS					 ; $88a1: 60
+	LDA #$ff				; $88a2: A9 FF
+	STA $7b				 ; $88a4: 85 7B
+	LDA $45				 ; $88a6: A5 45
+	LDX $7e				 ; $88a8: A6 7E
+	BPL $88b2			   ; $88aa: 10 06
+	SEC					 ; $88ac: 38
+	SBC #$10				; $88ad: E9 10
+	JMP $88b5			   ; $88af: 4C B5 88
+	CLC					 ; $88b2: 18
+	ADC #$10				; $88b3: 69 10
+	STA $45				 ; $88b5: 85 45
+	LDA #$10				; $88b7: A9 10
+	STA $7c				 ; $88b9: 85 7C
+	LDX $45				 ; $88bb: A6 45
+	DEX					 ; $88bd: CA
+	LDA $7e				 ; $88be: A5 7E
+	BPL $88c4			   ; $88c0: 10 02
+	INX					 ; $88c2: E8
+	INX					 ; $88c3: E8
+	STX $45				 ; $88c4: 86 45
+	JSR $88ee			   ; $88c6: 20 EE 88
+	DEC $7c				 ; $88c9: C6 7C
+	BEQ $88ed			   ; $88cb: F0 20
+	LDA $7c				 ; $88cd: A5 7C
+	CMP #$03				; $88cf: C9 03
+	BNE $88bb			   ; $88d1: D0 E8
+	BRK					 ; $88d3: 00
+	.db $a3			; $88d4
+	.db $fb			; $88d5
+	LDA #$01				; $88d6: A9 01
+	STA $058e			   ; $88d8: 8D 8E 05
+	LDA #$10				; $88db: A9 10
+	STA $058f			   ; $88dd: 8D 8F 05
+	LDX #$01				; $88e0: A2 01
+	LDA $7e				 ; $88e2: A5 7E
+	BPL $88e8			   ; $88e4: 10 02
+	LDX #$ff				; $88e6: A2 FF
+	STX $7e				 ; $88e8: 86 7E
+	JMP $88bb			   ; $88ea: 4C BB 88
+	RTS					 ; $88ed: 60
+	LDA #$10				; $88ee: A9 10
+	STA $3e				 ; $88f0: 85 3E
+	LDA $058e			   ; $88f2: AD 8E 05
+	EOR #$03				; $88f5: 49 03
+	ASL					 ; $88f7: 0A
+	ASL					 ; $88f8: 0A
+	ASL					 ; $88f9: 0A
+	TAX					 ; $88fa: AA
+	TXA					 ; $88fb: 8A
+	PHA					 ; $88fc: 48
+	LDY #$07				; $88fd: A0 07
+	LDA $7e				 ; $88ff: A5 7E
+	BPL $8904			   ; $8901: 10 01
+	INY					 ; $8903: C8
+	CPY $7c				 ; $8904: C4 7C
+	BCC $891c			   ; $8906: 90 14
+	CPY $7c				 ; $8908: C4 7C
+	BNE $8919			   ; $890a: D0 0D
+	CPX #$08				; $890c: E0 08
+	BNE $8919			   ; $890e: D0 09
+	LDA $7e				 ; $8910: A5 7E
+	BPL $8916			   ; $8912: 10 02
+	LDX #$f8				; $8914: A2 F8
+	JSR $888a			   ; $8916: 20 8A 88
+	JSR $8928			   ; $8919: 20 28 89
+	JSR $c001			   ; $891c: 20 01 C0
+	JSR $ff74			   ; $891f: 20 74 FF
+	PLA					 ; $8922: 68
+	TAX					 ; $8923: AA
+	DEX					 ; $8924: CA
+	BNE $88fb			   ; $8925: D0 D4
+	RTS					 ; $8927: 60
+	LDX #$00				; $8928: A2 00
+	LDA $0200,X			 ; $892a: BD 00 02
+	CMP #$f7				; $892d: C9 F7
+	BEQ $8943			   ; $892f: F0 12
+	CLC					 ; $8931: 18
+	ADC $7e				 ; $8932: 65 7E
+	CMP $7b				 ; $8934: C5 7B
+	BEQ $8940			   ; $8936: F0 08
+	BCC $8940			   ; $8938: 90 06
+	CMP #$fe				; $893a: C9 FE
+	BCS $8940			   ; $893c: B0 02
+	SBC $7e				 ; $893e: E5 7E
+	STA $0200,X			 ; $8940: 9D 00 02
+	INX					 ; $8943: E8
+	INX					 ; $8944: E8
+	INX					 ; $8945: E8
+	INX					 ; $8946: E8
+	BNE $892a			   ; $8947: D0 E1
+	RTS					 ; $8949: 60
+	LDX #$00				; $894a: A2 00
+	LDA $89c8,X			 ; $894c: BD C8 89
+	CMP #$ff				; $894f: C9 FF
+	BEQ $895d			   ; $8951: F0 0A
+	CMP $63				 ; $8953: C5 63
+	BEQ $8960			   ; $8955: F0 09
+	INX					 ; $8957: E8
+	INX					 ; $8958: E8
+	INX					 ; $8959: E8
+	JMP $894c			   ; $895a: 4C 4C 89
+	JMP $895d			   ; $895d: 4C 5D 89
+	LDA $89c9,X			 ; $8960: BD C9 89
+	STA $49				 ; $8963: 85 49
+	LDA $89ca,X			 ; $8965: BD CA 89
+	STA $4a				 ; $8968: 85 4A
+	LDY #$00				; $896a: A0 00
+	LDX #$04				; $896c: A2 04
+	JSR $8986			   ; $896e: 20 86 89
+	LDY #$04				; $8971: A0 04
+	LDX #$00				; $8973: A2 00
+	JSR $8986			   ; $8975: 20 86 89
+	LDA $49				 ; $8978: A5 49
+	CLC					 ; $897a: 18
+	ADC #$08				; $897b: 69 08
+	STA $49				 ; $897d: 85 49
+	BCC $896a			   ; $897f: 90 E9
+	INC $4a				 ; $8981: E6 4A
+	JMP $896a			   ; $8983: 4C 6A 89
+	LDA ($49),Y			 ; $8986: B1 49
+	CMP #$ff				; $8988: C9 FF
+	BEQ $895d			   ; $898a: F0 D1
+	CMP $64				 ; $898c: C5 64
+	BNE $89c4			   ; $898e: D0 34
+	INY					 ; $8990: C8
+	LDA ($49),Y			 ; $8991: B1 49
+	CMP $44				 ; $8993: C5 44
+	BNE $89c4			   ; $8995: D0 2D
+	INY					 ; $8997: C8
+	LDA ($49),Y			 ; $8998: B1 49
+	CMP $45				 ; $899a: C5 45
+	BNE $89c4			   ; $899c: D0 26
+	TXA					 ; $899e: 8A
+	TAY					 ; $899f: A8
+	LDA ($49),Y			 ; $89a0: B1 49
+	STA $64				 ; $89a2: 85 64
+	INY					 ; $89a4: C8
+	LDA ($49),Y			 ; $89a5: B1 49
+	STA $44				 ; $89a7: 85 44
+	INY					 ; $89a9: C8
+	LDA ($49),Y			 ; $89aa: B1 49
+	STA $45				 ; $89ac: 85 45
+	INY					 ; $89ae: C8
+	LDA ($49),Y			 ; $89af: B1 49
+	STA $7f				 ; $89b1: 85 7F
+	PLA					 ; $89b3: 68
+	PLA					 ; $89b4: 68
+	TXA					 ; $89b5: 8A
+	BEQ $89ba			   ; $89b6: F0 02
+	DEX					 ; $89b8: CA
+	DEX					 ; $89b9: CA
+	LDA $89c5,X			 ; $89ba: BD C5 89
+	STA $7e				 ; $89bd: 85 7E
+	TXA					 ; $89bf: 8A
+	EOR #$02				; $89c0: 49 02
+	STA $3d				 ; $89c2: 85 3D
+	RTS					 ; $89c4: 60
+	INC $0200,X			 ; $89c5: FE 00 02
+	AND ($d2),Y			 ; $89c8: 31 D2
+	.db $89			; $89ca
+	.db $47			; $89cb
+	.db $f3			; $89cc
+	.db $89			; $89cd
+	EOR $fc				 ; $89ce: 45 FC
+	.db $89			; $89d0
+	.db $ff			; $89d1
+	BRK					 ; $89d2: 00
+	ORA tmp2,X			  ; $89d3: 15 02
+	.db $ff			; $89d5
+	ORA ($17,X)			 ; $89d6: 01 17
+	.db $02			; $89d8
+	.db $ff			; $89d9
+	ORA (tmp2,X)			; $89da: 01 02
+	.db $0c			; $89dc
+	.db $ff			; $89dd
+	.db $03			; $89de
+	.db $02			; $89df
+	.db $04			; $89e0
+	.db $ff			; $89e1
+	ORA ($0b,X)			 ; $89e2: 01 0B
+	.db $1a			; $89e4
+	.db $ff			; $89e5
+	.db $02			; $89e6
+	ORA ptr0_lo			 ; $89e7: 05 04
+	.db $ff			; $89e9
+	.db $02			; $89ea
+	.db $12			; $89eb
+	ORA $ff				 ; $89ec: 05 FF
+	.db $03			; $89ee
+	ASL $1d,X			   ; $89ef: 16 1D
+	.db $ff			; $89f1
+	.db $ff			; $89f2
+	BRK					 ; $89f3: 00
+	.db $2b			; $89f4
+	.db $03			; $89f5
+	ORA (tmp0,X)			; $89f6: 01 00
+	.db $1f			; $89f8
+	.db $03			; $89f9
+	BRK					 ; $89fa: 00
+	.db $ff			; $89fb
+	.db $04			; $89fc
+	ROL $17				 ; $89fd: 26 17
+	.db $02			; $89ff
+	ASL $09				 ; $8a00: 06 09
+	ORA $0503			   ; $8a02: 0D 03 05
+	ORA $0411,X			 ; $8a05: 1D 11 04
+	.db $07			; $8a08
+	ASL					 ; $8a09: 0A
+	.db $03			; $8a0a
+	ORA $ff				 ; $8a0b: 05 FF
+	LDA $7f				 ; $8a0d: A5 7F
+	BMI $8a23			   ; $8a0f: 30 12
+	JSR $8a68			   ; $8a11: 20 68 8A
+	JSR $8a9a			   ; $8a14: 20 9A 8A
+	JSR $dff1			   ; $8a17: 20 F1 DF
+	JSR $ff74			   ; $8a1a: 20 74 FF
+	JSR $a84c			   ; $8a1d: 20 4C A8
+	JSR $a800			   ; $8a20: 20 00 A8
+	RTS					 ; $8a23: 60
+	.db $80			; $8a24
+	ASL ptr0_hi			 ; $8a25: 06 05
+	.db $63			; $8a27
+	SEI					 ; $8a28: 78
+	.db $80			; $8a29
+	ASL ptr0_hi			 ; $8a2a: 06 05
+	.db $6f			; $8a2c
+	SEI					 ; $8a2d: 78
+	.db $80			; $8a2e
+	ASL ptr0_hi			 ; $8a2f: 06 05
+	.db $27			; $8a31
+	.db $7c			; $8a32
+	.db $80			; $8a33
+	ASL ptr0_hi			 ; $8a34: 06 05
+	JSR $807a			   ; $8a36: 20 7A 80
+	ASL ptr0_hi			 ; $8a39: 06 05
+	SBC $8079,Y			 ; $8a3b: F9 79 80
+	ASL ptr0_hi			 ; $8a3e: 06 05
+	ROL $78				 ; $8a40: 26 78
+	RTS					 ; $8a42: 60
+	RTI					 ; $8a43: 40
+	JSR $2020			   ; $8a44: 20 20 20
+	JSR $7fa5			   ; $8a47: 20 A5 7F
+	BMI $8a23			   ; $8a4a: 30 D7
+	JSR $8a68			   ; $8a4c: 20 68 8A
+	LDY $7f				 ; $8a4f: A4 7F
+	LDA $8a42,Y			 ; $8a51: B9 42 8A
+	STA $46				 ; $8a54: 85 46
+	STA $57				 ; $8a56: 85 57
+	JSR $8a9a			   ; $8a58: 20 9A 8A
+	JSR $a814			   ; $8a5b: 20 14 A8
+	JSR $a829			   ; $8a5e: 20 29 A8
+	JSR $a846			   ; $8a61: 20 46 A8
+	JSR $a800			   ; $8a64: 20 00 A8
+	RTS					 ; $8a67: 60
+	ASL					 ; $8a68: 0A
+	ASL					 ; $8a69: 0A
+	CLC					 ; $8a6a: 18
+	ADC $7f				 ; $8a6b: 65 7F
+	TAX					 ; $8a6d: AA
+	LDA $8a24,X			 ; $8a6e: BD 24 8A
+	STA $46				 ; $8a71: 85 46
+	STA $57				 ; $8a73: 85 57
+	STA $7140			   ; $8a75: 8D 40 71
+	STA $7141			   ; $8a78: 8D 41 71
+	STA $7142			   ; $8a7b: 8D 42 71
+	STA $7143			   ; $8a7e: 8D 43 71
+	LDA #$00				; $8a81: A9 00
+	STA $47				 ; $8a83: 85 47
+	LDA $8a25,X			 ; $8a85: BD 25 8A
+	STA tmp3				; $8a88: 85 03
+	LDA $8a26,X			 ; $8a8a: BD 26 8A
+	STA ptr0_lo			 ; $8a8d: 85 04
+	LDA $8a27,X			 ; $8a8f: BD 27 8A
+	STA $07				 ; $8a92: 85 07
+	LDA $8a28,X			 ; $8a94: BD 28 8A
+	STA $08				 ; $8a97: 85 08
+	RTS					 ; $8a99: 60
+	LDY #$00				; $8a9a: A0 00
+	LDX tmp3				; $8a9c: A6 03
+	LDA ($07),Y			 ; $8a9e: B1 07
+	AND #$1f				; $8aa0: 29 1F
+	STA ($07),Y			 ; $8aa2: 91 07
+	LDA $57				 ; $8aa4: A5 57
+	ORA ($07),Y			 ; $8aa6: 11 07
+	STA ($07),Y			 ; $8aa8: 91 07
+	INY					 ; $8aaa: C8
+	DEX					 ; $8aab: CA
+	BNE $8a9e			   ; $8aac: D0 F0
+	LDA $3f				 ; $8aae: A5 3F
+	LDY #$00				; $8ab0: A0 00
+	LDX #$07				; $8ab2: A2 07
+	JSR $c81d			   ; $8ab4: 20 1D C8
+	DEC ptr0_lo			 ; $8ab7: C6 04
+	BNE $8a9a			   ; $8ab9: D0 DF
+	RTS					 ; $8abb: 60
+	LDA #$20				; $8abc: A9 20
+	STA $55				 ; $8abe: 85 55
+	LDX #$00				; $8ac0: A2 00
+	STX $53				 ; $8ac2: 86 53
+	INX					 ; $8ac4: E8
+	STX $51				 ; $8ac5: 86 51
+	LDA #$03				; $8ac7: A9 03
+	STA $52				 ; $8ac9: 85 52
+	LDX #$05				; $8acb: A2 05
+	LDA $7020,X			 ; $8acd: BD 20 70
+	BMI $8ae6			   ; $8ad0: 30 14
+	LDA $7000,X			 ; $8ad2: BD 00 70
+	AND #$3c				; $8ad5: 29 3C
+	JSR $c78c			   ; $8ad7: 20 8C C7
+	JSR $8afb			   ; $8ada: 20 FB 8A
+	JSR $8afb			   ; $8add: 20 FB 8A
+	JSR $8afb			   ; $8ae0: 20 FB 8A
+	JSR $8afb			   ; $8ae3: 20 FB 8A
+	DEX					 ; $8ae6: CA
+	BPL $8acd			   ; $8ae7: 10 E4
+	JSR $ff74			   ; $8ae9: 20 74 FF
+	DEC $52				 ; $8aec: C6 52
+	BNE $8af6			   ; $8aee: D0 06
+	INC $51				 ; $8af0: E6 51
+	LDA #$03				; $8af2: A9 03
+	STA $52				 ; $8af4: 85 52
+	DEC $55				 ; $8af6: C6 55
+	BNE $8acb			   ; $8af8: D0 D1
+	RTS					 ; $8afa: 60
+	LDA $0200,Y			 ; $8afb: B9 00 02
+	CMP #$f0				; $8afe: C9 F0
+	BCS $8b10			   ; $8b00: B0 0E
+	SEC					 ; $8b02: 38
+	SBC $51				 ; $8b03: E5 51
+	BCS $8b0d			   ; $8b05: B0 06
+	BIT $53				 ; $8b07: 24 53
+	BMI $8b0d			   ; $8b09: 30 02
+	LDA #$f7				; $8b0b: A9 F7
+	STA $0200,Y			 ; $8b0d: 99 00 02
+	INY					 ; $8b10: C8
+	INY					 ; $8b11: C8
+	INY					 ; $8b12: C8
+	INY					 ; $8b13: C8
+	RTS					 ; $8b14: 60
+	BRK					 ; $8b15: 00
+	.db $92			; $8b16
+	.db $fb			; $8b17
+	JSR $8bb4			   ; $8b18: 20 B4 8B
+	JSR $8b59			   ; $8b1b: 20 59 8B
+	BRK					 ; $8b1e: 00
+	LDA $fb				 ; $8b1f: A5 FB
+	JSR $8b28			   ; $8b21: 20 28 8B
+	JSR $8b4c			   ; $8b24: 20 4C 8B
+	RTS					 ; $8b27: 60
+	LDY #$01				; $8b28: A0 01
+	LDX #$1c				; $8b2a: A2 1C
+	TXA					 ; $8b2c: 8A
+	LSR					 ; $8b2d: 4A
+	LSR					 ; $8b2e: 4A
+	STA $51				 ; $8b2f: 85 51
+	JSR $8b38			   ; $8b31: 20 38 8B
+	DEX					 ; $8b34: CA
+	BNE $8b2c			   ; $8b35: D0 F5
+	RTS					 ; $8b37: 60
+	LDA $0508,Y			 ; $8b38: B9 08 05
+	PHA					 ; $8b3b: 48
+	CLC					 ; $8b3c: 18
+	ADC $51				 ; $8b3d: 65 51
+	STA $0508,Y			 ; $8b3f: 99 08 05
+	JSR $ff74			   ; $8b42: 20 74 FF
+	PLA					 ; $8b45: 68
+	STA $0508,Y			 ; $8b46: 99 08 05
+	JMP $ff74			   ; $8b49: 4C 74 FF
+	LDX #$05				; $8b4c: A2 05
+	LDA $59,X			   ; $8b4e: B5 59
+	STA $7b,X			   ; $8b50: 95 7B
+	DEX					 ; $8b52: CA
+	BPL $8b4e			   ; $8b53: 10 F9
+	LDA #$ff				; $8b55: A9 FF
+	BNE $8b5b			   ; $8b57: D0 02
+	LDA #$00				; $8b59: A9 00
+	STA $52				 ; $8b5b: 85 52
+	JSR $8baf			   ; $8b5d: 20 AF 8B
+	JSR $8b6b			   ; $8b60: 20 6B 8B
+	JSR $ff74			   ; $8b63: 20 74 FF
+	DEC $51				 ; $8b66: C6 51
+	BNE $8b60			   ; $8b68: D0 F6
+	RTS					 ; $8b6a: 60
+	LDX #$05				; $8b6b: A2 05
+	LDA $7020,X			 ; $8b6d: BD 20 70
+	BMI $8b7d			   ; $8b70: 30 0B
+	LDA $7000,X			 ; $8b72: BD 00 70
+	AND #$3c				; $8b75: 29 3C
+	JSR $c78c			   ; $8b77: 20 8C C7
+	JSR $8b81			   ; $8b7a: 20 81 8B
+	DEX					 ; $8b7d: CA
+	BPL $8b6d			   ; $8b7e: 10 ED
+	RTS					 ; $8b80: 60
+	TXA					 ; $8b81: 8A
+	PHA					 ; $8b82: 48
+	LDA $7b,X			   ; $8b83: B5 7B
+	INC $7b,X			   ; $8b85: F6 7B
+	TAX					 ; $8b87: AA
+	LDA $52				 ; $8b88: A5 52
+	BMI $8b96			   ; $8b8a: 30 0A
+	LDA $0200,Y			 ; $8b8c: B9 00 02
+	SEC					 ; $8b8f: 38
+	SBC $8bd8,X			 ; $8b90: FD D8 8B
+	JMP $8b9d			   ; $8b93: 4C 9D 8B
+	LDA $0200,Y			 ; $8b96: B9 00 02
+	CLC					 ; $8b99: 18
+	ADC $8bd8,X			 ; $8b9a: 7D D8 8B
+	STA $0200,Y			 ; $8b9d: 99 00 02
+	STA $0204,Y			 ; $8ba0: 99 04 02
+	CLC					 ; $8ba3: 18
+	ADC #$08				; $8ba4: 69 08
+	STA $0208,Y			 ; $8ba6: 99 08 02
+	STA $020c,Y			 ; $8ba9: 99 0C 02
+	PLA					 ; $8bac: 68
+	TAX					 ; $8bad: AA
+	RTS					 ; $8bae: 60
+	LDA #$10				; $8baf: A9 10
+	STA $51				 ; $8bb1: 85 51
+	RTS					 ; $8bb3: 60
+	LDX #$05				; $8bb4: A2 05
+	LDA $7000,X			 ; $8bb6: BD 00 70
+	AND #$3c				; $8bb9: 29 3C
+	JSR $c78c			   ; $8bbb: 20 8C C7
+	LDA $0200,Y			 ; $8bbe: B9 00 02
+	LSR					 ; $8bc1: 4A
+	LSR					 ; $8bc2: 4A
+	LSR					 ; $8bc3: 4A
+	LSR					 ; $8bc4: 4A
+	TAY					 ; $8bc5: A8
+	LDA $8bce,Y			 ; $8bc6: B9 CE 8B
+	STA $7b,X			   ; $8bc9: 95 7B
+	STA $59,X			   ; $8bcb: 95 59
+	DEX					 ; $8bcd: CA
+	BPL $8bb6			   ; $8bce: 10 E6
+	RTS					 ; $8bd0: 60
+	BRK					 ; $8bd1: 00
+	BPL $8bf4			   ; $8bd2: 10 20
+	BMI $8c16			   ; $8bd4: 30 40
+	BVC $8c38			   ; $8bd6: 50 60
+	BRK					 ; $8bd8: 00
+	ORA (tmp2,X)			; $8bd9: 01 02
+	.db $02			; $8bdb
+	.db $02			; $8bdc
+	.db $03			; $8bdd
+	.db $03			; $8bde
+	.db $03			; $8bdf
+	.db $04			; $8be0
+	.db $04			; $8be1
+	ORA ptr0_hi			 ; $8be2: 05 05
+	ASL $06				 ; $8be4: 06 06
+	.db $07			; $8be6
+	.db $07			; $8be7
+	ORA (tmp1,X)			; $8be8: 01 01
+	.db $02			; $8bea
+	.db $02			; $8beb
+	.db $03			; $8bec
+	.db $03			; $8bed
+	.db $04			; $8bee
+	ORA ptr0_hi			 ; $8bef: 05 05
+	ASL $06				 ; $8bf1: 06 06
+	ASL $07				 ; $8bf3: 06 07
+	PHP					 ; $8bf5: 08
+	PHP					 ; $8bf6: 08
+	PHP					 ; $8bf7: 08
+	ORA (tmp1,X)			; $8bf8: 01 01
+	.db $02			; $8bfa
+	.db $03			; $8bfb
+	.db $04			; $8bfc
+	.db $04			; $8bfd
+	ORA ptr0_hi			 ; $8bfe: 05 05
+	ASL $07				 ; $8c00: 06 07
+	.db $07			; $8c02
+	PHP					 ; $8c03: 08
+	PHP					 ; $8c04: 08
+	ORA #$0a				; $8c05: 09 0A
+	.db $0b			; $8c07
+	ORA (tmp2,X)			; $8c08: 01 02
+	.db $02			; $8c0a
+	.db $04			; $8c0b
+	.db $04			; $8c0c
+	ORA ptr0_hi			 ; $8c0d: 05 05
+	ASL $07				 ; $8c0f: 06 07
+	PHP					 ; $8c11: 08
+	ORA #$09				; $8c12: 09 09
+	ASL					 ; $8c14: 0A
+	.db $0b			; $8c15
+	.db $0b			; $8c16
+	.db $0c			; $8c17
+	ORA (tmp2,X)			; $8c18: 01 02
+	.db $03			; $8c1a
+	.db $04			; $8c1b
+	ORA ptr0_hi			 ; $8c1c: 05 05
+	.db $07			; $8c1e
+	.db $07			; $8c1f
+	PHP					 ; $8c20: 08
+	ORA #$0a				; $8c21: 09 0A
+	ASL					 ; $8c23: 0A
+	.db $0c			; $8c24
+	.db $0c			; $8c25
+	ORA $010e			   ; $8c26: 0D 0E 01
+	.db $03			; $8c29
+	.db $03			; $8c2a
+	ORA ptr0_hi			 ; $8c2b: 05 05
+	ASL $07				 ; $8c2d: 06 07
+	PHP					 ; $8c2f: 08
+	ASL					 ; $8c30: 0A
+	ASL					 ; $8c31: 0A
+	.db $0b			; $8c32
+	.db $0c			; $8c33
+	ORA $0f0e			   ; $8c34: 0D 0E 0F
+	BPL $8c3b			   ; $8c37: 10 02
+	.db $02			; $8c39
+	.db $04			; $8c3a
+	ORA $06				 ; $8c3b: 05 06
+	.db $07			; $8c3d
+	PHP					 ; $8c3e: 08
+	ORA #$0a				; $8c3f: 09 0A
+	.db $0b			; $8c41
+	ORA $0f0d			   ; $8c42: 0D 0D 0F
+	.db $0f			; $8c45
+	ORA ($12),Y			 ; $8c46: 11 12
+	LDA #$f3				; $8c48: A9 F3
+	STA $54				 ; $8c4a: 85 54
+	LDA #$6b				; $8c4c: A9 6B
+	CLC					 ; $8c4e: 18
+	BNE $8c57			   ; $8c4f: D0 06
+	LDA #$f7				; $8c51: A9 F7
+	STA $54				 ; $8c53: 85 54
+	LDA #$6f				; $8c55: A9 6F
+	PHP					 ; $8c57: 08
+	STA $55				 ; $8c58: 85 55
+	JSR $8ce9			   ; $8c5a: 20 E9 8C
+	JSR $c5bf			   ; $8c5d: 20 BF C5
+	LDA $41				 ; $8c60: A5 41
+	BMI $8c6f			   ; $8c62: 30 0B
+	LDA $63				 ; $8c64: A5 63
+	CMP #$41				; $8c66: C9 41
+	BNE $8c6f			   ; $8c68: D0 05
+	LDX #$28				; $8c6a: A2 28
+	JSR $c90c			   ; $8c6c: 20 0C C9
+	LDA #$01				; $8c6f: A9 01
+	STA $57				 ; $8c71: 85 57
+	LDA #$08				; $8c73: A9 08
+	STA $56				 ; $8c75: 85 56
+	LDA #$0f				; $8c77: A9 0F
+	STA $58				 ; $8c79: 85 58
+	STA $53				 ; $8c7b: 85 53
+	LDA #$00				; $8c7d: A9 00
+	STA $51				 ; $8c7f: 85 51
+	PLP					 ; $8c81: 28
+	BCS $8c9e			   ; $8c82: B0 1A
+	LDA #$00				; $8c84: A9 00
+	STA $51				 ; $8c86: 85 51
+	LDX #$05				; $8c88: A2 05
+	LDA $7020,X			 ; $8c8a: BD 20 70
+	BPL $8c92			   ; $8c8d: 10 03
+	DEX					 ; $8c8f: CA
+	BNE $8c8a			   ; $8c90: D0 F8
+	TXA					 ; $8c92: 8A
+	LDY $57				 ; $8c93: A4 57
+	ASL					 ; $8c95: 0A
+	DEY					 ; $8c96: 88
+	BNE $8c95			   ; $8c97: D0 FC
+	CLC					 ; $8c99: 18
+	ADC $58				 ; $8c9a: 65 58
+	STA $53				 ; $8c9c: 85 53
+	JSR $8cad			   ; $8c9e: 20 AD 8C
+	JSR $ff74			   ; $8ca1: 20 74 FF
+	INC $51				 ; $8ca4: E6 51
+	LDA $51				 ; $8ca6: A5 51
+	CMP $53				 ; $8ca8: C5 53
+	BCC $8c9e			   ; $8caa: 90 F2
+	RTS					 ; $8cac: 60
+	LDX #$05				; $8cad: A2 05
+	LDA $7020,X			 ; $8caf: BD 20 70
+	BMI $8ce5			   ; $8cb2: 30 31
+	LDA $51				 ; $8cb4: A5 51
+	LDY $57				 ; $8cb6: A4 57
+	LSR					 ; $8cb8: 4A
+	DEY					 ; $8cb9: 88
+	BNE $8cb8			   ; $8cba: D0 FC
+	STA $52				 ; $8cbc: 85 52
+	CPX $52				 ; $8cbe: E4 52
+	BEQ $8cc4			   ; $8cc0: F0 02
+	BCS $8ce5			   ; $8cc2: B0 21
+	LDA $7000,X			 ; $8cc4: BD 00 70
+	AND #$3c				; $8cc7: 29 3C
+	JSR $c78c			   ; $8cc9: 20 8C C7
+	LDA $0200,Y			 ; $8ccc: B9 00 02
+	CMP $55				 ; $8ccf: C5 55
+	BEQ $8ce5			   ; $8cd1: F0 12
+	CLC					 ; $8cd3: 18
+	ADC $56				 ; $8cd4: 65 56
+	STA $0200,Y			 ; $8cd6: 99 00 02
+	STA $0204,Y			 ; $8cd9: 99 04 02
+	CLC					 ; $8cdc: 18
+	ADC #$08				; $8cdd: 69 08
+	STA $0208,Y			 ; $8cdf: 99 08 02
+	STA $020c,Y			 ; $8ce2: 99 0C 02
+	DEX					 ; $8ce5: CA
+	BPL $8caf			   ; $8ce6: 10 C7
+	RTS					 ; $8ce8: 60
+	LDX #$05				; $8ce9: A2 05
+	LDA $7020,X			 ; $8ceb: BD 20 70
+	BMI $8d09			   ; $8cee: 30 19
+	LDA $7000,X			 ; $8cf0: BD 00 70
+	AND #$3c				; $8cf3: 29 3C
+	JSR $c78c			   ; $8cf5: 20 8C C7
+	LDA $54				 ; $8cf8: A5 54
+	STA $0200,Y			 ; $8cfa: 99 00 02
+	STA $0204,Y			 ; $8cfd: 99 04 02
+	CLC					 ; $8d00: 18
+	ADC #$08				; $8d01: 69 08
+	STA $0208,Y			 ; $8d03: 99 08 02
+	STA $020c,Y			 ; $8d06: 99 0C 02
+	DEX					 ; $8d09: CA
+	BPL $8ceb			   ; $8d0a: 10 DF
+	RTS					 ; $8d0c: 60
+	LDY #$06				; $8d0d: A0 06
+	JSR $8d18			   ; $8d0f: 20 18 8D
+	JSR $8d2c			   ; $8d12: 20 2C 8D
+	JMP $8d0f			   ; $8d15: 4C 0F 8D
+	TYA					 ; $8d18: 98
+	PHA					 ; $8d19: 48
+	LDA $7020,X			 ; $8d1a: BD 20 70
+	ORA #$80				; $8d1d: 09 80
+	STA $7020,X			 ; $8d1f: 9D 20 70
+	TXA					 ; $8d22: 8A
+	PHA					 ; $8d23: 48
+	BRK					 ; $8d24: 00
+	ASL					 ; $8d25: 0A
+	.db $6f			; $8d26
+	PLA					 ; $8d27: 68
+	TAX					 ; $8d28: AA
+	PLA					 ; $8d29: 68
+	TAY					 ; $8d2a: A8
+	RTS					 ; $8d2b: 60
+	TXA					 ; $8d2c: 8A
+	PHA					 ; $8d2d: 48
+	TYA					 ; $8d2e: 98
+	PHA					 ; $8d2f: 48
+	LDA $7020,X			 ; $8d30: BD 20 70
+	AND #$7f				; $8d33: 29 7F
+	STA $7020,X			 ; $8d35: 9D 20 70
+	BRK					 ; $8d38: 00
+	ASL					 ; $8d39: 0A
+	.db $6f			; $8d3a
+	PLA					 ; $8d3b: 68
+	PHA					 ; $8d3c: 48
+	TAX					 ; $8d3d: AA
+	JSR $c90c			   ; $8d3e: 20 0C C9
+	PLA					 ; $8d41: 68
+	TAY					 ; $8d42: A8
+	PLA					 ; $8d43: 68
+	TAX					 ; $8d44: AA
+	DEY					 ; $8d45: 88
+	BNE $8d5b			   ; $8d46: D0 13
+	PLA					 ; $8d48: 68
+	PLA					 ; $8d49: 68
+	JSR $8d18			   ; $8d4a: 20 18 8D
+	LDA #$80				; $8d4d: A9 80
+	STA $6f60,X			 ; $8d4f: 9D 60 6F
+	STA $6fa0,X			 ; $8d52: 9D A0 6F
+	STA $6f80,X			 ; $8d55: 9D 80 6F
+	STA $6fc0,X			 ; $8d58: 9D C0 6F
+	RTS					 ; $8d5b: 60
+	BIT $6291			   ; $8d5c: 2C 91 62
+	BVC $8d64			   ; $8d5f: 50 03
+	JMP $8ded			   ; $8d61: 4C ED 8D
+	BRK					 ; $8d64: 00
+	STA $fb,X			   ; $8d65: 95 FB
+	LDA #$0a				; $8d67: A9 0A
+	LDX $64				 ; $8d69: A6 64
+	CPX #$02				; $8d6b: E0 02
+	BNE $8d8a			   ; $8d6d: D0 1B
+	LDX $52				 ; $8d6f: A6 52
+	CPX #$0a				; $8d71: E0 0A
+	BNE $8d8a			   ; $8d73: D0 15
+	LDX $53				 ; $8d75: A6 53
+	CPX #$16				; $8d77: E0 16
+	BNE $8d8a			   ; $8d79: D0 0F
+	LDA #$00				; $8d7b: A9 00
+	JSR $b3ed			   ; $8d7d: 20 ED B3
+	BCC $8d88			   ; $8d80: 90 06
+	LDA $0572			   ; $8d82: AD 72 05
+	JMP $8d8a			   ; $8d85: 4C 8A 8D
+	LDA #$1e				; $8d88: A9 1E
+	LDX $52				 ; $8d8a: A6 52
+	LDY $53				 ; $8d8c: A4 53
+	PHA					 ; $8d8e: 48
+	BRK					 ; $8d8f: 00
+	ORA #$ef				; $8d90: 09 EF
+	LDA $7140			   ; $8d92: AD 40 71
+	AND #$e0				; $8d95: 29 E0
+	STA tmp0				; $8d97: 85 00
+	PLA					 ; $8d99: 68
+	ORA tmp0				; $8d9a: 05 00
+	PHA					 ; $8d9c: 48
+	LDX $3d				 ; $8d9d: A6 3D
+	LDA $8e3d,X			 ; $8d9f: BD 3D 8E
+	STA tmp0				; $8da2: 85 00
+	LDA #$6c				; $8da4: A9 6C
+	STA tmp1				; $8da6: 85 01
+	LDA #$03				; $8da8: A9 03
+	STA tmp2				; $8daa: 85 02
+	LDA $8e41,X			 ; $8dac: BD 41 8E
+	STA tmp3				; $8daf: 85 03
+	LDX #$00				; $8db1: A2 00
+	LDY #$3c				; $8db3: A0 3C
+	JSR $c73e			   ; $8db5: 20 3E C7
+	LDA tmp3				; $8db8: A5 03
+	CLC					 ; $8dba: 18
+	ADC #$08				; $8dbb: 69 08
+	STA tmp3				; $8dbd: 85 03
+	LDX #$00				; $8dbf: A2 00
+	INY					 ; $8dc1: C8
+	JSR $c73e			   ; $8dc2: 20 3E C7
+	LDA tmp3				; $8dc5: A5 03
+	SEC					 ; $8dc7: 38
+	SBC #$08				; $8dc8: E9 08
+	STA tmp3				; $8dca: 85 03
+	LDA tmp0				; $8dcc: A5 00
+	CLC					 ; $8dce: 18
+	ADC #$08				; $8dcf: 69 08
+	STA tmp0				; $8dd1: 85 00
+	LDX #$00				; $8dd3: A2 00
+	INY					 ; $8dd5: C8
+	JSR $c73e			   ; $8dd6: 20 3E C7
+	LDA tmp3				; $8dd9: A5 03
+	CLC					 ; $8ddb: 18
+	ADC #$08				; $8ddc: 69 08
+	STA tmp3				; $8dde: 85 03
+	LDX #$00				; $8de0: A2 00
+	INY					 ; $8de2: C8
+	JSR $c73e			   ; $8de3: 20 3E C7
+	BRK					 ; $8de6: 00
+	ASL $cb,X			   ; $8de7: 16 CB
+	RTI					 ; $8de9: 40
+	PLA					 ; $8dea: 68
+	TAY					 ; $8deb: A8
+	RTS					 ; $8dec: 60
+	LDY #$3c				; $8ded: A0 3C
+	LDX #$00				; $8def: A2 00
+	JSR $c770			   ; $8df1: 20 70 C7
+	TYA					 ; $8df4: 98
+	SEC					 ; $8df5: 38
+	SBC #$3c				; $8df6: E9 3C
+	ASL					 ; $8df8: 0A
+	ASL					 ; $8df9: 0A
+	ASL					 ; $8dfa: 0A
+	ASL					 ; $8dfb: 0A
+	ASL					 ; $8dfc: 0A
+	CLC					 ; $8dfd: 18
+	ADC $3e				 ; $8dfe: 65 3E
+	TAX					 ; $8e00: AA
+	DEX					 ; $8e01: CA
+	LDA tmp0				; $8e02: A5 00
+	CLC					 ; $8e04: 18
+	ADC $8e45,X			 ; $8e05: 7D 45 8E
+	STA tmp0				; $8e08: 85 00
+	LDA tmp3				; $8e0a: A5 03
+	CLC					 ; $8e0c: 18
+	ADC $8e55,X			 ; $8e0d: 7D 55 8E
+	STA tmp3				; $8e10: 85 03
+	LDX #$00				; $8e12: A2 00
+	JSR $c73e			   ; $8e14: 20 3E C7
+	INY					 ; $8e17: C8
+	CPY #$40				; $8e18: C0 40
+	BCC $8def			   ; $8e1a: 90 D3
+	LDA $3e				 ; $8e1c: A5 3E
+	CMP #$02				; $8e1e: C9 02
+	BCS $8e3c			   ; $8e20: B0 1A
+	BRK					 ; $8e22: 00
+	ASL $db,X			   ; $8e23: 16 DB
+	.db $bf			; $8e25
+	LDA #$f7				; $8e26: A9 F7
+	STA tmp0				; $8e28: 85 00
+	STA tmp1				; $8e2a: 85 01
+	STA tmp2				; $8e2c: 85 02
+	STA tmp3				; $8e2e: 85 03
+	LDY #$3c				; $8e30: A0 3C
+	LDX #$00				; $8e32: A2 00
+	JSR $c73e			   ; $8e34: 20 3E C7
+	INY					 ; $8e37: C8
+	CPY #$40				; $8e38: C0 40
+	BCC $8e32			   ; $8e3a: 90 F6
+	RTS					 ; $8e3c: 60
+	.db $5c			; $8e3d
+	JMP ($6c7c)			 ; $8e3e: 6C 7C 6C
+	.db $80			; $8e41
+	BCC $8dc4			   ; $8e42: 90 80
+	BVS $8e82			   ; $8e44: 70 3C
+	.db $23			; $8e46
+	.db $14			; $8e47
+	.db $0b			; $8e48
+	ASL ptr0_lo			 ; $8e49: 06 04
+	.db $03			; $8e4b
+	.db $02			; $8e4c
+	.db $02			; $8e4d
+	ORA ($ff,X)			 ; $8e4e: 01 FF
+	INC $fefe,X			 ; $8e50: FE FE FE
+	SBC $fefd,X			 ; $8e53: FD FD FE
+	INC $fefe,X			 ; $8e56: FE FE FE
+	INC $fefe,X			 ; $8e59: FE FE FE
+	INC $fefe,X			 ; $8e5c: FE FE FE
+	INC $fefe,X			 ; $8e5f: FE FE FE
+	INC $fefe,X			 ; $8e62: FE FE FE
+	.db $3c			; $8e65
+	.db $23			; $8e66
+	.db $14			; $8e67
+	.db $0b			; $8e68
+	ASL ptr0_lo			 ; $8e69: 06 04
+	.db $03			; $8e6b
+	.db $02			; $8e6c
+	.db $02			; $8e6d
+	ORA ($ff,X)			 ; $8e6e: 01 FF
+	INC $fefe,X			 ; $8e70: FE FE FE
+	SBC $02fd,X			 ; $8e73: FD FD 02
+	.db $02			; $8e76
+	.db $02			; $8e77
+	.db $02			; $8e78
+	.db $02			; $8e79
+	.db $02			; $8e7a
+	.db $02			; $8e7b
+	.db $02			; $8e7c
+	.db $02			; $8e7d
+	.db $02			; $8e7e
+	.db $02			; $8e7f
+	.db $02			; $8e80
+	.db $02			; $8e81
+	.db $02			; $8e82
+	.db $02			; $8e83
+	.db $02			; $8e84
+	.db $3c			; $8e85
+	.db $23			; $8e86
+	.db $14			; $8e87
+	.db $0b			; $8e88
+	ASL ptr0_hi			 ; $8e89: 06 05
+	.db $04			; $8e8b
+	.db $03			; $8e8c
+	.db $02			; $8e8d
+	ORA (tmp1,X)			; $8e8e: 01 01
+	BRK					 ; $8e90: 00
+	.db $ff			; $8e91
+	.db $ff			; $8e92
+	INC $fefe,X			 ; $8e93: FE FE FE
+	INC $fefe,X			 ; $8e96: FE FE FE
+	INC $fefe,X			 ; $8e99: FE FE FE
+	INC $fefe,X			 ; $8e9c: FE FE FE
+	INC $fefe,X			 ; $8e9f: FE FE FE
+	INC $fefe,X			 ; $8ea2: FE FE FE
+	.db $3c			; $8ea5
+	.db $23			; $8ea6
+	.db $14			; $8ea7
+	.db $0b			; $8ea8
+	ASL ptr0_hi			 ; $8ea9: 06 05
+	.db $04			; $8eab
+	.db $03			; $8eac
+	.db $02			; $8ead
+	ORA (tmp1,X)			; $8eae: 01 01
+	BRK					 ; $8eb0: 00
+	.db $ff			; $8eb1
+	.db $ff			; $8eb2
+	INC $02fe,X			 ; $8eb3: FE FE 02
+	.db $02			; $8eb6
+	.db $02			; $8eb7
+	.db $02			; $8eb8
+	.db $02			; $8eb9
+	.db $02			; $8eba
+	.db $02			; $8ebb
+	.db $02			; $8ebc
+	.db $02			; $8ebd
+	.db $02			; $8ebe
+	.db $02			; $8ebf
+	.db $02			; $8ec0
+	.db $02			; $8ec1
+	.db $02			; $8ec2
+	.db $02			; $8ec3
+	.db $02			; $8ec4
+	JSR $959b			   ; $8ec5: 20 9B 95
+	BRK					 ; $8ec8: 00
+	PHP					 ; $8ec9: 08
+	.db $87			; $8eca
+	PHA					 ; $8ecb: 48
+	JSR $8fa5			   ; $8ecc: 20 A5 8F
+	JSR $8fdf			   ; $8ecf: 20 DF 8F
+	JSR $9817			   ; $8ed2: 20 17 98
+	PLA					 ; $8ed5: 68
+	PHA					 ; $8ed6: 48
+	CLC					 ; $8ed7: 18
+	BRK					 ; $8ed8: 00
+	ASL $68bf			   ; $8ed9: 0E BF 68
+	JSR $8ee5			   ; $8edc: 20 E5 8E
+	JSR $9825			   ; $8edf: 20 25 98
+	JMP $c5bf			   ; $8ee2: 4C BF C5
+	PHA					 ; $8ee5: 48
+	BRK					 ; $8ee6: 00
+	LSR $33,X			   ; $8ee7: 56 33
+	PLA					 ; $8ee9: 68
+	PHA					 ; $8eea: 48
+	LDA $41				 ; $8eeb: A5 41
+	ORA #$80				; $8eed: 09 80
+	STA $41				 ; $8eef: 85 41
+	LDA #$00				; $8ef1: A9 00
+	STA $0527			   ; $8ef3: 8D 27 05
+	PLA					 ; $8ef6: 68
+	JSR $9083			   ; $8ef7: 20 83 90
+	BRK					 ; $8efa: 00
+	.db $02			; $8efb
+	.db $bf			; $8efc
+	BCS $8f02			   ; $8efd: B0 03
+	BRK					 ; $8eff: 00
+	ORA #$9f				; $8f00: 09 9F
+	LDX $44				 ; $8f02: A6 44
+	STX $053e			   ; $8f04: 8E 3E 05
+	LDY $45				 ; $8f07: A4 45
+	STY $053f			   ; $8f09: 8C 3F 05
+	JSR $8f63			   ; $8f0c: 20 63 8F
+	BCS $8f53			   ; $8f0f: B0 42
+	JSR $8f7a			   ; $8f11: 20 7A 8F
+	JSR $c5bf			   ; $8f14: 20 BF C5
+	LDX $44				 ; $8f17: A6 44
+	INX					 ; $8f19: E8
+	LDY $45				 ; $8f1a: A4 45
+	JSR $d3e6			   ; $8f1c: 20 E6 D3
+	AND #$1f				; $8f1f: 29 1F
+	JSR $8f6b			   ; $8f21: 20 6B 8F
+	BCC $8f2c			   ; $8f24: 90 06
+	DEC $053e			   ; $8f26: CE 3E 05
+	DEC $0541			   ; $8f29: CE 41 05
+	LDX $053e			   ; $8f2c: AE 3E 05
+	DEC $053f			   ; $8f2f: CE 3F 05
+	LDY $053f			   ; $8f32: AC 3F 05
+	JSR $d3e6			   ; $8f35: 20 E6 D3
+	STA $0540			   ; $8f38: 8D 40 05
+	BRK					 ; $8f3b: 00
+	LDA #$fb				; $8f3c: A9 FB
+	LDX #$00				; $8f3e: A2 00
+	LDA $28				 ; $8f40: A5 28
+	CMP #$32				; $8f42: C9 32
+	BNE $8f48			   ; $8f44: D0 02
+	LDX #$02				; $8f46: A2 02
+	BRK					 ; $8f48: 00
+	.db $03			; $8f49
+	.db $bf			; $8f4a
+	BRK					 ; $8f4b: 00
+	ASL					 ; $8f4c: 0A
+	.db $6f			; $8f4d
+	PLA					 ; $8f4e: 68
+	PLA					 ; $8f4f: 68
+	JMP $ff74			   ; $8f50: 4C 74 FF
+	CMP #$14				; $8f53: C9 14
+	BCC $8f62			   ; $8f55: 90 0B
+	CMP #$18				; $8f57: C9 18
+	BCS $8f62			   ; $8f59: B0 07
+	DEC $45				 ; $8f5b: C6 45
+	JSR $835d			   ; $8f5d: 20 5D 83
+	INC $45				 ; $8f60: E6 45
+	RTS					 ; $8f62: 60
+	JSR $d3e6			   ; $8f63: 20 E6 D3
+	AND #$1f				; $8f66: 29 1F
+	STA $0541			   ; $8f68: 8D 41 05
+	TAX					 ; $8f6b: AA
+	LDA $6f40,X			 ; $8f6c: BD 40 6F
+	AND #$7f				; $8f6f: 29 7F
+	CMP #$20				; $8f71: C9 20
+	BCC $8f78			   ; $8f73: 90 03
+	CMP #$24				; $8f75: C9 24
+	RTS					 ; $8f77: 60
+	SEC					 ; $8f78: 38
+	RTS					 ; $8f79: 60
+	LDX #$00				; $8f7a: A2 00
+	JSR $8f85			   ; $8f7c: 20 85 8F
+	INX					 ; $8f7f: E8
+	CPX #$06				; $8f80: E0 06
+	BNE $8f7c			   ; $8f82: D0 F8
+	RTS					 ; $8f84: 60
+	TXA					 ; $8f85: 8A
+	PHA					 ; $8f86: 48
+	LDA $7020,X			 ; $8f87: BD 20 70
+	BMI $8fa2			   ; $8f8a: 30 16
+	LDA $7000,X			 ; $8f8c: BD 00 70
+	AND #$3c				; $8f8f: 29 3C
+	JSR $c78c			   ; $8f91: 20 8C C7
+	LDA #$f7				; $8f94: A9 F7
+	STA $0200,Y			 ; $8f96: 99 00 02
+	STA $0204,Y			 ; $8f99: 99 04 02
+	STA $0208,Y			 ; $8f9c: 99 08 02
+	STA $020c,Y			 ; $8f9f: 99 0C 02
+	PLA					 ; $8fa2: 68
+	TAX					 ; $8fa3: AA
+	RTS					 ; $8fa4: 60
+	BIT $6281			   ; $8fa5: 2C 81 62
+	BVC $8fde			   ; $8fa8: 50 34
+	LDX #$00				; $8faa: A2 00
+	BRK					 ; $8fac: 00
+	.db $2b			; $8fad
+	.db $73			; $8fae
+	CMP #$08				; $8faf: C9 08
+	BCC $8fde			   ; $8fb1: 90 2B
+	LDY #$ff				; $8fb3: A0 FF
+	STY $70				 ; $8fb5: 84 70
+	LDX #$01				; $8fb7: A2 01
+	LDA #$00				; $8fb9: A9 00
+	STY $71				 ; $8fbb: 84 71
+	BRK					 ; $8fbd: 00
+	LSR $a273,X			 ; $8fbe: 5E 73 A2
+	BRK					 ; $8fc1: 00
+	JSR $966c			   ; $8fc2: 20 6C 96
+	BRK					 ; $8fc5: 00
+	ORA $a287			   ; $8fc6: 0D 87 A2
+	ORA ($20,X)			 ; $8fc9: 01 20
+	JMP ($0096)			 ; $8fcb: 6C 96 00
+	ORA $a587			   ; $8fce: 0D 87 A5
+	BVS $8f9c			   ; $8fd1: 70 C9
+	.db $ff			; $8fd3
+	BEQ $8fde			   ; $8fd4: F0 08
+	LDX #$02				; $8fd6: A2 02
+	JSR $966c			   ; $8fd8: 20 6C 96
+	BRK					 ; $8fdb: 00
+	ORA $6087			   ; $8fdc: 0D 87 60
+	LDA $63				 ; $8fdf: A5 63
+	CMP #$37				; $8fe1: C9 37
+	BNE $8fea			   ; $8fe3: D0 05
+	LDA #$08				; $8fe5: A9 08
+	BRK					 ; $8fe7: 00
+	.db $12			; $8fe8
+	.db $2f			; $8fe9
+	RTS					 ; $8fea: 60
+	LDY #$00				; $8feb: A0 00
+	LDX #$8f				; $8fed: A2 8F
+	LDA $615a			   ; $8fef: AD 5A 61
+	CMP $9060,Y			 ; $8ff2: D9 60 90
+	BNE $905f			   ; $8ff5: D0 68
+	LDA $63				 ; $8ff7: A5 63
+	CMP $9061,Y			 ; $8ff9: D9 61 90
+	BNE $905f			   ; $8ffc: D0 61
+	LDA $64				 ; $8ffe: A5 64
+	CMP $9062,Y			 ; $9000: D9 62 90
+	BNE $905f			   ; $9003: D0 5A
+	LDA $44				 ; $9005: A5 44
+	CMP $9063,Y			 ; $9007: D9 63 90
+	BNE $905f			   ; $900a: D0 53
+	STX $0530			   ; $900c: 8E 30 05
+	LDA #$01				; $900f: A9 01
+	STA $0531			   ; $9011: 8D 31 05
+	LDA #$00				; $9014: A9 00
+	STA $0533			   ; $9016: 8D 33 05
+	STA $0532			   ; $9019: 8D 32 05
+	LDX #$00				; $901c: A2 00
+	BRK					 ; $901e: 00
+	.db $2b			; $901f
+	.db $73			; $9020
+	CMP $9064,Y			 ; $9021: D9 64 90
+	BEQ $9048			   ; $9024: F0 22
+	TYA					 ; $9026: 98
+	PHA					 ; $9027: 48
+	INX					 ; $9028: E8
+	BRK					 ; $9029: 00
+	.db $2b			; $902a
+	.db $73			; $902b
+	CMP $9064,Y			 ; $902c: D9 64 90
+	PHP					 ; $902f: 08
+	LDX #$01				; $9030: A2 01
+	LDA #$00				; $9032: A9 00
+	LDY #$02				; $9034: A0 02
+	PLP					 ; $9036: 28
+	BEQ $903f			   ; $9037: F0 06
+	LDX #$02				; $9039: A2 02
+	LDA #$01				; $903b: A9 01
+	LDY #$00				; $903d: A0 00
+	STY $70				 ; $903f: 84 70
+	LDY #$ff				; $9041: A0 FF
+	JSR $8fbb			   ; $9043: 20 BB 8F
+	PLA					 ; $9046: 68
+	TAY					 ; $9047: A8
+	LDX #$01				; $9048: A2 01
+	BRK					 ; $904a: 00
+	.db $2b			; $904b
+	.db $73			; $904c
+	CMP $9065,Y			 ; $904d: D9 65 90
+	BEQ $905f			   ; $9050: F0 0D
+	LDX #$00				; $9052: A2 00
+	LDA #$02				; $9054: A9 02
+	LDY #$01				; $9056: A0 01
+	STY $70				 ; $9058: 84 70
+	LDY #$ff				; $905a: A0 FF
+	JMP $8fbb			   ; $905c: 4C BB 8F
+	RTS					 ; $905f: 60
+	ORA (ptr0_lo,X)		 ; $9060: 01 04
+	.db $07			; $9062
+	ASL $0107			   ; $9063: 0E 07 01
+	.db $03			; $9066
+	BRK					 ; $9067: 00
+	BRK					 ; $9068: 00
+	ASL					 ; $9069: 0A
+	.db $03			; $906a
+	.db $02			; $906b
+	LDX #$8f				; $906c: A2 8F
+	BRK					 ; $906e: 00
+	.db $0f			; $906f
+	.db $eb			; $9070
+	PHP					 ; $9071: 08
+	BEQ $9076			   ; $9072: F0 02
+	LDX #$00				; $9074: A2 00
+	LDY #$06				; $9076: A0 06
+	JMP $8fef			   ; $9078: 4C EF 8F
+	PHA					 ; $907b: 48
+	JSR $959b			   ; $907c: 20 9B 95
+	PLA					 ; $907f: 68
+	JMP $8ed6			   ; $9080: 4C D6 8E
+	PHA					 ; $9083: 48
+	AND #$03				; $9084: 29 03
+	STA $3d				 ; $9086: 85 3D
+	JSR $9090			   ; $9088: 20 90 90
+	PLA					 ; $908b: 68
+	JSR $90c8			   ; $908c: 20 C8 90
+	RTS					 ; $908f: 60
+	JSR $c016			   ; $9090: 20 16 C0
+	JSR $c5af			   ; $9093: 20 AF C5
+	SEC					 ; $9096: 38
+	JSR $c004			   ; $9097: 20 04 C0
+	BCC $90a2			   ; $909a: 90 06
+	LDA $0572			   ; $909c: AD 72 05
+	BRK					 ; $909f: 00
+	ORA ($87),Y			 ; $90a0: 11 87
+	JSR $c54e			   ; $90a2: 20 4E C5
+	JMP $c58f			   ; $90a5: 4C 8F C5
+	JSR $ff74			   ; $90a8: 20 74 FF
+	JSR $c016			   ; $90ab: 20 16 C0
+	CLC					 ; $90ae: 18
+	JSR $c004			   ; $90af: 20 04 C0
+	JSR $a16b			   ; $90b2: 20 6B A1
+	JSR $90ef			   ; $90b5: 20 EF 90
+	LDA #$00				; $90b8: A9 00
+	STA $47				 ; $90ba: 85 47
+	LDX $44				 ; $90bc: A6 44
+	LDY $45				 ; $90be: A4 45
+	JSR $d3e6			   ; $90c0: 20 E6 D3
+	AND #$e0				; $90c3: 29 E0
+	STA $46				 ; $90c5: 85 46
+	RTS					 ; $90c7: 60
+	PHA					 ; $90c8: 48
+	JSR $90ef			   ; $90c9: 20 EF 90
+	PLA					 ; $90cc: 68
+	BPL $90d8			   ; $90cd: 10 09
+	JSR $aab4			   ; $90cf: 20 B4 AA
+	JSR $90e2			   ; $90d2: 20 E2 90
+	JMP $958a			   ; $90d5: 4C 8A 95
+	JSR $acea			   ; $90d8: 20 EA AC
+	JSR $90e2			   ; $90db: 20 E2 90
+	JSR $958a			   ; $90de: 20 8A 95
+	RTS					 ; $90e1: 60
+	JSR $c5af			   ; $90e2: 20 AF C5
+	BRK					 ; $90e5: 00
+	BRK					 ; $90e6: 00
+	.db $cf			; $90e7
+	JSR $c58f			   ; $90e8: 20 8F C5
+	BRK					 ; $90eb: 00
+	PHP					 ; $90ec: 08
+	.db $cf			; $90ed
+	RTS					 ; $90ee: 60
+	LDA $44				 ; $90ef: A5 44
+	STA $6f60			   ; $90f1: 8D 60 6F
+	STA $6fa0			   ; $90f4: 8D A0 6F
+	LDA $45				 ; $90f7: A5 45
+	STA $6f80			   ; $90f9: 8D 80 6F
+	STA $6fc0			   ; $90fc: 8D C0 6F
+	RTS					 ; $90ff: 60
+	BRK					 ; $9100: 00
+	ASL $87				 ; $9101: 06 87
+	BCC $90ff			   ; $9103: 90 FA
+	BRK					 ; $9105: 00
+	.db $82			; $9106
+	.db $fb			; $9107
+	JSR $c5c5			   ; $9108: 20 C5 C5
+	BRK					 ; $910b: 00
+	ASL					 ; $910c: 0A
+	.db $87			; $910d
+	LDX tmp0				; $910e: A6 00
+	BMI $914d			   ; $9110: 30 3B
+	LSR tmp0				; $9112: 46 00
+	LSR tmp0				; $9114: 46 00
+	LSR tmp0				; $9116: 46 00
+	BCC $911f			   ; $9118: 90 05
+	PHA					 ; $911a: 48
+	BRK					 ; $911b: 00
+	LSR $33,X			   ; $911c: 56 33
+	PLA					 ; $911e: 68
+	PHA					 ; $911f: 48
+	AND #$03				; $9120: 29 03
+	STA $3d				 ; $9122: 85 3D
+	STA $7000			   ; $9124: 8D 00 70
+	LDA $0530			   ; $9127: AD 30 05
+	BMI $912f			   ; $912a: 30 03
+	BRK					 ; $912c: 00
+	ORA #$9f				; $912d: 09 9F
+	LDA $63				 ; $912f: A5 63
+	CMP #$36				; $9131: C9 36
+	BNE $9140			   ; $9133: D0 0B
+	LDA $64				 ; $9135: A5 64
+	CMP #$00				; $9137: C9 00
+	BNE $9140			   ; $9139: D0 05
+	LDA #$00				; $913b: A9 00
+	STA $0530			   ; $913d: 8D 30 05
+	JSR $8feb			   ; $9140: 20 EB 8F
+	JSR $906c			   ; $9143: 20 6C 90
+	PLA					 ; $9146: 68
+	JSR $90c8			   ; $9147: 20 C8 90
+	JMP $c5bf			   ; $914a: 4C BF C5
+	PHA					 ; $914d: 48
+	BRK					 ; $914e: 00
+	ASL $68bf			   ; $914f: 0E BF 68
+	JMP $92df			   ; $9152: 4C DF 92
+	LDA $44				 ; $9155: A5 44
+	CMP $3f				 ; $9157: C5 3F
+	BCS $9166			   ; $9159: B0 0B
+	LDA $45				 ; $915b: A5 45
+	CMP $40				 ; $915d: C5 40
+	BCS $9166			   ; $915f: B0 05
+	JSR $91e1			   ; $9161: 20 E1 91
+	BCC $91a6			   ; $9164: 90 40
+	LDA $63				 ; $9166: A5 63
+	CMP #$04				; $9168: C9 04
+	BNE $9196			   ; $916a: D0 2A
+	LDX $64				 ; $916c: A6 64
+	CPX #$02				; $916e: E0 02
+	BNE $9196			   ; $9170: D0 24
+	LDA #$00				; $9172: A9 00
+	STA $64				 ; $9174: 85 64
+	LDX #$23				; $9176: A2 23
+	LDY #$81				; $9178: A0 81
+	LDA $44				 ; $917a: A5 44
+	BMI $9180			   ; $917c: 30 02
+	BNE $9184			   ; $917e: D0 04
+	LDX #$0c				; $9180: A2 0C
+	LDY #$83				; $9182: A0 83
+	STX $44				 ; $9184: 86 44
+	LDA #$07				; $9186: A9 07
+	STA $45				 ; $9188: 85 45
+	TYA					 ; $918a: 98
+	PHA					 ; $918b: 48
+	BRK					 ; $918c: 00
+	.db $82			; $918d
+	.db $fb			; $918e
+	JSR $c5c5			   ; $918f: 20 C5 C5
+	PLA					 ; $9192: 68
+	JMP $8ed6			   ; $9193: 4C D6 8E
+	CMP #$01				; $9196: C9 01
+	BNE $91a2			   ; $9198: D0 08
+	LDA $6281			   ; $919a: AD 81 62
+	ORA #$20				; $919d: 09 20
+	STA $6281			   ; $919f: 8D 81 62
+	JSR $9290			   ; $91a2: 20 90 92
+	RTS					 ; $91a5: 60
+	LDA $63				 ; $91a6: A5 63
+	CMP #$18				; $91a8: C9 18
+	BNE $91c2			   ; $91aa: D0 16
+	LDA $45				 ; $91ac: A5 45
+	AND #$fe				; $91ae: 29 FE
+	CMP #$1c				; $91b0: C9 1C
+	BNE $91c2			   ; $91b2: D0 0E
+	LDX #$15				; $91b4: A2 15
+	LDA $44				 ; $91b6: A5 44
+	CMP #$09				; $91b8: C9 09
+	BEQ $91c3			   ; $91ba: F0 07
+	LDX #$eb				; $91bc: A2 EB
+	CMP #$1f				; $91be: C9 1F
+	BEQ $91c3			   ; $91c0: F0 01
+	RTS					 ; $91c2: 60
+	TXA					 ; $91c3: 8A
+	TAY					 ; $91c4: A8
+	CLC					 ; $91c5: 18
+	ADC $44				 ; $91c6: 65 44
+	STA $44				 ; $91c8: 85 44
+	LDX #$05				; $91ca: A2 05
+	TYA					 ; $91cc: 98
+	CLC					 ; $91cd: 18
+	ADC $6f60,X			 ; $91ce: 7D 60 6F
+	STA $6f60,X			 ; $91d1: 9D 60 6F
+	STA $6fa0,X			 ; $91d4: 9D A0 6F
+	DEX					 ; $91d7: CA
+	BPL $91cc			   ; $91d8: 10 F2
+	TYA					 ; $91da: 98
+	CLC					 ; $91db: 18
+	ADC $ec				 ; $91dc: 65 EC
+	STA $ec				 ; $91de: 85 EC
+	RTS					 ; $91e0: 60
+	LDX #$00				; $91e1: A2 00
+	LDA $9236,X			 ; $91e3: BD 36 92
+	CMP #$ff				; $91e6: C9 FF
+	BEQ $9219			   ; $91e8: F0 2F
+	CMP $63				 ; $91ea: C5 63
+	BNE $9211			   ; $91ec: D0 23
+	LDA $9237,X			 ; $91ee: BD 37 92
+	CMP $64				 ; $91f1: C5 64
+	BNE $9211			   ; $91f3: D0 1C
+	LDA $44				 ; $91f5: A5 44
+	CMP $9238,X			 ; $91f7: DD 38 92
+	BEQ $9203			   ; $91fa: F0 07
+	BCC $9234			   ; $91fc: 90 36
+	CMP $9239,X			 ; $91fe: DD 39 92
+	BCS $9234			   ; $9201: B0 31
+	LDA $45				 ; $9203: A5 45
+	CMP $923a,X			 ; $9205: DD 3A 92
+	BEQ $9211			   ; $9208: F0 07
+	BCC $9234			   ; $920a: 90 28
+	CMP $923b,X			 ; $920c: DD 3B 92
+	BCS $9234			   ; $920f: B0 23
+	TXA					 ; $9211: 8A
+	CLC					 ; $9212: 18
+	ADC #$06				; $9213: 69 06
+	TAX					 ; $9215: AA
+	JMP $91e3			   ; $9216: 4C E3 91
+	LDA $63				 ; $9219: A5 63
+	CMP #$21				; $921b: C9 21
+	BNE $9232			   ; $921d: D0 13
+	LDA $6292			   ; $921f: AD 92 62
+	LSR					 ; $9222: 4A
+	BCS $9232			   ; $9223: B0 0D
+	LDX #$00				; $9225: A2 00
+	LDA $45				 ; $9227: A5 45
+	CMP #$0f				; $9229: C9 0F
+	BNE $922f			   ; $922b: D0 02
+	LDX #$10				; $922d: A2 10
+	STX $6f42			   ; $922f: 8E 42 6F
+	CLC					 ; $9232: 18
+	RTS					 ; $9233: 60
+	SEC					 ; $9234: 38
+	RTS					 ; $9235: 60
+	.db $0b			; $9236
+	BRK					 ; $9237: 00
+	BRK					 ; $9238: 00
+	.db $ff			; $9239
+	PHP					 ; $923a: 08
+	AND ($1d),Y			 ; $923b: 31 1D
+	BRK					 ; $923d: 00
+	BRK					 ; $923e: 00
+	.db $ff			; $923f
+	BRK					 ; $9240: 00
+	.db $0f			; $9241
+	.db $27			; $9242
+	BRK					 ; $9243: 00
+	BRK					 ; $9244: 00
+	.db $ff			; $9245
+	PHP					 ; $9246: 08
+	.db $ff			; $9247
+	PLP					 ; $9248: 28
+	BRK					 ; $9249: 00
+	BRK					 ; $924a: 00
+	.db $ff			; $924b
+	BRK					 ; $924c: 00
+	ORA ($21),Y			 ; $924d: 11 21
+	BRK					 ; $924f: 00
+	BRK					 ; $9250: 00
+	.db $ff			; $9251
+	BRK					 ; $9252: 00
+	ORA ($47),Y			 ; $9253: 11 47
+	BRK					 ; $9255: 00
+	BRK					 ; $9256: 00
+	.db $ff			; $9257
+	BRK					 ; $9258: 00
+	ORA $002e			   ; $9259: 0D 2E 00
+	BRK					 ; $925c: 00
+	.db $ff			; $925d
+	BRK					 ; $925e: 00
+	AND #$46				; $925f: 29 46
+	BRK					 ; $9261: 00
+	BRK					 ; $9262: 00
+	.db $ff			; $9263
+	BRK					 ; $9264: 00
+	JSR $0045			   ; $9265: 20 45 00
+	BRK					 ; $9268: 00
+	.db $ff			; $9269
+	PHP					 ; $926a: 08
+	.db $ff			; $926b
+	.db $3c			; $926c
+	BRK					 ; $926d: 00
+	BRK					 ; $926e: 00
+	.db $ff			; $926f
+	BRK					 ; $9270: 00
+	ROL ptr_hi			  ; $9271: 26 11
+	BRK					 ; $9273: 00
+	ASL					 ; $9274: 0A
+	.db $ff			; $9275
+	BRK					 ; $9276: 00
+	.db $ff			; $9277
+	ROL					 ; $9278: 2A
+	BRK					 ; $9279: 00
+	ORA ($0a,X)			 ; $927a: 01 0A
+	BRK					 ; $927c: 00
+	.db $ff			; $927d
+	.db $ff			; $927e
+	PHA					 ; $927f: 48
+	LDA $63				 ; $9280: A5 63
+	CMP #$3e				; $9282: C9 3E
+	BNE $9289			   ; $9284: D0 03
+	STA $618f			   ; $9286: 8D 8F 61
+	BRK					 ; $9289: 00
+	.db $57			; $928a
+	.db $33			; $928b
+	PLA					 ; $928c: 68
+	JMP $8ed6			   ; $928d: 4C D6 8E
+	LDA $0515			   ; $9290: AD 15 05
+	CMP #$01				; $9293: C9 01
+	BEQ $929a			   ; $9295: F0 03
+	BRK					 ; $9297: 00
+	.db $82			; $9298
+	.db $fb			; $9299
+	JSR $c5c5			   ; $929a: 20 C5 C5
+	BRK					 ; $929d: 00
+	ORA #$87				; $929e: 09 87
+	BCS $927f			   ; $92a0: B0 DD
+	PHA					 ; $92a2: 48
+	SEC					 ; $92a3: 38
+	BRK					 ; $92a4: 00
+	ASL $adbf			   ; $92a5: 0E BF AD
+	ORA ptr0_hi,X		   ; $92a8: 15 05
+	CMP #$01				; $92aa: C9 01
+	BEQ $92b1			   ; $92ac: F0 03
+	BRK					 ; $92ae: 00
+	.db $04			; $92af
+	.db $9f			; $92b0
+	LDA $63				 ; $92b1: A5 63
+	CMP #$45				; $92b3: C9 45
+	BNE $92cd			   ; $92b5: D0 16
+	LDA $64				 ; $92b7: A5 64
+	CMP #$00				; $92b9: C9 00
+	BNE $92cd			   ; $92bb: D0 10
+	LDA $45				 ; $92bd: A5 45
+	CMP #$07				; $92bf: C9 07
+	BNE $92cd			   ; $92c1: D0 0A
+	DEC $43				 ; $92c3: C6 43
+	DEC $43				 ; $92c5: C6 43
+	DEC $43				 ; $92c7: C6 43
+	PLA					 ; $92c9: 68
+	LDA #$00				; $92ca: A9 00
+	PHA					 ; $92cc: 48
+	PLA					 ; $92cd: 68
+	LDX $0515			   ; $92ce: AE 15 05
+	CPX #$01				; $92d1: E0 01
+	BNE $92df			   ; $92d3: D0 0A
+	LDX $42				 ; $92d5: A6 42
+	STX $6195			   ; $92d7: 8E 95 61
+	LDX $43				 ; $92da: A6 43
+	STX $6196			   ; $92dc: 8E 96 61
+	AND #$03				; $92df: 29 03
+	STA $3d				 ; $92e1: 85 3D
+	JSR $92ec			   ; $92e3: 20 EC 92
+	JSR $c5bf			   ; $92e6: 20 BF C5
+	JMP $9485			   ; $92e9: 4C 85 94
+	BIT $41				 ; $92ec: 24 41
+	BPL $92fc			   ; $92ee: 10 0C
+	BRK					 ; $92f0: 00
+	.db $57			; $92f1
+	.db $33			; $92f2
+	LDA $41				 ; $92f3: A5 41
+	AND #$7f				; $92f5: 29 7F
+	STA $41				 ; $92f7: 85 41
+	JSR $9817			   ; $92f9: 20 17 98
+	LDA $615a			   ; $92fc: AD 5A 61
+	BNE $930b			   ; $92ff: D0 0A
+	LDA $6283			   ; $9301: AD 83 62
+	BPL $930b			   ; $9304: 10 05
+	LDA #$1e				; $9306: A9 1E
+	STA $62ed			   ; $9308: 8D ED 62
+	BRK					 ; $930b: 00
+	BRK					 ; $930c: 00
+	.db $cf			; $930d
+	JSR $a615			   ; $930e: 20 15 A6
+	BRK					 ; $9311: 00
+	BPL $9373			   ; $9312: 10 5F
+	LDA #$00				; $9314: A9 00
+	STA $6285			   ; $9316: 8D 85 62
+	STA $6289			   ; $9319: 8D 89 62
+	BRK					 ; $931c: 00
+	.db $1f			; $931d
+	.db $db			; $931e
+	.db $7f			; $931f
+	LDA $42				 ; $9320: A5 42
+	STA $6f60			   ; $9322: 8D 60 6F
+	LDA $43				 ; $9325: A5 43
+	STA $6f80			   ; $9327: 8D 80 6F
+	LDA $6195			   ; $932a: AD 95 61
+	STA $6f66			   ; $932d: 8D 66 6F
+	STA $6fa6			   ; $9330: 8D A6 6F
+	LDA $6196			   ; $9333: AD 96 61
+	STA $6f86			   ; $9336: 8D 86 6F
+	STA $6fc6			   ; $9339: 8D C6 6F
+	LDA $6197			   ; $933c: AD 97 61
+	STA $6f67			   ; $933f: 8D 67 6F
+	STA $6fa7			   ; $9342: 8D A7 6F
+	STA $6f68			   ; $9345: 8D 68 6F
+	STA $6fa8			   ; $9348: 8D A8 6F
+	STA $6f69			   ; $934b: 8D 69 6F
+	STA $6fa9			   ; $934e: 8D A9 6F
+	LDY $6198			   ; $9351: AC 98 61
+	STY $6f87			   ; $9354: 8C 87 6F
+	STY $6fc7			   ; $9357: 8C C7 6F
+	STY $6f89			   ; $935a: 8C 89 6F
+	STY $6fc9			   ; $935d: 8C C9 6F
+	DEY					 ; $9360: 88
+	STY $6f88			   ; $9361: 8C 88 6F
+	STY $6fc8			   ; $9364: 8C C8 6F
+	LDA #$00				; $9367: A9 00
+	STA $7046			   ; $9369: 8D 46 70
+	STA $7047			   ; $936c: 8D 47 70
+	STA $7048			   ; $936f: 8D 48 70
+	STA $7049			   ; $9372: 8D 49 70
+	STA $704a			   ; $9375: 8D 4A 70
+	STA $704b			   ; $9378: 8D 4B 70
+	STA $704c			   ; $937b: 8D 4C 70
+	STA $704d			   ; $937e: 8D 4D 70
+	STA $704e			   ; $9381: 8D 4E 70
+	STA $704f			   ; $9384: 8D 4F 70
+	STA $7050			   ; $9387: 8D 50 70
+	STA $7051			   ; $938a: 8D 51 70
+	LDA $65				 ; $938d: A5 65
+	CMP #$03				; $938f: C9 03
+	BEQ $9396			   ; $9391: F0 03
+	JMP $9421			   ; $9393: 4C 21 94
+	LDX #$22				; $9396: A2 22
+	STX $6f6a			   ; $9398: 8E 6A 6F
+	STX $6faa			   ; $939b: 8E AA 6F
+	INX					 ; $939e: E8
+	STX $6f6c			   ; $939f: 8E 6C 6F
+	STX $6fac			   ; $93a2: 8E AC 6F
+	STX $6f6e			   ; $93a5: 8E 6E 6F
+	STX $6fae			   ; $93a8: 8E AE 6F
+	STX $6f70			   ; $93ab: 8E 70 6F
+	STX $6fb0			   ; $93ae: 8E B0 6F
+	INX					 ; $93b1: E8
+	STX $6f6d			   ; $93b2: 8E 6D 6F
+	STX $6fad			   ; $93b5: 8E AD 6F
+	STX $6f6f			   ; $93b8: 8E 6F 6F
+	STX $6faf			   ; $93bb: 8E AF 6F
+	STX $6f71			   ; $93be: 8E 71 6F
+	STX $6fb1			   ; $93c1: 8E B1 6F
+	INX					 ; $93c4: E8
+	STX $6f6b			   ; $93c5: 8E 6B 6F
+	STX $6fab			   ; $93c8: 8E AB 6F
+	LDY #$00				; $93cb: A0 00
+	LDX #$04				; $93cd: A2 04
+	LDA $62a4			   ; $93cf: AD A4 62
+	ASL					 ; $93d2: 0A
+	BCC $93d6			   ; $93d3: 90 01
+	INY					 ; $93d5: C8
+	DEX					 ; $93d6: CA
+	BNE $93d2			   ; $93d7: D0 F9
+	CPY #$04				; $93d9: C0 04
+	BCS $9421			   ; $93db: B0 44
+	CPY #$03				; $93dd: C0 03
+	BEQ $9413			   ; $93df: F0 32
+	CPY #$02				; $93e1: C0 02
+	BEQ $9405			   ; $93e3: F0 20
+	CPY #$01				; $93e5: C0 01
+	BEQ $93f7			   ; $93e7: F0 0E
+	LDY #$1e				; $93e9: A0 1E
+	STY $6f90			   ; $93eb: 8C 90 6F
+	STY $6fd0			   ; $93ee: 8C D0 6F
+	STY $6f91			   ; $93f1: 8C 91 6F
+	STY $6fd1			   ; $93f4: 8C D1 6F
+	LDY #$1f				; $93f7: A0 1F
+	STY $6f8e			   ; $93f9: 8C 8E 6F
+	STY $6fce			   ; $93fc: 8C CE 6F
+	STY $6f8f			   ; $93ff: 8C 8F 6F
+	STY $6fcf			   ; $9402: 8C CF 6F
+	LDY #$20				; $9405: A0 20
+	STY $6f8a			   ; $9407: 8C 8A 6F
+	STY $6fca			   ; $940a: 8C CA 6F
+	STY $6f8b			   ; $940d: 8C 8B 6F
+	STY $6fcb			   ; $9410: 8C CB 6F
+	LDY #$20				; $9413: A0 20
+	STY $6f8c			   ; $9415: 8C 8C 6F
+	STY $6fcc			   ; $9418: 8C CC 6F
+	STY $6f8d			   ; $941b: 8C 8D 6F
+	STY $6fcd			   ; $941e: 8C CD 6F
+	LDA $618e			   ; $9421: AD 8E 61
+	AND #$27				; $9424: 29 27
+	CMP #$21				; $9426: C9 21
+	BCC $9441			   ; $9428: 90 17
+	LDA $6191			   ; $942a: AD 91 61
+	STA $6f6a			   ; $942d: 8D 6A 6F
+	STA $6faa			   ; $9430: 8D AA 6F
+	LDA $6192			   ; $9433: AD 92 61
+	STA $6f8a			   ; $9436: 8D 8A 6F
+	STA $6fca			   ; $9439: 8D CA 6F
+	LDA #$00				; $943c: A9 00
+	STA $704a			   ; $943e: 8D 4A 70
+	LDA #$ff				; $9441: A9 FF
+	STA $054e			   ; $9443: 8D 4E 05
+	STA $054f			   ; $9446: 8D 4F 05
+	STA $0598			   ; $9449: 8D 98 05
+	JSR $c5af			   ; $944c: 20 AF C5
+	LDA #$00				; $944f: A9 00
+	STA $28				 ; $9451: 85 28
+	BRK					 ; $9453: 00
+	.db $02			; $9454
+	.db $87			; $9455
+	JSR $a289			   ; $9456: 20 89 A2
+	JSR $96b7			   ; $9459: 20 B7 96
+	JSR $c54e			   ; $945c: 20 4E C5
+	JSR $c58f			   ; $945f: 20 8F C5
+	JSR $aab4			   ; $9462: 20 B4 AA
+	JSR $958a			   ; $9465: 20 8A 95
+	LDA $058f			   ; $9468: AD 8F 05
+	ASL					 ; $946b: 0A
+	ORA #$80				; $946c: 09 80
+	AND #$c0				; $946e: 29 C0
+	STA $70e6			   ; $9470: 8D E6 70
+	STA $70e7			   ; $9473: 8D E7 70
+	STA $70e8			   ; $9476: 8D E8 70
+	STA $70e9			   ; $9479: 8D E9 70
+	LDA $62a5			   ; $947c: AD A5 62
+	BMI $9484			   ; $947f: 30 03
+	BRK					 ; $9481: 00
+	ORA #$9f				; $9482: 09 9F
+	RTS					 ; $9484: 60
+	LDA $41				 ; $9485: A5 41
+	BMI $94a3			   ; $9487: 30 1A
+	LDA $615a			   ; $9489: AD 5A 61
+	CMP #$02				; $948c: C9 02
+	BEQ $949d			   ; $948e: F0 0D
+	CMP #$04				; $9490: C9 04
+	BNE $94a3			   ; $9492: D0 0F
+	JSR $951c			   ; $9494: 20 1C 95
+	JSR $94fc			   ; $9497: 20 FC 94
+	JMP $9540			   ; $949a: 4C 40 95
+	JSR $94a4			   ; $949d: 20 A4 94
+	JSR $94d7			   ; $94a0: 20 D7 94
+	RTS					 ; $94a3: 60
+	BRK					 ; $94a4: 00
+	.db $13			; $94a5
+	.db $eb			; $94a6
+	RTI					 ; $94a7: 40
+	BEQ $94d6			   ; $94a8: F0 2C
+	LDA $628d			   ; $94aa: AD 8D 62
+	CMP #$05				; $94ad: C9 05
+	BCC $94d6			   ; $94af: 90 25
+	LDA #$0a				; $94b1: A9 0A
+	BRK					 ; $94b3: 00
+	.db $63			; $94b4
+	.db $73			; $94b5
+	TAX					 ; $94b6: AA
+	BRK					 ; $94b7: 00
+	LSR $93				 ; $94b8: 46 93
+	.db $07			; $94ba
+	BCC $94d6			   ; $94bb: 90 19
+	JSR $9846			   ; $94bd: 20 46 98
+	BRK					 ; $94c0: 00
+	ADC $203b,Y			 ; $94c1: 79 3B 20
+	.db $5f			; $94c4
+	STA tmp0,X			  ; $94c5: 95 00
+	.db $0b			; $94c7
+	.db $eb			; $94c8
+	.db $04			; $94c9
+	BEQ $94d3			   ; $94ca: F0 07
+	LDX #$01				; $94cc: A2 01
+	LDA #$24				; $94ce: A9 24
+	BRK					 ; $94d0: 00
+	ORA $2087			   ; $94d1: 0D 87 20
+	ASL					 ; $94d4: 0A
+	.db $d2			; $94d5
+	RTS					 ; $94d6: 60
+	LDA $628e			   ; $94d7: AD 8E 62
+	BPL $94fb			   ; $94da: 10 1F
+	LDA $628c			   ; $94dc: AD 8C 62
+	CMP #$05				; $94df: C9 05
+	BCC $94fb			   ; $94e1: 90 18
+	LDA #$0b				; $94e3: A9 0B
+	BRK					 ; $94e5: 00
+	.db $63			; $94e6
+	.db $73			; $94e7
+	TAX					 ; $94e8: AA
+	BRK					 ; $94e9: 00
+	LSR $93				 ; $94ea: 46 93
+	.db $07			; $94ec
+	BCC $94fb			   ; $94ed: 90 0C
+	JSR $9846			   ; $94ef: 20 46 98
+	BRK					 ; $94f2: 00
+	SEI					 ; $94f3: 78
+	.db $3b			; $94f4
+	JSR $9567			   ; $94f5: 20 67 95
+	JSR $d20a			   ; $94f8: 20 0A D2
+	RTS					 ; $94fb: 60
+	LDA $629b			   ; $94fc: AD 9B 62
+	BPL $951b			   ; $94ff: 10 1A
+	BRK					 ; $9501: 00
+	.db $1a			; $9502
+	.db $eb			; $9503
+	.db $04			; $9504
+	BEQ $951b			   ; $9505: F0 14
+	JSR $9846			   ; $9507: 20 46 98
+	JSR $9e3f			   ; $950a: 20 3F 9E
+	STA $f9				 ; $950d: 85 F9
+	BRK					 ; $950f: 00
+	AND ($4b,X)			 ; $9510: 21 4B
+	BRK					 ; $9512: 00
+	.db $22			; $9513
+	.db $4b			; $9514
+	JSR $956f			   ; $9515: 20 6F 95
+	JSR $d20a			   ; $9518: 20 0A D2
+	RTS					 ; $951b: 60
+	BRK					 ; $951c: 00
+	ORA $20eb,X			 ; $951d: 1D EB 20
+	BEQ $953f			   ; $9520: F0 1D
+	LDA $6299			   ; $9522: AD 99 62
+	BPL $953f			   ; $9525: 10 18
+	AND #$3f				; $9527: 29 3F
+	BRK					 ; $9529: 00
+	ASL $00db,X			 ; $952a: 1E DB 00
+	PHA					 ; $952d: 48
+	BRK					 ; $952e: 00
+	.db $6f			; $952f
+	.db $33			; $9530
+	PLA					 ; $9531: 68
+	PHA					 ; $9532: 48
+	BRK					 ; $9533: 00
+	.db $52			; $9534
+	.db $73			; $9535
+	PLA					 ; $9536: 68
+	BRK					 ; $9537: 00
+	ROL $2f				 ; $9538: 26 2F
+	BCC $953f			   ; $953a: 90 03
+	BRK					 ; $953c: 00
+	.db $5f			; $953d
+	.db $73			; $953e
+	RTS					 ; $953f: 60
+	BRK					 ; $9540: 00
+	.db $17			; $9541
+	.db $eb			; $9542
+	PHP					 ; $9543: 08
+	BEQ $955e			   ; $9544: F0 18
+	BRK					 ; $9546: 00
+	.db $17			; $9547
+	.db $eb			; $9548
+	ORA ($f0,X)			 ; $9549: 01 F0
+	.db $12			; $954b
+	BRK					 ; $954c: 00
+	ROL $eb				 ; $954d: 26 EB
+	BPL $9521			   ; $954f: 10 D0
+	.db $0c			; $9551
+	JSR $9846			   ; $9552: 20 46 98
+	BRK					 ; $9555: 00
+	.db $af			; $9556
+	.db $4b			; $9557
+	JSR $9582			   ; $9558: 20 82 95
+	JSR $d20a			   ; $955b: 20 0A D2
+	RTS					 ; $955e: 60
+	BRK					 ; $955f: 00
+	.db $13			; $9560
+	.db $db			; $9561
+	.db $bf			; $9562
+	LDA #$0a				; $9563: A9 0A
+	BNE $9575			   ; $9565: D0 0E
+	BRK					 ; $9567: 00
+	.db $13			; $9568
+	.db $db			; $9569
+	.db $7f			; $956a
+	LDA #$0b				; $956b: A9 0B
+	BNE $9575			   ; $956d: D0 06
+	BRK					 ; $956f: 00
+	JSR $7fdb			   ; $9570: 20 DB 7F
+	LDA #$0d				; $9573: A9 0D
+	BRK					 ; $9575: 00
+	.db $63			; $9576
+	.db $73			; $9577
+	TAX					 ; $9578: AA
+	BRK					 ; $9579: 00
+	EOR ($73),Y			 ; $957a: 51 73
+	JSR $97b8			   ; $957c: 20 B8 97
+	JMP $a232			   ; $957f: 4C 32 A2
+	BRK					 ; $9582: 00
+	ROL $cb				 ; $9583: 26 CB
+	BPL $9530			   ; $9585: 10 A9
+	.db $0c			; $9587
+	BNE $9575			   ; $9588: D0 EB
+	LDA #$00				; $958a: A9 00
+	STA $0539			   ; $958c: 8D 39 05
+	JSR $c54e			   ; $958f: 20 4E C5
+	JSR $c00a			   ; $9592: 20 0A C0
+	JSR $e501			   ; $9595: 20 01 E5
+	JMP $dff1			   ; $9598: 4C F1 DF
+	LDA $0515			   ; $959b: AD 15 05
+	BNE $95a6			   ; $959e: D0 06
+	BRK					 ; $95a0: 00
+	.db $82			; $95a1
+	.db $fb			; $95a2
+	BRK					 ; $95a3: 00
+	.db $04			; $95a4
+	.db $9f			; $95a5
+	JMP $c5c5			   ; $95a6: 4C C5 C5
+	JSR $9648			   ; $95a9: 20 48 96
+	JSR $c58f			   ; $95ac: 20 8F C5
+	LDA $3d				 ; $95af: A5 3D
+	STA $7000			   ; $95b1: 8D 00 70
+	JMP $ab6b			   ; $95b4: 4C 6B AB
+	LDX #$03				; $95b7: A2 03
+	TXA					 ; $95b9: 8A
+	STA $6fe0,X			 ; $95ba: 9D E0 6F
+	LDA $058f			   ; $95bd: AD 8F 05
+	AND #$40				; $95c0: 29 40
+	LSR					 ; $95c2: 4A
+	ORA $058f			   ; $95c3: 0D 8F 05
+	AND #$20				; $95c6: 29 20
+	ASL					 ; $95c8: 0A
+	STA $70e0,X			 ; $95c9: 9D E0 70
+	LDA $6be7,X			 ; $95cc: BD E7 6B
+	ASL					 ; $95cf: 0A
+	ASL					 ; $95d0: 0A
+	AND #$80				; $95d1: 29 80
+	EOR #$80				; $95d3: 49 80
+	ORA $70e0,X			 ; $95d5: 1D E0 70
+	STA $70e0,X			 ; $95d8: 9D E0 70
+	DEX					 ; $95db: CA
+	BPL $95b9			   ; $95dc: 10 DB
+	BRK					 ; $95de: 00
+	.db $62			; $95df
+	.db $23			; $95e0
+	RTI					 ; $95e1: 40
+	STA $51				 ; $95e2: 85 51
+	BEQ $9627			   ; $95e4: F0 41
+	DEC $51				 ; $95e6: C6 51
+	BEQ $9627			   ; $95e8: F0 3D
+	LDX #$00				; $95ea: A2 00
+	LDY #$00				; $95ec: A0 00
+	LDA $6be7,X			 ; $95ee: BD E7 6B
+	AND #$40				; $95f1: 29 40
+	BEQ $961e			   ; $95f3: F0 29
+	TYA					 ; $95f5: 98
+	PHA					 ; $95f6: 48
+	LDA $70e0,Y			 ; $95f7: B9 E0 70
+	PHA					 ; $95fa: 48
+	LDA $6fe0,Y			 ; $95fb: B9 E0 6F
+	PHA					 ; $95fe: 48
+	CPY $51				 ; $95ff: C4 51
+	BEQ $9613			   ; $9601: F0 10
+	LDA $6fe1,Y			 ; $9603: B9 E1 6F
+	STA $6fe0,Y			 ; $9606: 99 E0 6F
+	LDA $70e1,Y			 ; $9609: B9 E1 70
+	STA $70e0,Y			 ; $960c: 99 E0 70
+	INY					 ; $960f: C8
+	JMP $95ff			   ; $9610: 4C FF 95
+	PLA					 ; $9613: 68
+	STA $6fe0,Y			 ; $9614: 99 E0 6F
+	PLA					 ; $9617: 68
+	STA $70e0,Y			 ; $9618: 99 E0 70
+	PLA					 ; $961b: 68
+	TAY					 ; $961c: A8
+	DEY					 ; $961d: 88
+	INY					 ; $961e: C8
+	CPX $51				 ; $961f: E4 51
+	BEQ $9627			   ; $9621: F0 04
+	INX					 ; $9623: E8
+	JMP $95ee			   ; $9624: 4C EE 95
+	LDY #$00				; $9627: A0 00
+	STY $51				 ; $9629: 84 51
+	LDX #$00				; $962b: A2 00
+	LDA $6fe0,X			 ; $962d: BD E0 6F
+	CMP $51				 ; $9630: C5 51
+	BEQ $963c			   ; $9632: F0 08
+	INX					 ; $9634: E8
+	CMP #$06				; $9635: C9 06
+	BEQ $9642			   ; $9637: F0 09
+	JMP $962d			   ; $9639: 4C 2D 96
+	LDY $51				 ; $963c: A4 51
+	TXA					 ; $963e: 8A
+	STA $053a,Y			 ; $963f: 99 3A 05
+	INY					 ; $9642: C8
+	CPY #$04				; $9643: C0 04
+	BNE $9629			   ; $9645: D0 E2
+	RTS					 ; $9647: 60
+	JSR $c5af			   ; $9648: 20 AF C5
+	LDX #$00				; $964b: A2 00
+	JSR $966c			   ; $964d: 20 6C 96
+	BRK					 ; $9650: 00
+	.db $0b			; $9651
+	.db $87			; $9652
+	LDX #$01				; $9653: A2 01
+	JSR $966c			   ; $9655: 20 6C 96
+	BRK					 ; $9658: 00
+	.db $0b			; $9659
+	.db $87			; $965a
+	LDX #$02				; $965b: A2 02
+	JSR $966c			   ; $965d: 20 6C 96
+	BRK					 ; $9660: 00
+	.db $0b			; $9661
+	.db $87			; $9662
+	LDX #$03				; $9663: A2 03
+	JSR $966c			   ; $9665: 20 6C 96
+	BRK					 ; $9668: 00
+	.db $0b			; $9669
+	.db $87			; $966a
+	RTS					 ; $966b: 60
+	JSR $aaff			   ; $966c: 20 FF AA
+	BCC $9683			   ; $966f: 90 12
+	PHP					 ; $9671: 08
+	PHA					 ; $9672: 48
+	LDA $6296			   ; $9673: AD 96 62
+	BEQ $9680			   ; $9676: F0 08
+	PLA					 ; $9678: 68
+	LDA $6297			   ; $9679: AD 97 62
+	AND #$7f				; $967c: 29 7F
+	PLP					 ; $967e: 28
+	RTS					 ; $967f: 60
+	PLA					 ; $9680: 68
+	PLP					 ; $9681: 28
+	RTS					 ; $9682: 60
+	LDA $6be7,X			 ; $9683: BD E7 6B
+	AND #$c0				; $9686: 29 C0
+	BNE $96ab			   ; $9688: D0 21
+	LDA $6296			   ; $968a: AD 96 62
+	BEQ $9695			   ; $968d: F0 06
+	LDA $6297			   ; $968f: AD 97 62
+	AND #$7f				; $9692: 29 7F
+	RTS					 ; $9694: 60
+	BRK					 ; $9695: 00
+	.db $2b			; $9696
+	.db $73			; $9697
+	BEQ $96ae			   ; $9698: F0 14
+	CMP #$08				; $969a: C9 08
+	BCC $96a2			   ; $969c: 90 04
+	TAY					 ; $969e: A8
+	LDA $969b,Y			 ; $969f: B9 9B 96
+	RTS					 ; $96a2: 60
+	AND $1219,X			 ; $96a3: 3D 19 12
+	ORA ($4c),Y			 ; $96a6: 11 4C
+	.db $3b			; $96a8
+	.db $2f			; $96a9
+	ROL $0ea9,X			 ; $96aa: 3E A9 0E
+	RTS					 ; $96ad: 60
+	BRK					 ; $96ae: 00
+	AND #$73				; $96af: 29 73
+	BEQ $96b6			   ; $96b1: F0 03
+	CLC					 ; $96b3: 18
+	ADC #$07				; $96b4: 69 07
+	RTS					 ; $96b6: 60
+	JSR $9799			   ; $96b7: 20 99 97
+	JSR $95b7			   ; $96ba: 20 B7 95
+	LDA $6fe3			   ; $96bd: AD E3 6F
+	STA $6fe5			   ; $96c0: 8D E5 6F
+	LDA $6fe1			   ; $96c3: AD E1 6F
+	STA $6fe3			   ; $96c6: 8D E3 6F
+	LDA $6fe2			   ; $96c9: AD E2 6F
+	STA $6fe4			   ; $96cc: 8D E4 6F
+	LDX #$04				; $96cf: A2 04
+	STX $6fe1			   ; $96d1: 8E E1 6F
+	INX					 ; $96d4: E8
+	STX $6fe2			   ; $96d5: 8E E2 6F
+	INX					 ; $96d8: E8
+	STX $6fe6			   ; $96d9: 8E E6 6F
+	INX					 ; $96dc: E8
+	STX $6fe7			   ; $96dd: 8E E7 6F
+	INX					 ; $96e0: E8
+	STX $6fe8			   ; $96e1: 8E E8 6F
+	INX					 ; $96e4: E8
+	STX $6fe9			   ; $96e5: 8E E9 6F
+	LDA #$0c				; $96e8: A9 0C
+	STA $6fea			   ; $96ea: 8D EA 6F
+	STA $6feb			   ; $96ed: 8D EB 6F
+	STA $6fec			   ; $96f0: 8D EC 6F
+	STA $6fed			   ; $96f3: 8D ED 6F
+	LDA #$0d				; $96f6: A9 0D
+	STA $6fee			   ; $96f8: 8D EE 6F
+	STA $6fef			   ; $96fb: 8D EF 6F
+	STA $6ff0			   ; $96fe: 8D F0 6F
+	STA $6ff1			   ; $9701: 8D F1 6F
+	LDX #$11				; $9704: A2 11
+	LDA $618e			   ; $9706: AD 8E 61
+	AND #$27				; $9709: 29 27
+	CMP #$21				; $970b: C9 21
+	BCC $9716			   ; $970d: 90 07
+	LDA #$05				; $970f: A9 05
+	STA $6fea			   ; $9711: 8D EA 6F
+	LDX #$0a				; $9714: A2 0A
+	LDA #$00				; $9716: A9 00
+	STA $7020,X			 ; $9718: 9D 20 70
+	STA $7000,X			 ; $971b: 9D 00 70
+	STA $7160,X			 ; $971e: 9D 60 71
+	DEX					 ; $9721: CA
+	BPL $9718			   ; $9722: 10 F4
+	LDY #$00				; $9724: A0 00
+	STY $7026			   ; $9726: 8C 26 70
+	STY $7027			   ; $9729: 8C 27 70
+	STY $7028			   ; $972c: 8C 28 70
+	STY $702a			   ; $972f: 8C 2A 70
+	STY $702b			   ; $9732: 8C 2B 70
+	STY $702c			   ; $9735: 8C 2C 70
+	STY $702d			   ; $9738: 8C 2D 70
+	STY $702e			   ; $973b: 8C 2E 70
+	STY $702f			   ; $973e: 8C 2F 70
+	STY $7030			   ; $9741: 8C 30 70
+	STY $7031			   ; $9744: 8C 31 70
+	LDA #$80				; $9747: A9 80
+	STA $7029			   ; $9749: 8D 29 70
+	LDX $65				 ; $974c: A6 65
+	BEQ $9760			   ; $974e: F0 10
+	CPX #$01				; $9750: E0 01
+	BEQ $975d			   ; $9752: F0 09
+	STA $7027			   ; $9754: 8D 27 70
+	STA $7028			   ; $9757: 8D 28 70
+	JMP $9768			   ; $975a: 4C 68 97
+	STA $7026			   ; $975d: 8D 26 70
+	LDX #$07				; $9760: A2 07
+	STA $702a,X			 ; $9762: 9D 2A 70
+	DEX					 ; $9765: CA
+	BPL $9762			   ; $9766: 10 FA
+	BRK					 ; $9768: 00
+	.db $13			; $9769
+	.db $eb			; $976a
+	ORA ($d0,X)			 ; $976b: 01 D0
+	ORA #$8d				; $976d: 09 8D
+	ROL $70				 ; $976f: 26 70
+	STY $6195			   ; $9771: 8C 95 61
+	STY $6196			   ; $9774: 8C 96 61
+	BRK					 ; $9777: 00
+	.db $13			; $9778
+	.db $eb			; $9779
+	.db $02			; $977a
+	BNE $9789			   ; $977b: D0 0C
+	STA $7027			   ; $977d: 8D 27 70
+	STA $7028			   ; $9780: 8D 28 70
+	STY $6197			   ; $9783: 8C 97 61
+	STY $6198			   ; $9786: 8C 98 61
+	LDA $3d				 ; $9789: A5 3D
+	STA $7000			   ; $978b: 8D 00 70
+	LDX $0515			   ; $978e: AE 15 05
+	CPX #$01				; $9791: E0 01
+	BNE $9798			   ; $9793: D0 03
+	STA $7006			   ; $9795: 8D 06 70
+	RTS					 ; $9798: 60
+	BRK					 ; $9799: 00
+	.db $03			; $979a
+	.db $87			; $979b
+	LDX #$00				; $979c: A2 00
+	TXA					 ; $979e: 8A
+	PHA					 ; $979f: 48
+	LDA $97ae,X			 ; $97a0: BD AE 97
+	BRK					 ; $97a3: 00
+	.db $04			; $97a4
+	.db $87			; $97a5
+	PLA					 ; $97a6: 68
+	TAX					 ; $97a7: AA
+	INX					 ; $97a8: E8
+	CPX #$0a				; $97a9: E0 0A
+	BCC $979e			   ; $97ab: 90 F1
+	RTS					 ; $97ad: 60
+	ORA #$0a				; $97ae: 09 0A
+	.db $0b			; $97b0
+	ORA $640c			   ; $97b1: 0D 0C 64
+	ADC $63				 ; $97b4: 65 63
+	.db $6b			; $97b6
+	ROR					 ; $97b7: 6A
+	JSR $ab6b			   ; $97b8: 20 6B AB
+	LDX #$00				; $97bb: A2 00
+	LDA $6be7,X			 ; $97bd: BD E7 6B
+	BMI $97ef			   ; $97c0: 30 2D
+	JSR $966c			   ; $97c2: 20 6C 96
+	BRK					 ; $97c5: 00
+	ORA $a287			   ; $97c6: 0D 87 A2
+	ORA ($bd,X)			 ; $97c9: 01 BD
+	.db $e7			; $97cb
+	.db $6b			; $97cc
+	BMI $97ef			   ; $97cd: 30 20
+	JSR $966c			   ; $97cf: 20 6C 96
+	BRK					 ; $97d2: 00
+	ORA $a287			   ; $97d3: 0D 87 A2
+	.db $02			; $97d6
+	LDA $6be7,X			 ; $97d7: BD E7 6B
+	BMI $97ef			   ; $97da: 30 13
+	JSR $966c			   ; $97dc: 20 6C 96
+	BRK					 ; $97df: 00
+	ORA $a287			   ; $97e0: 0D 87 A2
+	.db $03			; $97e3
+	LDA $6be7,X			 ; $97e4: BD E7 6B
+	BMI $97ef			   ; $97e7: 30 06
+	JSR $966c			   ; $97e9: 20 6C 96
+	BRK					 ; $97ec: 00
+	ORA $0087			   ; $97ed: 0D 87 00
+	ASL					 ; $97f0: 0A
+	.db $6f			; $97f1
+	JMP $ff74			   ; $97f2: 4C 74 FF
+	LDX $053a			   ; $97f5: AE 3A 05
+	JSR $d804			   ; $97f8: 20 04 D8
+	LDX $053b			   ; $97fb: AE 3B 05
+	JSR $d804			   ; $97fe: 20 04 D8
+	LDX $053c			   ; $9801: AE 3C 05
+	JSR $d804			   ; $9804: 20 04 D8
+	LDX $053d			   ; $9807: AE 3D 05
+	JSR $d804			   ; $980a: 20 04 D8
+	RTS					 ; $980d: 60
+	LDX $053a,Y			 ; $980e: BE 3A 05
+	JSR $d804			   ; $9811: 20 04 D8
+	JMP $ff74			   ; $9814: 4C 74 FF
+	LDA $6296			   ; $9817: AD 96 62
+	BEQ $9824			   ; $981a: F0 08
+	LDA #$00				; $981c: A9 00
+	STA $6296			   ; $981e: 8D 96 62
+	JSR $97b8			   ; $9821: 20 B8 97
+	RTS					 ; $9824: 60
+	LDA $07ba			   ; $9825: AD BA 07
+	AND #$7f				; $9828: 29 7F
+	CMP #$02				; $982a: C9 02
+	BCS $9845			   ; $982c: B0 17
+	LDX #$00				; $982e: A2 00
+	LDA $6be7,X			 ; $9830: BD E7 6B
+	BMI $9845			   ; $9833: 30 10
+	AND #$20				; $9835: 29 20
+	BEQ $9840			   ; $9837: F0 07
+	TXA					 ; $9839: 8A
+	PHA					 ; $983a: 48
+	JSR $991f			   ; $983b: 20 1F 99
+	PLA					 ; $983e: 68
+	TAX					 ; $983f: AA
+	INX					 ; $9840: E8
+	CPX #$04				; $9841: E0 04
+	BCC $9830			   ; $9843: 90 EB
+	RTS					 ; $9845: 60
+	BRK					 ; $9846: 00
+	.db $07			; $9847
+	.db $6f			; $9848
+	.db $43			; $9849
+	RTS					 ; $984a: 60
+	RTS					 ; $984b: 60
+	JSR $9e6b			   ; $984c: 20 6B 9E
+	JSR $9485			   ; $984f: 20 85 94
+	LDA $41				 ; $9852: A5 41
+	BMI $98b6			   ; $9854: 30 60
+	LDA $615a			   ; $9856: AD 5A 61
+	CMP #$01				; $9859: C9 01
+	BNE $98b6			   ; $985b: D0 59
+	LDA $627f			   ; $985d: AD 7F 62
+	LSR					 ; $9860: 4A
+	BCS $98b6			   ; $9861: B0 53
+	BRK					 ; $9863: 00
+	ORA $80cb			   ; $9864: 0D CB 80
+	LDA $6289			   ; $9867: AD 89 62
+	CLC					 ; $986a: 18
+	ADC #$01				; $986b: 69 01
+	STA $6289			   ; $986d: 8D 89 62
+	AND #$07				; $9870: 29 07
+	CMP #$04				; $9872: C9 04
+	BNE $98b6			   ; $9874: D0 40
+	BRK					 ; $9876: 00
+	ORA $7fdb			   ; $9877: 0D DB 7F
+	LDA #$83				; $987a: A9 83
+	STA $0530			   ; $987c: 8D 30 05
+	LDX #$01				; $987f: A2 01
+	STX $0531			   ; $9881: 8E 31 05
+	DEX					 ; $9884: CA
+	STX $0533			   ; $9885: 8E 33 05
+	STX $0532			   ; $9888: 8E 32 05
+	JSR $ff74			   ; $988b: 20 74 FF
+	LDX #$01				; $988e: A2 01
+	TXA					 ; $9890: 8A
+	BRK					 ; $9891: 00
+	ORA $a287			   ; $9892: 0D 87 A2
+	.db $02			; $9895
+	LDA #$04				; $9896: A9 04
+	BRK					 ; $9898: 00
+	ORA $a287			   ; $9899: 0D 87 A2
+	.db $27			; $989c
+	LDA #$49				; $989d: A9 49
+	LDY #$00				; $989f: A0 00
+	JSR $9939			   ; $98a1: 20 39 99
+	JSR $9e2f			   ; $98a4: 20 2F 9E
+	LDA #$49				; $98a7: A9 49
+	LDX #$28				; $98a9: A2 28
+	LDY #$01				; $98ab: A0 01
+	JSR $9939			   ; $98ad: 20 39 99
+	JSR $9e2f			   ; $98b0: 20 2F 9E
+	JSR $9d05			   ; $98b3: 20 05 9D
+	BIT $6288			   ; $98b6: 2C 88 62
+	BMI $984b			   ; $98b9: 30 90
+	JSR $997f			   ; $98bb: 20 7F 99
+	JSR $9956			   ; $98be: 20 56 99
+	INC $0518			   ; $98c1: EE 18 05
+	LDX #$00				; $98c4: A2 00
+	STX $53				 ; $98c6: 86 53
+	STX $60				 ; $98c8: 86 60
+	STX $70				 ; $98ca: 86 70
+	LDA $6be7,X			 ; $98cc: BD E7 6B
+	BMI $98fb			   ; $98cf: 30 2A
+	AND #$40				; $98d1: 29 40
+	BNE $98f3			   ; $98d3: D0 1E
+	LDA #$00				; $98d5: A9 00
+	STA $51				 ; $98d7: 85 51
+	STA $52				 ; $98d9: 85 52
+	JSR $9902			   ; $98db: 20 02 99
+	JSR $9a3c			   ; $98de: 20 3C 9A
+	JSR $9a52			   ; $98e1: 20 52 9A
+	JSR $9a60			   ; $98e4: 20 60 9A
+	JSR $9aca			   ; $98e7: 20 CA 9A
+	JSR $9b08			   ; $98ea: 20 08 9B
+	JSR $9a30			   ; $98ed: 20 30 9A
+	JSR $9a46			   ; $98f0: 20 46 9A
+	INX					 ; $98f3: E8
+	CPX #$04				; $98f4: E0 04
+	BEQ $98fb			   ; $98f6: F0 03
+	JMP $98cc			   ; $98f8: 4C CC 98
+	JSR $9a85			   ; $98fb: 20 85 9A
+	JSR $9b1c			   ; $98fe: 20 1C 9B
+	RTS					 ; $9901: 60
+	LDA $6be7,X			 ; $9902: BD E7 6B
+	AND #$20				; $9905: 29 20
+	BEQ $991e			   ; $9907: F0 15
+	TXA					 ; $9909: 8A
+	PHA					 ; $990a: 48
+	JSR $c891			   ; $990b: 20 91 C8
+	AND #$07				; $990e: 29 07
+	BNE $991c			   ; $9910: D0 0A
+	PLA					 ; $9912: 68
+	PHA					 ; $9913: 48
+	TAX					 ; $9914: AA
+	JSR $991f			   ; $9915: 20 1F 99
+	BRK					 ; $9918: 00
+	ASL $efdb			   ; $9919: 0E DB EF
+	PLA					 ; $991c: 68
+	TAX					 ; $991d: AA
+	RTS					 ; $991e: 60
+	LDA $6be7,X			 ; $991f: BD E7 6B
+	AND #$df				; $9922: 29 DF
+	STA $6be7,X			 ; $9924: 9D E7 6B
+	LDA #$06				; $9927: A9 06
+	BRK					 ; $9929: 00
+	EOR $73				 ; $992a: 45 73
+	LDA $053a,X			 ; $992c: BD 3A 05
+	TAX					 ; $992f: AA
+	LDA $70e0,X			 ; $9930: BD E0 70
+	ORA #$80				; $9933: 09 80
+	STA $70e0,X			 ; $9935: 9D E0 70
+	RTS					 ; $9938: 60
+	STA $6f8a,Y			 ; $9939: 99 8A 6F
+	STA $6fca,Y			 ; $993c: 99 CA 6F
+	TXA					 ; $993f: 8A
+	STA $6f6a,Y			 ; $9940: 99 6A 6F
+	STA $6faa,Y			 ; $9943: 99 AA 6F
+	LDA #$00				; $9946: A9 00
+	STA $702a,Y			 ; $9948: 99 2A 70
+	LDA #$02				; $994b: A9 02
+	STA $700a,Y			 ; $994d: 99 0A 70
+	INY					 ; $9950: C8
+	TYA					 ; $9951: 98
+	STA $6fe9,Y			 ; $9952: 99 E9 6F
+	RTS					 ; $9955: 60
+	LDA $627f			   ; $9956: AD 7F 62
+	ASL					 ; $9959: 0A
+	ASL					 ; $995a: 0A
+	BCC $997e			   ; $995b: 90 21
+	ASL					 ; $995d: 0A
+	BCS $997e			   ; $995e: B0 1E
+	LDX #$05				; $9960: A2 05
+	LDA $7140,X			 ; $9962: BD 40 71
+	AND #$1f				; $9965: 29 1F
+	TAY					 ; $9967: A8
+	LDA $6f40,Y			 ; $9968: B9 40 6F
+	CMP #$01				; $996b: C9 01
+	BEQ $997e			   ; $996d: F0 0F
+	CMP #$02				; $996f: C9 02
+	BEQ $997e			   ; $9971: F0 0B
+	DEX					 ; $9973: CA
+	BPL $9962			   ; $9974: 10 EC
+	LDA $627f			   ; $9976: AD 7F 62
+	AND #$bf				; $9979: 29 BF
+	STA $627f			   ; $997b: 8D 7F 62
+	RTS					 ; $997e: 60
+	LDX #$04				; $997f: A2 04
+	LDA #$03				; $9981: A9 03
+	JSR $b157			   ; $9983: 20 57 B1
+	BCC $998a			   ; $9986: 90 02
+	INX					 ; $9988: E8
+	INX					 ; $9989: E8
+	STX $58				 ; $998a: 86 58
+	LDX #$00				; $998c: A2 00
+	STX $59				 ; $998e: 86 59
+	LDY $59				 ; $9990: A4 59
+	LDA $053a,Y			 ; $9992: B9 3A 05
+	TAY					 ; $9995: A8
+	LDA $7140,Y			 ; $9996: B9 40 71
+	AND #$1f				; $9999: 29 1F
+	TAY					 ; $999b: A8
+	LDA $6f40,Y			 ; $999c: B9 40 6F
+	AND #$7f				; $999f: 29 7F
+	LDY $59				 ; $99a1: A4 59
+	STA $0054,Y			 ; $99a3: 99 54 00
+	INC $59				 ; $99a6: E6 59
+	INX					 ; $99a8: E8
+	CPX $58				 ; $99a9: E4 58
+	BEQ $99bc			   ; $99ab: F0 0F
+	CPX #$01				; $99ad: E0 01
+	BNE $9990			   ; $99af: D0 DF
+	LDA $58				 ; $99b1: A5 58
+	CMP #$04				; $99b3: C9 04
+	BEQ $9990			   ; $99b5: F0 D9
+	LDX #$03				; $99b7: A2 03
+	JMP $9990			   ; $99b9: 4C 90 99
+	RTS					 ; $99bc: 60
+	BIT $6288			   ; $99bd: 2C 88 62
+	BMI $9a1b			   ; $99c0: 30 59
+	LDA #$03				; $99c2: A9 03
+	JSR $b157			   ; $99c4: 20 57 B1
+	BCC $9a2a			   ; $99c7: 90 61
+	LDA #$01				; $99c9: A9 01
+	STA $52				 ; $99cb: 85 52
+	LDA #$00				; $99cd: A9 00
+	STA $53				 ; $99cf: 85 53
+	STA $70				 ; $99d1: 85 70
+	LDX #$02				; $99d3: A2 02
+	JSR $99e1			   ; $99d5: 20 E1 99
+	JSR $99e1			   ; $99d8: 20 E1 99
+	JSR $9a85			   ; $99db: 20 85 9A
+	JMP $9b1c			   ; $99de: 4C 1C 9B
+	LDA $052a,X			 ; $99e1: BD 2A 05
+	BEQ $9a29			   ; $99e4: F0 43
+	LDA $6be7,X			 ; $99e6: BD E7 6B
+	BMI $9a29			   ; $99e9: 30 3E
+	AND #$40				; $99eb: 29 40
+	BNE $9a29			   ; $99ed: D0 3A
+	LDY $053a,X			 ; $99ef: BC 3A 05
+	LDA $7140,Y			 ; $99f2: B9 40 71
+	AND #$1f				; $99f5: 29 1F
+	TAY					 ; $99f7: A8
+	LDA $6f40,Y			 ; $99f8: B9 40 6F
+	AND #$7f				; $99fb: 29 7F
+	CMP #$01				; $99fd: C9 01
+	BNE $9a1c			   ; $99ff: D0 1B
+	LDA #$01				; $9a01: A9 01
+	STA $53				 ; $9a03: 85 53
+	STA $52				 ; $9a05: 85 52
+	STA $6f				 ; $9a07: 85 6F
+	LDA $627f			   ; $9a09: AD 7F 62
+	AND #$df				; $9a0c: 29 DF
+	STA $627f			   ; $9a0e: 8D 7F 62
+	AND #$40				; $9a11: 29 40
+	BNE $9a2b			   ; $9a13: D0 16
+	LDA #$01				; $9a15: A9 01
+	JSR $b157			   ; $9a17: 20 57 B1
+	INX					 ; $9a1a: E8
+	RTS					 ; $9a1b: 60
+	CMP #$02				; $9a1c: C9 02
+	BNE $9a29			   ; $9a1e: D0 09
+	LDA #$02				; $9a20: A9 02
+	STA $53				 ; $9a22: 85 53
+	LDA #$0f				; $9a24: A9 0F
+	JMP $9a05			   ; $9a26: 4C 05 9A
+	INX					 ; $9a29: E8
+	RTS					 ; $9a2a: 60
+	LDA #$00				; $9a2b: A9 00
+	STA $53				 ; $9a2d: 85 53
+	RTS					 ; $9a2f: 60
+	LDA $51				 ; $9a30: A5 51
+	BEQ $9a45			   ; $9a32: F0 11
+	STA $6f				 ; $9a34: 85 6F
+	LDA #$00				; $9a36: A9 00
+	JSR $b157			   ; $9a38: 20 57 B1
+	RTS					 ; $9a3b: 60
+	LDA $6be7,X			 ; $9a3c: BD E7 6B
+	AND #$02				; $9a3f: 29 02
+	BEQ $9a45			   ; $9a41: F0 02
+	INC $51				 ; $9a43: E6 51
+	RTS					 ; $9a45: 60
+	LDA $52				 ; $9a46: A5 52
+	BEQ $9a5f			   ; $9a48: F0 15
+	STA $6f				 ; $9a4a: 85 6F
+	LDA #$01				; $9a4c: A9 01
+	JSR $b157			   ; $9a4e: 20 57 B1
+	RTS					 ; $9a51: 60
+	LDA $41				 ; $9a52: A5 41
+	BMI $9a5f			   ; $9a54: 30 09
+	LDA $6be7,X			 ; $9a56: BD E7 6B
+	AND #$04				; $9a59: 29 04
+	BEQ $9a5f			   ; $9a5b: F0 02
+	INC $52				 ; $9a5d: E6 52
+	RTS					 ; $9a5f: 60
+	LDA $0518			   ; $9a60: AD 18 05
+	AND #$03				; $9a63: 29 03
+	BNE $9a84			   ; $9a65: D0 1D
+	LDA $41				 ; $9a67: A5 41
+	BPL $9a78			   ; $9a69: 10 0D
+	LDA $07ba			   ; $9a6b: AD BA 07
+	AND #$7f				; $9a6e: 29 7F
+	CMP #$04				; $9a70: C9 04
+	BCC $9a84			   ; $9a72: 90 10
+	CMP #$07				; $9a74: C9 07
+	BEQ $9a84			   ; $9a76: F0 0C
+	LDA $6be7,X			 ; $9a78: BD E7 6B
+	LSR					 ; $9a7b: 4A
+	BCC $9a84			   ; $9a7c: 90 06
+	INC $52				 ; $9a7e: E6 52
+	LDA #$01				; $9a80: A9 01
+	STA $53				 ; $9a82: 85 53
+	RTS					 ; $9a84: 60
+	LDA $53				 ; $9a85: A5 53
+	BEQ $9ac9			   ; $9a87: F0 40
+	JSR $ff74			   ; $9a89: 20 74 FF
+	LDY #$16				; $9a8c: A0 16
+	LDA $53				 ; $9a8e: A5 53
+	CMP #$01				; $9a90: C9 01
+	BEQ $9a96			   ; $9a92: F0 02
+	LDY #$10				; $9a94: A0 10
+	LDX #$00				; $9a96: A2 00
+	TYA					 ; $9a98: 98
+	STA $05fd,X			 ; $9a99: 9D FD 05
+	INX					 ; $9a9c: E8
+	CPX #$0c				; $9a9d: E0 0C
+	BNE $9a99			   ; $9a9f: D0 F8
+	LDA $60				 ; $9aa1: A5 60
+	BEQ $9ab4			   ; $9aa3: F0 0F
+	LDA $53				 ; $9aa5: A5 53
+	CMP #$02				; $9aa7: C9 02
+	BEQ $9ab1			   ; $9aa9: F0 06
+	BRK					 ; $9aab: 00
+	STY $fb				 ; $9aac: 84 FB
+	JMP $9ab4			   ; $9aae: 4C B4 9A
+	BRK					 ; $9ab1: 00
+	STA ($fb,X)			 ; $9ab2: 81 FB
+	JSR $c5b9			   ; $9ab4: 20 B9 C5
+	JSR $ff74			   ; $9ab7: 20 74 FF
+	JSR $ff74			   ; $9aba: 20 74 FF
+	BRK					 ; $9abd: 00
+	BRK					 ; $9abe: 00
+	.db $e7			; $9abf
+	BRK					 ; $9ac0: 00
+	.db $27			; $9ac1
+	.db $0f			; $9ac2
+	JSR $c5b9			   ; $9ac3: 20 B9 C5
+	JSR $ff74			   ; $9ac6: 20 74 FF
+	RTS					 ; $9ac9: 60
+	LDA $54,X			   ; $9aca: B5 54
+	CMP #$01				; $9acc: C9 01
+	BNE $9aea			   ; $9ace: D0 1A
+	LDA $627f			   ; $9ad0: AD 7F 62
+	AND #$df				; $9ad3: 29 DF
+	STA $627f			   ; $9ad5: 8D 7F 62
+	AND #$40				; $9ad8: 29 40
+	BNE $9b07			   ; $9ada: D0 2B
+	LDA $52				 ; $9adc: A5 52
+	CLC					 ; $9ade: 18
+	ADC #$01				; $9adf: 69 01
+	STA $52				 ; $9ae1: 85 52
+	LDA #$01				; $9ae3: A9 01
+	STA $53				 ; $9ae5: 85 53
+	INC $60				 ; $9ae7: E6 60
+	RTS					 ; $9ae9: 60
+	CMP #$02				; $9aea: C9 02
+	BNE $9b07			   ; $9aec: D0 19
+	LDA $627f			   ; $9aee: AD 7F 62
+	AND #$df				; $9af1: 29 DF
+	STA $627f			   ; $9af3: 8D 7F 62
+	AND #$40				; $9af6: 29 40
+	BNE $9b07			   ; $9af8: D0 0D
+	LDA $52				 ; $9afa: A5 52
+	CLC					 ; $9afc: 18
+	ADC #$0f				; $9afd: 69 0F
+	STA $52				 ; $9aff: 85 52
+	LDA #$02				; $9b01: A9 02
+	STA $53				 ; $9b03: 85 53
+	INC $60				 ; $9b05: E6 60
+	RTS					 ; $9b07: 60
+	LDA $0518			   ; $9b08: AD 18 05
+	AND #$03				; $9b0b: 29 03
+	BNE $9b1b			   ; $9b0d: D0 0C
+	LDA $6be7,X			 ; $9b0f: BD E7 6B
+	AND #$08				; $9b12: 29 08
+	BEQ $9b1b			   ; $9b14: F0 05
+	LDA #$04				; $9b16: A9 04
+	JSR $b157			   ; $9b18: 20 57 B1
+	RTS					 ; $9b1b: 60
+	LDX #$03				; $9b1c: A2 03
+	LDA #$ff				; $9b1e: A9 FF
+	STA $053e,X			 ; $9b20: 9D 3E 05
+	DEX					 ; $9b23: CA
+	BPL $9b20			   ; $9b24: 10 FA
+	LDX #$00				; $9b26: A2 00
+	STX $51				 ; $9b28: 86 51
+	LDA $6be7,X			 ; $9b2a: BD E7 6B
+	BMI $9b43			   ; $9b2d: 30 14
+	LDA #$02				; $9b2f: A9 02
+	JSR $b157			   ; $9b31: 20 57 B1
+	BCC $9b3e			   ; $9b34: 90 08
+	LDY $51				 ; $9b36: A4 51
+	TXA					 ; $9b38: 8A
+	STA $053e,Y			 ; $9b39: 99 3E 05
+	INC $51				 ; $9b3c: E6 51
+	INX					 ; $9b3e: E8
+	CPX #$04				; $9b3f: E0 04
+	BNE $9b2a			   ; $9b41: D0 E7
+	LDA $51				 ; $9b43: A5 51
+	BEQ $9bb0			   ; $9b45: F0 69
+	LDX #$00				; $9b47: A2 00
+	STX $0542			   ; $9b49: 8E 42 05
+	LDA $053e,X			 ; $9b4c: BD 3E 05
+	BMI $9b68			   ; $9b4f: 30 17
+	TAX					 ; $9b51: AA
+	PHA					 ; $9b52: 48
+	JSR $966c			   ; $9b53: 20 6C 96
+	BRK					 ; $9b56: 00
+	ORA $6887			   ; $9b57: 0D 87 68
+	TAY					 ; $9b5a: A8
+	JSR $980e			   ; $9b5b: 20 0E 98
+	INC $0542			   ; $9b5e: EE 42 05
+	LDX $0542			   ; $9b61: AE 42 05
+	CPX #$04				; $9b64: E0 04
+	BCC $9b4c			   ; $9b66: 90 E4
+	JSR $ab6b			   ; $9b68: 20 6B AB
+	BRK					 ; $9b6b: 00
+	.db $27			; $9b6c
+	.db $0f			; $9b6d
+	JSR $9846			   ; $9b6e: 20 46 98
+	JSR $a232			   ; $9b71: 20 32 A2
+	LDA $615a			   ; $9b74: AD 5A 61
+	CMP #$04				; $9b77: C9 04
+	BNE $9b8e			   ; $9b79: D0 13
+	BRK					 ; $9b7b: 00
+	EOR $9033,X			 ; $9b7c: 5D 33 90
+	.db $07			; $9b7f
+	LDA $618e			   ; $9b80: AD 8E 61
+	AND #$07				; $9b83: 29 07
+	BEQ $9b8e			   ; $9b85: F0 07
+	LDA $0599			   ; $9b87: AD 99 05
+	BNE $9bb1			   ; $9b8a: D0 25
+	BEQ $9b94			   ; $9b8c: F0 06
+	BRK					 ; $9b8e: 00
+	.db $62			; $9b8f
+	.db $23			; $9b90
+	.db $0b			; $9b91
+	BEQ $9bb1			   ; $9b92: F0 1D
+	LDX #$00				; $9b94: A2 00
+	STX $0542			   ; $9b96: 8E 42 05
+	LDA $053e,X			 ; $9b99: BD 3E 05
+	BMI $9bad			   ; $9b9c: 30 0F
+	STA $f9				 ; $9b9e: 85 F9
+	BRK					 ; $9ba0: 00
+	.db $1b			; $9ba1
+	.db $0b			; $9ba2
+	INC $0542			   ; $9ba3: EE 42 05
+	LDX $0542			   ; $9ba6: AE 42 05
+	CPX #$04				; $9ba9: E0 04
+	BCC $9b99			   ; $9bab: 90 EC
+	JMP $d20a			   ; $9bad: 4C 0A D2
+	RTS					 ; $9bb0: 60
+	BRK					 ; $9bb1: 00
+	.db $27			; $9bb2
+	.db $0f			; $9bb3
+	BRK					 ; $9bb4: 00
+	.db $62			; $9bb5
+	.db $33			; $9bb6
+	CMP #$01				; $9bb7: C9 01
+	BEQ $9bfa			   ; $9bb9: F0 3F
+	LDA $615a			   ; $9bbb: AD 5A 61
+	CMP #$04				; $9bbe: C9 04
+	BNE $9bed			   ; $9bc0: D0 2B
+	BRK					 ; $9bc2: 00
+	EOR $9033,X			 ; $9bc3: 5D 33 90
+	.db $07			; $9bc6
+	LDA $618e			   ; $9bc7: AD 8E 61
+	AND #$07				; $9bca: 29 07
+	BEQ $9bed			   ; $9bcc: F0 1F
+	BRK					 ; $9bce: 00
+	.db $62			; $9bcf
+	.db $23			; $9bd0
+	RTI					 ; $9bd1: 40
+	CMP #$01				; $9bd2: C9 01
+	BEQ $9bfa			   ; $9bd4: F0 24
+	LDA #$00				; $9bd6: A9 00
+	BRK					 ; $9bd8: 00
+	ROL $2f				 ; $9bd9: 26 2F
+	BCS $9be9			   ; $9bdb: B0 0C
+	LDA #$00				; $9bdd: A9 00
+	STA $6e				 ; $9bdf: 85 6E
+	LDA #$08				; $9be1: A9 08
+	BRK					 ; $9be3: 00
+	AND $4c0f			   ; $9be4: 2D 0F 4C
+	BEQ $9b84			   ; $9be7: F0 9B
+	TXA					 ; $9be9: 8A
+	JMP $9bf0			   ; $9bea: 4C F0 9B
+	JSR $9e3f			   ; $9bed: 20 3F 9E
+	BCC $9bfa			   ; $9bf0: 90 08
+	STA $f9				 ; $9bf2: 85 F9
+	BRK					 ; $9bf4: 00
+	STY $0b				 ; $9bf5: 84 0B
+	JMP $9c01			   ; $9bf7: 4C 01 9C
+	LDA #$00				; $9bfa: A9 00
+	STA $f9				 ; $9bfc: 85 F9
+	BRK					 ; $9bfe: 00
+	.db $1b			; $9bff
+	.db $0b			; $9c00
+	BRK					 ; $9c01: 00
+	.db $80			; $9c02
+	.db $fb			; $9c03
+	BRK					 ; $9c04: 00
+	ASL $20fb			   ; $9c05: 0E FB 20
+	LDX $84,Y			   ; $9c08: B6 84
+	JSR $c5c5			   ; $9c0a: 20 C5 C5
+	LDX #$ff				; $9c0d: A2 FF
+	TXS					 ; $9c0f: 9A
+	JMP $c977			   ; $9c10: 4C 77 C9
+	LDA $41				 ; $9c13: A5 41
+	BMI $9c34			   ; $9c15: 30 1D
+	LDA $65				 ; $9c17: A5 65
+	BNE $9c35			   ; $9c19: D0 1A
+	LDA $42				 ; $9c1b: A5 42
+	SEC					 ; $9c1d: 38
+	SBC #$87				; $9c1e: E9 87
+	CMP #$05				; $9c20: C9 05
+	BCS $9c34			   ; $9c22: B0 10
+	LDA $43				 ; $9c24: A5 43
+	SEC					 ; $9c26: 38
+	SBC #$87				; $9c27: E9 87
+	CMP #$05				; $9c29: C9 05
+	BCS $9c34			   ; $9c2b: B0 07
+	LDX #$0b				; $9c2d: A2 0B
+	LDY #$1c				; $9c2f: A0 1C
+	JSR $9c51			   ; $9c31: 20 51 9C
+	RTS					 ; $9c34: 60
+	CMP #$01				; $9c35: C9 01
+	BNE $9c50			   ; $9c37: D0 17
+	LDA #$00				; $9c39: A9 00
+	STA $65				 ; $9c3b: 85 65
+	LDA $62e5			   ; $9c3d: AD E5 62
+	STA $6195			   ; $9c40: 8D 95 61
+	LDA $62e6			   ; $9c43: AD E6 62
+	STA $6196			   ; $9c46: 8D 96 61
+	LDX #$89				; $9c49: A2 89
+	LDY #$88				; $9c4b: A0 88
+	JMP $9c69			   ; $9c4d: 4C 69 9C
+	RTS					 ; $9c50: 60
+	LDA #$01				; $9c51: A9 01
+	STA $65				 ; $9c53: 85 65
+	LDA $6195			   ; $9c55: AD 95 61
+	STA $62e5			   ; $9c58: 8D E5 62
+	LDA $6196			   ; $9c5b: AD 96 61
+	STA $62e6			   ; $9c5e: 8D E6 62
+	LDA #$80				; $9c61: A9 80
+	STA $6195			   ; $9c63: 8D 95 61
+	STA $6196			   ; $9c66: 8D 96 61
+	STX $42				 ; $9c69: 86 42
+	STX $6197			   ; $9c6b: 8E 97 61
+	STX $6f60			   ; $9c6e: 8E 60 6F
+	STX $6f61			   ; $9c71: 8E 61 6F
+	STX $6fa1			   ; $9c74: 8E A1 6F
+	STX $6f62			   ; $9c77: 8E 62 6F
+	STX $6fa2			   ; $9c7a: 8E A2 6F
+	STX $6f63			   ; $9c7d: 8E 63 6F
+	STX $6fa3			   ; $9c80: 8E A3 6F
+	STX $6f64			   ; $9c83: 8E 64 6F
+	STX $6fa4			   ; $9c86: 8E A4 6F
+	STX $6f65			   ; $9c89: 8E 65 6F
+	STX $6fa5			   ; $9c8c: 8E A5 6F
+	STX $6f67			   ; $9c8f: 8E 67 6F
+	STX $6fa7			   ; $9c92: 8E A7 6F
+	STX $6f68			   ; $9c95: 8E 68 6F
+	STX $6fa8			   ; $9c98: 8E A8 6F
+	STX $6f69			   ; $9c9b: 8E 69 6F
+	STX $6fa9			   ; $9c9e: 8E A9 6F
+	STY $43				 ; $9ca1: 84 43
+	STY $6198			   ; $9ca3: 8C 98 61
+	STY $6f80			   ; $9ca6: 8C 80 6F
+	STY $6f81			   ; $9ca9: 8C 81 6F
+	STY $6fc1			   ; $9cac: 8C C1 6F
+	STY $6f82			   ; $9caf: 8C 82 6F
+	STY $6fc2			   ; $9cb2: 8C C2 6F
+	STY $6f83			   ; $9cb5: 8C 83 6F
+	STY $6fc3			   ; $9cb8: 8C C3 6F
+	STY $6f84			   ; $9cbb: 8C 84 6F
+	STY $6fc4			   ; $9cbe: 8C C4 6F
+	STY $6f85			   ; $9cc1: 8C 85 6F
+	STY $6fc5			   ; $9cc4: 8C C5 6F
+	STY $6f89			   ; $9cc7: 8C 89 6F
+	STY $6fc9			   ; $9cca: 8C C9 6F
+	DEY					 ; $9ccd: 88
+	DEY					 ; $9cce: 88
+	STY $6f87			   ; $9ccf: 8C 87 6F
+	STY $6fc7			   ; $9cd2: 8C C7 6F
+	DEY					 ; $9cd5: 88
+	STY $6f88			   ; $9cd6: 8C 88 6F
+	STY $6fc8			   ; $9cd9: 8C C8 6F
+	LDA $6195			   ; $9cdc: AD 95 61
+	STA $6f66			   ; $9cdf: 8D 66 6F
+	STA $6fa6			   ; $9ce2: 8D A6 6F
+	LDA $6196			   ; $9ce5: AD 96 61
+	STA $6f86			   ; $9ce8: 8D 86 6F
+	STA $6fc6			   ; $9ceb: 8D C6 6F
+	JSR $c5c5			   ; $9cee: 20 C5 C5
+	BRK					 ; $9cf1: 00
+	.db $03			; $9cf2
+	.db $ef			; $9cf3
+	JMP $c5bf			   ; $9cf4: 4C BF C5
+	.db $03			; $9cf7
+	ORA $2117			   ; $9cf8: 0D 17 21
+	.db $2b			; $9cfb
+	AND $3f,X			   ; $9cfc: 35 3F
+	.db $03			; $9cfe
+	ORA $2117			   ; $9cff: 0D 17 21
+	.db $2b			; $9d02
+	AND $3f,X			   ; $9d03: 35 3F
+	JSR $9e08			   ; $9d05: 20 08 9E
+	JSR $9d8a			   ; $9d08: 20 8A 9D
+	LDX #$10				; $9d0b: A2 10
+	TXA					 ; $9d0d: 8A
+	PHA					 ; $9d0e: 48
+	JSR $9d93			   ; $9d0f: 20 93 9D
+	PLA					 ; $9d12: 68
+	TAX					 ; $9d13: AA
+	DEX					 ; $9d14: CA
+	BNE $9d0d			   ; $9d15: D0 F6
+	LDA $700a			   ; $9d17: AD 0A 70
+	AND #$7c				; $9d1a: 29 7C
+	ORA $3d				 ; $9d1c: 05 3D
+	STA $700a			   ; $9d1e: 8D 0A 70
+	LDA $700b			   ; $9d21: AD 0B 70
+	AND #$7c				; $9d24: 29 7C
+	ORA $3d				 ; $9d26: 05 3D
+	STA $700b			   ; $9d28: 8D 0B 70
+	LDA $7000			   ; $9d2b: AD 00 70
+	EOR #$02				; $9d2e: 49 02
+	STA $7000			   ; $9d30: 8D 00 70
+	LDA #$01				; $9d33: A9 01
+	BRK					 ; $9d35: 00
+	.db $52			; $9d36
+	.db $73			; $9d37
+	LDA #$04				; $9d38: A9 04
+	BRK					 ; $9d3a: 00
+	.db $52			; $9d3b
+	.db $73			; $9d3c
+	LDA $700a			   ; $9d3d: AD 0A 70
+	STA $7001			   ; $9d40: 8D 01 70
+	LDA $700a			   ; $9d43: AD 0A 70
+	AND #$c3				; $9d46: 29 C3
+	STA $700a			   ; $9d48: 8D 0A 70
+	LDA $700a			   ; $9d4b: AD 0A 70
+	AND #$03				; $9d4e: 29 03
+	LDX #$04				; $9d50: A2 04
+	LDY #$00				; $9d52: A0 00
+	BRK					 ; $9d54: 00
+	ASL $df				 ; $9d55: 06 DF
+	LDA $700b			   ; $9d57: AD 0B 70
+	STA $7002			   ; $9d5a: 8D 02 70
+	LDA $700b			   ; $9d5d: AD 0B 70
+	AND #$c3				; $9d60: 29 C3
+	STA $700b			   ; $9d62: 8D 0B 70
+	LDA $700b			   ; $9d65: AD 0B 70
+	AND #$03				; $9d68: 29 03
+	LDX #$05				; $9d6a: A2 05
+	LDY #$01				; $9d6c: A0 01
+	BRK					 ; $9d6e: 00
+	ASL $df				 ; $9d6f: 06 DF
+	JSR $9846			   ; $9d71: 20 46 98
+	BRK					 ; $9d74: 00
+	ASL					 ; $9d75: 0A
+	.db $3b			; $9d76
+	LDA $627f			   ; $9d77: AD 7F 62
+	ORA #$01				; $9d7a: 09 01
+	STA $627f			   ; $9d7c: 8D 7F 62
+	LDA $7000			   ; $9d7f: AD 00 70
+	EOR #$02				; $9d82: 49 02
+	STA $7000			   ; $9d84: 8D 00 70
+	JMP $d1f3			   ; $9d87: 4C F3 D1
+	JSR $9da2			   ; $9d8a: 20 A2 9D
+	JSR $9d93			   ; $9d8d: 20 93 9D
+	JMP $9d8a			   ; $9d90: 4C 8A 9D
+	JSR $e06e			   ; $9d93: 20 6E E0
+	JSR $cbb4			   ; $9d96: 20 B4 CB
+	JSR $d7d5			   ; $9d99: 20 D5 D7
+	JSR $ff74			   ; $9d9c: 20 74 FF
+	INC $3c				 ; $9d9f: E6 3C
+	RTS					 ; $9da1: 60
+	LDA $3c				 ; $9da2: A5 3C
+	AND #$0f				; $9da4: 29 0F
+	BNE $9db6			   ; $9da6: D0 0E
+	LDX #$0a				; $9da8: A2 0A
+	JSR $9dbd			   ; $9daa: 20 BD 9D
+	PHP					 ; $9dad: 08
+	LDX #$0b				; $9dae: A2 0B
+	JSR $9dbd			   ; $9db0: 20 BD 9D
+	BCS $9db7			   ; $9db3: B0 02
+	PLP					 ; $9db5: 28
+	RTS					 ; $9db6: 60
+	PLP					 ; $9db7: 28
+	BCC $9dbc			   ; $9db8: 90 02
+	PLA					 ; $9dba: 68
+	PLA					 ; $9dbb: 68
+	RTS					 ; $9dbc: 60
+	STX $51				 ; $9dbd: 86 51
+	LDA $71a0,X			 ; $9dbf: BD A0 71
+	CMP $6f60,X			 ; $9dc2: DD 60 6F
+	BNE $9dd1			   ; $9dc5: D0 0A
+	LDA $71c0,X			 ; $9dc7: BD C0 71
+	CMP $6f80,X			 ; $9dca: DD 80 6F
+	BNE $9dd1			   ; $9dcd: D0 02
+	SEC					 ; $9dcf: 38
+	RTS					 ; $9dd0: 60
+	LDA $3c				 ; $9dd1: A5 3C
+	AND #$0f				; $9dd3: 29 0F
+	BNE $9dfe			   ; $9dd5: D0 27
+	JSR $dc4b			   ; $9dd7: 20 4B DC
+	LDX $51				 ; $9dda: A6 51
+	LDA $7000,X			 ; $9ddc: BD 00 70
+	ORA #$80				; $9ddf: 09 80
+	STA $7000,X			 ; $9de1: 9D 00 70
+	AND #$03				; $9de4: 29 03
+	ASL					 ; $9de6: 0A
+	TAY					 ; $9de7: A8
+	LDA $6f60,X			 ; $9de8: BD 60 6F
+	CLC					 ; $9deb: 18
+	ADC $d239,Y			 ; $9dec: 79 39 D2
+	STA $6f60,X			 ; $9def: 9D 60 6F
+	LDA $6f80,X			 ; $9df2: BD 80 6F
+	CLC					 ; $9df5: 18
+	ADC $d23a,Y			 ; $9df6: 79 3A D2
+	STA $6f80,X			 ; $9df9: 9D 80 6F
+	CLC					 ; $9dfc: 18
+	RTS					 ; $9dfd: 60
+	LDA $51				 ; $9dfe: A5 51
+	CMP #$0a				; $9e00: C9 0A
+	BEQ $9e05			   ; $9e02: F0 01
+	PLP					 ; $9e04: 28
+	PLA					 ; $9e05: 68
+	PLA					 ; $9e06: 68
+	RTS					 ; $9e07: 60
+	LDA $3d				 ; $9e08: A5 3D
+	EOR #$02				; $9e0a: 49 02
+	ASL					 ; $9e0c: 0A
+	TAX					 ; $9e0d: AA
+	LDA $42				 ; $9e0e: A5 42
+	CLC					 ; $9e10: 18
+	ADC $d239,X			 ; $9e11: 7D 39 D2
+	STA $71aa			   ; $9e14: 8D AA 71
+	CLC					 ; $9e17: 18
+	ADC $d239,X			 ; $9e18: 7D 39 D2
+	STA $71ab			   ; $9e1b: 8D AB 71
+	LDA $43				 ; $9e1e: A5 43
+	CLC					 ; $9e20: 18
+	ADC $d23a,X			 ; $9e21: 7D 3A D2
+	STA $71ca			   ; $9e24: 8D CA 71
+	CLC					 ; $9e27: 18
+	ADC $d23a,X			 ; $9e28: 7D 3A D2
+	STA $71cb			   ; $9e2b: 8D CB 71
+	RTS					 ; $9e2e: 60
+	BRK					 ; $9e2f: 00
+	ASL					 ; $9e30: 0A
+	.db $6f			; $9e31
+	LDX #$17				; $9e32: A2 17
+	TXA					 ; $9e34: 8A
+	PHA					 ; $9e35: 48
+	JSR $9d96			   ; $9e36: 20 96 9D
+	PLA					 ; $9e39: 68
+	TAX					 ; $9e3a: AA
+	DEX					 ; $9e3b: CA
+	BNE $9e34			   ; $9e3c: D0 F6
+	RTS					 ; $9e3e: 60
+	LDX $615a			   ; $9e3f: AE 5A 61
+	LDA $9e66,X			 ; $9e42: BD 66 9E
+	STA tmp0				; $9e45: 85 00
+	BRK					 ; $9e47: 00
+	.db $62			; $9e48
+	.db $33			; $9e49
+	STA tmp1				; $9e4a: 85 01
+	LDX #$00				; $9e4c: A2 00
+	BRK					 ; $9e4e: 00
+	.db $2b			; $9e4f
+	.db $73			; $9e50
+	CMP tmp0				; $9e51: C5 00
+	BEQ $9e64			   ; $9e53: F0 0F
+	INX					 ; $9e55: E8
+	CPX tmp1				; $9e56: E4 01
+	BCC $9e4e			   ; $9e58: 90 F4
+	LDX #$00				; $9e5a: A2 00
+	STX $6e				 ; $9e5c: 86 6E
+	LDA #$08				; $9e5e: A9 08
+	BRK					 ; $9e60: 00
+	AND $600f			   ; $9e61: 2D 0F 60
+	TXA					 ; $9e64: 8A
+	RTS					 ; $9e65: 60
+	ASL $07				 ; $9e66: 06 07
+	ORA tmp3				; $9e68: 05 03
+	BRK					 ; $9e6a: 00
+	LDX $6296			   ; $9e6b: AE 96 62
+	BEQ $9e79			   ; $9e6e: F0 09
+	DEX					 ; $9e70: CA
+	STX $6296			   ; $9e71: 8E 96 62
+	BNE $9e79			   ; $9e74: D0 03
+	JSR $97b8			   ; $9e76: 20 B8 97
+	RTS					 ; $9e79: 60
+	LDA #$00				; $9e7a: A9 00
+	BRK					 ; $9e7c: 00
+	ROL $2f				 ; $9e7d: 26 2F
+	TXA					 ; $9e7f: 8A
+	BCS $9e8b			   ; $9e80: B0 09
+	LDA #$00				; $9e82: A9 00
+	STA $6e				 ; $9e84: 85 6E
+	LDA #$08				; $9e86: A9 08
+	BRK					 ; $9e88: 00
+	AND $600f			   ; $9e89: 2D 0F 60
+	JSR $9e92			   ; $9e8c: 20 92 9E
+	JMP $9ec4			   ; $9e8f: 4C C4 9E
+	PHA					 ; $9e92: 48
+	JSR $9ea2			   ; $9e93: 20 A2 9E
+	AND #$e0				; $9e96: 29 E0
+	STA (ptr0_lo),Y		 ; $9e98: 91 04
+	PLA					 ; $9e9a: 68
+	AND #$1f				; $9e9b: 29 1F
+	ORA (ptr0_lo),Y		 ; $9e9d: 11 04
+	STA (ptr0_lo),Y		 ; $9e9f: 91 04
+	RTS					 ; $9ea1: 60
+	STX tmp2				; $9ea2: 86 02
+	STY ptr0_lo			 ; $9ea4: 84 04
+	STY tmp3				; $9ea6: 84 03
+	LDA #$00				; $9ea8: A9 00
+	STA ptr0_hi			 ; $9eaa: 85 05
+	LDA $3f				 ; $9eac: A5 3F
+	LDX #$04				; $9eae: A2 04
+	JSR $c827			   ; $9eb0: 20 27 C8
+	LDA tmp2				; $9eb3: A5 02
+	JSR $c813			   ; $9eb5: 20 13 C8
+	LDA #$00				; $9eb8: A9 00
+	LDY #$78				; $9eba: A0 78
+	JSR $c81d			   ; $9ebc: 20 1D C8
+	LDY #$00				; $9ebf: A0 00
+	LDA (ptr0_lo),Y		 ; $9ec1: B1 04
+	RTS					 ; $9ec3: 60
+	PHA					 ; $9ec4: 48
+	LDA tmp2				; $9ec5: A5 02
+	SEC					 ; $9ec7: 38
+	SBC $6fa0			   ; $9ec8: ED A0 6F
+	CLC					 ; $9ecb: 18
+	ADC #$09				; $9ecc: 69 09
+	CMP #$12				; $9ece: C9 12
+	BCS $9ee1			   ; $9ed0: B0 0F
+	STA tmp2				; $9ed2: 85 02
+	LDA tmp3				; $9ed4: A5 03
+	SEC					 ; $9ed6: 38
+	SBC $6fc0			   ; $9ed7: ED C0 6F
+	CLC					 ; $9eda: 18
+	ADC #$07				; $9edb: 69 07
+	CMP #$0f				; $9edd: C9 0F
+	BCC $9ee3			   ; $9edf: 90 02
+	PLA					 ; $9ee1: 68
+	RTS					 ; $9ee2: 60
+	STA $60				 ; $9ee3: 85 60
+	ASL					 ; $9ee5: 0A
+	STA tmp1				; $9ee6: 85 01
+	LDA tmp2				; $9ee8: A5 02
+	BNE $9efd			   ; $9eea: D0 11
+	LDA $3e				 ; $9eec: A5 3E
+	BEQ $9efb			   ; $9eee: F0 0B
+	LDA $3d				 ; $9ef0: A5 3D
+	CMP #$03				; $9ef2: C9 03
+	BNE $9efb			   ; $9ef4: D0 05
+	LDA #$00				; $9ef6: A9 00
+	JMP $9efd			   ; $9ef8: 4C FD 9E
+	LDA #$1f				; $9efb: A9 1F
+	STA $5f				 ; $9efd: 85 5F
+	DEC $5f				 ; $9eff: C6 5F
+	CMP #$0f				; $9f01: C9 0F
+	BCS $9f0c			   ; $9f03: B0 07
+	BRK					 ; $9f05: 00
+	.db $0b			; $9f06
+	.db $6f			; $9f07
+	BCS $9ee1			   ; $9f08: B0 D7
+	LDA $5f				 ; $9f0a: A5 5F
+	ASL					 ; $9f0c: 0A
+	SEC					 ; $9f0d: 38
+	SBC #$02				; $9f0e: E9 02
+	STA tmp0				; $9f10: 85 00
+	PLA					 ; $9f12: 68
+	PHA					 ; $9f13: 48
+	AND #$e0				; $9f14: 29 E0
+	CMP $46				 ; $9f16: C5 46
+	BNE $9ee1			   ; $9f18: D0 C7
+	PLA					 ; $9f1a: 68
+	AND #$1f				; $9f1b: 29 1F
+	PHA					 ; $9f1d: 48
+	ASL					 ; $9f1e: 0A
+	ASL					 ; $9f1f: 0A
+	TAY					 ; $9f20: A8
+	JSR $9f40			   ; $9f21: 20 40 9F
+	INC tmp0				; $9f24: E6 00
+	JSR $9f40			   ; $9f26: 20 40 9F
+	DEC tmp0				; $9f29: C6 00
+	INC tmp1				; $9f2b: E6 01
+	JSR $9f40			   ; $9f2d: 20 40 9F
+	INC tmp0				; $9f30: E6 00
+	JSR $9f40			   ; $9f32: 20 40 9F
+	PLA					 ; $9f35: 68
+	TAX					 ; $9f36: AA
+	LDA $76c0,X			 ; $9f37: BD C0 76
+	JSR $c727			   ; $9f3a: 20 27 C7
+	JMP $c626			   ; $9f3d: 4C 26 C6
+	LDA $7600,Y			 ; $9f40: B9 00 76
+	INY					 ; $9f43: C8
+	JMP $c65a			   ; $9f44: 4C 5A C6
+	PHP					 ; $9f47: 08
+	JSR $a046			   ; $9f48: 20 46 A0
+	PLP					 ; $9f4b: 28
+	PHP					 ; $9f4c: 08
+	BCC $9f54			   ; $9f4d: 90 05
+	LDA $28				 ; $9f4f: A5 28
+	BRK					 ; $9f51: 00
+	.db $02			; $9f52
+	.db $87			; $9f53
+	LDX #$00				; $9f54: A2 00
+	LDA $6f20,X			 ; $9f56: BD 20 6F
+	AND #$07				; $9f59: 29 07
+	CMP #$05				; $9f5b: C9 05
+	BCS $9f66			   ; $9f5d: B0 07
+	INX					 ; $9f5f: E8
+	CPX #$20				; $9f60: E0 20
+	BNE $9f56			   ; $9f62: D0 F2
+	BEQ $9f6f			   ; $9f64: F0 09
+	AND #$03				; $9f66: 29 03
+	TAY					 ; $9f68: A8
+	DEY					 ; $9f69: 88
+	STX tmp2,Y			  ; $9f6a: 96 02
+	JMP $9f5f			   ; $9f6c: 4C 5F 9F
+	LDA #$00				; $9f6f: A9 00
+	STA $49				 ; $9f71: 85 49
+	LDA #$78				; $9f73: A9 78
+	STA $4a				 ; $9f75: 85 4A
+	LDA $40				 ; $9f77: A5 40
+	STA tmp1				; $9f79: 85 01
+	LDY #$00				; $9f7b: A0 00
+	LDA $3f				 ; $9f7d: A5 3F
+	STA tmp0				; $9f7f: 85 00
+	LDA ($49),Y			 ; $9f81: B1 49
+	PHA					 ; $9f83: 48
+	AND #$e0				; $9f84: 29 E0
+	STA $06				 ; $9f86: 85 06
+	PLA					 ; $9f88: 68
+	AND #$1f				; $9f89: 29 1F
+	TAX					 ; $9f8b: AA
+	LDA $6f20,X			 ; $9f8c: BD 20 6F
+	AND #$07				; $9f8f: 29 07
+	BEQ $9f97			   ; $9f91: F0 04
+	CMP #$04				; $9f93: C9 04
+	BCC $9fa6			   ; $9f95: 90 0F
+	INY					 ; $9f97: C8
+	DEC tmp0				; $9f98: C6 00
+	BNE $9f81			   ; $9f9a: D0 E5
+	JSR $e66f			   ; $9f9c: 20 6F E6
+	DEC tmp1				; $9f9f: C6 01
+	BNE $9f7b			   ; $9fa1: D0 D8
+	JMP $a02b			   ; $9fa3: 4C 2B A0
+	STA ptr0_hi			 ; $9fa6: 85 05
+	JSR $e66f			   ; $9fa8: 20 6F E6
+	LDA tmp1				; $9fab: A5 01
+	CMP #$01				; $9fad: C9 01
+	BNE $9fb7			   ; $9faf: D0 06
+	LDA $0520			   ; $9fb1: AD 20 05
+	JMP $9fe7			   ; $9fb4: 4C E7 9F
+	LDA ($49),Y			 ; $9fb7: B1 49
+	STA $07				 ; $9fb9: 85 07
+	AND #$e0				; $9fbb: 29 E0
+	CMP $06				 ; $9fbd: C5 06
+	BEQ $9fe5			   ; $9fbf: F0 24
+	LDX #$00				; $9fc1: A2 00
+	LDA $a016,X			 ; $9fc3: BD 16 A0
+	BMI $9fd0			   ; $9fc6: 30 08
+	CMP $28				 ; $9fc8: C5 28
+	BEQ $a007			   ; $9fca: F0 3B
+	INX					 ; $9fcc: E8
+	JMP $9fc3			   ; $9fcd: 4C C3 9F
+	LDX #$00				; $9fd0: A2 00
+	LDA $a01c,X			 ; $9fd2: BD 1C A0
+	BMI $9fdf			   ; $9fd5: 30 08
+	CMP $28				 ; $9fd7: C5 28
+	BEQ $9ff1			   ; $9fd9: F0 16
+	INX					 ; $9fdb: E8
+	JMP $9fd2			   ; $9fdc: 4C D2 9F
+	LDA $06				 ; $9fdf: A5 06
+	BEQ $a010			   ; $9fe1: F0 2D
+	BNE $9ff1			   ; $9fe3: D0 0C
+	LDA $07				 ; $9fe5: A5 07
+	AND #$1f				; $9fe7: 29 1F
+	TAX					 ; $9fe9: AA
+	LDA $6f20,X			 ; $9fea: BD 20 6F
+	AND #$07				; $9fed: 29 07
+	BNE $a010			   ; $9fef: D0 1F
+	JSR $e67b			   ; $9ff1: 20 7B E6
+	LDA ptr0_hi			 ; $9ff4: A5 05
+	AND #$03				; $9ff6: 29 03
+	SEC					 ; $9ff8: 38
+	SBC #$01				; $9ff9: E9 01
+	TAX					 ; $9ffb: AA
+	LDA ($49),Y			 ; $9ffc: B1 49
+	AND #$e0				; $9ffe: 29 E0
+	ORA tmp2,X			  ; $a000: 15 02
+	STA ($49),Y			 ; $a002: 91 49
+	JMP $9f97			   ; $a004: 4C 97 9F
+	LDA $07				 ; $a007: A5 07
+	AND #$1f				; $a009: 29 1F
+	CMP $0520			   ; $a00b: CD 20 05
+	BEQ $9fe5			   ; $a00e: F0 D5
+	JSR $e67b			   ; $a010: 20 7B E6
+	JMP $9f97			   ; $a013: 4C 97 9F
+	AND $26				 ; $a016: 25 26
+	.db $27			; $a018
+	PLP					 ; $a019: 28
+	.db $2b			; $a01a
+	.db $ff			; $a01b
+	BPL $a02f			   ; $a01c: 10 11
+	.db $12			; $a01e
+	.db $13			; $a01f
+	.db $14			; $a020
+	ORA $16,X			   ; $a021: 15 16
+	.db $17			; $a023
+	CLC					 ; $a024: 18
+	ORA $1d1a,Y			 ; $a025: 19 1A 1D
+	AND #$2a				; $a028: 29 2A
+	.db $ff			; $a02a
+	PLP					 ; $a02b: 28
+	BCC $a045			   ; $a02c: 90 17
+	LDX $0520			   ; $a02e: AE 20 05
+	LDA #$ff				; $a031: A9 FF
+	STA $6e5e,X			 ; $a033: 9D 5E 6E
+	LDX #$00				; $a036: A2 00
+	LDA $6e5e,X			 ; $a038: BD 5E 6E
+	BEQ $a042			   ; $a03b: F0 05
+	INX					 ; $a03d: E8
+	CPX #$20				; $a03e: E0 20
+	BCC $a038			   ; $a040: 90 F6
+	STX $0572			   ; $a042: 8E 72 05
+	RTS					 ; $a045: 60
+	LDA #$ff				; $a046: A9 FF
+	BIT $41				 ; $a048: 24 41
+	BPL $a054			   ; $a04a: 10 08
+	LDA $3f				 ; $a04c: A5 3F
+	STA $49				 ; $a04e: 85 49
+	LDA #$00				; $a050: A9 00
+	STA $4a				 ; $a052: 85 4A
+	LDX #$1f				; $a054: A2 1F
+	STA $6e5e,X			 ; $a056: 9D 5E 6E
+	DEX					 ; $a059: CA
+	BPL $a056			   ; $a05a: 10 FA
+	CMP #$ff				; $a05c: C9 FF
+	BEQ $a0a6			   ; $a05e: F0 46
+	LDA $0520			   ; $a060: AD 20 05
+	AND #$1f				; $a063: 29 1F
+	TAX					 ; $a065: AA
+	LDA #$ff				; $a066: A9 FF
+	STA $6e5e,X			 ; $a068: 9D 5E 6E
+	LDA $40				 ; $a06b: A5 40
+	LDX #$49				; $a06d: A2 49
+	JSR $c827			   ; $a06f: 20 27 C8
+	LDA #$00				; $a072: A9 00
+	LDY #$78				; $a074: A0 78
+	JSR $c81d			   ; $a076: 20 1D C8
+	LDA $49				 ; $a079: A5 49
+	SEC					 ; $a07b: 38
+	SBC #$01				; $a07c: E9 01
+	STA $49				 ; $a07e: 85 49
+	BCS $a084			   ; $a080: B0 02
+	DEC $4a				 ; $a082: C6 4A
+	LDY #$00				; $a084: A0 00
+	LDA ($49),Y			 ; $a086: B1 49
+	AND #$1f				; $a088: 29 1F
+	TAX					 ; $a08a: AA
+	LDA #$ff				; $a08b: A9 FF
+	STA $6e5e,X			 ; $a08d: 9D 5E 6E
+	LDA $49				 ; $a090: A5 49
+	BEQ $a099			   ; $a092: F0 05
+	DEC $49				 ; $a094: C6 49
+	JMP $a086			   ; $a096: 4C 86 A0
+	DEC $49				 ; $a099: C6 49
+	LDA $4a				 ; $a09b: A5 4A
+	CMP #$78				; $a09d: C9 78
+	BEQ $a0a6			   ; $a09f: F0 05
+	DEC $4a				 ; $a0a1: C6 4A
+	JMP $a086			   ; $a0a3: 4C 86 A0
+	RTS					 ; $a0a6: 60
+	JSR $a155			   ; $a0a7: 20 55 A1
+	JSR $a0b1			   ; $a0aa: 20 B1 A0
+	BRK					 ; $a0ad: 00
+	.db $04			; $a0ae
+	.db $bf			; $a0af
+	RTS					 ; $a0b0: 60
+	LDY #$00				; $a0b1: A0 00
+	LDA ($49),Y			 ; $a0b3: B1 49
+	AND #$1f				; $a0b5: 29 1F
+	TAX					 ; $a0b7: AA
+	LDA $6f40,X			 ; $a0b8: BD 40 6F
+	AND #$7f				; $a0bb: 29 7F
+	CMP #$14				; $a0bd: C9 14
+	BCC $a0c5			   ; $a0bf: 90 04
+	CMP #$24				; $a0c1: C9 24
+	BCC $a0d6			   ; $a0c3: 90 11
+	DEC $49				 ; $a0c5: C6 49
+	LDA $49				 ; $a0c7: A5 49
+	CMP #$ff				; $a0c9: C9 FF
+	BNE $a0b3			   ; $a0cb: D0 E6
+	DEC $4a				 ; $a0cd: C6 4A
+	LDA $4a				 ; $a0cf: A5 4A
+	CMP #$78				; $a0d1: C9 78
+	BCS $a0b3			   ; $a0d3: B0 DE
+	RTS					 ; $a0d5: 60
+	LDX #$00				; $a0d6: A2 00
+	LDA $6c0c,X			 ; $a0d8: BD 0C 6C
+	CMP #$ff				; $a0db: C9 FF
+	BEQ $a0c5			   ; $a0dd: F0 E6
+	CMP $4a				 ; $a0df: C5 4A
+	BNE $a0fe			   ; $a0e1: D0 1B
+	LDA $6c0d,X			 ; $a0e3: BD 0D 6C
+	CMP $49				 ; $a0e6: C5 49
+	BNE $a0fe			   ; $a0e8: D0 14
+	LDA $6c0e,X			 ; $a0ea: BD 0E 6C
+	AND #$7f				; $a0ed: 29 7F
+	CMP $64				 ; $a0ef: C5 64
+	BNE $a0fe			   ; $a0f1: D0 0B
+	LDA $6c0e,X			 ; $a0f3: BD 0E 6C
+	BMI $a105			   ; $a0f6: 30 0D
+	JSR $a145			   ; $a0f8: 20 45 A1
+	JMP $a0c5			   ; $a0fb: 4C C5 A0
+	INX					 ; $a0fe: E8
+	INX					 ; $a0ff: E8
+	INX					 ; $a100: E8
+	INX					 ; $a101: E8
+	JMP $a0d8			   ; $a102: 4C D8 A0
+	LDA $49				 ; $a105: A5 49
+	PHA					 ; $a107: 48
+	LDA $4a				 ; $a108: A5 4A
+	PHA					 ; $a10a: 48
+	JSR $a145			   ; $a10b: 20 45 A1
+	JSR $a13a			   ; $a10e: 20 3A A1
+	JSR $a145			   ; $a111: 20 45 A1
+	TXA					 ; $a114: 8A
+	PHA					 ; $a115: 48
+	TYA					 ; $a116: 98
+	PHA					 ; $a117: 48
+	LDA $3f				 ; $a118: A5 3F
+	SEC					 ; $a11a: 38
+	SBC #$01				; $a11b: E9 01
+	LDY #$00				; $a11d: A0 00
+	LDX #$49				; $a11f: A2 49
+	JSR $c807			   ; $a121: 20 07 C8
+	PLA					 ; $a124: 68
+	TAY					 ; $a125: A8
+	PLA					 ; $a126: 68
+	TAX					 ; $a127: AA
+	JSR $a145			   ; $a128: 20 45 A1
+	JSR $a13a			   ; $a12b: 20 3A A1
+	JSR $a145			   ; $a12e: 20 45 A1
+	PLA					 ; $a131: 68
+	STA $4a				 ; $a132: 85 4A
+	PLA					 ; $a134: 68
+	STA $49				 ; $a135: 85 49
+	JMP $a0c5			   ; $a137: 4C C5 A0
+	DEC $49				 ; $a13a: C6 49
+	LDA $49				 ; $a13c: A5 49
+	CMP #$ff				; $a13e: C9 FF
+	BNE $a144			   ; $a140: D0 02
+	DEC $4a				 ; $a142: C6 4A
+	RTS					 ; $a144: 60
+	LDA ($49),Y			 ; $a145: B1 49
+	AND #$e0				; $a147: 29 E0
+	STA ($49),Y			 ; $a149: 91 49
+	LDA $6c0f,X			 ; $a14b: BD 0F 6C
+	AND #$1f				; $a14e: 29 1F
+	ORA ($49),Y			 ; $a150: 11 49
+	STA ($49),Y			 ; $a152: 91 49
+	RTS					 ; $a154: 60
+	LDA $3f				 ; $a155: A5 3F
+	STA $49				 ; $a157: 85 49
+	LDA #$00				; $a159: A9 00
+	STA $4a				 ; $a15b: 85 4A
+	LDA $40				 ; $a15d: A5 40
+	LDX #$49				; $a15f: A2 49
+	JSR $c827			   ; $a161: 20 27 C8
+	LDA #$00				; $a164: A9 00
+	LDY #$78				; $a166: A0 78
+	JMP $c81d			   ; $a168: 4C 1D C8
+	LDA $63				 ; $a16b: A5 63
+	CMP #$36				; $a16d: C9 36
+	BNE $a184			   ; $a16f: D0 13
+	LDA $64				 ; $a171: A5 64
+	CMP #$06				; $a173: C9 06
+	BNE $a184			   ; $a175: D0 0D
+	LDA #$00				; $a177: A9 00
+	JSR $b3ed			   ; $a179: 20 ED B3
+	BCC $a183			   ; $a17c: 90 05
+	LDA #$0a				; $a17e: A9 0A
+	STA $7837			   ; $a180: 8D 37 78
+	RTS					 ; $a183: 60
+	JSR $a155			   ; $a184: 20 55 A1
+	LDA #$00				; $a187: A9 00
+	STA $4b				 ; $a189: 85 4B
+	LDA #$78				; $a18b: A9 78
+	STA $4c				 ; $a18d: 85 4C
+	LDY #$00				; $a18f: A0 00
+	STY tmp0				; $a191: 84 00
+	LDA ($4b),Y			 ; $a193: B1 4B
+	AND #$1f				; $a195: 29 1F
+	TAX					 ; $a197: AA
+	LDA $6f40,X			 ; $a198: BD 40 6F
+	CMP #$04				; $a19b: C9 04
+	BEQ $a1b2			   ; $a19d: F0 13
+	INC $4b				 ; $a19f: E6 4B
+	BNE $a1a5			   ; $a1a1: D0 02
+	INC $4c				 ; $a1a3: E6 4C
+	LDA $4b				 ; $a1a5: A5 4B
+	CMP $49				 ; $a1a7: C5 49
+	BNE $a193			   ; $a1a9: D0 E8
+	LDA $4c				 ; $a1ab: A5 4C
+	CMP $4a				 ; $a1ad: C5 4A
+	BNE $a193			   ; $a1af: D0 E2
+	RTS					 ; $a1b1: 60
+	LDA tmp0				; $a1b2: A5 00
+	INC tmp0				; $a1b4: E6 00
+	JSR $b3ed			   ; $a1b6: 20 ED B3
+	LDY #$00				; $a1b9: A0 00
+	BCC $a19f			   ; $a1bb: 90 E2
+	LDA ($4b),Y			 ; $a1bd: B1 4B
+	AND #$e0				; $a1bf: 29 E0
+	ORA $0572			   ; $a1c1: 0D 72 05
+	STA ($4b),Y			 ; $a1c4: 91 4B
+	JMP $a19f			   ; $a1c6: 4C 9F A1
+	JSR $a1d2			   ; $a1c9: 20 D2 A1
+	JSR $958a			   ; $a1cc: 20 8A 95
+	JMP $c5bf			   ; $a1cf: 4C BF C5
+	JSR $c5c5			   ; $a1d2: 20 C5 C5
+	JSR $c54e			   ; $a1d5: 20 4E C5
+	JSR $c5af			   ; $a1d8: 20 AF C5
+	LDA #$00				; $a1db: A9 00
+	STA $6bde			   ; $a1dd: 8D DE 6B
+	LDA $0553			   ; $a1e0: AD 53 05
+	AND #$7f				; $a1e3: 29 7F
+	STA $0553			   ; $a1e5: 8D 53 05
+	JSR $a046			   ; $a1e8: 20 46 A0
+	LDA $28				 ; $a1eb: A5 28
+	BRK					 ; $a1ed: 00
+	.db $02			; $a1ee
+	.db $87			; $a1ef
+	BRK					 ; $a1f0: 00
+	.db $03			; $a1f1
+	.db $df			; $a1f2
+	LDA $0572			   ; $a1f3: AD 72 05
+	BRK					 ; $a1f6: 00
+	ORA ($87),Y			 ; $a1f7: 11 87
+	LDA $41				 ; $a1f9: A5 41
+	BPL $a203			   ; $a1fb: 10 06
+	BRK					 ; $a1fd: 00
+	.db $02			; $a1fe
+	.db $cf			; $a1ff
+	JMP $a211			   ; $a200: 4C 11 A2
+	JSR $9799			   ; $a203: 20 99 97
+	JSR $ab6b			   ; $a206: 20 6B AB
+	JSR $a280			   ; $a209: 20 80 A2
+	LDA #$00				; $a20c: A9 00
+	STA $050b			   ; $a20e: 8D 0B 05
+	JSR $9648			   ; $a211: 20 48 96
+	JSR $ab6b			   ; $a214: 20 6B AB
+	JSR $97f5			   ; $a217: 20 F5 97
+	BRK					 ; $a21a: 00
+	.db $07			; $a21b
+	.db $87			; $a21c
+	JSR $a232			   ; $a21d: 20 32 A2
+	LDX #$05				; $a220: A2 05
+	LDA $6f60,X			 ; $a222: BD 60 6F
+	STA $6fa0,X			 ; $a225: 9D A0 6F
+	LDA $6f80,X			 ; $a228: BD 80 6F
+	STA $6fc0,X			 ; $a22b: 9D C0 6F
+	DEX					 ; $a22e: CA
+	BPL $a222			   ; $a22f: 10 F1
+	RTS					 ; $a231: 60
+	LDA #$10				; $a232: A9 10
+	STA $0599			   ; $a234: 8D 99 05
+	BRK					 ; $a237: 00
+	.db $62			; $a238
+	.db $23			; $a239
+	RTI					 ; $a23a: 40
+	BEQ $a25b			   ; $a23b: F0 1E
+	BRK					 ; $a23d: 00
+	.db $62			; $a23e
+	.db $23			; $a23f
+	.db $43			; $a240
+	BEQ $a258			   ; $a241: F0 15
+	BRK					 ; $a243: 00
+	.db $62			; $a244
+	.db $23			; $a245
+	PHA					 ; $a246: 48
+	BEQ $a252			   ; $a247: F0 09
+	BRK					 ; $a249: 00
+	.db $62			; $a24a
+	.db $23			; $a24b
+	.db $4b			; $a24c
+	BEQ $a255			   ; $a24d: F0 06
+	ASL $0599			   ; $a24f: 0E 99 05
+	ASL $0599			   ; $a252: 0E 99 05
+	ASL $0599			   ; $a255: 0E 99 05
+	ASL $0599			   ; $a258: 0E 99 05
+	RTS					 ; $a25b: 60
+	BIT $41				 ; $a25c: 24 41
+	BMI $a275			   ; $a25e: 30 15
+	LDA $65				 ; $a260: A5 65
+	CMP #$03				; $a262: C9 03
+	BEQ $a275			   ; $a264: F0 0F
+	LDX #$00				; $a266: A2 00
+	LDA $62ed			   ; $a268: AD ED 62
+	CMP $a2db,X			 ; $a26b: DD DB A2
+	BEQ $a276			   ; $a26e: F0 06
+	INX					 ; $a270: E8
+	CPX #$08				; $a271: E0 08
+	BCC $a26b			   ; $a273: 90 F6
+	RTS					 ; $a275: 60
+	JSR $a289			   ; $a276: 20 89 A2
+	LDA #$00				; $a279: A9 00
+	STA $16				 ; $a27b: 85 16
+	JMP $c5de			   ; $a27d: 4C DE C5
+	JSR $a296			   ; $a280: 20 96 A2
+	BRK					 ; $a283: 00
+	.db $27			; $a284
+	.db $0f			; $a285
+	JMP $c626			   ; $a286: 4C 26 C6
+	JSR $a296			   ; $a289: 20 96 A2
+	BRK					 ; $a28c: 00
+	PLP					 ; $a28d: 28
+	.db $0f			; $a28e
+	LDA $0514			   ; $a28f: AD 14 05
+	STA $05fd			   ; $a292: 8D FD 05
+	RTS					 ; $a295: 60
+	JSR $a2a8			   ; $a296: 20 A8 A2
+	LDX #$00				; $a299: A2 00
+	LDA $a2e3,Y			 ; $a29b: B9 E3 A2
+	STA $05fd,X			 ; $a29e: 9D FD 05
+	INY					 ; $a2a1: C8
+	INX					 ; $a2a2: E8
+	CPX #$0c				; $a2a3: E0 0C
+	BCC $a29b			   ; $a2a5: 90 F4
+	RTS					 ; $a2a7: 60
+	LDA $41				 ; $a2a8: A5 41
+	BMI $a2d2			   ; $a2aa: 30 26
+	LDX #$08				; $a2ac: A2 08
+	LDA $65				 ; $a2ae: A5 65
+	CMP #$03				; $a2b0: C9 03
+	BEQ $a2c2			   ; $a2b2: F0 0E
+	LDX #$07				; $a2b4: A2 07
+	LDA $62ed			   ; $a2b6: AD ED 62
+	CMP $a2db,X			 ; $a2b9: DD DB A2
+	BCS $a2c2			   ; $a2bc: B0 04
+	DEX					 ; $a2be: CA
+	JMP $a2b9			   ; $a2bf: 4C B9 A2
+	TXA					 ; $a2c2: 8A
+	ASL					 ; $a2c3: 0A
+	ASL					 ; $a2c4: 0A
+	STA $05fd			   ; $a2c5: 8D FD 05
+	ASL					 ; $a2c8: 0A
+	CLC					 ; $a2c9: 18
+	ADC $05fd			   ; $a2ca: 6D FD 05
+	TAY					 ; $a2cd: A8
+	LDA $a2e3,Y			 ; $a2ce: B9 E3 A2
+	RTS					 ; $a2d1: 60
+	LDA $28				 ; $a2d2: A5 28
+	BRK					 ; $a2d4: 00
+	ORA ($e7,X)			 ; $a2d5: 01 E7
+	LDA $05fd			   ; $a2d7: AD FD 05
+	RTS					 ; $a2da: 60
+	BRK					 ; $a2db: 00
+	SEI					 ; $a2dc: 78
+	.db $7c			; $a2dd
+	.db $80			; $a2de
+	STY $c0				 ; $a2df: 84 C0
+	CPY $c8				 ; $a2e1: C4 C8
+	BMI $a2f7			   ; $a2e3: 30 12
+	AND (tmp0,X)			; $a2e5: 21 00
+	.db $3a			; $a2e7
+	ROL					 ; $a2e8: 2A
+	.db $1a			; $a2e9
+	.db $27			; $a2ea
+	ROL					 ; $a2eb: 2A
+	.db $17			; $a2ec
+	SEC					 ; $a2ed: 38
+	ROL					 ; $a2ee: 2A
+	BMI $a2f3			   ; $a2ef: 30 02
+	ORA (tmp0),Y			; $a2f1: 11 00
+	BPL $a30f			   ; $a2f3: 10 1A
+	ASL					 ; $a2f5: 0A
+	.db $17			; $a2f6
+	.db $1a			; $a2f7
+	.db $17			; $a2f8
+	PLP					 ; $a2f9: 28
+	.db $1a			; $a2fa
+	.db $3c			; $a2fb
+	.db $0c			; $a2fc
+	.db $1c			; $a2fd
+	.db $1b			; $a2fe
+	BPL $a31c			   ; $a2ff: 10 1B
+	ASL					 ; $a301: 0A
+	.db $17			; $a302
+	.db $1b			; $a303
+	CLC					 ; $a304: 18
+	PLP					 ; $a305: 28
+	.db $1b			; $a306
+	AND ($0f,X)			 ; $a307: 21 0F
+	ORA ($0c,X)			 ; $a309: 01 0C
+	BRK					 ; $a30b: 00
+	.db $0b			; $a30c
+	ORA #$17				; $a30d: 09 17
+	.db $0b			; $a30f
+	.db $07			; $a310
+	CLC					 ; $a311: 18
+	.db $0b			; $a312
+	AND ($0f,X)			 ; $a313: 21 0F
+	.db $0c			; $a315
+	.db $0c			; $a316
+	.db $1c			; $a317
+	.db $0c			; $a318
+	ASL					 ; $a319: 0A
+	.db $07			; $a31a
+	.db $0c			; $a31b
+	PHP					 ; $a31c: 08
+	CLC					 ; $a31d: 18
+	.db $0c			; $a31e
+	AND ($0f,X)			 ; $a31f: 21 0F
+	ORA ($0c,X)			 ; $a321: 01 0C
+	BRK					 ; $a323: 00
+	.db $0b			; $a324
+	ORA #$17				; $a325: 09 17
+	.db $0b			; $a327
+	.db $07			; $a328
+	CLC					 ; $a329: 18
+	.db $0b			; $a32a
+	.db $3c			; $a32b
+	.db $0c			; $a32c
+	.db $1c			; $a32d
+	.db $1b			; $a32e
+	BPL $a34c			   ; $a32f: 10 1B
+	ASL					 ; $a331: 0A
+	.db $17			; $a332
+	.db $1b			; $a333
+	CLC					 ; $a334: 18
+	PLP					 ; $a335: 28
+	.db $1b			; $a336
+	BMI $a33b			   ; $a337: 30 02
+	ORA (tmp0),Y			; $a339: 11 00
+	BPL $a357			   ; $a33b: 10 1A
+	ASL					 ; $a33d: 0A
+	.db $17			; $a33e
+	.db $1a			; $a33f
+	.db $17			; $a340
+	PLP					 ; $a341: 28
+	.db $1a			; $a342
+	AND ($0f,X)			 ; $a343: 21 0F
+	.db $0c			; $a345
+	.db $0c			; $a346
+	BRK					 ; $a347: 00
+	.db $1b			; $a348
+	ASL					 ; $a349: 0A
+	.db $17			; $a34a
+	.db $1b			; $a34b
+	ROL $06				 ; $a34c: 26 06
+	ASL $2c,X			   ; $a34e: 16 2C
+	STA ($62),Y			 ; $a350: 91 62
+	BMI $a3a1			   ; $a352: 30 4D
+	BRK					 ; $a354: 00
+	ASL $cb,X			   ; $a355: 16 CB
+	.db $80			; $a357
+	BRK					 ; $a358: 00
+	ROL $0f				 ; $a359: 26 0F
+	LDA $c000			   ; $a35b: AD 00 C0
+	AND #$08				; $a35e: 29 08
+	BNE $a372			   ; $a360: D0 10
+	BRK					 ; $a362: 00
+	PHP					 ; $a363: 08
+	.db $8f			; $a364
+	JSR $c5bf			   ; $a365: 20 BF C5
+	JSR $f104			   ; $a368: 20 04 F1
+	STA $615a			   ; $a36b: 8D 5A 61
+	CMP #$04				; $a36e: C9 04
+	BCC $a372			   ; $a370: 90 00
+	BRK					 ; $a372: 00
+	ORA $00bf			   ; $a373: 0D BF 00
+	.db $17			; $a376
+	.db $2f			; $a377
+	LDA #$00				; $a378: A9 00
+	STA $3d				 ; $a37a: 85 3D
+	LDX $615a			   ; $a37c: AE 5A 61
+	CPX #$04				; $a37f: E0 04
+	BNE $a386			   ; $a381: D0 03
+	DEX					 ; $a383: CA
+	STX $3d				 ; $a384: 86 3D
+	LDA #$00				; $a386: A9 00
+	STA $0530			   ; $a388: 8D 30 05
+	JSR $a480			   ; $a38b: 20 80 A4
+	PHA					 ; $a38e: 48
+	TXA					 ; $a38f: 8A
+	PHA					 ; $a390: 48
+	JSR $a578			   ; $a391: 20 78 A5
+	LDA #$00				; $a394: A9 00
+	BRK					 ; $a396: 00
+	.db $03			; $a397
+	.db $9f			; $a398
+	BRK					 ; $a399: 00
+	ORA $40cb			   ; $a39a: 0D CB 40
+	PLA					 ; $a39d: 68
+	TAX					 ; $a39e: AA
+	PLA					 ; $a39f: 68
+	RTS					 ; $a3a0: 60
+	JSR $a684			   ; $a3a1: 20 84 A6
+	JSR $a690			   ; $a3a4: 20 90 A6
+	BRK					 ; $a3a7: 00
+	.db $6f			; $a3a8
+	.db $33			; $a3a9
+	BRK					 ; $a3aa: 00
+	LSR $33,X			   ; $a3ab: 56 33
+	BRK					 ; $a3ad: 00
+	ORA $40cb			   ; $a3ae: 0D CB 40
+	BRK					 ; $a3b1: 00
+	ASL $cb,X			   ; $a3b2: 16 CB
+	RTI					 ; $a3b4: 40
+	LDX #$fe				; $a3b5: A2 FE
+	LDA #$00				; $a3b7: A9 00
+	RTS					 ; $a3b9: 60
+	PHA					 ; $a3ba: 48
+	TXA					 ; $a3bb: 8A
+	PHA					 ; $a3bc: 48
+	JSR $a615			   ; $a3bd: 20 15 A6
+	BRK					 ; $a3c0: 00
+	ORA ($87,X)			 ; $a3c1: 01 87
+	BRK					 ; $a3c3: 00
+	ROL $0f				 ; $a3c4: 26 0F
+	JSR $a5ad			   ; $a3c6: 20 AD A5
+	JSR $a461			   ; $a3c9: 20 61 A4
+	JSR $a4f5			   ; $a3cc: 20 F5 A4
+	BRK					 ; $a3cf: 00
+	ORA #$9f				; $a3d0: 09 9F
+	JSR $c5bf			   ; $a3d2: 20 BF C5
+	JSR $ff74			   ; $a3d5: 20 74 FF
+	BRK					 ; $a3d8: 00
+	BPL $a3b6			   ; $a3d9: 10 DB
+	BRK					 ; $a3db: 00
+	PLA					 ; $a3dc: 68
+	TAX					 ; $a3dd: AA
+	PLA					 ; $a3de: 68
+	CPX #$ff				; $a3df: E0 FF
+	BEQ $a41b			   ; $a3e1: F0 38
+	CPX #$fe				; $a3e3: E0 FE
+	BEQ $a40a			   ; $a3e5: F0 23
+	PHA					 ; $a3e7: 48
+	TXA					 ; $a3e8: 8A
+	PHA					 ; $a3e9: 48
+	BRK					 ; $a3ea: 00
+	.db $07			; $a3eb
+	.db $6f			; $a3ec
+	.db $43			; $a3ed
+	PLA					 ; $a3ee: 68
+	TAX					 ; $a3ef: AA
+	PLA					 ; $a3f0: 68
+	BRK					 ; $a3f1: 00
+	.db $04			; $a3f2
+	.db $6f			; $a3f3
+	BRK					 ; $a3f4: 00
+	ASL					 ; $a3f5: 0A
+	.db $eb			; $a3f6
+	JSR $02f0			   ; $a3f7: 20 F0 02
+	BNE $a420			   ; $a3fa: D0 24
+	BRK					 ; $a3fc: 00
+	.db $0f			; $a3fd
+	.db $eb			; $a3fe
+	.db $04			; $a3ff
+	BEQ $a404			   ; $a400: F0 02
+	BNE $a453			   ; $a402: D0 4F
+	BRK					 ; $a404: 00
+	ASL $eb,X			   ; $a405: 16 EB
+	RTI					 ; $a407: 40
+	BEQ $a418			   ; $a408: F0 0E
+	BRK					 ; $a40a: 00
+	ASL $db,X			   ; $a40b: 16 DB
+	.db $bf			; $a40d
+	BRK					 ; $a40e: 00
+	ORA $bfdb			   ; $a40f: 0D DB BF
+	BRK					 ; $a412: 00
+	ASL $5f,X			   ; $a413: 16 5F
+	JMP $84b6			   ; $a415: 4C B6 84
+	JSR $84b6			   ; $a418: 20 B6 84
+	BRK					 ; $a41b: 00
+	ORA $bfdb			   ; $a41c: 0D DB BF
+	RTS					 ; $a41f: 60
+	BRK					 ; $a420: 00
+	ASL					 ; $a421: 0A
+	.db $db			; $a422
+	.db $df			; $a423
+	JSR $a44d			   ; $a424: 20 4D A4
+	BNE $a42c			   ; $a427: D0 03
+	BRK					 ; $a429: 00
+	ORA $203b			   ; $a42a: 0D 3B 20
+	.db $47			; $a42d
+	LDY $d0				 ; $a42e: A4 D0
+	.db $03			; $a430
+	BRK					 ; $a431: 00
+	ASL $203b			   ; $a432: 0E 3B 20
+	EOR $d0a4			   ; $a435: 4D A4 D0
+	.db $03			; $a438
+	BRK					 ; $a439: 00
+	.db $0f			; $a43a
+	.db $3b			; $a43b
+	JSR $a447			   ; $a43c: 20 47 A4
+	BNE $a444			   ; $a43f: D0 03
+	BRK					 ; $a441: 00
+	BPL $a47f			   ; $a442: 10 3B
+	JMP $d1f3			   ; $a444: 4C F3 D1
+	LDA $6be9			   ; $a447: AD E9 6B
+	AND #$60				; $a44a: 29 60
+	RTS					 ; $a44c: 60
+	LDA $6be8			   ; $a44d: AD E8 6B
+	AND #$60				; $a450: 29 60
+	RTS					 ; $a452: 60
+	BRK					 ; $a453: 00
+	.db $0f			; $a454
+	.db $db			; $a455
+	.db $fb			; $a456
+	BRK					 ; $a457: 00
+	.db $0f			; $a458
+	.db $cb			; $a459
+	.db $02			; $a45a
+	JSR $a615			   ; $a45b: 20 15 A6
+	JMP $84b6			   ; $a45e: 4C B6 84
+	LDA #$80				; $a461: A9 80
+	STA $41				 ; $a463: 85 41
+	JSR $95a9			   ; $a465: 20 A9 95
+	BRK					 ; $a468: 00
+	.db $07			; $a469
+	.db $87			; $a46a
+	LDA #$00				; $a46b: A9 00
+	STA $6bde			   ; $a46d: 8D DE 6B
+	JSR $a232			   ; $a470: 20 32 A2
+	LDA $6291			   ; $a473: AD 91 62
+	AND #$80				; $a476: 29 80
+	ORA $3d				 ; $a478: 05 3D
+	JSR $9083			   ; $a47a: 20 83 90
+	JMP $a5f5			   ; $a47d: 4C F5 A5
+	LDX $615a			   ; $a480: AE 5A 61
+	LDA $a75e,X			 ; $a483: BD 5E A7
+	STA $6290			   ; $a486: 8D 90 62
+	TXA					 ; $a489: 8A
+	ASL					 ; $a48a: 0A
+	TAX					 ; $a48b: AA
+	LDA $a499,X			 ; $a48c: BD 99 A4
+	STA tmp0				; $a48f: 85 00
+	LDA $a49a,X			 ; $a491: BD 9A A4
+	STA tmp1				; $a494: 85 01
+	JMP ($0000)			 ; $a496: 6C 00 00
+	.db $a3			; $a499
+	LDY $b3				 ; $a49a: A4 B3
+	LDY $c4				 ; $a49c: A4 C4
+	LDY $d5				 ; $a49e: A4 D5
+	LDY $36				 ; $a4a0: A4 36
+	LDA $a2				 ; $a4a2: A5 A2
+	.db $03			; $a4a4
+	LDY #$00				; $a4a5: A0 00
+	LDA #$8f				; $a4a7: A9 8F
+	JSR $a547			   ; $a4a9: 20 47 A5
+	BRK					 ; $a4ac: 00
+	.db $07			; $a4ad
+	.db $db			; $a4ae
+	BRK					 ; $a4af: 00
+	LDX #$ff				; $a4b0: A2 FF
+	RTS					 ; $a4b2: 60
+	LDX #$03				; $a4b3: A2 03
+	LDY #$05				; $a4b5: A0 05
+	LDA #$82				; $a4b7: A9 82
+	JSR $a547			   ; $a4b9: 20 47 A5
+	LDA #$80				; $a4bc: A9 80
+	STA $6282			   ; $a4be: 8D 82 62
+	LDX #$ff				; $a4c1: A2 FF
+	RTS					 ; $a4c3: 60
+	LDX #$03				; $a4c4: A2 03
+	LDY #$1c				; $a4c6: A0 1C
+	LDA #$8f				; $a4c8: A9 8F
+	JSR $a547			   ; $a4ca: 20 47 A5
+	LDA #$c0				; $a4cd: A9 C0
+	STA $6282			   ; $a4cf: 8D 82 62
+	LDX #$ff				; $a4d2: A2 FF
+	RTS					 ; $a4d4: 60
+	JSR $c54e			   ; $a4d5: 20 4E C5
+	BRK					 ; $a4d8: 00
+	.db $07			; $a4d9
+	.db $6f			; $a4da
+	.db $43			; $a4db
+	JSR $c5bf			   ; $a4dc: 20 BF C5
+	LDA #$00				; $a4df: A9 00
+	STA $6bde			   ; $a4e1: 8D DE 6B
+	BRK					 ; $a4e4: 00
+	ORA ($3b),Y			 ; $a4e5: 11 3B
+	JSR $c5c5			   ; $a4e7: 20 C5 C5
+	LDA #$e0				; $a4ea: A9 E0
+	STA $6282			   ; $a4ec: 8D 82 62
+	LDX #$ff				; $a4ef: A2 FF
+	STX $62ed			   ; $a4f1: 8E ED 62
+	RTS					 ; $a4f4: 60
+	LDA $62ed			   ; $a4f5: AD ED 62
+	CMP #$ff				; $a4f8: C9 FF
+	BNE $a535			   ; $a4fa: D0 39
+	LDX #$0f				; $a4fc: A2 0F
+	LDA $6fe6,X			 ; $a4fe: BD E6 6F
+	PHA					 ; $a501: 48
+	LDA #$00				; $a502: A9 00
+	STA $6fe6,X			 ; $a504: 9D E6 6F
+	PLA					 ; $a507: 68
+	STA $6fe0			   ; $a508: 8D E0 6F
+	TAX					 ; $a50b: AA
+	LDA #$53				; $a50c: A9 53
+	BRK					 ; $a50e: 00
+	ORA $a987			   ; $a50f: 0D 87 A9
+	ORA ($a2),Y			 ; $a512: 11 A2
+	BRK					 ; $a514: 00
+	STA $7046,X			 ; $a515: 9D 46 70
+	LDX #$01				; $a518: A2 01
+	STA $7046,X			 ; $a51a: 9D 46 70
+	LDA #$01				; $a51d: A9 01
+	STA $6fe6,X			 ; $a51f: 9D E6 6F
+	TAX					 ; $a522: AA
+	LDA #$02				; $a523: A9 02
+	BRK					 ; $a525: 00
+	ORA $0087			   ; $a526: 0D 87 00
+	ASL					 ; $a529: 0A
+	.db $6f			; $a52a
+	LDA #$82				; $a52b: A9 82
+	JSR $a567			   ; $a52d: 20 67 A5
+	LDA #$00				; $a530: A9 00
+	STA $6f4a			   ; $a532: 8D 4A 6F
+	RTS					 ; $a535: 60
+	LDX #$03				; $a536: A2 03
+	LDY #$94				; $a538: A0 94
+	LDA #$8f				; $a53a: A9 8F
+	JSR $a547			   ; $a53c: 20 47 A5
+	LDA #$f0				; $a53f: A9 F0
+	STA $6282			   ; $a541: 8D 82 62
+	LDX #$ff				; $a544: A2 FF
+	RTS					 ; $a546: 60
+	PHA					 ; $a547: 48
+	TXA					 ; $a548: 8A
+	PHA					 ; $a549: 48
+	TYA					 ; $a54a: 98
+	PHA					 ; $a54b: 48
+	JSR $c54e			   ; $a54c: 20 4E C5
+	BRK					 ; $a54f: 00
+	.db $07			; $a550
+	.db $6f			; $a551
+	.db $43			; $a552
+	JSR $c5bf			   ; $a553: 20 BF C5
+	LDA #$00				; $a556: A9 00
+	STA $6bde			   ; $a558: 8D DE 6B
+	PLA					 ; $a55b: 68
+	TAY					 ; $a55c: A8
+	PLA					 ; $a55d: 68
+	TAX					 ; $a55e: AA
+	TYA					 ; $a55f: 98
+	BRK					 ; $a560: 00
+	.db $04			; $a561
+	.db $6f			; $a562
+	JSR $c5c5			   ; $a563: 20 C5 C5
+	PLA					 ; $a566: 68
+	STA $0530			   ; $a567: 8D 30 05
+	LDA #$01				; $a56a: A9 01
+	STA $0531			   ; $a56c: 8D 31 05
+	LDA #$00				; $a56f: A9 00
+	STA $0533			   ; $a571: 8D 33 05
+	STA $0532			   ; $a574: 8D 32 05
+	RTS					 ; $a577: 60
+	LDA $615a			   ; $a578: AD 5A 61
+	ASL					 ; $a57b: 0A
+	ASL					 ; $a57c: 0A
+	TAX					 ; $a57d: AA
+	LDA $a599,X			 ; $a57e: BD 99 A5
+	STA $63				 ; $a581: 85 63
+	STA $618f			   ; $a583: 8D 8F 61
+	LDA $a59a,X			 ; $a586: BD 9A A5
+	STA $64				 ; $a589: 85 64
+	LDA $a59b,X			 ; $a58b: BD 9B A5
+	STA $44				 ; $a58e: 85 44
+	LDA $a59c,X			 ; $a590: BD 9C A5
+	STA $45				 ; $a593: 85 45
+	BRK					 ; $a595: 00
+	ORA #$87				; $a596: 09 87
+	RTS					 ; $a598: 60
+	.db $02			; $a599
+	ORA (ptr_lo,X)		  ; $a59a: 01 10
+	ORA tmp1,X			  ; $a59c: 15 01
+	ORA ($09,X)			 ; $a59e: 01 09
+	PHP					 ; $a5a0: 08
+	ASL tmp1,X			  ; $a5a1: 16 01
+	.db $1b			; $a5a3
+	ORA $15				 ; $a5a4: 05 15
+	.db $03			; $a5a6
+	.db $0c			; $a5a7
+	.db $0f			; $a5a8
+	.db $14			; $a5a9
+	BRK					 ; $a5aa: 00
+	ORA ptr_hi			  ; $a5ab: 05 11
+	LDA #$00				; $a5ad: A9 00
+	STA $3e				 ; $a5af: 85 3E
+	STA $3c				 ; $a5b1: 85 3C
+	STA $0515			   ; $a5b3: 8D 15 05
+	STA $0513			   ; $a5b6: 8D 13 05
+	STA $0533			   ; $a5b9: 8D 33 05
+	STA $0532			   ; $a5bc: 8D 32 05
+	STA $0539			   ; $a5bf: 8D 39 05
+	STA $6e42			   ; $a5c2: 8D 42 6E
+	STA $6e41			   ; $a5c5: 8D 41 6E
+	STA $6beb			   ; $a5c8: 8D EB 6B
+	STA $6e05			   ; $a5cb: 8D 05 6E
+	LDA #$ff				; $a5ce: A9 FF
+	LDX #$07				; $a5d0: A2 07
+	STA $6e31,X			 ; $a5d2: 9D 31 6E
+	DEX					 ; $a5d5: CA
+	BPL $a5d2			   ; $a5d6: 10 FA
+	LDA #$f8				; $a5d8: A9 F8
+	STA $0526			   ; $a5da: 8D 26 05
+	LDA #$01				; $a5dd: A9 01
+	STA $058e			   ; $a5df: 8D 8E 05
+	LDA #$10				; $a5e2: A9 10
+	STA $058f			   ; $a5e4: 8D 8F 05
+	LDA #$80				; $a5e7: A9 80
+	STA $6bde			   ; $a5e9: 8D DE 6B
+	BRK					 ; $a5ec: 00
+	.db $64			; $a5ed
+	.db $33			; $a5ee
+	LDA $75				 ; $a5ef: A5 75
+	STA $62d5			   ; $a5f1: 8D D5 62
+	RTS					 ; $a5f4: 60
+	LDX #$00				; $a5f5: A2 00
+	STX $51				 ; $a5f7: 86 51
+	LDY $6f80,X			 ; $a5f9: BC 80 6F
+	LDA $6f60,X			 ; $a5fc: BD 60 6F
+	TAX					 ; $a5ff: AA
+	AND $6f80,X			 ; $a600: 3D 80 6F
+	CMP #$ff				; $a603: C9 FF
+	BEQ $a614			   ; $a605: F0 0D
+	JSR $d3e6			   ; $a607: 20 E6 D3
+	LDX $51				 ; $a60a: A6 51
+	STA $7140,X			 ; $a60c: 9D 40 71
+	INX					 ; $a60f: E8
+	CPX #$1e				; $a610: E0 1E
+	BCC $a5f7			   ; $a612: 90 E3
+	RTS					 ; $a614: 60
+	LDA #$ff				; $a615: A9 FF
+	LDX #$a0				; $a617: A2 A0
+	STA $6c0b,X			 ; $a619: 9D 0B 6C
+	DEX					 ; $a61c: CA
+	BNE $a619			   ; $a61d: D0 FA
+	RTS					 ; $a61f: 60
+	BRK					 ; $a620: 00
+	ORA $40eb			   ; $a621: 0D EB 40
+	BNE $a666			   ; $a624: D0 40
+	BRK					 ; $a626: 00
+	ORA ($2f),Y			 ; $a627: 11 2F
+	BRK					 ; $a629: 00
+	.db $6f			; $a62a
+	.db $33			; $a62b
+	BRK					 ; $a62c: 00
+	.db $54			; $a62d
+	.db $33			; $a62e
+	BRK					 ; $a62f: 00
+	ASL					 ; $a630: 0A
+	.db $eb			; $a631
+	JSR $32d0			   ; $a632: 20 D0 32
+	BRK					 ; $a635: 00
+	.db $0f			; $a636
+	.db $eb			; $a637
+	.db $04			; $a638
+	BNE $a671			   ; $a639: D0 36
+	LDA #$80				; $a63b: A9 80
+	STA $6bde			   ; $a63d: 8D DE 6B
+	JSR $9e7a			   ; $a640: 20 7A 9E
+	STA $f9				 ; $a643: 85 F9
+	LDY #$92				; $a645: A0 92
+	LDX #$03				; $a647: A2 03
+	LDA #$00				; $a649: A9 00
+	STA $0515			   ; $a64b: 8D 15 05
+	STA $62ed			   ; $a64e: 8D ED 62
+	JSR $a547			   ; $a651: 20 47 A5
+	BRK					 ; $a654: 00
+	.db $04			; $a655
+	.db $9f			; $a656
+	JSR $a684			   ; $a657: 20 84 A6
+	JSR $a690			   ; $a65a: 20 90 A6
+	LDA #$00				; $a65d: A9 00
+	STA $0530			   ; $a65f: 8D 30 05
+	LDA #$18				; $a662: A9 18
+	LDX #$03				; $a664: A2 03
+	RTS					 ; $a666: 60
+	LDX #$00				; $a667: A2 00
+	JSR $a65a			   ; $a669: 20 5A A6
+	LDA #$0c				; $a66c: A9 0C
+	LDX #$03				; $a66e: A2 03
+	RTS					 ; $a670: 60
+	LDA #$04				; $a671: A9 04
+	BRK					 ; $a673: 00
+	.db $12			; $a674
+	.db $2f			; $a675
+	LDX #$05				; $a676: A2 05
+	JSR $a65a			   ; $a678: 20 5A A6
+	BRK					 ; $a67b: 00
+	ORA $80cb			   ; $a67c: 0D CB 80
+	LDA #$a8				; $a67f: A9 A8
+	LDX #$03				; $a681: A2 03
+	RTS					 ; $a683: 60
+	LDA $6290			   ; $a684: AD 90 62
+	ASL					 ; $a687: 0A
+	ASL					 ; $a688: 0A
+	ADC $6290			   ; $a689: 6D 90 62
+	ADC #$0a				; $a68c: 69 0A
+	TAX					 ; $a68e: AA
+	RTS					 ; $a68f: 60
+	LDA $a767,X			 ; $a690: BD 67 A7
+	PHA					 ; $a693: 48
+	AND #$03				; $a694: 29 03
+	STA $3d				 ; $a696: 85 3D
+	LDA $a765,X			 ; $a698: BD 65 A7
+	STA $44				 ; $a69b: 85 44
+	LDA $a766,X			 ; $a69d: BD 66 A7
+	STA $45				 ; $a6a0: 85 45
+	LDA $a764,X			 ; $a6a2: BD 64 A7
+	STA $64				 ; $a6a5: 85 64
+	LDA $a763,X			 ; $a6a7: BD 63 A7
+	STA $63				 ; $a6aa: 85 63
+	PLA					 ; $a6ac: 68
+	LSR					 ; $a6ad: 4A
+	LSR					 ; $a6ae: 4A
+	STA $51				 ; $a6af: 85 51
+	LDA #$00				; $a6b1: A9 00
+	STA $52				 ; $a6b3: 85 52
+	LDX #$51				; $a6b5: A2 51
+	LDA #$07				; $a6b7: A9 07
+	JSR $c827			   ; $a6b9: 20 27 C8
+	LDA $51				 ; $a6bc: A5 51
+	CLC					 ; $a6be: 18
+	ADC $aefe			   ; $a6bf: 6D FE AE
+	STA $51				 ; $a6c2: 85 51
+	LDA $52				 ; $a6c4: A5 52
+	ADC $aeff			   ; $a6c6: 6D FF AE
+	STA $52				 ; $a6c9: 85 52
+	LDY #$03				; $a6cb: A0 03
+	LDA ($51),Y			 ; $a6cd: B1 51
+	STA $6195			   ; $a6cf: 8D 95 61
+	INY					 ; $a6d2: C8
+	LDA ($51),Y			 ; $a6d3: B1 51
+	STA $6196			   ; $a6d5: 8D 96 61
+	INY					 ; $a6d8: C8
+	LDA ($51),Y			 ; $a6d9: B1 51
+	STA $6197			   ; $a6db: 8D 97 61
+	INY					 ; $a6de: C8
+	LDA ($51),Y			 ; $a6df: B1 51
+	STA $6198			   ; $a6e1: 8D 98 61
+	LDA $63				 ; $a6e4: A5 63
+	CMP #$0e				; $a6e6: C9 0E
+	BNE $a6fb			   ; $a6e8: D0 11
+	LDA $627f			   ; $a6ea: AD 7F 62
+	BPL $a711			   ; $a6ed: 10 22
+	LDA $62ed			   ; $a6ef: AD ED 62
+	CMP #$78				; $a6f2: C9 78
+	BCS $a711			   ; $a6f4: B0 1B
+	DEC $44				 ; $a6f6: C6 44
+	JMP $a711			   ; $a6f8: 4C 11 A7
+	CMP #$0a				; $a6fb: C9 0A
+	BNE $a711			   ; $a6fd: D0 12
+	BRK					 ; $a6ff: 00
+	.db $1a			; $a700
+	.db $eb			; $a701
+	ORA ($f0,X)			 ; $a702: 01 F0
+	.db $0c			; $a704
+	LDA #$0c				; $a705: A9 0C
+	STA $44				 ; $a707: 85 44
+	LDA #$10				; $a709: A9 10
+	STA $45				 ; $a70b: 85 45
+	LDA #$00				; $a70d: A9 00
+	STA $3d				 ; $a70f: 85 3D
+	LDA #$00				; $a711: A9 00
+	STA $65				 ; $a713: 85 65
+	BRK					 ; $a715: 00
+	ORA #$87				; $a716: 09 87
+	LDA $63				 ; $a718: A5 63
+	CMP #$3e				; $a71a: C9 3E
+	BNE $a738			   ; $a71c: D0 1A
+	LDX #$7d				; $a71e: A2 7D
+	LDA $a765,X			 ; $a720: BD 65 A7
+	STA $44				 ; $a723: 85 44
+	LDA $a766,X			 ; $a725: BD 66 A7
+	STA $45				 ; $a728: 85 45
+	LDA $a764,X			 ; $a72a: BD 64 A7
+	STA $64				 ; $a72d: 85 64
+	LDA $a763,X			 ; $a72f: BD 63 A7
+	STA $63				 ; $a732: 85 63
+	LDA #$01				; $a734: A9 01
+	STA $65				 ; $a736: 85 65
+	BRK					 ; $a738: 00
+	ORA ($87,X)			 ; $a739: 01 87
+	BRK					 ; $a73b: 00
+	LSR $33,X			   ; $a73c: 56 33
+	RTS					 ; $a73e: 60
+	LDX #$00				; $a73f: A2 00
+	LDY #$00				; $a741: A0 00
+	LDA $63				 ; $a743: A5 63
+	CMP $a76d,X			 ; $a745: DD 6D A7
+	BNE $a751			   ; $a748: D0 07
+	LDA $64				 ; $a74a: A5 64
+	CMP $a76e,X			 ; $a74c: DD 6E A7
+	BEQ $a75a			   ; $a74f: F0 09
+	INY					 ; $a751: C8
+	INX					 ; $a752: E8
+	INX					 ; $a753: E8
+	INX					 ; $a754: E8
+	INX					 ; $a755: E8
+	INX					 ; $a756: E8
+	JMP $a743			   ; $a757: 4C 43 A7
+	STY $6290			   ; $a75a: 8C 90 62
+	RTS					 ; $a75d: 60
+	.db $02			; $a75e
+	BPL $a773			   ; $a75f: 10 12
+	ORA (ptr0_hi),Y		 ; $a761: 11 05
+	.db $04			; $a763
+	ASL $030e			   ; $a764: 0E 0E 03
+	ORA (tmp0,X)			; $a767: 01 00
+	.db $04			; $a769
+	.db $02			; $a76a
+	.db $03			; $a76b
+	.db $02			; $a76c
+	BRK					 ; $a76d: 00
+	ORA (tmp3,X)			; $a76e: 01 03
+	.db $04			; $a770
+	BRK					 ; $a771: 00
+	ORA (tmp0,X)			; $a772: 01 00
+	.db $1b			; $a774
+	ASL					 ; $a775: 0A
+	PHP					 ; $a776: 08
+	.db $02			; $a777
+	BRK					 ; $a778: 00
+	ORA $16				 ; $a779: 05 16
+	.db $0c			; $a77b
+	.db $04			; $a77c
+	BRK					 ; $a77d: 00
+	ORA $0b				 ; $a77e: 05 0B
+	.db $14			; $a780
+	ORA tmp1				; $a781: 05 01
+	.db $1a			; $a783
+	ORA #$18				; $a784: 09 18
+	ASL tmp0				; $a786: 06 00
+	.db $07			; $a788
+	.db $0b			; $a789
+	.db $1c			; $a78a
+	.db $07			; $a78b
+	BRK					 ; $a78c: 00
+	.db $02			; $a78d
+	ASL $0820			   ; $a78e: 0E 20 08
+	ORA ($07,X)			 ; $a791: 01 07
+	.db $0b			; $a793
+	BIT $09				 ; $a794: 24 09
+	ASL ptr0_hi			 ; $a796: 06 05
+	ORA #$28				; $a798: 09 28
+	ASL					 ; $a79a: 0A
+	BRK					 ; $a79b: 00
+	ASL $0c,X			   ; $a79c: 16 0C
+	AND $000d			   ; $a79e: 2D 0D 00
+	ORA ptr0_hi,X		   ; $a7a1: 15 05
+	SEC					 ; $a7a3: 38
+	ASL $0c00			   ; $a7a4: 0E 00 0C
+	ORA $0f3c,Y			 ; $a7a7: 19 3C 0F
+	BRK					 ; $a7aa: 00
+	.db $07			; $a7ab
+	.db $17			; $a7ac
+	RTI					 ; $a7ad: 40
+	BPL $a7b2			   ; $a7ae: 10 02
+	.db $03			; $a7b0
+	.db $03			; $a7b1
+	.db $44			; $a7b2
+	ORA (tmp0),Y			; $a7b3: 11 00
+	.db $1c			; $a7b5
+	ORA ($48),Y			 ; $a7b6: 11 48
+	.db $12			; $a7b8
+	BRK					 ; $a7b9: 00
+	ORA $4c04,Y			 ; $a7ba: 19 04 4C
+	.db $13			; $a7bd
+	.db $02			; $a7be
+	.db $04			; $a7bf
+	ORA #$08				; $a7c0: 09 08
+	ORA tmp0,X			  ; $a7c2: 15 00
+	ASL $5418			   ; $a7c4: 0E 18 54
+	ASL tmp0,X			  ; $a7c7: 16 00
+	ASL $5806			   ; $a7c9: 0E 06 58
+	.db $1a			; $a7cc
+	BRK					 ; $a7cd: 00
+	BIT ptr_lo			  ; $a7ce: 24 10
+	RTS					 ; $a7d0: 60
+	.db $43			; $a7d1
+	ASL $25				 ; $a7d2: 06 25
+	ASL $64				 ; $a7d4: 06 64
+	.db $1b			; $a7d6
+	BRK					 ; $a7d7: 00
+	.db $1a			; $a7d8
+	.db $13			; $a7d9
+	ADC #$04				; $a7da: 69 04
+	ASL $0b0c			   ; $a7dc: 0E 0C 0B
+	ORA $46,X			   ; $a7df: 15 46
+	ORA (tmp3,X)			; $a7e1: 01 03
+	.db $04			; $a7e3
+	JSR $0920			   ; $a7e4: 20 20 09
+	TAY					 ; $a7e7: A8
+	JSR $a814			   ; $a7e8: 20 14 A8
+	JSR $a829			   ; $a7eb: 20 29 A8
+	JSR $a846			   ; $a7ee: 20 46 A8
+	JSR $a800			   ; $a7f1: 20 00 A8
+	JSR $aab4			   ; $a7f4: 20 B4 AA
+	JSR $dff1			   ; $a7f7: 20 F1 DF
+	JSR $ff74			   ; $a7fa: 20 74 FF
+	JSR $a84c			   ; $a7fd: 20 4C A8
+	LDA $050b			   ; $a800: AD 0B 05
+	BEQ $a808			   ; $a803: F0 03
+	JSR $a99b			   ; $a805: 20 9B A9
+	RTS					 ; $a808: 60
+	LDA $050b			   ; $a809: AD 0B 05
+	BEQ $a811			   ; $a80c: F0 03
+	JSR $c626			   ; $a80e: 20 26 C6
+	JMP $ff74			   ; $a811: 4C 74 FF
+	JSR $a861			   ; $a814: 20 61 A8
+	JSR $a8ce			   ; $a817: 20 CE A8
+	JSR $a8d5			   ; $a81a: 20 D5 A8
+	JSR $a938			   ; $a81d: 20 38 A9
+	JSR $a994			   ; $a820: 20 94 A9
+	JSR $a9e6			   ; $a823: 20 E6 A9
+	JMP $a817			   ; $a826: 4C 17 A8
+	JSR $a881			   ; $a829: 20 81 A8
+	JSR $a8ce			   ; $a82c: 20 CE A8
+	JSR $a8d5			   ; $a82f: 20 D5 A8
+	JSR $a938			   ; $a832: 20 38 A9
+	BCS $a83d			   ; $a835: B0 06
+	JSR $a909			   ; $a837: 20 09 A9
+	JSR $a938			   ; $a83a: 20 38 A9
+	JSR $a994			   ; $a83d: 20 94 A9
+	JSR $a9ee			   ; $a840: 20 EE A9
+	JMP $a82c			   ; $a843: 4C 2C A8
+	JSR $a887			   ; $a846: 20 87 A8
+	JMP $a82c			   ; $a849: 4C 2C A8
+	JSR $a8aa			   ; $a84c: 20 AA A8
+	JSR $a8ce			   ; $a84f: 20 CE A8
+	JSR $a909			   ; $a852: 20 09 A9
+	JSR $a938			   ; $a855: 20 38 A9
+	JSR $a994			   ; $a858: 20 94 A9
+	JSR $a9b7			   ; $a85b: 20 B7 A9
+	JMP $a84f			   ; $a85e: 4C 4F A8
+	LDA #$10				; $a861: A9 10
+	STA tmp0				; $a863: 85 00
+	LDA #$0e				; $a865: A9 0E
+	STA tmp1				; $a867: 85 01
+	JSR $c662			   ; $a869: 20 62 C6
+	LDA #$03				; $a86c: A9 03
+	STA $51				 ; $a86e: 85 51
+	LDA #$01				; $a870: A9 01
+	STA $52				 ; $a872: 85 52
+	LDA $44				 ; $a874: A5 44
+	STA $53				 ; $a876: 85 53
+	LDA $45				 ; $a878: A5 45
+	STA $54				 ; $a87a: 85 54
+	LDA #$01				; $a87c: A9 01
+	STA $55				 ; $a87e: 85 55
+	RTS					 ; $a880: 60
+	LDA #$20				; $a881: A9 20
+	LDX #$08				; $a883: A2 08
+	BNE $a88b			   ; $a885: D0 04
+	LDA #$3e				; $a887: A9 3E
+	LDX #$f7				; $a889: A2 F7
+	STA tmp0				; $a88b: 85 00
+	TXA					 ; $a88d: 8A
+	CLC					 ; $a88e: 18
+	ADC $44				 ; $a88f: 65 44
+	STA $53				 ; $a891: 85 53
+	LDA $45				 ; $a893: A5 45
+	SEC					 ; $a895: 38
+	SBC #$07				; $a896: E9 07
+	STA $54				 ; $a898: 85 54
+	LDA #$00				; $a89a: A9 00
+	STA tmp1				; $a89c: 85 01
+	JSR $c662			   ; $a89e: 20 62 C6
+	LDA #$02				; $a8a1: A9 02
+	STA $51				 ; $a8a3: 85 51
+	LDA #$0f				; $a8a5: A9 0F
+	STA $55				 ; $a8a7: 85 55
+	RTS					 ; $a8a9: 60
+	LDA #$00				; $a8aa: A9 00
+	STA tmp0				; $a8ac: 85 00
+	STA tmp1				; $a8ae: 85 01
+	JSR $c662			   ; $a8b0: 20 62 C6
+	LDA #$02				; $a8b3: A9 02
+	STA $51				 ; $a8b5: 85 51
+	LDA #$0e				; $a8b7: A9 0E
+	STA $52				 ; $a8b9: 85 52
+	LDA $44				 ; $a8bb: A5 44
+	SEC					 ; $a8bd: 38
+	SBC #$08				; $a8be: E9 08
+	STA $53				 ; $a8c0: 85 53
+	LDA $45				 ; $a8c2: A5 45
+	SEC					 ; $a8c4: 38
+	SBC #$07				; $a8c5: E9 07
+	STA $54				 ; $a8c7: 85 54
+	LDA #$0e				; $a8c9: A9 0E
+	STA $55				 ; $a8cb: 85 55
+	RTS					 ; $a8cd: 60
+	LDX $53				 ; $a8ce: A6 53
+	LDY $54				 ; $a8d0: A4 54
+	JMP $d3e6			   ; $a8d2: 4C E6 D3
+	PHA					 ; $a8d5: 48
+	JSR $a8db			   ; $a8d6: 20 DB A8
+	PLA					 ; $a8d9: 68
+	RTS					 ; $a8da: 60
+	PHA					 ; $a8db: 48
+	LDA $07ba			   ; $a8dc: AD BA 07
+	AND #$7f				; $a8df: 29 7F
+	CMP #$04				; $a8e1: C9 04
+	BNE $a8ee			   ; $a8e3: D0 09
+	PLA					 ; $a8e5: 68
+	PHA					 ; $a8e6: 48
+	AND #$1f				; $a8e7: 29 1F
+	CMP $0520			   ; $a8e9: CD 20 05
+	BEQ $a904			   ; $a8ec: F0 16
+	PLA					 ; $a8ee: 68
+	AND #$e0				; $a8ef: 29 E0
+	PHA					 ; $a8f1: 48
+	LDA $46				 ; $a8f2: A5 46
+	BEQ $a8fd			   ; $a8f4: F0 07
+	PLA					 ; $a8f6: 68
+	CMP $46				 ; $a8f7: C5 46
+	BEQ $a907			   ; $a8f9: F0 0C
+	CLC					 ; $a8fb: 18
+	RTS					 ; $a8fc: 60
+	PLA					 ; $a8fd: 68
+	CMP $47				 ; $a8fe: C5 47
+	BNE $a907			   ; $a900: D0 05
+	CLC					 ; $a902: 18
+	RTS					 ; $a903: 60
+	PLA					 ; $a904: 68
+	CLC					 ; $a905: 18
+	RTS					 ; $a906: 60
+	SEC					 ; $a907: 38
+	RTS					 ; $a908: 60
+	PHA					 ; $a909: 48
+	JSR $a90f			   ; $a90a: 20 0F A9
+	PLA					 ; $a90d: 68
+	RTS					 ; $a90e: 60
+	PHA					 ; $a90f: 48
+	LDA $07ba			   ; $a910: AD BA 07
+	AND #$7f				; $a913: 29 7F
+	CMP #$04				; $a915: C9 04
+	BNE $a922			   ; $a917: D0 09
+	PLA					 ; $a919: 68
+	PHA					 ; $a91a: 48
+	AND #$1f				; $a91b: 29 1F
+	CMP $0520			   ; $a91d: CD 20 05
+	BEQ $a904			   ; $a920: F0 E2
+	PLA					 ; $a922: 68
+	AND #$e0				; $a923: 29 E0
+	PHA					 ; $a925: 48
+	LDA $47				 ; $a926: A5 47
+	BEQ $a931			   ; $a928: F0 07
+	PLA					 ; $a92a: 68
+	CMP $47				 ; $a92b: C5 47
+	BEQ $a907			   ; $a92d: F0 D8
+	CLC					 ; $a92f: 18
+	RTS					 ; $a930: 60
+	PLA					 ; $a931: 68
+	CMP $46				 ; $a932: C5 46
+	BNE $a907			   ; $a934: D0 D1
+	CLC					 ; $a936: 18
+	RTS					 ; $a937: 60
+	BCC $a97f			   ; $a938: 90 45
+	JSR $d4f3			   ; $a93a: 20 F3 D4
+	PHA					 ; $a93d: 48
+	LDY $050a			   ; $a93e: AC 0A 05
+	LDA $1c				 ; $a941: A5 1C
+	STA $0300,Y			 ; $a943: 99 00 03
+	LDA $1d				 ; $a946: A5 1D
+	STA $0301,Y			 ; $a948: 99 01 03
+	LDA $7600,X			 ; $a94b: BD 00 76
+	STA $0302,Y			 ; $a94e: 99 02 03
+	LDA $7601,X			 ; $a951: BD 01 76
+	STA $0303,Y			 ; $a954: 99 03 03
+	LDA $7602,X			 ; $a957: BD 02 76
+	STA $0304,Y			 ; $a95a: 99 04 03
+	LDA $7603,X			 ; $a95d: BD 03 76
+	STA $0305,Y			 ; $a960: 99 05 03
+	PLA					 ; $a963: 68
+	JSR $a980			   ; $a964: 20 80 A9
+	STA $0308,Y			 ; $a967: 99 08 03
+	LDA $0e				 ; $a96a: A5 0E
+	STA $0306,Y			 ; $a96c: 99 06 03
+	LDA $0f				 ; $a96f: A5 0F
+	STA $0307,Y			 ; $a971: 99 07 03
+	TYA					 ; $a974: 98
+	CLC					 ; $a975: 18
+	ADC #$09				; $a976: 69 09
+	STA $050a			   ; $a978: 8D 0A 05
+	INC $050b			   ; $a97b: EE 0B 05
+	SEC					 ; $a97e: 38
+	RTS					 ; $a97f: 60
+	TAX					 ; $a980: AA
+	LDA $1c				 ; $a981: A5 1C
+	PHA					 ; $a983: 48
+	LDA $1d				 ; $a984: A5 1D
+	PHA					 ; $a986: 48
+	TXA					 ; $a987: 8A
+	JSR $c6bf			   ; $a988: 20 BF C6
+	TAX					 ; $a98b: AA
+	PLA					 ; $a98c: 68
+	STA $1d				 ; $a98d: 85 1D
+	PLA					 ; $a98f: 68
+	STA $1c				 ; $a990: 85 1C
+	TXA					 ; $a992: 8A
+	RTS					 ; $a993: 60
+	LDA $050b			   ; $a994: AD 0B 05
+	CMP #$12				; $a997: C9 12
+	BCC $a9b6			   ; $a999: 90 1B
+	LDA system_flags		; $a99b: A5 1F
+	ORA #$10				; $a99d: 09 10
+	STA system_flags		; $a99f: 85 1F
+	LDA system_flags		; $a9a1: A5 1F
+	ORA #$40				; $a9a3: 09 40
+	STA system_flags		; $a9a5: 85 1F
+	JSR $ff74			   ; $a9a7: 20 74 FF
+	LDA system_flags		; $a9aa: A5 1F
+	AND #$bf				; $a9ac: 29 BF
+	STA system_flags		; $a9ae: 85 1F
+	LDA system_flags		; $a9b0: A5 1F
+	AND #$ef				; $a9b2: 29 EF
+	STA system_flags		; $a9b4: 85 1F
+	RTS					 ; $a9b6: 60
+	JSR $a9f6			   ; $a9b7: 20 F6 A9
+	DEC $55				 ; $a9ba: C6 55
+	BNE $a9b6			   ; $a9bc: D0 F8
+	LDA $52				 ; $a9be: A5 52
+	STA $55				 ; $a9c0: 85 55
+	DEC $51				 ; $a9c2: C6 51
+	LDA $51				 ; $a9c4: A5 51
+	AND #$03				; $a9c6: 29 03
+	STA $51				 ; $a9c8: 85 51
+	AND #$01				; $a9ca: 29 01
+	BEQ $a9df			   ; $a9cc: F0 11
+	LDA $51				 ; $a9ce: A5 51
+	CMP #$01				; $a9d0: C9 01
+	BNE $a9de			   ; $a9d2: D0 0A
+	LDA $52				 ; $a9d4: A5 52
+	CMP #$0e				; $a9d6: C9 0E
+	BNE $a9de			   ; $a9d8: D0 04
+	INC $52				 ; $a9da: E6 52
+	INC $55				 ; $a9dc: E6 55
+	RTS					 ; $a9de: 60
+	DEC $52				 ; $a9df: C6 52
+	DEC $55				 ; $a9e1: C6 55
+	BEQ $aa2a			   ; $a9e3: F0 45
+	RTS					 ; $a9e5: 60
+	JSR $a9f6			   ; $a9e6: 20 F6 A9
+	DEC $55				 ; $a9e9: C6 55
+	BEQ $aa0d			   ; $a9eb: F0 20
+	RTS					 ; $a9ed: 60
+	JSR $a9f6			   ; $a9ee: 20 F6 A9
+	DEC $55				 ; $a9f1: C6 55
+	BEQ $aa2a			   ; $a9f3: F0 35
+	RTS					 ; $a9f5: 60
+	LDA $51				 ; $a9f6: A5 51
+	ASL					 ; $a9f8: 0A
+	TAX					 ; $a9f9: AA
+	LDA $d239,X			 ; $a9fa: BD 39 D2
+	CLC					 ; $a9fd: 18
+	ADC $53				 ; $a9fe: 65 53
+	STA $53				 ; $aa00: 85 53
+	LDA $d23a,X			 ; $aa02: BD 3A D2
+	CLC					 ; $aa05: 18
+	ADC $54				 ; $aa06: 65 54
+	STA $54				 ; $aa08: 85 54
+	JMP $aa32			   ; $aa0a: 4C 32 AA
+	LDA $52				 ; $aa0d: A5 52
+	STA $55				 ; $aa0f: 85 55
+	INC $51				 ; $aa11: E6 51
+	LDA $51				 ; $aa13: A5 51
+	AND #$03				; $aa15: 29 03
+	STA $51				 ; $aa17: 85 51
+	AND #$01				; $aa19: 29 01
+	BNE $aa1e			   ; $aa1b: D0 01
+	RTS					 ; $aa1d: 60
+	LDA $51				 ; $aa1e: A5 51
+	CMP #$01				; $aa20: C9 01
+	BNE $aa2d			   ; $aa22: D0 09
+	LDA $52				 ; $aa24: A5 52
+	CMP #$0f				; $aa26: C9 0F
+	BNE $aa2d			   ; $aa28: D0 03
+	PLA					 ; $aa2a: 68
+	PLA					 ; $aa2b: 68
+	RTS					 ; $aa2c: 60
+	INC $55				 ; $aa2d: E6 55
+	INC $52				 ; $aa2f: E6 52
+	RTS					 ; $aa31: 60
+	LDX $51				 ; $aa32: A6 51
+	BEQ $aa6c			   ; $aa34: F0 36
+	DEX					 ; $aa36: CA
+	BEQ $aa56			   ; $aa37: F0 1D
+	DEX					 ; $aa39: CA
+	BEQ $aa90			   ; $aa3a: F0 54
+	LDA $1d				 ; $aa3c: A5 1D
+	AND #$1f				; $aa3e: 29 1F
+	CMP #$02				; $aa40: C9 02
+	BCS $aa51			   ; $aa42: B0 0D
+	LDA $1d				 ; $aa44: A5 1D
+	ADC #$1e				; $aa46: 69 1E
+	STA $1d				 ; $aa48: 85 1D
+	LDA $1c				 ; $aa4a: A5 1C
+	EOR #$04				; $aa4c: 49 04
+	STA $1c				 ; $aa4e: 85 1C
+	RTS					 ; $aa50: 60
+	DEC $1d				 ; $aa51: C6 1D
+	DEC $1d				 ; $aa53: C6 1D
+	RTS					 ; $aa55: 60
+	LDA $1d				 ; $aa56: A5 1D
+	AND #$1f				; $aa58: 29 1F
+	CMP #$1e				; $aa5a: C9 1E
+	BCC $aa67			   ; $aa5c: 90 09
+	LDA $1d				 ; $aa5e: A5 1D
+	SBC #$1e				; $aa60: E9 1E
+	STA $1d				 ; $aa62: 85 1D
+	JMP $aa4a			   ; $aa64: 4C 4A AA
+	INC $1d				 ; $aa67: E6 1D
+	INC $1d				 ; $aa69: E6 1D
+	RTS					 ; $aa6b: 60
+	LDA $1c				 ; $aa6c: A5 1C
+	AND #$23				; $aa6e: 29 23
+	CMP #$21				; $aa70: C9 21
+	BCS $aa85			   ; $aa72: B0 11
+	LDA $1d				 ; $aa74: A5 1D
+	CMP #$40				; $aa76: C9 40
+	BCS $aa85			   ; $aa78: B0 0B
+	ADC #$80				; $aa7a: 69 80
+	STA $1d				 ; $aa7c: 85 1D
+	LDA $1c				 ; $aa7e: A5 1C
+	ORA #$03				; $aa80: 09 03
+	STA $1c				 ; $aa82: 85 1C
+	RTS					 ; $aa84: 60
+	LDA $1d				 ; $aa85: A5 1D
+	SBC #$40				; $aa87: E9 40
+	STA $1d				 ; $aa89: 85 1D
+	BCS $aa8f			   ; $aa8b: B0 02
+	DEC $1c				 ; $aa8d: C6 1C
+	RTS					 ; $aa8f: 60
+	LDA $1c				 ; $aa90: A5 1C
+	AND #$23				; $aa92: 29 23
+	CMP #$23				; $aa94: C9 23
+	BCC $aaa9			   ; $aa96: 90 11
+	LDA $1d				 ; $aa98: A5 1D
+	CMP #$80				; $aa9a: C9 80
+	BCC $aaa9			   ; $aa9c: 90 0B
+	SBC #$80				; $aa9e: E9 80
+	STA $1d				 ; $aaa0: 85 1D
+	LDA $1c				 ; $aaa2: A5 1C
+	AND #$fc				; $aaa4: 29 FC
+	STA $1c				 ; $aaa6: 85 1C
+	RTS					 ; $aaa8: 60
+	LDA $1d				 ; $aaa9: A5 1D
+	ADC #$40				; $aaab: 69 40
+	STA $1d				 ; $aaad: 85 1D
+	BCC $aab3			   ; $aaaf: 90 02
+	INC $1c				 ; $aab1: E6 1C
+	RTS					 ; $aab3: 60
+	LDA $7000			   ; $aab4: AD 00 70
+	AND #$bc				; $aab7: 29 BC
+	ORA $3d				 ; $aab9: 05 3D
+	STA $7000			   ; $aabb: 8D 00 70
+	JSR $c010			   ; $aabe: 20 10 C0
+	JSR $c010			   ; $aac1: 20 10 C0
+	JSR $c010			   ; $aac4: 20 10 C0
+	LDX #$05				; $aac7: A2 05
+	LDA $6f60			   ; $aac9: AD 60 6F
+	STA $6f60,X			 ; $aacc: 9D 60 6F
+	STA $6fa0,X			 ; $aacf: 9D A0 6F
+	LDA $6f80			   ; $aad2: AD 80 6F
+	STA $6f80,X			 ; $aad5: 9D 80 6F
+	STA $6fc0,X			 ; $aad8: 9D C0 6F
+	DEX					 ; $aadb: CA
+	BNE $aac9			   ; $aadc: D0 EB
+	JSR $ab6b			   ; $aade: 20 6B AB
+	LDA $41				 ; $aae1: A5 41
+	BPL $aafc			   ; $aae3: 10 17
+	LDA $0515			   ; $aae5: AD 15 05
+	BEQ $aafc			   ; $aae8: F0 12
+	LDX $44				 ; $aaea: A6 44
+	LDY $45				 ; $aaec: A4 45
+	JSR $d3e6			   ; $aaee: 20 E6 D3
+	PHA					 ; $aaf1: 48
+	LDA $0534			   ; $aaf2: AD 34 05
+	AND #$0f				; $aaf5: 29 0F
+	TAX					 ; $aaf7: AA
+	PLA					 ; $aaf8: 68
+	STA $7140,X			 ; $aaf9: 9D 40 71
+	JMP $ac92			   ; $aafc: 4C 92 AC
+	CPX #$01				; $aaff: E0 01
+	BEQ $ab0d			   ; $ab01: F0 0A
+	CPX #$02				; $ab03: E0 02
+	BEQ $ab3d			   ; $ab05: F0 36
+	CPX #$03				; $ab07: E0 03
+	BEQ $ab5b			   ; $ab09: F0 50
+	CLC					 ; $ab0b: 18
+	RTS					 ; $ab0c: 60
+	BIT $628e			   ; $ab0d: 2C 8E 62
+	BVS $ab22			   ; $ab10: 70 10
+	BRK					 ; $ab12: 00
+	.db $0b			; $ab13
+	.db $eb			; $ab14
+	.db $04			; $ab15
+	BEQ $ab22			   ; $ab16: F0 0A
+	BRK					 ; $ab18: 00
+	ASL $08eb			   ; $ab19: 0E EB 08
+	BNE $ab22			   ; $ab1c: D0 04
+	LDA #$24				; $ab1e: A9 24
+	SEC					 ; $ab20: 38
+	RTS					 ; $ab21: 60
+	LDA $627e			   ; $ab22: AD 7E 62
+	ASL					 ; $ab25: 0A
+	ASL					 ; $ab26: 0A
+	ASL					 ; $ab27: 0A
+	BCC $ab2d			   ; $ab28: 90 03
+	LDA #$13				; $ab2a: A9 13
+	RTS					 ; $ab2c: 60
+	BIT $6281			   ; $ab2d: 2C 81 62
+	BVS $ab3b			   ; $ab30: 70 09
+	LDA $6283			   ; $ab32: AD 83 62
+	ASL					 ; $ab35: 0A
+	ASL					 ; $ab36: 0A
+	ASL					 ; $ab37: 0A
+	LDA #$15				; $ab38: A9 15
+	RTS					 ; $ab3a: 60
+	CLC					 ; $ab3b: 18
+	RTS					 ; $ab3c: 60
+	BIT $628e			   ; $ab3d: 2C 8E 62
+	BVC $ab52			   ; $ab40: 50 10
+	BRK					 ; $ab42: 00
+	.db $0b			; $ab43
+	.db $eb			; $ab44
+	.db $04			; $ab45
+	BEQ $ab52			   ; $ab46: F0 0A
+	BRK					 ; $ab48: 00
+	ASL $08eb			   ; $ab49: 0E EB 08
+	BNE $ab52			   ; $ab4c: D0 04
+	LDA #$24				; $ab4e: A9 24
+	SEC					 ; $ab50: 38
+	RTS					 ; $ab51: 60
+	LDA $6283			   ; $ab52: AD 83 62
+	ASL					 ; $ab55: 0A
+	ASL					 ; $ab56: 0A
+	ASL					 ; $ab57: 0A
+	LDA #$15				; $ab58: A9 15
+	RTS					 ; $ab5a: 60
+	BIT $6281			   ; $ab5b: 2C 81 62
+	BVC $ab69			   ; $ab5e: 50 09
+	LDA $6283			   ; $ab60: AD 83 62
+	ASL					 ; $ab63: 0A
+	ASL					 ; $ab64: 0A
+	ASL					 ; $ab65: 0A
+	LDA #$15				; $ab66: A9 15
+	RTS					 ; $ab68: 60
+	CLC					 ; $ab69: 18
+	RTS					 ; $ab6a: 60
+	LDX #$05				; $ab6b: A2 05
+	LDA $6f60,X			 ; $ab6d: BD 60 6F
+	STA $6fa0,X			 ; $ab70: 9D A0 6F
+	LDA $6f80,X			 ; $ab73: BD 80 6F
+	STA $6fc0,X			 ; $ab76: 9D C0 6F
+	DEX					 ; $ab79: CA
+	BPL $ab6d			   ; $ab7a: 10 F1
+	LDX #$03				; $ab7c: A2 03
+	JSR $aaff			   ; $ab7e: 20 FF AA
+	LDA #$00				; $ab81: A9 00
+	BCS $ab88			   ; $ab83: B0 03
+	LDA $6be7,X			 ; $ab85: BD E7 6B
+	AND #$80				; $ab88: 29 80
+	STA $7020,X			 ; $ab8a: 9D 20 70
+	DEX					 ; $ab8d: CA
+	BPL $ab7e			   ; $ab8e: 10 EE
+	JSR $95b7			   ; $ab90: 20 B7 95
+	LDA #$03				; $ab93: A9 03
+	JSR $b157			   ; $ab95: 20 57 B1
+	BCC $abff			   ; $ab98: 90 65
+	LDA $7022			   ; $ab9a: AD 22 70
+	STA $7024			   ; $ab9d: 8D 24 70
+	LDA $70e2			   ; $aba0: AD E2 70
+	STA $70e4			   ; $aba3: 8D E4 70
+	LDA $6fe2			   ; $aba6: AD E2 6F
+	STA $6fe4			   ; $aba9: 8D E4 6F
+	LDA $7023			   ; $abac: AD 23 70
+	STA $7025			   ; $abaf: 8D 25 70
+	LDA $70e3			   ; $abb2: AD E3 70
+	STA $70e5			   ; $abb5: 8D E5 70
+	LDA $6fe3			   ; $abb8: AD E3 6F
+	STA $6fe5			   ; $abbb: 8D E5 6F
+	LDA $7021			   ; $abbe: AD 21 70
+	STA $7023			   ; $abc1: 8D 23 70
+	LDA $70e1			   ; $abc4: AD E1 70
+	STA $70e3			   ; $abc7: 8D E3 70
+	LDA $6fe1			   ; $abca: AD E1 6F
+	STA $6fe3			   ; $abcd: 8D E3 6F
+	LDX #$00				; $abd0: A2 00
+	LDA $053a,X			 ; $abd2: BD 3A 05
+	BEQ $abdd			   ; $abd5: F0 06
+	CLC					 ; $abd7: 18
+	ADC #$02				; $abd8: 69 02
+	STA $053a,X			 ; $abda: 9D 3A 05
+	INX					 ; $abdd: E8
+	CPX #$04				; $abde: E0 04
+	BCC $abd2			   ; $abe0: 90 F0
+	STX $6fe1			   ; $abe2: 8E E1 6F
+	INX					 ; $abe5: E8
+	STX $6fe2			   ; $abe6: 8E E2 6F
+	LDA #$00				; $abe9: A9 00
+	STA $7021			   ; $abeb: 8D 21 70
+	STA $7022			   ; $abee: 8D 22 70
+	LDA #$80				; $abf1: A9 80
+	STA $70e1			   ; $abf3: 8D E1 70
+	STA $70e2			   ; $abf6: 8D E2 70
+	LDA $0515			   ; $abf9: AD 15 05
+	BNE $ac04			   ; $abfc: D0 06
+	RTS					 ; $abfe: 60
+	LDA $0515			   ; $abff: AD 15 05
+	BEQ $ac12			   ; $ac02: F0 0E
+	LDA #$80				; $ac04: A9 80
+	STA $7020			   ; $ac06: 8D 20 70
+	STA $7021			   ; $ac09: 8D 21 70
+	STA $7022			   ; $ac0c: 8D 22 70
+	STA $7023			   ; $ac0f: 8D 23 70
+	LDA #$80				; $ac12: A9 80
+	STA $7024			   ; $ac14: 8D 24 70
+	STA $7025			   ; $ac17: 8D 25 70
+	RTS					 ; $ac1a: 60
+	LDY #$ff				; $ac1b: A0 FF
+	BIT $41				 ; $ac1d: 24 41
+	BPL $ac27			   ; $ac1f: 10 06
+	AND #$40				; $ac21: 29 40
+	BNE $ac2e			   ; $ac23: D0 09
+	BEQ $ac7a			   ; $ac25: F0 53
+	LDA #$03				; $ac27: A9 03
+	JSR $b157			   ; $ac29: 20 57 B1
+	BCC $ac7a			   ; $ac2c: 90 4C
+	LDA $7022			   ; $ac2e: AD 22 70
+	STA $7024			   ; $ac31: 8D 24 70
+	LDA $70e2			   ; $ac34: AD E2 70
+	STA $70e4			   ; $ac37: 8D E4 70
+	LDA $7023			   ; $ac3a: AD 23 70
+	STA $7025			   ; $ac3d: 8D 25 70
+	LDA $70e3			   ; $ac40: AD E3 70
+	STA $70e5			   ; $ac43: 8D E5 70
+	LDA $7021			   ; $ac46: AD 21 70
+	STA $7023			   ; $ac49: 8D 23 70
+	LDA $70e1			   ; $ac4c: AD E1 70
+	STA $70e3			   ; $ac4f: 8D E3 70
+	CPY #$00				; $ac52: C0 00
+	BEQ $ac71			   ; $ac54: F0 1B
+	LDA $6fe2			   ; $ac56: AD E2 6F
+	STA $6fe4			   ; $ac59: 8D E4 6F
+	LDA $6fe3			   ; $ac5c: AD E3 6F
+	STA $6fe5			   ; $ac5f: 8D E5 6F
+	LDA $6fe1			   ; $ac62: AD E1 6F
+	STA $6fe3			   ; $ac65: 8D E3 6F
+	LDX #$04				; $ac68: A2 04
+	STX $6fe1			   ; $ac6a: 8E E1 6F
+	INX					 ; $ac6d: E8
+	STX $6fe2			   ; $ac6e: 8E E2 6F
+	JSR $abe9			   ; $ac71: 20 E9 AB
+	JSR $9627			   ; $ac74: 20 27 96
+	JMP $ac92			   ; $ac77: 4C 92 AC
+	LDA #$80				; $ac7a: A9 80
+	STA $7024			   ; $ac7c: 8D 24 70
+	STA $7025			   ; $ac7f: 8D 25 70
+	LDX #$01				; $ac82: A2 01
+	STX $6fe1			   ; $ac84: 8E E1 6F
+	INX					 ; $ac87: E8
+	STX $6fe2			   ; $ac88: 8E E2 6F
+	INX					 ; $ac8b: E8
+	STX $6fe3			   ; $ac8c: 8E E3 6F
+	JSR $95b7			   ; $ac8f: 20 B7 95
+	LDY #$00				; $ac92: A0 00
+	TYA					 ; $ac94: 98
+	PHA					 ; $ac95: 48
+	JSR $acd9			   ; $ac96: 20 D9 AC
+	TAX					 ; $ac99: AA
+	PLA					 ; $ac9a: 68
+	TAY					 ; $ac9b: A8
+	TXA					 ; $ac9c: 8A
+	STA $7140,Y			 ; $ac9d: 99 40 71
+	INY					 ; $aca0: C8
+	CPY #$04				; $aca1: C0 04
+	BNE $ac94			   ; $aca3: D0 EF
+	LDA $7140			   ; $aca5: AD 40 71
+	PHA					 ; $aca8: 48
+	AND #$e0				; $aca9: 29 E0
+	STA $46				 ; $acab: 85 46
+	PLA					 ; $acad: 68
+	AND #$1f				; $acae: 29 1F
+	TAX					 ; $acb0: AA
+	LDA $6f40,X			 ; $acb1: BD 40 6F
+	STA $059e			   ; $acb4: 8D 9E 05
+	LDA $0515			   ; $acb7: AD 15 05
+	CMP #$01				; $acba: C9 01
+	BNE $acd8			   ; $acbc: D0 1A
+	LDY #$03				; $acbe: A0 03
+	LDA $41				 ; $acc0: A5 41
+	BMI $accd			   ; $acc2: 30 09
+	LDA #$03				; $acc4: A9 03
+	JSR $b157			   ; $acc6: 20 57 B1
+	BCC $accd			   ; $acc9: 90 02
+	LDY #$05				; $accb: A0 05
+	LDA $7020,Y			 ; $accd: B9 20 70
+	ORA #$80				; $acd0: 09 80
+	STA $7020,Y			 ; $acd2: 99 20 70
+	DEY					 ; $acd5: 88
+	BPL $accd			   ; $acd6: 10 F5
+	RTS					 ; $acd8: 60
+	LDX $6f60,Y			 ; $acd9: BE 60 6F
+	LDA $6f80,Y			 ; $acdc: B9 80 6F
+	TAY					 ; $acdf: A8
+	LDA $41				 ; $ace0: A5 41
+	BPL $ace7			   ; $ace2: 10 03
+	JMP $d3e6			   ; $ace4: 4C E6 D3
+	JMP $d251			   ; $ace7: 4C 51 D2
+	LDA $7000			   ; $acea: AD 00 70
+	AND #$7c				; $aced: 29 7C
+	ORA #$40				; $acef: 09 40
+	ORA $3d				 ; $acf1: 05 3D
+	STA $7000			   ; $acf3: 8D 00 70
+	STA $7001			   ; $acf6: 8D 01 70
+	STA $7002			   ; $acf9: 8D 02 70
+	STA $7003			   ; $acfc: 8D 03 70
+	AND #$03				; $acff: 29 03
+	EOR #$02				; $ad01: 49 02
+	ASL					 ; $ad03: 0A
+	TAX					 ; $ad04: AA
+	LDY #$00				; $ad05: A0 00
+	LDA $6f60,Y			 ; $ad07: B9 60 6F
+	CLC					 ; $ad0a: 18
+	ADC $d239,X			 ; $ad0b: 7D 39 D2
+	STA $6f61,Y			 ; $ad0e: 99 61 6F
+	STA $6fa1,Y			 ; $ad11: 99 A1 6F
+	LDA $6f80,Y			 ; $ad14: B9 80 6F
+	CLC					 ; $ad17: 18
+	ADC $d23a,X			 ; $ad18: 7D 3A D2
+	STA $6f81,Y			 ; $ad1b: 99 81 6F
+	STA $6fc1,Y			 ; $ad1e: 99 C1 6F
+	TXA					 ; $ad21: 8A
+	PHA					 ; $ad22: 48
+	TYA					 ; $ad23: 98
+	TAX					 ; $ad24: AA
+	JSR $aaff			   ; $ad25: 20 FF AA
+	LDA $6be7,Y			 ; $ad28: B9 E7 6B
+	BCC $ad2f			   ; $ad2b: 90 02
+	AND #$7f				; $ad2d: 29 7F
+	PHA					 ; $ad2f: 48
+	AND #$80				; $ad30: 29 80
+	STA $7020,Y			 ; $ad32: 99 20 70
+	PLA					 ; $ad35: 68
+	AND #$20				; $ad36: 29 20
+	ASL					 ; $ad38: 0A
+	ASL					 ; $ad39: 0A
+	EOR #$80				; $ad3a: 49 80
+	STA $70e0,Y			 ; $ad3c: 99 E0 70
+	PLA					 ; $ad3f: 68
+	TAX					 ; $ad40: AA
+	INY					 ; $ad41: C8
+	CPY #$03				; $ad42: C0 03
+	BNE $ad07			   ; $ad44: D0 C1
+	TYA					 ; $ad46: 98
+	TAX					 ; $ad47: AA
+	JSR $aaff			   ; $ad48: 20 FF AA
+	LDA $6be7,Y			 ; $ad4b: B9 E7 6B
+	BCC $ad52			   ; $ad4e: 90 02
+	AND #$7f				; $ad50: 29 7F
+	AND #$80				; $ad52: 29 80
+	STA $7020,Y			 ; $ad54: 99 20 70
+	LDA #$80				; $ad57: A9 80
+	STA $7024			   ; $ad59: 8D 24 70
+	STA $7025			   ; $ad5c: 8D 25 70
+	LDA $6f62			   ; $ad5f: AD 62 6F
+	STA $6f64			   ; $ad62: 8D 64 6F
+	STA $6f65			   ; $ad65: 8D 65 6F
+	STA $6fa4			   ; $ad68: 8D A4 6F
+	STA $6fa5			   ; $ad6b: 8D A5 6F
+	LDA $6f82			   ; $ad6e: AD 82 6F
+	STA $6f84			   ; $ad71: 8D 84 6F
+	STA $6f85			   ; $ad74: 8D 85 6F
+	STA $6fc4			   ; $ad77: 8D C4 6F
+	STA $6fc5			   ; $ad7a: 8D C5 6F
+	JSR $ab90			   ; $ad7d: 20 90 AB
+	JMP $ac92			   ; $ad80: 4C 92 AC
+	JSR $aeee			   ; $ad83: 20 EE AE
+	BCC $ada4			   ; $ad86: 90 1C
+	PHA					 ; $ad88: 48
+	CMP #$fe				; $ad89: C9 FE
+	BEQ $ad90			   ; $ad8b: F0 03
+	JSR $d1f3			   ; $ad8d: 20 F3 D1
+	PLA					 ; $ad90: 68
+	PHA					 ; $ad91: 48
+	JSR $ae19			   ; $ad92: 20 19 AE
+	PLA					 ; $ad95: 68
+	BCS $adac			   ; $ad96: B0 14
+	JSR $aec1			   ; $ad98: 20 C1 AE
+	BRK					 ; $ad9b: 00
+	ASL $db				 ; $ad9c: 06 DB
+	.db $f7			; $ad9e
+	BRK					 ; $ad9f: 00
+	ORA $db				 ; $ada0: 05 DB
+	.db $bf			; $ada2
+	RTS					 ; $ada3: 60
+	JSR $d1f3			   ; $ada4: 20 F3 D1
+	JSR $8b15			   ; $ada7: 20 15 8B
+	CLC					 ; $adaa: 18
+	RTS					 ; $adab: 60
+	CMP #$fe				; $adac: C9 FE
+	BEQ $adb6			   ; $adae: F0 06
+	BRK					 ; $adb0: 00
+	.db $92			; $adb1
+	.db $fb			; $adb2
+	JSR $8abc			   ; $adb3: 20 BC 8A
+	JSR $c5c5			   ; $adb6: 20 C5 C5
+	LDA #$00				; $adb9: A9 00
+	STA $0515			   ; $adbb: 8D 15 05
+	STA $0530			   ; $adbe: 8D 30 05
+	BRK					 ; $adc1: 00
+	ORA ($87,X)			 ; $adc2: 01 87
+	LDA #$82				; $adc4: A9 82
+	JSR $8ee5			   ; $adc6: 20 E5 8E
+	JSR $8c48			   ; $adc9: 20 48 8C
+	SEC					 ; $adcc: 38
+	RTS					 ; $adcd: 60
+	LDA #$00				; $adce: A9 00
+	STA $6bde			   ; $add0: 8D DE 6B
+	LDA $0553			   ; $add3: AD 53 05
+	AND #$7f				; $add6: 29 7F
+	STA $0553			   ; $add8: 8D 53 05
+	JSR $c5af			   ; $addb: 20 AF C5
+	JSR $ab6b			   ; $adde: 20 6B AB
+	JSR $9648			   ; $ade1: 20 48 96
+	JSR $97f5			   ; $ade4: 20 F5 97
+	BRK					 ; $ade7: 00
+	.db $07			; $ade8
+	.db $87			; $ade9
+	JMP $adb9			   ; $adea: 4C B9 AD
+	JSR $ae19			   ; $aded: 20 19 AE
+	CMP #$01				; $adf0: C9 01
+	BEQ $adce			   ; $adf2: F0 DA
+	LDA #$00				; $adf4: A9 00
+	STA $6bde			   ; $adf6: 8D DE 6B
+	LDA $0553			   ; $adf9: AD 53 05
+	AND #$7f				; $adfc: 29 7F
+	STA $0553			   ; $adfe: 8D 53 05
+	BRK					 ; $ae01: 00
+	.db $0c			; $ae02
+	.db $bf			; $ae03
+	JSR $c5af			   ; $ae04: 20 AF C5
+	JSR $9799			   ; $ae07: 20 99 97
+	JSR $ab6b			   ; $ae0a: 20 6B AB
+	JSR $9648			   ; $ae0d: 20 48 96
+	JSR $97f5			   ; $ae10: 20 F5 97
+	BRK					 ; $ae13: 00
+	.db $07			; $ae14
+	.db $87			; $ae15
+	JMP $aec6			   ; $ae16: 4C C6 AE
+	CMP #$ff				; $ae19: C9 FF
+	BEQ $ae2c			   ; $ae1b: F0 0F
+	CMP #$fe				; $ae1d: C9 FE
+	BEQ $ae27			   ; $ae1f: F0 06
+	BRK					 ; $ae21: 00
+	.db $47			; $ae22
+	.db $73			; $ae23
+	JMP $ae2e			   ; $ae24: 4C 2E AE
+	LDA #$1e				; $ae27: A9 1E
+	JMP $ae2e			   ; $ae29: 4C 2E AE
+	LDA #$1f				; $ae2c: A9 1F
+	PHA					 ; $ae2e: 48
+	STA $51				 ; $ae2f: 85 51
+	LDA #$00				; $ae31: A9 00
+	STA $52				 ; $ae33: 85 52
+	LDX #$51				; $ae35: A2 51
+	LDA #$07				; $ae37: A9 07
+	JSR $c827			   ; $ae39: 20 27 C8
+	LDA $51				 ; $ae3c: A5 51
+	CLC					 ; $ae3e: 18
+	ADC $aefe			   ; $ae3f: 6D FE AE
+	STA $51				 ; $ae42: 85 51
+	LDA $52				 ; $ae44: A5 52
+	ADC $aeff			   ; $ae46: 6D FF AE
+	STA $52				 ; $ae49: 85 52
+	BIT $41				 ; $ae4b: 24 41
+	BPL $ae52			   ; $ae4d: 10 03
+	BRK					 ; $ae4f: 00
+	.db $57			; $ae50
+	.db $33			; $ae51
+	LDY #$00				; $ae52: A0 00
+	LDA ($51),Y			 ; $ae54: B1 51
+	PHA					 ; $ae56: 48
+	AND #$03				; $ae57: 29 03
+	STA $65				 ; $ae59: 85 65
+	PLA					 ; $ae5b: 68
+	BMI $ae99			   ; $ae5c: 30 3B
+	INY					 ; $ae5e: C8
+	LDA ($51),Y			 ; $ae5f: B1 51
+	STA $42				 ; $ae61: 85 42
+	INY					 ; $ae63: C8
+	LDA ($51),Y			 ; $ae64: B1 51
+	STA $43				 ; $ae66: 85 43
+	INY					 ; $ae68: C8
+	LDA ($51),Y			 ; $ae69: B1 51
+	STA $6195			   ; $ae6b: 8D 95 61
+	INY					 ; $ae6e: C8
+	LDA ($51),Y			 ; $ae6f: B1 51
+	STA $6196			   ; $ae71: 8D 96 61
+	INY					 ; $ae74: C8
+	LDA ($51),Y			 ; $ae75: B1 51
+	CMP #$ff				; $ae77: C9 FF
+	BEQ $ae96			   ; $ae79: F0 1B
+	STA $6197			   ; $ae7b: 8D 97 61
+	INY					 ; $ae7e: C8
+	LDA ($51),Y			 ; $ae7f: B1 51
+	STA $6198			   ; $ae81: 8D 98 61
+	PLA					 ; $ae84: 68
+	PHA					 ; $ae85: 48
+	LDX #$c8				; $ae86: A2 C8
+	CMP #$1f				; $ae88: C9 1F
+	BNE $ae8e			   ; $ae8a: D0 02
+	LDX #$41				; $ae8c: A2 41
+	STX $63				 ; $ae8e: 86 63
+	BRK					 ; $ae90: 00
+	.db $6f			; $ae91
+	.db $33			; $ae92
+	BRK					 ; $ae93: 00
+	.db $54			; $ae94
+	.db $33			; $ae95
+	PLA					 ; $ae96: 68
+	CLC					 ; $ae97: 18
+	RTS					 ; $ae98: 60
+	INY					 ; $ae99: C8
+	LDA ($51),Y			 ; $ae9a: B1 51
+	STA $44				 ; $ae9c: 85 44
+	INY					 ; $ae9e: C8
+	LDA ($51),Y			 ; $ae9f: B1 51
+	STA $45				 ; $aea1: 85 45
+	INY					 ; $aea3: C8
+	LDA ($51),Y			 ; $aea4: B1 51
+	STA $63				 ; $aea6: 85 63
+	INY					 ; $aea8: C8
+	LDA ($51),Y			 ; $aea9: B1 51
+	STA $64				 ; $aeab: 85 64
+	LDA #$ff				; $aead: A9 FF
+	STA $6195			   ; $aeaf: 8D 95 61
+	STA $6196			   ; $aeb2: 8D 96 61
+	STA $6197			   ; $aeb5: 8D 97 61
+	STA $6198			   ; $aeb8: 8D 98 61
+	BRK					 ; $aebb: 00
+	.db $6f			; $aebc
+	.db $33			; $aebd
+	PLA					 ; $aebe: 68
+	SEC					 ; $aebf: 38
+	RTS					 ; $aec0: 60
+	PHA					 ; $aec1: 48
+	JSR $aee5			   ; $aec2: 20 E5 AE
+	PLA					 ; $aec5: 68
+	PHA					 ; $aec6: 48
+	SEC					 ; $aec7: 38
+	BRK					 ; $aec8: 00
+	ASL $a9bf			   ; $aec9: 0E BF A9
+	.db $02			; $aecc
+	STA $3d				 ; $aecd: 85 3D
+	LDA #$00				; $aecf: A9 00
+	STA $0515			   ; $aed1: 8D 15 05
+	STA $0530			   ; $aed4: 8D 30 05
+	JSR $92ec			   ; $aed7: 20 EC 92
+	PLA					 ; $aeda: 68
+	CMP #$ff				; $aedb: C9 FF
+	JSR $8c51			   ; $aedd: 20 51 8C
+	JSR $9485			   ; $aee0: 20 85 94
+	SEC					 ; $aee3: 38
+	RTS					 ; $aee4: 60
+	BRK					 ; $aee5: 00
+	.db $92			; $aee6
+	.db $fb			; $aee7
+	JSR $8abc			   ; $aee8: 20 BC 8A
+	JMP $c5c5			   ; $aeeb: 4C C5 C5
+	BIT $41				 ; $aeee: 24 41
+	BPL $aefc			   ; $aef0: 10 0A
+	PHA					 ; $aef2: 48
+	BRK					 ; $aef3: 00
+	.db $0f			; $aef4
+	.db $87			; $aef5
+	BCS $aefb			   ; $aef6: B0 03
+	PLA					 ; $aef8: 68
+	CLC					 ; $aef9: 18
+	RTS					 ; $aefa: 60
+	PLA					 ; $aefb: 68
+	SEC					 ; $aefc: 38
+	RTS					 ; $aefd: 60
+	BRK					 ; $aefe: 00
+	.db $af			; $aeff
+	BRK					 ; $af00: 00
+	RTI					 ; $af01: 40
+	.db $a7			; $af02
+	.db $47			; $af03
+	.db $a3			; $af04
+	.db $3f			; $af05
+	LDA $81				 ; $af06: A5 81
+	.db $0c			; $af08
+	.db $07			; $af09
+	ROL $0000,X			 ; $af0a: 3E 00 00
+	BRK					 ; $af0d: 00
+	BRK					 ; $af0e: 00
+	.db $27			; $af0f
+	LSR					 ; $af10: 4A
+	.db $27			; $af11
+	LSR $4826			   ; $af12: 4E 26 48
+	BRK					 ; $af15: 00
+	LDY $2f				 ; $af16: A4 2F
+	STA $a321,X			 ; $af18: 9D 21 A3
+	BIT $a400			   ; $af1b: 2C 00 A4
+	.db $cf			; $af1e
+	STA ($d1),Y			 ; $af1f: 91 D1
+	.db $a3			; $af21
+	CMP $6700			   ; $af22: CD 00 67
+	ROR $67				 ; $af25: 66 67
+	.db $67			; $af27
+	ROR $64				 ; $af28: 66 64
+	BRK					 ; $af2a: 00
+	.db $74			; $af2b
+	.db $47			; $af2c
+	.db $74			; $af2d
+	JMP $4576			   ; $af2e: 4C 76 45
+	BRK					 ; $af31: 00
+	STA $9946,Y			 ; $af32: 99 46 99
+	EOR #$98				; $af35: 49 98
+	.db $44			; $af37
+	BRK					 ; $af38: 00
+	.db $eb			; $af39
+	DEX					 ; $af3a: CA
+	.db $ef			; $af3b
+	CMP #$ea				; $af3c: C9 EA
+	INY					 ; $af3e: C8
+	BRK					 ; $af3f: 00
+	.db $c7			; $af40
+	BIT $21b8			   ; $af41: 2C B8 21
+	DEC $29				 ; $af44: C6 29
+	BRK					 ; $af46: 00
+	ROL $13				 ; $af47: 26 13
+	.db $2b			; $af49
+	CLC					 ; $af4a: 18
+	AND $14				 ; $af4b: 25 14
+	BRK					 ; $af4d: 00
+	ASL $1d97,X			 ; $af4e: 1E 97 1D
+	.db $9b			; $af51
+	.db $1f			; $af52
+	STA tmp0,X			  ; $af53: 95 00
+	BCC $af27			   ; $af55: 90 D0
+	STA ($d0),Y			 ; $af57: 91 D0
+	.db $8f			; $af59
+	BNE $af5c			   ; $af5a: D0 00
+	RTI					 ; $af5c: 40
+	LSR					 ; $af5d: 4A
+	.db $3a			; $af5e
+	.db $47			; $af5f
+	ROL $0049,X			 ; $af60: 3E 49 00
+	LDA $a9,X			   ; $af63: B5 A9
+	.db $b2			; $af65
+	.db $a3			; $af66
+	LDY $a7,X			   ; $af67: B4 A7
+	BRK					 ; $af69: 00
+	.db $47			; $af6a
+	.db $3a			; $af6b
+	AND ($36),Y			 ; $af6c: 31 36
+	EOR #$38				; $af6e: 49 38
+	BRK					 ; $af70: 00
+	RTS					 ; $af71: 60
+	AND #$63				; $af72: 29 63
+	ROL					 ; $af74: 2A
+	ADC ($27,X)			 ; $af75: 61 27
+	BRK					 ; $af77: 00
+	TSX					 ; $af78: BA
+	.db $62			; $af79
+	TAX					 ; $af7a: AA
+	BVS $af36			   ; $af7b: 70 B9
+	ADC (tmp0,X)			; $af7d: 61 00
+	.db $42			; $af7f
+	.db $9b			; $af80
+	EOR ($9a,X)			 ; $af81: 41 9A
+	.db $42			; $af83
+	STA $9a00,Y			 ; $af84: 99 00 9A
+	.db $17			; $af87
+	TXS					 ; $af88: 9A
+	.db $13			; $af89
+	.db $9b			; $af8a
+	ORA tmp0,X			  ; $af8b: 15 00
+	STA ($32),Y			 ; $af8d: 91 32
+	.db $93			; $af8f
+	EOR $3092			   ; $af90: 4D 92 30
+	BRK					 ; $af93: 00
+	AND $3ee7,Y			 ; $af94: 39 E7 3E
+	SBC $38				 ; $af97: E5 38
+	SBC tmp0				; $af99: E5 00
+	PLA					 ; $af9b: 68
+	AND $6a				 ; $af9c: 25 6A
+	ROL $67				 ; $af9e: 26 67
+	.db $23			; $afa0
+	BRK					 ; $afa1: 00
+	.db $33			; $afa2
+	LDX $b723,Y			 ; $afa3: BE 23 B7
+	AND ($bc),Y			 ; $afa6: 31 BC
+	ORA ($20,X)			 ; $afa8: 01 20
+	ORA $0000,X			 ; $afaa: 1D 00 00
+	.db $0b			; $afad
+	.db $1c			; $afae
+	BRK					 ; $afaf: 00
+	LDA #$89				; $afb0: A9 89
+	LDA #$8a				; $afb2: A9 8A
+	TAY					 ; $afb4: A8
+	.db $87			; $afb5
+	BRK					 ; $afb6: 00
+	CPY $cd67			   ; $afb7: CC 67 CD
+	ADC $cb				 ; $afba: 65 CB
+	ROR tmp3				; $afbc: 66 03
+	.db $23			; $afbe
+	.db $2b			; $afbf
+	BRK					 ; $afc0: 00
+	BRK					 ; $afc1: 00
+	BRK					 ; $afc2: 00
+	BRK					 ; $afc3: 00
+	.db $03			; $afc4
+	ORA $0020,Y			 ; $afc5: 19 20 00
+	BRK					 ; $afc8: 00
+	BRK					 ; $afc9: 00
+	BRK					 ; $afca: 00
+	ORA ($0e,X)			 ; $afcb: 01 0E
+	.db $0f			; $afcd
+	BRK					 ; $afce: 00
+	BRK					 ; $afcf: 00
+	BRK					 ; $afd0: 00
+	BRK					 ; $afd1: 00
+	.db $80			; $afd2
+	ORA #$0c				; $afd3: 09 0C
+	EOR (tmp0,X)			; $afd5: 41 00
+	BRK					 ; $afd7: 00
+	BRK					 ; $afd8: 00
+	BRK					 ; $afd9: 00
+	DEY					 ; $afda: 88
+	ASL tmp0,X			  ; $afdb: 16 00
+	BRK					 ; $afdd: 00
+	BRK					 ; $afde: 00
+	BRK					 ; $afdf: 00
+	LDA $41				 ; $afe0: A5 41
+	BPL $b009			   ; $afe2: 10 25
+	LDA $63				 ; $afe4: A5 63
+	CMP #$37				; $afe6: C9 37
+	BEQ $b009			   ; $afe8: F0 1F
+	CMP #$2e				; $afea: C9 2E
+	BNE $affc			   ; $afec: D0 0E
+	LDA #$e7				; $afee: A9 E7
+	STA $42				 ; $aff0: 85 42
+	STA $6195			   ; $aff2: 8D 95 61
+	LDA #$1c				; $aff5: A9 1C
+	STA $43				 ; $aff7: 85 43
+	STA $6196			   ; $aff9: 8D 96 61
+	LDA $07ba			   ; $affc: AD BA 07
+	AND #$7f				; $afff: 29 7F
+	CMP #$04				; $b001: C9 04
+	BEQ $b00b			   ; $b003: F0 06
+	CMP #$05				; $b005: C9 05
+	BEQ $b00b			   ; $b007: F0 02
+	CLC					 ; $b009: 18
+	RTS					 ; $b00a: 60
+	JSR $d1f3			   ; $b00b: 20 F3 D1
+	JSR $8abc			   ; $b00e: 20 BC 8A
+	BRK					 ; $b011: 00
+	.db $82			; $b012
+	.db $fb			; $b013
+	JSR $c5c5			   ; $b014: 20 C5 C5
+	LDA #$02				; $b017: A9 02
+	STA $3d				 ; $b019: 85 3D
+	LDX #$00				; $b01b: A2 00
+	LDA $63				 ; $b01d: A5 63
+	CMP #$2e				; $b01f: C9 2E
+	BNE $b024			   ; $b021: D0 01
+	INX					 ; $b023: E8
+	STX $0515			   ; $b024: 8E 15 05
+	BRK					 ; $b027: 00
+	.db $54			; $b028
+	.db $33			; $b029
+	JSR $92e3			   ; $b02a: 20 E3 92
+	SEC					 ; $b02d: 38
+	RTS					 ; $b02e: 60
+	LDA #$78				; $b02f: A9 78
+	STA $6296			   ; $b031: 8D 96 62
+	LDA $63				 ; $b034: A5 63
+	CMP #$03				; $b036: C9 03
+	BEQ $b052			   ; $b038: F0 18
+	LDA $64				 ; $b03a: A5 64
+	CMP #$01				; $b03c: C9 01
+	BNE $b052			   ; $b03e: D0 12
+	LDA $44				 ; $b040: A5 44
+	SEC					 ; $b042: 38
+	SBC #$01				; $b043: E9 01
+	CMP #$0d				; $b045: C9 0D
+	BCS $b052			   ; $b047: B0 09
+	LDA $45				 ; $b049: A5 45
+	SEC					 ; $b04b: 38
+	SBC #$0f				; $b04c: E9 0F
+	CMP #$09				; $b04e: C9 09
+	BCC $b061			   ; $b050: 90 0F
+	JSR $c891			   ; $b052: 20 91 C8
+	CMP #$c0				; $b055: C9 C0
+	BCC $b061			   ; $b057: 90 08
+	LDA #$25				; $b059: A9 25
+	BRK					 ; $b05b: 00
+	.db $17			; $b05c
+	.db $0f			; $b05d
+	JMP $b069			   ; $b05e: 4C 69 B0
+	LDA #$0f				; $b061: A9 0F
+	BRK					 ; $b063: 00
+	.db $17			; $b064
+	.db $0f			; $b065
+	CLC					 ; $b066: 18
+	ADC #$25				; $b067: 69 25
+	TAX					 ; $b069: AA
+	LDA $b079,X			 ; $b06a: BD 79 B0
+	ASL					 ; $b06d: 0A
+	CPX #$25				; $b06e: E0 25
+	ROR					 ; $b070: 6A
+	STA $6297			   ; $b071: 8D 97 62
+	JSR $97b8			   ; $b074: 20 B8 97
+	SEC					 ; $b077: 38
+	RTS					 ; $b078: 60
+	BRK					 ; $b079: 00
+	ORA (tmp2,X)			; $b07a: 01 02
+	.db $03			; $b07c
+	.db $04			; $b07d
+	ORA $06				 ; $b07e: 05 06
+	.db $07			; $b080
+	PHP					 ; $b081: 08
+	.db $0f			; $b082
+	BPL $b096			   ; $b083: 10 11
+	.db $12			; $b085
+	.db $13			; $b086
+	.db $14			; $b087
+	ORA $16,X			   ; $b088: 15 16
+	.db $17			; $b08a
+	CLC					 ; $b08b: 18
+	ORA $1b1a,Y			 ; $b08c: 19 1A 1B
+	ORA $1f1e,X			 ; $b08f: 1D 1E 1F
+	JSR $2221			   ; $b092: 20 21 22
+	PLP					 ; $b095: 28
+	AND #$36				; $b096: 29 36
+	.db $37			; $b098
+	SEC					 ; $b099: 38
+	.db $3a			; $b09a
+	.db $3b			; $b09b
+	JMP $1c4d			   ; $b09c: 4C 4D 1C
+	.db $23			; $b09f
+	BIT $25				 ; $b0a0: 24 25
+	ROL $2a				 ; $b0a2: 26 2A
+	AND $3e3d,Y			 ; $b0a4: 39 3D 3E
+	RTI					 ; $b0a7: 40
+	.db $42			; $b0a8
+	.db $43			; $b0a9
+	.db $44			; $b0aa
+	EOR $46				 ; $b0ab: 45 46
+	JSR $d1f3			   ; $b0ad: 20 F3 D1
+	BRK					 ; $b0b0: 00
+	.db $07			; $b0b1
+	.db $6f			; $b0b2
+	.db $43			; $b0b3
+	BRK					 ; $b0b4: 00
+	.db $ef			; $b0b5
+	.db $3b			; $b0b6
+	BRK					 ; $b0b7: 00
+	BIT $00fb			   ; $b0b8: 2C FB 00
+	.db $07			; $b0bb
+	.db $9f			; $b0bc
+	BRK					 ; $b0bd: 00
+	ORA #$9f				; $b0be: 09 9F
+	BRK					 ; $b0c0: 00
+	PLP					 ; $b0c1: 28
+	.db $4b			; $b0c2
+	LDX #$06				; $b0c3: A2 06
+	LDA $7006,X			 ; $b0c5: BD 06 70
+	AND #$fc				; $b0c8: 29 FC
+	STA $7006,X			 ; $b0ca: 9D 06 70
+	LDA $6fe6,X			 ; $b0cd: BD E6 6F
+	TAX					 ; $b0d0: AA
+	LDA #$01				; $b0d1: A9 01
+	BRK					 ; $b0d3: 00
+	ORA $0087			   ; $b0d4: 0D 87 00
+	ASL					 ; $b0d7: 0A
+	.db $6f			; $b0d8
+	LDX #$00				; $b0d9: A2 00
+	LDA $053a,X			 ; $b0db: BD 3A 05
+	BEQ $b0e5			   ; $b0de: F0 05
+	INX					 ; $b0e0: E8
+	CPX #$04				; $b0e1: E0 04
+	BCC $b0db			   ; $b0e3: 90 F6
+	STX $f9				 ; $b0e5: 86 F9
+	LDX #$04				; $b0e7: A2 04
+	LDA $7006,X			 ; $b0e9: BD 06 70
+	AND #$fc				; $b0ec: 29 FC
+	ORA #$02				; $b0ee: 09 02
+	STA $7006,X			 ; $b0f0: 9D 06 70
+	BRK					 ; $b0f3: 00
+	ASL					 ; $b0f4: 0A
+	.db $6f			; $b0f5
+	BRK					 ; $b0f6: 00
+	.db $2f			; $b0f7
+	.db $4b			; $b0f8
+	BRK					 ; $b0f9: 00
+	.db $62			; $b0fa
+	.db $23			; $b0fb
+	RTI					 ; $b0fc: 40
+	CMP #$02				; $b0fd: C9 02
+	BCS $b126			   ; $b0ff: B0 25
+	LDX #$00				; $b101: A2 00
+	BRK					 ; $b103: 00
+	.db $2b			; $b104
+	.db $73			; $b105
+	CMP #$04				; $b106: C9 04
+	BNE $b126			   ; $b108: D0 1C
+	BRK					 ; $b10a: 00
+	LSR $a24b,X			 ; $b10b: 5E 4B A2
+	.db $04			; $b10e
+	LDA $7006,X			 ; $b10f: BD 06 70
+	ORA #$03				; $b112: 09 03
+	STA $7006,X			 ; $b114: 9D 06 70
+	BRK					 ; $b117: 00
+	ASL					 ; $b118: 0A
+	.db $6f			; $b119
+	BRK					 ; $b11a: 00
+	.db $5f			; $b11b
+	.db $4b			; $b11c
+	BRK					 ; $b11d: 00
+	ASL $cb,X			   ; $b11e: 16 CB
+	PHP					 ; $b120: 08
+	JSR $d20a			   ; $b121: 20 0A D2
+	SEC					 ; $b124: 38
+	RTS					 ; $b125: 60
+	BRK					 ; $b126: 00
+	.db $5c			; $b127
+	.db $4b			; $b128
+	LDX #$04				; $b129: A2 04
+	LDA $7006,X			 ; $b12b: BD 06 70
+	ORA #$03				; $b12e: 09 03
+	STA $7006,X			 ; $b130: 9D 06 70
+	BRK					 ; $b133: 00
+	ASL					 ; $b134: 0A
+	.db $6f			; $b135
+	JSR $9e3f			   ; $b136: 20 3F 9E
+	STA $f9				 ; $b139: 85 F9
+	BRK					 ; $b13b: 00
+	BMI $b189			   ; $b13c: 30 4B
+	BRK					 ; $b13e: 00
+	EOR $a94b,X			 ; $b13f: 5D 4B A9
+	BIT tmp0				; $b142: 24 00
+	.db $07			; $b144
+	.db $cf			; $b145
+	SEC					 ; $b146: 38
+	RTS					 ; $b147: 60
+	LDA #$80				; $b148: A9 80
+	STA $6f66,X			 ; $b14a: 9D 66 6F
+	STA $6fa6,X			 ; $b14d: 9D A6 6F
+	STA $6f86,X			 ; $b150: 9D 86 6F
+	STA $6fc6,X			 ; $b153: 9D C6 6F
+	RTS					 ; $b156: 60
+	STA $6e0b			   ; $b157: 8D 0B 6E
+	STX $6e				 ; $b15a: 86 6E
+	PHA					 ; $b15c: 48
+	TXA					 ; $b15d: 8A
+	PHA					 ; $b15e: 48
+	TYA					 ; $b15f: 98
+	PHA					 ; $b160: 48
+	LDA $6e0b			   ; $b161: AD 0B 6E
+	CMP #$03				; $b164: C9 03
+	BEQ $b172			   ; $b166: F0 0A
+	LDA $6e				 ; $b168: A5 6E
+	BIT $618e			   ; $b16a: 2C 8E 61
+	BPL $b172			   ; $b16d: 10 03
+	CLC					 ; $b16f: 18
+	ADC #$04				; $b170: 69 04
+	BIT $618e			   ; $b172: 2C 8E 61
+	BVC $b17a			   ; $b175: 50 03
+	CLC					 ; $b177: 18
+	ADC #$1c				; $b178: 69 1C
+	TAX					 ; $b17a: AA
+	LDA $616a,X			 ; $b17b: BD 6A 61
+	AND #$7f				; $b17e: 29 7F
+	ASL					 ; $b180: 0A
+	TAX					 ; $b181: AA
+	LDA $b1a3,X			 ; $b182: BD A3 B1
+	STA $79				 ; $b185: 85 79
+	LDA $b1a4,X			 ; $b187: BD A4 B1
+	STA $7a				 ; $b18a: 85 7A
+	LDX $6e0b			   ; $b18c: AE 0B 6E
+	BEQ $b1d2			   ; $b18f: F0 41
+	DEX					 ; $b191: CA
+	BEQ $b20e			   ; $b192: F0 7A
+	DEX					 ; $b194: CA
+	BEQ $b19d			   ; $b195: F0 06
+	DEX					 ; $b197: CA
+	BEQ $b1a0			   ; $b198: F0 06
+	JMP $b275			   ; $b19a: 4C 75 B2
+	JMP $b232			   ; $b19d: 4C 32 B2
+	JMP $b259			   ; $b1a0: 4C 59 B2
+	ORA ($60,X)			 ; $b1a3: 01 60
+	.db $1f			; $b1a5
+	RTS					 ; $b1a6: 60
+	AND $5b60,X			 ; $b1a7: 3D 60 5B
+	RTS					 ; $b1aa: 60
+	ADC $9760,Y			 ; $b1ab: 79 60 97
+	RTS					 ; $b1ae: 60
+	LDA $60,X			   ; $b1af: B5 60
+	.db $d3			; $b1b1
+	RTS					 ; $b1b2: 60
+	SBC ($60),Y			 ; $b1b3: F1 60
+	.db $0f			; $b1b5
+	ADC ($15,X)			 ; $b1b6: 61 15
+	ADC ($1b,X)			 ; $b1b8: 61 1B
+	ADC ($21,X)			 ; $b1ba: 61 21
+	ADC ($27,X)			 ; $b1bc: 61 27
+	ADC ($2d,X)			 ; $b1be: 61 2D
+	ADC ($33,X)			 ; $b1c0: 61 33
+	ADC ($39,X)			 ; $b1c2: 61 39
+	ADC ($3f,X)			 ; $b1c4: 61 3F
+	ADC ($45,X)			 ; $b1c6: 61 45
+	ADC ($4b,X)			 ; $b1c8: 61 4B
+	ADC ($51,X)			 ; $b1ca: 61 51
+	ADC ($a0,X)			 ; $b1cc: 61 A0
+	BRK					 ; $b1ce: 00
+	LDA ($79),Y			 ; $b1cf: B1 79
+	RTS					 ; $b1d1: 60
+	JSR $b1cd			   ; $b1d2: 20 CD B1
+	BPL $b208			   ; $b1d5: 10 31
+	LDY #$01				; $b1d7: A0 01
+	LDA ($79),Y			 ; $b1d9: B1 79
+	CLC					 ; $b1db: 18
+	ADC $6f				 ; $b1dc: 65 6F
+	STA ($79),Y			 ; $b1de: 91 79
+	INY					 ; $b1e0: C8
+	LDA ($79),Y			 ; $b1e1: B1 79
+	ADC $70				 ; $b1e3: 65 70
+	STA ($79),Y			 ; $b1e5: 91 79
+	LDY #$0d				; $b1e7: A0 0D
+	CMP ($79),Y			 ; $b1e9: D1 79
+	BEQ $b1ef			   ; $b1eb: F0 02
+	BCC $b1f8			   ; $b1ed: 90 09
+	DEY					 ; $b1ef: 88
+	LDA ($79),Y			 ; $b1f0: B1 79
+	LDY #$01				; $b1f2: A0 01
+	CMP ($79),Y			 ; $b1f4: D1 79
+	BCS $b208			   ; $b1f6: B0 10
+	LDY #$0c				; $b1f8: A0 0C
+	LDA ($79),Y			 ; $b1fa: B1 79
+	PHA					 ; $b1fc: 48
+	INY					 ; $b1fd: C8
+	LDA ($79),Y			 ; $b1fe: B1 79
+	INY					 ; $b200: C8
+	INY					 ; $b201: C8
+	STA ($79),Y			 ; $b202: 91 79
+	DEY					 ; $b204: 88
+	PLA					 ; $b205: 68
+	STA ($79),Y			 ; $b206: 91 79
+	PLA					 ; $b208: 68
+	TAY					 ; $b209: A8
+	PLA					 ; $b20a: 68
+	TAX					 ; $b20b: AA
+	PLA					 ; $b20c: 68
+	RTS					 ; $b20d: 60
+	JSR $b1cd			   ; $b20e: 20 CD B1
+	BPL $b22c			   ; $b211: 10 19
+	LDY #$01				; $b213: A0 01
+	LDA ($79),Y			 ; $b215: B1 79
+	SEC					 ; $b217: 38
+	SBC $6f				 ; $b218: E5 6F
+	STA ($79),Y			 ; $b21a: 91 79
+	INY					 ; $b21c: C8
+	LDA ($79),Y			 ; $b21d: B1 79
+	SBC $70				 ; $b21f: E5 70
+	STA ($79),Y			 ; $b221: 91 79
+	BCS $b22c			   ; $b223: B0 07
+	LDA #$00				; $b225: A9 00
+	STA ($79),Y			 ; $b227: 91 79
+	DEY					 ; $b229: 88
+	STA ($79),Y			 ; $b22a: 91 79
+	PLA					 ; $b22c: 68
+	TAY					 ; $b22d: A8
+	PLA					 ; $b22e: 68
+	TAX					 ; $b22f: AA
+	PLA					 ; $b230: 68
+	RTS					 ; $b231: 60
+	JSR $b1cd			   ; $b232: 20 CD B1
+	BPL $b252			   ; $b235: 10 1B
+	LDY #$01				; $b237: A0 01
+	LDA ($79),Y			 ; $b239: B1 79
+	INY					 ; $b23b: C8
+	ORA ($79),Y			 ; $b23c: 11 79
+	BNE $b252			   ; $b23e: D0 12
+	LDY #$00				; $b240: A0 00
+	LDA ($79),Y			 ; $b242: B1 79
+	AND #$1f				; $b244: 29 1F
+	STA ($79),Y			 ; $b246: 91 79
+	BRK					 ; $b248: 00
+	ROL $0f				 ; $b249: 26 0F
+	SEC					 ; $b24b: 38
+	PLA					 ; $b24c: 68
+	TAY					 ; $b24d: A8
+	PLA					 ; $b24e: 68
+	TAX					 ; $b24f: AA
+	PLA					 ; $b250: 68
+	RTS					 ; $b251: 60
+	CLC					 ; $b252: 18
+	PLA					 ; $b253: 68
+	TAY					 ; $b254: A8
+	PLA					 ; $b255: 68
+	TAX					 ; $b256: AA
+	PLA					 ; $b257: 68
+	RTS					 ; $b258: 60
+	LDA $618e			   ; $b259: AD 8E 61
+	AND #$20				; $b25c: 29 20
+	BEQ $b26e			   ; $b25e: F0 0E
+	LDA $618e			   ; $b260: AD 8E 61
+	AND #$87				; $b263: 29 87
+	BNE $b26e			   ; $b265: D0 07
+	PLA					 ; $b267: 68
+	TAY					 ; $b268: A8
+	PLA					 ; $b269: 68
+	TAX					 ; $b26a: AA
+	PLA					 ; $b26b: 68
+	SEC					 ; $b26c: 38
+	RTS					 ; $b26d: 60
+	PLA					 ; $b26e: 68
+	TAY					 ; $b26f: A8
+	PLA					 ; $b270: 68
+	TAX					 ; $b271: AA
+	PLA					 ; $b272: 68
+	CLC					 ; $b273: 18
+	RTS					 ; $b274: 60
+	JSR $b1cd			   ; $b275: 20 CD B1
+	BPL $b2a0			   ; $b278: 10 26
+	LDY #$03				; $b27a: A0 03
+	LDA ($79),Y			 ; $b27c: B1 79
+	STA $76				 ; $b27e: 85 76
+	INY					 ; $b280: C8
+	LDA ($79),Y			 ; $b281: B1 79
+	LDY #$0f				; $b283: A0 0F
+	CMP ($79),Y			 ; $b285: D1 79
+	BNE $b290			   ; $b287: D0 07
+	DEY					 ; $b289: 88
+	LDA $76				 ; $b28a: A5 76
+	CMP ($79),Y			 ; $b28c: D1 79
+	BEQ $b2a0			   ; $b28e: F0 10
+	LDY #$03				; $b290: A0 03
+	LDA ($79),Y			 ; $b292: B1 79
+	CLC					 ; $b294: 18
+	ADC #$01				; $b295: 69 01
+	STA ($79),Y			 ; $b297: 91 79
+	INY					 ; $b299: C8
+	LDA ($79),Y			 ; $b29a: B1 79
+	ADC #$00				; $b29c: 69 00
+	STA ($79),Y			 ; $b29e: 91 79
+	PLA					 ; $b2a0: 68
+	TAY					 ; $b2a1: A8
+	PLA					 ; $b2a2: 68
+	TAX					 ; $b2a3: AA
+	PLA					 ; $b2a4: 68
+	RTS					 ; $b2a5: 60
+	BRK					 ; $b2a6: 00
+	.db $62			; $b2a7
+	.db $23			; $b2a8
+	RTI					 ; $b2a9: 40
+	BNE $b2bb			   ; $b2aa: D0 0F
+	BRK					 ; $b2ac: 00
+	.db $07			; $b2ad
+	.db $6f			; $b2ae
+	BVC $b2b1			   ; $b2af: 50 00
+	CMP $2b				 ; $b2b1: C5 2B
+	JSR $d214			   ; $b2b3: 20 14 D2
+	BRK					 ; $b2b6: 00
+	.db $07			; $b2b7
+	.db $6f			; $b2b8
+	.db $ff			; $b2b9
+	RTS					 ; $b2ba: 60
+	JSR $b35d			   ; $b2bb: 20 5D B3
+	BCC $b2f8			   ; $b2be: 90 38
+	LDX #$03				; $b2c0: A2 03
+	CMP $b3c8,X			 ; $b2c2: DD C8 B3
+	BEQ $b32a			   ; $b2c5: F0 63
+	DEX					 ; $b2c7: CA
+	BPL $b2c2			   ; $b2c8: 10 F8
+	JSR $b381			   ; $b2ca: 20 81 B3
+	BCS $b2de			   ; $b2cd: B0 0F
+	BRK					 ; $b2cf: 00
+	.db $07			; $b2d0
+	.db $6f			; $b2d1
+	.db $43			; $b2d2
+	BRK					 ; $b2d3: 00
+	ADC ($3b,X)			 ; $b2d4: 61 3B
+	JSR $c8e1			   ; $b2d6: 20 E1 C8
+	JSR $d1f3			   ; $b2d9: 20 F3 D1
+	SEC					 ; $b2dc: 38
+	RTS					 ; $b2dd: 60
+	STX tmp1				; $b2de: 86 01
+	JSR $b36e			   ; $b2e0: 20 6E B3
+	CMP tmp1				; $b2e3: C5 01
+	BCC $b32a			   ; $b2e5: 90 43
+	BEQ $b32a			   ; $b2e7: F0 41
+	BRK					 ; $b2e9: 00
+	.db $07			; $b2ea
+	.db $6f			; $b2eb
+	.db $43			; $b2ec
+	BRK					 ; $b2ed: 00
+	RTS					 ; $b2ee: 60
+	.db $3b			; $b2ef
+	LDA #$00				; $b2f0: A9 00
+	STA $6279			   ; $b2f2: 8D 79 62
+	JMP $b2d6			   ; $b2f5: 4C D6 B2
+	LDA tmp0				; $b2f8: A5 00
+	PHA					 ; $b2fa: 48
+	BRK					 ; $b2fb: 00
+	.db $07			; $b2fc
+	.db $6f			; $b2fd
+	.db $43			; $b2fe
+	PLA					 ; $b2ff: 68
+	CMP #$2c				; $b300: C9 2C
+	BEQ $b30e			   ; $b302: F0 0A
+	CMP #$30				; $b304: C9 30
+	BEQ $b314			   ; $b306: F0 0C
+	BRK					 ; $b308: 00
+	LSR $4c3b,X			 ; $b309: 5E 3B 4C
+	ORA $00b3,X			 ; $b30c: 1D B3 00
+	.db $f2			; $b30f
+	.db $3b			; $b310
+	JMP $b31d			   ; $b311: 4C 1D B3
+	LDA $63				 ; $b314: A5 63
+	CMP #$37				; $b316: C9 37
+	BNE $b30e			   ; $b318: D0 F4
+	BRK					 ; $b31a: 00
+	CPX $a93b			   ; $b31b: EC 3B A9
+	ORA ($8d,X)			 ; $b31e: 01 8D
+	ADC $4c62,Y			 ; $b320: 79 62 4C
+	DEC $b2,X			   ; $b323: D6 B2
+	JSR $c8e1			   ; $b325: 20 E1 C8
+	SEC					 ; $b328: 38
+	RTS					 ; $b329: 60
+	LDA tmp0				; $b32a: A5 00
+	PHA					 ; $b32c: 48
+	JSR $d1f3			   ; $b32d: 20 F3 D1
+	PLA					 ; $b330: 68
+	JSR $835d			   ; $b331: 20 5D 83
+	LDA #$00				; $b334: A9 00
+	STA $6279			   ; $b336: 8D 79 62
+	SEC					 ; $b339: 38
+	RTS					 ; $b33a: 60
+	JSR $b35d			   ; $b33b: 20 5D B3
+	BCS $b341			   ; $b33e: B0 01
+	RTS					 ; $b340: 60
+	LDA tmp0				; $b341: A5 00
+	LDX #$03				; $b343: A2 03
+	CMP $b3c8,X			 ; $b345: DD C8 B3
+	BEQ $b32a			   ; $b348: F0 E0
+	DEX					 ; $b34a: CA
+	BPL $b345			   ; $b34b: 10 F8
+	LDX #$02				; $b34d: A2 02
+	LDA $6279			   ; $b34f: AD 79 62
+	CMP $b3d8,X			 ; $b352: DD D8 B3
+	BEQ $b35a			   ; $b355: F0 03
+	DEX					 ; $b357: CA
+	BPL $b352			   ; $b358: 10 F8
+	JMP $b2de			   ; $b35a: 4C DE B2
+	JSR $83d9			   ; $b35d: 20 D9 83
+	STA tmp0				; $b360: 85 00
+	CMP #$14				; $b362: C9 14
+	BCC $b36c			   ; $b364: 90 06
+	CMP #$24				; $b366: C9 24
+	BCS $b36c			   ; $b368: B0 02
+	SEC					 ; $b36a: 38
+	RTS					 ; $b36b: 60
+	CLC					 ; $b36c: 18
+	RTS					 ; $b36d: 60
+	LDA tmp0				; $b36e: A5 00
+	LDY #$0f				; $b370: A0 0F
+	CMP $b3c8,Y			 ; $b372: D9 C8 B3
+	BEQ $b37a			   ; $b375: F0 03
+	DEY					 ; $b377: 88
+	BPL $b372			   ; $b378: 10 F8
+	TYA					 ; $b37a: 98
+	LSR					 ; $b37b: 4A
+	LSR					 ; $b37c: 4A
+	TAY					 ; $b37d: A8
+	DEY					 ; $b37e: 88
+	TYA					 ; $b37f: 98
+	RTS					 ; $b380: 60
+	LDA $615a			   ; $b381: AD 5A 61
+	CMP #$03				; $b384: C9 03
+	BNE $b3b7			   ; $b386: D0 2F
+	LDA #$09				; $b388: A9 09
+	BRK					 ; $b38a: 00
+	.db $63			; $b38b
+	.db $63			; $b38c
+	.db $03			; $b38d
+	BCC $b3b7			   ; $b38e: 90 27
+	LDA tmp0				; $b390: A5 00
+	CMP #$16				; $b392: C9 16
+	BEQ $b3a2			   ; $b394: F0 0C
+	CMP #$1a				; $b396: C9 1A
+	BEQ $b3a2			   ; $b398: F0 08
+	CMP #$1e				; $b39a: C9 1E
+	BEQ $b3a2			   ; $b39c: F0 04
+	CMP #$22				; $b39e: C9 22
+	BNE $b3b7			   ; $b3a0: D0 15
+	LDA tmp0				; $b3a2: A5 00
+	PHA					 ; $b3a4: 48
+	BRK					 ; $b3a5: 00
+	.db $07			; $b3a6
+	.db $6f			; $b3a7
+	BVC $b3aa			   ; $b3a8: 50 00
+	LDA $3b				 ; $b3aa: A5 3B
+	JSR $d214			   ; $b3ac: 20 14 D2
+	PLA					 ; $b3af: 68
+	STA tmp0				; $b3b0: 85 00
+	PLA					 ; $b3b2: 68
+	PLA					 ; $b3b3: 68
+	JMP $b32a			   ; $b3b4: 4C 2A B3
+	LDX #$02				; $b3b7: A2 02
+	LDA $b3d8,X			 ; $b3b9: BD D8 B3
+	BRK					 ; $b3bc: 00
+	ROR $73				 ; $b3bd: 66 73
+	BCS $b3c6			   ; $b3bf: B0 05
+	DEX					 ; $b3c1: CA
+	BPL $b3b9			   ; $b3c2: 10 F5
+	CLC					 ; $b3c4: 18
+	RTS					 ; $b3c5: 60
+	SEC					 ; $b3c6: 38
+	RTS					 ; $b3c7: 60
+	.db $14			; $b3c8
+	CLC					 ; $b3c9: 18
+	.db $1c			; $b3ca
+	JSR $1915			   ; $b3cb: 20 15 19
+	ORA $1621,X			 ; $b3ce: 1D 21 16
+	.db $1a			; $b3d1
+	ASL $1722,X			 ; $b3d2: 1E 22 17
+	.db $1b			; $b3d5
+	.db $1f			; $b3d6
+	.db $23			; $b3d7
+	ADC ($72),Y			 ; $b3d8: 71 72
+	.db $73			; $b3da
+	PLP					 ; $b3db: 28
+	PLA					 ; $b3dc: 68
+	PLA					 ; $b3dd: 68
+	JMP $b32a			   ; $b3de: 4C 2A B3
+	LDX #$00				; $b3e1: A2 00
+	BEQ $b3e7			   ; $b3e3: F0 02
+	LDX #$40				; $b3e5: A2 40
+	STX $6279			   ; $b3e7: 8E 79 62
+	JMP $b5a3			   ; $b3ea: 4C A3 B5
+	JSR $b731			   ; $b3ed: 20 31 B7
+	JMP $b791			   ; $b3f0: 4C 91 B7
+	JSR $b3fe			   ; $b3f3: 20 FE B3
+	BCS $b3fb			   ; $b3f6: B0 03
+	JSR $c8cc			   ; $b3f8: 20 CC C8
+	JMP $d1f3			   ; $b3fb: 4C F3 D1
+	BRK					 ; $b3fe: 00
+	.db $07			; $b3ff
+	.db $6f			; $b400
+	.db $43			; $b401
+	LDA #$00				; $b402: A9 00
+	STA $6278			   ; $b404: 8D 78 62
+	STA $6279			   ; $b407: 8D 79 62
+	JSR $b71e			   ; $b40a: 20 1E B7
+	STA $f9				 ; $b40d: 85 F9
+	LDA $7140			   ; $b40f: AD 40 71
+	AND #$1f				; $b412: 29 1F
+	TAX					 ; $b414: AA
+	LDA $6f40,X			 ; $b415: BD 40 6F
+	CMP #$04				; $b418: C9 04
+	BEQ $b447			   ; $b41a: F0 2B
+	CMP #$33				; $b41c: C9 33
+	BEQ $b423			   ; $b41e: F0 03
+	JMP $b4db			   ; $b420: 4C DB B4
+	BRK					 ; $b423: 00
+	.db $a7			; $b424
+	.db $2b			; $b425
+	LDA #$57				; $b426: A9 57
+	STA $51				 ; $b428: 85 51
+	BRK					 ; $b42a: 00
+	.db $3a			; $b42b
+	.db $0f			; $b42c
+	BCS $b43b			   ; $b42d: B0 0C
+	JSR $bc20			   ; $b42f: 20 20 BC
+	BCS $b43b			   ; $b432: B0 07
+	LDA #$57				; $b434: A9 57
+	JSR $b5a3			   ; $b436: 20 A3 B5
+	CLC					 ; $b439: 18
+	RTS					 ; $b43a: 60
+	LDA #$57				; $b43b: A9 57
+	STA $f9				 ; $b43d: 85 F9
+	BRK					 ; $b43f: 00
+	TYA					 ; $b440: 98
+	.db $2b			; $b441
+	BRK					 ; $b442: 00
+	DEC $4b				 ; $b443: C6 4B
+	CLC					 ; $b445: 18
+	RTS					 ; $b446: 60
+	JSR $b72e			   ; $b447: 20 2E B7
+	JSR $b791			   ; $b44a: 20 91 B7
+	BCS $b4b6			   ; $b44d: B0 67
+	JSR $b7ca			   ; $b44f: 20 CA B7
+	BRK					 ; $b452: 00
+	CMP #$1b				; $b453: C9 1B
+	JSR $b79c			   ; $b455: 20 9C B7
+	JSR $b7b2			   ; $b458: 20 B2 B7
+	BMI $b462			   ; $b45b: 30 05
+	JSR $b3ea			   ; $b45d: 20 EA B3
+	CLC					 ; $b460: 18
+	RTS					 ; $b461: 60
+	LDX #$00				; $b462: A2 00
+	CMP $bc35,X			 ; $b464: DD 35 BC
+	BNE $b479			   ; $b467: D0 10
+	TXA					 ; $b469: 8A
+	ASL					 ; $b46a: 0A
+	TAX					 ; $b46b: AA
+	LDA $bc3d,X			 ; $b46c: BD 3D BC
+	STA tmp0				; $b46f: 85 00
+	LDA $bc3e,X			 ; $b471: BD 3E BC
+	STA tmp1				; $b474: 85 01
+	JMP ($0000)			 ; $b476: 6C 00 00
+	INX					 ; $b479: E8
+	CPX $bc34			   ; $b47a: EC 34 BC
+	BCC $b464			   ; $b47d: 90 E5
+	AND #$7f				; $b47f: 29 7F
+	LDX #$00				; $b481: A2 00
+	STX tmp1				; $b483: 86 01
+	STX $ff				 ; $b485: 86 FF
+	STX $71				 ; $b487: 86 71
+	ASL					 ; $b489: 0A
+	ASL					 ; $b48a: 0A
+	STA tmp0				; $b48b: 85 00
+	ROL tmp1				; $b48d: 26 01
+	LDX #$00				; $b48f: A2 00
+	LDA #$0a				; $b491: A9 0A
+	JSR $c827			   ; $b493: 20 27 C8
+	LDA tmp1				; $b496: A5 01
+	STA $fe				 ; $b498: 85 FE
+	STA $70				 ; $b49a: 85 70
+	LDA tmp0				; $b49c: A5 00
+	STA $fd				 ; $b49e: 85 FD
+	STA $6f				 ; $b4a0: 85 6F
+	BRK					 ; $b4a2: 00
+	.db $4b			; $b4a3
+	.db $33			; $b4a4
+	BRK					 ; $b4a5: 00
+	.db $62			; $b4a6
+	.db $33			; $b4a7
+	CMP #$01				; $b4a8: C9 01
+	BNE $b4b1			   ; $b4aa: D0 05
+	BRK					 ; $b4ac: 00
+	LDA $183b,Y			 ; $b4ad: B9 3B 18
+	RTS					 ; $b4b0: 60
+	BRK					 ; $b4b1: 00
+	TSX					 ; $b4b2: BA
+	.db $3b			; $b4b3
+	CLC					 ; $b4b4: 18
+	RTS					 ; $b4b5: 60
+	BRK					 ; $b4b6: 00
+	.db $a7			; $b4b7
+	.db $2b			; $b4b8
+	LDA $63				 ; $b4b9: A5 63
+	CMP #$31				; $b4bb: C9 31
+	BNE $b4ce			   ; $b4bd: D0 0F
+	LDA $64				 ; $b4bf: A5 64
+	CMP #$03				; $b4c1: C9 03
+	BNE $b4ce			   ; $b4c3: D0 09
+	LDA $45				 ; $b4c5: A5 45
+	CMP #$10				; $b4c7: C9 10
+	BNE $b4ce			   ; $b4c9: D0 03
+	JMP $ba04			   ; $b4cb: 4C 04 BA
+	BRK					 ; $b4ce: 00
+	.db $97			; $b4cf
+	.db $2b			; $b4d0
+	CLC					 ; $b4d1: 18
+	RTS					 ; $b4d2: 60
+	BRK					 ; $b4d3: 00
+	.db $a7			; $b4d4
+	.db $2b			; $b4d5
+	BRK					 ; $b4d6: 00
+	LDX $2b				 ; $b4d7: A6 2B
+	CLC					 ; $b4d9: 18
+	RTS					 ; $b4da: 60
+	LDA $41				 ; $b4db: A5 41
+	BPL $b519			   ; $b4dd: 10 3A
+	LDX #$fb				; $b4df: A2 FB
+	INX					 ; $b4e1: E8
+	INX					 ; $b4e2: E8
+	INX					 ; $b4e3: E8
+	INX					 ; $b4e4: E8
+	INX					 ; $b4e5: E8
+	LDA $bf59,X			 ; $b4e6: BD 59 BF
+	CMP #$ff				; $b4e9: C9 FF
+	BNE $b4f4			   ; $b4eb: D0 07
+	JSR $bb0d			   ; $b4ed: 20 0D BB
+	BCC $b4d3			   ; $b4f0: 90 E1
+	BCS $b4d9			   ; $b4f2: B0 E5
+	CMP $63				 ; $b4f4: C5 63
+	BNE $b4e1			   ; $b4f6: D0 E9
+	LDA $bf5a,X			 ; $b4f8: BD 5A BF
+	CMP $64				 ; $b4fb: C5 64
+	BNE $b4e1			   ; $b4fd: D0 E2
+	LSR					 ; $b4ff: 4A
+	LSR					 ; $b500: 4A
+	LSR					 ; $b501: 4A
+	LSR					 ; $b502: 4A
+	LSR					 ; $b503: 4A
+	TAY					 ; $b504: A8
+	LDA $bf5b,X			 ; $b505: BD 5B BF
+	CMP $44				 ; $b508: C5 44
+	BNE $b4e1			   ; $b50a: D0 D5
+	LDA $bf5c,X			 ; $b50c: BD 5C BF
+	CMP $45				 ; $b50f: C5 45
+	BNE $b4e1			   ; $b511: D0 CE
+	LDA $bf5d,X			 ; $b513: BD 5D BF
+	JMP $b52f			   ; $b516: 4C 2F B5
+	JSR $bb07			   ; $b519: 20 07 BB
+	BCS $b4d9			   ; $b51c: B0 BB
+	LDA $0515			   ; $b51e: AD 15 05
+	BNE $b529			   ; $b521: D0 06
+	BRK					 ; $b523: 00
+	.db $a7			; $b524
+	.db $2b			; $b525
+	JMP $b4d6			   ; $b526: 4C D6 B4
+	BRK					 ; $b529: 00
+	TAY					 ; $b52a: A8
+	.db $2b			; $b52b
+	JMP $b4d6			   ; $b52c: 4C D6 B4
+	BPL $b59e			   ; $b52f: 10 6D
+	CMP #$a0				; $b531: C9 A0
+	BCC $b539			   ; $b533: 90 04
+	CMP #$ab				; $b535: C9 AB
+	BCC $b559			   ; $b537: 90 20
+	LDX #$00				; $b539: A2 00
+	CMP $bc56,X			 ; $b53b: DD 56 BC
+	BNE $b550			   ; $b53e: D0 10
+	TXA					 ; $b540: 8A
+	ASL					 ; $b541: 0A
+	TAX					 ; $b542: AA
+	LDA $bc62,X			 ; $b543: BD 62 BC
+	STA tmp0				; $b546: 85 00
+	LDA $bc63,X			 ; $b548: BD 63 BC
+	STA tmp1				; $b54b: 85 01
+	JMP ($0000)			 ; $b54d: 6C 00 00
+	INX					 ; $b550: E8
+	CPX $bc55			   ; $b551: EC 55 BC
+	BCC $b53b			   ; $b554: 90 E5
+	JMP $b4d3			   ; $b556: 4C D3 B4
+	STA $0e				 ; $b559: 85 0E
+	TAY					 ; $b55b: A8
+	AND #$0f				; $b55c: 29 0F
+	LSR					 ; $b55e: 4A
+	LSR					 ; $b55f: 4A
+	LSR					 ; $b560: 4A
+	TAX					 ; $b561: AA
+	TYA					 ; $b562: 98
+	AND #$07				; $b563: 29 07
+	TAY					 ; $b565: A8
+	LDA $bdab,Y			 ; $b566: B9 AB BD
+	AND $6272,X			 ; $b569: 3D 72 62
+	BEQ $b571			   ; $b56c: F0 03
+	JMP $b4d3			   ; $b56e: 4C D3 B4
+	TYA					 ; $b571: 98
+	PHA					 ; $b572: 48
+	TXA					 ; $b573: 8A
+	PHA					 ; $b574: 48
+	LDA $0e				 ; $b575: A5 0E
+	PHA					 ; $b577: 48
+	BRK					 ; $b578: 00
+	.db $a7			; $b579
+	.db $2b			; $b57a
+	PLA					 ; $b57b: 68
+	AND #$0f				; $b57c: 29 0F
+	TAY					 ; $b57e: A8
+	LDA $bdb3,Y			 ; $b57f: B9 B3 BD
+	BPL $b58a			   ; $b582: 10 06
+	JSR $b47f			   ; $b584: 20 7F B4
+	CLC					 ; $b587: 18
+	BCC $b58d			   ; $b588: 90 03
+	JSR $b5a3			   ; $b58a: 20 A3 B5
+	PLA					 ; $b58d: 68
+	TAX					 ; $b58e: AA
+	PLA					 ; $b58f: 68
+	TAY					 ; $b590: A8
+	BCS $b59c			   ; $b591: B0 09
+	LDA $bdab,Y			 ; $b593: B9 AB BD
+	ORA $6272,X			 ; $b596: 1D 72 62
+	STA $6272,X			 ; $b599: 9D 72 62
+	CLC					 ; $b59c: 18
+	RTS					 ; $b59d: 60
+	PHA					 ; $b59e: 48
+	BRK					 ; $b59f: 00
+	.db $a7			; $b5a0
+	.db $2b			; $b5a1
+	PLA					 ; $b5a2: 68
+	AND #$7f				; $b5a3: 29 7F
+	STA $627a			   ; $b5a5: 8D 7A 62
+	STA $f9				 ; $b5a8: 85 F9
+	BIT $6279			   ; $b5aa: 2C 79 62
+	BVS $b5b2			   ; $b5ad: 70 03
+	BRK					 ; $b5af: 00
+	TYA					 ; $b5b0: 98
+	.db $2b			; $b5b1
+	BRK					 ; $b5b2: 00
+	ADC $23				 ; $b5b3: 65 23
+	ORA #$a5				; $b5b5: 09 A5
+	.db $72			; $b5b7
+	BCS $b5c2			   ; $b5b8: B0 08
+	BRK					 ; $b5ba: 00
+	ADC $23				 ; $b5bb: 65 23
+	PHP					 ; $b5bd: 08
+	LDA $72				 ; $b5be: A5 72
+	BCC $b608			   ; $b5c0: 90 46
+	STA $6e				 ; $b5c2: 85 6E
+	BRK					 ; $b5c4: 00
+	ROL $a50f			   ; $b5c5: 2E 0F A5
+	.db $72			; $b5c8
+	STA $6e				 ; $b5c9: 85 6E
+	STA $f9				 ; $b5cb: 85 F9
+	TAX					 ; $b5cd: AA
+	LDA $627a			   ; $b5ce: AD 7A 62
+	STA $fa				 ; $b5d1: 85 FA
+	BRK					 ; $b5d3: 00
+	ROL $a973			   ; $b5d4: 2E 73 A9
+	.db $07			; $b5d7
+	BRK					 ; $b5d8: 00
+	LSR $73				 ; $b5d9: 46 73
+	BCC $b5f3			   ; $b5db: 90 16
+	LDA #$06				; $b5dd: A9 06
+	BRK					 ; $b5df: 00
+	LSR $73				 ; $b5e0: 46 73
+	BCS $b5e8			   ; $b5e2: B0 04
+	LDA #$a0				; $b5e4: A9 A0
+	BNE $b5fe			   ; $b5e6: D0 16
+	STX $fb				 ; $b5e8: 86 FB
+	JSR $b71e			   ; $b5ea: 20 1E B7
+	STA $f9				 ; $b5ed: 85 F9
+	LDA #$b3				; $b5ef: A9 B3
+	BNE $b5fe			   ; $b5f1: D0 0B
+	STX $fb				 ; $b5f3: 86 FB
+	JSR $b71e			   ; $b5f5: 20 1E B7
+	STA $f9				 ; $b5f8: 85 F9
+	LDA #$b4				; $b5fa: A9 B4
+	BNE $b5fe			   ; $b5fc: D0 00
+	LDX #$02				; $b5fe: A2 02
+	BRK					 ; $b600: 00
+	.db $04			; $b601
+	.db $6f			; $b602
+	BRK					 ; $b603: 00
+	.db $02			; $b604
+	.db $b7			; $b605
+	CLC					 ; $b606: 18
+	RTS					 ; $b607: 60
+	BRK					 ; $b608: 00
+	.db $62			; $b609
+	.db $33			; $b60a
+	CMP #$01				; $b60b: C9 01
+	BNE $b619			   ; $b60d: D0 0A
+	LDA #$00				; $b60f: A9 00
+	STA $f9				 ; $b611: 85 F9
+	BRK					 ; $b613: 00
+	.db $9b			; $b614
+	.db $2b			; $b615
+	JMP $b621			   ; $b616: 4C 21 B6
+	JSR $b71e			   ; $b619: 20 1E B7
+	STA $f9				 ; $b61c: 85 F9
+	BRK					 ; $b61e: 00
+	.db $9c			; $b61f
+	.db $2b			; $b620
+	BRK					 ; $b621: 00
+	STA $002b,X			 ; $b622: 9D 2B 00
+	.db $07			; $b625
+	.db $6f			; $b626
+	PHA					 ; $b627: 48
+	BNE $b677			   ; $b628: D0 4D
+	BRK					 ; $b62a: 00
+	.db $62			; $b62b
+	.db $23			; $b62c
+	PHP					 ; $b62d: 08
+	CMP #$01				; $b62e: C9 01
+	BEQ $b653			   ; $b630: F0 21
+	BRK					 ; $b632: 00
+	.db $9e			; $b633
+	.db $2b			; $b634
+	BRK					 ; $b635: 00
+	.db $07			; $b636
+	.db $6f			; $b637
+	.db $4f			; $b638
+	CMP #$ff				; $b639: C9 FF
+	BEQ $b677			   ; $b63b: F0 3A
+	STA $6e				 ; $b63d: 85 6E
+	BRK					 ; $b63f: 00
+	.db $2b			; $b640
+	.db $33			; $b641
+	CMP #$08				; $b642: C9 08
+	BCC $b662			   ; $b644: 90 1C
+	LDA $6e				 ; $b646: A5 6E
+	STA $f9				 ; $b648: 85 F9
+	BRK					 ; $b64a: 00
+	TAX					 ; $b64b: AA
+	.db $2b			; $b64c
+	JMP $b632			   ; $b64d: 4C 32 B6
+	BRK					 ; $b650: 00
+	.db $d2			; $b651
+	.db $2b			; $b652
+	LDA #$00				; $b653: A9 00
+	STA $6e				 ; $b655: 85 6E
+	LDA #$08				; $b657: A9 08
+	BRK					 ; $b659: 00
+	AND $a50f			   ; $b65a: 2D 0F A5
+	.db $72			; $b65d
+	STA $6e				 ; $b65e: 85 6E
+	STA $f8				 ; $b660: 85 F8
+	BRK					 ; $b662: 00
+	.db $9f			; $b663
+	.db $2b			; $b664
+	LDX $6e				 ; $b665: A6 6E
+	BRK					 ; $b667: 00
+	ORA ($6f,X)			 ; $b668: 01 6F
+	LSR					 ; $b66a: 4A
+	CMP #$ff				; $b66b: C9 FF
+	BNE $b6a1			   ; $b66d: D0 32
+	BRK					 ; $b66f: 00
+	.db $62			; $b670
+	.db $23			; $b671
+	PHP					 ; $b672: 08
+	CMP #$01				; $b673: C9 01
+	BNE $b62a			   ; $b675: D0 B3
+	BIT $6279			   ; $b677: 2C 79 62
+	BPL $b682			   ; $b67a: 10 06
+	JSR $b7d6			   ; $b67c: 20 D6 B7
+	JSR $b7a6			   ; $b67f: 20 A6 B7
+	LDA $627a			   ; $b682: AD 7A 62
+	STA $fa				 ; $b685: 85 FA
+	BRK					 ; $b687: 00
+	.db $62			; $b688
+	.db $33			; $b689
+	CMP #$01				; $b68a: C9 01
+	BNE $b697			   ; $b68c: D0 09
+	LDA #$00				; $b68e: A9 00
+	STA $f9				 ; $b690: 85 F9
+	BRK					 ; $b692: 00
+	LDA ($2b,X)			 ; $b693: A1 2B
+	SEC					 ; $b695: 38
+	RTS					 ; $b696: 60
+	JSR $b71e			   ; $b697: 20 1E B7
+	STA $f9				 ; $b69a: 85 F9
+	BRK					 ; $b69c: 00
+	LDX #$2b				; $b69d: A2 2B
+	SEC					 ; $b69f: 38
+	RTS					 ; $b6a0: 60
+	STA $6f				 ; $b6a1: 85 6F
+	BRK					 ; $b6a3: 00
+	BIT $0033			   ; $b6a4: 2C 33 00
+	ASL $900f			   ; $b6a7: 0E 0F 90
+	ASL tmp0				; $b6aa: 06 00
+	.db $d2			; $b6ac
+	.db $2b			; $b6ad
+	JMP $b662			   ; $b6ae: 4C 62 B6
+	BRK					 ; $b6b1: 00
+	.db $0c			; $b6b2
+	.db $0f			; $b6b3
+	BCC $b6c9			   ; $b6b4: 90 13
+	LDA $73				 ; $b6b6: A5 73
+	BPL $b6c9			   ; $b6b8: 10 0F
+	BRK					 ; $b6ba: 00
+	.db $12			; $b6bb
+	.db $fb			; $b6bc
+	BRK					 ; $b6bd: 00
+	.db $dc			; $b6be
+	.db $2b			; $b6bf
+	BRK					 ; $b6c0: 00
+	.db $07			; $b6c1
+	.db $9f			; $b6c2
+	BRK					 ; $b6c3: 00
+	ORA #$9f				; $b6c4: 09 9F
+	JMP $b662			   ; $b6c6: 4C 62 B6
+	STA $fa				 ; $b6c9: 85 FA
+	STA $fb				 ; $b6cb: 85 FB
+	BRK					 ; $b6cd: 00
+	BMI $b703			   ; $b6ce: 30 33
+	LDA $627a			   ; $b6d0: AD 7A 62
+	STA $6f				 ; $b6d3: 85 6F
+	BRK					 ; $b6d5: 00
+	ROL $a933			   ; $b6d6: 2E 33 A9
+	.db $07			; $b6d9
+	STA $6f				 ; $b6da: 85 6F
+	BRK					 ; $b6dc: 00
+	LSR $33				 ; $b6dd: 46 33
+	BCS $b6f4			   ; $b6df: B0 13
+	LDA $6e				 ; $b6e1: A5 6E
+	STA $fa				 ; $b6e3: 85 FA
+	JSR $b71e			   ; $b6e5: 20 1E B7
+	STA $f9				 ; $b6e8: 85 F9
+	LDA $627a			   ; $b6ea: AD 7A 62
+	STA $fc				 ; $b6ed: 85 FC
+	LDA #$a4				; $b6ef: A9 A4
+	JMP $b5fe			   ; $b6f1: 4C FE B5
+	LDA #$06				; $b6f4: A9 06
+	STA $6f				 ; $b6f6: 85 6F
+	BRK					 ; $b6f8: 00
+	LSR $33				 ; $b6f9: 46 33
+	BCC $b710			   ; $b6fb: 90 13
+	LDA $6e				 ; $b6fd: A5 6E
+	STA $fa				 ; $b6ff: 85 FA
+	JSR $b71e			   ; $b701: 20 1E B7
+	STA $f9				 ; $b704: 85 F9
+	LDA $627a			   ; $b706: AD 7A 62
+	STA $fc				 ; $b709: 85 FC
+	LDA #$a5				; $b70b: A9 A5
+	JMP $b5fe			   ; $b70d: 4C FE B5
+	LDA $6e				 ; $b710: A5 6E
+	STA $f9				 ; $b712: 85 F9
+	LDA $627a			   ; $b714: AD 7A 62
+	STA $fb				 ; $b717: 85 FB
+	LDA #$a3				; $b719: A9 A3
+	JMP $b5fe			   ; $b71b: 4C FE B5
+	LDA #$03				; $b71e: A9 03
+	BNE $b724			   ; $b720: D0 02
+	LDA #$01				; $b722: A9 01
+	LDX #$00				; $b724: A2 00
+	STX $6e				 ; $b726: 86 6E
+	BRK					 ; $b728: 00
+	AND $a50f			   ; $b729: 2D 0F A5
+	.db $72			; $b72c
+	RTS					 ; $b72d: 60
+	BRK					 ; $b72e: 00
+	.db $13			; $b72f
+	.db $87			; $b730
+	STA tmp1				; $b731: 85 01
+	LDA #$00				; $b733: A9 00
+	STA tmp2				; $b735: 85 02
+	LDA $bdbe			   ; $b737: AD BE BD
+	STA tmp3				; $b73a: 85 03
+	LDA $bdbf			   ; $b73c: AD BF BD
+	STA ptr0_lo			 ; $b73f: 85 04
+	LDY #$00				; $b741: A0 00
+	LDA (tmp3),Y			; $b743: B1 03
+	INY					 ; $b745: C8
+	CMP $63				 ; $b746: C5 63
+	BCC $b75f			   ; $b748: 90 15
+	BNE $b752			   ; $b74a: D0 06
+	LDA (tmp3),Y			; $b74c: B1 03
+	CMP $64				 ; $b74e: C5 64
+	BCC $b75f			   ; $b750: 90 0D
+	LDA tmp1				; $b752: A5 01
+	STA $6278			   ; $b754: 8D 78 62
+	LDA tmp2				; $b757: A5 02
+	ORA #$80				; $b759: 09 80
+	STA $6279			   ; $b75b: 8D 79 62
+	RTS					 ; $b75e: 60
+	INY					 ; $b75f: C8
+	CLC					 ; $b760: 18
+	LDA (tmp3),Y			; $b761: B1 03
+	ADC tmp1				; $b763: 65 01
+	STA tmp1				; $b765: 85 01
+	BCC $b76b			   ; $b767: 90 02
+	INC tmp2				; $b769: E6 02
+	CLC					 ; $b76b: 18
+	LDA tmp3				; $b76c: A5 03
+	ADC #$03				; $b76e: 69 03
+	STA tmp3				; $b770: 85 03
+	BCC $b776			   ; $b772: 90 02
+	INC ptr0_lo			 ; $b774: E6 04
+	JMP $b741			   ; $b776: 4C 41 B7
+	LDA $6279			   ; $b779: AD 79 62
+	LSR					 ; $b77c: 4A
+	LDA $6278			   ; $b77d: AD 78 62
+	TAY					 ; $b780: A8
+	ROR					 ; $b781: 6A
+	LSR					 ; $b782: 4A
+	LSR					 ; $b783: 4A
+	TAX					 ; $b784: AA
+	TYA					 ; $b785: 98
+	AND #$07				; $b786: 29 07
+	TAY					 ; $b788: A8
+	LDA #$00				; $b789: A9 00
+	SEC					 ; $b78b: 38
+	ROR					 ; $b78c: 6A
+	DEY					 ; $b78d: 88
+	BPL $b78c			   ; $b78e: 10 FC
+	RTS					 ; $b790: 60
+	JSR $b779			   ; $b791: 20 79 B7
+	CLC					 ; $b794: 18
+	AND $625d,X			 ; $b795: 3D 5D 62
+	BEQ $b79b			   ; $b798: F0 01
+	SEC					 ; $b79a: 38
+	RTS					 ; $b79b: 60
+	JSR $b779			   ; $b79c: 20 79 B7
+	ORA $625d,X			 ; $b79f: 1D 5D 62
+	STA $625d,X			 ; $b7a2: 9D 5D 62
+	RTS					 ; $b7a5: 60
+	JSR $b779			   ; $b7a6: 20 79 B7
+	EOR #$ff				; $b7a9: 49 FF
+	AND $625d,X			 ; $b7ab: 3D 5D 62
+	STA $625d,X			 ; $b7ae: 9D 5D 62
+	RTS					 ; $b7b1: 60
+	LDA $bdc0			   ; $b7b2: AD C0 BD
+	STA tmp3				; $b7b5: 85 03
+	LDA $bdc1			   ; $b7b7: AD C1 BD
+	STA ptr0_lo			 ; $b7ba: 85 04
+	LDA $6279			   ; $b7bc: AD 79 62
+	LSR					 ; $b7bf: 4A
+	BCC $b7c4			   ; $b7c0: 90 02
+	INC ptr0_lo			 ; $b7c2: E6 04
+	LDY $6278			   ; $b7c4: AC 78 62
+	LDA (tmp3),Y			; $b7c7: B1 03
+	RTS					 ; $b7c9: 60
+	LDA $0572			   ; $b7ca: AD 72 05
+	JSR $b7f2			   ; $b7cd: 20 F2 B7
+	BRK					 ; $b7d0: 00
+	.db $8f			; $b7d1
+	.db $fb			; $b7d2
+	JMP $ff74			   ; $b7d3: 4C 74 FF
+	LDX #$00				; $b7d6: A2 00
+	LDA $6f40,X			 ; $b7d8: BD 40 6F
+	AND #$1f				; $b7db: 29 1F
+	CMP #$04				; $b7dd: C9 04
+	BNE $b7e6			   ; $b7df: D0 05
+	CPX $0572			   ; $b7e1: EC 72 05
+	BNE $b7eb			   ; $b7e4: D0 05
+	INX					 ; $b7e6: E8
+	CPX #$20				; $b7e7: E0 20
+	BCC $b7d8			   ; $b7e9: 90 ED
+	TXA					 ; $b7eb: 8A
+	JSR $b7f2			   ; $b7ec: 20 F2 B7
+	JMP $ff74			   ; $b7ef: 4C 74 FF
+	LDX $44				 ; $b7f2: A6 44
+	LDY $45				 ; $b7f4: A4 45
+	STA tmp0				; $b7f6: 85 00
+	LDA $7140			   ; $b7f8: AD 40 71
+	AND #$e0				; $b7fb: 29 E0
+	ORA tmp0				; $b7fd: 05 00
+	STA $7140			   ; $b7ff: 8D 40 71
+	AND #$1f				; $b802: 29 1F
+	JMP $9e8c			   ; $b804: 4C 8C 9E
+	LDA #$52				; $b807: A9 52
+	JSR $b3ea			   ; $b809: 20 EA B3
+	JSR $b791			   ; $b80c: 20 91 B7
+	BCC $b819			   ; $b80f: 90 08
+	LDA #$01				; $b811: A9 01
+	JSR $b731			   ; $b813: 20 31 B7
+	JSR $b79c			   ; $b816: 20 9C B7
+	CLC					 ; $b819: 18
+	RTS					 ; $b81a: 60
+	LDA #$6b				; $b81b: A9 6B
+	JSR $b3ea			   ; $b81d: 20 EA B3
+	JSR $b791			   ; $b820: 20 91 B7
+	BCC $b82e			   ; $b823: 90 09
+	BRK					 ; $b825: 00
+	.db $02			; $b826
+	.db $cb			; $b827
+	PHP					 ; $b828: 08
+	LDA #$19				; $b829: A9 19
+	JSR $b7f2			   ; $b82b: 20 F2 B7
+	CLC					 ; $b82e: 18
+	RTS					 ; $b82f: 60
+	BRK					 ; $b830: 00
+	.db $a7			; $b831
+	.db $2b			; $b832
+	BRK					 ; $b833: 00
+	STX $2b,Y			   ; $b834: 96 2B
+	BRK					 ; $b836: 00
+	.db $07			; $b837
+	.db $6f			; $b838
+	PHA					 ; $b839: 48
+	BNE $b87a			   ; $b83a: D0 3E
+	BRK					 ; $b83c: 00
+	.db $02			; $b83d
+	.db $db			; $b83e
+	.db $f7			; $b83f
+	LDA #$03				; $b840: A9 03
+	JSR $b7f2			   ; $b842: 20 F2 B7
+	JSR $ff74			   ; $b845: 20 74 FF
+	LDA #$00				; $b848: A9 00
+	JSR $b731			   ; $b84a: 20 31 B7
+	JSR $b7a6			   ; $b84d: 20 A6 B7
+	LDA #$6b				; $b850: A9 6B
+	STA $6f				 ; $b852: 85 6F
+	BRK					 ; $b854: 00
+	ROR $33				 ; $b855: 66 33
+	BCC $b87a			   ; $b857: 90 21
+	STA $6e				 ; $b859: 85 6E
+	BRK					 ; $b85b: 00
+	AND ($33),Y			 ; $b85c: 31 33
+	STA $6f				 ; $b85e: 85 6F
+	BRK					 ; $b860: 00
+	BMI $b896			   ; $b861: 30 33
+	BRK					 ; $b863: 00
+	.db $7b			; $b864
+	.db $3b			; $b865
+	CLC					 ; $b866: 18
+	RTS					 ; $b867: 60
+	BRK					 ; $b868: 00
+	STA $a92b,Y			 ; $b869: 99 2B A9
+	BRK					 ; $b86c: 00
+	BEQ $b874			   ; $b86d: F0 05
+	BRK					 ; $b86f: 00
+	TXS					 ; $b870: 9A
+	.db $2b			; $b871
+	LDA #$1b				; $b872: A9 1B
+	BRK					 ; $b874: 00
+	ORA ($8f,X)			 ; $b875: 01 8F
+	JSR $a1c9			   ; $b877: 20 C9 A1
+	SEC					 ; $b87a: 38
+	RTS					 ; $b87b: 60
+	LDA $3d				 ; $b87c: A5 3D
+	BNE $b8aa			   ; $b87e: D0 2A
+	BRK					 ; $b880: 00
+	.db $02			; $b881
+	.db $eb			; $b882
+	.db $04			; $b883
+	BEQ $b8aa			   ; $b884: F0 24
+	LDX #$14				; $b886: A2 14
+	LDY #$0b				; $b888: A0 0B
+	JSR $d3e6			   ; $b88a: 20 E6 D3
+	AND #$1f				; $b88d: 29 1F
+	CMP #$03				; $b88f: C9 03
+	BEQ $b8aa			   ; $b891: F0 17
+	BRK					 ; $b893: 00
+	STA $2b,X			   ; $b894: 95 2B
+	BRK					 ; $b896: 00
+	.db $07			; $b897
+	.db $6f			; $b898
+	PHA					 ; $b899: 48
+	BNE $b87a			   ; $b89a: D0 DE
+	BRK					 ; $b89c: 00
+	.db $7a			; $b89d
+	.db $3b			; $b89e
+	LDX #$14				; $b89f: A2 14
+	LDY #$0b				; $b8a1: A0 0B
+	LDA #$03				; $b8a3: A9 03
+	JSR $b7f6			   ; $b8a5: 20 F6 B7
+	CLC					 ; $b8a8: 18
+	RTS					 ; $b8a9: 60
+	JMP $b4d3			   ; $b8aa: 4C D3 B4
+	LDA $3d				 ; $b8ad: A5 3D
+	CMP #$01				; $b8af: C9 01
+	BNE $b8aa			   ; $b8b1: D0 F7
+	LDX #$0e				; $b8b3: A2 0E
+	LDY #$04				; $b8b5: A0 04
+	JSR $d3e6			   ; $b8b7: 20 E6 D3
+	AND #$1f				; $b8ba: 29 1F
+	CMP #$03				; $b8bc: C9 03
+	BEQ $b8aa			   ; $b8be: F0 EA
+	BRK					 ; $b8c0: 00
+	PHP					 ; $b8c1: 08
+	.db $3b			; $b8c2
+	BRK					 ; $b8c3: 00
+	.db $07			; $b8c4
+	.db $6f			; $b8c5
+	PHA					 ; $b8c6: 48
+	BNE $b87a			   ; $b8c7: D0 B1
+	JSR $ba41			   ; $b8c9: 20 41 BA
+	BRK					 ; $b8cc: 00
+	.db $04			; $b8cd
+	.db $cb			; $b8ce
+	.db $02			; $b8cf
+	BRK					 ; $b8d0: 00
+	BCC $b90e			   ; $b8d1: 90 3B
+	CLC					 ; $b8d3: 18
+	RTS					 ; $b8d4: 60
+	BRK					 ; $b8d5: 00
+	.db $a7			; $b8d6
+	.db $2b			; $b8d7
+	BRK					 ; $b8d8: 00
+	BIT $382f			   ; $b8d9: 2C 2F 38
+	RTS					 ; $b8dc: 60
+	BRK					 ; $b8dd: 00
+	.db $0b			; $b8de
+	.db $eb			; $b8df
+	.db $02			; $b8e0
+	BEQ $b948			   ; $b8e1: F0 65
+	LDA #$75				; $b8e3: A9 75
+	BRK					 ; $b8e5: 00
+	ROR $73				 ; $b8e6: 66 73
+	BCS $b948			   ; $b8e8: B0 5E
+	BRK					 ; $b8ea: 00
+	PHP					 ; $b8eb: 08
+	.db $eb			; $b8ec
+	.db $02			; $b8ed
+	BNE $b948			   ; $b8ee: D0 58
+	LDA #$75				; $b8f0: A9 75
+	JSR $b59e			   ; $b8f2: 20 9E B5
+	CLC					 ; $b8f5: 18
+	RTS					 ; $b8f6: 60
+	BRK					 ; $b8f7: 00
+	CLC					 ; $b8f8: 18
+	.db $eb			; $b8f9
+	ORA ($d0,X)			 ; $b8fa: 01 D0
+	PHA					 ; $b8fc: 48
+	LDA #$7e				; $b8fd: A9 7E
+	JSR $b5a3			   ; $b8ff: 20 A3 B5
+	BCS $b908			   ; $b902: B0 04
+	BRK					 ; $b904: 00
+	CLC					 ; $b905: 18
+	.db $cb			; $b906
+	ORA ($18,X)			 ; $b907: 01 18
+	RTS					 ; $b909: 60
+	LDA #$6f				; $b90a: A9 6F
+	JSR $b5a3			   ; $b90c: 20 A3 B5
+	BCS $b915			   ; $b90f: B0 04
+	BRK					 ; $b911: 00
+	CLC					 ; $b912: 18
+	.db $cb			; $b913
+	.db $80			; $b914
+	CLC					 ; $b915: 18
+	RTS					 ; $b916: 60
+	LDA $3d				 ; $b917: A5 3D
+	BNE $b948			   ; $b919: D0 2D
+	BRK					 ; $b91b: 00
+	.db $9e			; $b91c
+	.db $3b			; $b91d
+	LDA $6277			   ; $b91e: AD 77 62
+	AND #$08				; $b921: 29 08
+	BNE $b945			   ; $b923: D0 20
+	LDA #$62				; $b925: A9 62
+	JSR $b5a3			   ; $b927: 20 A3 B5
+	BCS $b915			   ; $b92a: B0 E9
+	LDA #$08				; $b92c: A9 08
+	BNE $b9a9			   ; $b92e: D0 79
+	BRK					 ; $b930: 00
+	.db $a7			; $b931
+	.db $2b			; $b932
+	LDA $6277			   ; $b933: AD 77 62
+	AND #$10				; $b936: 29 10
+	BNE $b945			   ; $b938: D0 0B
+	LDA #$6a				; $b93a: A9 6A
+	JSR $b5a3			   ; $b93c: 20 A3 B5
+	BCS $b915			   ; $b93f: B0 D4
+	LDA #$10				; $b941: A9 10
+	BNE $b9a9			   ; $b943: D0 64
+	JMP $b4d6			   ; $b945: 4C D6 B4
+	JMP $b4d3			   ; $b948: 4C D3 B4
+	LDA $3d				 ; $b94b: A5 3D
+	BNE $b948			   ; $b94d: D0 F9
+	BRK					 ; $b94f: 00
+	.db $9e			; $b950
+	.db $3b			; $b951
+	LDA $6277			   ; $b952: AD 77 62
+	AND #$04				; $b955: 29 04
+	BNE $b945			   ; $b957: D0 EC
+	LDA #$26				; $b959: A9 26
+	JSR $b5a3			   ; $b95b: 20 A3 B5
+	BCS $b9af			   ; $b95e: B0 4F
+	LDA #$04				; $b960: A9 04
+	BNE $b9a3			   ; $b962: D0 3F
+	LDA $3d				 ; $b964: A5 3D
+	BNE $b948			   ; $b966: D0 E0
+	BRK					 ; $b968: 00
+	.db $9e			; $b969
+	.db $3b			; $b96a
+	LDA $6277			   ; $b96b: AD 77 62
+	AND #$02				; $b96e: 29 02
+	BNE $b945			   ; $b970: D0 D3
+	LDA #$53				; $b972: A9 53
+	JSR $b5a3			   ; $b974: 20 A3 B5
+	BCS $b9af			   ; $b977: B0 36
+	LDA #$02				; $b979: A9 02
+	BNE $b9a3			   ; $b97b: D0 26
+	LDA $3d				 ; $b97d: A5 3D
+	BNE $b948			   ; $b97f: D0 C7
+	BRK					 ; $b981: 00
+	.db $9e			; $b982
+	.db $3b			; $b983
+	LDA $6277			   ; $b984: AD 77 62
+	AND #$01				; $b987: 29 01
+	BNE $b945			   ; $b989: D0 BA
+	LDA #$00				; $b98b: A9 00
+	STA $71				 ; $b98d: 85 71
+	STA $70				 ; $b98f: 85 70
+	STA $fe				 ; $b991: 85 FE
+	STA $ff				 ; $b993: 85 FF
+	LDA #$32				; $b995: A9 32
+	STA $6f				 ; $b997: 85 6F
+	STA $fd				 ; $b999: 85 FD
+	BRK					 ; $b99b: 00
+	.db $4b			; $b99c
+	.db $33			; $b99d
+	BRK					 ; $b99e: 00
+	.db $c3			; $b99f
+	.db $1b			; $b9a0
+	LDA #$01				; $b9a1: A9 01
+	PHA					 ; $b9a3: 48
+	BRK					 ; $b9a4: 00
+	.db $13			; $b9a5
+	.db $cb			; $b9a6
+	PHP					 ; $b9a7: 08
+	PLA					 ; $b9a8: 68
+	ORA $6277			   ; $b9a9: 0D 77 62
+	STA $6277			   ; $b9ac: 8D 77 62
+	CLC					 ; $b9af: 18
+	RTS					 ; $b9b0: 60
+	BRK					 ; $b9b1: 00
+	.db $a7			; $b9b2
+	.db $2b			; $b9b3
+	BRK					 ; $b9b4: 00
+	.db $0f			; $b9b5
+	.db $eb			; $b9b6
+	.db $02			; $b9b7
+	BEQ $b945			   ; $b9b8: F0 8B
+	LDA #$1b				; $b9ba: A9 1B
+	LDX #$0a				; $b9bc: A2 0A
+	LDY #$13				; $b9be: A0 13
+	JSR $9e8c			   ; $b9c0: 20 8C 9E
+	LDA #$26				; $b9c3: A9 26
+	LDX #$1f				; $b9c5: A2 1F
+	LDY #$12				; $b9c7: A0 12
+	JSR $9e8c			   ; $b9c9: 20 8C 9E
+	BRK					 ; $b9cc: 00
+	.db $9f			; $b9cd
+	.db $3b			; $b9ce
+	CLC					 ; $b9cf: 18
+	RTS					 ; $b9d0: 60
+	BRK					 ; $b9d1: 00
+	.db $a7			; $b9d2
+	.db $2b			; $b9d3
+	LDA $615a			   ; $b9d4: AD 5A 61
+	CMP #$04				; $b9d7: C9 04
+	BNE $b970			   ; $b9d9: D0 95
+	LDA $6277			   ; $b9db: AD 77 62
+	AND #$20				; $b9de: 29 20
+	BNE $b970			   ; $b9e0: D0 8E
+	LDA #$65				; $b9e2: A9 65
+	JSR $b5a3			   ; $b9e4: 20 A3 B5
+	BCS $b9af			   ; $b9e7: B0 C6
+	LDA #$20				; $b9e9: A9 20
+	BNE $b9a9			   ; $b9eb: D0 BC
+	LDA $615a			   ; $b9ed: AD 5A 61
+	CMP #$04				; $b9f0: C9 04
+	BEQ $b9f9			   ; $b9f2: F0 05
+	LDA #$67				; $b9f4: A9 67
+	JMP $b3ea			   ; $b9f6: 4C EA B3
+	LDA #$67				; $b9f9: A9 67
+	JSR $b3ea			   ; $b9fb: 20 EA B3
+	BRK					 ; $b9fe: 00
+	.db $eb			; $b9ff
+	.db $3b			; $ba00
+	JMP $ba0e			   ; $ba01: 4C 0E BA
+	LDA $615a			   ; $ba04: AD 5A 61
+	CMP #$04				; $ba07: C9 04
+	BEQ $ba0e			   ; $ba09: F0 03
+	JMP $b4ce			   ; $ba0b: 4C CE B4
+	BRK					 ; $ba0e: 00
+	NOP					 ; $ba0f: EA
+	.db $3b			; $ba10
+	BRK					 ; $ba11: 00
+	.db $07			; $ba12
+	.db $6f			; $ba13
+	PHA					 ; $ba14: 48
+	BNE $ba3f			   ; $ba15: D0 28
+	JSR $d1f3			   ; $ba17: 20 F3 D1
+	LDX #$0b				; $ba1a: A2 0B
+	LDY #$12				; $ba1c: A0 12
+	JSR $d3e6			   ; $ba1e: 20 E6 D3
+	AND #$1f				; $ba21: 29 1F
+	CMP #$0a				; $ba23: C9 0A
+	BEQ $ba33			   ; $ba25: F0 0C
+	LDA #$6a				; $ba27: A9 6A
+	LDX #$0b				; $ba29: A2 0B
+	LDY #$12				; $ba2b: A0 12
+	JSR $9e8c			   ; $ba2d: 20 8C 9E
+	JMP $ba3c			   ; $ba30: 4C 3C BA
+	LDA #$71				; $ba33: A9 71
+	LDX #$0b				; $ba35: A2 0B
+	LDY #$12				; $ba37: A0 12
+	JSR $9e8c			   ; $ba39: 20 8C 9E
+	BRK					 ; $ba3c: 00
+	TXA					 ; $ba3d: 8A
+	.db $fb			; $ba3e
+	SEC					 ; $ba3f: 38
+	RTS					 ; $ba40: 60
+	LDA #$0c				; $ba41: A9 0C
+	STA tmp0				; $ba43: 85 00
+	LDX #$00				; $ba45: A2 00
+	DEC $0203,X			 ; $ba47: DE 03 02
+	DEC $0203,X			 ; $ba4a: DE 03 02
+	LDY $0201,X			 ; $ba4d: BC 01 02
+	LDA $bac8,Y			 ; $ba50: B9 C8 BA
+	STA $0201,X			 ; $ba53: 9D 01 02
+	INX					 ; $ba56: E8
+	INX					 ; $ba57: E8
+	INX					 ; $ba58: E8
+	INX					 ; $ba59: E8
+	CPX #$10				; $ba5a: E0 10
+	BNE $ba47			   ; $ba5c: D0 E9
+	LDX #$02				; $ba5e: A2 02
+	JSR $c90c			   ; $ba60: 20 0C C9
+	DEC tmp0				; $ba63: C6 00
+	BNE $ba45			   ; $ba65: D0 DE
+	LDX #$05				; $ba67: A2 05
+	JSR $c90c			   ; $ba69: 20 0C C9
+	LDA #$08				; $ba6c: A9 08
+	STA tmp0				; $ba6e: 85 00
+	LDX #$00				; $ba70: A2 00
+	INC $0203,X			 ; $ba72: FE 03 02
+	INC $0203,X			 ; $ba75: FE 03 02
+	INC $0203,X			 ; $ba78: FE 03 02
+	INC $0203,X			 ; $ba7b: FE 03 02
+	LDY $0201,X			 ; $ba7e: BC 01 02
+	LDA $bac8,Y			 ; $ba81: B9 C8 BA
+	STA $0201,X			 ; $ba84: 9D 01 02
+	INX					 ; $ba87: E8
+	INX					 ; $ba88: E8
+	INX					 ; $ba89: E8
+	INX					 ; $ba8a: E8
+	CPX #$10				; $ba8b: E0 10
+	BNE $ba72			   ; $ba8d: D0 E3
+	LDX #$02				; $ba8f: A2 02
+	JSR $c90c			   ; $ba91: 20 0C C9
+	DEC tmp0				; $ba94: C6 00
+	BNE $ba70			   ; $ba96: D0 D8
+	BRK					 ; $ba98: 00
+	LDA $a2fb			   ; $ba99: AD FB A2
+	ASL $04a0			   ; $ba9c: 0E A0 04
+	LDA #$03				; $ba9f: A9 03
+	JSR $b7f6			   ; $baa1: 20 F6 B7
+	LDY #$00				; $baa4: A0 00
+	JSR $8b2a			   ; $baa6: 20 2A 8B
+	LDA #$04				; $baa9: A9 04
+	STA tmp0				; $baab: 85 00
+	LDX #$00				; $baad: A2 00
+	DEC $0203,X			 ; $baaf: DE 03 02
+	DEC $0203,X			 ; $bab2: DE 03 02
+	LDY $0201,X			 ; $bab5: BC 01 02
+	LDA $bac8,Y			 ; $bab8: B9 C8 BA
+	STA $0201,X			 ; $babb: 9D 01 02
+	INX					 ; $babe: E8
+	INX					 ; $babf: E8
+	INX					 ; $bac0: E8
+	INX					 ; $bac1: E8
+	CPX #$10				; $bac2: E0 10
+	BNE $baaf			   ; $bac4: D0 E9
+	LDX #$02				; $bac6: A2 02
+	JSR $c90c			   ; $bac8: 20 0C C9
+	DEC tmp0				; $bacb: C6 00
+	BNE $baad			   ; $bacd: D0 DE
+	RTS					 ; $bacf: 60
+	.db $0c			; $bad0
+	ORA #$0d				; $bad1: 09 0D
+	ASL $0a08			   ; $bad3: 0E 08 0A
+	.db $0b			; $bad6
+	JSR $81ae			   ; $bad7: 20 AE 81
+	LDX $51				 ; $bada: A6 51
+	LDY $52				 ; $badc: A4 52
+	JSR $d251			   ; $bade: 20 51 D2
+	AND #$1f				; $bae1: 29 1F
+	TAX					 ; $bae3: AA
+	LDA $6f40,X			 ; $bae4: BD 40 6F
+	AND #$7f				; $bae7: 29 7F
+	RTS					 ; $bae9: 60
+	BIT $41				 ; $baea: 24 41
+	BPL $baf4			   ; $baec: 10 06
+	JSR $83d9			   ; $baee: 20 D9 83
+	JMP $baf7			   ; $baf1: 4C F7 BA
+	JSR $bad7			   ; $baf4: 20 D7 BA
+	CMP #$28				; $baf7: C9 28
+	BNE $bb1c			   ; $baf9: D0 21
+	BRK					 ; $bafb: 00
+	.db $07			; $bafc
+	.db $6f			; $bafd
+	.db $43			; $bafe
+	JSR $b71e			   ; $baff: 20 1E B7
+	STA $f9				 ; $bb02: 85 F9
+	JMP $bb52			   ; $bb04: 4C 52 BB
+	JSR $bad7			   ; $bb07: 20 D7 BA
+	JMP $bb10			   ; $bb0a: 4C 10 BB
+	JSR $83d9			   ; $bb0d: 20 D9 83
+	LDX #$00				; $bb10: A2 00
+	CMP $bbaa,X			 ; $bb12: DD AA BB
+	BEQ $bb1e			   ; $bb15: F0 07
+	INX					 ; $bb17: E8
+	CPX #$04				; $bb18: E0 04
+	BCC $bb12			   ; $bb1a: 90 F6
+	CLC					 ; $bb1c: 18
+	RTS					 ; $bb1d: 60
+	TXA					 ; $bb1e: 8A
+	ASL					 ; $bb1f: 0A
+	TAX					 ; $bb20: AA
+	LDA $bbae,X			 ; $bb21: BD AE BB
+	STA tmp0				; $bb24: 85 00
+	LDA $bbaf,X			 ; $bb26: BD AF BB
+	STA tmp1				; $bb29: 85 01
+	JMP ($0000)			 ; $bb2b: 6C 00 00
+	BRK					 ; $bb2e: 00
+	LDA $3b,X			   ; $bb2f: B5 3B
+	JSR $bc7a			   ; $bb31: 20 7A BC
+	BCC $bb37			   ; $bb34: 90 01
+	RTS					 ; $bb36: 60
+	LDA #$09				; $bb37: A9 09
+	BNE $bb9b			   ; $bb39: D0 60
+	BRK					 ; $bb3b: 00
+	.db $9e			; $bb3c
+	.db $3b			; $bb3d
+	JSR $bc7a			   ; $bb3e: 20 7A BC
+	BCC $bb44			   ; $bb41: 90 01
+	RTS					 ; $bb43: 60
+	LDA #$a6				; $bb44: A9 A6
+	BNE $bba6			   ; $bb46: D0 5E
+	LDA $63				 ; $bb48: A5 63
+	CMP #$37				; $bb4a: C9 37
+	BNE $bb1c			   ; $bb4c: D0 CE
+	LDA #$ec				; $bb4e: A9 EC
+	BNE $bb9b			   ; $bb50: D0 49
+	LDA $3d				 ; $bb52: A5 3D
+	CMP #$02				; $bb54: C9 02
+	BEQ $bba2			   ; $bb56: F0 4A
+	BRK					 ; $bb58: 00
+	CLV					 ; $bb59: B8
+	.db $3b			; $bb5a
+	LDY #$02				; $bb5b: A0 02
+	BIT $41				 ; $bb5d: 24 41
+	BPL $bb63			   ; $bb5f: 10 02
+	LDY #$00				; $bb61: A0 00
+	JSR $81ae			   ; $bb63: 20 AE 81
+	LDA $bbb6,Y			 ; $bb66: B9 B6 BB
+	STA tmp0				; $bb69: 85 00
+	LDA $bbb7,Y			 ; $bb6b: B9 B7 BB
+	STA tmp1				; $bb6e: 85 01
+	LDY #$00				; $bb70: A0 00
+	LDA (tmp0),Y			; $bb72: B1 00
+	INY					 ; $bb74: C8
+	CMP #$ff				; $bb75: C9 FF
+	BEQ $bba2			   ; $bb77: F0 29
+	CMP $51				 ; $bb79: C5 51
+	BNE $bb83			   ; $bb7b: D0 06
+	LDA (tmp0),Y			; $bb7d: B1 00
+	CMP $52				 ; $bb7f: C5 52
+	BEQ $bb87			   ; $bb81: F0 04
+	INY					 ; $bb83: C8
+	INY					 ; $bb84: C8
+	BNE $bb72			   ; $bb85: D0 EB
+	INY					 ; $bb87: C8
+	LDA (tmp0),Y			; $bb88: B1 00
+	BNE $bb9b			   ; $bb8a: D0 0F
+	TAX					 ; $bb8c: AA
+	LDA $615a			   ; $bb8d: AD 5A 61
+	CMP #$02				; $bb90: C9 02
+	BCC $bb98			   ; $bb92: 90 04
+	BEQ $bb97			   ; $bb94: F0 01
+	INX					 ; $bb96: E8
+	INX					 ; $bb97: E8
+	LDA $bbe6,X			 ; $bb98: BD E6 BB
+	LDX #$03				; $bb9b: A2 03
+	BRK					 ; $bb9d: 00
+	.db $04			; $bb9e
+	.db $6f			; $bb9f
+	SEC					 ; $bba0: 38
+	RTS					 ; $bba1: 60
+	LDA #$1b				; $bba2: A9 1B
+	BNE $bb9b			   ; $bba4: D0 F5
+	LDX #$02				; $bba6: A2 02
+	BNE $bb9d			   ; $bba8: D0 F3
+	.db $2b			; $bbaa
+	ROL					 ; $bbab: 2A
+	PLP					 ; $bbac: 28
+	BMI $bbdd			   ; $bbad: 30 2E
+	.db $bb			; $bbaf
+	.db $3b			; $bbb0
+	.db $bb			; $bbb1
+	.db $52			; $bbb2
+	.db $bb			; $bbb3
+	PHA					 ; $bbb4: 48
+	.db $bb			; $bbb5
+	TSX					 ; $bbb6: BA
+	.db $bb			; $bbb7
+	DEC $bb,X			   ; $bbb8: D6 BB
+	ASL $0f,X			   ; $bbba: 16 0F
+	BRK					 ; $bbbc: 00
+	.db $0c			; $bbbd
+	ORA #$d1				; $bbbe: 09 D1
+	.db $07			; $bbc0
+	.db $2f			; $bbc1
+	.db $d2			; $bbc2
+	ORA $09				 ; $bbc3: 05 09
+	.db $d3			; $bbc5
+	ASL $d30a,X			 ; $bbc6: 1E 0A D3
+	.db $0c			; $bbc9
+	.db $12			; $bbca
+	CMP $08,X			   ; $bbcb: D5 08
+	ORA ($d6,X)			 ; $bbcd: 01 D6
+	ASL $d70f			   ; $bbcf: 0E 0F D7
+	.db $13			; $bbd2
+	ORA $d8				 ; $bbd3: 05 D8
+	.db $ff			; $bbd5
+	LDX $2f				 ; $bbd6: A6 2F
+	CMP $626c,Y			 ; $bbd8: D9 6C 62
+	.db $da			; $bbdb
+	AND $3b,X			   ; $bbdc: 35 3B
+	.db $db			; $bbde
+	.db $9e			; $bbdf
+	ASL $dc,X			   ; $bbe0: 16 DC
+	SEC					 ; $bbe2: 38
+	.db $cb			; $bbe3
+	INC $d0ff,X			 ; $bbe4: FE FF D0
+	.db $d4			; $bbe7
+	STA ($ad),Y			 ; $bbe8: 91 AD
+	RTI					 ; $bbea: 40
+	ADC ($29),Y			 ; $bbeb: 71 29
+	.db $1f			; $bbed
+	TAX					 ; $bbee: AA
+	LDA $6f40,X			 ; $bbef: BD 40 6F
+	CMP #$04				; $bbf2: C9 04
+	BNE $bc1c			   ; $bbf4: D0 26
+	JSR $b72e			   ; $bbf6: 20 2E B7
+	JSR $b791			   ; $bbf9: 20 91 B7
+	BCS $bc1c			   ; $bbfc: B0 1E
+	JSR $b7b2			   ; $bbfe: 20 B2 B7
+	TAX					 ; $bc01: AA
+	BPL $bc18			   ; $bc02: 10 14
+	LDY $bc34			   ; $bc04: AC 34 BC
+	CMP $bc34,Y			 ; $bc07: D9 34 BC
+	BEQ $bc13			   ; $bc0a: F0 07
+	DEY					 ; $bc0c: 88
+	BPL $bc07			   ; $bc0d: 10 F8
+	LDA #$02				; $bc0f: A9 02
+	CLC					 ; $bc11: 18
+	RTS					 ; $bc12: 60
+	LDA $bc4c,Y			 ; $bc13: B9 4C BC
+	CLC					 ; $bc16: 18
+	RTS					 ; $bc17: 60
+	LDA #$01				; $bc18: A9 01
+	CLC					 ; $bc1a: 18
+	RTS					 ; $bc1b: 60
+	SEC					 ; $bc1c: 38
+	RTS					 ; $bc1d: 60
+	STA $51				 ; $bc1e: 85 51
+	BRK					 ; $bc20: 00
+	ASL $5f				 ; $bc21: 06 5F
+	TAX					 ; $bc23: AA
+	BEQ $bc30			   ; $bc24: F0 0A
+	LDA $61da,X			 ; $bc26: BD DA 61
+	CMP $51				 ; $bc29: C5 51
+	BEQ $bc32			   ; $bc2b: F0 05
+	DEX					 ; $bc2d: CA
+	BNE $bc26			   ; $bc2e: D0 F6
+	CLC					 ; $bc30: 18
+	RTS					 ; $bc31: 60
+	SEC					 ; $bc32: 38
+	RTS					 ; $bc33: 60
+	PHP					 ; $bc34: 08
+	.db $ff			; $bc35
+	INC $effd,X			 ; $bc36: FE FD EF
+	INC $e2e3			   ; $bc39: EE E3 E2
+	CPX #$ce				; $bc3c: E0 CE
+	LDY $68,X			   ; $bc3e: B4 68
+	CLV					 ; $bc40: B8
+	.db $6f			; $bc41
+	CLV					 ; $bc42: B8
+	.db $07			; $bc43
+	CLV					 ; $bc44: B8
+	.db $1b			; $bc45
+	CLV					 ; $bc46: B8
+	SBC $f7b9			   ; $bc47: ED B9 F7
+	CLV					 ; $bc4a: B8
+	ASL					 ; $bc4b: 0A
+	LDA $0300,Y			 ; $bc4c: B9 00 03
+	.db $03			; $bc4f
+	ORA (tmp1,X)			; $bc50: 01 01
+	ORA (tmp1,X)			; $bc52: 01 01
+	ORA ($0c,X)			 ; $bc54: 01 0C
+	INC $eced			   ; $bc56: EE ED EC
+	NOP					 ; $bc59: EA
+	SBC #$e8				; $bc5a: E9 E8
+	.db $e7			; $bc5c
+	INC $e5				 ; $bc5d: E6 E5
+	CPX $e1				 ; $bc5f: E4 E1
+	SBC ($30),Y			 ; $bc61: F1 30
+	CLV					 ; $bc63: B8
+	.db $7c			; $bc64
+	CLV					 ; $bc65: B8
+	LDA $d5b8			   ; $bc66: AD B8 D5
+	CLV					 ; $bc69: B8
+	.db $17			; $bc6a
+	LDA $b8dd,Y			 ; $bc6b: B9 DD B8
+	.db $4b			; $bc6e
+	LDA $b964,Y			 ; $bc6f: B9 64 B9
+	ADC $b1b9,X			 ; $bc72: 7D B9 B1
+	LDA $b930,Y			 ; $bc75: B9 30 B9
+	CMP ($b9),Y			 ; $bc78: D1 B9
+	JSR $bcaa			   ; $bc7a: 20 AA BC
+	LDX #$00				; $bc7d: A2 00
+	LDA $bced,X			 ; $bc7f: BD ED BC
+	CMP #$ff				; $bc82: C9 FF
+	BEQ $bca8			   ; $bc84: F0 22
+	CMP $63				 ; $bc86: C5 63
+	BNE $bc9f			   ; $bc88: D0 15
+	LDA $bcee,X			 ; $bc8a: BD EE BC
+	CMP $64				 ; $bc8d: C5 64
+	BNE $bc9f			   ; $bc8f: D0 0E
+	LDA $bcef,X			 ; $bc91: BD EF BC
+	CMP tmp0				; $bc94: C5 00
+	BNE $bc9f			   ; $bc96: D0 07
+	LDA $bcf0,X			 ; $bc98: BD F0 BC
+	CMP tmp1				; $bc9b: C5 01
+	BEQ $bcc6			   ; $bc9d: F0 27
+	INX					 ; $bc9f: E8
+	INX					 ; $bca0: E8
+	INX					 ; $bca1: E8
+	INX					 ; $bca2: E8
+	INX					 ; $bca3: E8
+	INX					 ; $bca4: E8
+	INX					 ; $bca5: E8
+	BNE $bc7f			   ; $bca6: D0 D7
+	CLC					 ; $bca8: 18
+	RTS					 ; $bca9: 60
+	LDX $44				 ; $bcaa: A6 44
+	LDY $45				 ; $bcac: A4 45
+	LDA $3d				 ; $bcae: A5 3D
+	BEQ $bcba			   ; $bcb0: F0 08
+	LSR					 ; $bcb2: 4A
+	BEQ $bcbd			   ; $bcb3: F0 08
+	BCC $bcc0			   ; $bcb5: 90 09
+	DEX					 ; $bcb7: CA
+	BPL $bcc1			   ; $bcb8: 10 07
+	DEY					 ; $bcba: 88
+	BPL $bcc1			   ; $bcbb: 10 04
+	INX					 ; $bcbd: E8
+	BPL $bcc1			   ; $bcbe: 10 01
+	INY					 ; $bcc0: C8
+	STX tmp0				; $bcc1: 86 00
+	STY tmp1				; $bcc3: 84 01
+	RTS					 ; $bcc5: 60
+	LDY $bcf2,X			 ; $bcc6: BC F2 BC
+	LDA $6273,Y			 ; $bcc9: B9 73 62
+	AND $bcf3,X			 ; $bccc: 3D F3 BC
+	BEQ $bcd3			   ; $bccf: F0 02
+	CLC					 ; $bcd1: 18
+	RTS					 ; $bcd2: 60
+	TXA					 ; $bcd3: 8A
+	PHA					 ; $bcd4: 48
+	LDA $bcf1,X			 ; $bcd5: BD F1 BC
+	JSR $b5a3			   ; $bcd8: 20 A3 B5
+	PLA					 ; $bcdb: 68
+	BCS $bceb			   ; $bcdc: B0 0D
+	TAX					 ; $bcde: AA
+	LDY $bcf2,X			 ; $bcdf: BC F2 BC
+	LDA $6273,Y			 ; $bce2: B9 73 62
+	ORA $bcf3,X			 ; $bce5: 1D F3 BC
+	STA $6273,Y			 ; $bce8: 99 73 62
+	SEC					 ; $bceb: 38
+	RTS					 ; $bcec: 60
+	LSR tmp2				; $bced: 46 02
+	.db $14			; $bcef
+	.db $07			; $bcf0
+	ADC #$00				; $bcf1: 69 00
+	.db $04			; $bcf3
+	ORA (tmp0,X)			; $bcf4: 01 00
+	.db $04			; $bcf6
+	ORA ($56,X)			 ; $bcf7: 01 56
+	BRK					 ; $bcf9: 00
+	.db $02			; $bcfa
+	ORA (tmp0,X)			; $bcfb: 01 00
+	.db $1a			; $bcfd
+	ORA ($55,X)			 ; $bcfe: 01 55
+	BRK					 ; $bd00: 00
+	ORA (tmp1,X)			; $bd01: 01 01
+	.db $02			; $bd03
+	ORA #$02				; $bd04: 09 02
+	LSR					 ; $bd06: 4A
+	ORA ($80,X)			 ; $bd07: 01 80
+	.db $02			; $bd09
+	ORA ($1d,X)			 ; $bd0a: 01 1D
+	.db $1a			; $bd0c
+	.db $53			; $bd0d
+	ORA ($40,X)			 ; $bd0e: 01 40
+	.db $03			; $bd10
+	.db $02			; $bd11
+	ASL					 ; $bd12: 0A
+	.db $12			; $bd13
+	ADC #$01				; $bd14: 69 01
+	JSR $0c04			   ; $bd16: 20 04 0C
+	ORA $6901			   ; $bd19: 0D 01 69
+	ORA (ptr_lo,X)		  ; $bd1c: 01 10
+	PHP					 ; $bd1e: 08
+	ORA (tmp2,X)			; $bd1f: 01 02
+	.db $17			; $bd21
+	ADC #$01				; $bd22: 69 01
+	PHP					 ; $bd24: 08
+	PHP					 ; $bd25: 08
+	.db $02			; $bd26
+	ORA ($07),Y			 ; $bd27: 11 07
+	.db $62			; $bd29
+	ORA (ptr0_lo,X)		 ; $bd2a: 01 04
+	ORA #$02				; $bd2c: 09 02
+	ORA $6901,Y			 ; $bd2e: 19 01 69
+	ORA (tmp2,X)			; $bd31: 01 02
+	ORA #$07				; $bd33: 09 07
+	ORA #$04				; $bd35: 09 04
+	ADC #$01				; $bd37: 69 01
+	ORA ($0c,X)			 ; $bd39: 01 0C
+	BRK					 ; $bd3b: 00
+	ORA $16,X			   ; $bd3c: 15 16
+	ADC (tmp2,X)			; $bd3e: 61 02
+	.db $80			; $bd40
+	.db $0c			; $bd41
+	BRK					 ; $bd42: 00
+	.db $17			; $bd43
+	ASL $79,X			   ; $bd44: 16 79
+	.db $02			; $bd46
+	RTI					 ; $bd47: 40
+	ORA (tmp2),Y			; $bd48: 11 02
+	.db $04			; $bd4a
+	ORA ($69,X)			 ; $bd4b: 01 69
+	.db $02			; $bd4d
+	JSR $0211			   ; $bd4e: 20 11 02
+	ASL $6901			   ; $bd51: 0E 01 69
+	.db $02			; $bd54
+	BPL $bd69			   ; $bd55: 10 12
+	BRK					 ; $bd57: 00
+	CLC					 ; $bd58: 18
+	ORA ($53),Y			 ; $bd59: 11 53
+	.db $02			; $bd5b
+	PHP					 ; $bd5c: 08
+	.db $14			; $bd5d
+	ORA (tmp1,X)			; $bd5e: 01 01
+	ORA #$53				; $bd60: 09 53
+	.db $02			; $bd62
+	.db $04			; $bd63
+	ORA tmp0,X			  ; $bd64: 15 00
+	.db $1f			; $bd66
+	.db $07			; $bd67
+	.db $53			; $bd68
+	.db $02			; $bd69
+	.db $02			; $bd6a
+	ORA tmp2,X			  ; $bd6b: 15 02
+	ORA $6101			   ; $bd6d: 0D 01 61
+	.db $02			; $bd70
+	ORA ($16,X)			 ; $bd71: 01 16
+	BRK					 ; $bd73: 00
+	ORA $5319,Y			 ; $bd74: 19 19 53
+	.db $03			; $bd77
+	.db $80			; $bd78
+	.db $17			; $bd79
+	BRK					 ; $bd7a: 00
+	ORA (ptr0_lo),Y		 ; $bd7b: 11 04
+	.db $64			; $bd7d
+	.db $03			; $bd7e
+	RTI					 ; $bd7f: 40
+	.db $1a			; $bd80
+	ORA ($0f,X)			 ; $bd81: 01 0F
+	ORA ($69,X)			 ; $bd83: 01 69
+	.db $03			; $bd85
+	JSR $0843			   ; $bd86: 20 43 08
+	.db $04			; $bd89
+	ASL					 ; $bd8a: 0A
+	ADC #$03				; $bd8b: 69 03
+	BPL $bdd2			   ; $bd8d: 10 43
+	ORA (tmp3,X)			; $bd8f: 01 03
+	.db $0c			; $bd91
+	ADC #$03				; $bd92: 69 03
+	PHP					 ; $bd94: 08
+	BIT tmp0				; $bd95: 24 00
+	.db $07			; $bd97
+	.db $03			; $bd98
+	ADC #$03				; $bd99: 69 03
+	.db $04			; $bd9b
+	AND (ptr0_lo),Y		 ; $bd9c: 31 04
+	.db $04			; $bd9e
+	ORA ($69,X)			 ; $bd9f: 01 69
+	.db $03			; $bda1
+	.db $02			; $bda2
+	.db $1c			; $bda3
+	ORA (tmp2,X)			; $bda4: 01 02
+	ORA ($53,X)			 ; $bda6: 01 53
+	.db $03			; $bda8
+	ORA ($ff,X)			 ; $bda9: 01 FF
+	.db $80			; $bdab
+	RTI					 ; $bdac: 40
+	JSR $0810			   ; $bdad: 20 10 08
+	.db $04			; $bdb0
+	.db $02			; $bdb1
+	ORA ($64,X)			 ; $bdb2: 01 64
+	ADC #$69				; $bdb4: 69 69
+	ADC #$64				; $bdb6: 69 64
+	ADC ($4a,X)			 ; $bdb8: 61 4A
+	.db $82			; $bdba
+	ADC #$69				; $bdbb: 69 69
+	ADC #$c2				; $bdbd: 69 C2
+	LDA $beb9,X			 ; $bdbf: BD B9 BE
+	BRK					 ; $bdc2: 00
+	.db $04			; $bdc3
+	ORA (tmp1,X)			; $bdc4: 01 01
+	BRK					 ; $bdc6: 00
+	.db $03			; $bdc7
+	.db $02			; $bdc8
+	ORA ($06,X)			 ; $bdc9: 01 06
+	.db $03			; $bdcb
+	.db $02			; $bdcc
+	.db $04			; $bdcd
+	.db $04			; $bdce
+	ORA (tmp3,X)			; $bdcf: 01 03
+	.db $04			; $bdd1
+	.db $03			; $bdd2
+	.db $02			; $bdd3
+	.db $04			; $bdd4
+	ORA tmp1				; $bdd5: 05 01
+	.db $04			; $bdd7
+	.db $0c			; $bdd8
+	.db $02			; $bdd9
+	.db $04			; $bdda
+	ASL $0604			   ; $bddb: 0E 04 06
+	BRK					 ; $bdde: 00
+	.db $03			; $bddf
+	PHP					 ; $bde0: 08
+	.db $03			; $bde1
+	ORA ($08,X)			 ; $bde2: 01 08
+	.db $04			; $bde4
+	ORA ($0f,X)			 ; $bde5: 01 0F
+	BRK					 ; $bde7: 00
+	.db $03			; $bde8
+	ASL tmp2,X			  ; $bde9: 16 02
+	.db $03			; $bdeb
+	.db $17			; $bdec
+	ORA (tmp1,X)			; $bded: 01 01
+	AND (tmp0,X)			; $bdef: 21 00
+	ORA ($2d,X)			 ; $bdf1: 01 2D
+	BRK					 ; $bdf3: 00
+	.db $02			; $bdf4
+	AND $0102			   ; $bdf5: 2D 02 01
+	AND $0805			   ; $bdf8: 2D 05 08
+	ROL $0100			   ; $bdfb: 2E 00 01
+	ROL $0201			   ; $bdfe: 2E 01 02
+	.db $2f			; $be01
+	BRK					 ; $be02: 00
+	ORA ($2f,X)			 ; $be03: 01 2F
+	ORA (tmp3,X)			; $be05: 01 03
+	.db $2f			; $be07
+	.db $02			; $be08
+	.db $02			; $be09
+	BMI $be0d			   ; $be0a: 30 01
+	.db $03			; $be0c
+	BMI $be11			   ; $be0d: 30 02
+	.db $03			; $be0f
+	AND (tmp0),Y			; $be10: 31 00
+	ORA ($31,X)			 ; $be12: 01 31
+	ORA (tmp2,X)			; $be14: 01 02
+	AND (tmp3),Y			; $be16: 31 03
+	.db $02			; $be18
+	AND (ptr0_lo),Y		 ; $be19: 31 04
+	ORA ($32,X)			 ; $be1b: 01 32
+	BRK					 ; $be1d: 00
+	.db $02			; $be1e
+	.db $32			; $be1f
+	ORA (tmp3,X)			; $be20: 01 03
+	.db $33			; $be22
+	ORA (tmp1,X)			; $be23: 01 01
+	.db $33			; $be25
+	.db $03			; $be26
+	ORA ($33,X)			 ; $be27: 01 33
+	.db $04			; $be29
+	ORA ($34,X)			 ; $be2a: 01 34
+	ORA (tmp1,X)			; $be2c: 01 01
+	.db $34			; $be2e
+	.db $02			; $be2f
+	ORA ($34,X)			 ; $be30: 01 34
+	.db $03			; $be32
+	ORA ($34,X)			 ; $be33: 01 34
+	.db $04			; $be35
+	.db $02			; $be36
+	AND tmp0,X			  ; $be37: 35 00
+	ORA ($35,X)			 ; $be39: 01 35
+	ORA (tmp2,X)			; $be3b: 01 02
+	AND tmp2,X			  ; $be3d: 35 02
+	.db $02			; $be3f
+	AND tmp3,X			  ; $be40: 35 03
+	ASL $35				 ; $be42: 06 35
+	ASL tmp2				; $be44: 06 02
+	ROL tmp2,X			  ; $be46: 36 02
+	ORA ($36,X)			 ; $be48: 01 36
+	ASL tmp1				; $be4a: 06 01
+	.db $37			; $be4c
+	.db $02			; $be4d
+	ORA ($38,X)			 ; $be4e: 01 38
+	.db $02			; $be50
+	.db $04			; $be51
+	SEC					 ; $be52: 38
+	.db $04			; $be53
+	ORA $38				 ; $be54: 05 38
+	ORA tmp1				; $be56: 05 01
+	AND $0200,Y			 ; $be58: 39 00 02
+	.db $3b			; $be5b
+	BRK					 ; $be5c: 00
+	ORA ($3b,X)			 ; $be5d: 01 3B
+	.db $02			; $be5f
+	.db $02			; $be60
+	AND $0200,X			 ; $be61: 3D 00 02
+	AND $0103,X			 ; $be64: 3D 03 01
+	AND $0106,X			 ; $be67: 3D 06 01
+	AND $010f,X			 ; $be6a: 3D 0F 01
+	.db $3f			; $be6d
+	ORA (tmp3,X)			; $be6e: 01 03
+	RTI					 ; $be70: 40
+	BRK					 ; $be71: 00
+	ORA ($40,X)			 ; $be72: 01 40
+	ORA (tmp1,X)			; $be74: 01 01
+	RTI					 ; $be76: 40
+	.db $03			; $be77
+	ORA ($41,X)			 ; $be78: 01 41
+	ORA (tmp2,X)			; $be7a: 01 02
+	EOR (tmp2,X)			; $be7c: 41 02
+	.db $02			; $be7e
+	EOR (tmp3,X)			; $be7f: 41 03
+	.db $02			; $be81
+	.db $42			; $be82
+	BRK					 ; $be83: 00
+	ORA ($42,X)			 ; $be84: 01 42
+	ORA (tmp1,X)			; $be86: 01 01
+	.db $42			; $be88
+	.db $02			; $be89
+	.db $04			; $be8a
+	.db $42			; $be8b
+	.db $03			; $be8c
+	ORA ($42,X)			 ; $be8d: 01 42
+	.db $04			; $be8f
+	.db $02			; $be90
+	.db $43			; $be91
+	.db $04			; $be92
+	ORA ($43,X)			 ; $be93: 01 43
+	ASL ptr0_hi			 ; $be95: 06 05
+	.db $44			; $be97
+	.db $02			; $be98
+	ORA ($45,X)			 ; $be99: 01 45
+	BRK					 ; $be9b: 00
+	ORA ($45,X)			 ; $be9c: 01 45
+	ORA (tmp1,X)			; $be9e: 01 01
+	EOR tmp2				; $bea0: 45 02
+	.db $02			; $bea2
+	.db $47			; $bea3
+	BRK					 ; $bea4: 00
+	.db $02			; $bea5
+	.db $47			; $bea6
+	ORA (tmp1,X)			; $bea7: 01 01
+	PHA					 ; $bea9: 48
+	ORA (tmp1,X)			; $beaa: 01 01
+	PHA					 ; $beac: 48
+	.db $02			; $bead
+	ORA ($48,X)			 ; $beae: 01 48
+	ORA tmp1				; $beb0: 05 01
+	PHA					 ; $beb2: 48
+	ASL tmp1				; $beb3: 06 01
+	PHA					 ; $beb5: 48
+	.db $07			; $beb6
+	ORA ($ff,X)			 ; $beb7: 01 FF
+	.db $7a			; $beb9
+	ADC ($5c,X)			 ; $beba: 61 5C
+	ASL $8464,X			 ; $bebc: 1E 64 84
+	PHA					 ; $bebf: 48
+	.db $62			; $bec0
+	ADC ($88,X)			 ; $bec1: 61 88
+	ADC #$42				; $bec3: 69 42
+	INC $fffe,X			 ; $bec5: FE FE FF
+	.db $ff			; $bec8
+	.db $ff			; $bec9
+	ADC ($13,X)			 ; $beca: 61 13
+	.db $64			; $becc
+	AND ($4a),Y			 ; $becd: 31 4A
+	.db $ff			; $becf
+	.db $ff			; $bed0
+	.db $ff			; $bed1
+	.db $ff			; $bed2
+	ADC $83				 ; $bed3: 65 83
+	ADC #$1a				; $bed5: 69 1A
+	.db $44			; $bed7
+	.db $ff			; $bed8
+	.db $ff			; $bed9
+	.db $ff			; $beda
+	ADC ($1b,X)			 ; $bedb: 61 1B
+	.db $04			; $bedd
+	.db $ff			; $bede
+	.db $74			; $bedf
+	PHP					 ; $bee0: 08
+	ADC $70				 ; $bee1: 65 70
+	ADC $febe,X			 ; $bee3: 7D BE FE
+	ADC #$69				; $bee6: 69 69
+	INC $6162,X			 ; $bee8: FE 62 61
+	ADC #$69				; $beeb: 69 69
+	.db $37			; $beed
+	.db $62			; $beee
+	ADC $94				 ; $beef: 65 94
+	AND $fde2,Y			 ; $bef1: 39 E2 FD
+	.db $62			; $bef4
+	.db $9e			; $bef5
+	ADC #$61				; $bef6: 69 61
+	EOR #$43				; $bef8: 49 43
+	LSR $64,X			   ; $befa: 56 64
+	STX $e3				 ; $befc: 86 E3
+	EOR $5a72,X			 ; $befe: 5D 72 5A
+	ROR $89,X			   ; $bf01: 76 89
+	.db $62			; $bf03
+	LSR $53,X			   ; $bf04: 56 53
+	JMP ($698f)			 ; $bf06: 6C 8F 69
+	ASL $9a5f			   ; $bf09: 0E 5F 9A
+	JMP $693b			   ; $bf0c: 4C 3B 69
+	.db $3c			; $bf0f
+	.db $64			; $bf10
+	AND $22,X			   ; $bf11: 35 22
+	.db $64			; $bf13
+	.db $d2			; $bf14
+	.db $62			; $bf15
+	ADC ($fe,X)			 ; $bf16: 61 FE
+	EOR ($64,X)			 ; $bf18: 41 64
+	.db $04			; $bf1a
+	INC $05e0			   ; $bf1b: EE E0 05
+	ASL					 ; $bf1e: 0A
+	.db $93			; $bf1f
+	.db $53			; $bf20
+	PLP					 ; $bf21: 28
+	.db $ff			; $bf22
+	.db $ff			; $bf23
+	LSR $06,X			   ; $bf24: 56 06
+	ADC $5381			   ; $bf26: 6D 81 53
+	PLA					 ; $bf29: 68
+	ORA $3669,X			 ; $bf2a: 1D 69 36
+	.db $5a			; $bf2d
+	ADC $69				 ; $bf2e: 65 69
+	.db $43			; $bf30
+	LSR $61,X			   ; $bf31: 56 61
+	.db $9e			; $bf33
+	.db $14			; $bf34
+	.db $5b			; $bf35
+	JSR $5661			   ; $bf36: 20 61 56
+	BCC $bf79			   ; $bf39: 90 3E
+	.db $23			; $bf3b
+	.db $63			; $bf3c
+	EOR $5a7c			   ; $bf3d: 4D 7C 5A
+	CLI					 ; $bf40: 58
+	SBC $610b,X			 ; $bf41: FD 0B 61
+	.db $63			; $bf44
+	TXA					 ; $bf45: 8A
+	.db $1f			; $bf46
+	.db $ff			; $bf47
+	.db $ff			; $bf48
+	.db $ff			; $bf49
+	.db $ff			; $bf4a
+	.db $ff			; $bf4b
+	.db $3a			; $bf4c
+	RTS					 ; $bf4d: 60
+	ADC #$64				; $bf4e: 69 64
+	ORA ($ef),Y			 ; $bf50: 11 EF
+	.db $ff			; $bf52
+	.db $3b			; $bf53
+	ADC #$62				; $bf54: 69 62
+	BCC $bf56			   ; $bf56: 90 FE
+	.db $12			; $bf58
+	BRK					 ; $bf59: 00
+	BRK					 ; $bf5a: 00
+	ASL					 ; $bf5b: 0A
+	.db $13			; $bf5c
+	CPX tmp0				; $bf5d: E4 00
+	ORA ($14,X)			 ; $bf5f: 01 14
+	.db $0c			; $bf61
+	SBC $0201			   ; $bf62: ED 01 02
+	ORA $ec04			   ; $bf65: 0D 04 EC
+	.db $03			; $bf68
+	.db $03			; $bf69
+	.db $04			; $bf6a
+	.db $03			; $bf6b
+	LDY #$0b				; $bf6c: A0 0B
+	BRK					 ; $bf6e: 00
+	PHP					 ; $bf6f: 08
+	ASL $0da2,X			 ; $bf70: 1E A2 0D
+	BRK					 ; $bf73: 00
+	PHP					 ; $bf74: 08
+	.db $14			; $bf75
+	.db $a3			; $bf76
+	ASL $0c00			   ; $bf77: 0E 00 0C
+	.db $03			; $bf7a
+	LDY $0f				 ; $bf7b: A4 0F
+	BRK					 ; $bf7d: 00
+	.db $03			; $bf7e
+	CLC					 ; $bf7f: 18
+	SBC (ptr_lo),Y		  ; $bf80: F1 10
+	BRK					 ; $bf82: 00
+	ORA tmp3				; $bf83: 05 03
+	LDA $14				 ; $bf85: A5 14
+	.db $02			; $bf87
+	ORA $a60d			   ; $bf88: 0D 0D A6
+	ORA tmp2,X			  ; $bf8b: 15 02
+	ASL					 ; $bf8d: 0A
+	BPL $bf37			   ; $bf8e: 10 A7
+	ORA $0900,Y			 ; $bf90: 19 00 09
+	.db $12			; $bf93
+	SBC ($19,X)			 ; $bf94: E1 19
+	BRK					 ; $bf96: 00
+	ORA $a80b			   ; $bf97: 0D 0B A8
+	.db $1c			; $bf9a
+	ORA (tmp3,X)			; $bf9b: 01 03
+	.db $02			; $bf9d
+	SBC #$20				; $bf9e: E9 20
+	BRK					 ; $bfa0: 00
+	.db $04			; $bfa1
+	ASL $e7				 ; $bfa2: 06 E7
+	JSR $0500			   ; $bfa4: 20 00 05
+	ASL $e6				 ; $bfa7: 06 E6
+	JSR $0600			   ; $bfa9: 20 00 06
+	ASL $e5				 ; $bfac: 06 E5
+	.db $23			; $bfae
+	BRK					 ; $bfaf: 00
+	.db $07			; $bfb0
+	.db $04			; $bfb1
+	LDA #$27				; $bfb2: A9 27
+	BRK					 ; $bfb4: 00
+	ORA #$0f				; $bfb5: 09 0F
+	TAX					 ; $bfb7: AA
+	AND $1804			   ; $bfb8: 2D 04 18
+	ORA $36a1,Y			 ; $bfbb: 19 A1 36
+	ASL ptr0_lo			 ; $bfbe: 06 04
+	.db $03			; $bfc0
+	INC $003f			   ; $bfc1: EE 3F 00
+	PHP					 ; $bfc4: 08
+	PHP					 ; $bfc5: 08
+	INX					 ; $bfc6: E8
+	.db $3f			; $bfc7
+	BRK					 ; $bfc8: 00
+	ORA #$08				; $bfc9: 09 08
+	INX					 ; $bfcb: E8
+	.db $3f			; $bfcc
+	BRK					 ; $bfcd: 00
+	PHP					 ; $bfce: 08
+	ORA #$e8				; $bfcf: 09 E8
+	.db $3f			; $bfd1
+	BRK					 ; $bfd2: 00
+	ORA #$09				; $bfd3: 09 09
+	INX					 ; $bfd5: E8
+	.db $ff			; $bfd6
+	.db $ff			; $bfd7
+	SEI					 ; $bfd8: 78
+	INC $bfdf			   ; $bfd9: EE DF BF
+	JMP $ff8e			   ; $bfdc: 4C 8E FF
+	.db $80			; $bfdf
+	JSR $5244			   ; $bfe0: 20 44 52
+	EOR ($47,X)			 ; $bfe3: 41 47
+	.db $4f			; $bfe5
+	LSR $5120			   ; $bfe6: 4E 20 51
+	EOR $45,X			   ; $bfe9: 55 45
+	.db $53			; $bfeb
+	.db $54			; $bfec
+	JSR $5649			   ; $bfed: 20 49 56
+	BRK					 ; $bff0: 00
+	BRK					 ; $bff1: 00
+	BRK					 ; $bff2: 00
+	BRK					 ; $bff3: 00
+	PHA					 ; $bff4: 48
+	.db $04			; $bff5
+	ORA ($0e,X)			 ; $bff6: 01 0E
+	.db $07			; $bff8
+	.db $9e			; $bff9
+	CLD					 ; $bffa: D8
+	.db $bf			; $bffb
+	CLD					 ; $bffc: D8
+	.db $bf			; $bffd
+	CLD					 ; $bffe: D8
+	.db $bf			; $bfff
