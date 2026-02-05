@@ -64,20 +64,24 @@ dragon-warrior-4-info/
 ├── disassemble.ps1            # 🌺 Peony disassembly script
 │
 ├── src/                       # 🌸 Poppy source files (.pasm)
-│   ├── main.pasm              # Main entry point
-│   ├── banks/                 # PRG bank source files
-│   │   ├── bank_00.pasm       # PRG Bank 0 ($8000-$9FFF)
-│   │   ├── bank_01.pasm       # PRG Bank 1 ($A000-$BFFF)
-│   │   └── ...                # Additional banks (16 PRG banks)
-│   ├── data/                  # Generated data files from JSON
-│   │   ├── monsters.pasm      # Monster stats table
-│   │   ├── items.pasm         # Item definitions
-│   │   ├── spells.pasm        # Spell data
+│   ├── main.pasm              # Main entry point with iNES header
+│   ├── banks/                 # PRG bank source files (32 banks)
+│   │   ├── bank_00.pasm       # Core engine, reset, NMI/IRQ
+│   │   ├── bank_01.pasm       # Map engine, overworld, collision
+│   │   ├── bank_02.pasm       # Battle engine - core combat
+│   │   ├── bank_08.pasm       # Monster data bank (includes monsters.pasm)
+│   │   ├── bank_09.pasm       # Item/Spell/Shop data bank
+│   │   └── ...                # Additional banks ($00-$1F)
+│   ├── data/                  # AUTO-GENERATED from JSON assets
+│   │   ├── monsters.pasm      # Monster stats, AI, drops
+│   │   ├── items.pasm         # Item definitions, prices
+│   │   ├── spells.pasm        # Spell data, MP costs
 │   │   └── shops.pasm         # Shop inventories
 │   └── include/               # Shared include files
-│       ├── constants.inc      # System constants
-│       ├── ram_map.inc        # RAM memory map
-│       └── macros.inc         # Assembly macros
+│       ├── hardware.pasm      # NES hardware registers
+│       ├── constants.pasm     # Game constants and IDs
+│       ├── ram_map.pasm       # Complete RAM memory map
+│       └── macros.pasm        # Assembly helper macros
 │
 ├── metadata/                  # 🌼 Pansy metadata files
 │   ├── dw4.pansy              # Main Pansy metadata file
@@ -203,6 +207,47 @@ python tools/editable_to_bin.py --input assets/json --output build/binary
 python tools/json_to_asm.py all
 ```
 
+### 📝 Editing Assets (JSON Workflow)
+
+The asset pipeline allows editing game data without assembly knowledge:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      JSON Asset Workflow                        │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  1. Edit JSON file     →  assets/json/monsters/monster_001.json │
+│                                                                 │
+│  2. Regenerate ASM     →  python tools/json_to_asm.py all       │
+│     (auto-generates)      src/data/monsters.pasm                │
+│                                                                 │
+│  3. Build ROM          →  .\build.ps1                           │
+│     (Poppy assembles)     build/dragon-warrior-4.nes            │
+│                                                                 │
+│  4. Test in emulator   →  Verify changes work correctly         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Example: Modifying a Monster**
+
+1. Edit `assets/json/monsters/monsters.json`:
+   ```json
+   {
+     "id": 0,
+     "name": "Slime",
+     "hp": 10,
+     "attack": 5,
+     "defense": 3,
+     "exp": 2,
+     "gold": 1
+   }
+   ```
+
+2. Regenerate assembly: `python tools/json_to_asm.py monsters`
+
+3. Build ROM: `.\build.ps1`
+
 ## 🛠️ Tools Overview
 
 ### 🌷 Flower Toolchain Integration
@@ -221,6 +266,7 @@ python tools/json_to_asm.py all
 | `editable_to_bin.py` | Convert JSON/PNG → binary assets |
 | `json_to_asm.py` | Generate .pasm from JSON data |
 | `asset_extractor.py` | Extract assets from reference ROM |
+| `generate_bank_stubs.py` | Generate bank source file templates |
 
 ### Universal Editor
 
