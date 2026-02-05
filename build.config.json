@@ -1,20 +1,72 @@
 {
-  "source": {
-    "mainFile": "src/main.pasm",
-    "assembler": "poppy",
-    "includes": [
-      "src/",
-      "include/"
-    ]
-  },
-  "assets": {
-    "editableDir": "assets/json",
-    "extractDir": "assets/binary"
-  },
-  "project": {
-    "platform": "nes",
-    "name": "dragon-warrior-4-info",
-    "version": "1.0.0"
-  },
-  "$schema": "https://gameinfo.example.com/schemas/build-config.json"
+	"$schema": "https://gameinfo.example.com/schemas/build-config.json",
+	"project": {
+		"name": "Dragon Warrior IV",
+		"platform": "nes",
+		"version": "1.0.0",
+		"description": "Complete disassembly and asset pipeline for Dragon Warrior IV (NES)"
+	},
+	"source": {
+		"assembler": "poppy",
+		"mainFile": "src/main.pasm",
+		"includes": [
+			"src/",
+			"src/banks/",
+			"src/data/",
+			"src/include/"
+		],
+		"outputRom": "build/dragon-warrior-4.nes"
+	},
+	"reference": {
+		"rom": "roms/Dragon Warrior IV (1992-10)(Enix)(US).nes",
+		"cdl": "debug/Dragon Warrior IV.cdl",
+		"symbols": "debug/Dragon Warrior IV.mlb",
+		"pansy": "metadata/dragon-warrior-4.pansy"
+	},
+	"peony": {
+		"enabled": true,
+		"outputDir": "src/",
+		"format": "poppy",
+		"allBanks": true,
+		"comments": true,
+		"symbolSources": [
+			"debug/Dragon Warrior IV.mlb"
+		]
+	},
+	"assets": {
+		"extractDir": "assets/binary",
+		"editableDir": "assets/json",
+		"generatedDir": "src/data/generated",
+		"graphics": {
+			"format": "png",
+			"tileSize": [8, 8],
+			"bitDepth": 2,
+			"paletteDir": "assets/palettes"
+		},
+		"text": {
+			"tableFile": "data/dw4.tbl",
+			"format": "json",
+			"compression": "dte"
+		},
+		"data": {
+			"format": "json",
+			"schemaDir": "assets/json/schemas"
+		}
+	},
+	"build": {
+		"outputDir": "build",
+		"tempDir": "build/temp",
+		"symbolFile": "build/dragon-warrior-4.sym",
+		"listingFile": "build/dragon-warrior-4.lst",
+		"verify": true,
+		"verifyChecksum": "a5a781e5ae7c75765969eba2beb4e27f"
+	},
+	"mapper": {
+		"type": "MMC3",
+		"number": 4,
+		"prgBanks": 16,
+		"chrBanks": 16,
+		"prgRamSize": 8192,
+		"batteryBacked": true
+	}
 }

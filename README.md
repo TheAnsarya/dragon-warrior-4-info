@@ -3,16 +3,53 @@
 [![Build Status](https://img.shields.io/badge/build-in_progress-yellow)](https://img.shields.io/badge/build-in_progress-yellow)
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://img.shields.io/badge/license-MIT-blue)
 [![NES](https://img.shields.io/badge/platform-NES-red)](https://img.shields.io/badge/platform-NES-red)
+[![Toolchain](https://img.shields.io/badge/toolchain-🌷_Flower-pink)](https://img.shields.io/badge/toolchain-Flower-pink)
 
-A complete code and asset disassembly of **Dragon Warrior IV** (US NES version, 1992) with full editors for all assets and a comprehensive build pipeline that produces a byte-perfect ROM from source.
+A complete code and asset disassembly of **Dragon Warrior IV** (US NES version, 1992) using the **🌷 Flower Toolchain** with full editors for all assets and a comprehensive build pipeline that produces a byte-perfect ROM from source.
+
+## 🌷 Flower Toolchain
+
+This project uses the **Flower Toolchain** for disassembly, metadata management, and ROM assembly:
+
+| Tool | Emoji | Purpose |
+|------|-------|---------|
+| **Peony** | 🌺 | Disassembler - ROM → Source (.pasm) |
+| **Pansy** | 🌼 | Metadata Format - Symbols, comments, cross-refs |
+| **Poppy** | 🌸 | Assembler - Source (.pasm) → ROM |
+
+### Build Pipeline Flow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                   🌷 Flower Toolchain Flow                       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Original ROM ───► 🌺 Peony ───► Source Code (.pasm)            │
+│       │                              │                          │
+│       │                              ▼                          │
+│       │                        🌼 Pansy Metadata                 │
+│       │                        (symbols, comments)              │
+│       │                                                         │
+│       ▼                                                         │
+│  Asset Extractor ───► Binary Assets ───► JSON/PNG (Edit)        │
+│                                              │                  │
+│                                              ▼                  │
+│                                         Converters              │
+│                                              │                  │
+│                                              ▼                  │
+│  New ROM ◄───── 🌸 Poppy ◄───── Source + Generated .pasm        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 ## 🎯 Project Goals
 
-1. **Complete Disassembly** - Full 6502 assembly source code for the entire ROM
-2. **Asset Extraction** - Extract all game assets (graphics, text, maps, data tables)
-3. **Universal Editor** - GUI editor for all extracted assets
-4. **Build Pipeline** - Assemble modified source back into a working ROM
-5. **Documentation** - Comprehensive documentation of game internals
+1. **Complete Disassembly** - Full 6502 assembly source code for the entire ROM using 🌺 Peony
+2. **Metadata Management** - Comprehensive symbols and comments in 🌼 Pansy format
+3. **Asset Extraction** - Extract all game assets (graphics, text, maps, data tables)
+4. **Universal Editor** - GUI editor for all extracted assets
+5. **Build Pipeline** - Assemble modified source back into a working ROM with 🌸 Poppy
+6. **Documentation** - Comprehensive documentation of game internals
 
 ## 📁 Project Structure
 
@@ -22,82 +59,70 @@ dragon-warrior-4-info/
 ├── .gitignore                 # Git ignore rules
 ├── README.md                  # This file
 ├── requirements.txt           # Python dependencies
+├── build.config.json          # 🌷 Flower Toolchain configuration
 ├── build.ps1                  # Main build script (PowerShell)
-├── build_rom.ps1              # ROM assembly script
+├── disassemble.ps1            # 🌺 Peony disassembly script
 │
-├── Ophis/                     # Ophis 6502 assembler
-│   └── ophis.exe
+├── src/                       # 🌸 Poppy source files (.pasm)
+│   ├── main.pasm              # Main entry point
+│   ├── banks/                 # PRG bank source files
+│   │   ├── bank_00.pasm       # PRG Bank 0 ($8000-$9FFF)
+│   │   ├── bank_01.pasm       # PRG Bank 1 ($A000-$BFFF)
+│   │   └── ...                # Additional banks (16 PRG banks)
+│   ├── data/                  # Generated data files from JSON
+│   │   ├── monsters.pasm      # Monster stats table
+│   │   ├── items.pasm         # Item definitions
+│   │   ├── spells.pasm        # Spell data
+│   │   └── shops.pasm         # Shop inventories
+│   └── include/               # Shared include files
+│       ├── constants.inc      # System constants
+│       ├── ram_map.inc        # RAM memory map
+│       └── macros.inc         # Assembly macros
 │
-├── source_files/              # Disassembled 6502 assembly source
-│   ├── DW4_Defines.asm        # Constants and memory map definitions
-│   ├── Header.asm             # iNES header
-│   ├── Bank00.asm             # PRG Bank 0 ($8000-$9FFF)
-│   ├── Bank01.asm             # PRG Bank 1 ($A000-$BFFF)
-│   ├── ...                    # Additional banks (DW4 has 16 PRG banks)
-│   └── generated/             # Generated ASM from asset pipeline
+├── metadata/                  # 🌼 Pansy metadata files
+│   ├── dw4.pansy              # Main Pansy metadata file
+│   └── symbols/               # Symbol exports
 │
 ├── assets/                    # Extracted/editable game assets
+│   ├── binary/                # Raw binary extracts
 │   ├── json/                  # JSON format data files
-│   │   ├── monsters.json      # Monster stats and data
-│   │   ├── items.json         # Item definitions
-│   │   ├── spells.json        # Spell data
-│   │   ├── shops.json         # Shop inventories
-│   │   ├── characters.json    # Party member data
-│   │   └── experience.json    # Experience tables
+│   │   ├── monsters/          # Monster data
+│   │   ├── items/             # Item definitions
+│   │   ├── spells/            # Spell data
+│   │   └── shops.json         # Shop inventories
 │   ├── text/                  # Dialog and text strings
 │   ├── graphics/              # PNG format graphics
 │   │   ├── sprites/           # Character and monster sprites
 │   │   ├── tilesets/          # Map tilesets
 │   │   └── ui/                # Menu and UI graphics
-│   ├── maps/                  # Map data
-│   │   ├── world/             # Overworld maps
-│   │   └── dungeons/          # Dungeon/town maps
-│   └── audio/                 # Music and sound effect data
+│   └── maps/                  # Map data
 │
 ├── tools/                     # Python tools
+│   ├── bin_to_editable.py     # Binary → JSON/PNG converter
+│   ├── editable_to_bin.py     # JSON/PNG → Binary converter
+│   ├── json_to_asm.py         # JSON → .pasm generator (🌷 Flower)
+│   ├── asset_extractor.py     # Extract assets from ROM
 │   ├── universal_editor.py    # Main GUI editor
 │   ├── rom_analyzer.py        # ROM analysis tool
-│   ├── asset_extractor.py     # Extract assets from ROM
-│   ├── asset_reinserter.py    # Generate ASM from assets
-│   ├── format_files.py        # Code formatting tool
-│   ├── build_errors.py        # Build error handling
-│   │
-│   ├── extraction/            # Asset extraction modules
-│   │   ├── data_extractor.py
-│   │   ├── graphics_extractor.py
-│   │   ├── text_extractor.py
-│   │   └── map_extractor.py
-│   │
-│   ├── editors/               # Individual asset editors
-│   │   ├── monster_editor.py
-│   │   ├── item_editor.py
-│   │   ├── spell_editor.py
-│   │   ├── map_editor.py
-│   │   ├── dialog_editor.py
-│   │   └── graphics_editor.py
-│   │
-│   └── github/                # GitHub integration tools
-│       └── create_issues.ps1
+│   └── format_files.py        # Code formatting tool
 │
-├── tests/                     # Test suite
-│   ├── test_build.py          # Build system tests
-│   ├── test_extraction.py     # Extraction tests
-│   └── test_editors.py        # Editor tests
+├── reference/                 # Reference materials
+│   ├── cdl/                   # Code/Data Log files
+│   ├── mlb/                   # Mesen Label files
+│   └── tbl/                   # Text encoding tables
 │
 ├── docs/                      # Documentation
 │   ├── INDEX.md               # Documentation index
 │   ├── ROM_MAP.md             # Complete ROM memory map
 │   ├── RAM_MAP.md             # RAM memory map
-│   ├── DATA_FORMATS.md        # Game data format documentation
-│   ├── BUILD_GUIDE.md         # Build instructions
-│   ├── TROUBLESHOOTING.md     # Common issues and solutions
-│   │
-│   ├── guides/                # Tutorial guides
-│   ├── technical/             # Technical documentation
-│   └── session-logs/          # AI session logs
+│   └── BUILD_GUIDE.md         # Build instructions
 │
-├── ~docs/                     # Working documents (excluded from some git operations)
-│   ├── session-logs/          # Session history
+├── build/                     # Build output directory
+│   └── dragon-warrior-4.nes   # Assembled ROM
+│
+└── roms/                      # ROM files (not in git)
+    └── README.md              # Instructions for obtaining ROM
+```
 │   └── chat-logs/             # AI chat logs
 │
 ├── roms/                      # ROM files (not in git, except readme)
@@ -115,7 +140,8 @@ dragon-warrior-4-info/
 ### Prerequisites
 
 - **Python 3.8+** - For all tools and editors
-- **Ophis Assembler** - Included in `Ophis/` directory
+- **🌸 Poppy Assembler** - For ROM assembly (or Ophis as fallback)
+- **🌺 Peony Disassembler** - For disassembly (optional, pre-disassembled source available)
 - **PowerShell 5.1+** - For build scripts (Windows)
 - **Reference ROM** - `Dragon Warrior IV (1992-10)(Enix)(US).nes`
 
@@ -132,17 +158,20 @@ pip install -r requirements.txt
 # 3. Place your ROM in the roms/ folder
 # File: roms/Dragon Warrior IV (1992-10)(Enix)(US).nes
 
-# 4. Extract assets from ROM
+# 4. (Optional) Disassemble ROM with Peony
+.\disassemble.ps1
+
+# 5. Extract assets from ROM
 python tools/asset_extractor.py
 
-# 5. Launch the Universal Editor
+# 6. Launch the Universal Editor
 python tools/universal_editor.py
 ```
 
 ### Building a ROM
 
 ```powershell
-# Full build with asset integration
+# Full build with 🌸 Poppy (or Ophis fallback)
 .\build.ps1
 
 # Clean build
@@ -150,9 +179,48 @@ python tools/universal_editor.py
 
 # Build with verbose output
 .\build.ps1 -Verbose
+
+# Disassemble first, then build
+.\build.ps1 -Disassemble
+
+# Extract and convert assets before build
+.\build.ps1 -ExtractAssets -ConvertAssets
+```
+
+### Asset Pipeline Commands
+
+```powershell
+# Extract binary assets from ROM
+python tools/asset_extractor.py --rom "roms/Dragon Warrior IV (1992-10)(Enix)(US).nes"
+
+# Convert binary to editable (JSON/PNG)
+python tools/bin_to_editable.py --input assets/binary --output assets/json
+
+# Convert editable back to binary
+python tools/editable_to_bin.py --input assets/json --output build/binary
+
+# Generate Poppy assembly from JSON
+python tools/json_to_asm.py all
 ```
 
 ## 🛠️ Tools Overview
+
+### 🌷 Flower Toolchain Integration
+
+| Tool | Command | Purpose |
+|------|---------|---------|
+| 🌺 Peony | `.\disassemble.ps1` | Disassemble ROM to .pasm source |
+| 🌼 Pansy | (metadata format) | Store symbols, comments, cross-refs |
+| 🌸 Poppy | `.\build.ps1` | Assemble .pasm source to ROM |
+
+### Asset Pipeline Tools
+
+| Tool | Purpose |
+|------|---------|
+| `bin_to_editable.py` | Convert binary assets → JSON/PNG |
+| `editable_to_bin.py` | Convert JSON/PNG → binary assets |
+| `json_to_asm.py` | Generate .pasm from JSON data |
+| `asset_extractor.py` | Extract assets from reference ROM |
 
 ### Universal Editor
 
@@ -179,12 +247,13 @@ Comprehensive ROM inspection:
 
 ### Build System
 
-Complete build pipeline:
+Complete build pipeline using the 🌷 Flower Toolchain:
 
-- JSON → ASM generation
-- Bank-by-bank assembly
+- JSON → .pasm generation (via `json_to_asm.py`)
+- Bank-by-bank assembly with 🌸 Poppy
 - CHR-ROM extraction/insertion
 - ROM verification against reference
+- Fallback to Ophis assembler if Poppy unavailable
 
 ## 📚 Documentation
 
@@ -205,8 +274,13 @@ See the `docs/` folder for comprehensive documentation:
 
 ## 🔗 Related Projects
 
-- **[Dragon Warrior Info](https://github.com/TheAnsarya/dragon-warrior-info)** - DW1 disassembly (reference project)
+- **[🌸 Poppy](https://github.com/TheAnsarya/poppy)** - Multi-system assembler (🌷 Flower Toolchain)
+- **[🌺 Peony](https://github.com/TheAnsarya/peony)** - Multi-system disassembler (🌷 Flower Toolchain)
+- **[🌼 Pansy](https://github.com/TheAnsarya/pansy)** - Metadata format (🌷 Flower Toolchain)
+- **[🌱 Game Garden](https://github.com/TheAnsarya/game-garden)** - Game disassembly collection
+- **[Dragon Warrior Info](https://github.com/TheAnsarya/dragon-warrior-info)** - DW1 disassembly
 - **[FFMQ Info](https://github.com/TheAnsarya/ffmq-info)** - Final Fantasy Mystic Quest disassembly
+- **[GameInfo](https://github.com/TheAnsarya/GameInfo)** - ROM hacking toolkit
 
 ## 🏗️ Project Status
 
@@ -232,20 +306,24 @@ See the `docs/` folder for comprehensive documentation:
 
 | Tool | Status | Description |
 |------|--------|-------------|
+| `disassemble.ps1` | ✅ Complete | 🌺 Peony disassembly wrapper |
+| `build.ps1` | ✅ Complete | 🌸 Poppy build script (Ophis fallback) |
+| `bin_to_editable.py` | ✅ Complete | Binary → JSON/PNG converter |
+| `editable_to_bin.py` | ✅ Complete | JSON/PNG → Binary converter |
+| `json_to_asm.py` | ✅ Complete | JSON → .pasm generator |
 | `rom_analyzer.py` | ✅ Complete | ROM header, bank analysis, hex viewer |
 | `text_decoder.py` | ✅ Complete | Decode text using TBL encoding |
 | `asset_extractor.py` | ✅ Working | Extract monsters, items, spells, shops, text, graphics |
-| `json_to_asm.py` | ✅ Working | Convert JSON data to assembly source |
-| `asset_reinserter.py` | ⬜ TODO | Generate ASM from modified assets |
 | `universal_editor.py` | ⬜ TODO | GUI editor for all assets |
 
 ### Source Files Status
 
 | Directory | Status | Description |
 |-----------|--------|-------------|
-| `source_files/include/` | ✅ Complete | 6 include files with wiki-verified data |
-| `source_files/asm/` | 🟡 Framework | Main dw4.asm, linker config |
-| `source_files/data/` | ✅ Generated | monsters.asm, items.asm, spells.asm, shops.asm |
+| `src/include/` | ✅ Complete | 6 include files with wiki-verified data |
+| `src/banks/` | 🟡 Framework | Bank source files for Poppy |
+| `src/data/` | ✅ Generated | monsters.pasm, items.pasm, spells.pasm, shops.pasm |
+| `metadata/` | 🟡 In Progress | 🌼 Pansy metadata files |
 
 ### Include Files (Wiki-Verified)
 
