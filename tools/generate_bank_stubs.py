@@ -48,17 +48,17 @@ BANK_DESCRIPTIONS = {
 
 def generate_bank_file(bank_num: int, output_dir: Path) -> None:
     """Generate a single bank stub file."""
-    
+
     rom_offset_start = bank_num * 0x4000 + 0x10  # After iNES header
     rom_offset_end = rom_offset_start + 0x3fff
-    
+
     description = BANK_DESCRIPTIONS.get(bank_num, "Unknown/Reserved")
-    
+
     # Skip banks we've already created manually
     if bank_num in [0x00, 0x01, 0x08, 0x09]:
         print(f"  Skipping bank ${bank_num:02x} (already exists)")
         return
-    
+
     content = f"""; ============================================================================
 ; Dragon Warrior IV - Bank ${bank_num:02x} (PRG ROM ${bank_num * 0x4000:05x}-${bank_num * 0x4000 + 0x3fff:05x})
 ; 🌷 Flower Toolchain
@@ -83,7 +83,7 @@ def generate_bank_file(bank_num: int, output_dir: Path) -> None:
 ; ============================================================================
 
 """
-    
+
     # Add bank-specific content templates
     if bank_num in [0x02, 0x03]:
         content += """; ============================================================================
@@ -267,36 +267,36 @@ bank_entry:
 ; End of Bank
 ; ============================================================================
 """
-    
+
     # Write file
     output_file = output_dir / f"bank_{bank_num:02x}.pasm"
     with open(output_file, 'w', encoding='utf-8-sig', newline='\r\n') as f:
         f.write(content)
-    
+
     print(f"  Created bank ${bank_num:02x}: {output_file.name}")
 
 
 def main():
     """Generate all bank stub files."""
-    
+
     # Get output directory
     script_dir = Path(__file__).parent
     project_dir = script_dir.parent
     banks_dir = project_dir / "src" / "banks"
-    
+
     # Create banks directory if needed
     banks_dir.mkdir(parents=True, exist_ok=True)
-    
+
     print("Generating bank stub files for Dragon Warrior IV...")
     print(f"Output directory: {banks_dir}")
     print()
-    
+
     # Generate all 32 banks (00-1F for 512KB PRG ROM, but DW4 is 256KB = 16 banks)
     # DW4 has 16 banks (0x00-0x0F) in 256KB PRG ROM
     # Actually with MMC3, it can address more - let's do 32 banks
     for bank_num in range(0x20):  # Banks $00-$1F
         generate_bank_file(bank_num, banks_dir)
-    
+
     print()
     print(f"Generated stub files for 32 banks.")
     print("Next steps:")

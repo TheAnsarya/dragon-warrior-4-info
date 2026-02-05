@@ -20,7 +20,7 @@ reset_handler:
 	cld				; Clear decimal mode
 	ldx #$ff
 	txs				; Initialize stack pointer
-	
+
 	; Wait for PPU to stabilize (2 vblanks)
 	bit PPU_STATUS			; Clear vblank flag
 @wait_vblank_1:
@@ -29,19 +29,19 @@ reset_handler:
 @wait_vblank_2:
 	bit PPU_STATUS
 	bpl @wait_vblank_2
-	
+
 	; Initialize RAM
 	jsr init_ram
-	
+
 	; Initialize PPU
 	jsr init_ppu
-	
+
 	; Initialize audio engine
 	jsr init_audio
-	
+
 	; Initialize MMC3 mapper
 	jsr init_mapper
-	
+
 	; Start main game loop
 	jmp main_loop
 
@@ -58,14 +58,14 @@ init_ram:
 	sta $00,x
 	inx
 	bne @clear_zp
-	
+
 	; Clear stack page (leave stack pointer area)
 	ldx #$00
 @clear_stack:
 	sta $0100,x
 	inx
 	bne @clear_stack
-	
+
 	; Clear OAM buffer
 	lda #$ff			; Y = $FF hides sprites
 	ldx #0
@@ -73,7 +73,7 @@ init_ram:
 	sta OAM_BUFFER,x
 	inx
 	bne @clear_oam
-	
+
 	; Clear general RAM $0300-$07FF
 	lda #0
 	ldx #0
@@ -85,11 +85,11 @@ init_ram:
 	sta $0700,x
 	inx
 	bne @clear_ram
-	
+
 	; Initialize default values
 	lda #1
 	sta zp_chapter_id		; Start at Chapter 1
-	
+
 	rts
 
 ; ============================================================================
@@ -104,13 +104,13 @@ init_ppu:
 	sta PPU_MASK
 	sta zp_ppu_ctrl_shadow
 	sta zp_ppu_mask_shadow
-	
+
 	; Clear nametables
 	lda #$20			; Nametable 0 at $2000
 	sta PPU_ADDR
 	lda #$00
 	sta PPU_ADDR
-	
+
 	lda #0
 	ldx #0
 	ldy #8				; 8 pages = 2KB
@@ -120,27 +120,27 @@ init_ppu:
 	bne @clear_nt
 	dey
 	bne @clear_nt
-	
+
 	; Clear palette to all black
 	lda #$3f
 	sta PPU_ADDR
 	lda #$00
 	sta PPU_ADDR
-	
+
 	lda #$0f			; Black
 	ldx #32
 @clear_pal:
 	sta PPU_DATA
 	dex
 	bne @clear_pal
-	
+
 	; Reset scroll
 	lda #0
 	sta PPU_SCROLL
 	sta PPU_SCROLL
 	sta zp_scroll_x
 	sta zp_scroll_y
-	
+
 	rts
 
 ; ============================================================================
@@ -151,7 +151,7 @@ init_audio:
 	; Enable all audio channels
 	lda #$0f
 	sta APU_STATUS
-	
+
 	; Silence all channels
 	lda #$30			; Constant volume, duty 00
 	sta APU_PULSE1_ENV
@@ -160,7 +160,7 @@ init_audio:
 	sta APU_TRIANGLE_CTRL
 	lda #$30			; Silence noise
 	sta APU_NOISE_ENV
-	
+
 	rts
 
 ; ============================================================================
@@ -171,39 +171,39 @@ init_mapper:
 	; Set PRG ROM mode: swap $8000, fix $C000
 	lda #$00
 	sta MMC3_BANK_SELECT
-	
+
 	; Set initial PRG banks
 	lda #6				; Register 6: $8000
 	sta MMC3_BANK_SELECT
 	lda #0				; Bank 0
 	sta MMC3_BANK_DATA
 	sta zp_current_prg_bank_8000
-	
+
 	lda #7				; Register 7: $A000
 	sta MMC3_BANK_SELECT
 	lda #1				; Bank 1
 	sta MMC3_BANK_DATA
 	sta zp_current_prg_bank_a000
-	
+
 	; Set initial CHR banks
 	lda #0
 	sta MMC3_BANK_SELECT
 	sta MMC3_BANK_DATA		; CHR bank 0 at $0000
 	sta zp_current_chr_bank_0
-	
+
 	lda #1
 	sta MMC3_BANK_SELECT
 	lda #2
 	sta MMC3_BANK_DATA		; CHR bank 2 at $0800
 	sta zp_current_chr_bank_1
-	
+
 	; Enable RAM
 	lda #$80
 	sta MMC3_RAM_PROTECT
-	
+
 	; Disable IRQ for now
 	sta MMC3_IRQ_DISABLE
-	
+
 	rts
 
 ; ============================================================================
@@ -218,10 +218,10 @@ main_loop:
 @wait_vblank:
 	lda zp_ppu_update_pending
 	beq @wait_vblank
-	
+
 	; Read controller input
 	jsr read_controllers
-	
+
 	; Update game state based on current mode
 	lda zp_game_mode
 	asl
@@ -231,12 +231,12 @@ main_loop:
 	lda game_mode_handlers+1,x
 	sta zp_ptr0_hi
 	jmp (zp_ptr0_lo)		; Jump to mode handler
-	
+
 	; Mode handlers return here
 main_loop_return:
 	; Update audio engine
 	jsr update_audio
-	
+
 	; Loop forever
 	jmp main_loop
 
@@ -266,24 +266,24 @@ nmi_handler:
 	pha
 	tya
 	pha
-	
+
 	; Increment NMI counter
 	inc zp_nmi_counter
-	
+
 	; Perform OAM DMA (upload sprites)
 	lda #>OAM_BUFFER
 	sta APU_OAM_DMA
-	
+
 	; Update PPU if pending
 	lda zp_ppu_update_pending
 	beq @skip_ppu
 	jsr update_ppu
 @skip_ppu:
-	
+
 	; Set flag for main loop
 	lda #1
 	sta zp_ppu_update_pending
-	
+
 	; Restore registers
 	pla
 	tay
@@ -299,14 +299,14 @@ nmi_handler:
 
 irq_handler:
 	pha
-	
+
 	; Acknowledge IRQ
 	sta MMC3_IRQ_DISABLE
 	sta MMC3_IRQ_ENABLE
-	
+
 	; Handle mid-screen effect (e.g., status bar)
 	; TODO: Implement based on game mode
-	
+
 	pla
 	rti
 
@@ -318,13 +318,13 @@ read_controllers:
 	; Store previous state
 	lda zp_joy1_state
 	sta zp_joy1_prev
-	
+
 	; Strobe controller
 	lda #1
 	sta JOYPAD1
 	lda #0
 	sta JOYPAD1
-	
+
 	; Read 8 buttons
 	ldx #8
 @read_loop:
@@ -333,14 +333,14 @@ read_controllers:
 	rol zp_joy1_state		; Carry -> bit 0
 	dex
 	bne @read_loop
-	
+
 	; Calculate newly pressed buttons
 	lda zp_joy1_state
 	eor #$ff			; Invert current
 	ora zp_joy1_prev		; OR with previous
 	eor #$ff			; Invert result
 	sta zp_joy1_pressed		; = (current AND NOT previous)
-	
+
 	rts
 
 ; ============================================================================
@@ -352,16 +352,16 @@ update_ppu:
 	; Update scroll position
 	lda zp_ppu_ctrl_shadow
 	sta PPU_CTRL
-	
+
 	lda zp_scroll_x
 	sta PPU_SCROLL
 	lda zp_scroll_y
 	sta PPU_SCROLL
-	
+
 	; Update mask (enable/disable rendering)
 	lda zp_ppu_mask_shadow
 	sta PPU_MASK
-	
+
 	rts
 
 ; ============================================================================

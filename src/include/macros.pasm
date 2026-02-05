@@ -393,7 +393,7 @@
 	.macro brk_point
 		jmp *
 	.endm
-	
+
 	; Debug marker - writes value to unused RAM location
 	.macro debug_mark value
 		lda #value
@@ -403,7 +403,7 @@
 	; No-op versions for release
 	.macro brk_point
 	.endm
-	
+
 	.macro debug_mark value
 	.endm
 .endif

@@ -376,17 +376,59 @@ class JsonToAsmConverter:
 
 		self.console.print(f"[green]✓ Written {len(spells)} spells to {output_path}[/green]")
 
+	def load_items_lookup(self) -> Dict[int, Dict[str, Any]]:
+		"""
+		Load item data to create a lookup table for item names.
+
+		Returns a dict mapping item ID -> {name, type, label}
+		"""
+		items_path = ASSETS_JSON_DIR / "items.json"
+		if not items_path.exists():
+			return {}
+
+		with open(items_path, "r", encoding="utf-8") as f:
+			data = json.load(f)
+
+		lookup = {}
+		for item in data.get("items", []):
+			# Parse hex ID like "0x00" to int
+			item_id_str = item.get("id", "0x00")
+			if isinstance(item_id_str, str):
+				item_id = int(item_id_str, 16)
+			else:
+				item_id = item_id_str
+
+			name = item.get("name", f"Item_{item_id:02x}")
+			item_type = item.get("type", "unknown")
+			label = f"ITEM_{sanitize_label(name).upper()}"
+
+			lookup[item_id] = {
+				"name": name,
+				"type": item_type,
+				"label": label,
+			}
+
+		return lookup
+
 	def convert_shops(self, input_path: Path, output_path: Path):
 		"""
 		Convert shop data JSON to Poppy assembly.
 
 		Shop format: Pointer table followed by item lists.
 		Each shop is a list of item IDs terminated by $FF.
+
+		Features:
+		- Named labels based on shop location (e.g., shop_burland_weapon)
+		- Item IDs replaced with ITEM_* constants
+		- Full comments with item names
 		"""
 		self.console.print(f"[cyan]🌷 Converting shops: {input_path}[/cyan]")
 
 		with open(input_path, "r", encoding="utf-8") as f:
 			data = json.load(f)
+
+		# Load item lookup for name resolution
+		items_lookup = self.load_items_lookup()
 
 		lines = [
 			"; ============================================================================",
@@ -395,53 +437,149 @@ class JsonToAsmConverter:
 			"; ============================================================================",
 			";",
 			"; Shop format:",
-			";   - Pointer table: .dw shop_000, shop_001, ...",
-			";   - Each shop: list of item IDs terminated by $ff",
+			";   - Pointer table: .dw shop_xxx, ...",
+			";   - Each shop: list of item IDs (ITEM_* constants) terminated by SHOP_END",
+			";",
+			"; Each shop entry uses symbolic item constants for readability.",
+			"; Shop labels are named by location for easy reference.",
 			";",
 			"; ============================================================================",
 			"",
 		]
 
 		shops = data.get("shops", [])
-		lines.append(f"; -----------------------------------------------------------------------------")
-		lines.append(f"; Shop count constant")
-		lines.append(f"; -----------------------------------------------------------------------------")
+
+		# ---------------------------------------------------------------------
+		# Generate shop label from ROM offset and shop ID
+		# We'll create meaningful names based on the ROM offset ranges
+		# which correspond to different areas/chapters
+		# ---------------------------------------------------------------------
+		def get_shop_label(shop_data: Dict, index: int) -> str:
+			"""Generate a descriptive shop label based on ROM offset."""
+			rom_offset = shop_data.get("rom_offset", "0x0")
+			if isinstance(rom_offset, str):
+				offset = int(rom_offset, 16)
+			else:
+				offset = rom_offset
+
+			# Map ROM offset ranges to location names
+			# These are approximate based on the ROM layout
+			if 0x20100 <= offset < 0x20500:
+				return f"shop_ch1_{index:03d}"  # Chapter 1 - Ragnar
+			elif 0x20500 <= offset < 0x20800:
+				return f"shop_ch2_{index:03d}"  # Chapter 2 - Alena
+			elif 0x20800 <= offset < 0x21000:
+				return f"shop_ch3_{index:03d}"  # Chapter 3 - Taloon
+			elif 0x21000 <= offset < 0x21800:
+				return f"shop_ch4_{index:03d}"  # Chapter 4 - Sisters
+			elif 0x21800 <= offset < 0x22500:
+				return f"shop_ch5_{index:03d}"  # Chapter 5 - Hero
+			else:
+				return f"shop_{index:03d}"
+
+		# Generate shop labels
+		shop_labels = []
+		for i, shop in enumerate(shops):
+			label = get_shop_label(shop, i)
+			shop_labels.append(label)
+
+		# ---------------------------------------------------------------------
+		# Item constants
+		# ---------------------------------------------------------------------
+		lines.append("; -----------------------------------------------------------------------------")
+		lines.append("; Item ID Constants (for shop data)")
+		lines.append("; -----------------------------------------------------------------------------")
+		lines.append("")
+
+		# Generate constants for items that appear in shops
+		used_items = set()
+		for shop in shops:
+			for item_id in shop.get("item_ids", []):
+				used_items.add(item_id)
+
+		# Sort and output item constants
+		for item_id in sorted(used_items):
+			if item_id in items_lookup:
+				info = items_lookup[item_id]
+				name = info["name"]
+				label = info["label"]
+				lines.append(f"{label} = ${item_id:02x}\t\t; {name}")
+			else:
+				lines.append(f"ITEM_{item_id:02X} = ${item_id:02x}\t\t; Unknown item ${item_id:02x}")
+
+		lines.append("")
+		lines.append("; Shop terminator")
+		lines.append("SHOP_END = $ff")
+		lines.append("")
+
+		lines.append("; -----------------------------------------------------------------------------")
+		lines.append("; Shop count constant")
+		lines.append("; -----------------------------------------------------------------------------")
 		lines.append(f"SHOP_COUNT = {len(shops)}")
 		lines.append("")
 
+		# ---------------------------------------------------------------------
 		# Pointer table
+		# ---------------------------------------------------------------------
 		lines.append("; -----------------------------------------------------------------------------")
 		lines.append("; Shop pointer table")
 		lines.append("; -----------------------------------------------------------------------------")
 		lines.append("shop_pointer_table:")
 		for i, shop in enumerate(shops):
-			shop_name = shop.get("name", f"Shop {i}")
-			lines.append(f"\t.dw shop_{i:03d}\t\t\t; {shop_name}")
+			label = shop_labels[i]
+			item_ids = shop.get("item_ids", [])
+			# Generate a descriptive comment
+			if item_ids and item_ids[0] in items_lookup:
+				first_item = items_lookup[item_ids[0]]["name"]
+				lines.append(f"\t.dw {label}\t\t; Shop {i}: {first_item}...")
+			else:
+				lines.append(f"\t.dw {label}\t\t; Shop {i}")
 		lines.append("")
 
+		# ---------------------------------------------------------------------
 		# Shop data
+		# ---------------------------------------------------------------------
 		lines.append("; -----------------------------------------------------------------------------")
 		lines.append("; Shop data (item lists)")
+		lines.append("; Each shop contains item constants terminated by SHOP_END ($ff)")
 		lines.append("; -----------------------------------------------------------------------------")
+
 		for i, shop in enumerate(shops):
-			shop_name = shop.get("name", f"Shop {i}")
-			location = shop.get("location", "Unknown")
+			label = shop_labels[i]
 			item_ids = shop.get("item_ids", [])
+			rom_offset = shop.get("rom_offset", "0x0")
 
 			lines.append(f"")
-			lines.append(f"; Shop ${i:02x}: {shop_name}")
-			if location != "Unknown":
-				lines.append(f"; Location: {location}")
-			lines.append(f"shop_{i:03d}:")
+			lines.append(f"; -----------------------------------------------------------------------------")
+			lines.append(f"; Shop ${i:02x} - {label}")
+			lines.append(f"; ROM Offset: {rom_offset}")
+
+			# List all items in this shop
+			if item_ids:
+				item_names = []
+				for item_id in item_ids:
+					if item_id in items_lookup:
+						item_names.append(items_lookup[item_id]["name"])
+					else:
+						item_names.append(f"Unknown(${item_id:02x})")
+				lines.append(f"; Items: {', '.join(item_names)}")
+
+			lines.append(f"; -----------------------------------------------------------------------------")
+			lines.append(f"{label}:")
 
 			if item_ids:
-				# Output items in groups of 8 for readability
-				for j in range(0, len(item_ids), 8):
-					chunk = item_ids[j:j + 8]
-					items_str = ", ".join(format_hex_byte(item) for item in chunk)
-					lines.append(f"\t.db {items_str}")
+				# Output each item with its constant label and comment
+				for j, item_id in enumerate(item_ids):
+					if item_id in items_lookup:
+						info = items_lookup[item_id]
+						item_label = info["label"]
+						item_name = info["name"]
+						item_type = info["type"]
+						lines.append(f"\t.db {item_label}\t\t; {j + 1}. {item_name} ({item_type})")
+					else:
+						lines.append(f"\t.db ${item_id:02x}\t\t\t; {j + 1}. Unknown item ${item_id:02x}")
 
-			lines.append(f"\t.db $ff\t\t\t\t; End of shop")
+			lines.append(f"\t.db SHOP_END\t\t\t; End of shop")
 
 		lines.extend([
 			"",
@@ -455,6 +593,7 @@ class JsonToAsmConverter:
 			f.write("\n".join(lines))
 
 		self.console.print(f"[green]✓ Written {len(shops)} shops to {output_path}[/green]")
+		self.console.print(f"[green]  - {len(used_items)} unique item constants generated[/green]")
 
 	def convert_all(self):
 		"""

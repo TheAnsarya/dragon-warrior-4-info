@@ -4,10 +4,142 @@
 ; ============================================================================
 ;
 ; Shop format:
-;   - Pointer table: .dw shop_000, shop_001, ...
-;   - Each shop: list of item IDs terminated by $ff
+;   - Pointer table: .dw shop_xxx, ...
+;   - Each shop: list of item IDs (ITEM_* constants) terminated by SHOP_END
+;
+; Each shop entry uses symbolic item constants for readability.
+; Shop labels are named by location for easy reference.
 ;
 ; ============================================================================
+
+; -----------------------------------------------------------------------------
+; Item ID Constants (for shop data)
+; -----------------------------------------------------------------------------
+
+ITEM_CLUB = $01		; Club
+ITEM_COPPER_SWORD = $02		; Copper Sword
+ITEM_IRON_CLAW = $03		; Iron Claw
+ITEM_CHAIN_SICKLE = $04		; Chain Sickle
+ITEM_IRON_SPEAR = $05		; Iron Spear
+ITEM_BROAD_SWORD = $06		; Broad Sword
+ITEM_BATTLE_AXE = $07		; Battle Axe
+ITEM_SILVER_TAROT_CARDS = $08		; Silver Tarot Cards
+ITEM_THORN_WHIP = $09		; Thorn Whip
+ITEM_MORNING_STAR = $0a		; Morning Star
+ITEM_BOOMERANG = $0b		; Boomerang
+ITEM_ABACUS_OF_VIRTUE = $0c		; Abacus of Virtue
+ITEM_IRON_FAN = $0d		; Iron Fan
+ITEM_METAL_BABBLE_SWORD = $0e		; Metal Babble Sword
+ITEM_POISON_NEEDLE = $0f		; Poison Needle
+ITEM_STAFF_OF_FORCE = $10		; Staff of Force
+ITEM_STAFF_OF_THUNDER = $11		; Staff of Thunder
+ITEM_DEMON_HAMMER = $12		; Demon Hammer
+ITEM_MULTI_EDGE_SWORD = $13		; Multi-edge Sword
+ITEM_ZENITHIAN_SWORD_1 = $14		; Zenithian Sword (1)
+ITEM_STILLETO_EARRINGS = $16		; Stilleto Earrings
+ITEM_STAFF_OF_PUNISHMENT = $17		; Staff of Punishment
+ITEM_SWORD_OF_LETHARGY = $18		; Sword of Lethargy
+ITEM_VENOMOUS_DAGGER = $19		; Venomous Dagger
+ITEM_ICE_BLADE = $1b		; Ice Blade
+ITEM_SWORD_OF_MIRACLES = $1c		; Sword of Miracles
+ITEM_SWORD_OF_DECIMATION = $1f		; Sword of Decimation
+ITEM_STAFF_OF_HEALING = $20		; Staff of Healing
+ITEM_ZENITHIAN_SWORD_2 = $21		; Zenithian Sword (2)
+ITEM_SWORD_OF_MALICE = $23		; Sword of Malice
+ITEM_BASIC_CLOTHES = $24		; Basic Clothes
+ITEM_WAYFARERS_CLOTHES = $25		; Wayfarer's Clothes
+ITEM_LEATHER_ARMOR = $26		; Leather Armor
+ITEM_HALF_PLATE_ARMOR = $28		; Half Plate Armor
+ITEM_IRON_APRON = $29		; Iron Apron
+ITEM_FULL_PLATE_ARMOR = $2a		; Full Plate Armor
+ITEM_SILK_ROBE = $2b		; Silk Robe
+ITEM_BRONZE_ARMOR = $2d		; Bronze Armor
+ITEM_FUR_COAT = $2f		; Fur Coat
+ITEM_LEATHER_DRESS = $30		; Leather Dress
+ITEM_PINK_LEOTARD = $31		; Pink Leotard
+ITEM_CLOAK_OF_EVASION = $33		; Cloak of Evasion
+ITEM_SACRED_ROBE = $34		; Sacred Robe
+ITEM_WATER_FLYING_CLOTHES = $35		; Water Flying Clothes
+ITEM_MYSTERIOUS_BOLERO = $36		; Mysterious Bolero
+ITEM_ZENITHIAN_ARMOR = $37		; Zenithian Armor
+ITEM_ROBE_OF_SERENITY = $39		; Robe of Serenity
+ITEM_ZOMBIE_MAIL = $3a		; Zombie Mail
+ITEM_DRESS_OF_RADIANCE = $3b		; Dress of Radiance
+ITEM_DEMON_ARMOR = $3c		; Demon Armor
+ITEM_SCALE_SHIELD = $3e		; Scale Shield
+ITEM_AEOLUS_SHIELD = $42		; Aeolus' Shield
+ITEM_METAL_BABBLE_SHIELD = $45		; Metal Babble Shield
+ITEM_LEATHER_HAT = $46		; Leather Hat
+ITEM_WOODEN_HAT = $47		; Wooden Hat
+ITEM_IRON_HELMET = $48		; Iron Helmet
+ITEM_IRON_MASK = $49		; Iron Mask
+ITEM_FEATHER_HAT = $4a		; Feather Hat
+ITEM_HAT_OF_HAPPINESS = $4e		; Hat of Happiness
+ITEM_METAL_BABBLE_HELM = $4f		; Metal Babble Helm
+ITEM_METEORITE_ARMBAND = $50		; Meteorite Armband
+ITEM__BLANK_NAME = $51		; ??? (Blank Name)
+ITEM_BARONS_HORN = $52		; Baron's Horn
+ITEM_ANTIDOTE_HERB = $54		; Antidote Herb
+ITEM_FAIRY_WATER = $55		; Fairy Water
+ITEM_WING_OF_WYVERN = $56		; Wing of Wyvern
+ITEM_FULL_MOON_HERB = $58		; Full Moon Herb
+ITEM_WIZARDS_RING = $59		; Wizard's Ring
+ITEM_MAGIC_POTION = $5a		; Magic Potion
+ITEM_SPHERE_OF_SILENCE = $5d		; Sphere of Silence
+ITEM_SCENT_POUCH = $5e		; Scent Pouch
+ITEM_SANDGLASS_OF_REGRESSION = $5f		; Sandglass of Regression
+ITEM_SAGES_STONE = $60		; Sage's Stone
+ITEM_AGILITY_SEED = $62		; Agility Seed
+ITEM_LUCK_SEED = $63		; Luck Seed
+ITEM_LIFEFORCE_NUTS = $64		; Lifeforce Nuts
+ITEM_MYSTIC_ACORNS = $65		; Mystic Acorns
+ITEM_MIRROR_OF_RA = $66		; Mirror of Ra
+ITEM_STAFF_OF_TRANSFORM = $68		; Staff of Transform
+ITEM_STONE_OF_DROUGHT = $6a		; Stone of Drought
+ITEM_IRON_SAFE = $6b		; Iron Safe
+ITEM_TREASURE_MAP = $6e		; Treasure Map
+ITEM_SYMBOL_OF_FAITH = $6f		; Symbol of Faith
+ITEM_GUNPOWDER_JAR = $70		; Gunpowder Jar
+ITEM_THIEFS_KEY = $71		; Thief's Key
+ITEM_LUNCH = $74		; Lunch
+ITEM_GOLDEN_BRACELET = $76		; Golden Bracelet
+ITEM_PRINCES_LETTER = $77		; Prince's Letter
+ITEM_ROYAL_SCROLL = $78		; Royal Scroll
+ITEM_PADEQUIA_ROOT = $7b		; Padequia Root
+ITEM_FIRE_OF_SERENITY = $7c		; Fire of Serenity
+ITEM__NO_ITEM = $7f		; ??? No Item
+ITEM_80 = $80		; Unknown item $80
+ITEM_81 = $81		; Unknown item $81
+ITEM_82 = $82		; Unknown item $82
+ITEM_84 = $84		; Unknown item $84
+ITEM_85 = $85		; Unknown item $85
+ITEM_86 = $86		; Unknown item $86
+ITEM_87 = $87		; Unknown item $87
+ITEM_88 = $88		; Unknown item $88
+ITEM_8B = $8b		; Unknown item $8b
+ITEM_8E = $8e		; Unknown item $8e
+ITEM_8F = $8f		; Unknown item $8f
+ITEM_90 = $90		; Unknown item $90
+ITEM_92 = $92		; Unknown item $92
+ITEM_9B = $9b		; Unknown item $9b
+ITEM_9E = $9e		; Unknown item $9e
+ITEM_9F = $9f		; Unknown item $9f
+ITEM_A0 = $a0		; Unknown item $a0
+ITEM_A2 = $a2		; Unknown item $a2
+ITEM_A4 = $a4		; Unknown item $a4
+ITEM_A8 = $a8		; Unknown item $a8
+ITEM_A9 = $a9		; Unknown item $a9
+ITEM_AA = $aa		; Unknown item $aa
+ITEM_AC = $ac		; Unknown item $ac
+ITEM_B1 = $b1		; Unknown item $b1
+ITEM_B2 = $b2		; Unknown item $b2
+ITEM_B6 = $b6		; Unknown item $b6
+ITEM_BF = $bf		; Unknown item $bf
+ITEM_C0 = $c0		; Unknown item $c0
+ITEM_C5 = $c5		; Unknown item $c5
+
+; Shop terminator
+SHOP_END = $ff
 
 ; -----------------------------------------------------------------------------
 ; Shop count constant
@@ -18,1130 +150,2706 @@ SHOP_COUNT = 180
 ; Shop pointer table
 ; -----------------------------------------------------------------------------
 shop_pointer_table:
-	.dw shop_000			; Shop 0
-	.dw shop_001			; Shop 1
-	.dw shop_002			; Shop 2
-	.dw shop_003			; Shop 3
-	.dw shop_004			; Shop 4
-	.dw shop_005			; Shop 5
-	.dw shop_006			; Shop 6
-	.dw shop_007			; Shop 7
-	.dw shop_008			; Shop 8
-	.dw shop_009			; Shop 9
-	.dw shop_010			; Shop 10
-	.dw shop_011			; Shop 11
-	.dw shop_012			; Shop 12
-	.dw shop_013			; Shop 13
-	.dw shop_014			; Shop 14
-	.dw shop_015			; Shop 15
-	.dw shop_016			; Shop 16
-	.dw shop_017			; Shop 17
-	.dw shop_018			; Shop 18
-	.dw shop_019			; Shop 19
-	.dw shop_020			; Shop 20
-	.dw shop_021			; Shop 21
-	.dw shop_022			; Shop 22
-	.dw shop_023			; Shop 23
-	.dw shop_024			; Shop 24
-	.dw shop_025			; Shop 25
-	.dw shop_026			; Shop 26
-	.dw shop_027			; Shop 27
-	.dw shop_028			; Shop 28
-	.dw shop_029			; Shop 29
-	.dw shop_030			; Shop 30
-	.dw shop_031			; Shop 31
-	.dw shop_032			; Shop 32
-	.dw shop_033			; Shop 33
-	.dw shop_034			; Shop 34
-	.dw shop_035			; Shop 35
-	.dw shop_036			; Shop 36
-	.dw shop_037			; Shop 37
-	.dw shop_038			; Shop 38
-	.dw shop_039			; Shop 39
-	.dw shop_040			; Shop 40
-	.dw shop_041			; Shop 41
-	.dw shop_042			; Shop 42
-	.dw shop_043			; Shop 43
-	.dw shop_044			; Shop 44
-	.dw shop_045			; Shop 45
-	.dw shop_046			; Shop 46
-	.dw shop_047			; Shop 47
-	.dw shop_048			; Shop 48
-	.dw shop_049			; Shop 49
-	.dw shop_050			; Shop 50
-	.dw shop_051			; Shop 51
-	.dw shop_052			; Shop 52
-	.dw shop_053			; Shop 53
-	.dw shop_054			; Shop 54
-	.dw shop_055			; Shop 55
-	.dw shop_056			; Shop 56
-	.dw shop_057			; Shop 57
-	.dw shop_058			; Shop 58
-	.dw shop_059			; Shop 59
-	.dw shop_060			; Shop 60
-	.dw shop_061			; Shop 61
-	.dw shop_062			; Shop 62
-	.dw shop_063			; Shop 63
-	.dw shop_064			; Shop 64
-	.dw shop_065			; Shop 65
-	.dw shop_066			; Shop 66
-	.dw shop_067			; Shop 67
-	.dw shop_068			; Shop 68
-	.dw shop_069			; Shop 69
-	.dw shop_070			; Shop 70
-	.dw shop_071			; Shop 71
-	.dw shop_072			; Shop 72
-	.dw shop_073			; Shop 73
-	.dw shop_074			; Shop 74
-	.dw shop_075			; Shop 75
-	.dw shop_076			; Shop 76
-	.dw shop_077			; Shop 77
-	.dw shop_078			; Shop 78
-	.dw shop_079			; Shop 79
-	.dw shop_080			; Shop 80
-	.dw shop_081			; Shop 81
-	.dw shop_082			; Shop 82
-	.dw shop_083			; Shop 83
-	.dw shop_084			; Shop 84
-	.dw shop_085			; Shop 85
-	.dw shop_086			; Shop 86
-	.dw shop_087			; Shop 87
-	.dw shop_088			; Shop 88
-	.dw shop_089			; Shop 89
-	.dw shop_090			; Shop 90
-	.dw shop_091			; Shop 91
-	.dw shop_092			; Shop 92
-	.dw shop_093			; Shop 93
-	.dw shop_094			; Shop 94
-	.dw shop_095			; Shop 95
-	.dw shop_096			; Shop 96
-	.dw shop_097			; Shop 97
-	.dw shop_098			; Shop 98
-	.dw shop_099			; Shop 99
-	.dw shop_100			; Shop 100
-	.dw shop_101			; Shop 101
-	.dw shop_102			; Shop 102
-	.dw shop_103			; Shop 103
-	.dw shop_104			; Shop 104
-	.dw shop_105			; Shop 105
-	.dw shop_106			; Shop 106
-	.dw shop_107			; Shop 107
-	.dw shop_108			; Shop 108
-	.dw shop_109			; Shop 109
-	.dw shop_110			; Shop 110
-	.dw shop_111			; Shop 111
-	.dw shop_112			; Shop 112
-	.dw shop_113			; Shop 113
-	.dw shop_114			; Shop 114
-	.dw shop_115			; Shop 115
-	.dw shop_116			; Shop 116
-	.dw shop_117			; Shop 117
-	.dw shop_118			; Shop 118
-	.dw shop_119			; Shop 119
-	.dw shop_120			; Shop 120
-	.dw shop_121			; Shop 121
-	.dw shop_122			; Shop 122
-	.dw shop_123			; Shop 123
-	.dw shop_124			; Shop 124
-	.dw shop_125			; Shop 125
-	.dw shop_126			; Shop 126
-	.dw shop_127			; Shop 127
-	.dw shop_128			; Shop 128
-	.dw shop_129			; Shop 129
-	.dw shop_130			; Shop 130
-	.dw shop_131			; Shop 131
-	.dw shop_132			; Shop 132
-	.dw shop_133			; Shop 133
-	.dw shop_134			; Shop 134
-	.dw shop_135			; Shop 135
-	.dw shop_136			; Shop 136
-	.dw shop_137			; Shop 137
-	.dw shop_138			; Shop 138
-	.dw shop_139			; Shop 139
-	.dw shop_140			; Shop 140
-	.dw shop_141			; Shop 141
-	.dw shop_142			; Shop 142
-	.dw shop_143			; Shop 143
-	.dw shop_144			; Shop 144
-	.dw shop_145			; Shop 145
-	.dw shop_146			; Shop 146
-	.dw shop_147			; Shop 147
-	.dw shop_148			; Shop 148
-	.dw shop_149			; Shop 149
-	.dw shop_150			; Shop 150
-	.dw shop_151			; Shop 151
-	.dw shop_152			; Shop 152
-	.dw shop_153			; Shop 153
-	.dw shop_154			; Shop 154
-	.dw shop_155			; Shop 155
-	.dw shop_156			; Shop 156
-	.dw shop_157			; Shop 157
-	.dw shop_158			; Shop 158
-	.dw shop_159			; Shop 159
-	.dw shop_160			; Shop 160
-	.dw shop_161			; Shop 161
-	.dw shop_162			; Shop 162
-	.dw shop_163			; Shop 163
-	.dw shop_164			; Shop 164
-	.dw shop_165			; Shop 165
-	.dw shop_166			; Shop 166
-	.dw shop_167			; Shop 167
-	.dw shop_168			; Shop 168
-	.dw shop_169			; Shop 169
-	.dw shop_170			; Shop 170
-	.dw shop_171			; Shop 171
-	.dw shop_172			; Shop 172
-	.dw shop_173			; Shop 173
-	.dw shop_174			; Shop 174
-	.dw shop_175			; Shop 175
-	.dw shop_176			; Shop 176
-	.dw shop_177			; Shop 177
-	.dw shop_178			; Shop 178
-	.dw shop_179			; Shop 179
+	.dw shop_ch1_000		; Shop 0: Half Plate Armor...
+	.dw shop_ch1_001		; Shop 1: Staff of Force...
+	.dw shop_ch1_002		; Shop 2: Abacus of Virtue...
+	.dw shop_ch1_003		; Shop 3: Iron Helmet...
+	.dw shop_ch1_004		; Shop 4
+	.dw shop_ch2_005		; Shop 5: Leather Dress...
+	.dw shop_ch2_006		; Shop 6: Demon Hammer...
+	.dw shop_ch2_007		; Shop 7: Venomous Dagger...
+	.dw shop_ch2_008		; Shop 8: Leather Dress...
+	.dw shop_ch2_009		; Shop 9: Staff of Punishment...
+	.dw shop_ch2_010		; Shop 10: Leather Armor...
+	.dw shop_ch2_011		; Shop 11: Leather Dress...
+	.dw shop_ch2_012		; Shop 12: Basic Clothes...
+	.dw shop_ch2_013		; Shop 13: Multi-edge Sword...
+	.dw shop_ch2_014		; Shop 14: Leather Dress...
+	.dw shop_ch4_015		; Shop 15: Thorn Whip...
+	.dw shop_ch4_016		; Shop 16: Silver Tarot Cards...
+	.dw shop_ch4_017		; Shop 17: Leather Armor...
+	.dw shop_ch4_018		; Shop 18: Venomous Dagger...
+	.dw shop_ch5_019		; Shop 19: Club...
+	.dw shop_ch5_020		; Shop 20: Club...
+	.dw shop_ch5_021		; Shop 21: Iron Claw...
+	.dw shop_ch5_022		; Shop 22: Club...
+	.dw shop_ch5_023		; Shop 23: Club...
+	.dw shop_ch5_024		; Shop 24: Club...
+	.dw shop_ch5_025		; Shop 25: Chain Sickle...
+	.dw shop_ch5_026		; Shop 26: Club...
+	.dw shop_ch5_027		; Shop 27: Demon Hammer...
+	.dw shop_ch5_028		; Shop 28: Club...
+	.dw shop_ch5_029		; Shop 29: Metal Babble Sword...
+	.dw shop_ch5_030		; Shop 30: Copper Sword...
+	.dw shop_ch5_031		; Shop 31: Broad Sword...
+	.dw shop_ch5_032		; Shop 32: Club...
+	.dw shop_ch5_033		; Shop 33: Club...
+	.dw shop_ch5_034		; Shop 34: Broad Sword...
+	.dw shop_ch5_035		; Shop 35: Club...
+	.dw shop_ch5_036		; Shop 36: Club...
+	.dw shop_ch5_037		; Shop 37: Iron Claw...
+	.dw shop_ch5_038		; Shop 38: Club...
+	.dw shop_ch5_039		; Shop 39: Thorn Whip...
+	.dw shop_ch5_040		; Shop 40: Club...
+	.dw shop_ch5_041		; Shop 41: Club...
+	.dw shop_042		; Shop 42: Sword of Miracles...
+	.dw shop_043		; Shop 43
+	.dw shop_044		; Shop 44: Sage's Stone...
+	.dw shop_045		; Shop 45
+	.dw shop_046		; Shop 46: Sword of Miracles...
+	.dw shop_047		; Shop 47: Sage's Stone...
+	.dw shop_048		; Shop 48: Full Plate Armor...
+	.dw shop_049		; Shop 49: Mysterious Bolero...
+	.dw shop_050		; Shop 50: Zenithian Armor...
+	.dw shop_051		; Shop 51: Iron Fan...
+	.dw shop_052		; Shop 52: Morning Star...
+	.dw shop_053		; Shop 53: Boomerang...
+	.dw shop_054		; Shop 54: Morning Star...
+	.dw shop_055		; Shop 55
+	.dw shop_056		; Shop 56: Sword of Lethargy...
+	.dw shop_057		; Shop 57: Wayfarer's Clothes...
+	.dw shop_058		; Shop 58
+	.dw shop_059		; Shop 59: Iron Claw...
+	.dw shop_060		; Shop 60: Iron Apron...
+	.dw shop_061		; Shop 61: Copper Sword...
+	.dw shop_062		; Shop 62: Iron Claw...
+	.dw shop_063		; Shop 63: Sword of Malice...
+	.dw shop_064		; Shop 64: Venomous Dagger...
+	.dw shop_065		; Shop 65: Iron Claw...
+	.dw shop_066		; Shop 66: Basic Clothes...
+	.dw shop_067		; Shop 67: Venomous Dagger...
+	.dw shop_068		; Shop 68: Iron Claw...
+	.dw shop_069		; Shop 69: Sword of Malice...
+	.dw shop_070		; Shop 70: Sword of Miracles...
+	.dw shop_071		; Shop 71: Iron Claw...
+	.dw shop_072		; Shop 72: Sword of Miracles...
+	.dw shop_073		; Shop 73: Bronze Armor...
+	.dw shop_074		; Shop 74: Hat of Happiness...
+	.dw shop_075		; Shop 75: Zenithian Armor...
+	.dw shop_076		; Shop 76: Metal Babble Shield...
+	.dw shop_077		; Shop 77: Hat of Happiness...
+	.dw shop_078		; Shop 78: Broad Sword...
+	.dw shop_079		; Shop 79: Chain Sickle...
+	.dw shop_080		; Shop 80: Iron Spear...
+	.dw shop_081		; Shop 81: Broad Sword...
+	.dw shop_082		; Shop 82: Poison Needle...
+	.dw shop_083		; Shop 83: Hat of Happiness...
+	.dw shop_084		; Shop 84: Demon Armor...
+	.dw shop_085		; Shop 85: Silk Robe...
+	.dw shop_086		; Shop 86: ??? (Blank Name)...
+	.dw shop_087		; Shop 87: Demon Armor...
+	.dw shop_088		; Shop 88: Iron Spear...
+	.dw shop_089		; Shop 89: Iron Spear...
+	.dw shop_090		; Shop 90: Iron Spear...
+	.dw shop_091		; Shop 91: Iron Spear...
+	.dw shop_092		; Shop 92: Magic Potion...
+	.dw shop_093		; Shop 93: Iron Mask...
+	.dw shop_094		; Shop 94: Mirror of Ra...
+	.dw shop_095		; Shop 95: Full Moon Herb...
+	.dw shop_096		; Shop 96: Full Moon Herb...
+	.dw shop_097		; Shop 97: Baron's Horn...
+	.dw shop_098		; Shop 98: Club...
+	.dw shop_099		; Shop 99: Thorn Whip...
+	.dw shop_100		; Shop 100: Thorn Whip...
+	.dw shop_101		; Shop 101: Battle Axe...
+	.dw shop_102		; Shop 102: Sphere of Silence...
+	.dw shop_103		; Shop 103: Treasure Map...
+	.dw shop_104		; Shop 104: Fairy Water...
+	.dw shop_105		; Shop 105: Fire of Serenity...
+	.dw shop_106		; Shop 106: Fire of Serenity...
+	.dw shop_107		; Shop 107: Gunpowder Jar...
+	.dw shop_108		; Shop 108: Luck Seed...
+	.dw shop_109		; Shop 109: Luck Seed...
+	.dw shop_110		; Shop 110: Staff of Healing...
+	.dw shop_111		; Shop 111: Ice Blade...
+	.dw shop_112		; Shop 112
+	.dw shop_113		; Shop 113: Half Plate Armor...
+	.dw shop_114		; Shop 114
+	.dw shop_115		; Shop 115: Broad Sword...
+	.dw shop_116		; Shop 116: Lifeforce Nuts...
+	.dw shop_117		; Shop 117: Pink Leotard...
+	.dw shop_118		; Shop 118: Scale Shield...
+	.dw shop_119		; Shop 119: Cloak of Evasion...
+	.dw shop_120		; Shop 120: Aeolus' Shield...
+	.dw shop_121		; Shop 121: Lunch...
+	.dw shop_122		; Shop 122
+	.dw shop_123		; Shop 123: Sandglass of Regression...
+	.dw shop_124		; Shop 124
+	.dw shop_125		; Shop 125: Symbol of Faith...
+	.dw shop_126		; Shop 126: Staff of Transform...
+	.dw shop_127		; Shop 127: Mysterious Bolero...
+	.dw shop_128		; Shop 128
+	.dw shop_129		; Shop 129: Prince's Letter...
+	.dw shop_130		; Shop 130: Wizard's Ring...
+	.dw shop_131		; Shop 131: Fur Coat...
+	.dw shop_132		; Shop 132
+	.dw shop_133		; Shop 133
+	.dw shop_134		; Shop 134: Fire of Serenity...
+	.dw shop_135		; Shop 135: Zombie Mail...
+	.dw shop_136		; Shop 136: Iron Helmet...
+	.dw shop_137		; Shop 137: Thorn Whip...
+	.dw shop_138		; Shop 138: Stilleto Earrings...
+	.dw shop_139		; Shop 139
+	.dw shop_140		; Shop 140: Demon Hammer...
+	.dw shop_141		; Shop 141
+	.dw shop_142		; Shop 142: Cloak of Evasion...
+	.dw shop_143		; Shop 143: Staff of Punishment...
+	.dw shop_144		; Shop 144: Sandglass of Regression...
+	.dw shop_145		; Shop 145: Staff of Force...
+	.dw shop_146		; Shop 146: Stilleto Earrings...
+	.dw shop_147		; Shop 147
+	.dw shop_148		; Shop 148
+	.dw shop_149		; Shop 149
+	.dw shop_150		; Shop 150
+	.dw shop_151		; Shop 151: Zenithian Sword (2)...
+	.dw shop_152		; Shop 152
+	.dw shop_153		; Shop 153
+	.dw shop_154		; Shop 154: Copper Sword...
+	.dw shop_155		; Shop 155: Wing of Wyvern...
+	.dw shop_156		; Shop 156: Metal Babble Sword...
+	.dw shop_157		; Shop 157: Feather Hat...
+	.dw shop_158		; Shop 158: Staff of Force...
+	.dw shop_159		; Shop 159: Iron Claw...
+	.dw shop_160		; Shop 160
+	.dw shop_161		; Shop 161: Club...
+	.dw shop_162		; Shop 162: Dress of Radiance...
+	.dw shop_163		; Shop 163: Broad Sword...
+	.dw shop_164		; Shop 164
+	.dw shop_165		; Shop 165: Padequia Root...
+	.dw shop_166		; Shop 166: Wizard's Ring...
+	.dw shop_167		; Shop 167: Agility Seed...
+	.dw shop_168		; Shop 168
+	.dw shop_169		; Shop 169
+	.dw shop_170		; Shop 170: Gunpowder Jar...
+	.dw shop_171		; Shop 171: Iron Mask...
+	.dw shop_172		; Shop 172
+	.dw shop_173		; Shop 173: Antidote Herb...
+	.dw shop_174		; Shop 174
+	.dw shop_175		; Shop 175
+	.dw shop_176		; Shop 176
+	.dw shop_177		; Shop 177
+	.dw shop_178		; Shop 178: Iron Mask...
+	.dw shop_179		; Shop 179: Staff of Transform...
 
 ; -----------------------------------------------------------------------------
 ; Shop data (item lists)
+; Each shop contains item constants terminated by SHOP_END ($ff)
 ; -----------------------------------------------------------------------------
 
-; Shop $00: Shop 0
-shop_000:
-	.db $28, $10, $02, $a0
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $00 - shop_ch1_000
+; ROM Offset: 0x2019e
+; Items: Half Plate Armor, Staff of Force, Copper Sword, Unknown($a0)
+; -----------------------------------------------------------------------------
+shop_ch1_000:
+	.db ITEM_HALF_PLATE_ARMOR		; 1. Half Plate Armor (armor)
+	.db ITEM_STAFF_OF_FORCE		; 2. Staff of Force (weapon)
+	.db ITEM_COPPER_SWORD		; 3. Copper Sword (weapon)
+	.db $a0			; 4. Unknown item $a0
+	.db SHOP_END			; End of shop
 
-; Shop $01: Shop 1
-shop_001:
-	.db $10, $02, $a0
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $01 - shop_ch1_001
+; ROM Offset: 0x2019f
+; Items: Staff of Force, Copper Sword, Unknown($a0)
+; -----------------------------------------------------------------------------
+shop_ch1_001:
+	.db ITEM_STAFF_OF_FORCE		; 1. Staff of Force (weapon)
+	.db ITEM_COPPER_SWORD		; 2. Copper Sword (weapon)
+	.db $a0			; 3. Unknown item $a0
+	.db SHOP_END			; End of shop
 
-; Shop $02: Shop 2
-shop_002:
-	.db $0c, $48, $a2, $1f, $a9
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $02 - shop_ch1_002
+; ROM Offset: 0x204e6
+; Items: Abacus of Virtue, Iron Helmet, Unknown($a2), Sword of Decimation, Unknown($a9)
+; -----------------------------------------------------------------------------
+shop_ch1_002:
+	.db ITEM_ABACUS_OF_VIRTUE		; 1. Abacus of Virtue (weapon)
+	.db ITEM_IRON_HELMET		; 2. Iron Helmet (helmet)
+	.db $a2			; 3. Unknown item $a2
+	.db ITEM_SWORD_OF_DECIMATION		; 4. Sword of Decimation (weapon)
+	.db $a9			; 5. Unknown item $a9
+	.db SHOP_END			; End of shop
 
-; Shop $03: Shop 3
-shop_003:
-	.db $48, $a2, $1f, $a9
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $03 - shop_ch1_003
+; ROM Offset: 0x204e7
+; Items: Iron Helmet, Unknown($a2), Sword of Decimation, Unknown($a9)
+; -----------------------------------------------------------------------------
+shop_ch1_003:
+	.db ITEM_IRON_HELMET		; 1. Iron Helmet (helmet)
+	.db $a2			; 2. Unknown item $a2
+	.db ITEM_SWORD_OF_DECIMATION		; 3. Sword of Decimation (weapon)
+	.db $a9			; 4. Unknown item $a9
+	.db SHOP_END			; End of shop
 
-; Shop $04: Shop 4
-shop_004:
-	.db $a2, $1f, $a9
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $04 - shop_ch1_004
+; ROM Offset: 0x204e8
+; Items: Unknown($a2), Sword of Decimation, Unknown($a9)
+; -----------------------------------------------------------------------------
+shop_ch1_004:
+	.db $a2			; 1. Unknown item $a2
+	.db ITEM_SWORD_OF_DECIMATION		; 2. Sword of Decimation (weapon)
+	.db $a9			; 3. Unknown item $a9
+	.db SHOP_END			; End of shop
 
-; Shop $05: Shop 5
-shop_005:
-	.db $30, $12, $19, $30, $17, $26, $30, $24
-	.db $13, $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $05 - shop_ch2_005
+; ROM Offset: 0x20713
+; Items: Leather Dress, Demon Hammer, Venomous Dagger, Leather Dress, Staff of Punishment, Leather Armor, Leather Dress, Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_005:
+	.db ITEM_LEATHER_DRESS		; 1. Leather Dress (armor)
+	.db ITEM_DEMON_HAMMER		; 2. Demon Hammer (weapon)
+	.db ITEM_VENOMOUS_DAGGER		; 3. Venomous Dagger (weapon)
+	.db ITEM_LEATHER_DRESS		; 4. Leather Dress (armor)
+	.db ITEM_STAFF_OF_PUNISHMENT		; 5. Staff of Punishment (weapon)
+	.db ITEM_LEATHER_ARMOR		; 6. Leather Armor (armor)
+	.db ITEM_LEATHER_DRESS		; 7. Leather Dress (armor)
+	.db ITEM_BASIC_CLOTHES		; 8. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 9. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 10. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 11. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 12. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $06: Shop 6
-shop_006:
-	.db $12, $19, $30, $17, $26, $30, $24, $13
-	.db $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $06 - shop_ch2_006
+; ROM Offset: 0x20714
+; Items: Demon Hammer, Venomous Dagger, Leather Dress, Staff of Punishment, Leather Armor, Leather Dress, Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_006:
+	.db ITEM_DEMON_HAMMER		; 1. Demon Hammer (weapon)
+	.db ITEM_VENOMOUS_DAGGER		; 2. Venomous Dagger (weapon)
+	.db ITEM_LEATHER_DRESS		; 3. Leather Dress (armor)
+	.db ITEM_STAFF_OF_PUNISHMENT		; 4. Staff of Punishment (weapon)
+	.db ITEM_LEATHER_ARMOR		; 5. Leather Armor (armor)
+	.db ITEM_LEATHER_DRESS		; 6. Leather Dress (armor)
+	.db ITEM_BASIC_CLOTHES		; 7. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 8. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 9. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 10. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 11. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $07: Shop 7
-shop_007:
-	.db $19, $30, $17, $26, $30, $24, $13, $30
-	.db $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $07 - shop_ch2_007
+; ROM Offset: 0x20715
+; Items: Venomous Dagger, Leather Dress, Staff of Punishment, Leather Armor, Leather Dress, Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_007:
+	.db ITEM_VENOMOUS_DAGGER		; 1. Venomous Dagger (weapon)
+	.db ITEM_LEATHER_DRESS		; 2. Leather Dress (armor)
+	.db ITEM_STAFF_OF_PUNISHMENT		; 3. Staff of Punishment (weapon)
+	.db ITEM_LEATHER_ARMOR		; 4. Leather Armor (armor)
+	.db ITEM_LEATHER_DRESS		; 5. Leather Dress (armor)
+	.db ITEM_BASIC_CLOTHES		; 6. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 7. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 8. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 9. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 10. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $08: Shop 8
-shop_008:
-	.db $30, $17, $26, $30, $24, $13, $30, $26
-	.db $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $08 - shop_ch2_008
+; ROM Offset: 0x20716
+; Items: Leather Dress, Staff of Punishment, Leather Armor, Leather Dress, Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_008:
+	.db ITEM_LEATHER_DRESS		; 1. Leather Dress (armor)
+	.db ITEM_STAFF_OF_PUNISHMENT		; 2. Staff of Punishment (weapon)
+	.db ITEM_LEATHER_ARMOR		; 3. Leather Armor (armor)
+	.db ITEM_LEATHER_DRESS		; 4. Leather Dress (armor)
+	.db ITEM_BASIC_CLOTHES		; 5. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 6. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 7. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 8. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 9. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $09: Shop 9
-shop_009:
-	.db $17, $26, $30, $24, $13, $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $09 - shop_ch2_009
+; ROM Offset: 0x20717
+; Items: Staff of Punishment, Leather Armor, Leather Dress, Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_009:
+	.db ITEM_STAFF_OF_PUNISHMENT		; 1. Staff of Punishment (weapon)
+	.db ITEM_LEATHER_ARMOR		; 2. Leather Armor (armor)
+	.db ITEM_LEATHER_DRESS		; 3. Leather Dress (armor)
+	.db ITEM_BASIC_CLOTHES		; 4. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 5. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 6. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 7. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 8. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $0a: Shop 10
-shop_010:
-	.db $26, $30, $24, $13, $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $0a - shop_ch2_010
+; ROM Offset: 0x20718
+; Items: Leather Armor, Leather Dress, Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_010:
+	.db ITEM_LEATHER_ARMOR		; 1. Leather Armor (armor)
+	.db ITEM_LEATHER_DRESS		; 2. Leather Dress (armor)
+	.db ITEM_BASIC_CLOTHES		; 3. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 4. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 5. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 6. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 7. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $0b: Shop 11
-shop_011:
-	.db $30, $24, $13, $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $0b - shop_ch2_011
+; ROM Offset: 0x20719
+; Items: Leather Dress, Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_011:
+	.db ITEM_LEATHER_DRESS		; 1. Leather Dress (armor)
+	.db ITEM_BASIC_CLOTHES		; 2. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 3. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 4. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 5. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 6. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $0c: Shop 12
-shop_012:
-	.db $24, $13, $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $0c - shop_ch2_012
+; ROM Offset: 0x2071a
+; Items: Basic Clothes, Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_012:
+	.db ITEM_BASIC_CLOTHES		; 1. Basic Clothes (armor)
+	.db ITEM_MULTI_EDGE_SWORD		; 2. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 3. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 4. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 5. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $0d: Shop 13
-shop_013:
-	.db $13, $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $0d - shop_ch2_013
+; ROM Offset: 0x2071b
+; Items: Multi-edge Sword, Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_013:
+	.db ITEM_MULTI_EDGE_SWORD		; 1. Multi-edge Sword (weapon)
+	.db ITEM_LEATHER_DRESS		; 2. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 3. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 4. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $0e: Shop 14
-shop_014:
-	.db $30, $26, $04
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $0e - shop_ch2_014
+; ROM Offset: 0x2071c
+; Items: Leather Dress, Leather Armor, Chain Sickle
+; -----------------------------------------------------------------------------
+shop_ch2_014:
+	.db ITEM_LEATHER_DRESS		; 1. Leather Dress (armor)
+	.db ITEM_LEATHER_ARMOR		; 2. Leather Armor (armor)
+	.db ITEM_CHAIN_SICKLE		; 3. Chain Sickle (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $0f: Shop 15
-shop_015:
-	.db $09, $04, $08
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $0f - shop_ch4_015
+; ROM Offset: 0x213c5
+; Items: Thorn Whip, Chain Sickle, Silver Tarot Cards
+; -----------------------------------------------------------------------------
+shop_ch4_015:
+	.db ITEM_THORN_WHIP		; 1. Thorn Whip (weapon)
+	.db ITEM_CHAIN_SICKLE		; 2. Chain Sickle (weapon)
+	.db ITEM_SILVER_TAROT_CARDS		; 3. Silver Tarot Cards (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $10: Shop 16
-shop_016:
-	.db $08, $26, $19, $76, $19
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $10 - shop_ch4_016
+; ROM Offset: 0x21521
+; Items: Silver Tarot Cards, Leather Armor, Venomous Dagger, Golden Bracelet, Venomous Dagger
+; -----------------------------------------------------------------------------
+shop_ch4_016:
+	.db ITEM_SILVER_TAROT_CARDS		; 1. Silver Tarot Cards (weapon)
+	.db ITEM_LEATHER_ARMOR		; 2. Leather Armor (armor)
+	.db ITEM_VENOMOUS_DAGGER		; 3. Venomous Dagger (weapon)
+	.db ITEM_GOLDEN_BRACELET		; 4. Golden Bracelet (key_item)
+	.db ITEM_VENOMOUS_DAGGER		; 5. Venomous Dagger (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $11: Shop 17
-shop_017:
-	.db $26, $19, $76, $19
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $11 - shop_ch4_017
+; ROM Offset: 0x21522
+; Items: Leather Armor, Venomous Dagger, Golden Bracelet, Venomous Dagger
+; -----------------------------------------------------------------------------
+shop_ch4_017:
+	.db ITEM_LEATHER_ARMOR		; 1. Leather Armor (armor)
+	.db ITEM_VENOMOUS_DAGGER		; 2. Venomous Dagger (weapon)
+	.db ITEM_GOLDEN_BRACELET		; 3. Golden Bracelet (key_item)
+	.db ITEM_VENOMOUS_DAGGER		; 4. Venomous Dagger (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $12: Shop 18
-shop_018:
-	.db $19, $76, $19
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $12 - shop_ch4_018
+; ROM Offset: 0x21523
+; Items: Venomous Dagger, Golden Bracelet, Venomous Dagger
+; -----------------------------------------------------------------------------
+shop_ch4_018:
+	.db ITEM_VENOMOUS_DAGGER		; 1. Venomous Dagger (weapon)
+	.db ITEM_GOLDEN_BRACELET		; 2. Golden Bracelet (key_item)
+	.db ITEM_VENOMOUS_DAGGER		; 3. Venomous Dagger (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $13: Shop 19
-shop_019:
-	.db $01, $01, $03, $01, $01, $01, $03, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $13 - shop_ch5_019
+; ROM Offset: 0x221e7
+; Items: Club, Club, Iron Claw, Club, Club, Club, Iron Claw, Club
+; -----------------------------------------------------------------------------
+shop_ch5_019:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db ITEM_CLUB		; 6. Club (weapon)
+	.db ITEM_IRON_CLAW		; 7. Iron Claw (weapon)
+	.db ITEM_CLUB		; 8. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $14: Shop 20
-shop_020:
-	.db $01, $03, $01, $01, $01, $03, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $14 - shop_ch5_020
+; ROM Offset: 0x221e8
+; Items: Club, Iron Claw, Club, Club, Club, Iron Claw, Club
+; -----------------------------------------------------------------------------
+shop_ch5_020:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db ITEM_IRON_CLAW		; 6. Iron Claw (weapon)
+	.db ITEM_CLUB		; 7. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $15: Shop 21
-shop_021:
-	.db $03, $01, $01, $01, $03, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $15 - shop_ch5_021
+; ROM Offset: 0x221e9
+; Items: Iron Claw, Club, Club, Club, Iron Claw, Club
+; -----------------------------------------------------------------------------
+shop_ch5_021:
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_IRON_CLAW		; 5. Iron Claw (weapon)
+	.db ITEM_CLUB		; 6. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $16: Shop 22
-shop_022:
-	.db $01, $01, $01, $03, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $16 - shop_ch5_022
+; ROM Offset: 0x221ea
+; Items: Club, Club, Club, Iron Claw, Club
+; -----------------------------------------------------------------------------
+shop_ch5_022:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_IRON_CLAW		; 4. Iron Claw (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $17: Shop 23
-shop_023:
-	.db $01, $01, $03, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $17 - shop_ch5_023
+; ROM Offset: 0x221eb
+; Items: Club, Club, Iron Claw, Club
+; -----------------------------------------------------------------------------
+shop_ch5_023:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $18: Shop 24
-shop_024:
-	.db $01, $03, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $18 - shop_ch5_024
+; ROM Offset: 0x221ec
+; Items: Club, Iron Claw, Club
+; -----------------------------------------------------------------------------
+shop_ch5_024:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $19: Shop 25
-shop_025:
-	.db $04, $01, $03, $02
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $19 - shop_ch5_025
+; ROM Offset: 0x221ff
+; Items: Chain Sickle, Club, Iron Claw, Copper Sword
+; -----------------------------------------------------------------------------
+shop_ch5_025:
+	.db ITEM_CHAIN_SICKLE		; 1. Chain Sickle (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_COPPER_SWORD		; 4. Copper Sword (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $1a: Shop 26
-shop_026:
-	.db $01, $03, $02
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $1a - shop_ch5_026
+; ROM Offset: 0x22200
+; Items: Club, Iron Claw, Copper Sword
+; -----------------------------------------------------------------------------
+shop_ch5_026:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_COPPER_SWORD		; 3. Copper Sword (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $1b: Shop 27
-shop_027:
-	.db $12, $01, $01, $02
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $1b - shop_ch5_027
+; ROM Offset: 0x2222c
+; Items: Demon Hammer, Club, Club, Copper Sword
+; -----------------------------------------------------------------------------
+shop_ch5_027:
+	.db ITEM_DEMON_HAMMER		; 1. Demon Hammer (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_COPPER_SWORD		; 4. Copper Sword (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $1c: Shop 28
-shop_028:
-	.db $01, $01, $02
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $1c - shop_ch5_028
+; ROM Offset: 0x2222d
+; Items: Club, Club, Copper Sword
+; -----------------------------------------------------------------------------
+shop_ch5_028:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_COPPER_SWORD		; 3. Copper Sword (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $1d: Shop 29
-shop_029:
-	.db $0e, $01, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $1d - shop_ch5_029
+; ROM Offset: 0x22247
+; Items: Metal Babble Sword, Club, Club
+; -----------------------------------------------------------------------------
+shop_ch5_029:
+	.db ITEM_METAL_BABBLE_SWORD		; 1. Metal Babble Sword (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $1e: Shop 30
-shop_030:
-	.db $02, $01, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $1e - shop_ch5_030
+; ROM Offset: 0x2224b
+; Items: Copper Sword, Club, Club
+; -----------------------------------------------------------------------------
+shop_ch5_030:
+	.db ITEM_COPPER_SWORD		; 1. Copper Sword (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $1f: Shop 31
-shop_031:
-	.db $06, $07, $03
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $1f - shop_ch5_031
+; ROM Offset: 0x22253
+; Items: Broad Sword, Battle Axe, Iron Claw
+; -----------------------------------------------------------------------------
+shop_ch5_031:
+	.db ITEM_BROAD_SWORD		; 1. Broad Sword (weapon)
+	.db ITEM_BATTLE_AXE		; 2. Battle Axe (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $20: Shop 32
-shop_032:
-	.db $01, $01, $06, $01, $01, $03, $01, $09
-	.db $01, $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $20 - shop_ch5_032
+; ROM Offset: 0x22279
+; Items: Club, Club, Broad Sword, Club, Club, Iron Claw, Club, Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_032:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_BROAD_SWORD		; 3. Broad Sword (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db ITEM_IRON_CLAW		; 6. Iron Claw (weapon)
+	.db ITEM_CLUB		; 7. Club (weapon)
+	.db ITEM_THORN_WHIP		; 8. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 9. Club (weapon)
+	.db ITEM_CLUB		; 10. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 11. Battle Axe (weapon)
+	.db ITEM_CLUB		; 12. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $21: Shop 33
-shop_033:
-	.db $01, $06, $01, $01, $03, $01, $09, $01
-	.db $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $21 - shop_ch5_033
+; ROM Offset: 0x2227a
+; Items: Club, Broad Sword, Club, Club, Iron Claw, Club, Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_033:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_BROAD_SWORD		; 2. Broad Sword (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_IRON_CLAW		; 5. Iron Claw (weapon)
+	.db ITEM_CLUB		; 6. Club (weapon)
+	.db ITEM_THORN_WHIP		; 7. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 8. Club (weapon)
+	.db ITEM_CLUB		; 9. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 10. Battle Axe (weapon)
+	.db ITEM_CLUB		; 11. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $22: Shop 34
-shop_034:
-	.db $06, $01, $01, $03, $01, $09, $01, $01
-	.db $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $22 - shop_ch5_034
+; ROM Offset: 0x2227b
+; Items: Broad Sword, Club, Club, Iron Claw, Club, Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_034:
+	.db ITEM_BROAD_SWORD		; 1. Broad Sword (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_IRON_CLAW		; 4. Iron Claw (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db ITEM_THORN_WHIP		; 6. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 7. Club (weapon)
+	.db ITEM_CLUB		; 8. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 9. Battle Axe (weapon)
+	.db ITEM_CLUB		; 10. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $23: Shop 35
-shop_035:
-	.db $01, $01, $03, $01, $09, $01, $01, $07
-	.db $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $23 - shop_ch5_035
+; ROM Offset: 0x2227c
+; Items: Club, Club, Iron Claw, Club, Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_035:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_THORN_WHIP		; 5. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 6. Club (weapon)
+	.db ITEM_CLUB		; 7. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 8. Battle Axe (weapon)
+	.db ITEM_CLUB		; 9. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $24: Shop 36
-shop_036:
-	.db $01, $03, $01, $09, $01, $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $24 - shop_ch5_036
+; ROM Offset: 0x2227d
+; Items: Club, Iron Claw, Club, Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_036:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_THORN_WHIP		; 4. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db ITEM_CLUB		; 6. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 7. Battle Axe (weapon)
+	.db ITEM_CLUB		; 8. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $25: Shop 37
-shop_037:
-	.db $03, $01, $09, $01, $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $25 - shop_ch5_037
+; ROM Offset: 0x2227e
+; Items: Iron Claw, Club, Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_037:
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_THORN_WHIP		; 3. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 6. Battle Axe (weapon)
+	.db ITEM_CLUB		; 7. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $26: Shop 38
-shop_038:
-	.db $01, $09, $01, $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $26 - shop_ch5_038
+; ROM Offset: 0x2227f
+; Items: Club, Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_038:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_THORN_WHIP		; 2. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 5. Battle Axe (weapon)
+	.db ITEM_CLUB		; 6. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $27: Shop 39
-shop_039:
-	.db $09, $01, $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $27 - shop_ch5_039
+; ROM Offset: 0x22280
+; Items: Thorn Whip, Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_039:
+	.db ITEM_THORN_WHIP		; 1. Thorn Whip (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 4. Battle Axe (weapon)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $28: Shop 40
-shop_040:
-	.db $01, $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $28 - shop_ch5_040
+; ROM Offset: 0x22281
+; Items: Club, Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_040:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 3. Battle Axe (weapon)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $29: Shop 41
-shop_041:
-	.db $01, $07, $01
-	.db $ff				; End of shop
+; -----------------------------------------------------------------------------
+; Shop $29 - shop_ch5_041
+; ROM Offset: 0x22282
+; Items: Club, Battle Axe, Club
+; -----------------------------------------------------------------------------
+shop_ch5_041:
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_BATTLE_AXE		; 2. Battle Axe (weapon)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $2a: Shop 42
+; -----------------------------------------------------------------------------
+; Shop $2a - shop_042
+; ROM Offset: 0x23760
+; Items: Sword of Miracles, Unknown($a8), Sage's Stone, Unknown($a0), Sword of Miracles, Sage's Stone, Full Plate Armor, Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_042:
-	.db $1c, $a8, $60, $a0, $1c, $60, $2a, $36
-	.db $37, $0d, $35, $34
-	.db $ff				; End of shop
+	.db ITEM_SWORD_OF_MIRACLES		; 1. Sword of Miracles (weapon)
+	.db $a8			; 2. Unknown item $a8
+	.db ITEM_SAGES_STONE		; 3. Sage's Stone (key_item)
+	.db $a0			; 4. Unknown item $a0
+	.db ITEM_SWORD_OF_MIRACLES		; 5. Sword of Miracles (weapon)
+	.db ITEM_SAGES_STONE		; 6. Sage's Stone (key_item)
+	.db ITEM_FULL_PLATE_ARMOR		; 7. Full Plate Armor (armor)
+	.db ITEM_MYSTERIOUS_BOLERO		; 8. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 9. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 10. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 11. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 12. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $2b: Shop 43
+; -----------------------------------------------------------------------------
+; Shop $2b - shop_043
+; ROM Offset: 0x23761
+; Items: Unknown($a8), Sage's Stone, Unknown($a0), Sword of Miracles, Sage's Stone, Full Plate Armor, Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_043:
-	.db $a8, $60, $a0, $1c, $60, $2a, $36, $37
-	.db $0d, $35, $34
-	.db $ff				; End of shop
+	.db $a8			; 1. Unknown item $a8
+	.db ITEM_SAGES_STONE		; 2. Sage's Stone (key_item)
+	.db $a0			; 3. Unknown item $a0
+	.db ITEM_SWORD_OF_MIRACLES		; 4. Sword of Miracles (weapon)
+	.db ITEM_SAGES_STONE		; 5. Sage's Stone (key_item)
+	.db ITEM_FULL_PLATE_ARMOR		; 6. Full Plate Armor (armor)
+	.db ITEM_MYSTERIOUS_BOLERO		; 7. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 8. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 9. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 10. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 11. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $2c: Shop 44
+; -----------------------------------------------------------------------------
+; Shop $2c - shop_044
+; ROM Offset: 0x23762
+; Items: Sage's Stone, Unknown($a0), Sword of Miracles, Sage's Stone, Full Plate Armor, Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_044:
-	.db $60, $a0, $1c, $60, $2a, $36, $37, $0d
-	.db $35, $34
-	.db $ff				; End of shop
+	.db ITEM_SAGES_STONE		; 1. Sage's Stone (key_item)
+	.db $a0			; 2. Unknown item $a0
+	.db ITEM_SWORD_OF_MIRACLES		; 3. Sword of Miracles (weapon)
+	.db ITEM_SAGES_STONE		; 4. Sage's Stone (key_item)
+	.db ITEM_FULL_PLATE_ARMOR		; 5. Full Plate Armor (armor)
+	.db ITEM_MYSTERIOUS_BOLERO		; 6. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 7. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 8. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 9. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 10. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $2d: Shop 45
+; -----------------------------------------------------------------------------
+; Shop $2d - shop_045
+; ROM Offset: 0x23763
+; Items: Unknown($a0), Sword of Miracles, Sage's Stone, Full Plate Armor, Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_045:
-	.db $a0, $1c, $60, $2a, $36, $37, $0d, $35
-	.db $34
-	.db $ff				; End of shop
+	.db $a0			; 1. Unknown item $a0
+	.db ITEM_SWORD_OF_MIRACLES		; 2. Sword of Miracles (weapon)
+	.db ITEM_SAGES_STONE		; 3. Sage's Stone (key_item)
+	.db ITEM_FULL_PLATE_ARMOR		; 4. Full Plate Armor (armor)
+	.db ITEM_MYSTERIOUS_BOLERO		; 5. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 6. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 7. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 8. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 9. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $2e: Shop 46
+; -----------------------------------------------------------------------------
+; Shop $2e - shop_046
+; ROM Offset: 0x23764
+; Items: Sword of Miracles, Sage's Stone, Full Plate Armor, Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_046:
-	.db $1c, $60, $2a, $36, $37, $0d, $35, $34
-	.db $ff				; End of shop
+	.db ITEM_SWORD_OF_MIRACLES		; 1. Sword of Miracles (weapon)
+	.db ITEM_SAGES_STONE		; 2. Sage's Stone (key_item)
+	.db ITEM_FULL_PLATE_ARMOR		; 3. Full Plate Armor (armor)
+	.db ITEM_MYSTERIOUS_BOLERO		; 4. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 5. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 6. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 7. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 8. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $2f: Shop 47
+; -----------------------------------------------------------------------------
+; Shop $2f - shop_047
+; ROM Offset: 0x23765
+; Items: Sage's Stone, Full Plate Armor, Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_047:
-	.db $60, $2a, $36, $37, $0d, $35, $34
-	.db $ff				; End of shop
+	.db ITEM_SAGES_STONE		; 1. Sage's Stone (key_item)
+	.db ITEM_FULL_PLATE_ARMOR		; 2. Full Plate Armor (armor)
+	.db ITEM_MYSTERIOUS_BOLERO		; 3. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 4. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 5. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 6. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 7. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $30: Shop 48
+; -----------------------------------------------------------------------------
+; Shop $30 - shop_048
+; ROM Offset: 0x23766
+; Items: Full Plate Armor, Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_048:
-	.db $2a, $36, $37, $0d, $35, $34
-	.db $ff				; End of shop
+	.db ITEM_FULL_PLATE_ARMOR		; 1. Full Plate Armor (armor)
+	.db ITEM_MYSTERIOUS_BOLERO		; 2. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 3. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 4. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 5. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 6. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $31: Shop 49
+; -----------------------------------------------------------------------------
+; Shop $31 - shop_049
+; ROM Offset: 0x23767
+; Items: Mysterious Bolero, Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_049:
-	.db $36, $37, $0d, $35, $34
-	.db $ff				; End of shop
+	.db ITEM_MYSTERIOUS_BOLERO		; 1. Mysterious Bolero (armor)
+	.db ITEM_ZENITHIAN_ARMOR		; 2. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 3. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 4. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 5. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $32: Shop 50
+; -----------------------------------------------------------------------------
+; Shop $32 - shop_050
+; ROM Offset: 0x23768
+; Items: Zenithian Armor, Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_050:
-	.db $37, $0d, $35, $34
-	.db $ff				; End of shop
+	.db ITEM_ZENITHIAN_ARMOR		; 1. Zenithian Armor (armor)
+	.db ITEM_IRON_FAN		; 2. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 3. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 4. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $33: Shop 51
+; -----------------------------------------------------------------------------
+; Shop $33 - shop_051
+; ROM Offset: 0x23769
+; Items: Iron Fan, Water Flying Clothes, Sacred Robe
+; -----------------------------------------------------------------------------
 shop_051:
-	.db $0d, $35, $34
-	.db $ff				; End of shop
+	.db ITEM_IRON_FAN		; 1. Iron Fan (weapon)
+	.db ITEM_WATER_FLYING_CLOTHES		; 2. Water Flying Clothes (armor)
+	.db ITEM_SACRED_ROBE		; 3. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $34: Shop 52
+; -----------------------------------------------------------------------------
+; Shop $34 - shop_052
+; ROM Offset: 0x23973
+; Items: Morning Star, Multi-edge Sword, Zenithian Sword (1)
+; -----------------------------------------------------------------------------
 shop_052:
-	.db $0a, $13, $14
-	.db $ff				; End of shop
+	.db ITEM_MORNING_STAR		; 1. Morning Star (weapon)
+	.db ITEM_MULTI_EDGE_SWORD		; 2. Multi-edge Sword (weapon)
+	.db ITEM_ZENITHIAN_SWORD_1		; 3. Zenithian Sword (1) (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $35: Shop 53
+; -----------------------------------------------------------------------------
+; Shop $35 - shop_053
+; ROM Offset: 0x23980
+; Items: Boomerang, Thorn Whip, Unknown($82)
+; -----------------------------------------------------------------------------
 shop_053:
-	.db $0b, $09, $82
-	.db $ff				; End of shop
+	.db ITEM_BOOMERANG		; 1. Boomerang (weapon)
+	.db ITEM_THORN_WHIP		; 2. Thorn Whip (weapon)
+	.db $82			; 3. Unknown item $82
+	.db SHOP_END			; End of shop
 
-; Shop $36: Shop 54
+; -----------------------------------------------------------------------------
+; Shop $36 - shop_054
+; ROM Offset: 0x23a78
+; Items: Morning Star, Unknown($a0), Club, Bronze Armor
+; -----------------------------------------------------------------------------
 shop_054:
-	.db $0a, $a0, $01, $2d
-	.db $ff				; End of shop
+	.db ITEM_MORNING_STAR		; 1. Morning Star (weapon)
+	.db $a0			; 2. Unknown item $a0
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_BRONZE_ARMOR		; 4. Bronze Armor (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $37: Shop 55
+; -----------------------------------------------------------------------------
+; Shop $37 - shop_055
+; ROM Offset: 0x23a79
+; Items: Unknown($a0), Club, Bronze Armor
+; -----------------------------------------------------------------------------
 shop_055:
-	.db $a0, $01, $2d
-	.db $ff				; End of shop
+	.db $a0			; 1. Unknown item $a0
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_BRONZE_ARMOR		; 3. Bronze Armor (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $38: Shop 56
+; -----------------------------------------------------------------------------
+; Shop $38 - shop_056
+; ROM Offset: 0x23b32
+; Items: Sword of Lethargy, Unknown($80), Unknown($80)
+; -----------------------------------------------------------------------------
 shop_056:
-	.db $18, $80, $80
-	.db $ff				; End of shop
+	.db ITEM_SWORD_OF_LETHARGY		; 1. Sword of Lethargy (weapon)
+	.db $80			; 2. Unknown item $80
+	.db $80			; 3. Unknown item $80
+	.db SHOP_END			; End of shop
 
-; Shop $39: Shop 57
+; -----------------------------------------------------------------------------
+; Shop $39 - shop_057
+; ROM Offset: 0x23b8f
+; Items: Wayfarer's Clothes, Unknown($a0), Iron Claw, Dress of Radiance, Unknown($80)
+; -----------------------------------------------------------------------------
 shop_057:
-	.db $25, $a0, $03, $3b, $80
-	.db $ff				; End of shop
+	.db ITEM_WAYFARERS_CLOTHES		; 1. Wayfarer's Clothes (armor)
+	.db $a0			; 2. Unknown item $a0
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_DRESS_OF_RADIANCE		; 4. Dress of Radiance (armor)
+	.db $80			; 5. Unknown item $80
+	.db SHOP_END			; End of shop
 
-; Shop $3a: Shop 58
+; -----------------------------------------------------------------------------
+; Shop $3a - shop_058
+; ROM Offset: 0x23b90
+; Items: Unknown($a0), Iron Claw, Dress of Radiance, Unknown($80)
+; -----------------------------------------------------------------------------
 shop_058:
-	.db $a0, $03, $3b, $80
-	.db $ff				; End of shop
+	.db $a0			; 1. Unknown item $a0
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_DRESS_OF_RADIANCE		; 3. Dress of Radiance (armor)
+	.db $80			; 4. Unknown item $80
+	.db SHOP_END			; End of shop
 
-; Shop $3b: Shop 59
+; -----------------------------------------------------------------------------
+; Shop $3b - shop_059
+; ROM Offset: 0x23b91
+; Items: Iron Claw, Dress of Radiance, Unknown($80)
+; -----------------------------------------------------------------------------
 shop_059:
-	.db $03, $3b, $80
-	.db $ff				; End of shop
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db ITEM_DRESS_OF_RADIANCE		; 2. Dress of Radiance (armor)
+	.db $80			; 3. Unknown item $80
+	.db SHOP_END			; End of shop
 
-; Shop $3c: Shop 60
+; -----------------------------------------------------------------------------
+; Shop $3c - shop_060
+; ROM Offset: 0x23bb0
+; Items: Iron Apron, Unknown($80), Unknown($80)
+; -----------------------------------------------------------------------------
 shop_060:
-	.db $29, $80, $80
-	.db $ff				; End of shop
+	.db ITEM_IRON_APRON		; 1. Iron Apron (armor)
+	.db $80			; 2. Unknown item $80
+	.db $80			; 3. Unknown item $80
+	.db SHOP_END			; End of shop
 
-; Shop $3d: Shop 61
+; -----------------------------------------------------------------------------
+; Shop $3d - shop_061
+; ROM Offset: 0x23be4
+; Items: Copper Sword, Unknown($80), Unknown($80)
+; -----------------------------------------------------------------------------
 shop_061:
-	.db $02, $80, $80
-	.db $ff				; End of shop
+	.db ITEM_COPPER_SWORD		; 1. Copper Sword (weapon)
+	.db $80			; 2. Unknown item $80
+	.db $80			; 3. Unknown item $80
+	.db SHOP_END			; End of shop
 
-; Shop $3e: Shop 62
+; -----------------------------------------------------------------------------
+; Shop $3e - shop_062
+; ROM Offset: 0x23e97
+; Items: Iron Claw, Sword of Malice, Venomous Dagger, Iron Claw, Basic Clothes, Venomous Dagger, Iron Claw, Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_062:
-	.db $03, $23, $19, $03, $24, $19, $03, $23
-	.db $1c, $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 2. Sword of Malice (weapon)
+	.db ITEM_VENOMOUS_DAGGER		; 3. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 4. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 5. Basic Clothes (armor)
+	.db ITEM_VENOMOUS_DAGGER		; 6. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 7. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 8. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 9. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 10. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 11. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 12. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $3f: Shop 63
+; -----------------------------------------------------------------------------
+; Shop $3f - shop_063
+; ROM Offset: 0x23e98
+; Items: Sword of Malice, Venomous Dagger, Iron Claw, Basic Clothes, Venomous Dagger, Iron Claw, Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_063:
-	.db $23, $19, $03, $24, $19, $03, $23, $1c
-	.db $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_SWORD_OF_MALICE		; 1. Sword of Malice (weapon)
+	.db ITEM_VENOMOUS_DAGGER		; 2. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 4. Basic Clothes (armor)
+	.db ITEM_VENOMOUS_DAGGER		; 5. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 6. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 7. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 8. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 9. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 10. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 11. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $40: Shop 64
+; -----------------------------------------------------------------------------
+; Shop $40 - shop_064
+; ROM Offset: 0x23e99
+; Items: Venomous Dagger, Iron Claw, Basic Clothes, Venomous Dagger, Iron Claw, Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_064:
-	.db $19, $03, $24, $19, $03, $23, $1c, $03
-	.db $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_VENOMOUS_DAGGER		; 1. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 3. Basic Clothes (armor)
+	.db ITEM_VENOMOUS_DAGGER		; 4. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 5. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 6. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 7. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 8. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 9. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 10. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $41: Shop 65
+; -----------------------------------------------------------------------------
+; Shop $41 - shop_065
+; ROM Offset: 0x23e9a
+; Items: Iron Claw, Basic Clothes, Venomous Dagger, Iron Claw, Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_065:
-	.db $03, $24, $19, $03, $23, $1c, $03, $24
-	.db $1c
-	.db $ff				; End of shop
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 2. Basic Clothes (armor)
+	.db ITEM_VENOMOUS_DAGGER		; 3. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 4. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 5. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 6. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 7. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 8. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 9. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $42: Shop 66
+; -----------------------------------------------------------------------------
+; Shop $42 - shop_066
+; ROM Offset: 0x23e9b
+; Items: Basic Clothes, Venomous Dagger, Iron Claw, Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_066:
-	.db $24, $19, $03, $23, $1c, $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_BASIC_CLOTHES		; 1. Basic Clothes (armor)
+	.db ITEM_VENOMOUS_DAGGER		; 2. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 4. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 5. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 6. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 7. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 8. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $43: Shop 67
+; -----------------------------------------------------------------------------
+; Shop $43 - shop_067
+; ROM Offset: 0x23e9c
+; Items: Venomous Dagger, Iron Claw, Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_067:
-	.db $19, $03, $23, $1c, $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_VENOMOUS_DAGGER		; 1. Venomous Dagger (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 3. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 4. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 5. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 6. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 7. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $44: Shop 68
+; -----------------------------------------------------------------------------
+; Shop $44 - shop_068
+; ROM Offset: 0x23e9d
+; Items: Iron Claw, Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_068:
-	.db $03, $23, $1c, $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db ITEM_SWORD_OF_MALICE		; 2. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 3. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 4. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 5. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 6. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $45: Shop 69
+; -----------------------------------------------------------------------------
+; Shop $45 - shop_069
+; ROM Offset: 0x23e9e
+; Items: Sword of Malice, Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_069:
-	.db $23, $1c, $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_SWORD_OF_MALICE		; 1. Sword of Malice (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 2. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 4. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 5. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $46: Shop 70
+; -----------------------------------------------------------------------------
+; Shop $46 - shop_070
+; ROM Offset: 0x23e9f
+; Items: Sword of Miracles, Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_070:
-	.db $1c, $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_SWORD_OF_MIRACLES		; 1. Sword of Miracles (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 3. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 4. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $47: Shop 71
+; -----------------------------------------------------------------------------
+; Shop $47 - shop_071
+; ROM Offset: 0x23ea0
+; Items: Iron Claw, Basic Clothes, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_071:
-	.db $03, $24, $1c
-	.db $ff				; End of shop
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db ITEM_BASIC_CLOTHES		; 2. Basic Clothes (armor)
+	.db ITEM_SWORD_OF_MIRACLES		; 3. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $48: Shop 72
+; -----------------------------------------------------------------------------
+; Shop $48 - shop_072
+; ROM Offset: 0x23ea4
+; Items: Sword of Miracles, Ice Blade, Sword of Miracles
+; -----------------------------------------------------------------------------
 shop_072:
-	.db $1c, $1b, $1c
-	.db $ff				; End of shop
+	.db ITEM_SWORD_OF_MIRACLES		; 1. Sword of Miracles (weapon)
+	.db ITEM_ICE_BLADE		; 2. Ice Blade (weapon)
+	.db ITEM_SWORD_OF_MIRACLES		; 3. Sword of Miracles (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $49: Shop 73
+; -----------------------------------------------------------------------------
+; Shop $49 - shop_073
+; ROM Offset: 0x23eac
+; Items: Bronze Armor, Feather Hat, Bronze Armor
+; -----------------------------------------------------------------------------
 shop_073:
-	.db $2d, $4a, $2d
-	.db $ff				; End of shop
+	.db ITEM_BRONZE_ARMOR		; 1. Bronze Armor (armor)
+	.db ITEM_FEATHER_HAT		; 2. Feather Hat (helmet)
+	.db ITEM_BRONZE_ARMOR		; 3. Bronze Armor (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $4a: Shop 74
+; -----------------------------------------------------------------------------
+; Shop $4a - shop_074
+; ROM Offset: 0x23eb4
+; Items: Hat of Happiness, Zenithian Armor, Metal Babble Shield, Hat of Happiness, Broad Sword, Chain Sickle, Iron Spear, Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_074:
-	.db $4e, $37, $45, $4e, $06, $04, $05, $06
-	.db $0f, $16, $10
-	.db $ff				; End of shop
+	.db ITEM_HAT_OF_HAPPINESS		; 1. Hat of Happiness (helmet)
+	.db ITEM_ZENITHIAN_ARMOR		; 2. Zenithian Armor (armor)
+	.db ITEM_METAL_BABBLE_SHIELD		; 3. Metal Babble Shield (shield)
+	.db ITEM_HAT_OF_HAPPINESS		; 4. Hat of Happiness (helmet)
+	.db ITEM_BROAD_SWORD		; 5. Broad Sword (weapon)
+	.db ITEM_CHAIN_SICKLE		; 6. Chain Sickle (weapon)
+	.db ITEM_IRON_SPEAR		; 7. Iron Spear (weapon)
+	.db ITEM_BROAD_SWORD		; 8. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 9. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 10. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 11. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $4b: Shop 75
+; -----------------------------------------------------------------------------
+; Shop $4b - shop_075
+; ROM Offset: 0x23eb5
+; Items: Zenithian Armor, Metal Babble Shield, Hat of Happiness, Broad Sword, Chain Sickle, Iron Spear, Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_075:
-	.db $37, $45, $4e, $06, $04, $05, $06, $0f
-	.db $16, $10
-	.db $ff				; End of shop
+	.db ITEM_ZENITHIAN_ARMOR		; 1. Zenithian Armor (armor)
+	.db ITEM_METAL_BABBLE_SHIELD		; 2. Metal Babble Shield (shield)
+	.db ITEM_HAT_OF_HAPPINESS		; 3. Hat of Happiness (helmet)
+	.db ITEM_BROAD_SWORD		; 4. Broad Sword (weapon)
+	.db ITEM_CHAIN_SICKLE		; 5. Chain Sickle (weapon)
+	.db ITEM_IRON_SPEAR		; 6. Iron Spear (weapon)
+	.db ITEM_BROAD_SWORD		; 7. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 8. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 9. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 10. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $4c: Shop 76
+; -----------------------------------------------------------------------------
+; Shop $4c - shop_076
+; ROM Offset: 0x23eb6
+; Items: Metal Babble Shield, Hat of Happiness, Broad Sword, Chain Sickle, Iron Spear, Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_076:
-	.db $45, $4e, $06, $04, $05, $06, $0f, $16
-	.db $10
-	.db $ff				; End of shop
+	.db ITEM_METAL_BABBLE_SHIELD		; 1. Metal Babble Shield (shield)
+	.db ITEM_HAT_OF_HAPPINESS		; 2. Hat of Happiness (helmet)
+	.db ITEM_BROAD_SWORD		; 3. Broad Sword (weapon)
+	.db ITEM_CHAIN_SICKLE		; 4. Chain Sickle (weapon)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_BROAD_SWORD		; 6. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 7. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 8. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 9. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $4d: Shop 77
+; -----------------------------------------------------------------------------
+; Shop $4d - shop_077
+; ROM Offset: 0x23eb7
+; Items: Hat of Happiness, Broad Sword, Chain Sickle, Iron Spear, Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_077:
-	.db $4e, $06, $04, $05, $06, $0f, $16, $10
-	.db $ff				; End of shop
+	.db ITEM_HAT_OF_HAPPINESS		; 1. Hat of Happiness (helmet)
+	.db ITEM_BROAD_SWORD		; 2. Broad Sword (weapon)
+	.db ITEM_CHAIN_SICKLE		; 3. Chain Sickle (weapon)
+	.db ITEM_IRON_SPEAR		; 4. Iron Spear (weapon)
+	.db ITEM_BROAD_SWORD		; 5. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 6. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 7. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 8. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $4e: Shop 78
+; -----------------------------------------------------------------------------
+; Shop $4e - shop_078
+; ROM Offset: 0x23eb8
+; Items: Broad Sword, Chain Sickle, Iron Spear, Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_078:
-	.db $06, $04, $05, $06, $0f, $16, $10
-	.db $ff				; End of shop
+	.db ITEM_BROAD_SWORD		; 1. Broad Sword (weapon)
+	.db ITEM_CHAIN_SICKLE		; 2. Chain Sickle (weapon)
+	.db ITEM_IRON_SPEAR		; 3. Iron Spear (weapon)
+	.db ITEM_BROAD_SWORD		; 4. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 5. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 6. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 7. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $4f: Shop 79
+; -----------------------------------------------------------------------------
+; Shop $4f - shop_079
+; ROM Offset: 0x23eb9
+; Items: Chain Sickle, Iron Spear, Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_079:
-	.db $04, $05, $06, $0f, $16, $10
-	.db $ff				; End of shop
+	.db ITEM_CHAIN_SICKLE		; 1. Chain Sickle (weapon)
+	.db ITEM_IRON_SPEAR		; 2. Iron Spear (weapon)
+	.db ITEM_BROAD_SWORD		; 3. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 4. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 5. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 6. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $50: Shop 80
+; -----------------------------------------------------------------------------
+; Shop $50 - shop_080
+; ROM Offset: 0x23eba
+; Items: Iron Spear, Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_080:
-	.db $05, $06, $0f, $16, $10
-	.db $ff				; End of shop
+	.db ITEM_IRON_SPEAR		; 1. Iron Spear (weapon)
+	.db ITEM_BROAD_SWORD		; 2. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 3. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 4. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 5. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $51: Shop 81
+; -----------------------------------------------------------------------------
+; Shop $51 - shop_081
+; ROM Offset: 0x23ebb
+; Items: Broad Sword, Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_081:
-	.db $06, $0f, $16, $10
-	.db $ff				; End of shop
+	.db ITEM_BROAD_SWORD		; 1. Broad Sword (weapon)
+	.db ITEM_POISON_NEEDLE		; 2. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 3. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 4. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $52: Shop 82
+; -----------------------------------------------------------------------------
+; Shop $52 - shop_082
+; ROM Offset: 0x23ebc
+; Items: Poison Needle, Stilleto Earrings, Staff of Force
+; -----------------------------------------------------------------------------
 shop_082:
-	.db $0f, $16, $10
-	.db $ff				; End of shop
+	.db ITEM_POISON_NEEDLE		; 1. Poison Needle (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 2. Stilleto Earrings (weapon)
+	.db ITEM_STAFF_OF_FORCE		; 3. Staff of Force (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $53: Shop 83
+; -----------------------------------------------------------------------------
+; Shop $53 - shop_083
+; ROM Offset: 0x23ec4
+; Items: Hat of Happiness, Wooden Hat, Metal Babble Helm
+; -----------------------------------------------------------------------------
 shop_083:
-	.db $4e, $47, $4f
-	.db $ff				; End of shop
+	.db ITEM_HAT_OF_HAPPINESS		; 1. Hat of Happiness (helmet)
+	.db ITEM_WOODEN_HAT		; 2. Wooden Hat (helmet)
+	.db ITEM_METAL_BABBLE_HELM		; 3. Metal Babble Helm (helmet)
+	.db SHOP_END			; End of shop
 
-; Shop $54: Shop 84
+; -----------------------------------------------------------------------------
+; Shop $54 - shop_084
+; ROM Offset: 0x23ecc
+; Items: Demon Armor, Silk Robe, ??? (Blank Name), Demon Armor, Iron Spear, Iron Spear, Iron Spear, Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_084:
-	.db $3c, $2b, $51, $3c, $05, $05, $05, $05
-	.db $5a, $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_DEMON_ARMOR		; 1. Demon Armor (armor)
+	.db ITEM_SILK_ROBE		; 2. Silk Robe (armor)
+	.db ITEM__BLANK_NAME		; 3. ??? (Blank Name) (separator)
+	.db ITEM_DEMON_ARMOR		; 4. Demon Armor (armor)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 6. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 7. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 8. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 9. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 10. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 11. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $55: Shop 85
+; -----------------------------------------------------------------------------
+; Shop $55 - shop_085
+; ROM Offset: 0x23ecd
+; Items: Silk Robe, ??? (Blank Name), Demon Armor, Iron Spear, Iron Spear, Iron Spear, Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_085:
-	.db $2b, $51, $3c, $05, $05, $05, $05, $5a
-	.db $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_SILK_ROBE		; 1. Silk Robe (armor)
+	.db ITEM__BLANK_NAME		; 2. ??? (Blank Name) (separator)
+	.db ITEM_DEMON_ARMOR		; 3. Demon Armor (armor)
+	.db ITEM_IRON_SPEAR		; 4. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 6. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 7. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 8. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 9. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 10. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $56: Shop 86
+; -----------------------------------------------------------------------------
+; Shop $56 - shop_086
+; ROM Offset: 0x23ece
+; Items: ??? (Blank Name), Demon Armor, Iron Spear, Iron Spear, Iron Spear, Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_086:
-	.db $51, $3c, $05, $05, $05, $05, $5a, $55
-	.db $5f
-	.db $ff				; End of shop
+	.db ITEM__BLANK_NAME		; 1. ??? (Blank Name) (separator)
+	.db ITEM_DEMON_ARMOR		; 2. Demon Armor (armor)
+	.db ITEM_IRON_SPEAR		; 3. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 4. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 6. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 7. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 8. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 9. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $57: Shop 87
+; -----------------------------------------------------------------------------
+; Shop $57 - shop_087
+; ROM Offset: 0x23ecf
+; Items: Demon Armor, Iron Spear, Iron Spear, Iron Spear, Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_087:
-	.db $3c, $05, $05, $05, $05, $5a, $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_DEMON_ARMOR		; 1. Demon Armor (armor)
+	.db ITEM_IRON_SPEAR		; 2. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 3. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 4. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 6. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 7. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 8. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $58: Shop 88
+; -----------------------------------------------------------------------------
+; Shop $58 - shop_088
+; ROM Offset: 0x23ed0
+; Items: Iron Spear, Iron Spear, Iron Spear, Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_088:
-	.db $05, $05, $05, $05, $5a, $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_IRON_SPEAR		; 1. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 2. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 3. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 4. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 5. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 6. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 7. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $59: Shop 89
+; -----------------------------------------------------------------------------
+; Shop $59 - shop_089
+; ROM Offset: 0x23ed1
+; Items: Iron Spear, Iron Spear, Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_089:
-	.db $05, $05, $05, $5a, $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_IRON_SPEAR		; 1. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 2. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 3. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 4. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 5. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 6. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $5a: Shop 90
+; -----------------------------------------------------------------------------
+; Shop $5a - shop_090
+; ROM Offset: 0x23ed2
+; Items: Iron Spear, Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_090:
-	.db $05, $05, $5a, $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_IRON_SPEAR		; 1. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 2. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 3. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 4. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 5. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $5b: Shop 91
+; -----------------------------------------------------------------------------
+; Shop $5b - shop_091
+; ROM Offset: 0x23ed3
+; Items: Iron Spear, Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_091:
-	.db $05, $5a, $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_IRON_SPEAR		; 1. Iron Spear (weapon)
+	.db ITEM_MAGIC_POTION		; 2. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 3. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 4. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $5c: Shop 92
+; -----------------------------------------------------------------------------
+; Shop $5c - shop_092
+; ROM Offset: 0x23ed4
+; Items: Magic Potion, Fairy Water, Sandglass of Regression
+; -----------------------------------------------------------------------------
 shop_092:
-	.db $5a, $55, $5f
-	.db $ff				; End of shop
+	.db ITEM_MAGIC_POTION		; 1. Magic Potion (consumable)
+	.db ITEM_FAIRY_WATER		; 2. Fairy Water (consumable)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 3. Sandglass of Regression (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $5d: Shop 93
+; -----------------------------------------------------------------------------
+; Shop $5d - shop_093
+; ROM Offset: 0x23edc
+; Items: Iron Mask, Magic Potion, Meteorite Armband
+; -----------------------------------------------------------------------------
 shop_093:
-	.db $49, $5a, $50
-	.db $ff				; End of shop
+	.db ITEM_IRON_MASK		; 1. Iron Mask (helmet)
+	.db ITEM_MAGIC_POTION		; 2. Magic Potion (consumable)
+	.db ITEM_METEORITE_ARMBAND		; 3. Meteorite Armband (accessory)
+	.db SHOP_END			; End of shop
 
-; Shop $5e: Shop 94
+; -----------------------------------------------------------------------------
+; Shop $5e - shop_094
+; ROM Offset: 0x23ee4
+; Items: Mirror of Ra, Full Moon Herb, Full Moon Herb, Baron's Horn, Club, Thorn Whip, Thorn Whip, Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_094:
-	.db $66, $58, $58, $52, $01, $09, $09, $07
-	.db $5d, $64, $68
-	.db $ff				; End of shop
+	.db ITEM_MIRROR_OF_RA		; 1. Mirror of Ra (key_item)
+	.db ITEM_FULL_MOON_HERB		; 2. Full Moon Herb (consumable)
+	.db ITEM_FULL_MOON_HERB		; 3. Full Moon Herb (consumable)
+	.db ITEM_BARONS_HORN		; 4. Baron's Horn (key_item)
+	.db ITEM_CLUB		; 5. Club (weapon)
+	.db ITEM_THORN_WHIP		; 6. Thorn Whip (weapon)
+	.db ITEM_THORN_WHIP		; 7. Thorn Whip (weapon)
+	.db ITEM_BATTLE_AXE		; 8. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 9. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 10. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 11. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $5f: Shop 95
+; -----------------------------------------------------------------------------
+; Shop $5f - shop_095
+; ROM Offset: 0x23ee5
+; Items: Full Moon Herb, Full Moon Herb, Baron's Horn, Club, Thorn Whip, Thorn Whip, Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_095:
-	.db $58, $58, $52, $01, $09, $09, $07, $5d
-	.db $64, $68
-	.db $ff				; End of shop
+	.db ITEM_FULL_MOON_HERB		; 1. Full Moon Herb (consumable)
+	.db ITEM_FULL_MOON_HERB		; 2. Full Moon Herb (consumable)
+	.db ITEM_BARONS_HORN		; 3. Baron's Horn (key_item)
+	.db ITEM_CLUB		; 4. Club (weapon)
+	.db ITEM_THORN_WHIP		; 5. Thorn Whip (weapon)
+	.db ITEM_THORN_WHIP		; 6. Thorn Whip (weapon)
+	.db ITEM_BATTLE_AXE		; 7. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 8. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 9. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 10. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $60: Shop 96
+; -----------------------------------------------------------------------------
+; Shop $60 - shop_096
+; ROM Offset: 0x23ee6
+; Items: Full Moon Herb, Baron's Horn, Club, Thorn Whip, Thorn Whip, Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_096:
-	.db $58, $52, $01, $09, $09, $07, $5d, $64
-	.db $68
-	.db $ff				; End of shop
+	.db ITEM_FULL_MOON_HERB		; 1. Full Moon Herb (consumable)
+	.db ITEM_BARONS_HORN		; 2. Baron's Horn (key_item)
+	.db ITEM_CLUB		; 3. Club (weapon)
+	.db ITEM_THORN_WHIP		; 4. Thorn Whip (weapon)
+	.db ITEM_THORN_WHIP		; 5. Thorn Whip (weapon)
+	.db ITEM_BATTLE_AXE		; 6. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 7. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 8. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 9. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $61: Shop 97
+; -----------------------------------------------------------------------------
+; Shop $61 - shop_097
+; ROM Offset: 0x23ee7
+; Items: Baron's Horn, Club, Thorn Whip, Thorn Whip, Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_097:
-	.db $52, $01, $09, $09, $07, $5d, $64, $68
-	.db $ff				; End of shop
+	.db ITEM_BARONS_HORN		; 1. Baron's Horn (key_item)
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_THORN_WHIP		; 3. Thorn Whip (weapon)
+	.db ITEM_THORN_WHIP		; 4. Thorn Whip (weapon)
+	.db ITEM_BATTLE_AXE		; 5. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 6. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 7. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 8. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $62: Shop 98
+; -----------------------------------------------------------------------------
+; Shop $62 - shop_098
+; ROM Offset: 0x23ee8
+; Items: Club, Thorn Whip, Thorn Whip, Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_098:
-	.db $01, $09, $09, $07, $5d, $64, $68
-	.db $ff				; End of shop
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_THORN_WHIP		; 2. Thorn Whip (weapon)
+	.db ITEM_THORN_WHIP		; 3. Thorn Whip (weapon)
+	.db ITEM_BATTLE_AXE		; 4. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 5. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 6. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 7. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $63: Shop 99
+; -----------------------------------------------------------------------------
+; Shop $63 - shop_099
+; ROM Offset: 0x23ee9
+; Items: Thorn Whip, Thorn Whip, Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_099:
-	.db $09, $09, $07, $5d, $64, $68
-	.db $ff				; End of shop
+	.db ITEM_THORN_WHIP		; 1. Thorn Whip (weapon)
+	.db ITEM_THORN_WHIP		; 2. Thorn Whip (weapon)
+	.db ITEM_BATTLE_AXE		; 3. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 4. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 5. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 6. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $64: Shop 100
+; -----------------------------------------------------------------------------
+; Shop $64 - shop_100
+; ROM Offset: 0x23eea
+; Items: Thorn Whip, Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_100:
-	.db $09, $07, $5d, $64, $68
-	.db $ff				; End of shop
+	.db ITEM_THORN_WHIP		; 1. Thorn Whip (weapon)
+	.db ITEM_BATTLE_AXE		; 2. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 3. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 4. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 5. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $65: Shop 101
+; -----------------------------------------------------------------------------
+; Shop $65 - shop_101
+; ROM Offset: 0x23eeb
+; Items: Battle Axe, Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_101:
-	.db $07, $5d, $64, $68
-	.db $ff				; End of shop
+	.db ITEM_BATTLE_AXE		; 1. Battle Axe (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 2. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 3. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 4. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $66: Shop 102
+; -----------------------------------------------------------------------------
+; Shop $66 - shop_102
+; ROM Offset: 0x23eec
+; Items: Sphere of Silence, Lifeforce Nuts, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_102:
-	.db $5d, $64, $68
-	.db $ff				; End of shop
+	.db ITEM_SPHERE_OF_SILENCE		; 1. Sphere of Silence (key_item)
+	.db ITEM_LIFEFORCE_NUTS		; 2. Lifeforce Nuts (stat_seed)
+	.db ITEM_STAFF_OF_TRANSFORM		; 3. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $67: Shop 103
+; -----------------------------------------------------------------------------
+; Shop $67 - shop_103
+; ROM Offset: 0x23ef4
+; Items: Treasure Map, Thief's Key, Unknown($86)
+; -----------------------------------------------------------------------------
 shop_103:
-	.db $6e, $71, $86
-	.db $ff				; End of shop
+	.db ITEM_TREASURE_MAP		; 1. Treasure Map (key_item)
+	.db ITEM_THIEFS_KEY		; 2. Thief's Key (key)
+	.db $86			; 3. Unknown item $86
+	.db SHOP_END			; End of shop
 
-; Shop $68: Shop 104
+; -----------------------------------------------------------------------------
+; Shop $68 - shop_104
+; ROM Offset: 0x23efc
+; Items: Fairy Water, Royal Scroll, Fairy Water
+; -----------------------------------------------------------------------------
 shop_104:
-	.db $55, $78, $55
-	.db $ff				; End of shop
+	.db ITEM_FAIRY_WATER		; 1. Fairy Water (consumable)
+	.db ITEM_ROYAL_SCROLL		; 2. Royal Scroll (key_item)
+	.db ITEM_FAIRY_WATER		; 3. Fairy Water (consumable)
+	.db SHOP_END			; End of shop
 
-; Shop $69: Shop 105
+; -----------------------------------------------------------------------------
+; Shop $69 - shop_105
+; ROM Offset: 0x23f04
+; Items: Fire of Serenity, Stone of Drought, Fire of Serenity
+; -----------------------------------------------------------------------------
 shop_105:
-	.db $7c, $6a, $7c
-	.db $ff				; End of shop
+	.db ITEM_FIRE_OF_SERENITY		; 1. Fire of Serenity (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 2. Stone of Drought (key_item)
+	.db ITEM_FIRE_OF_SERENITY		; 3. Fire of Serenity (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $6a: Shop 106
+; -----------------------------------------------------------------------------
+; Shop $6a - shop_106
+; ROM Offset: 0x23f0c
+; Items: Fire of Serenity, Gunpowder Jar, Luck Seed, Luck Seed, Silver Tarot Cards, Iron Spear, Iron Spear, Iron Spear, Sphere of Silence, Sandglass of Regression, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_106:
-	.db $7c, $70, $63, $63, $08, $05, $05, $05
-	.db $5d, $5f, $68
-	.db $ff				; End of shop
+	.db ITEM_FIRE_OF_SERENITY		; 1. Fire of Serenity (key_item)
+	.db ITEM_GUNPOWDER_JAR		; 2. Gunpowder Jar (key_item)
+	.db ITEM_LUCK_SEED		; 3. Luck Seed (stat_seed)
+	.db ITEM_LUCK_SEED		; 4. Luck Seed (stat_seed)
+	.db ITEM_SILVER_TAROT_CARDS		; 5. Silver Tarot Cards (weapon)
+	.db ITEM_IRON_SPEAR		; 6. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 7. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 8. Iron Spear (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 9. Sphere of Silence (key_item)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 10. Sandglass of Regression (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 11. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $6b: Shop 107
+; -----------------------------------------------------------------------------
+; Shop $6b - shop_107
+; ROM Offset: 0x23f0d
+; Items: Gunpowder Jar, Luck Seed, Luck Seed, Silver Tarot Cards, Iron Spear, Iron Spear, Iron Spear, Sphere of Silence, Sandglass of Regression, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_107:
-	.db $70, $63, $63, $08, $05, $05, $05, $5d
-	.db $5f, $68
-	.db $ff				; End of shop
+	.db ITEM_GUNPOWDER_JAR		; 1. Gunpowder Jar (key_item)
+	.db ITEM_LUCK_SEED		; 2. Luck Seed (stat_seed)
+	.db ITEM_LUCK_SEED		; 3. Luck Seed (stat_seed)
+	.db ITEM_SILVER_TAROT_CARDS		; 4. Silver Tarot Cards (weapon)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 6. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 7. Iron Spear (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 8. Sphere of Silence (key_item)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 9. Sandglass of Regression (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 10. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $6c: Shop 108
+; -----------------------------------------------------------------------------
+; Shop $6c - shop_108
+; ROM Offset: 0x23f0e
+; Items: Luck Seed, Luck Seed, Silver Tarot Cards, Iron Spear, Iron Spear, Iron Spear, Sphere of Silence, Sandglass of Regression, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_108:
-	.db $63, $63, $08, $05, $05, $05, $5d, $5f
-	.db $68
-	.db $ff				; End of shop
+	.db ITEM_LUCK_SEED		; 1. Luck Seed (stat_seed)
+	.db ITEM_LUCK_SEED		; 2. Luck Seed (stat_seed)
+	.db ITEM_SILVER_TAROT_CARDS		; 3. Silver Tarot Cards (weapon)
+	.db ITEM_IRON_SPEAR		; 4. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 6. Iron Spear (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 7. Sphere of Silence (key_item)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 8. Sandglass of Regression (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 9. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $6d: Shop 109
+; -----------------------------------------------------------------------------
+; Shop $6d - shop_109
+; ROM Offset: 0x23f0f
+; Items: Luck Seed, Silver Tarot Cards, Iron Spear, Iron Spear, Iron Spear, Sphere of Silence, Sandglass of Regression, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_109:
-	.db $63, $08, $05, $05, $05, $5d, $5f, $68
-	.db $ff				; End of shop
+	.db ITEM_LUCK_SEED		; 1. Luck Seed (stat_seed)
+	.db ITEM_SILVER_TAROT_CARDS		; 2. Silver Tarot Cards (weapon)
+	.db ITEM_IRON_SPEAR		; 3. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 4. Iron Spear (weapon)
+	.db ITEM_IRON_SPEAR		; 5. Iron Spear (weapon)
+	.db ITEM_SPHERE_OF_SILENCE		; 6. Sphere of Silence (key_item)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 7. Sandglass of Regression (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 8. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $6e: Shop 110
+; -----------------------------------------------------------------------------
+; Shop $6e - shop_110
+; ROM Offset: 0x24010
+; Items: Staff of Healing, Ice Blade, Unknown($c0), Half Plate Armor, Unknown($84), Broad Sword, Leather Hat, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_110:
-	.db $20, $1b, $c0, $28, $84, $06, $46, $68
-	.db $ff				; End of shop
+	.db ITEM_STAFF_OF_HEALING		; 1. Staff of Healing (weapon)
+	.db ITEM_ICE_BLADE		; 2. Ice Blade (weapon)
+	.db $c0			; 3. Unknown item $c0
+	.db ITEM_HALF_PLATE_ARMOR		; 4. Half Plate Armor (armor)
+	.db $84			; 5. Unknown item $84
+	.db ITEM_BROAD_SWORD		; 6. Broad Sword (weapon)
+	.db ITEM_LEATHER_HAT		; 7. Leather Hat (helmet)
+	.db ITEM_STAFF_OF_TRANSFORM		; 8. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $6f: Shop 111
+; -----------------------------------------------------------------------------
+; Shop $6f - shop_111
+; ROM Offset: 0x24011
+; Items: Ice Blade, Unknown($c0), Half Plate Armor, Unknown($84), Broad Sword, Leather Hat, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_111:
-	.db $1b, $c0, $28, $84, $06, $46, $68
-	.db $ff				; End of shop
+	.db ITEM_ICE_BLADE		; 1. Ice Blade (weapon)
+	.db $c0			; 2. Unknown item $c0
+	.db ITEM_HALF_PLATE_ARMOR		; 3. Half Plate Armor (armor)
+	.db $84			; 4. Unknown item $84
+	.db ITEM_BROAD_SWORD		; 5. Broad Sword (weapon)
+	.db ITEM_LEATHER_HAT		; 6. Leather Hat (helmet)
+	.db ITEM_STAFF_OF_TRANSFORM		; 7. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $70: Shop 112
+; -----------------------------------------------------------------------------
+; Shop $70 - shop_112
+; ROM Offset: 0x24012
+; Items: Unknown($c0), Half Plate Armor, Unknown($84), Broad Sword, Leather Hat, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_112:
-	.db $c0, $28, $84, $06, $46, $68
-	.db $ff				; End of shop
+	.db $c0			; 1. Unknown item $c0
+	.db ITEM_HALF_PLATE_ARMOR		; 2. Half Plate Armor (armor)
+	.db $84			; 3. Unknown item $84
+	.db ITEM_BROAD_SWORD		; 4. Broad Sword (weapon)
+	.db ITEM_LEATHER_HAT		; 5. Leather Hat (helmet)
+	.db ITEM_STAFF_OF_TRANSFORM		; 6. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $71: Shop 113
+; -----------------------------------------------------------------------------
+; Shop $71 - shop_113
+; ROM Offset: 0x24013
+; Items: Half Plate Armor, Unknown($84), Broad Sword, Leather Hat, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_113:
-	.db $28, $84, $06, $46, $68
-	.db $ff				; End of shop
+	.db ITEM_HALF_PLATE_ARMOR		; 1. Half Plate Armor (armor)
+	.db $84			; 2. Unknown item $84
+	.db ITEM_BROAD_SWORD		; 3. Broad Sword (weapon)
+	.db ITEM_LEATHER_HAT		; 4. Leather Hat (helmet)
+	.db ITEM_STAFF_OF_TRANSFORM		; 5. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $72: Shop 114
+; -----------------------------------------------------------------------------
+; Shop $72 - shop_114
+; ROM Offset: 0x24014
+; Items: Unknown($84), Broad Sword, Leather Hat, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_114:
-	.db $84, $06, $46, $68
-	.db $ff				; End of shop
+	.db $84			; 1. Unknown item $84
+	.db ITEM_BROAD_SWORD		; 2. Broad Sword (weapon)
+	.db ITEM_LEATHER_HAT		; 3. Leather Hat (helmet)
+	.db ITEM_STAFF_OF_TRANSFORM		; 4. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $73: Shop 115
+; -----------------------------------------------------------------------------
+; Shop $73 - shop_115
+; ROM Offset: 0x24015
+; Items: Broad Sword, Leather Hat, Staff of Transform
+; -----------------------------------------------------------------------------
 shop_115:
-	.db $06, $46, $68
-	.db $ff				; End of shop
+	.db ITEM_BROAD_SWORD		; 1. Broad Sword (weapon)
+	.db ITEM_LEATHER_HAT		; 2. Leather Hat (helmet)
+	.db ITEM_STAFF_OF_TRANSFORM		; 3. Staff of Transform (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $74: Shop 116
+; -----------------------------------------------------------------------------
+; Shop $74 - shop_116
+; ROM Offset: 0x2421a
+; Items: Lifeforce Nuts, Pink Leotard, Unknown($b2), Staff of Thunder
+; -----------------------------------------------------------------------------
 shop_116:
-	.db $64, $31, $b2, $11
-	.db $ff				; End of shop
+	.db ITEM_LIFEFORCE_NUTS		; 1. Lifeforce Nuts (stat_seed)
+	.db ITEM_PINK_LEOTARD		; 2. Pink Leotard (armor)
+	.db $b2			; 3. Unknown item $b2
+	.db ITEM_STAFF_OF_THUNDER		; 4. Staff of Thunder (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $75: Shop 117
+; -----------------------------------------------------------------------------
+; Shop $75 - shop_117
+; ROM Offset: 0x2421b
+; Items: Pink Leotard, Unknown($b2), Staff of Thunder
+; -----------------------------------------------------------------------------
 shop_117:
-	.db $31, $b2, $11
-	.db $ff				; End of shop
+	.db ITEM_PINK_LEOTARD		; 1. Pink Leotard (armor)
+	.db $b2			; 2. Unknown item $b2
+	.db ITEM_STAFF_OF_THUNDER		; 3. Staff of Thunder (weapon)
+	.db SHOP_END			; End of shop
 
-; Shop $76: Shop 118
+; -----------------------------------------------------------------------------
+; Shop $76 - shop_118
+; ROM Offset: 0x244e4
+; Items: Scale Shield, Unknown($87), Iron Safe
+; -----------------------------------------------------------------------------
 shop_118:
-	.db $3e, $87, $6b
-	.db $ff				; End of shop
+	.db ITEM_SCALE_SHIELD		; 1. Scale Shield (shield)
+	.db $87			; 2. Unknown item $87
+	.db ITEM_IRON_SAFE		; 3. Iron Safe (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $77: Shop 119
+; -----------------------------------------------------------------------------
+; Shop $77 - shop_119
+; ROM Offset: 0x24cf1
+; Items: Cloak of Evasion, Aeolus' Shield, Lunch, Unknown($9b), Sandglass of Regression, Unknown($b6), Symbol of Faith, Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_119:
-	.db $33, $42, $74, $9b, $5f, $b6, $6f, $68
-	.db $36, $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db ITEM_CLOAK_OF_EVASION		; 1. Cloak of Evasion (armor)
+	.db ITEM_AEOLUS_SHIELD		; 2. Aeolus' Shield (shield)
+	.db ITEM_LUNCH		; 3. Lunch (consumable)
+	.db $9b			; 4. Unknown item $9b
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 5. Sandglass of Regression (key_item)
+	.db $b6			; 6. Unknown item $b6
+	.db ITEM_SYMBOL_OF_FAITH		; 7. Symbol of Faith (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 8. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 9. Mysterious Bolero (armor)
+	.db $8b			; 10. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 11. Treasure Map (key_item)
+	.db $b6			; 12. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $78: Shop 120
+; -----------------------------------------------------------------------------
+; Shop $78 - shop_120
+; ROM Offset: 0x24cf2
+; Items: Aeolus' Shield, Lunch, Unknown($9b), Sandglass of Regression, Unknown($b6), Symbol of Faith, Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_120:
-	.db $42, $74, $9b, $5f, $b6, $6f, $68, $36
-	.db $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db ITEM_AEOLUS_SHIELD		; 1. Aeolus' Shield (shield)
+	.db ITEM_LUNCH		; 2. Lunch (consumable)
+	.db $9b			; 3. Unknown item $9b
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 4. Sandglass of Regression (key_item)
+	.db $b6			; 5. Unknown item $b6
+	.db ITEM_SYMBOL_OF_FAITH		; 6. Symbol of Faith (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 7. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 8. Mysterious Bolero (armor)
+	.db $8b			; 9. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 10. Treasure Map (key_item)
+	.db $b6			; 11. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $79: Shop 121
+; -----------------------------------------------------------------------------
+; Shop $79 - shop_121
+; ROM Offset: 0x24cf3
+; Items: Lunch, Unknown($9b), Sandglass of Regression, Unknown($b6), Symbol of Faith, Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_121:
-	.db $74, $9b, $5f, $b6, $6f, $68, $36, $8b
-	.db $6e, $b6
-	.db $ff				; End of shop
+	.db ITEM_LUNCH		; 1. Lunch (consumable)
+	.db $9b			; 2. Unknown item $9b
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 3. Sandglass of Regression (key_item)
+	.db $b6			; 4. Unknown item $b6
+	.db ITEM_SYMBOL_OF_FAITH		; 5. Symbol of Faith (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 6. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 7. Mysterious Bolero (armor)
+	.db $8b			; 8. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 9. Treasure Map (key_item)
+	.db $b6			; 10. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $7a: Shop 122
+; -----------------------------------------------------------------------------
+; Shop $7a - shop_122
+; ROM Offset: 0x24cf4
+; Items: Unknown($9b), Sandglass of Regression, Unknown($b6), Symbol of Faith, Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_122:
-	.db $9b, $5f, $b6, $6f, $68, $36, $8b, $6e
-	.db $b6
-	.db $ff				; End of shop
+	.db $9b			; 1. Unknown item $9b
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 2. Sandglass of Regression (key_item)
+	.db $b6			; 3. Unknown item $b6
+	.db ITEM_SYMBOL_OF_FAITH		; 4. Symbol of Faith (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 5. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 6. Mysterious Bolero (armor)
+	.db $8b			; 7. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 8. Treasure Map (key_item)
+	.db $b6			; 9. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $7b: Shop 123
+; -----------------------------------------------------------------------------
+; Shop $7b - shop_123
+; ROM Offset: 0x24cf5
+; Items: Sandglass of Regression, Unknown($b6), Symbol of Faith, Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_123:
-	.db $5f, $b6, $6f, $68, $36, $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 1. Sandglass of Regression (key_item)
+	.db $b6			; 2. Unknown item $b6
+	.db ITEM_SYMBOL_OF_FAITH		; 3. Symbol of Faith (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 4. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 5. Mysterious Bolero (armor)
+	.db $8b			; 6. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 7. Treasure Map (key_item)
+	.db $b6			; 8. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $7c: Shop 124
+; -----------------------------------------------------------------------------
+; Shop $7c - shop_124
+; ROM Offset: 0x24cf6
+; Items: Unknown($b6), Symbol of Faith, Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_124:
-	.db $b6, $6f, $68, $36, $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db $b6			; 1. Unknown item $b6
+	.db ITEM_SYMBOL_OF_FAITH		; 2. Symbol of Faith (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 3. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 4. Mysterious Bolero (armor)
+	.db $8b			; 5. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 6. Treasure Map (key_item)
+	.db $b6			; 7. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $7d: Shop 125
+; -----------------------------------------------------------------------------
+; Shop $7d - shop_125
+; ROM Offset: 0x24cf7
+; Items: Symbol of Faith, Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_125:
-	.db $6f, $68, $36, $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db ITEM_SYMBOL_OF_FAITH		; 1. Symbol of Faith (key_item)
+	.db ITEM_STAFF_OF_TRANSFORM		; 2. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 3. Mysterious Bolero (armor)
+	.db $8b			; 4. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 5. Treasure Map (key_item)
+	.db $b6			; 6. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $7e: Shop 126
+; -----------------------------------------------------------------------------
+; Shop $7e - shop_126
+; ROM Offset: 0x24cf8
+; Items: Staff of Transform, Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_126:
-	.db $68, $36, $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db ITEM_STAFF_OF_TRANSFORM		; 1. Staff of Transform (key_item)
+	.db ITEM_MYSTERIOUS_BOLERO		; 2. Mysterious Bolero (armor)
+	.db $8b			; 3. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 4. Treasure Map (key_item)
+	.db $b6			; 5. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $7f: Shop 127
+; -----------------------------------------------------------------------------
+; Shop $7f - shop_127
+; ROM Offset: 0x24cf9
+; Items: Mysterious Bolero, Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_127:
-	.db $36, $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db ITEM_MYSTERIOUS_BOLERO		; 1. Mysterious Bolero (armor)
+	.db $8b			; 2. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 3. Treasure Map (key_item)
+	.db $b6			; 4. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $80: Shop 128
+; -----------------------------------------------------------------------------
+; Shop $80 - shop_128
+; ROM Offset: 0x24cfa
+; Items: Unknown($8b), Treasure Map, Unknown($b6)
+; -----------------------------------------------------------------------------
 shop_128:
-	.db $8b, $6e, $b6
-	.db $ff				; End of shop
+	.db $8b			; 1. Unknown item $8b
+	.db ITEM_TREASURE_MAP		; 2. Treasure Map (key_item)
+	.db $b6			; 3. Unknown item $b6
+	.db SHOP_END			; End of shop
 
-; Shop $81: Shop 129
+; -----------------------------------------------------------------------------
+; Shop $81 - shop_129
+; ROM Offset: 0x24d2f
+; Items: Prince's Letter, Sword of Lethargy, Thief's Key
+; -----------------------------------------------------------------------------
 shop_129:
-	.db $77, $18, $71
-	.db $ff				; End of shop
+	.db ITEM_PRINCES_LETTER		; 1. Prince's Letter (key_item)
+	.db ITEM_SWORD_OF_LETHARGY		; 2. Sword of Lethargy (weapon)
+	.db ITEM_THIEFS_KEY		; 3. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $82: Shop 130
+; -----------------------------------------------------------------------------
+; Shop $82 - shop_130
+; ROM Offset: 0x25289
+; Items: Wizard's Ring, Fur Coat, Unknown($bf), Unknown($aa), Fire of Serenity, Chain Sickle, Antidote Herb
+; -----------------------------------------------------------------------------
 shop_130:
-	.db $59, $2f, $bf, $aa, $7c, $04, $54
-	.db $ff				; End of shop
+	.db ITEM_WIZARDS_RING		; 1. Wizard's Ring (accessory)
+	.db ITEM_FUR_COAT		; 2. Fur Coat (armor)
+	.db $bf			; 3. Unknown item $bf
+	.db $aa			; 4. Unknown item $aa
+	.db ITEM_FIRE_OF_SERENITY		; 5. Fire of Serenity (key_item)
+	.db ITEM_CHAIN_SICKLE		; 6. Chain Sickle (weapon)
+	.db ITEM_ANTIDOTE_HERB		; 7. Antidote Herb (consumable)
+	.db SHOP_END			; End of shop
 
-; Shop $83: Shop 131
+; -----------------------------------------------------------------------------
+; Shop $83 - shop_131
+; ROM Offset: 0x2528a
+; Items: Fur Coat, Unknown($bf), Unknown($aa), Fire of Serenity, Chain Sickle, Antidote Herb
+; -----------------------------------------------------------------------------
 shop_131:
-	.db $2f, $bf, $aa, $7c, $04, $54
-	.db $ff				; End of shop
+	.db ITEM_FUR_COAT		; 1. Fur Coat (armor)
+	.db $bf			; 2. Unknown item $bf
+	.db $aa			; 3. Unknown item $aa
+	.db ITEM_FIRE_OF_SERENITY		; 4. Fire of Serenity (key_item)
+	.db ITEM_CHAIN_SICKLE		; 5. Chain Sickle (weapon)
+	.db ITEM_ANTIDOTE_HERB		; 6. Antidote Herb (consumable)
+	.db SHOP_END			; End of shop
 
-; Shop $84: Shop 132
+; -----------------------------------------------------------------------------
+; Shop $84 - shop_132
+; ROM Offset: 0x2528b
+; Items: Unknown($bf), Unknown($aa), Fire of Serenity, Chain Sickle, Antidote Herb
+; -----------------------------------------------------------------------------
 shop_132:
-	.db $bf, $aa, $7c, $04, $54
-	.db $ff				; End of shop
+	.db $bf			; 1. Unknown item $bf
+	.db $aa			; 2. Unknown item $aa
+	.db ITEM_FIRE_OF_SERENITY		; 3. Fire of Serenity (key_item)
+	.db ITEM_CHAIN_SICKLE		; 4. Chain Sickle (weapon)
+	.db ITEM_ANTIDOTE_HERB		; 5. Antidote Herb (consumable)
+	.db SHOP_END			; End of shop
 
-; Shop $85: Shop 133
+; -----------------------------------------------------------------------------
+; Shop $85 - shop_133
+; ROM Offset: 0x2528c
+; Items: Unknown($aa), Fire of Serenity, Chain Sickle, Antidote Herb
+; -----------------------------------------------------------------------------
 shop_133:
-	.db $aa, $7c, $04, $54
-	.db $ff				; End of shop
+	.db $aa			; 1. Unknown item $aa
+	.db ITEM_FIRE_OF_SERENITY		; 2. Fire of Serenity (key_item)
+	.db ITEM_CHAIN_SICKLE		; 3. Chain Sickle (weapon)
+	.db ITEM_ANTIDOTE_HERB		; 4. Antidote Herb (consumable)
+	.db SHOP_END			; End of shop
 
-; Shop $86: Shop 134
+; -----------------------------------------------------------------------------
+; Shop $86 - shop_134
+; ROM Offset: 0x2528d
+; Items: Fire of Serenity, Chain Sickle, Antidote Herb
+; -----------------------------------------------------------------------------
 shop_134:
-	.db $7c, $04, $54
-	.db $ff				; End of shop
+	.db ITEM_FIRE_OF_SERENITY		; 1. Fire of Serenity (key_item)
+	.db ITEM_CHAIN_SICKLE		; 2. Chain Sickle (weapon)
+	.db ITEM_ANTIDOTE_HERB		; 3. Antidote Herb (consumable)
+	.db SHOP_END			; End of shop
 
-; Shop $87: Shop 135
+; -----------------------------------------------------------------------------
+; Shop $87 - shop_135
+; ROM Offset: 0x26e67
+; Items: Zombie Mail, Iron Helmet, Thorn Whip, Stilleto Earrings, Unknown($bf), Demon Hammer, Unknown($b1), Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_135:
-	.db $3a, $48, $09, $16, $bf, $12, $b1, $33
-	.db $1f, $71
-	.db $ff				; End of shop
+	.db ITEM_ZOMBIE_MAIL		; 1. Zombie Mail (armor)
+	.db ITEM_IRON_HELMET		; 2. Iron Helmet (helmet)
+	.db ITEM_THORN_WHIP		; 3. Thorn Whip (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 4. Stilleto Earrings (weapon)
+	.db $bf			; 5. Unknown item $bf
+	.db ITEM_DEMON_HAMMER		; 6. Demon Hammer (weapon)
+	.db $b1			; 7. Unknown item $b1
+	.db ITEM_CLOAK_OF_EVASION		; 8. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 9. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 10. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $88: Shop 136
+; -----------------------------------------------------------------------------
+; Shop $88 - shop_136
+; ROM Offset: 0x26e68
+; Items: Iron Helmet, Thorn Whip, Stilleto Earrings, Unknown($bf), Demon Hammer, Unknown($b1), Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_136:
-	.db $48, $09, $16, $bf, $12, $b1, $33, $1f
-	.db $71
-	.db $ff				; End of shop
+	.db ITEM_IRON_HELMET		; 1. Iron Helmet (helmet)
+	.db ITEM_THORN_WHIP		; 2. Thorn Whip (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 3. Stilleto Earrings (weapon)
+	.db $bf			; 4. Unknown item $bf
+	.db ITEM_DEMON_HAMMER		; 5. Demon Hammer (weapon)
+	.db $b1			; 6. Unknown item $b1
+	.db ITEM_CLOAK_OF_EVASION		; 7. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 8. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 9. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $89: Shop 137
+; -----------------------------------------------------------------------------
+; Shop $89 - shop_137
+; ROM Offset: 0x26e69
+; Items: Thorn Whip, Stilleto Earrings, Unknown($bf), Demon Hammer, Unknown($b1), Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_137:
-	.db $09, $16, $bf, $12, $b1, $33, $1f, $71
-	.db $ff				; End of shop
+	.db ITEM_THORN_WHIP		; 1. Thorn Whip (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 2. Stilleto Earrings (weapon)
+	.db $bf			; 3. Unknown item $bf
+	.db ITEM_DEMON_HAMMER		; 4. Demon Hammer (weapon)
+	.db $b1			; 5. Unknown item $b1
+	.db ITEM_CLOAK_OF_EVASION		; 6. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 7. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 8. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $8a: Shop 138
+; -----------------------------------------------------------------------------
+; Shop $8a - shop_138
+; ROM Offset: 0x26e6a
+; Items: Stilleto Earrings, Unknown($bf), Demon Hammer, Unknown($b1), Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_138:
-	.db $16, $bf, $12, $b1, $33, $1f, $71
-	.db $ff				; End of shop
+	.db ITEM_STILLETO_EARRINGS		; 1. Stilleto Earrings (weapon)
+	.db $bf			; 2. Unknown item $bf
+	.db ITEM_DEMON_HAMMER		; 3. Demon Hammer (weapon)
+	.db $b1			; 4. Unknown item $b1
+	.db ITEM_CLOAK_OF_EVASION		; 5. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 6. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 7. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $8b: Shop 139
+; -----------------------------------------------------------------------------
+; Shop $8b - shop_139
+; ROM Offset: 0x26e6b
+; Items: Unknown($bf), Demon Hammer, Unknown($b1), Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_139:
-	.db $bf, $12, $b1, $33, $1f, $71
-	.db $ff				; End of shop
+	.db $bf			; 1. Unknown item $bf
+	.db ITEM_DEMON_HAMMER		; 2. Demon Hammer (weapon)
+	.db $b1			; 3. Unknown item $b1
+	.db ITEM_CLOAK_OF_EVASION		; 4. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 5. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 6. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $8c: Shop 140
+; -----------------------------------------------------------------------------
+; Shop $8c - shop_140
+; ROM Offset: 0x26e6c
+; Items: Demon Hammer, Unknown($b1), Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_140:
-	.db $12, $b1, $33, $1f, $71
-	.db $ff				; End of shop
+	.db ITEM_DEMON_HAMMER		; 1. Demon Hammer (weapon)
+	.db $b1			; 2. Unknown item $b1
+	.db ITEM_CLOAK_OF_EVASION		; 3. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 4. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 5. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $8d: Shop 141
+; -----------------------------------------------------------------------------
+; Shop $8d - shop_141
+; ROM Offset: 0x26e6d
+; Items: Unknown($b1), Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_141:
-	.db $b1, $33, $1f, $71
-	.db $ff				; End of shop
+	.db $b1			; 1. Unknown item $b1
+	.db ITEM_CLOAK_OF_EVASION		; 2. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 3. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 4. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $8e: Shop 142
+; -----------------------------------------------------------------------------
+; Shop $8e - shop_142
+; ROM Offset: 0x26e6e
+; Items: Cloak of Evasion, Sword of Decimation, Thief's Key
+; -----------------------------------------------------------------------------
 shop_142:
-	.db $33, $1f, $71
-	.db $ff				; End of shop
+	.db ITEM_CLOAK_OF_EVASION		; 1. Cloak of Evasion (armor)
+	.db ITEM_SWORD_OF_DECIMATION		; 2. Sword of Decimation (weapon)
+	.db ITEM_THIEFS_KEY		; 3. Thief's Key (key)
+	.db SHOP_END			; End of shop
 
-; Shop $8f: Shop 143
+; -----------------------------------------------------------------------------
+; Shop $8f - shop_143
+; ROM Offset: 0x27171
+; Items: Staff of Punishment, Sandglass of Regression, Prince's Letter, Unknown($90)
+; -----------------------------------------------------------------------------
 shop_143:
-	.db $17, $5f, $77, $90
-	.db $ff				; End of shop
+	.db ITEM_STAFF_OF_PUNISHMENT		; 1. Staff of Punishment (weapon)
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 2. Sandglass of Regression (key_item)
+	.db ITEM_PRINCES_LETTER		; 3. Prince's Letter (key_item)
+	.db $90			; 4. Unknown item $90
+	.db SHOP_END			; End of shop
 
-; Shop $90: Shop 144
+; -----------------------------------------------------------------------------
+; Shop $90 - shop_144
+; ROM Offset: 0x27172
+; Items: Sandglass of Regression, Prince's Letter, Unknown($90)
+; -----------------------------------------------------------------------------
 shop_144:
-	.db $5f, $77, $90
-	.db $ff				; End of shop
+	.db ITEM_SANDGLASS_OF_REGRESSION		; 1. Sandglass of Regression (key_item)
+	.db ITEM_PRINCES_LETTER		; 2. Prince's Letter (key_item)
+	.db $90			; 3. Unknown item $90
+	.db SHOP_END			; End of shop
 
-; Shop $91: Shop 145
+; -----------------------------------------------------------------------------
+; Shop $91 - shop_145
+; ROM Offset: 0x279c8
+; Items: Staff of Force, Stilleto Earrings, Unknown($88), Unknown($80), Unknown($85), Unknown($a4), Zenithian Sword (2), Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_145:
-	.db $10, $16, $88, $80, $85, $a4, $21, $8f
-	.db $a8, $02, $78, $6a
-	.db $ff				; End of shop
+	.db ITEM_STAFF_OF_FORCE		; 1. Staff of Force (weapon)
+	.db ITEM_STILLETO_EARRINGS		; 2. Stilleto Earrings (weapon)
+	.db $88			; 3. Unknown item $88
+	.db $80			; 4. Unknown item $80
+	.db $85			; 5. Unknown item $85
+	.db $a4			; 6. Unknown item $a4
+	.db ITEM_ZENITHIAN_SWORD_2		; 7. Zenithian Sword (2) (weapon)
+	.db $8f			; 8. Unknown item $8f
+	.db $a8			; 9. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 10. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 11. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 12. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $92: Shop 146
+; -----------------------------------------------------------------------------
+; Shop $92 - shop_146
+; ROM Offset: 0x279c9
+; Items: Stilleto Earrings, Unknown($88), Unknown($80), Unknown($85), Unknown($a4), Zenithian Sword (2), Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_146:
-	.db $16, $88, $80, $85, $a4, $21, $8f, $a8
-	.db $02, $78, $6a
-	.db $ff				; End of shop
+	.db ITEM_STILLETO_EARRINGS		; 1. Stilleto Earrings (weapon)
+	.db $88			; 2. Unknown item $88
+	.db $80			; 3. Unknown item $80
+	.db $85			; 4. Unknown item $85
+	.db $a4			; 5. Unknown item $a4
+	.db ITEM_ZENITHIAN_SWORD_2		; 6. Zenithian Sword (2) (weapon)
+	.db $8f			; 7. Unknown item $8f
+	.db $a8			; 8. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 9. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 10. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 11. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $93: Shop 147
+; -----------------------------------------------------------------------------
+; Shop $93 - shop_147
+; ROM Offset: 0x279ca
+; Items: Unknown($88), Unknown($80), Unknown($85), Unknown($a4), Zenithian Sword (2), Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_147:
-	.db $88, $80, $85, $a4, $21, $8f, $a8, $02
-	.db $78, $6a
-	.db $ff				; End of shop
+	.db $88			; 1. Unknown item $88
+	.db $80			; 2. Unknown item $80
+	.db $85			; 3. Unknown item $85
+	.db $a4			; 4. Unknown item $a4
+	.db ITEM_ZENITHIAN_SWORD_2		; 5. Zenithian Sword (2) (weapon)
+	.db $8f			; 6. Unknown item $8f
+	.db $a8			; 7. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 8. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 9. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 10. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $94: Shop 148
+; -----------------------------------------------------------------------------
+; Shop $94 - shop_148
+; ROM Offset: 0x279cb
+; Items: Unknown($80), Unknown($85), Unknown($a4), Zenithian Sword (2), Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_148:
-	.db $80, $85, $a4, $21, $8f, $a8, $02, $78
-	.db $6a
-	.db $ff				; End of shop
+	.db $80			; 1. Unknown item $80
+	.db $85			; 2. Unknown item $85
+	.db $a4			; 3. Unknown item $a4
+	.db ITEM_ZENITHIAN_SWORD_2		; 4. Zenithian Sword (2) (weapon)
+	.db $8f			; 5. Unknown item $8f
+	.db $a8			; 6. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 7. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 8. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 9. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $95: Shop 149
+; -----------------------------------------------------------------------------
+; Shop $95 - shop_149
+; ROM Offset: 0x279cc
+; Items: Unknown($85), Unknown($a4), Zenithian Sword (2), Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_149:
-	.db $85, $a4, $21, $8f, $a8, $02, $78, $6a
-	.db $ff				; End of shop
+	.db $85			; 1. Unknown item $85
+	.db $a4			; 2. Unknown item $a4
+	.db ITEM_ZENITHIAN_SWORD_2		; 3. Zenithian Sword (2) (weapon)
+	.db $8f			; 4. Unknown item $8f
+	.db $a8			; 5. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 6. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 7. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 8. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $96: Shop 150
+; -----------------------------------------------------------------------------
+; Shop $96 - shop_150
+; ROM Offset: 0x279cd
+; Items: Unknown($a4), Zenithian Sword (2), Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_150:
-	.db $a4, $21, $8f, $a8, $02, $78, $6a
-	.db $ff				; End of shop
+	.db $a4			; 1. Unknown item $a4
+	.db ITEM_ZENITHIAN_SWORD_2		; 2. Zenithian Sword (2) (weapon)
+	.db $8f			; 3. Unknown item $8f
+	.db $a8			; 4. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 5. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 6. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 7. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $97: Shop 151
+; -----------------------------------------------------------------------------
+; Shop $97 - shop_151
+; ROM Offset: 0x279ce
+; Items: Zenithian Sword (2), Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_151:
-	.db $21, $8f, $a8, $02, $78, $6a
-	.db $ff				; End of shop
+	.db ITEM_ZENITHIAN_SWORD_2		; 1. Zenithian Sword (2) (weapon)
+	.db $8f			; 2. Unknown item $8f
+	.db $a8			; 3. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 4. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 5. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 6. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $98: Shop 152
+; -----------------------------------------------------------------------------
+; Shop $98 - shop_152
+; ROM Offset: 0x279cf
+; Items: Unknown($8f), Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_152:
-	.db $8f, $a8, $02, $78, $6a
-	.db $ff				; End of shop
+	.db $8f			; 1. Unknown item $8f
+	.db $a8			; 2. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 3. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 4. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 5. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $99: Shop 153
+; -----------------------------------------------------------------------------
+; Shop $99 - shop_153
+; ROM Offset: 0x279d0
+; Items: Unknown($a8), Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_153:
-	.db $a8, $02, $78, $6a
-	.db $ff				; End of shop
+	.db $a8			; 1. Unknown item $a8
+	.db ITEM_COPPER_SWORD		; 2. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 3. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 4. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $9a: Shop 154
+; -----------------------------------------------------------------------------
+; Shop $9a - shop_154
+; ROM Offset: 0x279d1
+; Items: Copper Sword, Royal Scroll, Stone of Drought
+; -----------------------------------------------------------------------------
 shop_154:
-	.db $02, $78, $6a
-	.db $ff				; End of shop
+	.db ITEM_COPPER_SWORD		; 1. Copper Sword (weapon)
+	.db ITEM_ROYAL_SCROLL		; 2. Royal Scroll (key_item)
+	.db ITEM_STONE_OF_DROUGHT		; 3. Stone of Drought (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $9b: Shop 155
+; -----------------------------------------------------------------------------
+; Shop $9b - shop_155
+; ROM Offset: 0x28992
+; Items: Wing of Wyvern, Metal Babble Sword, Feather Hat, Staff of Force, Iron Claw, Unknown($92), Sacred Robe
+; -----------------------------------------------------------------------------
 shop_155:
-	.db $56, $0e, $4a, $10, $03, $92, $34
-	.db $ff				; End of shop
+	.db ITEM_WING_OF_WYVERN		; 1. Wing of Wyvern (consumable)
+	.db ITEM_METAL_BABBLE_SWORD		; 2. Metal Babble Sword (weapon)
+	.db ITEM_FEATHER_HAT		; 3. Feather Hat (helmet)
+	.db ITEM_STAFF_OF_FORCE		; 4. Staff of Force (weapon)
+	.db ITEM_IRON_CLAW		; 5. Iron Claw (weapon)
+	.db $92			; 6. Unknown item $92
+	.db ITEM_SACRED_ROBE		; 7. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $9c: Shop 156
+; -----------------------------------------------------------------------------
+; Shop $9c - shop_156
+; ROM Offset: 0x28993
+; Items: Metal Babble Sword, Feather Hat, Staff of Force, Iron Claw, Unknown($92), Sacred Robe
+; -----------------------------------------------------------------------------
 shop_156:
-	.db $0e, $4a, $10, $03, $92, $34
-	.db $ff				; End of shop
+	.db ITEM_METAL_BABBLE_SWORD		; 1. Metal Babble Sword (weapon)
+	.db ITEM_FEATHER_HAT		; 2. Feather Hat (helmet)
+	.db ITEM_STAFF_OF_FORCE		; 3. Staff of Force (weapon)
+	.db ITEM_IRON_CLAW		; 4. Iron Claw (weapon)
+	.db $92			; 5. Unknown item $92
+	.db ITEM_SACRED_ROBE		; 6. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $9d: Shop 157
+; -----------------------------------------------------------------------------
+; Shop $9d - shop_157
+; ROM Offset: 0x28994
+; Items: Feather Hat, Staff of Force, Iron Claw, Unknown($92), Sacred Robe
+; -----------------------------------------------------------------------------
 shop_157:
-	.db $4a, $10, $03, $92, $34
-	.db $ff				; End of shop
+	.db ITEM_FEATHER_HAT		; 1. Feather Hat (helmet)
+	.db ITEM_STAFF_OF_FORCE		; 2. Staff of Force (weapon)
+	.db ITEM_IRON_CLAW		; 3. Iron Claw (weapon)
+	.db $92			; 4. Unknown item $92
+	.db ITEM_SACRED_ROBE		; 5. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $9e: Shop 158
+; -----------------------------------------------------------------------------
+; Shop $9e - shop_158
+; ROM Offset: 0x28995
+; Items: Staff of Force, Iron Claw, Unknown($92), Sacred Robe
+; -----------------------------------------------------------------------------
 shop_158:
-	.db $10, $03, $92, $34
-	.db $ff				; End of shop
+	.db ITEM_STAFF_OF_FORCE		; 1. Staff of Force (weapon)
+	.db ITEM_IRON_CLAW		; 2. Iron Claw (weapon)
+	.db $92			; 3. Unknown item $92
+	.db ITEM_SACRED_ROBE		; 4. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $9f: Shop 159
+; -----------------------------------------------------------------------------
+; Shop $9f - shop_159
+; ROM Offset: 0x28996
+; Items: Iron Claw, Unknown($92), Sacred Robe
+; -----------------------------------------------------------------------------
 shop_159:
-	.db $03, $92, $34
-	.db $ff				; End of shop
+	.db ITEM_IRON_CLAW		; 1. Iron Claw (weapon)
+	.db $92			; 2. Unknown item $92
+	.db ITEM_SACRED_ROBE		; 3. Sacred Robe (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $a0: Shop 160
+; -----------------------------------------------------------------------------
+; Shop $a0 - shop_160
+; ROM Offset: 0x2934d
+; Items: Unknown($80), Club, Zenithian Sword (2), Prince's Letter
+; -----------------------------------------------------------------------------
 shop_160:
-	.db $80, $01, $21, $77
-	.db $ff				; End of shop
+	.db $80			; 1. Unknown item $80
+	.db ITEM_CLUB		; 2. Club (weapon)
+	.db ITEM_ZENITHIAN_SWORD_2		; 3. Zenithian Sword (2) (weapon)
+	.db ITEM_PRINCES_LETTER		; 4. Prince's Letter (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $a1: Shop 161
+; -----------------------------------------------------------------------------
+; Shop $a1 - shop_161
+; ROM Offset: 0x2934e
+; Items: Club, Zenithian Sword (2), Prince's Letter
+; -----------------------------------------------------------------------------
 shop_161:
-	.db $01, $21, $77
-	.db $ff				; End of shop
+	.db ITEM_CLUB		; 1. Club (weapon)
+	.db ITEM_ZENITHIAN_SWORD_2		; 2. Zenithian Sword (2) (weapon)
+	.db ITEM_PRINCES_LETTER		; 3. Prince's Letter (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $a2: Shop 162
+; -----------------------------------------------------------------------------
+; Shop $a2 - shop_162
+; ROM Offset: 0x2983d
+; Items: Dress of Radiance, Broad Sword, Unknown($9e), Fire of Serenity, ??? No Item
+; -----------------------------------------------------------------------------
 shop_162:
-	.db $3b, $06, $9e, $7c, $7f
-	.db $ff				; End of shop
+	.db ITEM_DRESS_OF_RADIANCE		; 1. Dress of Radiance (armor)
+	.db ITEM_BROAD_SWORD		; 2. Broad Sword (weapon)
+	.db $9e			; 3. Unknown item $9e
+	.db ITEM_FIRE_OF_SERENITY		; 4. Fire of Serenity (key_item)
+	.db ITEM__NO_ITEM		; 5. ??? No Item (none)
+	.db SHOP_END			; End of shop
 
-; Shop $a3: Shop 163
+; -----------------------------------------------------------------------------
+; Shop $a3 - shop_163
+; ROM Offset: 0x2983e
+; Items: Broad Sword, Unknown($9e), Fire of Serenity, ??? No Item
+; -----------------------------------------------------------------------------
 shop_163:
-	.db $06, $9e, $7c, $7f
-	.db $ff				; End of shop
+	.db ITEM_BROAD_SWORD		; 1. Broad Sword (weapon)
+	.db $9e			; 2. Unknown item $9e
+	.db ITEM_FIRE_OF_SERENITY		; 3. Fire of Serenity (key_item)
+	.db ITEM__NO_ITEM		; 4. ??? No Item (none)
+	.db SHOP_END			; End of shop
 
-; Shop $a4: Shop 164
+; -----------------------------------------------------------------------------
+; Shop $a4 - shop_164
+; ROM Offset: 0x2983f
+; Items: Unknown($9e), Fire of Serenity, ??? No Item
+; -----------------------------------------------------------------------------
 shop_164:
-	.db $9e, $7c, $7f
-	.db $ff				; End of shop
+	.db $9e			; 1. Unknown item $9e
+	.db ITEM_FIRE_OF_SERENITY		; 2. Fire of Serenity (key_item)
+	.db ITEM__NO_ITEM		; 3. ??? No Item (none)
+	.db SHOP_END			; End of shop
 
-; Shop $a5: Shop 165
+; -----------------------------------------------------------------------------
+; Shop $a5 - shop_165
+; ROM Offset: 0x2a41d
+; Items: Padequia Root, Wizard's Ring, Agility Seed, Unknown($c5), Unknown($81), Agility Seed
+; -----------------------------------------------------------------------------
 shop_165:
-	.db $7b, $59, $62, $c5, $81, $62
-	.db $ff				; End of shop
+	.db ITEM_PADEQUIA_ROOT		; 1. Padequia Root (key_item)
+	.db ITEM_WIZARDS_RING		; 2. Wizard's Ring (accessory)
+	.db ITEM_AGILITY_SEED		; 3. Agility Seed (stat_seed)
+	.db $c5			; 4. Unknown item $c5
+	.db $81			; 5. Unknown item $81
+	.db ITEM_AGILITY_SEED		; 6. Agility Seed (stat_seed)
+	.db SHOP_END			; End of shop
 
-; Shop $a6: Shop 166
+; -----------------------------------------------------------------------------
+; Shop $a6 - shop_166
+; ROM Offset: 0x2a41e
+; Items: Wizard's Ring, Agility Seed, Unknown($c5), Unknown($81), Agility Seed
+; -----------------------------------------------------------------------------
 shop_166:
-	.db $59, $62, $c5, $81, $62
-	.db $ff				; End of shop
+	.db ITEM_WIZARDS_RING		; 1. Wizard's Ring (accessory)
+	.db ITEM_AGILITY_SEED		; 2. Agility Seed (stat_seed)
+	.db $c5			; 3. Unknown item $c5
+	.db $81			; 4. Unknown item $81
+	.db ITEM_AGILITY_SEED		; 5. Agility Seed (stat_seed)
+	.db SHOP_END			; End of shop
 
-; Shop $a7: Shop 167
+; -----------------------------------------------------------------------------
+; Shop $a7 - shop_167
+; ROM Offset: 0x2a41f
+; Items: Agility Seed, Unknown($c5), Unknown($81), Agility Seed
+; -----------------------------------------------------------------------------
 shop_167:
-	.db $62, $c5, $81, $62
-	.db $ff				; End of shop
+	.db ITEM_AGILITY_SEED		; 1. Agility Seed (stat_seed)
+	.db $c5			; 2. Unknown item $c5
+	.db $81			; 3. Unknown item $81
+	.db ITEM_AGILITY_SEED		; 4. Agility Seed (stat_seed)
+	.db SHOP_END			; End of shop
 
-; Shop $a8: Shop 168
+; -----------------------------------------------------------------------------
+; Shop $a8 - shop_168
+; ROM Offset: 0x2a420
+; Items: Unknown($c5), Unknown($81), Agility Seed
+; -----------------------------------------------------------------------------
 shop_168:
-	.db $c5, $81, $62
-	.db $ff				; End of shop
+	.db $c5			; 1. Unknown item $c5
+	.db $81			; 2. Unknown item $81
+	.db ITEM_AGILITY_SEED		; 3. Agility Seed (stat_seed)
+	.db SHOP_END			; End of shop
 
-; Shop $a9: Shop 169
+; -----------------------------------------------------------------------------
+; Shop $a9 - shop_169
+; ROM Offset: 0x2a568
+; Items: Unknown($84), Unknown($85), Robe of Serenity
+; -----------------------------------------------------------------------------
 shop_169:
-	.db $84, $85, $39
-	.db $ff				; End of shop
+	.db $84			; 1. Unknown item $84
+	.db $85			; 2. Unknown item $85
+	.db ITEM_ROBE_OF_SERENITY		; 3. Robe of Serenity (armor)
+	.db SHOP_END			; End of shop
 
-; Shop $aa: Shop 170
+; -----------------------------------------------------------------------------
+; Shop $aa - shop_170
+; ROM Offset: 0x2ac40
+; Items: Gunpowder Jar, Mystic Acorns, Unknown($8e)
+; -----------------------------------------------------------------------------
 shop_170:
-	.db $70, $65, $8e
-	.db $ff				; End of shop
+	.db ITEM_GUNPOWDER_JAR		; 1. Gunpowder Jar (key_item)
+	.db ITEM_MYSTIC_ACORNS		; 2. Mystic Acorns (stat_seed)
+	.db $8e			; 3. Unknown item $8e
+	.db SHOP_END			; End of shop
 
-; Shop $ab: Shop 171
+; -----------------------------------------------------------------------------
+; Shop $ab - shop_171
+; ROM Offset: 0x2b011
+; Items: Iron Mask, Unknown($a4), Antidote Herb, Unknown($ac), Unknown($9e), Unknown($a9), Unknown($9f), Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_171:
-	.db $49, $a4, $54, $ac, $9e, $a9, $9f, $49
-	.db $9f, $5e
-	.db $ff				; End of shop
+	.db ITEM_IRON_MASK		; 1. Iron Mask (helmet)
+	.db $a4			; 2. Unknown item $a4
+	.db ITEM_ANTIDOTE_HERB		; 3. Antidote Herb (consumable)
+	.db $ac			; 4. Unknown item $ac
+	.db $9e			; 5. Unknown item $9e
+	.db $a9			; 6. Unknown item $a9
+	.db $9f			; 7. Unknown item $9f
+	.db ITEM_IRON_MASK		; 8. Iron Mask (helmet)
+	.db $9f			; 9. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 10. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $ac: Shop 172
+; -----------------------------------------------------------------------------
+; Shop $ac - shop_172
+; ROM Offset: 0x2b012
+; Items: Unknown($a4), Antidote Herb, Unknown($ac), Unknown($9e), Unknown($a9), Unknown($9f), Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_172:
-	.db $a4, $54, $ac, $9e, $a9, $9f, $49, $9f
-	.db $5e
-	.db $ff				; End of shop
+	.db $a4			; 1. Unknown item $a4
+	.db ITEM_ANTIDOTE_HERB		; 2. Antidote Herb (consumable)
+	.db $ac			; 3. Unknown item $ac
+	.db $9e			; 4. Unknown item $9e
+	.db $a9			; 5. Unknown item $a9
+	.db $9f			; 6. Unknown item $9f
+	.db ITEM_IRON_MASK		; 7. Iron Mask (helmet)
+	.db $9f			; 8. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 9. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $ad: Shop 173
+; -----------------------------------------------------------------------------
+; Shop $ad - shop_173
+; ROM Offset: 0x2b013
+; Items: Antidote Herb, Unknown($ac), Unknown($9e), Unknown($a9), Unknown($9f), Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_173:
-	.db $54, $ac, $9e, $a9, $9f, $49, $9f, $5e
-	.db $ff				; End of shop
+	.db ITEM_ANTIDOTE_HERB		; 1. Antidote Herb (consumable)
+	.db $ac			; 2. Unknown item $ac
+	.db $9e			; 3. Unknown item $9e
+	.db $a9			; 4. Unknown item $a9
+	.db $9f			; 5. Unknown item $9f
+	.db ITEM_IRON_MASK		; 6. Iron Mask (helmet)
+	.db $9f			; 7. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 8. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $ae: Shop 174
+; -----------------------------------------------------------------------------
+; Shop $ae - shop_174
+; ROM Offset: 0x2b014
+; Items: Unknown($ac), Unknown($9e), Unknown($a9), Unknown($9f), Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_174:
-	.db $ac, $9e, $a9, $9f, $49, $9f, $5e
-	.db $ff				; End of shop
+	.db $ac			; 1. Unknown item $ac
+	.db $9e			; 2. Unknown item $9e
+	.db $a9			; 3. Unknown item $a9
+	.db $9f			; 4. Unknown item $9f
+	.db ITEM_IRON_MASK		; 5. Iron Mask (helmet)
+	.db $9f			; 6. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 7. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $af: Shop 175
+; -----------------------------------------------------------------------------
+; Shop $af - shop_175
+; ROM Offset: 0x2b015
+; Items: Unknown($9e), Unknown($a9), Unknown($9f), Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_175:
-	.db $9e, $a9, $9f, $49, $9f, $5e
-	.db $ff				; End of shop
+	.db $9e			; 1. Unknown item $9e
+	.db $a9			; 2. Unknown item $a9
+	.db $9f			; 3. Unknown item $9f
+	.db ITEM_IRON_MASK		; 4. Iron Mask (helmet)
+	.db $9f			; 5. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 6. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $b0: Shop 176
+; -----------------------------------------------------------------------------
+; Shop $b0 - shop_176
+; ROM Offset: 0x2b016
+; Items: Unknown($a9), Unknown($9f), Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_176:
-	.db $a9, $9f, $49, $9f, $5e
-	.db $ff				; End of shop
+	.db $a9			; 1. Unknown item $a9
+	.db $9f			; 2. Unknown item $9f
+	.db ITEM_IRON_MASK		; 3. Iron Mask (helmet)
+	.db $9f			; 4. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 5. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $b1: Shop 177
+; -----------------------------------------------------------------------------
+; Shop $b1 - shop_177
+; ROM Offset: 0x2b017
+; Items: Unknown($9f), Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_177:
-	.db $9f, $49, $9f, $5e
-	.db $ff				; End of shop
+	.db $9f			; 1. Unknown item $9f
+	.db ITEM_IRON_MASK		; 2. Iron Mask (helmet)
+	.db $9f			; 3. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 4. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $b2: Shop 178
+; -----------------------------------------------------------------------------
+; Shop $b2 - shop_178
+; ROM Offset: 0x2b018
+; Items: Iron Mask, Unknown($9f), Scent Pouch
+; -----------------------------------------------------------------------------
 shop_178:
-	.db $49, $9f, $5e
-	.db $ff				; End of shop
+	.db ITEM_IRON_MASK		; 1. Iron Mask (helmet)
+	.db $9f			; 2. Unknown item $9f
+	.db ITEM_SCENT_POUCH		; 3. Scent Pouch (key_item)
+	.db SHOP_END			; End of shop
 
-; Shop $b3: Shop 179
+; -----------------------------------------------------------------------------
+; Shop $b3 - shop_179
+; ROM Offset: 0x2b5fe
+; Items: Staff of Transform, Fire of Serenity, ??? No Item
+; -----------------------------------------------------------------------------
 shop_179:
-	.db $68, $7c, $7f
-	.db $ff				; End of shop
+	.db ITEM_STAFF_OF_TRANSFORM		; 1. Staff of Transform (key_item)
+	.db ITEM_FIRE_OF_SERENITY		; 2. Fire of Serenity (key_item)
+	.db ITEM__NO_ITEM		; 3. ??? No Item (none)
+	.db SHOP_END			; End of shop
 
 ; ============================================================================
 ; End of shop data
